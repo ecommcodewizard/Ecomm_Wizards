@@ -186,7 +186,7 @@ export default function HomePage() {
           <div className="flex flex-col gap-4 sm:flex-row lg:flex-shrink-0" style={{ width: "100%", maxWidth: "645px", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155" }}>
 
             {/* Card 1 */}
-            <div className="rounded-2xl bg-[#111111]/90 backdrop-blur-sm transition-all duration-300 border-2 border-white/10 hover:border-[#b18945]" className="flex-1" style={{ minWidth: "0", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155", padding: "30px 20px" }}>
+            <div className="rounded-2xl bg-[#111111]/90 backdrop-blur-sm transition-all duration-300 border-2 border-white/10 hover:border-[#b18945] flex-1" style={{ minWidth: "0", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155", padding: "30px 20px" }}>
               {/* Icon */}
               <svg className="mb-5" width="30" height="30" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {/* Monitor outer frame */}
@@ -239,7 +239,7 @@ export default function HomePage() {
             </div>
 
             {/* Card 2 */}
-            <div className="rounded-2xl bg-[#111111]/90 backdrop-blur-sm transition-all duration-300 border-2 border-white/10 hover:border-[#b18945]" className="flex-1" style={{ minWidth: "0", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155", padding: "30px 20px" }}>
+            <div className="rounded-2xl bg-[#111111]/90 backdrop-blur-sm transition-all duration-300 border-2 border-white/10 hover:border-[#b18945] flex-1" style={{ minWidth: "0", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155", padding: "30px 20px" }}>
               {/* Icon */}
               <svg className="mb-5" width="30" height="30" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {/* Bar 1 - shortest */}
