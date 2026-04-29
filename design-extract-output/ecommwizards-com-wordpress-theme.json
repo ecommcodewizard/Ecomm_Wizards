@@ -1,0 +1,203 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "primary",
+          "color": "#61ce70",
+          "name": "Primary"
+        },
+        {
+          "slug": "secondary",
+          "color": "#046bd2",
+          "name": "Secondary"
+        },
+        {
+          "slug": "accent",
+          "color": "#6ec1e4",
+          "name": "Accent"
+        },
+        {
+          "slug": "neutral-1",
+          "color": "#334155",
+          "name": "Neutral 1"
+        },
+        {
+          "slug": "neutral-2",
+          "color": "#ffffff",
+          "name": "Neutral 2"
+        },
+        {
+          "slug": "neutral-3",
+          "color": "#000000",
+          "name": "Neutral 3"
+        },
+        {
+          "slug": "neutral-4",
+          "color": "#7a7a7a",
+          "name": "Neutral 4"
+        },
+        {
+          "slug": "neutral-5",
+          "color": "#69727d",
+          "name": "Neutral 5"
+        },
+        {
+          "slug": "bg-ffffff",
+          "color": "#ffffff",
+          "name": "Background #ffffff"
+        },
+        {
+          "slug": "bg-000000",
+          "color": "#000000",
+          "name": "Background #000000"
+        },
+        {
+          "slug": "bg-fbf7ed",
+          "color": "#fbf7ed",
+          "name": "Background #fbf7ed"
+        }
+      ],
+      "gradients": [
+        {
+          "slug": "gradient-1",
+          "gradient": "linear-gradient(0deg, rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0) 100%)",
+          "name": "Gradient 1"
+        },
+        {
+          "slug": "gradient-2",
+          "gradient": "linear-gradient(rgb(0, 0, 0) 0%, rgb(18, 18, 18) 60%)",
+          "name": "Gradient 2"
+        },
+        {
+          "slug": "gradient-3",
+          "gradient": "linear-gradient(280deg, rgb(0, 0, 0) 0%, rgb(18, 18, 18) 100%)",
+          "name": "Gradient 3"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "Poppins",
+          "slug": "poppins",
+          "name": "Poppins"
+        },
+        {
+          "fontFamily": "Times New Roman",
+          "slug": "times-new-roman",
+          "name": "Times New Roman"
+        },
+        {
+          "fontFamily": "Lato",
+          "slug": "lato",
+          "name": "Lato"
+        },
+        {
+          "fontFamily": "Nunito",
+          "slug": "nunito",
+          "name": "Nunito"
+        }
+      ],
+      "fontSizes": [
+        {
+          "size": "52px",
+          "slug": "size-52",
+          "name": "52px"
+        },
+        {
+          "size": "50px",
+          "slug": "size-50",
+          "name": "50px"
+        },
+        {
+          "size": "42px",
+          "slug": "size-42",
+          "name": "42px"
+        },
+        {
+          "size": "40px",
+          "slug": "size-40",
+          "name": "40px"
+        },
+        {
+          "size": "30px",
+          "slug": "size-30",
+          "name": "30px"
+        },
+        {
+          "size": "25px",
+          "slug": "size-25",
+          "name": "25px"
+        },
+        {
+          "size": "24px",
+          "slug": "size-24",
+          "name": "24px"
+        },
+        {
+          "size": "20px",
+          "slug": "size-20",
+          "name": "20px"
+        }
+      ]
+    },
+    "spacing": {
+      "spacingSizes": [
+        {
+          "size": "2px",
+          "slug": "spacing-2",
+          "name": "2px"
+        },
+        {
+          "size": "10px",
+          "slug": "spacing-10",
+          "name": "10px"
+        },
+        {
+          "size": "20px",
+          "slug": "spacing-20",
+          "name": "20px"
+        },
+        {
+          "size": "24px",
+          "slug": "spacing-24",
+          "name": "24px"
+        },
+        {
+          "size": "40px",
+          "slug": "spacing-40",
+          "name": "40px"
+        },
+        {
+          "size": "45px",
+          "slug": "spacing-45",
+          "name": "45px"
+        },
+        {
+          "size": "60px",
+          "slug": "spacing-60",
+          "name": "60px"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "100%",
+      "wideSize": "1400px"
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "#ffffff",
+      "text": "#000000"
+    },
+    "typography": {
+      "fontSize": "16px",
+      "lineHeight": "normal",
+      "fontFamily": "Poppins"
+    },
+    "spacing": {}
+  }
+}

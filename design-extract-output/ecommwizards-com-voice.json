@@ -1,0 +1,126 @@
+{
+  "tone": "friendly",
+  "pronoun": "third-person",
+  "headingStyle": "Title Case",
+  "headingLengthClass": "tight",
+  "ctaVerbs": [
+    {
+      "value": "get",
+      "count": 52
+    },
+    {
+      "value": "book",
+      "count": 28
+    },
+    {
+      "value": "request",
+      "count": 20
+    },
+    {
+      "value": "view",
+      "count": 8
+    },
+    {
+      "value": "claim",
+      "count": 8
+    },
+    {
+      "value": "schedule",
+      "count": 8
+    },
+    {
+      "value": "see",
+      "count": 4
+    },
+    {
+      "value": "optimize",
+      "count": 4
+    },
+    {
+      "value": "define",
+      "count": 4
+    },
+    {
+      "value": "personalize",
+      "count": 4
+    }
+  ],
+  "buttonPatterns": [
+    {
+      "value": "book a call",
+      "count": 24
+    },
+    {
+      "value": "get started",
+      "count": 12
+    },
+    {
+      "value": "view case studies",
+      "count": 8
+    },
+    {
+      "value": "get a free test drive",
+      "count": 8
+    },
+    {
+      "value": "claim free audit",
+      "count": 8
+    },
+    {
+      "value": "request app quote",
+      "count": 8
+    },
+    {
+      "value": "schedule b2b consultation",
+      "count": 8
+    },
+    {
+      "value": "request pos demo",
+      "count": 8
+    },
+    {
+      "value": "get a free quote",
+      "count": 4
+    },
+    {
+      "value": "get a free audit",
+      "count": 4
+    },
+    {
+      "value": "get a free strategy",
+      "count": 4
+    },
+    {
+      "value": "see case studies",
+      "count": 4
+    },
+    {
+      "value": "get a free migration consultation",
+      "count": 4
+    },
+    {
+      "value": "request a custom quote",
+      "count": 4
+    },
+    {
+      "value": "get a free ux audit",
+      "count": 4
+    }
+  ],
+  "sampleHeadings": [
+    "\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tCustom Shopify Theme Design\t\t\t\t\t\t\n\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tConvert any Figma to Shopify\t\t\t\t\t\t\n\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tBulk Hours for Shopify Tasks\t\t\t\t\t\t\n\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tNew Store Development\t\t\t\t\t\t\n\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tFree Shopify Concept Design\t\t\t\t\t\t\n\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tCustom Shopify Theme Design\t\t\t\t\t\t\n\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tConvert any Figma to Shopify\t\t\t\t\t\t\n\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tBulk Hours for Shopify Tasks\t\t\t\t\t\t\n\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tNew Store Development\t\t\t\t\t\t\n\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tFree Shopify Concept Design\t\t\t\t\t\t\n\t\t\t\t\t"
+  ],
+  "stats": {
+    "buttons": 152,
+    "headings": 15
+  }
+}

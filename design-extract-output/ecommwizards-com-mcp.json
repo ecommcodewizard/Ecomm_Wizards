@@ -1,0 +1,785 @@
+{
+  "colors": {
+    "all": [
+      {
+        "hex": "#334155",
+        "rgb": {
+          "r": 51,
+          "g": 65,
+          "b": 85,
+          "a": 1
+        },
+        "hsl": {
+          "h": 215,
+          "s": 25,
+          "l": 27
+        },
+        "count": 4567,
+        "contexts": [
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255,
+          "a": 1
+        },
+        "hsl": {
+          "h": 0,
+          "s": 0,
+          "l": 100
+        },
+        "count": 1612,
+        "contexts": [
+          "background",
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#b18945",
+        "rgb": {
+          "r": 177,
+          "g": 137,
+          "b": 69,
+          "a": 1
+        },
+        "hsl": {
+          "h": 38,
+          "s": 44,
+          "l": 48
+        },
+        "count": 1070,
+        "contexts": [
+          "text",
+          "border",
+          "background"
+        ]
+      },
+      {
+        "hex": "#6ec1e4",
+        "rgb": {
+          "r": 110,
+          "g": 193,
+          "b": 228,
+          "a": 1
+        },
+        "hsl": {
+          "h": 198,
+          "s": 69,
+          "l": 66
+        },
+        "count": 728,
+        "contexts": [
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#046bd2",
+        "rgb": {
+          "r": 4,
+          "g": 107,
+          "b": 210,
+          "a": 1
+        },
+        "hsl": {
+          "h": 210,
+          "s": 96,
+          "l": 42
+        },
+        "count": 370,
+        "contexts": [
+          "text",
+          "border",
+          "background"
+        ]
+      },
+      {
+        "hex": "#000000",
+        "rgb": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        },
+        "hsl": {
+          "h": 0,
+          "s": 0,
+          "l": 0
+        },
+        "count": 310,
+        "contexts": [
+          "text",
+          "border",
+          "background"
+        ]
+      },
+      {
+        "hex": "#7a7a7a",
+        "rgb": {
+          "r": 122,
+          "g": 122,
+          "b": 122,
+          "a": 1
+        },
+        "hsl": {
+          "h": 0,
+          "s": 0,
+          "l": 48
+        },
+        "count": 56,
+        "contexts": [
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#69727d",
+        "rgb": {
+          "r": 105,
+          "g": 114,
+          "b": 125,
+          "a": 1
+        },
+        "hsl": {
+          "h": 213,
+          "s": 9,
+          "l": 45
+        },
+        "count": 32,
+        "contexts": [
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#101010",
+        "rgb": {
+          "r": 16,
+          "g": 16,
+          "b": 16,
+          "a": 1
+        },
+        "hsl": {
+          "h": 0,
+          "s": 0,
+          "l": 6
+        },
+        "count": 26,
+        "contexts": [
+          "text",
+          "border",
+          "background"
+        ]
+      },
+      {
+        "hex": "#61ce70",
+        "rgb": {
+          "r": 97,
+          "g": 206,
+          "b": 112,
+          "a": 1
+        },
+        "hsl": {
+          "h": 128,
+          "s": 53,
+          "l": 59
+        },
+        "count": 17,
+        "contexts": [
+          "background"
+        ]
+      },
+      {
+        "hex": "#1e293b",
+        "rgb": {
+          "r": 30,
+          "g": 41,
+          "b": 59,
+          "a": 1
+        },
+        "hsl": {
+          "h": 217,
+          "s": 33,
+          "l": 17
+        },
+        "count": 10,
+        "contexts": [
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#fbf7ed",
+        "rgb": {
+          "r": 251,
+          "g": 247,
+          "b": 237,
+          "a": 1
+        },
+        "hsl": {
+          "h": 43,
+          "s": 64,
+          "l": 96
+        },
+        "count": 2,
+        "contexts": [
+          "background"
+        ]
+      },
+      {
+        "hex": "#333333",
+        "rgb": {
+          "r": 51,
+          "g": 51,
+          "b": 51,
+          "a": 0.5
+        },
+        "hsl": {
+          "h": 0,
+          "s": 0,
+          "l": 20
+        },
+        "count": 1,
+        "contexts": [
+          "text"
+        ]
+      }
+    ]
+  },
+  "regions": [
+    {
+      "role": "nav",
+      "tag": "nav",
+      "bounds": {
+        "x": 271.9375,
+        "y": 15,
+        "w": 650.796875,
+        "h": 80
+      },
+      "heading": null,
+      "buttonCount": 32,
+      "cardCount": 7,
+      "className": "ekit-wid-con ekit_menu_responsive_tablet"
+    },
+    {
+      "role": "nav",
+      "tag": "nav",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "heading": "\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tCustom Shopify Theme Design\t\t\t\t\t\t\n\t\t\t\t\t",
+      "buttonCount": 32,
+      "cardCount": 7,
+      "className": "ekit-wid-con ekit_menu_responsive_tablet"
+    },
+    {
+      "role": "nav",
+      "tag": "nav",
+      "bounds": {
+        "x": 271.9375,
+        "y": -70,
+        "w": 650.796875,
+        "h": 80
+      },
+      "heading": null,
+      "buttonCount": 32,
+      "cardCount": 7,
+      "className": "ekit-wid-con ekit_menu_responsive_tablet"
+    },
+    {
+      "role": "nav",
+      "tag": "nav",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "heading": "\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tCustom Shopify Theme Design\t\t\t\t\t\t\n\t\t\t\t\t",
+      "buttonCount": 32,
+      "cardCount": 7,
+      "className": "ekit-wid-con ekit_menu_responsive_tablet"
+    },
+    {
+      "role": "footer",
+      "tag": "footer",
+      "bounds": {
+        "x": 0,
+        "y": 31502.28125,
+        "w": 1280,
+        "h": 2265
+      },
+      "heading": "Select a Service",
+      "buttonCount": 0,
+      "cardCount": 70,
+      "className": "elementor elementor-26 elementor-location-footer"
+    }
+  ],
+  "componentClusters": [
+    {
+      "kind": "button",
+      "structuralHash": "div>a",
+      "instanceCount": 38,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(51, 65, 85)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(51, 65, 85)",
+            "fontSize": "16px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 38
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "a>span",
+      "instanceCount": 38,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "20px 45px 20px 45px",
+            "borderRadius": "100px",
+            "border": "2px solid rgb(177, 137, 69)",
+            "fontSize": "16px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 15
+        },
+        {
+          "css": {
+            "background": "rgb(255, 255, 255)",
+            "color": "rgb(0, 0, 0)",
+            "padding": "12px 24px 12px 24px",
+            "borderRadius": "100px",
+            "border": "2px solid rgb(255, 255, 255)",
+            "fontSize": "14px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 2
+        },
+        {
+          "css": {
+            "background": "rgb(18, 18, 18)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "16px 25px 16px 25px",
+            "borderRadius": "10px",
+            "border": "2px solid rgb(177, 137, 69)",
+            "fontSize": "15px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 19
+        },
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(177, 137, 69)",
+            "padding": "0px 0px 2px 0px",
+            "borderRadius": "0px",
+            "border": "0px 0px 1px solid rgb(177, 137, 69)",
+            "fontSize": "15px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 2
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "span>span>span",
+      "instanceCount": 34,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(255, 255, 255)",
+            "fontSize": "16px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 34
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "span>svg",
+      "instanceCount": 34,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(255, 255, 255)",
+            "fontSize": "16px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 34
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "span",
+      "instanceCount": 38,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(255, 255, 255)",
+            "fontSize": "16px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 36
+        },
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(0, 0, 0)",
+            "fontSize": "14px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 2
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "span>span",
+      "instanceCount": 4,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(255, 255, 255)",
+            "fontSize": "14px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 2
+        },
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(0, 0, 0)",
+            "fontSize": "14px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 2
+        }
+      ]
+    },
+    {
+      "kind": "card",
+      "structuralHash": "div>div>div",
+      "instanceCount": 15,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(51, 65, 85)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(51, 65, 85)",
+            "fontSize": "16px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 15
+        }
+      ]
+    },
+    {
+      "kind": "card",
+      "structuralHash": "div>a",
+      "instanceCount": 10,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(51, 65, 85)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(51, 65, 85)",
+            "fontSize": "16px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 10
+        }
+      ]
+    },
+    {
+      "kind": "card",
+      "structuralHash": "div>p",
+      "instanceCount": 10,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(51, 65, 85)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(51, 65, 85)",
+            "fontSize": "16px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 10
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "remediation": []
+  },
+  "cssHealth": {
+    "sheets": [
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 8479,
+        "usedBytes": 6337,
+        "unusedBytes": 2142,
+        "unusedPercent": 25
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 291,
+        "usedBytes": 288,
+        "unusedBytes": 3,
+        "unusedPercent": 1
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 10351,
+        "usedBytes": 9716,
+        "unusedBytes": 635,
+        "unusedPercent": 6
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 529,
+        "usedBytes": 524,
+        "unusedBytes": 5,
+        "unusedPercent": 1
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 3988,
+        "usedBytes": 3983,
+        "unusedBytes": 5,
+        "unusedPercent": 0
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 137710,
+        "usedBytes": 4708,
+        "unusedBytes": 133002,
+        "unusedPercent": 97
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 12393,
+        "usedBytes": 12362,
+        "unusedBytes": 31,
+        "unusedPercent": 0
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 11098,
+        "usedBytes": 11070,
+        "unusedBytes": 28,
+        "unusedPercent": 0
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 485,
+        "usedBytes": 233,
+        "unusedBytes": 252,
+        "unusedPercent": 52
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 29891,
+        "usedBytes": 28287,
+        "unusedBytes": 1604,
+        "unusedPercent": 5
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 11417,
+        "usedBytes": 6536,
+        "unusedBytes": 4881,
+        "unusedPercent": 43
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 99,
+        "usedBytes": 0,
+        "unusedBytes": 99,
+        "unusedPercent": 100
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 109,
+        "usedBytes": 0,
+        "unusedBytes": 109,
+        "unusedPercent": 100
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 825,
+        "usedBytes": 677,
+        "unusedBytes": 148,
+        "unusedPercent": 18
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 164,
+        "usedBytes": 160,
+        "unusedBytes": 4,
+        "unusedPercent": 2
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 207,
+        "usedBytes": 204,
+        "unusedBytes": 3,
+        "unusedPercent": 1
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 2588,
+        "usedBytes": 2332,
+        "unusedBytes": 256,
+        "unusedPercent": 10
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 1483,
+        "usedBytes": 1473,
+        "unusedBytes": 10,
+        "unusedPercent": 1
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 16712,
+        "usedBytes": 16668,
+        "unusedBytes": 44,
+        "unusedPercent": 0
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 514,
+        "usedBytes": 509,
+        "unusedBytes": 5,
+        "unusedPercent": 1
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 11098,
+        "usedBytes": 11070,
+        "unusedBytes": 28,
+        "unusedPercent": 0
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 12393,
+        "usedBytes": 12362,
+        "unusedBytes": 31,
+        "unusedPercent": 0
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 862,
+        "usedBytes": 493,
+        "unusedBytes": 369,
+        "unusedPercent": 43
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 12393,
+        "usedBytes": 12362,
+        "unusedBytes": 31,
+        "unusedPercent": 0
+      },
+      {
+        "url": "https://ecommwizards.com/",
+        "totalBytes": 1616,
+        "usedBytes": 1435,
+        "unusedBytes": 181,
+        "unusedPercent": 11
+      },
+      {
+        "url": "https://ecommwizards.com/wp-content/uploads/al_opt_content/CSS//0ec9ae8f0421f3ae70a3f3436d4148fb.css",
+        "totalBytes": 64670,
+        "usedBytes": 0,
+        "unusedBytes": 64670,
+        "unusedPercent": 100
+      }
+    ],
+    "totalBytes": 352365,
+    "usedBytes": 143789,
+    "unusedBytes": 208576,
+    "unusedPercent": 59,
+    "importantCount": 19,
+    "duplicates": 5201,
+    "vendorPrefixes": {
+      "webkit": 1614,
+      "moz": 4,
+      "ms": 11,
+      "o": 2
+    },
+    "keyframes": [
+      {
+        "name": "verticalScrollUp",
+        "steps": 2
+      }
+    ],
+    "specificity": {
+      "max": [
+        1,
+        6,
+        2
+      ],
+      "average": [
+        0,
+        1.85,
+        0.33
+      ],
+      "count": 1801
+    },
+    "issues": [
+      "19 !important rules",
+      "5201 duplicate declarations",
+      "59% unused CSS"
+    ]
+  }
+}

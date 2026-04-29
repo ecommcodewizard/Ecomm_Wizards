@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "home",
+    "name": "Homepage",
+    "h2Count": 40,
+    "h3Count": 81,
+    "paraCount": 54,
+    "liCount": 41
+  },
+  {
+    "slug": "about-shopify-agency",
+    "name": "About",
+    "h2Count": 20,
+    "h3Count": 41,
+    "paraCount": 63,
+    "liCount": 41
+  },
+  {
+    "slug": "contact-shopify-agency",
+    "name": "Contact",
+    "h2Count": 9,
+    "h3Count": 38,
+    "paraCount": 40,
+    "liCount": 41
+  },
+  {
+    "slug": "shopify-store-development",
+    "name": "Build",
+    "h2Count": 23,
+    "h3Count": 54,
+    "paraCount": 63,
+    "liCount": 41
+  },
+  {
+    "slug": "figma-to-shopify-conversion",
+    "name": "Figma to Shopify",
+    "h2Count": 34,
+    "h3Count": 58,
+    "paraCount": 53,
+    "liCount": 41
+  },
+  {
+    "slug": "free-shopify-store-audit",
+    "name": "Free Audit",
+    "h2Count": 65,
+    "h3Count": 51,
+    "paraCount": 59,
+    "liCount": 49
+  },
+  {
+    "slug": "shopify-app-development",
+    "name": "App Dev",
+    "h2Count": 53,
+    "h3Count": 49,
+    "paraCount": 63,
+    "liCount": 41
+  },
+  {
+    "slug": "erp-connections-to-shopify",
+    "name": "ERP",
+    "h2Count": 31,
+    "h3Count": 61,
+    "paraCount": 67,
+    "liCount": 41
+  },
+  {
+    "slug": "shopify-pos-setup",
+    "name": "POS",
+    "h2Count": 38,
+    "h3Count": 60,
+    "paraCount": 66,
+    "liCount": 43
+  },
+  {
+    "slug": "shopify-b2b-store-setup",
+    "name": "B2B",
+    "h2Count": 31,
+    "h3Count": 62,
+    "paraCount": 79,
+    "liCount": 41
+  },
+  {
+    "slug": "shopify-seo-agency",
+    "name": "SEO",
+    "h2Count": 35,
+    "h3Count": 45,
+    "paraCount": 55,
+    "liCount": 41
+  },
+  {
+    "slug": "book-shopify-consultation",
+    "name": "Book a Call",
+    "h2Count": 13,
+    "h3Count": 38,
+    "paraCount": 40,
+    "liCount": 45
+  }
+]

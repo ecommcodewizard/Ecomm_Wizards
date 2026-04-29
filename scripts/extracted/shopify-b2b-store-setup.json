@@ -1,0 +1,509 @@
+{
+  "slug": "shopify-b2b-store-setup",
+  "name": "B2B",
+  "meta": {
+    "title": "B2B - Ecomm Wizards",
+    "description": "",
+    "h1": ""
+  },
+  "h2s": [
+    "Shopify Plus B2B Solutions: Run Wholesale and D2C From One Powerful Platform",
+    "Stop Managing Two Businesses Separately. B2B Shopify Was Built for This.",
+    "Brands That Trust Ecomm Wizards for Shopify B2B",
+    "Who We Build Shopify B2B Stores For",
+    "Why Are Smart Wholesalers Moving to B2B Shopify?",
+    "Benefits",
+    "Description",
+    "Impact on Your Business",
+    "Every Feature Your Wholesale Shopify Store Needs, Built and Configured by Experts",
+    "How We Build Your Shopify B2B Operation: From Strategy to Scale",
+    "Real Brands. Real Shopify B2B Results.",
+    "The Shopify B2B Agency Behind Your Wholesale Growth",
+    "Frequently Asked Questions",
+    "Join 1,000+ Brands Seeing Real Results",
+    "Fitness Brand",
+    "Premium Goods",
+    "Apparel Merchant",
+    "Apps we used:",
+    "A dynamically personalized Shopify Store developed & maintained for Bark",
+    "Nari Sitaraman",
+    "An elegant Shopify Store designed and built for EBY by Sofia Vergara",
+    "EBY by Sofia Vergara",
+    "A sophisticated Shopify Store designed and built for a Harvard University",
+    "Daniyal S.",
+    "We’ll show you exactly where you're losing revenue and how to fix it.",
+    "Select a Service",
+    "Company",
+    "Awards & Reviews",
+    "Migration Solutions",
+    "Get Started",
+    "Resoures & Connect"
+  ],
+  "h3s": [
+    "Custom Shopify Theme Design",
+    "Convert any Figma to Shopify",
+    "Bulk Hours for Shopify Tasks",
+    "New Store Development",
+    "Free Shopify Concept Design",
+    "ERP Integartions",
+    "Seamless Migration to Shopify",
+    "Migrate from Netsuite to Shopify",
+    "Migrate from Salesforce to Shopify",
+    "Migrate from Any Platform to Shopify",
+    "Migrate from BigCommerce to Shopify",
+    "Migrate from WooCommerce to Shopify",
+    "Migrate from Magento to Shopify",
+    "POS System Migartions to Shopify",
+    "Shopify Test Drive",
+    "8-Phase Migration Protocol",
+    "Home/Collections/Product Page Audits",
+    "Gamify Your Cart Drawer",
+    "Checkout Optimizations",
+    "UI/UX Shopify Audit",
+    "Speed Plus Optimizations",
+    "A/B Testing & Development",
+    "Mobile App Development",
+    "Workflow Automation",
+    "App Integrations",
+    "AI Agents & Shopify AI",
+    "Custom Private Shopify Apps for Your Store",
+    "Public App Development for Shopify App Store",
+    "B2B Migrations",
+    "Custom B2B Apps & Features",
+    "ERP Sync for B2B Operations",
+    "B2B Store Setup & Customization",
+    "Wholesale Integrations",
+    "POS Migrations to Shopify",
+    "Custom POS Apps & Optimizations",
+    "Inventory/Order Sync Across Channels",
+    "POS System Integrations",
+    "Unified D2C/B2B/POS Experiences",
+    "Brands Launching Wholesale for the First Time",
+    "Businesses Migrating Off Legacy Wholesale Platforms",
+    "Shopify Plus Brands Scaling Their B2B Channel",
+    "Company Profiles and Buyer Accounts",
+    "Custom Pricing and Price Lists",
+    "Net Payment Terms and B2B Checkout",
+    "Custom Catalog Management",
+    "Shopify Flow Automation",
+    "ERP and Backend Integration",
+    "Self-Serve Buyer Portal",
+    "Wholesale Pricing for Non-Plus Stores",
+    "Bulk Ordering and Order Management",
+    "Discovery & Planning",
+    "Configuration & Customization",
+    "Integration & Automation",
+    "Testing & Quality Assurance",
+    "Launch & Ongoing Refinement",
+    "Fitness Equipment Wholesale Portal",
+    "Apparel Brand Hybrid Model",
+    "Premium Goods B2B Setup",
+    "Luxury Accessories Implementation",
+    "Ecomm Wizards approach to our B2B setup on Shopify Plus unified our operations beautifully—from custom catalogs to automated flows. It's been a game-changer.",
+    "The integration with our ERP was flawless, and their refinements over time have kept our wholesale portal evolving. Exceptional partnership.",
+    "Implementing B2B features with Ecomm Wizards cut our manual tasks dramatically, allowing us to focus on growth. Highly thoughtful execution."
+  ],
+  "h4s": [],
+  "paras": [
+    "Build Custom Shopify Theme Design Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Convert any Figma to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Bulk Hours for Shopify Tasks Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "New Store Development Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Free Shopify Concept Design Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "ERP Integartions Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "View Case Studies Migrate Seamless Migration to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Migrate from Netsuite to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Migrate from Salesforce to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Migrate from Any Platform to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Migrate from BigCommerce to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Migrate from WooCommerce to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Migrate from Magento to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "POS System Migartions to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Shopify Test Drive Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "8-Phase Migration Protocol Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Get a Free Test Drive Optimize Home/Collections/Product Page Audits Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Gamify Your Cart Drawer Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Checkout Optimizations Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "UI/UX Shopify Audit Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Speed Plus Optimizations Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "A/B Testing & Development Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Claim Free Audit Apps Mobile App Development Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Workflow Automation Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "App Integrations Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "AI Agents & Shopify AI Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Custom Private Shopify Apps for Your Store Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Public App Development for Shopify App Store Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Request App Quote B2B B2B Migrations Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Custom B2B Apps & Features Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "ERP Sync for B2B Operations Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "B2B Store Setup & Customization Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Wholesale Integrations Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Schedule B2B Consultation POS POS Migrations to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Custom POS Apps & Optimizations Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Inventory/Order Sync Across Channels Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "POS System Integrations Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Unified D2C/B2B/POS Experiences Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Request POS Demo Marketing X Build Custom Shopify Theme Design Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Request POS Demo Marketing X Get Started Book a Call Build Custom Shopify Theme Design Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Request POS Demo Marketing X Get Started Book a Call Shopify Plus B2B Solutions: Run Wholesale and D2C From One Powerful Platform Stop Managing Two Businesses Separately. B2B Shopify Was Built for This. Most wholesale businesses are stuck juggling a patchwork of tools. A separate wholesale portal here, a manual pricing spreadsheet there, and a D2C store that has no idea the other exists. It is slow, it is expensive, and it breaks at scale. Ecomm Wizards is a dedicated Shopify B2B agency that builds unified commerce solutions where your wholesale and D2C operations run together on a single Shopify Plus B2B infrastructure. Whether you are launching Shopify wholesale from scratch or migrating off a clunky legacy platform, we make Shopify for B2B feel effortless for your team and your buyers. Book a Free Consultation Brands That Trust Ecomm Wizards for Shopify B2B Who We Build Shopify B2B Stores For Our Shopify B2B solutions are built for brands at every stage of wholesale growth. Brands Launching Wholesale for the First Time Set up your Shopify B2B operation from scratch, pricing, accounts, catalog, without disrupting your D2C store.",
+    "Migrate your entire wholesale operation to Shopify Plus B2B with zero data loss and zero downtime.",
+    "We audit your B2B setup, identify gaps, and build portals, net terms, and ERP sync wholesale buyers expect.",
+    "Run Shopify B2B and D2C on one platform with seamless ERP integration",
+    "Custom catalogs, company-specific volume pricing, and self-serve buyer portals",
+    "Shopify Flow handles invoice generation, order approvals, and reorder triggers automatically",
+    "Handles high-volume orders with 99.99% uptime across multi-location buyers and global accounts",
+    "Access 8,000+ apps and APIs with Shopify Plus B2B features that receive 200+ updates per year",
+    "Cuts tech debt by 20 to 30%, eliminating duplicate systems and slashing maintenance costs",
+    "Boosts repeat orders by 25 to 35% through buying experiences built around each account",
+    "Cuts manual workload by 50 to 70%, freeing your team to focus on growth instead of admin",
+    "Launch new Shopify wholesale channels in weeks, not months",
+    "Future-proof your wholesale setup without rebuilding from scratch",
+    "Individual profiles with contacts, shipping locations, payment terms, and permissions. Buyers manage orders without emailing your team.",
+    "Account-specific price lists, tiered discounts, and MOQ rules. Each company sees only the pricing they're entitled to.",
+    "Net 30, 60, or custom terms at checkout. PO capture, automated invoices, and tax exemption handling built in.",
+    "Control which products each wholesale buyer sees. Restrict visibility by segment, company, or location.",
+    "Automate order approvals, reorder triggers, invoices, and buyer onboarding. No more manual workflows.",
+    "Connect Shopify B2B to NetSuite, Acumatica, SAP via API. Real-time inventory, order sync, no manual reconciliation.",
+    "Branded portal for orders, history, reorders, and tracking. Buyers manage everything without contacting your team.",
+    "Not on Shopify Plus yet? We use SparkLayer or Wholesale Hub to serve B2B buyers today while you scale.",
+    "Quick order forms, CSV upload, and repeat orders. Less friction means more orders, fewer abandoned carts.",
+    "Discovery & Planning We audit your current workflows, buyer segments, and tech stack to map out exactly what your Shopify for B2B setup needs, from custom pricing rules to ERP sync requirements. No assumptions, no cookie-cutter configurations.",
+    "Configuration & Customization We build out company profiles, account-specific catalogs, and net payment terms inside Shopify Plus. Where needed, our B2B Shopify developer configures headless options or a branded B2B Shopify theme that matches your wholesale portal to your brand identity.",
+    "Integration & Automation We connect your ERP (NetSuite, Acumatica, or others) via APIs and the right Shopify B2B app integrations, then configure Shopify Flow for automated PO handling, invoice generation, order approvals, and sales rep permissions.",
+    "Testing & Quality Assurance Full QA across usability, data accuracy, and mobile responsiveness. We run simulated buyer scenarios to stress-test every workflow before a single real order goes through.",
+    "Launch & Ongoing Refinement We go live with performance monitoring in place. Post-launch, we track buyer behaviour and iterate on features like bulk ordering, vaulted payments, and account-level reporting to keep your Shopify B2B agency support relationship active and results-driven.",
+    "Buyer-specific catalogs and tiered pricing synced live with ERP. Built full B2B Shopify setup with real-time inventory. Result: 30% faster reorder cycles.",
+    "Connected wholesale and retail operations. Configured company profiles, Shopify Flow approvals, and automated invoices inside branded B2B themes.",
+    "Unified D2C and wholesale on one storefront. Self-serve portals, net payment terms, and buyer-level pricing turned one-timers into loyal accounts.",
+    "Headless flexibility with custom discount logic and PO tracking at scale. Premium brand consistency across every wholesale market.",
+    "Shopify B2B is Shopify's native wholesale solution built into Shopify Plus. It includes company profiles, custom price lists, net payment terms, self-serve buyer portals, and bulk ordering features all managed from one admin. Full native Shopify B2B features require Shopify Plus. If you are on a lower plan, we configure a strong wholesale setup using apps like SparkLayer or Wholesale Hub until you are ready to upgrade.",
+    "Yes. One of the biggest advantages of Shopify Plus B2B is the ability to run your D2C and wholesale operations from a single storefront. Wholesale buyers log in and see their company-specific pricing, catalog, and payment terms. D2C customers see the standard retail experience. No separate stores, no duplicate admin work.",
+    "Our standard Shopify B2B implementation runs four to six weeks for a full build. Simpler setups with fewer integrations can launch faster. More complex builds involving ERP integration, headless development, or large buyer catalogs take longer. We scope the exact timeline during your discovery call before any work begins.",
+    "We configure net 30, net 60, net 90, or custom payment terms at the buyer account level inside Shopify Plus. This includes purchase order number capture at checkout, automated invoice generation via Shopify Flow, and payment reminders. For brands not on Plus, we use third-party net terms apps to replicate this functionality.",
+    "Yes. Shopify B2B ERP integration is one of the most common parts of our builds. We connect Shopify to NetSuite, Acumatica, SAP, and other ERP systems through clean API integrations. Real-time inventory sync, order data flow, and financial reconciliation all happen automatically between your Shopify B2B store and your ERP.",
+    "Shopify B2B setup cost depends on the scope of your build, the number of buyer accounts, catalog complexity, and whether ERP integration is required. We provide fixed-price quotes with no hourly surprises. Contact us and we will send a detailed breakdown within 24 hours.",
+    "Shopify B2B is the native Shopify Plus solution with company profiles, custom catalogs, and net terms built directly into the admin. Shopify wholesale apps like SparkLayer or Wholesale Hub replicate many of these features for brands on lower Shopify plans. Both paths are valid depending on your scale and budget. We build and configure both.",
+    "Yes. We do not hand you the keys and disappear. We offer post-launch support, performance monitoring, buyer behavior analysis, and ongoing feature development. Whether you need a long-term Shopify B2B agency partner or on-demand development, we are available."
+  ],
+  "lis": [
+    "Build a New Shopify Store",
+    "Shopify Theme Customizations",
+    "Shopify Audit",
+    "Convert Figma to Shopify",
+    "ERP Connections to Shopify",
+    "Shopify App Development",
+    "Mobile App Development",
+    "On Demand Dev with Bulk Hours",
+    "Site Speed Optimizations",
+    "Point of Sale (POS) for Business",
+    "A/B Testing for CRO, AOV & CLV",
+    "B2B Solutions",
+    "Shopify SEO Agency",
+    "Book a Demo",
+    "Shopify Landing Page Design",
+    "About Ecomm Wizards",
+    "Partner Program",
+    "Write a Review",
+    "UX & UI Audit",
+    "Case Studies",
+    "Migrate to Shopify",
+    "Migrate from Magento",
+    "Migrate from BigCommerce",
+    "Migrate from wooCommerce",
+    "Migrate from Amazon",
+    "Migrate from Salesforce",
+    "Migrate from Prestashop",
+    "Migrate from Liquid to Hydrogen",
+    "Shopify UX and UI Design",
+    "Headless Shopify Agency",
+    "Shopify Conversion Rate Optimization (CRO) Agency",
+    "Shopify Theme Development",
+    "Shopify Plus Development",
+    "Shopify Maintenance and Support",
+    "Shopify Integrations (ERP, CRM, 3PL, etc)",
+    "Shopify App Setup and App Optimization",
+    "Shopify 2.0 Development",
+    "Shopify Analytics and Tracking Setup",
+    "Free Audit Form",
+    "Newsletter Signup",
+    "CCPA Opt-Out"
+  ],
+  "buttons": [
+    {
+      "text": "View Case Studies",
+      "href": "#"
+    },
+    {
+      "text": "Get a Free Test Drive",
+      "href": "#"
+    },
+    {
+      "text": "Claim Free Audit",
+      "href": "#"
+    },
+    {
+      "text": "Request App Quote",
+      "href": "#"
+    },
+    {
+      "text": "Schedule B2B Consultation",
+      "href": "#"
+    },
+    {
+      "text": "Request POS Demo",
+      "href": "#"
+    },
+    {
+      "text": "View Case Studies",
+      "href": "#"
+    },
+    {
+      "text": "Get a Free Test Drive",
+      "href": "#"
+    },
+    {
+      "text": "Claim Free Audit",
+      "href": "#"
+    },
+    {
+      "text": "Request App Quote",
+      "href": "#"
+    },
+    {
+      "text": "Schedule B2B Consultation",
+      "href": "#"
+    },
+    {
+      "text": "Request POS Demo",
+      "href": "#"
+    },
+    {
+      "text": "Get Started",
+      "href": "/contact-shopify-agency/"
+    },
+    {
+      "text": "Book a Call",
+      "href": "/book-shopify-consultation/"
+    },
+    {
+      "text": "View Case Studies",
+      "href": "#"
+    },
+    {
+      "text": "Get a Free Test Drive",
+      "href": "#"
+    },
+    {
+      "text": "Claim Free Audit",
+      "href": "#"
+    },
+    {
+      "text": "Request App Quote",
+      "href": "#"
+    },
+    {
+      "text": "Schedule B2B Consultation",
+      "href": "#"
+    },
+    {
+      "text": "Request POS Demo",
+      "href": "#"
+    },
+    {
+      "text": "View Case Studies",
+      "href": "#"
+    },
+    {
+      "text": "Get a Free Test Drive",
+      "href": "#"
+    },
+    {
+      "text": "Claim Free Audit",
+      "href": "#"
+    },
+    {
+      "text": "Request App Quote",
+      "href": "#"
+    },
+    {
+      "text": "Schedule B2B Consultation",
+      "href": "#"
+    },
+    {
+      "text": "Request POS Demo",
+      "href": "#"
+    },
+    {
+      "text": "Get Started",
+      "href": "/contact-shopify-agency/"
+    },
+    {
+      "text": "Book a Call",
+      "href": "/book-shopify-consultation/"
+    },
+    {
+      "text": "Book a Free Consultation",
+      "href": "/book-shopify-consultation/"
+    },
+    {
+      "text": "View Case Study",
+      "href": "#"
+    },
+    {
+      "text": "View Case Study",
+      "href": "#"
+    },
+    {
+      "text": "View Case Study",
+      "href": "#"
+    },
+    {
+      "text": "Book a Call",
+      "href": "/book-shopify-consultation/"
+    }
+  ],
+  "stats": [
+    "1",
+    "0",
+    "8",
+    "2026",
+    "04",
+    "11",
+    "15+",
+    "00",
+    "02",
+    "1184",
+    "1176",
+    "16",
+    "6",
+    "9",
+    "4",
+    "176",
+    "03",
+    "1,",
+    "01",
+    "480"
+  ],
+  "images": [
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/03/cropped-cropped-ecomm-golden.png.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/mcp-image0.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    }
+  ]
+}

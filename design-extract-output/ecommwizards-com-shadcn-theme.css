@@ -1,0 +1,19 @@
+/* shadcn/ui Theme — extracted from https://ecommwizards.com */
+/* Paste into your globals.css */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --primary: 128 53% 59%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 210 96% 42%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 198 69% 66%;
+    --accent-foreground: 0 0% 0%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 215 25% 27%;
+    --border: 213 9% 45%;
+    --radius: 10px;
+  }
+}

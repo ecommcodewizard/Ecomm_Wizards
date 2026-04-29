@@ -1,0 +1,503 @@
+{
+  "slug": "shopify-pos-setup",
+  "name": "POS",
+  "meta": {
+    "title": "Shopify POS Setup Service | Remote Configuration and Migration",
+    "description": "Expert Shopify POS setup, hardware configuration, and POS migration from Square, Lightspeed, or Clover. Remote service for single stores to 50+ locations. Get a free quote.",
+    "h1": ""
+  },
+  "h2s": [
+    "Shopify POS Setup That Connects Your Store to the Street",
+    "One System. Every Sale. Online and In-Person.",
+    "Response within 24 hours. Fixed-price quotes. Zero obligation.",
+    "Why Brands Are Ditching Legacy POS for Shopify Point of Sale",
+    "From Square to Shopify POS : 7 Key Reasons Retailers Are Making the Switch",
+    "From Lightspeed to Shopify POS : 6 Reasons Retailers Are Switching",
+    "The Numbers Do Not Lie: Shopify POS Costs Less",
+    "Competitor",
+    "Shopify Advantage",
+    "Business Impact",
+    "Square",
+    "Unified sync, no compromises",
+    "Scale without silos, increased efficiency",
+    "Lightspeed",
+    "Native interoperability",
+    "Simpler fulfillment, up to 10% more revenue",
+    "Others",
+    "Lower total cost overall",
+    "22% savings, faster ROI",
+    "Brands That Made the Switch",
+    "What You Get With Our Shopify POS Setup Service",
+    "Tailored POS Migrations",
+    "Remote Setup",
+    "Ongoing Revenue and Support",
+    "Real-Time Inventory Sync",
+    "Scalable Pilots",
+    "Data Integrity",
+    "Exclusive Perks When You Commit to Shopify POS Pro Annually",
+    "Our Proven Shopify POS Setup Process",
+    "Results You Can Expect From Our Shopify POS Setup Service",
+    "Frequently Asked Questions",
+    "We’ll show you exactly where you're losing revenue and how to fix it.",
+    "Select a Service",
+    "Company",
+    "Awards & Reviews",
+    "Migration Solutions",
+    "Get Started",
+    "Resoures & Connect"
+  ],
+  "h3s": [
+    "Custom Shopify Theme Design",
+    "Convert any Figma to Shopify",
+    "Bulk Hours for Shopify Tasks",
+    "New Store Development",
+    "Free Shopify Concept Design",
+    "ERP Integartions",
+    "Seamless Migration to Shopify",
+    "Migrate from Netsuite to Shopify",
+    "Migrate from Salesforce to Shopify",
+    "Migrate from Any Platform to Shopify",
+    "Migrate from BigCommerce to Shopify",
+    "Migrate from WooCommerce to Shopify",
+    "Migrate from Magento to Shopify",
+    "POS System Migartions to Shopify",
+    "Shopify Test Drive",
+    "8-Phase Migration Protocol",
+    "Home/Collections/Product Page Audits",
+    "Gamify Your Cart Drawer",
+    "Checkout Optimizations",
+    "UI/UX Shopify Audit",
+    "Speed Plus Optimizations",
+    "A/B Testing & Development",
+    "Mobile App Development",
+    "Workflow Automation",
+    "App Integrations",
+    "AI Agents & Shopify AI",
+    "Custom Private Shopify Apps for Your Store",
+    "Public App Development for Shopify App Store",
+    "B2B Migrations",
+    "Custom B2B Apps & Features",
+    "ERP Sync for B2B Operations",
+    "B2B Store Setup & Customization",
+    "Wholesale Integrations",
+    "POS Migrations to Shopify",
+    "Custom POS Apps & Optimizations",
+    "Inventory/Order Sync Across Channels",
+    "POS System Integrations",
+    "Unified D2C/B2B/POS Experiences",
+    "1. Nonstop Platform Innovation",
+    "2. Native Ecommerce Sync",
+    "3. Unified Multi-Location Management",
+    "4. Centralized Customer Data",
+    "5. Grows When You Do",
+    "6. Support That Actually Shows Up",
+    "22% lower retail technology costs",
+    "22% lower implementation costs",
+    "11% lower ongoing operational costs",
+    "Book a Free Consultation",
+    "Free Launch Assistance",
+    "25% Off Monthly POS Pro",
+    "Subscription Fee Rebate",
+    "Discovery & Strategy",
+    "Hardware and Configuration Planning",
+    "Data Migration and Setup",
+    "Launch & QA",
+    "Post-Launch Support and Growth",
+    "Faster Checkouts, Happier Customers",
+    "Real-Time Inventory You Can Trust",
+    "One View of Every Customer",
+    "A System That Scales With You"
+  ],
+  "h4s": [],
+  "paras": [
+    "Build Custom Shopify Theme Design Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Convert any Figma to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Bulk Hours for Shopify Tasks Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "New Store Development Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Free Shopify Concept Design Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "ERP Integartions Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "View Case Studies Migrate Seamless Migration to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Migrate from Netsuite to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Migrate from Salesforce to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Migrate from Any Platform to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Migrate from BigCommerce to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Migrate from WooCommerce to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Migrate from Magento to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "POS System Migartions to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Shopify Test Drive Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "8-Phase Migration Protocol Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Get a Free Test Drive Optimize Home/Collections/Product Page Audits Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Gamify Your Cart Drawer Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Checkout Optimizations Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "UI/UX Shopify Audit Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Speed Plus Optimizations Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "A/B Testing & Development Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Claim Free Audit Apps Mobile App Development Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Workflow Automation Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "App Integrations Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "AI Agents & Shopify AI Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Custom Private Shopify Apps for Your Store Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Public App Development for Shopify App Store Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Request App Quote B2B B2B Migrations Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Custom B2B Apps & Features Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "ERP Sync for B2B Operations Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "B2B Store Setup & Customization Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Wholesale Integrations Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Schedule B2B Consultation POS POS Migrations to Shopify Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Custom POS Apps & Optimizations Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Inventory/Order Sync Across Channels Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "POS System Integrations Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Unified D2C/B2B/POS Experiences Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Request POS Demo Marketing X Build Custom Shopify Theme Design Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Request POS Demo Marketing X Get Started Book a Call Build Custom Shopify Theme Design Comprehensive setup and customization services for new or existing shopify stores, including theme development.",
+    "Request POS Demo Marketing X Get Started Book a Call Shopify POS Setup That Connects Your Store to the Street One System. Every Sale. Online and In-Person. Running your online store on Shopify but using Square, Lightspeed, or Clover at the register? That disconnect is costing you money and you already know it. Inventory mismatches, double data entry, and fragmented customer profiles silently eat into your margins every day. Start with a low-risk pilot alongside your current system. Book a Free Consultation Response within 24 hours. Fixed-price quotes. Zero obligation. Why Brands Are Ditching Legacy POS for Shopify Point of Sale Shopify POS was built for unified commerce. One inventory, one customer profile, one dashboard. No more patching separate systems together and hoping the data syncs. Merchants who complete the Shopify POS setup see higher conversions, fewer support headaches, and a retail experience that feels modern. Below are the reasons brands are switching. If any of them sound familiar, talk to us about a Shopify POS setup plan built around your business. From Square to Shopify POS : 7 Key Reasons Retailers Are Making the Switch Growth-focused brands choose Shopify POS setup for scalable, unified retail operations that Square cannot match. Book a Free Consultation Case Study: Offbeat Bikes unified their online and in-store operations with a complete Shopify POS hardware setup, simplifying admin, syncing inventory, and improving the customer experience across every touchpoint. Shopify makes the customer experience possible without more work. Owner, Offbeat Scale Without Limits Expand to new locations with native Shopify POS multi-location sync. No patchwork integrations required.",
+    "Your online store and physical retail floor run on the same system. Inventory, orders, and customer profiles are all connected from day one.",
+    "Manage every location, every channel, and every team member from a single Shopify admin. No tab-switching, no reconciling data across platforms.",
+    "Same loyalty rewards, same purchase history, same personalized service, whether customers shop online or walk into your store.",
+    "One source of truth across all channels. No manual reconciliation, no guesswork at the end of the month.",
+    "Add locations, staff, and features as your business grows. Shopify adapts with you. You will not need to rebuild.",
+    "Shopify ships new POS features faster than any competitor. Your Shopify POS setup stays current without expensive hardware upgrades. From Lightspeed to Shopify POS : 6 Reasons Retailers Are Switching 1. Nonstop Platform Innovation Shopify ships new POS features faster than any competitor. Your Shopify POS configuration stays modern without paying for expensive upgrades.",
+    "Shopify POS is built on the best ecommerce platform in the world, not bolted on as an afterthought. Your online and in-store operations run on one shared foundation.",
+    "Manage inventory, staff permissions, and sales across every location from one admin. No third-party middleware, no extra monthly fees.",
+    "One customer profile across online and in-store. Better segmentation, smarter marketing, and higher customer lifetime value.",
+    "Add new Shopify POS hardware, locations, and features as your business scales. No platform migrations, no rebuilds, no disruption.",
+    "Real help when you need it. Not a chatbot maze. Direct answers from people who know the Shopify POS setup process inside out.",
+    "22% lower retail technology costs 22% lower implementation costs 11% lower ongoing operational costs Book a Free Consultation Competitor Shopify Advantage Business Impact Square Unified sync, no compromises Scale without silos, increased efficiency Lightspeed Native interoperability Simpler fulfillment, up to 10% more revenue Others Lower total cost overall 22% savings, faster ROI Brands That Made the Switch Aviator Nation unified their online and in-store channels, fulfilling 2,000+ online orders monthly from retail locations and growing revenue by 10%. Bared Footwear consolidated two platforms into one. Operating two platforms hurt us. We needed Shopify POS for scale, says COO Alexandra McNab. What You Get With Our Shopify POS Setup Service We handle the data, the Shopify POS hardware setup, and every configuration detail so your system works from day one, whether you are running a pop-up shop or a multi-location retail chain. Tailored POS Migrations Real-time across locations to avoid stockouts. Remote Setup Start with 1 store, expand to 50+ with zero disruption. Ongoing Revenue and Support Optimized for omnichannel sales, orders, and insights. Real-Time Inventory Sync Knockdown strategies from Square, Lightspeed, or legacy systems. Scalable Pilots Remote design, training, and launch for distributed teams. Data Integrity Unlock Shopify s residual commissions for recurring revenue. Faster checkouts. Unified insights. Built for growth. Exclusive Perks When You Commit to Shopify POS Pro Annually Lock in Shopify POS Pro for one year and unlock over $2,300 in value per location. These offers make the switch to Shopify POS easier, cheaper, and practically risk-free. Ecomm Wizards handles all setup remotely. Book a Free Consultation Book a Free Consultation Get a free POS Terminal (valued at $349) for every location. High-end payment device with a customer-facing screen included. We handle the full Shopify POS hardware setup and integration remotely.",
+    "Stress-free Shopify POS migration covering product data, customer records, and go-live support. Valued at $1,500. Zero downtime, zero headaches.",
+    "Save over $267 per location with discounted Shopify POS Pro pricing. Full features at the lowest monthly cost. We calculate your exact savings based on your store count.",
+    "Hit $10,000 in Shopify Payments transactions within 90 days and earn back three months of subscription fees, valued at $200 per location. We optimize your Shopify POS setup to help you qualify fast.",
+    "We review your current POS setup, locations, data, and workflows. You get a clear migration plan tailored to your business, not a generic template.",
+    "We audit your existing hardware and map what carries over. Staff roles, tax settings, payments, and register configurations are defined before setup begins.",
+    "Products, customers, inventory, and gift cards are transferred with no data loss. Your Shopify POS is fully configured, tested, and ready before launch.",
+    "We test checkout, inventory sync, payments, hardware, and staff access across every location. Your system goes live without disruption.",
+    "We continue after launch with support, monitoring, and ongoing improvements to keep your POS running smoothly as you grow.",
+    "Streamlined Shopify POS configuration means shorter lines and smoother transactions. Your staff spend less time troubleshooting and more time serving customers.",
+    "Automatic stock sync across every channel and location. What is sold in-store reflects online instantly. No overselling, no manual updates, no surprises.",
+    "Unified customer profiles across your online store and every retail location. Better personalization, stronger loyalty, and higher repeat purchase rates.",
+    "From a single pop-up to a 50-location Shopify POS enterprise rollout, the system grows with you. You will never need to switch platforms again.",
+    "Our Shopify POS setup service covers everything from hardware configuration and Shopify POS Go setup to inventory import, staff PIN assignments, tax profiles, payment processing setup, and go-live support. Everything is handled remotely. You do not need to be on-site, and we do not need to be either. Can you migrate our data from Square or Lightspeed to Shopify POS? Yes. We handle full Shopify POS migrations from Square, Lightspeed, Clover, and other legacy systems. Product data, customer records, gift card balances, and order history are all transferred with zero data loss and zero downtime during the migration. How long does a Shopify POS setup take? A single-location Shopify POS setup typically takes one to two weeks depending on data volume and hardware requirements. Multi-location rollouts across five or more sites are scoped with a dedicated timeline during your discovery call. We provide a clear schedule before any work begins. Can you set up Shopify POS for multiple locations? Yes. Shopify POS multi-location setup is one of our most common projects. We configure inventory sync, staff permissions, tax profiles, and hardware across every location from a single remote session. Whether you have two locations or fifty, the process is the same. Do you handle Shopify POS hardware setup remotely? Yes. Our Shopify app development services do not end at deployment. We offer ongoing maintenance covering bug fixes, Shopify API updates, performance optimization, and new feature development so your app stays competitive long after launch."
+  ],
+  "lis": [
+    "Aviator Nation unified their online and in-store channels, fulfilling 2,000+ online orders monthly from retail locations and growing revenue by 10%.",
+    "Bared Footwear consolidated two platforms into one. Operating two platforms hurt us. We needed Shopify POS for scale, says COO Alexandra McNab.",
+    "Build a New Shopify Store",
+    "Shopify Theme Customizations",
+    "Shopify Audit",
+    "Convert Figma to Shopify",
+    "ERP Connections to Shopify",
+    "Shopify App Development",
+    "Mobile App Development",
+    "On Demand Dev with Bulk Hours",
+    "Site Speed Optimizations",
+    "Point of Sale (POS) for Business",
+    "A/B Testing for CRO, AOV & CLV",
+    "B2B Solutions",
+    "Shopify SEO Agency",
+    "Book a Demo",
+    "Shopify Landing Page Design",
+    "About Ecomm Wizards",
+    "Partner Program",
+    "Write a Review",
+    "UX & UI Audit",
+    "Case Studies",
+    "Migrate to Shopify",
+    "Migrate from Magento",
+    "Migrate from BigCommerce",
+    "Migrate from wooCommerce",
+    "Migrate from Amazon",
+    "Migrate from Salesforce",
+    "Migrate from Prestashop",
+    "Migrate from Liquid to Hydrogen",
+    "Shopify UX and UI Design",
+    "Headless Shopify Agency",
+    "Shopify Conversion Rate Optimization (CRO) Agency",
+    "Shopify Theme Development",
+    "Shopify Plus Development",
+    "Shopify Maintenance and Support",
+    "Shopify Integrations (ERP, CRM, 3PL, etc)",
+    "Shopify App Setup and App Optimization",
+    "Shopify 2.0 Development",
+    "Shopify Analytics and Tracking Setup",
+    "Free Audit Form",
+    "Newsletter Signup",
+    "CCPA Opt-Out"
+  ],
+  "buttons": [
+    {
+      "text": "View Case Studies",
+      "href": "#"
+    },
+    {
+      "text": "Get a Free Test Drive",
+      "href": "#"
+    },
+    {
+      "text": "Claim Free Audit",
+      "href": "#"
+    },
+    {
+      "text": "Request App Quote",
+      "href": "#"
+    },
+    {
+      "text": "Schedule B2B Consultation",
+      "href": "#"
+    },
+    {
+      "text": "Request POS Demo",
+      "href": "#"
+    },
+    {
+      "text": "View Case Studies",
+      "href": "#"
+    },
+    {
+      "text": "Get a Free Test Drive",
+      "href": "#"
+    },
+    {
+      "text": "Claim Free Audit",
+      "href": "#"
+    },
+    {
+      "text": "Request App Quote",
+      "href": "#"
+    },
+    {
+      "text": "Schedule B2B Consultation",
+      "href": "#"
+    },
+    {
+      "text": "Request POS Demo",
+      "href": "#"
+    },
+    {
+      "text": "Get Started",
+      "href": "/contact-shopify-agency/"
+    },
+    {
+      "text": "Book a Call",
+      "href": "/book-shopify-consultation/"
+    },
+    {
+      "text": "View Case Studies",
+      "href": "#"
+    },
+    {
+      "text": "Get a Free Test Drive",
+      "href": "#"
+    },
+    {
+      "text": "Claim Free Audit",
+      "href": "#"
+    },
+    {
+      "text": "Request App Quote",
+      "href": "#"
+    },
+    {
+      "text": "Schedule B2B Consultation",
+      "href": "#"
+    },
+    {
+      "text": "Request POS Demo",
+      "href": "#"
+    },
+    {
+      "text": "View Case Studies",
+      "href": "#"
+    },
+    {
+      "text": "Get a Free Test Drive",
+      "href": "#"
+    },
+    {
+      "text": "Claim Free Audit",
+      "href": "#"
+    },
+    {
+      "text": "Request App Quote",
+      "href": "#"
+    },
+    {
+      "text": "Schedule B2B Consultation",
+      "href": "#"
+    },
+    {
+      "text": "Request POS Demo",
+      "href": "#"
+    },
+    {
+      "text": "Get Started",
+      "href": "/contact-shopify-agency/"
+    },
+    {
+      "text": "Book a Call",
+      "href": "/book-shopify-consultation/"
+    },
+    {
+      "text": "Book a Free Consultation",
+      "href": "/book-shopify-consultation/"
+    },
+    {
+      "text": "Book a Free Consultation",
+      "href": "/book-shopify-consultation/"
+    },
+    {
+      "text": "Book a Free Consultation",
+      "href": "/book-shopify-consultation/"
+    },
+    {
+      "text": "Book a Free Consultation",
+      "href": "/book-shopify-consultation/"
+    },
+    {
+      "text": "Book a Call",
+      "href": "/book-shopify-consultation/"
+    }
+  ],
+  "stats": [
+    "1",
+    "0",
+    "8",
+    "50",
+    "2026",
+    "04",
+    "12",
+    "29+",
+    "00",
+    "01",
+    "1564",
+    "1394",
+    "9",
+    "6",
+    "4",
+    "176",
+    "03",
+    "1,",
+    "480",
+    "820"
+  ],
+  "images": [
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/03/cropped-cropped-ecomm-golden.png.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/mcp-image0.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-1-4.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-2.webp?bv_host=ecommwizards.com&amp;bv-resized-infos=bv_resized_mobile%3A393%2A823%3Bbv_resized_ipad%3A460%2A963%3Bbv_resized_desktop%3A460%2A963",
+      "alt": ""
+    },
+    {
+      "src": "https://ecommwizards.com/wp-content/uploads/al_opt_content/IMAGE/ecommwizards.com/wp-content/uploads/2026/01/partner-images-3-1.webp.bv.webp?bv_host=ecommwizards.com",
+      "alt": ""
+    }
+  ]
+}
