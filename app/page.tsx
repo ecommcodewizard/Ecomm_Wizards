@@ -151,10 +151,8 @@ export default function HomePage() {
           {/* ── Left: text ── */}
           <div className="w-full lg:w-[645px] lg:shrink-0" style={{ color: "#334155", fontFamily: "'Poppins', sans-serif", fontSize: "16px" }}>
             <h1 className="leading-tight text-white" style={{ fontSize: "clamp(32px, 5vw, 52px)", fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>
-              Your Shopify Growth<br />
-              Partner that{" "}
-              <span className="text-[#b18945]">Builds.<br />
-              Scales. Wins.</span>
+              We Build Stores<br />
+              <span className="text-[#b18945]">That Convert.</span>
             </h1>
 
             <p className="mt-4 lg:mt-6" style={{ fontSize: "clamp(15px, 2vw, 18px)", fontFamily: "'Nunito', sans-serif", color: "#FFFFFF" }}>
