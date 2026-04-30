@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import PageHero from "@/components/ui/PageHero";
+import AboutHero from "@/components/ui/AboutHero";
 import CTASection from "@/components/ui/CTASection";
 import SectionHeader from "@/components/ui/SectionHeader";
 import BrandLogos from "@/components/ui/BrandLogos";
@@ -58,14 +58,7 @@ const TEAM = [
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        badge="About Ecomm Wizards"
-        title="The Shopify Agency Behind"
-        titleHighlight="$900M+ in Client Revenue"
-        subtitle="From startup founders launching their first Shopify store to enterprise brands upgrading to Shopify Plus, we've helped over 700+ ecommerce businesses scale profitably."
-        primaryCta={{ label: "Get a Free Audit", href: "/free-shopify-store-audit" }}
-        secondaryCta={{ label: "Book a Call", href: "/book-shopify-consultation" }}
-      />
+      <AboutHero />
       <BrandLogos />
 
       {/* Stats */}
