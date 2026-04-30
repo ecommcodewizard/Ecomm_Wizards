@@ -116,7 +116,7 @@ export default function AboutPage() {
 
               {/* Main workspace image — z-index 5, sits on top of convertionrate-box */}
               <div
-                className="relative overflow-hidden rounded-xl"
+                className="relative overflow-hidden w-[82%] mx-auto xl:w-full xl:mx-0"
                 style={{ aspectRatio: "1024 / 544", zIndex: 5, position: "relative" }}
               >
                 <Image
@@ -132,7 +132,7 @@ export default function AboutPage() {
                   SVG is placed 60px above the image top so the curls are visible in the padding. */}
               <div
                 aria-hidden="true"
-                className="absolute pointer-events-none hidden lg:block"
+                className="absolute pointer-events-none hidden xl:block"
                 style={{
                   left: 0,
                   top: "-60px",
@@ -167,7 +167,7 @@ export default function AboutPage() {
                     Then a bezier curve sweeps right across the image to the mobile mockup (~x=1020).
                   */}
                   <path
-                    d="M 20 60 A 38 38 0 0 0 96 60 A 48 48 0 0 0 192 60 C 400 60, 880 100, 1020 110"
+                    d="M 920 60 C 1010 0, 1075 30, 985 180"
                     stroke="#9ca3af"
                     strokeWidth="2"
                     strokeDasharray="6 4"
@@ -178,13 +178,60 @@ export default function AboutPage() {
                 </svg>
               </div>
 
-              {/* Mobile store mockup — right side, overlapping the main image edge */}
+              {/* convertionrate-box — mobile/tablet (below xl): top-left corner overlay on image */}
               <div
-                className="absolute hidden md:block"
+                aria-hidden="true"
+                className="absolute xl:hidden"
                 style={{
-                  right: "-8%",
-                  top: "22%",
-                  width: "clamp(120px, 14%, 175px)",
+                  left: "3%",
+                  top: "8%",
+                  width: "clamp(100px, 35%, 210px)",
+                  zIndex: 7,
+                }}
+              >
+                <Image
+                  src="/images/convertionrate-box.webp"
+                  alt=""
+                  width={600}
+                  height={400}
+                  className="w-full"
+                />
+              </div>
+
+              {/* Mobile arrow — xl:hidden — small dashed curl above the phone, pointing down at its top */}
+              <div
+                aria-hidden="true"
+                className="absolute pointer-events-none xl:hidden"
+                style={{ right: "8%", top: "2%", width: "42px", zIndex: 11 }}
+              >
+                <svg
+                  viewBox="0 0 42 50"
+                  fill="none"
+                  style={{ width: "100%", height: "auto", display: "block", overflow: "visible" }}
+                >
+                  <defs>
+                    <marker id="arr-mob" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto">
+                      <polygon points="0 0, 8 3.5, 0 7" fill="#9ca3af" />
+                    </marker>
+                  </defs>
+                  <path
+                    d="M 2 4 C 22 -6, 48 8, 30 44"
+                    stroke="#9ca3af"
+                    strokeWidth="2"
+                    strokeDasharray="5 4"
+                    strokeLinecap="round"
+                    fill="none"
+                    markerEnd="url(#arr-mob)"
+                  />
+                </svg>
+              </div>
+
+              {/* Mobile store mockup — overlaps right edge of workspace image and extends past it */}
+              <div
+                className="absolute right-[3%] xl:-right-[8%]"
+                style={{
+                  top: "12%",
+                  width: "clamp(78px, 16%, 150px)",
                   zIndex: 10,
                 }}
               >
