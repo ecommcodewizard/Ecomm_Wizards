@@ -4,7 +4,6 @@ import Image from "next/image";
 import AboutHero from "@/components/ui/AboutHero";
 import CTASection from "@/components/ui/CTASection";
 import SectionHeader from "@/components/ui/SectionHeader";
-import BrandLogos from "@/components/ui/BrandLogos";
 
 export const metadata: Metadata = {
   title: "About Ecomm Wizards | Leading Shopify Plus Agency",
@@ -59,7 +58,149 @@ export default function AboutPage() {
   return (
     <>
       <AboutHero />
-      <BrandLogos />
+
+      {/* Agency Proof Showcase */}
+      <section className="bg-white" style={{ padding: "40px 0 0", overflowX: "clip" }}>
+
+        {/* Centered highlight text */}
+        <div className="mx-auto px-6 sm:px-10 lg:px-16" style={{ maxWidth: "1080px" }}>
+          <p
+            className="text-center mx-auto"
+            style={{
+              fontFamily: "var(--font-sans)",
+              fontSize: "clamp(15px, 1.5vw, 20px)",
+              lineHeight: "1.65",
+              color: "#000000",
+              maxWidth: "900px",
+              marginBottom: "36px",
+            }}
+          >
+            The Shopify Agency Behind{" "}
+            <strong>$900M+ in Client Revenue.</strong>{" "}
+            From startup founders launching their first Shopify store to enterprise
+            brands upgrading to Shopify Plus, we&apos;ve helped over 700+&nbsp;ecommerce
+            businesses scale profitably.
+          </p>
+        </div>
+
+        {/* Full-width positioning context — lets convertionrate-box bleed left of container */}
+        <div className="relative w-full">
+
+          {/* convertionrate-box — dark card behind both images.
+              Anchored so its left portion is visible in the margin to the left of the
+              1080px container; right portion slides behind the workspace image (lower z-index). */}
+          <div
+            aria-hidden="true"
+            className="absolute hidden xl:block"
+            style={{
+              left: "calc(50% - 540px - 80px)",
+              top: "6%",
+              width: "min(38%, 520px)",
+              zIndex: 2,
+            }}
+          >
+            <Image
+              src="/images/convertionrate-box.webp"
+              alt=""
+              width={600}
+              height={400}
+              className="w-full rounded-2xl"
+            />
+          </div>
+
+          {/* 1080px container: workspace image + arrow + mobile mockup */}
+          <div className="mx-auto px-6 sm:px-10 lg:px-16 relative" style={{ maxWidth: "1080px" }}>
+
+            {/* Image composition */}
+            <div className="relative">
+
+              {/* Main workspace image — z-index 5, sits on top of convertionrate-box */}
+              <div
+                className="relative overflow-hidden rounded-xl"
+                style={{ aspectRatio: "1024 / 544", zIndex: 5, position: "relative" }}
+              >
+                <Image
+                  src="/images/new-about-image_1_2048x2048-1.webp"
+                  alt="Ecomm Wizards client ecommerce store workflow"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Grey dashed arrow — starts at the top-left corner of the workspace image,
+                  makes two upward curls (CCW semicircles), then curves right to the mobile mockup.
+                  SVG is placed 60px above the image top so the curls are visible in the padding. */}
+              <div
+                aria-hidden="true"
+                className="absolute pointer-events-none hidden lg:block"
+                style={{
+                  left: 0,
+                  top: "-60px",
+                  width: "112%",
+                  zIndex: 6,
+                  lineHeight: 0,
+                }}
+              >
+                <svg
+                  viewBox="0 0 1060 220"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style={{ width: "100%", height: "auto", display: "block" }}
+                >
+                  <defs>
+                    <marker
+                      id="two-curl-arrow"
+                      markerWidth="8"
+                      markerHeight="7"
+                      refX="7"
+                      refY="3.5"
+                      orient="auto"
+                    >
+                      <polygon points="0 0, 8 3.5, 0 7" fill="#9ca3af" />
+                    </marker>
+                  </defs>
+                  {/*
+                    y=60 corresponds to the workspace image top edge (SVG is offset -60px above it).
+                    Start (20, 60): top-left corner of workspace image.
+                    Curl 1: CCW semicircle radius=38, from x=20 to x=96, peak at y=22.
+                    Curl 2: CCW semicircle radius=48, from x=96 to x=192, peak at y=12.
+                    Then a bezier curve sweeps right across the image to the mobile mockup (~x=1020).
+                  */}
+                  <path
+                    d="M 20 60 A 38 38 0 0 0 96 60 A 48 48 0 0 0 192 60 C 400 60, 880 100, 1020 110"
+                    stroke="#9ca3af"
+                    strokeWidth="2"
+                    strokeDasharray="6 4"
+                    strokeLinecap="round"
+                    fill="none"
+                    markerEnd="url(#two-curl-arrow)"
+                  />
+                </svg>
+              </div>
+
+              {/* Mobile store mockup — right side, overlapping the main image edge */}
+              <div
+                className="absolute hidden md:block"
+                style={{
+                  right: "-8%",
+                  top: "22%",
+                  width: "clamp(120px, 14%, 175px)",
+                  zIndex: 10,
+                }}
+              >
+                <Image
+                  src="/images/new-about-mobile-image_grande.webp"
+                  alt="Mobile store view"
+                  width={300}
+                  height={520}
+                  className="w-full drop-shadow-2xl"
+                />
+              </div>
+
+            </div>{/* end image composition */}
+          </div>{/* end 1080px container */}
+        </div>{/* end full-width div */}
+      </section>
 
       {/* Stats */}
       <section className="border-b border-slate-100 bg-white py-12">
