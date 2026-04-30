@@ -249,6 +249,38 @@ export default function AboutPage() {
         </div>{/* end full-width div */}
       </section>
 
+      {/* Credibility logos strip */}
+      <section className="bg-white" style={{ padding: "60px 0 50px" }}>
+        <div
+          className="mx-auto px-3 sm:px-8 lg:px-16"
+          style={{ maxWidth: "1320px" }}
+        >
+          <ul
+            className="grid items-center justify-items-center gap-2 sm:gap-6 lg:gap-10"
+            style={{ gridTemplateColumns: "repeat(5, minmax(0, 1fr))" }}
+          >
+            {[
+              { src: "/images/google.svg", alt: "Google Reviews", invert: false },
+              { src: "/images/main-hero-logo-2.webp", alt: "Clutch Reviews", invert: true },
+              { src: "/images/shopify platinum partner logo.svg", alt: "Shopify Platinum Partner", invert: false },
+              { src: "/images/main-hero-logo-4.webp", alt: "Shopify Platinum Partner", invert: true },
+              { src: "/images/main-hero-logo-5.webp", alt: "Shopify", invert: true },
+            ].map((logo) => (
+              <li key={logo.src} className="flex items-center justify-center">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={220}
+                  height={80}
+                  className="h-auto w-full max-w-[160px] object-contain"
+                  style={logo.invert ? { filter: "brightness(0)" } : undefined}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* Stats */}
       <section className="border-b border-slate-100 bg-white py-12">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
