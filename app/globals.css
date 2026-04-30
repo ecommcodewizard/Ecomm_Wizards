@@ -423,68 +423,68 @@
    ───────────────────────────────────────────── */
 
 /* ── Base defaults (applied before any breakpoint) ── */
-.header-mobile-logo  { height: 70px;  padding: 0 16px; }
-.header-mobile-cta   { font-size: 13px; padding: 8px 16px;  height: 38px; }
-.header-desktop-logo { width: 300px;  height: 110px; padding: 10px; }
-.header-desktop-nav  { height: 110px; padding-left: 60px; }
-.header-nav-item     { font-size: 15px; padding: 0 16px; }
+.header-mobile-logo  { height: 64px; padding: 0 16px; }
+.header-mobile-cta   { font-size: 13px; padding: 8px 16px; height: 36px; }
+.header-desktop-logo { width: 200px; height: 80px; padding: 8px 10px; }
+.header-desktop-nav  { height: 80px; padding-left: 24px; }
+.header-nav-item     { font-size: 14px; padding: 0 12px; }
 
 /* ── Mobile  (≤ 767px) ── */
 @media (max-width: 767px) {
   .header-mobile-logo {
-    height: 65px;
-    padding: 0 14px;
+    height: 60px;
+    padding: 0 12px;
   }
   .header-mobile-cta {
     font-size: 12px;
-    padding: 7px 13px;
-    height: 35px;
+    padding: 6px 12px;
+    height: 34px;
   }
 }
 
 /* ── iPad / Tablet  (768px – 1023px) ── */
 @media (min-width: 768px) and (max-width: 1023px) {
   .header-mobile-logo {
-    height: 80px;
+    height: 70px;
     padding: 0 20px;
   }
   .header-mobile-cta {
-    font-size: 14px;
-    padding: 9px 20px;
-    height: 42px;
+    font-size: 13px;
+    padding: 8px 18px;
+    height: 38px;
   }
 }
 
 /* ── Desktop  (1024px – 1279px) ── */
 @media (min-width: 1024px) and (max-width: 1279px) {
   .header-desktop-logo {
-    width: 200px;
-    height: 90px;
-    padding: 8px;
+    width: 160px;
+    height: 70px;
+    padding: 6px 8px;
   }
   .header-desktop-nav {
-    height: 90px;
-    padding-left: 16px;
+    height: 70px;
+    padding-left: 12px;
   }
   .header-nav-item {
     font-size: 13px;
-    padding: 0 9px;
+    padding: 0 8px;
   }
 }
 
 /* ── Large Desktop  (≥ 1280px) ── */
 @media (min-width: 1280px) {
   .header-desktop-logo {
-    width: 300px;
-    height: 110px;
-    padding: 10px;
+    width: 220px;
+    height: 80px;
+    padding: 8px 10px;
   }
   .header-desktop-nav {
-    height: 110px;
-    padding-left: 60px;
+    height: 80px;
+    padding-left: 32px;
   }
   .header-nav-item {
-    font-size: 15px;
-    padding: 0 16px;
+    font-size: 14px;
+    padding: 0 14px;
   }
 }

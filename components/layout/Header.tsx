@@ -284,18 +284,18 @@ export default function Header() {
           </div>
 
           {/* Desktop CTAs */}
-          <div className="hidden lg:flex shrink-0 items-center gap-3" style={{ padding: "10px", paddingRight: "0px" }}>
+          <div className="hidden lg:flex shrink-0 items-center gap-2 xl:gap-3" style={{ padding: "8px 0px 8px 8px" }}>
             <Link
               href="/free-shopify-store-audit"
               className="inline-flex items-center justify-center rounded-full border-2 border-[var(--color-gold)] text-white transition-all hover:bg-white hover:text-[#000000] whitespace-nowrap"
-              style={{ fontFamily: "'Poppins', sans-serif", fontSize: "14px", padding: "12px 24px", height: "50px" }}
+              style={{ fontFamily: "'Poppins', sans-serif", fontSize: "13px", padding: "10px 18px", height: "42px" }}
             >
               Get Started
             </Link>
             <Link
               href="/book-shopify-consultation"
               className="inline-flex items-center justify-center rounded-full border-2 border-transparent bg-white text-[#000000] transition-all hover:border-[var(--color-gold)] whitespace-nowrap"
-              style={{ fontFamily: "'Poppins', sans-serif", fontSize: "14px", padding: "12px 24px", height: "50px" }}
+              style={{ fontFamily: "'Poppins', sans-serif", fontSize: "13px", padding: "10px 18px", height: "42px" }}
             >
               Book a Call
             </Link>
