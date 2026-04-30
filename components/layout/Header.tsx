@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 
-// ─── Nav structure ────────────────────────────────────────────────────────────
+// ─── Types ────────────────────────────────────────────────────────────────────
 
 interface NavChild {
   label: string;
@@ -17,6 +17,8 @@ interface NavItem {
   href?: string;
   children?: NavChild[];
 }
+
+// ─── Nav data ─────────────────────────────────────────────────────────────────
 
 const NAV: NavItem[] = [
   {
@@ -60,32 +62,31 @@ const NAV: NavItem[] = [
   {
     label: "Apps",
     children: [
-      { label: "Custom App Development",   href: "/shopify-app-development",               description: "Private & public Shopify apps" },
-      { label: "Mobile App Development",   href: "/shopify-mobile-app-development",        description: "iOS & Android shopping apps" },
-      { label: "App Setup & Optimisation", href: "/shopify-app-setup-and-app-optimization",description: "Get the most from your app stack" },
-      { label: "Shopify Integrations",     href: "/shopify-integrations-erp-crm-3pl-etc",  description: "ERP, CRM, 3PL & more" },
+      { label: "Custom App Development",   href: "/shopify-app-development",                description: "Private & public Shopify apps" },
+      { label: "Mobile App Development",   href: "/shopify-mobile-app-development",         description: "iOS & Android shopping apps" },
+      { label: "App Setup & Optimisation", href: "/shopify-app-setup-and-app-optimization", description: "Get the most from your app stack" },
+      { label: "Shopify Integrations",     href: "/shopify-integrations-erp-crm-3pl-etc",   description: "ERP, CRM, 3PL & more" },
     ],
   },
-  { label: "B2B",  href: "/shopify-b2b-store-setup" },
-  { label: "POS",  href: "/shopify-pos-setup" },
+  { label: "B2B", href: "/shopify-b2b-store-setup" },
+  { label: "POS", href: "/shopify-pos-setup" },
   {
     label: "Marketing",
     children: [
-      { label: "Shopify SEO",           href: "/shopify-seo-agency",                              description: "Rank higher, earn more organic traffic" },
-      { label: "CRO Agency",            href: "/shopify-conversion-rate-optimization-cro-agency", description: "Systematic conversion improvements" },
-      { label: "Landing Page Design",   href: "/shopify-landing-page-design",                    description: "Campaign pages built to convert" },
-      { label: "Analytics & Tracking",  href: "/shopify-analytics-and-tracking-setup",            description: "Full-funnel measurement setup" },
+      { label: "Shopify SEO",          href: "/shopify-seo-agency",                              description: "Rank higher, earn more organic traffic" },
+      { label: "CRO Agency",           href: "/shopify-conversion-rate-optimization-cro-agency", description: "Systematic conversion improvements" },
+      { label: "Landing Page Design",  href: "/shopify-landing-page-design",                    description: "Campaign pages built to convert" },
+      { label: "Analytics & Tracking", href: "/shopify-analytics-and-tracking-setup",            description: "Full-funnel measurement setup" },
     ],
   },
 ];
 
-// ─── Chevron ──────────────────────────────────────────────────────────────────
+// ─── ChevronDown ──────────────────────────────────────────────────────────────
 
 function ChevronDown({ open }: { open: boolean }) {
   return (
     <svg
-      className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
-      style={{ color: "var(--color-gold)" }}
+      className={`h-3.5 w-3.5 text-gold transition-transform duration-200 ${open ? "rotate-180" : ""}`}
       fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor"
     >
       <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
@@ -93,29 +94,30 @@ function ChevronDown({ open }: { open: boolean }) {
   );
 }
 
-// ─── Desktop dropdown ─────────────────────────────────────────────────────────
+// ─── DesktopDropdown — opens on hover ────────────────────────────────────────
 
 function DesktopDropdown({ item }: { item: NavItem }) {
   const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  useEffect(() => {
-    function handler(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
-    }
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, []);
+  useEffect(() => () => { if (closeTimer.current) clearTimeout(closeTimer.current); }, []);
+
+  function onEnter() {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpen(true);
+  }
+  function onLeave() {
+    closeTimer.current = setTimeout(() => setOpen(false), 150);
+  }
 
   if (!item.children) {
     return (
       <Link
         href={item.href ?? "/"}
-        className="group flex h-full flex-col items-center justify-center font-medium text-white transition-colors hover:text-[var(--color-gold)] header-nav-item"
-        style={{ fontFamily: "'Poppins', sans-serif" }}
+        className="group flex h-full flex-col items-center justify-center px-[10px] xl:px-4 text-sm xl:text-md font-medium text-white transition-colors hover:text-gold"
       >
         <span>{item.label}</span>
-        <span className="mt-1 block h-[2px] w-0 rounded-full bg-[var(--color-gold)] transition-all duration-300 group-hover:w-full" />
+        <span className="mt-1 block h-[2px] w-0 rounded-full bg-gold transition-all duration-300 group-hover:w-full" />
       </Link>
     );
   }
@@ -123,19 +125,20 @@ function DesktopDropdown({ item }: { item: NavItem }) {
   const cols = item.children.length > 5 ? 2 : 1;
 
   return (
-    <div ref={ref} className="relative flex h-full items-stretch">
-      <a
-        role="link"
-        tabIndex={0}
-        onClick={() => setOpen((o) => !o)}
-        onKeyDown={(e) => e.key === "Enter" && setOpen((o) => !o)}
-        className="group flex cursor-pointer flex-col items-center justify-center font-medium text-white transition-colors hover:text-[var(--color-gold)] focus:outline-none header-nav-item"
-        style={{ fontFamily: "'Poppins', sans-serif" }}
+    <div
+      className="relative flex h-full items-stretch"
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+    >
+      <button
+        type="button"
+        className="group flex h-full cursor-default flex-col items-center justify-center px-[10px] xl:px-4 text-sm xl:text-md font-medium text-white transition-colors hover:text-gold focus:outline-none"
         aria-expanded={open}
+        aria-haspopup="true"
       >
         <span>{item.label}</span>
-        <span className="mt-1 block h-[2px] w-0 rounded-full bg-[var(--color-gold)] transition-all duration-300 group-hover:w-full" />
-      </a>
+        <span className="mt-1 block h-[2px] w-0 rounded-full bg-gold transition-all duration-300 group-hover:w-full" />
+      </button>
 
       {open && (
         <div
@@ -149,8 +152,7 @@ function DesktopDropdown({ item }: { item: NavItem }) {
               <Link
                 key={child.href}
                 href={child.href}
-                onClick={() => setOpen(false)}
-                className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm text-white/70 transition-colors hover:bg-white/5 hover:text-[var(--color-gold)]"
+                className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm text-white/70 transition-colors hover:bg-white/5 hover:text-gold"
               >
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-white/5 text-white/50">
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -172,7 +174,7 @@ function DesktopDropdown({ item }: { item: NavItem }) {
   );
 }
 
-// ─── Mobile accordion item ────────────────────────────────────────────────────
+// ─── MobileNavItem — accordion on tap ────────────────────────────────────────
 
 function MobileNavItem({ item, onClose }: { item: NavItem; onClose: () => void }) {
   const [open, setOpen] = useState(false);
@@ -182,8 +184,7 @@ function MobileNavItem({ item, onClose }: { item: NavItem; onClose: () => void }
       <Link
         href={item.href ?? "/"}
         onClick={onClose}
-        className="block rounded-lg px-4 py-3.5 text-base font-semibold text-white/80
-          hover:bg-white/5 hover:text-[var(--color-gold)] transition-colors"
+        className="block rounded-lg px-4 py-3.5 text-base font-semibold text-white/80 transition-colors hover:bg-white/5 hover:text-gold"
       >
         {item.label}
       </Link>
@@ -193,23 +194,22 @@ function MobileNavItem({ item, onClose }: { item: NavItem; onClose: () => void }
   return (
     <div>
       <button
+        type="button"
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between rounded-lg px-4 py-3.5 text-base
-          font-semibold text-white/80 hover:bg-white/5 hover:text-[var(--color-gold)] transition-colors"
+        className="flex w-full items-center justify-between rounded-lg px-4 py-3.5 text-base font-semibold text-white/80 transition-colors hover:bg-white/5 hover:text-gold"
       >
         {item.label}
         <ChevronDown open={open} />
       </button>
 
       <div className={`overflow-hidden transition-all duration-300 ${open ? "max-h-[600px]" : "max-h-0"}`}>
-        <div className="ml-4 mt-1 border-l-2 border-[var(--color-gold)]/30 pl-4 pb-2 space-y-0.5">
+        <div className="ml-4 mt-1 border-l-2 border-gold/30 pl-4 pb-2 space-y-0.5">
           {item.children.map((child) => (
             <Link
               key={child.href}
               href={child.href}
               onClick={onClose}
-              className="block rounded-md px-3 py-2.5 text-sm text-white/60
-                hover:bg-white/5 hover:text-[var(--color-gold)] transition-colors"
+              className="block rounded-md px-3 py-2.5 text-sm text-white/60 transition-colors hover:bg-white/5 hover:text-gold"
             >
               {child.label}
             </Link>
@@ -237,96 +237,99 @@ export default function Header() {
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setMobileOpen(false);
+    }
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, []);
+
   return (
     <>
+      {/* ── Bar ── */}
       <header
-        className={`fixed inset-x-0 top-0 z-40 bg-[#000000] transition-all duration-300 ${
+        className={`fixed inset-x-0 top-0 z-40 bg-black transition-all duration-300 ${
           scrolled ? "border-b border-white/10 shadow-[0_2px_20px_rgba(0,0,0,0.6)]" : "border-b border-white/5"
         }`}
       >
-        <div
-          className="mx-auto flex w-full items-center"
-          style={{ maxWidth: "1320px", fontFamily: "'Poppins', sans-serif" }}
-        >
+        <div className="mx-auto flex w-full max-w-[1320px] items-center px-4 lg:px-6 h-[100px] sm:h-[70px] md:h-[100px] lg:h-[86px] xl:h-[96px]">
+
           {/* Logo */}
           <Link href="/" className="shrink-0 flex items-center">
-            {/* Desktop logo */}
-            <div className="hidden lg:flex items-center header-desktop-logo">
-              <Image
-                src="/images/cropped-cropped-ecomm-golden.png"
-                alt="Ecomm Wizards"
-                width={227}
-                height={60}
-                className="object-contain"
-                style={{ width: "227px", height: "60px" }}
-                priority
-              />
-            </div>
-            {/* Mobile / tablet logo */}
-            <div className="flex lg:hidden items-center header-mobile-logo">
-              <Image
-                src="/images/cropped-cropped-ecomm-golden.png"
-                alt="Ecomm Wizards"
-                width={150}
-                height={40}
-                className="object-contain"
-                style={{ height: "38px", width: "auto" }}
-                priority
-              />
-            </div>
+            <Image
+              src="/images/cropped-cropped-ecomm-golden.png"
+              alt="Ecomm Wizards"
+              width={227}
+              height={60}
+              className="h-[69px] sm:h-9 md:h-[69px] lg:h-[52px] xl:h-[60px] w-auto object-contain"
+              priority
+            />
           </Link>
 
-          {/* Desktop nav */}
-          <div className="hidden lg:flex flex-1 items-stretch justify-start header-desktop-nav">
+          {/* Desktop nav — lg+ */}
+          <nav className="hidden lg:flex flex-1 items-stretch h-full justify-center xl:justify-end xl:pr-8">
             {NAV.map((item) => (
               <DesktopDropdown key={item.label} item={item} />
             ))}
-          </div>
+          </nav>
 
-          {/* Desktop CTAs */}
-          <div className="hidden lg:flex shrink-0 items-center gap-3" style={{ padding: "10px", paddingRight: "0px" }}>
+          {/* Desktop CTAs — lg+ */}
+          <div className="hidden lg:flex shrink-0 items-center gap-2 xl:gap-3 pl-3">
             <Link
               href="/free-shopify-store-audit"
-              className="inline-flex items-center justify-center rounded-full border-2 border-[var(--color-gold)] text-white transition-all hover:bg-white hover:text-[#000000] whitespace-nowrap"
-              style={{ fontFamily: "'Poppins', sans-serif", fontSize: "14px", padding: "12px 24px", height: "50px" }}
+              className="inline-flex items-center justify-center rounded-full border-2 border-gold text-white transition-all hover:bg-white hover:text-black whitespace-nowrap text-sm xl:text-sm2 px-4 xl:px-6 h-[44px] xl:h-[50px]"
             >
               Get Started
             </Link>
             <Link
               href="/book-shopify-consultation"
-              className="inline-flex items-center justify-center rounded-full border-2 border-transparent bg-white text-[#000000] transition-all hover:border-[var(--color-gold)] whitespace-nowrap"
-              style={{ fontFamily: "'Poppins', sans-serif", fontSize: "14px", padding: "12px 24px", height: "50px" }}
+              className="inline-flex items-center justify-center rounded-full border-2 border-transparent bg-white text-black transition-all hover:border-gold whitespace-nowrap text-sm xl:text-sm2 px-4 xl:px-6 h-[44px] xl:h-[50px]"
             >
               Book a Call
             </Link>
           </div>
 
-          {/* Mobile: CTA + hamburger */}
-          <div className="lg:hidden flex items-center gap-2 ml-auto pr-4">
+          {/* Mobile / tablet right side — hidden at lg+ */}
+          <div className="flex lg:hidden items-center gap-3 ml-auto pr-2">
+
+            {/* Both CTAs — md and up only */}
+            <Link
+              href="/free-shopify-store-audit"
+              className="hidden md:inline-flex items-center justify-center rounded-full border-2 border-gold text-white whitespace-nowrap transition-all hover:bg-white hover:text-black font-semibold text-sm px-4 h-[42px]"
+            >
+              Get Started
+            </Link>
             <Link
               href="/book-shopify-consultation"
-              className="inline-flex items-center justify-center rounded-full bg-[var(--color-gold)] text-black font-semibold whitespace-nowrap transition-all hover:opacity-90 header-mobile-cta"
-              style={{ fontFamily: "'Poppins', sans-serif" }}
+              className="hidden md:inline-flex items-center justify-center rounded-full bg-white text-black border-2 border-transparent whitespace-nowrap transition-all hover:border-gold font-semibold text-sm px-4 h-[42px]"
             >
               Book a Call
             </Link>
+
+            {/* Hamburger */}
             <button
-              className="flex h-10 w-10 items-center justify-center rounded-lg text-white hover:bg-white/10 transition-colors focus:outline-none"
+              type="button"
+              className="flex h-[27px] w-[45px] sm:h-[29px] sm:w-[29px] items-center justify-center rounded text-white transition-colors hover:bg-white/10 focus:outline-none"
               onClick={() => setMobileOpen((o) => !o)}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
             >
               {mobileOpen ? (
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>
               ) : (
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
+                <span className="flex flex-col gap-y-[4px]" aria-hidden="true">
+                  <span className="block h-[1px] w-[29px] bg-white" />
+                  <span className="block h-[1px] w-[29px] bg-white" />
+                  <span className="block h-[1px] w-[29px] bg-white" />
+                </span>
               )}
             </button>
           </div>
+
         </div>
       </header>
 
@@ -338,29 +341,32 @@ export default function Header() {
           mobileOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setMobileOpen(false)}
+        aria-hidden="true"
       />
 
-      {/* Drawer — full width on phones, 340px on tablets */}
+      {/* Drawer — full-width on mobile, 340 px on sm+ */}
       <div
-        className={`fixed inset-y-0 right-0 z-40 flex flex-col bg-[#0f0f0f] shadow-2xl lg:hidden
-          w-full sm:w-[340px] transition-transform duration-300 ease-in-out ${
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Navigation menu"
+        className={`fixed inset-y-0 right-0 z-40 flex flex-col bg-[#0f0f0f] shadow-2xl lg:hidden w-full sm:w-[340px] transition-transform duration-300 ease-in-out ${
           mobileOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Drawer header */}
-        <div className="flex h-[70px] items-center justify-between border-b border-white/10 px-5">
+        <div className="flex h-[100px] sm:h-[70px] md:h-[100px] items-center justify-between border-b border-white/10 px-4 sm:px-[20px]">
           <Image
             src="/images/cropped-cropped-ecomm-golden.png"
             alt="Ecomm Wizards"
             width={140}
             height={37}
-            className="object-contain"
-            style={{ height: "34px", width: "auto" }}
+            className="h-[34px] w-auto object-contain"
           />
           <button
+            type="button"
             onClick={() => setMobileOpen(false)}
-            className="flex h-9 w-9 items-center justify-center rounded-lg text-white/60
-              hover:bg-white/10 hover:text-white transition-colors"
+            className="flex h-9 w-9 items-center justify-center rounded-lg text-white/60 transition-colors hover:bg-white/10 hover:text-white"
             aria-label="Close menu"
           >
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
@@ -381,20 +387,18 @@ export default function Header() {
         </nav>
 
         {/* Bottom CTAs */}
-        <div className="border-t border-white/10 p-5 space-y-3">
+        <div className="border-t border-white/10 p-4 sm:p-[20px] space-y-3">
           <Link
             href="/free-shopify-store-audit"
             onClick={() => setMobileOpen(false)}
-            className="flex w-full items-center justify-center rounded-full border-2 border-[var(--color-gold)] text-white font-semibold transition-all hover:bg-[var(--color-gold)] hover:text-black"
-            style={{ fontFamily: "'Poppins', sans-serif", fontSize: "14px", height: "48px" }}
+            className="flex w-full items-center justify-center rounded-full border-2 border-gold text-white font-semibold transition-all hover:bg-gold hover:text-black text-sm2 h-[48px]"
           >
             Get Started
           </Link>
           <Link
             href="/book-shopify-consultation"
             onClick={() => setMobileOpen(false)}
-            className="flex w-full items-center justify-center rounded-full bg-[var(--color-gold)] text-black font-semibold transition-all hover:opacity-90"
-            style={{ fontFamily: "'Poppins', sans-serif", fontSize: "14px", height: "48px" }}
+            className="flex w-full items-center justify-center rounded-full bg-gold text-black font-semibold transition-all hover:opacity-90 text-sm2 h-[48px]"
           >
             Book a Call
           </Link>
