@@ -503,6 +503,178 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Why Work with Ecomm Wizards — horizontal scrolling marquee */}
+      <section
+        className="why-work-section"
+        style={{ background: "#000000" }}
+        aria-label="Why Work with Ecomm Wizards"
+      >
+        <div className="why-work-inner">
+          <h2
+            className="why-work-heading elementor-heading-title elementor-size-default"
+            role="heading"
+            aria-level={2}
+          >
+            Why Work with <br className="why-work-br" />Ecomm Wizards
+          </h2>
+
+          <div className="why-work-marquee scroll-wrapper" aria-hidden="false">
+            <ul className="why-work-track">
+              {(() => {
+                const items = [
+                  "Zero Cutting Corners",
+                  "World-Class Support",
+                  "Revenue-Driven Approach",
+                  "Proven Track Record",
+                  "Growth Obsessed Team",
+                  "100% Client Satisfaction",
+                  "Transparent Communication",
+                ];
+                return [...items, ...items].map((item, i) => (
+                  <li
+                    key={`${item}-${i}`}
+                    className="why-work-item"
+                    aria-hidden={i >= items.length ? true : undefined}
+                  >
+                    <span className="why-work-dot" aria-hidden="true">&bull;</span>
+                    <span className="why-work-text">{item}</span>
+                  </li>
+                ));
+              })()}
+            </ul>
+          </div>
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .why-work-section {
+            padding: 0 20px;
+            min-height: 106px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            color: #334155;
+          }
+          .why-work-inner {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0;
+            width: 100%;
+          }
+          .why-work-heading {
+            flex-shrink: 0;
+            width: 201.21px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 28px;
+            margin: 0;
+            padding-right: 24px;
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+          }
+          .why-work-br { display: inline; }
+          .why-work-marquee,
+          .scroll-wrapper {
+            flex: 1 1 auto;
+            min-width: 0;
+            overflow: hidden;
+            color: #334155;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14.592px;
+          }
+          .why-work-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            animation: why-work-scroll 40s linear infinite;
+          }
+          .why-work-marquee:hover .why-work-track {
+            animation-play-state: paused;
+          }
+          .why-work-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 28px;
+            padding-right: 28px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #FFFFFF;
+            white-space: nowrap;
+          }
+          .why-work-dot {
+            color: #B18945;
+            font-size: 28px;
+            line-height: 1;
+          }
+          .why-work-text {
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+          }
+          @keyframes why-work-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .why-work-track { animation: none; }
+          }
+          @media (max-width: 768px) {
+            .why-work-section {
+              padding: 0 15px;
+              min-height: 151.09px;
+              font-size: 14.592px;
+              align-items: center;
+            }
+            .why-work-inner {
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 18px;
+              padding: 0;
+              width: 100%;
+            }
+            .why-work-heading {
+              font-size: 18px;
+              line-height: 28px;
+              height: 28px;
+              width: 100%;
+              max-width: 380px;
+              padding-right: 0;
+              border-right: none;
+              text-align: center;
+            }
+            .why-work-br { display: none; }
+            .why-work-marquee {
+              width: 100%;
+              margin-left: -15px;
+              margin-right: -15px;
+              padding-left: 0;
+              padding-right: 0;
+              flex-basis: auto;
+            }
+            .why-work-track {
+              animation-duration: 30s;
+            }
+            .why-work-item {
+              gap: 18px;
+              padding-right: 18px;
+              font-size: 14px;
+              line-height: 23.09px;
+            }
+            .why-work-dot { font-size: 18px; }
+          }
+        ` }} />
+      </section>
+
       {/* Culture */}
       <section className="bg-slate-700 py-20 sm:py-24">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
