@@ -123,9 +123,13 @@ const SOCIAL = [
 
 // ─── Shared social row ────────────────────────────────────────────────────────
 
-function SocialIcons({ center }: { center?: boolean }) {
+function SocialIcons({ center, twoCol }: { center?: boolean; twoCol?: boolean }) {
   return (
-    <div className={`flex items-center gap-2 ${center ? "justify-center" : "justify-start"}`}>
+    <div className={
+      twoCol
+        ? "grid grid-cols-2 gap-2"
+        : `flex items-center gap-2 ${center ? "justify-center" : "justify-start"}`
+    }>
       {SOCIAL.map((s) => (
         <a
           key={s.label}
@@ -144,17 +148,17 @@ function SocialIcons({ center }: { center?: boolean }) {
 
 // ─── Accordion nav column ─────────────────────────────────────────────────────
 
-function FooterCol({ title, links }: { title: string; links: { label: string; href: string }[] }) {
+function FooterCol({ title, links, className = "" }: { title: string; links: { label: string; href: string }[]; className?: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-white/10 sm:border-b-0 lg:border-l lg:border-white/10 lg:first:border-l-0 lg:px-4 xl:px-6 lg:first:pl-0">
+    <div className={`border-b border-white/10 sm:border-b-0 lg:border-l lg:border-white/10 lg:first:border-l-0 lg:p-[16px] lg:first:pl-0 lg:h-full ${className}`}>
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between py-4 text-left sm:cursor-default sm:pointer-events-none sm:pb-3 sm:pt-0"
+        className="flex w-full items-center justify-between px-[25px] py-[20px] text-left sm:cursor-default sm:pointer-events-none sm:px-0 sm:pb-3 sm:pt-0"
       >
-        <span className="text-[15px] font-semibold text-white">{title}</span>
+        <span className="text-[20px] font-semibold text-white sm:text-[19px]">{title}</span>
         {/* + rotates to × on open — hidden sm+ */}
         <span
           className={`text-2xl font-extralight text-white/70 leading-none transition-transform duration-200 sm:hidden ${
@@ -166,7 +170,7 @@ function FooterCol({ title, links }: { title: string; links: { label: string; hr
       </button>
 
       <ul
-        className={`overflow-hidden transition-all duration-300 space-y-2.5 sm:max-h-none sm:overflow-visible sm:pb-6 ${
+        className={`overflow-hidden transition-all duration-300 sm:max-h-none sm:overflow-visible sm:pb-6 ${
           open ? "max-h-[600px] pb-5" : "max-h-0"
         }`}
       >
@@ -174,7 +178,7 @@ function FooterCol({ title, links }: { title: string; links: { label: string; hr
           <li key={l.label}>
             <Link
               href={l.href}
-              className="block text-sm text-white/60 leading-snug transition-colors hover:text-gold"
+              className="block px-[25px] pb-[12px] text-[14px] text-white transition-colors hover:text-gold sm:px-0 sm:pb-[7.5px] sm:mt-[7.5px] sm:text-[16px] sm:text-white"
             >
               {l.label}
             </Link>
@@ -236,56 +240,37 @@ export default function Footer() {
     <footer className="bg-black text-white/70">
 
       {/* ── Mobile header — logo + CTAs — < 640px only ── */}
-      <div className="sm:hidden border-b border-white/10 px-4 py-6">
-        <Link href="/" className="inline-block mb-6">
-          <Image
-            src="/images/cropped-cropped-ecomm-golden.png"
-            alt="Ecomm Wizards"
-            width={218}
-            height={57}
-            className="h-[50px] w-auto object-contain"
-            priority
-          />
-        </Link>
-
-        <div className="grid grid-cols-2 gap-4 items-center">
-          {/* Outlined CTA */}
-          <Link
-            href="/book-shopify-consultation"
-            className="flex items-center justify-center rounded-full border-2 border-gold text-white font-semibold h-[52px] text-sm transition-all hover:bg-gold hover:text-black"
-          >
-            Book a Call
-          </Link>
-
-          {/* Icon + text CTA */}
-          <Link
-            href="/free-shopify-store-audit"
-            className="flex items-center gap-3 text-white font-semibold text-sm"
-          >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10">
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-              </svg>
-            </span>
-            Get Started
-          </Link>
-        </div>
-      </div>
-
-      {/* ── Top strip: logo (lg+) · cities · social — hidden mobile ── */}
-      <div className="hidden sm:block border-b border-white/10">
-        <div className="mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 w-full max-w-[1320px] px-4 lg:px-6 py-5 lg:h-[97px] lg:py-0">
-          <Link href="/" className="hidden lg:flex shrink-0 items-center">
+      <div className="sm:hidden border-b border-white/10 px-4 py-4">
+        <div className="flex justify-center mb-3">
+          <Link href="/">
             <Image
               src="/images/cropped-cropped-ecomm-golden.png"
               alt="Ecomm Wizards"
               width={218}
               height={57}
-              className="h-[57px] w-auto object-contain"
+              className="h-[65px] w-auto object-contain"
               priority
             />
           </Link>
-          <p className="flex-1 text-center text-sm text-white leading-relaxed">
+        </div>
+
+        <SocialIcons center />
+      </div>
+
+      {/* ── Top strip: logo (lg+) · cities · social — hidden mobile ── */}
+      <div className="hidden sm:block border-b border-white/10">
+        <div className="mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 w-full max-w-[1320px] px-4 lg:px-6 py-5 lg:h-[97px] lg:py-0">
+          <Link href="/" className="hidden md:flex shrink-0 items-center">
+            <Image
+              src="/images/cropped-cropped-ecomm-golden.png"
+              alt="Ecomm Wizards"
+              width={218}
+              height={57}
+              className="h-[45px] md:h-[65px] lg:h-[57px] w-auto object-contain"
+              priority
+            />
+          </Link>
+          <p className="hidden lg:block flex-1 text-center text-[15px] text-white px-[10px]">
             {CITIES.map((city, i) => (
               <span key={city}>
                 {city}
@@ -293,6 +278,7 @@ export default function Footer() {
               </span>
             ))}
           </p>
+          <div className="flex-1 lg:hidden" />
           <div className="shrink-0">
             <SocialIcons />
           </div>
@@ -300,15 +286,16 @@ export default function Footer() {
       </div>
 
       {/* ── Select a Service — hidden mobile ── */}
-      <div className="hidden sm:block bg-[radial-gradient(ellipse_at_20%_50%,rgba(212,175,55,0.18)_0%,transparent_55%),radial-gradient(ellipse_at_80%_50%,rgba(212,175,55,0.12)_0%,transparent_55%),radial-gradient(ellipse_at_50%_100%,rgba(212,175,55,0.10)_0%,transparent_50%),#000000]">
-        <div className="mx-auto w-full max-w-[1320px] px-4 lg:px-6 py-10 lg:py-14">
-          <h3 className="mb-6 text-center text-xl font-normal text-white">Select a Service</h3>
-          <div className="flex flex-wrap justify-center gap-3">
+      <div className="hidden sm:block relative overflow-hidden bg-black xl:h-[351px] xl:flex xl:flex-col xl:justify-start">
+        <div className="absolute inset-0" style={{background: "radial-gradient(ellipse 55% 45% at 50% 40%, rgba(200,146,42,0.35) 0%, rgba(200,146,42,0.15) 40%, rgba(200,146,42,0.05) 65%, transparent 80%)"}} />
+        <div className="relative z-10 mx-auto w-full max-w-[1320px] p-[24px]">
+          <h3 className="mb-6 text-center text-[20px] leading-[30px] font-semibold text-white">Select a Service</h3>
+          <div className="flex flex-wrap justify-center text-[16px]">
             {SERVICE_TAGS.map((tag) => (
               <Link
                 key={tag.href + tag.label}
                 href={tag.href}
-                className="inline-flex items-center justify-center rounded-md bg-white/5 px-6 py-2.5 text-sm text-white transition-opacity hover:opacity-75"
+                className="inline-flex items-center justify-center rounded-md bg-white/5 border border-[rgba(255,255,255,0.08)] m-[7.5px] px-[35px] py-[5px] text-[15px] text-white transition-opacity hover:opacity-75"
               >
                 {tag.label}
               </Link>
@@ -318,42 +305,20 @@ export default function Footer() {
       </div>
 
       {/* ── Main footer body ── */}
-      <div className="border-t border-white/10 bg-[radial-gradient(ellipse_at_50%_50%,rgba(212,175,55,0.22)_0%,transparent_60%),#000000]">
-        <div className="mx-auto w-full max-w-[1320px] px-4 lg:px-6 py-0 sm:py-10 lg:py-16">
+      <div className="border-t border-white/10 bg-black relative overflow-hidden">
+        <div className="absolute inset-0" style={{background: "radial-gradient(ellipse 55% 45% at 50% 50%, rgba(200,146,42,0.35) 0%, rgba(200,146,42,0.15) 40%, rgba(200,146,42,0.05) 65%, transparent 80%)"}} />
+        <div className="relative z-10 mx-auto w-full max-w-[1320px] px-[24px]">
           <div className="flex flex-col lg:flex-row gap-10 xl:gap-14">
 
-            {/* Left col: logo · description · social — hidden mobile ── */}
-            <div className="hidden sm:flex flex-col shrink-0 text-center lg:text-left lg:w-[220px] xl:w-[260px]">
-              <Link href="/" className="inline-block mb-5 mx-auto lg:mx-0">
-                <Image
-                  src="/images/cropped-cropped-ecomm-golden.png"
-                  alt="Ecomm Wizards"
-                  width={218}
-                  height={57}
-                  className="h-[50px] sm:h-[54px] lg:h-[50px] w-auto object-contain"
-                />
-              </Link>
-              <p className="mb-6 text-sm text-white/55 leading-relaxed">
-                Ecomm Wizards is a leading Shopify agency specialising in store builds, migrations, speed optimisation, and revenue growth.
-              </p>
-              <div className="flex justify-center lg:justify-start">
-                <SocialIcons />
-              </div>
-            </div>
-
-            {/* Nav columns — always visible, accordion on mobile */}
-            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:gap-x-6 md:gap-x-8 lg:gap-x-0 border-t border-white/10 sm:border-t-0">
-              <FooterCol title="Company"             links={COMPANY} />
-              <FooterCol title="Awards & Reviews"    links={AWARDS} />
-              <FooterCol title="Migration Solutions" links={MIGRATION} />
+{/* Nav columns — always visible, accordion on mobile */}
+            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:gap-x-3 md:gap-x-4 lg:gap-x-0 border-t border-white/10 sm:border-t-0">
+              <FooterCol title="Company"             links={COMPANY}     className="md:pt-[10px]" />
+              <FooterCol title="Awards & Reviews"    links={AWARDS}      className="md:pt-[10px]" />
+              <FooterCol title="Migration Solutions" links={MIGRATION}   className="md:pt-[10px]" />
               <FooterCol title="Get Started"         links={GET_STARTED} />
-              <FooterCol title="Resources & Connect" links={RESOURCES} />
+              <FooterCol title="Resources & Connect" links={RESOURCES}   />
             </div>
 
-            {/* Newsletter — hidden mobile, full-width sm/md, side column lg+ */}
-            <div className="hidden sm:block shrink-0 lg:w-[240px] xl:w-[280px]">
-              <Newsletter />
-            </div>
 
           </div>
         </div>
@@ -361,15 +326,10 @@ export default function Footer() {
 
       {/* ── Copyright bar ── */}
       <div className="border-t border-white/10">
-        <div className="relative mx-auto flex flex-col lg:flex-row items-center justify-between gap-3 w-full max-w-[1320px] px-4 lg:px-6 py-5 lg:h-[65px] lg:py-0">
-          <p className="text-sm text-white text-center lg:text-left">
+        <div className="relative mx-auto flex flex-col lg:flex-row items-center justify-between gap-3 w-full max-w-[1320px] px-4 lg:px-6 py-[15px] lg:h-[65px] lg:py-0">
+          <p className="text-[15px] text-white text-center w-full">
             &copy; 2026 EcommWizards. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-sm text-white/50">
-            <Link href="/privacy-policy" className="transition-colors hover:text-white">Privacy Policy</Link>
-            <Link href="/terms" className="transition-colors hover:text-white">Terms of Service</Link>
-            <Link href="/ccpa-opt-out" className="transition-colors hover:text-white">CCPA Opt-Out</Link>
-          </div>
           <ScrollToTop />
         </div>
       </div>

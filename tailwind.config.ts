@@ -50,9 +50,9 @@ const config: Config = {
       },
 
       fontFamily: {
-        sans:    ["Poppins", "system-ui", "sans-serif"],
-        heading: ["Poppins", "system-ui", "sans-serif"],
-        body:    ["Poppins", "system-ui", "sans-serif"],
+        sans:    ["Poppins", "sans-serif"],
+        heading: ["Poppins", "sans-serif"],
+        body:    ["Poppins", "sans-serif"],
       },
 
       fontSize: {
