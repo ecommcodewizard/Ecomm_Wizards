@@ -242,36 +242,98 @@ export default function AboutPage() {
         </div>{/* end full-width div */}
       </section>
 
-      {/* Credibility logos strip */}
+      {/* Credibility logos strip — infinite marquee */}
       <section className="bg-white" style={{ padding: "60px 0 50px" }}>
         <div
           className="mx-auto px-3 sm:px-8 lg:px-16"
           style={{ maxWidth: "1320px" }}
         >
-          <ul
-            className="grid items-center justify-items-center gap-2 sm:gap-6 lg:gap-10"
-            style={{ gridTemplateColumns: "repeat(5, minmax(0, 1fr))" }}
-          >
-            {[
-              { src: "/images/google.svg", alt: "Google Reviews", invert: false },
-              { src: "/images/main-hero-logo-2.webp", alt: "Clutch Reviews", invert: true },
-              { src: "/images/shopify platinum partner logo.svg", alt: "Shopify Platinum Partner", invert: false },
-              { src: "/images/main-hero-logo-4.webp", alt: "Shopify Platinum Partner", invert: true },
-              { src: "/images/main-hero-logo-5.webp", alt: "Shopify", invert: true },
-            ].map((logo) => (
-              <li key={logo.src} className="flex items-center justify-center">
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={220}
-                  height={80}
-                  className="h-auto w-full max-w-[160px] object-contain"
-                  style={logo.invert ? { filter: "brightness(0)" } : undefined}
-                />
-              </li>
-            ))}
-          </ul>
+          <div className="logos-marquee">
+            <ul className="logos-marquee-track">
+              {(() => {
+                const logos = [
+                  { src: "/images/google.svg", alt: "Google Reviews", invert: false },
+                  { src: "/images/main-hero-logo-2.webp", alt: "Clutch Reviews", invert: true },
+                  { src: "/images/shopify platinum partner logo.svg", alt: "Shopify Platinum Partner", invert: false },
+                  { src: "/images/main-hero-logo-4.webp", alt: "Shopify Platinum Partner", invert: true },
+                  { src: "/images/main-hero-logo-5.webp", alt: "Shopify", invert: true },
+                ];
+                return [...logos, ...logos].map((logo, i) => (
+                  <li
+                    key={`${logo.src}-${i}`}
+                    className="flex items-center justify-center shrink-0"
+                    aria-hidden={i >= logos.length ? true : undefined}
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={220}
+                      height={80}
+                      className="h-auto w-full max-w-[160px] object-contain"
+                      style={logo.invert ? { filter: "brightness(0)" } : undefined}
+                    />
+                  </li>
+                ));
+              })()}
+            </ul>
+          </div>
         </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .logos-marquee {
+            overflow: hidden;
+            mask-image: linear-gradient(
+              to right,
+              transparent 0,
+              #000 80px,
+              #000 calc(100% - 80px),
+              transparent 100%
+            );
+            -webkit-mask-image: linear-gradient(
+              to right,
+              transparent 0,
+              #000 80px,
+              #000 calc(100% - 80px),
+              transparent 100%
+            );
+          }
+          .logos-marquee-track {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            width: max-content;
+            animation: logos-scroll 30s linear infinite;
+          }
+          .logos-marquee-track > li {
+            width: 160px;
+          }
+          .logos-marquee:hover .logos-marquee-track {
+            animation-play-state: paused;
+          }
+          @keyframes logos-scroll {
+            from {
+              transform: translateX(0);
+            }
+            to {
+              transform: translateX(-50%);
+            }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .logos-marquee-track {
+              animation: none;
+            }
+          }
+          @media (min-width: 640px) {
+            .logos-marquee-track {
+              gap: 64px;
+            }
+          }
+          @media (min-width: 1024px) {
+            .logos-marquee-track {
+              gap: 96px;
+            }
+          }
+        ` }} />
       </section>
 
       {/* Mission — revenue machines */}
