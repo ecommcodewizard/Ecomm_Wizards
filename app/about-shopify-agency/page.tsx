@@ -10,13 +10,6 @@ export const metadata: Metadata = {
   description: "Ecomm Wizards is a leading Shopify Plus agency with 8+ years of experience and $900M+ in client revenue. Meet the team behind 700+ successful Shopify stores.",
 };
 
-const STATS = [
-  { value: "700+",  label: "Shopify Stores Built" },
-  { value: "$900M+", label: "Client Revenue" },
-  { value: "8+",    label: "Years Experience" },
-  { value: "100%",  label: "Satisfaction Guarantee" },
-];
-
 const VALUES = [
   {
     title: "100% Satisfaction Guarantee",
@@ -281,58 +274,169 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="border-b border-slate-100 bg-white py-12">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <dl className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {STATS.map((s) => (
-              <div key={s.label} className="text-center">
-                <dt className="text-4xl font-extrabold text-slate-700">{s.value}</dt>
-                <dd className="mt-1 text-sm text-slate-500">{s.label}</dd>
+      {/* Mission — revenue machines */}
+      <section style={{ background: "#F1F5FF", padding: "80px 20px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1320px" }}>
+          <h2
+            className="elementor-heading-title elementor-size-default text-center mx-auto"
+            role="heading"
+            aria-level={2}
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "30px",
+              fontWeight: 400,
+              color: "#000000",
+              lineHeight: "40px",
+              maxWidth: "1253.5px",
+              width: "100%",
+              marginBottom: "20px",
+            }}
+          >
+            At <strong style={{ fontWeight: 700 }}>Ecomm Wizards</strong>, we don&apos;t just build Shopify stores - we build revenue machines.
+          </h2>
+
+          <p
+            className="text-center mx-auto"
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "clamp(15px, 1.4vw, 19px)",
+              color: "rgba(0, 0, 0, 0.8)",
+              lineHeight: 1.5,
+              maxWidth: "1320px",
+              marginBottom: "56px",
+            }}
+          >
+            Headquartered in Toronto with teams across America, Europe, and Asia we combine design obsession with technical precision to help DTC brands outperform their competition.
+          </p>
+
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-center"
+          >
+            {[
+              {
+                title: "100% Satisfaction Guarantee",
+                desc: "If you're not happy, we're not done. We don't hide behind contracts or excuses. Every project gets our full attention until it exceeds your expectations - period.",
+                icon: (
+                  <svg height="50" viewBox="0 0 64 64" fill="none" stroke="#B18945" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 26 L13 22 L24 31 L31 27 C33 26 35 27 36 29 L46 39 C48 41 48 44 46 46 C44 48 41 48 39 46 L31 38" />
+                    <path d="M61 26 L51 22 L40 31" />
+                    <path d="M24 31 L17 38 C15 40 12 40 10 38 C8 36 8 33 10 31 L13 28" />
+                    <path d="M40 36 L34 42 C32 44 29 44 27 42" />
+                    <path d="M44 41 L40 45 C38 47 35 47 33 45" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Result-oriented Approach",
+                desc: "Pretty stores are easy. Stores that convert? That's the hard part. We obsess over the details that actually move the needle - speed, UX, and conversion KPIs- so your revenue doesn't just grow, it compounds.",
+                icon: (
+                  <svg height="50" viewBox="0 0 64 64" fill="none" stroke="#B18945" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32 4 L56 12 V30 C56 44 46 54 32 60 C18 54 8 44 8 30 V12 Z" />
+                    <path d="M22 32 L29 39 L43 25" />
+                  </svg>
+                ),
+              },
+              {
+                title: "A Hub for Innovative Minds",
+                desc: "We attract people who hate mediocrity. Designers who push pixels until they're perfect. Developers who write clean code. Strategists who think three steps ahead. That Alpha energy shows up in every project we ship.",
+                icon: (
+                  <svg height="50" viewBox="0 0 64 64" fill="none" stroke="#B18945" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 6 H42 L52 16 V54 C52 56 50 58 48 58 H14 C12 58 10 56 10 54 V10 C10 8 12 6 14 6 Z" />
+                    <path d="M42 6 V16 H52" />
+                    <line x1="18" y1="28" x2="44" y2="28" />
+                    <line x1="18" y1="38" x2="44" y2="38" />
+                    <line x1="18" y1="48" x2="36" y2="48" />
+                  </svg>
+                ),
+              },
+            ].map((box) => (
+              <div
+                key={box.title}
+                style={{
+                  background: "#FFFFFF",
+                  padding: "30px",
+                  width: "100%",
+                  minHeight: "326px",
+                  borderRadius: "16px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  textAlign: "center",
+                  color: "#334155",
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize: "16px",
+                }}
+              >
+                <div
+                  style={{
+                    height: "50px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "20px",
+                  }}
+                >
+                  {box.icon}
+                </div>
+                <span
+                  style={{
+                    display: "block",
+                    fontFamily: "'Poppins', sans-serif",
+                    fontSize: "25px",
+                    color: "#000000",
+                    fontWeight: 500,
+                    lineHeight: "34.67px",
+                    marginBottom: "16px",
+                  }}
+                  role="heading"
+                  aria-level={3}
+                >
+                  {box.title}
+                </span>
+                <p
+                  className="elementor-icon-box-description"
+                  style={{
+                    fontFamily: "'Poppins', sans-serif",
+                    fontSize: "16px",
+                    color: "#000000",
+                    lineHeight: "26px",
+                    width: "100%",
+                    maxWidth: "366.67px",
+                    margin: 0,
+                  }}
+                >
+                  {box.desc}
+                </p>
               </div>
             ))}
-          </dl>
-        </div>
-      </section>
+          </div>
 
-      {/* Mission */}
-      <section className="py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div>
-              <SectionHeader
-                badge="Our Mission"
-                title="We Don't Just Build Shopify Stores — We Build Revenue Machines"
-                centered={false}
-              />
-              <p className="text-slate-500 leading-relaxed">
-                At Ecomm Wizards, we believe that every ecommerce brand deserves a store that works as
-                hard as they do. That means obsessing over conversion rates, page speed, UX design,
-                and the full customer journey — not just shipping code.
-              </p>
-              <p className="mt-4 text-slate-500 leading-relaxed">
-                We don&apos;t just build Shopify stores — we build revenue machines. Our team of strategists,
-                designers, developers, and growth experts work together on every project to deliver
-                measurable outcomes, not just deliverables.
-              </p>
-              <div className="mt-8 flex gap-4">
-                <Link href="/free-shopify-store-audit" className="btn-primary">Get a Free Audit</Link>
-                <Link href="/services" className="btn-outline">Our Services</Link>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              {VALUES.map((v) => (
-                <div key={v.title} className="rounded-2xl border border-slate-100 bg-slate-50 p-6">
-                  <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-lg bg-slate-700 text-white">
-                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                    </svg>
-                  </div>
-                  <h3 className="text-sm font-bold text-slate-800">{v.title}</h3>
-                  <p className="mt-1 text-xs leading-relaxed text-slate-500">{v.desc}</p>
-                </div>
-              ))}
-            </div>
+          <div className="text-center" style={{ marginTop: "48px" }}>
+            <Link
+              href="/free-shopify-store-audit"
+              className="elementor-button elementor-button-link elementor-size-sm transition-shadow duration-200 hover:shadow-[0_0_0_2px_#B18945]"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "10px",
+                width: "211.64px",
+                height: "60px",
+                padding: "20px 45px",
+                background: "#000000",
+                color: "#FFFFFF",
+                fontFamily: "'Poppins', sans-serif",
+                fontSize: "16px",
+                borderRadius: "9999px",
+                textDecoration: "none",
+                boxSizing: "border-box",
+              }}
+            >
+              Get Started
+              <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 6h14M14 6L9 1M14 6L9 11" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
