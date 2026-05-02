@@ -7,6 +7,24 @@
   100% { transform: translate3d(-33.333%, 0, 0); }
 }
 
+.ticker-strip {
+  animation: ticker 18s linear infinite;
+}
+@media (max-width: 639px) {
+  .ticker-strip {
+    animation: ticker 10s linear infinite;
+  }
+}
+
+.logo-strip {
+  animation: ticker-half 18s linear infinite;
+}
+@media (max-width: 639px) {
+  .logo-strip {
+    animation: ticker-half 10s linear infinite;
+  }
+}
+
 @keyframes ticker-half {
   0%   { transform: translate3d(0, 0, 0); }
   100% { transform: translate3d(-50%, 0, 0); }

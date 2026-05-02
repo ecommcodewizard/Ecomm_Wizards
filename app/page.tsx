@@ -146,18 +146,18 @@ export default function HomePage() {
         {/* Dark overlay so text stays readable */}
         <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.75) 100%)" }} />
 
-        <div className="relative mx-auto flex w-full flex-col items-stretch gap-6 lg:flex-row lg:items-center lg:gap-8" style={{ maxWidth: "1320px", padding: "40px 20px 40px 20px" }}>
+        <div className="relative mx-auto flex w-full flex-col items-stretch gap-6 lg:flex-row lg:items-center lg:gap-8 pt-[30px] pb-[30px] px-[20px] lg:pt-[40px] lg:pb-[40px]" style={{ maxWidth: "1320px" }}>
 
           {/* ── Left: text ── */}
-          <div className="w-full lg:w-[645px] lg:shrink-0" style={{ color: "#334155", fontFamily: "'Poppins', sans-serif", fontSize: "16px" }}>
-            <h1 className="leading-tight text-white" style={{ fontSize: "clamp(32px, 5vw, 52px)", fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>
+          <div className="w-full lg:w-[480px] lg:shrink-0" style={{ color: "#334155", fontFamily: "'Poppins', sans-serif", fontSize: "16px" }}>
+            <h1 className="leading-tight text-white text-[32px] sm:text-[40px] lg:text-[44px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>
               We are the Shopify<br />
               Agency that{" "}
               <span className="text-[#b18945]">Design.<br />
               Develop. Dominate.</span>
             </h1>
 
-            <p className="mt-4 lg:mt-6" style={{ fontSize: "clamp(15px, 2vw, 18px)", fontFamily: "'Nunito', sans-serif", color: "#FFFFFF" }}>
+            <p className="mt-4 lg:mt-6 text-[15px] lg:text-[20px]" style={{ fontFamily: "'Nunito', sans-serif", color: "#FFFFFF" }}>
               <span className="text-[#b18945] font-semibold">Award-Winning</span> Shopify Plus Agency.<br />
               Top Rated Talent{" "}
               <span className="text-[#b18945]">working on your brand.</span>
@@ -183,10 +183,10 @@ export default function HomePage() {
           </div>
 
           {/* ── Right: two cards ── */}
-          <div className="flex flex-col gap-4 sm:flex-row lg:flex-shrink-0" style={{ width: "100%", maxWidth: "645px", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155" }}>
+          <div className="flex flex-row gap-4 lg:flex-shrink-0" style={{ width: "100%", maxWidth: "645px", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155" }}>
 
             {/* Card 1 */}
-            <div className="rounded-2xl bg-[#111111]/90 backdrop-blur-sm transition-all duration-300 border-2 border-white/10 hover:border-[#b18945] flex-1" style={{ minWidth: "0", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155", padding: "30px 20px" }}>
+            <div className="rounded-2xl bg-[#111111]/90 backdrop-blur-sm transition-all duration-300 border-2 border-white/10 hover:border-[#b18945] flex-1 lg:flex-none lg:w-[220px] flex flex-col min-h-[418px] sm:min-h-0 lg:min-h-[206px] py-[20px] px-[16px] sm:py-[30px] sm:px-[20px] lg:py-[20px] lg:px-[16px]" style={{ minWidth: "0", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155" }}>
               {/* Icon */}
               <svg className="mb-5" width="30" height="30" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {/* Monitor outer frame */}
@@ -214,32 +214,33 @@ export default function HomePage() {
                 <line x1="18" y1="38" x2="30" y2="38" stroke="white" strokeWidth="2"/>
               </svg>
 
-              <h2 style={{ width: "258.5px", maxWidth: "100%", height: "60px", fontSize: "20px", fontFamily: "'Poppins', sans-serif", color: "#B18945", lineHeight: "1.5" }}>
+              <h2 className="text-[16px] sm:text-[20px] mb-[8px] sm:mb-0 min-h-[72px] sm:min-h-0 lg:min-h-[90px]" style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", color: "#B18945", lineHeight: "1.5" }}>
                 I Need High-Converting<br />Shopify Store
               </h2>
-              <p className="mt-3" style={{ width: "258.5px", maxWidth: "100%", height: "75px", fontSize: "15px", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF" }}>
+              <p className="mt-0 sm:mt-3 text-[13px] sm:text-[15px] lg:text-[13px]" style={{ width: "258.5px", maxWidth: "100%", height: "75px", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF" }}>
                 Stunning UI/UX, custom Shopify builds, and pixel-perfect execution that converts.
               </p>
 
               <Link
                 href="/free-shopify-store-audit"
-                className="mt-6 flex items-center justify-center gap-2 rounded-lg text-white transition-all hover:text-[#b18945]"
-                style={{ width: "258.5px", maxWidth: "100%", height: "51px", fontSize: "15px", fontFamily: "'Poppins', sans-serif", background: "#121212", padding: "16px 25px", border: "2px solid #b18945" }}
+                className="mt-[32px] sm:mt-6 lg:mt-[12px] flex items-center justify-center gap-2 rounded-lg text-white transition-all hover:text-[#b18945] text-[14px] sm:text-[15px] lg:text-[14px] h-[43px] sm:h-[51px] lg:h-[43px] py-[12px] px-[6px] sm:py-[16px] sm:px-[25px] lg:py-[12px] lg:px-[10px]"
+                style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", background: "#121212", border: "2px solid #b18945" }}
               >
-                <span style={{ width: "126.25px", height: "15px", fontSize: "15px", fontFamily: "'Poppins', sans-serif", lineHeight: "15px" }}>Get a Free Quote</span>
+                <span className="sm:hidden text-[13px] whitespace-nowrap" style={{ fontFamily: "'Poppins', sans-serif" }}>Free Quote</span>
+                <span className="hidden sm:inline text-[15px] lg:text-[14px]" style={{ width: "126.25px", height: "15px", fontFamily: "'Poppins', sans-serif", lineHeight: "15px" }}>Get a Free Quote</span>
                 <svg width="15" height="10.55" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "inline-block", verticalAlign: "middle" }}><path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </Link>
 
-              <p className="mt-4 text-center" style={{ width: "258.5px", maxWidth: "100%", fontSize: "15px", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF", lineHeight: "25px" }}>
+              <p className="mt-3 text-center text-[14px] sm:text-[15px] lg:text-[13px] lg:whitespace-nowrap" style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF", lineHeight: "25px" }}>
                 Not sure where to start?<br />
-                <Link href="/free-shopify-store-audit" className="hover:opacity-80 inline-flex items-center gap-1" style={{ fontSize: "15px", fontFamily: "'Poppins', sans-serif", color: "#B18945", borderBottom: "1px solid #B18945", paddingBottom: "0px", marginBottom: "-1px" }}>
+                <Link href="/free-shopify-store-audit" className="hover:opacity-80 inline-flex items-center gap-1 text-[14px] sm:text-[15px] lg:text-[13px]" style={{ fontFamily: "'Poppins', sans-serif", color: "#B18945", borderBottom: "1px solid #B18945", paddingBottom: "0px", marginBottom: "-1px" }}>
                   Get a Free Audit <svg width="15" height="10.55" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "inline-block", verticalAlign: "middle" }}><path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="#B18945" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </Link>
               </p>
             </div>
 
             {/* Card 2 */}
-            <div className="rounded-2xl bg-[#111111]/90 backdrop-blur-sm transition-all duration-300 border-2 border-white/10 hover:border-[#b18945] flex-1" style={{ minWidth: "0", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155", padding: "30px 20px" }}>
+            <div className="rounded-2xl bg-[#111111]/90 backdrop-blur-sm transition-all duration-300 border-2 border-white/10 hover:border-[#b18945] flex-1 lg:flex-none lg:w-[220px] flex flex-col min-h-[418px] sm:min-h-0 lg:min-h-[206px] py-[20px] px-[16px] sm:py-[30px] sm:px-[20px] lg:py-[20px] lg:px-[16px]" style={{ minWidth: "0", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155" }}>
               {/* Icon */}
               <svg className="mb-5" width="30" height="30" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {/* Bar 1 - shortest */}
@@ -250,25 +251,26 @@ export default function HomePage() {
                 <path d="M35,10 L27,22 L31,22 L31,46 L39,46 L39,22 L43,22 Z" stroke="white" strokeWidth="2" strokeLinejoin="round" fill="none"/>
               </svg>
 
-              <h2 style={{ width: "258.5px", maxWidth: "100%", height: "60px", fontSize: "20px", fontFamily: "'Poppins', sans-serif", color: "#B18945", lineHeight: "1.5" }}>
-                I Need a Growth<br />Plan
+              <h2 className="text-[16px] sm:text-[20px] mb-[8px] sm:mb-0 min-h-[72px] sm:min-h-0 lg:min-h-[90px]" style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", color: "#B18945", lineHeight: "1.5" }}>
+                I Need to Scale My<br />Shopify Revenue
               </h2>
-              <p className="mt-3" style={{ width: "258.5px", maxWidth: "100%", height: "75px", fontSize: "15px", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF" }}>
+              <p className="mt-0 sm:mt-3 text-[13px] sm:text-[15px] lg:text-[13px]" style={{ width: "258.5px", maxWidth: "100%", height: "75px", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF" }}>
                 Data-driven marketing, CRO, email, and paid ads to grow faster and profitably.
               </p>
 
               <Link
                 href="/shopify-conversion-rate-optimization-cro-agency"
-                className="mt-6 flex items-center justify-center gap-2 rounded-lg text-white transition-all hover:text-[#b18945]"
-                style={{ width: "258.5px", maxWidth: "100%", height: "51px", fontSize: "15px", fontFamily: "'Poppins', sans-serif", background: "#121212", padding: "16px 25px", border: "2px solid #b18945" }}
+                className="mt-[32px] sm:mt-6 lg:mt-[12px] flex items-center justify-center gap-2 rounded-lg text-white transition-all hover:text-[#b18945] text-[14px] sm:text-[15px] lg:text-[14px] h-[43px] sm:h-[51px] lg:h-[43px] py-[12px] px-[6px] sm:py-[16px] sm:px-[25px] lg:py-[12px] lg:px-[10px]"
+                style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", background: "#121212", border: "2px solid #b18945" }}
               >
-                <span style={{ width: "144.61px", height: "15px", fontSize: "15px", fontFamily: "'Poppins', sans-serif", lineHeight: "15px" }}>Get a Free Strategy</span>
+                <span className="sm:hidden text-[13px] whitespace-nowrap" style={{ fontFamily: "'Poppins', sans-serif" }}>Free Strategy</span>
+                <span className="hidden sm:inline text-[15px] lg:text-[14px]" style={{ width: "144.61px", height: "15px", fontFamily: "'Poppins', sans-serif", lineHeight: "15px" }}>Get a Free Strategy</span>
                 <svg width="15" height="10.55" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "inline-block", verticalAlign: "middle" }}><path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </Link>
 
-              <p className="mt-4 text-center" style={{ width: "258.5px", maxWidth: "100%", fontSize: "15px", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF", lineHeight: "25px" }}>
+              <p className="mt-3 text-center text-[14px] sm:text-[15px] lg:text-[13px] lg:whitespace-nowrap" style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF", lineHeight: "25px" }}>
                 Want to see what&apos;s possible?<br />
-                <Link href="/reviews" className="hover:opacity-80 inline-flex items-center gap-1" style={{ fontSize: "15px", fontFamily: "'Poppins', sans-serif", color: "#B18945", borderBottom: "1px solid #B18945", paddingBottom: "0px", marginBottom: "-1px" }}>
+                <Link href="/reviews" className="hover:opacity-80 inline-flex items-center gap-1 text-[14px] sm:text-[15px] lg:text-[13px]" style={{ fontFamily: "'Poppins', sans-serif", color: "#B18945", borderBottom: "1px solid #B18945", paddingBottom: "0px", marginBottom: "-1px" }}>
                   See Case Studies <svg width="15" height="10.55" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "inline-block", verticalAlign: "middle" }}><path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="#B18945" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </Link>
               </p>
@@ -280,8 +282,8 @@ export default function HomePage() {
       {/* ── Ticker ────────────────────────────────────────────────────────── */}
       <div className="overflow-hidden border-y border-white/10 bg-[#0a0a0a]" style={{ height: "66.39px", color: "#334155", fontFamily: "'Poppins', sans-serif", fontSize: "16px" }}>
         <div
-          className="flex whitespace-nowrap h-full items-center"
-          style={{ animation: "ticker 18s linear infinite", willChange: "transform" }}
+          className="ticker-strip flex whitespace-nowrap h-full items-center"
+          style={{ willChange: "transform" }}
         >
           {[...Array(3)].map((_, i) => (
             <div key={i} className="flex shrink-0 items-center gap-8 px-4 font-medium text-white" style={{ fontSize: "16px", fontFamily: "'Poppins', sans-serif" }}>
@@ -343,10 +345,10 @@ export default function HomePage() {
         </div>
 
         {/* Logos slider */}
-        <div className="mx-auto overflow-hidden" style={{ maxWidth: "1320px", height: "95.53px", margin: "0px auto" }}>
+        <div className="mx-auto overflow-hidden h-[70px] sm:h-[95px]" style={{ maxWidth: "1320px", margin: "0px auto" }}>
           <div
-            className="flex items-center"
-            style={{ animation: "ticker-half 18s linear infinite", height: "95.53px", willChange: "transform" }}
+            className="logo-strip flex items-center h-[70px] sm:h-[95px]"
+            style={{ willChange: "transform" }}
           >
             {[...Array(2)].map((_, i) => (
               <div key={i} className="flex shrink-0 items-center">
@@ -357,14 +359,13 @@ export default function HomePage() {
                   { src: "/images/main-hero-logo-4.webp", alt: "Shopify Platinum Partner" },
                   { src: "/images/main-hero-logo-5.webp", alt: "Shopify" },
                 ].map((logo) => (
-                  <div key={logo.alt} className="flex items-center justify-center shrink-0" style={{ width: "260px" }}>
+                  <div key={logo.alt} className="flex items-center justify-center shrink-0 w-[160px] sm:w-[260px]">
                     <Image
                       src={logo.src}
                       alt={logo.alt}
                       width={180}
                       height={62}
-                      className="object-contain"
-                      style={{ width: "180px", height: "62px" }}
+                      className="object-contain w-[120px] h-[42px] sm:w-[180px] sm:h-[62px]"
                     />
                   </div>
                 ))}
