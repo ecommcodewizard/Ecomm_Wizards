@@ -1383,6 +1383,170 @@ export default function AboutPage() {
         ` }} />
       </section>
 
+      {/* Our Valued Partners */}
+      <section
+        className="valued-partners-section"
+        style={{ background: "#F1F5FF", padding: "0 20px" }}
+      >
+        <div
+          className="valued-partners-inner"
+          style={{
+            maxWidth: "1320px",
+            margin: "0 auto",
+            padding: "60px 0",
+            color: "#334155",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "16px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <h2
+            className="valued-partners-title elementor-heading-title elementor-size-default"
+            role="heading"
+            aria-level={2}
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "35px",
+              fontWeight: 700,
+              color: "#000000",
+              lineHeight: "50px",
+              height: "50px",
+              width: "362.68px",
+              maxWidth: "100%",
+              textAlign: "center",
+              margin: "0 auto 20px",
+              padding: 0,
+              whiteSpace: "nowrap",
+            }}
+          >
+            Our Valued Partners
+          </h2>
+
+          <div
+            className="valued-partners-desc elementor-element elementor-widget__width-inherit"
+            style={{
+              width: "1320px",
+              maxWidth: "100%",
+              margin: "0 auto 40px",
+              padding: 0,
+              color: "#000000CC",
+              fontFamily: "Nunito, sans-serif",
+              fontSize: "20px",
+              lineHeight: "30px",
+              textAlign: "center",
+            }}
+          >
+            At Ecomm Wizards, we have spent the last decade <strong style={{ fontWeight: 700, color: "#000000CC" }}>cultivating enduring partnerships</strong> with some of the most remarkable companies in the industry. We take pride in working closely with these esteemed brands on a daily basis, to craft truly exceptional technical solutions for Shopify merchants.
+          </div>
+
+          <ul
+            className="valued-partners-grid"
+            style={{
+              listStyle: "none",
+              margin: 0,
+              padding: 0,
+              display: "grid",
+              gridTemplateColumns: "repeat(5, minmax(0, 244.01px))",
+              gridAutoRows: "75.99px",
+              columnGap: "20px",
+              rowGap: "40px",
+              width: "100%",
+              maxWidth: "1240px",
+              justifyContent: "center",
+            }}
+          >
+            {[
+              { src: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg", alt: "Shopify" },
+              { src: "/images/partner_logo_2.svg", alt: "Yotpo" },
+              { src: "/images/partner_logo_3.svg", alt: "Rebuy" },
+              { src: "/images/partner_logo_4.svg", alt: "Recharge" },
+              { src: "/images/partner_logo_5.svg", alt: "Klaviyo" },
+              { src: "/images/partner_logo_6.svg", alt: "Gorgias" },
+              { src: "/images/partner_logo_7.svg", alt: "Okendo" },
+              { src: "/images/partner_logo_8.svg", alt: "Nosto" },
+              { src: "/images/partner_logo_9.svg", alt: "ShipStation" },
+              { src: "/images/partner_logo_10.svg", alt: "Rise.ai" },
+              { src: "/images/partner_logo_11.svg", alt: "Glew" },
+              { src: "/images/partner_logo_12.svg", alt: "Matrixify" },
+              { src: "/images/partner_logo_13.svg", alt: "Route" },
+              { src: "/images/partner_logo_14.svg", alt: "Carro" },
+            ].map((logo) => (
+              <li
+                key={logo.alt}
+                className="valued-partners-cell elementor-element e-con-full e-flex e-con e-child"
+                style={{
+                  width: "244.01px",
+                  height: "75.99px",
+                  padding: "10px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "#334155",
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize: "16px",
+                  boxSizing: "border-box",
+                }}
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={244}
+                  height={76}
+                  style={{
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                    width: "auto",
+                    height: "auto",
+                    objectFit: "contain",
+                    display: "block",
+                  }}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 1024px) {
+            .valued-partners-section .valued-partners-grid {
+              grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            }
+          }
+          @media (max-width: 768px) {
+            .valued-partners-section { padding: 0 15px !important; }
+            .valued-partners-section .valued-partners-inner {
+              padding: 40px 0 !important;
+            }
+            .valued-partners-section .valued-partners-title {
+              font-size: 28px !important;
+              line-height: 38px !important;
+              height: auto !important;
+              width: 100% !important;
+              white-space: normal !important;
+              margin: 0 auto 16px !important;
+            }
+            .valued-partners-section .valued-partners-desc {
+              font-size: 16px !important;
+              line-height: 24px !important;
+              margin: 0 auto 28px !important;
+              padding: 0 6px !important;
+            }
+            .valued-partners-section .valued-partners-grid {
+              grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+              column-gap: 12px !important;
+              row-gap: 24px !important;
+            }
+            .valued-partners-section .valued-partners-cell {
+              width: 100% !important;
+              height: 64px !important;
+              padding: 8px !important;
+            }
+          }
+        ` }} />
+      </section>
+
       <CTASection
         heading="Get your Free UX + UI Shopify Audit"
         subheading="We'll show you exactly where you're losing revenue and how to fix it — no commitment required."
