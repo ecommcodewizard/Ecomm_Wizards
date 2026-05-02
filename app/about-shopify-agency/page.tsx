@@ -1059,7 +1059,6 @@ export default function AboutPage() {
                   { src: "/images/biopure.svg", alt: "BioPure" },
                   { src: "/images/chalet.svg", alt: "Chalet" },
                   { src: "/images/trust_logo_hover_3.svg", alt: "Brand" },
-                  { src: "/images/harvard-university-11.webp", alt: "Harvard" },
                   { src: "/images/kaval-new.webp", alt: "Kaval" },
                 ],
                 direction: "right",
