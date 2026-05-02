@@ -4,6 +4,7 @@ import Image from "next/image";
 import AboutHero from "@/components/ui/AboutHero";
 import CTASection from "@/components/ui/CTASection";
 import SectionHeader from "@/components/ui/SectionHeader";
+import JourneyTimeline from "@/components/JourneyTimeline";
 
 export const metadata: Metadata = {
   title: "About Ecomm Wizards | Leading Shopify Plus Agency",
@@ -1179,28 +1180,7 @@ export default function AboutPage() {
       </section>
 
       {/* Journey */}
-      <section className="py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            badge="Our Journey"
-            title="8 Years of Compounding Impact as a Shopify Agency"
-            subtitle="From a small team to a multi-award winning agency — here's how we got here."
-          />
-          <div className="relative ml-4 border-l-2 border-slate-100 pl-8 space-y-10">
-            {JOURNEY.map((j) => (
-              <div key={j.year} className="relative">
-                <div className="absolute -left-[42px] flex h-8 w-8 items-center justify-center
-                  rounded-full bg-slate-700 text-xs font-bold text-white ring-4 ring-white">
-                  {j.year.slice(2)}
-                </div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">{j.year}</span>
-                <h3 className="mt-1 text-lg font-bold text-slate-800">{j.title}</h3>
-                <p className="mt-1 text-slate-500">{j.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <JourneyTimeline />
 
       {/* Team */}
       <section className="bg-slate-50 py-20 sm:py-24">
