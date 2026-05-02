@@ -50,9 +50,9 @@ const config: Config = {
       },
 
       fontFamily: {
-        sans:    ["Poppins", "system-ui", "sans-serif"],
-        heading: ["Poppins", "system-ui", "sans-serif"],
-        body:    ["Poppins", "system-ui", "sans-serif"],
+        sans:    ["Poppins", "sans-serif"],
+        heading: ["Poppins", "sans-serif"],
+        body:    ["Poppins", "sans-serif"],
       },
 
       fontSize: {
@@ -112,8 +112,8 @@ const config: Config = {
       screens: {
         xs:   "480px",
         sm:   "640px",
-        md:   "769px",
-        lg:   "1025px",
+        md:   "768px",
+        lg:   "1024px",
         xl:   "1280px",
         "2xl":"1536px",
       },

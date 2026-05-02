@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="flex min-h-screen flex-col" style={{ backgroundColor: "var(--color-white)", color: "var(--color-dark)" }} suppressHydrationWarning>
         <Header />
-        <main className="flex-1 pt-[70px] lg:pt-[110px]">{children}</main>
+        <main className="flex-1 pt-[100px] sm:pt-[70px] md:pt-[100px] lg:pt-[86px] xl:pt-[96px]">{children}</main>
         <Footer />
       </body>
     </html>

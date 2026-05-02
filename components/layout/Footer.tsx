@@ -1,11 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import ScrollToTop from "./ScrollToTop";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const CITIES = [
-  "Los Angeles", "Newyork", "Chicago", "Seattle",
+  "Los Angeles", "New York", "Chicago", "Seattle",
   "Toronto", "Boston", "London", "Washington DC",
 ];
 
@@ -21,69 +24,68 @@ const SERVICE_TAGS = [
   { label: "Site Speed Optimizations",         href: "/shopify-speed-optimization" },
   { label: "Point of Sale (POS) for Business", href: "/shopify-pos-setup" },
   { label: "A/B Testing for CRO, AOV & CLV",  href: "/a-b-testing" },
-  { label: "B2B Solutions",                   href: "/shopify-b2b-store-setup" },
-  { label: "Shopify SEO Agency",              href: "/shopify-seo-agency" },
-  { label: "Book a Demo",                     href: "/book-shopify-consultation" },
-  { label: "Shopify Landing Page Design",     href: "/shopify-landing-page-design" },
+  { label: "B2B Solutions",                    href: "/shopify-b2b-store-setup" },
+  { label: "Shopify SEO Agency",               href: "/shopify-seo-agency" },
+  { label: "Book a Demo",                      href: "/book-shopify-consultation" },
+  { label: "Shopify Landing Page Design",      href: "/shopify-landing-page-design" },
 ];
 
 const COMPANY = [
-  { label: "About Ecomm Wizards",    href: "/about-shopify-agency" },
-  { label: "Partners",               href: "/partners" },
-  { label: "Partner Program",        href: "/partners" },
-  { label: "FAQ's",                  href: "/faqs" },
-  { label: "Q4 Breakthrough Journey",href: "/contact-shopify-agency" },
+  { label: "About Ecomm Wizards",     href: "/about-shopify-agency" },
+  { label: "Partners",                href: "/partners" },
+  { label: "Partner Program",         href: "/partners" },
+  { label: "FAQ's",                   href: "/faqs" },
+  { label: "Q4 Breakthrough Journey", href: "/contact-shopify-agency" },
 ];
 
 const AWARDS = [
-  { label: "Write a Review",  href: "/reviews" },
-  { label: "Reviews",         href: "/reviews" },
-  { label: "UX & UI Audit",   href: "/shopify-ux-and-ui-design" },
-  { label: "Case Studies",    href: "/case-studies" },
+  { label: "Write a Review", href: "/reviews" },
+  { label: "Reviews",        href: "/reviews" },
+  { label: "UX & UI Audit",  href: "/shopify-ux-and-ui-design" },
+  { label: "Case Studies",   href: "/case-studies" },
 ];
 
 const MIGRATION = [
-  { label: "Migrate to Shopify",           href: "/migration" },
-  { label: "Migrate from Magento",         href: "/magento-to-shopify" },
-  { label: "Migrate from BigCommerce",     href: "/bigcommerce-to-shopify" },
-  { label: "Migrate from wooCommerce",     href: "/woocommerce-to-shopify" },
-  { label: "Migrate from Amazon",          href: "/amazon-to-shopify" },
-  { label: "Migrate from Salesforce",      href: "/salesforce-to-shopify" },
-  { label: "Migrate from Prestashop",      href: "/prestashop-to-shopify" },
+  { label: "Migrate to Shopify",              href: "/migration" },
+  { label: "Migrate from Magento",            href: "/magento-to-shopify" },
+  { label: "Migrate from BigCommerce",        href: "/bigcommerce-to-shopify" },
+  { label: "Migrate from WooCommerce",        href: "/woocommerce-to-shopify" },
+  { label: "Migrate from Amazon",             href: "/amazon-to-shopify" },
+  { label: "Migrate from Salesforce",         href: "/salesforce-to-shopify" },
+  { label: "Migrate from Prestashop",         href: "/prestashop-to-shopify" },
   { label: "Migrate from Liquid to Hydrogen", href: "/liquid-to-shopify-hydrogen" },
 ];
 
 const GET_STARTED = [
-  { label: "Shopify UX and UI Design",                         href: "/shopify-ux-and-ui-design" },
-  { label: "Headless Shopify Agency",                          href: "/headless-shopify-agency" },
-  { label: "Shopify Conversion Rate Optimization (CRO) Agency",href: "/shopify-conversion-rate-optimization-cro-agency" },
-  { label: "Shopify Theme Development",                        href: "/shopify-theme-development" },
-  { label: "Shopify Plus Development",                         href: "/shopify-plus-development" },
-  { label: "Shopify SEO Agency",                               href: "/shopify-seo-agency" },
-  { label: "Shopify Landing Page Design",                      href: "/shopify-landing-page-design" },
-  { label: "Shopify Maintenance and Support",                  href: "/shopify-maintenance-and-support" },
-  { label: "Shopify Integrations (ERP, CRM, 3PL, etc)",       href: "/shopify-integrations-erp-crm-3pl-etc" },
-  { label: "Shopify App Setup and App Optimization",           href: "/shopify-app-setup-and-app-optimization" },
-  { label: "Shopify 2.0 Development",                          href: "/shopify-2-0-development" },
-  { label: "Shopify Analytics and Tracking Setup",             href: "/shopify-analytics-and-tracking-setup" },
-  { label: "Klaviyo Audit",                                    href: "/klaviyo-audit" },
+  { label: "Shopify UX and UI Design",             href: "/shopify-ux-and-ui-design" },
+  { label: "Headless Shopify Agency",              href: "/headless-shopify-agency" },
+  { label: "Shopify CRO Agency",                   href: "/shopify-conversion-rate-optimization-cro-agency" },
+  { label: "Shopify Theme Development",            href: "/shopify-theme-development" },
+  { label: "Shopify Plus Development",             href: "/shopify-plus-development" },
+  { label: "Shopify SEO Agency",                   href: "/shopify-seo-agency" },
+  { label: "Shopify Landing Page Design",          href: "/shopify-landing-page-design" },
+  { label: "Shopify Maintenance and Support",      href: "/shopify-maintenance-and-support" },
+  { label: "Shopify Integrations (ERP, CRM, 3PL)",href: "/shopify-integrations-erp-crm-3pl-etc" },
+  { label: "Shopify App Setup & Optimisation",     href: "/shopify-app-setup-and-app-optimization" },
+  { label: "Shopify 2.0 Development",             href: "/shopify-2-0-development" },
+  { label: "Shopify Analytics and Tracking Setup", href: "/shopify-analytics-and-tracking-setup" },
+  { label: "Klaviyo Audit",                        href: "/klaviyo-audit" },
 ];
 
 const RESOURCES = [
-  { label: "Blog",               href: "/blog" },
-  { label: "Case Studies",       href: "/case-studies" },
-  { label: "Newsletter Signup",  href: "/newsletter" },
-  { label: "CCPA Opt-Out",       href: "/ccpa-opt-out" },
-  { label: "Contact",            href: "/contact-shopify-agency" },
+  { label: "Blog",         href: "/blog" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Newsletter",   href: "/newsletter" },
+  { label: "CCPA Opt-Out", href: "/ccpa-opt-out" },
+  { label: "Contact",      href: "/contact-shopify-agency" },
 ];
 
-// ─── Social icons ──────────────────────────────────────────────────────────────
+// ─── Social icons ─────────────────────────────────────────────────────────────
 
 const SOCIAL = [
   {
     label: "Facebook",
     href: "https://facebook.com",
-    color: "#000000",
     icon: (
       <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
         <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.887v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" />
@@ -119,126 +121,64 @@ const SOCIAL = [
   },
 ];
 
-// ─── Footer ───────────────────────────────────────────────────────────────────
+// ─── Shared social row ────────────────────────────────────────────────────────
 
-export default function Footer() {
+function SocialIcons({ center, twoCol }: { center?: boolean; twoCol?: boolean }) {
   return (
-    <footer style={{ background: "#000000", color: "#d1d5db" }}>
-
-      {/* ── Top bar: logo / cities / socials ── */}
-      <div style={{ background: "#000000", borderBottom: "1px solid rgba(255,255,255,0.15)" }}>
-        <div
-          className="mx-auto flex items-center justify-between w-full"
-          style={{ maxWidth: "1320px", height: "97px", padding: "0px" }}
+    <div className={
+      twoCol
+        ? "grid grid-cols-2 gap-2"
+        : `flex items-center gap-2 ${center ? "justify-center" : "justify-start"}`
+    }>
+      {SOCIAL.map((s) => (
+        <a
+          key={s.label}
+          href={s.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={s.label}
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-black transition-opacity hover:opacity-75"
         >
-          {/* Logo */}
-          <Link href="/" className="shrink-0 flex items-center" style={{ width: "237.59px", height: "77.06px", padding: "10px" }}>
-            <Image
-              src="/images/cropped-cropped-ecomm-golden.png"
-              alt="Ecomm Wizards"
-              width={218}
-              height={57}
-              style={{ width: "217.59px", height: "57.06px" }}
-              className="object-contain"
-            />
-          </Link>
-
-          {/* Cities */}
-          <div style={{ flex: 1, height: "77.06px", padding: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <p style={{ color: "#FFFFFF", fontSize: "16px", fontFamily: "'Poppins', sans-serif" }} className="text-center">
-              {CITIES.map((city, i) => (
-                <span key={city}>
-                  {city}
-                  {i < CITIES.length - 1 && (
-                    <span className="mx-2">–</span>
-                  )}
-                </span>
-              ))}
-            </p>
-          </div>
-
-          {/* Social icons */}
-          <div className="flex shrink-0 items-center gap-2">
-            {SOCIAL.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={s.label}
-                className="flex items-center justify-center rounded-full transition-opacity hover:opacity-80"
-                style={{ width: "32px", height: "32px", background: "#FFFFFF", color: "#000000" }}
-              >
-                {s.icon}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ── Select a Service ── */}
-      <div style={{ background: "radial-gradient(ellipse at 20% 50%, rgba(212,175,55,0.18) 0%, transparent 55%), radial-gradient(ellipse at 80% 50%, rgba(212,175,55,0.12) 0%, transparent 55%), radial-gradient(ellipse at 50% 100%, rgba(212,175,55,0.10) 0%, transparent 50%), #000000", minHeight: "351px", display: "flex", alignItems: "center", position: "relative" }}>
-        <div className="mx-auto px-5 py-10 w-full" style={{ maxWidth: "1485px" }}>
-          <h3 className="mb-6 text-center font-normal" style={{ color: "#FFFFFF", fontSize: "20px", fontFamily: "'Poppins', sans-serif", width: "1320px", maxWidth: "100%", height: "30px", lineHeight: "30px", margin: "0 auto 24px" }}>
-            Select a Service
-          </h3>
-          <div className="flex flex-wrap justify-center" style={{ width: "1335px", maxWidth: "100%", height: "260px", margin: "0 auto", fontFamily: "'Poppins', sans-serif", fontSize: "16px", overflow: "visible" }}>
-            {SERVICE_TAGS.map((tag) => (
-              <Link
-                key={tag.href + tag.label}
-                href={tag.href}
-                className="inline-flex items-center justify-center rounded-md font-normal text-white transition-opacity hover:opacity-80"
-                style={{ background: "#ffffff0d", padding: "5px 35px", height: "45px", margin: "7.5px", fontSize: "15px", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF" }}
-              >
-                {tag.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ── Main 5-column links ── */}
-      <div style={{ background: "radial-gradient(ellipse at 50% 50%, rgba(212,175,55,0.22) 0%, transparent 60%), #000000", minHeight: "700px", borderTop: "1px solid rgba(255,255,255,0.15)" }}>
-        <div className="mx-auto w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5" style={{ maxWidth: "1320px" }}>
-          <FooterCol title="Company"             links={COMPANY}    borderRight />
-          <FooterCol title="Awards & Reviews"    links={AWARDS}     borderRight />
-          <FooterCol title="Migration Solutions" links={MIGRATION}  borderRight />
-          <FooterCol title="Get Started"         links={GET_STARTED} borderRight />
-          <FooterCol title="Resoures & Connect"  links={RESOURCES} />
-        </div>
-      </div>
-
-      {/* ── Bottom copyright ── */}
-      <div style={{ borderTop: "1px solid rgba(255,255,255,0.15)" }}>
-        <div className="relative text-center" style={{ width: "100%", height: "65px", padding: "20px 0px", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155", display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <p style={{ color: "#FFFFFF", fontSize: "15px", fontFamily: "'Poppins', sans-serif", width: "1320px", maxWidth: "100%", height: "25px", lineHeight: "25px" }}>
-            &copy; 2026 EcommWizards. All rights reserved.
-          </p>
-          <ScrollToTop />
-        </div>
-      </div>
-
-    </footer>
+          {s.icon}
+        </a>
+      ))}
+    </div>
   );
 }
 
-// ─── Column helper ─────────────────────────────────────────────────────────────
+// ─── Accordion nav column ─────────────────────────────────────────────────────
 
-function FooterCol({ title, links, borderRight }: { title: string; links: { label: string; href: string }[]; borderRight?: boolean }) {
+function FooterCol({ title, links, className = "" }: { title: string; links: { label: string; href: string }[]; className?: string }) {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div
-      style={{ width: "256px", height: "698px", padding: "10px", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155", borderRight: borderRight ? "1px solid rgba(255,255,255,0.15)" : undefined }}
-    >
-      <h4 className="font-semibold" style={{ marginBottom: "10px", color: "#FFFFFF", fontSize: "19px", fontFamily: "'Poppins', sans-serif", width: "235.97px", height: "28px", lineHeight: "28px" }}>
-        {title}
-      </h4>
-      <ul>
+    <div className={`border-b border-white/10 sm:border-b-0 lg:border-l lg:border-white/10 lg:first:border-l-0 lg:p-[16px] lg:first:pl-0 lg:h-full ${className}`}>
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="flex w-full items-center justify-between px-[25px] py-[20px] text-left sm:cursor-default sm:pointer-events-none sm:px-0 sm:pb-3 sm:pt-0"
+      >
+        <span className="text-[20px] font-semibold text-white sm:text-[19px]">{title}</span>
+        {/* + rotates to × on open — hidden sm+ */}
+        <span
+          className={`text-2xl font-extralight text-white/70 leading-none transition-transform duration-200 sm:hidden ${
+            open ? "rotate-45" : ""
+          }`}
+        >
+          +
+        </span>
+      </button>
+
+      <ul
+        className={`overflow-hidden transition-all duration-300 sm:max-h-none sm:overflow-visible sm:pb-6 ${
+          open ? "max-h-[600px] pb-5" : "max-h-0"
+        }`}
+      >
         {links.map((l) => (
-          <li key={l.label} style={{ margin: "7.5px 0px 0px", padding: "0px 0px 7.5px" }}>
+          <li key={l.label}>
             <Link
               href={l.href}
-              className="leading-snug transition-colors hover:opacity-70"
-              style={{ fontSize: "15px", color: "#FFFFFF" }}
+              className="block px-[25px] pb-[12px] text-[14px] text-white transition-colors hover:text-gold sm:px-0 sm:pb-[7.5px] sm:mt-[7.5px] sm:text-[16px] sm:text-white"
             >
               {l.label}
             </Link>
@@ -249,3 +189,151 @@ function FooterCol({ title, links, borderRight }: { title: string; links: { labe
   );
 }
 
+// ─── Newsletter ───────────────────────────────────────────────────────────────
+
+function Newsletter() {
+  const [email, setEmail] = useState("");
+  const [sent, setSent] = useState(false);
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setSent(true);
+    setEmail("");
+  }
+
+  return (
+    <div>
+      <h4 className="mb-2 text-[15px] font-semibold text-white">Stay in the Loop</h4>
+      <p className="mb-5 text-sm text-white/60 leading-relaxed">
+        Get the latest Shopify insights and agency news delivered to your inbox.
+      </p>
+      {sent ? (
+        <p className="rounded-lg border border-gold/40 bg-gold/10 px-4 py-3 text-sm text-gold">
+          Thanks! You&apos;re on the list.
+        </p>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-3">
+          <input
+            type="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Your email address"
+            className="w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-gold focus:outline-none transition-colors"
+          />
+          <button
+            type="submit"
+            className="w-full rounded-lg bg-gold px-4 py-3 text-sm font-semibold text-black transition-opacity hover:opacity-90"
+          >
+            Subscribe
+          </button>
+        </form>
+      )}
+    </div>
+  );
+}
+
+// ─── Footer ───────────────────────────────────────────────────────────────────
+
+export default function Footer() {
+  return (
+    <footer className="bg-black text-white/70">
+
+      {/* ── Mobile header — logo + CTAs — < 640px only ── */}
+      <div className="sm:hidden border-b border-white/10 px-4 py-4">
+        <div className="flex justify-center mb-3">
+          <Link href="/">
+            <Image
+              src="/images/cropped-cropped-ecomm-golden.png"
+              alt="Ecomm Wizards"
+              width={218}
+              height={57}
+              className="h-[65px] w-auto object-contain"
+              priority
+            />
+          </Link>
+        </div>
+
+        <SocialIcons center />
+      </div>
+
+      {/* ── Top strip: logo (lg+) · cities · social — hidden mobile ── */}
+      <div className="hidden sm:block border-b border-white/10">
+        <div className="mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 w-full max-w-[1320px] px-4 lg:px-6 py-5 lg:h-[97px] lg:py-0">
+          <Link href="/" className="hidden md:flex shrink-0 items-center">
+            <Image
+              src="/images/cropped-cropped-ecomm-golden.png"
+              alt="Ecomm Wizards"
+              width={218}
+              height={57}
+              className="h-[45px] md:h-[65px] lg:h-[57px] w-auto object-contain"
+              priority
+            />
+          </Link>
+          <p className="hidden lg:block flex-1 text-center text-[15px] text-white px-[10px]">
+            {CITIES.map((city, i) => (
+              <span key={city}>
+                {city}
+                {i < CITIES.length - 1 && <span className="mx-2 text-white/30">–</span>}
+              </span>
+            ))}
+          </p>
+          <div className="flex-1 lg:hidden" />
+          <div className="shrink-0">
+            <SocialIcons />
+          </div>
+        </div>
+      </div>
+
+      {/* ── Select a Service — hidden mobile ── */}
+      <div className="hidden sm:block relative overflow-hidden bg-black xl:h-[351px] xl:flex xl:flex-col xl:justify-start">
+        <div className="absolute inset-0" style={{background: "radial-gradient(ellipse 55% 45% at 50% 40%, rgba(200,146,42,0.35) 0%, rgba(200,146,42,0.15) 40%, rgba(200,146,42,0.05) 65%, transparent 80%)"}} />
+        <div className="relative z-10 mx-auto w-full max-w-[1320px] p-[24px]">
+          <h3 className="mb-6 text-center text-[20px] leading-[30px] font-semibold text-white">Select a Service</h3>
+          <div className="flex flex-wrap justify-center text-[16px]">
+            {SERVICE_TAGS.map((tag) => (
+              <Link
+                key={tag.href + tag.label}
+                href={tag.href}
+                className="inline-flex items-center justify-center rounded-md bg-white/5 border border-[rgba(255,255,255,0.08)] m-[7.5px] px-[35px] py-[5px] text-[15px] text-white transition-opacity hover:opacity-75"
+              >
+                {tag.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Main footer body ── */}
+      <div className="border-t border-white/10 bg-black relative overflow-hidden">
+        <div className="absolute inset-0" style={{background: "radial-gradient(ellipse 55% 45% at 50% 50%, rgba(200,146,42,0.35) 0%, rgba(200,146,42,0.15) 40%, rgba(200,146,42,0.05) 65%, transparent 80%)"}} />
+        <div className="relative z-10 mx-auto w-full max-w-[1320px] px-[24px]">
+          <div className="flex flex-col lg:flex-row gap-10 xl:gap-14">
+
+{/* Nav columns — always visible, accordion on mobile */}
+            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:gap-x-3 md:gap-x-4 lg:gap-x-0 border-t border-white/10 sm:border-t-0">
+              <FooterCol title="Company"             links={COMPANY}     className="md:pt-[10px]" />
+              <FooterCol title="Awards & Reviews"    links={AWARDS}      className="md:pt-[10px]" />
+              <FooterCol title="Migration Solutions" links={MIGRATION}   className="md:pt-[10px]" />
+              <FooterCol title="Get Started"         links={GET_STARTED} />
+              <FooterCol title="Resources & Connect" links={RESOURCES}   />
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+      {/* ── Copyright bar ── */}
+      <div className="border-t border-white/10">
+        <div className="relative mx-auto flex flex-col lg:flex-row items-center justify-between gap-3 w-full max-w-[1320px] px-4 lg:px-6 py-[15px] lg:h-[65px] lg:py-0">
+          <p className="text-[15px] text-white text-center w-full">
+            &copy; 2026 EcommWizards. All rights reserved.
+          </p>
+          <ScrollToTop />
+        </div>
+      </div>
+
+    </footer>
+  );
+}
