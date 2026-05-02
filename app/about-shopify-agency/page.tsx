@@ -676,20 +676,507 @@ export default function AboutPage() {
       </section>
 
       {/* Culture */}
-      <section className="bg-slate-700 py-20 sm:py-24">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
-          <span className="mb-4 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1
-            text-xs font-semibold uppercase tracking-widest text-slate-200">Our Culture</span>
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">
+      <section className="culture-section" style={{ background: "#FFFFFF" }}>
+        <div
+          className="culture-inner"
+          style={{
+            maxWidth: "1320px",
+            margin: "0 auto",
+            padding: "60px 0",
+            color: "#334155",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "16px",
+          }}
+        >
+          <h2
+            className="culture-title elementor-heading-title elementor-size-default"
+            role="heading"
+            aria-level={2}
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "42px",
+              fontWeight: 700,
+              color: "#000000",
+              lineHeight: "52px",
+              height: "52px",
+              width: "1246.56px",
+              maxWidth: "100%",
+              textAlign: "center",
+              margin: "0 auto",
+              padding: 0,
+              whiteSpace: "nowrap",
+              overflow: "visible",
+            }}
+          >
             The Culture Behind Our High-Performance Shopify Agency
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-slate-300 leading-relaxed">
-            We believe excellence compounds. Our team continuously trains on the latest Shopify Plus
-            features, ecommerce trends, AI tools, and conversion psychology frameworks. We foster a
-            culture of ownership — every Shopify project is treated like it&apos;s our own brand.
-            No shortcuts. No templates. No recycled strategies.
-          </p>
+
+          <div className="culture-grid">
+            <div className="culture-cell culture-cell--left">
+              <Image
+                src="/images/culture_image_one_1024x1024.webp"
+                alt="Ecomm Wizards team member working"
+                width={1024}
+                height={1024}
+                className="culture-image"
+              />
+            </div>
+            <div className="culture-cell culture-cell--mid-top">
+              <Image
+                src="/images/culture_image_two_1024x1024.webp"
+                alt="Ecomm Wizards designer at work"
+                width={1024}
+                height={1024}
+                className="culture-image"
+              />
+            </div>
+            <div className="culture-cell culture-cell--mid-bottom">
+              <Image
+                src="/images/culture_image_three_1024x1024.webp"
+                alt="Ecomm Wizards developer at work"
+                width={1024}
+                height={1024}
+                className="culture-image"
+              />
+            </div>
+            <div className="culture-cell culture-cell--right">
+              <Image
+                src="/images/culture_image_four_1024x1024.webp"
+                alt="Ecomm Wizards strategist at work"
+                width={1024}
+                height={1024}
+                className="culture-image"
+              />
+            </div>
+          </div>
+
+          <h2
+            className="culture-body elementor-heading-title elementor-size-default"
+            role="heading"
+            aria-level={2}
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "22px",
+              fontWeight: 400,
+              color: "#000000",
+              lineHeight: "32px",
+              textAlign: "center",
+              maxWidth: "1040px",
+              margin: "0 auto",
+              padding: "0 20px",
+            }}
+          >
+            We believe excellent compounds. Our team continuously trains on the latest Shopify Plus features, ecommerce trends, AI tools, and conversion psychology frameworks. We foster a culture of ownership, every Shopify project is treated like it&rsquo;s our own brand. No shortcuts. No templates. No recycled strategies.
+          </h2>
         </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .culture-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 16px;
+            margin: 40px 20px;
+          }
+          .culture-cell {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #f1f5f9;
+          }
+          .culture-cell--left { grid-column: 1; grid-row: 1 / span 2; }
+          .culture-cell--mid-top { grid-column: 2; grid-row: 1; }
+          .culture-cell--mid-bottom { grid-column: 2; grid-row: 2; }
+          .culture-cell--right { grid-column: 3; grid-row: 1 / span 2; }
+          .culture-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+          .culture-cell--left,
+          .culture-cell--right {
+            min-height: 540px;
+          }
+          .culture-cell--mid-top,
+          .culture-cell--mid-bottom {
+            min-height: 262px;
+          }
+          @media (max-width: 1024px) {
+            .culture-cell--left,
+            .culture-cell--right { min-height: 420px; }
+            .culture-cell--mid-top,
+            .culture-cell--mid-bottom { min-height: 202px; }
+          }
+          @media (max-width: 768px) {
+            .culture-section .culture-title {
+              font-size: 30px !important;
+              line-height: 40px !important;
+              height: auto !important;
+              width: 100% !important;
+              max-width: 400px !important;
+              white-space: normal !important;
+              padding: 0 15px !important;
+            }
+            .culture-section .culture-body { font-size: 16px !important; line-height: 26px !important; }
+            .culture-inner { padding: 40px 0 !important; }
+            .culture-grid {
+              grid-template-columns: 1fr;
+              grid-template-rows: auto;
+              gap: 12px;
+              margin: 28px 15px;
+            }
+            .culture-cell--left,
+            .culture-cell--mid-top,
+            .culture-cell--mid-bottom,
+            .culture-cell--right {
+              grid-column: 1;
+              grid-row: auto;
+              min-height: 0;
+              aspect-ratio: 1 / 1;
+            }
+          }
+        ` }} />
+      </section>
+
+      {/* A Note From Our Founder */}
+      <section className="founder-note-section" style={{ background: "#F1F5FF" }}>
+        <div
+          className="founder-note-inner"
+          style={{
+            maxWidth: "1320px",
+            margin: "0 auto",
+            padding: "60px 0",
+            color: "#334155",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "16px",
+          }}
+        >
+          <h2
+            className="founder-note-title elementor-heading-title elementor-size-default"
+            role="heading"
+            aria-level={2}
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "42px",
+              fontWeight: 700,
+              color: "#000000",
+              lineHeight: "52px",
+              height: "52px",
+              width: "533.62px",
+              maxWidth: "100%",
+              textAlign: "center",
+              margin: "0 auto",
+              padding: 0,
+              whiteSpace: "nowrap",
+            }}
+          >
+            A Note From Our Founder
+          </h2>
+
+          <div
+            className="founder-note-body elementor-element elementor-widget__width-initial"
+            style={{
+              maxWidth: "1056px",
+              width: "100%",
+              margin: "32px auto 0",
+              padding: "0 20px",
+              color: "#000000CC",
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "18px",
+              lineHeight: "30px",
+              textAlign: "center",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              <b
+                style={{
+                  display: "inline-block",
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize: "18px",
+                  fontWeight: 700,
+                  color: "#000000CC",
+                  lineHeight: "24.67px",
+                }}
+              >
+                I&rsquo;ll be honest with you.
+              </b>
+            </p>
+            <p style={{ margin: "24px 0 0" }}>
+              When we started Ecom Wizards, we made a decision to specialize exclusively in Shopify and Shopify Plus development.
+            </p>
+            <p style={{ margin: "24px 0 0" }}>
+              We saw too many ecommerce brands struggling with generic agencies that treated Shopify like &ldquo;just another CMS.&rdquo; But Shopify is an ecosystem, and mastering it requires deep platform expertise.
+            </p>
+            <p style={{ margin: "24px 0 0" }}>
+              So here&rsquo;s my commitment: if you partner with our Shopify experts, you won&rsquo;t just keep up &ndash; you&rsquo;ll lead. We&rsquo;ll make sure of it.
+            </p>
+            <p style={{ margin: "24px 0 0" }}>
+              The future belongs to brands that move now. Let&rsquo;s make sure you&rsquo;re one of them.
+            </p>
+          </div>
+
+          <div className="text-center" style={{ marginTop: "40px" }}>
+            <Link
+              href="/contact"
+              className="elementor-button elementor-button-link elementor-size-sm transition-shadow duration-200 hover:shadow-[0_0_0_2px_#B18945]"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "10px",
+                width: "210.2px",
+                height: "60px",
+                padding: "20px 45px",
+                background: "#000000",
+                color: "#FFFFFF",
+                fontFamily: "'Poppins', sans-serif",
+                fontSize: "16px",
+                borderRadius: "9999px",
+                textDecoration: "none",
+                boxSizing: "border-box",
+              }}
+            >
+              Book a Call
+              <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 6h14M14 6L9 1M14 6L9 11" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 768px) {
+            .founder-note-section .founder-note-inner {
+              padding: 44px 0 !important;
+            }
+            .founder-note-section .founder-note-title {
+              font-size: 30px !important;
+              line-height: 40px !important;
+              height: auto !important;
+              width: 100% !important;
+              max-width: 400px !important;
+              white-space: normal !important;
+              padding: 0 15px !important;
+            }
+            .founder-note-section .founder-note-body {
+              font-size: 16px !important;
+              line-height: 26px !important;
+              padding: 0 20px !important;
+              margin-top: 24px !important;
+            }
+            .founder-note-section .founder-note-body b {
+              font-size: 16px !important;
+              line-height: 22px !important;
+            }
+          }
+        ` }} />
+      </section>
+
+      {/* Trusted by the Worlds Most Innovative Brands */}
+      <section
+        className="trusted-brands-section"
+        style={{ background: "#FFFFFF", padding: "0 20px" }}
+      >
+        <div
+          className="trusted-brands-inner e-con-inner"
+          style={{
+            width: "1320px",
+            maxWidth: "100%",
+            minHeight: "866.59px",
+            margin: "0 auto",
+            padding: "60px 0",
+            color: "#334155",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "16px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            boxSizing: "border-box",
+          }}
+        >
+          <h2
+            className="trusted-brands-title elementor-heading-title elementor-size-default"
+            role="heading"
+            aria-level={2}
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "42px",
+              fontWeight: 700,
+              color: "#000000",
+              lineHeight: "52px",
+              width: "791.99px",
+              maxWidth: "100%",
+              textAlign: "center",
+              margin: "0 auto 40px",
+              padding: 0,
+            }}
+          >
+            Trusted by the Worlds Most Innovative Brands
+          </h2>
+
+          {(() => {
+            const rows: { logos: { src: string; alt: string }[]; direction: "left" | "right"; duration: number }[] = [
+              {
+                logos: [
+                  { src: "/images/trust_logo_hover_1.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_hover_2.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_hover_10.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_hover_11.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_hover_12.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_hover_13.svg", alt: "Brand" },
+                ],
+                direction: "left",
+                duration: 40,
+              },
+              {
+                logos: [
+                  { src: "/images/trust_logo_hover_14.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_2.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_6.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_7.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_20.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_26.svg", alt: "Brand" },
+                ],
+                direction: "right",
+                duration: 42,
+              },
+              {
+                logos: [
+                  { src: "/images/trust_logo_27.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_31.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_32.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_new_1.svg", alt: "Brand" },
+                  { src: "/images/Group_38643.svg", alt: "Crown & Paw" },
+                  { src: "/images/ipsy-logo.svg", alt: "IPSY" },
+                ],
+                direction: "left",
+                duration: 44,
+              },
+              {
+                logos: [
+                  { src: "/images/everlast-icon.svg", alt: "Everlast" },
+                  { src: "/images/biopure.svg", alt: "BioPure" },
+                  { src: "/images/chalet.svg", alt: "Chalet" },
+                  { src: "/images/trust_logo_hover_3.svg", alt: "Brand" },
+                  { src: "/images/harvard-university-11.webp", alt: "Harvard" },
+                  { src: "/images/kaval-new.webp", alt: "Kaval" },
+                ],
+                direction: "right",
+                duration: 46,
+              },
+            ];
+            return rows.map((row, rowIdx) => (
+              <div className="trusted-brands-row" key={rowIdx} aria-hidden="false">
+                <ul
+                  className={`trusted-brands-track ${row.direction === "right" ? "trusted-brands-track--reverse" : ""}`}
+                  style={{ animationDuration: `${row.duration}s` }}
+                >
+                  {[...row.logos, ...row.logos].map((logo, i) => (
+                    <li
+                      key={`${logo.src}-${i}`}
+                      className="trusted-brands-slide swiper-slide"
+                      aria-hidden={i >= row.logos.length ? true : undefined}
+                    >
+                      <Image
+                        src={logo.src}
+                        alt={logo.alt}
+                        width={240}
+                        height={115}
+                        className="swiper-slide-image bv-tag-attr-replace bv-lazyload-tag-img"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ));
+          })()}
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .trusted-brands-row {
+            overflow: hidden;
+            margin-bottom: 32px;
+            max-width: 1320px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .trusted-brands-row:last-child {
+            margin-bottom: 0;
+          }
+          .trusted-brands-track {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            width: max-content;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+            animation: trusted-brands-scroll 40s linear infinite;
+          }
+          .trusted-brands-track--reverse {
+            animation-name: trusted-brands-scroll-reverse;
+          }
+          .trusted-brands-row:hover .trusted-brands-track {
+            animation-play-state: paused;
+          }
+          .trusted-brands-slide {
+            flex-shrink: 0;
+            width: 239.97px;
+            height: 115.79px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .trusted-brands-slide :global(img),
+          .trusted-brands-slide img {
+            width: 239.97px !important;
+            height: 115.79px !important;
+            object-fit: contain;
+            display: block;
+            filter: none;
+          }
+          @keyframes trusted-brands-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+          }
+          @keyframes trusted-brands-scroll-reverse {
+            from { transform: translateX(-50%); }
+            to { transform: translateX(0); }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .trusted-brands-track { animation: none; }
+          }
+          @media (max-width: 768px) {
+            .trusted-brands-section {
+              padding: 0 15px !important;
+            }
+            .trusted-brands-section .trusted-brands-inner {
+              width: 100% !important;
+              min-height: 0 !important;
+              padding: 32px 0 !important;
+              justify-content: flex-start !important;
+            }
+            .trusted-brands-section .trusted-brands-title {
+              font-size: 28px !important;
+              line-height: 38px !important;
+              width: 100% !important;
+              max-width: 400px !important;
+              margin: 0 auto 20px !important;
+            }
+            .trusted-brands-row { margin-bottom: 10px; }
+            .trusted-brands-track { gap: 18px; }
+            .trusted-brands-slide {
+              width: 184.99px;
+              height: 89.26px;
+            }
+            .trusted-brands-slide img {
+              width: 184.99px !important;
+              height: 89.26px !important;
+            }
+          }
+        ` }} />
       </section>
 
       {/* Journey */}
