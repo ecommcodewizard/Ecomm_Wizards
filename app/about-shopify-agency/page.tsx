@@ -1182,27 +1182,205 @@ export default function AboutPage() {
       {/* Journey */}
       <JourneyTimeline />
 
-      {/* Team */}
-      <section className="bg-slate-50 py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            badge="The Team"
-            title="The Multi Award Winning Team at Ecomm Wizards"
-            subtitle="Strategists, designers, developers, and growth experts — all under one roof."
-          />
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-            {TEAM.map((member) => (
-              <div key={member.name}
-                className="flex flex-col items-center rounded-2xl border border-slate-100 bg-white p-6 text-center shadow-sm">
-                <div className="relative h-14 w-14 overflow-hidden rounded-full">
-                  <Image src={member.photo} alt={member.name} fill className="object-cover" />
-                </div>
-                <p className="mt-3 text-sm font-semibold text-slate-800">{member.name}</p>
-                <p className="mt-0.5 text-xs text-slate-400">{member.role}</p>
-              </div>
-            ))}
+      {/* Multi Award Winning Team */}
+      <section
+        className="award-team-section"
+        style={{ background: "#FFFFFF", padding: "0 20px" }}
+      >
+        <div
+          className="award-team-inner"
+          style={{
+            maxWidth: "1320px",
+            margin: "0 auto",
+            padding: "60px 0",
+            color: "#334155",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "16px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "40px",
+            flexWrap: "wrap",
+          }}
+        >
+          <div className="award-team-left" style={{ flex: "1 1 580px", minWidth: 0 }}>
+            <h2
+              className="award-team-title elementor-heading-title elementor-size-default"
+              role="heading"
+              aria-level={2}
+              style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontSize: "40px",
+                fontWeight: 700,
+                color: "#000000",
+                lineHeight: "50px",
+                width: "630px",
+                maxWidth: "100%",
+                margin: "0 0 36px",
+                padding: 0,
+              }}
+            >
+              The Multi Award Winning Team at Ecomm Wizards
+            </h2>
+
+            <ul
+              className="award-team-grid"
+              style={{
+                listStyle: "none",
+                margin: 0,
+                padding: 0,
+                display: "grid",
+                gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+                gap: "32px 24px",
+                maxWidth: "630px",
+              }}
+            >
+              {[
+                { src: "/images/best-designrush_1024x1024.webp", label: "Best Website Design 2022" },
+                { src: "/images/expertise_f69c262b-9692-4d07-9d0d-92f9b1dbf894_1024x1024.webp", label: "Best Web Developers in New York 2022" },
+                { src: "/images/clutch_1024x1024.png", label: "Top Web Developers 2020" },
+                { src: "/images/goodfirms_1024x1024.webp", label: "Top Web Developers 2024" },
+                { src: "/images/shopify_expert.webp", label: "Enterprise Shopify Plus" },
+                { src: "/images/upcity.webp", label: "Best Development 2021" },
+                { src: "/images/top-digital-new_1024x1024.webp", label: "Top Digital Agency 2024" },
+                { src: "/images/best-agencies_1024x1024.webp", label: "Best Shopify Agency" },
+                { src: "/images/best-support_1024x1024.webp", label: "Best Support 2021" },
+              ].map((badge) => (
+                <li
+                  key={badge.label}
+                  className="award-team-item"
+                  style={{
+                    width: "170px",
+                    height: "122.04px",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "flex-start",
+                    textAlign: "center",
+                    gap: "10px",
+                  }}
+                >
+                  <div
+                    className="award-team-badge"
+                    style={{
+                      width: "50.99px",
+                      height: "50.99px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Image
+                      src={badge.src}
+                      alt={badge.label}
+                      width={102}
+                      height={102}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                      }}
+                    />
+                  </div>
+                  <span
+                    className="award-team-label"
+                    style={{
+                      width: "170px",
+                      maxWidth: "100%",
+                      height: "47.99px",
+                      fontFamily: "'Poppins', sans-serif",
+                      fontSize: "14px",
+                      fontWeight: 500,
+                      color: "#000000",
+                      lineHeight: "16px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {badge.label}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div
+            className="award-team-right"
+            style={{ flex: "0 0 630px", maxWidth: "100%" }}
+          >
+            <Image
+              src="/images/new_image_grande.webp"
+              alt="Award Winning Team - Ecomm Wizards"
+              width={1260}
+              height={1233}
+              className="attachment-large size-large wp-image-1478 bv-tag-attr-replace bv-lazyload-tag-img"
+              style={{
+                width: "630px",
+                maxWidth: "100%",
+                height: "auto",
+                aspectRatio: "630 / 616.34",
+                objectFit: "cover",
+                borderRadius: "20px",
+                display: "block",
+              }}
+            />
           </div>
         </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 1024px) {
+            .award-team-section .award-team-inner {
+              flex-direction: column !important;
+              align-items: stretch !important;
+            }
+            .award-team-section .award-team-right {
+              flex: 0 0 auto !important;
+              order: 2;
+            }
+            .award-team-section .award-team-left {
+              order: 1;
+            }
+            .award-team-section .award-team-right img {
+              margin: 0 auto;
+            }
+          }
+          @media (max-width: 768px) {
+            .award-team-section { padding: 0 15px !important; }
+            .award-team-section .award-team-inner {
+              padding: 40px 0 !important;
+              gap: 28px !important;
+            }
+            .award-team-section .award-team-title {
+              font-size: 28px !important;
+              line-height: 38px !important;
+              width: 100% !important;
+              text-align: center !important;
+              margin: 0 auto 24px !important;
+            }
+            .award-team-section .award-team-grid {
+              grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+              gap: 28px 16px !important;
+              margin: 0 auto !important;
+              justify-items: center;
+              max-width: 360px !important;
+            }
+            .award-team-section .award-team-item {
+              width: 100% !important;
+              height: auto !important;
+            }
+            .award-team-section .award-team-label {
+              font-size: 14px !important;
+              line-height: 18px !important;
+              height: auto !important;
+            }
+            .award-team-section .award-team-badge {
+              width: 50.99px !important;
+              height: 50.99px !important;
+            }
+          }
+        ` }} />
       </section>
 
       <CTASection
