@@ -5,6 +5,9 @@ import AboutHero from "@/components/ui/AboutHero";
 import CTASection from "@/components/ui/CTASection";
 import SectionHeader from "@/components/ui/SectionHeader";
 import JourneyTimeline from "@/components/JourneyTimeline";
+import FAQSection from "@/components/FAQSection";
+import { ABOUT_FAQS } from "@/lib/about-faqs";
+import AboutContactSection from "@/components/AboutContactSection";
 
 export const metadata: Metadata = {
   title: "About Ecomm Wizards | Leading Shopify Plus Agency",
@@ -49,8 +52,25 @@ const TEAM = [
 ];
 
 export default function AboutPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: ABOUT_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <AboutHero />
 
       {/* Agency Proof Showcase */}
@@ -1547,10 +1567,9 @@ export default function AboutPage() {
         ` }} />
       </section>
 
-      <CTASection
-        heading="Get your Free UX + UI Shopify Audit"
-        subheading="We'll show you exactly where you're losing revenue and how to fix it — no commitment required."
-      />
+      <FAQSection />
+
+      <AboutContactSection />
     </>
   );
 }
