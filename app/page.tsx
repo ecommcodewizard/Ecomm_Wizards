@@ -1,6 +1,8 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import KnifeAccordion from "@/components/sections/KnifeAccordion";
+import StatsCard from "@/components/sections/StatsCard";
 
 export const metadata: Metadata = {
   title: "Shopify Agency | Design, CRO, Development & Growth Experts | Ecomm Wizards",
@@ -385,6 +387,108 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* -- Intro -- */}
+      <section style={{ background: "#FBF7ED", padding: "0px 20px" }}>
+        <div
+          className="py-[40px] lg:py-[50px] min-[1440px]:py-[60px]"
+          style={{
+            maxWidth: "1320px",
+            margin: "0 auto",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "16px",
+            color: "#334155",
+          }}
+        >
+          <h2
+            className="text-[32px] sm:text-[36px] lg:text-[42px]"
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontWeight: 600,
+              color: "#000000",
+              lineHeight: "1.2",
+              textAlign: "center",
+              maxWidth: "792px",
+              margin: "0 auto",
+            }}
+          >
+            Your Shopify Store is only as good as the Agency working on it.
+          </h2>
+          <p
+            className="text-[16px] lg:text-[18px]"
+            style={{
+              marginTop: "20px",
+              fontFamily: "'Poppins', sans-serif",
+              color: "rgba(0,0,0,0.8)",
+              lineHeight: "28px",
+              textAlign: "center",
+            }}
+          >
+            We started EcommWizards because we were tired of watching brands get burned by agencies that overpromise and underdeliver. As a full-service Shopify Plus agency, we combine design, development, CRO, SEO, and retention marketing to help brands scale faster and more profitably. Whether you need a new Shopify store, migration, custom development, UX optimization, or full-funnel marketing &mdash; we build strategies focused on{" "}
+            <strong style={{ fontWeight: 700 }}>revenue growth, not just aesthetics.</strong> Every project gets a dedicated strategist, not a project manager. Whether it&apos;s design, development, or marketing, we do it strategically to hit your sales targets.
+          </p>
+        </div>
+      </section>
+
+      {/* -- Gun to Knife Fight -- */}
+      <section className="px-[15px] sm:px-[20px] md:pb-[20px] lg:pb-0" style={{ background: "#FBF7ED" }}>
+        <div
+          className="pb-[30px] lg:pb-[60px]"
+          style={{
+            maxWidth: "1320px",
+            margin: "0 auto",
+            padding: "0px 0px 0px",
+            display: "flex",
+            alignItems: "flex-start",
+            gap: "20px",
+            flexWrap: "wrap",
+            fontFamily: "'Poppins', sans-serif",
+            color: "#334155",
+          }}
+        >
+          {/* Left column */}
+          <div className="w-full md:w-[calc(50%-10px)] min-[1440px]:w-[650px] h-[881px] sm:h-auto md:h-[1060px] lg:h-[879px] min-[1440px]:h-[801px] px-[20px] py-[30px] sm:pt-[40px] sm:px-[30px] sm:pb-[30px]" style={{ background: "#FFFFFF", borderRadius: "20px", overflow: "hidden", color: "#334155", fontFamily: "'Poppins', sans-serif", fontSize: "16px" }}>
+            <h2
+              className="text-[32px] md:text-[36px] lg:text-[40px] mb-[16px] sm:mb-[20px]"
+              style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontWeight: 600,
+                color: "#000000",
+                lineHeight: "1.25",
+              }}
+            >
+              Working with Ecomm Wizards is like bringing a Gun to a Knife Fight
+            </h2>
+            <p
+              style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontSize: "16px",
+                color: "rgba(0,0,0,0.8)",
+                lineHeight: "1.7",
+                marginBottom: "16px",
+              }}
+            >
+              Most agencies do one thing well. But thanks to our talent hunt program where we only hire top talent from around the globe, we do it all: design, development, and growth marketing under one roof. No more juggling five vendors who don&apos;t talk to each other. One team. One strategy. One goal: scale your revenue.
+            </p>
+
+            {/* Accordion */}
+            <KnifeAccordion />
+          </div>
+
+          {/* Right column */}
+          <div className="w-full md:w-[calc(50%-10px)] min-[1440px]:w-[650px] h-[320px] sm:h-auto md:h-[1060px] lg:h-[879px] min-[1440px]:h-[801px]" style={{ borderRadius: "20px", overflow: "hidden", position: "relative" }}>
+            <Image
+              src="/images/image-4.png"
+              alt="Ecomm Wizards office"
+              fill
+              className="object-cover"
+            />
+            {/* Stats card overlay */}
+            <StatsCard />
+          </div>
+        </div>
+
+      </section>
+
       {/* â"€â"€ Services â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="bg-[#0d0d0d] py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -659,3 +763,4 @@ export default function HomePage() {
     </>
   );
 }
+
