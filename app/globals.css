@@ -31,6 +31,9 @@
   }
 }
 
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
 .stat-gradient-text {
   background: linear-gradient(135deg, #1B5E20 0%, #52b788 100%);
   -webkit-background-clip: text;
