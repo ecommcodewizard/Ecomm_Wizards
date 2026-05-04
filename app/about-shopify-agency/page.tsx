@@ -4,6 +4,10 @@ import Image from "next/image";
 import AboutHero from "@/components/ui/AboutHero";
 import CTASection from "@/components/ui/CTASection";
 import SectionHeader from "@/components/ui/SectionHeader";
+import JourneyTimeline from "@/components/JourneyTimeline";
+import FAQSection from "@/components/FAQSection";
+import { ABOUT_FAQS } from "@/lib/about-faqs";
+import AboutContactSection from "@/components/AboutContactSection";
 
 export const metadata: Metadata = {
   title: "About Ecomm Wizards | Leading Shopify Plus Agency",
@@ -48,8 +52,25 @@ const TEAM = [
 ];
 
 export default function AboutPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: ABOUT_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <AboutHero />
 
       {/* Agency Proof Showcase */}
@@ -242,36 +263,98 @@ export default function AboutPage() {
         </div>{/* end full-width div */}
       </section>
 
-      {/* Credibility logos strip */}
+      {/* Credibility logos strip — infinite marquee */}
       <section className="bg-white" style={{ padding: "60px 0 50px" }}>
         <div
           className="mx-auto px-3 sm:px-8 lg:px-16"
           style={{ maxWidth: "1320px" }}
         >
-          <ul
-            className="grid items-center justify-items-center gap-2 sm:gap-6 lg:gap-10"
-            style={{ gridTemplateColumns: "repeat(5, minmax(0, 1fr))" }}
-          >
-            {[
-              { src: "/images/google.svg", alt: "Google Reviews", invert: false },
-              { src: "/images/main-hero-logo-2.webp", alt: "Clutch Reviews", invert: true },
-              { src: "/images/shopify platinum partner logo.svg", alt: "Shopify Platinum Partner", invert: false },
-              { src: "/images/main-hero-logo-4.webp", alt: "Shopify Platinum Partner", invert: true },
-              { src: "/images/main-hero-logo-5.webp", alt: "Shopify", invert: true },
-            ].map((logo) => (
-              <li key={logo.src} className="flex items-center justify-center">
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={220}
-                  height={80}
-                  className="h-auto w-full max-w-[160px] object-contain"
-                  style={logo.invert ? { filter: "brightness(0)" } : undefined}
-                />
-              </li>
-            ))}
-          </ul>
+          <div className="logos-marquee">
+            <ul className="logos-marquee-track">
+              {(() => {
+                const logos = [
+                  { src: "/images/google.svg", alt: "Google Reviews", invert: false },
+                  { src: "/images/main-hero-logo-2.webp", alt: "Clutch Reviews", invert: true },
+                  { src: "/images/shopify platinum partner logo.svg", alt: "Shopify Platinum Partner", invert: false },
+                  { src: "/images/main-hero-logo-4.webp", alt: "Shopify Platinum Partner", invert: true },
+                  { src: "/images/main-hero-logo-5.webp", alt: "Shopify", invert: true },
+                ];
+                return [...logos, ...logos].map((logo, i) => (
+                  <li
+                    key={`${logo.src}-${i}`}
+                    className="flex items-center justify-center shrink-0"
+                    aria-hidden={i >= logos.length ? true : undefined}
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={220}
+                      height={80}
+                      className="h-auto w-full max-w-[160px] object-contain"
+                      style={logo.invert ? { filter: "brightness(0)" } : undefined}
+                    />
+                  </li>
+                ));
+              })()}
+            </ul>
+          </div>
         </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .logos-marquee {
+            overflow: hidden;
+            mask-image: linear-gradient(
+              to right,
+              transparent 0,
+              #000 80px,
+              #000 calc(100% - 80px),
+              transparent 100%
+            );
+            -webkit-mask-image: linear-gradient(
+              to right,
+              transparent 0,
+              #000 80px,
+              #000 calc(100% - 80px),
+              transparent 100%
+            );
+          }
+          .logos-marquee-track {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            width: max-content;
+            animation: logos-scroll 30s linear infinite;
+          }
+          .logos-marquee-track > li {
+            width: 160px;
+          }
+          .logos-marquee:hover .logos-marquee-track {
+            animation-play-state: paused;
+          }
+          @keyframes logos-scroll {
+            from {
+              transform: translateX(0);
+            }
+            to {
+              transform: translateX(-50%);
+            }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .logos-marquee-track {
+              animation: none;
+            }
+          }
+          @media (min-width: 640px) {
+            .logos-marquee-track {
+              gap: 64px;
+            }
+          }
+          @media (min-width: 1024px) {
+            .logos-marquee-track {
+              gap: 96px;
+            }
+          }
+        ` }} />
       </section>
 
       {/* Mission â€” revenue machines */}
@@ -441,74 +524,1052 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Why Work with Ecomm Wizards — horizontal scrolling marquee */}
+      <section
+        className="why-work-section"
+        style={{ background: "#000000" }}
+        aria-label="Why Work with Ecomm Wizards"
+      >
+        <div className="why-work-inner">
+          <h2
+            className="why-work-heading elementor-heading-title elementor-size-default"
+            role="heading"
+            aria-level={2}
+          >
+            Why Work with <br className="why-work-br" />Ecomm Wizards
+          </h2>
+
+          <div className="why-work-marquee scroll-wrapper" aria-hidden="false">
+            <ul className="why-work-track">
+              {(() => {
+                const items = [
+                  "Zero Cutting Corners",
+                  "World-Class Support",
+                  "Revenue-Driven Approach",
+                  "Proven Track Record",
+                  "Growth Obsessed Team",
+                  "100% Client Satisfaction",
+                  "Transparent Communication",
+                ];
+                return [...items, ...items].map((item, i) => (
+                  <li
+                    key={`${item}-${i}`}
+                    className="why-work-item"
+                    aria-hidden={i >= items.length ? true : undefined}
+                  >
+                    <span className="why-work-dot" aria-hidden="true">&bull;</span>
+                    <span className="why-work-text">{item}</span>
+                  </li>
+                ));
+              })()}
+            </ul>
+          </div>
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .why-work-section {
+            padding: 0 20px;
+            min-height: 106px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            color: #334155;
+          }
+          .why-work-inner {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0;
+            width: 100%;
+          }
+          .why-work-heading {
+            flex-shrink: 0;
+            width: 201.21px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 28px;
+            margin: 0;
+            padding-right: 24px;
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+          }
+          .why-work-br { display: inline; }
+          .why-work-marquee,
+          .scroll-wrapper {
+            flex: 1 1 auto;
+            min-width: 0;
+            overflow: hidden;
+            color: #334155;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14.592px;
+          }
+          .why-work-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            animation: why-work-scroll 40s linear infinite;
+          }
+          .why-work-marquee:hover .why-work-track {
+            animation-play-state: paused;
+          }
+          .why-work-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 28px;
+            padding-right: 28px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #FFFFFF;
+            white-space: nowrap;
+          }
+          .why-work-dot {
+            color: #B18945;
+            font-size: 28px;
+            line-height: 1;
+          }
+          .why-work-text {
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+          }
+          @keyframes why-work-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .why-work-track { animation: none; }
+          }
+          @media (max-width: 768px) {
+            .why-work-section {
+              padding: 0 15px;
+              min-height: 151.09px;
+              font-size: 14.592px;
+              align-items: center;
+            }
+            .why-work-inner {
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 18px;
+              padding: 0;
+              width: 100%;
+            }
+            .why-work-heading {
+              font-size: 18px;
+              line-height: 28px;
+              height: 28px;
+              width: 100%;
+              max-width: 380px;
+              padding-right: 0;
+              border-right: none;
+              text-align: center;
+            }
+            .why-work-br { display: none; }
+            .why-work-marquee {
+              width: 100%;
+              margin-left: -15px;
+              margin-right: -15px;
+              padding-left: 0;
+              padding-right: 0;
+              flex-basis: auto;
+            }
+            .why-work-track {
+              animation-duration: 30s;
+            }
+            .why-work-item {
+              gap: 18px;
+              padding-right: 18px;
+              font-size: 14px;
+              line-height: 23.09px;
+            }
+            .why-work-dot { font-size: 18px; }
+          }
+        ` }} />
+      </section>
+
       {/* Culture */}
-      <section className="bg-slate-700 py-20 sm:py-24">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
-          <span className="mb-4 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1
-            text-xs font-semibold uppercase tracking-widest text-slate-200">Our Culture</span>
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">
+      <section className="culture-section" style={{ background: "#FFFFFF" }}>
+        <div
+          className="culture-inner"
+          style={{
+            maxWidth: "1320px",
+            margin: "0 auto",
+            padding: "60px 0",
+            color: "#334155",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "16px",
+          }}
+        >
+          <h2
+            className="culture-title elementor-heading-title elementor-size-default"
+            role="heading"
+            aria-level={2}
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "42px",
+              fontWeight: 700,
+              color: "#000000",
+              lineHeight: "52px",
+              height: "52px",
+              width: "1246.56px",
+              maxWidth: "100%",
+              textAlign: "center",
+              margin: "0 auto",
+              padding: 0,
+              whiteSpace: "nowrap",
+              overflow: "visible",
+            }}
+          >
             The Culture Behind Our High-Performance Shopify Agency
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-slate-300 leading-relaxed">
-            We believe excellence compounds. Our team continuously trains on the latest Shopify Plus
-            features, ecommerce trends, AI tools, and conversion psychology frameworks. We foster a
-            culture of ownership â€” every Shopify project is treated like it&apos;s our own brand.
-            No shortcuts. No templates. No recycled strategies.
-          </p>
+
+          <div className="culture-grid">
+            <div className="culture-cell culture-cell--left">
+              <Image
+                src="/images/culture_image_one_1024x1024.webp"
+                alt="Ecomm Wizards team member working"
+                width={1024}
+                height={1024}
+                className="culture-image"
+              />
+            </div>
+            <div className="culture-cell culture-cell--mid-top">
+              <Image
+                src="/images/culture_image_two_1024x1024.webp"
+                alt="Ecomm Wizards designer at work"
+                width={1024}
+                height={1024}
+                className="culture-image"
+              />
+            </div>
+            <div className="culture-cell culture-cell--mid-bottom">
+              <Image
+                src="/images/culture_image_three_1024x1024.webp"
+                alt="Ecomm Wizards developer at work"
+                width={1024}
+                height={1024}
+                className="culture-image"
+              />
+            </div>
+            <div className="culture-cell culture-cell--right">
+              <Image
+                src="/images/culture_image_four_1024x1024.webp"
+                alt="Ecomm Wizards strategist at work"
+                width={1024}
+                height={1024}
+                className="culture-image"
+              />
+            </div>
+          </div>
+
+          <h2
+            className="culture-body elementor-heading-title elementor-size-default"
+            role="heading"
+            aria-level={2}
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "22px",
+              fontWeight: 400,
+              color: "#000000",
+              lineHeight: "32px",
+              textAlign: "center",
+              maxWidth: "1040px",
+              margin: "0 auto",
+              padding: "0 20px",
+            }}
+          >
+            We believe excellent compounds. Our team continuously trains on the latest Shopify Plus features, ecommerce trends, AI tools, and conversion psychology frameworks. We foster a culture of ownership, every Shopify project is treated like it&rsquo;s our own brand. No shortcuts. No templates. No recycled strategies.
+          </h2>
         </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .culture-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 16px;
+            margin: 40px 20px;
+          }
+          .culture-cell {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #f1f5f9;
+          }
+          .culture-cell--left { grid-column: 1; grid-row: 1 / span 2; }
+          .culture-cell--mid-top { grid-column: 2; grid-row: 1; }
+          .culture-cell--mid-bottom { grid-column: 2; grid-row: 2; }
+          .culture-cell--right { grid-column: 3; grid-row: 1 / span 2; }
+          .culture-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+          .culture-cell--left,
+          .culture-cell--right {
+            min-height: 540px;
+          }
+          .culture-cell--mid-top,
+          .culture-cell--mid-bottom {
+            min-height: 262px;
+          }
+          @media (max-width: 1024px) {
+            .culture-cell--left,
+            .culture-cell--right { min-height: 420px; }
+            .culture-cell--mid-top,
+            .culture-cell--mid-bottom { min-height: 202px; }
+          }
+          @media (max-width: 768px) {
+            .culture-section .culture-title {
+              font-size: 30px !important;
+              line-height: 40px !important;
+              height: auto !important;
+              width: 100% !important;
+              max-width: 400px !important;
+              white-space: normal !important;
+              padding: 0 15px !important;
+            }
+            .culture-section .culture-body { font-size: 16px !important; line-height: 26px !important; }
+            .culture-inner { padding: 40px 0 !important; }
+            .culture-grid {
+              grid-template-columns: 1fr;
+              grid-template-rows: auto;
+              gap: 12px;
+              margin: 28px 15px;
+            }
+            .culture-cell--left,
+            .culture-cell--mid-top,
+            .culture-cell--mid-bottom,
+            .culture-cell--right {
+              grid-column: 1;
+              grid-row: auto;
+              min-height: 0;
+              aspect-ratio: 1 / 1;
+            }
+          }
+        ` }} />
+      </section>
+
+      {/* A Note From Our Founder */}
+      <section className="founder-note-section" style={{ background: "#F1F5FF" }}>
+        <div
+          className="founder-note-inner"
+          style={{
+            maxWidth: "1320px",
+            margin: "0 auto",
+            padding: "60px 0",
+            color: "#334155",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "16px",
+          }}
+        >
+          <h2
+            className="founder-note-title elementor-heading-title elementor-size-default"
+            role="heading"
+            aria-level={2}
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "42px",
+              fontWeight: 700,
+              color: "#000000",
+              lineHeight: "52px",
+              height: "52px",
+              width: "533.62px",
+              maxWidth: "100%",
+              textAlign: "center",
+              margin: "0 auto",
+              padding: 0,
+              whiteSpace: "nowrap",
+            }}
+          >
+            A Note From Our Founder
+          </h2>
+
+          <div
+            className="founder-note-body elementor-element elementor-widget__width-initial"
+            style={{
+              maxWidth: "1056px",
+              width: "100%",
+              margin: "32px auto 0",
+              padding: "0 20px",
+              color: "#000000CC",
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "18px",
+              lineHeight: "30px",
+              textAlign: "center",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              <b
+                style={{
+                  display: "inline-block",
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize: "18px",
+                  fontWeight: 700,
+                  color: "#000000CC",
+                  lineHeight: "24.67px",
+                }}
+              >
+                I&rsquo;ll be honest with you.
+              </b>
+            </p>
+            <p style={{ margin: "24px 0 0" }}>
+              When we started Ecom Wizards, we made a decision to specialize exclusively in Shopify and Shopify Plus development.
+            </p>
+            <p style={{ margin: "24px 0 0" }}>
+              We saw too many ecommerce brands struggling with generic agencies that treated Shopify like &ldquo;just another CMS.&rdquo; But Shopify is an ecosystem, and mastering it requires deep platform expertise.
+            </p>
+            <p style={{ margin: "24px 0 0" }}>
+              So here&rsquo;s my commitment: if you partner with our Shopify experts, you won&rsquo;t just keep up &ndash; you&rsquo;ll lead. We&rsquo;ll make sure of it.
+            </p>
+            <p style={{ margin: "24px 0 0" }}>
+              The future belongs to brands that move now. Let&rsquo;s make sure you&rsquo;re one of them.
+            </p>
+          </div>
+
+          <div className="text-center" style={{ marginTop: "40px" }}>
+            <Link
+              href="/contact"
+              className="elementor-button elementor-button-link elementor-size-sm transition-shadow duration-200 hover:shadow-[0_0_0_2px_#B18945]"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "10px",
+                width: "210.2px",
+                height: "60px",
+                padding: "20px 45px",
+                background: "#000000",
+                color: "#FFFFFF",
+                fontFamily: "'Poppins', sans-serif",
+                fontSize: "16px",
+                borderRadius: "9999px",
+                textDecoration: "none",
+                boxSizing: "border-box",
+              }}
+            >
+              Book a Call
+              <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 6h14M14 6L9 1M14 6L9 11" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 768px) {
+            .founder-note-section .founder-note-inner {
+              padding: 44px 0 !important;
+            }
+            .founder-note-section .founder-note-title {
+              font-size: 30px !important;
+              line-height: 40px !important;
+              height: auto !important;
+              width: 100% !important;
+              max-width: 400px !important;
+              white-space: normal !important;
+              padding: 0 15px !important;
+            }
+            .founder-note-section .founder-note-body {
+              font-size: 16px !important;
+              line-height: 26px !important;
+              padding: 0 20px !important;
+              margin-top: 24px !important;
+            }
+            .founder-note-section .founder-note-body b {
+              font-size: 16px !important;
+              line-height: 22px !important;
+            }
+          }
+        ` }} />
+      </section>
+
+      {/* Trusted by the Worlds Most Innovative Brands */}
+      <section
+        className="trusted-brands-section"
+        style={{ background: "#FFFFFF", padding: "0 20px" }}
+      >
+        <div
+          className="trusted-brands-inner e-con-inner"
+          style={{
+            width: "1320px",
+            maxWidth: "100%",
+            minHeight: "866.59px",
+            margin: "0 auto",
+            padding: "60px 0",
+            color: "#334155",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "16px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            boxSizing: "border-box",
+          }}
+        >
+          <h2
+            className="trusted-brands-title elementor-heading-title elementor-size-default"
+            role="heading"
+            aria-level={2}
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "42px",
+              fontWeight: 700,
+              color: "#000000",
+              lineHeight: "52px",
+              width: "791.99px",
+              maxWidth: "100%",
+              textAlign: "center",
+              margin: "0 auto 40px",
+              padding: 0,
+            }}
+          >
+            Trusted by the Worlds Most Innovative Brands
+          </h2>
+
+          {(() => {
+            const rows: { logos: { src: string; alt: string }[]; direction: "left" | "right"; duration: number }[] = [
+              {
+                logos: [
+                  { src: "/images/trust_logo_hover_1.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_hover_2.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_hover_10.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_hover_11.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_hover_12.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_hover_13.svg", alt: "Brand" },
+                ],
+                direction: "left",
+                duration: 40,
+              },
+              {
+                logos: [
+                  { src: "/images/trust_logo_hover_14.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_2.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_6.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_7.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_20.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_26.svg", alt: "Brand" },
+                ],
+                direction: "right",
+                duration: 42,
+              },
+              {
+                logos: [
+                  { src: "/images/trust_logo_27.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_31.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_32.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_new_1.svg", alt: "Brand" },
+                  { src: "/images/Group_38643.svg", alt: "Crown & Paw" },
+                  { src: "/images/ipsy-logo.svg", alt: "IPSY" },
+                ],
+                direction: "left",
+                duration: 44,
+              },
+              {
+                logos: [
+                  { src: "/images/everlast-icon.svg", alt: "Everlast" },
+                  { src: "/images/biopure.svg", alt: "BioPure" },
+                  { src: "/images/chalet.svg", alt: "Chalet" },
+                  { src: "/images/trust_logo_hover_3.svg", alt: "Brand" },
+                  { src: "/images/kaval-new.webp", alt: "Kaval" },
+                ],
+                direction: "right",
+                duration: 46,
+              },
+            ];
+            return rows.map((row, rowIdx) => (
+              <div className="trusted-brands-row" key={rowIdx} aria-hidden="false">
+                <ul
+                  className={`trusted-brands-track ${row.direction === "right" ? "trusted-brands-track--reverse" : ""}`}
+                  style={{ animationDuration: `${row.duration}s` }}
+                >
+                  {[...row.logos, ...row.logos].map((logo, i) => (
+                    <li
+                      key={`${logo.src}-${i}`}
+                      className="trusted-brands-slide swiper-slide"
+                      aria-hidden={i >= row.logos.length ? true : undefined}
+                    >
+                      <Image
+                        src={logo.src}
+                        alt={logo.alt}
+                        width={240}
+                        height={115}
+                        className="swiper-slide-image bv-tag-attr-replace bv-lazyload-tag-img"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ));
+          })()}
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .trusted-brands-row {
+            overflow: hidden;
+            margin-bottom: 32px;
+            max-width: 1320px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .trusted-brands-row:last-child {
+            margin-bottom: 0;
+          }
+          .trusted-brands-track {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            width: max-content;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+            animation: trusted-brands-scroll 40s linear infinite;
+          }
+          .trusted-brands-track--reverse {
+            animation-name: trusted-brands-scroll-reverse;
+          }
+          .trusted-brands-row:hover .trusted-brands-track {
+            animation-play-state: paused;
+          }
+          .trusted-brands-slide {
+            flex-shrink: 0;
+            width: 239.97px;
+            height: 115.79px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .trusted-brands-slide :global(img),
+          .trusted-brands-slide img {
+            width: 239.97px !important;
+            height: 115.79px !important;
+            object-fit: contain;
+            display: block;
+            filter: none;
+          }
+          @keyframes trusted-brands-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+          }
+          @keyframes trusted-brands-scroll-reverse {
+            from { transform: translateX(-50%); }
+            to { transform: translateX(0); }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .trusted-brands-track { animation: none; }
+          }
+          @media (max-width: 768px) {
+            .trusted-brands-section {
+              padding: 0 15px !important;
+            }
+            .trusted-brands-section .trusted-brands-inner {
+              width: 100% !important;
+              min-height: 0 !important;
+              padding: 32px 0 !important;
+              justify-content: flex-start !important;
+            }
+            .trusted-brands-section .trusted-brands-title {
+              font-size: 28px !important;
+              line-height: 38px !important;
+              width: 100% !important;
+              max-width: 400px !important;
+              margin: 0 auto 20px !important;
+            }
+            .trusted-brands-row { margin-bottom: 10px; }
+            .trusted-brands-track { gap: 18px; }
+            .trusted-brands-slide {
+              width: 184.99px;
+              height: 89.26px;
+            }
+            .trusted-brands-slide img {
+              width: 184.99px !important;
+              height: 89.26px !important;
+            }
+          }
+        ` }} />
       </section>
 
       {/* Journey */}
-      <section className="py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            badge="Our Journey"
-            title="8 Years of Compounding Impact as a Shopify Agency"
-            subtitle="From a small team to a multi-award winning agency â€” here's how we got here."
-          />
-          <div className="relative ml-4 border-l-2 border-slate-100 pl-8 space-y-10">
-            {JOURNEY.map((j) => (
-              <div key={j.year} className="relative">
-                <div className="absolute -left-[42px] flex h-8 w-8 items-center justify-center
-                  rounded-full bg-slate-700 text-xs font-bold text-white ring-4 ring-white">
-                  {j.year.slice(2)}
-                </div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">{j.year}</span>
-                <h3 className="mt-1 text-lg font-bold text-slate-800">{j.title}</h3>
-                <p className="mt-1 text-slate-500">{j.desc}</p>
-              </div>
-            ))}
+      <JourneyTimeline />
+
+      {/* Multi Award Winning Team */}
+      <section
+        className="award-team-section"
+        style={{ background: "#FFFFFF", padding: "0 20px" }}
+      >
+        <div
+          className="award-team-inner"
+          style={{
+            maxWidth: "1320px",
+            margin: "0 auto",
+            padding: "60px 0",
+            color: "#334155",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "16px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "40px",
+            flexWrap: "wrap",
+          }}
+        >
+          <div className="award-team-left" style={{ flex: "1 1 580px", minWidth: 0 }}>
+            <h2
+              className="award-team-title elementor-heading-title elementor-size-default"
+              role="heading"
+              aria-level={2}
+              style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontSize: "40px",
+                fontWeight: 700,
+                color: "#000000",
+                lineHeight: "50px",
+                width: "630px",
+                maxWidth: "100%",
+                margin: "0 0 36px",
+                padding: 0,
+              }}
+            >
+              The Multi Award Winning Team at Ecomm Wizards
+            </h2>
+
+            <ul
+              className="award-team-grid"
+              style={{
+                listStyle: "none",
+                margin: 0,
+                padding: 0,
+                display: "grid",
+                gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+                gap: "32px 24px",
+                maxWidth: "630px",
+              }}
+            >
+              {[
+                { src: "/images/best-designrush_1024x1024.webp", label: "Best Website Design 2022" },
+                { src: "/images/expertise_f69c262b-9692-4d07-9d0d-92f9b1dbf894_1024x1024.webp", label: "Best Web Developers in New York 2022" },
+                { src: "/images/clutch_1024x1024.png", label: "Top Web Developers 2020" },
+                { src: "/images/goodfirms_1024x1024.webp", label: "Top Web Developers 2024" },
+                { src: "/images/shopify_expert.webp", label: "Enterprise Shopify Plus" },
+                { src: "/images/upcity.webp", label: "Best Development 2021" },
+                { src: "/images/top-digital-new_1024x1024.webp", label: "Top Digital Agency 2024" },
+                { src: "/images/best-agencies_1024x1024.webp", label: "Best Shopify Agency" },
+                { src: "/images/best-support_1024x1024.webp", label: "Best Support 2021" },
+              ].map((badge) => (
+                <li
+                  key={badge.label}
+                  className="award-team-item"
+                  style={{
+                    width: "170px",
+                    height: "122.04px",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "flex-start",
+                    textAlign: "center",
+                    gap: "10px",
+                  }}
+                >
+                  <div
+                    className="award-team-badge"
+                    style={{
+                      width: "50.99px",
+                      height: "50.99px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Image
+                      src={badge.src}
+                      alt={badge.label}
+                      width={102}
+                      height={102}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                      }}
+                    />
+                  </div>
+                  <span
+                    className="award-team-label"
+                    style={{
+                      width: "170px",
+                      maxWidth: "100%",
+                      height: "47.99px",
+                      fontFamily: "'Poppins', sans-serif",
+                      fontSize: "14px",
+                      fontWeight: 500,
+                      color: "#000000",
+                      lineHeight: "16px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {badge.label}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div
+            className="award-team-right"
+            style={{ flex: "0 0 630px", maxWidth: "100%" }}
+          >
+            <Image
+              src="/images/new_image_grande.webp"
+              alt="Award Winning Team - Ecomm Wizards"
+              width={1260}
+              height={1233}
+              className="attachment-large size-large wp-image-1478 bv-tag-attr-replace bv-lazyload-tag-img"
+              style={{
+                width: "630px",
+                maxWidth: "100%",
+                height: "auto",
+                aspectRatio: "630 / 616.34",
+                objectFit: "cover",
+                borderRadius: "20px",
+                display: "block",
+              }}
+            />
           </div>
         </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 1024px) {
+            .award-team-section .award-team-inner {
+              flex-direction: column !important;
+              align-items: stretch !important;
+            }
+            .award-team-section .award-team-right {
+              flex: 0 0 auto !important;
+              order: 2;
+            }
+            .award-team-section .award-team-left {
+              order: 1;
+            }
+            .award-team-section .award-team-right img {
+              margin: 0 auto;
+            }
+          }
+          @media (max-width: 768px) {
+            .award-team-section { padding: 0 15px !important; }
+            .award-team-section .award-team-inner {
+              padding: 40px 0 !important;
+              gap: 28px !important;
+            }
+            .award-team-section .award-team-title {
+              font-size: 28px !important;
+              line-height: 38px !important;
+              width: 100% !important;
+              text-align: center !important;
+              margin: 0 auto 24px !important;
+            }
+            .award-team-section .award-team-grid {
+              grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+              gap: 28px 16px !important;
+              margin: 0 auto !important;
+              justify-items: center;
+              max-width: 360px !important;
+            }
+            .award-team-section .award-team-item {
+              width: 100% !important;
+              height: auto !important;
+            }
+            .award-team-section .award-team-label {
+              font-size: 14px !important;
+              line-height: 18px !important;
+              height: auto !important;
+            }
+            .award-team-section .award-team-badge {
+              width: 50.99px !important;
+              height: 50.99px !important;
+            }
+          }
+        ` }} />
       </section>
 
-      {/* Team */}
-      <section className="bg-slate-50 py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            badge="The Team"
-            title="The Multi Award Winning Team at Ecomm Wizards"
-            subtitle="Strategists, designers, developers, and growth experts â€” all under one roof."
-          />
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-            {TEAM.map((member) => (
-              <div key={member.name}
-                className="flex flex-col items-center rounded-2xl border border-slate-100 bg-white p-6 text-center shadow-sm">
-                <div className="relative h-14 w-14 overflow-hidden rounded-full">
-                  <Image src={member.photo} alt={member.name} fill className="object-cover" />
-                </div>
-                <p className="mt-3 text-sm font-semibold text-slate-800">{member.name}</p>
-                <p className="mt-0.5 text-xs text-slate-400">{member.role}</p>
-              </div>
-            ))}
+      {/* Our Valued Partners */}
+      <section
+        className="valued-partners-section"
+        style={{ background: "#F1F5FF", padding: "0 20px" }}
+      >
+        <div
+          className="valued-partners-inner"
+          style={{
+            maxWidth: "1320px",
+            margin: "0 auto",
+            padding: "60px 0",
+            color: "#334155",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "16px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <h2
+            className="valued-partners-title elementor-heading-title elementor-size-default"
+            role="heading"
+            aria-level={2}
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "35px",
+              fontWeight: 700,
+              color: "#000000",
+              lineHeight: "50px",
+              height: "50px",
+              width: "362.68px",
+              maxWidth: "100%",
+              textAlign: "center",
+              margin: "0 auto 20px",
+              padding: 0,
+              whiteSpace: "nowrap",
+            }}
+          >
+            Our Valued Partners
+          </h2>
+
+          <div
+            className="valued-partners-desc elementor-element elementor-widget__width-inherit"
+            style={{
+              width: "1320px",
+              maxWidth: "100%",
+              margin: "0 auto 40px",
+              padding: 0,
+              color: "#000000CC",
+              fontFamily: "Nunito, sans-serif",
+              fontSize: "20px",
+              lineHeight: "30px",
+              textAlign: "center",
+            }}
+          >
+            At Ecomm Wizards, we have spent the last decade <strong style={{ fontWeight: 700, color: "#000000CC" }}>cultivating enduring partnerships</strong> with some of the most remarkable companies in the industry. We take pride in working closely with these esteemed brands on a daily basis, to craft truly exceptional technical solutions for Shopify merchants.
           </div>
+
+          <ul
+            className="valued-partners-grid"
+            style={{
+              listStyle: "none",
+              margin: 0,
+              padding: 0,
+              display: "grid",
+              gridTemplateColumns: "repeat(5, minmax(0, 244.01px))",
+              gridAutoRows: "75.99px",
+              columnGap: "20px",
+              rowGap: "40px",
+              width: "100%",
+              maxWidth: "1240px",
+              justifyContent: "center",
+            }}
+          >
+            {[
+              { src: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg", alt: "Shopify" },
+              { src: "/images/partner_logo_2.svg", alt: "Yotpo" },
+              { src: "/images/partner_logo_3.svg", alt: "Rebuy" },
+              { src: "/images/partner_logo_4.svg", alt: "Recharge" },
+              { src: "/images/partner_logo_5.svg", alt: "Klaviyo" },
+              { src: "/images/partner_logo_6.svg", alt: "Gorgias" },
+              { src: "/images/partner_logo_7.svg", alt: "Okendo" },
+              { src: "/images/partner_logo_8.svg", alt: "Nosto" },
+              { src: "/images/partner_logo_9.svg", alt: "ShipStation" },
+              { src: "/images/partner_logo_10.svg", alt: "Rise.ai" },
+              { src: "/images/partner_logo_11.svg", alt: "Glew" },
+              { src: "/images/partner_logo_12.svg", alt: "Matrixify" },
+              { src: "/images/partner_logo_13.svg", alt: "Route" },
+              { src: "/images/partner_logo_14.svg", alt: "Carro" },
+            ].map((logo) => (
+              <li
+                key={logo.alt}
+                className="valued-partners-cell elementor-element e-con-full e-flex e-con e-child"
+                style={{
+                  width: "244.01px",
+                  height: "75.99px",
+                  padding: "10px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "#334155",
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize: "16px",
+                  boxSizing: "border-box",
+                }}
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={244}
+                  height={76}
+                  style={{
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                    width: "auto",
+                    height: "auto",
+                    objectFit: "contain",
+                    display: "block",
+                  }}
+                />
+              </li>
+            ))}
+          </ul>
         </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 1024px) {
+            .valued-partners-section .valued-partners-grid {
+              grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            }
+          }
+          @media (max-width: 768px) {
+            .valued-partners-section { padding: 0 15px !important; }
+            .valued-partners-section .valued-partners-inner {
+              padding: 40px 0 !important;
+            }
+            .valued-partners-section .valued-partners-title {
+              font-size: 28px !important;
+              line-height: 38px !important;
+              height: auto !important;
+              width: 100% !important;
+              white-space: normal !important;
+              margin: 0 auto 16px !important;
+            }
+            .valued-partners-section .valued-partners-desc {
+              font-size: 16px !important;
+              line-height: 24px !important;
+              margin: 0 auto 28px !important;
+              padding: 0 6px !important;
+            }
+            .valued-partners-section .valued-partners-grid {
+              grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+              column-gap: 12px !important;
+              row-gap: 24px !important;
+            }
+            .valued-partners-section .valued-partners-cell {
+              width: 100% !important;
+              height: 64px !important;
+              padding: 8px !important;
+            }
+          }
+        ` }} />
       </section>
 
-      <CTASection
-        heading="Get your Free UX + UI Shopify Audit"
-        subheading="We'll show you exactly where you're losing revenue and how to fix it â€” no commitment required."
-      />
+      <FAQSection />
+
+      <AboutContactSection />
     </>
   );
 }
