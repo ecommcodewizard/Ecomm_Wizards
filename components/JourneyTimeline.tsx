@@ -243,10 +243,10 @@ export default function JourneyTimeline() {
         .timeline-dot {
           width: 14px;
           height: 14px;
-          background: #B18945;
+          background: linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%);
           border: 4px solid #FBF7ED;
           border-radius: 9999px;
-          box-shadow: 0 0 0 1px rgba(177, 137, 69, 0.55);
+          box-shadow: 0 0 0 1px rgba(61, 199, 122, 0.55);
           position: relative;
           z-index: 2;
         }
