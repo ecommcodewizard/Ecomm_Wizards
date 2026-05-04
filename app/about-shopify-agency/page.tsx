@@ -400,7 +400,14 @@ export default function AboutPage() {
                 title: "100% Satisfaction Guarantee",
                 desc: "If you're not happy, we're not done. We don't hide behind contracts or excuses. Every project gets our full attention until it exceeds your expectations - period.",
                 icon: (
-                  <svg height="50" viewBox="0 0 64 64" fill="none" stroke="#4a7c59" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                  <svg height="50" viewBox="0 0 64 64" fill="none" stroke="url(#about-grad)" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="about-grad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stopColor="#3DC77A"/>
+                        <stop offset="50%" stopColor="#2A9555"/>
+                        <stop offset="100%" stopColor="#1F6B3E"/>
+                      </linearGradient>
+                    </defs>
                     <path d="M3 26 L13 22 L24 31 L31 27 C33 26 35 27 36 29 L46 39 C48 41 48 44 46 46 C44 48 41 48 39 46 L31 38" />
                     <path d="M61 26 L51 22 L40 31" />
                     <path d="M24 31 L17 38 C15 40 12 40 10 38 C8 36 8 33 10 31 L13 28" />
@@ -413,7 +420,7 @@ export default function AboutPage() {
                 title: "Result-oriented Approach",
                 desc: "Pretty stores are easy. Stores that convert? That's the hard part. We obsess over the details that actually move the needle - speed, UX, and conversion KPIs- so your revenue doesn't just grow, it compounds.",
                 icon: (
-                  <svg height="50" viewBox="0 0 64 64" fill="none" stroke="#4a7c59" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                  <svg height="50" viewBox="0 0 64 64" fill="none" stroke="url(#about-grad)" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                     <path d="M32 4 L56 12 V30 C56 44 46 54 32 60 C18 54 8 44 8 30 V12 Z" />
                     <path d="M22 32 L29 39 L43 25" />
                   </svg>
@@ -423,7 +430,7 @@ export default function AboutPage() {
                 title: "A Hub for Innovative Minds",
                 desc: "We attract people who hate mediocrity. Designers who push pixels until they're perfect. Developers who write clean code. Strategists who think three steps ahead. That Alpha energy shows up in every project we ship.",
                 icon: (
-                  <svg height="50" viewBox="0 0 64 64" fill="none" stroke="#4a7c59" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                  <svg height="50" viewBox="0 0 64 64" fill="none" stroke="url(#about-grad)" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14 6 H42 L52 16 V54 C52 56 50 58 48 58 H14 C12 58 10 56 10 54 V10 C10 8 12 6 14 6 Z" />
                     <path d="M42 6 V16 H52" />
                     <line x1="18" y1="28" x2="44" y2="28" />
@@ -497,7 +504,7 @@ export default function AboutPage() {
           <div className="text-center" style={{ marginTop: "48px" }}>
             <Link
               href="/free-shopify-store-audit"
-              className="elementor-button elementor-button-link elementor-size-sm transition-shadow duration-200 hover:shadow-[0_0_0_2px_#4a7c59]"
+              className="elementor-button elementor-button-link elementor-size-sm transition-shadow duration-200 hover:shadow-[0_0_0_2px_#3DC77A]"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -632,7 +639,10 @@ export default function AboutPage() {
             white-space: nowrap;
           }
           .why-work-dot {
-            color: #B18945;
+            background: linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-size: 28px;
             line-height: 1;
           }
@@ -940,7 +950,7 @@ export default function AboutPage() {
           <div className="text-center" style={{ marginTop: "40px" }}>
             <Link
               href="/contact"
-              className="elementor-button elementor-button-link elementor-size-sm transition-shadow duration-200 hover:shadow-[0_0_0_2px_#B18945]"
+              className="elementor-button elementor-button-link elementor-size-sm transition-shadow duration-200 hover:shadow-[0_0_0_2px_#3DC77A]"
               style={{
                 display: "inline-flex",
                 alignItems: "center",

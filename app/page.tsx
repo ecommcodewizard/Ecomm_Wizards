@@ -11,6 +11,9 @@ export const metadata: Metadata = {
 
 // â"€â"€â"€ Data â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
 
+const GRADIENT = "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)";
+const GRADIENT_TEXT = { background: GRADIENT, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" } as const;
+
 const STATS = [
   { value: "700+",   label: "Stores Built" },
   { value: "$900M+", label: "Client Revenue" },
@@ -115,9 +118,10 @@ const PARTNERS = [
 
 function Badge({ text }: { text: string }) {
   return (
-    <span className="mb-4 inline-block rounded-full border border-[#4a7c59]/30 bg-[#4a7c59]/10
-      px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[#4a7c59]">
-      {text}
+    <span className="mb-4 inline-block rounded-full p-[1px]" style={{ background: GRADIENT }}>
+      <span className="block rounded-full bg-[#0a0a0a] px-4 py-1 text-xs font-semibold uppercase tracking-widest" style={GRADIENT_TEXT}>
+        {text}
+      </span>
     </span>
   );
 }
@@ -292,17 +296,17 @@ export default function HomePage() {
           {[...Array(3)].map((_, i) => (
             <div key={i} className="flex shrink-0 items-center gap-8 px-4 font-medium text-white" style={{ fontSize: "16px", fontFamily: "'Poppins', sans-serif" }}>
               <span>700+ Stores Built</span>
-              <span className="shrink-0 rounded-full bg-[#4a7c59]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
+              <span className="shrink-0 rounded-full" style={{ width: "7px", height: "7px", display: "inline-block", background: GRADIENT }} />
               <span>$900M+ Revenue Generated</span>
-              <span className="shrink-0 rounded-full bg-[#4a7c59]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
+              <span className="shrink-0 rounded-full" style={{ width: "7px", height: "7px", display: "inline-block", background: GRADIENT }} />
               <span>8+ Years of Experience</span>
-              <span className="shrink-0 rounded-full bg-[#4a7c59]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
+              <span className="shrink-0 rounded-full" style={{ width: "7px", height: "7px", display: "inline-block", background: GRADIENT }} />
               <span>Full-Stack Ecommerce Partner</span>
-              <span className="shrink-0 rounded-full bg-[#4a7c59]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
+              <span className="shrink-0 rounded-full" style={{ width: "7px", height: "7px", display: "inline-block", background: GRADIENT }} />
               <span>Shopify Plus Certified</span>
-              <span className="shrink-0 rounded-full bg-[#4a7c59]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
+              <span className="shrink-0 rounded-full" style={{ width: "7px", height: "7px", display: "inline-block", background: GRADIENT }} />
               <span>28.5% Avg Conversion Lift</span>
-              <span className="shrink-0 rounded-full bg-[#4a7c59]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
+              <span className="shrink-0 rounded-full" style={{ width: "7px", height: "7px", display: "inline-block", background: GRADIENT }} />
             </div>
           ))}
         </div>
@@ -399,13 +403,13 @@ export default function HomePage() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="group rounded-2xl border border-white/10 bg-white/5 p-7 transition-all hover:border-[#4a7c59]/30 hover:bg-white/[0.07]"
+                className="group rounded-2xl border border-white/10 bg-white/5 p-7 transition-all hover:border-[#A8F0B4]/40 hover:bg-white/[0.07]"
               >
-                <h3 className="text-xl font-bold text-white group-hover:text-[#4a7c59] transition-colors">
-                  {s.title}
+                <h3 className="text-xl font-bold text-white transition-colors">
+                  <span className="group-hover:bg-clip-text group-hover:text-transparent" style={{ backgroundImage: GRADIENT }}>{s.title}</span>
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-white/50">{s.desc}</p>
-                <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[#4a7c59] group-hover:gap-2 transition-all">
+                <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold group-hover:gap-2 transition-all" style={GRADIENT_TEXT}>
                   Learn more â†'
                 </span>
               </Link>
@@ -428,7 +432,7 @@ export default function HomePage() {
             {METRICS.map((m) => (
               <div key={m.label} className="text-center">
                 <div className="text-4xl">{m.icon}</div>
-                <span className="mt-4 block text-4xl font-extrabold text-[#4a7c59]">{m.value}</span>
+                <span className="mt-4 block text-4xl font-extrabold" style={GRADIENT_TEXT}>{m.value}</span>
                 <p className="mt-2 text-sm text-white/50">{m.label}</p>
               </div>
             ))}
@@ -452,10 +456,10 @@ export default function HomePage() {
           <div className="mt-14 flex items-end justify-center gap-4 sm:gap-6">
             {BAR_DATA.map((j) => (
               <div key={j.year} className="flex flex-col items-center gap-2">
-                <span className="text-xs font-bold text-[#4a7c59]">{j.stores}+</span>
+                <span className="text-xs font-bold" style={GRADIENT_TEXT}>{j.stores}+</span>
                 <div
-                  className="w-10 sm:w-14 rounded-t-lg bg-gradient-to-t from-[#4a7c59]/40 to-[#4a7c59] transition-all"
-                  style={{ height: `${(j.stores / maxStores) * 200}px` }}
+                  className="w-10 sm:w-14 rounded-t-lg transition-all"
+                  style={{ height: `${(j.stores / maxStores) * 200}px`, background: GRADIENT }}
                 />
                 <span className="text-xs text-white/40">{j.year}</span>
               </div>
@@ -477,14 +481,15 @@ export default function HomePage() {
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {PROCESS.map((p) => (
               <div key={p.step} className="flex flex-col">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#4a7c59] text-xs font-bold text-[#0a0a0a]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-xs font-bold text-[#0a0a0a]" style={{ background: GRADIENT }}>
                   {p.step}
                 </div>
                 <h3 className="mt-5 text-lg font-bold text-white">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/50">{p.desc}</p>
                 <Link
                   href="/free-shopify-store-audit"
-                  className="mt-auto inline-flex items-center gap-2 pt-4 text-sm font-semibold text-[#4a7c59] hover:gap-3 transition-all"
+                  className="mt-auto inline-flex items-center gap-2 pt-4 text-sm font-semibold hover:gap-3 transition-all"
+                  style={GRADIENT_TEXT}
                 >
                   Get started â†'
                 </Link>
@@ -508,11 +513,11 @@ export default function HomePage() {
             {TESTIMONIALS.map((t) => (
               <div
                 key={t.name}
-                className="rounded-2xl border border-white/10 bg-white/5 p-7 transition-all hover:border-[#4a7c59]/30"
+                className="rounded-2xl border border-white/10 bg-white/5 p-7 transition-all hover:border-[#A8F0B4]/40"
               >
                 <p className="text-sm leading-relaxed text-white/70">"{t.quote}"</p>
                 <div className="mt-6 flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#4a7c59] text-sm font-extrabold text-[#0a0a0a] ring-4 ring-[#111111]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full text-sm font-extrabold text-[#0a0a0a] ring-4 ring-[#111111]" style={{ background: GRADIENT }}>
                     {t.initials}
                   </div>
                   <div>
@@ -527,7 +532,8 @@ export default function HomePage() {
           <div className="mt-10 text-center">
             <Link
               href="/reviews"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#4a7c59] hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-sm font-semibold hover:gap-3 transition-all"
+              style={GRADIENT_TEXT}
             >
               Read all reviews â†'
             </Link>
@@ -546,7 +552,7 @@ export default function HomePage() {
             <ul className="mt-8 space-y-4">
               {PLANS.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm text-white/70">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#4a7c59] shrink-0" />
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full shrink-0" style={{ background: GRADIENT }} />
                   {item}
                 </li>
               ))}
@@ -554,15 +560,16 @@ export default function HomePage() {
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/free-shopify-store-audit"
-                className="inline-flex items-center justify-center rounded-lg bg-[#4a7c59]
-                  px-6 py-3 text-sm font-semibold text-[#0a0a0a] transition-all hover:bg-[#9a7538]"
+                className="inline-flex items-center justify-center rounded-lg
+                  px-6 py-3 text-sm font-semibold text-[#0a0a0a] transition-all hover:opacity-90"
+                style={{ background: GRADIENT }}
               >
                 Get a Free Audit
               </Link>
               <Link
                 href="/book-shopify-consultation"
                 className="inline-flex items-center justify-center rounded-lg border border-white/20
-                  px-6 py-3 text-[12px] font-semibold text-white transition-all hover:border-[#4a7c59] hover:text-[#4a7c59]"
+                  px-6 py-3 text-[12px] font-semibold text-white transition-all hover:border-[#A8F0B4]"
               >
                 Book a Call
               </Link>
@@ -571,7 +578,7 @@ export default function HomePage() {
 
           <div className="mt-14 lg:mt-0 lg:w-1/2">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
-              <div className="text-3xl font-extrabold text-[#4a7c59]">700+</div>
+              <div className="text-3xl font-extrabold" style={GRADIENT_TEXT}>700+</div>
               <p className="mt-1 text-sm text-white/50">Shopify stores launched globally</p>
               <div className="mt-6 grid grid-cols-2 gap-4">
                 {[
@@ -581,7 +588,7 @@ export default function HomePage() {
                   { v: "98%",    l: "Client Retention" },
                 ].map((s) => (
                   <div key={s.l} className="rounded-xl border border-white/10 bg-white/5 p-4">
-                    <div className="text-xl font-extrabold text-[#4a7c59]">{s.v}</div>
+                    <div className="text-xl font-extrabold" style={GRADIENT_TEXT}>{s.v}</div>
                     <div className="mt-1 text-xs text-white/40">{s.l}</div>
                   </div>
                 ))}
@@ -605,7 +612,7 @@ export default function HomePage() {
             {PARTNERS.map((p) => (
               <div
                 key={p.alt}
-                className="rounded-2xl border border-white/10 bg-white/5 p-7 transition-all hover:border-[#4a7c59]/30"
+                className="rounded-2xl border border-white/10 bg-white/5 p-7 transition-all hover:border-[#A8F0B4]/40"
               >
                 <Image
                   src={p.src}
@@ -621,7 +628,7 @@ export default function HomePage() {
       </section>
 
       {/* â"€â"€ Final CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="bg-[#4a7c59] py-20">
+      <section className="py-20" style={{ background: GRADIENT }}>
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-extrabold text-[#0a0a0a] sm:text-4xl">
             Ready to Grow Your Shopify Store?
@@ -634,14 +641,15 @@ export default function HomePage() {
             <Link
               href="/free-shopify-store-audit"
               className="inline-flex items-center justify-center rounded-lg bg-[#0a0a0a]
-                px-8 py-3.5 text-sm font-semibold text-[#4a7c59] transition-all hover:bg-[#111]"
+                px-8 py-3.5 text-sm font-semibold transition-all hover:bg-[#111]"
+              style={GRADIENT_TEXT}
             >
               Get a Free Audit
             </Link>
             <Link
               href="/book-shopify-consultation"
               className="inline-flex items-center justify-center rounded-lg border-2 border-[#0a0a0a]
-                px-8 py-3.5 text-sm font-semibold text-[#0a0a0a] transition-all hover:bg-[#0a0a0a] hover:text-[#4a7c59]"
+                px-8 py-3.5 text-sm font-semibold text-[#0a0a0a] transition-all hover:bg-[#0a0a0a]"
             >
               Book a Call
             </Link>

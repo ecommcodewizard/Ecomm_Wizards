@@ -301,7 +301,7 @@ export default function AboutContactSection() {
         }
         .about-contact-submit:hover,
         .about-contact-submit:focus-visible {
-          box-shadow: 0 0 0 2px #B18945;
+          box-shadow: 0 0 0 2px #3DC77A;
           outline: none;
         }
         .about-contact-wrap {
