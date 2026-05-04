@@ -1,160 +1,773 @@
 import type { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
-import CTASection from "@/components/ui/CTASection";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Hire a Shopify Plus Agency | Contact Ecomm Wizards",
   description: "Ready to scale your store? Hire Ecomm Wizards, a certified Shopify Plus agency. Contact our experts today for a free audit and custom scaling roadmap.",
 };
 
-const REASONS = [
-  { icon: "⚡", title: "Response within 24 hours",    desc: "We reply fast — no waiting days for a callback." },
-  { icon: "💰", title: "Fixed-price quotes",           desc: "No surprise invoices. You know the cost before we start." },
-  { icon: "🎯", title: "Zero obligation",              desc: "Get a quote and strategy call with no pressure to commit." },
-  { icon: "🏆", title: "Shopify Plus Certified",      desc: "Certified Shopify Plus partner with 700+ stores launched." },
+const HERO_STATS = [
+  "Full-Stack Ecommerce Partner",
+  "8+ Years of Experience",
+  "$900M+ Revenue Generated",
+  "700+ Stores Built",
 ];
+
+function FormField({
+  name,
+  label,
+  type,
+  required,
+  half,
+}: {
+  name: string;
+  label: string;
+  type: string;
+  required?: boolean;
+  half?: boolean;
+}) {
+  return (
+    <div
+      className={`elementor-field-type-${type === "email" ? "email" : type === "tel" ? "tel" : "text"} elementor-field-group elementor-column ${half ? "elementor-field-group-half" : "elementor-field-group-full"}`}
+      style={{
+        width: half ? "auto" : "100%",
+        margin: "0 0 20px",
+        padding: "0 12.5px",
+        boxSizing: "border-box",
+      }}
+    >
+      <label
+        htmlFor={`field-${name}`}
+        style={{
+          display: "block",
+          marginBottom: "6px",
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "16px",
+          fontWeight: 600,
+          color: "#000000",
+        }}
+      >
+        {label}
+        {required && (
+          <span style={{ color: "#D43A3A", marginLeft: "4px" }}>*</span>
+        )}
+      </label>
+      <input
+        id={`field-${name}`}
+        name={name}
+        type={type}
+        required={required}
+        style={{
+          width: "100%",
+          height: "44px",
+          padding: "0 12px",
+          border: "1px solid #D9D9D9",
+          background: "transparent",
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "16px",
+          color: "#000000",
+          outline: "none",
+          boxSizing: "border-box",
+        }}
+      />
+    </div>
+  );
+}
+
+function FormSelect({
+  name,
+  label,
+  options,
+  required,
+  half,
+}: {
+  name: string;
+  label: string;
+  options: string[];
+  required?: boolean;
+  half?: boolean;
+}) {
+  return (
+    <div
+      className={`elementor-field-type-select elementor-field-group elementor-column ${half ? "elementor-field-group-half" : "elementor-field-group-full"}`}
+      style={{
+        width: half ? "auto" : "100%",
+        margin: "0 0 20px",
+        padding: "0 12.5px",
+        boxSizing: "border-box",
+      }}
+    >
+      <label
+        htmlFor={`field-${name}`}
+        style={{
+          display: "block",
+          marginBottom: "6px",
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "16px",
+          fontWeight: 600,
+          color: "#000000",
+        }}
+      >
+        {label}
+        {required && (
+          <span style={{ color: "#D43A3A", marginLeft: "4px" }}>*</span>
+        )}
+      </label>
+      <select
+        id={`field-${name}`}
+        name={name}
+        required={required}
+        defaultValue=""
+        style={{
+          width: "100%",
+          height: "44px",
+          padding: "0 12px",
+          border: "1px solid #D9D9D9",
+          background: "transparent",
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "16px",
+          color: "#000000",
+          outline: "none",
+          appearance: "none",
+          WebkitAppearance: "none",
+          MozAppearance: "none",
+          backgroundImage:
+            "url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10' fill='none'%3e%3cpath d='M1 1l7 7 7-7' stroke='%23999' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e\")",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "right 14px center",
+          backgroundSize: "12px 8px",
+          boxSizing: "border-box",
+        }}
+      >
+        <option value="" disabled>
+          Please Select
+        </option>
+        {options.map((opt) => (
+          <option key={opt} value={opt}>
+            {opt}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+}
 
 export default function ContactPage() {
   return (
     <>
-      <PageHero
-        badge="Get In Touch"
-        title="Partner with a Certified"
-        titleHighlight="Shopify Plus Agency"
-        subtitle="Have a project in mind? We'd love to hear about it. Tell us what you need and we'll get back to you within 24 hours with a custom roadmap."
-      />
+      {/* Hero */}
+      <section
+        className="contact-hero-section"
+        style={{
+          background: "#FBF7ED",
+          padding: "0 20px",
+          color: "#334155",
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "16px",
+        }}
+      >
+        <div
+          className="contact-hero-inner"
+          style={{
+            maxWidth: "1320px",
+            margin: "0 auto",
+            padding: "100px 0 40px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+        >
+          <h1
+            className="contact-hero-title elementor-heading-title elementor-size-default"
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "42px",
+              fontWeight: 700,
+              color: "#000000",
+              lineHeight: "52px",
+              width: "932.2px",
+              maxWidth: "100%",
+              margin: 0,
+              padding: 0,
+            }}
+          >
+            Partner with a Certified Shopify Plus Agency
+          </h1>
 
-      {/* Main content */}
-      <section className="py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2">
-
-            {/* Contact form */}
-            <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
-              <h2 className="text-2xl font-bold text-slate-800">Send Us a Message</h2>
-              <p className="mt-2 text-slate-500 text-sm">
-                Fill in the form and a Shopify expert will be in touch within 24 hours.
-              </p>
-              <form className="mt-8 space-y-5" action="#" method="POST">
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div>
-                    <label htmlFor="first" className="block text-sm font-medium text-slate-700 mb-1.5">First Name</label>
-                    <input id="first" name="first" type="text" required placeholder="Jane"
-                      className="w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm text-slate-800
-                        placeholder:text-slate-400 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200" />
-                  </div>
-                  <div>
-                    <label htmlFor="last" className="block text-sm font-medium text-slate-700 mb-1.5">Last Name</label>
-                    <input id="last" name="last" type="text" required placeholder="Smith"
-                      className="w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm text-slate-800
-                        placeholder:text-slate-400 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200" />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1.5">Email Address</label>
-                  <input id="email" name="email" type="email" required placeholder="jane@yourstore.com"
-                    className="w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm text-slate-800
-                      placeholder:text-slate-400 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200" />
-                </div>
-                <div>
-                  <label htmlFor="store" className="block text-sm font-medium text-slate-700 mb-1.5">Shopify Store URL</label>
-                  <input id="store" name="store" type="url" placeholder="https://yourstore.myshopify.com"
-                    className="w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm text-slate-800
-                      placeholder:text-slate-400 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200" />
-                </div>
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-slate-700 mb-1.5">Service Needed</label>
-                  <select id="service" name="service"
-                    className="w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm text-slate-800
-                      focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200">
-                    <option value="">Select a service…</option>
-                    <option>Build a New Shopify Store</option>
-                    <option>Migrate to Shopify</option>
-                    <option>Speed Optimisation</option>
-                    <option>CRO / Conversion Optimisation</option>
-                    <option>Shopify App Development</option>
-                    <option>B2B / Wholesale Setup</option>
-                    <option>POS Setup</option>
-                    <option>Shopify SEO</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1.5">Tell us about your project</label>
-                  <textarea id="message" name="message" rows={5} required
-                    placeholder="What are you trying to achieve? What's your timeline and budget?"
-                    className="w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm text-slate-800
-                      placeholder:text-slate-400 focus:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-200 resize-none" />
-                </div>
-                <button type="submit" className="btn-primary w-full py-3 text-sm">
-                  Send Message →
-                </button>
-              </form>
-            </div>
-
-            {/* Info panel */}
-            <div className="flex flex-col gap-6">
-              <div>
-                <h2 className="text-2xl font-bold text-slate-800">Why Work With Us</h2>
-                <p className="mt-2 text-slate-500">
-                  We&apos;re a certified Shopify Plus agency with 8+ years of experience building
-                  high-converting stores for brands around the world.
-                </p>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                {REASONS.map((r) => (
-                  <div key={r.title}
-                    className="rounded-xl border border-slate-100 bg-slate-50 p-5">
-                    <span className="text-2xl">{r.icon}</span>
-                    <h3 className="mt-2 font-semibold text-slate-800 text-sm">{r.title}</h3>
-                    <p className="mt-1 text-xs text-slate-500 leading-relaxed">{r.desc}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Direct contact */}
-              <div className="rounded-2xl bg-slate-700 p-7 text-white">
-                <h3 className="text-lg font-bold">Prefer a direct conversation?</h3>
-                <p className="mt-2 text-slate-300 text-sm">
-                  Book a free 30-minute strategy call and speak with a Shopify expert directly.
-                  No sales pitch — just honest advice for your store.
-                </p>
-                <a href="/book-shopify-consultation"
-                  className="mt-5 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5
-                    text-sm font-semibold text-slate-700 transition-all hover:bg-slate-100">
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round"
-                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25z" />
-                  </svg>
-                  Book a Free Call
-                </a>
-              </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-4">
-                {[
-                  { value: "700+", label: "Stores Built" },
-                  { value: "24h",  label: "Response Time" },
-                  { value: "8+",   label: "Years Experience" },
-                ].map((s) => (
-                  <div key={s.label} className="rounded-xl border border-slate-100 bg-white p-4 text-center shadow-sm">
-                    <p className="text-2xl font-extrabold text-slate-700">{s.value}</p>
-                    <p className="mt-0.5 text-xs text-slate-500">{s.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div
+            className="contact-hero-desc"
+            style={{
+              width: "780px",
+              maxWidth: "100%",
+              margin: "24px 0 0",
+              padding: 0,
+              color: "#000000CC",
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "16px",
+              lineHeight: "26px",
+            }}
+          >
+            Let&rsquo;s talk about your store. Ecom Wizards is a full-service Shopify Plus Agency
+            delivering high-performance builds for growing DTC brands. Tell us about your project,
+            whether it&rsquo;s custom Shopify theme development, Shopify migrations, or CRO audits,
+            and our Shopify experts will map out your scaling roadmap.
           </div>
+
         </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 768px) {
+            .contact-hero-section { padding: 0 15px !important; }
+            .contact-hero-section .contact-hero-inner {
+              padding: 56px 0 40px !important;
+            }
+            .contact-hero-section .contact-hero-title {
+              font-size: 30px !important;
+              line-height: 40px !important;
+              width: 380px !important;
+              max-width: 100% !important;
+              height: 80px !important;
+            }
+            .contact-hero-section .contact-hero-desc {
+              font-size: 16px !important;
+              line-height: 26px !important;
+              margin-top: 18px !important;
+              width: 380px !important;
+              max-width: 100% !important;
+              height: 182px !important;
+            }
+          }
+        ` }} />
       </section>
 
-      <CTASection
-        heading="Not sure where to start?"
-        subheading="Get a free Shopify store audit and we'll show you exactly where you're losing revenue."
-        primaryLabel="Claim Free Audit"
-        primaryHref="/free-shopify-store-audit"
-      />
+      {/* Stats strip — infinite slider */}
+      <section
+        className="contact-stats-section"
+        style={{
+          background: "#FBF7ED",
+        }}
+        aria-label="Ecomm Wizards highlights"
+      >
+        <div
+          className="contact-stats-divider"
+          aria-hidden="true"
+          style={{
+            width: "1320px",
+            maxWidth: "calc(100% - 40px)",
+            height: "1px",
+            margin: "0 auto",
+            background: "rgba(0, 0, 0, 0.08)",
+          }}
+        />
+        <div
+          className="contact-stats-marquee text-marquee-section"
+          style={{
+            margin: "0 auto",
+            padding: "20px 0",
+            width: "1320px",
+            maxWidth: "100%",
+            height: "66.39px",
+            display: "flex",
+            alignItems: "center",
+            color: "#334155",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "16px",
+            overflow: "hidden",
+            boxSizing: "border-box",
+          }}
+        >
+          <ul className="contact-stats-track">
+            {(() => {
+              const items = HERO_STATS;
+              return [...items, ...items].map((stat, i) => (
+                <li
+                  key={`${stat}-${i}`}
+                  className="contact-stats-item"
+                  aria-hidden={i >= items.length ? true : undefined}
+                >
+                  <span className="contact-stats-dot" aria-hidden="true" />
+                  <span className="contact-stats-text">{stat}</span>
+                </li>
+              ));
+            })()}
+          </ul>
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .contact-stats-track {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: max-content;
+            animation: contact-stats-scroll 30s linear infinite;
+          }
+          .contact-stats-marquee:hover .contact-stats-track {
+            animation-play-state: paused;
+          }
+          .contact-stats-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 28px;
+            padding-right: 28px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: #000000;
+            line-height: 24px;
+            white-space: nowrap;
+          }
+          .contact-stats-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, #3DC77A 0%, #2A9555 50%, #1F6B3E 100%);
+            flex-shrink: 0;
+          }
+          .contact-stats-text {
+            color: #000000;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+          }
+          @keyframes contact-stats-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .contact-stats-track { animation: none; }
+          }
+          @media (max-width: 768px) {
+            .contact-stats-section .contact-stats-marquee {
+              height: 66.39px !important;
+              padding: 20px 0 !important;
+            }
+            .contact-stats-track {
+              animation-duration: 22s;
+            }
+            .contact-stats-item {
+              gap: 18px;
+              padding-right: 18px;
+              font-size: 14px;
+              line-height: 22px;
+            }
+            .contact-stats-dot {
+              width: 8px;
+              height: 8px;
+            }
+            .contact-stats-text {
+              font-size: 14px;
+            }
+          }
+        ` }} />
+      </section>
+
+      {/* Contact form section */}
+      <section
+        className="contact-form-section"
+        style={{ background: "#FFFFFF", padding: "0 20px" }}
+      >
+        <div
+          className="contact-form-inner e-con-inner"
+          style={{
+            width: "1320px",
+            maxWidth: "100%",
+            minHeight: "832.01px",
+            margin: "0 auto",
+            padding: "60px 0",
+            color: "#334155",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "16px",
+            boxSizing: "border-box",
+          }}
+        >
+          <h2
+            className="contact-form-heading elementor-heading-title elementor-size-default"
+            role="heading"
+            aria-level={2}
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "24px",
+              fontWeight: 700,
+              color: "#000000",
+              lineHeight: "34px",
+              width: "1300px",
+              maxWidth: "100%",
+              minHeight: "34px",
+              margin: "0 auto 36px",
+              padding: 0,
+              textAlign: "center",
+            }}
+          >
+            Have a project in mind? We&apos;d love to hear about it!
+          </h2>
+
+          <form
+            className="contact-form"
+            action="#"
+            method="POST"
+            encType="multipart/form-data"
+          >
+            <div
+              className="elementor-form-fields-wrapper contact-form-fields"
+              style={{
+                width: "auto",
+                maxWidth: "100%",
+                margin: "0 -12.5px -20px",
+                color: "#334155",
+                fontFamily: "'Poppins', sans-serif",
+                fontSize: "16px",
+              }}
+            >
+              {[
+                { name: "name",     label: "What is Your Name?",  type: "text",  required: true, half: true },
+                { name: "email",    label: "Your Email Address",  type: "email", required: true, half: true },
+                { name: "company",  label: "Company Name",        type: "text",  required: true, half: true },
+                { name: "phone",    label: "Phone",               type: "tel",   required: false, half: true },
+              ].map((field) => (
+                <FormField
+                  key={field.name}
+                  name={field.name}
+                  label={field.label}
+                  type={field.type}
+                  required={field.required}
+                  half={field.half}
+                />
+              ))}
+
+              <FormSelect
+                name="budget"
+                label="Budget"
+                half
+                options={[
+                  "Under $5,000",
+                  "$5,000 - $15,000",
+                  "$15,000 - $50,000",
+                  "$50,000 - $100,000",
+                  "$100,000+",
+                ]}
+              />
+
+              <FormSelect
+                name="services"
+                label="Services Of Interest"
+                half
+                options={[
+                  "Build a New Shopify Store",
+                  "Migrate to Shopify",
+                  "Shopify Plus Development",
+                  "Speed Optimisation",
+                  "CRO / Conversion Optimisation",
+                  "Shopify App Development",
+                  "B2B / Wholesale Setup",
+                  "POS Setup",
+                  "Shopify SEO",
+                  "Other",
+                ]}
+              />
+
+              <FormSelect
+                name="referral"
+                label="How Did You Find Us"
+                options={[
+                  "Google Search",
+                  "Referral",
+                  "Social Media",
+                  "Shopify Partner Directory",
+                  "Other",
+                ]}
+              />
+
+              <div
+                className="elementor-field-type-textarea elementor-field-group elementor-column elementor-field-group-full"
+                style={{
+                  width: "100%",
+                  margin: "0 0 20px",
+                  padding: "0 12.5px",
+                  boxSizing: "border-box",
+                }}
+              >
+                <label
+                  htmlFor="field-project-details"
+                  style={{
+                    display: "block",
+                    marginBottom: "6px",
+                    fontFamily: "'Poppins', sans-serif",
+                    fontSize: "16px",
+                    fontWeight: 600,
+                    color: "#000000",
+                  }}
+                >
+                  Project Details
+                  <span style={{ color: "#D43A3A", marginLeft: "4px" }}>*</span>
+                </label>
+                <textarea
+                  id="field-project-details"
+                  name="project_details"
+                  required
+                  rows={5}
+                  style={{
+                    width: "100%",
+                    minHeight: "120px",
+                    padding: "12px",
+                    border: "1px solid #D9D9D9",
+                    background: "transparent",
+                    fontFamily: "'Poppins', sans-serif",
+                    fontSize: "16px",
+                    color: "#000000",
+                    outline: "none",
+                    resize: "vertical",
+                    boxSizing: "border-box",
+                  }}
+                />
+              </div>
+
+              <div
+                className="elementor-field-type-upload elementor-field-group elementor-column elementor-field-group-full"
+                style={{
+                  width: "100%",
+                  margin: "0 0 28px",
+                  padding: "0 12.5px",
+                  boxSizing: "border-box",
+                }}
+              >
+                <label
+                  htmlFor="field-upload"
+                  style={{
+                    display: "block",
+                    marginBottom: "8px",
+                    fontFamily: "'Poppins', sans-serif",
+                    fontSize: "16px",
+                    fontWeight: 600,
+                    color: "#000000",
+                  }}
+                >
+                  File / Image upload (Optional)
+                </label>
+                <input
+                  id="field-upload"
+                  name="upload"
+                  type="file"
+                  style={{
+                    fontFamily: "'Poppins', sans-serif",
+                    fontSize: "14px",
+                    color: "#000000",
+                  }}
+                />
+              </div>
+
+              <div style={{ padding: "0 12.5px" }}>
+                <button
+                  type="submit"
+                  className="elementor-button elementor-size-sm contact-form-submit"
+                  style={{
+                    width: "167.03px",
+                    height: "55.33px",
+                    padding: "18px 40px",
+                    background: "#000000",
+                    color: "#FFFFFF",
+                    fontFamily: "'Poppins', sans-serif",
+                    fontSize: "16px",
+                    fontWeight: 600,
+                    border: "none",
+                    borderRadius: "9999px",
+                    cursor: "pointer",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "10px",
+                    boxSizing: "border-box",
+                  }}
+                >
+                  Submit
+                  <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 6h14M14 6L9 1M14 6L9 11" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .contact-form-section .contact-form-fields {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 0;
+          }
+          .contact-form-section .elementor-field-group-full {
+            grid-column: span 2;
+          }
+          .contact-form-section input[type="text"],
+          .contact-form-section input[type="email"],
+          .contact-form-section input[type="tel"],
+          .contact-form-section input[type="url"],
+          .contact-form-section select,
+          .contact-form-section textarea {
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+          }
+          .contact-form-section input:focus,
+          .contact-form-section select:focus,
+          .contact-form-section textarea:focus {
+            border-color: #2A9555 !important;
+            box-shadow: 0 0 0 2px rgba(61, 199, 122, 0.18);
+          }
+          .contact-form-submit {
+            transition: box-shadow 0.2s ease;
+          }
+          .contact-form-submit:hover,
+          .contact-form-submit:focus-visible {
+            box-shadow: 0 0 0 2px #3DC77A;
+            outline: none;
+          }
+          @media (max-width: 768px) {
+            .contact-form-section { padding: 0 15px !important; }
+            .contact-form-section .contact-form-inner {
+              padding: 40px 0 !important;
+              min-height: 0 !important;
+            }
+            .contact-form-section .contact-form-heading {
+              font-size: 20px !important;
+              line-height: 28px !important;
+              margin: 0 0 24px !important;
+              text-align: center !important;
+              width: 100% !important;
+              padding: 0 6px !important;
+            }
+            .contact-form-section .contact-form-fields {
+              grid-template-columns: 1fr !important;
+              margin: 0 0 -20px !important;
+            }
+            .contact-form-section .elementor-field-group {
+              padding: 0 !important;
+            }
+            .contact-form-section .contact-form-submit {
+              width: 100% !important;
+            }
+          }
+        ` }} />
+      </section>
+
+      {/* Final CTA */}
+      <section
+        className="contact-final-cta-section"
+        style={{ background: "#FFFFFF", padding: "0 20px" }}
+      >
+        <div
+          className="contact-final-cta-inner"
+          style={{
+            maxWidth: "1320px",
+            margin: "0 auto",
+            padding: "60px 0",
+            color: "#334155",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "16px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+        >
+          <h2
+            className="contact-final-cta-title elementor-heading-title elementor-size-default"
+            role="heading"
+            aria-level={2}
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "42px",
+              fontWeight: 700,
+              color: "#000000",
+              lineHeight: "52px",
+              maxWidth: "768px",
+              margin: 0,
+              padding: 0,
+            }}
+          >
+            Not sure where to start?
+          </h2>
+          <p
+            className="contact-final-cta-desc"
+            style={{
+              maxWidth: "640px",
+              margin: "16px 0 0",
+              padding: 0,
+              color: "#000000CC",
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "16px",
+              lineHeight: "26px",
+            }}
+          >
+            Get a free Shopify store audit and we&apos;ll show you exactly where you&apos;re
+            losing revenue.
+          </p>
+
+          <Link
+            href="/free-shopify-store-audit"
+            className="contact-final-cta-btn elementor-button elementor-button-link elementor-size-sm"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "10px",
+              minWidth: "211.64px",
+              height: "60px",
+              padding: "20px 45px",
+              marginTop: "32px",
+              background: "#000000",
+              color: "#FFFFFF",
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "16px",
+              fontWeight: 600,
+              borderRadius: "9999px",
+              textDecoration: "none",
+              boxSizing: "border-box",
+              border: "2px solid transparent",
+              backgroundClip: "padding-box",
+              position: "relative",
+            }}
+          >
+            Claim Free Audit
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 6h14M14 6L9 1M14 6L9 11" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .contact-final-cta-btn {
+            transition: background 0.25s ease, transform 0.2s ease, border-color 0.25s ease;
+          }
+          .contact-final-cta-btn:hover,
+          .contact-final-cta-btn:focus-visible {
+            outline: none;
+            background:
+              linear-gradient(#000000, #000000) padding-box,
+              linear-gradient(135deg, #3DC77A 0%, #2A9555 50%, #1F6B3E 100%) border-box !important;
+            border: 2px solid transparent !important;
+            transform: translateY(-1px);
+          }
+          @media (max-width: 768px) {
+            .contact-final-cta-section { padding: 0 15px !important; }
+            .contact-final-cta-section .contact-final-cta-inner {
+              padding: 44px 0 !important;
+            }
+            .contact-final-cta-section .contact-final-cta-title {
+              font-size: 28px !important;
+              line-height: 38px !important;
+            }
+            .contact-final-cta-section .contact-final-cta-desc {
+              font-size: 15px !important;
+              line-height: 24px !important;
+            }
+            .contact-final-cta-btn {
+              width: 100% !important;
+              max-width: 320px !important;
+            }
+          }
+        ` }} />
+      </section>
     </>
   );
 }
