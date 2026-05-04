@@ -17,12 +17,25 @@
 }
 
 .logo-strip {
-  animation: ticker-half 18s linear infinite;
+  animation: ticker-half 30s linear infinite;
 }
 @media (max-width: 639px) {
   .logo-strip {
-    animation: ticker-half 10s linear infinite;
+    animation: ticker-half 18s linear infinite;
   }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .logo-strip img {
+    width: 90px !important;
+    height: 20px !important;
+  }
+}
+
+.stat-gradient-text {
+  background: linear-gradient(135deg, #1B5E20 0%, #52b788 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @keyframes ticker-half {
