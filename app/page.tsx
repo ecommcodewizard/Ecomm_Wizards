@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://ecommwizards.com" },
 };
 
-// ─── Data ─────────────────────────────────────────────────────────────────────
+// â"€â"€â"€ Data â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
 
 const STATS = [
   { value: "700+",   label: "Stores Built" },
@@ -52,10 +52,10 @@ const SERVICES = [
 ];
 
 const METRICS = [
-  { value: "700+",   label: "Stores Launched",      icon: "🏪" },
-  { value: "$900M+", label: "Revenue Generated",     icon: "💰" },
-  { value: "12+",    label: "Years of Experience",   icon: "🏆" },
-  { value: "98%",    label: "Client Retention Rate", icon: "🤝" },
+  { value: "700+",   label: "Stores Launched",      icon: "ðŸª" },
+  { value: "$900M+", label: "Revenue Generated",     icon: "ðŸ'°" },
+  { value: "12+",    label: "Years of Experience",   icon: "ðŸ†" },
+  { value: "98%",    label: "Client Retention Rate", icon: "ðŸ¤" },
 ];
 
 const BAR_DATA = [
@@ -111,82 +111,82 @@ const PARTNERS = [
   { src: "/images/klaviyo-partner.png",       alt: "Klaviyo Partner" },
 ];
 
-// ─── Badge helper ─────────────────────────────────────────────────────────────
+// â"€â"€â"€ Badge helper â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
 
 function Badge({ text }: { text: string }) {
   return (
-    <span className="mb-4 inline-block rounded-full border border-[#b18945]/30 bg-[#b18945]/10
-      px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[#b18945]">
+    <span className="mb-4 inline-block rounded-full border border-[#4a7c59]/30 bg-[#4a7c59]/10
+      px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[#4a7c59]">
       {text}
     </span>
   );
 }
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
+// â"€â"€â"€ Page â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
 
 export default function HomePage() {
   const maxStores = Math.max(...BAR_DATA.map((d) => d.stores));
 
   return (
     <>
-      {/* ── Hero ──────────────────────────────────────────────────────────── */}
+      {/* â"€â"€ Hero â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="relative overflow-hidden w-full flex items-center" style={{ minHeight: "539.78px", background: "#000000" }}>
-        {/* Background video */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover"
+        {/* Background image */}
+        <Image
+          src="/images/main-hero-f-desktop.webp"
+          alt="Hero background"
+          fill
+          className="absolute inset-0 object-cover"
           style={{ opacity: 0.6 }}
-        >
-          <source src="/images/EcommWizards_Home_Banner_Video.mp4" type="video/mp4" />
-        </video>
+          priority
+        />
 
         {/* Dark overlay so text stays readable */}
         <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.75) 100%)" }} />
 
-        <div className="relative mx-auto flex w-full flex-col items-stretch gap-6 lg:flex-row lg:items-center lg:gap-8 pt-[30px] pb-[30px] px-[20px] lg:pt-[40px] lg:pb-[40px]" style={{ maxWidth: "1320px" }}>
+        <div className="relative mx-auto flex w-full flex-col items-stretch gap-6 lg:flex-row lg:items-center lg:justify-between pt-[30px] pb-[30px] px-[20px] lg:pt-[40px] lg:pb-[40px]" style={{ maxWidth: "1320px" }}>
 
-          {/* ── Left: text ── */}
-          <div className="w-full lg:w-[480px] lg:shrink-0" style={{ color: "#334155", fontFamily: "'Poppins', sans-serif", fontSize: "16px" }}>
-            <h1 className="leading-tight text-white text-[32px] sm:text-[40px] lg:text-[44px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>
+          {/* â"€â"€ Left: text â"€â"€ */}
+          <div className="w-full lg:w-[460px] min-[1440px]:w-[560px] lg:shrink-0" style={{ color: "#334155", fontFamily: "'Poppins', sans-serif", fontSize: "16px" }}>
+            <h1 className="leading-tight text-white text-[32px] sm:text-[40px] lg:text-[44px] min-[1440px]:text-[52px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>
               We are the Shopify<br />
               Agency that{" "}
-              <span className="text-[#b18945]">Design.<br />
+              <span style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Design.<br />
               Develop. Dominate.</span>
             </h1>
 
-            <p className="mt-4 lg:mt-6 text-[15px] lg:text-[20px]" style={{ fontFamily: "'Nunito', sans-serif", color: "#FFFFFF" }}>
-              <span className="text-[#b18945] font-semibold">Award-Winning</span> Shopify Plus Agency.<br />
+            <p className="mt-4 lg:mt-[20px] text-[15px] lg:text-[18px]" style={{ fontFamily: "'Nunito', sans-serif", color: "#FFFFFF" }}>
+              <span className="font-semibold" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Award-Winning</span> Shopify Plus Agency.<br />
               Top Rated Talent{" "}
-              <span className="text-[#b18945]">working on your brand.</span>
+              <span style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>working on your brand.</span>
             </p>
 
-            <div className="mt-5 flex flex-wrap items-center gap-5 lg:gap-10" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "16px" }}>
-              <Link
-                href="/book-shopify-consultation"
-                className="group inline-flex items-center gap-2 rounded-full border-2 border-[#b18945] text-white transition-all hover:bg-white hover:text-[#000000]"
-                style={{ fontFamily: "'Poppins', sans-serif", fontSize: "15px", padding: "14px 32px", height: "52px" }}
-              >
-                Book a Call <Image src="/images/arrow vector.png" alt="arrow" width={16} height={16} className="transition-all group-hover:invert" />
-              </Link>
+            <div className="mt-[20px] flex items-center gap-5 lg:gap-10" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "16px" }}>
+              <span className="inline-flex p-[2px] rounded-full" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
+                <Link
+                  href="/book-shopify-consultation"
+                  className="group inline-flex items-center gap-2 rounded-full bg-black transition-all px-[32px] py-[14px] h-[52px] sm:px-[45px] sm:py-[20px] sm:h-[60px] text-[15px] sm:text-[16px]"
+                  style={{ fontFamily: "'Poppins', sans-serif" }}
+                >
+                  <span className="text-white group-hover:text-transparent bg-clip-text whitespace-nowrap" style={{ backgroundImage: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>Book a Call</span>
+                  <Image src="/images/arrow vector.png" alt="arrow" width={16} height={16} />
+                </Link>
+              </span>
               <Image
                 src="/images/shopifypartners-1.png"
                 alt="Shopify Platinum Partner"
-                width={150}
-                height={52}
-                className="object-contain"
-                style={{ height: "52px", width: "auto" }}
+                width={170}
+                height={58}
+                className="object-contain w-[151px] h-[52px] sm:w-[170px] sm:h-[58px]"
               />
             </div>
           </div>
 
-          {/* ── Right: two cards ── */}
+          {/* â"€â"€ Right: two cards â"€â"€ */}
           <div className="flex flex-row gap-4 lg:flex-shrink-0" style={{ width: "100%", maxWidth: "645px", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155" }}>
 
             {/* Card 1 */}
-            <div className="rounded-2xl bg-[#111111]/90 backdrop-blur-sm transition-all duration-300 border-2 border-white/10 hover:border-[#b18945] flex-1 lg:flex-none lg:w-[220px] flex flex-col min-h-[418px] sm:min-h-0 lg:min-h-[206px] py-[20px] px-[16px] sm:py-[30px] sm:px-[20px] lg:py-[20px] lg:px-[16px]" style={{ minWidth: "0", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155" }}>
+            <div className="rounded-2xl bg-[#111111]/90 backdrop-blur-sm transition-all duration-300 border-2 border-white/10 hover:border-[#A8F0B4] flex-1 lg:flex-none lg:w-[220px] flex flex-col min-h-[360px] sm:min-h-0 lg:min-h-[206px] py-[20px] px-[16px] sm:py-[30px] sm:px-[20px] lg:py-[20px] lg:px-[16px] min-[1440px]:w-[302px] min-[1440px]:min-h-0 min-[1440px]:py-[30px] min-[1440px]:px-[20px]" style={{ minWidth: "0", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155" }}>
               {/* Icon */}
               <svg className="mb-5" width="30" height="30" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {/* Monitor outer frame */}
@@ -214,33 +214,35 @@ export default function HomePage() {
                 <line x1="18" y1="38" x2="30" y2="38" stroke="white" strokeWidth="2"/>
               </svg>
 
-              <h2 className="text-[16px] sm:text-[20px] mb-[8px] sm:mb-0 min-h-[72px] sm:min-h-0 lg:min-h-[90px]" style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", color: "#B18945", lineHeight: "1.5" }}>
+              <h2 className="text-[16px] sm:text-[20px] mb-[8px] sm:mb-0 min-h-[72px] sm:min-h-0 lg:min-h-[90px] min-[1440px]:min-h-0" style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", lineHeight: "1.5", background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                 I Need High-Converting<br />Shopify Store
               </h2>
-              <p className="mt-0 sm:mt-3 text-[13px] sm:text-[15px] lg:text-[13px]" style={{ width: "258.5px", maxWidth: "100%", height: "75px", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF" }}>
-                Stunning UI/UX, custom Shopify builds, and pixel-perfect execution that converts.
+              <p className="mt-[10px] sm:mt-[16px] grow sm:grow-0 text-[13px] sm:text-[15px] lg:text-[13px]" style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF" }}>
+                Stunning UI/UX, custom builds, and pixel-perfect execution that converts.
               </p>
 
-              <Link
-                href="/free-shopify-store-audit"
-                className="mt-[32px] sm:mt-6 lg:mt-[12px] flex items-center justify-center gap-2 rounded-lg text-white transition-all hover:text-[#b18945] text-[14px] sm:text-[15px] lg:text-[14px] h-[43px] sm:h-[51px] lg:h-[43px] py-[12px] px-[6px] sm:py-[16px] sm:px-[25px] lg:py-[12px] lg:px-[10px]"
-                style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", background: "#121212", border: "2px solid #b18945" }}
-              >
-                <span className="sm:hidden text-[13px] whitespace-nowrap" style={{ fontFamily: "'Poppins', sans-serif" }}>Free Quote</span>
-                <span className="hidden sm:inline text-[15px] lg:text-[14px]" style={{ width: "126.25px", height: "15px", fontFamily: "'Poppins', sans-serif", lineHeight: "15px" }}>Get a Free Quote</span>
-                <svg width="15" height="10.55" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "inline-block", verticalAlign: "middle" }}><path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </Link>
+              <span className="mt-[10px] sm:mt-[16px] flex p-[2px] rounded-lg" style={{ width: "258.5px", maxWidth: "100%", background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
+                <Link
+                  href="/free-shopify-store-audit"
+                  className="flex items-center justify-center gap-2 rounded-lg text-white transition-all hover:text-[#3DC77A] text-[15px] sm:text-[15px] lg:text-[13px] h-[43px] sm:h-[51px] lg:h-[43px] py-[12px] px-[6px] sm:py-[16px] sm:px-[25px] lg:py-[12px] lg:px-[10px] w-full"
+                  style={{ fontFamily: "'Poppins', sans-serif", background: "#121212" }}
+                >
+                  <span className="sm:hidden text-[13px] whitespace-nowrap" style={{ fontFamily: "'Poppins', sans-serif" }}>Free Quote</span>
+                  <span className="hidden sm:inline text-[15px] lg:text-[13px]" style={{ width: "126.25px", height: "15px", fontFamily: "'Poppins', sans-serif", lineHeight: "15px" }}>Get a Free Quote</span>
+                  <svg width="15" height="10.55" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "inline-block", verticalAlign: "middle" }}><path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </Link>
+              </span>
 
-              <p className="mt-3 text-center text-[14px] sm:text-[15px] lg:text-[13px] lg:whitespace-nowrap" style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF", lineHeight: "25px" }}>
-                Not sure where to start?<br />
-                <Link href="/free-shopify-store-audit" className="hover:opacity-80 inline-flex items-center gap-1 text-[14px] sm:text-[15px] lg:text-[13px]" style={{ fontFamily: "'Poppins', sans-serif", color: "#B18945", borderBottom: "1px solid #B18945", paddingBottom: "0px", marginBottom: "-1px" }}>
-                  Get a Free Audit <svg width="15" height="10.55" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "inline-block", verticalAlign: "middle" }}><path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="#B18945" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              <p className="mt-[10px] sm:mt-[16px] text-center text-[13px] sm:text-[15px] lg:text-[13px] lg:whitespace-nowrap" style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF", lineHeight: "25px" }}>
+                Not sure? Start here.<br />
+                <Link href="/free-shopify-store-audit" className="hover:opacity-80 inline-flex items-center gap-1 text-[13px] sm:text-[15px] lg:text-[13px]" style={{ fontFamily: "'Poppins', sans-serif", background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", borderBottom: "1px solid #3DC77A", paddingBottom: "0px", marginBottom: "-1px" }}>
+                  Get a Free Audit <svg width="15" height="10.55" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "inline-block", verticalAlign: "middle" }}><path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="#3DC77A" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </Link>
               </p>
             </div>
 
             {/* Card 2 */}
-            <div className="rounded-2xl bg-[#111111]/90 backdrop-blur-sm transition-all duration-300 border-2 border-white/10 hover:border-[#b18945] flex-1 lg:flex-none lg:w-[220px] flex flex-col min-h-[418px] sm:min-h-0 lg:min-h-[206px] py-[20px] px-[16px] sm:py-[30px] sm:px-[20px] lg:py-[20px] lg:px-[16px]" style={{ minWidth: "0", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155" }}>
+            <div className="rounded-2xl bg-[#111111]/90 backdrop-blur-sm transition-all duration-300 border-2 border-white/10 hover:border-[#A8F0B4] flex-1 lg:flex-none lg:w-[220px] flex flex-col min-h-[360px] sm:min-h-0 lg:min-h-[206px] py-[20px] px-[16px] sm:py-[30px] sm:px-[20px] lg:py-[20px] lg:px-[16px] min-[1440px]:w-[302px] min-[1440px]:min-h-0 min-[1440px]:py-[30px] min-[1440px]:px-[20px]" style={{ minWidth: "0", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155" }}>
               {/* Icon */}
               <svg className="mb-5" width="30" height="30" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {/* Bar 1 - shortest */}
@@ -251,27 +253,29 @@ export default function HomePage() {
                 <path d="M35,10 L27,22 L31,22 L31,46 L39,46 L39,22 L43,22 Z" stroke="white" strokeWidth="2" strokeLinejoin="round" fill="none"/>
               </svg>
 
-              <h2 className="text-[16px] sm:text-[20px] mb-[8px] sm:mb-0 min-h-[72px] sm:min-h-0 lg:min-h-[90px]" style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", color: "#B18945", lineHeight: "1.5" }}>
+              <h2 className="text-[16px] sm:text-[20px] mb-[8px] sm:mb-0 min-h-[72px] sm:min-h-0 lg:min-h-[90px] min-[1440px]:min-h-0" style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", lineHeight: "1.5", background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                 I Need to Scale My<br />Shopify Revenue
               </h2>
-              <p className="mt-0 sm:mt-3 text-[13px] sm:text-[15px] lg:text-[13px]" style={{ width: "258.5px", maxWidth: "100%", height: "75px", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF" }}>
-                Data-driven marketing, CRO, email, and paid ads to grow faster and profitably.
+              <p className="mt-[10px] sm:mt-[16px] grow sm:grow-0 text-[13px] sm:text-[15px] lg:text-[13px]" style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF" }}>
+                Data-driven CRO, email, and paid ads to grow faster and profitably.
               </p>
 
-              <Link
-                href="/shopify-conversion-rate-optimization-cro-agency"
-                className="mt-[32px] sm:mt-6 lg:mt-[12px] flex items-center justify-center gap-2 rounded-lg text-white transition-all hover:text-[#b18945] text-[14px] sm:text-[15px] lg:text-[14px] h-[43px] sm:h-[51px] lg:h-[43px] py-[12px] px-[6px] sm:py-[16px] sm:px-[25px] lg:py-[12px] lg:px-[10px]"
-                style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", background: "#121212", border: "2px solid #b18945" }}
-              >
-                <span className="sm:hidden text-[13px] whitespace-nowrap" style={{ fontFamily: "'Poppins', sans-serif" }}>Free Strategy</span>
-                <span className="hidden sm:inline text-[15px] lg:text-[14px]" style={{ width: "144.61px", height: "15px", fontFamily: "'Poppins', sans-serif", lineHeight: "15px" }}>Get a Free Strategy</span>
-                <svg width="15" height="10.55" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "inline-block", verticalAlign: "middle" }}><path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </Link>
+              <span className="mt-[10px] sm:mt-[16px] flex p-[2px] rounded-lg" style={{ width: "258.5px", maxWidth: "100%", background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
+                <Link
+                  href="/shopify-conversion-rate-optimization-cro-agency"
+                  className="flex items-center justify-center gap-2 rounded-lg text-white transition-all hover:text-[#3DC77A] text-[15px] sm:text-[15px] lg:text-[13px] h-[43px] sm:h-[51px] lg:h-[43px] py-[12px] px-[6px] sm:py-[16px] sm:px-[25px] lg:py-[12px] lg:px-[10px] w-full"
+                  style={{ fontFamily: "'Poppins', sans-serif", background: "#121212" }}
+                >
+                  <span className="sm:hidden text-[13px] whitespace-nowrap" style={{ fontFamily: "'Poppins', sans-serif" }}>Free Strategy</span>
+                  <span className="hidden sm:inline text-[15px] lg:text-[13px]" style={{ width: "144.61px", height: "15px", fontFamily: "'Poppins', sans-serif", lineHeight: "15px" }}>Get a Free Strategy</span>
+                  <svg width="15" height="10.55" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "inline-block", verticalAlign: "middle" }}><path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </Link>
+              </span>
 
-              <p className="mt-3 text-center text-[14px] sm:text-[15px] lg:text-[13px] lg:whitespace-nowrap" style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF", lineHeight: "25px" }}>
-                Want to see what&apos;s possible?<br />
-                <Link href="/reviews" className="hover:opacity-80 inline-flex items-center gap-1 text-[14px] sm:text-[15px] lg:text-[13px]" style={{ fontFamily: "'Poppins', sans-serif", color: "#B18945", borderBottom: "1px solid #B18945", paddingBottom: "0px", marginBottom: "-1px" }}>
-                  See Case Studies <svg width="15" height="10.55" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "inline-block", verticalAlign: "middle" }}><path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="#B18945" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              <p className="mt-[10px] sm:mt-[16px] text-center text-[13px] sm:text-[15px] lg:text-[13px] lg:whitespace-nowrap" style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF", lineHeight: "25px" }}>
+                Want to see results?<br />
+                <Link href="/reviews" className="hover:opacity-80 inline-flex items-center gap-1 text-[13px] sm:text-[15px] lg:text-[13px]" style={{ fontFamily: "'Poppins', sans-serif", background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", borderBottom: "1px solid #3DC77A", paddingBottom: "0px", marginBottom: "-1px" }}>
+                  See Case Studies <svg width="15" height="10.55" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "inline-block", verticalAlign: "middle" }}><path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="#3DC77A" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </Link>
               </p>
             </div>
@@ -279,7 +283,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Ticker ────────────────────────────────────────────────────────── */}
+      {/* â"€â"€ Ticker â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <div className="overflow-hidden border-y border-white/10 bg-[#0a0a0a]" style={{ height: "66.39px", color: "#334155", fontFamily: "'Poppins', sans-serif", fontSize: "16px" }}>
         <div
           className="ticker-strip flex whitespace-nowrap h-full items-center"
@@ -288,23 +292,23 @@ export default function HomePage() {
           {[...Array(3)].map((_, i) => (
             <div key={i} className="flex shrink-0 items-center gap-8 px-4 font-medium text-white" style={{ fontSize: "16px", fontFamily: "'Poppins', sans-serif" }}>
               <span>700+ Stores Built</span>
-              <span className="shrink-0 rounded-full bg-[#b18945]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
+              <span className="shrink-0 rounded-full bg-[#4a7c59]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
               <span>$900M+ Revenue Generated</span>
-              <span className="shrink-0 rounded-full bg-[#b18945]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
+              <span className="shrink-0 rounded-full bg-[#4a7c59]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
               <span>8+ Years of Experience</span>
-              <span className="shrink-0 rounded-full bg-[#b18945]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
+              <span className="shrink-0 rounded-full bg-[#4a7c59]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
               <span>Full-Stack Ecommerce Partner</span>
-              <span className="shrink-0 rounded-full bg-[#b18945]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
+              <span className="shrink-0 rounded-full bg-[#4a7c59]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
               <span>Shopify Plus Certified</span>
-              <span className="shrink-0 rounded-full bg-[#b18945]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
+              <span className="shrink-0 rounded-full bg-[#4a7c59]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
               <span>28.5% Avg Conversion Lift</span>
-              <span className="shrink-0 rounded-full bg-[#b18945]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
+              <span className="shrink-0 rounded-full bg-[#4a7c59]" style={{ width: "7px", height: "7px", display: "inline-block" }} />
             </div>
           ))}
         </div>
       </div>
 
-      {/* ── Logos Section ─────────────────────────────────────────────────── */}
+      {/* â"€â"€ Logos Section â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section style={{ background: "#000000", paddingBottom: "30px" }}>
 
         {/* Stats row */}
@@ -316,28 +320,30 @@ export default function HomePage() {
             { label: "Average Conversion Rate", value: "28.5%", suffix: "improvement" },
             { label: "Average Order Value",      value: "22%",   suffix: "improvement" },
             { label: "Total Revenue",            value: "28.8%", suffix: "improvement" },
-          ].map((s) => (
+          ].map((s, i) => (
             <div key={s.label} className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#111111] w-full" style={{ minHeight: "117px", padding: "15px", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155" }}>
               <div style={{ flex: 1, minWidth: 0, padding: "10px", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155" }}>
                 <p style={{ width: "240.42px", height: "26px", fontSize: "16px", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF", fontWeight: 700, lineHeight: "26px" }}>{s.label}</p>
-                <p className="mt-2" style={{ width: "240.42px", height: "27px", fontSize: "17px", fontFamily: "'Lato', sans-serif", color: "#B18945", fontWeight: 600, lineHeight: "27px" }}>
-                  {s.value} <span style={{ color: "#B18945", fontWeight: 400 }}>{s.suffix}</span>
+                <p className="mt-2" style={{ width: "240.42px", height: "27px", fontSize: "17px", fontFamily: "'Lato', sans-serif", fontWeight: 600, lineHeight: "27px", background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                  {s.value} <span style={{ fontWeight: 400 }}>{s.suffix}</span>
                 </p>
               </div>
               <div style={{ padding: "12px", flexShrink: 0 }}>
               <svg width="48" height="48" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Bar 1 — shortest, all bottom-aligned at y=48 */}
-                <rect x="2" y="38" width="8" height="10" stroke="#b18945" strokeWidth="2.2" fill="none"/>
-                {/* Bar 2 */}
-                <rect x="14" y="30" width="8" height="18" stroke="#b18945" strokeWidth="2.2" fill="none"/>
-                {/* Bar 3 */}
-                <rect x="26" y="21" width="8" height="27" stroke="#b18945" strokeWidth="2.2" fill="none"/>
-                {/* Bar 4 — tallest */}
-                <rect x="38" y="12" width="8" height="36" stroke="#b18945" strokeWidth="2.2" fill="none"/>
-                {/* Trend curve — elevated, inward bow, starts above bar1, ends above bar4 */}
-                <path d="M6,23 Q24,15 42,0" stroke="#b18945" strokeWidth="2.2" strokeLinecap="round" fill="none"/>
-                {/* Arrowhead at (42,0) */}
-                <path d="M42,0 L39,6 M42,0 L36,3" stroke="#b18945" strokeWidth="2.8" strokeLinecap="round"/>
+                <defs>
+                  <linearGradient id={"stat-grad-" + i} x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#A8F0B4"/>
+                    <stop offset="29.33%" stopColor="#3DC77A"/>
+                    <stop offset="52.4%" stopColor="#A8F0B4"/>
+                    <stop offset="100%" stopColor="#4EB771"/>
+                  </linearGradient>
+                </defs>
+                <rect x="2" y="38" width="8" height="10" stroke={"url(#stat-grad-" + i + ")"} strokeWidth="2.2" fill="none"/>
+                <rect x="14" y="30" width="8" height="18" stroke={"url(#stat-grad-" + i + ")"} strokeWidth="2.2" fill="none"/>
+                <rect x="26" y="21" width="8" height="27" stroke={"url(#stat-grad-" + i + ")"} strokeWidth="2.2" fill="none"/>
+                <rect x="38" y="12" width="8" height="36" stroke={"url(#stat-grad-" + i + ")"} strokeWidth="2.2" fill="none"/>
+                <path d="M6,23 Q24,15 42,0" stroke={"url(#stat-grad-" + i + ")"} strokeWidth="2.2" strokeLinecap="round" fill="none"/>
+                <path d="M42,0 L39,6 M42,0 L36,3" stroke={"url(#stat-grad-" + i + ")"} strokeWidth="2.8" strokeLinecap="round"/>
               </svg>
               </div>
             </div>
@@ -375,7 +381,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Services ──────────────────────────────────────────────────────── */}
+      {/* â"€â"€ Services â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="bg-[#0d0d0d] py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -393,14 +399,14 @@ export default function HomePage() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="group rounded-2xl border border-white/10 bg-white/5 p-7 transition-all hover:border-[#b18945]/30 hover:bg-white/[0.07]"
+                className="group rounded-2xl border border-white/10 bg-white/5 p-7 transition-all hover:border-[#4a7c59]/30 hover:bg-white/[0.07]"
               >
-                <h3 className="text-xl font-bold text-white group-hover:text-[#b18945] transition-colors">
+                <h3 className="text-xl font-bold text-white group-hover:text-[#4a7c59] transition-colors">
                   {s.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-white/50">{s.desc}</p>
-                <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[#b18945] group-hover:gap-2 transition-all">
-                  Learn more →
+                <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[#4a7c59] group-hover:gap-2 transition-all">
+                  Learn more â†'
                 </span>
               </Link>
             ))}
@@ -408,7 +414,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Metrics ───────────────────────────────────────────────────────── */}
+      {/* â"€â"€ Metrics â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="bg-[#0a0a0a] py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -422,7 +428,7 @@ export default function HomePage() {
             {METRICS.map((m) => (
               <div key={m.label} className="text-center">
                 <div className="text-4xl">{m.icon}</div>
-                <span className="mt-4 block text-4xl font-extrabold text-[#b18945]">{m.value}</span>
+                <span className="mt-4 block text-4xl font-extrabold text-[#4a7c59]">{m.value}</span>
                 <p className="mt-2 text-sm text-white/50">{m.label}</p>
               </div>
             ))}
@@ -430,7 +436,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Growth Chart ──────────────────────────────────────────────────── */}
+      {/* â"€â"€ Growth Chart â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="bg-[#0d0d0d] py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -446,9 +452,9 @@ export default function HomePage() {
           <div className="mt-14 flex items-end justify-center gap-4 sm:gap-6">
             {BAR_DATA.map((j) => (
               <div key={j.year} className="flex flex-col items-center gap-2">
-                <span className="text-xs font-bold text-[#b18945]">{j.stores}+</span>
+                <span className="text-xs font-bold text-[#4a7c59]">{j.stores}+</span>
                 <div
-                  className="w-10 sm:w-14 rounded-t-lg bg-gradient-to-t from-[#b18945]/40 to-[#b18945] transition-all"
+                  className="w-10 sm:w-14 rounded-t-lg bg-gradient-to-t from-[#4a7c59]/40 to-[#4a7c59] transition-all"
                   style={{ height: `${(j.stores / maxStores) * 200}px` }}
                 />
                 <span className="text-xs text-white/40">{j.year}</span>
@@ -458,7 +464,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Process ───────────────────────────────────────────────────────── */}
+      {/* â"€â"€ Process â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="bg-[#0a0a0a] py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -471,16 +477,16 @@ export default function HomePage() {
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {PROCESS.map((p) => (
               <div key={p.step} className="flex flex-col">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#b18945] text-xs font-bold text-[#0a0a0a]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#4a7c59] text-xs font-bold text-[#0a0a0a]">
                   {p.step}
                 </div>
                 <h3 className="mt-5 text-lg font-bold text-white">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/50">{p.desc}</p>
                 <Link
                   href="/free-shopify-store-audit"
-                  className="mt-auto inline-flex items-center gap-2 pt-4 text-sm font-semibold text-[#b18945] hover:gap-3 transition-all"
+                  className="mt-auto inline-flex items-center gap-2 pt-4 text-sm font-semibold text-[#4a7c59] hover:gap-3 transition-all"
                 >
-                  Get started →
+                  Get started â†'
                 </Link>
               </div>
             ))}
@@ -488,7 +494,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Testimonials ──────────────────────────────────────────────────── */}
+      {/* â"€â"€ Testimonials â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="bg-[#0d0d0d] py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -502,11 +508,11 @@ export default function HomePage() {
             {TESTIMONIALS.map((t) => (
               <div
                 key={t.name}
-                className="rounded-2xl border border-white/10 bg-white/5 p-7 transition-all hover:border-[#b18945]/30"
+                className="rounded-2xl border border-white/10 bg-white/5 p-7 transition-all hover:border-[#4a7c59]/30"
               >
                 <p className="text-sm leading-relaxed text-white/70">"{t.quote}"</p>
                 <div className="mt-6 flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#b18945] text-sm font-extrabold text-[#0a0a0a] ring-4 ring-[#111111]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#4a7c59] text-sm font-extrabold text-[#0a0a0a] ring-4 ring-[#111111]">
                     {t.initials}
                   </div>
                   <div>
@@ -521,15 +527,15 @@ export default function HomePage() {
           <div className="mt-10 text-center">
             <Link
               href="/reviews"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#b18945] hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#4a7c59] hover:gap-3 transition-all"
             >
-              Read all reviews →
+              Read all reviews â†'
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── Why Us / Plans ────────────────────────────────────────────────── */}
+      {/* â"€â"€ Why Us / Plans â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="bg-[#0a0a0a] py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 lg:flex lg:items-center lg:gap-20">
           <div className="lg:w-1/2">
@@ -540,7 +546,7 @@ export default function HomePage() {
             <ul className="mt-8 space-y-4">
               {PLANS.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm text-white/70">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#b18945] shrink-0" />
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#4a7c59] shrink-0" />
                   {item}
                 </li>
               ))}
@@ -548,7 +554,7 @@ export default function HomePage() {
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/free-shopify-store-audit"
-                className="inline-flex items-center justify-center rounded-lg bg-[#b18945]
+                className="inline-flex items-center justify-center rounded-lg bg-[#4a7c59]
                   px-6 py-3 text-sm font-semibold text-[#0a0a0a] transition-all hover:bg-[#9a7538]"
               >
                 Get a Free Audit
@@ -556,7 +562,7 @@ export default function HomePage() {
               <Link
                 href="/book-shopify-consultation"
                 className="inline-flex items-center justify-center rounded-lg border border-white/20
-                  px-6 py-3 text-[12px] font-semibold text-white transition-all hover:border-[#b18945] hover:text-[#b18945]"
+                  px-6 py-3 text-[12px] font-semibold text-white transition-all hover:border-[#4a7c59] hover:text-[#4a7c59]"
               >
                 Book a Call
               </Link>
@@ -565,7 +571,7 @@ export default function HomePage() {
 
           <div className="mt-14 lg:mt-0 lg:w-1/2">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
-              <div className="text-3xl font-extrabold text-[#b18945]">700+</div>
+              <div className="text-3xl font-extrabold text-[#4a7c59]">700+</div>
               <p className="mt-1 text-sm text-white/50">Shopify stores launched globally</p>
               <div className="mt-6 grid grid-cols-2 gap-4">
                 {[
@@ -575,7 +581,7 @@ export default function HomePage() {
                   { v: "98%",    l: "Client Retention" },
                 ].map((s) => (
                   <div key={s.l} className="rounded-xl border border-white/10 bg-white/5 p-4">
-                    <div className="text-xl font-extrabold text-[#b18945]">{s.v}</div>
+                    <div className="text-xl font-extrabold text-[#4a7c59]">{s.v}</div>
                     <div className="mt-1 text-xs text-white/40">{s.l}</div>
                   </div>
                 ))}
@@ -585,7 +591,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Partners ──────────────────────────────────────────────────────── */}
+      {/* â"€â"€ Partners â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="bg-[#0d0d0d] py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -599,7 +605,7 @@ export default function HomePage() {
             {PARTNERS.map((p) => (
               <div
                 key={p.alt}
-                className="rounded-2xl border border-white/10 bg-white/5 p-7 transition-all hover:border-[#b18945]/30"
+                className="rounded-2xl border border-white/10 bg-white/5 p-7 transition-all hover:border-[#4a7c59]/30"
               >
                 <Image
                   src={p.src}
@@ -614,8 +620,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Final CTA ─────────────────────────────────────────────────────── */}
-      <section className="bg-[#b18945] py-20">
+      {/* â"€â"€ Final CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
+      <section className="bg-[#4a7c59] py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-extrabold text-[#0a0a0a] sm:text-4xl">
             Ready to Grow Your Shopify Store?
@@ -628,14 +634,14 @@ export default function HomePage() {
             <Link
               href="/free-shopify-store-audit"
               className="inline-flex items-center justify-center rounded-lg bg-[#0a0a0a]
-                px-8 py-3.5 text-sm font-semibold text-[#b18945] transition-all hover:bg-[#111]"
+                px-8 py-3.5 text-sm font-semibold text-[#4a7c59] transition-all hover:bg-[#111]"
             >
               Get a Free Audit
             </Link>
             <Link
               href="/book-shopify-consultation"
               className="inline-flex items-center justify-center rounded-lg border-2 border-[#0a0a0a]
-                px-8 py-3.5 text-sm font-semibold text-[#0a0a0a] transition-all hover:bg-[#0a0a0a] hover:text-[#b18945]"
+                px-8 py-3.5 text-sm font-semibold text-[#0a0a0a] transition-all hover:bg-[#0a0a0a] hover:text-[#4a7c59]"
             >
               Book a Call
             </Link>

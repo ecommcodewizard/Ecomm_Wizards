@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+﻿import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -8,9 +8,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // ── Core brand palette (ecommwizards.com) ──
+        // â”€â”€ Core brand palette (ecommwizards.com) â”€â”€
         brand: {
-          DEFAULT: "#046bd2",   // secondary blue — dominant (370 uses)
+          DEFAULT: "#046bd2",   // secondary blue â€” dominant (370 uses)
           dark:    "#045cb4",   // darker blue
           50:      "#f0f5fa",
           100:     "#d1e4f7",
@@ -23,12 +23,12 @@ const config: Config = {
           800:     "#1e293b",
           900:     "#1e293b",
         },
-        primary:   "#61ce70",   // green — CTAs
+        primary:   "#61ce70",   // green â€” CTAs
         secondary: "#046bd2",   // blue
         accent:    "#6ec1e4",   // light blue
-        gold:      "#b18945",   // warm gold (1070 uses)
+        gold:      "#4a7c59",   // warm gold (1070 uses)
 
-        // ── Neutrals ──
+        // â”€â”€ Neutrals â”€â”€
         dark: {
           DEFAULT: "#334155",   // main text (4567 uses)
           50:      "#f8fafc",
@@ -43,7 +43,7 @@ const config: Config = {
           900:     "#000000",
         },
 
-        // ── Backgrounds ──
+        // â”€â”€ Backgrounds â”€â”€
         canvas: "#ffffff",
         cream:  "#fbf7ed",
         muted:  "#f0f5fa",

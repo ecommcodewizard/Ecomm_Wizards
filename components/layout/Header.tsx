@@ -114,9 +114,9 @@ function DesktopDropdown({ item }: { item: NavItem }) {
     return (
       <Link
         href={item.href ?? "/"}
-        className="group flex h-full flex-col items-center justify-center px-[10px] xl:px-4 text-sm xl:text-md font-medium text-white transition-colors hover:text-gold"
+        className="group flex h-full flex-col items-center justify-center px-[10px] xl:px-4 text-sm xl:text-md font-medium transition-colors"
       >
-        <span>{item.label}</span>
+        <span className="text-white bg-clip-text group-hover:text-transparent" style={{ backgroundImage: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>{item.label}</span>
         <span className="mt-1 block h-[2px] w-0 rounded-full bg-gold transition-all duration-300 group-hover:w-full" />
       </Link>
     );
@@ -132,11 +132,11 @@ function DesktopDropdown({ item }: { item: NavItem }) {
     >
       <button
         type="button"
-        className="group flex h-full cursor-default flex-col items-center justify-center px-[10px] xl:px-4 text-sm xl:text-md font-medium text-white transition-colors hover:text-gold focus:outline-none"
+        className="group flex h-full cursor-default flex-col items-center justify-center px-[10px] xl:px-4 text-sm xl:text-md font-medium transition-colors focus:outline-none"
         aria-expanded={open}
         aria-haspopup="true"
       >
-        <span>{item.label}</span>
+        <span className="text-white bg-clip-text group-hover:text-transparent" style={{ backgroundImage: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>{item.label}</span>
         <span className="mt-1 block h-[2px] w-0 rounded-full bg-gold transition-all duration-300 group-hover:w-full" />
       </button>
 
@@ -152,7 +152,7 @@ function DesktopDropdown({ item }: { item: NavItem }) {
               <Link
                 key={child.href}
                 href={child.href}
-                className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm text-white/70 transition-colors hover:bg-white/5 hover:text-gold"
+                className="group flex items-center gap-3 rounded-md px-3 py-2.5 text-sm text-white/70 transition-colors hover:bg-white/5"
               >
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-white/5 text-white/50">
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -160,7 +160,7 @@ function DesktopDropdown({ item }: { item: NavItem }) {
                   </svg>
                 </span>
                 <span>
-                  <span className="block font-medium text-white/90">{child.label}</span>
+                  <span className="block font-medium text-white/90 bg-clip-text group-hover:text-transparent" style={{ backgroundImage: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>{child.label}</span>
                   {child.description && (
                     <span className="block text-xs text-white/40">{child.description}</span>
                   )}
@@ -258,11 +258,11 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="shrink-0 flex items-center">
             <Image
-              src="/images/cropped-cropped-ecomm-golden.png"
+              src="/images/ecomm-green.png"
               alt="Ecomm Wizards"
               width={227}
               height={60}
-              className="h-[69px] sm:h-9 md:h-[69px] lg:h-[52px] xl:h-[60px] w-auto object-contain"
+              className="h-[89px] w-[284px] object-cover object-[0%_58%] sm:h-[65px] sm:w-[263px] sm:object-cover sm:object-[0%_65%] md:h-[69px] md:w-[263px] md:object-cover md:object-[0%_58%] lg:h-[62px] lg:w-[236px] lg:object-cover lg:object-[0%_58%] xl:h-[70px] xl:w-[267px]"
               priority
             />
           </Link>
@@ -276,17 +276,19 @@ export default function Header() {
 
           {/* Desktop CTAs — lg+ */}
           <div className="hidden lg:flex shrink-0 items-center gap-2 xl:gap-3 pl-3">
-            <Link
-              href="/free-shopify-store-audit"
-              className="inline-flex items-center justify-center rounded-full border-2 border-gold text-white transition-all hover:bg-white hover:text-black whitespace-nowrap text-sm xl:text-sm2 px-4 xl:px-6 h-[44px] xl:h-[50px]"
-            >
-              Get Started
-            </Link>
+            <span className="inline-flex p-[2px] rounded-full shrink-0" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
+              <Link
+                href="/free-shopify-store-audit"
+                className="inline-flex items-center justify-center rounded-full bg-black text-white transition-all hover:bg-white hover:text-black whitespace-nowrap text-sm xl:text-sm2 px-4 xl:px-6 h-[44px] xl:h-[50px]"
+              >
+                Get Started
+              </Link>
+            </span>
             <Link
               href="/book-shopify-consultation"
-              className="inline-flex items-center justify-center rounded-full border-2 border-transparent bg-white text-black transition-all hover:border-gold whitespace-nowrap text-sm xl:text-sm2 px-4 xl:px-6 h-[44px] xl:h-[50px]"
+              className="group inline-flex items-center justify-center rounded-full border-2 border-transparent bg-white text-black transition-all hover:border-gold whitespace-nowrap text-sm xl:text-sm2 px-4 xl:px-6 h-[44px] xl:h-[50px]"
             >
-              Book a Call
+              <span className="bg-clip-text group-hover:text-transparent" style={{ backgroundImage: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>Book a Call</span>
             </Link>
           </div>
 
@@ -294,17 +296,19 @@ export default function Header() {
           <div className="flex lg:hidden items-center gap-3 ml-auto pr-2">
 
             {/* Both CTAs — md and up only */}
-            <Link
-              href="/free-shopify-store-audit"
-              className="hidden md:inline-flex items-center justify-center rounded-full border-2 border-gold text-white whitespace-nowrap transition-all hover:bg-white hover:text-black font-semibold text-sm px-4 h-[42px]"
-            >
-              Get Started
-            </Link>
+            <span className="hidden md:inline-flex p-[2px] rounded-full shrink-0" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
+              <Link
+                href="/free-shopify-store-audit"
+                className="inline-flex items-center justify-center rounded-full bg-black text-white whitespace-nowrap transition-all hover:bg-white hover:text-black font-semibold text-sm px-4 h-[42px]"
+              >
+                Get Started
+              </Link>
+            </span>
             <Link
               href="/book-shopify-consultation"
-              className="hidden md:inline-flex items-center justify-center rounded-full bg-white text-black border-2 border-transparent whitespace-nowrap transition-all hover:border-gold font-semibold text-sm px-4 h-[42px]"
+              className="group hidden md:inline-flex items-center justify-center rounded-full bg-white text-black border-2 border-transparent whitespace-nowrap transition-all hover:border-gold font-semibold text-sm px-4 h-[42px]"
             >
-              Book a Call
+              <span className="bg-clip-text group-hover:text-transparent" style={{ backgroundImage: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>Book a Call</span>
             </Link>
 
             {/* Hamburger */}
@@ -357,11 +361,11 @@ export default function Header() {
         {/* Drawer header */}
         <div className="flex h-[100px] sm:h-[70px] md:h-[100px] items-center justify-between border-b border-white/10 px-4 sm:px-[20px]">
           <Image
-            src="/images/cropped-cropped-ecomm-golden.png"
+            src="/images/ecomm-green.png"
             alt="Ecomm Wizards"
             width={140}
             height={37}
-            className="h-[34px] w-auto object-contain"
+            className="h-[75px] w-[283px] object-contain object-left ml-3"
           />
           <button
             type="button"
