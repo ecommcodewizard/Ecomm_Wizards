@@ -152,7 +152,7 @@ function FooterCol({ title, links, className = "" }: { title: string; links: { l
   const [open, setOpen] = useState(false);
 
   return (
-    <div className={`border-b border-white/10 sm:border-b-0 lg:border-l lg:border-white/10 lg:first:border-l-0 lg:p-[16px] lg:first:pl-0 lg:h-full ${className}`}>
+    <div className={`border-b border-white/10 sm:border-b-0 lg:border-l lg:border-white/10 lg:first:border-l-0 lg:p-[10px] lg:first:pl-0 lg:h-full ${className}`}>
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
@@ -178,9 +178,9 @@ function FooterCol({ title, links, className = "" }: { title: string; links: { l
           <li key={l.label}>
             <Link
               href={l.href}
-              className="block px-[25px] pb-[12px] text-[14px] text-white transition-colors hover:text-gold sm:px-0 sm:pb-[7.5px] sm:mt-[7.5px] sm:text-[16px] sm:text-white"
+              className="group block px-[25px] pb-[12px] text-[14px] transition-colors sm:px-0 sm:pb-[7.5px] sm:mt-[7.5px] sm:text-[16px]"
             >
-              {l.label}
+              <span className="text-white bg-clip-text group-hover:text-transparent" style={{ backgroundImage: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>{l.label}</span>
             </Link>
           </li>
         ))}
@@ -244,11 +244,11 @@ export default function Footer() {
         <div className="flex justify-center mb-3">
           <Link href="/">
             <Image
-              src="/images/cropped-cropped-ecomm-golden.png"
+              src="/images/ecomm-green.png"
               alt="Ecomm Wizards"
               width={218}
               height={57}
-              className="h-[65px] w-auto object-contain"
+              className="h-[65px] w-[248px] object-cover object-[0%_58%]"
               priority
             />
           </Link>
@@ -262,11 +262,11 @@ export default function Footer() {
         <div className="mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 w-full max-w-[1320px] px-4 lg:px-6 py-5 lg:h-[97px] lg:py-0">
           <Link href="/" className="hidden md:flex shrink-0 items-center">
             <Image
-              src="/images/cropped-cropped-ecomm-golden.png"
+              src="/images/ecomm-green.png"
               alt="Ecomm Wizards"
               width={218}
               height={57}
-              className="h-[45px] md:h-[65px] lg:h-[57px] w-auto object-contain"
+              className="h-[65px] w-[248px] lg:h-[57px] lg:w-[217px] object-cover object-[0%_58%]"
               priority
             />
           </Link>
@@ -287,7 +287,7 @@ export default function Footer() {
 
       {/* ── Select a Service — hidden mobile ── */}
       <div className="hidden sm:block relative overflow-hidden bg-black xl:h-[351px] xl:flex xl:flex-col xl:justify-start">
-        <div className="absolute inset-0" style={{background: "radial-gradient(ellipse 55% 45% at 50% 40%, rgba(200,146,42,0.35) 0%, rgba(200,146,42,0.15) 40%, rgba(200,146,42,0.05) 65%, transparent 80%)"}} />
+        <div className="absolute inset-0" style={{background: "radial-gradient(ellipse 55% 45% at 50% 40%, rgba(61,199,122,0.35) 0%, rgba(61,199,122,0.15) 40%, rgba(61,199,122,0.05) 65%, transparent 80%)"}} />
         <div className="relative z-10 mx-auto w-full max-w-[1320px] p-[24px]">
           <h3 className="mb-6 text-center text-[20px] leading-[30px] font-semibold text-white">Select a Service</h3>
           <div className="flex flex-wrap justify-center text-[16px]">
@@ -295,9 +295,9 @@ export default function Footer() {
               <Link
                 key={tag.href + tag.label}
                 href={tag.href}
-                className="inline-flex items-center justify-center rounded-md bg-white/5 border border-[rgba(255,255,255,0.08)] m-[7.5px] px-[35px] py-[5px] text-[15px] text-white transition-opacity hover:opacity-75"
+                className="group inline-flex items-center justify-center rounded-md bg-white/5 border border-[rgba(255,255,255,0.08)] m-[7.5px] px-[35px] py-[5px] text-[15px] transition-colors"
               >
-                {tag.label}
+                <span className="text-white bg-clip-text group-hover:text-transparent" style={{ backgroundImage: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>{tag.label}</span>
               </Link>
             ))}
           </div>
@@ -306,7 +306,7 @@ export default function Footer() {
 
       {/* ── Main footer body ── */}
       <div className="border-t border-white/10 bg-black relative overflow-hidden">
-        <div className="absolute inset-0" style={{background: "radial-gradient(ellipse 55% 45% at 50% 50%, rgba(200,146,42,0.35) 0%, rgba(200,146,42,0.15) 40%, rgba(200,146,42,0.05) 65%, transparent 80%)"}} />
+        <div className="absolute inset-0" style={{background: "radial-gradient(ellipse 55% 45% at 50% 50%, rgba(61,199,122,0.35) 0%, rgba(61,199,122,0.15) 40%, rgba(61,199,122,0.05) 65%, transparent 80%)"}} />
         <div className="relative z-10 mx-auto w-full max-w-[1320px] px-[24px]">
           <div className="flex flex-col lg:flex-row gap-10 xl:gap-14">
 

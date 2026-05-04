@@ -1,4 +1,4 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -30,9 +30,9 @@
   100% { transform: translate3d(-50%, 0, 0); }
 }
 
-/* ─────────────────────────────────────────────
-   CSS Custom Properties — ecommwizards.com
-   ───────────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   CSS Custom Properties â€” ecommwizards.com
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :root {
   /* Colors */
   --color-primary:       #61ce70;
@@ -40,7 +40,7 @@
   --color-secondary:     #046bd2;
   --color-secondary-dark:#045cb4;
   --color-accent:        #6ec1e4;
-  --color-gold:          #b18945;
+  --color-gold:          #4a7c59;
 
   /* Neutrals */
   --color-dark:          #334155;
@@ -92,9 +92,9 @@
   --ease-default:    ease;
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Base Layer
-   ───────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -151,18 +151,18 @@
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Components Layer
-   ───────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @layer components {
 
-  /* ── Container ── */
+  /* â”€â”€ Container â”€â”€ */
   .container-site {
     @apply mx-auto w-full px-5;
     max-width: var(--container-max);
   }
 
-  /* ── Navigation ── */
+  /* â”€â”€ Navigation â”€â”€ */
   .nav-link {
     @apply relative text-sm font-medium transition-colors;
     color: var(--color-dark);
@@ -181,7 +181,7 @@
     background-color: var(--color-secondary);
   }
 
-  /* ── Buttons ── */
+  /* â”€â”€ Buttons â”€â”€ */
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 px-5 py-2.5
       text-sm font-semibold text-white transition-all;
@@ -266,7 +266,7 @@
     color: var(--color-dark);
   }
 
-  /* ── Cards ── */
+  /* â”€â”€ Cards â”€â”€ */
   .card {
     @apply bg-white;
     border-radius: var(--radius-md);
@@ -291,7 +291,7 @@
     box-shadow: var(--shadow-sm);
   }
 
-  /* ── Section utilities ── */
+  /* â”€â”€ Section utilities â”€â”€ */
   .section {
     @apply py-16 lg:py-24;
   }
@@ -312,7 +312,7 @@
     @apply py-16 lg:py-24;
   }
 
-  /* ── Typography helpers ── */
+  /* â”€â”€ Typography helpers â”€â”€ */
   .heading-xl {
     font-size: 52px;
     font-weight: 600;
@@ -350,7 +350,7 @@
   .text-gold   { color: var(--color-gold); }
   .text-accent { color: var(--color-accent); }
 
-  /* ── Badge / Tag ── */
+  /* â”€â”€ Badge / Tag â”€â”€ */
   .badge {
     @apply inline-flex items-center gap-1 px-3 py-1 text-xs font-semibold;
     border-radius: var(--radius-full);
@@ -368,7 +368,7 @@
     color: var(--color-gold);
   }
 
-  /* ── Dropdown ── */
+  /* â”€â”€ Dropdown â”€â”€ */
   .dropdown-item {
     @apply flex items-center gap-3 px-3 py-2.5 text-sm transition-colors;
     color: var(--color-muted);
@@ -380,14 +380,14 @@
     color: var(--color-dark);
   }
 
-  /* ── Divider ── */
+  /* â”€â”€ Divider â”€â”€ */
   .divider {
     border: none;
     height: 1px;
     background-color: var(--color-light);
   }
 
-  /* ── Input ── */
+  /* â”€â”€ Input â”€â”€ */
   .input {
     @apply w-full px-4 py-2.5 text-sm transition-all;
     border: 1px solid var(--color-light);
@@ -405,7 +405,7 @@
     color: var(--color-muted);
   }
 
-  /* ── Gold accent line (used in headings) ── */
+  /* â”€â”€ Gold accent line (used in headings) â”€â”€ */
   .accent-line {
     display: inline-block;
     width: 60px;
@@ -414,15 +414,15 @@
     border-radius: var(--radius-full);
   }
 
-  /* ── Hero section ── */
+  /* â”€â”€ Hero section â”€â”€ */
   .hero-gradient {
     background: linear-gradient(280deg, rgb(0,0,0) 0%, rgb(18,18,18) 100%);
   }
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Utilities Layer
-   ───────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @layer utilities {
   .shadow-xs { box-shadow: var(--shadow-xs); }
   .shadow-card { box-shadow: var(--shadow-xs); }

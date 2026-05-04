@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import AboutHero from "@/components/ui/AboutHero";
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const VALUES = [
   {
     title: "100% Satisfaction Guarantee",
-    desc: "We stand behind every project we deliver. If you're not satisfied, we make it right — no excuses.",
+    desc: "We stand behind every project we deliver. If you're not satisfied, we make it right â€” no excuses.",
   },
   {
     title: "Result-Oriented Approach",
@@ -25,7 +25,7 @@ const VALUES = [
   },
   {
     title: "A Hub for Innovative Minds",
-    desc: "Our team continuously trains on Shopify Plus features, AI tools, and conversion psychology — staying ahead so you don't have to.",
+    desc: "Our team continuously trains on Shopify Plus features, AI tools, and conversion psychology â€” staying ahead so you don't have to.",
   },
   {
     title: "Ownership Mentality",
@@ -97,10 +97,10 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Full-width positioning context — lets convertionrate-box bleed left of container */}
+        {/* Full-width positioning context â€” lets convertionrate-box bleed left of container */}
         <div className="relative w-full">
 
-          {/* convertionrate-box — dark card behind both images.
+          {/* convertionrate-box â€” dark card behind both images.
               Anchored so its left portion is visible in the margin to the left of the
               1080px container; right portion slides behind the workspace image (lower z-index). */}
           <div
@@ -128,7 +128,7 @@ export default function AboutPage() {
             {/* Image composition */}
             <div className="relative">
 
-              {/* Main workspace image — z-index 5, sits on top of convertionrate-box */}
+              {/* Main workspace image â€” z-index 5, sits on top of convertionrate-box */}
               <div
                 className="relative overflow-hidden w-[82%] mx-auto xl:w-full xl:mx-0"
                 style={{ aspectRatio: "1024 / 544", zIndex: 5, position: "relative" }}
@@ -141,7 +141,7 @@ export default function AboutPage() {
                 />
               </div>
 
-              {/* Grey dashed arrow — starts at the top-left corner of the workspace image,
+              {/* Grey dashed arrow â€” starts at the top-left corner of the workspace image,
                   makes two upward curls (CCW semicircles), then curves right to the mobile mockup.
                   SVG is placed 60px above the image top so the curls are visible in the padding. */}
               <div
@@ -192,7 +192,7 @@ export default function AboutPage() {
                 </svg>
               </div>
 
-              {/* convertionrate-box — mobile/tablet (below xl): top-left corner overlay on image */}
+              {/* convertionrate-box â€” mobile/tablet (below xl): top-left corner overlay on image */}
               <div
                 aria-hidden="true"
                 className="absolute xl:hidden"
@@ -212,7 +212,7 @@ export default function AboutPage() {
                 />
               </div>
 
-              {/* Mobile arrow — xl:hidden — small dashed curl above the phone, pointing down at its top */}
+              {/* Mobile arrow â€” xl:hidden â€” small dashed curl above the phone, pointing down at its top */}
               <div
                 aria-hidden="true"
                 className="absolute pointer-events-none xl:hidden"
@@ -240,7 +240,7 @@ export default function AboutPage() {
                 </svg>
               </div>
 
-              {/* Mobile store mockup — overlaps right edge of workspace image and extends past it */}
+              {/* Mobile store mockup â€” overlaps right edge of workspace image and extends past it */}
               <div
                 className="absolute right-[3%] xl:-right-[8%]"
                 style={{
@@ -357,7 +357,7 @@ export default function AboutPage() {
         ` }} />
       </section>
 
-      {/* Mission — revenue machines */}
+      {/* Mission â€” revenue machines */}
       <section style={{ background: "#F1F5FF", padding: "80px 20px" }}>
         <div className="mx-auto" style={{ maxWidth: "1320px" }}>
           <h2
@@ -400,7 +400,7 @@ export default function AboutPage() {
                 title: "100% Satisfaction Guarantee",
                 desc: "If you're not happy, we're not done. We don't hide behind contracts or excuses. Every project gets our full attention until it exceeds your expectations - period.",
                 icon: (
-                  <svg height="50" viewBox="0 0 64 64" fill="none" stroke="#B18945" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                  <svg height="50" viewBox="0 0 64 64" fill="none" stroke="#4a7c59" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 26 L13 22 L24 31 L31 27 C33 26 35 27 36 29 L46 39 C48 41 48 44 46 46 C44 48 41 48 39 46 L31 38" />
                     <path d="M61 26 L51 22 L40 31" />
                     <path d="M24 31 L17 38 C15 40 12 40 10 38 C8 36 8 33 10 31 L13 28" />
@@ -413,7 +413,7 @@ export default function AboutPage() {
                 title: "Result-oriented Approach",
                 desc: "Pretty stores are easy. Stores that convert? That's the hard part. We obsess over the details that actually move the needle - speed, UX, and conversion KPIs- so your revenue doesn't just grow, it compounds.",
                 icon: (
-                  <svg height="50" viewBox="0 0 64 64" fill="none" stroke="#B18945" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                  <svg height="50" viewBox="0 0 64 64" fill="none" stroke="#4a7c59" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                     <path d="M32 4 L56 12 V30 C56 44 46 54 32 60 C18 54 8 44 8 30 V12 Z" />
                     <path d="M22 32 L29 39 L43 25" />
                   </svg>
@@ -423,7 +423,7 @@ export default function AboutPage() {
                 title: "A Hub for Innovative Minds",
                 desc: "We attract people who hate mediocrity. Designers who push pixels until they're perfect. Developers who write clean code. Strategists who think three steps ahead. That Alpha energy shows up in every project we ship.",
                 icon: (
-                  <svg height="50" viewBox="0 0 64 64" fill="none" stroke="#B18945" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                  <svg height="50" viewBox="0 0 64 64" fill="none" stroke="#4a7c59" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14 6 H42 L52 16 V54 C52 56 50 58 48 58 H14 C12 58 10 56 10 54 V10 C10 8 12 6 14 6 Z" />
                     <path d="M42 6 V16 H52" />
                     <line x1="18" y1="28" x2="44" y2="28" />
@@ -497,7 +497,7 @@ export default function AboutPage() {
           <div className="text-center" style={{ marginTop: "48px" }}>
             <Link
               href="/free-shopify-store-audit"
-              className="elementor-button elementor-button-link elementor-size-sm transition-shadow duration-200 hover:shadow-[0_0_0_2px_#B18945]"
+              className="elementor-button elementor-button-link elementor-size-sm transition-shadow duration-200 hover:shadow-[0_0_0_2px_#4a7c59]"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
