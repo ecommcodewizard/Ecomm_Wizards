@@ -171,11 +171,12 @@ export default function JourneyTimeline() {
 
       <style dangerouslySetInnerHTML={{ __html: `
         .journey-section {
-          padding: 0 20px;
+          padding: 80px 20px 40px;
           color: #334155;
           font-family: 'Poppins', sans-serif;
           font-size: 16px;
-          overflow: hidden;
+          overflow-x: hidden;
+          overflow-y: visible;
         }
         .journey-title {
           font-family: 'Poppins', sans-serif;
@@ -267,9 +268,8 @@ export default function JourneyTimeline() {
         }
         .timeline-content {
           width: 320px;
-          min-height: 215.99px;
           background: #FFFFFF;
-          padding: 30px;
+          padding: 22px 26px;
           color: #334155;
           font-family: 'Poppins', sans-serif;
           font-size: 16px;
@@ -281,9 +281,9 @@ export default function JourneyTimeline() {
           justify-content: center;
         }
         .timeline-text {
-          width: 260px;
+          width: 100%;
           max-width: 100%;
-          margin: 0 0 28px 0;
+          margin: 0;
           color: #333333;
           font-family: 'Poppins', sans-serif;
           font-size: 16px;
@@ -344,7 +344,7 @@ export default function JourneyTimeline() {
           line-height: 1;
         }
         @media (max-width: 768px) {
-          .journey-section { padding: 0 15px; }
+          .journey-section { padding: 56px 15px 28px; overflow-x: hidden; overflow-y: visible; }
           .journey-title {
             font-size: 30px !important;
             line-height: 40px !important;
@@ -365,14 +365,13 @@ export default function JourneyTimeline() {
           }
           .timeline-content {
             width: 240px;
-            min-height: 180px;
-            padding: 20px;
+            padding: 18px 20px;
           }
           .timeline-text {
-            width: 200px;
+            width: 100%;
             font-size: 14px;
             line-height: 1.55;
-            margin: 0 0 16px 0;
+            margin: 0;
           }
           .timeline-item {
             width: 260px;

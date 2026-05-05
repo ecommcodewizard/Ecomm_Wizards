@@ -8,10 +8,10 @@ export default function AboutHero() {
       style={{ background: "#000000" }}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end">
+        <div className="flex flex-col lg:flex-row lg:items-center">
 
           {/* Left: Text content */}
-          <div className="flex-1 pt-0 pb-16 sm:pt-32 sm:pb-20 lg:pb-28 lg:pr-12">
+          <div className="flex-1 pt-0 pb-16 sm:pt-16 sm:pb-20 lg:pt-12 lg:pb-28 lg:pr-12">
             <h1
               className="font-bold leading-tight"
               style={{
@@ -43,17 +43,15 @@ export default function AboutHero() {
             </p>
 
             <div className="mt-8">
-              <Link
-                href="/book-shopify-consultation"
-                className="inline-flex rounded-full p-[1px] transition-all hover:opacity-90"
-                style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}
-              >
-                <span className="inline-flex items-center justify-center gap-2 rounded-full bg-black px-7 py-3.5" style={{ fontFamily: "var(--font-sans)", fontSize: "16px", fontWeight: 600 }}>
-                  <span style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                    Book a Free Consultation →
-                  </span>
-                </span>
-              </Link>
+              <span className="inline-flex p-[2px] rounded-full shrink-0" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
+                <Link
+                  href="/book-shopify-consultation"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-black text-white transition-all hover:bg-white hover:text-black px-7 py-3.5"
+                  style={{ fontFamily: "var(--font-sans)", fontSize: "16px", fontWeight: 600 }}
+                >
+                  Book a Free Consultation →
+                </Link>
+              </span>
             </div>
           </div>
 
