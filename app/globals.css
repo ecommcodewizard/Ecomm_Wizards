@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes marquee-up {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+@keyframes marquee-down {
+  from { transform: translateY(-50%); }
+  to   { transform: translateY(0); }
+}
+.logo-col-up {
+  animation: marquee-up 22s linear infinite;
+}
+.logo-col-down {
+  animation: marquee-down 26s linear infinite;
+}
+.logo-col-up:hover,
+.logo-col-down:hover {
+  animation-play-state: paused;
+}
+
+.logo-grid-img {
+  width: 190.8px;
+  height: 79px;
+}
+@media (max-width: 639px) {
+  .logo-grid-img {
+    width: 107.31px !important;
+    height: 79px !important;
+  }
+  .logo-grid-cell {
+    padding: 10px !important;
+    height: 100px !important;
+  }
+}
+
 @keyframes ticker {
   0%   { transform: translate3d(0, 0, 0); }
   100% { transform: translate3d(-33.333%, 0, 0); }
