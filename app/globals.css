@@ -35,10 +35,34 @@
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
 .stat-gradient-text {
-  background: linear-gradient(135deg, #1B5E20 0%, #52b788 100%);
+  background: linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+@media (max-width: 1024px) {
+  .growth-chart-h2 {
+    font-size: 48px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .growth-chart-h2 {
+    font-size: 32px !important;
+  }
+  .sidebar-year  { font-size: 18px !important; }
+  .sidebar-label { font-size: 10px !important; }
+  .sidebar-desc  { font-size: 14px !important; }
+  .sidebar-count { font-size: 28px !important; }
+}
+
+@media (max-width: 640px) {
+  .growth-chart-h2 { font-size: 26px !important; }
+  .sidebar-year    { font-size: 12px !important; }
+  .sidebar-label   { font-size: 9px  !important; }
+  .sidebar-desc    { font-size: 10px !important; }
+  .sidebar-count   { font-size: 18px !important; }
 }
 
 @keyframes ticker-half {
