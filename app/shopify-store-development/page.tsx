@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
+import Image from "next/image";
+import Link from "next/link";
 import CTASection from "@/components/ui/CTASection";
 import SectionHeader from "@/components/ui/SectionHeader";
+
+const OLIVE_GRADIENT =
+  "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)";
 
 export const metadata: Metadata = {
   title: "Custom Shopify Store Development | Ecomm Wizards",
@@ -44,14 +48,319 @@ const FAQS = [
 export default function ShopifyStoreDevelopmentPage() {
   return (
     <>
-      <PageHero
-        badge="Shopify Development"
-        title="Custom Shopify Store Development"
-        titleHighlight="Built to Convert"
-        subtitle="Strategy to launch — custom themes, Shopify Plus, headless storefronts, and everything in between. 700+ stores built. Zero compromise on quality."
-        primaryCta={{ label: "Get a Free Quote", href: "/free-shopify-store-audit" }}
-        secondaryCta={{ label: "Book a Call", href: "/book-shopify-consultation" }}
-      />
+      {/* Hero */}
+      <section
+        className="w-full"
+        style={{
+          background: "#000000",
+          color: "#334155",
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "16px",
+        }}
+      >
+        <div
+          className="ssd-hero-inner mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 px-5 lg:px-0"
+          style={{
+            maxWidth: "1320px",
+            padding: "60px 0",
+          }}
+        >
+          {/* Left: text content (645 × 470, 10px padding) */}
+          <div
+            className="ssd-hero-text w-full lg:max-w-[645px] lg:flex-shrink-0"
+            style={{
+              padding: "10px",
+              color: "#FFFFFF",
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "16px",
+            }}
+          >
+            <h1
+              className="text-[32px] sm:text-[36px] lg:text-[42px]"
+              style={{
+                color: "#FFFFFF",
+                fontFamily: "'Poppins', sans-serif",
+                fontWeight: 700,
+                lineHeight: 1.24,
+                margin: 0,
+              }}
+            >
+              <span
+                style={{
+                  background: OLIVE_GRADIENT,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Shopify Development Agency
+              </span>{" "}
+              That Builds High-Converting Stores
+            </h1>
+
+            <h2
+              className="mt-5 text-[20px] sm:text-[22px] lg:text-[24px]"
+              style={{
+                color: "#FFFFFF",
+                fontFamily: "'Poppins', sans-serif",
+                fontWeight: 600,
+                lineHeight: 1.4,
+                margin: "20px 0 0",
+              }}
+            >
+              Custom Shopify Store Development from Strategy to Launch
+            </h2>
+
+            <p
+              className="mt-5 text-[15px] lg:text-[16px]"
+              style={{
+                color: "#FFFFFF",
+                fontFamily: "'Poppins', sans-serif",
+                lineHeight: 1.65,
+                margin: "20px 0 0",
+              }}
+            >
+              Looking to build a Shopify store that actually performs? Our Shopify
+              store development agency specializes in custom Shopify store design
+              and development, Shopify Plus builds, advanced integrations, and
+              conversion-focused built to scale with your brand.
+            </p>
+
+            {/* CTA */}
+            <div className="mt-8">
+              <span
+                className="inline-flex p-[2px] rounded-full"
+                style={{ background: OLIVE_GRADIENT }}
+              >
+                <Link
+                  href="/book-shopify-consultation"
+                  className="ssd-hero-cta group inline-flex items-center gap-2 rounded-full"
+                  style={{
+                    padding: "20px 45px",
+                    fontFamily: "'Poppins', sans-serif",
+                    fontSize: "16px",
+                    color: "#FFFFFF",
+                    lineHeight: 1,
+                    background: "#000000",
+                    transition: "background 0.25s ease, color 0.25s ease",
+                  }}
+                >
+                  <span className="ssd-hero-cta-label whitespace-nowrap">
+                    Book a Call
+                  </span>
+                  <svg
+                    className="ssd-hero-cta-arrow"
+                    width="18"
+                    height="12"
+                    viewBox="0 0 15 10.55"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55"
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </Link>
+              </span>
+            </div>
+          </div>
+
+          {/* Right: 3-column vertical-scrolling slider (625 × 450), tilted +15° (top leans right) */}
+          <div
+            className="ssd-hero-slider"
+            style={{
+              width: "625px",
+              maxWidth: "100%",
+              height: "450px",
+              overflow: "hidden",
+              position: "relative",
+              flexShrink: 0,
+            }}
+          >
+            <div className="ssd-hero-tilt">
+              {[
+                // Repacked so that the two images that visibly clashed (4-1 "anti-aging" and
+                // 4-5-1 "Canada light therapy") are no longer in adjacent columns moving in
+                // opposite directions. They now travel together in cols 1 and 3 (both UP), and
+                // col 2 (DOWN) holds a fully disjoint set — no image is shared between any two
+                // adjacent columns, so nothing crosses paths between adjacent cols.
+                //
+                // Col 1 — UP, [4-1, 4-5-1, 4-3]. Center cycle: 4-5-1 → 4-3 → 4-1
+                { dir: "up",   delay: "0s",   imgs: ["/images/build-hero-4-1.webp", "/images/build-hero-4-5-1.webp", "/images/build-hero-4-3.webp"] },
+                // Col 2 — DOWN, [4-4, 4-2, 4-6-1]. Center cycle: 4-2 → 4-4 → 4-6-1.
+                // Disjoint from cols 1 and 3.
+                { dir: "down", delay: "0s",   imgs: ["/images/build-hero-4-4.webp", "/images/build-hero-4-2.webp", "/images/build-hero-4-6-1.webp"] },
+                // Col 3 — UP, [4-3, 4-1, 4-5-1]. Center cycle: 4-1 → 4-5-1 → 4-3.
+                // Same image set as col 1, but reordered so its center never coincides with
+                // col 1's at the same phase.
+                { dir: "up",   delay: "0s",   imgs: ["/images/build-hero-4-3.webp", "/images/build-hero-4-1.webp", "/images/build-hero-4-5-1.webp"] },
+              ].map((col, idx) => (
+                <div key={idx} className="ssd-hero-col">
+                  <div
+                    className={`ssd-hero-marquee ssd-hero-marquee-${col.dir}`}
+                    style={{ animationDelay: col.delay }}
+                  >
+                    {[...col.imgs, ...col.imgs].map((src, i) => (
+                      <div key={`${idx}-${i}`} className="ssd-hero-card">
+                        <Image
+                          src={src}
+                          alt=""
+                          width={221}
+                          height={179}
+                          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .ssd-hero-cta-label {
+            background-image: ${OLIVE_GRADIENT};
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transition: color 0.25s ease, background 0.25s ease;
+          }
+          .ssd-hero-cta-arrow {
+            color: #FFFFFF;
+            transition: color 0.25s ease;
+          }
+          .ssd-hero-cta:hover,
+          .ssd-hero-cta:focus-visible {
+            background: #FFFFFF !important;
+            outline: none;
+          }
+          .ssd-hero-cta:hover .ssd-hero-cta-label,
+          .ssd-hero-cta:focus-visible .ssd-hero-cta-label {
+            color: #000000;
+            -webkit-text-fill-color: #000000;
+            background: none;
+          }
+          .ssd-hero-cta:hover .ssd-hero-cta-arrow,
+          .ssd-hero-cta:focus-visible .ssd-hero-cta-arrow {
+            color: #000000;
+          }
+
+          /* Tilted grid wrapper — rotates the whole slider +15° clockwise (top leans right) */
+          .ssd-hero-tilt {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 720px;       /* 3 × 220.3 + 2 × 12px gap + safety */
+            height: 760px;      /* tall enough to cover after rotation + scroll */
+            transform: translate(-50%, -50%) rotate(15deg);
+            transform-origin: center center;
+            display: grid;
+            grid-template-columns: 220.3px 220.3px 220.3px;
+            gap: 12px;
+            justify-content: center;
+            align-content: center;
+          }
+          .ssd-hero-col {
+            width: 220.3px;
+            /* Exactly 3 cards stacked = 3 × 178.61 + 2 × 12 = 559.83px (no within-column dupe visible) */
+            height: 559.83px;
+            overflow: hidden;
+            position: relative;
+            /* Heavy fade zones at top/bottom so cycling duplicates and side cards
+               are deep in shadow — only the middle band is clearly visible */
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 35%, #000 65%, transparent 100%);
+                    mask-image: linear-gradient(to bottom, transparent 0%, #000 35%, #000 65%, transparent 100%);
+          }
+          .ssd-hero-marquee {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            will-change: transform;
+          }
+          .ssd-hero-card {
+            width: 220.3px;
+            height: 178.61px;
+            overflow: hidden;
+            border-radius: 10px;
+            flex-shrink: 0;
+            background: #111;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+          }
+
+          /* Corner-darkening vignette overlaid on the 625×450 viewport */
+          .ssd-hero-slider::before,
+          .ssd-hero-slider::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 3;
+          }
+          .ssd-hero-slider::before {
+            background:
+              radial-gradient(ellipse at top left,     rgba(0,0,0,0.95), transparent 38%),
+              radial-gradient(ellipse at top right,    rgba(0,0,0,0.95), transparent 38%),
+              radial-gradient(ellipse at bottom left,  rgba(0,0,0,0.95), transparent 38%),
+              radial-gradient(ellipse at bottom right, rgba(0,0,0,0.95), transparent 38%);
+          }
+          .ssd-hero-slider::after {
+            /* Outer edge dim — pulls everything toward black at the very corners */
+            background: radial-gradient(ellipse at center, transparent 52%, rgba(0,0,0,0.8) 100%);
+          }
+
+          /* Translate the marquee track by exact card-stride multiples so loop is seamless
+             AND the within-column duplication never lands in the visible band:
+             stride = 3 cards = 3 × 190.61 = 571.83px (card 178.61 + gap 12) */
+          @keyframes ssdMarqueeUp {
+            0%   { transform: translateY(0); }
+            100% { transform: translateY(-571.83px); }
+          }
+          @keyframes ssdMarqueeDown {
+            0%   { transform: translateY(-571.83px); }
+            100% { transform: translateY(0); }
+          }
+          .ssd-hero-marquee-up   { animation: ssdMarqueeUp   40s linear infinite; }
+          .ssd-hero-marquee-down { animation: ssdMarqueeDown 40s linear infinite; }
+          .ssd-hero-slider:hover .ssd-hero-marquee-up,
+          .ssd-hero-slider:hover .ssd-hero-marquee-down {
+            animation-play-state: paused;
+          }
+
+          @media (max-width: 1023px) {
+            .ssd-hero-inner { padding: 16px 0 40px !important; }
+            .ssd-hero-text { padding: 0 !important; }
+          }
+          @media (max-width: 640px) {
+            .ssd-hero-tilt {
+              width: 540px;
+              height: 600px;
+              grid-template-columns: 165px 165px 165px;
+            }
+            .ssd-hero-col { width: 165px; height: 426px; }
+            .ssd-hero-card { width: 165px; height: 134px; }
+            @keyframes ssdMarqueeUpMobile {
+              0%   { transform: translateY(0); }
+              100% { transform: translateY(-438px); }   /* 3 × (134 + 12) */
+            }
+            @keyframes ssdMarqueeDownMobile {
+              0%   { transform: translateY(-438px); }
+              100% { transform: translateY(0); }
+            }
+            .ssd-hero-marquee-up   { animation-name: ssdMarqueeUpMobile; }
+            .ssd-hero-marquee-down { animation-name: ssdMarqueeDownMobile; }
+          }
+        ` }} />
+      </section>
 
       {/* Trust bar */}
       <div className="border-b border-slate-100 bg-white py-5">
