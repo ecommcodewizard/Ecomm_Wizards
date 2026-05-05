@@ -2,11 +2,11 @@
 import { useState } from "react";
 
 const items = [
-  { title: "One Team, Zero Gaps",                          body: "Shopify Design, dev, and marketing working together — not in silos." },
-  { title: "Ecommerce Strategy First, Always",             body: "Every Shopify project gets a dedicated strategist, not a task manager." },
-  { title: "Launch Fast, Scale Faster with Shopify Plus",  body: "We start in days, not weeks. Speed without cutting corners." },
-  { title: "Built to Convert using Shopify Best Practices",body: "Pretty stores don't pay bills. Ours are designed to sell." },
-  { title: "Traffic That Actually Buys",                   body: "Media buying, funnels, and retention built around your margins." },
+  { title: "One Team, Zero Gaps",           body: "Shopify Design, dev, and marketing working together — not in silos." },
+  { title: "Ecommerce Strategy First",      body: "Every Shopify project gets a dedicated strategist, not a task manager." },
+  { title: "Launch Fast, Scale Faster",     body: "We start in days, not weeks. Speed without cutting corners." },
+  { title: "Built to Convert",              body: "Pretty stores don't pay bills. Ours are designed to sell." },
+  { title: "Traffic That Actually Buys",    body: "Media buying, funnels, and retention built around your margins." },
 ];
 
 export default function KnifeAccordion() {
@@ -32,7 +32,7 @@ export default function KnifeAccordion() {
                 textAlign: "left",
               }}
             >
-              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "18px", fontWeight: 600, color: "#000000", paddingRight: "10px" }}>
+              <span className="text-[18px] md:text-[16px] lg:text-[18px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, color: "#000000", paddingRight: "10px" }}>
                 {item.title}
               </span>
               <span style={{ flexShrink: 0 }}>
@@ -57,7 +57,7 @@ export default function KnifeAccordion() {
               }}
             >
               <div style={{ overflow: "hidden" }}>
-                <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "rgba(0,0,0,0.8)", paddingBottom: "16px", lineHeight: "1.6", margin: 0 }}>
+                <p className="text-[16px] md:text-[14px] lg:text-[16px]" style={{ fontFamily: "'Poppins', sans-serif", color: "rgba(0,0,0,0.8)", paddingBottom: "16px", lineHeight: "1.6", margin: 0 }}>
                   {item.body}
                 </p>
               </div>

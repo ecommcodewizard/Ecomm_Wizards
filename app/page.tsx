@@ -442,9 +442,9 @@ export default function HomePage() {
           }}
         >
           {/* Left column */}
-          <div className="w-full md:w-[calc(50%-10px)] min-[1440px]:w-[650px] h-[881px] sm:h-auto md:h-[1060px] lg:h-[879px] min-[1440px]:h-[801px] px-[20px] py-[30px] sm:pt-[40px] sm:px-[30px] sm:pb-[30px]" style={{ background: "#FFFFFF", borderRadius: "20px", overflow: "hidden", color: "#334155", fontFamily: "'Poppins', sans-serif", fontSize: "16px" }}>
+          <div className="w-full md:w-[calc(50%-10px)] min-[1440px]:w-[650px] h-[881px] sm:h-auto md:h-[780px] lg:h-[879px] min-[1440px]:h-[801px] px-[20px] py-[30px] sm:pt-[40px] sm:px-[30px] sm:pb-[30px] md:pt-[24px]" style={{ background: "#FFFFFF", borderRadius: "20px", overflow: "hidden", color: "#334155", fontFamily: "'Poppins', sans-serif", fontSize: "16px" }}>
             <h2
-              className="text-[32px] md:text-[36px] lg:text-[40px] mb-[16px] sm:mb-[20px]"
+              className="text-[32px] md:text-[30px] lg:text-[40px] mb-[16px] sm:mb-[20px]"
               style={{
                 fontFamily: "'Poppins', sans-serif",
                 fontWeight: 600,
@@ -455,9 +455,9 @@ export default function HomePage() {
               Working with Ecomm Wizards is like bringing a Gun to a Knife Fight
             </h2>
             <p
+              className="text-[16px] md:text-[14px] lg:text-[16px]"
               style={{
                 fontFamily: "'Poppins', sans-serif",
-                fontSize: "16px",
                 color: "rgba(0,0,0,0.8)",
                 lineHeight: "1.7",
                 marginBottom: "16px",
@@ -471,7 +471,7 @@ export default function HomePage() {
           </div>
 
           {/* Right column */}
-          <div className="w-full md:w-[calc(50%-10px)] min-[1440px]:w-[650px] h-[320px] sm:h-auto md:h-[1060px] lg:h-[879px] min-[1440px]:h-[801px]" style={{ borderRadius: "20px", overflow: "hidden", position: "relative" }}>
+          <div className="w-full md:w-[calc(50%-10px)] min-[1440px]:w-[650px] h-[320px] sm:h-auto md:h-[780px] lg:h-[879px] min-[1440px]:h-[801px]" style={{ borderRadius: "20px", overflow: "hidden", position: "relative" }}>
             <Image
               src="/images/image-4.png"
               alt="Ecomm Wizards office"
