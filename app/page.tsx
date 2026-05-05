@@ -5,6 +5,7 @@ import KnifeAccordion from "@/components/sections/KnifeAccordion";
 import StatsCard from "@/components/sections/StatsCard";
 import GrowthChart from "@/components/sections/GrowthChart";
 import SocialProofSection from "@/components/sections/SocialProofSection";
+import ProcessSection from "@/components/sections/ProcessSection";
 
 export const metadata: Metadata = {
   title: "Shopify Agency | Design, CRO, Development & Growth Experts | Ecomm Wizards",
@@ -495,6 +496,9 @@ export default function HomePage() {
 
       {/* ── Social Proof ── */}
       <SocialProofSection />
+
+      {/* ── Process ── */}
+      <ProcessSection />
 
       {/* â"€â"€ Services â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="bg-[#0d0d0d] py-24">
