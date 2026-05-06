@@ -65,7 +65,7 @@ function StepCard({ step, title, desc }: { step: string; title: string; desc: st
         className="text-[15px] max-sm:text-[14px] md:max-lg:text-[14px]"
         style={{
           fontFamily: "'Poppins', sans-serif",
-          color: "rgba(0,0,0,0.65)",
+          color: "rgba(0,0,0,0.8)",
           lineHeight: 1.7,
           margin: 0,
         }}
