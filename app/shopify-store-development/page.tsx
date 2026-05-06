@@ -102,15 +102,6 @@ const PROCESS = [
   },
 ];
 
-const WHY = [
-  "700+ Shopify stores built across every niche",
-  "Shopify Plus Certified Partner",
-  "Average 28.5% conversion rate improvement",
-  "Dedicated project manager for every build",
-  "Fixed-price quotes — no surprise invoices",
-  "Post-launch growth support included",
-];
-
 const FAQS = [
   { q: "How long does a Shopify store build take?",       a: "A standard custom build takes 4–8 weeks. Shopify Plus enterprise projects typically take 8–12 weeks. We'll give you a precise timeline in your free quote." },
   { q: "Do you work with existing Shopify stores?",       a: "Yes — we handle redesigns, theme customisations, feature additions, and full rebuilds for existing stores just as often as new builds." },
@@ -1371,43 +1362,401 @@ export default function ShopifyStoreDevelopmentPage() {
         ` }} />
       </section>
 
-      {/* Why us */}
-      <section className="py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div>
-              <SectionHeader
-                badge="Why Ecomm Wizards"
-                title="Why Brands Choose Us for Shopify Development"
-                centered={false}
-              />
-              <ul className="space-y-3">
-                {WHY.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-slate-700 text-white">
-                      <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                      </svg>
-                    </span>
-                    <span className="text-slate-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8 flex gap-4">
-                <a href="/free-shopify-store-audit" className="btn-primary">Get a Free Quote</a>
-                <a href="/book-shopify-consultation" className="btn-outline">Book a Call</a>
+      {/* Why Brands Choose Ecomm Wizards for Shopify Development */}
+      <section
+        className="ssd-why-section"
+        style={{
+          background: "#000000",
+          color: "#334155",
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "16px",
+          padding: "80px 20px",
+        }}
+      >
+        <div
+          className="ssd-why-inner mx-auto"
+          style={{ maxWidth: "1320px" }}
+        >
+          {/* Heading */}
+          <h2 className="ssd-why-heading">
+            Why Brands Choose Ecomm Wizards for Shopify Development
+          </h2>
+
+          {/* Top description */}
+          <p className="ssd-why-desc">
+            Recognized among the top Shopify Plus partner agencies for
+            large-scale ecommerce development 2025, we build stores that
+            actually convert, not cookie-cutter templates. Here&apos;s what sets
+            us apart:
+          </p>
+
+          {/* 6-card grid */}
+          <div className="ssd-why-grid">
+            {[
+              {
+                title: "Brand-First Design That Converts",
+                desc: (
+                  <>
+                    Every UX/UI element is crafted to reflect your brand identity
+                    and guide customers toward purchase. Our Shopify website
+                    development agency focuses on seamless cross-device
+                    experiences that consistently deliver{" "}
+                    <span className="ssd-why-hl">25%+ higher conversion rates</span>{" "}
+                    compared to generic themes.
+                  </>
+                ),
+                icon: (
+                  /* Connected nodes — 4 corners + center, X-cross connections */
+                  <svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="9"  y1="9"  x2="23" y2="23" />
+                    <line x1="23" y1="9"  x2="9"  y2="23" />
+                    <line x1="9"  y1="9"  x2="23" y2="9"  />
+                    <line x1="9"  y1="23" x2="23" y2="23" />
+                    <circle cx="9"  cy="9"  r="2.4" fill="currentColor" />
+                    <circle cx="23" cy="9"  r="2.4" fill="currentColor" />
+                    <circle cx="9"  cy="23" r="2.4" fill="currentColor" />
+                    <circle cx="23" cy="23" r="2.4" fill="currentColor" />
+                    <circle cx="16" cy="16" r="2.4" fill="currentColor" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Backend Systems That Actually Work",
+                desc: (
+                  <>
+                    Connect your ERP, warehouse management, POS, and tools like
+                    Klaviyo or Rebuy without the headaches. Our Shopify developer
+                    agency engineers integrations that eliminate manual data entry
+                    and keep operations running smoothly.
+                  </>
+                ),
+                icon: (
+                  /* Two overlapping gears */
+                  <svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    {/* Big gear top-left */}
+                    <path d="M11 3 v2.2  M11 16.8 v2.2  M3 11 h2.2  M16.8 11 h2.2  M5.4 5.4 l1.6 1.6  M15 15 l1.6 1.6  M16.6 5.4 l-1.6 1.6  M7 15 l-1.6 1.6" />
+                    <circle cx="11" cy="11" r="5" />
+                    <circle cx="11" cy="11" r="1.8" />
+                    {/* Small gear bottom-right */}
+                    <path d="M22 13 v1.8  M22 25.2 v1.8  M14 20 h1.8  M28.2 20 h1.8  M16.6 14.6 l1.3 1.3  M26 24 l1.3 1.3  M27.4 14.6 l-1.3 1.3  M18 24 l-1.3 1.3" />
+                    <circle cx="22" cy="20" r="4.5" />
+                    <circle cx="22" cy="20" r="1.5" />
+                  </svg>
+                ),
+              },
+              {
+                title: "AI-Driven Features That Boost Revenue",
+                desc: (
+                  <>
+                    We integrate smart personalization, automated product
+                    recommendations, and predictive analytics that increase
+                    customer engagement and drive{" "}
+                    <span className="ssd-why-hl">18% higher average order values</span>{" "}
+                    on average.
+                  </>
+                ),
+                icon: (
+                  /* Diamond / gem with crown facets */
+                  <svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12 L11 5 H21 L27 12 L16 28 Z" />
+                    <line x1="5"  y1="12" x2="27" y2="12" />
+                    <line x1="11" y1="5"  x2="13" y2="12" />
+                    <line x1="21" y1="5"  x2="19" y2="12" />
+                    <line x1="13" y1="12" x2="16" y2="28" />
+                    <line x1="19" y1="12" x2="16" y2="28" />
+                    {/* Sparkle accents */}
+                    <line x1="2" y1="3" x2="2" y2="6" />
+                    <line x1="0.5" y1="4.5" x2="3.5" y2="4.5" />
+                    <line x1="29" y1="2" x2="29" y2="5" />
+                    <line x1="27.5" y1="3.5" x2="30.5" y2="3.5" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Built to Scale with Your Growth",
+                desc: (
+                  <>
+                    Whether you&apos;re launching D2C or managing complex B2B
+                    operations, our Shopify Plus development agency builds
+                    infrastructure for subscriptions, loyalty programs, and custom
+                    apps that support{" "}
+                    <span className="ssd-why-hl">40% revenue growth</span> in
+                    under 6 months.
+                  </>
+                ),
+                icon: (
+                  /* Bar chart + rising trend arrow */
+                  <svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5"  y1="27" x2="5"  y2="22" />
+                    <line x1="11" y1="27" x2="11" y2="18" />
+                    <line x1="17" y1="27" x2="17" y2="14" />
+                    <line x1="23" y1="27" x2="23" y2="9" />
+                    {/* Trend arrow */}
+                    <polyline points="5,20 11,15 17,10 23,5" />
+                    <polyline points="19,5 23,5 23,9" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Always-On Support When You Need It",
+                desc: (
+                  <>
+                    Dedicated Slack channels, weekly strategy calls, and
+                    post-launch speed optimizations that deliver{" "}
+                    <span className="ssd-why-hl">52% faster load times</span>. We
+                    don&apos;t disappear after launch — we continuously improve
+                    your store&apos;s performance.
+                  </>
+                ),
+                icon: (
+                  /* Headset with mic */
+                  <svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 18v-3a11 11 0 0 1 22 0v3" />
+                    <path d="M5 18h4v8H7a2 2 0 0 1-2-2v-6z" />
+                    <path d="M27 18h-4v8h2a2 2 0 0 0 2-2v-6z" />
+                    <path d="M23 26v1a2 2 0 0 1-2 2h-4" />
+                    <circle cx="15" cy="29" r="1.4" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Results Brands Actually Trust",
+                desc: (
+                  <>
+                    Over 700 stores launched, $900M+ in client revenue generated
+                    for brands ranging from startups to Shark Tank Features. As
+                    one of the best ecommerce development agencies for Shopify
+                    and WooCommerce, we deliver proven results across platforms.
+                  </>
+                ),
+                icon: (
+                  /* Award rosette/badge with checkmark */
+                  <svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 4 l3 2.4 l3.7 -0.6 l1.6 3.4 l3.4 1.6 l-0.6 3.7 l2.4 3 l-2.4 3 l0.6 3.7 l-3.4 1.6 l-1.6 3.4 l-3.7 -0.6 l-3 2.4 l-3 -2.4 l-3.7 0.6 l-1.6 -3.4 l-3.4 -1.6 l0.6 -3.7 l-2.4 -3 l2.4 -3 l-0.6 -3.7 l3.4 -1.6 l1.6 -3.4 l3.7 0.6 z" />
+                    <polyline points="11,16.5 14.5,20 21,12.5" />
+                  </svg>
+                ),
+              },
+            ].map((card) => (
+              <div key={card.title} className="ssd-why-card">
+                <span className="ssd-why-icon" aria-hidden="true">{card.icon}</span>
+                <h3 className="ssd-why-card-title">{card.title}</h3>
+                <p className="ssd-why-card-desc">{card.desc}</p>
               </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[["700+","Stores Built"],["$900M+","Revenue Generated"],["8+","Years Experience"],["28.5%","Avg Conversion Lift"]].map(([v, l]) => (
-                <div key={l} className="flex flex-col items-center justify-center rounded-2xl bg-slate-700 p-8 text-center text-white">
-                  <span className="text-4xl font-extrabold">{v}</span>
-                  <span className="mt-2 text-xs text-slate-300">{l}</span>
-                </div>
-              ))}
-            </div>
+            ))}
+          </div>
+
+          {/* Closing description */}
+          <p className="ssd-why-closing">
+            Our rigorous testing protocols and hybrid development approach
+            minimize risk and ensure your store is built to last, not just to
+            launch.
+          </p>
+
+          {/* CTA */}
+          <div className="ssd-why-cta-wrap">
+            <Link href="/book-shopify-consultation" className="ssd-why-cta">
+              <span className="ssd-why-cta-label">Book a Call</span>
+              <svg className="ssd-why-cta-arrow" width="18" height="13" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
           </div>
         </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .ssd-why-heading {
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 52px;
+            text-align: center;
+            margin: 0 auto 24px;
+            max-width: 1320px;
+          }
+          .ssd-why-desc {
+            color: rgba(255, 255, 255, 0.8);
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            line-height: 28px;
+            text-align: center;
+            margin: 0 auto 56px;
+            max-width: 980px;
+          }
+
+          /* 6-card grid: 3 × 2 at 426.67 × 388, 30px padding */
+          .ssd-why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 0 0 56px;
+          }
+          .ssd-why-card {
+            position: relative;
+            background: #0a0a0a;
+            padding: 30px;
+            min-height: 388px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: #334155;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.25s ease, transform 0.25s ease;
+          }
+          .ssd-why-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: linear-gradient(140deg, rgba(168, 240, 180, 0.45) 0%, rgba(74, 184, 114, 0.0) 35%, rgba(74, 184, 114, 0.0) 65%, rgba(78, 183, 113, 0.45) 100%);
+            -webkit-mask:
+              linear-gradient(#000, #000) content-box,
+              linear-gradient(#000, #000);
+            -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+            pointer-events: none;
+          }
+          .ssd-why-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            margin-bottom: 22px;
+            color: #4FB872;
+            background-image: linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+          }
+          .ssd-why-icon svg { stroke: url(#ssdOliveGradient); color: #C8F57A; }
+          .ssd-why-card-title {
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 30px;
+            margin: 0 0 14px;
+          }
+          .ssd-why-card-desc {
+            color: rgba(255, 255, 255, 0.78);
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            line-height: 24px;
+            margin: 0;
+          }
+          .ssd-why-hl {
+            font-weight: 700;
+            background-image: linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+          }
+
+          .ssd-why-closing {
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            line-height: 28px;
+            text-align: center;
+            margin: 20px auto 36px;
+            max-width: 1202.78px;
+          }
+
+          /* CTA: 211.05 × 56, padding 18 × 40, black bg with WHITE border, white text.
+             On hover: full WHITE bg, olive-green gradient text + arrow. */
+          .ssd-why-cta-wrap {
+            display: flex;
+            justify-content: center;
+          }
+          .ssd-why-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 38px;       /* 2px shaved each side; 2px white border restores 211.05 × 56 */
+            background: #000000;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            line-height: 1;
+            border: 2px solid #FFFFFF;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: background 0.3s ease, border-color 0.3s ease;
+          }
+          .ssd-why-cta-label {
+            color: #FFFFFF;
+            transition: color 0.3s ease;
+          }
+          .ssd-why-cta-arrow {
+            color: #FFFFFF;
+            transition: color 0.3s ease;
+          }
+          .ssd-why-cta:hover,
+          .ssd-why-cta:focus-visible {
+            outline: none;
+            background: #FFFFFF;
+            border-color: #FFFFFF;
+          }
+          .ssd-why-cta:hover .ssd-why-cta-label,
+          .ssd-why-cta:focus-visible .ssd-why-cta-label {
+            background-image: linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+          }
+          .ssd-why-cta:hover .ssd-why-cta-arrow,
+          .ssd-why-cta:focus-visible .ssd-why-cta-arrow {
+            color: #2A9555;
+          }
+
+          /* Tablet & mobile */
+          @media (max-width: 1023px) {
+            .ssd-why-section { padding: 56px 20px !important; }
+            .ssd-why-heading { font-size: 30px !important; line-height: 40px !important; margin-bottom: 18px !important; }
+            .ssd-why-desc { font-size: 16px !important; line-height: 26px !important; margin-bottom: 36px !important; }
+            .ssd-why-grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 16px !important;
+              margin-bottom: 36px !important;
+            }
+            .ssd-why-card { padding: 24px !important; min-height: 0 !important; }
+            .ssd-why-card-title { font-size: 19px !important; line-height: 26px !important; }
+            .ssd-why-card-desc  { font-size: 14px !important; line-height: 22px !important; }
+            .ssd-why-closing { font-size: 16px !important; line-height: 26px !important; margin-bottom: 24px !important; }
+            .ssd-why-cta { padding: 14px 32px !important; font-size: 14px !important; }
+          }
+          @media (max-width: 640px) {
+            .ssd-why-section { padding: 44px 16px !important; }
+            .ssd-why-grid { grid-template-columns: 1fr !important; }
+            .ssd-why-heading { font-size: 26px !important; line-height: 34px !important; }
+            .ssd-why-desc { font-size: 15px !important; line-height: 24px !important; }
+            .ssd-why-card { padding: 22px 20px !important; }
+            .ssd-why-icon { width: 48px; height: 48px; margin-bottom: 16px; }
+            .ssd-why-cta { width: 100% !important; max-width: 320px; justify-content: center !important; }
+          }
+        ` }} />
+
+        {/* Reusable olive-green gradient definition for SVG icon strokes */}
+        <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true">
+          <defs>
+            <linearGradient id="ssdOliveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%"     stopColor="#A8F0B4" />
+              <stop offset="16.83%" stopColor="#C8F57A" />
+              <stop offset="29.33%" stopColor="#3DC77A" />
+              <stop offset="41.83%" stopColor="#5FDB7E" />
+              <stop offset="52.4%"  stopColor="#A8F0B4" />
+              <stop offset="66.83%" stopColor="#2A9555" />
+              <stop offset="83.41%" stopColor="#4FB872" />
+              <stop offset="100%"   stopColor="#4EB771" />
+            </linearGradient>
+          </defs>
+        </svg>
       </section>
 
       {/* FAQs */}
