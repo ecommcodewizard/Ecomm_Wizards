@@ -13,11 +13,93 @@ export const metadata: Metadata = {
 };
 
 const PROCESS = [
-  { step: "01", title: "Discovery & Strategy",   desc: "We audit your brand, competitors, and goals to map out the perfect Shopify architecture." },
-  { step: "02", title: "UX & Design",            desc: "Wireframes and high-fidelity mockups designed for conversion — reviewed and approved by you." },
-  { step: "03", title: "Development",            desc: "Clean, optimised Liquid (or Hydrogen) code. Mobile-first. Accessibility-compliant. Fast." },
-  { step: "04", title: "QA & Testing",           desc: "Cross-browser, cross-device testing. Speed benchmarks. Checkout flow validation." },
-  { step: "05", title: "Launch & Handover",      desc: "Zero-downtime go-live with full training, documentation, and post-launch support." },
+  {
+    step: "1",
+    title: "Vision & Goals Mapping",
+    desc: "We start with Slack and weekly video calls to understand what you're building - whether it's a D2C brand, B2B platform, or something hybrid. We map out your tech stack needs before touching any code.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="8" y1="13" x2="16" y2="13" />
+        <line x1="8" y1="17" x2="13" y2="17" />
+      </svg>
+    ),
+  },
+  {
+    step: "2",
+    title: "Brand-First Design & System Setup",
+    desc: "Our Shopify design and development agency crafts custom layouts in Figma that match your brand identity. Simultaneously, we architect your backend integrations: ERP systems, inventory tools, and POS connections.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="6" cy="6" r="3" />
+        <circle cx="6" cy="18" r="3" />
+        <circle cx="18" cy="12" r="3" />
+        <line x1="9" y1="6" x2="15" y2="11" />
+        <line x1="9" y1="18" x2="15" y2="13" />
+      </svg>
+    ),
+  },
+  {
+    step: "3",
+    title: "Platform Configuration & Apps",
+    desc: "Payments, shipping rules, tax compliance, subscription tools, we configure everything so your store runs on autopilot.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="3" />
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01A1.65 1.65 0 0 0 10 4.6V4.5a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V10a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+      </svg>
+    ),
+  },
+  {
+    step: "4",
+    title: "Feature Engineering & Custom Builds",
+    desc: "Need functionality that doesn't exist? Our Shopify theme development agency codes it from scratch. Custom apps, AI recommendations, unique checkout experiences that separate you from competitors using basic templates.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <polyline points="16 18 22 12 16 6" />
+        <polyline points="8 6 2 12 8 18" />
+      </svg>
+    ),
+  },
+  {
+    step: "5",
+    title: "A/B Testing & Speed Optimization",
+    desc: "We test payments, checkout flows, mobile responsiveness, and page speed. Every element gets optimized for SEO, load times, and zero launch-day surprises.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <line x1="18" y1="20" x2="18" y2="10" />
+        <line x1="12" y1="20" x2="12" y2="4" />
+        <line x1="6"  y1="20" x2="6"  y2="14" />
+      </svg>
+    ),
+  },
+  {
+    step: "6",
+    title: "Dedicated Support for Launch Day",
+    desc: "Daily check-ins and real-time Slack support during your go-live. We're with you every step to ensure a flawless launch with minimal downtime.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+        <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+        <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+        <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+      </svg>
+    ),
+  },
+  {
+    step: "7",
+    title: "Post-Launch Ongoing Support",
+    desc: "Track metrics, gather customer feedback, and run A/B tests. Our Shopify app development agency helps you iterate and scale with data-driven enhancements.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M19 8v6" />
+        <path d="M22 11h-6" />
+      </svg>
+    ),
+  },
 ];
 
 const WHY = [
@@ -1008,24 +1090,285 @@ export default function ShopifyStoreDevelopmentPage() {
         ` }} />
       </section>
 
-      {/* Process */}
-      <section className="bg-slate-50 py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            badge="Our Process"
-            title="Our Proven Shopify Store Development Process"
-            subtitle="Five clear phases from kickoff to a live, revenue-generating Shopify store."
-          />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-            {PROCESS.map((p) => (
-              <div key={p.step} className="relative rounded-2xl bg-white p-6 shadow-sm border border-slate-100">
-                <span className="text-5xl font-extrabold text-slate-100 leading-none">{p.step}</span>
-                <h3 className="mt-2 font-bold text-slate-800">{p.title}</h3>
-                <p className="mt-2 text-sm text-slate-500 leading-relaxed">{p.desc}</p>
+      {/* Our Proven Shopify Store Development Process */}
+      <section
+        className="ssd-process-section"
+        style={{
+          background: "#FFFFFF",
+          color: "#334155",
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "16px",
+          padding: "60px 20px",
+        }}
+      >
+        <div
+          className="ssd-process-inner mx-auto"
+          style={{ maxWidth: "1320px" }}
+        >
+          <div className="ssd-process-grid">
+            {/* Left column: heading, description, CTA, image (650 × 1059.64, padding 10) */}
+            <div className="ssd-process-left">
+              <h2 className="ssd-process-heading">
+                Our Proven Shopify Store Development Process
+              </h2>
+
+              <p className="ssd-process-desc">
+                Our structured Shopify development process ensures your store
+                launches optimized for performance, conversion, and long-term
+                scalability.
+              </p>
+
+              <div className="ssd-process-cta-wrap">
+                <Link href="/book-shopify-consultation" className="ssd-process-cta">
+                  <span className="ssd-process-cta-label">Book a Call</span>
+                  <svg className="ssd-process-cta-arrow" width="18" height="13" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
               </div>
-            ))}
+
+              <div className="ssd-process-image-wrap">
+                <Image
+                  src="/images/olaplex-px-new-2.webp"
+                  alt="Shopify development workflow — design, code, and launch"
+                  width={630}
+                  height={678}
+                  className="ssd-process-image"
+                />
+              </div>
+            </div>
+
+            {/* Right column: 6 numbered steps (650 × 1059.64, padding 10) */}
+            <div className="ssd-process-right">
+              <ul className="ssd-process-steps">
+                {PROCESS.map((p) => (
+                  <li key={p.step} className="ssd-process-step">
+                    <div className="ssd-process-step-text">
+                      <h3 className="ssd-process-step-title">
+                        {p.step}. {p.title}
+                      </h3>
+                      <p className="ssd-process-step-desc">{p.desc}</p>
+                    </div>
+                    <span className="ssd-process-step-icon" aria-hidden="true">
+                      {p.icon}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Mobile-only CTA — sits after the 7 bullets on phones/tablets,
+                  hidden on desktop where the CTA above the image takes its place. */}
+              <div className="ssd-process-cta-wrap-mobile">
+                <Link href="/book-shopify-consultation" className="ssd-process-cta">
+                  <span className="ssd-process-cta-label">Book a Call</span>
+                  <svg className="ssd-process-cta-arrow" width="18" height="13" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          /* ── Two-column grid ────────────────────────────────────────── */
+          .ssd-process-grid {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            color: #334155;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+          }
+          .ssd-process-left,
+          .ssd-process-right {
+            flex: 1 1 0;
+            max-width: 650px;
+            padding: 10px;
+            color: #334155;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+          }
+
+          /* ── Left column ────────────────────────────────────────────── */
+          .ssd-process-heading {
+            color: #000000;
+            font-family: 'Poppins', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 50px;
+            margin: 0 0 20px;
+            max-width: 630px;
+          }
+          .ssd-process-desc {
+            color: rgba(0, 0, 0, 0.8);
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            line-height: 26px;
+            margin: 0 0 28px;
+            max-width: 630px;
+          }
+          .ssd-process-cta-wrap { margin: 0 0 32px; }
+          .ssd-process-cta-wrap-mobile { display: none; }
+          .ssd-process-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 43px;        /* 2px shaved each side; 2px transparent border restores 210.2 × 60 */
+            background:
+              linear-gradient(#000000, #000000) padding-box,
+              linear-gradient(#000000, #000000) border-box;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            line-height: 1;
+            border: 2px solid transparent;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+          }
+          .ssd-process-cta-label { color: #FFFFFF; }
+          .ssd-process-cta-arrow { color: #FFFFFF; }
+          .ssd-process-cta:hover,
+          .ssd-process-cta:focus-visible {
+            outline: none;
+            background:
+              linear-gradient(#000000, #000000) padding-box,
+              linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%) border-box;
+          }
+
+          .ssd-process-image-wrap {
+            width: 100%;
+            max-width: 630px;
+          }
+          .ssd-process-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+          }
+
+          /* ── Right column: stepped list ─────────────────────────────── */
+          .ssd-process-steps {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+          }
+          .ssd-process-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 0 0 20px;        /* per inspector: 0 0 20px on each row */
+            border-bottom: 1px solid #E5E5E5;
+            margin-bottom: 20px;
+          }
+          .ssd-process-step:last-child {
+            border-bottom: 0;
+            margin-bottom: 0;
+          }
+          .ssd-process-step-text { flex: 1; min-width: 0; }
+          .ssd-process-step-title {
+            color: #000000;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;          /* per inspector: 336.08 × 25, 18px Poppins */
+            font-weight: 700;
+            line-height: 25px;
+            margin: 0 0 10px;
+          }
+          .ssd-process-step-desc {
+            color: rgba(0, 0, 0, 0.8);
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            line-height: 26px;
+            margin: 0;
+          }
+          .ssd-process-step-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            color: #000000;
+            margin-top: 4px;
+          }
+
+          /* ── Tablet & mobile ────────────────────────────────────────── */
+          @media (max-width: 1023px) {
+            .ssd-process-section { padding: 44px 20px !important; }
+            .ssd-process-grid {
+              flex-direction: column !important;
+              gap: 32px !important;
+              align-items: stretch !important;
+            }
+            .ssd-process-left,
+            .ssd-process-right {
+              flex: 0 0 auto !important;
+              width: 100% !important;
+              max-width: 100% !important;
+              padding: 0 !important;
+            }
+            /* Center heading + desc + CTA on mobile to match the rest of the page */
+            .ssd-process-left { text-align: center !important; }
+            .ssd-process-heading {
+              font-size: 30px !important;
+              line-height: 40px !important;
+              margin: 0 auto 16px !important;
+            }
+            .ssd-process-desc {
+              font-size: 16px !important;
+              line-height: 26px !important;
+              margin: 0 auto 24px !important;
+            }
+            /* Hide the desktop-position CTA on mobile and reveal the one
+               that sits AFTER the 7 bullets in the right column. */
+            .ssd-process-cta-wrap { display: none !important; }
+            .ssd-process-cta-wrap-mobile {
+              display: flex !important;
+              justify-content: center !important;
+              margin-top: 28px !important;
+            }
+            .ssd-process-cta {
+              padding: 16px 32px !important;
+              font-size: 14px !important;
+            }
+            .ssd-process-image-wrap {
+              margin: 0 auto !important;
+              max-width: 100% !important;
+            }
+            /* Bullet rows: icon LEFT, content RIGHT */
+            .ssd-process-step {
+              flex-direction: row-reverse !important;
+              gap: 14px !important;
+              text-align: left !important;
+            }
+            .ssd-process-step-title {
+              font-size: 18px !important;     /* per inspector: 18px Poppins */
+              line-height: 25px !important;
+            }
+            .ssd-process-step-desc {
+              font-size: 15px !important;
+              line-height: 24px !important;
+            }
+            .ssd-process-step-icon { margin-top: 2px !important; }
+          }
+          @media (max-width: 640px) {
+            .ssd-process-section { padding: 36px 16px !important; }
+            .ssd-process-heading { font-size: 28px !important; line-height: 36px !important; }
+            .ssd-process-desc { font-size: 15px !important; line-height: 24px !important; }
+            .ssd-process-cta {
+              padding: 14px 28px !important;
+              width: 100% !important;
+              justify-content: center !important;
+            }
+            .ssd-process-step { gap: 12px !important; padding-bottom: 18px !important; margin-bottom: 18px !important; }
+            .ssd-process-step-title { font-size: 18px !important; line-height: 25px !important; margin-bottom: 8px !important; }
+            .ssd-process-step-desc { font-size: 14px !important; line-height: 22px !important; }
+            .ssd-process-step-icon { width: 26px !important; height: 26px !important; }
+          }
+        ` }} />
       </section>
 
       {/* Why us */}
