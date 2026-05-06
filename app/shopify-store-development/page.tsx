@@ -7,7 +7,12 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
   {
     key: "eby",
     image: "/images/Frame_1000004320.webp",
-    apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/klaviyo.svg", "/images/yotpo.svg"],
+    apps: [
+      "/images/shopify-logo-slide_1024x1024.svg",
+      "/images/infinite-logo-slide_1024x1024.svg",
+      "/images/Subtract-logo-slide_1024x1024.svg",
+      "/images/unknow-logo-slide_1024x1024.svg",
+    ],
     headline: (
       <>
         An elegant <strong>Shopify Store</strong> designed and built for{" "}
@@ -26,7 +31,12 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
   {
     key: "harvard",
     image: "/images/all-case-study-harvard.webp",
-    apps: ["/images/shopify-icon.svg", "/images/klaviyo.svg", "/images/yotpo.svg", "/images/gorgias.svg"],
+    apps: [
+      "/images/shopify-logo-slide_1024x1024.svg",
+      "/images/infinite-logo-slide_1024x1024.svg",
+      "/images/Subtract-logo-slide_1024x1024.svg",
+      "/images/unknow-logo-slide_1024x1024.svg",
+    ],
     headline: (
       <>
         A sophisticated <strong>Shopify Store</strong> designed and built for a{" "}
@@ -46,7 +56,12 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
   {
     key: "bark",
     image: "/images/ai-bark-casestudy.webp",
-    apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/Subtract.svg", "/images/64f098c0e38dec3a384cb182_rebuy.svg"],
+    apps: [
+      "/images/shopify-logo-slide_1024x1024.svg",
+      "/images/infinite-logo-slide_1024x1024.svg",
+      "/images/Subtract-logo-slide_1024x1024.svg",
+      "/images/unknow-logo-slide_1024x1024.svg",
+    ],
     headline: (
       <>
         A dynamically personalized <strong>Shopify Store</strong> developed &amp; maintained for{" "}
