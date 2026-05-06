@@ -12,15 +12,6 @@ export const metadata: Metadata = {
   description: "Custom Shopify store development built for speed, scalability, and conversions. 700+ stores launched. Speak with our Shopify experts today.",
 };
 
-const DELIVERABLES = [
-  { icon: "🎨", title: "Custom Shopify Theme Design",       desc: "Bespoke Liquid themes built from scratch to match your brand and convert visitors." },
-  { icon: "📐", title: "Figma to Shopify Conversion",       desc: "Pixel-perfect translation of your design file into a fully functional Shopify store." },
-  { icon: "🚀", title: "New Store Development",              desc: "Full setup — products, collections, payments, shipping, and launch-ready configuration." },
-  { icon: "⚡", title: "Shopify Plus Development",           desc: "Enterprise-grade stores with custom checkout, Scripts, Flow, and B2B functionality." },
-  { icon: "🌐", title: "Headless / Hydrogen Storefronts",   desc: "Next.js and Hydrogen builds for brands that need maximum speed and flexibility." },
-  { icon: "🔌", title: "ERP & App Integrations",            desc: "Connect your store to NetSuite, SAP, 3PLs, CRMs, and any third-party system." },
-];
-
 const PROCESS = [
   { step: "01", title: "Discovery & Strategy",   desc: "We audit your brand, competitors, and goals to map out the perfect Shopify architecture." },
   { step: "02", title: "UX & Design",            desc: "Wireframes and high-fidelity mockups designed for conversion — reviewed and approved by you." },
@@ -337,10 +328,52 @@ export default function ShopifyStoreDevelopmentPage() {
           }
 
           @media (max-width: 1023px) {
-            .ssd-hero-inner { padding: 16px 0 40px !important; }
-            .ssd-hero-text { padding: 0 !important; }
+            /* Pull text + button off the screen edges */
+            .ssd-hero-inner { padding: 28px 20px 44px !important; gap: 28px !important; }
+            .ssd-hero-text  {
+              padding: 0 !important;
+              max-width: 100% !important;
+              text-align: center !important;     /* center-align headline / subheading / desc */
+            }
+            .ssd-hero-text .mt-8 {
+              display: flex !important;          /* center the CTA pill on its own row */
+              justify-content: center !important;
+            }
+            /* Hero typography — locked to inspector specs at 380px viewport */
+            .ssd-hero-text h1 {
+              font-size: 32px !important;     /* spec: 380 × 168, 32px Poppins */
+              line-height: 42px !important;
+            }
+            .ssd-hero-text h2 {
+              font-size: 20px !important;     /* spec: 380 × 60, 20px Poppins */
+              line-height: 30px !important;
+              margin-top: 18px !important;
+            }
+            .ssd-hero-text p {
+              font-size: 16px !important;     /* spec: 380 × 156, 16px Poppins */
+              line-height: 26px !important;
+              margin-top: 18px !important;
+            }
+            /* CTA — spec: 150.93 × 50, 14px Poppins, padding 16px 22px */
+            .ssd-hero-text .mt-8 { margin-top: 24px !important; }
+            .ssd-hero-cta {
+              padding: 16px 22px !important;
+              font-size: 14px !important;
+              gap: 8px !important;
+            }
+            /* Slider sits below text and stays clear of the side gutter */
+            .ssd-hero-slider {
+              width: 100% !important;
+              max-width: 100% !important;
+            }
           }
           @media (max-width: 640px) {
+            .ssd-hero-inner { padding: 24px 16px 40px !important; gap: 24px !important; }
+            /* Keep the same inspector-spec sizes on phones too */
+            .ssd-hero-text h1 { font-size: 32px !important; line-height: 42px !important; }
+            .ssd-hero-text h2 { font-size: 20px !important; line-height: 30px !important; }
+            .ssd-hero-text p  { font-size: 16px !important; line-height: 26px !important; }
+            .ssd-hero-cta     { padding: 16px 22px !important; font-size: 14px !important; }
             .ssd-hero-tilt {
               width: 540px;
               height: 600px;
@@ -362,33 +395,617 @@ export default function ShopifyStoreDevelopmentPage() {
         ` }} />
       </section>
 
-      {/* Trust bar */}
-      <div className="border-b border-slate-100 bg-white py-5">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6">
-          <p className="text-center text-xs font-semibold uppercase tracking-widest text-slate-400">
-            Shopify Plus Partner · 700+ Stores Built · $900M+ Client Revenue · 28.5% Avg Conversion Lift
-          </p>
-        </div>
-      </div>
+      {/* Trusted by Leading Shopify Brands */}
+      <section
+        className="ssd-trust-section"
+        style={{
+          background: "#FFFFFF",
+          color: "#334155",
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "16px",
+        }}
+      >
+        <div
+          className="ssd-trust-inner mx-auto"
+          style={{
+            maxWidth: "1320px",
+            padding: "60px 0",
+          }}
+        >
+          <h2
+            className="ssd-trust-heading text-center"
+            style={{
+              color: "#000000",
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "22px",
+              fontWeight: 700,
+              lineHeight: 1.45,
+              margin: 0,
+            }}
+          >
+            Trusted by Leading Shopify Brands
+          </h2>
 
-      {/* What you get */}
-      <section className="py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            badge="What's Included"
-            title="Custom Shopify Store Development from Strategy to Launch"
-            subtitle="Everything you need to go live with a high-converting Shopify store — and nothing you don't."
-          />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {DELIVERABLES.map((d) => (
-              <div key={d.title} className="rounded-2xl border border-slate-100 bg-white p-7 shadow-sm hover:shadow-md transition-shadow">
-                <span className="text-3xl">{d.icon}</span>
-                <h3 className="mt-4 text-lg font-bold text-slate-800">{d.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-500">{d.desc}</p>
-              </div>
-            ))}
+          <div
+            className="ssd-trust-carousel"
+            style={{
+              marginTop: "30px",
+              width: "100%",
+              overflow: "hidden",
+            }}
+          >
+            <div className="ssd-trust-track">
+              {[
+                { src: "/images/trust_logo_2.svg",  alt: "Peanuts" },
+                { src: "/images/trust_logo_31.svg", alt: "Olaplex" },
+                { src: "/images/trust_logo_32.svg", alt: "Forme" },
+                { src: "/images/trust_logo_20.svg", alt: "SarahChloe" },
+                { src: "/images/trust_logo_27.svg", alt: "Cellar.com" },
+                { src: "/images/Lids-logo_fcb134ea-8ac4-4592-bfa1-6a366076e371.avif", alt: "Lids HD" },
+                // duplicate set for seamless marquee
+                { src: "/images/trust_logo_2.svg",  alt: "" },
+                { src: "/images/trust_logo_31.svg", alt: "" },
+                { src: "/images/trust_logo_32.svg", alt: "" },
+                { src: "/images/trust_logo_20.svg", alt: "" },
+                { src: "/images/trust_logo_27.svg", alt: "" },
+                { src: "/images/Lids-logo_fcb134ea-8ac4-4592-bfa1-6a366076e371.avif", alt: "" },
+              ].map((logo, i) => (
+                <div key={i} className="ssd-trust-slide">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="ssd-trust-logo"
+                    width={178}
+                    height={86}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .ssd-trust-track {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 24px;
+            width: 100%;
+          }
+          .ssd-trust-slide {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 178.32px;
+            height: 86.04px;
+          }
+          .ssd-trust-logo {
+            width: 178.32px;
+            height: 86.04px;
+            object-fit: contain;
+            display: block;
+          }
+          /* Hide the duplicate set on desktop — only need it for the mobile marquee */
+          .ssd-trust-slide:nth-child(n + 7) { display: none; }
+
+          @media (max-width: 1023px) {
+            .ssd-trust-section { padding: 0 16px; }
+            .ssd-trust-inner { padding: 36px 0 !important; }
+            .ssd-trust-heading { font-size: 20px !important; }
+            .ssd-trust-carousel { margin-top: 24px !important; }
+            /* Show all (originals + dupes) and run an auto-scroll marquee */
+            .ssd-trust-slide:nth-child(n + 7) { display: flex !important; }
+            .ssd-trust-track {
+              width: max-content;
+              justify-content: flex-start;
+              gap: 32px;
+              animation: ssdTrustScroll 28s linear infinite;
+            }
+            /* Per inspector: each logo on mobile is 174.99 × 84.44 */
+            .ssd-trust-slide {
+              width: 174.99px;
+              height: 84.44px;
+            }
+            .ssd-trust-logo {
+              width: 174.99px;
+              height: 84.44px;
+            }
+            @keyframes ssdTrustScroll {
+              0%   { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+          }
+        ` }} />
+      </section>
+
+      {/* What You Get — intro */}
+      <section
+        className="ssd-what-section"
+        style={{
+          background: "#FBF7ED",
+          color: "#334155",
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "16px",
+          padding: "60px 20px",
+        }}
+      >
+        <div
+          className="ssd-what-inner mx-auto"
+          style={{ maxWidth: "1320px" }}
+        >
+          <h2
+            className="ssd-what-heading text-center"
+            style={{
+              color: "#000000",
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "42px",
+              fontWeight: 700,
+              lineHeight: "52px",
+              margin: "0 auto 28px",
+              maxWidth: "924px",
+            }}
+          >
+            What You Get With Our Shopify Store Development Services
+          </h2>
+
+          <p
+            className="ssd-what-desc text-center"
+            style={{
+              color: "rgba(0, 0, 0, 0.8)",
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "18px",
+              lineHeight: "28px",
+              margin: "0 auto 31.5px",
+              maxWidth: "1320px",
+            }}
+          >
+            Building a new Shopify store isn&apos;t about picking a theme and calling
+            it done. It&apos;s about creating a custom ecommerce experience that fits
+            your brand, your customers, and your growth goals. Whether you&apos;re
+            starting from scratch or need a complete rebuild, our Shopify development
+            agency treats your store like a revenue-generating machine. From the
+            first wireframe to the final pixel, we build stores optimized for
+            conversions, built to scale, and designed to make your competitors
+            nervous.
+          </p>
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 1023px) {
+            .ssd-what-section { padding: 44px 20px !important; }
+            .ssd-what-heading {
+              font-size: 30px !important;     /* per inspector: 400 × 120, 30px Poppins */
+              line-height: 40px !important;
+              margin: 0 auto 24px !important;
+            }
+            .ssd-what-desc {
+              font-size: 16px !important;     /* per inspector: 400 × 286, 16px Poppins */
+              line-height: 26px !important;
+              margin: 0 auto 28px !important; /* per inspector: 0 0 28px */
+            }
+          }
+          @media (max-width: 640px) {
+            .ssd-what-section { padding: 36px 16px !important; }
+            .ssd-what-heading {
+              font-size: 30px !important;     /* keep at 30px on phones too */
+              line-height: 40px !important;
+            }
+            .ssd-what-desc {
+              font-size: 16px !important;
+              line-height: 26px !important;
+              margin-bottom: 28px !important;
+            }
+          }
+        ` }} />
+      </section>
+
+      {/* Who this service is for + stats */}
+      <section
+        className="ssd-who-section"
+        style={{
+          background: "#FBF7ED",
+          color: "#334155",
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "16px",
+          padding: "0 20px 60px",
+        }}
+      >
+        <div
+          className="ssd-who-inner mx-auto"
+          style={{ maxWidth: "1320px" }}
+        >
+          <div className="ssd-who-grid">
+            {/* Left card: Who this service is for */}
+            <div className="ssd-who-left">
+              <h2 className="ssd-who-heading">
+                Who This Shopify Development Service Is For
+              </h2>
+
+              <div className="ssd-who-items">
+                {[
+                  { title: "New Brands",                 desc: "Launch a Shopify store built for conversions from day one" },
+                  { title: "Scaling Brands",             desc: "Redesign and optimize your store to increase revenue" },
+                  { title: "Enterprise / Shopify Plus",  desc: "Custom development, integrations, and scalable infrastructure" },
+                ].map((item) => (
+                  <div key={item.title} className="ssd-who-item">
+                    <div className="ssd-who-item-content">
+                      <h3 className="ssd-who-item-title">{item.title}</h3>
+                      <p className="ssd-who-item-desc">{item.desc}</p>
+                    </div>
+                    <span className="ssd-who-item-icon" aria-hidden>
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93 4.93 19.07" stroke="#000000" strokeWidth="1.6" strokeLinecap="round" />
+                      </svg>
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="ssd-who-cta-wrap">
+                <Link
+                  href="/book-shopify-consultation"
+                  className="ssd-who-cta"
+                >
+                  <span className="ssd-who-cta-label">Book a Free Call Now</span>
+                  <svg className="ssd-who-cta-arrow" width="18" height="13" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right column: single card. Top half = stats slider (rotates).
+                Bottom half = static divider + static logo row. */}
+            <div className="ssd-who-right">
+              <div className="ssd-who-stat-card">
+                {/* Sliding stats */}
+                <div className="ssd-who-stat-slider">
+                  <div className="ssd-who-stat-track">
+                    {(() => {
+                      const stats = [
+                        { num: "700+",   label: "Stores Built" },
+                        { num: "$900M+", label: "Revenue Generated" },
+                        { num: "10+",    label: "Awards For Ecomm Wizards" },
+                        { num: "8+",     label: "Years of Experience" },
+                      ];
+                      // duplicate first slide at the tail so the wrap-around is seamless
+                      return [...stats, stats[0]].map((s, i) => (
+                        <div key={i} className="ssd-who-stat-slide">
+                          <div className="ssd-who-stat-number">{s.num}</div>
+                          <div className="ssd-who-stat-label">{s.label}</div>
+                        </div>
+                      ));
+                    })()}
+                  </div>
+                </div>
+
+                {/* Static divider */}
+                <hr className="ssd-who-stat-divider" />
+
+                {/* Static logo row */}
+                <div className="ssd-who-stat-logos">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/partner_logo_7.svg" alt="Okendo"  className="ssd-who-stat-logo" />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/partner_logo_6.svg" alt="Gorgias" className="ssd-who-stat-logo" />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/partner_logo_5.svg" alt="Klaviyo" className="ssd-who-stat-logo" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          /* ── Two-column grid ────────────────────────────────────────── */
+          .ssd-who-grid {
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+            color: #334155;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+          }
+          .ssd-who-left,
+          .ssd-who-right {
+            flex: 1 1 0;
+            max-width: 650px;
+            min-height: 600px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            color: #334155;
+          }
+
+          /* ── Left card ──────────────────────────────────────────────── */
+          .ssd-who-left {
+            background: #FFFFFF;
+            padding: 40px 30px 30px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+          }
+          .ssd-who-heading {
+            color: #000000;
+            font-family: 'Poppins', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 50px;
+            margin: 0 0 32px;
+            max-width: 590px;
+          }
+          .ssd-who-items {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+          }
+          .ssd-who-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid #E5E5E5;
+            color: #334155;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+          }
+          .ssd-who-item:first-child { padding-top: 0; }
+          .ssd-who-item:last-child  { border-bottom: 0; }
+          .ssd-who-item-content { flex: 1; min-width: 0; max-width: 545px; }
+          .ssd-who-item-title {
+            color: #000000;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 26px;
+            margin: 0 0 6px;
+          }
+          .ssd-who-item-desc {
+            color: rgba(0,0,0,0.85);
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            margin: 0;
+          }
+          .ssd-who-item-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+          }
+
+          /* ── CTA (287.59 × 60, padding 20 45, #000 / #FFF) ──────────── */
+          .ssd-who-cta-wrap { margin-top: 28px; }
+          .ssd-who-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 43px;        /* 2px shaved each side; the 2px transparent border restores 287.59 × 60 */
+            background:
+              linear-gradient(#000000, #000000) padding-box,
+              linear-gradient(#000000, #000000) border-box;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            line-height: 1;
+            border: 2px solid transparent;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+          }
+          .ssd-who-cta-label { color: #FFFFFF; }
+          .ssd-who-cta-arrow { color: #FFFFFF; }
+          /* On hover: keep the inside black + white text, but swap the 2px ring to the olive gradient */
+          .ssd-who-cta:hover,
+          .ssd-who-cta:focus-visible {
+            outline: none;
+            background:
+              linear-gradient(#000000, #000000) padding-box,
+              linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%) border-box;
+          }
+
+          /* ── Right column: image backdrop, white card pinned to bottom-left ── */
+          .ssd-who-right {
+            padding: 20px 30px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;        /* card hugs the bottom of the wrapper */
+            align-items: flex-start;          /* card hugs the left of the wrapper */
+            background-image: url('/images/Group_1000004345_1.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 16px;
+          }
+          .ssd-who-stat-card {
+            width: 590px;
+            max-width: 100%;
+            height: 375.39px;
+            background: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+            color: #334155;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+          }
+
+          /* The sliding region — only the number + label cycle here. */
+          .ssd-who-stat-slider {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+          }
+          .ssd-who-stat-track {
+            display: flex;
+            width: 500%;          /* 5 slides = 4 unique + 1 duplicate of slide 1 */
+            animation: ssdStatsSlide 24s ease-in-out infinite;
+            will-change: transform;
+          }
+          .ssd-who-stat-card:hover .ssd-who-stat-track {
+            animation-play-state: paused;
+          }
+          .ssd-who-stat-slide {
+            flex: 0 0 20%;        /* each slide = 1 / 5 of the track */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+
+          /* Counter — 530 × 86.39, 72px Poppins, margin 0 0 20px */
+          .ssd-who-stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 86.39px;
+            letter-spacing: -1px;
+            margin: 0 0 20px;
+            max-width: 530px;
+            background-image: linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+          }
+          .ssd-who-stat-label {
+            color: #000000;
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 28px;
+            margin: 0;
+          }
+
+          /* Static divider — sits between the slider and the logo row */
+          .ssd-who-stat-divider {
+            border: 0;
+            border-top: 1px solid #E5E5E5;
+            margin: 36px 0 28px;
+            width: 100%;
+          }
+
+          /* Static logo row */
+          .ssd-who-stat-logos {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 16px;
+            width: 100%;
+          }
+          .ssd-who-stat-logo {
+            height: 32px;
+            max-width: 150px;
+            object-fit: contain;
+            display: block;
+          }
+
+          /* Slide timing: 4 unique + 1 dup = 5 stops over 24s.
+             Each stop holds for ~4.8s (~80% of a step), transitions over ~1.2s. */
+          @keyframes ssdStatsSlide {
+            0%,   18% { transform: translateX(0%);   }
+            22%,  38% { transform: translateX(-20%); }
+            42%,  58% { transform: translateX(-40%); }
+            62%,  78% { transform: translateX(-60%); }
+            82%, 100% { transform: translateX(-80%); }
+          }
+
+          /* ── Tablet & mobile ────────────────────────────────────────── */
+          @media (max-width: 1023px) {
+            .ssd-who-section { padding: 0 16px 56px !important; }
+            .ssd-who-grid {
+              flex-direction: column !important;
+              gap: 24px !important;
+              align-items: stretch !important;
+            }
+            .ssd-who-left,
+            .ssd-who-right {
+              flex: 0 0 auto !important;
+              width: 100% !important;
+              max-width: 100% !important;
+              min-height: 0 !important;
+            }
+
+            /* Section heading — per inspector 360 × 120, 30px Poppins */
+            .ssd-who-heading {
+              font-size: 30px !important;
+              line-height: 40px !important;
+              margin-bottom: 24px !important;
+            }
+
+            /* Bullet rows: icon LEFT, content RIGHT.
+               row-reverse swaps the visual order without touching the JSX. */
+            .ssd-who-item {
+              flex-direction: row-reverse !important;
+              justify-content: flex-end !important;
+              padding: 18px 0 !important;
+              gap: 14px !important;
+            }
+            .ssd-who-item-content { flex: 1 1 auto !important; }
+            .ssd-who-item-icon { margin-top: 4px !important; }
+
+            /* Image backdrop must stay visible on mobile — keep wrapper padding
+               and a tall enough viewport so the image shows above + around the card. */
+            .ssd-who-right {
+              padding: 16px !important;
+              min-height: 460px !important;
+            }
+            .ssd-who-stat-card {
+              width: 100% !important;
+              max-width: 100% !important;
+              height: auto !important;
+              min-height: 0 !important;
+              padding: 30px 20px 24px !important;
+            }
+            .ssd-who-stat-slide { padding: 0 !important; }
+            .ssd-who-stat-number {
+              font-size: 56px !important;
+              line-height: 64px !important;
+              margin-bottom: 14px !important;
+            }
+            .ssd-who-stat-label  { font-size: 18px !important; line-height: 26px !important; }
+            .ssd-who-stat-divider { margin: 26px 0 22px !important; }
+            .ssd-who-stat-logo  { height: 26px !important; max-width: 100px !important; }
+          }
+
+          @media (max-width: 640px) {
+            .ssd-who-section { padding: 0 14px 48px !important; }
+            .ssd-who-left { padding: 28px 20px 24px !important; }
+            .ssd-who-heading { font-size: 30px !important; line-height: 40px !important; margin-bottom: 20px !important; }
+            .ssd-who-cta {
+              padding: 14px 28px !important;
+              width: 100% !important;
+              justify-content: center !important;
+            }
+            .ssd-who-cta-wrap { display: flex; }
+
+            .ssd-who-right {
+              padding: 14px !important;
+              min-height: 410px !important;
+            }
+            .ssd-who-stat-card { padding: 24px 18px 20px !important; }
+            .ssd-who-stat-slide { padding: 0 !important; }
+            .ssd-who-stat-number {
+              font-size: 44px !important;
+              line-height: 52px !important;
+              margin-bottom: 10px !important;
+            }
+            .ssd-who-stat-label  { font-size: 16px !important; line-height: 24px !important; }
+            .ssd-who-stat-divider { margin: 20px 0 16px !important; }
+            .ssd-who-stat-logo  { height: 22px !important; max-width: 86px !important; }
+            .ssd-who-stat-logos { gap: 8px !important; }
+            .ssd-who-item { padding: 16px 0 !important; gap: 12px !important; }
+            .ssd-who-item-title { font-size: 17px !important; }
+            .ssd-who-item-desc  { font-size: 15px !important; line-height: 22px !important; }
+          }
+        ` }} />
       </section>
 
       {/* Process */}
