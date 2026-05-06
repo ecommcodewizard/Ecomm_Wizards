@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import SectionHeader from "@/components/ui/SectionHeader";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 const CASE_STUDY_SLIDES: CaseStudySlide[] = [
