@@ -1,8 +1,69 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import CTASection from "@/components/ui/CTASection";
 import SectionHeader from "@/components/ui/SectionHeader";
+import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+
+const CASE_STUDY_SLIDES: CaseStudySlide[] = [
+  {
+    key: "eby",
+    image: "/images/Frame_1000004320.webp",
+    apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/klaviyo.svg", "/images/yotpo.svg"],
+    headline: (
+      <>
+        An elegant <strong>Shopify Store</strong> designed and built for{" "}
+        <strong>EBY</strong> by <strong>Sofia Vergara</strong>
+      </>
+    ),
+    quote: (
+      <>
+        &ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally — we couldn&apos;t be happier!&rdquo;
+      </>
+    ),
+    avatar: "/images/Sofia_Jimenez.webp",
+    name: "EBY by Sofia Vergara",
+    role: "Marketing Manager",
+  },
+  {
+    key: "harvard",
+    image: "/images/all-case-study-harvard.webp",
+    apps: ["/images/shopify-icon.svg", "/images/klaviyo.svg", "/images/yotpo.svg", "/images/gorgias.svg"],
+    headline: (
+      <>
+        A sophisticated <strong>Shopify Store</strong> designed and built for a{" "}
+        <strong>Harvard University</strong>
+      </>
+    ),
+    quote: (
+      <>
+        &ldquo;Our experience with EW was excellent, characterized by an{" "}
+        <strong>efficient workflow</strong> and <strong>professional execution</strong>; we couldn&apos;t be more delighted&rdquo;
+      </>
+    ),
+    avatar: "/images/harvardperson_medium.webp",
+    name: "Daniyal S.",
+    role: "Harvard University",
+  },
+  {
+    key: "bark",
+    image: "/images/ai-bark-casestudy.webp",
+    apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/Subtract.svg", "/images/64f098c0e38dec3a384cb182_rebuy.svg"],
+    headline: (
+      <>
+        A dynamically personalized <strong>Shopify Store</strong> developed &amp; maintained for{" "}
+        <strong>Bark</strong>
+      </>
+    ),
+    quote: (
+      <>
+        &ldquo;Their immense knowledge of Shopify Plus and exceptional communication skills, accompanied by a <strong>can-do attitude</strong> made Ecomm Wizards a fantastic partner.&rdquo;
+      </>
+    ),
+    avatar: "/images/nari_medium_215a6a4f-f640-4b4f-98aa-28f001df20dd_medium.webp",
+    name: "Nari Sitaraman",
+    role: "Chief Technology Officer",
+  },
+];
 
 const OLIVE_GRADIENT =
   "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)";
@@ -103,10 +164,30 @@ const PROCESS = [
 ];
 
 const FAQS = [
-  { q: "How long does a Shopify store build take?",       a: "A standard custom build takes 4–8 weeks. Shopify Plus enterprise projects typically take 8–12 weeks. We'll give you a precise timeline in your free quote." },
-  { q: "Do you work with existing Shopify stores?",       a: "Yes — we handle redesigns, theme customisations, feature additions, and full rebuilds for existing stores just as often as new builds." },
-  { q: "What's included in a custom Shopify build?",      a: "Custom theme design, development, product import, payments and shipping setup, app integrations, speed optimisation, and full QA before launch." },
-  { q: "Can you build a Shopify Plus store?",             a: "Absolutely. We're a certified Shopify Plus partner with dozens of Plus builds under our belt, including custom checkout, Scripts, Flow automations, and B2B." },
+  {
+    q: "I'm new to Shopify. What do I need to know?",
+    a: "Our Shopify development agency handles all the technical work. You focus on your brand and products while we guide you through platform setup, feature selection, and launch strategy.",
+  },
+  {
+    q: "How long does a build take?",
+    a: "Most stores launch in 6-10 weeks. Simple D2C builds take around 6 weeks, while complex B2B stores with custom integrations need 8-10 weeks.",
+  },
+  {
+    q: "What does it cost?",
+    a: "Projects typically range from $2K to $50K depending on design complexity, integrations, and features. We provide transparent proposals with no hidden fees.",
+  },
+  {
+    q: "Can you integrate my existing systems?",
+    a: "Our Shopify ecommerce development agency connects ERP platforms, warehouse tools, POS systems, CRMs, and legacy databases seamlessly.",
+  },
+  {
+    q: "What if I need changes post-launch?",
+    a: "We offer ongoing support packages for updates, optimizations, and new features as your business grows.",
+  },
+  {
+    q: "Why choose Ecomm Wizards over other agencies?",
+    a: "We're recognized among the best ecommerce development agencies for Shopify and WooCommerce, with proven expertise in large-scale builds. As one of the top Shopify Plus partner agencies for large-scale ecommerce development 2025, we've delivered enterprise-level solutions for brands processing millions in revenue.",
+  },
 ];
 
 export default function ShopifyStoreDevelopmentPage() {
@@ -1759,26 +1840,677 @@ export default function ShopifyStoreDevelopmentPage() {
         </svg>
       </section>
 
-      {/* FAQs */}
-      <section className="bg-slate-50 py-20 sm:py-24">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <SectionHeader badge="FAQs" title="Frequently Asked Questions" />
-          <div className="space-y-4">
-            {FAQS.map((faq) => (
-              <div key={faq.q} className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-                <h3 className="font-semibold text-slate-800">{faq.q}</h3>
-                <p className="mt-2 text-sm text-slate-500 leading-relaxed">{faq.a}</p>
+      {/* Proven Results from Brands We've Built */}
+      <section
+        className="ssd-results-section"
+        style={{
+          background: "#FFFFFF",
+          color: "#334155",
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "16px",
+          padding: "60px 20px",
+        }}
+      >
+        <div
+          className="ssd-results-inner mx-auto"
+          style={{ maxWidth: "1320px" }}
+        >
+          {/* Heading */}
+          <h2 className="ssd-results-heading">
+            Proven Results from Brands We&apos;ve Built
+          </h2>
+
+          {/* Top description */}
+          <p className="ssd-results-desc">
+            Our Shopify store development services have helped brands increase
+            conversion rates by up to 35%, reduce page load time by 50%, and
+            scale to Shopify Plus with confidence.
+          </p>
+
+          {/* 3 testimonial cards — brand logos use the Frame_1000007615 set */}
+          <div className="ssd-results-cards">
+            {[
+              {
+                quote: "Elegant custom store with Recharge and Klaviyo— “Top-notch experience from start to finish!”",
+                logo: "/images/Frame_1000007615.webp",
+                logoAlt: "EBY",
+                person: "Sofia Vergara, Marketing Manager",
+              },
+              {
+                quote: "Sophisticated site with AI and Swatch King— “Efficient workflow and professional execution.”",
+                logo: "/images/Frame_1000007615-1.avif",
+                logoAlt: "The Harvard Shop",
+                person: "Daniyal S.",
+              },
+              {
+                quote: "Dynamic, personalized build with Rebuy and Subtract—resulting in exceptional communication and results.",
+                logo: "/images/Frame_1000007615-2.avif",
+                logoAlt: "BARK",
+                person: "Nari Sitaraman, CTO",
+              },
+            ].map((c) => (
+              <div key={c.person} className="ssd-results-card">
+                <p className="ssd-results-card-quote">{c.quote}</p>
+                <div className="ssd-results-card-logo">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={c.logo} alt={c.logoAlt} />
+                </div>
+                <p className="ssd-results-card-person">{c.person}</p>
               </div>
             ))}
           </div>
+
+          {/* Case-study slider — interactive (prev/next + auto-rotate) */}
+          <CaseStudySlider slides={CASE_STUDY_SLIDES} intervalMs={6000} />
+
         </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .ssd-results-heading {
+            color: #000000;
+            font-family: 'Poppins', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 52px;
+            text-align: center;
+            margin: 0 auto 24px;
+            max-width: 920px;
+          }
+          .ssd-results-desc {
+            color: rgba(0, 0, 0, 0.8);
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            line-height: 28px;
+            text-align: center;
+            margin: 0 auto 48px;
+            max-width: 1056px;
+          }
+
+          /* 3 cards: 426.67 × 257.28, padding 30px, bg #FBF7ED */
+          .ssd-results-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 48px;
+          }
+          .ssd-results-card {
+            background: #FBF7ED;
+            padding: 30px;
+            min-height: 257.28px;
+            border-radius: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: #334155;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+          }
+          .ssd-results-card-quote {
+            color: #000000;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            line-height: 28px;
+            margin: 0 0 24px;
+            max-width: 366.67px;
+          }
+          .ssd-results-card-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 64px;
+            margin-bottom: 18px;
+          }
+          .ssd-results-card-logo img {
+            width: 150px;
+            height: 64.05px;          /* per inspector spec: 150 × 64.05 */
+            object-fit: contain;
+            display: block;
+          }
+          .ssd-results-card-person {
+            color: rgba(0, 0, 0, 0.7);
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            line-height: 22px;
+            margin: 0;
+          }
+
+          /* Slider container — 1300 × 582.28, cream wrapper.
+             Spec padding (30 20) is applied on the slide itself; the wrapper
+             stays flush so each slide fills the full track. */
+          .ssd-results-slider {
+            position: relative;
+            background: #FBF7ED;
+            border-radius: 18px;
+            padding: 0;
+            overflow: hidden;
+          }
+          .ssd-results-slider-track {
+            display: flex;
+            will-change: transform;
+            /* width + transform set inline by the React component */
+          }
+          .ssd-results-slide {
+            display: grid;
+            grid-template-columns: 600px 1fr;
+            gap: 30px;
+            align-items: center;
+            padding: 30px 20px;        /* per inspector slider spec */
+            box-sizing: border-box;
+            /* flex-basis is set inline by the React component (1 / N of the track) */
+          }
+          .ssd-results-slide-image {
+            width: 600px;
+            height: 423.42px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #efe9d9;
+          }
+          .ssd-results-slide-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+          .ssd-results-slide-text {
+            padding: 10px;
+            color: #334155;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+          }
+
+          .ssd-results-apps {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+          }
+          .ssd-results-apps-label {
+            color: #000000;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+          }
+          .ssd-results-apps-icons {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+          }
+          .ssd-results-app-chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #000000;
+          }
+          .ssd-results-app-chip img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+          }
+          .ssd-results-slide-headline {
+            color: #000000;
+            font-family: 'Poppins', sans-serif;
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 40px;
+            margin: 0 0 18px;
+            max-width: 600px;
+          }
+          .ssd-results-slide-headline strong { font-weight: 800; }
+          .ssd-results-slide-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #000000;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            text-decoration: none;
+            margin: 0 0 22px;
+            transition: gap 0.25s ease;
+          }
+          .ssd-results-slide-link:hover { gap: 12px; }
+          .ssd-results-slide-link span {
+            border-bottom: 1px solid #000;
+            padding-bottom: 1px;
+          }
+
+          .ssd-results-quote-card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 600px;
+          }
+          .ssd-results-quote-text {
+            color: #000000;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            line-height: 24px;
+            margin: 0 0 18px;
+          }
+          .ssd-results-quote-text strong { font-weight: 700; }
+          .ssd-results-quote-person {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+          }
+          .ssd-results-quote-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: #ddd;
+          }
+          .ssd-results-quote-name {
+            color: #000000;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 22px;
+          }
+          .ssd-results-quote-role {
+            color: rgba(0, 0, 0, 0.65);
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            line-height: 20px;
+          }
+
+          /* Slider arrows */
+          .ssd-results-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #000000;
+            color: #FFFFFF;
+            border: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            transition: transform 0.2s ease, background 0.2s ease;
+          }
+          .ssd-results-arrow:hover { background: #2A9555; transform: translateY(-50%) scale(1.05); }
+          .ssd-results-arrow-prev { left: 8px; }
+          .ssd-results-arrow-next { right: 8px; }
+
+          /* Dot indicator under the slider */
+          .ssd-results-dots {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 14px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            z-index: 4;
+          }
+          .ssd-results-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.25);
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+          }
+          .ssd-results-dot.is-active {
+            background: #000000;
+            transform: scale(1.2);
+          }
+
+          /* ── Tablet & mobile ────────────────────────────────────────── */
+          @media (max-width: 1023px) {
+            .ssd-results-section { padding: 44px 20px !important; }
+            .ssd-results-heading { font-size: 30px !important; line-height: 40px !important; margin-bottom: 18px !important; }
+            .ssd-results-desc { font-size: 16px !important; line-height: 26px !important; margin-bottom: 32px !important; }
+
+            .ssd-results-cards {
+              grid-template-columns: 1fr !important;
+              gap: 16px !important;
+              margin-bottom: 32px !important;
+            }
+            .ssd-results-card { min-height: 0 !important; padding: 26px 22px !important; }
+            .ssd-results-card-quote { font-size: 16px !important; line-height: 26px !important; margin-bottom: 18px !important; }
+
+            .ssd-results-slide {
+              grid-template-columns: 1fr !important;
+              padding: 24px 16px !important;
+              gap: 20px !important;
+            }
+            .ssd-results-slide-image {
+              width: 100% !important;
+              height: auto !important;
+              aspect-ratio: 600 / 423.42 !important;
+            }
+            .ssd-results-slide-text { padding: 0 !important; }
+            .ssd-results-slide-headline { font-size: 22px !important; line-height: 30px !important; }
+            .ssd-results-slide-link { font-size: 16px !important; }
+            .ssd-results-quote-text { font-size: 14px !important; line-height: 22px !important; }
+            .ssd-results-arrow { width: 36px !important; height: 36px !important; }
+          }
+          @media (max-width: 640px) {
+            .ssd-results-section { padding: 36px 16px !important; }
+            .ssd-results-heading { font-size: 26px !important; line-height: 34px !important; }
+            .ssd-results-desc   { font-size: 15px !important; line-height: 24px !important; }
+            .ssd-results-slider { padding: 0 !important; }
+            .ssd-results-slide  { padding: 22px 14px !important; }
+            .ssd-results-slide-headline { font-size: 19px !important; line-height: 26px !important; }
+            .ssd-results-quote-card { padding: 16px !important; }
+            .ssd-results-arrow { display: none !important; }
+            .ssd-results-app-chip { width: 28px; height: 28px; }
+            .ssd-results-app-chip img { width: 16px; height: 16px; }
+          }
+        ` }} />
       </section>
 
-      <CTASection
-        heading="Ready to Build Your Dream Shopify Store?"
-        subheading="Get a fixed-price quote from our expert team within 24 hours. No commitment required."
-        primaryLabel="Get a Free Quote"
+      {/* FAQ structured data — applies only to this page */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: FAQS.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: f.a,
+              },
+            })),
+          }),
+        }}
       />
+
+      {/* Frequently Asked Questions */}
+      <section
+        className="ssd-faq-section"
+        style={{
+          backgroundColor: "#000000",
+          backgroundImage:
+            "linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.62)), url('/images/faqs-test-drive-back-scaled.webp')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          color: "#334155",
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "16px",
+          padding: "60px 20px",
+        }}
+      >
+        <div
+          className="ssd-faq-inner mx-auto"
+          style={{ maxWidth: "1320px" }}
+        >
+          <div className="ssd-faq-grid">
+            {/* Left: image + Have More Questions + CTA (650 × 664, padding 10) */}
+            <div className="ssd-faq-left">
+              <div className="ssd-faq-image-wrap">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/faqs-test-drive.webp"
+                  alt="Customer support team available to help"
+                  className="ssd-faq-image"
+                />
+              </div>
+              <div className="ssd-faq-cta-row">
+                <h3 className="ssd-faq-more">Have More Questions?</h3>
+                <Link href="/contact-shopify-agency" className="ssd-faq-cta">
+                  <span className="ssd-faq-cta-label">Contact Us</span>
+                  <svg className="ssd-faq-cta-arrow" width="18" height="13" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right: heading + accordion (650 × 664, padding 10) */}
+            <div className="ssd-faq-right">
+              <h2 className="ssd-faq-heading">
+                Frequently Asked Questions (FAQ&apos;s)
+              </h2>
+              <ul className="ssd-faq-list">
+                {FAQS.map((faq) => (
+                  <li key={faq.q} className="ssd-faq-item">
+                    <details className="ssd-faq-details">
+                      <summary className="ssd-faq-summary">
+                        <span className="ssd-faq-q">{faq.q}</span>
+                        <span className="ssd-faq-toggle" aria-hidden="true">
+                          <svg className="ssd-faq-toggle-down" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                          </svg>
+                          <svg className="ssd-faq-toggle-up" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="12" y1="19" x2="12" y2="5" />
+                            <polyline points="5 12 12 5 19 12" />
+                          </svg>
+                        </span>
+                      </summary>
+                      <div className="ssd-faq-a">{faq.a}</div>
+                    </details>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .ssd-faq-grid {
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+            color: #334155;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+          }
+          .ssd-faq-left,
+          .ssd-faq-right {
+            flex: 1 1 0;
+            max-width: 650px;
+            padding: 10px;
+            color: #334155;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+          }
+
+          /* ── Left column: image + CTA row ───────────────────────────── */
+          .ssd-faq-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 28px;
+          }
+          .ssd-faq-image-wrap {
+            width: 100%;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #111;
+          }
+          .ssd-faq-image {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: cover;
+            display: block;
+          }
+          .ssd-faq-cta-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+          }
+          .ssd-faq-more {
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
+            margin: 0;
+          }
+          /* Rounded olive-gradient ring via dual-background trick
+             (border-image doesn't follow border-radius). */
+          .ssd-faq-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 36px;
+            background:
+              linear-gradient(#000000, #000000) padding-box,
+              linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%) border-box;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            line-height: 1;
+            border: 1.5px solid transparent;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: background 0.3s ease, color 0.3s ease;
+          }
+          .ssd-faq-cta:hover,
+          .ssd-faq-cta:focus-visible {
+            outline: none;
+            background:
+              linear-gradient(#FFFFFF, #FFFFFF) padding-box,
+              linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%) border-box;
+            color: #000000;
+          }
+          .ssd-faq-cta-label, .ssd-faq-cta-arrow { color: inherit; }
+
+          /* ── Right column: heading + accordion ──────────────────────── */
+          .ssd-faq-heading {
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 35px;
+            font-weight: 700;
+            line-height: 45px;
+            margin: 0 0 24px;
+            max-width: 630px;
+          }
+          .ssd-faq-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+          .ssd-faq-item {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+          }
+          .ssd-faq-item:last-child {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+          }
+          .ssd-faq-details {
+            display: block;
+          }
+          .ssd-faq-summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 22px 4px;
+            cursor: pointer;
+            list-style: none;          /* hide default disclosure marker */
+          }
+          .ssd-faq-summary::-webkit-details-marker { display: none; }
+          .ssd-faq-q {
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 28px;
+            padding: 0 10px 0 0;
+            flex: 1;
+            min-width: 0;
+          }
+          .ssd-faq-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            color: #FFFFFF;
+            flex-shrink: 0;
+          }
+          .ssd-faq-toggle-up { display: none; }
+          .ssd-faq-details[open] .ssd-faq-toggle-down { display: none; }
+          .ssd-faq-details[open] .ssd-faq-toggle-up { display: inline-block; }
+          .ssd-faq-a {
+            color: rgba(255, 255, 255, 0.8);
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            line-height: 25px;
+            padding: 0 10px 22px 4px;
+            max-width: 600px;
+          }
+
+          /* ── Tablet & mobile ────────────────────────────────────────── */
+          @media (max-width: 1023px) {
+            .ssd-faq-section { padding: 44px 20px !important; }
+            .ssd-faq-grid {
+              flex-direction: column !important;
+              gap: 28px !important;
+            }
+            .ssd-faq-left,
+            .ssd-faq-right {
+              flex: 0 0 auto !important;
+              width: 100% !important;
+              max-width: 100% !important;
+              padding: 0 !important;
+            }
+            .ssd-faq-cta-row {
+              flex-wrap: wrap !important;
+              gap: 16px !important;
+            }
+            .ssd-faq-more { font-size: 22px !important; line-height: 30px !important; }
+            .ssd-faq-cta { padding: 14px 32px !important; font-size: 14px !important; }
+            .ssd-faq-heading {
+              font-size: 28px !important;
+              line-height: 38px !important;
+              margin-bottom: 20px !important;
+            }
+            .ssd-faq-q { font-size: 17px !important; line-height: 26px !important; }
+            .ssd-faq-summary { padding: 18px 4px !important; }
+            .ssd-faq-a { font-size: 15px !important; line-height: 24px !important; }
+          }
+          @media (max-width: 640px) {
+            .ssd-faq-section { padding: 36px 16px !important; }
+            .ssd-faq-more {
+              font-size: 22px !important;
+              line-height: 30px !important;
+              text-align: center !important;
+            }
+            /* Heading: per inspector 380 × 80, 30px Poppins white */
+            .ssd-faq-heading {
+              font-size: 30px !important;
+              line-height: 40px !important;
+              margin-bottom: 20px !important;
+              text-align: center !important;
+              max-width: 100% !important;
+            }
+            /* Have-More + Contact-Us stacked & centered, CTA sized to text */
+            .ssd-faq-cta-row {
+              flex-direction: column !important;
+              align-items: center !important;
+              gap: 14px !important;
+            }
+            .ssd-faq-cta {
+              padding: 14px 28px !important;
+              width: auto !important;
+              justify-content: center !important;
+              font-size: 14px !important;
+            }
+            .ssd-faq-q { font-size: 16px !important; line-height: 24px !important; }
+            .ssd-faq-a { font-size: 14px !important; line-height: 22px !important; }
+          }
+        ` }} />
+      </section>
     </>
   );
 }
