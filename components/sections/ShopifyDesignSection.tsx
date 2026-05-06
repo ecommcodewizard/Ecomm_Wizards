@@ -52,7 +52,7 @@ export default function ShopifyDesignSection() {
       <section style={{ background: "#FFFFFF", padding: "0 20px" }}>
         <div style={{ maxWidth: "1320px", margin: "0 auto" }}>
           <h2
-            className="text-[28px] sm:text-[36px] md:text-[32px] lg:text-[42px] font-bold max-sm:font-semibold"
+            className="text-[28px] sm:text-[36px] md:text-[32px] lg:text-[38px] font-bold max-sm:font-semibold md:font-semibold"
             style={{
               textAlign: "center",
               fontFamily: "'Poppins', sans-serif",
@@ -61,7 +61,11 @@ export default function ShopifyDesignSection() {
               margin: 0,
             }}
           >
-            End to End Shopify Services to Build, Grow and Dominate
+            End to End Shopify Services to Build,{" "}
+            <br className="hidden md:block lg:hidden" />
+            Grow{" "}
+            <br className="sm:hidden" />
+            and Dominate
           </h2>
         </div>
       </section>
@@ -75,26 +79,25 @@ export default function ShopifyDesignSection() {
 
         {/* Cream container */}
         <div
-          className="p-[48px] max-sm:p-[20px] md:max-lg:p-[28px] lg:max-xl:p-[40px]"
+          className="p-[48px] max-sm:p-[20px] md:max-lg:py-[28px] md:max-lg:px-[20px] md:max-lg:h-[490px] md:max-lg:overflow-hidden lg:max-xl:p-[40px]"
           style={{
             background: "#FBF7ED",
             borderRadius: "28px",
             boxSizing: "border-box" as const,
           }}
         >
-          <div className="flex flex-col lg:flex-row gap-[40px] lg:gap-[50px] items-center">
+          <div className="flex flex-col md:flex-row gap-[40px] md:gap-[20px] lg:gap-[50px] items-center">
 
             {/* Left: content */}
-            <div className="w-full lg:w-[50%]">
+            <div className="w-full md:max-lg:w-[365px] lg:w-[50%] max-sm:order-2">
               <h3
-                className="text-[30px] max-sm:text-[22px] md:max-lg:text-[24px] lg:max-xl:text-[28px]"
+                className="text-[30px] max-sm:text-[22px] md:max-lg:text-[22px] lg:max-xl:text-[28px] whitespace-nowrap max-sm:whitespace-normal md:max-lg:whitespace-normal lg:max-xl:whitespace-normal md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px]"
                 style={{
                   fontFamily: "'Poppins', sans-serif",
                   color: "#000000",
                   lineHeight: 1.35,
                   margin: "0 0 24px",
                   fontWeight: 400,
-                  whiteSpace: "nowrap",
                 }}
               >
                 Shopify{" "}
@@ -103,7 +106,7 @@ export default function ShopifyDesignSection() {
               </h3>
 
               <p
-                className="text-[16px] max-sm:text-[14px] md:max-lg:text-[15px]"
+                className="text-[16px] max-sm:text-[14px] md:max-lg:text-[14px] lg:max-xl:text-[14px] md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px]"
                 style={{
                   fontFamily: "'Poppins', sans-serif",
                   color: "rgba(0,0,0,0.8)",
@@ -118,6 +121,7 @@ export default function ShopifyDesignSection() {
 
               {/* Service items */}
               <div
+                className="md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px]"
                 style={{
                   border: "1px solid rgba(0,0,0,0.1)",
                   borderRadius: "12px",
@@ -154,7 +158,7 @@ export default function ShopifyDesignSection() {
               {/* CTA Button */}
               <Link
                 href="/book-shopify-consultation"
-                className="inline-flex items-center gap-2"
+                className="inline-flex items-center gap-3 md:max-lg:!text-[12px] max-sm:w-full max-sm:justify-center"
                 onMouseEnter={() => setBtnHovered(true)}
                 onMouseLeave={() => setBtnHovered(false)}
                 style={{
@@ -195,11 +199,11 @@ export default function ShopifyDesignSection() {
             </div>
 
             {/* Right: video */}
-            <div className="w-full lg:w-[50%] flex justify-center lg:justify-start">
+            <div className="w-full md:flex-1 lg:w-[50%] flex justify-center lg:justify-start max-sm:order-1">
               <div
+                className="max-w-[640px] md:max-lg:max-w-[365px] lg:max-xl:max-w-[492px]"
                 style={{
                   width: "100%",
-                  maxWidth: "640px",
                   aspectRatio: "1 / 1",
                   borderRadius: "16px",
                   overflow: "hidden",
