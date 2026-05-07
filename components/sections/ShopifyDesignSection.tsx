@@ -1,10 +1,31 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
+import type { ReactNode } from "react";
 
 const GRADIENT_BORDER = "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)";
 
-const SERVICES = [
+interface ServiceItem {
+  title: string;
+  icon: ReactNode;
+}
+
+interface Props {
+  showHeading?: boolean;
+  h3Content?: ReactNode;
+  description?: string;
+  services?: ServiceItem[];
+  buttonText?: string;
+  buttonHref?: string;
+  videoSrc?: string;
+  imageSrc?: string;
+  paddingTop?: string;
+  reverseLayout?: boolean;
+  mobileYPadding?: string;
+}
+
+const DEFAULT_SERVICES: ServiceItem[] = [
   {
     title: "Custom Shopify Features for higher conversions",
     icon: (
@@ -42,14 +63,63 @@ const SERVICES = [
   },
 ];
 
+const MIGRATION_SERVICES: ServiceItem[] = [
+  {
+    title: "Platform Migration to Shopify",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="3" width="14" height="24" rx="1.5" stroke="#000000" strokeWidth="1.6"/>
+        <path d="M9 15H28M28 15L23 10M28 15L23 20" stroke="#000000" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="9" cy="22" r="1.5" fill="#000000"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Data & Product Transfer",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="15" cy="7" rx="10" ry="3.5" stroke="#000000" strokeWidth="1.6"/>
+        <path d="M5 7v7c0 1.93 4.48 3.5 10 3.5s10-1.57 10-3.5V7" stroke="#000000" strokeWidth="1.6"/>
+        <path d="M5 14v7c0 1.93 4.48 3.5 10 3.5s10-1.57 10-3.5v-7" stroke="#000000" strokeWidth="1.6"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Zero Downtime Shopify Launch",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="4.5" stroke="#000000" strokeWidth="1.6"/>
+        <path d="M15 2v3M15 25v3M2 15h3M25 15h3M6.05 6.05l2.12 2.12M21.83 21.83l2.12 2.12M6.05 23.95l2.12-2.12M21.83 8.17l2.12-2.12" stroke="#000000" strokeWidth="1.6" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+];
 
-export default function ShopifyDesignSection() {
+export default function ShopifyDesignSection({
+  showHeading = true,
+  h3Content,
+  description,
+  services,
+  buttonText = "Book a Call",
+  buttonHref = "/book-shopify-consultation",
+  videoSrc = "/images/d7f14fb290a1484cbb32e6037b39d7f1.mp4",
+  imageSrc,
+  paddingTop = "53px",
+  reverseLayout = false,
+  mobileYPadding = "max-sm:!py-[40px]",
+}: Props) {
   const [btnHovered, setBtnHovered] = useState(false);
+
+  const activeServices = services ?? DEFAULT_SERVICES;
+  const activeH3 = h3Content ?? (
+    <>Shopify{" "}<strong style={{ fontWeight: 600 }}>Design &amp; Development</strong>{" "}Services</>
+  );
+  const activeDescription = description ?? "Shopify stores built for performance, conversion, and long-term scale. Whether you’re launching fresh or upgrading to Shopify Plus, our Shopify development services make it seamless.";
 
   return (
     <>
       {/* Heading section */}
-      <section style={{ background: "#FFFFFF", padding: "0 20px" }}>
+      {showHeading && <section style={{ background: "#FFFFFF", padding: "0 20px" }}>
         <div style={{ maxWidth: "1320px", margin: "0 auto" }}>
           <h2
             className="text-[28px] sm:text-[36px] md:text-[32px] lg:text-[38px] font-bold max-sm:font-semibold md:font-semibold"
@@ -68,12 +138,12 @@ export default function ShopifyDesignSection() {
             and Dominate
           </h2>
         </div>
-      </section>
+      </section>}
 
       {/* Cream container section */}
       <section
-        className="max-sm:!py-[40px]"
-        style={{ background: "#FFFFFF", padding: "53px 20px 5px" }}
+        className={mobileYPadding}
+        style={{ background: "#FFFFFF", padding: `${paddingTop} 20px 5px` }}
       >
         <div style={{ maxWidth: "1320px", margin: "0 auto" }}>
 
@@ -86,7 +156,7 @@ export default function ShopifyDesignSection() {
             boxSizing: "border-box" as const,
           }}
         >
-          <div className="flex flex-col md:flex-row gap-[40px] md:gap-[20px] lg:gap-[50px] items-center">
+          <div className={`flex flex-col gap-[40px] md:gap-[20px] lg:gap-[50px] items-center ${reverseLayout ? "md:flex-row-reverse" : "md:flex-row"}`}>
 
             {/* Left: content */}
             <div className="w-full md:max-lg:w-[365px] lg:w-[50%] max-sm:order-2">
@@ -100,9 +170,7 @@ export default function ShopifyDesignSection() {
                   fontWeight: 400,
                 }}
               >
-                Shopify{" "}
-                <strong style={{ fontWeight: 600 }}>Design &amp; Development</strong>{" "}
-                Services
+                {activeH3}
               </h3>
 
               <p
@@ -114,9 +182,7 @@ export default function ShopifyDesignSection() {
                   margin: "0 0 24px",
                 }}
               >
-                Shopify stores built for performance, conversion, and long-term scale.
-                Whether you&apos;re launching fresh or upgrading to Shopify Plus, our Shopify
-                development services make it seamless.
+                {activeDescription}
               </p>
 
               {/* Service items */}
@@ -130,7 +196,7 @@ export default function ShopifyDesignSection() {
                   marginBottom: "24px",
                 }}
               >
-                {SERVICES.map((service, i) => (
+                {activeServices.map((service, i) => (
                   <div key={i}>
                     {i > 0 && (
                       <div style={{ height: "1px", background: "rgba(0,0,0,0.08)", margin: "0 20px" }} />
@@ -157,8 +223,8 @@ export default function ShopifyDesignSection() {
 
               {/* CTA Button */}
               <Link
-                href="/book-shopify-consultation"
-                className="inline-flex items-center gap-3 md:max-lg:!text-[12px] max-sm:w-full max-sm:justify-center"
+                href={buttonHref}
+                className="inline-flex items-center gap-3 max-sm:!text-[14px] max-sm:!px-[20px] md:max-lg:!text-[12px] max-sm:w-full max-sm:justify-center"
                 onMouseEnter={() => setBtnHovered(true)}
                 onMouseLeave={() => setBtnHovered(false)}
                 style={{
@@ -174,7 +240,6 @@ export default function ShopifyDesignSection() {
                   lineHeight: 1,
                 }}
               >
-                {/* Gradient border layer — opacity fade avoids the snap glitch */}
                 <span
                   aria-hidden="true"
                   style={{
@@ -191,7 +256,7 @@ export default function ShopifyDesignSection() {
                     pointerEvents: "none",
                   }}
                 />
-                Book a Call
+                {buttonText}
                 <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 5H14M14 5L9 0M14 5L9 10" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -207,16 +272,26 @@ export default function ShopifyDesignSection() {
                   aspectRatio: "1 / 1",
                   borderRadius: "16px",
                   overflow: "hidden",
+                  position: "relative",
                 }}
               >
-                <video
-                  src="/images/d7f14fb290a1484cbb32e6037b39d7f1.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                />
+                {imageSrc ? (
+                  <Image
+                    src={imageSrc}
+                    alt=""
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                ) : (
+                  <video
+                    src={videoSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  />
+                )}
               </div>
             </div>
 
@@ -227,3 +302,5 @@ export default function ShopifyDesignSection() {
     </>
   );
 }
+
+export { MIGRATION_SERVICES };

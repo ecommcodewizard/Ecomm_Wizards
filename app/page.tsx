@@ -6,7 +6,7 @@ import StatsCard from "@/components/sections/StatsCard";
 import GrowthChart from "@/components/sections/GrowthChart";
 import SocialProofSection from "@/components/sections/SocialProofSection";
 import ProcessSection from "@/components/sections/ProcessSection";
-import ShopifyDesignSection from "@/components/sections/ShopifyDesignSection";
+import ShopifyDesignSection, { MIGRATION_SERVICES } from "@/components/sections/ShopifyDesignSection";
 
 export const metadata: Metadata = {
   title: "Shopify Agency | Design, CRO, Development & Growth Experts | Ecomm Wizards",
@@ -502,7 +502,19 @@ export default function HomePage() {
       <ProcessSection />
 
       {/* ── Shopify Design & Development ── */}
-      <ShopifyDesignSection />
+      <ShopifyDesignSection mobileYPadding="max-sm:!pt-[40px] max-sm:!pb-[10px]" />
+      <ShopifyDesignSection
+        showHeading={false}
+        h3Content={<>Shopify <strong style={{ fontWeight: 600 }}>Migration</strong> Services</>}
+        description="Moving from Magento, WooCommerce, BigCommerce or any other platform to Shopify? Don't lose your SEO rankings or customer data. Our Shopify Migration Experts handle the transition seamlessly."
+        services={MIGRATION_SERVICES}
+        buttonText="Get a Free Migration Consultation"
+        buttonHref="/migration"
+        imageSrc="/images/video_cover_2048x.webp"
+        paddingTop="5px"
+        reverseLayout
+        mobileYPadding="max-sm:!py-[10px]"
+      />
 
       {/* â"€â"€ Services â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="bg-[#0d0d0d] py-24">
