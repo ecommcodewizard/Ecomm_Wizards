@@ -6,7 +6,7 @@ import StatsCard from "@/components/sections/StatsCard";
 import GrowthChart from "@/components/sections/GrowthChart";
 import SocialProofSection from "@/components/sections/SocialProofSection";
 import ProcessSection from "@/components/sections/ProcessSection";
-import ShopifyDesignSection, { MIGRATION_SERVICES } from "@/components/sections/ShopifyDesignSection";
+import ShopifyDesignSection, { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES } from "@/components/sections/ShopifyDesignSection";
 
 export const metadata: Metadata = {
   title: "Shopify Agency | Design, CRO, Development & Growth Experts | Ecomm Wizards",
@@ -172,14 +172,14 @@ export default function HomePage() {
             </p>
 
             <div className="mt-[20px] flex items-center gap-5 lg:gap-10" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "16px" }}>
-              <span className="inline-flex p-[2px] rounded-full" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
+              <span className="group inline-flex p-[2px] rounded-full" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
                 <Link
                   href="/book-shopify-consultation"
-                  className="group inline-flex items-center gap-2 rounded-full bg-black transition-all px-[32px] py-[14px] h-[52px] sm:px-[45px] sm:py-[20px] sm:h-[60px] text-[15px] sm:text-[16px]"
+                  className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px] h-[52px] sm:px-[45px] sm:py-[20px] sm:h-[60px] text-[15px] sm:text-[16px]"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
-                  <span className="text-white group-hover:text-transparent bg-clip-text whitespace-nowrap" style={{ backgroundImage: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>Book a Call</span>
-                  <Image src="/images/arrow vector.png" alt="arrow" width={16} height={16} />
+                  <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Book a Call</span>
+                  <Image src="/images/arrow vector.png" alt="arrow" width={16} height={16} className="transition-all duration-300 group-hover:brightness-0" />
                 </Link>
               </span>
               <Image
@@ -513,6 +513,30 @@ export default function HomePage() {
         imageSrc="/images/video_cover_2048x.webp"
         paddingTop="5px"
         reverseLayout
+        mobileYPadding="max-sm:!py-[10px]"
+      />
+      <ShopifyDesignSection
+        showHeading={false}
+        h3Content={<><span style={GRADIENT_TEXT}>Custom</span> <strong style={{ fontWeight: 600, ...GRADIENT_TEXT }}>Shopify Development</strong> Services</>}
+        description="Off-the-shelf won't cut it for ya? We build custom themes, private apps, and bespoke functionality tailored to how your business actually operates."
+        services={CUSTOM_DEV_SERVICES}
+        buttonText="Request a Custom Quote"
+        buttonHref="/book-shopify-consultation"
+        imageSrc="/images/ecommwizards_1.jpg"
+        paddingTop="5px"
+        mobileYPadding="max-sm:!py-[10px]"
+        bgImage="/images/Group_1000004265.svg"
+        dark
+      />
+      <ShopifyDesignSection
+        showHeading={false}
+        h3Content={<>Shopify <strong style={{ fontWeight: 600 }}>UI/UX Optimization</strong> Services</>}
+        description="Is your checkout flow leaking money? We perform deep-dive audits of your UX to reduce friction. We redesign your store with one goal: make it easier to buy. Better flow, fewer drop-offs, more conversions."
+        services={UX_SERVICES}
+        buttonText="Get a Free UX Audit"
+        buttonHref="/free-shopify-store-audit"
+        imageSrc="/images/video_cover_2048x.webp"
+        paddingTop="5px"
         mobileYPadding="max-sm:!py-[10px]"
       />
 
