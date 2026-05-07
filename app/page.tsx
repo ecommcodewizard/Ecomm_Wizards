@@ -6,7 +6,7 @@ import StatsCard from "@/components/sections/StatsCard";
 import GrowthChart from "@/components/sections/GrowthChart";
 import SocialProofSection from "@/components/sections/SocialProofSection";
 import ProcessSection from "@/components/sections/ProcessSection";
-import ShopifyDesignSection, { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES } from "@/components/sections/ShopifyDesignSection";
+import ShopifyDesignSection, { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES, BRAND_SERVICES, B2B_SERVICES } from "@/components/sections/ShopifyDesignSection";
 
 export const metadata: Metadata = {
   title: "Shopify Agency | Design, CRO, Development & Growth Experts | Ecomm Wizards",
@@ -526,6 +526,7 @@ export default function HomePage() {
         paddingTop="5px"
         mobileYPadding="max-sm:!py-[10px]"
         bgImage="/images/Group_1000004265.svg"
+        bgImageOpacity={0.45}
         dark
       />
       <ShopifyDesignSection
@@ -586,6 +587,24 @@ export default function HomePage() {
             />
           </div>
         }
+      />
+      <ShopifyDesignSection
+        showHeading={false}
+        h3Content={<>Sell <strong style={{ fontWeight: 600, ...GRADIENT_TEXT }}>Wholesale & Retail</strong> from One Shopify Store</>}
+        description="Most brands bleed profit running two separate stores. We build unified Shopify Plus storefronts that serve both B2B and D2C customers with custom catalogs, volume pricing, net payment terms, and automated workflows. One store. Two revenue streams. Zero duplication."
+        services={B2B_SERVICES}
+        buttonText="Explore B2B Solutions"
+        buttonHref="/book-shopify-consultation"
+        imageSrc="/images/b2b-d2c.webp"
+        wrapHeading
+        paddingTop="5px"
+        reverseLayout
+        mobileYPadding="max-sm:!py-[10px]"
+        bgImage="/images/Group_1000004265.svg"
+        bgImageOpacity={0.35}
+        bgImageTransform="rotate(180deg)"
+        mdAutoHeight
+        dark
       />
       <ShopifyDesignSection
         showHeading={false}
