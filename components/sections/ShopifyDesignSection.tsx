@@ -25,6 +25,8 @@ interface Props {
   mobileYPadding?: string;
   dark?: boolean;
   bgImage?: string;
+  wrapHeading?: boolean;
+  imagePanel?: ReactNode;
 }
 
 const DEFAULT_SERVICES: ServiceItem[] = [
@@ -186,6 +188,8 @@ export default function ShopifyDesignSection({
   mobileYPadding = "max-sm:!py-[40px]",
   dark = false,
   bgImage,
+  wrapHeading = false,
+  imagePanel,
 }: Props) {
   const [btnHovered, setBtnHovered] = useState(false);
 
@@ -276,7 +280,7 @@ export default function ShopifyDesignSection({
             {/* Left: content */}
             <div className="w-full md:max-lg:w-[365px] lg:w-[50%] max-sm:order-2">
               <h3
-                className="text-[30px] max-sm:text-[22px] md:max-lg:text-[22px] lg:max-xl:text-[28px] whitespace-nowrap max-sm:whitespace-normal md:max-lg:whitespace-normal lg:max-xl:whitespace-normal md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px]"
+                className={`text-[30px] max-sm:text-[22px] md:max-lg:text-[22px] lg:max-xl:text-[28px] md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px] ${wrapHeading ? "whitespace-normal" : "whitespace-nowrap max-sm:whitespace-normal md:max-lg:whitespace-normal lg:max-xl:whitespace-normal"}`}
                 style={{
                   fontFamily: "'Poppins', sans-serif",
                   color: headingColor,
@@ -402,36 +406,42 @@ export default function ShopifyDesignSection({
               )}
             </div>
 
-            {/* Right: video / image */}
+            {/* Right: video / image / custom panel */}
             <div className="w-full md:flex-1 lg:w-[50%] flex justify-center lg:justify-start max-sm:order-1">
-              <div
-                className="max-w-[640px] md:max-lg:max-w-[365px] lg:max-xl:max-w-[492px]"
-                style={{
-                  width: "100%",
-                  aspectRatio: "1 / 1",
-                  borderRadius: "16px",
-                  overflow: "hidden",
-                  position: "relative",
-                }}
-              >
-                {imageSrc ? (
-                  <Image
-                    src={imageSrc}
-                    alt=""
-                    fill
-                    style={{ objectFit: "cover" }}
-                  />
-                ) : (
-                  <video
-                    src={videoSrc}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                  />
-                )}
-              </div>
+              {imagePanel ? (
+                <div className="w-full max-w-[640px] md:max-lg:max-w-[365px] lg:max-xl:max-w-[492px]">
+                  {imagePanel}
+                </div>
+              ) : (
+                <div
+                  className="max-w-[640px] md:max-lg:max-w-[365px] lg:max-xl:max-w-[492px]"
+                  style={{
+                    width: "100%",
+                    aspectRatio: "1 / 1",
+                    borderRadius: "16px",
+                    overflow: "hidden",
+                    position: "relative",
+                  }}
+                >
+                  {imageSrc ? (
+                    <Image
+                      src={imageSrc}
+                      alt=""
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
+                  ) : (
+                    <video
+                      src={videoSrc}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                    />
+                  )}
+                </div>
+              )}
             </div>
 
           </div>
@@ -442,4 +452,74 @@ export default function ShopifyDesignSection({
   );
 }
 
-export { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES };
+const SEO_SERVICES: ServiceItem[] = [
+  {
+    title: "Technical SEO Audit & Fixes",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="13" cy="13" r="9" stroke="currentColor" strokeWidth="1.6"/>
+        <path d="M20 20L27 27" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+        <path d="M10 13h6M13 10v6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Content & Blog Strategy",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="3" width="24" height="24" rx="2" stroke="currentColor" strokeWidth="1.6"/>
+        <path d="M8 9h14M8 14h14M8 19h8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Organic Revenue Growth",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 24L10 16L16 20L24 10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M20 10h4v4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+];
+
+const CRO_SERVICES: ServiceItem[] = [
+  {
+    title: "Heatmaps & Behavior Analytics",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="4" width="26" height="20" rx="2" stroke="currentColor" strokeWidth="1.6"/>
+        <rect x="5" y="7" width="7" height="14" rx="1" stroke="currentColor" strokeWidth="1.2"/>
+        <path d="M15 14h8M15 18h5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+        <path d="M15 9l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="5" cy="7" r="1.5" fill="currentColor"/>
+        <circle cx="9" cy="13" r="1.5" fill="currentColor"/>
+        <circle cx="7" cy="18" r="1.5" fill="currentColor"/>
+      </svg>
+    ),
+  },
+  {
+    title: "A/B Testing & Experimentation",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="26" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.6"/>
+        <rect x="2" y="12" width="26" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.6"/>
+        <rect x="2" y="22" width="26" height="6" rx="1.5" stroke="currentColor" strokeWidth="1.6"/>
+        <path d="M7 5.5h5M7 15.5h9M7 25h3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Checkout & Funnel Optimization",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 3C10 3 7 7 7 11c0 3 1.5 5.5 4 7l1 9h6l1-9c2.5-1.5 4-4 4-7 0-4-3-8-8-8z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/>
+        <path d="M11 18h8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+        <path d="M12 21h6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+        <path d="M15 3v8M12 8l3-5 3 5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+];
+
+export { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES };

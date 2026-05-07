@@ -6,7 +6,7 @@ import StatsCard from "@/components/sections/StatsCard";
 import GrowthChart from "@/components/sections/GrowthChart";
 import SocialProofSection from "@/components/sections/SocialProofSection";
 import ProcessSection from "@/components/sections/ProcessSection";
-import ShopifyDesignSection, { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES } from "@/components/sections/ShopifyDesignSection";
+import ShopifyDesignSection, { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES } from "@/components/sections/ShopifyDesignSection";
 
 export const metadata: Metadata = {
   title: "Shopify Agency | Design, CRO, Development & Growth Experts | Ecomm Wizards",
@@ -535,8 +535,68 @@ export default function HomePage() {
         services={UX_SERVICES}
         buttonText="Get a Free UX Audit"
         buttonHref="/free-shopify-store-audit"
-        imageSrc="/images/video_cover_2048x.webp"
+        imageSrc="/images/concept_image_1024x1024.webp"
         paddingTop="5px"
+        reverseLayout
+        mobileYPadding="max-sm:!py-[10px]"
+      />
+      <ShopifyDesignSection
+        showHeading={false}
+        h3Content={<>Shopify <strong style={{ fontWeight: 600 }}>Conversion Rate Optimization</strong> Agency</>}
+        description="Gut feelings don't scale. We dig into your data, run A/B tests, and fix what's leaking revenue. Every tweak is backed by numbers, buyer behavior, and psychology."
+        services={CRO_SERVICES}
+        buttonText="Optimize Your Conversions"
+        buttonHref="/shopify-conversion-rate-optimization-cro-agency"
+        paddingTop="5px"
+        wrapHeading
+        mobileYPadding="max-sm:!py-[10px]"
+        imagePanel={
+          <div style={{ background: "#0d0d0d", borderRadius: "20px", overflow: "hidden", width: "100%" }}>
+            {/* 2×2 stats grid */}
+            <div className="grid grid-cols-2 relative overflow-hidden" style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+              <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 55% 80% at 50% 50%, rgba(61,199,122,0.20) 0%, rgba(61,199,122,0.08) 40%, rgba(61,199,122,0.03) 65%, transparent 80%)" }} />
+              {[
+                { icon: <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect x="1" y="8" width="10" height="19" rx="1.5" stroke="currentColor" strokeWidth="1.6"/><rect x="14" y="1" width="13" height="26" rx="1.5" stroke="currentColor" strokeWidth="1.6"/></svg>, value: "700+", label: "Shopify Stores Built" },
+                { icon: <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M3 22L9 15L15 19L23 9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M19 9h4v4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>, value: "$900M+", label: "Revenue Generated" },
+                { icon: <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="10" r="6" stroke="currentColor" strokeWidth="1.6"/><path d="M4 26c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>, value: "8+", label: "Years of Experience" },
+                { icon: <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M9 4H5a1 1 0 00-1 1v4c0 6.627 4.477 12.246 10.666 13.773M19 4h4a1 1 0 011 1v4c0 6.627-4.477 12.246-10.666 13.773" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M9 4h10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>, value: "10+", label: "Awards For Ecomm Wizards" },
+              ].map((s, i) => (
+                <div
+                  key={i}
+                  className={`flex flex-col justify-start gap-[4px] relative z-10 h-[110px] md:max-lg:h-[90px] overflow-hidden ${i % 2 === 0 ? "pl-[40px] md:max-lg:pl-[20px] lg:max-xl:pl-[60px] xl:pl-[130px]" : "pl-[16px]"} pr-[12px] pt-[14px] ${i < 2 ? "lg:max-xl:pt-[24px]" : ""} pb-[14px]`}
+                  style={{
+                    borderRight: i % 2 === 0 ? "1px solid rgba(255,255,255,0.08)" : "none",
+                    borderBottom: i < 2 ? "1px solid rgba(255,255,255,0.08)" : "none",
+                  }}
+                >
+                  <span className="md:max-lg:scale-75 md:max-lg:origin-left" style={{ color: "#A8F0B4" }}>{s.icon}</span>
+                  <span className="text-[24px] md:max-lg:text-[18px] lg:max-xl:text-[24px] xl:text-[30px] font-bold" style={{ fontFamily: "'Poppins', sans-serif", background: GRADIENT, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", lineHeight: 1 }}>{s.value}</span>
+                  <span className="text-[11px] md:max-lg:text-[12px] lg:max-xl:text-[12px] xl:text-[13px]" style={{ fontFamily: "'Poppins', sans-serif", color: "#FFFFFF", lineHeight: 1.3 }}>{s.label}</span>
+                </div>
+              ))}
+            </div>
+            {/* Counter image */}
+            <Image
+              src="/images/ai-counter-image-1.webp"
+              alt="Shopify results dashboard"
+              width={640}
+              height={360}
+              className="w-full h-auto"
+              style={{ display: "block", objectFit: "contain" }}
+            />
+          </div>
+        }
+      />
+      <ShopifyDesignSection
+        showHeading={false}
+        h3Content={<>Shopify <strong style={{ fontWeight: 600 }}>SEO & Organic Growth</strong> Agency</>}
+        description="Paid ads stop the moment you stop paying. We build organic traffic that compounds — technical SEO, content strategy, and link building tailored specifically for Shopify stores."
+        services={SEO_SERVICES}
+        buttonText="Get a Free SEO Audit"
+        buttonHref="/shopify-seo-agency"
+        imageSrc="/images/ai-counter-image.webp"
+        paddingTop="5px"
+        reverseLayout
         mobileYPadding="max-sm:!py-[10px]"
       />
 
