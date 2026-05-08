@@ -6,7 +6,7 @@ import StatsCard from "@/components/sections/StatsCard";
 import GrowthChart from "@/components/sections/GrowthChart";
 import SocialProofSection from "@/components/sections/SocialProofSection";
 import ProcessSection from "@/components/sections/ProcessSection";
-import ShopifyDesignSection, { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES, BRAND_SERVICES, B2B_SERVICES } from "@/components/sections/ShopifyDesignSection";
+import ShopifyDesignSection, { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES, BRAND_SERVICES, B2B_SERVICES, COPYWRITING_SERVICES, PERSONALIZATION_SERVICES, SEO_AI_SERVICES, RETENTION_SERVICES, WHY_B2B_SERVICES } from "@/components/sections/ShopifyDesignSection";
 
 export const metadata: Metadata = {
   title: "Shopify Agency | Design, CRO, Development & Growth Experts | Ecomm Wizards",
@@ -608,14 +608,71 @@ export default function HomePage() {
       />
       <ShopifyDesignSection
         showHeading={false}
-        h3Content={<>Shopify <strong style={{ fontWeight: 600 }}>SEO & Organic Growth</strong> Agency</>}
-        description="Paid ads stop the moment you stop paying. We build organic traffic that compounds — technical SEO, content strategy, and link building tailored specifically for Shopify stores."
-        services={SEO_SERVICES}
-        buttonText="Get a Free SEO Audit"
-        buttonHref="/shopify-seo-agency"
-        imageSrc="/images/ai-counter-image.webp"
+        h3Content={<>Shopify <strong style={{ fontWeight: 600 }}>Copywriting</strong> That Converts Visitors Into Customers</>}
+        description="Words drive sales. Our Shopify copywriters know how to write persuasion-based product descriptions that bypass skepticism. We optimize your PDPs (Product Detail Pages) to answer every objection your customer might have before they even ask."
+        services={COPYWRITING_SERVICES}
+        buttonText="Get Copy That Converts"
+        buttonHref="/book-shopify-consultation"
+        imageSrc="/images/view-messy-office-workspace-with-laptop-device.webp"
+        paddingTop="5px"
+        wrapHeading
+        mdAutoHeight
+        mobileYPadding="max-sm:!py-[10px]"
+      />
+      <ShopifyDesignSection
+        showHeading={false}
+        h3Content={<><strong style={{ fontWeight: 600 }}>Dynamically</strong> Personalized Shopify Store</>}
+        description="One-size-fits-all is dead. We build stores that adapt in real-time – showing the right products, offers, and content based on who's browsing. Every visitor gets a tailored experience."
+        services={PERSONALIZATION_SERVICES}
+        buttonText="Personalize Your Store"
+        buttonHref="/book-shopify-consultation"
+        imageSrc="/images/ai-personalised.webp"
         paddingTop="5px"
         reverseLayout
+        wrapHeading
+        mdAutoHeight
+        mobileYPadding="max-sm:!py-[10px]"
+      />
+      <ShopifyDesignSection
+        showHeading={false}
+        h3Content={<>Shopify <strong style={{ fontWeight: 600, ...GRADIENT_TEXT }}>SEO & AI</strong> Search Optimization</>}
+        description="Google is just the start. We optimize your Shopify store for traditional search AND AI engines like ChatGPT and Gemini — so you show up wherever your customers are looking."
+        services={SEO_AI_SERVICES}
+        buttonText="Get Found Everywhere"
+        buttonHref="/shopify-seo-agency"
+        imageSrc="/images/ai-agent-main.webp"
+        paddingTop="5px"
+        wrapHeading
+        mobileYPadding="max-sm:!py-[10px]"
+        bgImage="/images/Group_1000004265.svg"
+        bgImageOpacity={0.45}
+        dark
+      />
+      <ShopifyDesignSection
+        showHeading={false}
+        h3Content={<>Retention <strong style={{ fontWeight: 600 }}>Marketing</strong> Agency</>}
+        description="Acquiring customers is expensive. Keeping them is profitable. We build email flows, loyalty loops, and lead systems that turn one-time buyers into repeat customers."
+        services={RETENTION_SERVICES}
+        buttonText="Boost Your Retention"
+        buttonHref="/book-shopify-consultation"
+        imageSrc="/images/pexels-kindelmedia-7688116.jpg"
+        paddingTop="5px"
+        reverseLayout
+        mdAutoHeight
+        mobileYPadding="max-sm:!py-[10px]"
+      />
+      <ShopifyDesignSection
+        showHeading={false}
+        h3Content={<>Why <strong style={{ fontWeight: 600 }}>Shopify Plus</strong> Wins for B2B Commerce</>}
+        description="Shopify Plus is the only platform built to handle wholesale and DTC from a single store — native B2B features, no costly middleware, no workarounds. Give wholesale buyers a dedicated portal while running your retail store from the same dashboard."
+        services={WHY_B2B_SERVICES}
+        buttonText="Build Your B2B Store"
+        buttonHref="/book-shopify-consultation"
+        imageSrc="/images/Image_7c2e1efa-3310-4bd5-815f-a21c1097455a-scaled.webp"
+        paddingTop="5px"
+        wrapHeading
+        mdAutoHeight
+        imageAspectRatio="4/3"
         mobileYPadding="max-sm:!py-[10px]"
       />
 
