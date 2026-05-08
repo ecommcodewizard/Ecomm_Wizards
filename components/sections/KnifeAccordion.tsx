@@ -17,7 +17,7 @@ export default function KnifeAccordion() {
       {items.map((item, i) => {
         const isOpen = openIndex === i;
         return (
-          <div key={item.title} style={{ borderBottom: "1px solid rgba(0,0,0,0.12)" }}>
+          <div key={item.title} style={{ borderBottom: "1px solid rgba(0,0,0,0.12)", borderTop: i === 0 ? "1px solid rgba(0,0,0,0.12)" : undefined }}>
             <button
               onClick={() => setOpenIndex(isOpen ? -1 : i)}
               style={{
@@ -32,7 +32,7 @@ export default function KnifeAccordion() {
                 textAlign: "left",
               }}
             >
-              <span className="text-[18px] md:text-[16px] lg:text-[18px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, color: "#000000", paddingRight: "10px" }}>
+              <span className="knife-accordion-title" style={{ fontFamily: "'Poppins', sans-serif", fontSize: 18, fontWeight: 600, color: "#000000", padding: "0 10px 0 0" }}>
                 {item.title}
               </span>
               <span style={{ flexShrink: 0 }}>
@@ -57,9 +57,11 @@ export default function KnifeAccordion() {
               }}
             >
               <div style={{ overflow: "hidden" }}>
-                <p className="text-[16px] md:text-[14px] lg:text-[16px]" style={{ fontFamily: "'Poppins', sans-serif", color: "rgba(0,0,0,0.8)", paddingBottom: "16px", lineHeight: "1.6", margin: 0 }}>
-                  {item.body}
-                </p>
+                <div style={{ padding: "10px 15px" }}>
+                  <p className="knife-accordion-body" style={{ fontFamily: "'Poppins', sans-serif", fontSize: 16, color: "#000000CC", lineHeight: "1.6", margin: 0 }}>
+                    {item.body}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
