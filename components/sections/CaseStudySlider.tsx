@@ -17,9 +17,10 @@ type Props = {
   slides: CaseStudySlide[];
   /** Auto-advance interval in ms. Set to 0 to disable auto-rotation. */
   intervalMs?: number;
+  showDots?: boolean;
 };
 
-export default function CaseStudySlider({ slides, intervalMs = 6000 }: Props) {
+export default function CaseStudySlider({ slides, intervalMs = 6000, showDots = true }: Props) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const total = slides.length;
@@ -106,8 +107,8 @@ export default function CaseStudySlider({ slides, intervalMs = 6000 }: Props) {
         aria-label="Previous case study"
         onClick={goPrev}
       >
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="15 18 9 12 15 6" />
+        <svg width="18" height="13" viewBox="0 0 15 10.55" fill="none" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" style={{ transform: "rotate(180deg)" }}>
+          <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" />
         </svg>
       </button>
       <button
@@ -116,23 +117,25 @@ export default function CaseStudySlider({ slides, intervalMs = 6000 }: Props) {
         aria-label="Next case study"
         onClick={goNext}
       >
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="9 18 15 12 9 6" />
+        <svg width="18" height="13" viewBox="0 0 15 10.55" fill="none" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" />
         </svg>
       </button>
 
       {/* Dots */}
-      <div className="ssd-results-dots" aria-hidden="true">
-        {slides.map((s, i) => (
-          <button
-            key={s.key}
-            type="button"
-            className={`ssd-results-dot${i === index ? " is-active" : ""}`}
-            aria-label={`Go to slide ${i + 1}`}
-            onClick={() => setIndex(i)}
-          />
-        ))}
-      </div>
+      {showDots && (
+        <div className="ssd-results-dots" aria-hidden="true">
+          {slides.map((s, i) => (
+            <button
+              key={s.key}
+              type="button"
+              className={`ssd-results-dot${i === index ? " is-active" : ""}`}
+              aria-label={`Go to slide ${i + 1}`}
+              onClick={() => setIndex(i)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

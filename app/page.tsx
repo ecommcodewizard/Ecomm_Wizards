@@ -6,7 +6,11 @@ import StatsCard from "@/components/sections/StatsCard";
 import GrowthChart from "@/components/sections/GrowthChart";
 import SocialProofSection from "@/components/sections/SocialProofSection";
 import ProcessSection from "@/components/sections/ProcessSection";
-import ShopifyDesignSection, { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES, BRAND_SERVICES, B2B_SERVICES, COPYWRITING_SERVICES, PERSONALIZATION_SERVICES, SEO_AI_SERVICES, RETENTION_SERVICES, WHY_B2B_SERVICES } from "@/components/sections/ShopifyDesignSection";
+import ShopifyDesignSection, { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES, BRAND_SERVICES, B2B_SERVICES, COPYWRITING_SERVICES, PERSONALIZATION_SERVICES, SEO_AI_SERVICES, RETENTION_SERVICES, WHY_B2B_SERVICES, POS_SERVICES, AI_AUTOMATION_SERVICES } from "@/components/sections/ShopifyDesignSection";
+import AiAppsSlider from "@/components/sections/AiAppsSlider";
+import MobileAppSection from "@/components/sections/MobileAppSection";
+import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import WhyPartnerSection from "@/components/sections/WhyPartnerSection";
 
 export const metadata: Metadata = {
   title: "Shopify Agency | Design, CRO, Development & Growth Experts | Ecomm Wizards",
@@ -16,6 +20,39 @@ export const metadata: Metadata = {
 };
 
 // â"€â"€â"€ Data â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+
+const CASE_STUDY_SLIDES: CaseStudySlide[] = [
+  {
+    key: "eby",
+    image: "/images/Frame_1000004320.webp",
+    apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/klaviyo.svg", "/images/yotpo.svg"],
+    headline: (<>An elegant <strong>Shopify Store</strong> designed and built for <strong>EBY</strong> by <strong>Sofia Vergara</strong></>),
+    quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally — we couldn&apos;t be happier!&rdquo;</>),
+    avatar: "/images/eby_dce31a54-eb36-409c-a8d7-e22fd8297de3_medium.webp",
+    name: "EBY by Sofia Vergara",
+    role: "Marketing Manager",
+  },
+  {
+    key: "harvard",
+    image: "/images/harvard-2_b0d9924a-412f-449b-94c3-0806b1d672ba.webp",
+    apps: ["/images/shopify-icon.svg", "/images/klaviyo.svg", "/images/yotpo.svg", "/images/gorgias.svg"],
+    headline: (<>A sophisticated <strong>Shopify Store</strong> designed and built for a <strong>Harvard University</strong></>),
+    quote: (<>&ldquo;Our experience with EW was excellent, characterized by an <strong>efficient workflow</strong> and <strong>professional execution</strong>; we couldn&apos;t be more delighted&rdquo;</>),
+    avatar: "/images/harvardperson_medium.webp",
+    name: "Daniyal S.",
+    role: "Harvard University",
+  },
+  {
+    key: "bark",
+    image: "/images/ai-bark-casestudy.webp",
+    apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/Subtract.svg", "/images/64f098c0e38dec3a384cb182_rebuy.svg"],
+    headline: (<>A dynamically personalized <strong>Shopify Store</strong> developed &amp; maintained for <strong>Bark</strong></>),
+    quote: (<>&ldquo;Their immense knowledge of Shopify Plus and exceptional communication skills, accompanied by a <strong>can-do attitude</strong> made Ecomm Wizards a fantastic partner.&rdquo;</>),
+    avatar: "/images/nari_medium_215a6a4f-f640-4b4f-98aa-28f001df20dd_medium.webp",
+    name: "Nari Sitaraman",
+    role: "Chief Technology Officer",
+  },
+];
 
 const GRADIENT = "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)";
 const GRADIENT_TEXT = { background: GRADIENT, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" } as const;
@@ -675,248 +712,159 @@ export default function HomePage() {
         imageAspectRatio="4/3"
         mobileYPadding="max-sm:!py-[10px]"
       />
+      <ShopifyDesignSection
+        showHeading={false}
+        h3Content={<>Shopify <strong style={{ fontWeight: 600, ...GRADIENT_TEXT }}>POS Setup</strong> & Configuration</>}
+        description="Unify your online and offline sales. We set up Shopify POS so your inventory, orders, and customer data stay synced – whether you're selling in-store, at pop-ups, or on the go."
+        services={POS_SERVICES}
+        buttonText="Get Your POS Running"
+        buttonHref="/book-shopify-consultation"
+        imageSrc="/images/seeamleass-right.webp"
+        wrapHeading
+        paddingTop="5px"
+        reverseLayout
+        mobileYPadding="max-sm:!py-[10px]"
+        bgImage="/images/Group_1000004265.svg"
+        bgImageOpacity={0.35}
+        bgImageTransform="rotate(180deg)"
+        mdAutoHeight
+        dark
+      />
+      <ShopifyDesignSection
+        showHeading={false}
+        h3Content={<>Shopify <strong style={{ fontWeight: 700, color: "#000000" }}>AI Automation</strong> Services</>}
+        description="From inventory updates to customer support – we set up AI agents that handle the repetitive stuff so you can focus on growth. Your store runs itself."
+        services={AI_AUTOMATION_SERVICES}
+        buttonText="Automate Your Store"
+        buttonHref="/book-shopify-consultation"
+        imageSrc="/images/ai-shopify-apps.webp"
+        paddingTop="5px"
+        wrapHeading
+        mdAutoHeight
+        imageFit="contain"
+        imageAspectRatio="4/3"
+        paddingBottom="30px"
+        mobileYPadding="max-sm:!py-[10px]"
+      />
+      <AiAppsSlider />
+      <MobileAppSection />
 
-      {/* â"€â"€ Services â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="bg-[#0d0d0d] py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Badge text="What We Do" />
-            <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-              Everything Your Shopify Store Needs
-            </h2>
-            <p className="mt-4 max-w-xl mx-auto text-sm leading-relaxed text-white/50">
-              From launch to scale — we cover every discipline that drives ecommerce growth.
-            </p>
-          </div>
-
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {SERVICES.map((s) => (
-              <Link
-                key={s.href}
-                href={s.href}
-                className="group rounded-2xl border border-white/10 bg-white/5 p-7 transition-all hover:border-[#A8F0B4]/40 hover:bg-white/[0.07]"
-              >
-                <h3 className="text-xl font-bold text-white transition-colors">
-                  <span className="group-hover:bg-clip-text group-hover:text-transparent" style={{ backgroundImage: GRADIENT }}>{s.title}</span>
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/50">{s.desc}</p>
-                <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold group-hover:gap-2 transition-all" style={GRADIENT_TEXT}>
-                  Learn more â†'
-                </span>
-              </Link>
-            ))}
-          </div>
+      {/* Proven Results from Brands We've Built */}
+      <section
+        className="ssd-results-section"
+        style={{ background: "#FFFFFF", color: "#334155", fontFamily: "'Poppins', sans-serif", fontSize: "16px", padding: "30px 20px" }}
+      >
+        <div className="ssd-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
+          <h2 className="ssd-results-heading">Proven Results from Brands We&apos;ve Built</h2>
+          <p className="ssd-results-desc">
+            Our Shopify store development services have helped brands increase conversion rates by up to 35%, reduce page load time by 50%, and scale to Shopify Plus with confidence.
+          </p>
+          <CaseStudySlider slides={CASE_STUDY_SLIDES} intervalMs={6000} showDots={false} />
         </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          .ssd-results-heading { color:#000;font-family:'Poppins',sans-serif;font-size:42px;font-weight:700;line-height:52px;text-align:center;margin:0 auto 24px;max-width:920px; }
+          .ssd-results-desc { color:rgba(0,0,0,.8);font-family:'Poppins',sans-serif;font-size:18px;line-height:28px;text-align:center;margin:0 auto 24px;max-width:1056px; }
+          .ssd-results-cards { display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px; }
+          .ssd-results-card { background:#FBF7ED;padding:30px;min-height:257.28px;border-radius:14px;display:flex;flex-direction:column;align-items:center;text-align:center;color:#334155;font-family:'Poppins',sans-serif;font-size:16px; }
+          .ssd-results-card-quote { color:#000;font-family:'Poppins',sans-serif;font-size:18px;line-height:28px;margin:0 0 24px;max-width:366.67px; }
+          .ssd-results-card-logo { display:flex;align-items:center;justify-content:center;min-height:64px;margin-bottom:18px; }
+          .ssd-results-card-logo img { width:150px;height:64.05px;object-fit:contain;display:block; }
+          .ssd-results-card-person { color:rgba(0,0,0,.7);font-family:'Poppins',sans-serif;font-size:14px;line-height:22px;margin:0; }
+          .ssd-results-slider { position:relative;background:#FBF7ED;border-radius:18px;padding:0;overflow:hidden; }
+          .ssd-results-slider-track { display:flex;will-change:transform; }
+          .ssd-results-slide { display:grid;grid-template-columns:691px 1fr;gap:0;align-items:stretch;padding:0;box-sizing:border-box; }
+          .ssd-results-slide-image { width:691px;height:573.67px;border-radius:0;overflow:hidden;background:#FBF7ED; }
+          .ssd-results-slide-image img { width:100%;height:100%;object-fit:cover;display:block; }
+          .ssd-results-slide-text { padding:30px 15px 30px 40px;color:rgba(0,0,0,0.75);font-family:'Poppins',sans-serif;font-size:16px;display:flex;flex-direction:column;justify-content:center; }
+          .ssd-results-apps { display:flex;align-items:center;gap:16px;margin-bottom:24px; }
+          .ssd-results-apps-label { color:#000;font-family:'Poppins',sans-serif;font-weight:600;font-size:14px; }
+          .ssd-results-apps-icons { display:flex;align-items:center;gap:8px; }
+          .ssd-results-app-chip { display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#000; }
+          .ssd-results-app-chip img { width:20px;height:20px;object-fit:contain;filter:brightness(0) invert(1); }
+          .ssd-results-slide-headline { color:#000;font-family:'Poppins',sans-serif;font-size:27px;font-weight:500;line-height:36px;margin:0 0 28px;max-width:600px; }
+          .ssd-results-slide-headline strong { font-weight:800; }
+          .ssd-results-slide-link { display:inline-flex;align-items:center;gap:8px;color:#000;font-family:'Poppins',sans-serif;font-size:16px;text-decoration:none;margin:0 0 20px;transition:gap .25s ease; }
+          .ssd-results-slide-link:hover { gap:12px; }
+          .ssd-results-slide-link span { border-bottom:1px solid #000;padding-bottom:1px; }
+          .ssd-results-quote-card { background:#fff;border-radius:12px;padding:20px;max-width:600px;margin-top:40px; }
+          .ssd-results-quote-text { color:#000;font-family:'Poppins',sans-serif;font-size:15px;line-height:24px;margin:0 0 18px; }
+          .ssd-results-quote-text strong { font-weight:700; }
+          .ssd-results-quote-person { display:flex;align-items:center;gap:12px; }
+          .ssd-results-quote-avatar { width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#ddd; }
+          .ssd-results-quote-name { color:#000;font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;line-height:22px; }
+          .ssd-results-quote-role { color:rgba(0,0,0,.65);font-family:'Poppins',sans-serif;font-size:13px;line-height:20px; }
+          .ssd-results-arrow { position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;background:#1A1A1A;color:rgba(0,0,0,0.75);border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;transition:transform .2s ease,background .2s ease; }
+          .ssd-results-arrow:hover { background:#2A9555;transform:translateY(-50%) scale(1.05); }
+          .ssd-results-arrow-prev { left:8px; }
+          .ssd-results-arrow-next { right:8px; }
+          .ssd-results-dots { position:absolute;left:0;right:0;bottom:14px;display:flex;justify-content:center;gap:8px;z-index:4; }
+          .ssd-results-dot { width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.25);border:0;padding:0;cursor:pointer;transition:background .2s ease,transform .2s ease; }
+          .ssd-results-dot.is-active { background:#000;transform:scale(1.2); }
+          @media (min-width:1024px) and (max-width:1279px) {
+            .ssd-results-slide { grid-template-columns:520px 1fr !important; }
+            .ssd-results-slide-image { width:520px !important;height:432px !important; }
+            .ssd-results-slide-text { padding:20px !important; }
+            .ssd-results-heading { margin-bottom:12px !important; }
+            .ssd-results-desc { margin-bottom:12px !important; }
+            .ssd-results-apps { margin-bottom:12px !important; }
+            .ssd-results-slide-headline { margin-bottom:12px !important; }
+            .ssd-results-slide-link { margin-bottom:12px !important; }
+            .ssd-results-quote-card { margin-top:12px !important; }
+            .ssd-results-arrow { width:40px !important;height:40px !important;top:42% !important; }
+            .ssd-results-arrow svg { width:14px !important;height:10px !important; }
+          }
+          @media (max-width:1023px) {
+            .ssd-results-section { padding:44px 20px !important; }
+            .ssd-results-heading { font-size:30px !important;line-height:40px !important;margin-bottom:18px !important; }
+            .ssd-results-desc { font-size:16px !important;line-height:26px !important;margin-bottom:32px !important; }
+            .ssd-results-cards { grid-template-columns:1fr !important;gap:16px !important;margin-bottom:32px !important; }
+            .ssd-results-card { min-height:0 !important;padding:26px 22px !important; }
+            .ssd-results-card-quote { font-size:16px !important;line-height:26px !important;margin-bottom:18px !important; }
+            .ssd-results-slide { grid-template-columns:1fr !important;padding:24px 16px !important;gap:20px !important; }
+            .ssd-results-slide-image { width:100% !important;height:auto !important;aspect-ratio:600/423.42 !important; }
+            .ssd-results-slide-text { padding:0 !important; }
+            .ssd-results-slide-headline { font-size:22px !important;line-height:30px !important; }
+            .ssd-results-slide-link { font-size:16px !important; }
+            .ssd-results-quote-text { font-size:14px !important;line-height:22px !important; }
+            .ssd-results-arrow { width:36px !important;height:36px !important; }
+          }
+          @media (min-width:768px) and (max-width:1023px) {
+            .ssd-results-section { padding:30px 20px !important; }
+            .ssd-results-desc { margin-bottom:18px !important; }
+            .ssd-results-slide { grid-template-columns:382px 1fr !important;padding:0 !important;gap:0 !important; }
+            .ssd-results-slide-image { width:382px !important;height:317px !important; }
+            .ssd-results-slide-text { padding:20px 20px 20px 24px !important;display:flex !important;flex-direction:column !important;justify-content:center !important; }
+            .ssd-results-apps { margin-bottom:12px !important; }
+            .ssd-results-slide-headline { font-size:22px !important;line-height:30px !important;margin-bottom:12px !important; }
+            .ssd-results-slide-link { font-size:14px !important;margin-bottom:12px !important; }
+            .ssd-results-quote-card { margin-top:12px !important;padding:14px !important; }
+            .ssd-results-quote-text { font-size:13px !important;line-height:20px !important; }
+            .ssd-results-arrow { width:36px !important;height:36px !important;top:43% !important; }
+            .ssd-results-arrow svg { width:13px !important;height:9px !important; }
+          }
+          @media (max-width:640px) {
+            .ssd-results-section { padding:20px 16px !important; }
+            .ssd-results-heading { font-size:26px !important;line-height:34px !important; }
+            .ssd-results-desc { font-size:15px !important;line-height:24px !important; }
+            .ssd-results-slider { padding:0 !important; }
+            .ssd-results-slide { grid-template-columns:1fr !important;padding:22px 14px !important;gap:24px !important; }
+            .ssd-results-slide-image { width:100% !important;height:auto !important;aspect-ratio:600/423.42 !important; }
+            .ssd-results-slide-text { padding:0 !important;display:flex !important;flex-direction:column !important;justify-content:flex-start !important; }
+            .ssd-results-apps { margin-bottom:16px !important; }
+            .ssd-results-slide-headline { font-size:19px !important;line-height:26px !important;margin-bottom:16px !important; }
+            .ssd-results-slide-link { margin-bottom:16px !important; }
+            .ssd-results-quote-card { padding:16px !important;margin-top:0 !important; }
+            .ssd-results-arrow { display:none !important; }
+            .ssd-results-app-chip { width:28px;height:28px; }
+            .ssd-results-app-chip img { width:16px;height:16px; }
+          }
+        ` }} />
       </section>
 
-      {/* â"€â"€ Metrics â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="bg-[#0a0a0a] py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Badge text="Our Track Record" />
-            <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-              Numbers That Speak for Themselves
-            </h2>
-          </div>
+      <WhyPartnerSection />
 
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {METRICS.map((m) => (
-              <div key={m.label} className="text-center">
-                <div className="text-4xl">{m.icon}</div>
-                <span className="mt-4 block text-4xl font-extrabold" style={GRADIENT_TEXT}>{m.value}</span>
-                <p className="mt-2 text-sm text-white/50">{m.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* â"€â"€ Growth Chart â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="bg-[#0d0d0d] py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Badge text="Growth Story" />
-            <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-              Stores Built Year on Year
-            </h2>
-            <p className="mt-4 text-sm text-white/50">
-              Consistent growth since our founding — 700+ stores and counting.
-            </p>
-          </div>
 
-          <div className="mt-14 flex items-end justify-center gap-4 sm:gap-6">
-            {BAR_DATA.map((j) => (
-              <div key={j.year} className="flex flex-col items-center gap-2">
-                <span className="text-xs font-bold" style={GRADIENT_TEXT}>{j.stores}+</span>
-                <div
-                  className="w-10 sm:w-14 rounded-t-lg transition-all"
-                  style={{ height: `${(j.stores / maxStores) * 200}px`, background: GRADIENT }}
-                />
-                <span className="text-xs text-white/40">{j.year}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* â"€â"€ Process â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="bg-[#0a0a0a] py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Badge text="How We Work" />
-            <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-              A Proven Process. Predictable Results.
-            </h2>
-          </div>
-
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {PROCESS.map((p) => (
-              <div key={p.step} className="flex flex-col">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-xs font-bold text-[#0a0a0a]" style={{ background: GRADIENT }}>
-                  {p.step}
-                </div>
-                <h3 className="mt-5 text-lg font-bold text-white">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/50">{p.desc}</p>
-                <Link
-                  href="/free-shopify-store-audit"
-                  className="mt-auto inline-flex items-center gap-2 pt-4 text-sm font-semibold hover:gap-3 transition-all"
-                  style={GRADIENT_TEXT}
-                >
-                  Get started â†'
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* â"€â"€ Testimonials â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="bg-[#0d0d0d] py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Badge text="Client Results" />
-            <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-              What Our Clients Say
-            </h2>
-          </div>
-
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {TESTIMONIALS.map((t) => (
-              <div
-                key={t.name}
-                className="rounded-2xl border border-white/10 bg-white/5 p-7 transition-all hover:border-[#A8F0B4]/40"
-              >
-                <p className="text-sm leading-relaxed text-white/70">"{t.quote}"</p>
-                <div className="mt-6 flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full text-sm font-extrabold text-[#0a0a0a] ring-4 ring-[#111111]" style={{ background: GRADIENT }}>
-                    {t.initials}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white">{t.name}</p>
-                    <p className="text-xs text-white/40">{t.company}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10 text-center">
-            <Link
-              href="/reviews"
-              className="inline-flex items-center gap-2 text-sm font-semibold hover:gap-3 transition-all"
-              style={GRADIENT_TEXT}
-            >
-              Read all reviews â†'
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* â"€â"€ Why Us / Plans â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="bg-[#0a0a0a] py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 lg:flex lg:items-center lg:gap-20">
-          <div className="lg:w-1/2">
-            <Badge text="Why Ecomm Wizards" />
-            <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-              Everything You Need to Scale. Nothing You Don't.
-            </h2>
-            <ul className="mt-8 space-y-4">
-              {PLANS.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm text-white/70">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full shrink-0" style={{ background: GRADIENT }} />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/free-shopify-store-audit"
-                className="inline-flex items-center justify-center rounded-lg
-                  px-6 py-3 text-sm font-semibold text-[#0a0a0a] transition-all hover:opacity-90"
-                style={{ background: GRADIENT }}
-              >
-                Get a Free Audit
-              </Link>
-              <Link
-                href="/book-shopify-consultation"
-                className="inline-flex items-center justify-center rounded-lg border border-white/20
-                  px-6 py-3 text-[12px] font-semibold text-white transition-all hover:border-[#A8F0B4]"
-              >
-                Book a Call
-              </Link>
-            </div>
-          </div>
-
-          <div className="mt-14 lg:mt-0 lg:w-1/2">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
-              <div className="text-3xl font-extrabold" style={GRADIENT_TEXT}>700+</div>
-              <p className="mt-1 text-sm text-white/50">Shopify stores launched globally</p>
-              <div className="mt-6 grid grid-cols-2 gap-4">
-                {[
-                  { v: "$900M+", l: "Revenue Generated" },
-                  { v: "28.5%",  l: "Avg Conversion Lift" },
-                  { v: "12+",    l: "Years Experience" },
-                  { v: "98%",    l: "Client Retention" },
-                ].map((s) => (
-                  <div key={s.l} className="rounded-xl border border-white/10 bg-white/5 p-4">
-                    <div className="text-xl font-extrabold" style={GRADIENT_TEXT}>{s.v}</div>
-                    <div className="mt-1 text-xs text-white/40">{s.l}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* â"€â"€ Partners â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="bg-[#0d0d0d] py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Badge text="Trusted Partners" />
-            <h2 className="text-2xl font-extrabold text-white">
-              Certified & Partnered with the Best
-            </h2>
-          </div>
-
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
-            {PARTNERS.map((p) => (
-              <div
-                key={p.alt}
-                className="rounded-2xl border border-white/10 bg-white/5 p-7 transition-all hover:border-[#A8F0B4]/40"
-              >
-                <Image
-                  src={p.src}
-                  alt={p.alt}
-                  width={120}
-                  height={40}
-                  className="h-10 w-auto object-contain brightness-0 invert opacity-60"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* â"€â"€ Final CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
       <section className="py-20" style={{ background: GRADIENT }}>

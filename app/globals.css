@@ -2,6 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes mobile-scroll-up {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+.get-started-btn-wrap {
+  background: transparent;
+  transition: background 0.3s ease;
+}
+.get-started-btn-wrap:hover {
+  background: linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%);
+}
+
+@media (max-width: 639px) {
+  .mobile-app-section {
+    padding: 0 15px !important;
+  }
+  .mobile-app-inner {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    padding: 30px 0 !important;
+  }
+  .mobile-app-grid {
+    height: 400px !important;
+    padding-left: 0 !important;
+    border-radius: 12px !important;
+  }
+  .mobile-app-text {
+    padding: 10px !important;
+    margin-top: 20px;
+  }
+  .mobile-app-heading {
+    font-size: 30px !important;
+    color: #000000 !important;
+    margin-bottom: 16px !important;
+  }
+  .mobile-app-desc {
+    color: rgba(0, 0, 0, 0.8) !important;
+    margin-bottom: 16px !important;
+  }
+  .get-started-btn-wrap {
+    display: flex !important;
+    width: 100%;
+  }
+  .get-started-btn-link {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 18px 24px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .mobile-app-heading {
+    font-size: 30px !important;
+  }
+  .mobile-app-inner {
+    gap: 20px !important;
+  }
+  .mobile-app-grid {
+    padding-left: 10px;
+  }
+}
+@media (min-width: 1024px) {
+  .mobile-app-inner {
+    gap: 30px !important;
+  }
+  .mobile-app-grid {
+    padding-left: 10px;
+  }
+}
+.mobile-col-1 { animation: mobile-scroll-up 28s linear infinite; }
+.mobile-col-2 { animation: mobile-scroll-up 20s linear infinite; }
+.mobile-col-3 { animation: mobile-scroll-up 24s linear infinite; }
+.why-partner-logo-track { animation: mobile-scroll-up 18s linear infinite; }
+@media (min-width:1024px) and (max-width:1279px) {
+  .why-partner-phone { padding: 0 6px !important; }
+  .why-partner-inner { gap: 16px !important; }
+}
+@media (min-width:768px) and (max-width:1023px) {
+  .why-partner-phone { padding: 0 6px !important; }
+  .why-partner-inner { gap: 16px !important; }
+  .why-partner-heading { font-size: 30px !important; }
+  .why-partner-heading br { display: none !important; }
+  .knife-accordion-title { font-size: 16px !important; }
+  .knife-accordion-body { font-size: 14px !important; }
+}
+
+@media (max-width: 639px) {
+  .why-partner-inner { grid-template-columns: 1fr !important; gap: 24px !important; padding: 10px 0 !important; }
+  .why-partner-text { text-align: center !important; }
+  .why-partner-heading { font-size: 28px !important; margin-bottom: 12px !important; }
+  .why-partner-heading br { display: none !important; }
+  .why-partner-phone { width: 100% !important; height: 380px !important; padding: 0 12px !important; }
+  .why-partner-accordion { width: 100% !important; }
+}
+
 @keyframes marquee-up {
   from { transform: translateY(0); }
   to   { transform: translateY(-50%); }
@@ -58,10 +154,42 @@
     animation: ticker-half 18s linear infinite;
   }
 }
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (max-width: 639px) {
+  .ai-apps-btn-wrap {
+    display: flex !important;
+    width: 100%;
+  }
+  .ai-apps-btn-link {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 8px !important;
+    width: 100%;
+    padding: 14px 24px !important;
+  }
+  .ai-apps-heading {
+    font-size: 30px !important;
+    line-height: 1.25 !important;
+  }
+  .ai-apps-partner-heading {
+    font-size: 20px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 16px !important;
+  }
+  .ai-apps-card-img {
+    margin-bottom: 12px !important;
+  }
+  .ai-apps-card-title {
+    margin-bottom: 12px !important;
+  }
+  .ai-apps-card-desc {
+    margin-bottom: 12px !important;
+  }
+}
+@media (max-width: 1023px) {
   .logo-strip img {
-    width: 90px !important;
-    height: 20px !important;
+    height: 40px !important;
+    width: auto !important;
   }
 }
 
