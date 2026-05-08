@@ -27,6 +27,13 @@ interface Props {
   bgImage?: string;
   wrapHeading?: boolean;
   imagePanel?: ReactNode;
+  bgImageOpacity?: number;
+  bgImageTransform?: string;
+  mdAutoHeight?: boolean;
+  imageFit?: "cover" | "contain";
+  imageBg?: string;
+  imageMaxWidth?: string;
+  imageAspectRatio?: string;
 }
 
 const DEFAULT_SERVICES: ServiceItem[] = [
@@ -190,6 +197,13 @@ export default function ShopifyDesignSection({
   bgImage,
   wrapHeading = false,
   imagePanel,
+  bgImageOpacity = 1,
+  bgImageTransform,
+  mdAutoHeight = false,
+  imageFit = "cover",
+  imageBg,
+  imageMaxWidth,
+  imageAspectRatio,
 }: Props) {
   const [btnHovered, setBtnHovered] = useState(false);
 
@@ -243,7 +257,7 @@ export default function ShopifyDesignSection({
 
         {/* Inner container */}
         <div
-          className="p-[48px] max-sm:p-[20px] md:max-lg:py-[28px] md:max-lg:px-[20px] md:max-lg:h-[490px] md:max-lg:overflow-hidden lg:max-xl:p-[40px]"
+          className={`p-[48px] max-sm:p-[20px] md:max-lg:py-[28px] md:max-lg:px-[20px] lg:max-xl:p-[40px] ${mdAutoHeight ? "md:max-lg:h-auto" : "md:max-lg:h-[490px] md:max-lg:overflow-hidden"}`}
           style={{
             background: containerBg,
             borderRadius: "28px",
@@ -263,7 +277,8 @@ export default function ShopifyDesignSection({
                   left: "40%",
                   height: "100%",
                   width: "auto",
-                  opacity: 1,
+                  opacity: bgImageOpacity,
+                  transform: bgImageTransform,
                   pointerEvents: "none",
                   userSelect: "none",
                   display: "block",
@@ -280,7 +295,7 @@ export default function ShopifyDesignSection({
             {/* Left: content */}
             <div className="w-full md:max-lg:w-[365px] lg:w-[50%] max-sm:order-2">
               <h3
-                className={`text-[30px] max-sm:text-[22px] md:max-lg:text-[22px] lg:max-xl:text-[28px] md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px] ${wrapHeading ? "whitespace-normal" : "whitespace-nowrap max-sm:whitespace-normal md:max-lg:whitespace-normal lg:max-xl:whitespace-normal"}`}
+                className={`text-[30px] max-sm:text-[22px] md:max-lg:text-[22px] lg:max-xl:text-[28px] max-sm:!mb-[12px] md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px] ${wrapHeading ? "whitespace-normal" : "whitespace-nowrap max-sm:whitespace-normal md:max-lg:whitespace-normal lg:max-xl:whitespace-normal"}`}
                 style={{
                   fontFamily: "'Poppins', sans-serif",
                   color: headingColor,
@@ -293,7 +308,7 @@ export default function ShopifyDesignSection({
               </h3>
 
               <p
-                className="text-[16px] max-sm:text-[14px] md:max-lg:text-[14px] lg:max-xl:text-[14px] md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px]"
+                className="text-[16px] max-sm:text-[14px] md:max-lg:text-[14px] lg:max-xl:text-[14px] max-sm:!mb-[12px] md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px]"
                 style={{
                   fontFamily: "'Poppins', sans-serif",
                   color: descColor,
@@ -306,7 +321,7 @@ export default function ShopifyDesignSection({
 
               {/* Service items */}
               <div
-                className="md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px]"
+                className="max-sm:!mb-[12px] md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px]"
                 style={{
                   border: `1px solid ${servicesBorder}`,
                   borderRadius: "12px",
@@ -417,10 +432,12 @@ export default function ShopifyDesignSection({
                   className="max-w-[640px] md:max-lg:max-w-[365px] lg:max-xl:max-w-[492px]"
                   style={{
                     width: "100%",
-                    aspectRatio: "1 / 1",
+                    maxWidth: imageMaxWidth,
+                    aspectRatio: imageAspectRatio ?? "1 / 1",
                     borderRadius: "16px",
                     overflow: "hidden",
                     position: "relative",
+                    background: imageBg,
                   }}
                 >
                   {imageSrc ? (
@@ -428,7 +445,7 @@ export default function ShopifyDesignSection({
                       src={imageSrc}
                       alt=""
                       fill
-                      style={{ objectFit: "cover" }}
+                      style={{ objectFit: imageFit }}
                     />
                   ) : (
                     <video
@@ -483,6 +500,75 @@ const SEO_SERVICES: ServiceItem[] = [
   },
 ];
 
+const BRAND_SERVICES: ServiceItem[] = [
+  {
+    title: "Brand Voice & Messaging",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 8a2 2 0 012-2h4l3 4-3 4H6a2 2 0 01-2-2V8z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/>
+        <path d="M13 12h10M13 8h7M13 16h5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+        <circle cx="22" cy="22" r="5" stroke="currentColor" strokeWidth="1.6"/>
+        <path d="M20 22l1.5 1.5L24 20" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Conversion Copywriting",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 4l6 6-14 14H6v-6L20 4z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/>
+        <path d="M17 7l6 6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Visual & Content Positioning",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="4" width="26" height="18" rx="2" stroke="currentColor" strokeWidth="1.6"/>
+        <path d="M10 22v4M20 22v4M7 26h16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+        <path d="M7 14l4-4 4 4 4-6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+];
+
+const B2B_SERVICES: ServiceItem[] = [
+  {
+    title: "Custom B2B Catalogs & Wholesale Pricing",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="7" cy="15" r="4" stroke="currentColor" strokeWidth="1.6"/>
+        <circle cx="23" cy="15" r="4" stroke="currentColor" strokeWidth="1.6"/>
+        <path d="M11 15h8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+        <path d="M7 11V7a2 2 0 012-2h12a2 2 0 012 2v4M7 19v4a2 2 0 002 2h12a2 2 0 002-2v-4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Shopify Plus Wholesale Portal Setup",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="3" width="18" height="22" rx="2" stroke="currentColor" strokeWidth="1.6"/>
+        <path d="M8 9h10M8 13h10M8 17h6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+        <path d="M19 20l5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+        <circle cx="19" cy="20" r="3.5" stroke="currentColor" strokeWidth="1.4"/>
+      </svg>
+    ),
+  },
+  {
+    title: "B2B Automation & Net Terms Integration",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 4v14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+        <path d="M10 9l5-5 5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M6 20c0-2 1.5-4 4-5l5 3 5-3c2.5 1 4 3 4 5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M4 26h22" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+];
+
 const CRO_SERVICES: ServiceItem[] = [
   {
     title: "Heatmaps & Behavior Analytics",
@@ -522,4 +608,169 @@ const CRO_SERVICES: ServiceItem[] = [
   },
 ];
 
-export { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES };
+const COPYWRITING_SERVICES: ServiceItem[] = [
+  {
+    title: "Shopify Landing Page Copy",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="3" width="24" height="24" rx="2" stroke="currentColor" strokeWidth="1.6"/>
+        <path d="M8 9h14M8 14h14M8 19h8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Product Page & VSL Scripts",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 6h3.5l3 14h14l2.5-9H8.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="12" cy="25" r="2" stroke="currentColor" strokeWidth="1.6"/>
+        <circle cx="22" cy="25" r="2" stroke="currentColor" strokeWidth="1.6"/>
+      </svg>
+    ),
+  },
+  {
+    title: "SEO Blog Content",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="4" width="26" height="18" rx="2" stroke="currentColor" strokeWidth="1.6"/>
+        <path d="M7 10h5M7 14h10M7 18h7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+        <rect x="16" y="9" width="8" height="10" rx="1" stroke="currentColor" strokeWidth="1.2"/>
+      </svg>
+    ),
+  },
+];
+
+const PERSONALIZATION_SERVICES: ServiceItem[] = [
+  {
+    title: "Dynamic Product Recommendations",
+    icon: <img src="/images/web.png" alt="" width={38} height={38} style={{ width: 38, height: 38, objectFit: "contain", filter: "brightness(0) contrast(1.2)" }} />,
+  },
+  {
+    title: "Personalized Landing Pages",
+    icon: <img src="/images/landing-pages.png" alt="" width={38} height={38} style={{ width: 38, height: 38, objectFit: "contain", filter: "brightness(0) contrast(1.2)" }} />,
+  },
+  {
+    title: "Behavior-Based Content Blocks",
+    icon: <img src="/images/ad-blocker.png" alt="" width={38} height={38} style={{ width: 38, height: 38, objectFit: "contain", filter: "brightness(0) contrast(1.2)" }} />,
+  },
+];
+
+const SEO_AI_SERVICES: ServiceItem[] = [
+  {
+    title: "On-Page & Technical SEO",
+    icon: (
+      <svg width="34" height="34" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="3" width="28" height="20" rx="2" stroke="currentColor" strokeWidth="1.6"/>
+        <line x1="15" y1="23" x2="15" y2="27" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+        <line x1="10" y1="27" x2="20" y2="27" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+        <circle cx="17" cy="13" r="6" stroke="currentColor" strokeWidth="1.6"/>
+        <line x1="21.5" y1="17.5" x2="25" y2="21" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+        <path d="M14 11h3M14 13h4M14 15h2" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "AI Search Optimization (GPT, Gemini)",
+    icon: (
+      <svg width="34" height="34" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="13" cy="13" r="10" stroke="currentColor" strokeWidth="1.6"/>
+        <line x1="20.5" y1="20.5" x2="27" y2="27" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M8 9v3M6.5 10.5h3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M15 7l1.5 4.5 4.5 1.5-4.5 1.5-1.5 4.5-1.5-4.5-4.5-1.5 4.5-1.5z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Content & Keyword Strategy",
+    icon: (
+      <svg width="34" height="34" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="28" height="28" rx="3" stroke="currentColor" strokeWidth="1.6"/>
+        <line x1="1" y1="9" x2="29" y2="9" stroke="currentColor" strokeWidth="1.4"/>
+        <circle cx="5" cy="5" r="1.5" stroke="currentColor" strokeWidth="1.4"/>
+        <circle cx="10" cy="5" r="1.5" stroke="currentColor" strokeWidth="1.4"/>
+        <rect x="4" y="12" width="7" height="3" rx="1" stroke="currentColor" strokeWidth="1.3"/>
+        <rect x="14" y="12" width="12" height="3" rx="1" stroke="currentColor" strokeWidth="1.3"/>
+        <line x1="4" y1="19" x2="26" y2="19" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+        <circle cx="8" cy="25" r="3" stroke="currentColor" strokeWidth="1.4"/>
+        <circle cx="8" cy="25" r="1" stroke="currentColor" strokeWidth="1.2"/>
+        <path d="M11 25h10" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+        <path d="M18 25v-2M21 25v-1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+];
+
+const RETENTION_SERVICES: ServiceItem[] = [
+  {
+    title: "Email Flows & Campaigns (Klaviyo)",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="5" width="26" height="20" rx="2" stroke="currentColor" strokeWidth="1.6"/>
+        <path d="M2 8l11 8a3 3 0 004 0l11-8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Klaviyo Integrations for Shopify",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.4,12.0 L17.5,12.2 L17.5,13.8 L15.4,14.0 L13.5,17.2 L14.4,19.1 L13.1,19.9 L11.9,18.2 L8.1,18.2 L6.9,19.9 L5.6,19.1 L6.5,17.2 L4.6,14.0 L2.5,13.8 L2.5,12.2 L4.6,12.0 L6.5,8.8 L5.6,6.9 L6.9,6.1 L8.1,7.8 L11.9,7.8 L13.1,6.1 L14.4,6.9 L13.5,8.8 Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/>
+        <circle cx="10" cy="13" r="2.5" stroke="currentColor" strokeWidth="1.3"/>
+        <path d="M25.9,20.4 L27.0,20.4 L27.0,21.6 L25.9,21.6 L23.6,23.9 L23.6,25.0 L22.4,25.0 L22.4,23.9 L20.1,21.6 L19.0,21.6 L19.0,20.4 L20.1,20.4 L22.4,18.1 L22.4,17.0 L23.6,17.0 L23.6,18.1 Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round"/>
+        <circle cx="23" cy="21" r="1.4" stroke="currentColor" strokeWidth="1.2"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Customer Retention",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="9" r="4" stroke="currentColor" strokeWidth="1.6"/>
+        <path d="M7 26c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+        <circle cx="5" cy="11" r="3" stroke="currentColor" strokeWidth="1.4"/>
+        <path d="M1 26c0-3.314 2-6 5-7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+        <circle cx="25" cy="11" r="3" stroke="currentColor" strokeWidth="1.4"/>
+        <path d="M29 26c0-3.314-2-6-5-7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+];
+
+const WHY_B2B_SERVICES: ServiceItem[] = [
+  {
+    title: "Shopify B2B Portal & Company Accounts",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="5" width="26" height="20" rx="2" stroke="currentColor" strokeWidth="1.6"/>
+        <circle cx="10" cy="13" r="3.5" stroke="currentColor" strokeWidth="1.4"/>
+        <path d="M3 25c0-3.5 3-6 7-6s7 2.5 7 6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+        <path d="M19 11h7M19 15h5M19 19h7" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Volume Pricing & Net Payment Terms",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="20" width="6" height="8" rx="1" stroke="currentColor" strokeWidth="1.5"/>
+        <rect x="11" y="14" width="6" height="14" rx="1" stroke="currentColor" strokeWidth="1.5"/>
+        <rect x="20" y="8" width="6" height="20" rx="1" stroke="currentColor" strokeWidth="1.5"/>
+        <path d="M23 2v6M20 5h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Wholesale Automation via Shopify Flow",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="6" cy="15" r="4" stroke="currentColor" strokeWidth="1.5"/>
+        <circle cx="24" cy="7" r="4" stroke="currentColor" strokeWidth="1.5"/>
+        <circle cx="24" cy="23" r="4" stroke="currentColor" strokeWidth="1.5"/>
+        <path d="M10 13L20 9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+        <path d="M10 17L20 21" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+];
+
+export { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES, BRAND_SERVICES, B2B_SERVICES, COPYWRITING_SERVICES, PERSONALIZATION_SERVICES, SEO_AI_SERVICES, RETENTION_SERVICES, WHY_B2B_SERVICES };
