@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import CTABar from "@/components/layout/CTABar";
 
 export const metadata: Metadata = {
   title: {
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="flex min-h-screen flex-col" style={{ backgroundColor: "var(--color-white)", color: "var(--color-dark)" }} suppressHydrationWarning>
         <Header />
         <main className="flex-1 pt-[100px] sm:pt-[70px] md:pt-[100px] lg:pt-[86px] xl:pt-[96px]">{children}</main>
+        <CTABar />
         <Footer />
       </body>
     </html>
