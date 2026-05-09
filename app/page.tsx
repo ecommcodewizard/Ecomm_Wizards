@@ -866,36 +866,8 @@ export default function HomePage() {
 
 
 
-      {/* â"€â"€ Final CTA â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
-      <section className="py-20" style={{ background: GRADIENT }}>
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-extrabold text-[#0a0a0a] sm:text-4xl">
-            Ready to Grow Your Shopify Store?
-          </h2>
-          <p className="mt-4 text-base text-[#0a0a0a]/70">
-            Book a free consultation with our Shopify experts. No pressure, no commitment —
-            just a conversation about your goals.
-          </p>
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link
-              href="/free-shopify-store-audit"
-              className="inline-flex items-center justify-center rounded-lg bg-[#0a0a0a]
-                px-8 py-3.5 text-sm font-semibold transition-all hover:bg-[#111]"
-              style={GRADIENT_TEXT}
-            >
-              Get a Free Audit
-            </Link>
-            <Link
-              href="/book-shopify-consultation"
-              className="inline-flex items-center justify-center rounded-lg border-2 border-[#0a0a0a]
-                px-8 py-3.5 text-sm font-semibold text-[#0a0a0a] transition-all hover:bg-[#0a0a0a]"
-            >
-              Book a Call
-            </Link>
-          </div>
-        </div>
-      </section>
+      
     </>
   );
 }
-
+
