@@ -21,6 +21,7 @@ interface Props {
   videoSrc?: string;
   imageSrc?: string;
   paddingTop?: string;
+  paddingBottom?: string;
   reverseLayout?: boolean;
   mobileYPadding?: string;
   dark?: boolean;
@@ -191,6 +192,7 @@ export default function ShopifyDesignSection({
   videoSrc = "/images/d7f14fb290a1484cbb32e6037b39d7f1.mp4",
   imageSrc,
   paddingTop = "53px",
+  paddingBottom = "5px",
   reverseLayout = false,
   mobileYPadding = "max-sm:!py-[40px]",
   dark = false,
@@ -251,7 +253,7 @@ export default function ShopifyDesignSection({
       {/* Container section */}
       <section
         className={mobileYPadding}
-        style={{ background: "#FFFFFF", padding: `${paddingTop} 20px 5px` }}
+        style={{ background: "#FFFFFF", padding: `${paddingTop} 20px ${paddingBottom}` }}
       >
         <div style={{ maxWidth: "1320px", margin: "0 auto" }}>
 
@@ -773,4 +775,71 @@ const WHY_B2B_SERVICES: ServiceItem[] = [
   },
 ];
 
-export { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES, BRAND_SERVICES, B2B_SERVICES, COPYWRITING_SERVICES, PERSONALIZATION_SERVICES, SEO_AI_SERVICES, RETENTION_SERVICES, WHY_B2B_SERVICES };
+const AI_AUTOMATION_SERVICES: ServiceItem[] = [
+  {
+    title: "Automated Shopify Customer Support",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 6h20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H10l-6 4v-4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/>
+        <path d="M10 12h10M10 16h6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Inventory & Order Automation",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 4h3.5l3.5 13h14l2.5-9H9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="12" cy="24" r="2" stroke="currentColor" strokeWidth="1.5"/>
+        <circle cx="22" cy="24" r="2" stroke="currentColor" strokeWidth="1.5"/>
+      </svg>
+    ),
+  },
+  {
+    title: "AI-Powered Shopify Analytics",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="4" width="24" height="22" rx="2" stroke="currentColor" strokeWidth="1.6"/>
+        <rect x="8" y="17" width="4" height="5" rx="1" stroke="currentColor" strokeWidth="1.4"/>
+        <rect x="14" y="12" width="4" height="10" rx="1" stroke="currentColor" strokeWidth="1.4"/>
+        <rect x="20" y="8" width="4" height="14" rx="1" stroke="currentColor" strokeWidth="1.4"/>
+      </svg>
+    ),
+  },
+];
+
+const POS_SERVICES: ServiceItem[] = [
+  {
+    title: "POS Hardware Setup for Shopify",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="3" width="14" height="18" rx="2" stroke="currentColor" strokeWidth="1.6"/>
+        <rect x="11" y="6" width="8" height="5" rx="1" stroke="currentColor" strokeWidth="1.3"/>
+        <circle cx="15" cy="18" r="1" fill="currentColor"/>
+        <path d="M11 24h8M15 21v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M10 27h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Inventory Sync Across Channels",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 12a9 9 0 0 1 16-3M24 9l2 3-3 1" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M24 18a9 9 0 0 1-16 3M6 21l-2-3 3-1" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Unified Shopify Reporting & Analytics",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="20" width="6" height="7" rx="1" stroke="currentColor" strokeWidth="1.5"/>
+        <rect x="12" y="13" width="6" height="14" rx="1" stroke="currentColor" strokeWidth="1.5"/>
+        <rect x="21" y="6" width="6" height="21" rx="1" stroke="currentColor" strokeWidth="1.5"/>
+      </svg>
+    ),
+  },
+];
+
+export { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES, BRAND_SERVICES, B2B_SERVICES, COPYWRITING_SERVICES, PERSONALIZATION_SERVICES, SEO_AI_SERVICES, RETENTION_SERVICES, WHY_B2B_SERVICES, POS_SERVICES, AI_AUTOMATION_SERVICES };
