@@ -42,7 +42,7 @@ export default async function CaseStudyPage({
       <CaseStudyResults cs={cs} />
       {cs.techStack.length > 0 && <CaseStudyTechStack cs={cs} />}
       <CaseStudyQuote cs={cs} />
-      {cs.nextSlug && <CaseStudyNext cs={cs} />}
+      <CaseStudyExploreMore current={cs.slug} />
     </>
   );
 }
@@ -598,51 +598,80 @@ function CaseStudyQuote({ cs }: { cs: CaseStudy }) {
   );
 }
 
-function CaseStudyNext({ cs }: { cs: CaseStudy }) {
-  if (!cs.nextSlug) return null;
+function CaseStudyExploreMore({ current }: { current: string }) {
+  const cards = CASE_STUDIES.filter((cs) => cs.slug !== current);
+  const all = cards.length > 0 ? cards : CASE_STUDIES;
   return (
-    <section style={{ background: "#ffffff", padding: "0 20px" }}>
-      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "60px 0" }}>
-        <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "13px", fontWeight: 600, color: "#69727d", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "20px" }}>
-          Next Case Study
-        </p>
-        <Link
-          href={`/case-studies/${cs.nextSlug}`}
-          className="cs-next-card"
-          style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderRadius: "20px", overflow: "hidden", textDecoration: "none", background: "#F1F5FF", border: "1px solid rgba(4,107,210,0.1)" }}
-        >
-          <div style={{ background: "#e8f0fe", position: "relative", overflow: "hidden", aspectRatio: "16/9" }}>
-            {cs.nextImage && (
-              <Image src={cs.nextImage} alt={cs.nextBrand ?? "Next case study"} fill className="object-cover" />
-            )}
-          </div>
-          <div style={{ padding: "40px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            {cs.nextIndustry && (
-              <span style={{ display: "inline-block", padding: "4px 14px", fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#046bd2", background: "rgba(4,107,210,0.08)", border: "1px solid rgba(4,107,210,0.15)", borderRadius: "9999px", letterSpacing: "0.05em", marginBottom: "16px", width: "fit-content" }}>
-                {cs.nextIndustry}
-              </span>
-            )}
-            <h3 style={{ fontFamily: "'Poppins',sans-serif", fontSize: "28px", fontWeight: 700, color: "#000000", lineHeight: "38px", margin: "0 0 12px" }}>
-              {cs.nextBrand}
-            </h3>
-            {cs.nextMetric && (
-              <p className="stat-gradient-text" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "22px", fontWeight: 800, margin: "0 0 24px" }}>
-                {cs.nextMetric}
-              </p>
-            )}
-            <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", fontFamily: "'Poppins',sans-serif", fontSize: "15px", fontWeight: 600, color: "#046bd2" }}>
-              View Case Study
-              <svg width="14" height="11" viewBox="0 0 16 12" fill="none">
-                <path d="M0 6h14M14 6L9 1M14 6L9 11" stroke="#046bd2" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-          </div>
-        </Link>
+    <section style={{ background: "#f5f5f3", padding: "60px 0 0" }}>
+      {/* Header row */}
+      <div className="cs-explore-header" style={{ maxWidth: "1320px", margin: "0 auto", padding: "0 40px 40px", display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: "24px" }}>
+        <div style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
+          <h2 className="cs-explore-h2" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "72px", fontWeight: 800, color: "#000000", textTransform: "uppercase", letterSpacing: "-0.03em", lineHeight: 1, margin: 0 }}>
+            Explore More
+          </h2>
+          <span style={{ background: "#ffe342", color: "#000000", fontFamily: "'Poppins',sans-serif", fontSize: "13px", fontWeight: 700, borderRadius: "9999px", padding: "4px 10px", marginTop: "8px", flexShrink: 0 }}>
+            {all.length}
+          </span>
+        </div>
+        <div style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0, paddingBottom: "6px" }}>
+          <Link href="/contact-shopify-agency" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", fontWeight: 600, color: "#ffffff", background: "#000000", borderRadius: "9999px", padding: "12px 24px", textDecoration: "none", whiteSpace: "nowrap" }}>
+            Work With Us
+          </Link>
+          <Link href="/case-studies" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", fontWeight: 600, color: "#000000", background: "transparent", border: "1.5px solid #000000", borderRadius: "9999px", padding: "12px 24px", textDecoration: "none", whiteSpace: "nowrap" }}>
+            View All Work
+          </Link>
+        </div>
       </div>
+
+      {/* Scrollable cards */}
+      <div className="cs-explore-scroll" style={{ overflowX: "auto", paddingBottom: "32px", cursor: "grab" }}>
+        <div className="cs-explore-track" style={{ display: "flex", gap: "16px", paddingLeft: "40px", paddingRight: "40px", width: "max-content" }}>
+          {all.map((cs) => {
+            const tags = cs.serviceType.split("|").map((t) => t.trim());
+            const stat = cs.stats[0];
+            return (
+              <Link key={cs.slug} href={`/case-studies/${cs.slug}`} className="cs-explore-card" style={{ display: "block", width: "340px", flexShrink: 0, background: "#ffffff", borderRadius: "16px", overflow: "hidden", textDecoration: "none" }}>
+                {/* Image */}
+                <div style={{ position: "relative", width: "100%", aspectRatio: "4/3", background: "#e8e8e8" }}>
+                  <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" />
+                  {/* Stat badge */}
+                  <div style={{ position: "absolute", top: "14px", left: "14px", background: "rgba(255,255,255,0.96)", borderRadius: "9999px", padding: "5px 12px", display: "flex", alignItems: "center", gap: "6px", backdropFilter: "blur(4px)" }}>
+                    <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#000000", display: "inline-block", flexShrink: 0 }} />
+                    <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#000000", whiteSpace: "nowrap" }}>
+                      {stat.shortLabel ?? stat.label} {stat.value}
+                    </span>
+                  </div>
+                </div>
+                {/* Content */}
+                <div style={{ padding: "20px" }}>
+                  <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "18px", fontWeight: 700, color: "#000000", margin: "0 0 12px", lineHeight: 1.3 }}>
+                    {cs.brandName}
+                  </p>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                    {tags.map((tag) => (
+                      <span key={tag} style={{ fontFamily: "'Poppins',sans-serif", fontSize: "11px", fontWeight: 500, color: "#555555", background: "#f0f0f0", borderRadius: "9999px", padding: "3px 10px", whiteSpace: "nowrap" }}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+
       <style dangerouslySetInnerHTML={{ __html: `
-        .cs-next-card { transition: box-shadow 0.25s ease, transform 0.25s ease; }
-        .cs-next-card:hover { box-shadow: rgba(4,107,210,0.16) 0px 12px 40px 0px; transform: translateY(-2px); }
-        @media (max-width: 767px) { .cs-next-card { grid-template-columns: 1fr !important; } .cs-next-card > div:last-child { padding: 24px !important; } }
+        .cs-explore-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .cs-explore-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.10); }
+        .cs-explore-scroll::-webkit-scrollbar { height: 3px; }
+        .cs-explore-scroll::-webkit-scrollbar-track { background: rgba(0,0,0,0.08); }
+        .cs-explore-scroll::-webkit-scrollbar-thumb { background: #000000; border-radius: 9999px; }
+        @media (max-width: 768px) {
+          .cs-explore-h2 { font-size: 44px !important; }
+          .cs-explore-header { padding: 0 20px 32px !important; flex-direction: column; align-items: flex-start !important; }
+          .cs-explore-track { padding-left: 20px !important; padding-right: 20px !important; }
+        }
       ` }} />
     </section>
   );
