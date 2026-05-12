@@ -230,9 +230,7 @@ function CaseStudyStats({ cs }: { cs: CaseStudy }) {
           <h2 className="block_cashmere-review-heading" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "15px", fontWeight: 400, color: "#000000", margin: 0, whiteSpace: "nowrap" }}>
             Our customers say
           </h2>
-          <div style={{ position: "relative", width: "100px", height: "17px", flexShrink: 0 }}>
-            <Image src="/images/star-icon.webp" alt="star" fill className="object-contain object-left" />
-          </div>
+          <img src="/images/star-icon.webp" alt="star" width={100} height={17} style={{ display: "block", flexShrink: 0 }} />
           <strong style={{ fontFamily: "'Poppins',sans-serif", fontSize: "24px", fontWeight: 700, color: "#000000", whiteSpace: "nowrap" }}>
             Excellent
           </strong>
