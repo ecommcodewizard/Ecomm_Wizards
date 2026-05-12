@@ -379,6 +379,58 @@
    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @layer components {
 
+  /* â”€â”€ CTA pill (dark-bg variant) â”€â”€
+     Default: olive-green border, white text.
+     Hover/focus/active/visited: border brightens to vivid green; text color is locked. */
+  .cta-pill,
+  .cta-pill:link,
+  .cta-pill:visited,
+  .cta-pill:hover,
+  .cta-pill:focus,
+  .cta-pill:active {
+    color: #ffffff;
+    border-color: #4FB872;
+  }
+  .cta-pill:hover,
+  .cta-pill:focus-visible {
+    border-color: #3DC77A;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  /* â”€â”€ CTA pill: solid-black variant (white text, transparent border) â”€â”€
+     Follows site-wide hover standard: border turns green on hover; text stays put. */
+  .cta-pill-solid,
+  .cta-pill-solid:link,
+  .cta-pill-solid:visited,
+  .cta-pill-solid:hover,
+  .cta-pill-solid:focus,
+  .cta-pill-solid:active {
+    color: #ffffff;
+    background-color: #000000;
+    border-color: transparent;
+  }
+  .cta-pill-solid:hover,
+  .cta-pill-solid:focus-visible {
+    border-color: #3DC77A;
+  }
+
+  /* â”€â”€ CTA pill: invert-on-hover variant (per-button deviation) â”€â”€
+     Rest: same as .cta-pill (olive-green border, white text).
+     Hover: background fills white, text + border go black. */
+  .cta-pill-invert,
+  .cta-pill-invert:link,
+  .cta-pill-invert:visited {
+    color: #ffffff;
+    border-color: #4FB872;
+  }
+  .cta-pill-invert:hover,
+  .cta-pill-invert:focus-visible,
+  .cta-pill-invert:active {
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #ffffff;
+  }
+
   /* â”€â”€ Container â”€â”€ */
   .container-site {
     @apply mx-auto w-full px-5;
