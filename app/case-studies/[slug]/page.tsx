@@ -230,9 +230,11 @@ function CaseStudyStats({ cs }: { cs: CaseStudy }) {
           <h2 className="block_cashmere-review-heading" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "15px", fontWeight: 400, color: "#000000", margin: 0, whiteSpace: "nowrap" }}>
             Our customers say
           </h2>
-          <div style={{ position: "relative", width: "100px", height: "17px", flexShrink: 0 }}>
-            <Image src="/images/star-icon.webp" alt="star" fill className="object-contain object-left" />
-          </div>
+          <svg width="100" height="17" viewBox="0 0 100 17" fill="none" aria-label="5 stars" style={{ display: "block", flexShrink: 0 }}>
+            {[0,1,2,3,4].map((i) => (
+              <polygon key={i} points="10,1 12.4,7.3 19,7.6 14,11.8 15.8,18.5 10,14.9 4.2,18.5 6,11.8 1,7.6 7.6,7.3" transform={`translate(${i * 20}, -1)`} fill="#00B67A" />
+            ))}
+          </svg>
           <strong style={{ fontFamily: "'Poppins',sans-serif", fontSize: "24px", fontWeight: 700, color: "#000000", whiteSpace: "nowrap" }}>
             Excellent
           </strong>
