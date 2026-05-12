@@ -602,54 +602,63 @@ function CaseStudyExploreMore({ current }: { current: string }) {
   const cards = CASE_STUDIES.filter((cs) => cs.slug !== current);
   const all = cards.length > 0 ? cards : CASE_STUDIES;
   return (
-    <section style={{ background: "#f5f5f3", padding: "60px 0 0" }}>
+    <section style={{ background: "#ffffff", padding: "40px 0 40px" }}>
       {/* Header row */}
-      <div className="cs-explore-header" style={{ maxWidth: "1320px", margin: "0 auto", padding: "0 40px 40px", display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: "24px" }}>
-        <div style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
-          <h2 className="cs-explore-h2" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "72px", fontWeight: 800, color: "#000000", textTransform: "uppercase", letterSpacing: "-0.03em", lineHeight: 1, margin: 0 }}>
+      <div className="cs-explore-header" style={{ maxWidth: "1320px", margin: "0 auto", padding: "0 0 40px", display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: "24px" }}>
+        <div style={{ position: "relative", display: "inline-block" }}>
+          <h2 className="cs-explore-h2" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "42px", fontWeight: 800, color: "#000000", textTransform: "uppercase", letterSpacing: "-0.03em", lineHeight: 1, margin: 0 }}>
             Explore More
           </h2>
-          <span style={{ background: "#ffe342", color: "#000000", fontFamily: "'Poppins',sans-serif", fontSize: "13px", fontWeight: 700, borderRadius: "9999px", padding: "4px 10px", marginTop: "8px", flexShrink: 0 }}>
-            {all.length}
+          <span style={{ position: "absolute", top: "-20px", right: "-110px", display: "inline-block", padding: "3px 12px", fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#4a7c59", background: "rgba(97,206,112,0.1)", border: "1px solid rgba(97,206,112,0.25)", borderRadius: "9999px", letterSpacing: "0.06em", whiteSpace: "nowrap" }}>
+            {all.length} {all.length === 1 ? "Case Study" : "Case Studies"}
           </span>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0, paddingBottom: "6px" }}>
-          <Link href="/contact-shopify-agency" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", fontWeight: 600, color: "#ffffff", background: "#000000", borderRadius: "9999px", padding: "12px 24px", textDecoration: "none", whiteSpace: "nowrap" }}>
+        <div className="cs-explore-btns-header" style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0, paddingBottom: "6px" }}>
+          <Link href="/contact-shopify-agency" className="cs-explore-btn" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", fontWeight: 600, color: "#ffffff", background: "#000000", borderRadius: "9999px", padding: "12px 24px", textDecoration: "none", whiteSpace: "nowrap" }}>
             Work With Us
           </Link>
-          <Link href="/case-studies" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", fontWeight: 600, color: "#000000", background: "transparent", border: "1.5px solid #000000", borderRadius: "9999px", padding: "12px 24px", textDecoration: "none", whiteSpace: "nowrap" }}>
+          <Link href="/case-studies" className="cs-explore-btn" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", fontWeight: 600, color: "#000000", background: "transparent", border: "1.5px solid #000000", borderRadius: "9999px", padding: "12px 24px", textDecoration: "none", whiteSpace: "nowrap" }}>
             View All Work
           </Link>
         </div>
       </div>
 
       {/* Scrollable cards */}
-      <div className="cs-explore-scroll" style={{ overflowX: "auto", paddingBottom: "32px", cursor: "grab" }}>
-        <div className="cs-explore-track" style={{ display: "flex", gap: "16px", paddingLeft: "40px", paddingRight: "40px", width: "max-content" }}>
-          {all.map((cs) => {
+      <div className="cs-explore-scroll-wrapper" style={{ paddingLeft: "max(0px, calc((100vw - 1320px) / 2))" }}>
+      <div className="cs-explore-scroll" style={{ overflowX: "auto", paddingBottom: "16px" }}>
+
+        <div className="cs-explore-track" style={{ display: "flex", gap: "16px", paddingRight: "40px", width: "max-content" }}>
+          {Array.from({ length: 12 }, (_, i) => all[i % all.length]).map((cs, i) => {
             const tags = cs.serviceType.split("|").map((t) => t.trim());
             const stat = cs.stats[0];
             return (
-              <Link key={cs.slug} href={`/case-studies/${cs.slug}`} className="cs-explore-card" style={{ display: "block", width: "340px", flexShrink: 0, background: "#ffffff", borderRadius: "16px", overflow: "hidden", textDecoration: "none" }}>
+              <Link key={i} href={`/case-studies/${cs.slug}`} className="cs-explore-card" draggable={false} style={{ display: "block", width: "356px", height: "494px", flexShrink: 0, background: "#FBF7ED", borderRadius: "20px", overflow: "hidden", textDecoration: "none" }}>
                 {/* Image */}
-                <div style={{ position: "relative", width: "100%", aspectRatio: "4/3", background: "#e8e8e8" }}>
-                  <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" />
+                <div className="cs-explore-card-img" style={{ position: "relative", width: "340px", height: "372px", background: "#e8e8e8", margin: "8px", borderRadius: "14px", overflow: "hidden", flexShrink: 0 }}>
+                  {cs.slug === "111skin-shopify-cro-redesign" ? (
+                    <video src="/images/Case%20studies/111skin%20video.mp4" autoPlay loop muted playsInline style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : (
+                    <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" />
+                  )}
                   {/* Stat badge */}
-                  <div style={{ position: "absolute", top: "14px", left: "14px", background: "rgba(255,255,255,0.96)", borderRadius: "9999px", padding: "5px 12px", display: "flex", alignItems: "center", gap: "6px", backdropFilter: "blur(4px)" }}>
+                  <div style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.97)", borderRadius: "9999px", padding: "5px 14px", display: "flex", alignItems: "center", gap: "8px",  }}>
                     <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#000000", display: "inline-block", flexShrink: 0 }} />
-                    <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#000000", whiteSpace: "nowrap" }}>
-                      {stat.shortLabel ?? stat.label} {stat.value}
+                    <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 400, color: "#000000", whiteSpace: "nowrap" }}>
+                      {stat.shortLabel ?? stat.label}
+                    </span>
+                    <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", fontWeight: 700, color: "#000000", whiteSpace: "nowrap" }}>
+                      {stat.value}
                     </span>
                   </div>
                 </div>
                 {/* Content */}
-                <div style={{ padding: "20px" }}>
-                  <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "18px", fontWeight: 700, color: "#000000", margin: "0 0 12px", lineHeight: 1.3 }}>
+                <div style={{ padding: "12px 20px 20px" }}>
+                  <p className="cs-explore-brand" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "20px", fontWeight: 700, color: "#000000", margin: "0 0 12px", lineHeight: 1.3 }}>
                     {cs.brandName}
                   </p>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                  <div className="cs-explore-tags" style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
                     {tags.map((tag) => (
-                      <span key={tag} style={{ fontFamily: "'Poppins',sans-serif", fontSize: "11px", fontWeight: 500, color: "#555555", background: "#f0f0f0", borderRadius: "9999px", padding: "3px 10px", whiteSpace: "nowrap" }}>
+                      <span key={tag} style={{ fontFamily: "'Poppins',sans-serif", fontSize: "11px", fontWeight: 500, color: "#444444", background: "transparent", border: "1px solid rgba(0,0,0,0.25)", borderRadius: "9999px", padding: "3px 10px", whiteSpace: "nowrap" }}>
                         {tag}
                       </span>
                     ))}
@@ -660,18 +669,135 @@ function CaseStudyExploreMore({ current }: { current: string }) {
           })}
         </div>
       </div>
+      </div>
+
+      {/* Custom scrollbar */}
+      <div className="cs-scrollbar-track" style={{ margin: "12px max(0px, calc((100vw - 1320px) / 2)) 0", height: "3px", background: "rgba(0,0,0,0.08)", borderRadius: "9999px", position: "relative" }}>
+        <div className="cs-scrollbar-thumb" style={{ position: "absolute", top: "0px", left: "0px", height: "100%", background: "#000000", borderRadius: "9999px", width: "0%" }}></div>
+      </div>
+
+      {/* CTA buttons below cards — shown only on mobile <640px */}
+      <div className="cs-explore-btns-below" style={{ display: "none", gap: "12px", padding: "24px 30px 0" }}>
+        <Link href="/contact-shopify-agency" className="cs-explore-btn" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", fontWeight: 600, color: "#ffffff", background: "#000000", borderRadius: "9999px", padding: "12px 24px", textDecoration: "none", whiteSpace: "nowrap" }}>
+          Work With Us
+        </Link>
+        <Link href="/case-studies" className="cs-explore-btn" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", fontWeight: 600, color: "#000000", background: "transparent", border: "1.5px solid #000000", borderRadius: "9999px", padding: "12px 24px", textDecoration: "none", whiteSpace: "nowrap" }}>
+          View All Work
+        </Link>
+      </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
         .cs-explore-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
         .cs-explore-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.10); }
+        .cs-explore-scroll { user-select: none; -webkit-user-select: none; scrollbar-width: none; }
+        .cs-explore-scroll::-webkit-scrollbar { display: none; }
+        .cs-explore-card img, .cs-explore-card video { -webkit-user-drag: none; pointer-events: none; }
+
+        .cs-explore-scroll,
+        .cs-explore-scroll *,
+        .cs-explore-card,
+        .cs-explore-card * { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='28'%3E%3Crect width='64' height='28' rx='14' fill='%23000'/%3E%3Cpath d='M22 9 L15 14 L22 19' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cline x1='32' y1='8' x2='32' y2='20' stroke='white' stroke-width='1' stroke-opacity='0.3'/%3E%3Cpath d='M42 9 L49 14 L42 19' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E") 32 14, grab !important; }
+        .cs-explore-scroll:active,
+        .cs-explore-scroll:active *,
+        .cs-explore-card:active,
+        .cs-explore-card:active * { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='28'%3E%3Crect width='64' height='28' rx='14' fill='%23333'/%3E%3Cpath d='M22 9 L15 14 L22 19' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cline x1='32' y1='8' x2='32' y2='20' stroke='white' stroke-width='1' stroke-opacity='0.3'/%3E%3Cpath d='M42 9 L49 14 L42 19' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E") 32 14, grabbing !important; }
+
         .cs-explore-scroll::-webkit-scrollbar { height: 3px; }
         .cs-explore-scroll::-webkit-scrollbar-track { background: rgba(0,0,0,0.08); }
         .cs-explore-scroll::-webkit-scrollbar-thumb { background: #000000; border-radius: 9999px; }
-        @media (max-width: 768px) {
-          .cs-explore-h2 { font-size: 44px !important; }
-          .cs-explore-header { padding: 0 20px 32px !important; flex-direction: column; align-items: flex-start !important; }
-          .cs-explore-track { padding-left: 20px !important; padding-right: 20px !important; }
+        @media (max-width: 1024px) {
+          .cs-explore-card { width: 265px !important; height: 382px !important; }
+          .cs-explore-card-img { width: 249px !important; height: 272px !important; }
+          .cs-explore-brand { font-size: 18px !important; margin: 0 0 10px !important; }
+          .cs-explore-tags { flex-wrap: nowrap !important; overflow: hidden; }
+          .cs-explore-tags span { font-size: 10px !important; }
+          .cs-explore-header { padding-left: 20px !important; }
+          .cs-explore-scroll-wrapper { padding-left: 20px !important; }
+          .cs-scrollbar-track { margin-left: 20px !important; margin-right: 20px !important; }
         }
+        @media (max-width: 768px) {
+          .cs-explore-h2 { font-size: 32px !important; }
+          .cs-explore-header { padding: 0 30px 32px !important; flex-direction: row !important; align-items: flex-end !important; }
+          .cs-explore-btn { font-size: 12px !important; }
+          .cs-explore-scroll-wrapper { padding-left: 30px !important; }
+          .cs-explore-track { padding-right: 30px !important; }
+          .cs-scrollbar-track { margin-left: 30px !important; margin-right: 30px !important; }
+        }
+        @media (max-width: 640px) {
+          .cs-explore-btns-header { display: none !important; }
+          .cs-explore-btns-below { display: flex !important; }
+          .cs-explore-scroll { padding-bottom: 28px !important; }
+          .cs-explore-btns-below { padding-top: 28px !important; }
+        }
+      ` }} />
+
+      <script dangerouslySetInnerHTML={{ __html: `
+        (function() {
+          var _csInited = false;
+          function init() {
+            var el = document.querySelector('.cs-explore-scroll');
+            var thumb = document.querySelector('.cs-scrollbar-thumb');
+            if (!el || !thumb) return;
+            if (_csInited) return;
+            _csInited = true;
+            var startX = 0, startScroll = 0, moved = false;
+
+            function updateThumb() {
+              var max = el.scrollWidth - el.clientWidth;
+              if (max <= 0) return;
+              var thumbPct = Math.max(0.05, el.clientWidth / el.scrollWidth);
+              var ratio = el.scrollLeft / max;
+              thumb.style.width = (thumbPct * 100) + '%';
+              thumb.style.left = (ratio * (1 - thumbPct) * 100) + '%';
+            }
+            el.addEventListener('scroll', updateThumb);
+            window.addEventListener('resize', updateThumb);
+            updateThumb();
+            setTimeout(updateThumb, 300);
+
+            function cardStep() {
+              var card = el.querySelector('.cs-explore-card');
+              if (!card) return 372;
+              return card.offsetWidth + 16;
+            }
+
+            function snapToCard(targetScroll) {
+              var step = cardStep();
+              var snapped = Math.round(targetScroll / step) * step;
+              el.scrollTo({ left: snapped, behavior: 'smooth' });
+            }
+
+            el.addEventListener('mousedown', function(e) {
+              startX = e.pageX;
+              startScroll = el.scrollLeft;
+              moved = false;
+              function onMove(e) {
+                var dx = e.pageX - startX;
+                if (Math.abs(dx) > 4) moved = true;
+                el.scrollLeft = startScroll - dx;
+              }
+              function onUp() {
+                document.removeEventListener('mousemove', onMove);
+                document.removeEventListener('mouseup', onUp);
+                if (moved) snapToCard(el.scrollLeft);
+              }
+              document.addEventListener('mousemove', onMove);
+              document.addEventListener('mouseup', onUp);
+            });
+
+            el.addEventListener('dragstart', function(e) { e.preventDefault(); });
+            el.addEventListener('click', function(e) {
+              if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; }
+            }, true);
+          }
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+          } else {
+            init();
+          }
+          window.addEventListener('load', init);
+          setTimeout(init, 500);
+        })();
       ` }} />
     </section>
   );
