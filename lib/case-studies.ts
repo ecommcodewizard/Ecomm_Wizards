@@ -63,7 +63,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: "111skin-shopify-cro-redesign",
     brandName: "111SKIN",
     industry: "Cosmetics & Beauty",
-    serviceType: "Shopify CRO | Design & Development",
+    serviceType: "Shopify CRO | Theme Development",
     heroMetric: "+46%",
     heroSubMetric: "Conversion Rate",
     heroImage: "/images/Case%20studies/111skin-hero.jpg",
