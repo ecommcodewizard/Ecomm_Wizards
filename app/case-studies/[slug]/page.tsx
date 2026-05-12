@@ -673,7 +673,7 @@ function CaseStudyExploreMore({ current }: { current: string }) {
 
       {/* Custom scrollbar */}
       <div className="cs-scrollbar-track" style={{ margin: "12px max(0px, calc((100vw - 1320px) / 2)) 0", height: "3px", background: "rgba(0,0,0,0.08)", borderRadius: "9999px", position: "relative" }}>
-        <div className="cs-scrollbar-thumb" style={{ position: "absolute", top: "0px", left: "0px", height: "100%", background: "#000000", borderRadius: "9999px", width: "0%" }}></div>
+        <div suppressHydrationWarning className="cs-scrollbar-thumb" style={{ position: "absolute", top: "0px", left: "0px", height: "100%", background: "#000000", borderRadius: "9999px", width: "0%" }}></div>
       </div>
 
       {/* CTA buttons below cards — shown only on mobile <640px */}
