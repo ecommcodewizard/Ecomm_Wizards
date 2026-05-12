@@ -305,7 +305,7 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
         </div>
         <div className="cs-challenge-media" style={{ borderRadius: "16px", overflow: "hidden", background: "#000", position: "relative" }}>
           <video
-            src="/images/Case studies/111skin video.mp4"
+            src="/images/Case%20studies/111skin%20video.mp4"
             autoPlay
             loop
             muted

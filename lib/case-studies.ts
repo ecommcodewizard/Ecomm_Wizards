@@ -66,7 +66,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify CRO | Design & Development",
     heroMetric: "+46%",
     heroSubMetric: "Conversion Rate",
-    heroImage: "/images/Case studies/111skin-hero.jpg",
+    heroImage: "/images/Case%20studies/111skin-hero.jpg",
     heroDescription:
       "How a dermatologist-founded luxury skincare brand transformed their Shopify Plus store with a data-driven CRO roadmap, bespoke theme, and intelligent skin quiz — increasing conversions by 46% and revenue by 21%.",
     stats: [
@@ -77,7 +77,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     challengeTitle: "Converting Premium Skincare Into Premium Revenue",
     challengeBody:
       "111SKIN was born at 111 Harley Street, where Dr. Yannis Alexandrides has practised as one of London's most respected plastic surgeons for over three decades. Together with co-founder Eva Alexandridis, he built a skincare brand rooted in medical science and designed for real results. Today, 111SKIN is stocked in premium retailers worldwide and trusted by dermatologists, editors, and loyal customers who take their skincare seriously.\n\nWhen they came to us, their Shopify Plus store wasn't doing the brand justice. Customers found it hard to navigate the product range and match products to their specific skin concerns. Drop-off rates were high and the conversion rate was well below what a brand of this calibre should be achieving. They needed a proper CRO programme and a store experience that felt as premium as the products on the shelf.",
-    challengeImage: "/images/Case studies/111Skin mockup.jpeg",
+    challengeImage: "/images/Case%20studies/111Skin%20mockup.jpeg",
     approachTitle: "CRO Roadmap for Growth",
     approachItems: [
       {
@@ -104,10 +104,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the 111SKIN Build",
     workSubtitle: "A look at the pages, features, and details we shipped.",
     workImages: [
-      "/images/Case studies/111skin.jpg",
-      "/images/Case studies/111skin-2.jpg",
-      "/images/Case studies/111skin-3.jpg",
-      "/images/Case studies/111skin-quiz.jpg",
+      "/images/Case%20studies/111skin.jpg",
+      "/images/Case%20studies/111skin-2.jpg",
+      "/images/Case%20studies/111skin-3.jpg",
+      "/images/Case%20studies/111skin-quiz.jpg",
     ],
     results: [
       { label: "Conversion Rate", before: "1.4%", after: "2.1%", improvement: "+46%" },
@@ -134,11 +134,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Working with Ecomm Wizards gave us a clear roadmap for growth. The skin finder quiz alone transformed how our customers discover the right products, and the results across conversion rate and revenue speak for themselves.",
     quotePerson: "Eva Alexandridis",
     quoteRole: "Co-Founder, 111SKIN",
-    quoteAvatar: "/images/Case studies/eva-alexandridis.jpg",
+    quoteAvatar: "/images/Case%20studies/eva-alexandridis.jpg",
     nextSlug: "111skin-shopify-cro-redesign",
     nextBrand: "111SKIN",
     nextMetric: "+46% Conversion Rate",
-    nextImage: "/images/Case studies/111skin-hero.jpg",
+    nextImage: "/images/Case%20studies/111skin-hero.jpg",
     nextIndustry: "Cosmetics & Beauty",
   },
 ];
