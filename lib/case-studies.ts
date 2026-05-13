@@ -229,7 +229,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Plus | CRO | Subscriptions",
     heroMetric: "+134%",
     heroSubMetric: "Subscription Revenue",
-    heroImage: "/images/Case%20studies/111skin-2.jpg",
+    heroImage: "/images/Case%20studies/happy-mammoth-1.webp",
     heroDescription:
       "How a gut health and hormone balance supplement brand transformed their Shopify Plus store into a subscription engine: rebuilding their product quiz, launching Recharge-powered recurring orders, and adding £22M in annualised subscription revenue.",
     stats: [
@@ -266,10 +266,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the Happy Mammoth Build",
     workSubtitle: "Subscription architecture, quiz rebuild, and PDPs engineered for LTV.",
     workImages: [
-      "/images/Case%20studies/111skin-hero.jpg",
-      "/images/Case%20studies/111skin-2.jpg",
-      "/images/Case%20studies/111skin-hero%20section.png",
-      "/images/Case%20studies/111skin-quiz.jpg",
+      "/images/Case%20studies/happy-mammoth.webp",
+      "/images/Case%20studies/happy-mammoth-2.jpg",
+      "/images/Case%20studies/Happy-Mammoth-review.avif",
+      "/images/Case%20studies/happy-mammoth-subscription.webp",
     ],
     results: [
       { label: "Subscription Revenue", before: "£380k/mo", after: "£889k/mo", improvement: "+134%" },
@@ -295,8 +295,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     quote:
       "We had the traffic and we had the product. What we didn't have was a store engineered for retention. Ecomm Wizards rebuilt the quiz, launched subscriptions properly, and the LTV numbers tell the rest of the story.",
-    quotePerson: "Alex Turner",
-    quoteRole: "Head of Growth, Happy Mammoth",
+    quotePerson: "Matthew Murphy",
+    quoteRole: "CEO & Founder, Happy Mammoth",
+    quoteAvatar: "/images/Case%20studies/Matthew%20Murphy.avif",
   },
 
   // ─── 04. CANDY KITTENS — Food & Beverages ───
