@@ -112,10 +112,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     results: [
       { label: "Conversion Rate", before: "1.4%", after: "2.1%", improvement: "+46%" },
       { label: "Total Revenue", before: "Baseline", after: "+21% YoY", improvement: "+21%" },
-      { label: "Average Order Value", before: "£148", after: "£154", improvement: "+4%" },
+      { label: "Average Order Value", before: "$188", after: "$196", improvement: "+4%" },
       { label: "Repeat Purchase Rate", before: "22%", after: "31%", improvement: "+41%" },
     ],
-    resultsDescription: "The CRO programme delivered results that went well beyond conversion rate. The 111SKIN Shopify Plus store now converts at 2.1%, up from 1.4% before we started working together. Revenue grew 21% year-on-year, average order value increased from £148 to £154, and the repeat purchase rate climbed from 22% to 31%. The bespoke theme, skin finder quiz, and ongoing A/B testing programme built a store experience that matches the quality of the brand, with a foundation that keeps improving over time.",
+    resultsDescription: "The CRO programme delivered results that went well beyond conversion rate. The 111SKIN Shopify Plus store now converts at 2.1%, up from 1.4% before we started working together. Revenue grew 21% year-on-year, average order value increased from $188 to $196, and the repeat purchase rate climbed from 22% to 31%. The bespoke theme, skin finder quiz, and ongoing A/B testing programme built a store experience that matches the quality of the brand, with a foundation that keeps improving over time.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
@@ -194,7 +194,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     results: [
       { label: "Conversion Rate", before: "1.1%", after: "2.0%", improvement: "+82%" },
-      { label: "Average Order Value", before: "£94", after: "£123", improvement: "+31%" },
+      { label: "Average Order Value", before: "$119", after: "$156", improvement: "+31%" },
       { label: "Organic Revenue", before: "Baseline", after: "+47% YoY", improvement: "+47%" },
       { label: "Repeat Purchase Rate", before: "19%", after: "38%", improvement: "+100%" },
     ],
@@ -231,7 +231,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroSubMetric: "Subscription Revenue",
     heroImage: "/images/Case%20studies/happy-mammoth-1.webp",
     heroDescription:
-      "How a gut health and hormone balance supplement brand transformed their Shopify Plus store into a subscription engine: rebuilding their product quiz, launching Recharge-powered recurring orders, and adding £22M in annualised subscription revenue.",
+      "How a gut health and hormone balance supplement brand transformed their Shopify Plus store into a subscription engine: rebuilding their product quiz, launching Recharge-powered recurring orders, and adding $28M in annualised subscription revenue.",
     stats: [
       { label: "Subscription Revenue Growth", value: "+134%", shortLabel: "Sub Revenue" },
       { label: "Increase in Conversion Rate", value: "+61%", shortLabel: "Conversion Rate" },
@@ -272,13 +272,13 @@ export const CASE_STUDIES: CaseStudy[] = [
       "/images/Case%20studies/happy-mammoth-subscription.webp",
     ],
     results: [
-      { label: "Subscription Revenue", before: "£380k/mo", after: "£889k/mo", improvement: "+134%" },
+      { label: "Subscription Revenue", before: "$483k/mo", after: "$1.1M/mo", improvement: "+134%" },
       { label: "Conversion Rate", before: "1.9%", after: "3.1%", improvement: "+61%" },
-      { label: "Customer LTV (12-mo)", before: "£87", after: "£164", improvement: "+89%" },
+      { label: "Customer LTV (12-mo)", before: "$110", after: "$208", improvement: "+89%" },
       { label: "Subscription Churn", before: "14.2%", after: "10.1%", improvement: "-29%" },
     ],
     resultsDescription:
-      "Monthly subscription revenue grew from £380k to £889k, a 134% increase driven by the Recharge build, quiz funnel, and retention flows. Conversion rate climbed from 1.9% to 3.1%, 12-month LTV nearly doubled from £87 to £164, and subscription churn dropped 29% in the first quarter alone. The unit economics of the business changed fundamentally.",
+      "Monthly subscription revenue grew from $483k to $1.1M, a 134% increase driven by the Recharge build, quiz funnel, and retention flows. Conversion rate climbed from 1.9% to 3.1%, 12-month LTV nearly doubled from $110 to $208, and subscription churn dropped 29% in the first quarter alone. The unit economics of the business changed fundamentally.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "Recharge", logo: "/images/partner_logo_4.svg" },
@@ -308,12 +308,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Plus | CRO | Theme Development",
     heroMetric: "+182%",
     heroSubMetric: "Conversion Rate",
-    heroImage: "/images/Case%20studies/111skin-3.jpg",
+    heroImage: "/images/Case%20studies/Candy%20Kittens.jpg",
     heroDescription:
-      "How a premium vegan confectionery brand rebuilt their Shopify Plus store around editorial storytelling, a gifting-first UX, and a flexible seasonal campaign infrastructure that nearly tripled their conversion rate and added £6.4M in new annual revenue.",
+      "How a premium vegan confectionery brand rebuilt their Shopify Plus store around editorial storytelling, a gifting-first UX, and a flexible seasonal campaign infrastructure that nearly tripled their conversion rate and added $8.1M in new annual revenue.",
     stats: [
       { label: "Higher Conversion Rate", value: "+182%", shortLabel: "Conversion Rate" },
-      { label: "New Annual Revenue", value: "+£6.4M", shortLabel: "Revenue" },
+      { label: "New Annual Revenue", value: "+$8.1M", shortLabel: "Revenue" },
       { label: "Increase in AOV", value: "+34%", shortLabel: "AOV" },
     ],
     challengeTitle: "A Premium Brand Selling Like a Commodity Online",
@@ -345,19 +345,19 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the Candy Kittens Build",
     workSubtitle: "Editorial design, a gifting-first UX, and seasonal campaign infrastructure.",
     workImages: [
-      "/images/Case%20studies/111skin-3.jpg",
-      "/images/Case%20studies/111skin.jpg",
-      "/images/Case%20studies/111skin-quiz.jpg",
-      "/images/Case%20studies/111skin-2.jpg",
+      "/images/Case%20studies/Candy%20Kittens%20hero%20section.webp",
+      "/images/Case%20studies/Candy%20Kittens-1.jpg",
+      "/images/Case%20studies/Candy%20Kittens-2.jpg",
+      "/images/Case%20studies/Candy%20Kittens%20black%20friday.jpg",
     ],
     results: [
       { label: "Conversion Rate", before: "0.9%", after: "2.5%", improvement: "+182%" },
-      { label: "Annual Revenue", before: "Baseline", after: "+£6.4M YoY", improvement: "+£6.4M" },
-      { label: "Average Order Value", before: "£18", after: "£24", improvement: "+34%" },
+      { label: "Annual Revenue", before: "Baseline", after: "+$8.1M YoY", improvement: "+$8.1M" },
+      { label: "Average Order Value", before: "$23", after: "$30", improvement: "+34%" },
       { label: "Gifting Revenue Share", before: "55%", after: "67%", improvement: "+12pts" },
     ],
     resultsDescription:
-      "Conversion rate grew from 0.9% to 2.5%, nearly tripling, with the gift finder and editorial homepage driving the bulk of the lift. AOV rose 34%, annual revenue grew by £6.4M, and the gifting revenue share climbed from 55% to 67%. The first Christmas post-launch was the brand's highest-revenue month in its history.",
+      "Conversion rate grew from 0.9% to 2.5%, nearly tripling, with the gift finder and editorial homepage driving the bulk of the lift. AOV rose 34%, annual revenue grew by $8.1M, and the gifting revenue share climbed from 55% to 67%. The first Christmas post-launch was the brand's highest-revenue month in its history.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
@@ -376,6 +376,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "The brand we'd built deserved a store to match it. Ecomm Wizards rebuilt the gifting experience from scratch and gave us the infrastructure to execute seasonal campaigns properly. The Christmas numbers spoke for themselves.",
     quotePerson: "Jamie Laing",
     quoteRole: "Co-Founder, Candy Kittens",
+    quoteAvatar: "/images/Case%20studies/Jamie%20Laing.jpg",
   },
 
   // ─── 05. EVERLAST — Sports & Fitness ───
@@ -386,7 +387,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Plus | CRO | Theme Development",
     heroMetric: "+152%",
     heroSubMetric: "Conversion Rate",
-    heroImage: "/images/Case%20studies/111skin-hero section.png",
+    heroImage: "/images/Case%20studies/Everlast-banner.webp",
     heroDescription:
       "How the world's most iconic boxing brand rebuilt their Shopify Plus store with a performance-first theme, product comparison tooling, and a dual B2C and trade checkout architecture that delivered a 152% conversion rate lift and 48% order growth.",
     stats: [
@@ -396,7 +397,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "An Iconic Brand Held Back by an Outdated Store",
     challengeBody:
-      "Everlast has been making boxing and fitness equipment for over 100 years. The brand is trusted by professional fighters and fitness enthusiasts worldwide and is one of the most recognised names in sport.\n\nWhen they came to us, the site was running on a default theme with limited product filtering across a large catalogue. A £180 professional boxing glove was being presented the same way as any commodity product. The store was also serving two very different audiences at once. Serious athletes buying technical equipment, and lifestyle fitness buyers, with no architecture built to handle both. A trade portal did not exist. Inventory issues were causing amendments on a significant portion of B2B orders.",
+      "Everlast has been making boxing and fitness equipment for over 100 years. The brand is trusted by professional fighters and fitness enthusiasts worldwide and is one of the most recognised names in sport.\n\nWhen they came to us, the site was running on a default theme with limited product filtering across a large catalogue. A $230 professional boxing glove was being presented the same way as any commodity product. The store was also serving two very different audiences at once. Serious athletes buying technical equipment, and lifestyle fitness buyers, with no architecture built to handle both. A trade portal did not exist. Inventory issues were causing amendments on a significant portion of B2B orders.",
     approachTitle: "Built for Champions, Built for Scale",
     approachItems: [
       {
@@ -423,19 +424,19 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the Everlast Rebuild",
     workSubtitle: "Sport-led navigation, dual-channel checkout, and a bundle engine built for athletes.",
     workImages: [
-      "/images/Case%20studies/111skin-hero%20section.png",
-      "/images/Case%20studies/111skin-3.jpg",
-      "/images/Case%20studies/111skin.jpg",
-      "/images/Case%20studies/111skin-hero.jpg",
+      "/images/Case%20studies/Everlast-all%20products.webp",
+      "/images/Case%20studies/Everlast-range.webp",
+      "/images/Case%20studies/Everlast-checkout.webp",
+      "/images/Case%20studies/Everlast-loyalty.webp",
     ],
     results: [
       { label: "Conversion Rate", before: "0.8%", after: "2.0%", improvement: "+152%" },
-      { label: "Average Order Value", before: "£142", after: "£172", improvement: "+21%" },
+      { label: "Average Order Value", before: "$180", after: "$218", improvement: "+21%" },
       { label: "Total Orders", before: "Baseline", after: "+48% YoY", improvement: "+48%" },
-      { label: "Trade Revenue", before: "£0", after: "£340k/mo", improvement: "New Channel" },
+      { label: "Trade Revenue", before: "$0", after: "$432k/mo", improvement: "New Channel" },
     ],
     resultsDescription:
-      "Conversion rate lifted 152%, from 0.8% to 2.0%, driven by the navigation rebuild and performance improvements. AOV grew 21%, total orders increased 48% year-on-year, and the trade portal reached £340k/month within six months of launch as a net-new revenue channel.",
+      "Conversion rate lifted 152%, from 0.8% to 2.0%, driven by the navigation rebuild and performance improvements. AOV grew 21%, total orders increased 48% year-on-year, and the trade portal reached $432k/month within six months of launch as a net-new revenue channel.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "Rebuy", logo: "/images/64f098c0e38dec3a384cb182_rebuy.svg" },
@@ -445,15 +446,16 @@ export const CASE_STUDIES: CaseStudy[] = [
     sliderStats: [
       "Catalogue abandonment down 38% post navigation rebuild",
       "Mobile conversion rate up 188%",
-      "Trade portal reached £340k/month in 6 months",
+      "Trade portal reached $432k/month in 6 months",
       "Cart abandonment rate down 31%",
       "Page load time cut from 6.1s to 1.9s",
       "Customer support tickets reduced by 38%",
     ],
     quote:
       "We needed a store that could handle the complexity of the brand: serious athletes, casual fitness buyers, and trade accounts, all in one place. Ecomm Wizards built exactly that. The conversion numbers and the trade portal revenue both exceeded what we projected.",
-    quotePerson: "David Clarke",
-    quoteRole: "Head of Digital, Everlast",
+    quotePerson: "Daniel Summerson",
+    quoteRole: "Managing Director, Everlast Gyms",
+    quoteAvatar: "/images/Case%20studies/Daniel%20Summerson.jpg",
   },
 
   // ─── 06. RONALDO JEWELRY — Jewelry & Accessories ───
