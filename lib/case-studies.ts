@@ -202,9 +202,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Conversion rate climbed from 1.1% to 2.0%, an 82% improvement driven by mobile UX and checkout optimisation. AOV lifted 31% as better product discovery and cross-sell logic increased basket size. Organic revenue grew 47% year-on-year, and the retention programme doubled the repeat purchase rate, fundamentally changing the unit economics of the business.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
-      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
-      { name: "Yotpo", logo: "/images/yotpo.svg" },
-      { name: "Gorgias", logo: "/images/gorgias.svg" },
+      { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
+      { name: "Yotpo", logo: "/images/partner_logo_2.svg" },
+      { name: "Gorgias", logo: "/images/65739f17195baa7e77a72d2f_5efb82474d9adf8a3ca19488_logo-gorgias.svg" },
     ],
     sliderStats: [
       "Mobile checkout abandonment reduced by 44%",
@@ -280,8 +280,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Monthly subscription revenue grew from £380k to £889k, a 134% increase driven by the Recharge build, quiz funnel, and retention flows. Conversion rate climbed from 1.9% to 3.1%, 12-month LTV nearly doubled from £87 to £164, and subscription churn dropped 29% in the first quarter alone. The unit economics of the business changed fundamentally.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
-      { name: "Recharge", logo: "/images/recharge.svg" },
-      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
+      { name: "Recharge", logo: "/images/partner_logo_4.svg" },
+      { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
       { name: "Rebuy", logo: "/images/64f098c0e38dec3a384cb182_rebuy.svg" },
     ],
     sliderStats: [
@@ -358,9 +358,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Conversion rate grew from 0.9% to 2.5%, nearly tripling, with the gift finder and editorial homepage driving the bulk of the lift. AOV rose 34%, annual revenue grew by £6.4M, and the gifting revenue share climbed from 55% to 67%. The first Christmas post-launch was the brand's highest-revenue month in its history.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
-      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
+      { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
       { name: "Rebuy", logo: "/images/64f098c0e38dec3a384cb182_rebuy.svg" },
-      { name: "Yotpo", logo: "/images/yotpo.svg" },
+      { name: "Yotpo", logo: "/images/partner_logo_2.svg" },
     ],
     sliderStats: [
       "Mobile bounce rate reduced by 41%",
@@ -437,8 +437,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "Rebuy", logo: "/images/64f098c0e38dec3a384cb182_rebuy.svg" },
-      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
-      { name: "Gorgias", logo: "/images/gorgias.svg" },
+      { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
+      { name: "Gorgias", logo: "/images/65739f17195baa7e77a72d2f_5efb82474d9adf8a3ca19488_logo-gorgias.svg" },
     ],
     sliderStats: [
       "Catalogue abandonment down 38% post navigation rebuild",
@@ -514,9 +514,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Total sales grew 250% year-on-year following launch. Conversion rate doubled from 0.5% to 1.1%, strong for a high-AOV jewellery brand. AOV climbed 46% as the configurator drove customers toward higher-value bespoke pieces. Custom piece configuration requests converted at 22%, up from 4% on the old email flow.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
-      { name: "Yotpo", logo: "/images/yotpo.svg" },
-      { name: "Gorgias", logo: "/images/gorgias.svg" },
-      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
+      { name: "Yotpo", logo: "/images/partner_logo_2.svg" },
+      { name: "Gorgias", logo: "/images/65739f17195baa7e77a72d2f_5efb82474d9adf8a3ca19488_logo-gorgias.svg" },
+      { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
     ],
     sliderStats: [
       "Configurator conversion: 4% → 22%",
@@ -592,8 +592,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       "B2B revenue grew 50% year-on-year as the operational ceiling was removed. Order processing time dropped from 4.2 hours to 1.1 hours. The operations team recovered 22 hours per week and redirected that capacity into account acquisition. New trade account onboarding time fell from 4.2 days to 18 hours, and 340+ accounts were migrated without a single order disruption.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
-      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
-      { name: "Gorgias", logo: "/images/gorgias.svg" },
+      { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
+      { name: "Gorgias", logo: "/images/65739f17195baa7e77a72d2f_5efb82474d9adf8a3ca19488_logo-gorgias.svg" },
     ],
     sliderStats: [
       "340+ trade accounts migrated without disruption",
