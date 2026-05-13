@@ -220,7 +220,7 @@ export default function CaseStudiesPage() {
 
           {/* Card grid */}
           <div className="cs-landing-grid">
-            {CASE_STUDIES.map((cs) => {
+            {CASE_STUDIES.map((cs, index) => {
               const tags = cs.serviceType.split("|").map((t) => t.trim());
               const stat = cs.stats[0];
               return (
@@ -258,6 +258,7 @@ export default function CaseStudiesPage() {
                         loop
                         muted
                         playsInline
+                        preload="metadata"
                         style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                       />
                     ) : cs.slug === "evie-lou-shopify-fashion-cro" ? (
@@ -267,6 +268,7 @@ export default function CaseStudiesPage() {
                         loop
                         muted
                         playsInline
+                        preload="metadata"
                         style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                       />
                     ) : cs.slug === "happy-mammoth-shopify-subscriptions-cro" ? (
@@ -276,6 +278,7 @@ export default function CaseStudiesPage() {
                         loop
                         muted
                         playsInline
+                        preload="metadata"
                         style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                       />
                     ) : cs.slug === "candy-kittens-shopify-food-beverage-cro" ? (
@@ -304,6 +307,7 @@ export default function CaseStudiesPage() {
                         alt={cs.brandName}
                         fill
                         className="object-cover cs-landing-card-img"
+                        priority={index < 3}
                       />
                     )}
 
