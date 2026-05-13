@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getCaseStudyBySlug, CASE_STUDIES, type CaseStudy } from "@/lib/case-studies";
 import CTASection from "@/components/ui/CTASection";
+import BeforeAfterSlider from "./BeforeAfterSlider";
 
 export async function generateStaticParams() {
   return CASE_STUDIES.map((cs) => ({ slug: cs.slug }));
@@ -37,6 +38,7 @@ export default async function CaseStudyPage({
       <CaseStudyHero cs={cs} />
       <CaseStudyStats cs={cs} />
       <CaseStudyChallenge cs={cs} />
+      {cs.slug === "evie-lou-shopify-fashion-cro" && <BeforeAfterSlider />}
       <CaseStudyApproach cs={cs} />
       {cs.workImages.length > 0 && <CaseStudyWork cs={cs} />}
       <CaseStudyResults cs={cs} />
@@ -306,15 +308,26 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
           ))}
         </div>
         <div className="cs-challenge-media" style={{ borderRadius: "16px", overflow: "hidden", background: "#000", position: "relative" }}>
-          <video
-            src="/images/Case%20studies/111skin%20video.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-          />
+          {cs.slug === "111skin-shopify-cro-redesign" ? (
+            <video
+              src="/images/Case%20studies/111skin%20video.mp4"
+              autoPlay loop muted playsInline preload="auto"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
+          ) : cs.slug === "evie-lou-shopify-fashion-cro" ? (
+            <video
+              src="/images/Case%20studies/evie-lou%20video.mp4"
+              autoPlay loop muted playsInline preload="auto"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
+          ) : (
+            <Image
+              src={cs.heroImage}
+              alt={cs.brandName}
+              fill
+              className="object-cover"
+            />
+          )}
         </div>
       </div>
       <style dangerouslySetInnerHTML={{ __html: `

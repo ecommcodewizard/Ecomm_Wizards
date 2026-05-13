@@ -190,7 +190,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "/images/Case%20studies/evie-lou-about-page.webp",
       "/images/Case%20studies/evie-lou-1.webp",
       "/images/Case%20studies/evie-lou-slider-img-left.jpg",
-      "/images/Case%20studies/evie-lou-slider-img-right.webp",
+      "/images/Case%20studies/evie-lou.webp",
     ],
     results: [
       { label: "Conversion Rate", before: "1.1%", after: "2.0%", improvement: "+82%" },
@@ -216,8 +216,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     quote:
       "We always knew the brand looked great. We just could not figure out why the store was not converting. Ecomm Wizards found the problem fast and fixed it properly. The results came in within the first 90 days and they have held.",
-    quotePerson: "Sarah Mitchell",
-    quoteRole: "Head of Ecommerce, Evie Lou",
+    quotePerson: "Kim Crow",
+    quoteRole: "Owner, Evie Lou",
+    quoteAvatar: "/images/Case%20studies/Kim%20Crow.jpg",
   },
 
   // ─── 03. HAPPY MAMMOTH — Health, Wellness & Fitness ───
