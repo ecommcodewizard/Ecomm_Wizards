@@ -186,7 +186,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     workTitle: "Inside the Evie Lou Build",
     workSubtitle: "Bespoke theme, mobile checkout rebuild, and a retention programme that works.",
-    workImages: [],
+    workImages: [
+      "/images/Case%20studies/111skin.jpg",
+      "/images/Case%20studies/111skin-2.jpg",
+      "/images/Case%20studies/111skin-3.jpg",
+      "/images/Case%20studies/111skin-quiz.jpg",
+    ],
     results: [
       { label: "Conversion Rate", before: "1.1%", after: "2.0%", improvement: "+82%" },
       { label: "Average Order Value", before: "£94", after: "£123", improvement: "+31%" },
@@ -259,7 +264,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     workTitle: "Inside the Happy Mammoth Build",
     workSubtitle: "Subscription architecture, quiz rebuild, and PDPs engineered for LTV.",
-    workImages: [],
+    workImages: [
+      "/images/Case%20studies/111skin-hero.jpg",
+      "/images/Case%20studies/111skin-2.jpg",
+      "/images/Case%20studies/111skin-hero%20section.png",
+      "/images/Case%20studies/111skin-quiz.jpg",
+    ],
     results: [
       { label: "Subscription Revenue", before: "£380k/mo", after: "£889k/mo", improvement: "+134%" },
       { label: "Conversion Rate", before: "1.9%", after: "3.1%", improvement: "+61%" },
@@ -332,7 +342,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     workTitle: "Inside the Candy Kittens Build",
     workSubtitle: "Editorial design, a gifting-first UX, and seasonal campaign infrastructure.",
-    workImages: [],
+    workImages: [
+      "/images/Case%20studies/111skin-3.jpg",
+      "/images/Case%20studies/111skin.jpg",
+      "/images/Case%20studies/111skin-quiz.jpg",
+      "/images/Case%20studies/111skin-2.jpg",
+    ],
     results: [
       { label: "Conversion Rate", before: "0.9%", after: "2.5%", improvement: "+182%" },
       { label: "Annual Revenue", before: "Baseline", after: "+£6.4M YoY", improvement: "+£6.4M" },
@@ -405,7 +420,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     workTitle: "Inside the Everlast Rebuild",
     workSubtitle: "Sport-led navigation, dual-channel checkout, and a bundle engine built for athletes.",
-    workImages: [],
+    workImages: [
+      "/images/Case%20studies/111skin-hero%20section.png",
+      "/images/Case%20studies/111skin-3.jpg",
+      "/images/Case%20studies/111skin.jpg",
+      "/images/Case%20studies/111skin-hero.jpg",
+    ],
     results: [
       { label: "Conversion Rate", before: "0.8%", after: "2.0%", improvement: "+152%" },
       { label: "Average Order Value", before: "£142", after: "£172", improvement: "+21%" },
@@ -478,7 +498,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     workTitle: "Inside the Ronaldo Jewelry Build",
     workSubtitle: "Configurator, 360 product viewer, and a trust framework built for high-AOV.",
-    workImages: [],
+    workImages: [
+      "/images/Case%20studies/111skin-2.jpg",
+      "/images/Case%20studies/111skin-hero%20section.png",
+      "/images/Case%20studies/111skin-hero.jpg",
+      "/images/Case%20studies/111skin-3.jpg",
+    ],
     results: [
       { label: "Total Sales", before: "Baseline", after: "+250% YoY", improvement: "+250%" },
       { label: "Conversion Rate", before: "0.5%", after: "1.1%", improvement: "+120%" },
@@ -551,7 +576,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     workTitle: "Inside the Mouldings One Build",
     workSubtitle: "ERP sync, tiered B2B pricing, and a self-service trade portal.",
-    workImages: [],
+    workImages: [
+      "/images/Case%20studies/111skin-quiz.jpg",
+      "/images/Case%20studies/111skin-hero.jpg",
+      "/images/Case%20studies/111skin-2.jpg",
+      "/images/Case%20studies/111skin-hero%20section.png",
+    ],
     results: [
       { label: "B2B Revenue", before: "Baseline", after: "+50% YoY", improvement: "+50%" },
       { label: "Order Processing Time", before: "4.2 hrs avg", after: "1.1 hrs avg", improvement: "-74%" },
