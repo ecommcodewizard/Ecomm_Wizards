@@ -545,7 +545,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Plus B2B | Custom Development | ERP Integration",
     heroMetric: "+50%",
     heroSubMetric: "B2B Revenue",
-    heroImage: "/images/Case%20studies/111skin-quiz.jpg",
+    heroImage: "/images/Case%20studies/Mouldings%20One%20hero.webp",
     heroDescription:
       "How a leading architectural mouldings supplier replaced a legacy trade portal with a bespoke Shopify Plus B2B store, automating wholesale ordering, cutting processing time by 74%, and growing B2B revenue by 50%.",
     stats: [
@@ -582,10 +582,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the Mouldings One Build",
     workSubtitle: "ERP sync, tiered B2B pricing, and a self-service trade portal.",
     workImages: [
-      "/images/Case%20studies/111skin-quiz.jpg",
-      "/images/Case%20studies/111skin-hero.jpg",
-      "/images/Case%20studies/111skin-2.jpg",
-      "/images/Case%20studies/111skin-hero%20section.png",
+      "/images/Case%20studies/Mouldings%20One.webp",
+      "/images/Case%20studies/Mouldings%20One-1.webp",
+      "/images/Case%20studies/Mouldings%20One%20PDP.webp",
+      "/images/Case%20studies/Mouldings%20One%20hero.webp",
     ],
     results: [
       { label: "B2B Revenue", before: "Baseline", after: "+50% YoY", improvement: "+50%" },

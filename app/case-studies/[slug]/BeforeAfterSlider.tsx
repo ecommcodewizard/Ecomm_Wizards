@@ -3,7 +3,14 @@
 import { useRef, useState, useCallback } from "react";
 import Image from "next/image";
 
-export default function BeforeAfterSlider() {
+interface Props {
+  beforeSrc: string;
+  beforeAlt: string;
+  afterSrc: string;
+  afterAlt: string;
+}
+
+export default function BeforeAfterSlider({ beforeSrc, beforeAlt, afterSrc, afterAlt }: Props) {
   const [position, setPosition] = useState(50);
   const containerRef = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
@@ -37,7 +44,7 @@ export default function BeforeAfterSlider() {
           <span style={{ display: "inline-block", padding: "4px 16px", fontFamily: "'Poppins', sans-serif", fontSize: "12px", fontWeight: 600, color: "#61ce70", background: "rgba(97,206,112,0.12)", border: "1px solid rgba(97,206,112,0.2)", borderRadius: "9999px", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "16px" }}>
             The Transformation
           </span>
-          <h2 style={{ fontFamily: "'Poppins', sans-serif", fontSize: "42px", fontWeight: 800, color: "#ffffff", margin: 0, lineHeight: 1.1, letterSpacing: "-0.02em" }}>
+          <h2 className="ba-slider-h2" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "42px", fontWeight: 800, color: "#ffffff", margin: 0, lineHeight: 1.1, letterSpacing: "-0.02em" }}>
             Before &amp; After
           </h2>
         </div>
@@ -63,8 +70,8 @@ export default function BeforeAfterSlider() {
         >
           {/* AFTER image — full width base layer */}
           <Image
-            src="/images/Case%20studies/evie-lou-slider-img-right.webp"
-            alt="Evie Lou redesigned store"
+            src={afterSrc}
+            alt={afterAlt}
             fill
             className="object-cover object-top"
             draggable={false}
@@ -81,8 +88,8 @@ export default function BeforeAfterSlider() {
             }}
           >
             <Image
-              src="/images/Case%20studies/evie-lou-slider-img-left.jpg"
-              alt="Evie Lou original store"
+              src={beforeSrc}
+              alt={beforeAlt}
               fill
               className="object-cover object-top"
               draggable={false}
