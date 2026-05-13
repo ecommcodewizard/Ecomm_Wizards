@@ -278,6 +278,26 @@ export default function CaseStudiesPage() {
                         playsInline
                         style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                       />
+                    ) : cs.slug === "candy-kittens-shopify-food-beverage-cro" ? (
+                      <video
+                        src="/images/Case%20studies/Candy%20Kittens%20video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
+                    ) : cs.slug === "everlast-shopify-plus-sports-redesign" ? (
+                      <video
+                        src="/images/Case%20studies/Everlast%20video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
                     ) : (
                       <Image
                         src={cs.heroImage}
