@@ -655,13 +655,13 @@ function CaseStudyExploreMore({ current }: { current: string }) {
                 {/* Image */}
                 <div className="cs-explore-card-img" style={{ position: "relative", width: "340px", height: "372px", background: "#e8e8e8", margin: "8px", borderRadius: "14px", overflow: "hidden", flexShrink: 0 }}>
                   {cs.slug === "111skin-shopify-cro-redesign" ? (
-                    <video src="/images/Case%20studies/111skin%20video.mp4" autoPlay loop muted playsInline style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    <video src="/images/Case%20studies/111skin%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : cs.slug === "evie-lou-shopify-fashion-cro" ? (
-                    <video src="/images/Case%20studies/evie-lou%20video.mp4" autoPlay loop muted playsInline style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    <video src="/images/Case%20studies/evie-lou%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : cs.slug === "happy-mammoth-shopify-subscriptions-cro" ? (
-                    <video src="/images/Case%20studies/happy-mammoth-video.mp4" autoPlay loop muted playsInline style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    <video src="/images/Case%20studies/happy-mammoth-video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
-                    <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" />
+                    <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" />
                   )}
                   {/* Stat badge */}
                   <div style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.97)", borderRadius: "9999px", padding: "5px 14px", display: "flex", alignItems: "center", gap: "8px",  }}>
