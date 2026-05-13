@@ -727,7 +727,7 @@ function CaseStudyExploreMore({ current }: { current: string }) {
                   <p className="cs-explore-brand" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "20px", fontWeight: 700, color: "#000000", margin: "0 0 12px", lineHeight: 1.3 }}>
                     {cs.brandName}
                   </p>
-                  <div className="cs-explore-tags" style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                  <div className="cs-explore-tags" style={{ display: "flex", flexWrap: "nowrap", gap: "6px", overflow: "hidden" }}>
                     {tags.map((tag) => (
                       <span key={tag} style={{ fontFamily: "'Poppins',sans-serif", fontSize: "11px", fontWeight: 500, color: "#444444", background: "transparent", border: "1px solid rgba(0,0,0,0.25)", borderRadius: "9999px", padding: "3px 10px", whiteSpace: "nowrap" }}>
                         {tag}
