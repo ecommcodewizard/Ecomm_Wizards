@@ -466,7 +466,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Plus | UX Design | CRO",
     heroMetric: "+250%",
     heroSubMetric: "Total Sales",
-    heroImage: "/images/Case%20studies/111skin.jpg",
+    heroImage: "/images/Case%20studies/Ronaldo%20Jewelry%20hero%20section%20img.webp",
     heroDescription:
       "How a handcrafted wire-wrapped jewelry brand rebuilt their Shopify Plus store with high-fidelity product visualisation, a bespoke piece configurator, and a trust framework built for high-AOV transactions, driving a 250% increase in total sales.",
     stats: [
@@ -503,10 +503,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the Ronaldo Jewelry Build",
     workSubtitle: "Configurator, 360 product viewer, and a trust framework built for high-AOV.",
     workImages: [
-      "/images/Case%20studies/111skin-2.jpg",
-      "/images/Case%20studies/111skin-hero%20section.png",
-      "/images/Case%20studies/111skin-hero.jpg",
-      "/images/Case%20studies/111skin-3.jpg",
+      "/images/Case%20studies/Ronaldo%20Jewelry-hero-desk.webp",
+      "/images/Case%20studies/Ronaldo%20Jewelry%20PDP.webp",
+      "/images/Case%20studies/Ronaldo%20Jewelry-our%20story.webp",
+      "/images/Case%20studies/Ronaldo%20Jewelry%20Gift%20guide.webp",
     ],
     results: [
       { label: "Total Sales", before: "Baseline", after: "+250% YoY", improvement: "+250%" },
@@ -532,8 +532,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     quote:
       "Our pieces had always been special. The store just was not showing that. Ecomm Wizards gave us a digital experience that finally reflects the craft behind every piece. The configurator changed how customers engage with us entirely.",
-    quotePerson: "Ron Laughter",
+    quotePerson: "Ronnie E. Needham",
     quoteRole: "Founder, Ronaldo Designer Jewelry",
+    quoteAvatar: "/images/Case%20studies/Ronnie%20E.%20Needham.webp",
   },
 
   // ─── 07. MOULDINGS ONE — B2B & Wholesale ───

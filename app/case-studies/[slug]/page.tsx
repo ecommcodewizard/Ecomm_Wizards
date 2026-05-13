@@ -338,6 +338,12 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
               autoPlay loop muted playsInline preload="auto"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
+          ) : cs.slug === "ronaldo-jewelry-shopify-plus-redesign" ? (
+            <video
+              src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4"
+              autoPlay loop muted playsInline preload="auto"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
           ) : (
             <Image
               src={cs.heroImage}
@@ -676,6 +682,8 @@ function CaseStudyExploreMore({ current }: { current: string }) {
                     <video src="/images/Case%20studies/Candy%20Kittens%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : cs.slug === "everlast-shopify-plus-sports-redesign" ? (
                     <video src="/images/Case%20studies/Everlast%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : cs.slug === "ronaldo-jewelry-shopify-plus-redesign" ? (
+                    <video src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
                     <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" />
                   )}
