@@ -269,6 +269,15 @@ export default function CaseStudiesPage() {
                         playsInline
                         style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                       />
+                    ) : cs.slug === "happy-mammoth-shopify-subscriptions-cro" ? (
+                      <video
+                        src="/images/Case%20studies/happy-mammoth-video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
                     ) : (
                       <Image
                         src={cs.heroImage}

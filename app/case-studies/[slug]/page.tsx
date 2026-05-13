@@ -163,7 +163,7 @@ function CaseStudyHero({ cs }: { cs: CaseStudy }) {
                   <span className="stat-value" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "24px", fontWeight: 600, lineHeight: 1.1, display: "block", color: "#4a7c59" }}>
                     {stat.value}
                   </span>
-                  <span className="stat-label" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "12px", color: "#000000", display: "block", marginTop: "2px", whiteSpace: "nowrap" }}>
+                  <span className="stat-label" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "12px", color: "#000000", display: "block", marginTop: "2px", whiteSpace: "normal" }}>
                     <span className="stat-label-full">{stat.label}</span>
                     <span className="stat-label-short">{stat.shortLabel ?? stat.label}</span>
                   </span>
@@ -211,7 +211,7 @@ function CaseStudyHero({ cs }: { cs: CaseStudy }) {
           .block_cashmere-banner-sale-heading { font-size: 12px !important; margin-bottom: 3px !important; }
           .block_cashmere-banner-sale { padding: 4px 0 !important; gap: 8px !important; }
           .stat-value { font-size: 17px !important; }
-          .stat-label { font-size: 11px !important; white-space: nowrap !important; }
+          .stat-label { font-size: 11px !important; }
           .stat-label-full { display: none !important; }
           .stat-label-short { display: inline !important; }
           .cs-hero-btn-outer { width: 100% !important; }
@@ -317,6 +317,12 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
           ) : cs.slug === "evie-lou-shopify-fashion-cro" ? (
             <video
               src="/images/Case%20studies/evie-lou%20video.mp4"
+              autoPlay loop muted playsInline preload="auto"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
+          ) : cs.slug === "happy-mammoth-shopify-subscriptions-cro" ? (
+            <video
+              src="/images/Case%20studies/happy-mammoth-video.mp4"
               autoPlay loop muted playsInline preload="auto"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
@@ -652,6 +658,8 @@ function CaseStudyExploreMore({ current }: { current: string }) {
                     <video src="/images/Case%20studies/111skin%20video.mp4" autoPlay loop muted playsInline style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : cs.slug === "evie-lou-shopify-fashion-cro" ? (
                     <video src="/images/Case%20studies/evie-lou%20video.mp4" autoPlay loop muted playsInline style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : cs.slug === "happy-mammoth-shopify-subscriptions-cro" ? (
+                    <video src="/images/Case%20studies/happy-mammoth-video.mp4" autoPlay loop muted playsInline style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
                     <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" />
                   )}
