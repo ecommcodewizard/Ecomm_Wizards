@@ -585,7 +585,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "/images/Case%20studies/Mouldings%20One.webp",
       "/images/Case%20studies/Mouldings%20One-1.webp",
       "/images/Case%20studies/Mouldings%20One%20PDP.webp",
-      "/images/Case%20studies/Mouldings%20One%20hero.webp",
+      "/images/Case%20studies/Mouldings%20One-slider-right-img.webp",
     ],
     results: [
       { label: "B2B Revenue", before: "Baseline", after: "+50% YoY", improvement: "+50%" },

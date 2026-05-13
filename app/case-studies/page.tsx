@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { CASE_STUDIES } from "@/lib/case-studies";
+import SpeedVideo from "./SpeedVideo";
 
 export const metadata: Metadata = {
   title: "Case Studies | Real Results for Real Brands | Ecomm Wizards",
@@ -302,7 +303,7 @@ export default function CaseStudiesPage() {
                         style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                       />
                     ) : cs.slug === "ronaldo-jewelry-shopify-plus-redesign" ? (
-                      <video
+                      <SpeedVideo
                         src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4"
                         autoPlay
                         loop
@@ -312,7 +313,7 @@ export default function CaseStudiesPage() {
                         style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                       />
                     ) : cs.slug === "mouldings-one-shopify-b2b-portal" ? (
-                      <video
+                      <SpeedVideo
                         src="/images/Case%20studies/Mouldings%20One%20video.mp4"
                         autoPlay
                         loop
