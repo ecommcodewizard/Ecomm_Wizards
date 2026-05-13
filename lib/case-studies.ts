@@ -433,7 +433,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: "Conversion Rate", before: "0.8%", after: "2.0%", improvement: "+152%" },
       { label: "Average Order Value", before: "$180", after: "$218", improvement: "+21%" },
       { label: "Total Orders", before: "Baseline", after: "+48% YoY", improvement: "+48%" },
-      { label: "Trade Revenue", before: "$0", after: "$432k/mo", improvement: "New Channel" },
+      { label: "Trade Revenue", before: "$0", after: "$432k/mo", improvement: "6 Months" },
     ],
     resultsDescription:
       "Conversion rate lifted 152%, from 0.8% to 2.0%, driven by the navigation rebuild and performance improvements. AOV grew 21%, total orders increased 48% year-on-year, and the trade portal reached $432k/month within six months of launch as a net-new revenue channel.",
