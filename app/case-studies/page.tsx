@@ -301,6 +301,16 @@ export default function CaseStudiesPage() {
                         preload="metadata"
                         style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                       />
+                    ) : cs.slug === "ronaldo-jewelry-shopify-plus-redesign" ? (
+                      <video
+                        src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
                     ) : (
                       <Image
                         src={cs.heroImage}
