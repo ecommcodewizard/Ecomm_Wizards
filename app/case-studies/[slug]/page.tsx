@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { getCaseStudyBySlug, CASE_STUDIES, type CaseStudy } from "@/lib/case-studies";
 import CTASection from "@/components/ui/CTASection";
 import BeforeAfterSlider from "./BeforeAfterSlider";
+import SpeedVideo from "../SpeedVideo";
 
 export async function generateStaticParams() {
   return CASE_STUDIES.map((cs) => ({ slug: cs.slug }));
@@ -354,13 +355,13 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : cs.slug === "ronaldo-jewelry-shopify-plus-redesign" ? (
-            <video
+            <SpeedVideo
               src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4"
               autoPlay loop muted playsInline preload="auto"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : cs.slug === "mouldings-one-shopify-b2b-portal" ? (
-            <video
+            <SpeedVideo
               src="/images/Case%20studies/Mouldings%20One%20video.mp4"
               autoPlay loop muted playsInline preload="auto"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
@@ -704,9 +705,9 @@ function CaseStudyExploreMore({ current }: { current: string }) {
                   ) : cs.slug === "everlast-shopify-plus-sports-redesign" ? (
                     <video src="/images/Case%20studies/Everlast%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : cs.slug === "ronaldo-jewelry-shopify-plus-redesign" ? (
-                    <video src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    <SpeedVideo src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : cs.slug === "mouldings-one-shopify-b2b-portal" ? (
-                    <video src="/images/Case%20studies/Mouldings%20One%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    <SpeedVideo src="/images/Case%20studies/Mouldings%20One%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
                     <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" />
                   )}
