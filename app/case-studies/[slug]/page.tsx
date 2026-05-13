@@ -38,7 +38,22 @@ export default async function CaseStudyPage({
       <CaseStudyHero cs={cs} />
       <CaseStudyStats cs={cs} />
       <CaseStudyChallenge cs={cs} />
-      {cs.slug === "evie-lou-shopify-fashion-cro" && <BeforeAfterSlider />}
+      {cs.slug === "evie-lou-shopify-fashion-cro" && (
+        <BeforeAfterSlider
+          beforeSrc="/images/Case%20studies/evie-lou-slider-img-left.jpg"
+          beforeAlt="Evie Lou original store"
+          afterSrc="/images/Case%20studies/evie-lou-slider-img-right.webp"
+          afterAlt="Evie Lou redesigned store"
+        />
+      )}
+      {cs.slug === "mouldings-one-shopify-b2b-portal" && (
+        <BeforeAfterSlider
+          beforeSrc="/images/Case%20studies/Mouldings%20One-slider-left-img.webp"
+          beforeAlt="Mouldings One original store"
+          afterSrc="/images/Case%20studies/Mouldings%20One-slider-right-img.webp"
+          afterAlt="Mouldings One redesigned store"
+        />
+      )}
       <CaseStudyApproach cs={cs} />
       {cs.workImages.length > 0 && <CaseStudyWork cs={cs} />}
       <CaseStudyResults cs={cs} />
@@ -341,6 +356,12 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
           ) : cs.slug === "ronaldo-jewelry-shopify-plus-redesign" ? (
             <video
               src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4"
+              autoPlay loop muted playsInline preload="auto"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
+          ) : cs.slug === "mouldings-one-shopify-b2b-portal" ? (
+            <video
+              src="/images/Case%20studies/Mouldings%20One%20video.mp4"
               autoPlay loop muted playsInline preload="auto"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
@@ -684,6 +705,8 @@ function CaseStudyExploreMore({ current }: { current: string }) {
                     <video src="/images/Case%20studies/Everlast%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : cs.slug === "ronaldo-jewelry-shopify-plus-redesign" ? (
                     <video src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : cs.slug === "mouldings-one-shopify-b2b-portal" ? (
+                    <video src="/images/Case%20studies/Mouldings%20One%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
                     <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" />
                   )}
