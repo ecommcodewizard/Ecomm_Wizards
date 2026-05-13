@@ -637,6 +637,8 @@ function CaseStudyExploreMore({ current }: { current: string }) {
                 <div className="cs-explore-card-img" style={{ position: "relative", width: "340px", height: "372px", background: "#e8e8e8", margin: "8px", borderRadius: "14px", overflow: "hidden", flexShrink: 0 }}>
                   {cs.slug === "111skin-shopify-cro-redesign" ? (
                     <video src="/images/Case%20studies/111skin%20video.mp4" autoPlay loop muted playsInline style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : cs.slug === "evie-lou-shopify-fashion-cro" ? (
+                    <video src="/images/Case%20studies/evie-lou%20video.mp4" autoPlay loop muted playsInline style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
                     <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" />
                   )}

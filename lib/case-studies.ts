@@ -138,7 +138,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     nextSlug: "evie-lou-shopify-fashion-cro",
     nextBrand: "Evie Lou",
     nextMetric: "+82% Conversion Rate",
-    nextImage: "/images/Case%20studies/111skin-hero.jpg",
+    nextImage: "/images/Case%20studies/Evie-Lou.jpg",
     nextIndustry: "Fashion & Apparel",
   },
 
@@ -150,7 +150,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Plus | UX Design | CRO",
     heroMetric: "+82%",
     heroSubMetric: "Conversion Rate",
-    heroImage: "/images/Case%20studies/111skin-hero.jpg",
+    heroImage: "/images/Case%20studies/Evie-Lou.jpg",
     heroDescription:
       "How a women's contemporary fashion brand rebuilt their Shopify Plus store around a mobile-first UX, smarter product discovery, and a retention programme that nearly doubled their conversion rate and added 47% organic revenue growth within a year.",
     stats: [
@@ -187,10 +187,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the Evie Lou Build",
     workSubtitle: "Bespoke theme, mobile checkout rebuild, and a retention programme that works.",
     workImages: [
-      "/images/Case%20studies/111skin.jpg",
-      "/images/Case%20studies/111skin-2.jpg",
-      "/images/Case%20studies/111skin-3.jpg",
-      "/images/Case%20studies/111skin-quiz.jpg",
+      "/images/Case%20studies/evie-lou-about-page.webp",
+      "/images/Case%20studies/evie-lou-1.webp",
+      "/images/Case%20studies/evie-lou-slider-img-left.jpg",
+      "/images/Case%20studies/evie-lou-slider-img-right.webp",
     ],
     results: [
       { label: "Conversion Rate", before: "1.1%", after: "2.0%", improvement: "+82%" },
