@@ -27,6 +27,26 @@ const PAGE_STATS = [
   { value: "28.5%", label: "Avg Conversion Lift" },
 ];
 
+const HERO_LOGOS = [
+  "/images/trust_logo_hover_1.svg",
+  "/images/trust_logo_hover_2.svg",
+  "/images/trust_logo_hover_10.svg",
+  "/images/trust_logo_hover_11.svg",
+  "/images/trust_logo_hover_12.svg",
+  "/images/trust_logo_hover_13.svg",
+  "/images/trust_logo_hover_14.svg",
+  "/images/trust_logo_2.svg",
+  "/images/trust_logo_6.svg",
+  "/images/trust_logo_7.svg",
+  "/images/trust_logo_20.svg",
+  "/images/trust_logo_26.svg",
+  "/images/trust_logo_27.svg",
+  "/images/trust_logo_31.svg",
+  "/images/trust_logo_32.svg",
+  "/images/ipsy-logo.svg",
+  "/images/everlast-icon.svg",
+];
+
 export default function CaseStudiesPage() {
   return (
     <>
@@ -61,84 +81,186 @@ export default function CaseStudiesPage() {
             zIndex: 1,
           }}
         >
-          {/* Badge */}
-          <span
-            style={{
-              display: "inline-block",
-              padding: "4px 16px",
-              fontFamily: "'Poppins', sans-serif",
-              fontSize: "12px",
-              fontWeight: 600,
-              color: "#4a7c59",
-              background: "rgba(97,206,112,0.1)",
-              border: "1px solid rgba(97,206,112,0.25)",
-              borderRadius: "9999px",
-              letterSpacing: "0.06em",
-              textTransform: "uppercase",
-              marginBottom: "24px",
-            }}
-          >
-            Our Work
-          </span>
+          <div className="cs-hero-grid">
 
-          <h1
-            className="cs-landing-h1"
-            style={{
-              fontFamily: "'Poppins', sans-serif",
-              fontWeight: 800,
-              color: "#ffffff",
-              margin: "0 0 24px",
-              lineHeight: 1.1,
-              letterSpacing: "-0.03em",
-            }}
-          >
-            Real brands.{" "}
-            <span style={GRADIENT_TEXT}>Real results.</span>
-          </h1>
+            {/* ── Left column ── */}
+            <div className="cs-hero-left">
+              {/* Badge */}
+              <span
+                style={{
+                  display: "inline-block",
+                  padding: "4px 16px",
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize: "12px",
+                  fontWeight: 600,
+                  color: "#4a7c59",
+                  background: "rgba(97,206,112,0.1)",
+                  border: "1px solid rgba(97,206,112,0.25)",
+                  borderRadius: "9999px",
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  marginBottom: "24px",
+                }}
+              >
+                Our Work
+              </span>
 
-          <p
-            className="cs-landing-sub"
-            style={{
-              fontFamily: "'Nunito', sans-serif",
-              color: "rgba(255,255,255,0.65)",
-              margin: "0 0 56px",
-              lineHeight: 1.7,
-            }}
-          >
-            Every case study here is built on a real client engagement — real challenges, real decisions, and real
-            numbers. No stock results. No inflated claims. Just the work.
-          </p>
+              <h1
+                className="cs-landing-h1"
+                style={{
+                  fontFamily: "'Poppins', sans-serif",
+                  fontWeight: 800,
+                  color: "#ffffff",
+                  margin: "0 0 24px",
+                  lineHeight: 1.1,
+                  letterSpacing: "-0.03em",
+                }}
+              >
+                Real brands.{" "}
+                <span style={GRADIENT_TEXT}>Real results.</span>
+              </h1>
 
-          {/* Stats row */}
-          <div className="cs-landing-stats">
-            {PAGE_STATS.map((s) => (
-              <div key={s.label} className="cs-landing-stat-item">
-                <span
+              <p
+                className="cs-landing-sub"
+                style={{
+                  fontFamily: "'Nunito', sans-serif",
+                  color: "rgba(255,255,255,0.65)",
+                  margin: "0 0 48px",
+                  lineHeight: 1.7,
+                }}
+              >
+                Every case study here is built on a real client engagement — real challenges, real decisions, and real
+                numbers. No stock results. No inflated claims. Just the work.
+              </p>
+
+              {/* Stats row */}
+              <div className="cs-landing-stats">
+                {PAGE_STATS.map((s) => (
+                  <div key={s.label} className="cs-landing-stat-item">
+                    <span
+                      style={{
+                        fontFamily: "'Poppins', sans-serif",
+                        fontWeight: 800,
+                        ...GRADIENT_TEXT,
+                        display: "block",
+                        lineHeight: 1,
+                        marginBottom: "6px",
+                      }}
+                      className="cs-landing-stat-val"
+                    >
+                      {s.value}
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: "'Nunito', sans-serif",
+                        color: "rgba(255,255,255,0.55)",
+                        display: "block",
+                        lineHeight: 1.4,
+                      }}
+                      className="cs-landing-stat-label"
+                    >
+                      {s.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ── Right column ── */}
+            <div className="cs-hero-right">
+
+              {/* Testimonial card */}
+              <Link
+                href="/case-studies/evie-lou-shopify-fashion-cro"
+                style={{
+                  display: "block",
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  borderRadius: "16px",
+                  padding: "24px",
+                  textDecoration: "none",
+                  transition: "border-color 0.2s ease, background 0.2s ease",
+                }}
+                className="cs-hero-testimonial"
+              >
+                <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
+                  <Image
+                    src="/images/Case%20studies/Kim%20Crow.jpg"
+                    alt="Kim Crow"
+                    width={52}
+                    height={52}
+                    style={{ borderRadius: "50%", objectFit: "cover", flexShrink: 0, width: "52px", height: "52px" }}
+                  />
+                  <div>
+                    <p
+                      style={{
+                        fontFamily: "'Nunito', sans-serif",
+                        fontSize: "15px",
+                        color: "rgba(255,255,255,0.9)",
+                        margin: "0 0 14px",
+                        lineHeight: 1.65,
+                      }}
+                    >
+                      &ldquo;We always knew the brand looked great. We just could not figure out why the store was not converting. Ecomm Wizards found the problem fast and fixed it properly.&rdquo;
+                    </p>
+                    <span
+                      style={{
+                        fontFamily: "'Poppins', sans-serif",
+                        fontSize: "13px",
+                        fontWeight: 600,
+                        color: "#61ce70",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "8px",
+                      }}
+                    >
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <circle cx="8" cy="8" r="7.5" stroke="#61ce70" />
+                        <path d="M6.5 5.5L11 8L6.5 10.5V5.5Z" fill="#61ce70" />
+                      </svg>
+                      Kim Crow &nbsp;·&nbsp; Owner, Evie Lou
+                    </span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Trusted by + logo marquee */}
+              <div>
+                <p
                   style={{
                     fontFamily: "'Poppins', sans-serif",
-                    fontWeight: 800,
-                    ...GRADIENT_TEXT,
-                    display: "block",
-                    lineHeight: 1,
-                    marginBottom: "6px",
+                    fontSize: "11px",
+                    fontWeight: 600,
+                    color: "rgba(255,255,255,0.3)",
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    margin: "0 0 16px",
                   }}
-                  className="cs-landing-stat-val"
                 >
-                  {s.value}
-                </span>
-                <span
-                  style={{
-                    fontFamily: "'Nunito', sans-serif",
-                    color: "rgba(255,255,255,0.55)",
-                    display: "block",
-                    lineHeight: 1.4,
-                  }}
-                  className="cs-landing-stat-label"
-                >
-                  {s.label}
-                </span>
+                  Trusted by world-class ecommerce brands
+                </p>
+
+                {/* Marquee */}
+                <div style={{ overflow: "hidden", position: "relative" }}>
+                  {/* fade edges */}
+                  <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: "48px", background: "linear-gradient(to right, #000000, transparent)", zIndex: 2, pointerEvents: "none" }} />
+                  <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: "48px", background: "linear-gradient(to left, #000000, transparent)", zIndex: 2, pointerEvents: "none" }} />
+                  <div className="cs-hero-marquee">
+                    {[...HERO_LOGOS, ...HERO_LOGOS].map((src, i) => (
+                      <Image
+                        key={i}
+                        src={src}
+                        alt=""
+                        width={90}
+                        height={32}
+                        style={{ objectFit: "contain", flexShrink: 0, filter: "brightness(0) invert(1)", opacity: 0.45, width: "90px", height: "32px" }}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
-            ))}
+
+            </div>
           </div>
         </div>
       </section>
@@ -674,20 +796,52 @@ export default function CaseStudiesPage() {
           .cs-landing-h1 { font-size: 64px; }
           .cs-landing-sub { font-size: 18px; max-width: 620px; }
 
-          /* Stats row */
+          /* Hero 2-col grid */
+          .cs-hero-grid {
+            display: grid;
+            grid-template-columns: 55fr 45fr;
+            gap: 64px;
+            align-items: center;
+          }
+          .cs-hero-right {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+          }
+          .cs-hero-testimonial:hover {
+            background: rgba(255,255,255,0.08) !important;
+            border-color: rgba(255,255,255,0.18) !important;
+          }
+
+          /* Marquee */
+          @keyframes cs-marquee {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+          }
+          .cs-hero-marquee {
+            display: flex;
+            gap: 36px;
+            align-items: center;
+            width: max-content;
+            animation: cs-marquee 22s linear infinite;
+          }
+          .cs-hero-marquee:hover { animation-play-state: paused; }
+
+          /* Stats row — inline, no box */
           .cs-landing-stats {
             display: flex;
             gap: 0;
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
-            overflow: hidden;
-            width: fit-content;
           }
           .cs-landing-stat-item {
-            padding: 24px 40px;
-            border-right: 1px solid rgba(255,255,255,0.1);
+            padding-right: 28px;
+            margin-right: 28px;
+            border-right: 1px solid rgba(255,255,255,0.15);
           }
-          .cs-landing-stat-item:last-child { border-right: none; }
+          .cs-landing-stat-item:last-child {
+            border-right: none;
+            padding-right: 0;
+            margin-right: 0;
+          }
           .cs-landing-stat-val { font-size: 36px; }
           .cs-landing-stat-label { font-size: 14px; }
 
@@ -726,7 +880,9 @@ export default function CaseStudiesPage() {
           /* ─── Responsive ─── */
           @media (max-width: 1024px) {
             .cs-landing-h1 { font-size: 48px; }
-            .cs-landing-stat-item { padding: 20px 28px; }
+            .cs-hero-grid { grid-template-columns: 1fr; gap: 48px; }
+            .cs-hero-right { max-width: 560px; }
+            .cs-landing-stat-item { padding-right: 20px; margin-right: 20px; }
             .cs-landing-stat-val { font-size: 28px; }
             .cs-landing-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
             .cs-landing-grid-h2 { font-size: 32px; }
@@ -735,21 +891,16 @@ export default function CaseStudiesPage() {
           @media (max-width: 768px) {
             .cs-landing-h1 { font-size: 38px; }
             .cs-landing-sub { font-size: 16px; }
-            .cs-landing-stats {
-              flex-wrap: wrap;
-              width: 100%;
-              border-radius: 12px;
-            }
+            .cs-hero-grid { gap: 36px; }
+            .cs-hero-right { max-width: 100%; }
+            .cs-landing-stats { flex-wrap: wrap; gap: 16px; }
             .cs-landing-stat-item {
-              width: 50%;
-              box-sizing: border-box;
-              border-right: 1px solid rgba(255,255,255,0.1) !important;
-              border-bottom: 1px solid rgba(255,255,255,0.1);
-              padding: 18px 20px;
+              border-right: none !important;
+              padding-right: 0;
+              margin-right: 0;
+              width: calc(50% - 8px);
             }
-            .cs-landing-stat-item:nth-child(2n) { border-right: none !important; }
-            .cs-landing-stat-item:nth-last-child(-n+2) { border-bottom: none; }
-            .cs-landing-stat-val { font-size: 24px; }
+            .cs-landing-stat-val { font-size: 26px; }
             .cs-landing-stat-label { font-size: 13px; }
             .cs-landing-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
             .cs-landing-desc { display: none; }
@@ -760,6 +911,7 @@ export default function CaseStudiesPage() {
             .cs-landing-grid { grid-template-columns: 1fr; }
             .cs-landing-desc { display: block; }
             .cs-landing-cta-h2 { font-size: 28px; }
+            .cs-landing-stat-item { width: 100%; }
           }
         `,
       }} />
