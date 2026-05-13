@@ -466,7 +466,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Plus | UX Design | CRO",
     heroMetric: "+250%",
     heroSubMetric: "Total Sales",
-    heroImage: "/images/Case%20studies/Ronaldo%20Jewelry-hero-desk.webp",
+    heroImage: "/images/Case%20studies/Ronaldo%20Jewelry%20hero%20section%20img.webp",
     heroDescription:
       "How a handcrafted wire-wrapped jewelry brand rebuilt their Shopify Plus store with high-fidelity product visualisation, a bespoke piece configurator, and a trust framework built for high-AOV transactions, driving a 250% increase in total sales.",
     stats: [
@@ -503,7 +503,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the Ronaldo Jewelry Build",
     workSubtitle: "Configurator, 360 product viewer, and a trust framework built for high-AOV.",
     workImages: [
-      "/images/Case%20studies/Ronaldo%20Jewelry%20hero%20section%20img.webp",
+      "/images/Case%20studies/Ronaldo%20Jewelry-hero-desk.webp",
       "/images/Case%20studies/Ronaldo%20Jewelry%20PDP.webp",
       "/images/Case%20studies/Ronaldo%20Jewelry-our%20story.webp",
       "/images/Case%20studies/Ronaldo%20Jewelry%20Gift%20guide.webp",
