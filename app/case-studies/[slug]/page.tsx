@@ -508,7 +508,7 @@ function CaseStudyResults({ cs }: { cs: CaseStudy }) {
         <div className="cs-results-stats" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", borderTop: "1px solid rgba(255,255,255,0.1)", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
           {cs.results.map((result, i) => (
             <div key={result.label} className="cs-results-stat-cell" style={{ padding: "40px 24px", textAlign: "center", borderRight: i < cs.results.length - 1 ? "1px solid rgba(255,255,255,0.1)" : "none" }}>
-              <p className="cs-results-pct" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "56px", fontWeight: 800, color: "#61ce70", lineHeight: 1, margin: "0 0 10px", letterSpacing: "-0.02em" }}>
+              <p className="cs-results-pct" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "56px", fontWeight: 800, color: "#61ce70", lineHeight: 1, margin: "0 0 10px", letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>
                 {result.improvement}
               </p>
               <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#ffffff", textTransform: "uppercase", letterSpacing: "0.08em", margin: "0 0 6px" }}>
