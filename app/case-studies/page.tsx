@@ -481,71 +481,9 @@ export default async function CaseStudiesPage({
           style={{
             maxWidth: "1320px",
             margin: "0 auto",
-            padding: "80px 0 100px",
+            padding: "60px 0 60px",
           }}
         >
-          {/* Section label */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              marginBottom: "48px",
-              flexWrap: "wrap",
-              gap: "16px",
-            }}
-          >
-            <div>
-              <h2
-                className="cs-landing-grid-h2"
-                style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  fontWeight: 800,
-                  color: "#000000",
-                  margin: "0 0 8px",
-                  lineHeight: 1.1,
-                  letterSpacing: "-0.03em",
-                  textTransform: "uppercase",
-                }}
-              >
-                Case Studies
-              </h2>
-              <p
-                style={{
-                  fontFamily: "'Nunito', sans-serif",
-                  fontSize: "16px",
-                  color: "rgba(0,0,0,0.5)",
-                  margin: 0,
-                }}
-              >
-                {filteredStudies.length} published &nbsp;·&nbsp; Click any card to read the full story
-              </p>
-            </div>
-            <Link
-              href="/contact-shopify-agency"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                fontFamily: "'Poppins', sans-serif",
-                fontSize: "14px",
-                fontWeight: 600,
-                color: "#ffffff",
-                background: "#000000",
-                borderRadius: "9999px",
-                padding: "12px 28px",
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-                flexShrink: 0,
-              }}
-            >
-              Start Your Project
-              <svg width="14" height="10" viewBox="0 0 15 10.55" fill="none">
-                <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
-          </div>
-
           {/* Card grid */}
           <div className="cs-landing-grid">
             {filteredStudies.map((cs, index) => {
@@ -559,7 +497,7 @@ export default async function CaseStudiesPage({
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    background: "#ffffff",
+                    background: "#FBF7ED",
                     borderRadius: "20px",
                     overflow: "hidden",
                     textDecoration: "none",
@@ -661,6 +599,7 @@ export default async function CaseStudiesPage({
 
                     {/* Stat badge */}
                     <div
+                      className="cs-card-stat"
                       style={{
                         position: "absolute",
                         top: "12px",
@@ -709,6 +648,7 @@ export default async function CaseStudiesPage({
 
                     {/* Industry pill — top right */}
                     <div
+                      className="cs-card-industry"
                       style={{
                         position: "absolute",
                         top: "12px",
@@ -763,31 +703,13 @@ export default async function CaseStudiesPage({
                       >
                         {cs.brandName}
                       </p>
-                      <span
-                        className="cs-landing-arrow"
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          width: "36px",
-                          height: "36px",
-                          borderRadius: "50%",
-                          background: "#000000",
-                          flexShrink: 0,
-                          marginTop: "2px",
-                        }}
-                      >
-                        <svg width="14" height="10" viewBox="0 0 15 10.55" fill="none">
-                          <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </span>
                     </div>
 
                     {/* Divider */}
                     <div style={{ height: "1px", background: "rgba(0,0,0,0.08)" }} />
 
                     {/* Service tags */}
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                    <div className="cs-card-tags" style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
                       {tags.map((tag) => (
                         <span
                           key={tag}
@@ -825,25 +747,6 @@ export default async function CaseStudiesPage({
                         : cs.heroDescription}
                     </p>
 
-                    {/* Read link */}
-                    <span
-                      style={{
-                        fontFamily: "'Poppins', sans-serif",
-                        fontSize: "13px",
-                        fontWeight: 600,
-                        color: "#000000",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "6px",
-                        marginTop: "4px",
-                      }}
-                      className="cs-landing-read"
-                    >
-                      Read Case Study
-                      <svg width="13" height="9" viewBox="0 0 15 10.55" fill="none">
-                        <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </span>
                   </div>
                 </Link>
               );
@@ -852,148 +755,6 @@ export default async function CaseStudiesPage({
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section
-        style={{
-          background: "#000000",
-          padding: "0 20px",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          aria-hidden="true"
-          style={{
-            pointerEvents: "none",
-            position: "absolute",
-            inset: 0,
-            opacity: 0.04,
-            backgroundImage: "radial-gradient(circle, #61ce70 1px, transparent 1px)",
-            backgroundSize: "32px 32px",
-          }}
-        />
-        <div
-          style={{
-            maxWidth: "1320px",
-            margin: "0 auto",
-            padding: "100px 0",
-            textAlign: "center",
-            position: "relative",
-            zIndex: 1,
-          }}
-        >
-          <span
-            style={{
-              display: "inline-block",
-              padding: "4px 16px",
-              fontFamily: "'Poppins', sans-serif",
-              fontSize: "12px",
-              fontWeight: 600,
-              color: "#4a7c59",
-              background: "rgba(97,206,112,0.1)",
-              border: "1px solid rgba(97,206,112,0.25)",
-              borderRadius: "9999px",
-              letterSpacing: "0.06em",
-              textTransform: "uppercase",
-              marginBottom: "24px",
-            }}
-          >
-            Ready to Grow?
-          </span>
-
-          <h2
-            className="cs-landing-cta-h2"
-            style={{
-              fontFamily: "'Poppins', sans-serif",
-              fontWeight: 800,
-              color: "#ffffff",
-              margin: "0 0 20px",
-              lineHeight: 1.1,
-              letterSpacing: "-0.03em",
-            }}
-          >
-            Your brand could be{" "}
-            <span style={GRADIENT_TEXT}>next.</span>
-          </h2>
-
-          <p
-            style={{
-              fontFamily: "'Nunito', sans-serif",
-              fontSize: "18px",
-              color: "rgba(255,255,255,0.6)",
-              margin: "0 auto 40px",
-              maxWidth: "560px",
-              lineHeight: 1.7,
-            }}
-          >
-            Book a free strategy call and we will show you exactly where your Shopify store is leaving money on the
-            table.
-          </p>
-
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "16px",
-              flexWrap: "wrap",
-            }}
-          >
-            <span
-              style={{
-                display: "inline-block",
-                padding: "2px",
-                borderRadius: "9999px",
-                background: GRADIENT,
-              }}
-            >
-              <Link
-                href="/book-shopify-consultation"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  fontFamily: "'Poppins', sans-serif",
-                  fontSize: "15px",
-                  fontWeight: 600,
-                  color: "#ffffff",
-                  background: "#000000",
-                  borderRadius: "9999px",
-                  padding: "14px 36px",
-                  textDecoration: "none",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                Book a Free Call
-                <svg width="14" height="10" viewBox="0 0 15 10.55" fill="none">
-                  <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
-            </span>
-
-            <Link
-              href="/free-shopify-store-audit"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                fontFamily: "'Poppins', sans-serif",
-                fontSize: "15px",
-                fontWeight: 600,
-                color: "#ffffff",
-                background: "transparent",
-                border: "1.5px solid rgba(255,255,255,0.25)",
-                borderRadius: "9999px",
-                padding: "14px 36px",
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-              }}
-            >
-              Get a Free Audit
-            </Link>
-          </div>
-        </div>
-      </section>
 
       <style dangerouslySetInnerHTML={{
         __html: `
@@ -1106,12 +867,11 @@ export default async function CaseStudiesPage({
             transition: transform 0.4s ease;
           }
 
-          /* CTA heading */
-          .cs-landing-cta-h2 { font-size: 56px; }
 
           /* ─── Responsive ─── */
           @media (max-width: 1024px) {
             .cs-hero-glow { opacity: 0.4; }
+            .cs-card-industry { display: none; }
             .cs-hero-section { padding: 0 40px !important; }
             .cs-hero-inner { padding: 40px 0 !important; }
             .cs-landing-sub { margin-bottom: 20px !important; max-width: 100% !important; }
@@ -1123,10 +883,11 @@ export default async function CaseStudiesPage({
             .cs-landing-stat-item { padding-right: 20px; margin-right: 20px; }
             .cs-landing-stat-val { font-size: 48px; }
             .cs-landing-stat-label { font-size: 14px; margin-top: 8px; }
-            .cs-landing-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .cs-landing-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+            .cs-landing-desc { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+            .cs-card-tags { flex-wrap: nowrap !important; overflow: hidden; }
             .cs-industry-h2 { font-size: 36px; }
             .cs-landing-grid-h2 { font-size: 32px; }
-            .cs-landing-cta-h2 { font-size: 44px; }
           }
           @media (max-width: 768px) {
             .cs-industry-h2 { font-size: 38px; margin-bottom: 24px !important; }
@@ -1150,7 +911,6 @@ export default async function CaseStudiesPage({
             .cs-landing-stat-label { font-size: 14px; margin-top: 6px; }
             .cs-landing-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
             .cs-landing-desc { display: none; }
-            .cs-landing-cta-h2 { font-size: 34px; }
           }
           @media (max-width: 639px) {
             .cs-hero-section { padding: 0 20px !important; }
@@ -1158,6 +918,7 @@ export default async function CaseStudiesPage({
             .cs-hero-inner { padding: 20px 0 !important; }
             .cs-landing-h1 { margin-bottom: 16px !important; }
             .cs-industry-h2 { font-size: 34px !important; margin-bottom: 16px !important; }
+            .cs-landing-grid { grid-template-columns: 1fr !important; gap: 16px; }
             .cs-featured-grid {
               display: flex !important;
               grid-template-columns: unset !important;
@@ -1196,8 +957,6 @@ export default async function CaseStudiesPage({
             .cs-landing-h1 { font-size: 32px; }
             .cs-landing-grid { grid-template-columns: 1fr; }
             .cs-landing-desc { display: block; }
-            .cs-landing-cta-h2 { font-size: 28px; }
-            .cs-landing-stat-item { width: 100%; }
           }
         `,
       }} />
