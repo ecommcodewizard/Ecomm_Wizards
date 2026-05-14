@@ -587,6 +587,26 @@ export default async function CaseStudiesPage({
                         preload="metadata"
                         style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                       />
+                    ) : cs.slug === "wild-shopify-plus-subscriptions" ? (
+                      <video
+                        src="/images/Case%20studies/WeareWild%20video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
+                    ) : cs.slug === "dryrobe-shopify-plus-redesign" ? (
+                      <video
+                        src="/images/Case%20studies/dryrobe%20video%20test.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
                     ) : (
                       <Image
                         src={cs.heroImage}
@@ -594,6 +614,8 @@ export default async function CaseStudiesPage({
                         fill
                         className="object-cover cs-landing-card-img"
                         priority={index < 3}
+                        loading={index < 3 ? undefined : "lazy"}
+                        sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, 33vw"
                       />
                     )}
 

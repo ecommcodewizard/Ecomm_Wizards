@@ -163,7 +163,7 @@ function CaseStudyHero({ cs }: { cs: CaseStudy }) {
         {/* Right: screenshot */}
         <div className="cs-hero-img-wrap" style={{ position: "relative" }}>
           <div className="cs-hero-img-box" style={{ borderRadius: "16px", overflow: "hidden", boxShadow: "0 32px 80px rgba(0,0,0,0.6)", background: "#1a1a1a", position: "relative" }}>
-            <Image src={cs.heroImage} alt={`${cs.brandName} Shopify store`} fill className="object-cover" priority />
+            <Image src={cs.heroImage} alt={`${cs.brandName} Shopify store`} fill className="object-cover" priority sizes="(max-width: 1023px) 100vw, 50vw" />
           </div>
           {/* Site Metrics floating card — Cashmere banner style */}
           <div className="block_cashmere-banner-sale-box" style={{ position: "absolute", bottom: "-40px", left: "-20px", width: "220px", padding: "20px", background: "#FFFFFF", borderRadius: "16px", boxShadow: "0 16px 48px rgba(0,0,0,0.22)" }}>
@@ -327,43 +327,55 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
           {cs.slug === "111skin-shopify-cro-redesign" ? (
             <video
               src="/images/Case%20studies/111skin%20video.mp4"
-              autoPlay loop muted playsInline preload="auto"
+              autoPlay loop muted playsInline preload="metadata"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : cs.slug === "evie-lou-shopify-fashion-cro" ? (
             <video
               src="/images/Case%20studies/evie-lou%20video.mp4"
-              autoPlay loop muted playsInline preload="auto"
+              autoPlay loop muted playsInline preload="metadata"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : cs.slug === "happy-mammoth-shopify-subscriptions-cro" ? (
             <video
               src="/images/Case%20studies/happy-mammoth-video.mp4"
-              autoPlay loop muted playsInline preload="auto"
+              autoPlay loop muted playsInline preload="metadata"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : cs.slug === "candy-kittens-shopify-food-beverage-cro" ? (
             <video
               src="/images/Case%20studies/Candy%20Kittens%20video.mp4"
-              autoPlay loop muted playsInline preload="auto"
+              autoPlay loop muted playsInline preload="metadata"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : cs.slug === "everlast-shopify-plus-sports-redesign" ? (
             <video
               src="/images/Case%20studies/Everlast%20video.mp4"
-              autoPlay loop muted playsInline preload="auto"
+              autoPlay loop muted playsInline preload="metadata"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : cs.slug === "ronaldo-jewelry-shopify-plus-redesign" ? (
             <SpeedVideo
               src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4"
-              autoPlay loop muted playsInline preload="auto"
+              autoPlay loop muted playsInline preload="metadata"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : cs.slug === "mouldings-one-shopify-b2b-portal" ? (
             <SpeedVideo
               src="/images/Case%20studies/Mouldings%20One%20video.mp4"
-              autoPlay loop muted playsInline preload="auto"
+              autoPlay loop muted playsInline preload="metadata"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
+          ) : cs.slug === "wild-shopify-plus-subscriptions" ? (
+            <video
+              src="/images/Case%20studies/WeareWild%20video.mp4"
+              autoPlay loop muted playsInline preload="metadata"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
+          ) : cs.slug === "dryrobe-shopify-plus-redesign" ? (
+            <video
+              src="/images/Case%20studies/dryrobe%20video%20test.mp4"
+              autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : (
@@ -372,6 +384,8 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
               alt={cs.brandName}
               fill
               className="object-cover"
+              loading="lazy"
+              sizes="(max-width: 1023px) 100vw, 50vw"
             />
           )}
         </div>
@@ -494,7 +508,7 @@ function CaseStudyWork({ cs }: { cs: CaseStudy }) {
           {cs.workImages.map((img, i) => (
             <div key={i} style={{ borderRadius: "12px", overflow: "hidden", background: "#111111", position: "relative", border: "1px solid rgba(255,255,255,0.08)" }}>
               <div className="cs-work-img-box" style={{ position: "relative", aspectRatio: "16/10" }}>
-                <Image src={img} alt={`${cs.brandName} design ${i + 1}`} fill className="object-cover" />
+                <Image src={img} alt={`${cs.brandName} design ${i + 1}`} fill className="object-cover" loading="lazy" sizes="(max-width: 767px) 100vw, 50vw" />
               </div>
             </div>
           ))}
@@ -515,6 +529,7 @@ function CaseStudyWork({ cs }: { cs: CaseStudy }) {
 }
 
 function CaseStudyResults({ cs }: { cs: CaseStudy }) {
+  const colCount = cs.results.length > 4 ? 3 : 4;
   return (
     <section style={{ background: "#000000", position: "relative", overflow: "hidden" }}>
       <div aria-hidden="true" style={{ pointerEvents: "none", position: "absolute", inset: 0, opacity: 0.03, backgroundImage: "radial-gradient(circle, #61ce70 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
@@ -532,10 +547,10 @@ function CaseStudyResults({ cs }: { cs: CaseStudy }) {
           )}
         </div>
 
-        {/* Row 2: 4 improvement stats */}
-        <div className="cs-results-stats" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", borderTop: "1px solid rgba(255,255,255,0.1)", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
+        {/* Row 2: improvement stats */}
+        <div className="cs-results-stats" style={{ display: "grid", gridTemplateColumns: `repeat(${colCount},1fr)`, borderTop: "1px solid rgba(255,255,255,0.1)", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
           {cs.results.map((result, i) => (
-            <div key={result.label} className="cs-results-stat-cell" style={{ padding: "40px 24px", textAlign: "center", borderRight: i < cs.results.length - 1 ? "1px solid rgba(255,255,255,0.1)" : "none" }}>
+            <div key={result.label} className="cs-results-stat-cell" style={{ padding: "40px 24px", textAlign: "center", borderRight: (i + 1) % colCount !== 0 && i < cs.results.length - 1 ? "1px solid rgba(255,255,255,0.1)" : "none" }}>
               <p className="cs-results-pct" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "56px", fontWeight: 800, color: "#61ce70", lineHeight: 1, margin: "0 0 10px", letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>
                 {result.improvement}
               </p>
@@ -574,9 +589,8 @@ function CaseStudyResults({ cs }: { cs: CaseStudy }) {
           .cs-results-header { grid-template-columns: 1fr !important; gap: 30px !important; margin-bottom: 40px !important; }
           .cs-results-title { font-size: 36px !important; }
           .cs-results-stats { grid-template-columns: repeat(2,1fr) !important; }
-          .cs-results-stat-cell:nth-child(2) { border-right: none !important; }
-          .cs-results-stat-cell:nth-child(1),
-          .cs-results-stat-cell:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.1) !important; }
+          .cs-results-stat-cell:nth-child(even) { border-right: none !important; }
+          .cs-results-stat-cell:not(:nth-last-child(-n+2)) { border-bottom: 1px solid rgba(255,255,255,0.1) !important; }
         }
         @media (max-width: 768px) {
           .cs-results-title { text-align: center !important; }
@@ -636,7 +650,7 @@ function CaseStudyQuote({ cs }: { cs: CaseStudy }) {
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "16px" }}>
           <div style={{ width: "64px", height: "64px", borderRadius: "50%", overflow: "hidden", flexShrink: 0, position: "relative" }}>
             {cs.quoteAvatar ? (
-              <Image src={cs.quoteAvatar} alt={cs.quotePerson} fill className="object-cover object-top" />
+              <Image src={cs.quoteAvatar} alt={cs.quotePerson} fill className="object-cover object-top" loading="lazy" sizes="64px" />
             ) : (
               <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg,#61ce70 0%,#4ab85a 100%)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Poppins',sans-serif", fontSize: "20px", fontWeight: 700, color: "#fff" }}>
                 {cs.quotePerson.charAt(0)}
@@ -708,8 +722,12 @@ function CaseStudyExploreMore({ current }: { current: string }) {
                     <SpeedVideo src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : cs.slug === "mouldings-one-shopify-b2b-portal" ? (
                     <SpeedVideo src="/images/Case%20studies/Mouldings%20One%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : cs.slug === "wild-shopify-plus-subscriptions" ? (
+                    <video src="/images/Case%20studies/WeareWild%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : cs.slug === "dryrobe-shopify-plus-redesign" ? (
+                    <video src="/images/Case%20studies/dryrobe%20video%20test.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
-                    <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" />
+                    <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" sizes="356px" />
                   )}
                   {/* Stat badge */}
                   <div style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.97)", borderRadius: "9999px", padding: "5px 14px", display: "flex", alignItems: "center", gap: "8px",  }}>
