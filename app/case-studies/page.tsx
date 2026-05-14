@@ -607,6 +607,16 @@ export default async function CaseStudiesPage({
                         preload="none"
                         style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                       />
+                    ) : cs.slug === "loop-earplugs-shopify-landing-page-cro" ? (
+                      <video
+                        src="/images/Case%20studies/Loop%20Earplugs%20video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
                     ) : (
                       <Image
                         src={cs.heroImage}

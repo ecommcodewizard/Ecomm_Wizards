@@ -310,7 +310,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     nextSlug: "loop-earplugs-shopify-landing-page-cro",
     nextBrand: "Loop Earplugs",
     nextMetric: "€1M+ Growth Opportunity",
-    nextImage: "/images/Case%20studies/loop-earplugs-hero.jpg",
+    nextImage: "/images/Case%20studies/Loop%20Earplugs.webp",
     nextIndustry: "Health, Wellness & Fitness",
   },
 
@@ -836,7 +836,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Landing Page Design | CRO | App Optimization",
     heroMetric: "€1M+",
     heroSubMetric: "Annual Growth Opportunity",
-    heroImage: "/images/Case%20studies/loop-earplugs-hero.jpg",
+    heroImage: "/images/Case%20studies/Loop%20Earplugs.webp",
     heroDescription:
       "How a Belgian earplug brand selling in 100+ countries identified a €1M+ annual growth opportunity through structured CRO, rebuilt their Shopify landing pages to generate a 6.4% revenue uplift, and launched a product recommendation quiz that lifted new user conversion by 5.9%.",
     stats: [
@@ -873,10 +873,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the Loop Earplugs Programme",
     workSubtitle: "CRO audit, landing page redesign, product quiz, and zero-party data infrastructure.",
     workImages: [
-      "/images/Case%20studies/loop-earplugs-hero.jpg",
-      "/images/Case%20studies/loop-earplugs-1.jpg",
-      "/images/Case%20studies/loop-earplugs-2.jpg",
-      "/images/Case%20studies/loop-earplugs-3.jpg",
+      "/images/Case%20studies/Loop%20Earplugs.webp",
+      "/images/Case%20studies/Loop%20Earplugs-1.webp",
+      "/images/Case%20studies/Loop%20Earplugs%20pdp.png",
+      "/images/Case%20studies/Loop%20Earplugs%20quiz.png",
     ],
     results: [
       { label: "Revenue Uplift (Test 1)", before: "Baseline", after: "+6.4%", improvement: "+6.4%" },
@@ -904,6 +904,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "The Swanky team identified the opportunity clearly and then proved it with real data. Two tests, two wins, and a roadmap for growth we can actually act on. The quiz in particular has changed how we think about new customer acquisition.",
     quotePerson: "Maarten Bodewes",
     quoteRole: "Co-Founder, Loop Earplugs",
+    quoteAvatar: "/images/Case%20studies/Maarten%20Bodewes.jfif",
     prevSlug: "happy-mammoth-shopify-subscriptions-cro",
     prevBrand: "Happy Mammoth",
     nextSlug: "candy-kittens-shopify-food-beverage-cro",
