@@ -390,6 +390,24 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
               autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
+          ) : cs.slug === "capelli-sports-shopify-migration" ? (
+            <video
+              src="/images/Case%20studies/Capelli%20Sports%20test%20video-2.mp4"
+              autoPlay loop muted playsInline preload="none"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
+          ) : cs.slug === "john-hardy-shopify-plus-migration" ? (
+            <video
+              src="/images/Case%20studies/John%20Hardy%20video.mp4"
+              autoPlay loop muted playsInline preload="none"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
+          ) : cs.slug === "saddleback-shopify-plus-b2b" ? (
+            <video
+              src="/images/Case%20studies/Saddleback%20video.mp4"
+              autoPlay loop muted playsInline preload="none"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
           ) : (
             <Image
               src={cs.heroImage}
@@ -742,6 +760,12 @@ function CaseStudyExploreMore({ current }: { current: string }) {
                     <video src="/images/Case%20studies/Loop%20Earplugs%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : cs.slug === "sneak-energy-shopify-redesign" ? (
                     <video src="/images/Case%20studies/Sneak%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : cs.slug === "capelli-sports-shopify-migration" ? (
+                    <video src="/images/Case%20studies/Capelli%20Sports%20test%20video-2.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : cs.slug === "john-hardy-shopify-plus-migration" ? (
+                    <video src="/images/Case%20studies/John%20Hardy%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : cs.slug === "saddleback-shopify-plus-b2b" ? (
+                    <video src="/images/Case%20studies/Saddleback%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
                     <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" sizes="356px" />
                   )}

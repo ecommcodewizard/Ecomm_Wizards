@@ -627,6 +627,36 @@ export default async function CaseStudiesPage({
                         preload="none"
                         style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                       />
+                    ) : cs.slug === "capelli-sports-shopify-migration" ? (
+                      <video
+                        src="/images/Case%20studies/Capelli%20Sports%20test%20video-2.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
+                    ) : cs.slug === "john-hardy-shopify-plus-migration" ? (
+                      <video
+                        src="/images/Case%20studies/John%20Hardy%20video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
+                    ) : cs.slug === "saddleback-shopify-plus-b2b" ? (
+                      <video
+                        src="/images/Case%20studies/Saddleback%20video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
                     ) : (
                       <Image
                         src={cs.heroImage}

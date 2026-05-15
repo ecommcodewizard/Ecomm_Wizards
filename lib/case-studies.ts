@@ -482,7 +482,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     nextSlug: "capelli-sports-shopify-migration",
     nextBrand: "Capelli Sports",
     nextMetric: "+24% Conversion Rate",
-    nextImage: "/images/Case%20studies/capelli-sports-hero.jpg",
+    nextImage: "/images/Case%20studies/Capelli%20Sports%20hero%20image.webp",
     nextIndustry: "Sports & Fitness",
   },
 
@@ -568,7 +568,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     nextSlug: "john-hardy-shopify-plus-migration",
     nextBrand: "John Hardy",
     nextMetric: "+71% Conversion Rate",
-    nextImage: "/images/Case%20studies/john-hardy-hero.jpg",
+    nextImage: "/images/Case%20studies/John%20Hardy-hero-update.jpg",
     nextIndustry: "Jewelry & Accessories",
   },
 
@@ -652,7 +652,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     nextSlug: "saddleback-shopify-plus-b2b",
     nextBrand: "Saddleback",
     nextMetric: "+881% B2B Sales Growth",
-    nextImage: "/images/Case%20studies/saddleback-hero.jpg",
+    nextImage: "/images/Case%20studies/Saddleback-hero%20image.webp",
     nextIndustry: "B2B & Wholesale",
   },
 
@@ -1008,7 +1008,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Migration | UX Design | App Setup",
     heroMetric: "+24%",
     heroSubMetric: "Conversion Rate",
-    heroImage: "/images/Case%20studies/capelli-sports-hero.jpg",
+    heroImage: "/images/Case%20studies/Capelli%20Sports%20hero%20image.webp",
     heroDescription:
       "How a global sportswear and soccer brand migrated from WordPress to Shopify with zero downtime, a performance-first UX redesign, and a 10-app integration stack, growing conversion rate 24%, site speed 38%, and retaining 95% of SEO equity through the migration.",
     stats: [
@@ -1045,16 +1045,16 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the Capelli Sports Build",
     workSubtitle: "No-downtime migration, global architecture, and 95% SEO equity preserved.",
     workImages: [
-      "/images/Case%20studies/capelli-sports-hero.jpg",
-      "/images/Case%20studies/capelli-sports-1.jpg",
-      "/images/Case%20studies/capelli-sports-2.jpg",
-      "/images/Case%20studies/capelli-sports-3.jpg",
+      "/images/Case%20studies/Capelli%20Sports",
+      "/images/Case%20studies/Capelli%20Sports%20website%20hero.png",
+      "/images/Case%20studies/Capelli%20Sports%20pdp.png",
+      "/images/Case%20studies/Capelli%20Sports-1.webp",
     ],
     results: [
       { label: "Conversion Rate", before: "Baseline", after: "+24%", improvement: "+24%" },
       { label: "Site Speed", before: "Baseline", after: "+38%", improvement: "+38%" },
-      { label: "Platform Uptime", before: "Variable", after: "99.9%", improvement: "Stabilised" },
-      { label: "SEO Equity Retained", before: "At risk", after: "95%", improvement: "Preserved" },
+      { label: "Platform Uptime", before: "Variable", after: "99.9%", improvement: "99.9%" },
+      { label: "SEO Equity Retained", before: "At risk", after: "95%", improvement: "95%" },
     ],
     resultsDescription:
       "Conversion rate improved 24% following the Shopify migration and UI redesign. Site speed increased 38% as WordPress performance constraints were eliminated. The migration was executed to 99.9% uptime, with zero disruption to live trading. The SEO retention strategy preserved 95% of organic equity across three regions, with organic traffic recovering in full within the first month post-launch.",
@@ -1074,8 +1074,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     quote:
       "The migration was seamless. Our customers didn't notice a thing, and neither did Google. The new store architecture matched how our buyers actually shop and the conversion numbers followed. IT Geeks delivered exactly what they promised.",
-    quotePerson: "Marco Leshkowitz",
-    quoteRole: "VP Ecommerce, Capelli Sports",
+    quotePerson: "George Altirs",
+    quoteRole: "Founder & CEO, Capelli Sports",
+    quoteAvatar: "/images/Case%20studies/George%20Altirs.jfif",
     prevSlug: "everlast-shopify-plus-sports-redesign",
     prevBrand: "Everlast",
     nextSlug: "ronaldo-jewelry-shopify-plus-redesign",
@@ -1093,7 +1094,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Plus | Migration | Theme Development",
     heroMetric: "+71%",
     heroSubMetric: "Conversion Rate",
-    heroImage: "/images/Case%20studies/john-hardy-hero.jpg",
+    heroImage: "/images/Case%20studies/John%20Hardy-hero-update.jpg",
     heroDescription:
       "How a luxury handcrafted jewelry brand replatformed from Salesforce Commerce Cloud to Shopify Plus in under three months, delivering a bespoke high-AOV theme, Shopify Markets Pro, and a full tech stack integration in time for Black Friday, and grew conversion rate by 71%.",
     stats: [
@@ -1130,16 +1131,16 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the John Hardy Build",
     workSubtitle: "Salesforce CC to Shopify Plus, luxury theme, and a Black Friday delivery.",
     workImages: [
-      "/images/Case%20studies/john-hardy-hero.jpg",
-      "/images/Case%20studies/john-hardy-1.jpg",
-      "/images/Case%20studies/john-hardy-2.jpg",
-      "/images/Case%20studies/john-hardy-3.jpg",
+      "/images/Case%20studies/John%20Hardy-1.webp",
+      "/images/Case%20studies/John%20Hardy-pdp.webp",
+      "/images/Case%20studies/John%20Hardy-cart.webp",
+      "/images/Case%20studies/John%20Hardy-menu%20navigation.png",
     ],
     results: [
       { label: "Conversion Rate", before: "Baseline", after: "+71%", improvement: "+71%" },
       { label: "Replatform Timeline", before: "Projected 6 months", after: "<3 months", improvement: "2x faster" },
-      { label: "Black Friday", before: "At risk", after: "Delivered on time", improvement: "On schedule" },
-      { label: "Platform Cost", before: "Salesforce CC overhead", after: "Shopify Plus", improvement: "Reduced" },
+      { label: "Black Friday", before: "At risk", after: "Delivered on time", improvement: "90 Days" },
+      { label: "Platform Cost", before: "Salesforce CC overhead", after: "Shopify Plus", improvement: "10 Apps" },
     ],
     resultsDescription:
       "Conversion rate grew 71% following the Shopify Plus launch. The replatform was delivered in under three months, ahead of schedule and in time for Black Friday. Full customer history, order records, and a complete production-ready tech stack were live on go-live day. The partnership with WeMakeWebsites has continued beyond the initial build, with ongoing development and CRO work running on the new foundation.",
@@ -1159,8 +1160,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     quote:
       "We had a great experience with the WMW team. They executed our website redesign vision in record time, within 3 months. The quality of the build and the way they managed the Black Friday deadline gave us complete confidence in the platform from day one.",
-    quotePerson: "Sachin K Bhargava",
-    quoteRole: "Head of Ecommerce & Digital Product, John Hardy",
+    quotePerson: "Matthew Tepper",
+    quoteRole: "President, John Hardy",
+    quoteAvatar: "/images/Case%20studies/Matthew%20Tepper.jfif",
     prevSlug: "ronaldo-jewelry-shopify-plus-redesign",
     prevBrand: "Ronaldo Jewelry",
     nextSlug: "mouldings-one-shopify-b2b-portal",
@@ -1178,7 +1180,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Plus B2B | Custom Development | UX Design",
     heroMetric: "+881%",
     heroSubMetric: "B2B Sales Growth",
-    heroImage: "/images/Case%20studies/saddleback-hero.jpg",
+    heroImage: "/images/Case%20studies/Saddleback-hero%20image.webp",
     heroDescription:
       "How a premium European cycling distributor replaced a clunky wholesale portal with a Shopify Plus B2B store, built a bespoke credit app, and launched CSV bulk ordering, growing B2B sales 881% in month one, driving +704% traffic, and winning B2B Website of the Year at the UK Digital Growth Awards.",
     stats: [
@@ -1215,15 +1217,15 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the Saddleback Build",
     workSubtitle: "Shopify Plus B2B, tiered pricing, custom credit app, and CSV bulk ordering.",
     workImages: [
-      "/images/Case%20studies/saddleback-hero.jpg",
-      "/images/Case%20studies/saddleback-1.jpg",
-      "/images/Case%20studies/saddleback-2.jpg",
-      "/images/Case%20studies/saddleback-3.jpg",
+      "/images/Case%20studies/Saddleback.webp",
+      "/images/Case%20studies/Saddleback-hero%20section.webp",
+      "/images/Case%20studies/Saddleback-pdp.webp",
+      "/images/Case%20studies/Saddleback-product%20page.png",
     ],
     results: [
       { label: "B2B Sales Growth", before: "Baseline", after: "+881% Month 1", improvement: "+881%" },
       { label: "Traffic Growth", before: "Baseline", after: "+704% Month 1", improvement: "+704%" },
-      { label: "B2B Conversion Rate", before: "Baseline", after: "9.54%", improvement: "Above industry avg" },
+      { label: "B2B Conversion Rate", before: "Baseline", after: "9.54%", improvement: "9.54%" },
       { label: "Order Processing Time", before: "30–90 mins", after: "<5 mins", improvement: "-94%" },
     ],
     resultsDescription:
@@ -1243,8 +1245,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     quote:
       "The new portal changed how our stockists experience ordering from us. What used to take an hour now takes minutes. The credit visibility and tiered pricing just work. The sales numbers in month one told us everything we needed to know.",
-    quotePerson: "Nick Craig",
-    quoteRole: "Managing Director, Saddleback",
+    quotePerson: "Andy Wigmore",
+    quoteRole: "Founder & Managing Director, Saddleback",
+    quoteAvatar: "/images/Case%20studies/Andy%20Wigmore.jfif",
     prevSlug: "mouldings-one-shopify-b2b-portal",
     prevBrand: "Mouldings One",
   },
