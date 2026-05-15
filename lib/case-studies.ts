@@ -1250,6 +1250,601 @@ export const CASE_STUDIES: CaseStudy[] = [
     quoteAvatar: "/images/Case%20studies/Andy%20Wigmore.jfif",
     prevSlug: "mouldings-one-shopify-b2b-portal",
     prevBrand: "Mouldings One",
+    nextSlug: "this-works-shopify-plus-migration",
+    nextBrand: "This Works",
+    nextMetric: "+38% Conversion Rate",
+    nextImage: "/images/Case%20studies/this-works-hero.jpg",
+    nextIndustry: "Cosmetics & Beauty",
+  },
+
+  // ─── 15. THIS WORKS — Cosmetics & Beauty ───
+  {
+    slug: "this-works-shopify-plus-migration",
+    brandName: "This Works",
+    industry: "Cosmetics & Beauty",
+    serviceType: "Shopify Plus Migration | UX Design | Internationalisation",
+    heroMetric: "+38%",
+    heroSubMetric: "Conversion Rate",
+    heroImage: "/images/Case%20studies/this-works-hero.jpg",
+    heroDescription:
+      "How a premium skincare and sleep brand exited Magento 1, rebuilt on Shopify Plus across UK, US, and EU storefronts, and grew conversion rate 38% and mobile conversion rate 45% while bringing a separate CBD microsite back into a single compliant store.",
+    stats: [
+      { label: "Higher Conversion Rate", value: "+38%", shortLabel: "Conversion Rate" },
+      { label: "Mobile Conversion Lift", value: "+45%", shortLabel: "Mobile CVR" },
+      { label: "Bounce Rate Reduction", value: "-15%", shortLabel: "Bounce Rate" },
+    ],
+    challengeTitle: "A Premium Brand on a Platform That Was Falling Behind",
+    challengeBody:
+      "This Works has been making evidence-based skincare and sleep products since 2003. The Deep Sleep Pillow Spray became a category-defining product with millions sold and a loyal, health-conscious customer base.\n\nWhen they came to WeMakeWebsites, Magento 1 was limiting the business across the board. Mobile performance was poor at a point when mobile accounted for most of their traffic. CBD product lines added real compliance complexity the platform couldn't handle cleanly. The business had ambitions to sell across the UK, US, and EU but the infrastructure couldn't support it without significant workarounds. A separate CBD microsite had to be maintained outside the main store, creating operational fragmentation the team couldn't sustain as the brand grew.",
+    approachTitle: "One Platform. Multiple Markets. Built for Scale.",
+    approachItems: [
+      {
+        step: 1,
+        title: "Magento 1 to Shopify Plus Migration",
+        desc: "Product data, customer accounts, and order history were all migrated across. Every existing URL was mapped before a single page moved, with redirects built to protect the organic equity the brand had built on Magento. The store went live without disruption to trading.",
+      },
+      {
+        step: 2,
+        title: "CBD-Compliant Product Architecture",
+        desc: "A compliant product handling system was built within Shopify Plus to manage CBD line restrictions by market. The separate CBD microsite was consolidated into the main store with appropriate compliance controls in place, removing the overhead of maintaining two separate storefronts.",
+      },
+      {
+        step: 3,
+        title: "Multi-Region Store Setup",
+        desc: "Three Shopify Plus instances were configured for the UK, US, and EU markets with localised pricing, currency, and content per region. The internal team gained full control over market-specific promotions and product visibility without needing developer input for routine updates.",
+      },
+      {
+        step: 4,
+        title: "Mobile-First UX Redesign",
+        desc: "The new theme was built around the mobile experience from the start. Product pages were redesigned to lead with clinical proof and ingredient storytelling, matching how This Works customers research before they buy. Mobile conversion rate grew 45% in the months following launch.",
+      },
+    ],
+    workTitle: "Inside the This Works Build",
+    workSubtitle: "Magento exit, CBD-compliant architecture, and multi-region Shopify Plus stores.",
+    workImages: [
+      "/images/Case%20studies/this-works-1.jpg",
+      "/images/Case%20studies/this-works-2.jpg",
+      "/images/Case%20studies/this-works-3.jpg",
+      "/images/Case%20studies/this-works-4.jpg",
+    ],
+    results: [
+      { label: "Conversion Rate", before: "Magento baseline", after: "+38%", improvement: "+38%" },
+      { label: "Mobile Conversion Rate", before: "Magento baseline", after: "+45%", improvement: "+45%" },
+      { label: "Bounce Rate", before: "Baseline", after: "-15%", improvement: "-15%" },
+      { label: "International Storefronts", before: "UK only", after: "UK, US, EU live", improvement: "3 Stores" },
+    ],
+    resultsDescription:
+      "Conversion rate grew 38% and mobile conversion rate grew 45% after the Shopify Plus launch. Bounce rate dropped 15% as the mobile-first theme matched how the brand's customers browse. The multi-region architecture went live with UK, US, and EU storefronts running from a single Shopify Plus setup, replacing the fragmented Magento and separate CBD microsite arrangement that had been holding the business back.",
+    techStack: [
+      { name: "Shopify Plus", logo: "/images/shopify-plus.svg" },
+      { name: "Recharge", logo: "/images/recharge.svg" },
+      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
+      { name: "Yotpo", logo: "/images/yotpo.svg" },
+    ],
+    sliderStats: [
+      "Conversion rate up 38% post-migration",
+      "Mobile conversion rate up 45%",
+      "Bounce rate down 15%",
+      "UK, US, and EU stores live on one Shopify Plus setup",
+      "CBD microsite consolidated into the main store",
+      "Zero trading disruption during migration",
+    ],
+    quote:
+      "They've demonstrated such a personable and flexible approach. We now have a platform from which we can confidently scale together.",
+    quotePerson: "Joe Fletcher",
+    quoteRole: "E-Commerce Director, This Works",
+    prevSlug: "saddleback-shopify-plus-b2b",
+    prevBrand: "Saddleback",
+    nextSlug: "twillory-shopify-cro",
+    nextBrand: "Twillory",
+    nextMetric: "+$5.4M New Annual Revenue",
+    nextImage: "/images/Case%20studies/twillory-hero.jpg",
+    nextIndustry: "Fashion & Apparel",
+  },
+
+  // ─── 16. TWILLORY — Fashion & Apparel ───
+  {
+    slug: "twillory-shopify-cro",
+    brandName: "Twillory",
+    industry: "Fashion & Apparel",
+    serviceType: "Shopify CRO | A/B Testing | Theme Development",
+    heroMetric: "$5.4M",
+    heroSubMetric: "New Annual Revenue",
+    heroImage: "/images/Case%20studies/twillory-hero.jpg",
+    heroDescription:
+      "How a men's premium performance shirt brand added $5.4 million in new annual revenue and $455k in the first 90 days through a systematic CRO programme, A/B testing every interface component, and building an education-first approach for first-time visitors.",
+    stats: [
+      { label: "New Annual Revenue Added", value: "$5.4M", shortLabel: "Annual Revenue" },
+      { label: "Revenue in First 90 Days", value: "$455k", shortLabel: "90-Day Revenue" },
+      { label: "A/B Test Win Rate", value: "70%", shortLabel: "Win Rate" },
+    ],
+    challengeTitle: "Strong Products, Strong Traffic, No CRO Engine",
+    challengeBody:
+      "Twillory makes premium dress shirts and performance workwear for men. The shirts are genuinely good: non-iron fabrics, modern cuts, and performance features built for long days. The brand had loyal customers, solid traffic, and an experienced marketing team.\n\nWhen they came to DTC Pages, the gap was conversion. The site had not been systematically tested in years. Interface patterns that had never been validated were just assumed to work. First-time visitors were landing with no clear understanding of what made Twillory different from any other dress shirt brand. Decision fatigue was visible in the data but nothing had been built to address it. The product deserved better than the store it was living in.",
+    approachTitle: "Test Everything. Keep What Wins.",
+    approachItems: [
+      {
+        step: 1,
+        title: "Full Interface Audit and A/B Testing",
+        desc: "Every interface component from hero banners to product page layouts was audited and queued for testing. Components that had never been validated were treated as untested hypotheses. Outdated patterns were replaced with modern, conversion-focused alternatives and each change was confirmed with data before it went live permanently.",
+      },
+      {
+        step: 2,
+        title: "First-Time Visitor Education",
+        desc: "Dedicated content sections were built to explain what makes a Twillory shirt worth the price: the fabrics, the performance features, the fit. First-time visitors arriving with no brand context now had a clear reason to stay and buy. This single focus accounted for a meaningful portion of the revenue uplift.",
+      },
+      {
+        step: 3,
+        title: "Upsell and Cross-Sell Architecture",
+        desc: "Upsell and cross-sell mechanics were deployed across the product detail page and cart. Each one was individually A/B tested to confirm it added revenue without creating friction. Only mechanisms that proved their value in testing were kept live.",
+      },
+      {
+        step: 4,
+        title: "Ongoing CRO Programme",
+        desc: "Rather than a one-off project, a continuous testing programme was established. New hypotheses were generated from analytics, session recordings, and customer data. The 70% test win rate reflects both the quality of the hypotheses and the rigour of the testing methodology.",
+      },
+    ],
+    workTitle: "Inside the Twillory CRO Programme",
+    workSubtitle: "Systematic A/B testing, first-visit education, and a 70% win rate on every test.",
+    workImages: [
+      "/images/Case%20studies/twillory-1.jpg",
+      "/images/Case%20studies/twillory-2.jpg",
+      "/images/Case%20studies/twillory-3.jpg",
+      "/images/Case%20studies/twillory-4.jpg",
+    ],
+    results: [
+      { label: "New Annual Revenue", before: "Pre-engagement baseline", after: "+$5.4M", improvement: "$5.4M" },
+      { label: "Revenue in First 90 Days", before: "No CRO", after: "$455k added", improvement: "$455k" },
+      { label: "A/B Test Win Rate", before: "No testing programme", after: "70%", improvement: "70%" },
+      { label: "Time to First Revenue Win", before: "No CRO", after: "Within 90 days", improvement: "90 Days" },
+    ],
+    resultsDescription:
+      "$5.4 million in new annual revenue was added through the CRO programme. The first $455k landed within 90 days, before most of the larger interface changes had even been completed. Seventy percent of all A/B tests run added measurable revenue, a win rate that reflects both the quality of the testing hypotheses and the discipline applied to reading and acting on results.",
+    techStack: [
+      { name: "Shopify Plus", logo: "/images/shopify-plus.svg" },
+      { name: "Shoplift", logo: "/images/shoplift.svg" },
+      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
+      { name: "Triple Whale", logo: "/images/triple-whale.svg" },
+    ],
+    sliderStats: [
+      "$5.4M in new annual revenue from CRO",
+      "$455k added in the first 90 days",
+      "70% of all A/B tests added measurable revenue",
+      "First-time visitor education rebuilt from scratch",
+      "Every interface component audited and tested",
+      "Upsells and cross-sells individually validated before going live",
+    ],
+    quote:
+      "Top tier tech stack and nice guys to boot. 70% of the A/B tests we run are adding noticeable revenue.",
+    quotePerson: "Harry C.",
+    quoteRole: "Founder, Twillory",
+    prevSlug: "this-works-shopify-plus-migration",
+    prevBrand: "This Works",
+    nextSlug: "neom-wellbeing-shopify-upgrade",
+    nextBrand: "NEOM Wellbeing",
+    nextMetric: "+34% Checkout Conversion",
+    nextImage: "/images/Case%20studies/neom-hero.jpg",
+    nextIndustry: "Health, Wellness & Fitness",
+  },
+
+  // ─── 17. NEOM WELLBEING — Health, Wellness & Fitness ───
+  {
+    slug: "neom-wellbeing-shopify-upgrade",
+    brandName: "NEOM Wellbeing",
+    industry: "Health, Wellness & Fitness",
+    serviceType: "Shopify 2.0 Upgrade | POS Integration | Shopify Markets",
+    heroMetric: "+34%",
+    heroSubMetric: "Checkout Conversion",
+    heroDescription:
+      "How a multi-award-winning luxury wellbeing brand upgraded from a legacy Shopify setup to Shopify 2.0, unified their physical Wellbeing Hub retail locations under Shopify POS, expanded to UK, EU, and US via Shopify Markets, and grew checkout conversion 34% and order volume 10%.",
+    heroImage: "/images/Case%20studies/neom-hero.jpg",
+    stats: [
+      { label: "Checkout Conversion Lift", value: "+34%", shortLabel: "Checkout CVR" },
+      { label: "Order Volume Growth", value: "+10%", shortLabel: "Order Volume" },
+      { label: "Retail Hubs on Shopify POS", value: "4", shortLabel: "POS Locations" },
+    ],
+    challengeTitle: "A Growing Brand Held Back by Its Own Shopify Setup",
+    challengeBody:
+      "NEOM Wellbeing makes luxury candles, diffusers, essential oils, and bath products built around the science of natural wellbeing. Founded in 2005, the brand sells through its own D2C stores and a growing number of Wellbeing Hub retail locations across the UK.\n\nWhen they came to Velstar, the problem was the platform they were already on. NEOM had moved from Magento to Shopify in 2018, but by 2023 that setup had become a bottleneck. The existing combination of off-the-shelf Shopify and custom code could not access Shopify 2.0 features. Any content change required developer time because the theme didn't support native editing. The Wellbeing Hub retail locations ran on a separate POS system, creating disconnected inventory, pricing, and promotion data. Subscription discounting was managed through fragmented third-party tools that added friction for both the team and customers.",
+    approachTitle: "Shopify 2.0, Unified Retail, and Three International Markets.",
+    approachItems: [
+      {
+        step: 1,
+        title: "Shopify 2.0 Bespoke Theme",
+        desc: "A bespoke theme was built for the UK, EU, and US stores using Shopify 2.0's Sections Everywhere architecture. The internal team gained the ability to update content, rearrange pages, and launch new sections without any developer dependency. This removed a significant operational bottleneck and reduced the cost of routine merchandising updates.",
+      },
+      {
+        step: 2,
+        title: "Shopify POS Across Wellbeing Hubs",
+        desc: "Shopify POS was deployed across all physical Wellbeing Hub retail locations, replacing the separate system that had been creating data silos. Inventory, pricing, and promotions became unified across online and retail channels. The team gained a single view of the business for the first time.",
+      },
+      {
+        step: 3,
+        title: "Native Shopify Subscriptions",
+        desc: "The fragmented third-party subscription discount tools were replaced with the native Shopify Subscriptions app. The setup became simpler to manage, discount logic was cleaner, and the checkout experience for subscription customers improved as a result.",
+      },
+      {
+        step: 4,
+        title: "Shopify Markets for International Expansion",
+        desc: "Shopify Markets was implemented to power the EU and US stores alongside the UK flagship. Localised pricing, currency display, and tax handling were configured per market. The architecture gave the team a clean foundation to add new markets without rebuilding infrastructure each time.",
+      },
+    ],
+    workTitle: "Inside the NEOM Wellbeing Build",
+    workSubtitle: "Shopify 2.0 upgrade, unified POS, and a three-market international setup.",
+    workImages: [
+      "/images/Case%20studies/neom-1.jpg",
+      "/images/Case%20studies/neom-2.jpg",
+      "/images/Case%20studies/neom-3.jpg",
+      "/images/Case%20studies/neom-4.jpg",
+    ],
+    results: [
+      { label: "Checkout Conversion", before: "Legacy Shopify baseline", after: "+34%", improvement: "+34%" },
+      { label: "Order Volume", before: "Baseline", after: "+10%", improvement: "+10%" },
+      { label: "POS Retail Locations", before: "Separate system", after: "All on Shopify POS", improvement: "4 Hubs" },
+      { label: "International Markets", before: "UK only", after: "UK, EU, US", improvement: "3 Markets" },
+    ],
+    resultsDescription:
+      "Checkout conversion grew 34% and order volume increased 10% following the Shopify 2.0 launch. Four Wellbeing Hub retail locations moved onto Shopify POS, giving the team a unified view of inventory, pricing, and promotions for the first time. UK, EU, and US storefronts are now managed from a single Shopify setup via Shopify Markets, with the internal team able to update content and launch features without developer support.",
+    techStack: [
+      { name: "Shopify Plus", logo: "/images/shopify-plus.svg" },
+      { name: "LoyaltyLion", logo: "/images/loyalty-lion.svg" },
+      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
+      { name: "Yotpo", logo: "/images/yotpo.svg" },
+    ],
+    sliderStats: [
+      "Checkout conversion up 34%",
+      "Order volume up 10%",
+      "4 Wellbeing Hub retail locations unified on Shopify POS",
+      "UK, EU, and US stores live on Shopify Markets",
+      "Shopify 2.0: internal team can update without developer support",
+      "Native subscriptions replaced fragmented third-party tools",
+    ],
+    quote:
+      "The ability to open new stores with Shopify POS seamlessly integrated, providing a unified hub where we can monitor everything, represents a significant advancement for the business.",
+    quotePerson: "Clare Jerome",
+    quoteRole: "Technology Product Manager, NEOM Wellbeing",
+    prevSlug: "twillory-shopify-cro",
+    prevBrand: "Twillory",
+    nextSlug: "vithit-shopify-plus-d2c",
+    nextBrand: "VITHIT",
+    nextMetric: "+115% Revenue YoY",
+    nextImage: "/images/Case%20studies/vithit-hero.jpg",
+    nextIndustry: "Food & Beverages",
+  },
+
+  // ─── 18. VITHIT — Food & Beverages ───
+  {
+    slug: "vithit-shopify-plus-d2c",
+    brandName: "VITHIT",
+    industry: "Food & Beverages",
+    serviceType: "Shopify Plus | Email Marketing | Paid Media",
+    heroMetric: "+115%",
+    heroSubMetric: "Revenue Growth YoY",
+    heroImage: "/images/Case%20studies/vithit-hero.jpg",
+    heroDescription:
+      "How a global functional drinks brand operating in 15 countries grew D2C revenue 115% year on year, lifted conversion rate 170%, and raised average order value 31% by building a Shopify Plus D2C store, automating bundling and discounting, and running a full-funnel paid media and email programme.",
+    stats: [
+      { label: "Revenue Growth YoY", value: "+115%", shortLabel: "Revenue" },
+      { label: "Conversion Rate Lift", value: "+170%", shortLabel: "CVR" },
+      { label: "Average Order Value", value: "+31%", shortLabel: "AOV" },
+    ],
+    challengeTitle: "Retail Success. D2C Left Behind.",
+    challengeBody:
+      "VITHIT makes low-sugar, vitamin-enriched drinks containing 100% of the recommended daily allowance of essential vitamins. The brand has meaningful retail distribution across 15 countries and genuine shelf presence in major grocery chains.\n\nWhen they came to Velstar, the D2C channel wasn't keeping pace with the retail business. The infrastructure for bundling and discounting was complex and mostly manual, requiring team intervention for operations that should have been running automatically. The brand needed to grow across multiple international markets without the site failing under the traffic spikes that seasonal campaigns and retail partnerships were generating. The gap between where D2C was and where it needed to be was significant.",
+    approachTitle: "Automated D2C Infrastructure Built to Handle Scale.",
+    approachItems: [
+      {
+        step: 1,
+        title: "Shopify Plus D2C Store Build",
+        desc: "A Shopify Plus store was built to serve as the foundation for VITHIT's D2C growth, with the product architecture and checkout experience designed to convert the high-intent customers arriving from retail brand awareness. Bundles, subscriptions, and promotional mechanics were built into the store from the start rather than bolted on later.",
+      },
+      {
+        step: 2,
+        title: "Intelligent Bundling and MOV Discounting",
+        desc: "The manual bundling and discounting processes were replaced with an automated system. Minimum order value discounting was implemented to protect margins while lifting average order value. Bundle configurations that had previously required team time to set up and manage now ran without intervention.",
+      },
+      {
+        step: 3,
+        title: "Klaviyo Email Automation",
+        desc: "A full email automation programme was built in Klaviyo covering welcome flows, abandon sequences, post-purchase, and win-back. Each flow was built around VITHIT's product education story, with campaign strategy built to convert first-time D2C buyers into repeat customers.",
+      },
+      {
+        step: 4,
+        title: "Full-Funnel Paid Media",
+        desc: "Paid social campaigns across Meta and TikTok and paid search via Google were built and managed alongside the store. Creative strategy was aligned with the D2C product positioning, targeting customers who knew VITHIT from retail but had never bought direct. The combined paid and email programme drove the 115% year-on-year revenue growth.",
+      },
+    ],
+    workTitle: "Inside the VITHIT Build",
+    workSubtitle: "Shopify Plus D2C, automated bundling, and a full-funnel paid and email programme.",
+    workImages: [
+      "/images/Case%20studies/vithit-1.jpg",
+      "/images/Case%20studies/vithit-2.jpg",
+      "/images/Case%20studies/vithit-3.jpg",
+      "/images/Case%20studies/vithit-4.jpg",
+    ],
+    results: [
+      { label: "Revenue Growth YoY", before: "Baseline", after: "+115%", improvement: "+115%" },
+      { label: "Conversion Rate", before: "Baseline", after: "+170%", improvement: "+170%" },
+      { label: "Average Order Value", before: "Baseline", after: "+31%", improvement: "+31%" },
+      { label: "Traffic Spike Outages", before: "Recurring", after: "Zero incidents", improvement: "0" },
+    ],
+    resultsDescription:
+      "D2C revenue grew 115% year on year across the UK and Ireland following the Shopify Plus build and full-funnel growth programme. Conversion rate increased 170% and average order value grew 31% as the automated bundling, MOV discounting, and Klaviyo flows replaced the manual processes that had been slowing the business. The store handled record-breaking traffic spikes during campaign periods without a single stability issue.",
+    techStack: [
+      { name: "Shopify Plus", logo: "/images/shopify-plus.svg" },
+      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
+      { name: "Yotpo", logo: "/images/yotpo.svg" },
+      { name: "Triple Whale", logo: "/images/triple-whale.svg" },
+    ],
+    sliderStats: [
+      "Revenue up 115% year on year",
+      "Conversion rate up 170%",
+      "Average order value up 31%",
+      "Zero site stability issues during record traffic spikes",
+      "Manual bundling and discounting fully automated",
+      "Operating across 15 countries from one Shopify Plus store",
+    ],
+    quote:
+      "Velstar turned what used to be a complex, manual process into an efficient, automated workflow that allowed us to handle record-breaking traffic across multiple regions without a single stability issue.",
+    quotePerson: "Sophie Pledger",
+    quoteRole: "UK Digital Marketing Manager, VITHIT",
+    prevSlug: "neom-wellbeing-shopify-upgrade",
+    prevBrand: "NEOM Wellbeing",
+    nextSlug: "feetures-shopify-theme-development",
+    nextBrand: "Feetures",
+    nextMetric: "+32% Add-to-Cart Rate",
+    nextImage: "/images/Case%20studies/feetures-hero.jpg",
+    nextIndustry: "Sports & Fitness",
+  },
+
+  // ─── 19. FEETURES — Sports & Fitness ───
+  {
+    slug: "feetures-shopify-theme-development",
+    brandName: "Feetures",
+    industry: "Sports & Fitness",
+    serviceType: "Shopify Theme Development | Custom PDP | Cart Engineering",
+    heroMetric: "+32%",
+    heroSubMetric: "Add-to-Cart Rate",
+    heroImage: "/images/Case%20studies/feetures-hero.jpg",
+    heroDescription:
+      "How America's top-rated performance sock brand outgrew their existing Shopify theme and rebuilt it from scratch with custom PLPs, a free shipping progress bar, dynamic PDPs with men's and women's variant toggles, and metafield-driven automation that removed significant manual overhead.",
+    stats: [
+      { label: "Add-to-Cart Rate Growth", value: "+32%", shortLabel: "Add-to-Cart" },
+      { label: "Average Order Value", value: "+19%", shortLabel: "AOV" },
+      { label: "Bounce Rate Reduction", value: "-24%", shortLabel: "Bounce Rate" },
+    ],
+    challengeTitle: "A Best-in-Class Product. A Theme That Couldn't Keep Up.",
+    challengeBody:
+      "Feetures makes high-performance athletic socks built around anatomical construction, targeted compression, and an itch-free guarantee. They're the number one rated running sock brand in America and hold a loyal following among serious athletes and everyday runners alike.\n\nWhen they came to Netalico, the store had outgrown its existing Shopify theme. Product listing pages were constrained by Shopify's default product-per-page limits, making it hard to show the full depth of a technically differentiated range. The product detail pages couldn't handle the complexity of men's and women's variants, activity-specific filtering, or the kind of upsell logic a high-consideration sock purchase warrants. Manual processes around content and merchandising were creating overhead that scaled badly as the product range grew.",
+    approachTitle: "Custom PLPs, Dynamic PDPs, and a Cart Built to Lift AOV.",
+    approachItems: [
+      {
+        step: 1,
+        title: "Custom Product Listing Pages",
+        desc: "Custom PLPs were built using the Shopify Collections API to bypass default product-per-page limits. Filtering by product type, sport, and activity was built in. Seasonal promotions are highlighted with colour-coded labels. Bundle savings are visible at the collection level so customers can see the value before they click through to a product.",
+      },
+      {
+        step: 2,
+        title: "Dynamic Product Detail Pages",
+        desc: "PDPs were rebuilt to handle the complexity of the Feetures range. Men's and women's tabs toggle size-specific variants without a page reload. Colour swatches update dynamically based on collection context. Upsell options were added at PDP level, individually tested to confirm they added revenue rather than friction. Below-the-fold content is driven by metafields, removing the need for manual copy updates per product.",
+      },
+      {
+        step: 3,
+        title: "Cart Experience and Free Shipping Bar",
+        desc: "A custom drawer cart and full cart page were built with large product images and clear order summaries. A free shipping progress bar was added to show customers how close they are to the free shipping threshold. Flat-rate shipping logic for orders below the threshold was automated. Add-to-cart rate grew 32% and average order value grew 19% across the new cart experience.",
+      },
+      {
+        step: 4,
+        title: "Metafield-Driven Content Automation",
+        desc: "Below-the-fold product content including technical specifications, activity guides, and care instructions was connected to Shopify metafields. The Feetures team can now update product content at scale without touching the theme code, removing a recurring source of manual work that had been slowing down catalogue management.",
+      },
+    ],
+    workTitle: "Inside the Feetures Build",
+    workSubtitle: "Custom PLPs, dynamic PDPs, a free shipping bar, and metafield automation.",
+    workImages: [
+      "/images/Case%20studies/feetures-1.jpg",
+      "/images/Case%20studies/feetures-2.jpg",
+      "/images/Case%20studies/feetures-3.jpg",
+      "/images/Case%20studies/feetures-4.jpg",
+    ],
+    results: [
+      { label: "Add-to-Cart Rate", before: "Baseline", after: "+32%", improvement: "+32%" },
+      { label: "Average Order Value", before: "Baseline", after: "+19%", improvement: "+19%" },
+      { label: "Bounce Rate", before: "Baseline", after: "-24%", improvement: "-24%" },
+      { label: "Manual Content Tasks", before: "Per-product manual", after: "Metafield-automated", improvement: "-100%" },
+    ],
+    resultsDescription:
+      "Add-to-cart rate grew 32% and average order value increased 19% following the rebuild, driven by the free shipping progress bar, PDP upsells, and a cart experience built around large product images and clear value signals. Bounce rate dropped 24% as the custom PLPs with activity filtering gave customers a faster route to the right product. Below-the-fold content automation removed a recurring manual process that had been adding overhead to every product launch.",
+    techStack: [
+      { name: "Shopify Plus", logo: "/images/shopify-plus.svg" },
+      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
+      { name: "Yotpo", logo: "/images/yotpo.svg" },
+      { name: "Rebuy", logo: "/images/64f098c0e38dec3a384cb182_rebuy.svg" },
+    ],
+    sliderStats: [
+      "Add-to-cart rate up 32%",
+      "Average order value up 19%",
+      "Bounce rate down 24%",
+      "Custom PLPs bypass Shopify default product-per-page limits",
+      "Men's and women's PDPs with dynamic variant toggles",
+      "Below-the-fold content fully automated via metafields",
+    ],
+    quote:
+      "The biggest thing is they listen to us, and that's really hard to find in a developer.",
+    quotePerson: "Jinnie Austin",
+    quoteRole: "Brand Manager, Feetures",
+    prevSlug: "vithit-shopify-plus-d2c",
+    prevBrand: "VITHIT",
+    nextSlug: "chlobo-shopify-plus-migration",
+    nextBrand: "ChloBo",
+    nextMetric: "+48% Conversion Rate",
+    nextImage: "/images/Case%20studies/chlobo-hero.jpg",
+    nextIndustry: "Jewelry & Accessories",
+  },
+
+  // ─── 20. CHLOBO — Jewelry & Accessories ───
+  {
+    slug: "chlobo-shopify-plus-migration",
+    brandName: "ChloBo",
+    industry: "Jewelry & Accessories",
+    serviceType: "Shopify Plus Migration | UX Design | Personalisation",
+    heroMetric: "+48%",
+    heroSubMetric: "Conversion Rate",
+    heroImage: "/images/Case%20studies/chlobo-hero.jpg",
+    heroDescription:
+      "How a British luxury jewellery brand exited Magento, rebuilt on Shopify Plus with a UX research-led redesign, launched a custom engraving preview tool for personalised orders, and grew conversion rate 48% and mobile revenue 39% while cutting platform operating costs.",
+    stats: [
+      { label: "Higher Conversion Rate", value: "+48%", shortLabel: "Conversion Rate" },
+      { label: "Mobile Revenue Growth", value: "+39%", shortLabel: "Mobile Revenue" },
+      { label: "Platform Cost Reduction", value: "-52%", shortLabel: "Platform Cost" },
+    ],
+    challengeTitle: "A Luxury Brand Trapped on an Expensive, Inflexible Platform",
+    challengeBody:
+      "ChloBo makes handcrafted jewellery with a loyal following and a product range that customers genuinely build collections from. The stacking philosophy behind the brand creates high repeat purchase rates and a community of buyers who know exactly what they want.\n\nWhen they came to Underwaterpistol, Magento was the problem. Maintenance costs required constant external agency support for changes that should have been straightforward. The platform lacked the flexibility to build the kind of editorial, story-led shopping experience the brand needed to communicate the handcrafted nature of its products. The site design had fallen behind the quality of the jewellery it was selling. Growth was being actively constrained by a platform the business had outgrown.",
+    approachTitle: "Premium Experience. Full Team Control. Personalisation Built In.",
+    approachItems: [
+      {
+        step: 1,
+        title: "Magento to Shopify Plus Migration",
+        desc: "Product data, customer accounts, and order history were migrated across. URL redirects were built before the switchover to protect organic search equity. The migration was planned around ChloBo's trading calendar to avoid disruption during key promotional periods.",
+      },
+      {
+        step: 2,
+        title: "UX Research and Premium Redesign",
+        desc: "A UX research phase informed the redesign, mapping how ChloBo's customers browse and build collections. Navigation was streamlined to make stacking and gift-buying journeys more intuitive. The new design reflected the premium positioning of the jewellery: editorial imagery, craft storytelling, and a cleaner visual language throughout.",
+      },
+      {
+        step: 3,
+        title: "Custom Engraving Preview Tool",
+        desc: "A custom engraving preview tool was built to let customers personalise selected pieces and see a real-time preview before they add to cart. The tool opened a new personalised product revenue stream that hadn't existed on Magento and gave ChloBo a clear point of difference in the gifting market.",
+      },
+      {
+        step: 4,
+        title: "Merchandising and Bundling",
+        desc: "Product bundling options were refined to support the stacking purchase behaviour that defines the ChloBo customer. Upsell mechanics were added at PDP and cart level. The internal team gained full control over content, product pages, and promotional activity without needing agency involvement for routine updates.",
+      },
+    ],
+    workTitle: "Inside the ChloBo Build",
+    workSubtitle: "Magento exit, UX-led redesign, and a custom engraving personalisation tool.",
+    workImages: [
+      "/images/Case%20studies/chlobo-1.jpg",
+      "/images/Case%20studies/chlobo-2.jpg",
+      "/images/Case%20studies/chlobo-3.jpg",
+      "/images/Case%20studies/chlobo-4.jpg",
+    ],
+    results: [
+      { label: "Conversion Rate", before: "Magento baseline", after: "+48%", improvement: "+48%" },
+      { label: "Mobile Revenue", before: "Baseline", after: "+39%", improvement: "+39%" },
+      { label: "Platform Operating Cost", before: "Magento overhead", after: "Shopify Plus", improvement: "-52%" },
+      { label: "Personalisation", before: "Not available", after: "Engraving live", improvement: "New" },
+    ],
+    resultsDescription:
+      "Conversion rate grew 48% and mobile revenue increased 39% following the Shopify Plus launch. Platform operating costs dropped 52% as the Magento maintenance overhead was replaced by Shopify Plus's predictable pricing. The custom engraving preview tool went live across the jewellery range, creating a personalised product revenue stream that hadn't existed before. The internal team now manages content, promotions, and new features without external agency support.",
+    techStack: [
+      { name: "Shopify Plus", logo: "/images/shopify-plus.svg" },
+      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
+      { name: "Yotpo", logo: "/images/yotpo.svg" },
+      { name: "LoyaltyLion", logo: "/images/loyalty-lion.svg" },
+    ],
+    sliderStats: [
+      "Conversion rate up 48% post-migration",
+      "Mobile revenue up 39%",
+      "Platform operating cost down 52%",
+      "Custom engraving preview tool live across the range",
+      "Magento replaced: full team control with no agency dependency",
+      "UX research-led redesign built for collection and gifting journeys",
+    ],
+    quote:
+      "Moving from Magento to Shopify Plus gave us the flexibility we'd been missing. The engraving tool alone opened up a gifting market we couldn't tap before. The team can now move at the speed the brand needs.",
+    quotePerson: "Sarah Hendry",
+    quoteRole: "Head of Digital, ChloBo",
+    prevSlug: "feetures-shopify-theme-development",
+    prevBrand: "Feetures",
+    nextSlug: "henchman-shopify-plus-b2b",
+    nextBrand: "Henchman",
+    nextMetric: "+58% Online Revenue",
+    nextImage: "/images/Case%20studies/henchman-hero.jpg",
+    nextIndustry: "B2B & Wholesale",
+  },
+
+  // ─── 21. HENCHMAN — B2B & Wholesale ───
+  {
+    slug: "henchman-shopify-plus-b2b",
+    brandName: "Henchman",
+    industry: "B2B & Wholesale",
+    serviceType: "Shopify Plus Migration | B2B Development | ERP Integration",
+    heroMetric: "+58%",
+    heroSubMetric: "Online Revenue",
+    heroImage: "/images/Case%20studies/henchman-hero.jpg",
+    heroDescription:
+      "How a British ladder and access equipment specialist exited Magento, built a Shopify Plus B2B store with self-service wholesale ordering and tiered price books, integrated Brightpearl ERP for automated order management, and grew online revenue 58% while cutting platform operating costs.",
+    stats: [
+      { label: "Online Revenue Growth", value: "+58%", shortLabel: "Revenue" },
+      { label: "Wholesale Order Processing", value: "-70%", shortLabel: "Order Time" },
+      { label: "Platform Cost Reduction", value: "-45%", shortLabel: "Platform Cost" },
+    ],
+    challengeTitle: "A B2B Business Constrained by a Platform Built for Someone Else",
+    challengeBody:
+      "Henchman has been making specialist ladders and platforms for working at height since 1994. The product range serves both trade buyers ordering wholesale and direct consumers. The brand has a strong reputation in the professional trades market and a product line that genuinely solves the problems working-at-height jobs create.\n\nWhen they came to Underwaterpistol, Magento was actively holding the business back. Content management was slow and cumbersome, requiring development support for changes that should have taken minutes. The B2B wholesale ordering process was largely manual: trade buyers had no self-service route and the team had to handle order admin that the platform should have automated. Maintenance costs were high and the total cost of ownership had become difficult to justify given what the platform was delivering.",
+    approachTitle: "Self-Service B2B, ERP Integration, and a Platform Built to Last.",
+    approachItems: [
+      {
+        step: 1,
+        title: "Magento to Shopify Plus Migration",
+        desc: "The full migration covered product catalogue, customer accounts, and order history. Brightpearl ERP was integrated during the migration phase so order management, inventory sync, and fulfilment data moved to an automated flow from day one. URL redirects were built before the cutover to protect existing search rankings.",
+      },
+      {
+        step: 2,
+        title: "B2B Wholesale Store with Price Books",
+        desc: "A B2B ordering environment was built within Shopify Plus using company accounts and location-based pricing. Returning wholesale buyers log in to see their specific price book without any manual intervention from the Henchman team. Smaller trade retailers can now place orders directly through the store rather than going through a manual process.",
+      },
+      {
+        step: 3,
+        title: "Brightpearl ERP Integration",
+        desc: "Brightpearl was integrated to automate the connection between the Shopify store and Henchman's back-end operations. Orders placed online flow directly into Brightpearl for fulfilment, inventory levels update in real time, and the manual reconciliation work that had been consuming team time was eliminated.",
+      },
+      {
+        step: 4,
+        title: "Simplified Content Management and UX",
+        desc: "The new Shopify Plus theme was built with a clean, modern design and a content management setup the internal team can use without developer support. Product pages, delivery information, and trade account content can all be updated directly. The improved checkout displays clear delivery options upfront, reducing drop-off from trade buyers who need to confirm lead times before committing.",
+      },
+    ],
+    workTitle: "Inside the Henchman Build",
+    workSubtitle: "Magento exit, Shopify Plus B2B, and Brightpearl ERP automation.",
+    workImages: [
+      "/images/Case%20studies/henchman-1.jpg",
+      "/images/Case%20studies/henchman-2.jpg",
+      "/images/Case%20studies/henchman-3.jpg",
+      "/images/Case%20studies/henchman-4.jpg",
+    ],
+    results: [
+      { label: "Online Revenue", before: "Magento baseline", after: "+58%", improvement: "+58%" },
+      { label: "Wholesale Order Processing", before: "Manual per order", after: "Self-service online", improvement: "-70%" },
+      { label: "Platform Operating Cost", before: "Magento overhead", after: "Shopify Plus", improvement: "-45%" },
+      { label: "ERP Order Automation", before: "Manual sync", after: "Brightpearl automated", improvement: "100%" },
+    ],
+    resultsDescription:
+      "Online revenue grew 58% following the Shopify Plus launch. Wholesale order processing time dropped 70% as trade buyers moved to self-service ordering through the B2B store rather than placing orders manually through the sales team. Platform operating costs fell 45% with Magento replaced by Shopify Plus. Brightpearl ERP integration automated the order-to-fulfilment flow, removing the manual reconciliation work that had been consuming operational resource.",
+    techStack: [
+      { name: "Shopify Plus", logo: "/images/shopify-plus.svg" },
+      { name: "Brightpearl", logo: "/images/brightpearl.svg" },
+      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
+      { name: "Gorgias", logo: "/images/gorgias.svg" },
+    ],
+    sliderStats: [
+      "Online revenue up 58% post-migration",
+      "Wholesale order processing time down 70%",
+      "Platform operating cost down 45%",
+      "Brightpearl ERP: orders automated from placement to fulfilment",
+      "B2B price books: trade buyers see correct pricing on login",
+      "Magento replaced: full internal content control restored",
+    ],
+    quote:
+      "Moving off Magento was the best commercial decision we made that year. The B2B store gave our trade customers a self-service route they actually want to use, and the Brightpearl integration removed a layer of manual work we'd been carrying for years.",
+    quotePerson: "Richard Carey",
+    quoteRole: "Managing Director, Henchman",
+    prevSlug: "chlobo-shopify-plus-migration",
+    prevBrand: "ChloBo",
   },
 ];
 
