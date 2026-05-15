@@ -784,7 +784,7 @@
   .ssd-results-arrow { width: 36px !important; height: 36px !important; }
 }
 @media (max-width: 640px) {
-  .ssd-results-section { padding: 36px 16px !important; }
+  .ssd-results-section { padding: 40px 15px !important; }
   .ssd-results-heading { font-size: 26px !important; line-height: 34px !important; }
   .ssd-results-desc   { font-size: 15px !important; line-height: 24px !important; }
   .ssd-results-slider { padding: 0 !important; }

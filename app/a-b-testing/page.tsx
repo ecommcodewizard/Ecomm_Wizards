@@ -347,7 +347,7 @@ export default function ABTestingPage() {
     <>
       {/* 1 — HERO */}
       <section className="relative overflow-hidden" style={{ background: "#000000", fontFamily: "'Poppins', sans-serif" }}>
-        <div className="mx-auto grid items-center gap-10 px-5 pt-24 pb-20 sm:pt-28 sm:pb-24 lg:grid-cols-[1.05fr_1fr] lg:gap-12" style={{ maxWidth: "var(--container-max)" }}>
+        <div className="mx-auto grid items-center gap-8 px-[15px] pt-14 pb-10 sm:gap-10 sm:px-5 sm:pt-28 sm:pb-24 lg:grid-cols-[1.05fr_1fr] lg:gap-12" style={{ maxWidth: "var(--container-max)" }}>
           <div>
             <h1 className="font-bold text-white text-[34px] leading-[42px] sm:text-[44px] sm:leading-[54px] lg:text-[52px] lg:leading-[62px]">
               Shopify <span style={GRADIENT_TEXT}>A/B Testing</span> That Actually Moves the Needle.
@@ -358,7 +358,7 @@ export default function ABTestingPage() {
             <div className="mt-8">
               <Link
                 href="/book-shopify-consultation"
-                className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold text-white transition-all"
+                className="flex w-full items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold text-white transition-all sm:inline-flex sm:w-auto"
                 style={{
                   border: "1.5px solid transparent",
                   borderRadius: "var(--radius-full)",
@@ -387,9 +387,9 @@ export default function ABTestingPage() {
       </section>
 
       {/* 2 — WHY START NOW */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24" style={{ fontFamily: "'Poppins', sans-serif" }}>
-        <div className="mx-auto grid items-center gap-10 px-5 lg:grid-cols-2 lg:gap-16" style={{ maxWidth: "var(--container-max)" }}>
-          <div className="order-2 lg:order-1">
+      <section className="bg-white py-10 sm:py-20 lg:py-24" style={{ fontFamily: "'Poppins', sans-serif" }}>
+        <div className="mx-auto grid items-center gap-8 px-[15px] sm:gap-10 sm:px-5 lg:grid-cols-2 lg:gap-16" style={{ maxWidth: "var(--container-max)" }}>
+          <div>
             <Image
               src="/images/Group_1000004415.webp"
               alt="Shopify A/B testing theme editor"
@@ -398,14 +398,23 @@ export default function ABTestingPage() {
               className="h-auto w-full"
             />
           </div>
-          <div className="order-1 lg:order-2">
+          <div>
             <h2 className="font-bold text-[28px] leading-[36px] sm:text-[36px] sm:leading-[46px] lg:text-[42px] lg:leading-[52px]" style={{ color: "#000000" }}>
               Why Start Shopify A/B Testing Now?
             </h2>
-            <div className="mt-8 space-y-7">
+            <div className="mt-6 space-y-5 sm:mt-8 sm:space-y-7">
               {PAIN_POINTS.map((p) => (
-                <div key={p.title} className="border-t border-slate-200 pt-6">
-                  <div className="flex items-start justify-between gap-6">
+                <div key={p.title} className="border-t border-slate-200 pt-5 sm:pt-6">
+                  {/* Mobile: icon-left, title beside, body wraps under title */}
+                  <div className="flex items-start gap-3 lg:hidden">
+                    <span className="shrink-0" style={{ color: "#334155" }}>{p.icon}</span>
+                    <div className="flex-1">
+                      <h3 className="text-[17px] font-bold leading-snug" style={{ color: "#000000" }}>{p.title}</h3>
+                      <p className="mt-2 text-[14px] leading-[22px]" style={{ color: "#334155" }}>{p.desc}</p>
+                    </div>
+                  </div>
+                  {/* Desktop: title+body left, icon on right */}
+                  <div className="hidden lg:flex lg:items-start lg:justify-between lg:gap-6">
                     <div className="flex-1">
                       <h3 className="text-[18px] font-bold leading-snug" style={{ color: "#000000" }}>{p.title}</h3>
                       <p className="mt-3 text-[14.5px] leading-[24px]" style={{ color: "#334155" }}>{p.desc}</p>
@@ -414,7 +423,7 @@ export default function ABTestingPage() {
                   </div>
                 </div>
               ))}
-              <p className="border-t border-slate-200 pt-6 text-[14.5px] leading-[24px]" style={{ color: "#334155" }}>
+              <p className="border-t border-slate-200 pt-5 text-[14px] leading-[22px] sm:pt-6 sm:text-[14.5px] sm:leading-[24px]" style={{ color: "#334155" }}>
                 A/B testing replaces guesswork with decisions backed by real shopper behavior, so your roadmap compounds gains instead of risks.
               </p>
             </div>
@@ -423,17 +432,17 @@ export default function ABTestingPage() {
       </section>
 
       {/* 3 — WHY SHOPLIFT */}
-      <section className="py-16 sm:py-20 lg:py-24" style={{ background: "#000000", fontFamily: "'Poppins', sans-serif" }}>
-        <div className="mx-auto px-5" style={{ maxWidth: "var(--container-max)" }}>
+      <section className="py-10 sm:py-20 lg:py-24" style={{ background: "#000000", fontFamily: "'Poppins', sans-serif" }}>
+        <div className="mx-auto px-[15px] sm:px-5" style={{ maxWidth: "var(--container-max)" }}>
           <h2 className="mx-auto max-w-3xl text-center font-bold text-white text-[28px] leading-[36px] sm:text-[36px] sm:leading-[46px] lg:text-[42px] lg:leading-[52px]">
             Why Shoplift, and Why with Ecomm Wizards?
           </h2>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+          <div className="mt-8 grid gap-5 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-5">
             {WHY_SHOPLIFT.map((c) => (
-              <div key={c.title} className="flex flex-col rounded-[14px] p-7" style={{ background: "#121212", border: "1px solid rgba(255,255,255,0.06)" }}>
-                <h3 className="text-[20px] font-semibold leading-snug text-white">{c.title}</h3>
-                <p className="mt-4 text-[13.5px] leading-[22px] text-white/65">{c.desc}</p>
-                <div className="mt-6">
+              <div key={c.title} className="flex flex-col rounded-[14px] p-6 sm:p-7" style={{ background: "#121212", border: "1px solid rgba(255,255,255,0.06)" }}>
+                <h3 className="text-[19px] font-semibold leading-snug text-white sm:text-[20px]">{c.title}</h3>
+                <p className="mt-3 text-[13.5px] leading-[22px] text-white/65 sm:mt-4">{c.desc}</p>
+                <div className="mt-5 sm:mt-6">
                   <Image src={c.image} alt="" width={460} height={320} className="h-auto w-full rounded-[10px]" />
                 </div>
               </div>
@@ -450,7 +459,6 @@ export default function ABTestingPage() {
           color: "#334155",
           fontFamily: "'Poppins', sans-serif",
           fontSize: "16px",
-          padding: "60px 20px",
         }}
       >
         <div className="ssd-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
@@ -475,22 +483,22 @@ export default function ABTestingPage() {
       </section>
 
       {/* 5 — THE A/B TEST DRIVE */}
-      <section className="py-16 sm:py-20 lg:py-24" style={{ background: "#ffffff", fontFamily: "'Poppins', sans-serif" }}>
-        <div className="mx-auto px-5" style={{ maxWidth: "var(--container-max)" }}>
+      <section className="py-10 sm:py-20 lg:py-24" style={{ background: "#ffffff", fontFamily: "'Poppins', sans-serif" }}>
+        <div className="mx-auto px-[15px] sm:px-5" style={{ maxWidth: "var(--container-max)" }}>
           <h2 className="text-center font-bold text-[28px] leading-[36px] sm:text-[36px] sm:leading-[46px] lg:text-[42px] lg:leading-[52px]" style={{ color: "#000000" }}>
             The A/B Test Drive
           </h2>
-          <div className="mt-10 grid items-center gap-10 rounded-3xl p-6 sm:p-10 lg:grid-cols-2 lg:gap-12 lg:p-14" style={{ background: "#FBF7ED" }}>
+          <div className="mt-8 grid items-center gap-8 rounded-2xl p-5 sm:mt-10 sm:gap-10 sm:rounded-3xl sm:p-10 lg:grid-cols-2 lg:gap-12 lg:p-14" style={{ background: "#FBF7ED" }}>
             <div>
-              <h3 className="text-[22px] font-bold leading-snug sm:text-[26px]" style={{ color: "#000000" }}>
+              <h3 className="text-[20px] font-bold leading-snug sm:text-[26px]" style={{ color: "#000000" }}>
                 What you get (60–90 minutes to kickoff)
               </h3>
-              <div className="mt-7 space-y-6">
+              <div className="mt-5 space-y-5 sm:mt-7 sm:space-y-6">
                 {TEST_DRIVE_STEPS.map((s) => (
-                  <div key={s.title} className="border-t pt-5" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
-                    <div className="flex gap-4">
+                  <div key={s.title} className="border-t pt-4 sm:pt-5" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
+                    <div className="flex gap-3 sm:gap-4">
                       <span className="shrink-0" style={{ color: "#000000" }}>{s.icon}</span>
-                      <p className="text-[14.5px] leading-[24px]" style={{ color: "#334155" }}>
+                      <p className="text-[14px] leading-[22px] sm:text-[14.5px] sm:leading-[24px]" style={{ color: "#334155" }}>
                         <strong className="font-bold" style={{ color: "#000000" }}>{s.title}</strong>{s.desc}
                       </p>
                     </div>
@@ -504,7 +512,7 @@ export default function ABTestingPage() {
                 alt="A/B test drive: Shoplift, Figma, and analytics workflow"
                 width={720}
                 height={620}
-                className="h-auto w-full"
+                className="h-auto w-full rounded-xl"
               />
             </div>
           </div>
@@ -512,9 +520,9 @@ export default function ABTestingPage() {
       </section>
 
       {/* 6 — OUR GUARANTEE */}
-      <section className="py-16 sm:py-20 lg:py-24" style={{ background: "#FBF7ED", fontFamily: "'Poppins', sans-serif" }}>
-        <div className="mx-auto grid items-center gap-10 px-5 lg:grid-cols-2 lg:gap-16" style={{ maxWidth: "var(--container-max)" }}>
-          <div>
+      <section className="py-10 sm:py-20 lg:py-24" style={{ background: "#FBF7ED", fontFamily: "'Poppins', sans-serif" }}>
+        <div className="mx-auto grid items-center gap-8 px-[15px] sm:gap-10 sm:px-5 lg:grid-cols-2 lg:gap-16" style={{ maxWidth: "var(--container-max)" }}>
+          <div className="order-2 lg:order-1">
             <Image
               src="/images/ab-guarantee.webp"
               alt="A/B test insight dashboard"
@@ -523,7 +531,7 @@ export default function ABTestingPage() {
               className="h-auto w-full"
             />
           </div>
-          <div>
+          <div className="order-1 lg:order-2">
             <h2 className="font-bold text-[28px] leading-[36px] sm:text-[36px] sm:leading-[46px] lg:text-[42px] lg:leading-[52px]" style={{ color: "#000000" }}>
               Our Guarantee
             </h2>
@@ -545,27 +553,27 @@ export default function ABTestingPage() {
 
       {/* 7 — WHAT WE'LL TEST FIRST */}
       <section
-        className="relative overflow-hidden py-16 sm:py-20 lg:py-24"
+        className="relative overflow-hidden py-10 sm:py-20 lg:py-24"
         style={{
           background:
             "radial-gradient(ellipse at top, rgba(78,183,113,0.22) 0%, rgba(0,0,0,0) 55%), #000000",
           fontFamily: "'Poppins', sans-serif",
         }}
       >
-        <div className="relative mx-auto px-5" style={{ maxWidth: "var(--container-max)" }}>
+        <div className="relative mx-auto px-[15px] sm:px-5" style={{ maxWidth: "var(--container-max)" }}>
           <h2 className="text-center font-bold text-white text-[28px] leading-[36px] sm:text-[36px] sm:leading-[46px] lg:text-[42px] lg:leading-[52px]">
             What we&rsquo;ll test first
           </h2>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-5 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {TEST_FIRST.map((t) => (
               <div
                 key={t.title}
-                className="flex flex-col items-center rounded-[14px] p-8 text-center"
+                className="flex flex-col items-center rounded-[14px] p-6 text-center sm:p-8"
                 style={{ background: "rgba(15,15,15,0.85)", border: "1px solid rgba(78,183,113,0.22)" }}
               >
                 <span style={{ color: "#4EB771" }}>{t.icon}</span>
-                <h3 className="mt-5 text-[20px] font-semibold leading-snug text-white">{t.title}</h3>
-                <p className="mt-4 text-[13.5px] leading-[22px] text-white/65">{t.desc}</p>
+                <h3 className="mt-4 text-[19px] font-semibold leading-snug text-white sm:mt-5 sm:text-[20px]">{t.title}</h3>
+                <p className="mt-3 text-[13.5px] leading-[22px] text-white/65 sm:mt-4">{t.desc}</p>
               </div>
             ))}
           </div>
@@ -573,16 +581,16 @@ export default function ABTestingPage() {
       </section>
 
       {/* 8 — HOW IT WORKS */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24" style={{ fontFamily: "'Poppins', sans-serif" }}>
-        <div className="mx-auto grid gap-10 px-5 lg:grid-cols-2 lg:gap-16" style={{ maxWidth: "var(--container-max)" }}>
+      <section className="bg-white py-10 sm:py-20 lg:py-24" style={{ fontFamily: "'Poppins', sans-serif" }}>
+        <div className="mx-auto grid gap-8 px-[15px] sm:gap-10 sm:px-5 lg:grid-cols-2 lg:gap-16" style={{ maxWidth: "var(--container-max)" }}>
           <div>
             <h2 className="font-bold text-[28px] leading-[36px] sm:text-[36px] sm:leading-[46px] lg:text-[42px] lg:leading-[52px]" style={{ color: "#000000" }}>
               How it works
             </h2>
-            <p className="mt-5 text-[14.5px] leading-[26px]" style={{ color: "#334155" }}>
+            <p className="mt-4 text-[14px] leading-[22px] sm:mt-5 sm:text-[14.5px] sm:leading-[26px]" style={{ color: "#334155" }}>
               <strong className="font-bold" style={{ color: "#000000" }}>Typical Timeline:</strong> Many brands see significant readouts within weeks, depending on traffic volume and effect size.
             </p>
-            <div className="mt-10">
+            <div className="mt-6 sm:mt-10">
               <Image
                 src="/images/Group_1000004421.webp"
                 alt="A/B testing in action across Shopify stores"
@@ -592,10 +600,21 @@ export default function ABTestingPage() {
               />
             </div>
           </div>
-          <div className="space-y-7">
+          <div className="space-y-5 sm:space-y-7">
             {HOW_IT_WORKS.map((s) => (
               <div key={s.title} className="border-t pt-5" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
-                <div className="flex items-start justify-between gap-4">
+                {/* Mobile: icon-left, title beside, body wraps under title */}
+                <div className="flex items-start gap-3 lg:hidden">
+                  <span className="shrink-0" style={{ color: "#334155" }}>{s.icon}</span>
+                  <div className="flex-1">
+                    <h3 className="text-[17px] font-bold leading-snug" style={{ color: "#000000" }}>
+                      <span className="mr-1.5">{s.n}</span>{s.title}
+                    </h3>
+                    <p className="mt-2 text-[14px] leading-[22px]" style={{ color: "#334155" }}>{s.desc}</p>
+                  </div>
+                </div>
+                {/* Desktop: title+body left, icon right */}
+                <div className="hidden lg:flex lg:items-start lg:justify-between lg:gap-4">
                   <div className="flex-1">
                     <h3 className="text-[18px] font-bold leading-snug" style={{ color: "#000000" }}>
                       <span className="mr-1.5">{s.n}</span>{s.title}

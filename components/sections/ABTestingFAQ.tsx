@@ -9,8 +9,8 @@ export default function ABTestingFAQ({ faqs }: { faqs: FAQ[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24" style={{ background: "#000000", fontFamily: "'Poppins', sans-serif" }}>
-      <div className="mx-auto grid gap-10 px-5 lg:grid-cols-[1.1fr_1fr] lg:gap-14" style={{ maxWidth: "var(--container-max)" }}>
+    <section className="py-10 sm:py-20 lg:py-24" style={{ background: "#000000", fontFamily: "'Poppins', sans-serif" }}>
+      <div className="mx-auto grid gap-8 px-[15px] sm:gap-10 sm:px-5 lg:grid-cols-[1.1fr_1fr] lg:gap-14" style={{ maxWidth: "var(--container-max)" }}>
         {/* Left — FAQ accordion */}
         <div>
           <h2 className="font-bold text-white text-[28px] leading-[36px] sm:text-[36px] sm:leading-[46px] lg:text-[42px] lg:leading-[52px]">
@@ -69,16 +69,16 @@ export default function ABTestingFAQ({ faqs }: { faqs: FAQ[] }) {
 
         {/* Right — Dark CTA card (slightly lighter than section bg for visual separation) */}
         <div className="flex items-center">
-          <div className="w-full rounded-[18px] p-8 text-center sm:p-12" style={{ background: "#1a1a1a", border: "1px solid rgba(255,255,255,0.06)" }}>
-            <h2 className="font-bold text-white text-[24px] leading-[32px] sm:text-[30px] sm:leading-[40px] lg:text-[34px] lg:leading-[44px]">
+          <div className="w-full rounded-2xl p-6 text-center sm:rounded-[18px] sm:p-12" style={{ background: "#1a1a1a", border: "1px solid rgba(255,255,255,0.06)" }}>
+            <h2 className="font-bold text-white text-[22px] leading-[30px] sm:text-[30px] sm:leading-[40px] lg:text-[34px] lg:leading-[44px]">
               Ready to Run Your First Winning Test?
             </h2>
-            <p className="mt-5 text-[13.5px] leading-[22px] text-white/65 sm:text-[14px]">
+            <p className="mt-4 text-[13.5px] leading-[22px] text-white/65 sm:mt-5 sm:text-[14px]">
               Results vary by traffic and audience. All uplift figures come from real case studies and Shoplift reporting. Benchmarks are directional, not guarantees. But when the best A/B testing tools for ecommerce personalization meet a team that knows how to use them, the wins speak for themselves.
             </p>
             <Link
               href="/book-shopify-consultation"
-              className="mt-8 inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold text-white transition-all"
+              className="mt-6 flex w-full items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold text-white transition-all sm:mt-8 sm:inline-flex sm:w-auto"
               style={{
                 border: "1.5px solid transparent",
                 borderRadius: "var(--radius-full)",
