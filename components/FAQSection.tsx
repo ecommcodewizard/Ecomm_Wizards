@@ -1,9 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { ABOUT_FAQS as FAQS } from "@/lib/about-faqs";
+import { ABOUT_FAQS, type FAQ } from "@/lib/about-faqs";
 
-export default function FAQSection() {
+type Props = {
+  title?: string;
+  faqs?: FAQ[];
+};
+
+export default function FAQSection({
+  title = "Frequently Asked Questions About Our Shopify Agency",
+  faqs = ABOUT_FAQS,
+}: Props = {}) {
+  const FAQS = faqs;
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
@@ -36,7 +45,7 @@ export default function FAQSection() {
             padding: 0,
           }}
         >
-          Frequently Asked Questions About Our Shopify Agency
+          {title}
         </h2>
 
         <div className="ekit-accordion" style={{ width: "100%", maxWidth: "1290px", margin: "0 auto" }}>
