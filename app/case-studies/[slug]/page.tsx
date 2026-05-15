@@ -384,6 +384,12 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
               autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
+          ) : cs.slug === "sneak-energy-shopify-redesign" ? (
+            <video
+              src="/images/Case%20studies/Sneak%20video.mp4"
+              autoPlay loop muted playsInline preload="none"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
           ) : (
             <Image
               src={cs.heroImage}
@@ -734,6 +740,8 @@ function CaseStudyExploreMore({ current }: { current: string }) {
                     <video src="/images/Case%20studies/dryrobe%20video%20test.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : cs.slug === "loop-earplugs-shopify-landing-page-cro" ? (
                     <video src="/images/Case%20studies/Loop%20Earplugs%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : cs.slug === "sneak-energy-shopify-redesign" ? (
+                    <video src="/images/Case%20studies/Sneak%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
                     <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" sizes="356px" />
                   )}

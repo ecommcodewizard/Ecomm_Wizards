@@ -396,7 +396,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     nextSlug: "sneak-energy-shopify-redesign",
     nextBrand: "Sneak Energy",
     nextMetric: "+68% Mobile Conversion Rate",
-    nextImage: "/images/Case%20studies/sneak-energy-hero.jpg",
+    nextImage: "/images/Case%20studies/sneak-header-final.jpg",
     nextIndustry: "Food & Beverages",
   },
 
@@ -922,7 +922,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Theme Development | UX Design | App Setup",
     heroMetric: "+68%",
     heroSubMetric: "Mobile Conversion Rate",
-    heroImage: "/images/Case%20studies/sneak-energy-hero.jpg",
+    heroImage: "/images/Case%20studies/sneak-header-final.jpg",
     heroDescription:
       "How a low-calorie energy powder brand with 80% mobile traffic rebuilt their Shopify store around mobile-first UX, a custom bundle builder, and performance optimisation to grow mobile conversion rate 68%, add-to-cart rate 52%, and hit a sub-3-second load time.",
     stats: [
@@ -959,10 +959,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the Sneak Energy Build",
     workSubtitle: "Mobile-first theme, sticky ATC, custom bundle builder, and sub-3s performance.",
     workImages: [
-      "/images/Case%20studies/sneak-energy-hero.jpg",
-      "/images/Case%20studies/sneak-energy-1.jpg",
-      "/images/Case%20studies/sneak-energy-2.jpg",
-      "/images/Case%20studies/sneak-energy-3.jpg",
+      "/images/Case%20studies/sneak-pdp.jpg",
+      "/images/Case%20studies/sneak.webp",
+      "/images/Case%20studies/sneak-2.webp",
+      "/images/Case%20studies/Sneak-bundle.png",
     ],
     results: [
       { label: "Mobile Conversion Rate", before: "Baseline", after: "+68%", improvement: "+68%" },
@@ -990,6 +990,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "A big shout out to the guys at Eastside Co who did a fabulous job of making our vision come to life through the design. The mobile numbers spoke for themselves within the first few weeks of launch.",
     quotePerson: "Jodie Beevers",
     quoteRole: "Ecommerce Manager, Sneak Energy",
+    quoteAvatar: "/images/Case%20studies/Jodie%20Beevers.jfif",
     prevSlug: "candy-kittens-shopify-food-beverage-cro",
     prevBrand: "Candy Kittens",
     nextSlug: "everlast-shopify-plus-sports-redesign",

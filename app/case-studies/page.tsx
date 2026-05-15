@@ -617,6 +617,16 @@ export default async function CaseStudiesPage({
                         preload="none"
                         style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                       />
+                    ) : cs.slug === "sneak-energy-shopify-redesign" ? (
+                      <video
+                        src="/images/Case%20studies/Sneak%20video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
                     ) : (
                       <Image
                         src={cs.heroImage}
