@@ -881,7 +881,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     results: [
       { label: "Revenue Uplift (Test 1)", before: "Baseline", after: "+6.4%", improvement: "+6.4%" },
       { label: "New User CVR (Test 2)", before: "Baseline", after: "+5.9%", improvement: "+5.9%" },
-      { label: "Combined Annual Opportunity", before: "Unmapped", after: "€1M+", improvement: "Quantified" },
+      { label: "Countries Selling In", before: "Global brand", after: "100+ markets", improvement: "100+" },
       { label: "Zero-Party Data", before: "None", after: "Live Klaviyo personalisation", improvement: "Built" },
     ],
     resultsDescription:
