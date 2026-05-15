@@ -310,7 +310,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     nextSlug: "loop-earplugs-shopify-landing-page-cro",
     nextBrand: "Loop Earplugs",
     nextMetric: "€1M+ Growth Opportunity",
-    nextImage: "/images/Case%20studies/Loop%20Earplugs.webp",
+    nextImage: "/images/Case%20studies/Loop%20Earplugs-1.webp",
     nextIndustry: "Health, Wellness & Fitness",
   },
 
@@ -836,7 +836,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Landing Page Design | CRO | App Optimization",
     heroMetric: "€1M+",
     heroSubMetric: "Annual Growth Opportunity",
-    heroImage: "/images/Case%20studies/Loop%20Earplugs.webp",
+    heroImage: "/images/Case%20studies/Loop%20Earplugs-1.webp",
     heroDescription:
       "How a Belgian earplug brand selling in 100+ countries identified a €1M+ annual growth opportunity through structured CRO, rebuilt their Shopify landing pages to generate a 6.4% revenue uplift, and launched a product recommendation quiz that lifted new user conversion by 5.9%.",
     stats: [
