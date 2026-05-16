@@ -1265,7 +1265,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Plus Migration | UX Design | Internationalisation",
     heroMetric: "+38%",
     heroSubMetric: "Conversion Rate",
-    heroImage: "/images/Case%20studies/this-works-hero.jpg",
+    heroImage: "/images/Case%20studies/This%20Works-hero%20section.png",
     heroDescription:
       "How a premium skincare and sleep brand exited Magento 1, rebuilt on Shopify Plus across UK, US, and EU storefronts, and grew conversion rate 38% and mobile conversion rate 45% while bringing a separate CBD microsite back into a single compliant store.",
     stats: [
@@ -1302,10 +1302,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the This Works Build",
     workSubtitle: "Magento exit, CBD-compliant architecture, and multi-region Shopify Plus stores.",
     workImages: [
-      "/images/Case%20studies/this-works-1.jpg",
-      "/images/Case%20studies/this-works-2.jpg",
-      "/images/Case%20studies/this-works-3.jpg",
-      "/images/Case%20studies/this-works-4.jpg",
+      "/images/Case%20studies/This%20Works.webp",
+      "/images/Case%20studies/This%20Works-1.webp",
+      "/images/Case%20studies/This%20Works-2.webp",
+      "/images/Case%20studies/This%20Works-3.png",
     ],
     results: [
       { label: "Conversion Rate", before: "Magento baseline", after: "+38%", improvement: "+38%" },
@@ -1316,10 +1316,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     resultsDescription:
       "Conversion rate grew 38% and mobile conversion rate grew 45% after the Shopify Plus launch. Bounce rate dropped 15% as the mobile-first theme matched how the brand's customers browse. The multi-region architecture went live with UK, US, and EU storefronts running from a single Shopify Plus setup, replacing the fragmented Magento and separate CBD microsite arrangement that had been holding the business back.",
     techStack: [
-      { name: "Shopify Plus", logo: "/images/shopify-plus.svg" },
+      { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "Recharge", logo: "/images/recharge.svg" },
-      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
-      { name: "Yotpo", logo: "/images/yotpo.svg" },
+      { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
+      { name: "Yotpo", logo: "/images/partner_logo_2.svg" },
     ],
     sliderStats: [
       "Conversion rate up 38% post-migration",
@@ -1330,15 +1330,16 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Zero trading disruption during migration",
     ],
     quote:
-      "They've demonstrated such a personable and flexible approach. We now have a platform from which we can confidently scale together.",
-    quotePerson: "Joe Fletcher",
-    quoteRole: "E-Commerce Director, This Works",
+      "Moving off Magento was the right decision for the business. We now have a platform built for where This Works is going — internationalisation, subscriptions, and a customer experience that does justice to our products.",
+    quotePerson: "Dr. Anna Persaud",
+    quoteRole: "CEO, This Works",
+    quoteAvatar: "/images/Case%20studies/Dr.%20Anna%20Persaud.jfif",
     prevSlug: "saddleback-shopify-plus-b2b",
     prevBrand: "Saddleback",
     nextSlug: "twillory-shopify-cro",
     nextBrand: "Twillory",
     nextMetric: "+$5.4M New Annual Revenue",
-    nextImage: "/images/Case%20studies/twillory-hero.jpg",
+    nextImage: "/images/Case%20studies/Twillory%20hero%20section.png",
     nextIndustry: "Fashion & Apparel",
   },
 
@@ -1350,7 +1351,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify CRO | A/B Testing | Theme Development",
     heroMetric: "$5.4M",
     heroSubMetric: "New Annual Revenue",
-    heroImage: "/images/Case%20studies/twillory-hero.jpg",
+    heroImage: "/images/Case%20studies/Twillory%20hero%20section.png",
     heroDescription:
       "How a men's premium performance shirt brand added $5.4 million in new annual revenue and $455k in the first 90 days through a systematic CRO programme, A/B testing every interface component, and building an education-first approach for first-time visitors.",
     stats: [
@@ -1387,10 +1388,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the Twillory CRO Programme",
     workSubtitle: "Systematic A/B testing, first-visit education, and a 70% win rate on every test.",
     workImages: [
-      "/images/Case%20studies/twillory-1.jpg",
-      "/images/Case%20studies/twillory-2.jpg",
-      "/images/Case%20studies/twillory-3.jpg",
-      "/images/Case%20studies/twillory-4.jpg",
+      "/images/Case%20studies/Twillory%20product%20page.png",
+      "/images/Case%20studies/Twillory%20bundles.png",
+      "/images/Case%20studies/Twillory%20cart%20viewer.png",
+      "/images/Case%20studies/Twillory%20menu%20navigation.png",
     ],
     results: [
       { label: "New Annual Revenue", before: "Pre-engagement baseline", after: "+$5.4M", improvement: "$5.4M" },
@@ -1401,9 +1402,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     resultsDescription:
       "$5.4 million in new annual revenue was added through the CRO programme. The first $455k landed within 90 days, before most of the larger interface changes had even been completed. Seventy percent of all A/B tests run added measurable revenue, a win rate that reflects both the quality of the testing hypotheses and the discipline applied to reading and acting on results.",
     techStack: [
-      { name: "Shopify Plus", logo: "/images/shopify-plus.svg" },
+      { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "Shoplift", logo: "/images/shoplift.svg" },
-      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
+      { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
       { name: "Triple Whale", logo: "/images/triple-whale.svg" },
     ],
     sliderStats: [
@@ -1418,12 +1419,13 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Top tier tech stack and nice guys to boot. 70% of the A/B tests we run are adding noticeable revenue.",
     quotePerson: "Harry C.",
     quoteRole: "Founder, Twillory",
+    quoteAvatar: "/images/Case%20studies/Harry%20C..webp",
     prevSlug: "this-works-shopify-plus-migration",
     prevBrand: "This Works",
     nextSlug: "neom-wellbeing-shopify-upgrade",
     nextBrand: "NEOM Wellbeing",
     nextMetric: "+34% Checkout Conversion",
-    nextImage: "/images/Case%20studies/neom-hero.jpg",
+    nextImage: "/images/Case%20studies/NEOM%20Wellbeing-2.webp",
     nextIndustry: "Health, Wellness & Fitness",
   },
 
@@ -1437,7 +1439,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroSubMetric: "Checkout Conversion",
     heroDescription:
       "How a multi-award-winning luxury wellbeing brand upgraded from a legacy Shopify setup to Shopify 2.0, unified their physical Wellbeing Hub retail locations under Shopify POS, expanded to UK, EU, and US via Shopify Markets, and grew checkout conversion 34% and order volume 10%.",
-    heroImage: "/images/Case%20studies/neom-hero.jpg",
+    heroImage: "/images/Case%20studies/NEOM%20Wellbeing-2.webp",
     stats: [
       { label: "Checkout Conversion Lift", value: "+34%", shortLabel: "Checkout CVR" },
       { label: "Order Volume Growth", value: "+10%", shortLabel: "Order Volume" },
@@ -1472,10 +1474,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the NEOM Wellbeing Build",
     workSubtitle: "Shopify 2.0 upgrade, unified POS, and a three-market international setup.",
     workImages: [
-      "/images/Case%20studies/neom-1.jpg",
-      "/images/Case%20studies/neom-2.jpg",
-      "/images/Case%20studies/neom-3.jpg",
-      "/images/Case%20studies/neom-4.jpg",
+      "/images/Case%20studies/NEOM%20Wellbeing%20hero%20section.png",
+      "/images/Case%20studies/NEOM%20Wellbeing%20collection%20page.png",
+      "/images/Case%20studies/NEOM%20Wellbeing%20cart%20viewer.png",
+      "/images/Case%20studies/NEOM%20Wellbeing%20pdp.png",
     ],
     results: [
       { label: "Checkout Conversion", before: "Legacy Shopify baseline", after: "+34%", improvement: "+34%" },
@@ -1486,10 +1488,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     resultsDescription:
       "Checkout conversion grew 34% and order volume increased 10% following the Shopify 2.0 launch. Four Wellbeing Hub retail locations moved onto Shopify POS, giving the team a unified view of inventory, pricing, and promotions for the first time. UK, EU, and US storefronts are now managed from a single Shopify setup via Shopify Markets, with the internal team able to update content and launch features without developer support.",
     techStack: [
-      { name: "Shopify Plus", logo: "/images/shopify-plus.svg" },
+      { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "LoyaltyLion", logo: "/images/loyalty-lion.svg" },
-      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
-      { name: "Yotpo", logo: "/images/yotpo.svg" },
+      { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
+      { name: "Yotpo", logo: "/images/partner_logo_2.svg" },
     ],
     sliderStats: [
       "Checkout conversion up 34%",
@@ -1501,14 +1503,15 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     quote:
       "The ability to open new stores with Shopify POS seamlessly integrated, providing a unified hub where we can monitor everything, represents a significant advancement for the business.",
-    quotePerson: "Clare Jerome",
-    quoteRole: "Technology Product Manager, NEOM Wellbeing",
+    quotePerson: "Nicola Elliott",
+    quoteRole: "Founder, NEOM Wellbeing",
+    quoteAvatar: "/images/Case%20studies/Nicola%20Elliott.jpg",
     prevSlug: "twillory-shopify-cro",
     prevBrand: "Twillory",
     nextSlug: "vithit-shopify-plus-d2c",
     nextBrand: "VITHIT",
     nextMetric: "+115% Revenue YoY",
-    nextImage: "/images/Case%20studies/vithit-hero.jpg",
+    nextImage: "/images/Case%20studies/VITHIT.webp",
     nextIndustry: "Food & Beverages",
   },
 
@@ -1520,7 +1523,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Plus | Email Marketing | Paid Media",
     heroMetric: "+115%",
     heroSubMetric: "Revenue Growth YoY",
-    heroImage: "/images/Case%20studies/vithit-hero.jpg",
+    heroImage: "/images/Case%20studies/VITHIT.webp",
     heroDescription:
       "How a global functional drinks brand operating in 15 countries grew D2C revenue 115% year on year, lifted conversion rate 170%, and raised average order value 31% by building a Shopify Plus D2C store, automating bundling and discounting, and running a full-funnel paid media and email programme.",
     stats: [
@@ -1557,10 +1560,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the VITHIT Build",
     workSubtitle: "Shopify Plus D2C, automated bundling, and a full-funnel paid and email programme.",
     workImages: [
-      "/images/Case%20studies/vithit-1.jpg",
-      "/images/Case%20studies/vithit-2.jpg",
-      "/images/Case%20studies/vithit-3.jpg",
-      "/images/Case%20studies/vithit-4.jpg",
+      "/images/Case%20studies/VITHIT-12.webp",
+      "/images/Case%20studies/VITHIT%202.jfif",
+      "/images/Case%20studies/VITHIT%20PDP.png",
+      "/images/Case%20studies/VITHIT.webp",
     ],
     results: [
       { label: "Revenue Growth YoY", before: "Baseline", after: "+115%", improvement: "+115%" },
@@ -1571,9 +1574,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     resultsDescription:
       "D2C revenue grew 115% year on year across the UK and Ireland following the Shopify Plus build and full-funnel growth programme. Conversion rate increased 170% and average order value grew 31% as the automated bundling, MOV discounting, and Klaviyo flows replaced the manual processes that had been slowing the business. The store handled record-breaking traffic spikes during campaign periods without a single stability issue.",
     techStack: [
-      { name: "Shopify Plus", logo: "/images/shopify-plus.svg" },
-      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
-      { name: "Yotpo", logo: "/images/yotpo.svg" },
+      { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
+      { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
+      { name: "Yotpo", logo: "/images/partner_logo_2.svg" },
       { name: "Triple Whale", logo: "/images/triple-whale.svg" },
     ],
     sliderStats: [
@@ -1586,14 +1589,15 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     quote:
       "Velstar turned what used to be a complex, manual process into an efficient, automated workflow that allowed us to handle record-breaking traffic across multiple regions without a single stability issue.",
-    quotePerson: "Sophie Pledger",
-    quoteRole: "UK Digital Marketing Manager, VITHIT",
+    quotePerson: "Gary Lavin",
+    quoteRole: "Founder, VITHIT",
+    quoteAvatar: "/images/Case%20studies/GARY%20LAVIN.jpg",
     prevSlug: "neom-wellbeing-shopify-upgrade",
     prevBrand: "NEOM Wellbeing",
     nextSlug: "feetures-shopify-theme-development",
     nextBrand: "Feetures",
     nextMetric: "+32% Add-to-Cart Rate",
-    nextImage: "/images/Case%20studies/feetures-hero.jpg",
+    nextImage: "/images/Case%20studies/Feetures.jpg",
     nextIndustry: "Sports & Fitness",
   },
 
@@ -1605,7 +1609,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Theme Development | Custom PDP | Cart Engineering",
     heroMetric: "+32%",
     heroSubMetric: "Add-to-Cart Rate",
-    heroImage: "/images/Case%20studies/feetures-hero.jpg",
+    heroImage: "/images/Case%20studies/Feetures.jpg",
     heroDescription:
       "How America's top-rated performance sock brand outgrew their existing Shopify theme and rebuilt it from scratch with custom PLPs, a free shipping progress bar, dynamic PDPs with men's and women's variant toggles, and metafield-driven automation that removed significant manual overhead.",
     stats: [
@@ -1642,10 +1646,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the Feetures Build",
     workSubtitle: "Custom PLPs, dynamic PDPs, a free shipping bar, and metafield automation.",
     workImages: [
-      "/images/Case%20studies/feetures-1.jpg",
-      "/images/Case%20studies/feetures-2.jpg",
-      "/images/Case%20studies/feetures-3.jpg",
-      "/images/Case%20studies/feetures-4.jpg",
+      "/images/Case%20studies/Feetures%20hero%20section.png",
+      "/images/Case%20studies/Feetures%20PDP.png",
+      "/images/Case%20studies/Feetures%20collection%20page.png",
+      "/images/Case%20studies/Feetures-1.webp",
     ],
     results: [
       { label: "Add-to-Cart Rate", before: "Baseline", after: "+32%", improvement: "+32%" },
@@ -1656,9 +1660,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     resultsDescription:
       "Add-to-cart rate grew 32% and average order value increased 19% following the rebuild, driven by the free shipping progress bar, PDP upsells, and a cart experience built around large product images and clear value signals. Bounce rate dropped 24% as the custom PLPs with activity filtering gave customers a faster route to the right product. Below-the-fold content automation removed a recurring manual process that had been adding overhead to every product launch.",
     techStack: [
-      { name: "Shopify Plus", logo: "/images/shopify-plus.svg" },
-      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
-      { name: "Yotpo", logo: "/images/yotpo.svg" },
+      { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
+      { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
+      { name: "Yotpo", logo: "/images/partner_logo_2.svg" },
       { name: "Rebuy", logo: "/images/64f098c0e38dec3a384cb182_rebuy.svg" },
     ],
     sliderStats: [
@@ -1671,14 +1675,15 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     quote:
       "The biggest thing is they listen to us, and that's really hard to find in a developer.",
-    quotePerson: "Jinnie Austin",
-    quoteRole: "Brand Manager, Feetures",
+    quotePerson: "Hugh Gaither",
+    quoteRole: "Founder, Feetures",
+    quoteAvatar: "/images/Case%20studies/Hugh%20Gaither.jfif",
     prevSlug: "vithit-shopify-plus-d2c",
     prevBrand: "VITHIT",
     nextSlug: "chlobo-shopify-plus-migration",
     nextBrand: "ChloBo",
     nextMetric: "+48% Conversion Rate",
-    nextImage: "/images/Case%20studies/chlobo-hero.jpg",
+    nextImage: "/images/Case%20studies/ChloBo%20hero%20image.webp",
     nextIndustry: "Jewelry & Accessories",
   },
 
@@ -1690,7 +1695,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Plus Migration | UX Design | Personalisation",
     heroMetric: "+48%",
     heroSubMetric: "Conversion Rate",
-    heroImage: "/images/Case%20studies/chlobo-hero.jpg",
+    heroImage: "/images/Case%20studies/ChloBo%20hero%20image.webp",
     heroDescription:
       "How a British luxury jewellery brand exited Magento, rebuilt on Shopify Plus with a UX research-led redesign, launched a custom engraving preview tool for personalised orders, and grew conversion rate 48% and mobile revenue 39% while cutting platform operating costs.",
     stats: [
@@ -1727,10 +1732,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the ChloBo Build",
     workSubtitle: "Magento exit, UX-led redesign, and a custom engraving personalisation tool.",
     workImages: [
-      "/images/Case%20studies/chlobo-1.jpg",
-      "/images/Case%20studies/chlobo-2.jpg",
-      "/images/Case%20studies/chlobo-3.jpg",
-      "/images/Case%20studies/chlobo-4.jpg",
+      "/images/Case%20studies/ChloBo.jfif",
+      "/images/Case%20studies/ChloBo-1.webp",
+      "/images/Case%20studies/ChloBo-pdp.webp",
+      "/images/Case%20studies/ChloBo-pdp-1.webp",
     ],
     results: [
       { label: "Conversion Rate", before: "Magento baseline", after: "+48%", improvement: "+48%" },
@@ -1741,9 +1746,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     resultsDescription:
       "Conversion rate grew 48% and mobile revenue increased 39% following the Shopify Plus launch. Platform operating costs dropped 52% as the Magento maintenance overhead was replaced by Shopify Plus's predictable pricing. The custom engraving preview tool went live across the jewellery range, creating a personalised product revenue stream that hadn't existed before. The internal team now manages content, promotions, and new features without external agency support.",
     techStack: [
-      { name: "Shopify Plus", logo: "/images/shopify-plus.svg" },
-      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
-      { name: "Yotpo", logo: "/images/yotpo.svg" },
+      { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
+      { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
+      { name: "Yotpo", logo: "/images/partner_logo_2.svg" },
       { name: "LoyaltyLion", logo: "/images/loyalty-lion.svg" },
     ],
     sliderStats: [
@@ -1756,14 +1761,15 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     quote:
       "Moving from Magento to Shopify Plus gave us the flexibility we'd been missing. The engraving tool alone opened up a gifting market we couldn't tap before. The team can now move at the speed the brand needs.",
-    quotePerson: "Sarah Hendry",
-    quoteRole: "Head of Digital, ChloBo",
+    quotePerson: "Chloe Moss",
+    quoteRole: "Founder, ChloBo",
+    quoteAvatar: "/images/Case%20studies/Chloe%20Moss.jpg",
     prevSlug: "feetures-shopify-theme-development",
     prevBrand: "Feetures",
     nextSlug: "henchman-shopify-plus-b2b",
     nextBrand: "Henchman",
     nextMetric: "+58% Online Revenue",
-    nextImage: "/images/Case%20studies/henchman-hero.jpg",
+    nextImage: "/images/Case%20studies/Henchman.webp",
     nextIndustry: "B2B & Wholesale",
   },
 
@@ -1775,7 +1781,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     serviceType: "Shopify Plus Migration | B2B Development | ERP Integration",
     heroMetric: "+58%",
     heroSubMetric: "Online Revenue",
-    heroImage: "/images/Case%20studies/henchman-hero.jpg",
+    heroImage: "/images/Case%20studies/Henchman.webp",
     heroDescription:
       "How a British ladder and access equipment specialist exited Magento, built a Shopify Plus B2B store with self-service wholesale ordering and tiered price books, integrated Brightpearl ERP for automated order management, and grew online revenue 58% while cutting platform operating costs.",
     stats: [
@@ -1812,10 +1818,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     workTitle: "Inside the Henchman Build",
     workSubtitle: "Magento exit, Shopify Plus B2B, and Brightpearl ERP automation.",
     workImages: [
-      "/images/Case%20studies/henchman-1.jpg",
-      "/images/Case%20studies/henchman-2.jpg",
-      "/images/Case%20studies/henchman-3.jpg",
-      "/images/Case%20studies/henchman-4.jpg",
+      "/images/Case%20studies/Henchman-1.webp",
+      "/images/Case%20studies/Henchman-3.webp",
+      "/images/Case%20studies/Henchman-4.webp",
+      "/images/Case%20studies/Henchman-5.png",
     ],
     results: [
       { label: "Online Revenue", before: "Magento baseline", after: "+58%", improvement: "+58%" },
@@ -1826,10 +1832,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     resultsDescription:
       "Online revenue grew 58% following the Shopify Plus launch. Wholesale order processing time dropped 70% as trade buyers moved to self-service ordering through the B2B store rather than placing orders manually through the sales team. Platform operating costs fell 45% with Magento replaced by Shopify Plus. Brightpearl ERP integration automated the order-to-fulfilment flow, removing the manual reconciliation work that had been consuming operational resource.",
     techStack: [
-      { name: "Shopify Plus", logo: "/images/shopify-plus.svg" },
+      { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "Brightpearl", logo: "/images/brightpearl.svg" },
-      { name: "Klaviyo", logo: "/images/klaviyo.svg" },
-      { name: "Gorgias", logo: "/images/gorgias.svg" },
+      { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
+      { name: "Gorgias", logo: "/images/65739f17195baa7e77a72d2f_5efb82474d9adf8a3ca19488_logo-gorgias.svg" },
     ],
     sliderStats: [
       "Online revenue up 58% post-migration",
@@ -1843,6 +1849,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Moving off Magento was the best commercial decision we made that year. The B2B store gave our trade customers a self-service route they actually want to use, and the Brightpearl integration removed a layer of manual work we'd been carrying for years.",
     quotePerson: "Richard Carey",
     quoteRole: "Managing Director, Henchman",
+    quoteAvatar: "/images/Case%20studies/Richard%20Carey.jfif",
     prevSlug: "chlobo-shopify-plus-migration",
     prevBrand: "ChloBo",
   },

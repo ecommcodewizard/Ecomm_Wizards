@@ -163,7 +163,11 @@ function CaseStudyHero({ cs }: { cs: CaseStudy }) {
         {/* Right: screenshot */}
         <div className="cs-hero-img-wrap" style={{ position: "relative" }}>
           <div className="cs-hero-img-box" style={{ borderRadius: "16px", overflow: "hidden", boxShadow: "0 32px 80px rgba(0,0,0,0.6)", background: "#1a1a1a", position: "relative" }}>
-            <Image src={cs.heroImage} alt={`${cs.brandName} Shopify store`} fill className="object-cover" priority sizes="(max-width: 1023px) 100vw, 50vw" />
+            {cs.slug === "vithit-shopify-plus-d2c" ? (
+              <video src="/images/Case%20studies/VITHIT%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", position: "absolute", inset: 0 }} />
+            ) : (
+              <Image src={cs.heroImage} alt={`${cs.brandName} Shopify store`} fill className="object-cover" priority sizes="(max-width: 1023px) 100vw, 50vw" />
+            )}
           </div>
           {/* Site Metrics floating card — Cashmere banner style */}
           <div className="block_cashmere-banner-sale-box" style={{ position: "absolute", bottom: "-40px", left: "-20px", width: "220px", padding: "20px", background: "#FFFFFF", borderRadius: "16px", boxShadow: "0 16px 48px rgba(0,0,0,0.22)" }}>
@@ -405,6 +409,48 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
           ) : cs.slug === "saddleback-shopify-plus-b2b" ? (
             <video
               src="/images/Case%20studies/Saddleback%20video.mp4"
+              autoPlay loop muted playsInline preload="none"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
+          ) : cs.slug === "this-works-shopify-plus-migration" ? (
+            <video
+              src="/images/Case%20studies/This%20Works%20video.mp4"
+              autoPlay loop muted playsInline preload="none"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
+          ) : cs.slug === "twillory-shopify-cro" ? (
+            <video
+              src="/images/Case%20studies/Twillory%20video.mp4"
+              autoPlay loop muted playsInline preload="none"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
+          ) : cs.slug === "neom-wellbeing-shopify-upgrade" ? (
+            <video
+              src="/images/Case%20studies/NEOM%20Wellbeing%20video.mp4"
+              autoPlay loop muted playsInline preload="none"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
+          ) : cs.slug === "vithit-shopify-plus-d2c" ? (
+            <video
+              src="/images/Case%20studies/VITHIT%20video%202.mp4"
+              autoPlay loop muted playsInline preload="none"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
+          ) : cs.slug === "feetures-shopify-theme-development" ? (
+            <video
+              src="/images/Case%20studies/Feetures%20video.mp4"
+              autoPlay loop muted playsInline preload="none"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
+          ) : cs.slug === "chlobo-shopify-plus-migration" ? (
+            <video
+              src="/images/Case%20studies/ChloBo%20video.mp4"
+              autoPlay loop muted playsInline preload="none"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
+          ) : cs.slug === "henchman-shopify-plus-b2b" ? (
+            <video
+              src="/images/Case%20studies/Henchman%20video.mp4"
               autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
@@ -766,6 +812,20 @@ function CaseStudyExploreMore({ current }: { current: string }) {
                     <video src="/images/Case%20studies/John%20Hardy%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : cs.slug === "saddleback-shopify-plus-b2b" ? (
                     <video src="/images/Case%20studies/Saddleback%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : cs.slug === "this-works-shopify-plus-migration" ? (
+                    <video src="/images/Case%20studies/This%20Works%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : cs.slug === "twillory-shopify-cro" ? (
+                    <video src="/images/Case%20studies/Twillory%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : cs.slug === "neom-wellbeing-shopify-upgrade" ? (
+                    <video src="/images/Case%20studies/NEOM%20Wellbeing%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : cs.slug === "vithit-shopify-plus-d2c" ? (
+                    <video src="/images/Case%20studies/VITHIT%20video%202.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : cs.slug === "feetures-shopify-theme-development" ? (
+                    <video src="/images/Case%20studies/Feetures%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : cs.slug === "chlobo-shopify-plus-migration" ? (
+                    <video src="/images/Case%20studies/ChloBo%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : cs.slug === "henchman-shopify-plus-b2b" ? (
+                    <video src="/images/Case%20studies/Henchman%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
                     <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" sizes="356px" />
                   )}

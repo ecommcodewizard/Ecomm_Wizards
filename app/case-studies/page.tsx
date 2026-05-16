@@ -657,6 +657,76 @@ export default async function CaseStudiesPage({
                         preload="none"
                         style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                       />
+                    ) : cs.slug === "this-works-shopify-plus-migration" ? (
+                      <video
+                        src="/images/Case%20studies/This%20Works%20video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
+                    ) : cs.slug === "twillory-shopify-cro" ? (
+                      <video
+                        src="/images/Case%20studies/Twillory%20video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
+                    ) : cs.slug === "neom-wellbeing-shopify-upgrade" ? (
+                      <video
+                        src="/images/Case%20studies/NEOM%20Wellbeing%20video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
+                    ) : cs.slug === "vithit-shopify-plus-d2c" ? (
+                      <video
+                        src="/images/Case%20studies/VITHIT%20video%202.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
+                    ) : cs.slug === "feetures-shopify-theme-development" ? (
+                      <video
+                        src="/images/Case%20studies/Feetures%20video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
+                    ) : cs.slug === "chlobo-shopify-plus-migration" ? (
+                      <video
+                        src="/images/Case%20studies/ChloBo%20video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
+                    ) : cs.slug === "henchman-shopify-plus-b2b" ? (
+                      <video
+                        src="/images/Case%20studies/Henchman%20video.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
                     ) : (
                       <Image
                         src={cs.heroImage}
