@@ -297,6 +297,136 @@ export const KLAVIYO_CASE_STUDIES: KlaviyoCaseStudy[] = [
     quoteRole: "Founder, Living in Sunshine",
     quoteAvatar: "/images/Case%20studies/Lior%20Zimmerman.jfif",
   },
+  {
+    slug: "cecraft-klaviyo-email",
+    type: "klaviyo",
+    brandName: "C&E Craft Co",
+    klaviyoLogo: "/images/cecraft-logo.png",
+    klaviyoBg: "#1E1209",
+    klaviyoCategory: "Email Flows & Campaigns",
+    industry: "Home Fragrance & Lifestyle",
+    serviceType: "Klaviyo Email | Flow Strategy | Campaigns",
+    heroMetric: "+195.9%",
+    heroSubMetric: "Attributed Revenue Growth",
+    heroImage: "/images/Case%20studies/Cande%20Klaviyo%20hero%20image.webp",
+    heroDescription:
+      "C&E Craft Co makes hand-poured soy candles with a voice. We built their full Klaviyo setup: 3 core flows, a seasonal campaign stack, and a restock campaign. Attributed revenue up 195.9%. Bounce rate down 49.3%. 46,857 recipients reached.",
+    stats: [
+      { label: "Attributed Revenue Growth", value: "+195.9%", shortLabel: "Revenue" },
+      { label: "Total Recipients Growth", value: "+143.3%", shortLabel: "Recipients" },
+      { label: "Bounce Rate Reduction", value: "-49.3%", shortLabel: "Bounce Rate" },
+    ],
+    overview: {
+      clientType: "C&E Craft Co",
+      industry: "Home Fragrance & Lifestyle",
+      goal: "Full Klaviyo flow build and campaign strategy",
+      timeline: "Ongoing partnership",
+    },
+    challengeTitle: "A brand with personality. The emails weren't showing any of it.",
+    challengeBody:
+      "C&E Craft Co makes hand-poured soy candles with product names like 'Per My Last Email' and 'My Last Nerve, Oh Look it's on Fire'. The brand has a voice. Their customers get the humour. The email setup wasn't delivering any of it.\n\nNo welcome series was converting new subscribers into buyers. No cart or browse flows were recovering the traffic coming in from TikTok and Instagram. Seasonal moments — Father's Day, Labour Day, Independence Day, Graduation — were being left on the table entirely.\n\nThe list was growing. The infrastructure wasn't keeping up.",
+    approachTitle: "Built the flows, then built the campaign calendar around the brand voice.",
+    approachItems: [
+      {
+        step: 1,
+        title: "3 Core Flows",
+        desc: "Built the welcome series, abandoned cart, and browse abandonment from scratch. Every email was written in the C&E Craft Co tone — the same irreverent, personality-driven voice that drives their organic growth on TikTok and Instagram.",
+      },
+      {
+        step: 2,
+        title: "Seasonal Campaign Calendar",
+        desc: "Built a campaign calendar around the moments that fit the brand. Father's Day, Labour Day, 4th of July, and Graduation each got a dedicated send — written to sound like C&E Craft Co, not a generic seasonal template.",
+      },
+      {
+        step: 3,
+        title: "Restock and Re-engagement Campaigns",
+        desc: "Built the 'She's Back' restock campaign for returning products. Restock moments are high-intent for this customer base. The send was built to match the urgency and brand energy without losing the tone.",
+      },
+      {
+        step: 4,
+        title: "List Health and Segmentation",
+        desc: "Built 5 active segments including 30 Day Activation, 180 Day Engaged, and a no-repurchase trigger. Bounce rate fell 49.3%. Spam complaint rate down 42.9%. 46,857 recipients reached with a 34.8% open rate.",
+      },
+    ],
+    flowsBuilt: [
+      {
+        name: "Welcome Series",
+        icon: "✉️",
+        description: "Brand introduction that brings the C&E Craft Co personality into the inbox from day one. Sets the tone, introduces the range, and moves new subscribers toward their first purchase.",
+      },
+      {
+        name: "Abandoned Cart",
+        icon: "🛒",
+        description: "Recovery for customers who added to cart and left. Written in the brand voice so it feels like a nudge from the brand, not a chase.",
+      },
+      {
+        name: "Browse Abandonment",
+        icon: "👁",
+        description: "Triggered after product page views without a cart add. Catches interest before it fades, with copy that matches how the brand actually talks.",
+      },
+      {
+        name: "Father's Day",
+        icon: "🎁",
+        description: "Dedicated campaign built around the gift-giving angle. C&E Craft Co products are natural gifting items — this send leaned into that with the brand's humour intact.",
+      },
+      {
+        name: "She's Back",
+        icon: "🕯️",
+        description: "Restock campaign for returning products. High-intent moment for customers who missed the first drop. Built to match the urgency without dropping the brand tone.",
+      },
+      {
+        name: "Other Campaigns",
+        icon: "📅",
+        description: "Labour Day, 4th of July Independence Day, and Graduation. Each one built for its specific moment and audience, not repurposed from a generic template.",
+      },
+    ],
+    workImages: [
+      "/images/Case%20studies/Cande%20Klaviyo.png",
+      "/images/Case%20studies/Cande%20Klaviyo-1.png",
+      "/images/Case%20studies/Cande%20Klaviyo-2.png",
+      "/images/Case%20studies/Cande%20Klaviyo-3.png",
+    ],
+    benchmarks: [
+      { metric: "Bounce Rate", value: "-49.3%", percentile: "Top tier", rating: "Excellent" },
+      { metric: "Spam Complaint Rate", value: "-42.9%", percentile: "Top tier", rating: "Excellent" },
+      { metric: "Open Rate", value: "34.8%", percentile: "Above average", rating: "Good" },
+      { metric: "Unsubscribe Rate", value: "-7.7%", percentile: "Stable", rating: "Good" },
+    ],
+    segmentGrowth: [
+      { segment: "180 Day Engaged", growth: "+19%", note: "3,090 members" },
+      { segment: "30 Day Activation", growth: "+7.5%", note: "3,270 members" },
+      { segment: "30 Days Subscribed 0 Orders", growth: "+15%" },
+    ],
+    results: [
+      { label: "Attributed Revenue Growth", before: "Baseline", after: "+195.9%", improvement: "+195.9%" },
+      { label: "Total Recipients", before: "Baseline", after: "+143.3%", improvement: "+143.3%" },
+      { label: "Bounce Rate", before: "Baseline", after: "-49.3%", improvement: "-49.3%" },
+      { label: "Campaign Revenue", before: "Baseline", after: "+999%+", improvement: "+999%+" },
+    ],
+    resultsDescription:
+      "Attributed revenue up 195.9%. 46,857 recipients reached with a 34.8% open rate. Bounce rate down 49.3%. Spam complaints down 42.9%. C&E Craft Co now has a Klaviyo setup that matches the brand voice their customers already love.",
+    sliderStats: [
+      "+195.9% Attributed Revenue Growth",
+      "+143.3% Total Recipients",
+      "$13,127 Revenue Generated",
+      "34.8% Open Rate",
+      "-49.3% Bounce Rate",
+      "-42.9% Spam Complaint Rate",
+      "+19% 180 Day Engaged Segment",
+      "+999%+ Campaign Revenue",
+      "+46.7% Flows Revenue",
+    ],
+    techStack: [
+      { name: "Klaviyo", logo: "/images/klaviyo-logo.svg" },
+      { name: "Shopify", logo: "/images/shopify.svg" },
+      { name: "C&E Craft Co", logo: "/images/cecraft-logo.png", noFilter: true },
+    ],
+    quote:
+      "We always had the brand voice — we just needed the emails to actually sound like us. Now every flow and campaign feels like it came from us, not a template. The results speak for themselves.",
+    quotePerson: "Eryn Griffin",
+    quoteRole: "Founder, C&E Craft Co",
+    quoteAvatar: "/images/Case%20studies/Eryn%20Griffin.jfif",
+  },
 ];
 
 export function getKlaviyoCaseStudyBySlug(slug: string): KlaviyoCaseStudy | undefined {

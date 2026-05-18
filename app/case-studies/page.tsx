@@ -144,6 +144,20 @@ const KLAVIYO_FILTERS = ["All", "Email Flows", "Email & SMS", "Email Campaigns",
 
 const KLAVIYO_EMAIL_CARDS = [
   {
+    slug: "cecraft-klaviyo-email",
+    name: "C&E Craft Co",
+    category: "Email Flows & Campaigns",
+    tags: ["Klaviyo Flows", "Home Fragrance", "Campaigns"],
+    stat: "+195.9%",
+    statLabel: "Revenue Growth",
+    description: "3 core flows and a full seasonal campaign stack for a hand-poured soy candle brand. Attributed revenue up 195.9%. Bounce rate down 49.3%. 46,857 recipients reached.",
+    logo: "/images/cecraft-logo.png",
+    bg: "#1E1209",
+    video: "/images/Case%20studies/Cande%20Klaviyo%20video.mp4",
+    image: "/images/Case%20studies/Cande%20Klaviyo%20hero%20image.webp",
+    href: "/case-studies/cecraft-klaviyo-email",
+  },
+  {
     slug: "living-in-sunshine-klaviyo-email",
     name: "Living in Sunshine",
     category: "Email Flows & BFCM",

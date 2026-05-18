@@ -622,6 +622,12 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
               autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
+          ) : cs.slug === "cecraft-klaviyo-email" ? (
+            <SpeedVideo
+              src="/images/Case%20studies/Cande%20Klaviyo%20video.mp4"
+              autoPlay loop muted playsInline preload="none"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
           ) : cs.slug === "andrea-maack-klaviyo-email" ? (
             <video
               src="/images/Case%20studies/Andrea%20Maack%20Klaviyo%20video.mp4"
@@ -967,7 +973,13 @@ function CaseStudyExploreMore({ current, mode }: { current: string; mode?: "app"
               <Link key={i} href={`/case-studies/${cs.slug}`} className="cs-explore-card" draggable={false} style={{ display: "block", width: "356px", height: "494px", flexShrink: 0, background: "#FBF7ED", borderRadius: "20px", overflow: "hidden", textDecoration: "none" }}>
                 {/* Image */}
                 <div className="cs-explore-card-img" style={{ position: "relative", width: "340px", height: "372px", background: "#e8e8e8", margin: "8px", borderRadius: "14px", overflow: "hidden", flexShrink: 0 }}>
-                  {(mode === "app" || mode === "klaviyo") ? (
+                  {mode === "klaviyo" && cs.slug === "andrea-maack-klaviyo-email" ? (
+                    <SpeedVideo src="/images/Case%20studies/Andrea%20Maack%20Klaviyo%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : mode === "klaviyo" && cs.slug === "living-in-sunshine-klaviyo-email" ? (
+                    <SpeedVideo src="/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : mode === "klaviyo" && cs.slug === "cecraft-klaviyo-email" ? (
+                    <SpeedVideo src="/images/Case%20studies/Cande%20Klaviyo%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  ) : (mode === "app" || mode === "klaviyo") ? (
                     <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" sizes="356px" />
                   ) : cs.slug === "111skin-shopify-cro-redesign" ? (
                     <video src="/images/Case%20studies/111skin%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
