@@ -140,6 +140,24 @@ const SHOPIFY_APP_CARDS = [
   },
 ];
 
+const KLAVIYO_FILTERS = ["All", "Email Flows", "Email & SMS", "Email Campaigns", "BFCM", "Full Setup"];
+
+const KLAVIYO_EMAIL_CARDS = [
+  {
+    slug: "andrea-maack-klaviyo-email",
+    name: "Andrea Maack",
+    category: "Email Flows",
+    tags: ["Klaviyo Flows", "Luxury Fragrance", "Retention"],
+    stat: "+144.3%",
+    statLabel: "Flows Revenue",
+    description: "5 core flows, a seasonal campaign calendar, and SMS built from scratch for an Icelandic luxury fragrance house. Flows revenue up 144.3%. Open rate at 40.1%.",
+    logo: "/images/andrea-maack-logo.png",
+    bg: "#1A0F1E",
+    video: "/images/Case%20studies/Andrea%20Maack%20Klaviyo%20video.mp4",
+    href: "/case-studies/andrea-maack-klaviyo-email",
+  },
+];
+
 const FEATURED_CASE_STUDIES = [
   {
     slug: "candy-kittens-shopify-food-beverage-cro",
@@ -572,6 +590,13 @@ export default async function CaseStudiesPage({
 
 
       <ShopifyAppsSection cards={SHOPIFY_APP_CARDS} />
+
+      <ShopifyAppsSection
+        cards={KLAVIYO_EMAIL_CARDS}
+        badge="Klaviyo Email & SMS"
+        heading="Retention-first email, built to convert."
+        filters={KLAVIYO_FILTERS}
+      />
 
       <style dangerouslySetInnerHTML={{
         __html: `

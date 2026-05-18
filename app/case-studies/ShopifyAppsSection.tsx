@@ -14,19 +14,27 @@ type AppCard = {
   logo: string;
   bg: string;
   image?: string;
+  video?: string;
   href: string;
 };
 
-const APP_FILTERS = ["All", "Print-on-Demand", "Checkout & Delivery", "Custom App", "Gift Cards", "Bundles & Upsell", "Wishlist & Social"];
+const DEFAULT_APP_FILTERS = ["All", "Print-on-Demand", "Checkout & Delivery", "Custom App", "Gift Cards", "Bundles & Upsell", "Wishlist & Social"];
 
-export default function ShopifyAppsSection({ cards }: { cards: AppCard[] }) {
+type Props = {
+  cards: AppCard[];
+  badge?: string;
+  heading?: string;
+  filters?: string[];
+};
+
+export default function ShopifyAppsSection({ cards, badge = "Shopify Apps", heading = "Powerful Shopify apps, across every use case.", filters = DEFAULT_APP_FILTERS }: Props) {
   const [active, setActive] = useState("All");
 
   const filtered = active === "All" ? cards : cards.filter((c) => c.category === active);
 
   return (
     <>
-      {/* ── Shopify Apps header + filters ── */}
+      {/* ── Section header + filters ── */}
       <section style={{ background: "#FBF7ED", padding: "0 20px" }}>
         <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "40px 0 40px" }}>
           <span
@@ -45,7 +53,7 @@ export default function ShopifyAppsSection({ cards }: { cards: AppCard[] }) {
               marginBottom: "16px",
             }}
           >
-            Shopify Apps
+            {badge}
           </span>
           <h2
             className="cs-industry-h2"
@@ -58,13 +66,12 @@ export default function ShopifyAppsSection({ cards }: { cards: AppCard[] }) {
               letterSpacing: "-0.03em",
             }}
           >
-            Powerful Shopify apps,{" "}
-            <span style={{ color: "#000000" }}>across every use case.</span>
+            {heading}
           </h2>
 
           {/* Filter pills */}
           <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
-            {APP_FILTERS.map((label) => {
+            {filters.map((label) => {
               const isActive = active === label;
               return (
                 <button
@@ -127,7 +134,13 @@ export default function ShopifyAppsSection({ cards }: { cards: AppCard[] }) {
                     justifyContent: "center",
                   }}
                 >
-                  {app.image ? (
+                  {app.video ? (
+                    <video
+                      src={app.video}
+                      autoPlay loop muted playsInline preload="none"
+                      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  ) : app.image ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={app.image}

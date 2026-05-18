@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getCaseStudyBySlug, CASE_STUDIES, type CaseStudy } from "@/lib/case-studies";
 import { getAppCaseStudyBySlug, APP_CASE_STUDIES, type AppCaseStudy } from "@/lib/shopify-app-studies";
+import { getKlaviyoCaseStudyBySlug, KLAVIYO_CASE_STUDIES, type KlaviyoCaseStudy } from "@/lib/klaviyo-studies";
 import CTASection from "@/components/ui/CTASection";
 import BeforeAfterSlider from "./BeforeAfterSlider";
 import SpeedVideo from "../SpeedVideo";
@@ -12,6 +13,7 @@ export async function generateStaticParams() {
   return [
     ...CASE_STUDIES.map((cs) => ({ slug: cs.slug })),
     ...APP_CASE_STUDIES.map((app) => ({ slug: app.slug })),
+    ...KLAVIYO_CASE_STUDIES.map((k) => ({ slug: k.slug })),
   ];
 }
 
@@ -39,6 +41,9 @@ export default async function CaseStudyPage({
   const { slug } = await params;
   const app = getAppCaseStudyBySlug(slug);
   if (app) return <AppCaseStudyPage app={app} />;
+
+  const klaviyo = getKlaviyoCaseStudyBySlug(slug);
+  if (klaviyo) return <KlaviyoCaseStudyPage study={klaviyo} />;
 
   const cs = getCaseStudyBySlug(slug);
   if (!cs) notFound();
@@ -88,6 +93,137 @@ function AppCaseStudyPage({ app }: { app: AppCaseStudy }) {
       <CaseStudyQuote cs={app} />
       <CaseStudyExploreMore current={app.slug} mode="app" />
     </>
+  );
+}
+
+function KlaviyoCaseStudyPage({ study }: { study: KlaviyoCaseStudy }) {
+  return (
+    <>
+      <CaseStudyHero cs={study} />
+      <CaseStudyStats cs={study} />
+      <AppCaseStudyOverview app={study} />
+      <CaseStudyChallenge cs={study} />
+      <CaseStudyApproach cs={study} />
+      {study.flowsBuilt && study.flowsBuilt.length > 0 && <KlaviyoFlowsBuilt study={study} />}
+      {study.workImages.length > 0 && <CaseStudyWork cs={study} />}
+      <CaseStudyResults cs={study} />
+      <CaseStudyQuote cs={study} />
+      <CaseStudyExploreMore current={study.slug} mode="klaviyo" />
+    </>
+  );
+}
+
+function KlaviyoFlowsBuilt({ study }: { study: KlaviyoCaseStudy }) {
+  return (
+    <section style={{ background: "#ffffff", padding: "0 20px" }}>
+      <div className="cs-approach-outer kl-flows-outer" style={{ maxWidth: "1320px", margin: "0 auto", padding: "20px 0 53px" }}>
+        <div className="cs-approach-cream" style={{ background: "#FBF7ED", borderRadius: "28px", padding: "48px", boxSizing: "border-box" }}>
+          <div style={{ textAlign: "center", marginBottom: "20px" }}>
+            <span style={{ display: "inline-block", padding: "4px 16px", fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#4a7c59", background: "rgba(97,206,112,0.1)", border: "1px solid rgba(97,206,112,0.25)", borderRadius: "9999px", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "16px" }}>
+              Flows Built
+            </span>
+            <h2 className="cs-approach-h2" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "42px", fontWeight: 700, color: "#000000", lineHeight: "52px", margin: 0 }}>
+              Every flow, built for this brand.
+            </h2>
+          </div>
+          <div className="kl-flows-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", marginTop: "8px" }}>
+            {study.flowsBuilt!.map((flow) => (
+              <div key={flow.name} style={{ background: "#ffffff", borderRadius: "16px", padding: "28px 24px", boxSizing: "border-box" }}>
+                <span style={{ fontSize: "28px", display: "block", marginBottom: "12px", lineHeight: 1 }}>{flow.icon}</span>
+                <h3 style={{ fontFamily: "'Poppins',sans-serif", fontSize: "17px", fontWeight: 700, color: "#000000", margin: "0 0 8px", lineHeight: 1.3 }}>
+                  {flow.name}
+                </h3>
+                <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", color: "rgba(0,0,0,0.65)", lineHeight: 1.65, margin: 0 }}>
+                  {flow.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 1023px) { .kl-flows-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+        @media (max-width: 639px) { .kl-flows-grid { grid-template-columns: 1fr !important; } }
+      ` }} />
+    </section>
+  );
+}
+
+function KlaviyoDeliverabilityBenchmarks({ study }: { study: KlaviyoCaseStudy }) {
+  const ratingColor: Record<string, string> = {
+    Excellent: "#4a7c59",
+    Good: "#2563eb",
+    Average: "#d97706",
+  };
+  return (
+    <section style={{ background: "#000000", padding: "0 20px", position: "relative", overflow: "hidden" }}>
+      <div aria-hidden="true" style={{ pointerEvents: "none", position: "absolute", inset: 0, opacity: 0.04, backgroundImage: "radial-gradient(circle, #61ce70 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "40px 0 20px", position: "relative", zIndex: 1 }}>
+
+        {/* Header */}
+        <div style={{ marginBottom: "20px" }}>
+          <span style={{ display: "inline-block", padding: "4px 16px", fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#61ce70", background: "rgba(97,206,112,0.12)", border: "1px solid rgba(97,206,112,0.2)", borderRadius: "9999px", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "16px" }}>
+            Deliverability & Performance
+          </span>
+          <h2 className="kl-bench-h2" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "42px", fontWeight: 700, color: "#ffffff", lineHeight: 1.1, margin: 0, letterSpacing: "-0.02em" }}>
+            Industry benchmarks, beaten.
+          </h2>
+        </div>
+
+        <div className="kl-bench-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", alignItems: "start" }}>
+
+          {/* Left: benchmarks table */}
+          {study.benchmarks && study.benchmarks.length > 0 && (
+            <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+              {study.benchmarks.map((b, i) => (
+                <div key={b.metric} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "20px 0", borderTop: i > 0 ? "1px solid rgba(255,255,255,0.08)" : "none", gap: "16px" }}>
+                  <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "15px", fontWeight: 500, color: "#ffffff" }}>
+                    {b.metric}
+                  </span>
+                  <div style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0 }}>
+                    <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "17px", fontWeight: 700, color: "#ffffff" }}>
+                      {b.value}
+                    </span>
+                    <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 700, color: ratingColor[b.rating] ?? "#61ce70", background: `${ratingColor[b.rating]}33`, border: `2px solid ${ratingColor[b.rating]}99`, borderRadius: "9999px", padding: "4px 14px", whiteSpace: "nowrap" }}>
+                      {b.rating}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Right: segment growth */}
+          {study.segmentGrowth && study.segmentGrowth.length > 0 && (
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "15px", fontWeight: 600, color: "#ffffff", textTransform: "uppercase", letterSpacing: "0.08em", margin: "0 0 8px" }}>
+                Segment Growth
+              </p>
+              {study.segmentGrowth.map((s) => (
+                <div key={s.segment} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "18px 24px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "14px" }}>
+                  <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", color: "#ffffff" }}>
+                    {s.segment}
+                  </span>
+                  <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "20px", fontWeight: 700, color: "#61ce70" }}>
+                    {s.growth}
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
+
+        </div>
+      </div>
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 768px) {
+          .kl-bench-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+          .kl-bench-h2 { font-size: 32px !important; }
+        }
+        @media (max-width: 639px) {
+          .kl-bench-h2 { font-size: 26px !important; }
+        }
+      ` }} />
+    </section>
   );
 }
 
@@ -486,6 +622,12 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
               autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
+          ) : cs.slug === "andrea-maack-klaviyo-email" ? (
+            <video
+              src="/images/Case%20studies/Andrea%20Maack%20Klaviyo%20video.mp4"
+              autoPlay loop muted playsInline preload="none"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
           ) : (
             <Image
               src={cs.challengeImage ?? cs.heroImage}
@@ -526,7 +668,7 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
 function CaseStudyApproach({ cs }: { cs: CaseStudy }) {
   return (
     <section style={{ background: "#ffffff", padding: "0 20px" }}>
-      <div className="cs-approach-outer" style={{ maxWidth: "1320px", margin: "0 auto", padding: "53px 0" }}>
+      <div className="cs-approach-outer" style={{ maxWidth: "1320px", margin: "0 auto", padding: "53px 0 20px" }}>
         <div
           className="cs-approach-cream"
           style={{ background: "#FBF7ED", borderRadius: "28px", padding: "48px", boxSizing: "border-box" }}
@@ -580,7 +722,8 @@ function CaseStudyApproach({ cs }: { cs: CaseStudy }) {
         }
         /* <640px: max-sm equivalent */
         @media (max-width: 639px) {
-          .cs-approach-outer { padding: 40px 0 !important; }
+          .cs-approach-outer { padding: 40px 0 20px !important; }
+          .kl-flows-outer { padding: 20px 0 40px !important; }
           .cs-approach-cream { padding: 20px !important; border-radius: 16px !important; }
           .cs-approach-grid { gap: 16px !important; }
           .cs-approach-grid > div { padding: 15px !important; }
@@ -643,7 +786,7 @@ function CaseStudyResults({ cs }: { cs: CaseStudy }) {
       <div aria-hidden="true" style={{ pointerEvents: "none", position: "absolute", inset: 0, opacity: 0.03, backgroundImage: "radial-gradient(circle, #61ce70 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
       {/* Row 1: Big title left + description right */}
-      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "40px 20px 0", position: "relative", zIndex: 1 }}>
+      <div style={{ maxWidth: "1320px", margin: "0 auto", padding: "20px 20px 0", position: "relative", zIndex: 1 }}>
         <div className="cs-results-header" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "center", marginBottom: "40px" }}>
           <h2 className="cs-results-title" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "42px", fontWeight: 900, color: "#ffffff", lineHeight: 1.2, margin: 0, textTransform: "uppercase", letterSpacing: "-0.02em" }}>
             The Results
@@ -779,8 +922,8 @@ function CaseStudyQuote({ cs }: { cs: CaseStudy }) {
   );
 }
 
-function CaseStudyExploreMore({ current, mode }: { current: string; mode?: "app" }) {
-  const source = mode === "app" ? APP_CASE_STUDIES : CASE_STUDIES;
+function CaseStudyExploreMore({ current, mode }: { current: string; mode?: "app" | "klaviyo" }) {
+  const source = mode === "klaviyo" ? KLAVIYO_CASE_STUDIES : mode === "app" ? APP_CASE_STUDIES : CASE_STUDIES;
   const cards = source.filter((cs) => cs.slug !== current);
   const all = cards.length > 0 ? cards : source;
   return (
@@ -817,7 +960,7 @@ function CaseStudyExploreMore({ current, mode }: { current: string; mode?: "app"
               <Link key={i} href={`/case-studies/${cs.slug}`} className="cs-explore-card" draggable={false} style={{ display: "block", width: "356px", height: "494px", flexShrink: 0, background: "#FBF7ED", borderRadius: "20px", overflow: "hidden", textDecoration: "none" }}>
                 {/* Image */}
                 <div className="cs-explore-card-img" style={{ position: "relative", width: "340px", height: "372px", background: "#e8e8e8", margin: "8px", borderRadius: "14px", overflow: "hidden", flexShrink: 0 }}>
-                  {mode === "app" ? (
+                  {(mode === "app" || mode === "klaviyo") ? (
                     <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" sizes="356px" />
                   ) : cs.slug === "111skin-shopify-cro-redesign" ? (
                     <video src="/images/Case%20studies/111skin%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
@@ -1027,7 +1170,7 @@ function CaseStudyExploreMore({ current, mode }: { current: string; mode?: "app"
   );
 }
 
-function AppCaseStudyOverview({ app }: { app: AppCaseStudy }) {
+function AppCaseStudyOverview({ app }: { app: AppCaseStudy | KlaviyoCaseStudy }) {
   const items = [
     { label: "Client", value: app.overview.clientType },
     { label: "Industry", value: app.overview.industry },
