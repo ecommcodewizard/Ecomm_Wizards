@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { CASE_STUDIES } from "@/lib/case-studies";
-import SpeedVideo from "./SpeedVideo";
+import CaseStudiesGrid from "./CaseStudiesGrid";
+import ShopifyAppsSection from "./ShopifyAppsSection";
 
 export const metadata: Metadata = {
   title: "Case Studies | Real Results for Real Brands | Ecomm Wizards",
@@ -56,6 +57,87 @@ const INDUSTRY_FILTERS = [
   { label: "Sports", value: "Sports & Fitness" },
   { label: "Jewellery", value: "Jewelry & Accessories" },
   { label: "B2B", value: "B2B & Wholesale" },
+];
+
+const SHOPIFY_APP_CARDS = [
+  {
+    slug: "what3words-shopify-checkout-app",
+    name: "what3words",
+    category: "Checkout & Delivery",
+    tags: ["Shopify App Build", "Checkout & Delivery"],
+    stat: "5+",
+    statLabel: "Years Active",
+    description: "The official what3words checkout app for Shopify. Real-time 3-word address validation, integrated with DHL, DPD and Evri, free to install, and actively developed for 5+ years.",
+    logo: "/images/what3words%20logo.webp",
+    bg: "#001A1F",
+    image: "/images/Case%20studies/what3words.jpg",
+    href: "/case-studies/what3words-shopify-checkout-app",
+  },
+  {
+    slug: "vytronix-shopify-app-development",
+    name: "Vytronix",
+    category: "Custom App",
+    tags: ["Shopify App Build", "Magento Migration"],
+    stat: "3-in-1",
+    statLabel: "Services",
+    description: "Magento to Shopify migration, a fully bespoke OS 2.0 theme with custom account portal, and a private registration app. One brief, one team, one delivery.",
+    logo: "/images/Case%20studies/Vytronix_Logo.webp",
+    bg: "#0A0A14",
+    image: "/images/Case%20studies/Vytronix.jpg",
+    href: "/case-studies/vytronix-shopify-app-development",
+  },
+  {
+    slug: "untuckit-gift-card-api",
+    name: "UntuckIt",
+    category: "Gift Cards",
+    tags: ["Shopify App Build", "Custom API"],
+    stat: "3x",
+    statLabel: "Peak Traffic",
+    description: "Gift Card Pro: a custom Shopify app that let UntuckIt customers send gift cards directly to any recipient with occasion-matched landing pages, on AWS infrastructure that handled 3x holiday traffic.",
+    logo: "/images/untuckit%20logo.png",
+    bg: "#0D0A08",
+    image: "/images/Case%20studies/untuckit.webp",
+    href: "/case-studies/untuckit-gift-card-api",
+  },
+  {
+    slug: "teelaunch-print-on-demand",
+    name: "teelaunch",
+    category: "Print-on-Demand",
+    tags: ["Shopify App Build", "Print-on-Demand"],
+    stat: "50k+",
+    statLabel: "Merchants",
+    description: "We built the first print-on-demand fulfilment app on the Shopify App Store. From zero to 50,000+ merchants, 20,000 daily downloads at peak, and a mention in Shopify's own Unite keynote.",
+    logo: "/images/teelaunch-logo.svg",
+    bg: "#0A0A0A",
+    image: "/images/Case%20studies/teelaunch-shopify-app.webp",
+    href: "/case-studies/teelaunch-print-on-demand",
+  },
+  {
+    slug: "emma-noah-bundle-app",
+    name: "emma&noah",
+    category: "Bundles & Upsell",
+    tags: ["Shopify App Build", "Bundles & Upsell"],
+    stat: "+61%",
+    statLabel: "AOV Increase",
+    description: "A custom Mix & Match bundle app for a sustainable baby brand. Tiered discount thresholds, FOMO-driven progress tracking, and a no-code admin — delivered a 61% lift in average order value from launch.",
+    logo: "/images/emma-noah%20logo.png",
+    bg: "#1A1A2E",
+    image: "/images/Case%20studies/emma-noah.webp",
+    href: "/case-studies/emma-noah-bundle-app",
+  },
+  {
+    slug: "abask-shopify-wishlist-app",
+    name: "ABASK",
+    category: "Wishlist & Social",
+    tags: ["Shopify App Build", "Wishlist & Social"],
+    stat: "165",
+    statLabel: "Territories",
+    description: "Custom collaborative wishlist and mood board app for ABASK, the luxury platform founded by Tom Chapman of MatchesFashion — plus Shopify Markets across 165 territories from day one.",
+    logo: "/images/ABASK%20logo.png",
+    bg: "#0D0A08",
+    image: "/images/Case%20studies/ABASK-hero%20section.webp",
+    href: "/case-studies/abask-shopify-wishlist-app",
+  },
 ];
 
 const FEATURED_CASE_STUDIES = [
@@ -484,419 +566,12 @@ export default async function CaseStudiesPage({
             padding: "60px 0 60px",
           }}
         >
-          {/* Card grid */}
-          <div className="cs-landing-grid">
-            {filteredStudies.map((cs, index) => {
-              const tags = cs.serviceType.split("|").map((t) => t.trim());
-              const stat = cs.stats[0];
-              return (
-                <Link
-                  key={cs.slug}
-                  href={`/case-studies/${cs.slug}`}
-                  className="cs-landing-card"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    background: "#FBF7ED",
-                    borderRadius: "20px",
-                    overflow: "hidden",
-                    textDecoration: "none",
-                    border: "1px solid rgba(0,0,0,0.06)",
-                  }}
-                >
-                  {/* Image */}
-                  <div
-                    style={{
-                      position: "relative",
-                      width: "calc(100% - 16px)",
-                      margin: "8px 8px 0",
-                      borderRadius: "14px",
-                      overflow: "hidden",
-                      flexShrink: 0,
-                      aspectRatio: "16/10",
-                      background: "#e0ddd5",
-                    }}
-                  >
-                    {cs.slug === "111skin-shopify-cro-redesign" ? (
-                      <video
-                        src="/images/Case%20studies/111skin%20video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="metadata"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "evie-lou-shopify-fashion-cro" ? (
-                      <video
-                        src="/images/Case%20studies/evie-lou%20video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="metadata"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "happy-mammoth-shopify-subscriptions-cro" ? (
-                      <video
-                        src="/images/Case%20studies/happy-mammoth-video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="metadata"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "candy-kittens-shopify-food-beverage-cro" ? (
-                      <video
-                        src="/images/Case%20studies/Candy%20Kittens%20video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="metadata"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "everlast-shopify-plus-sports-redesign" ? (
-                      <video
-                        src="/images/Case%20studies/Everlast%20video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="metadata"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "ronaldo-jewelry-shopify-plus-redesign" ? (
-                      <SpeedVideo
-                        src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="metadata"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "mouldings-one-shopify-b2b-portal" ? (
-                      <SpeedVideo
-                        src="/images/Case%20studies/Mouldings%20One%20video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="metadata"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "wild-shopify-plus-subscriptions" ? (
-                      <video
-                        src="/images/Case%20studies/WeareWild%20video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="none"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "dryrobe-shopify-plus-redesign" ? (
-                      <video
-                        src="/images/Case%20studies/dryrobe%20video%20test.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="none"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "loop-earplugs-shopify-landing-page-cro" ? (
-                      <video
-                        src="/images/Case%20studies/Loop%20Earplugs%20video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="none"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "sneak-energy-shopify-redesign" ? (
-                      <video
-                        src="/images/Case%20studies/Sneak%20video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="none"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "capelli-sports-shopify-migration" ? (
-                      <video
-                        src="/images/Case%20studies/Capelli%20Sports%20test%20video-2.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="none"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "john-hardy-shopify-plus-migration" ? (
-                      <video
-                        src="/images/Case%20studies/John%20Hardy%20video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="none"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "saddleback-shopify-plus-b2b" ? (
-                      <video
-                        src="/images/Case%20studies/Saddleback%20video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="none"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "this-works-shopify-plus-migration" ? (
-                      <video
-                        src="/images/Case%20studies/This%20Works%20video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="none"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "twillory-shopify-cro" ? (
-                      <video
-                        src="/images/Case%20studies/Twillory%20video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="none"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "neom-wellbeing-shopify-upgrade" ? (
-                      <video
-                        src="/images/Case%20studies/NEOM%20Wellbeing%20video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="none"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "vithit-shopify-plus-d2c" ? (
-                      <video
-                        src="/images/Case%20studies/VITHIT%20video%202.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="none"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "feetures-shopify-theme-development" ? (
-                      <video
-                        src="/images/Case%20studies/Feetures%20video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="none"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "chlobo-shopify-plus-migration" ? (
-                      <video
-                        src="/images/Case%20studies/ChloBo%20video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="none"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : cs.slug === "henchman-shopify-plus-b2b" ? (
-                      <video
-                        src="/images/Case%20studies/Henchman%20video.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="none"
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                      />
-                    ) : (
-                      <Image
-                        src={cs.heroImage}
-                        alt={cs.brandName}
-                        fill
-                        className="object-cover cs-landing-card-img"
-                        priority={index < 3}
-                        loading={index < 3 ? undefined : "lazy"}
-                        sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, 33vw"
-                      />
-                    )}
-
-                    {/* Stat badge */}
-                    <div
-                      className="cs-card-stat"
-                      style={{
-                        position: "absolute",
-                        top: "12px",
-                        left: "12px",
-                        background: "rgba(255,255,255,0.97)",
-                        borderRadius: "9999px",
-                        padding: "5px 14px",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "8px",
-                      }}
-                    >
-                      <span
-                        style={{
-                          width: "6px",
-                          height: "6px",
-                          borderRadius: "50%",
-                          background: "#000000",
-                          display: "inline-block",
-                          flexShrink: 0,
-                        }}
-                      />
-                      <span
-                        style={{
-                          fontFamily: "'Poppins', sans-serif",
-                          fontSize: "12px",
-                          fontWeight: 400,
-                          color: "#000000",
-                          whiteSpace: "nowrap",
-                        }}
-                      >
-                        {stat.shortLabel ?? stat.label}
-                      </span>
-                      <span
-                        style={{
-                          fontFamily: "'Poppins', sans-serif",
-                          fontSize: "13px",
-                          fontWeight: 700,
-                          color: "#000000",
-                          whiteSpace: "nowrap",
-                        }}
-                      >
-                        {stat.value}
-                      </span>
-                    </div>
-
-                    {/* Industry pill — top right */}
-                    <div
-                      className="cs-card-industry"
-                      style={{
-                        position: "absolute",
-                        top: "12px",
-                        right: "12px",
-                        background: "rgba(0,0,0,0.72)",
-                        borderRadius: "9999px",
-                        padding: "4px 12px",
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontFamily: "'Poppins', sans-serif",
-                          fontSize: "11px",
-                          fontWeight: 500,
-                          color: "#ffffff",
-                          whiteSpace: "nowrap",
-                        }}
-                      >
-                        {cs.industry}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Card body */}
-                  <div
-                    style={{
-                      padding: "20px 20px 24px",
-                      display: "flex",
-                      flexDirection: "column",
-                      flexGrow: 1,
-                      gap: "12px",
-                    }}
-                  >
-                    {/* Brand + arrow */}
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "flex-start",
-                        justifyContent: "space-between",
-                        gap: "12px",
-                      }}
-                    >
-                      <p
-                        style={{
-                          fontFamily: "'Poppins', sans-serif",
-                          fontSize: "22px",
-                          fontWeight: 700,
-                          color: "#000000",
-                          margin: 0,
-                          lineHeight: 1.2,
-                        }}
-                      >
-                        {cs.brandName}
-                      </p>
-                    </div>
-
-                    {/* Divider */}
-                    <div style={{ height: "1px", background: "rgba(0,0,0,0.08)" }} />
-
-                    {/* Service tags */}
-                    <div className="cs-card-tags" style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-                      {tags.map((tag) => (
-                        <span
-                          key={tag}
-                          style={{
-                            fontFamily: "'Poppins', sans-serif",
-                            fontSize: "11px",
-                            fontWeight: 500,
-                            color: "#444444",
-                            background: "transparent",
-                            border: "1px solid rgba(0,0,0,0.22)",
-                            borderRadius: "9999px",
-                            padding: "3px 10px",
-                            whiteSpace: "nowrap",
-                          }}
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Hero description preview */}
-                    <p
-                      className="cs-landing-desc"
-                      style={{
-                        fontFamily: "'Nunito', sans-serif",
-                        fontSize: "14px",
-                        color: "rgba(0,0,0,0.55)",
-                        margin: 0,
-                        lineHeight: 1.6,
-                        flexGrow: 1,
-                      }}
-                    >
-                      {cs.heroDescription.length > 120
-                        ? cs.heroDescription.slice(0, 120).trimEnd() + "…"
-                        : cs.heroDescription}
-                    </p>
-
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
+          <CaseStudiesGrid studies={filteredStudies} />
         </div>
       </section>
 
+
+      <ShopifyAppsSection cards={SHOPIFY_APP_CARDS} />
 
       <style dangerouslySetInnerHTML={{
         __html: `

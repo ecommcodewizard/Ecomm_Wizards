@@ -3,12 +3,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getCaseStudyBySlug, CASE_STUDIES, type CaseStudy } from "@/lib/case-studies";
+import { getAppCaseStudyBySlug, APP_CASE_STUDIES, type AppCaseStudy } from "@/lib/shopify-app-studies";
 import CTASection from "@/components/ui/CTASection";
 import BeforeAfterSlider from "./BeforeAfterSlider";
 import SpeedVideo from "../SpeedVideo";
 
 export async function generateStaticParams() {
-  return CASE_STUDIES.map((cs) => ({ slug: cs.slug }));
+  return [
+    ...CASE_STUDIES.map((cs) => ({ slug: cs.slug })),
+    ...APP_CASE_STUDIES.map((app) => ({ slug: app.slug })),
+  ];
 }
 
 export async function generateMetadata({
@@ -18,10 +22,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const cs = getCaseStudyBySlug(slug);
-  if (!cs) return {};
+  const app = getAppCaseStudyBySlug(slug);
+  const study = cs ?? app;
+  if (!study) return {};
   return {
-    title: `${cs.brandName} Case Study | ${cs.heroMetric} ${cs.heroSubMetric} | Ecomm Wizards`,
-    description: cs.heroDescription,
+    title: `${study.brandName} Case Study | ${study.heroMetric} ${study.heroSubMetric} | Ecomm Wizards`,
+    description: study.heroDescription,
   };
 }
 
@@ -31,6 +37,9 @@ export default async function CaseStudyPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const app = getAppCaseStudyBySlug(slug);
+  if (app) return <AppCaseStudyPage app={app} />;
+
   const cs = getCaseStudyBySlug(slug);
   if (!cs) notFound();
 
@@ -61,6 +70,23 @@ export default async function CaseStudyPage({
       {cs.techStack.length > 0 && <CaseStudyTechStack cs={cs} />}
       <CaseStudyQuote cs={cs} />
       <CaseStudyExploreMore current={cs.slug} />
+    </>
+  );
+}
+
+function AppCaseStudyPage({ app }: { app: AppCaseStudy }) {
+  return (
+    <>
+      <CaseStudyHero cs={app} />
+      <CaseStudyStats cs={app} />
+      <AppCaseStudyOverview app={app} />
+      <CaseStudyChallenge cs={app} />
+      <CaseStudyApproach cs={app} />
+      {app.workImages.length > 0 && <CaseStudyWork cs={app} />}
+      <CaseStudyResults cs={app} />
+      {app.techStack.length > 0 && <CaseStudyTechStack cs={app} />}
+      <CaseStudyQuote cs={app} />
+      <CaseStudyExploreMore current={app.slug} mode="app" />
     </>
   );
 }
@@ -454,9 +480,15 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
               autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
+          ) : cs.slug === "abask-shopify-wishlist-app" ? (
+            <video
+              src="/images/Case%20studies/ABASK%20video.mp4"
+              autoPlay loop muted playsInline preload="none"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
           ) : (
             <Image
-              src={cs.heroImage}
+              src={cs.challengeImage ?? cs.heroImage}
               alt={cs.brandName}
               fill
               className="object-cover"
@@ -694,8 +726,8 @@ function CaseStudyTechStack({ cs }: { cs: CaseStudy }) {
         <div className="cs-tech-grid" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: "12px" }}>
           {cs.techStack.map((tool) => (
             <div key={tool.name} className="cs-tech-card" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 36px", background: "#FBF7ED", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "16px" }}>
-              <div style={{ width: "110px", height: "44px", position: "relative", flexShrink: 0 }}>
-                <Image src={tool.logo} alt={tool.name} fill className="object-contain" />
+              <div style={{ width: tool.name === "Etsy" ? "150px" : "110px", height: tool.name === "Etsy" ? "56px" : "44px", position: "relative", flexShrink: 0 }}>
+                <Image src={tool.logo} alt={tool.name} fill className="object-contain" style={tool.noFilter ? (tool.multiplyBlend ? { mixBlendMode: "multiply" } : undefined) : { filter: "brightness(0)" }} />
               </div>
             </div>
           ))}
@@ -724,9 +756,9 @@ function CaseStudyQuote({ cs }: { cs: CaseStudy }) {
           &ldquo;{cs.quote}&rdquo;
         </p>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "16px" }}>
-          <div style={{ width: "64px", height: "64px", borderRadius: "50%", overflow: "hidden", flexShrink: 0, position: "relative" }}>
+          <div style={{ width: "64px", height: "64px", borderRadius: "50%", overflow: "hidden", flexShrink: 0, position: "relative", background: cs.quoteAvatarIsLogo ? "#0A0A0A" : "transparent" }}>
             {cs.quoteAvatar ? (
-              <Image src={cs.quoteAvatar} alt={cs.quotePerson} fill className="object-cover object-top" loading="lazy" sizes="64px" />
+              <Image src={cs.quoteAvatar} alt={cs.quotePerson} fill className={cs.quoteAvatarIsLogo ? "object-contain" : "object-cover object-top"} loading="lazy" sizes="64px" style={cs.quoteAvatarIsLogo ? { padding: "4px" } : undefined} />
             ) : (
               <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg,#61ce70 0%,#4ab85a 100%)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Poppins',sans-serif", fontSize: "20px", fontWeight: 700, color: "#fff" }}>
                 {cs.quotePerson.charAt(0)}
@@ -747,9 +779,10 @@ function CaseStudyQuote({ cs }: { cs: CaseStudy }) {
   );
 }
 
-function CaseStudyExploreMore({ current }: { current: string }) {
-  const cards = CASE_STUDIES.filter((cs) => cs.slug !== current);
-  const all = cards.length > 0 ? cards : CASE_STUDIES;
+function CaseStudyExploreMore({ current, mode }: { current: string; mode?: "app" }) {
+  const source = mode === "app" ? APP_CASE_STUDIES : CASE_STUDIES;
+  const cards = source.filter((cs) => cs.slug !== current);
+  const all = cards.length > 0 ? cards : source;
   return (
     <section style={{ background: "#ffffff", padding: "40px 0 40px" }}>
       {/* Header row */}
@@ -784,7 +817,9 @@ function CaseStudyExploreMore({ current }: { current: string }) {
               <Link key={i} href={`/case-studies/${cs.slug}`} className="cs-explore-card" draggable={false} style={{ display: "block", width: "356px", height: "494px", flexShrink: 0, background: "#FBF7ED", borderRadius: "20px", overflow: "hidden", textDecoration: "none" }}>
                 {/* Image */}
                 <div className="cs-explore-card-img" style={{ position: "relative", width: "340px", height: "372px", background: "#e8e8e8", margin: "8px", borderRadius: "14px", overflow: "hidden", flexShrink: 0 }}>
-                  {cs.slug === "111skin-shopify-cro-redesign" ? (
+                  {mode === "app" ? (
+                    <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" sizes="356px" />
+                  ) : cs.slug === "111skin-shopify-cro-redesign" ? (
                     <video src="/images/Case%20studies/111skin%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : cs.slug === "evie-lou-shopify-fashion-cro" ? (
                     <video src="/images/Case%20studies/evie-lou%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
@@ -987,6 +1022,87 @@ function CaseStudyExploreMore({ current }: { current: string }) {
           window.addEventListener('load', init);
           setTimeout(init, 500);
         })();
+      ` }} />
+    </section>
+  );
+}
+
+function AppCaseStudyOverview({ app }: { app: AppCaseStudy }) {
+  const items = [
+    { label: "Client", value: app.overview.clientType },
+    { label: "Industry", value: app.overview.industry },
+    { label: "Goal", value: app.overview.goal },
+    { label: "Delivered", value: app.overview.timeline },
+  ];
+  return (
+    <section
+      style={{
+        background: "#ffffff",
+        borderTop: "1px solid rgba(0,0,0,0.08)",
+        borderBottom: "1px solid rgba(0,0,0,0.08)",
+        padding: "0 20px",
+      }}
+    >
+      <div
+        className="app-overview-grid"
+        style={{
+          maxWidth: "1320px",
+          margin: "0 auto",
+          padding: "36px 0",
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+        }}
+      >
+        {items.map((item, i) => (
+          <div
+            key={item.label}
+            className="app-overview-item"
+            style={{
+              padding: "0 36px",
+              borderRight: i < 3 ? "1px solid rgba(0,0,0,0.1)" : "none",
+              borderLeft: i === 0 ? "none" : undefined,
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "'Poppins',sans-serif",
+                fontSize: "11px",
+                fontWeight: 600,
+                color: "rgba(0,0,0,0.4)",
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                margin: "0 0 8px",
+              }}
+            >
+              {item.label}
+            </p>
+            <p
+              style={{
+                fontFamily: "'Poppins',sans-serif",
+                fontSize: "15px",
+                fontWeight: 600,
+                color: "#000000",
+                margin: 0,
+                lineHeight: 1.4,
+              }}
+            >
+              {item.value}
+            </p>
+          </div>
+        ))}
+      </div>
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 768px) {
+          .app-overview-grid { grid-template-columns: repeat(2, 1fr) !important; padding: 24px 0 !important; }
+          .app-overview-item { padding: 16px 24px !important; border-right: none !important; }
+          .app-overview-item:nth-child(odd) { border-right: 1px solid rgba(0,0,0,0.1) !important; }
+          .app-overview-item:nth-child(1),
+          .app-overview-item:nth-child(2) { border-bottom: 1px solid rgba(0,0,0,0.1); }
+        }
+        @media (max-width: 639px) {
+          .app-overview-item { padding: 14px 20px !important; }
+          .app-overview-item p:last-child { font-size: 14px !important; }
+        }
       ` }} />
     </section>
   );

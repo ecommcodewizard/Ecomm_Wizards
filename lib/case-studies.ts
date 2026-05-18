@@ -20,10 +20,13 @@ export interface CaseStudyApproachItem {
 export interface TechStackItem {
   name: string;
   logo: string;
+  noFilter?: boolean;
+  multiplyBlend?: boolean;
 }
 
 export interface CaseStudy {
   slug: string;
+  type?: "store" | "app";
   brandName: string;
   brandLogo?: string;
   industry: string;
@@ -49,6 +52,7 @@ export interface CaseStudy {
   quotePerson: string;
   quoteRole: string;
   quoteAvatar?: string;
+  quoteAvatarIsLogo?: boolean;
   prevSlug?: string;
   prevBrand?: string;
   nextSlug?: string;
