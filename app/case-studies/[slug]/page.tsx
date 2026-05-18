@@ -901,7 +901,8 @@ function CaseStudyQuote({ cs }: { cs: CaseStudy }) {
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "16px" }}>
           <div style={{ width: "64px", height: "64px", borderRadius: "50%", overflow: "hidden", flexShrink: 0, position: "relative", background: cs.quoteAvatarIsLogo ? "#0A0A0A" : "transparent" }}>
             {cs.quoteAvatar ? (
-              <Image src={cs.quoteAvatar} alt={cs.quotePerson} fill className={cs.quoteAvatarIsLogo ? "object-contain" : "object-cover object-top"} loading="lazy" sizes="64px" style={cs.quoteAvatarIsLogo ? { padding: "4px" } : undefined} />
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={cs.quoteAvatar} alt={cs.quotePerson} style={{ width: "100%", height: "100%", objectFit: cs.quoteAvatarIsLogo ? "contain" : "cover", objectPosition: "top", padding: cs.quoteAvatarIsLogo ? "4px" : undefined }} />
             ) : (
               <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg,#61ce70 0%,#4ab85a 100%)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Poppins',sans-serif", fontSize: "20px", fontWeight: 700, color: "#fff" }}>
                 {cs.quotePerson.charAt(0)}

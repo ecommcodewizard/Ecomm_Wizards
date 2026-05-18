@@ -163,8 +163,8 @@ export const KLAVIYO_CASE_STUDIES: KlaviyoCaseStudy[] = [
     ],
     quote:
       "The brand has always been about the art of fragrance. What we needed was a way to bring that experience into email and SMS without it feeling like a newsletter. The flows now feel like they belong to the brand.",
-    quotePerson: "Andrea Maack Team",
-    quoteRole: "Icelandic Luxury Fragrance House",
+    quotePerson: "Andrea Maack",
+    quoteRole: "Founder, Andrea Maack",
     quoteAvatar: "/images/Case%20studies/Andrea%20Maack.jfif",
   },
 ];
