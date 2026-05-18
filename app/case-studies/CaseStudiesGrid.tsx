@@ -12,19 +12,19 @@ function CardMedia({ cs, index }: { cs: CaseStudy; index: number }) {
   const videoStyle: React.CSSProperties = { width: "100%", height: "100%", objectFit: "cover", display: "block" };
 
   if (cs.slug === "111skin-shopify-cro-redesign")
-    return <video src="/images/Case%20studies/111skin%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
+    return <video src="/images/Case%20studies/111skin%20video.mp4" autoPlay loop muted playsInline preload="none" style={videoStyle} />;
   if (cs.slug === "evie-lou-shopify-fashion-cro")
-    return <video src="/images/Case%20studies/evie-lou%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
+    return <video src="/images/Case%20studies/evie-lou%20video.mp4" autoPlay loop muted playsInline preload="none" style={videoStyle} />;
   if (cs.slug === "happy-mammoth-shopify-subscriptions-cro")
-    return <video src="/images/Case%20studies/happy-mammoth-video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
+    return <video src="/images/Case%20studies/happy-mammoth-video.mp4" autoPlay loop muted playsInline preload="none" style={videoStyle} />;
   if (cs.slug === "candy-kittens-shopify-food-beverage-cro")
-    return <video src="/images/Case%20studies/Candy%20Kittens%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
+    return <video src="/images/Case%20studies/Candy%20Kittens%20video.mp4" autoPlay loop muted playsInline preload="none" style={videoStyle} />;
   if (cs.slug === "everlast-shopify-plus-sports-redesign")
-    return <video src="/images/Case%20studies/Everlast%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
+    return <video src="/images/Case%20studies/Everlast%20video.mp4" autoPlay loop muted playsInline preload="none" style={videoStyle} />;
   if (cs.slug === "ronaldo-jewelry-shopify-plus-redesign")
-    return <SpeedVideo src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
+    return <SpeedVideo src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4" autoPlay loop muted playsInline preload="none" style={videoStyle} />;
   if (cs.slug === "mouldings-one-shopify-b2b-portal")
-    return <SpeedVideo src="/images/Case%20studies/Mouldings%20One%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
+    return <SpeedVideo src="/images/Case%20studies/Mouldings%20One%20video.mp4" autoPlay loop muted playsInline preload="none" style={videoStyle} />;
   if (cs.slug === "wild-shopify-plus-subscriptions")
     return <video src="/images/Case%20studies/WeareWild%20video.mp4" autoPlay loop muted playsInline preload="none" style={videoStyle} />;
   if (cs.slug === "dryrobe-shopify-plus-redesign")

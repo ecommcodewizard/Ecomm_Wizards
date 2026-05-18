@@ -145,6 +145,7 @@ export default function ShopifyAppsSection({ cards, badge = "Shopify Apps", head
                     <img
                       src={app.image}
                       alt={app.name}
+                      loading="lazy"
                       style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
                     />
                   ) : (
@@ -163,6 +164,7 @@ export default function ShopifyAppsSection({ cards, badge = "Shopify Apps", head
                       <img
                         src={app.logo}
                         alt={app.name}
+                        loading="lazy"
                         style={{
                           height: "38px",
                           width: "auto",

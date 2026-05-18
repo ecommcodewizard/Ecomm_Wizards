@@ -154,6 +154,7 @@ const KLAVIYO_EMAIL_CARDS = [
     logo: "/images/living-in-sunshine-logo.png",
     bg: "#0B2D3E",
     video: "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo%20video.mp4",
+    image: "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo%20hero%20section.webp",
     href: "/case-studies/living-in-sunshine-klaviyo-email",
   },
   {

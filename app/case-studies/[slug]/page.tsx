@@ -493,49 +493,49 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
           {cs.slug === "111skin-shopify-cro-redesign" ? (
             <video
               src="/images/Case%20studies/111skin%20video.mp4"
-              autoPlay loop muted playsInline preload="metadata"
+              autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : cs.slug === "evie-lou-shopify-fashion-cro" ? (
             <video
               src="/images/Case%20studies/evie-lou%20video.mp4"
-              autoPlay loop muted playsInline preload="metadata"
+              autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : cs.slug === "happy-mammoth-shopify-subscriptions-cro" ? (
             <video
               src="/images/Case%20studies/happy-mammoth-video.mp4"
-              autoPlay loop muted playsInline preload="metadata"
+              autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : cs.slug === "candy-kittens-shopify-food-beverage-cro" ? (
             <video
               src="/images/Case%20studies/Candy%20Kittens%20video.mp4"
-              autoPlay loop muted playsInline preload="metadata"
+              autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : cs.slug === "everlast-shopify-plus-sports-redesign" ? (
             <video
               src="/images/Case%20studies/Everlast%20video.mp4"
-              autoPlay loop muted playsInline preload="metadata"
+              autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : cs.slug === "ronaldo-jewelry-shopify-plus-redesign" ? (
             <SpeedVideo
               src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4"
-              autoPlay loop muted playsInline preload="metadata"
+              autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : cs.slug === "mouldings-one-shopify-b2b-portal" ? (
             <SpeedVideo
               src="/images/Case%20studies/Mouldings%20One%20video.mp4"
-              autoPlay loop muted playsInline preload="metadata"
+              autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : cs.slug === "wild-shopify-plus-subscriptions" ? (
             <video
               src="/images/Case%20studies/WeareWild%20video.mp4"
-              autoPlay loop muted playsInline preload="metadata"
+              autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : cs.slug === "dryrobe-shopify-plus-redesign" ? (
@@ -629,7 +629,7 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : cs.slug === "living-in-sunshine-klaviyo-email" ? (
-            <video
+            <SpeedVideo
               src="/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo%20video.mp4"
               autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}

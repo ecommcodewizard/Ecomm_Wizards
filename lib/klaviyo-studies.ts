@@ -178,7 +178,7 @@ export const KLAVIYO_CASE_STUDIES: KlaviyoCaseStudy[] = [
     serviceType: "Klaviyo Email | Flow Strategy | BFCM",
     heroMetric: "+219.8%",
     heroSubMetric: "Flows Revenue Growth",
-    heroImage: "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo%20hero.webp",
+    heroImage: "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo%20hero%20section.webp",
     heroDescription:
       "Living in Sunshine makes patented surf storage for a 50,000+ customer community. We built the full Klaviyo infrastructure from scratch: 9 flows, a BFCM campaign stack, and seasonal sends. Flows revenue up 219.8%. Attributed revenue up 461.2%. 112,705 recipients reached.",
     stats: [
@@ -251,9 +251,10 @@ export const KLAVIYO_CASE_STUDIES: KlaviyoCaseStudy[] = [
       },
     ],
     workImages: [
-      "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo.png",
-      "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo-1.png",
-      "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo-2.png",
+      "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo-4.png",
+      "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo%20(1).png",
+      "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo%20(2).png",
+      "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo%20(3).png",
     ],
     benchmarks: [
       { metric: "Open Rate", value: "35.5%", percentile: "Top tier", rating: "Excellent" },
@@ -292,9 +293,9 @@ export const KLAVIYO_CASE_STUDIES: KlaviyoCaseStudy[] = [
     ],
     quote:
       "We had the customers but we weren't staying in touch with them. Now every flow feels like it was written for a surfer, not a generic email list. The BFCM results alone made the whole thing worth it.",
-    quotePerson: "Living in Sunshine",
+    quotePerson: "Lior Zimmerman",
     quoteRole: "Founder, Living in Sunshine",
-    quoteAvatar: "/images/Case%20studies/Living%20in%20Sunshine.jfif",
+    quoteAvatar: "/images/Case%20studies/Lior%20Zimmerman.jfif",
   },
 ];
 
