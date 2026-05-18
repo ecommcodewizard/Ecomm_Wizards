@@ -26,7 +26,7 @@ export interface TechStackItem {
 
 export interface CaseStudy {
   slug: string;
-  type?: "store" | "app";
+  type?: "store" | "app" | "klaviyo";
   brandName: string;
   brandLogo?: string;
   industry: string;
