@@ -628,6 +628,12 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
               autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
+          ) : cs.slug === "living-in-sunshine-klaviyo-email" ? (
+            <video
+              src="/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo%20video.mp4"
+              autoPlay loop muted playsInline preload="none"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
           ) : (
             <Image
               src={cs.challengeImage ?? cs.heroImage}

@@ -144,6 +144,19 @@ const KLAVIYO_FILTERS = ["All", "Email Flows", "Email & SMS", "Email Campaigns",
 
 const KLAVIYO_EMAIL_CARDS = [
   {
+    slug: "living-in-sunshine-klaviyo-email",
+    name: "Living in Sunshine",
+    category: "Email Flows & BFCM",
+    tags: ["Klaviyo Flows", "Surf Lifestyle", "BFCM"],
+    stat: "+219.8%",
+    statLabel: "Flows Revenue",
+    description: "9 flows and a full BFCM stack built from scratch for a surf lifestyle brand with 50,000+ customers. Flows revenue up 219.8%. Attributed revenue up 461.2%.",
+    logo: "/images/living-in-sunshine-logo.png",
+    bg: "#0B2D3E",
+    video: "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo%20video.mp4",
+    href: "/case-studies/living-in-sunshine-klaviyo-email",
+  },
+  {
     slug: "andrea-maack-klaviyo-email",
     name: "Andrea Maack",
     category: "Email Flows",

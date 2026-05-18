@@ -167,6 +167,135 @@ export const KLAVIYO_CASE_STUDIES: KlaviyoCaseStudy[] = [
     quoteRole: "Founder, Andrea Maack",
     quoteAvatar: "/images/Case%20studies/Andrea%20Maack.jfif",
   },
+  {
+    slug: "living-in-sunshine-klaviyo-email",
+    type: "klaviyo",
+    brandName: "Living in Sunshine",
+    klaviyoLogo: "/images/living-in-sunshine-logo.png",
+    klaviyoBg: "#0B2D3E",
+    klaviyoCategory: "Email Flows & BFCM",
+    industry: "Surf & Outdoor Lifestyle",
+    serviceType: "Klaviyo Email | Flow Strategy | BFCM",
+    heroMetric: "+219.8%",
+    heroSubMetric: "Flows Revenue Growth",
+    heroImage: "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo%20hero.webp",
+    heroDescription:
+      "Living in Sunshine makes patented surf storage for a 50,000+ customer community. We built the full Klaviyo infrastructure from scratch: 9 flows, a BFCM campaign stack, and seasonal sends. Flows revenue up 219.8%. Attributed revenue up 461.2%. 112,705 recipients reached.",
+    stats: [
+      { label: "Flows Revenue Growth", value: "+219.8%", shortLabel: "Flows Revenue" },
+      { label: "Attributed Revenue Growth", value: "+461.2%", shortLabel: "Revenue" },
+      { label: "Open Rate", value: "35.5%", shortLabel: "Open Rate" },
+    ],
+    overview: {
+      clientType: "Living in Sunshine",
+      industry: "Surf & Outdoor Lifestyle",
+      goal: "Full Klaviyo flow build and BFCM strategy",
+      timeline: "Ongoing partnership",
+    },
+    challengeTitle: "Good product, loyal customers, no retention system.",
+    challengeBody:
+      "Living in Sunshine makes surf storage that people actually recommend. Patented board racks, eco-friendly hammocks, wetsuit dryers — the kind of product that sells on word of mouth. The brand had 50,000 customers and a genuine community behind it. Klaviyo wasn't doing anything with any of that.\n\nThere were no lifecycle flows. Customers who bought came back only if they remembered to. Browsers who visited and left got nothing. The welcome series wasn't built. BFCM, early holiday, high-spend periods — none of it was being captured through email.\n\nThe list existed. The audience was there. The infrastructure just wasn't built.",
+    approachTitle: "Built every flow, then built the seasonal stack on top.",
+    approachItems: [
+      {
+        step: 1,
+        title: "Core Flow Build",
+        desc: "Built the welcome series, checkout abandonment, abandoned cart, and browse abandonment from scratch. Copy written around the surf lifestyle, not generic e-commerce language. Each flow reflects who the Living in Sunshine customer actually is.",
+      },
+      {
+        step: 2,
+        title: "VIP and High-Spender Flow",
+        desc: "Identified the customers driving the most revenue and built a dedicated flow for them. A personalised experience for the people most likely to buy again and refer others.",
+      },
+      {
+        step: 3,
+        title: "BFCM and Seasonal Campaign Stack",
+        desc: "Built dedicated flows and campaigns for Early Holiday Season, BFCM Early Access, and Black Friday and Cyber Monday. The highest-value window of the year for a lifestyle brand. Each period had its own strategy, not a repurposed template.",
+      },
+      {
+        step: 4,
+        title: "Deliverability and List Health",
+        desc: "Cleaned the list and rebuilt segmentation from the ground up. Spam complaint rate fell 56.6%. 112,705 total recipients reached with a 35.5% open rate and click rate up 74.8%.",
+      },
+    ],
+    flowsBuilt: [
+      {
+        name: "Welcome Series",
+        icon: "✉️",
+        description: "Brand introduction built around the surf lifestyle. Sets the tone for who Living in Sunshine is and why the products exist, before asking for the next purchase.",
+      },
+      {
+        name: "Checkout Abandonment",
+        icon: "🛒",
+        description: "Recovery for customers who made it to checkout and left. High intent, short window. Built to bring them back without feeling like a chase.",
+      },
+      {
+        name: "Abandoned Cart",
+        icon: "🏄",
+        description: "Triggered when items are left in the cart. Reconnects the customer with the product they were already interested in.",
+      },
+      {
+        name: "Browse Abandonment",
+        icon: "👁",
+        description: "Triggered after product page views without a cart add. Catches fading interest early before the customer moves on.",
+      },
+      {
+        name: "VIP / High-Spender",
+        icon: "⭐",
+        description: "Dedicated flow for the brand's highest-value customers. Personalised experience for the people most likely to buy again and refer others.",
+      },
+      {
+        name: "Other Flows",
+        icon: "📅",
+        description: "Shipment Confirmed, Early Holiday Season, BFCM Early Access, and Black Friday and Cyber Monday. Each one built for its specific moment, not repurposed from a template.",
+      },
+    ],
+    workImages: [
+      "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo.png",
+      "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo-1.png",
+      "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo-2.png",
+    ],
+    benchmarks: [
+      { metric: "Open Rate", value: "35.5%", percentile: "Top tier", rating: "Excellent" },
+      { metric: "Spam Complaint Rate", value: "-56.6%", percentile: "Top tier", rating: "Excellent" },
+      { metric: "Click Rate Growth", value: "+74.8%", percentile: "Above average", rating: "Good" },
+      { metric: "Unsubscribe Rate", value: "-1%", percentile: "Stable", rating: "Good" },
+    ],
+    segmentGrowth: [
+      { segment: "Total Recipients", growth: "+999%+" },
+      { segment: "Campaign Conversions", growth: "+999%+" },
+      { segment: "Campaign Recipients", growth: "96.8K" },
+    ],
+    results: [
+      { label: "Flows Revenue Growth", before: "Baseline", after: "+219.8%", improvement: "+219.8%" },
+      { label: "Attributed Revenue Growth", before: "Baseline", after: "+461.2%", improvement: "+461.2%" },
+      { label: "Total Recipients", before: "Baseline", after: "112,705", improvement: "+999%+" },
+      { label: "Spam Complaint Rate", before: "Baseline", after: "-56.6%", improvement: "-56.6%" },
+    ],
+    resultsDescription:
+      "Flows revenue up 219.8%. Attributed revenue up 461.2%. 112,705 recipients reached with a 35.5% open rate. Spam complaints down 56.6%. Living in Sunshine now has a Klaviyo setup that captures the value their community was already there to give.",
+    sliderStats: [
+      "+219.8% Flows Revenue Growth",
+      "+461.2% Attributed Revenue",
+      "$15,383 Revenue Generated",
+      "35.5% Open Rate",
+      "+74.8% Click Rate Growth",
+      "-56.6% Spam Complaint Rate",
+      "112,705 Total Recipients",
+      "+999%+ Campaign Conversions",
+      "96.8K Campaign Recipients",
+    ],
+    techStack: [
+      { name: "Klaviyo", logo: "/images/klaviyo-logo.svg" },
+      { name: "Shopify", logo: "/images/shopify.svg" },
+      { name: "Living in Sunshine", logo: "/images/living-in-sunshine-logo.png", noFilter: true },
+    ],
+    quote:
+      "We had the customers but we weren't staying in touch with them. Now every flow feels like it was written for a surfer, not a generic email list. The BFCM results alone made the whole thing worth it.",
+    quotePerson: "Living in Sunshine",
+    quoteRole: "Founder, Living in Sunshine",
+    quoteAvatar: "/images/Case%20studies/Living%20in%20Sunshine.jfif",
+  },
 ];
 
 export function getKlaviyoCaseStudyBySlug(slug: string): KlaviyoCaseStudy | undefined {
