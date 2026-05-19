@@ -35,6 +35,8 @@ interface Props {
   imageBg?: string;
   imageMaxWidth?: string;
   imageAspectRatio?: string;
+  showCta?: boolean;
+  shortDescription?: string;
 }
 
 const DEFAULT_SERVICES: ServiceItem[] = [
@@ -206,6 +208,8 @@ export default function ShopifyDesignSection({
   imageBg,
   imageMaxWidth,
   imageAspectRatio,
+  showCta = true,
+  shortDescription,
 }: Props) {
   const [btnHovered, setBtnHovered] = useState(false);
 
@@ -302,7 +306,7 @@ export default function ShopifyDesignSection({
                   fontFamily: "'Poppins', sans-serif",
                   color: headingColor,
                   lineHeight: 1.35,
-                  margin: "0 0 24px",
+                  margin: "0 0 16px",
                   fontWeight: 400,
                 }}
               >
@@ -310,15 +314,26 @@ export default function ShopifyDesignSection({
               </h3>
 
               <p
-                className="text-[16px] max-sm:text-[14px] md:max-lg:text-[14px] lg:max-xl:text-[14px] max-sm:!mb-[12px] md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px]"
+                className="text-[16px] max-xl:hidden max-sm:!mb-[12px] md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px]"
                 style={{
                   fontFamily: "'Poppins', sans-serif",
                   color: descColor,
                   lineHeight: 1.7,
-                  margin: "0 0 24px",
+                  margin: "0 0 16px",
                 }}
               >
                 {activeDescription}
+              </p>
+              <p
+                className="text-[14px] xl:hidden max-sm:!mb-[12px] md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px]"
+                style={{
+                  fontFamily: "'Poppins', sans-serif",
+                  color: descColor,
+                  lineHeight: 1.7,
+                  margin: "0 0 16px",
+                }}
+              >
+                {shortDescription ?? activeDescription}
               </p>
 
               {/* Service items */}
@@ -358,7 +373,7 @@ export default function ShopifyDesignSection({
               </div>
 
               {/* CTA Button */}
-              {dark ? (
+              {showCta && (dark ? (
                 <span className="group inline-flex p-[2px] rounded-full max-sm:w-full" style={{ background: GRADIENT_BORDER }}>
                   <Link
                     href={buttonHref}
@@ -420,7 +435,7 @@ export default function ShopifyDesignSection({
                     <path d="M0 5H14M14 5L9 0M14 5L9 10" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </Link>
-              )}
+              ))}
             </div>
 
             {/* Right: video / image / custom panel */}
