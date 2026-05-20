@@ -61,7 +61,7 @@ const GET_STARTED = [
   { label: "Headless Shopify Agency",              href: "/headless-shopify-agency" },
   { label: "Shopify CRO Agency",                   href: "/shopify-conversion-rate-optimization-cro-agency" },
   { label: "Shopify Theme Development",            href: "/shopify-theme-development" },
-  { label: "Shopify Plus Development",             href: "/shopify-plus-development" },
+  { label: "Shopify Plus Development",             href: "/services/shopify-plus-development" },
   { label: "Shopify SEO Agency",                   href: "/shopify-seo-agency" },
   { label: "Shopify Landing Page Design",          href: "/shopify-landing-page-design" },
   { label: "Shopify Maintenance and Support",      href: "/shopify-maintenance-and-support" },
