@@ -3,36 +3,36 @@ import { useState } from "react";
 
 const SOLUTIONS = [
   {
-    title: "Purpose-Built for Your Brand",
-    body: "A theme shaped around your products and customers, giving your store a clearer path from browsing to purchase.",
+    title: "Custom Theme Built for Your Brand",
+    body: "We develop your Shopify theme around your specific products, catalog structure, and customers — not a generic template. The result is a store with a direct, uncluttered path from browsing to purchase.",
   },
   {
     title: "Theme Redesign and Upgrades",
-    body: "We rebuild outdated layouts into modern, faster, and cleaner structures. Your store becomes easier to navigate and performs better across all devices.",
+    body: "We take outdated layouts and rebuild them into faster, cleaner structures. Better navigation, stronger performance, and a design that works harder for your brand on every screen size.",
   },
   {
     title: "UX and UI Improvements",
-    body: "We refine page layouts, information order, and interactive elements so customers move through the store with less friction and more confidence.",
+    body: "We rework page layouts, content hierarchy, and interactive elements so customers move through your store with less confusion and more confidence in what they're buying.",
   },
   {
-    title: "Performance and Speed Optimization",
-    body: "We streamline code, reduce bloat, optimize media, and improve load times to support stronger engagement and higher conversion.",
+    title: "Performance and Speed Optimisation",
+    body: "We strip out bloat, compress and optimise media, clean up the codebase, and remove render-blocking scripts — targeting 90+ Lighthouse scores and fast load times on every device.",
   },
   {
     title: "Conversion-Focused Page Structures",
-    body: "We organize home, collection, and product pages around buyer behavior, helping visitors discover products quickly and complete purchases with fewer barriers.",
+    body: "Product pages, collection pages, and your homepage are structured around how buyers actually behave — reducing the distance between discovery and the checkout button.",
   },
   {
     title: "Flexible Sections and Components",
-    body: "We create modular sections and reusable blocks, allowing your team to update content easily while keeping the store consistent.",
+    body: "Every theme we build uses Shopify 2.0 blocks and sections so your team can update content, swap layouts, and manage the store without touching code.",
   },
   {
     title: "App-Free Feature Development",
-    body: "We replace unnecessary apps with native theme features when possible, improving speed, stability, and long-term maintainability.",
+    body: "We build features directly into the theme wherever possible — replacing third-party apps that slow your store down, create conflicts, and add unnecessary monthly costs.",
   },
   {
-    title: "Shopify Plus Enhancements",
-    body: "For high-volume brands, we prepare themes to support advanced features, scalable merchandising, and a smoother enterprise-level experience.",
+    title: "Shopify Plus Theme Development",
+    body: "For high-volume brands on Shopify Plus, we build themes ready for advanced features, large catalogs, multi-currency setups, and the kind of traffic that breaks lesser builds.",
   },
 ];
 
