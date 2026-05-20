@@ -570,8 +570,8 @@ export default function Page() {
 
           {/* Row 2 — 2 cards centred */}
           <div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-[20px] max-sm:!max-w-full md:max-lg:mt-[16px] md:max-lg:!max-w-[428px]"
-            style={{ maxWidth: "calc(66.667% - 7px)", marginLeft: "auto", marginRight: "auto", width: "100%" }}
+            className="ssd-process-row2 grid grid-cols-1 sm:grid-cols-2 gap-5 mt-[20px]"
+            style={{ marginLeft: "auto", marginRight: "auto", width: "100%" }}
           >
             {[
               { step: "04.", title: "QA & Launch", desc: "Full QA across devices, browsers, and real traffic conditions. Then a clean, zero-downtime launch." },
@@ -1359,6 +1359,10 @@ export default function Page() {
           font-size: 15px; line-height: 1.5; color: ${C_TEXT};
         }
         .std-compare-list li svg { flex-shrink: 0; margin-top: 2px; }
+
+        /* Process Row 2 — centred on desktop, full-width at ≤1024px */
+        .ssd-process-row2 { max-width: calc(66.667% - 7px); }
+        @media (max-width: 1024px) { .ssd-process-row2 { max-width: 100% !important; } }
 
         /* Process grid — 3 cols → 2 → 1 */
         .std-process-grid {
