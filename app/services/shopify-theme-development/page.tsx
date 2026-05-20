@@ -7,9 +7,9 @@ import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/Case
 import ShopifyDesignSection from "@/components/sections/ShopifyDesignSection";
 
 export const metadata: Metadata = {
-  title: "Shopify Theme Development | Custom Liquid Themes | Ecomm Wizards",
+  title: "Shopify Theme Development Services | Custom Shopify Themes | Ecomm Wizards",
   description:
-    "Professional Shopify theme development focused on speed, clarity, and better shopping experiences for growing ecommerce brands. Shopify 2.0 standards, mobile-first, conversion-focused.",
+    "Shopify theme development services for ecommerce brands. We build custom Shopify themes on Shopify 2.0. Fast, mobile-first, and built to convert. 500+ themes built. Free audit.",
 };
 
 /* ── Design tokens ── */
@@ -25,7 +25,7 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
     image: "/images/Frame_1000004320.webp",
     apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/klaviyo.svg", "/images/yotpo.svg"],
     headline: (<>An elegant <strong>custom Shopify theme</strong> designed and built for <strong>EBY</strong> by <strong>Sofia Vergara</strong></>),
-    quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally — we couldn&apos;t be happier!&rdquo;</>),
+    quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally. We couldn&apos;t be happier!&rdquo;</>),
     avatar: "/images/eby_dce31a54-eb36-409c-a8d7-e22fd8297de3_medium.webp",
     name: "EBY by Sofia Vergara",
     role: "Marketing Manager",
@@ -113,20 +113,20 @@ const SOLUTIONS = [
 
 /* ── Bespoke vs Template ── */
 const CUSTOM_PROS = [
-  "Built around your exact products and catalog",
-  "No bloated apps — features baked into the theme",
-  "90+ PageSpeed score is the goal, not the exception",
-  "Fully owned code — zero licensing dependencies",
-  "Flexible sections your team manages independently",
-  "Scales cleanly as your catalog and traffic grow",
+  "Built around your exact products and catalog structure",
+  "No third-party app bloat. Features built into the theme.",
+  "90+ PageSpeed is the target on every build, not a bonus",
+  "You own the code. No licensing, no lock-in.",
+  "Shopify 2.0 sections your team manages without a developer",
+  "Scales cleanly as your catalog, traffic, and team grow",
 ];
 const TEMPLATE_CONS = [
-  { text: "Generic layout not built for your catalog",      warn: false },
-  { text: "Relies on third-party apps for core features",   warn: false },
-  { text: "Often slow by default — heavy scripts & assets", warn: false },
-  { text: "Constrained by the theme developer's choices",   warn: false },
-  { text: "Customisation breaks without touching code",     warn: true  },
-  { text: "May need full replacement as you scale",         warn: true  },
+  { text: "Generic layout not designed for your products",             warn: false },
+  { text: "Core features depend on third-party apps",                 warn: false },
+  { text: "Slow by default. Unused scripts, heavy assets.",           warn: false },
+  { text: "You work around the developer's decisions, not your own",  warn: false },
+  { text: "Customisation breaks the moment you go off-script",        warn: true  },
+  { text: "Most stores need a full rebuild within 12-18 months",      warn: true  },
 ];
 
 /* ── Process steps ── */
@@ -178,7 +178,7 @@ const BENEFITS = [
   {
     title: "Brand-Aligned Design",
     body: "We shape layouts, typography, and interactions around your brand identity, giving your store a more distinctive and recognizable presence.",
-    stat: "Unique to your brand — no templates",
+    stat: "Unique to your brand. No templates.",
   },
   {
     title: "Fast Loading Experience",
@@ -299,32 +299,32 @@ const POST_LAUNCH = [
 /* ── FAQ ── */
 const FAQS = [
   {
-    q: "How long does a Shopify theme development project take?",
-    a: "Most builds complete in 3–6 weeks. Smaller projects — refined themes, targeted page updates — take 2–3 weeks. Full custom builds with advanced features or Shopify Plus integrations take 4–8 weeks. Every project starts with a clear, agreed timeline.",
+    q: "How long does custom Shopify theme development take?",
+    a: "Most builds complete in 3–6 weeks. Targeted refinements and smaller page projects take 2–3 weeks. Full custom Shopify theme builds with Shopify Plus integrations or complex functionality take 4–8 weeks. Every project starts with a fixed timeline you approve before we begin.",
   },
   {
-    q: "How much does Shopify theme development cost?",
-    a: "Pricing depends on scope, page count, and complexity. We provide fixed-price quotes with no hourly surprises. Share your requirements and we'll send a detailed estimate within 24 hours.",
+    q: "How much do Shopify theme development services cost?",
+    a: "Cost depends on scope, page count, and complexity. We work on fixed-price quotes. No hourly billing, no surprises. Send us your requirements and we'll return a detailed estimate within 24 hours.",
   },
   {
-    q: "Can you improve my existing theme rather than rebuilding from scratch?",
-    a: "Yes. We assess your current theme, identify structural, speed, and UX issues, and apply targeted improvements — layout adjustments, performance fixes, and Shopify 2.0 upgrades where needed. A full rebuild isn't always necessary.",
+    q: "Can you improve my existing Shopify theme instead of rebuilding it?",
+    a: "Yes, and often it's the smarter call. We audit your current theme and identify what's holding it back: slow load times, structural issues, UX problems. Then we apply targeted fixes. A full rebuild isn't always necessary to see a real improvement in performance and conversion.",
   },
   {
-    q: "Do you build on Shopify 2.0?",
-    a: "Yes. Every theme we build uses Shopify 2.0 sections, blocks, and JSON templates. Your team can manage content and layouts from the theme customizer without touching code.",
+    q: "Do your Shopify theme developers build on Shopify 2.0?",
+    a: "Yes. Every theme we build uses Shopify 2.0 architecture: sections, blocks, and JSON templates. Your team can update content and adjust layouts from the customizer without touching code.",
   },
   {
-    q: "Will a new theme affect my SEO or existing rankings?",
-    a: "No. We preserve your metadata, URL structure, and core settings throughout development. Clean code and faster load times typically improve search performance — not hurt it.",
+    q: "Will a new Shopify theme damage my SEO or rankings?",
+    a: "No. We carry over your metadata, URL structure, and redirect logic as part of every build. Clean code and faster load times typically push rankings up, not down.",
   },
   {
-    q: "How do I track progress during development?",
-    a: "You receive regular milestone updates via email or Slack. We share preview environments at key stages so you can review and give feedback before anything goes live.",
+    q: "How do I track progress during Shopify theme development?",
+    a: "You get milestone updates at each stage: brief, design, development, and QA. We share a live preview environment before anything goes live so you can review and give feedback in real conditions.",
   },
   {
-    q: "What happens after the theme launches?",
-    a: "We monitor performance, resolve any issues quickly, and refine the theme based on real customer behaviour. Ongoing support, CRO reviews, and maintenance plans are all available post-launch.",
+    q: "What support do you offer after the theme launches?",
+    a: "We offer post-launch monitoring, priority bug fixes, and ongoing development. Most clients continue with a support plan after the initial build, either on-demand or as a monthly retainer.",
   },
 ];
 
@@ -372,15 +372,15 @@ export default function Page() {
           style={{ maxWidth: "1320px", padding: "60px 20px" }}
         >
           <div>
-            <span className="std-badge">Shopify Theme Development</span>
+            <span className="std-badge">Shopify Theme Development Agency</span>
             <h1 className="std-hero-h1 font-bold mt-5" style={{ color: C_WHITE, fontSize: "54px", lineHeight: 1.15, margin: "20px 0 0" }}>
               Shopify Theme Development{" "}
               <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                Built for Performance
+                Services That Convert
               </span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
-              We develop Shopify themes with a strong focus on stability, clarity, and speed. Our work follows Shopify 2.0 standards, improving your store&apos;s structure, load time, and responsiveness across devices. Whether you are launching a new store or strengthening an existing one, the goal is a streamlined experience that performs consistently.
+              We build custom Shopify themes for ecommerce brands that need more than a pre-built template. Every build runs on Shopify 2.0: clean Liquid, modular sections, and mobile-first layouts that load fast and convert. Whether you are launching new or overhauling what you have, the theme is built around your products, your customers, and how they buy.
             </p>
             <div className="std-hero-stats">
               {[
@@ -411,7 +411,7 @@ export default function Page() {
           <div className="std-hero-img">
             <Image
               src="/images/build-hero-4-1.webp"
-              alt="Shopify theme development — clean, modern storefront built for performance"
+              alt="Shopify theme development: clean, modern storefront built for performance"
               width={700}
               height={500}
               priority
@@ -425,10 +425,10 @@ export default function Page() {
       <section className="std-trust" style={{ background: C_WHITE }} aria-label="Brands that trust Ecomm Wizards">
         <div className="mx-auto" style={{ maxWidth: "1320px", padding: "52px 20px" }}>
           <h2 className="std-trust-h2 text-center" style={{ color: C_DARK, fontSize: 32, fontWeight: 700, lineHeight: 1.3, margin: 0 }}>
-            Trusted by the Best
+            Trusted by Leading Brands
           </h2>
           <p className="text-center mt-3" style={{ color: C_TEXT, fontSize: 16, lineHeight: "26px", margin: "12px 0 0" }}>
-            We&apos;ve helped the world&apos;s most innovative brands scale
+            From DTC startups to global names. Our Shopify theme developers have built for the best.
           </p>
 
           <div className="std-trust-carousel" style={{ marginTop: 20, width: "100%", overflow: "hidden" }}>
@@ -460,10 +460,10 @@ export default function Page() {
           <div className="std-solutions-left" style={{ position: "sticky", top: "120px", alignSelf: "start" }}>
             <span className="std-label" style={{ color: C_TEXT }}>What We Offer</span>
             <h2 style={{ color: C_DARK, fontSize: 42, fontWeight: 700, lineHeight: 1.2, margin: "12px 0 0" }}>
-              Shopify Theme Development Solutions We Offer
+              Shopify Theme Development Services We Offer
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              From purpose-built themes to targeted performance upgrades, we cover every aspect of Shopify theme work your store needs to stay fast, flexible, and conversion-ready.
+              From fully custom Shopify theme development to targeted redesigns and performance upgrades, we cover every aspect of theme work your store needs to stay fast, flexible, and built to sell.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
               Book a Call
@@ -483,13 +483,13 @@ export default function Page() {
 
           {/* Heading */}
           <h2 style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(28px, 4.1vw, 42px)", fontWeight: 700, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
-            Make the{" "}
+            Custom Shopify Theme vs{" "}
             <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Right Call
+              Pre-Built Template
             </span>
           </h2>
           <p style={{ fontFamily: "Poppins, sans-serif", fontSize: 16, lineHeight: 1.75, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
-            Most stores start with a template and quickly outgrow it. Here&apos;s exactly what the difference looks like.
+            Most stores start with a template and outgrow it faster than expected. Here&apos;s what separates a custom Shopify theme from an off-the-shelf one.
           </p>
 
           {/* Two cards */}
@@ -541,24 +541,24 @@ export default function Page() {
             className="text-[28px] sm:text-[36px] md:text-[32px] lg:text-[42px] font-bold max-sm:font-semibold"
             style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", lineHeight: 1.2, margin: 0 }}
           >
-            Our Shopify Theme Development Process
+            How We Handle Your Shopify Theme Development
           </h2>
 
           <p
             className="text-[16px] max-sm:text-[14px]"
             style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", marginTop: "16px", lineHeight: 1.65 }}
           >
-            From strategy to go-live, here&apos;s exactly how we build your theme.
+            A clear, structured process from brief to launch and beyond.
             <br className="hidden sm:block" />{" "}
-            You can join us at any stage.
+            You know exactly what is happening at every stage.
           </p>
 
           {/* Row 1 — 3 cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-[20px] md:max-lg:mt-[16px]">
             {[
-              { step: "01.", title: "Discovery & Brief", desc: "We learn your brand, products, and goals — then map out the exact theme structure that will support them." },
-              { step: "02.", title: "UX & Design", desc: "We design mobile-first layouts focused on flow, clarity, and conversion before writing a single line of code." },
-              { step: "03.", title: "Theme Development", desc: "Clean, documented Liquid code built to Shopify 2.0 standards — fast, flexible, and fully tested." },
+              { step: "01.", title: "Discovery & Brief", desc: "We learn your store, your customers, and your goals. Then we define the exact theme structure that will support them." },
+              { step: "02.", title: "UX & Design", desc: "Mobile-first layouts built around buyer behaviour. We design for conversion before writing a single line of Liquid." },
+              { step: "03.", title: "Theme Development", desc: "Clean Liquid built to Shopify 2.0 standards. Fast, modular, documented, and ready for your team to manage." },
             ].map(({ step, title, desc }) => (
               <div key={step} className="p-[30px] max-sm:p-[15px] md:max-lg:p-[16px] lg:max-xl:p-[20px]" style={{ background: "#FFFFFF", borderRadius: "16px", height: "100%", boxSizing: "border-box" }}>
                 <p className="text-[50px] max-sm:text-[35px] md:max-lg:text-[40px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "rgba(0,0,0,0.12)", lineHeight: 1, margin: "0 0 10px" }}>{step}</p>
@@ -574,8 +574,8 @@ export default function Page() {
             style={{ maxWidth: "calc(66.667% - 7px)", marginLeft: "auto", marginRight: "auto", width: "100%" }}
           >
             {[
-              { step: "04.", title: "QA & Launch", desc: "We test across devices, browsers, and load conditions — then go live with zero downtime." },
-              { step: "05.", title: "Post-Launch Support", desc: "We monitor performance after launch and resolve any issues quickly, keeping your store stable and fast." },
+              { step: "04.", title: "QA & Launch", desc: "Full QA across devices, browsers, and real traffic conditions. Then a clean, zero-downtime launch." },
+              { step: "05.", title: "Post-Launch Support", desc: "We stay on after launch. We monitor performance, fix issues fast, and refine as your store grows." },
             ].map(({ step, title, desc }) => (
               <div key={step} className="p-[30px] max-sm:p-[15px] md:max-lg:p-[16px] lg:max-xl:p-[20px]" style={{ background: "#FFFFFF", borderRadius: "16px", height: "100%", boxSizing: "border-box" }}>
                 <p className="text-[50px] max-sm:text-[35px] md:max-lg:text-[40px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "rgba(0,0,0,0.12)", lineHeight: 1, margin: "0 0 10px" }}>{step}</p>
@@ -596,46 +596,46 @@ export default function Page() {
         <div className="ssd-why-inner mx-auto" style={{ maxWidth: "1320px" }}>
 
           <h2 className="ssd-why-heading">
-            Why Brands Choose Ecomm Wizards{" "}<br className="std-why-br-lg" />for{" "}<br className="std-why-br-md" />
+            Why Brands Hire Ecomm Wizards{" "}<br className="std-why-br-lg" />as Their{" "}<br className="std-why-br-md" />
             <span style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Shopify Theme Development
+              Shopify Theme Development Agency
             </span>
           </h2>
 
           <p className="ssd-why-desc">
-            Recognised as a top Shopify theme development agency, we build themes that are fast, flexible,<br className="std-why-desc-br" /> and built to convert — not off-the-shelf templates. Here&apos;s what sets us apart:
+            We have built 500+ custom Shopify themes and helped clients generate over $900M in revenue. Here&apos;s what makes us<br className="std-why-desc-br" /> different from every other Shopify theme development company you will talk to:
           </p>
 
           <div className="ssd-why-grid">
             {[
               {
-                title: "Theme Built Around Your Brand",
-                desc: (<>Every layout, section, and interaction is crafted to match your brand identity and guide customers toward purchase. Our themes consistently deliver <span className="ssd-why-hl">25%+ higher conversion rates</span> compared to generic templates.</>),
+                title: "Built for Your Brand, Not a Template",
+                desc: (<>We design every layout, section, and interaction for your products and customers. Our custom Shopify theme development consistently delivers <span className="ssd-why-hl">25%+ higher conversion rates</span> than off-the-shelf alternatives.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><line x1="9" y1="9" x2="23" y2="23" /><line x1="23" y1="9" x2="9" y2="23" /><line x1="9" y1="9" x2="23" y2="9" /><line x1="9" y1="23" x2="23" y2="23" /><circle cx="9" cy="9" r="2.4" fill="currentColor" /><circle cx="23" cy="9" r="2.4" fill="currentColor" /><circle cx="9" cy="23" r="2.4" fill="currentColor" /><circle cx="23" cy="23" r="2.4" fill="currentColor" /><circle cx="16" cy="16" r="2.4" fill="currentColor" /></svg>),
               },
               {
-                title: "Performance That Speaks for Itself",
-                desc: (<>We optimise every asset, clean up code bloat, and build mobile-first layouts that target <span className="ssd-why-hl">90+ Lighthouse scores</span> — because faster stores earn more and rank higher.</>),
+                title: "Performance That Earns More",
+                desc: (<>We optimise every asset, strip code bloat, and build mobile-first layouts targeting <span className="ssd-why-hl">90+ Lighthouse scores</span>. A faster Shopify theme ranks higher and converts better. That is not a coincidence.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="27" x2="5" y2="22" /><line x1="11" y1="27" x2="11" y2="18" /><line x1="17" y1="27" x2="17" y2="14" /><line x1="23" y1="27" x2="23" y2="9" /><polyline points="5,20 11,15 17,10 23,5" /><polyline points="19,5 23,5 23,9" /></svg>),
               },
               {
                 title: "Conversion-Focused Page Structures",
-                desc: (<>We organise product, collection, and home pages around how buyers actually behave — reducing friction and increasing the likelihood of purchase at every scroll, delivering <span className="ssd-why-hl">35% avg. conversion lift</span>.</>),
+                desc: (<>We structure product pages, collections, and homepages around how buyers actually behave. Our clients average a <span className="ssd-why-hl">35% conversion lift</span> after a custom Shopify theme build.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12 L11 5 H21 L27 12 L16 28 Z" /><line x1="5" y1="12" x2="27" y2="12" /><line x1="11" y1="5" x2="13" y2="12" /><line x1="21" y1="5" x2="19" y2="12" /><line x1="13" y1="12" x2="16" y2="28" /><line x1="19" y1="12" x2="16" y2="28" /></svg>),
               },
               {
-                title: "Flexible, Future-Proof Code",
-                desc: (<>Built on Shopify 2.0 with modular sections, no bloated app dependencies, and clean Liquid that your team can manage independently — scaling as your catalog and traffic grow.</>),
+                title: "Clean Shopify 2.0 Code You Own",
+                desc: (<>We build on Shopify 2.0 with modular sections, no bloated app dependencies, and clean Liquid your team can manage without a developer. It scales as your catalog and traffic grow.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M11 3 v2.2M11 16.8 v2.2M3 11 h2.2M16.8 11 h2.2M5.4 5.4 l1.6 1.6M15 15 l1.6 1.6M16.6 5.4 l-1.6 1.6M7 15 l-1.6 1.6" /><circle cx="11" cy="11" r="5" /><circle cx="11" cy="11" r="1.8" /><path d="M22 13 v1.8M22 25.2 v1.8M14 20 h1.8M28.2 20 h1.8M16.6 14.6 l1.3 1.3M26 24 l1.3 1.3M27.4 14.6 l-1.3 1.3M18 24 l-1.3 1.3" /><circle cx="22" cy="20" r="4.5" /><circle cx="22" cy="20" r="1.5" /></svg>),
               },
               {
-                title: "Post-Launch Support Included",
-                desc: (<>We don&apos;t disappear after go-live. Dedicated support, speed monitoring, and quick bug fixes ensure your theme stays fast and stable — with <span className="ssd-why-hl">52% faster load times</span> post-optimisation.</>),
+                title: "Support That Goes Beyond Launch",
+                desc: (<>Our Shopify theme developers do not disappear after go-live. Speed monitoring, quick bug fixes, and ongoing refinement keep your theme performing. Clients average <span className="ssd-why-hl">52% faster load times</span> post-optimisation.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M5 18v-3a11 11 0 0 1 22 0v3" /><path d="M5 18h4v8H7a2 2 0 0 1-2-2v-6z" /><path d="M27 18h-4v8h2a2 2 0 0 0 2-2v-6z" /><path d="M23 26v1a2 2 0 0 1-2 2h-4" /><circle cx="15" cy="29" r="1.4" /></svg>),
               },
               {
-                title: "Results Brands Actually Trust",
-                desc: (<>500+ themes built, $900M+ in client revenue generated — for brands ranging from startups to global names. We deliver proven results, not promises.</>),
+                title: "Proven Across 500+ Builds",
+                desc: (<>$900M+ in client revenue. 500+ Shopify themes. From funded DTC startups to enterprise brands. Real results you can verify, not claims you have to take on faith.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4 l3 2.4 l3.7 -0.6 l1.6 3.4 l3.4 1.6 l-0.6 3.7 l2.4 3 l-2.4 3 l0.6 3.7 l-3.4 1.6 l-1.6 3.4 l-3.7 -0.6 l-3 2.4 l-3 -2.4 l-3.7 0.6 l-1.6 -3.4 l-3.4 -1.6 l0.6 -3.7 l-2.4 -3 l2.4 -3 l-0.6 -3.7 l3.4 -1.6 l1.6 -3.4 l3.7 0.6 z" /><polyline points="11,16.5 14.5,20 21,12.5" /></svg>),
               },
             ].map((card) => (
@@ -648,7 +648,7 @@ export default function Page() {
           </div>
 
           <p className="ssd-why-closing">
-            Our rigorous QA process and Shopify 2.0 standards mean your theme is built to last — not just to launch.
+            Every theme passes full QA before a single customer sees it. Shopify 2.0 standards, mobile-first, built to perform for years.
           </p>
 
           <div style={{ display: "flex", justifyContent: "center" }}>
@@ -712,9 +712,9 @@ export default function Page() {
         style={{ background: "#FFFFFF", color: "#334155", fontFamily: "'Poppins', sans-serif", fontSize: "16px", padding: "30px 20px" }}
       >
         <div className="ssd-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
-          <h2 className="ssd-results-heading">Proven Results from Brands We&apos;ve Built</h2>
+          <h2 className="ssd-results-heading">Real Results from Our Shopify Theme Development Work</h2>
           <p className="ssd-results-desc">
-            Our Shopify theme development services have helped brands increase conversion rates by up to 35%, reduce page load time by 52%, and deliver themes that keep customers engaged and coming back.
+            Our custom Shopify theme development has driven up to 35% higher conversion rates and 52% faster load times, across 500+ builds for brands that needed more than a template could give them.
           </p>
           <CaseStudySlider slides={CASE_STUDY_SLIDES} intervalMs={6000} showDots={false} />
         </div>
@@ -814,11 +814,11 @@ export default function Page() {
         showHeading={false}
         h3Content={<>Shopify Theme <strong style={{ fontWeight: 600 }}>Testing, Launch,</strong><br className="max-sm:hidden" />and Ongoing Optimization</>}
         wrapHeading={true}
-        description="Before launch, we test your theme across major devices and browsers to confirm stable performance, proper layout behavior, and a smooth user experience. Once live, we continue refining the theme based on real customer interactions, fixing issues, and supporting improvements over time. This ensures your Shopify store stays fast, reliable, and ready to adapt as your catalog expands or your traffic increases."
-        shortDescription="We test your theme across devices and browsers before launch, then refine it post-live based on real interactions — keeping your store fast, reliable, and ready to scale."
+        description="Before any custom Shopify theme goes live, we run full QA across devices, browsers, and real connection speeds. We check load behaviour, layout integrity, and the checkout flow until everything works as it should. Launch is zero-downtime. After go-live, we stay active: tracking performance, resolving issues fast, and refining the theme as your traffic and catalog grow."
+        shortDescription="Full QA before launch, zero-downtime go-live, and active support after. Your Shopify theme performs on day one and improves from there."
         services={[
           {
-            title: "Custom Liquid Theme Development",
+            title: "Cross-Device & Browser QA",
             icon: (
               <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9 8L3 15L9 22" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
@@ -828,7 +828,7 @@ export default function Page() {
             ),
           },
           {
-            title: "Shopify 2.0 Section & Block Architecture",
+            title: "Zero-Downtime Launch",
             icon: (
               <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="2" y="4" width="26" height="17" rx="2" stroke="currentColor" strokeWidth="1.6"/>
@@ -841,7 +841,7 @@ export default function Page() {
             ),
           },
           {
-            title: "Speed, Performance & CWV Optimisation",
+            title: "Post-Launch Performance Monitoring",
             icon: (
               <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="15" cy="15" r="11" stroke="currentColor" strokeWidth="1.6"/>
@@ -864,8 +864,8 @@ export default function Page() {
         showHeading={false}
         h3Content={<>Modern Layouts and{" "}<strong style={{ fontWeight: 600 }}>UX Improvements</strong></>}
         wrapHeading={true}
-        description="A well-organised theme helps customers move through your store with ease. We refine layouts, improve page hierarchy, and adjust visual flow so key information is seen at the right moment. This supports stronger product discovery, clearer category navigation, and a more comfortable browsing rhythm. The result is a theme that feels modern, balanced, and intuitive for customers on both mobile and desktop."
-        shortDescription="We refine layouts and visual flow so customers discover products faster and navigate with confidence — on both mobile and desktop."
+        description="A well-built Shopify theme moves customers from landing to checkout without obstacles. We redesign page layouts, sharpen visual hierarchy, and improve navigation on both mobile and desktop. Every element is positioned to support product discovery, reduce friction, and make the path to purchase shorter. Fewer barriers at each step means more orders."
+        shortDescription="We rebuild layouts and navigation so customers move from discovery to checkout with less friction and more confidence, on every screen."
         services={[
           {
             title: "Conversion-Focused Page Redesign",
@@ -913,7 +913,7 @@ export default function Page() {
       />
 
       {/* ── 11. Our Work ── */}
-      <section style={{ background: C_WHITE, padding: "40px 20px" }} aria-label="Our work — case studies">
+      <section style={{ background: C_WHITE, padding: "40px 20px" }} aria-label="Our work: case studies">
         <div className="mx-auto" style={{ maxWidth: "1320px" }}>
           <h2 className="text-center" style={{ color: C_DARK, fontSize: 40, fontWeight: 700, lineHeight: 1.2, margin: "0 0 24px" }}>
             Our Work
@@ -990,24 +990,24 @@ export default function Page() {
           </h2>
 
           <p className="ssd-pl-desc">
-            We stay involved long after launch day. Our post-launch support keeps your theme fast,<br className="ssd-pl-desc-br" /> stable, and continuously improving — so your store grows alongside your business.
+            Your Shopify theme needs work after launch, not just before it. We monitor, maintain,<br className="ssd-pl-desc-br" /> and improve it month after month so it stays fast, stable, and ahead of problems.
           </p>
 
           <div className="ssd-pl-grid">
             {[
               {
                 title: "Priority Bug Fixes",
-                desc: (<>Any issue that appears post-launch is resolved quickly — layout breaks, checkout problems, or unexpected device behaviour. <span className="ssd-pl-hl">No waiting in a ticket queue.</span></>),
+                desc: (<>Any layout break, checkout error, or display bug that shows up after launch gets fixed fast. You get direct access to the Shopify theme developers who built your store. <span className="ssd-pl-hl">No ticket queues, no delays.</span></>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M20 8a4 4 0 0 0-8 0v1H8l-2 4h20l-2-4h-4V8z" /><rect x="10" y="13" width="12" height="12" rx="2" /><line x1="13" y1="18" x2="19" y2="18" /><line x1="16" y1="15" x2="16" y2="21" /></svg>),
               },
               {
                 title: "Speed & Performance Monitoring",
-                desc: (<>We track your Lighthouse scores and Core Web Vitals on an ongoing basis, catching regressions early and <span className="ssd-pl-hl">keeping load times consistently fast</span> as your catalog and traffic scale.</>),
+                desc: (<>We monitor your Lighthouse scores and Core Web Vitals after every Shopify update and theme change. We catch performance drops before they hit <span className="ssd-pl-hl">your rankings or your revenue.</span></>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="16" cy="18" r="10" /><path d="M16 18 L22 10" /><path d="M8 18 h2M22 18 h2M16 8 v2" /><circle cx="16" cy="18" r="1.5" fill="currentColor" /></svg>),
               },
               {
                 title: "Monthly Maintenance & Updates",
-                desc: (<>We handle Shopify platform updates, theme patches, and routine code health checks — keeping your store compatible, secure, and running on <span className="ssd-pl-hl">clean, maintainable code</span>.</>),
+                desc: (<>Shopify platform updates, app compatibility checks, theme patches, and code health reviews. Handled monthly so your store stays <span className="ssd-pl-hl">compatible, secure, and clean.</span></>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="6" width="24" height="22" rx="3" /><line x1="4" y1="13" x2="28" y2="13" /><line x1="11" y1="3" x2="11" y2="9" /><line x1="21" y1="3" x2="21" y2="9" /><line x1="9" y1="19" x2="14" y2="19" /><line x1="9" y1="23" x2="20" y2="23" /></svg>),
               },
             ].map((card) => (
@@ -1020,7 +1020,7 @@ export default function Page() {
           </div>
 
           <p className="ssd-pl-closing">
-            From the day your theme goes live, we&apos;re monitoring, improving, and ready to act — keeping your store competitive month after month.
+            From launch day forward, we&apos;re watching, maintaining, and improving. Your Shopify theme keeps performing as your business scales.
           </p>
 
           <div style={{ display: "flex", justifyContent: "center" }}>
