@@ -6,9 +6,9 @@ import SplusFaqAccordion from "./SplusFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 export const metadata: Metadata = {
-  title: "Shopify Plus Development Agency | Certified Shopify Plus Experts | Ecomm Wizards",
+  title: "Shopify Plus Development Agency | Hire Shopify Plus Developers | Ecomm Wizards",
   description:
-    "Certified Shopify Plus development agency. Custom checkout extensions, B2B commerce, ERP integrations, zero-downtime migrations, and multi-store builds. 200+ Plus stores built. $900M+ revenue generated.",
+    "Certified Shopify Plus development agency. 200+ Shopify Plus stores built by our expert developers. Custom Shopify Plus development: checkout extensions, B2B portals, ERP integrations, and zero-downtime migrations. $900M+ in client revenue.",
 };
 
 const C_DARK  = "#000000";
@@ -64,33 +64,12 @@ const TRUST_LOGOS = [
   { src: "/images/modelez-logo.png-1-768x361-1.png",     alt: "Mondelez" },
 ];
 
-/* ── Is Plus Right For You ── */
-const OUTGROWN_SIGNS = [
-  "Your checkout is locked. You cannot add custom fields, upsells, or loyalty integrations without a redirect.",
-  "Order routing, tagging, and fulfillment assignments are handled manually by your team.",
-  "B2B buyers and retail customers need different pricing. Standard Shopify cannot do this natively.",
-  "API rate limits are causing sync failures with your ERP, OMS, or warehouse system.",
-  "You are running separate stores per region or managing multiple storefronts to handle international sales.",
-  "Flash sales and high-traffic events slow the store down or cause checkout errors.",
-  "You have run out of staff account slots or need role-based permissions your current plan cannot support.",
-];
-
-const PLUS_UNLOCKS = [
-  "Checkout Extensibility: add upsells, custom fields, loyalty redemption, and branded elements inside native checkout.",
-  "Shopify Flow: automate order routing, fraud holds, restock alerts, customer tagging, and marketing triggers.",
-  "Native B2B: company profiles, segment-specific pricing, net payment terms, and self-service wholesale portals.",
-  "10x higher API rate limits built for enterprise-scale ERP, OMS, and warehouse integrations.",
-  "Shopify Markets: sell in multiple currencies and languages from one storefront without separate stores.",
-  "Enterprise infrastructure that handles high-volume traffic events without slowdowns or checkout failures.",
-  "Unlimited staff accounts with granular, role-based access controls across your whole team.",
-];
-
 /* ── Plus Features Explained ── */
 const PLUS_FEATURES = [
   {
     name: "Checkout Extensibility",
-    desc: "Shopify Plus opens the checkout for native customization through Checkout Extensions built with React. Add upsells, gift messages, loyalty reward redemption, custom input fields, and branded UI elements directly inside checkout. No redirects, no third-party checkout replacements.",
-    roi: "Clients average 18% higher AOV from checkout upsells added via native extensions.",
+    desc: "Add upsells, gift messages, loyalty redemption, custom fields, and branded elements directly inside the Shopify checkout via native Extensions. No redirects. No third-party replacements.",
+    roi: "Clients see an average 18% higher AOV once checkout upsells run via native Extensions.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
         <rect x="2" y="3" width="24" height="22" rx="2" stroke="currentColor" strokeWidth="1.5"/>
@@ -103,7 +82,7 @@ const PLUS_FEATURES = [
   },
   {
     name: "Shopify Flow Automation",
-    desc: "Flow lets you build automated workflows triggered by order events, customer actions, and inventory changes. Your operations team stops doing manually what the platform handles automatically: routing, tagging, alerts, and marketing triggers all run without human input.",
+    desc: "Build automated workflows triggered by orders, customer actions, and inventory changes. Routing, tagging, alerts, and marketing triggers run without your team touching them.",
     roi: "Operations teams typically save 12+ hours per week once Flow replaces their manual workflows.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
@@ -116,8 +95,8 @@ const PLUS_FEATURES = [
   },
   {
     name: "Native B2B Commerce",
-    desc: "Shopify Plus has full B2B functionality built in. Set up company profiles, assign customer-specific pricing by segment, configure net payment terms, and give trade buyers a self-service ordering portal. B2B and DTC run from one admin with no overlap or operational confusion.",
-    roi: "Henchman&apos;s B2B self-serve portal reduced their sales team workload by 40%.",
+    desc: "Company profiles, segment-specific pricing, net payment terms, and self-service wholesale portals built into the platform. B2B and DTC run from one admin with no separate tools needed.",
+    roi: "Henchman's self-serve B2B portal cut their sales team's manual order workload by 40%.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
         <rect x="3" y="13" width="9" height="12" rx="1.5" stroke="currentColor" strokeWidth="1.5"/>
@@ -129,8 +108,8 @@ const PLUS_FEATURES = [
   },
   {
     name: "Shopify Functions",
-    desc: "Shopify Functions let you write custom logic for discounts, cart rules, payment methods, and shipping rates that run at the platform level. Complex volume discounts, tiered pricing, BOGO rules, and conditional shipping options that no off-the-shelf app can replicate.",
-    roi: "One custom Function typically replaces three to four expensive third-party discount apps.",
+    desc: "Write custom discount logic, cart rules, payment methods, and shipping rates at the platform level. Volume discounts, tiered pricing, and BOGO rules that no app can replicate.",
+    roi: "A single custom Shopify Function typically replaces three to four expensive third-party discount apps.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
         <path d="M8 5L4 14l4 9M20 5l4 9-4 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -140,7 +119,7 @@ const PLUS_FEATURES = [
   },
   {
     name: "Shopify Markets",
-    desc: "Sell in multiple countries, currencies, and languages from a single storefront. Markets handles localized pricing, duty inclusion, domain routing, and language switching without you building or maintaining a separate store for each region.",
+    desc: "Sell in multiple countries, currencies, and languages from one storefront. Localized pricing, duty inclusion, domain routing, and language switching without separate stores.",
     roi: "Dryrobe expanded into Germany and added a second currency with zero additional store overhead.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
@@ -152,7 +131,7 @@ const PLUS_FEATURES = [
   },
   {
     name: "Enterprise API Access",
-    desc: "Shopify Plus provides 10x higher API rate limits than standard Shopify. Large catalogs, real-time ERP syncs, high-volume order processing, and multi-warehouse inventory management all run without hitting rate limit failures that corrupt data or delay fulfilment.",
+    desc: "10x higher API rate limits than standard Shopify. Large catalogs, real-time ERP syncs, high-volume orders, and multi-warehouse inventory run without rate limit failures.",
     roi: "Everlast syncs 150K+ SKUs with their ERP in real time without rate limit errors.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
@@ -165,129 +144,6 @@ const PLUS_FEATURES = [
   },
 ];
 
-/* ── Technology Partner Stack ── */
-const TECH_STACK = [
-  {
-    category: "Email & SMS",
-    partners: ["Klaviyo", "Attentive", "Postscript", "Omnisend"],
-    annotation: "Klaviyo integrates directly with Shopify Plus customer and order data for segmented automation flows that go beyond basic email triggers.",
-    annotatedPartner: "Klaviyo",
-  },
-  {
-    category: "Reviews & UGC",
-    partners: ["Yotpo", "Okendo", "Stamped.io", "Judge.me"],
-    annotation: null,
-    annotatedPartner: null,
-  },
-  {
-    category: "Customer Support",
-    partners: ["Gorgias", "Zendesk", "Re:amaze"],
-    annotation: "Gorgias pulls Shopify Plus order data directly into every support ticket, giving your team full context without switching tabs.",
-    annotatedPartner: "Gorgias",
-  },
-  {
-    category: "Subscriptions",
-    partners: ["Recharge", "Skio", "Stay AI", "Bold Subscriptions"],
-    annotation: null,
-    annotatedPartner: null,
-  },
-  {
-    category: "Loyalty & Rewards",
-    partners: ["LoyaltyLion", "Smile.io", "Yotpo Loyalty"],
-    annotation: null,
-    annotatedPartner: null,
-  },
-  {
-    category: "ERP & OMS",
-    partners: ["Brightpearl", "NetSuite", "Linnworks", "Cin7"],
-    annotation: "Brightpearl is our preferred OMS for Shopify Plus brands managing multi-warehouse operations, wholesale, and high-volume multi-channel fulfilment.",
-    annotatedPartner: "Brightpearl",
-  },
-];
-
-/* ── Industries ── */
-const INDUSTRIES = [
-  {
-    label: "Fashion & Apparel",
-    href: null,
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-        <path d="M10 4L4 9l3 2-3 13h20L21 11l3-2-6-5-1 3a3 3 0 0 1-6 0L10 4z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Sports & Fitness",
-    href: "/case-studies/everlast-shopify-plus-sports-redesign",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-        <circle cx="14" cy="14" r="10" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M8 8l3 6-3 6M20 8l-3 6 3 6M8 14h12" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Health & Beauty",
-    href: "/case-studies/111skin-shopify-cro-redesign",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-        <path d="M14 4c-5 0-8 4-8 8 0 6 8 12 8 12s8-6 8-12c0-4-3-8-8-8z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M14 10v8M10 14h8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Food & Beverage",
-    href: "/case-studies/candy-kittens-shopify-food-beverage-cro",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-        <path d="M9 4v6a5 5 0 0 0 10 0V4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M14 10v14M10 24h8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
-        <path d="M19 4v4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    label: "B2B & Wholesale",
-    href: "/case-studies/henchman-shopify-plus-b2b",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-        <rect x="3" y="12" width="10" height="13" rx="1.5" stroke="currentColor" strokeWidth="1.5"/>
-        <rect x="15" y="6" width="10" height="19" rx="1.5" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M6 12V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Home & Living",
-    href: null,
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-        <path d="M4 12L14 4l10 8v13H4V12z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <rect x="10" y="17" width="8" height="8" rx="1" stroke="currentColor" strokeWidth="1.3"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Subscription Brands",
-    href: "/case-studies/wild-shopify-plus-subscriptions",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-        <path d="M5 14a9 9 0 0 1 16-5.7M23 14a9 9 0 0 1-16 5.7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M19 5l2 3.3-3.3 2M9 23l-2-3.3 3.3-2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Luxury & Premium",
-    href: null,
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-        <path d="M14 4l2.5 7h7.5l-6 4.5 2.5 7L14 18.5 7.5 22.5l2.5-7L4 11h7.5L14 4z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-  },
-];
 
 /* ── Case studies (Our Work — kept exactly as-is) ── */
 const CASE_STUDIES = [
@@ -348,8 +204,12 @@ const FAQS = [
     a: "Targeted Plus work, such as a custom checkout extension or Flow automation build, takes 2 to 3 weeks. A full Shopify Plus store build takes 6 to 10 weeks. A migration from Magento, WooCommerce, or BigCommerce takes 8 to 14 weeks depending on catalog size, integration complexity, and B2B requirements. Every project starts with a fixed timeline you approve before we write a single line of code.",
   },
   {
-    q: "Why use a Shopify Plus agency instead of a freelancer?",
-    a: "A Shopify Plus project covers frontend development, React-based checkout extensions, API integrations, Shopify Flow automation, B2B configuration, and load testing. A freelancer can typically cover one or two of those areas. An agency covers all of them under one brief, one timeline, and one point of accountability. We have completed 200+ Plus projects. You are not our first.",
+    q: "Why hire a Shopify Plus development agency instead of a freelancer?",
+    a: "A Shopify Plus project covers frontend development, React-based checkout extensions, API integrations, Shopify Flow automation, B2B configuration, and load testing. A freelancer typically covers one or two of those areas. When you hire a Shopify Plus development agency, you get all of them under one brief, one timeline, and one point of accountability. Our Shopify Plus developers have completed 200+ Plus projects. You are not our first.",
+  },
+  {
+    q: "Do you work with international and remote clients?",
+    a: "Yes. We work with Shopify Plus brands across the UK, US, Australia, Europe, and beyond. Every client gets a dedicated Shopify Plus developer and project manager assigned from day one. Timezone differences are handled through async updates and scheduled calls. You can hire our Shopify Plus developers regardless of where your business is based, and you get the same access and accountability as our local clients.",
   },
   {
     q: "Can you migrate from Magento to Shopify Plus with no downtime?",
@@ -395,13 +255,6 @@ const CheckIcon = () => (
   </svg>
 );
 
-const WarnIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
-    <circle cx="9" cy="9" r="9" fill="rgba(245,158,11,0.12)" />
-    <path d="M9 6v4M9 12v.5" stroke="#f59e0b" strokeWidth="1.8" strokeLinecap="round" />
-  </svg>
-);
-
 export default function Page() {
   return (
     <>
@@ -414,13 +267,13 @@ export default function Page() {
           <div>
             <span className="std-badge">Certified Shopify Plus Partner Agency</span>
             <h1 className="std-hero-h1 font-bold mt-5" style={{ color: C_WHITE, fontSize: "54px", lineHeight: 1.15, margin: "20px 0 0" }}>
-              Standard Shopify Has a Ceiling.{" "}
               <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                Shopify Plus Removes It.
+                Shopify Plus Development
               </span>
+              {" "}for Brands That Are Done Fighting Their Platform.
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
-              Most brands hit the wall between $2M and $5M: a checkout you cannot customize, automations that do not exist, API limits that cause sync failures, and B2B buyers you are managing manually. Shopify Plus is the platform built for what comes next. We build, migrate, and scale Shopify Plus stores for brands that need it done right the first time.
+              Most brands hit the wall between $2M and $5M: a checkout you cannot customize, automations that do not exist, API limits that cause sync failures, and B2B buyers you are managing manually. Shopify Plus is the platform built for what comes next. We are a certified Shopify Plus development agency. We build, migrate, and scale Plus stores for brands that need it done right the first time.
             </p>
             <div className="std-hero-stats">
               {[
@@ -450,7 +303,7 @@ export default function Page() {
 
           <div className="std-hero-img">
             <Image
-              src="/images/build-hero-4-4.webp"
+              src="/images/migration-shopify-right-image.webp"
               alt="Shopify Plus development: enterprise ecommerce store built for scale"
               width={700}
               height={500}
@@ -468,7 +321,7 @@ export default function Page() {
             The World&apos;s Fastest-Growing Brands Trust Ecomm Wizards
           </h2>
           <p className="text-center" style={{ color: C_TEXT, fontSize: 16, lineHeight: "26px", margin: "10px 0 0", textAlign: "center" }}>
-            200+ Shopify Plus stores built. $900M+ in client revenue generated. From DTC challengers to global enterprise brands.
+            200+ Shopify Plus store development projects completed. $900M+ in client revenue generated. From DTC challengers to global enterprise brands.
           </p>
 
           <div className="std-trust-carousel" style={{ marginTop: 20, width: "100%", overflow: "hidden" }}>
@@ -491,77 +344,59 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ── 3. Is Shopify Plus Right For You? ── */}
-      <section className="spd-qual" style={{ background: C_DARK, padding: "0 20px" }} aria-label="Is Shopify Plus right for your business?">
-        <div className="mx-auto" style={{ maxWidth: 1320, padding: "64px 0" }}>
-          <h2 style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(28px, 4.1vw, 42px)", fontWeight: 700, color: C_WHITE, textAlign: "center", margin: "0 0 12px" }}>
-            Is Shopify Plus Right{" "}
-            <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              for Your Business?
-            </span>
+      {/* ── 3. Why Brands Choose Shopify Plus ── */}
+      <section className="spd-feat" style={{ background: C_CREAM, padding: "60px 20px" }} aria-label="Why brands choose Shopify Plus">
+        <div className="mx-auto" style={{ maxWidth: "1320px" }}>
+          <h2 className="spd-feat-heading">
+            Why Brands Choose Shopify Plus
           </h2>
-          <p style={{ fontFamily: "Poppins, sans-serif", fontSize: 16, lineHeight: 1.75, color: C_WHITE, textAlign: "center", margin: "0 0 10px" }}>
-            Most brands switch when they hit specific operational limits. Here are the signs.
+          <p className="spd-feat-desc">
+            Standard Shopify locks you out of the features that drive growth past $2M. Here is what Shopify Plus opens up and what it actually delivers.
           </p>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: 20, marginTop: 16 }}>
-            <div style={{ background: "#121212", borderRadius: 16, padding: 30 }}>
-              <span style={{ display: "inline-block", background: "rgba(245,158,11,0.12)", color: "#fbbf24", fontFamily: "Poppins, sans-serif", fontSize: 16, fontWeight: 600, borderRadius: 999, padding: "6px 16px", marginBottom: 20, border: "1px solid rgba(245,158,11,0.25)" }}>
-                Signs you have outgrown standard Shopify
-              </span>
-              <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
-                {OUTGROWN_SIGNS.map((item) => (
-                  <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontFamily: "Poppins, sans-serif", fontSize: 15, color: "#ffffff", lineHeight: 1.55 }}>
-                    <span style={{ flexShrink: 0, marginTop: 2 }}><WarnIcon /></span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div style={{ background: "#121212", borderRadius: 16, padding: 30 }}>
-              <span style={{ display: "inline-block", background: "rgba(61,199,122,0.15)", color: "#3DC77A", fontFamily: "Poppins, sans-serif", fontSize: 16, fontWeight: 600, borderRadius: 999, padding: "6px 16px", marginBottom: 20, border: "1px solid rgba(61,199,122,0.3)" }}>
-                What Shopify Plus gives you
-              </span>
-              <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
-                {PLUS_UNLOCKS.map((item) => (
-                  <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontFamily: "Poppins, sans-serif", fontSize: 15, color: "#ffffff", lineHeight: 1.55 }}>
-                    <span style={{ flexShrink: 0, marginTop: 2 }}><CheckIcon /></span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div style={{ display: "flex", justifyContent: "center", marginTop: 32 }}>
-            <span className="group inline-flex p-[2px] rounded-full" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
-              <Link
-                href="/book-shopify-consultation"
-                className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px]"
-                style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600 }}
-              >
-                <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Talk to a Shopify Plus Expert</span>
-                <span className="text-white group-hover:text-black transition-colors duration-300"><Arrow /></span>
-              </Link>
-            </span>
+          <div className="spd-feat-grid">
+            {PLUS_FEATURES.map((feat) => (
+              <div key={feat.name} className="spd-feat-card">
+                <span className="spd-feat-icon" aria-hidden="true">{feat.icon}</span>
+                <h3 className="spd-feat-name">{feat.name}</h3>
+                <p className="spd-feat-desc-text">{feat.desc}</p>
+                <div className="spd-feat-roi">
+                  <span className="spd-feat-roi-label">Real result:</span> {feat.roi}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .spd-feat-heading { color: #000; font-family: 'Poppins', sans-serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-align: center; margin: 0 auto 16px; max-width: 800px; }
+          .spd-feat-desc { color: rgba(0,0,0,.75); font-family: 'Poppins', sans-serif; font-size: 18px; line-height: 28px; text-align: center; margin: 0 auto 24px; max-width: 760px; }
+          .spd-feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+          .spd-feat-card { background: #fff; border-radius: 16px; padding: 28px; border: 1px solid rgba(0,0,0,0.07); display: flex; flex-direction: column; gap: 12px; }
+          .spd-feat-icon { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: rgba(61,199,122,0.1); border-radius: 12px; color: #2A9555; flex-shrink: 0; }
+          .spd-feat-name { font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; color: #000; margin: 0; line-height: 1.3; }
+          .spd-feat-desc-text { font-family: 'Poppins', sans-serif; font-size: 14px; color: #334155; line-height: 1.7; margin: 0; flex-grow: 1; }
+          .spd-feat-roi { font-family: 'Poppins', sans-serif; font-size: 13px; color: #2A9555; line-height: 1.5; background: rgba(61,199,122,0.08); border-radius: 8px; padding: 10px 14px; border-left: 3px solid #3DC77A; margin-top: auto; }
+          .spd-feat-roi-label { font-weight: 700; }
+          @media (max-width: 1024px) { .spd-feat-heading { font-size: 32px !important; } .spd-feat-desc { font-size: 16px !important; margin-bottom: 24px !important; } .spd-feat-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+          @media (max-width: 768px) { .spd-feat-desc { margin-bottom: 16px !important; } }
+          @media (max-width: 640px) { .spd-feat { padding: 40px 16px !important; } .spd-feat-heading { font-size: 26px !important; } .spd-feat-desc { font-size: 15px !important; } .spd-feat-grid { grid-template-columns: 1fr !important; } }
+        ` }} />
       </section>
 
       {/* ── 4. Services Accordion ── */}
-      <section className="std-solutions" style={{ background: C_CREAM }} aria-label="Shopify Plus development services">
+      <section className="std-solutions" style={{ background: C_WHITE }} aria-label="Shopify Plus development services">
         <div
           className="std-solutions-grid mx-auto grid gap-14 lg:grid-cols-[1.2fr_1fr] lg:items-start"
           style={{ maxWidth: "1320px", padding: "60px 20px" }}
         >
           <div className="std-solutions-left" style={{ position: "sticky", top: "120px", alignSelf: "start" }}>
-            <span className="std-label" style={{ color: C_TEXT }}>What We Build</span>
+            <span className="std-label" style={{ color: C_TEXT }}>Shopify Plus Development Services</span>
             <h2 style={{ color: C_DARK, fontSize: 42, fontWeight: 700, lineHeight: 1.2, margin: "12px 0 0" }}>
               Shopify Plus Development Services We Offer
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              From full Plus store builds and zero-downtime migrations to checkout extensions, B2B portals, and enterprise integrations, we cover every capability Shopify Plus makes available at scale.
+              From custom Shopify Plus development and zero-downtime migrations to checkout extensions, B2B portals, Shopify Plus web development, and enterprise integrations, we cover every Shopify Plus development service your store needs at scale.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
               Book a Free Strategy Call
@@ -584,26 +419,26 @@ export default function Page() {
         <div className="spd-why-inner mx-auto" style={{ maxWidth: "1320px" }}>
 
           <h2 className="spd-why-heading">
-            Why Brands Choose Ecomm Wizards{" "}<br className="std-why-br-lg" />as Their{" "}<br className="std-why-br-md" />
+            Why Brands Choose Ecomm Wizards as{" "}<br className="std-why-br-lg" />Their{" "}<br className="std-why-br-md" />
             <span style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Shopify Plus Development Agency
             </span>
           </h2>
 
           <p className="spd-why-desc">
-            We have built 200+ Shopify Plus stores and helped clients generate over $900M in revenue. Here is what makes us the right Plus development agency<br className="std-why-desc-br" /> for brands that cannot afford to get this wrong:
+            We have built 200+ Shopify Plus stores and helped clients generate over $900M in revenue. Here is what makes us<br className="std-why-desc-br" /> the right Plus development agency for brands that cannot afford to get this wrong:
           </p>
 
           <div className="spd-why-grid">
             {[
               {
                 title: "Certified Shopify Plus Partner",
-                desc: (<>We are an accredited Shopify Plus partner with direct access to Plus support and early feature access. You get a team that knows Plus from the inside, not a generalist agency learning on your project.</>),
+                desc: (<>Accredited Shopify Plus partner with direct access to Plus support and early feature access. You get a team that knows the platform from the inside, not an agency learning on your project.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4 l3 2.4 l3.7 -0.6 l1.6 3.4 l3.4 1.6 l-0.6 3.7 l2.4 3 l-2.4 3 l0.6 3.7 l-3.4 1.6 l-1.6 3.4 l-3.7 -0.6 l-3 2.4 l-3 -2.4 l-3.7 0.6 l-1.6 -3.4 l-3.4 -1.6 l0.6 -3.7 l-2.4 -3 l2.4 -3 l-0.6 -3.7 l3.4 -1.6 l1.6 -3.4 l3.7 0.6 z" /><polyline points="11,16.5 14.5,20 21,12.5" /></svg>),
               },
               {
                 title: "Checkout-First Methodology",
-                desc: (<>The Shopify Plus checkout is your highest-converting page. We start every Plus project by defining the checkout experience, then build backwards from there. Clients see an average <span className="spd-why-hl">18% lift in AOV</span> from checkout work alone.</>),
+                desc: (<>Your Shopify Plus checkout is your highest-converting page. We define the checkout experience first, then build backwards. Clients see an average <span className="spd-why-hl">18% lift in AOV</span> from checkout work alone.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="6" width="24" height="20" rx="3" /><path d="M4 12h24" /><path d="M9 18h4M9 22h6" /><rect x="18" y="16" width="6" height="6" rx="1" /></svg>),
               },
               {
@@ -618,7 +453,7 @@ export default function Page() {
               },
               {
                 title: "90-Day Post-Launch Window",
-                desc: (<>Every project includes a 90-day post-launch support window. We monitor your Plus store, fix anything that surfaces, and keep building as you get live traffic. <span className="spd-why-hl">You are not on your own after go-live.</span></>),
+                desc: (<>Every project includes a 90-day post-launch window. We monitor your Plus store, fix anything that surfaces, and keep building as live traffic grows. <span className="spd-why-hl">You are not on your own after go-live.</span></>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="6" width="24" height="22" rx="3" /><line x1="4" y1="13" x2="28" y2="13" /><line x1="11" y1="3" x2="11" y2="9" /><line x1="21" y1="3" x2="21" y2="9" /><line x1="9" y1="19" x2="14" y2="19" /><line x1="9" y1="23" x2="20" y2="23" /></svg>),
               },
               {
@@ -666,9 +501,9 @@ export default function Page() {
           .spd-why-card-desc { color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 15px; line-height: 24px; margin: 0; }
           .spd-why-hl { font-weight: 700; background-image: linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
           .spd-why-closing { color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 18px; line-height: 28px; text-align: center; margin: 20px auto 20px; max-width: 1202px; }
-          @media (max-width: 1024px) { .std-why.spd-why-section { padding: 53px 20px !important; } .spd-why-heading { font-size: 30px !important; line-height: 40px !important; margin-bottom: 16px !important; } .std-why-br-lg { display: none !important; } .std-why-br-md { display: inline !important; } .std-why-desc-br { display: inline !important; } .spd-why-desc { font-size: 16px !important; line-height: 26px !important; margin-bottom: 16px !important; max-width: 100% !important; text-align: center !important; } .spd-why-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; margin-bottom: 20px !important; } .spd-why-card { padding: 24px !important; } .spd-why-icon { margin-bottom: 6px !important; } .spd-why-card-title { font-size: 19px !important; line-height: 26px !important; } .spd-why-card-desc { font-size: 14px !important; line-height: 22px !important; } .spd-why-closing { font-size: 16px !important; line-height: 26px !important; margin-bottom: 24px !important; } }
+          @media (max-width: 1024px) { .std-why.spd-why-section { padding: 53px 20px !important; } .spd-why-heading { font-size: 30px !important; line-height: 40px !important; margin-bottom: 16px !important; } .std-why-br-lg { display: none !important; } .std-why-br-md { display: inline !important; } .std-why-desc-br { display: inline !important; }.spd-why-desc { font-size: 16px !important; line-height: 26px !important; margin-bottom: 16px !important; max-width: 100% !important; text-align: center !important; } .spd-why-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; margin-bottom: 20px !important; } .spd-why-card { padding: 24px !important; } .spd-why-icon { margin-bottom: 6px !important; } .spd-why-card-title { font-size: 19px !important; line-height: 26px !important; } .spd-why-card-desc { font-size: 14px !important; line-height: 22px !important; } .spd-why-closing { font-size: 16px !important; line-height: 26px !important; margin-bottom: 24px !important; } }
           @media (max-width: 768px) { .spd-why-grid { margin-bottom: 16px !important; } .spd-why-closing { margin-bottom: 16px !important; } .std-why-desc-br { display: none !important; } }
-          @media (max-width: 640px) { .std-why.spd-why-section { padding: 40px 0 !important; } .spd-why-grid { grid-template-columns: 1fr !important; margin-bottom: 10px !important; } .spd-why-heading { font-size: 26px !important; line-height: 34px !important; margin-bottom: 10px !important; } .spd-why-desc { font-size: 15px !important; line-height: 24px !important; margin-bottom: 10px !important; } .std-why-br-md { display: none !important; } .spd-why-card { padding: 22px 20px !important; } .spd-why-icon { width: 48px; height: 48px; margin-bottom: 10px !important; } .spd-why-card-title { margin-bottom: 10px !important; } .spd-why-closing { margin-bottom: 10px !important; } }
+          @media (max-width: 640px) { .std-why.spd-why-section { padding: 20px 18px !important; } .spd-why-grid { grid-template-columns: 1fr !important; margin-bottom: 10px !important; } .spd-why-heading { font-size: 26px !important; line-height: 34px !important; margin-bottom: 10px !important; } .spd-why-desc { font-size: 15px !important; line-height: 24px !important; margin-bottom: 10px !important; } .std-why-br-md { display: none !important; } .spd-why-card { padding: 22px 20px !important; } .spd-why-icon { width: 48px; height: 48px; margin-bottom: 10px !important; } .spd-why-card-title { margin-bottom: 10px !important; } .spd-why-closing { margin-bottom: 10px !important; } }
         ` }} />
 
         <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true">
@@ -697,7 +532,7 @@ export default function Page() {
             className="text-[28px] sm:text-[36px] md:text-[32px] lg:text-[42px] font-bold max-sm:font-semibold"
             style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", lineHeight: 1.2, margin: 0 }}
           >
-            How We Handle Your Shopify Plus Development
+            How Our Shopify Plus Developers Handle Your Project
           </h2>
 
           <p
@@ -712,9 +547,9 @@ export default function Page() {
           {/* Row 1 — 3 cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-[20px] md:max-lg:mt-[16px]">
             {[
-              { step: "01.", title: "Discovery & Technical Audit", desc: "We review your current platform, integration stack, catalog structure, and growth goals. We define what Shopify Plus handles natively and where custom development is required." },
-              { step: "02.", title: "Architecture & Scoping", desc: "We map checkout flows, automation logic, B2B structures, and integration points. You get a clear project plan with a fixed timeline and fixed price before a single line of code is written." },
-              { step: "03.", title: "Shopify Plus Development", desc: "We build checkout extensions, Flow automations, custom Functions, and API integrations to Shopify Plus standards. Clean, documented code built to scale from day one." },
+              { step: "01.", title: "Discovery & Technical Audit", desc: "We audit your platform, integrations, and catalog. We define what Shopify Plus handles natively and what needs custom development." },
+              { step: "02.", title: "Architecture & Scoping", desc: "We map your checkout flows, B2B structure, and integrations. You get a fixed timeline and fixed price before we write a line of code." },
+              { step: "03.", title: "Shopify Plus Development", desc: "We build checkout extensions, Flow automations, Functions, and API integrations to Shopify Plus standards. Clean code built to scale." },
             ].map(({ step, title, desc }) => (
               <div key={step} className="p-[30px] max-sm:p-[15px] md:max-lg:p-[16px] lg:max-xl:p-[20px]" style={{ background: "#FFFFFF", borderRadius: "16px", boxSizing: "border-box" }}>
                 <p className="text-[50px] max-sm:text-[35px] md:max-lg:text-[40px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "rgba(0,0,0,0.12)", lineHeight: 1, margin: "0 0 10px" }}>{step}</p>
@@ -730,8 +565,8 @@ export default function Page() {
             style={{ maxWidth: "calc(66.667% - 7px)", marginLeft: "auto", marginRight: "auto", width: "100%" }}
           >
             {[
-              { step: "04.", title: "QA & Load Testing", desc: "We test every feature across browsers, devices, and simulated traffic conditions. Checkout flows, B2B pricing logic, and integrations are all validated before a single customer sees the store." },
-              { step: "05.", title: "Launch & Scale Support", desc: "We handle go-live with zero downtime. After launch, we monitor, maintain, and keep building on your Plus store as your business grows." },
+              { step: "04.", title: "QA & Load Testing", desc: "We test every feature across browsers, devices, and traffic loads. Checkout flows, B2B logic, and integrations are all validated before launch." },
+              { step: "05.", title: "Launch & Scale Support", desc: "We go live with zero downtime, then monitor, maintain, and keep building on your Plus store as you grow." },
             ].map(({ step, title, desc }) => (
               <div key={step} className="p-[30px] max-sm:p-[15px] md:max-lg:p-[16px] lg:max-xl:p-[20px]" style={{ background: "#FFFFFF", borderRadius: "16px", boxSizing: "border-box" }}>
                 <p className="text-[50px] max-sm:text-[35px] md:max-lg:text-[40px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "rgba(0,0,0,0.12)", lineHeight: 1, margin: "0 0 10px" }}>{step}</p>
@@ -749,12 +584,12 @@ export default function Page() {
             <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: 16, color: "#000", margin: "0 0 14px" }}>
               What happens the day you sign
             </p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "10px 32px" }}>
+            <div className="spd-sign-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "10px 32px" }}>
               {[
-                "You get direct access to your project manager and lead Shopify Plus developer.",
-                "We send the kick-off questionnaire within 2 hours of signing.",
-                "Your discovery call is scheduled within 24 hours.",
-                "Active development begins within 5 business days.",
+                "Direct access to your project manager and lead developer.",
+                "Kick-off questionnaire sent within 2 hours of signing.",
+                "Discovery call booked within 24 hours of signing.",
+                "Active development kicks off within 5 business days.",
               ].map((item) => (
                 <div key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
                   <span style={{ flexShrink: 0, marginTop: 2 }}><CheckIcon /></span>
@@ -779,144 +614,11 @@ export default function Page() {
           <CaseStudySlider slides={CASE_STUDY_SLIDES} intervalMs={6000} showDots={false} />
         </div>
         <style dangerouslySetInnerHTML={{ __html: `
-          .spd-results-heading { color:#000;font-family:'Poppins',sans-serif;font-size:42px;font-weight:700;line-height:52px;text-align:center;margin:0 auto 24px;max-width:920px; }
+          .spd-results-heading { color:#000;font-family:'Poppins',sans-serif;font-size:42px;font-weight:700;line-height:52px;text-align:center;margin:0 auto 24px;max-width:1100px; }
           .spd-results-desc { color:rgba(0,0,0,.8);font-family:'Poppins',sans-serif;font-size:18px;line-height:28px;text-align:center;margin:0 auto 24px;max-width:1056px; }
           @media (max-width:1023px) { .spd-results-section { padding:44px 20px !important; } .spd-results-heading { font-size:30px !important;line-height:40px !important;margin-bottom:18px !important; } .spd-results-desc { font-size:16px !important;line-height:26px !important;margin-bottom:32px !important; } }
           @media (min-width:768px) and (max-width:1023px) { .spd-results-section { padding:30px 20px !important; } .spd-results-desc { margin-bottom:18px !important; } }
           @media (max-width:640px) { .spd-results-section { padding:20px 16px !important; } .spd-results-heading { font-size:26px !important;line-height:34px !important; } .spd-results-desc { font-size:15px !important;line-height:24px !important; } }
-        ` }} />
-      </section>
-
-      {/* ── 8. Plus Features Explained ── */}
-      <section className="spd-feat" style={{ background: C_CREAM, padding: "60px 20px" }} aria-label="Shopify Plus features explained">
-        <div className="mx-auto" style={{ maxWidth: "1320px" }}>
-          <h2 className="spd-feat-heading">
-            Shopify Plus Features{" "}
-            <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Explained
-            </span>
-          </h2>
-          <p className="spd-feat-desc">
-            Shopify Plus includes capabilities that standard Shopify does not. Here is what each one gives you and what it actually delivers in a production store.
-          </p>
-
-          <div className="spd-feat-grid">
-            {PLUS_FEATURES.map((feat) => (
-              <div key={feat.name} className="spd-feat-card">
-                <span className="spd-feat-icon" aria-hidden="true">{feat.icon}</span>
-                <h3 className="spd-feat-name">{feat.name}</h3>
-                <p className="spd-feat-desc-text">{feat.desc}</p>
-                <div className="spd-feat-roi">
-                  <span className="spd-feat-roi-label">Real result:</span> {feat.roi}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <style dangerouslySetInnerHTML={{ __html: `
-          .spd-feat-heading { color: #000; font-family: 'Poppins', sans-serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-align: center; margin: 0 auto 16px; max-width: 800px; }
-          .spd-feat-desc { color: rgba(0,0,0,.75); font-family: 'Poppins', sans-serif; font-size: 18px; line-height: 28px; text-align: center; margin: 0 auto 40px; max-width: 760px; }
-          .spd-feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-          .spd-feat-card { background: #fff; border-radius: 16px; padding: 28px; border: 1px solid rgba(0,0,0,0.07); display: flex; flex-direction: column; gap: 12px; }
-          .spd-feat-icon { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: rgba(61,199,122,0.1); border-radius: 12px; color: #2A9555; flex-shrink: 0; }
-          .spd-feat-name { font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; color: #000; margin: 0; line-height: 1.3; }
-          .spd-feat-desc-text { font-family: 'Poppins', sans-serif; font-size: 14px; color: #334155; line-height: 1.7; margin: 0; flex-grow: 1; }
-          .spd-feat-roi { font-family: 'Poppins', sans-serif; font-size: 13px; color: #2A9555; line-height: 1.5; background: rgba(61,199,122,0.08); border-radius: 8px; padding: 10px 14px; border-left: 3px solid #3DC77A; margin-top: auto; }
-          .spd-feat-roi-label { font-weight: 700; }
-          @media (max-width: 1024px) { .spd-feat-heading { font-size: 32px !important; } .spd-feat-desc { font-size: 16px !important; margin-bottom: 28px !important; } .spd-feat-grid { grid-template-columns: repeat(2, 1fr) !important; } }
-          @media (max-width: 640px) { .spd-feat { padding: 40px 16px !important; } .spd-feat-heading { font-size: 26px !important; } .spd-feat-desc { font-size: 15px !important; } .spd-feat-grid { grid-template-columns: 1fr !important; } }
-        ` }} />
-      </section>
-
-      {/* ── 9. Technology Partner Stack ── */}
-      <section className="spd-tech" style={{ background: C_WHITE, padding: "60px 20px" }} aria-label="Technology partner stack">
-        <div className="mx-auto" style={{ maxWidth: "1320px" }}>
-          <h2 className="spd-tech-heading">The Technology Stack Behind Our Shopify Plus Builds</h2>
-          <p className="spd-tech-desc">
-            We work with the tools your team already uses. Every integration is built to work properly, not just to appear on a list.
-          </p>
-
-          <div className="spd-tech-grid">
-            {TECH_STACK.map((group) => (
-              <div key={group.category} className="spd-tech-group">
-                <p className="spd-tech-cat">{group.category}</p>
-                <div className="spd-tech-chips">
-                  {group.partners.map((p) => (
-                    <span
-                      key={p}
-                      className="spd-tech-chip"
-                      style={p === group.annotatedPartner ? { background: "rgba(61,199,122,0.08)", border: "1px solid rgba(61,199,122,0.35)", color: "#1a5c38" } : undefined}
-                    >
-                      {p}
-                    </span>
-                  ))}
-                </div>
-                {group.annotation && (
-                  <p className="spd-tech-note">{group.annotation}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <style dangerouslySetInnerHTML={{ __html: `
-          .spd-tech-heading { color: #000; font-family: 'Poppins', sans-serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-align: center; margin: 0 auto 16px; max-width: 760px; }
-          .spd-tech-desc { color: rgba(0,0,0,.75); font-family: 'Poppins', sans-serif; font-size: 18px; line-height: 28px; text-align: center; margin: 0 auto 40px; max-width: 680px; }
-          .spd-tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-          .spd-tech-group { background: #FAFAFA; border-radius: 14px; padding: 22px; border: 1px solid rgba(0,0,0,0.07); }
-          .spd-tech-cat { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #888; margin: 0 0 12px; }
-          .spd-tech-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0; }
-          .spd-tech-chip { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600; color: #111; background: #fff; border: 1px solid rgba(0,0,0,0.15); border-radius: 999px; padding: 5px 14px; white-space: nowrap; }
-          .spd-tech-note { font-family: 'Poppins', sans-serif; font-size: 13px; color: #334155; line-height: 1.55; margin: 12px 0 0; border-top: 1px solid rgba(0,0,0,0.07); padding-top: 12px; }
-          @media (max-width: 1024px) { .spd-tech-heading { font-size: 32px !important; } .spd-tech-desc { font-size: 16px !important; margin-bottom: 28px !important; } .spd-tech-grid { grid-template-columns: repeat(2, 1fr) !important; } }
-          @media (max-width: 640px) { .spd-tech { padding: 40px 16px !important; } .spd-tech-heading { font-size: 26px !important; } .spd-tech-desc { font-size: 15px !important; } .spd-tech-grid { grid-template-columns: 1fr !important; } }
-        ` }} />
-      </section>
-
-      {/* ── 10. Industries We Serve ── */}
-      <section className="spd-ind" style={{ background: C_DARK, padding: "60px 20px" }} aria-label="Industries we serve">
-        <div className="mx-auto" style={{ maxWidth: "1320px" }}>
-          <h2 style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(28px, 4.1vw, 42px)", fontWeight: 700, color: C_WHITE, textAlign: "center", margin: "0 0 12px" }}>
-            Industries We{" "}
-            <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Serve
-            </span>
-          </h2>
-          <p style={{ fontFamily: "Poppins, sans-serif", fontSize: 16, color: "rgba(255,255,255,0.75)", textAlign: "center", lineHeight: 1.7, margin: "0 0 40px" }}>
-            We have built Shopify Plus stores across these verticals. Click to read the case studies.
-          </p>
-
-          <div className="spd-ind-grid">
-            {INDUSTRIES.map((ind) =>
-              ind.href ? (
-                <Link key={ind.label} href={ind.href} className="spd-ind-card spd-ind-card--link">
-                  <span className="spd-ind-icon" aria-hidden="true">{ind.icon}</span>
-                  <span className="spd-ind-label">{ind.label}</span>
-                  <span className="spd-ind-arrow" aria-hidden="true">
-                    <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5h9M6 1l4 4-4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  </span>
-                </Link>
-              ) : (
-                <div key={ind.label} className="spd-ind-card">
-                  <span className="spd-ind-icon" aria-hidden="true">{ind.icon}</span>
-                  <span className="spd-ind-label">{ind.label}</span>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-
-        <style dangerouslySetInnerHTML={{ __html: `
-          .spd-ind-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-          .spd-ind-card { background: #111; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 22px 20px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
-          .spd-ind-card--link { text-decoration: none; transition: border-color 0.2s ease, transform 0.2s ease; }
-          .spd-ind-card--link:hover { border-color: rgba(61,199,122,0.45); transform: translateY(-3px); }
-          .spd-ind-icon { color: #4FB872; display: inline-flex; }
-          .spd-ind-label { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; color: #fff; line-height: 1.3; }
-          .spd-ind-arrow { color: rgba(61,199,122,0.7); display: inline-flex; }
-          @media (max-width: 1024px) { .spd-ind-grid { grid-template-columns: repeat(3, 1fr) !important; } }
-          @media (max-width: 640px) { .spd-ind { padding: 40px 16px !important; } .spd-ind-grid { grid-template-columns: repeat(2, 1fr) !important; } }
         ` }} />
       </section>
 
@@ -981,7 +683,7 @@ export default function Page() {
       {/* ── 12. FAQ ── */}
       <section
         className="spd-faq"
-        style={{ background: C_WHITE, fontFamily: "'Poppins', sans-serif" }}
+        style={{ background: C_CREAM, fontFamily: "'Poppins', sans-serif" }}
         aria-label="Frequently asked questions about Shopify Plus development"
       >
         <div className="spd-faq__inner mx-auto" style={{ maxWidth: "1100px" }}>
@@ -1055,6 +757,7 @@ export default function Page() {
         .std-acc-icon--open { transform: rotate(180deg); }
 
         @media (max-width: 1024px) {
+          .spd-sign-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .std-hero-h1 { font-size: 40px !important; }
           .std-solutions h2 { font-size: 38px !important; }
           .std-solutions-grid { grid-template-columns: 1fr 1.1fr !important; gap: 40px !important; }
@@ -1073,6 +776,7 @@ export default function Page() {
         }
 
         @media (max-width: 640px) {
+          .spd-sign-grid { grid-template-columns: 1fr !important; }
           .std-hero > div { padding: 56px 18px !important; }
           .std-trust > div { padding: 32px 18px 38px !important; }
           .std-solutions > div { padding: 40px 18px !important; gap: 36px !important; }

@@ -67,7 +67,7 @@ export default function SplusAccordion() {
                 textAlign: "left",
               }}
             >
-              <span style={{ flex: 1, fontFamily: "'Poppins', sans-serif", fontSize: 18, fontWeight: 700, color: "#000000", lineHeight: 1.4 }}>
+              <span style={{ flex: 1, fontFamily: "'Poppins', sans-serif", fontSize: 18, fontWeight: 600, color: "#000000", lineHeight: 1.4 }}>
                 {s.title}
               </span>
               <span className={`std-acc-icon${isOpen ? " std-acc-icon--open" : ""}`} style={{ flexShrink: 0, color: "#000000", transition: "transform .3s ease", display: "block" }}>
