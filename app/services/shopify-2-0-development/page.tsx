@@ -6,9 +6,9 @@ import S20FaqAccordion from "./S20FaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 export const metadata: Metadata = {
-  title: "Shopify 2.0 Development Agency | Shopify Online Store 2.0 Experts | Ecomm Wizards",
+  title: "Shopify 2.0 Development Agency | Shopify 2.0 Theme Development | Ecomm Wizards",
   description:
-    "Certified Shopify 2.0 development agency. Full 2.0 store builds, Shopify 1.0 to 2.0 migrations, custom sections, metafields, and App Block integrations. 200+ Shopify stores built. $900M+ in client revenue.",
+    "200+ Shopify 2.0 stores built. $900M+ in client revenue. Custom Shopify 2.0 theme development, 1.0 to 2.0 migrations, and native App Block integrations.",
 };
 
 const C_DARK  = "#000000";
@@ -215,10 +215,6 @@ const FAQS = [
     a: "Most modern apps support Shopify 2.0 and can be reinstalled as native App Blocks. For apps that do not support App Blocks yet, we test compatibility and either find a 2.0-compatible alternative or ensure they install without legacy script conflicts that slow your store down.",
   },
   {
-    q: "Can my team manage pages more easily after upgrading to Shopify 2.0?",
-    a: "Yes. Sections on every page type mean your marketing team can update layouts, swap content blocks, and build new campaign pages from the theme editor without needing a developer. Metafields give your team direct control over product and page content without custom code.",
-  },
-  {
     q: "Does Shopify 2.0 improve store speed and SEO?",
     a: "Yes. Shopify 2.0 themes run on a cleaner codebase with lighter templates and more efficient rendering. Fewer script injections, better-structured assets, and App Blocks instead of injected code all contribute to faster load times and better Core Web Vitals, which directly supports search rankings.",
   },
@@ -231,8 +227,12 @@ const FAQS = [
     a: "Shopify 2.0 refers to the theme framework, the architecture your storefront is built on. Shopify Plus is a subscription tier that unlocks enterprise features like checkout customisation, Shopify Flow, B2B commerce, and higher API limits. You can run a Shopify 2.0 theme on any Shopify plan, including standard Shopify and Shopify Plus.",
   },
   {
-    q: "What ongoing support do you offer after a Shopify 2.0 project?",
-    a: "Every project includes a 90-day post-launch window covering monitoring, bug fixes, and minor adjustments. Most clients continue on a monthly retainer after that, covering new section builds, app updates, metafield extensions, and performance monitoring. You get direct access to the developers who built your store.",
+    q: "Is Shopify 2.0 better than Shopify 1.0?",
+    a: "Yes, in every meaningful way. Shopify 2.0 gives you sections on every page type, not just the homepage. JSON templates make page structures faster and more flexible. Metafields give direct control over product and page content without custom code. App Blocks replace legacy script injections that slowed 1.0 stores down. Shopify no longer develops or supports 1.0 architecture.",
+  },
+  {
+    q: "What does Shopify 2.0 theme development involve?",
+    a: "Shopify 2.0 theme development means building your storefront on Shopify's current Online Store 2.0 framework: JSON templates on every page type, drag-and-drop sections your marketing team controls, structured metafields for product content, and native App Blocks instead of legacy script injections. We handle new builds from scratch and migration rebuilds for stores moving off 1.0 themes.",
   },
 ];
 
@@ -268,7 +268,7 @@ export default function Page() {
               {" "}for Stores Ready to Upgrade
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
-              Most stores are still running on Shopify 1.0 themes: no sections outside the homepage, no structured metafields, apps injecting scripts that slow everything down, and a marketing team that needs a developer for every page change. Shopify Online Store 2.0 fixes all of it. We are a certified Shopify 2.0 development agency. We build, migrate, and upgrade Shopify stores for brands that need the right foundation to grow.
+              Most stores are still running on Shopify 1.0 themes: no sections outside the homepage, no structured metafields, apps injecting scripts that slow everything down, and a marketing team that needs a developer for every page change. Shopify Online Store 2.0 fixes all of it. We are a certified Shopify 2.0 development agency. We handle custom Shopify 2.0 theme development, full Online Store 2.0 builds, and 1.0 to 2.0 migrations for brands that need the right foundation.
             </p>
             <div className="std-hero-stats">
               {[
@@ -316,7 +316,7 @@ export default function Page() {
             The World&apos;s Fastest-Growing Brands Trust Ecomm Wizards
           </h2>
           <p className="text-center" style={{ color: C_TEXT, fontSize: 16, lineHeight: "26px", margin: "10px 0 0", textAlign: "center" }}>
-            200+ Shopify store development projects completed. $900M+ in client revenue generated. From DTC challengers to global enterprise brands.
+            200+ Shopify 2.0 development projects completed. $900M+ in client revenue generated. From DTC challengers to global enterprise brands.
           </p>
 
           <div className="std-trust-carousel" style={{ marginTop: 20, width: "100%", overflow: "hidden" }}>
@@ -391,7 +391,7 @@ export default function Page() {
               Shopify 2.0 Development Services We Offer
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              From full 2.0 store builds and Shopify 1.0 to 2.0 migrations to custom sections, metafields, and App Block integrations, we cover every Shopify 2.0 development service your store needs.
+              From custom Shopify 2.0 theme development and 1.0 to 2.0 migrations to App Block integrations and structured metafields, we cover every Shopify 2.0 development service your store needs.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
               Book a Free Strategy Call
@@ -405,7 +405,28 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ── 5. Why Ecomm Wizards ── */}
+      {/* ── 5. Proven Results ── */}
+      <section
+        className="s20-results-section"
+        style={{ background: C_CREAM, color: C_TEXT, fontFamily: "'Poppins', sans-serif", fontSize: "16px", padding: "40px 20px" }}
+      >
+        <div className="s20-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
+          <h2 className="s20-results-heading">Shopify 2.0 Results Our Clients Actually Got</h2>
+          <p className="s20-results-desc">
+            Not benchmarks. Results from real Shopify 2.0 projects that improved performance, team control, and revenue for brands that needed the right foundation.
+          </p>
+          <CaseStudySlider slides={CASE_STUDY_SLIDES} intervalMs={6000} showDots={false} />
+        </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          .s20-results-heading { color:#000;font-family:'Poppins',sans-serif;font-size:42px;font-weight:700;line-height:52px;text-align:center;margin:0 auto 24px;max-width:1100px; }
+          .s20-results-desc { color:rgba(0,0,0,.8);font-family:'Poppins',sans-serif;font-size:18px;line-height:28px;text-align:center;margin:0 auto 24px;max-width:1056px; }
+          @media (max-width:1023px) { .s20-results-section { padding:44px 20px !important; } .s20-results-heading { font-size:30px !important;line-height:40px !important;margin-bottom:18px !important; } .s20-results-desc { font-size:16px !important;line-height:26px !important;margin-bottom:32px !important; } }
+          @media (min-width:768px) and (max-width:1023px) { .s20-results-section { padding:30px 20px !important; } .s20-results-desc { margin-bottom:18px !important; } }
+          @media (max-width:640px) { .s20-results-section { padding:20px 16px !important; } .s20-results-heading { font-size:26px !important;line-height:34px !important; } .s20-results-desc { font-size:15px !important;line-height:24px !important; } }
+        ` }} />
+      </section>
+
+      {/* ── 6. Why Ecomm Wizards ── */}
       <section
         className="std-why s20-why-section"
         style={{ background: C_DARK, color: C_TEXT, fontFamily: "'Poppins', sans-serif", fontSize: "16px", padding: "53px 20px" }}
@@ -535,7 +556,7 @@ export default function Page() {
             style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", marginTop: "16px", lineHeight: 1.65 }}
           >
             A structured process from audit to launch and beyond.
-            <br className="hidden sm:block" />{" "}
+            <br className="hidden sm:block lg:hidden" />{" "}
             You know exactly what is happening at every stage.
           </p>
 
@@ -596,29 +617,8 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ── 7. Proven Results ── */}
-      <section
-        className="s20-results-section"
-        style={{ background: C_WHITE, color: C_TEXT, fontFamily: "'Poppins', sans-serif", fontSize: "16px", padding: "30px 20px" }}
-      >
-        <div className="s20-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
-          <h2 className="s20-results-heading">Shopify 2.0 Results Our Clients Actually Got</h2>
-          <p className="s20-results-desc">
-            Not benchmarks. Results from real Shopify 2.0 projects that improved performance, team control, and revenue for brands that needed the right foundation.
-          </p>
-          <CaseStudySlider slides={CASE_STUDY_SLIDES} intervalMs={6000} showDots={false} />
-        </div>
-        <style dangerouslySetInnerHTML={{ __html: `
-          .s20-results-heading { color:#000;font-family:'Poppins',sans-serif;font-size:42px;font-weight:700;line-height:52px;text-align:center;margin:0 auto 24px;max-width:1100px; }
-          .s20-results-desc { color:rgba(0,0,0,.8);font-family:'Poppins',sans-serif;font-size:18px;line-height:28px;text-align:center;margin:0 auto 24px;max-width:1056px; }
-          @media (max-width:1023px) { .s20-results-section { padding:44px 20px !important; } .s20-results-heading { font-size:30px !important;line-height:40px !important;margin-bottom:18px !important; } .s20-results-desc { font-size:16px !important;line-height:26px !important;margin-bottom:32px !important; } }
-          @media (min-width:768px) and (max-width:1023px) { .s20-results-section { padding:30px 20px !important; } .s20-results-desc { margin-bottom:18px !important; } }
-          @media (max-width:640px) { .s20-results-section { padding:20px 16px !important; } .s20-results-heading { font-size:26px !important;line-height:34px !important; } .s20-results-desc { font-size:15px !important;line-height:24px !important; } }
-        ` }} />
-      </section>
-
       {/* ── 8. Our Work ── */}
-      <section style={{ background: C_WHITE, padding: "40px 20px" }} aria-label="Our work: Shopify 2.0 case studies">
+      <section style={{ background: C_CREAM, padding: "40px 20px" }} aria-label="Our work: Shopify 2.0 case studies">
         <div className="mx-auto" style={{ maxWidth: "1320px" }}>
           <h2 className="text-center" style={{ color: C_DARK, fontSize: 40, fontWeight: 700, lineHeight: 1.2, margin: "0 0 24px" }}>
             Our Work
@@ -626,7 +626,7 @@ export default function Page() {
 
           <div className="s20-cs-grid">
             {CASE_STUDIES.map((cs, i) => (
-              <Link key={cs.brand} href={cs.href} className={`s20-cs-card${i === 3 ? " s20-cs-card-4th" : ""}`} style={{ display: "flex", flexDirection: "column", background: C_CREAM, borderRadius: "20px", overflow: "hidden", textDecoration: "none", border: "1px solid rgba(0,0,0,0.06)" }}>
+              <Link key={cs.brand} href={cs.href} className={`s20-cs-card${i === 3 ? " s20-cs-card-4th" : ""}`} style={{ display: "flex", flexDirection: "column", background: C_WHITE, borderRadius: "20px", overflow: "hidden", textDecoration: "none", border: "1px solid rgba(0,0,0,0.06)" }}>
                 <div style={{ position: "relative", width: "calc(100% - 16px)", margin: "8px 8px 0", borderRadius: "14px", overflow: "hidden", flexShrink: 0, aspectRatio: "16/10", background: "#e0ddd5" }}>
                   {cs.video ? (
                     <video src={cs.video} autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
@@ -678,7 +678,7 @@ export default function Page() {
       {/* ── 9. FAQ ── */}
       <section
         className="s20-faq"
-        style={{ background: C_CREAM, fontFamily: "'Poppins', sans-serif" }}
+        style={{ background: C_WHITE, fontFamily: "'Poppins', sans-serif" }}
         aria-label="Frequently asked questions about Shopify 2.0 development"
       >
         <div className="s20-faq__inner mx-auto" style={{ maxWidth: "1100px" }}>

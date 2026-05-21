@@ -304,7 +304,7 @@ const FAQS = [
   },
   {
     q: "How much do Shopify theme development services cost?",
-    a: "Cost depends on scope, page count, and complexity. We work on fixed-price quotes. No hourly billing, no surprises. Send us your requirements and we'll return a detailed estimate within 24 hours.",
+    a: "Cost depends on scope: page count, custom features, and whether it is a new build or a redesign. A targeted theme redesign or performance upgrade starts from £3,000. A fully custom Shopify theme development build starts from £8,000. Complex builds with Shopify Plus integrations or multiple custom templates start from £15,000. We work on fixed-price quotes. Send us your requirements and we will return a detailed estimate within 24 hours.",
   },
   {
     q: "Can you improve my existing Shopify theme instead of rebuilding it?",
@@ -319,12 +319,12 @@ const FAQS = [
     a: "No. We carry over your metadata, URL structure, and redirect logic as part of every build. Clean code and faster load times typically push rankings up, not down.",
   },
   {
-    q: "How do I track progress during Shopify theme development?",
-    a: "You get milestone updates at each stage: brief, design, development, and QA. We share a live preview environment before anything goes live so you can review and give feedback in real conditions.",
+    q: "What is the difference between a custom Shopify theme and a pre-built theme?",
+    a: "A pre-built theme is designed for every store, which means it fits none of them well. A custom Shopify theme is built around your specific products, catalog structure, and how your customers browse and buy. You get sections your team controls, no unused code, and a layout built for your conversion goals, not someone else's design decisions.",
   },
   {
-    q: "What support do you offer after the theme launches?",
-    a: "We offer post-launch monitoring, priority bug fixes, and ongoing development. Most clients continue with a support plan after the initial build, either on-demand or as a monthly retainer.",
+    q: "How do I choose a Shopify theme development agency?",
+    a: "Look for an agency with a portfolio of live stores, real client results you can verify, and proven Shopify 2.0 expertise. Ask how they handle QA, what their process looks like from brief to launch, and whether they offer post-launch support. Avoid agencies that show mockups but no live results. Ask for Lighthouse scores and conversion data from previous builds.",
   },
 ];
 
@@ -549,7 +549,7 @@ export default function Page() {
             style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", marginTop: "16px", lineHeight: 1.65 }}
           >
             A clear, structured process from brief to launch and beyond.
-            <br className="hidden sm:block" />{" "}
+            <br className="hidden sm:block lg:hidden" />{" "}
             You know exactly what is happening at every stage.
           </p>
 

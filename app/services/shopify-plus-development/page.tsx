@@ -208,8 +208,8 @@ const FAQS = [
     a: "A Shopify Plus project covers frontend development, React-based checkout extensions, API integrations, Shopify Flow automation, B2B configuration, and load testing. A freelancer typically covers one or two of those areas. When you hire a Shopify Plus development agency, you get all of them under one brief, one timeline, and one point of accountability. Our Shopify Plus developers have completed 200+ Plus projects. You are not our first.",
   },
   {
-    q: "Do you work with international and remote clients?",
-    a: "Yes. We work with Shopify Plus brands across the UK, US, Australia, Europe, and beyond. Every client gets a dedicated Shopify Plus developer and project manager assigned from day one. Timezone differences are handled through async updates and scheduled calls. You can hire our Shopify Plus developers regardless of where your business is based, and you get the same access and accountability as our local clients.",
+    q: "When should I upgrade to Shopify Plus?",
+    a: "Shopify Plus makes sense when you are generating over $1M annually and hitting the limits of standard Shopify: a checkout you cannot customize, automations that require manual work, API rate limits causing sync failures, or B2B buyers you manage outside the platform. For most brands at that revenue level, the upgrade pays for itself through checkout conversion improvements and automation savings alone.",
   },
   {
     q: "Can you migrate from Magento to Shopify Plus with no downtime?",
@@ -224,10 +224,6 @@ const FAQS = [
     a: "Shopify Plus includes native B2B features that standard Shopify does not have: company profiles, customer-specific pricing by segment, net payment terms, draft orders, and self-service wholesale portals. You manage B2B and DTC from one admin without separate platforms or apps filling gaps. If your brand has trade buyers, wholesale accounts, or volume pricing requirements, Plus is the right platform.",
   },
   {
-    q: "What ERP and OMS systems can you integrate with Shopify Plus?",
-    a: "We integrate Shopify Plus with NetSuite, SAP, HubSpot, Salesforce, Brightpearl, Linnworks, and custom in-house systems. These are real API integrations built to sync inventory, orders, customer data, and fulfilment reliably at scale. Not off-the-shelf connectors that break under volume.",
-  },
-  {
     q: "How do you protect SEO during a Shopify Plus migration?",
     a: "We carry over all metadata, canonical tags, URL structure, and redirect logic as part of every migration. For URL structure changes, we map every old URL to a new destination with 301 redirects before launch. We submit updated sitemaps immediately after go-live. The improved Core Web Vitals on the new Plus store typically push rankings up, not down, within 30 to 60 days.",
   },
@@ -236,8 +232,8 @@ const FAQS = [
     a: "Shopify Plus costs $2,500 per month, or 0.25% of monthly revenue, whichever is higher, up to $20,000 per month on the variable-fee tier. This is the Shopify platform fee, separate from any development work. For most brands generating over $2M annually, Plus pays for itself through checkout conversion improvements, automation efficiency savings, and reduced third-party app costs.",
   },
   {
-    q: "What ongoing support do you offer after a Shopify Plus project?",
-    a: "We offer priority bug fixes, platform monitoring, and ongoing Plus development. Most clients continue on a monthly retainer after launch, covering Shopify platform updates, integration maintenance, new feature development, and checkout optimization. You get direct access to the developers who built your store, not a ticket queue.",
+    q: "What is the difference between Shopify and Shopify Plus?",
+    a: "Shopify Plus is the enterprise tier. It gives you full checkout customization through Checkout Extensions, Shopify Flow for complex automation, native B2B tools including company profiles and segment pricing, higher API rate limits, and access to Shopify Launchpad. Standard Shopify locks the checkout and limits automation. Plus removes those limits for brands that have outgrown the standard platform.",
   },
 ];
 
@@ -410,7 +406,28 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ── 5. Why Ecomm Wizards ── */}
+      {/* ── 5. Proven Results ── */}
+      <section
+        className="spd-results-section"
+        style={{ background: C_CREAM, color: C_TEXT, fontFamily: "'Poppins', sans-serif", fontSize: "16px", padding: "40px 20px" }}
+      >
+        <div className="spd-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
+          <h2 className="spd-results-heading">Shopify Plus Results Our Clients Actually Got</h2>
+          <p className="spd-results-desc">
+            Not projections. Not benchmarks. Results from real Shopify Plus projects across B2C, B2B, and subscription brands that needed the platform to work at scale.
+          </p>
+          <CaseStudySlider slides={CASE_STUDY_SLIDES} intervalMs={6000} showDots={false} />
+        </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          .spd-results-heading { color:#000;font-family:'Poppins',sans-serif;font-size:42px;font-weight:700;line-height:52px;text-align:center;margin:0 auto 24px;max-width:1100px; }
+          .spd-results-desc { color:rgba(0,0,0,.8);font-family:'Poppins',sans-serif;font-size:18px;line-height:28px;text-align:center;margin:0 auto 24px;max-width:1056px; }
+          @media (max-width:1023px) { .spd-results-section { padding:44px 20px !important; } .spd-results-heading { font-size:30px !important;line-height:40px !important;margin-bottom:18px !important; } .spd-results-desc { font-size:16px !important;line-height:26px !important;margin-bottom:32px !important; } }
+          @media (min-width:768px) and (max-width:1023px) { .spd-results-section { padding:30px 20px !important; } .spd-results-desc { margin-bottom:18px !important; } }
+          @media (max-width:640px) { .spd-results-section { padding:20px 16px !important; } .spd-results-heading { font-size:26px !important;line-height:34px !important; } .spd-results-desc { font-size:15px !important;line-height:24px !important; } }
+        ` }} />
+      </section>
+
+      {/* ── 6. Why Ecomm Wizards ── */}
       <section
         className="std-why spd-why-section"
         style={{ background: C_DARK, color: C_TEXT, fontFamily: "'Poppins', sans-serif", fontSize: "16px", padding: "53px 20px" }}
@@ -540,7 +557,7 @@ export default function Page() {
             style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", marginTop: "16px", lineHeight: 1.65 }}
           >
             A structured process from discovery to launch and beyond.
-            <br className="hidden sm:block" />{" "}
+            <br className="hidden sm:block lg:hidden" />{" "}
             You know exactly what is happening at every stage.
           </p>
 
@@ -601,29 +618,8 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ── 7. Proven Results ── */}
-      <section
-        className="spd-results-section"
-        style={{ background: C_WHITE, color: C_TEXT, fontFamily: "'Poppins', sans-serif", fontSize: "16px", padding: "30px 20px" }}
-      >
-        <div className="spd-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
-          <h2 className="spd-results-heading">Shopify Plus Results Our Clients Actually Got</h2>
-          <p className="spd-results-desc">
-            Not projections. Not benchmarks. Results from real Shopify Plus projects across B2C, B2B, and subscription brands that needed the platform to work at scale.
-          </p>
-          <CaseStudySlider slides={CASE_STUDY_SLIDES} intervalMs={6000} showDots={false} />
-        </div>
-        <style dangerouslySetInnerHTML={{ __html: `
-          .spd-results-heading { color:#000;font-family:'Poppins',sans-serif;font-size:42px;font-weight:700;line-height:52px;text-align:center;margin:0 auto 24px;max-width:1100px; }
-          .spd-results-desc { color:rgba(0,0,0,.8);font-family:'Poppins',sans-serif;font-size:18px;line-height:28px;text-align:center;margin:0 auto 24px;max-width:1056px; }
-          @media (max-width:1023px) { .spd-results-section { padding:44px 20px !important; } .spd-results-heading { font-size:30px !important;line-height:40px !important;margin-bottom:18px !important; } .spd-results-desc { font-size:16px !important;line-height:26px !important;margin-bottom:32px !important; } }
-          @media (min-width:768px) and (max-width:1023px) { .spd-results-section { padding:30px 20px !important; } .spd-results-desc { margin-bottom:18px !important; } }
-          @media (max-width:640px) { .spd-results-section { padding:20px 16px !important; } .spd-results-heading { font-size:26px !important;line-height:34px !important; } .spd-results-desc { font-size:15px !important;line-height:24px !important; } }
-        ` }} />
-      </section>
-
       {/* ── 11. Our Work ── */}
-      <section style={{ background: C_WHITE, padding: "40px 20px" }} aria-label="Our work: Shopify Plus case studies">
+      <section style={{ background: C_CREAM, padding: "40px 20px" }} aria-label="Our work: Shopify Plus case studies">
         <div className="mx-auto" style={{ maxWidth: "1320px" }}>
           <h2 className="text-center" style={{ color: C_DARK, fontSize: 40, fontWeight: 700, lineHeight: 1.2, margin: "0 0 24px" }}>
             Our Work
@@ -631,7 +627,7 @@ export default function Page() {
 
           <div className="spd-cs-grid">
             {CASE_STUDIES.map((cs, i) => (
-              <Link key={cs.brand} href={cs.href} className={`spd-cs-card${i === 3 ? " spd-cs-card-4th" : ""}`} style={{ display: "flex", flexDirection: "column", background: C_CREAM, borderRadius: "20px", overflow: "hidden", textDecoration: "none", border: "1px solid rgba(0,0,0,0.06)" }}>
+              <Link key={cs.brand} href={cs.href} className={`spd-cs-card${i === 3 ? " spd-cs-card-4th" : ""}`} style={{ display: "flex", flexDirection: "column", background: C_WHITE, borderRadius: "20px", overflow: "hidden", textDecoration: "none", border: "1px solid rgba(0,0,0,0.06)" }}>
                 <div style={{ position: "relative", width: "calc(100% - 16px)", margin: "8px 8px 0", borderRadius: "14px", overflow: "hidden", flexShrink: 0, aspectRatio: "16/10", background: "#e0ddd5" }}>
                   {cs.video ? (
                     <video src={cs.video} autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
@@ -683,7 +679,7 @@ export default function Page() {
       {/* ── 12. FAQ ── */}
       <section
         className="spd-faq"
-        style={{ background: C_CREAM, fontFamily: "'Poppins', sans-serif" }}
+        style={{ background: C_WHITE, fontFamily: "'Poppins', sans-serif" }}
         aria-label="Frequently asked questions about Shopify Plus development"
       >
         <div className="spd-faq__inner mx-auto" style={{ maxWidth: "1100px" }}>

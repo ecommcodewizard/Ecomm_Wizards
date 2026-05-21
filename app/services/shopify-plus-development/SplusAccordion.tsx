@@ -4,39 +4,39 @@ import { useState } from "react";
 const SOLUTIONS = [
   {
     title: "Custom Shopify Plus Build",
-    body: "We build Shopify Plus stores from the ground up: architecture, checkout flows, B2B configuration, integrations, and performance optimization. Every build is scoped to your specific catalog, customer base, and operational requirements. You get a store that works for your business from day one, not a template your team works around.",
+    body: "We build Shopify Plus stores from scratch: architecture, checkout flows, B2B configuration, and integrations scoped to your catalog and operations. You get a store that works for your business from day one.",
   },
   {
     title: "Zero-Downtime Migration",
-    body: "We migrate brands from Magento, WooCommerce, BigCommerce, and lower-tier Shopify to Shopify Plus with full data transfer, URL redirect mapping, SEO preservation, and integration rebuilds. Every migration includes a rollback plan. The cutover happens in a low-traffic window. The new store outperforms what you left behind from launch day.",
+    body: "We migrate from Magento, WooCommerce, BigCommerce, and standard Shopify to Plus with full data transfer, redirect mapping, SEO preservation, and a rollback plan. Cutover happens in a low-traffic window.",
   },
   {
     title: "Checkout Extensibility",
-    body: "We build native Checkout Extensions that add upsells, gift messages, custom input fields, loyalty reward redemption, and branded UI elements directly inside the Shopify Plus checkout. No third-party checkout replacements, no redirects. Everything runs inside the native checkout and increases average order value without adding friction at the moment customers are about to buy.",
+    body: "We build native Checkout Extensions: upsells, gift messages, loyalty redemption, and branded UI inside the Shopify Plus checkout. No redirects, no third-party replacements. Higher AOV without added friction.",
   },
   {
     title: "Headless and Composable Commerce",
-    body: "For brands that need complete front-end control, we build headless Shopify Plus stores using the Storefront API. Your buying experience is built exactly to your spec. The Shopify Plus backend handles commerce operations, inventory, checkout, and payments. Useful when performance requirements or brand guidelines go beyond what standard themes support.",
+    body: "We build headless Shopify Plus stores via the Storefront API when performance or brand requirements go beyond standard themes. Shopify handles commerce; your front end is built exactly to spec.",
   },
   {
     title: "B2B and Wholesale Portal",
-    body: "We configure Shopify Plus B2B properly: company profiles, customer-specific pricing by segment, net payment terms, draft orders, and self-service wholesale portals. Your trade buyers place orders without calling your sales team. B2B and DTC revenue run from the same platform, managed from one admin, without the overhead of separate systems.",
+    body: "We configure Shopify Plus B2B: company profiles, segment pricing, net terms, and self-service wholesale portals. Trade buyers order without calling your team. B2B and DTC run from one admin.",
   },
   {
     title: "Custom App and API Development",
-    body: "We build private Shopify apps, custom admin extensions, and API-driven features that the standard app store cannot provide. If your operational workflows, pricing logic, or customer experience requirements go beyond what existing apps can support, we build it into the platform directly using Shopify's APIs and Functions.",
+    body: "We build private Shopify apps, admin extensions, and API-driven features when the app store falls short. Custom pricing logic, operational workflows, and buyer experiences built directly into the platform.",
   },
   {
     title: "ERP, CRM, and 3PL Integration",
-    body: "We connect Shopify Plus to NetSuite, SAP, HubSpot, Salesforce, Brightpearl, and custom 3PL systems. Real bidirectional API integrations that sync inventory, orders, and customer data reliably at scale. Not off-the-shelf connectors that break under volume. Custom-built integrations that match how your business actually operates.",
+    body: "We connect Shopify Plus to NetSuite, SAP, HubSpot, Salesforce, Brightpearl, and custom 3PL systems. Real bidirectional integrations that sync inventory, orders, and customer data at scale.",
   },
   {
     title: "Performance Optimization",
-    body: "We audit, rebuild, and optimize Shopify Plus stores that have accumulated technical debt, app bloat, or performance problems. Load testing, Core Web Vitals remediation, CDN configuration, and image optimization. Target: 90+ Lighthouse scores. Faster stores rank higher and convert better. This is not optional at enterprise scale.",
+    body: "We audit and rebuild Shopify Plus stores with app bloat or Core Web Vitals problems. Target: 90+ Lighthouse scores. Faster stores rank higher and convert better.",
   },
   {
     title: "Ongoing Retainer",
-    body: "We offer monthly Shopify Plus development retainers covering platform updates, integration maintenance, new feature development, A/B testing, and checkout optimization. You get direct access to the developers who built your store, not a support ticket queue. Most clients continue on retainer after their initial project.",
+    body: "Monthly retainers covering platform updates, integration maintenance, new features, and checkout optimisation. Direct access to the developers who built your store, not a support queue.",
   },
 ];
 
