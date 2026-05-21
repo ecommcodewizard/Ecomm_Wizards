@@ -50,6 +50,22 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
   },
 ];
 
+/* ── Hero phone slider columns ── */
+const PHONE_COL1 = [
+  "/images/partner-images-1-1.webp",
+  "/images/partner-images-1-2.webp",
+  "/images/partner-images-1-3.webp",
+  "/images/partner-images-1-4.webp",
+];
+const PHONE_COL2 = [
+  "/images/partner-images-2-1.webp",
+  "/images/partner-images-2-3.webp",
+];
+const PHONE_COL3 = [
+  "/images/partner-images-3-1.webp",
+  "/images/partner-images-3-2.webp",
+];
+
 /* ── Trust logos ── */
 const TRUST_LOGOS = [
   { src: "/images/schutz-logo.png-2.png",               alt: "Schutz" },
@@ -296,15 +312,37 @@ export default function Page() {
             </span>
           </div>
 
-          <div className="std-hero-img">
-            <Image
-              src="/images/migration-shopify-right-image.webp"
-              alt="Shopify 2.0 development: modern ecommerce store built on Online Store 2.0 architecture"
-              width={700}
-              height={500}
-              priority
-              className="block h-auto w-full rounded-lg"
-            />
+          {/* Phone slider */}
+          <div className="s20-phones-wrap" aria-hidden="true">
+            <div className="s20-phones">
+              {/* Column 1 — 4 images, scrolls up */}
+              <div className="s20-phones-col s20-phones-col--up1">
+                {[...PHONE_COL1, ...PHONE_COL1].map((src, i) => (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <div key={i} className="s20-phone-frame">
+                    <img src={src} alt="" width={130} height={274} loading={i < PHONE_COL1.length ? "eager" : "lazy"} />
+                  </div>
+                ))}
+              </div>
+              {/* Column 2 — 2 images, scrolls down */}
+              <div className="s20-phones-col s20-phones-col--down">
+                {[...PHONE_COL2, ...PHONE_COL2].map((src, i) => (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <div key={i} className="s20-phone-frame">
+                    <img src={src} alt="" width={130} height={274} loading={i < PHONE_COL2.length ? "eager" : "lazy"} />
+                  </div>
+                ))}
+              </div>
+              {/* Column 3 — 2 images, scrolls up */}
+              <div className="s20-phones-col s20-phones-col--up2">
+                {[...PHONE_COL3, ...PHONE_COL3].map((src, i) => (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <div key={i} className="s20-phone-frame">
+                    <img src={src} alt="" width={130} height={274} loading={i < PHONE_COL3.length ? "eager" : "lazy"} />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -750,6 +788,97 @@ export default function Page() {
         .std-acc-item:last-child { border-bottom: 1px solid rgba(17,17,17,.14); }
         .std-acc-icon { flex: 0 0 18px; color: #000000; transition: transform .3s ease; }
         .std-acc-icon--open { transform: rotate(180deg); }
+
+        /* ── Hero phone slider ── */
+        .s20-phones-wrap {
+          position: relative;
+          height: 520px;
+          overflow: hidden;
+          border-radius: 16px;
+        }
+        .s20-phones-wrap::before,
+        .s20-phones-wrap::after {
+          content: '';
+          position: absolute;
+          left: 0; right: 0;
+          height: 100px;
+          z-index: 2;
+          pointer-events: none;
+        }
+        .s20-phones-wrap::before {
+          top: 0;
+          background: linear-gradient(to bottom, #000000 0%, transparent 100%);
+        }
+        .s20-phones-wrap::after {
+          bottom: 0;
+          background: linear-gradient(to top, #000000 0%, transparent 100%);
+        }
+        .s20-phones {
+          display: flex;
+          gap: 10px;
+          height: 100%;
+          justify-content: center;
+        }
+        .s20-phones-col {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          flex-shrink: 0;
+        }
+        .s20-phone-frame {
+          width: 130px;
+          height: 274px;
+          border-radius: 22px;
+          overflow: hidden;
+          flex-shrink: 0;
+          background: #111;
+          border: 2px solid rgba(255,255,255,0.10);
+          box-shadow: 0 4px 24px rgba(0,0,0,0.55);
+        }
+        .s20-phone-frame img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        /* Col 1: 4 imgs — each item stride = 274+10=284px, 4×284=1136px to next duplicate */
+        .s20-phones-col--up1 { animation: s20Up1 22s linear infinite; }
+        /* Col 2: 2 imgs — stride = 568px; scroll down */
+        .s20-phones-col--down { margin-top: -120px; animation: s20Down 16s linear infinite; }
+        /* Col 3: 2 imgs — stride = 568px; scroll up, different speed */
+        .s20-phones-col--up2 { margin-top: -60px; animation: s20Up2 19s linear infinite; }
+        @keyframes s20Up1  { 0% { transform: translateY(0);      } 100% { transform: translateY(-1136px); } }
+        @keyframes s20Down { 0% { transform: translateY(-568px); } 100% { transform: translateY(0);       } }
+        @keyframes s20Up2  { 0% { transform: translateY(0);      } 100% { transform: translateY(-568px);  } }
+        /* Tablet: 768px–1023px — smaller phones, full slider still visible */
+        @media (max-width: 1023px) {
+          .s20-phones-wrap { height: 380px; border-radius: 12px; }
+          .s20-phone-frame { width: 115px; height: 242px; border-radius: 20px; }
+          .s20-phones-col--down { margin-top: -106px; }
+          .s20-phones-col--up2  { margin-top: -53px; }
+          @keyframes s20Up1  { 0% { transform: translateY(0);      } 100% { transform: translateY(-1008px); } }
+          @keyframes s20Down { 0% { transform: translateY(-504px); } 100% { transform: translateY(0);       } }
+          @keyframes s20Up2  { 0% { transform: translateY(0);      } 100% { transform: translateY(-504px);  } }
+        }
+        /* Mobile: below 768px — compact phones, 2 visible columns */
+        @media (max-width: 767px) {
+          .s20-phones-wrap { height: 260px; border-radius: 10px; margin-top: 4px; }
+          .s20-phones-wrap::before, .s20-phones-wrap::after { height: 70px; }
+          .s20-phone-frame { width: 110px; height: 232px; border-radius: 18px; }
+          .s20-phones-col--down { margin-top: -100px; }
+          .s20-phones-col--up2  { display: none; }
+          @keyframes s20Up1  { 0% { transform: translateY(0);      } 100% { transform: translateY(-968px); } }
+          @keyframes s20Down { 0% { transform: translateY(-484px); } 100% { transform: translateY(0);      } }
+        }
+        @media (min-width: 1440px) {
+          .s20-phones-wrap { height: 620px; }
+          .s20-phone-frame { width: 160px; height: 337px; border-radius: 26px; }
+          .s20-phones-col--down { margin-top: -148px; }
+          .s20-phones-col--up2  { margin-top: -74px; }
+          @keyframes s20Up1  { 0% { transform: translateY(0);       } 100% { transform: translateY(-1388px); } }
+          @keyframes s20Down { 0% { transform: translateY(-694px);  } 100% { transform: translateY(0);       } }
+          @keyframes s20Up2  { 0% { transform: translateY(0);       } 100% { transform: translateY(-694px);  } }
+        }
 
         @media (max-width: 1024px) {
           .s20-sign-grid { grid-template-columns: repeat(2, 1fr) !important; }
