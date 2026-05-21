@@ -144,7 +144,7 @@ const LP_TYPES = [
 
 /* ── Comparison: Shopify-native vs page builders ── */
 const NATIVE_PROS = [
-  "A Shopify 2.0 landing page runs natively inside your store. No app dependency.",
+  "Runs natively inside your Shopify store. No app dependency.",
   "Sub-2.5s load times. No external rendering layer adding weight.",
   "Native Shopify checkout. No redirect, no broken conversion tracking.",
   "You own the code outright. No monthly page builder subscription.",
@@ -237,10 +237,6 @@ const FAQS = [
   {
     q: "Do you use page builders like PageFly or Replo?",
     a: "No. We build every Shopify landing page as a native Liquid template directly on Shopify 2.0. No PageFly, no Replo, no Unbounce. Your page is part of your store, not dependent on a third-party app. When those apps have outages, your landing page stays live because it runs on Shopify, not on an app.",
-  },
-  {
-    q: "Will my landing page work with my existing Shopify theme?",
-    a: "Yes. We build landing pages as standalone Shopify templates that sit inside your existing store. They share your Shopify checkout, your domain, and your native pixel setup. Your existing theme stays untouched.",
   },
   {
     q: "Can my team edit the landing page after it is built?",
@@ -376,12 +372,14 @@ export default function Page() {
       {/* ── 3. Landing Page Types (CREAM) ── */}
       <section className="slp-feat" style={{ background: C_CREAM, padding: "60px 20px" }} aria-label="Types of Shopify landing pages we build">
         <div className="mx-auto" style={{ maxWidth: "1320px" }}>
-          <h2 className="slp-feat-heading">
-            Every Landing Page Built for One Goal: Conversion
-          </h2>
-          <p className="slp-feat-desc">
-            We build six types of Shopify landing pages. Each one targets a specific traffic source and a single campaign goal.
-          </p>
+          <div className="slp-feat-title-block">
+            <h2 className="slp-feat-heading">
+              Every Landing Page Built for One Goal: Conversion
+            </h2>
+            <p className="slp-feat-desc">
+              We build six types of Shopify landing pages. Each one targets a specific traffic source and a single campaign goal.
+            </p>
+          </div>
 
           <div className="slp-feat-grid">
             {LP_TYPES.map((feat) => (
@@ -407,6 +405,7 @@ export default function Page() {
           .slp-feat-desc-text { font-family: 'Poppins', sans-serif; font-size: 14px; color: #334155; line-height: 1.7; margin: 0; flex-grow: 1; }
           .slp-feat-roi { font-family: 'Poppins', sans-serif; font-size: 13px; color: #2A9555; line-height: 1.5; background: rgba(61,199,122,0.08); border-radius: 8px; padding: 10px 14px; border-left: 3px solid #3DC77A; margin-top: auto; }
           .slp-feat-roi-label { font-weight: 700; }
+          @media (min-width: 1024px) { .slp-feat-title-block { width: -moz-fit-content; width: fit-content; margin: 0 auto 8px; } .slp-feat-heading { max-width: none; white-space: nowrap; } .slp-feat-title-block .slp-feat-desc { max-width: 100%; margin-left: 0; margin-right: 0; } }
           @media (max-width: 1024px) { .slp-feat-heading { font-size: 32px !important; } .slp-feat-desc { font-size: 16px !important; margin-bottom: 24px !important; } .slp-feat-grid { grid-template-columns: repeat(2, 1fr) !important; } }
           @media (max-width: 768px) { .slp-feat-desc { margin-bottom: 16px !important; } }
           @media (max-width: 640px) { .slp-feat { padding: 40px 16px !important; } .slp-feat-heading { font-size: 26px !important; } .slp-feat-desc { font-size: 15px !important; } .slp-feat-grid { grid-template-columns: 1fr !important; } }
@@ -417,7 +416,7 @@ export default function Page() {
       <section className="slp-compare" style={{ background: C_DARK, padding: "0 20px" }} aria-label="Shopify-native landing pages vs page builders">
         <div className="mx-auto" style={{ maxWidth: 1320, padding: "60px 0" }}>
 
-          <h2 style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(28px, 4.1vw, 42px)", fontWeight: 700, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
+          <h2 className="slp-compare-h2" style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(28px, 4.1vw, 42px)", fontWeight: 700, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
             Why Not Just Use{" "}
             <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               PageFly, Replo, or Unbounce?
@@ -427,13 +426,13 @@ export default function Page() {
             Page builders add an app layer between your landing page and Shopify. That layer costs you speed, reliability, and money every month.
           </p>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: 20, marginTop: 10 }}>
+          <div className="slp-compare-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: 20, marginTop: 10 }}>
 
             <div className="slp-compare-card" style={{ background: "#121212", borderRadius: 16, overflow: "hidden", padding: 30, marginTop: 10 }}>
-              <span style={{ display: "inline-block", background: "rgba(61,199,122,0.15)", color: "#3DC77A", fontFamily: "Poppins, sans-serif", fontSize: 18, fontWeight: 600, borderRadius: 999, padding: "6px 16px", marginBottom: 20, border: "1px solid rgba(61,199,122,0.3)" }}>
+              <span className="slp-compare-badge" style={{ display: "inline-block", background: "rgba(61,199,122,0.15)", color: "#3DC77A", fontFamily: "Poppins, sans-serif", fontSize: 18, fontWeight: 600, borderRadius: 999, padding: "6px 16px", marginBottom: 20, border: "1px solid rgba(61,199,122,0.3)" }}>
                 ✓ Shopify-Native Landing Pages
               </span>
-              <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
+              <ul className="slp-compare-list" style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
                 {NATIVE_PROS.map((item) => (
                   <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontFamily: "Poppins, sans-serif", fontSize: 16, color: "#ffffff", lineHeight: 1.5 }}>
                     <span style={{ flexShrink: 0, marginTop: 2, color: "#3DC77A" }}><CheckIcon /></span>
@@ -444,10 +443,10 @@ export default function Page() {
             </div>
 
             <div className="slp-compare-card" style={{ background: "#121212", borderRadius: 16, overflow: "hidden", padding: 30, marginTop: 10 }}>
-              <span style={{ display: "inline-block", background: "rgba(239,68,68,0.12)", color: "#f87171", fontFamily: "Poppins, sans-serif", fontSize: 18, fontWeight: 600, borderRadius: 999, padding: "6px 16px", marginBottom: 20, border: "1px solid rgba(239,68,68,0.25)" }}>
+              <span className="slp-compare-badge" style={{ display: "inline-block", background: "rgba(239,68,68,0.12)", color: "#f87171", fontFamily: "Poppins, sans-serif", fontSize: 18, fontWeight: 600, borderRadius: 999, padding: "6px 16px", marginBottom: 20, border: "1px solid rgba(239,68,68,0.25)" }}>
                 ✕ Page Builder (PageFly / Replo)
               </span>
-              <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
+              <ul className="slp-compare-list" style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
                 {BUILDER_CONS.map((item) => (
                   <li key={item.text} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontFamily: "Poppins, sans-serif", fontSize: 16, color: "#ffffff", lineHeight: 1.5 }}>
                     <span style={{ flexShrink: 0, marginTop: 2, color: item.warn ? "#fbbf24" : "#f87171" }}>
@@ -474,6 +473,10 @@ export default function Page() {
             </span>
           </div>
         </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 1024px) { .slp-compare-h2 { font-size: 38px !important; } }
+          @media (max-width: 768px) { .slp-compare-grid { gap: 12px !important; } .slp-compare-card { padding: 20px !important; } .slp-compare-badge { font-size: 16px !important; padding: 5px 10px !important; white-space: nowrap; margin-bottom: 14px !important; } .slp-compare-list { gap: 10px !important; } .slp-compare-card li { font-size: 14px !important; } }
+        ` }} />
       </section>
 
       {/* ── 5. Services Accordion (WHITE) ── */}
