@@ -1199,6 +1199,13 @@ export default function Page() {
           letter-spacing: .02em;
         }
 
+        @media (min-width: 1025px) and (max-width: 1270px) {
+          .std-hero-stats { flex-wrap: nowrap !important; }
+          .std-hero-stat-item { padding-right: 18px !important; margin-right: 18px !important; }
+          .std-hero-stat-num { font-size: 24px !important; }
+          .std-hero-stat-label { font-size: 12px !important; }
+        }
+
         /* Hero CTA */
         .std-cta-hero {
           color: ${C_WHITE};
