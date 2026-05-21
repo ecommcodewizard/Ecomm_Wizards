@@ -364,8 +364,8 @@ export default function Page() {
         </div>
 
         <style dangerouslySetInnerHTML={{ __html: `
-          .s20-feat-heading { color: #000; font-family: 'Poppins', sans-serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-align: center; margin: 0 auto 16px; max-width: 800px; }
-          .s20-feat-desc { color: rgba(0,0,0,.75); font-family: 'Poppins', sans-serif; font-size: 18px; line-height: 28px; text-align: center; margin: 0 auto 24px; max-width: 760px; }
+          .s20-feat-heading { color: #000; font-family: 'Poppins', sans-serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-align: center; margin: 0 auto 16px; white-space: nowrap; }
+          .s20-feat-desc { color: rgba(0,0,0,.75); font-family: 'Poppins', sans-serif; font-size: 18px; line-height: 28px; text-align: center; margin: 0 auto 24px; }
           .s20-feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
           .s20-feat-card { background: #fff; border-radius: 16px; padding: 28px; border: 1px solid rgba(0,0,0,0.07); display: flex; flex-direction: column; gap: 12px; }
           .s20-feat-icon { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: rgba(61,199,122,0.1); border-radius: 12px; color: #2A9555; flex-shrink: 0; }
@@ -373,9 +373,9 @@ export default function Page() {
           .s20-feat-desc-text { font-family: 'Poppins', sans-serif; font-size: 14px; color: #334155; line-height: 1.7; margin: 0; flex-grow: 1; }
           .s20-feat-roi { font-family: 'Poppins', sans-serif; font-size: 13px; color: #2A9555; line-height: 1.5; background: rgba(61,199,122,0.08); border-radius: 8px; padding: 10px 14px; border-left: 3px solid #3DC77A; margin-top: auto; }
           .s20-feat-roi-label { font-weight: 700; }
-          @media (max-width: 1024px) { .s20-feat-heading { font-size: 32px !important; } .s20-feat-desc { font-size: 16px !important; margin-bottom: 24px !important; } .s20-feat-grid { grid-template-columns: repeat(2, 1fr) !important; } }
-          @media (max-width: 768px) { .s20-feat-desc { margin-bottom: 16px !important; } }
-          @media (max-width: 640px) { .s20-feat { padding: 40px 16px !important; } .s20-feat-heading { font-size: 26px !important; } .s20-feat-desc { font-size: 15px !important; } .s20-feat-grid { grid-template-columns: 1fr !important; } }
+          @media (max-width: 1024px) { .s20-feat-heading { font-size: 32px !important; white-space: normal !important; max-width: 600px !important; } .s20-feat-desc { font-size: 16px !important; margin-bottom: 24px !important; max-width: 560px !important; } .s20-feat-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+          @media (max-width: 768px) { .s20-feat-heading { font-size: 28px !important; } .s20-feat-desc { margin-bottom: 16px !important; } }
+          @media (max-width: 640px) { .s20-feat { padding: 40px 16px !important; } .s20-feat-heading { font-size: 26px !important; } .s20-feat-desc { font-size: 15px !important; } .s20-feat-grid { grid-template-columns: 1fr !important; } .s20-feat-card { padding: 18px !important; } }
         ` }} />
       </section>
 
@@ -556,7 +556,7 @@ export default function Page() {
 
           {/* Row 2 — 2 cards centred */}
           <div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-[20px] max-sm:!max-w-full md:max-lg:mt-[16px] md:max-lg:!max-w-[428px]"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-[20px] max-sm:!max-w-full md:max-lg:mt-[16px] max-xl:!max-w-full"
             style={{ maxWidth: "calc(66.667% - 7px)", marginLeft: "auto", marginRight: "auto", width: "100%" }}
           >
             {[

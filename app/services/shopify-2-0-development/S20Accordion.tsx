@@ -4,39 +4,39 @@ import { useState } from "react";
 const SOLUTIONS = [
   {
     title: "Full Shopify 2.0 Store Build",
-    body: "We build Shopify 2.0 stores from scratch: clean JSON templates, reusable sections and blocks, structured metafields, and App Block integrations across every page type. Every build is scoped to your catalog, team structure, and operational requirements. You get a store your team can manage and your customers can convert on from day one.",
+    body: "We build Shopify 2.0 stores from scratch with clean JSON templates, reusable sections, structured metafields, and native App Blocks. Scoped to your catalog and team so you can manage it from day one.",
   },
   {
     title: "Shopify 1.0 to 2.0 Theme Migration",
-    body: "We migrate your store from a legacy 1.0 theme to Shopify 2.0 without touching your live store. We rebuild sections, move content into metafields, reconnect apps as native App Blocks, and go live in a single planned cutover. Your products, orders, and customer data are never affected.",
+    body: "We migrate your store from a legacy 1.0 theme to Shopify 2.0 without touching your live store. Sections rebuilt, content moved to metafields, apps reconnected as App Blocks, go-live in a single planned cutover.",
   },
   {
     title: "Custom Sections & Block Components",
-    body: "We build reusable Shopify 2.0 sections and blocks your team drags, drops, and configures across any page. Product callouts, testimonial grids, campaign banners, and image-text pairs, all built to your design spec and editable from the theme editor without developer involvement.",
+    body: "We build reusable sections and blocks your team configures across any page from the theme editor. Product callouts, testimonial grids, campaign banners — built to spec, no developer needed to update them.",
   },
   {
     title: "Metafields & Metaobjects Setup",
-    body: "We design and implement a structured metafield architecture across your products, collections, and pages. Size guides, ingredient lists, technical specs, and custom badges are stored properly in Shopify and surfaced cleanly on the front end, without relying on third-party apps or theme hacks.",
+    body: "We design and implement structured metafields across products, collections, and pages. Size guides, specs, badges, and ingredients stored properly in Shopify and surfaced on the front end, no third-party apps required.",
   },
   {
     title: "Modular Landing Page Systems",
-    body: "We build a library of Shopify 2.0 sections your marketing team uses to build landing pages on demand. New collection launches, seasonal campaigns, and promotional pages built in hours, not weeks. No developer required for each new campaign your team runs.",
+    body: "We build a section library your marketing team uses to launch landing pages on demand. New campaigns built in hours, not weeks. No developer required for every promotion your team runs.",
   },
   {
     title: "App Block Integration & Cleanup",
-    body: "We audit your current app stack, remove legacy script injections, and reinstall apps as native 2.0 App Blocks where supported. The result is a faster, more stable store that does not break every time an app updates or a theme file is edited.",
+    body: "We audit your app stack, remove legacy script injections, and reinstall apps as native App Blocks. Faster store, cleaner code, no breakages when apps or theme files update.",
   },
   {
     title: "Conversion-Focused Page Templates",
-    body: "We build distinct templates for your highest-traffic pages: product pages, collection pages, and campaign landing pages, each structured around how your buyers actually behave. Different product types get different layouts. Every template is tested for conversion before it goes live.",
+    body: "We build distinct templates for your highest-traffic pages: product, collection, and campaign landing pages, each structured around how your buyers actually behave. Tested for conversion before go-live.",
   },
   {
     title: "Speed & Performance Optimisation",
-    body: "We audit your current theme for bloat, unused scripts, render-blocking assets, and unoptimised media. On Shopify 2.0, the foundation is already faster. We take it further, targeting 90+ Lighthouse scores and strong Core Web Vitals across every device and connection speed.",
+    body: "We audit your theme for bloat, unused scripts, and render-blocking assets. We target 90+ Lighthouse scores and strong Core Web Vitals across every device and connection speed.",
   },
   {
     title: "Ongoing 2.0 Retainer",
-    body: "We offer monthly Shopify 2.0 retainers covering new section builds, app updates, metafield extensions, and performance monitoring. You get direct access to the developers who built your store, not a support queue. Most clients continue on retainer after their initial 2.0 project.",
+    body: "Monthly retainers covering new section builds, app updates, metafield extensions, and performance monitoring. Direct access to the developers who built your store, not a support queue.",
   },
 ];
 
