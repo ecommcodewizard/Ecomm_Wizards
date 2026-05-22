@@ -25,7 +25,7 @@ const SERVICE_TAGS = [
   { label: "Point of Sale (POS) for Business", href: "/shopify-pos-setup" },
   { label: "A/B Testing for CRO, AOV & CLV",  href: "/a-b-testing" },
   { label: "B2B Solutions",                    href: "/shopify-b2b-store-setup" },
-  { label: "Shopify SEO Agency",               href: "/shopify-seo-agency" },
+  { label: "Shopify SEO Agency",               href: "/services/shopify-seo-agency" },
   { label: "Book a Demo",                      href: "/book-shopify-consultation" },
   { label: "Shopify Landing Page Design",      href: "/services/shopify-landing-page-design" },
 ];
@@ -62,7 +62,7 @@ const GET_STARTED = [
   { label: "Shopify CRO Agency",                   href: "/shopify-conversion-rate-optimization-cro-agency" },
   { label: "Shopify Theme Development",            href: "/shopify-theme-development" },
   { label: "Shopify Plus Development",             href: "/services/shopify-plus-development" },
-  { label: "Shopify SEO Agency",                   href: "/shopify-seo-agency" },
+  { label: "Shopify SEO Agency",                   href: "/services/shopify-seo-agency" },
   { label: "Shopify Landing Page Design",          href: "/services/shopify-landing-page-design" },
   { label: "Shopify Maintenance and Support",      href: "/shopify-maintenance-and-support" },
   { label: "Shopify Integrations (ERP, CRM, 3PL)",href: "/shopify-integrations-erp-crm-3pl-etc" },
