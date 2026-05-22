@@ -6,9 +6,9 @@ import SatFaqAccordion from "./SatFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 export const metadata: Metadata = {
-  title: "Shopify Analytics & Tracking Setup | GA4, GTM & Pixel Setup | Ecomm Wizards",
+  title: "Shopify Google Analytics Setup | GA4, GTM & Conversion Tracking | Ecomm Wizards",
   description:
-    "Shopify analytics and tracking setup for 150+ stores. We fix broken GA4, configure GTM, set up Meta and TikTok pixels, and validate every event before handover.",
+    "Shopify Google Analytics setup for 150+ stores. We configure GA4, GTM, and conversion pixels correctly, validate every event, and give you data you can trust to make ad decisions.",
 };
 
 const C_DARK  = "#000000";
@@ -143,7 +143,7 @@ const SAT_PAINS = [
   },
   {
     name: "Checkout Events Are Missing From Your Funnel",
-    desc: "Add-to-cart, begin-checkout, and purchase events track the full buyer journey. Most stores only capture the purchase at best. Without the full funnel, you can't see where buyers drop off or which products get considered but not bought.",
+    desc: "Add-to-cart, begin-checkout, and purchase events track the full buyer journey in Google Analytics 4. Most stores only capture the purchase at best. Without the full funnel, you can't see where buyers drop off or which products get considered but not bought.",
     cost: "Missing funnel data hides the exact step where you lose customers, so you fix the wrong things.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
@@ -155,7 +155,7 @@ const SAT_PAINS = [
   },
   {
     name: "iOS Privacy Has Already Cut Your Conversion Data",
-    desc: "Apple's tracking prevention blocks client-side pixels for a large share of iPhone users. For stores where 60%+ of traffic is mobile, a significant portion of real conversions never register in your ad accounts.",
+    desc: "Apple's tracking prevention blocks Google Analytics and Meta pixel data for a large share of iPhone users. For stores where 60%+ of traffic is mobile, a significant portion of real conversions never register in your ad accounts.",
     cost: "You're making budget decisions on data that's already missing 20-40% of your actual mobile conversions.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
@@ -198,11 +198,11 @@ const SAT_PAINS = [
 const SAT_ITEMS = [
   {
     title: "GA4 Setup & Ecommerce Tracking",
-    body: "We configure GA4 from scratch or fix an existing broken implementation. This covers the full ecommerce event suite: product views, add-to-cart, begin-checkout, purchase, and refund events. Every property is set up with the right data streams, conversion events, and attribution settings for Shopify.",
+    body: "We configure Google Analytics 4 (GA4) from scratch or fix an existing broken implementation. This covers the full ecommerce event suite: product views, add-to-cart, begin-checkout, purchase, and refund events. Every property is set up with the right data streams, conversion events, and attribution settings for your Shopify store.",
   },
   {
     title: "Google Tag Manager Configuration",
-    body: "We build a clean GTM container for your store: tags, triggers, and variables structured so future tracking changes don't require a developer. Every tag is documented and the container is handed over to your team with a written record of what each tag does.",
+    body: "We build a clean GTM container for your store to house your Google Analytics, conversion, and remarketing tags, structured so future tracking changes don't require a developer. Every tag is documented and the container is handed over to your team with a written record of what each tag does.",
   },
   {
     title: "Meta & TikTok Conversion Pixel Setup",
@@ -210,7 +210,7 @@ const SAT_ITEMS = [
   },
   {
     title: "Server-Side Tracking",
-    body: "Client-side pixels lose 20-40% of conversion events to iOS privacy controls and ad blockers. Server-side tracking sends conversion data directly from your server to Meta and Google, bypassing browser restrictions. We implement server-side tracking where the attribution gap justifies it.",
+    body: "Client-side pixels lose 20-40% of conversion events to iOS privacy controls and ad blockers. Server-side tracking sends conversion data directly from your server to Google Analytics, Meta, and TikTok, bypassing browser restrictions. We implement server-side tracking where the attribution gap justifies it.",
   },
   {
     title: "Consent Mode v2 & GDPR Compliance",
@@ -218,19 +218,19 @@ const SAT_ITEMS = [
   },
   {
     title: "Custom Event & Data Layer Setup",
-    body: "Standard ecommerce events don't track everything. We set up custom events for the actions specific to your store: wishlist adds, subscription sign-ups, loyalty program interactions, or any other buyer behavior worth measuring. All pushed through the data layer for reliability.",
+    body: "Standard Google Analytics ecommerce events don't track everything. We set up custom events for the actions specific to your store: wishlist adds, subscription sign-ups, loyalty program interactions, or any other buyer behavior worth measuring. All pushed through the data layer for reliability.",
   },
   {
     title: "Tracking Audit & Validation",
-    body: "Before we close any project, we test every event with real user journeys: product page loads, add-to-cart, checkout steps, and a completed test purchase. We use GA4 DebugView and Meta Pixel Helper to confirm every event fires once, correctly, with the right parameters attached.",
+    body: "Before we close any project, we verify every Google Analytics event and pixel conversion with real user journeys: product page loads, add-to-cart, checkout steps, and a completed test purchase. We use GA4 DebugView and Meta Pixel Helper to confirm every event fires once, correctly, with the right parameters attached.",
   },
   {
     title: "Cross-Domain & UTM Tracking",
-    body: "If your store uses a separate checkout domain, a blog subdomain, or depends on UTM parameters from campaigns, we configure cross-domain linking and UTM preservation so sessions don't break mid-funnel and source attribution survives the full purchase path.",
+    body: "If your store uses a separate checkout domain, a blog subdomain, or depends on UTM parameters from campaigns, we configure cross-domain linking and UTM preservation so sessions don't break mid-funnel and source attribution survives the full purchase path and lands correctly in Google Analytics.",
   },
   {
     title: "Dashboard & Reporting Setup",
-    body: "We build a Looker Studio dashboard covering the metrics your team actually looks at: revenue by channel, conversion funnel, top-performing products, and campaign attribution. You get a reporting setup that answers real business questions instead of raw GA4 tables you have to decode yourself.",
+    body: "We build a Looker Studio dashboard covering the metrics your team actually looks at: revenue by channel, conversion funnel, top-performing products, and campaign attribution. You get a reporting setup that answers real business questions instead of raw Google Analytics tables you have to decode yourself.",
   },
 ];
 
@@ -259,20 +259,20 @@ const FAQS = [
     a: "They count differently. Shopify records an order the moment payment is confirmed on its server. GA4 records it when the purchase event fires in the buyer's browser. iOS privacy controls, ad blockers, and slow connections prevent that browser event from firing every time, so GA4 always records fewer orders. A 10-15% gap is normal. A 30%+ gap means your tracking has a specific problem. Server-side tracking closes most of this gap by sending the purchase event from your server instead of relying on the buyer's browser.",
   },
   {
-    q: "What ecommerce events do you set up?",
-    a: "We configure the full standard ecommerce event set: view_item, add_to_cart, begin_checkout, add_payment_info, and purchase. We also set up remove_from_cart and view_item_list for stores that need funnel visibility at the collection level. If your store has specific behaviors worth measuring — subscription sign-ups, wishlist adds, quiz completions — those go in as custom events.",
+    q: "What Google Analytics 4 ecommerce events do you configure for Shopify?",
+    a: "We configure the full standard GA4 ecommerce event set for your Shopify store: view_item, add_to_cart, begin_checkout, add_payment_info, and purchase. We also set up remove_from_cart and view_item_list for stores that need funnel visibility at the collection level. If your store has specific behaviors worth measuring — subscription sign-ups, wishlist adds, quiz completions — those go in as custom events.",
   },
   {
     q: "Do we need server-side tracking?",
-    a: "It depends on your traffic and channel mix. If more than 50% of your visitors are on iPhone, server-side tracking closes a real attribution gap because Safari blocks a significant share of client-side pixel fires. If you run paid social campaigns on Meta or TikTok, server-side Conversions API also improves the quality of purchase signals those platforms use to optimize delivery. We assess this during the audit and recommend it when the data gap is large enough to justify it.",
+    a: "It depends on your traffic and channel mix. If more than 50% of your visitors are on iPhone, server-side tracking closes a real attribution gap because Safari blocks a significant share of client-side Google Analytics and pixel events from registering. If you run paid social campaigns on Meta or TikTok, server-side Conversions API also improves the quality of purchase signals those platforms use to optimize delivery. We assess this during the audit and recommend it when the data gap is large enough to justify it.",
   },
   {
     q: "How long does the full setup take?",
-    a: "A clean setup from scratch takes 5-10 business days depending on your store's complexity and which platforms we're configuring. An audit and repair of existing broken tracking can take longer if there are significant data layer issues to fix. We give you a specific timeline after the initial audit, not an estimate based on the average.",
+    a: "A clean Google Analytics and tracking setup from scratch takes 5-10 business days depending on your store's complexity and which platforms we're configuring. An audit and repair of existing broken tracking can take longer if there are significant data layer issues to fix. We give you a specific timeline after the initial audit, not an estimate based on the average.",
   },
   {
     q: "What happens to our tracking when we update our Shopify theme?",
-    a: "If tracking is implemented through GTM with no code injected directly into theme files, a theme update won't break it. The GTM container snippet lives in your theme layout file and needs to stay there, but it's a single line that theme updates preserve. We document exactly what to verify after any theme change and give your team a short checklist they can run in under 10 minutes.",
+    a: "If your Google Analytics tracking is implemented through GTM with no code injected directly into theme files, a theme update won't break it. The GTM container snippet lives in your theme layout file and needs to stay there, but it's a single line that theme updates preserve. We document exactly what to verify after any theme change and give your team a short checklist they can run in under 10 minutes.",
   },
   {
     q: "Do you set up Meta and TikTok pixels as well?",
@@ -284,15 +284,15 @@ const FAQS = [
   },
   {
     q: "Can you fix broken tracking on a store that already has GA4 installed?",
-    a: "Yes, and this is one of the most common projects we take on. Most stores have GA4 running but misconfigured: duplicate events, missing ecommerce data, wrong conversion event settings, or pixels firing on incorrect triggers. We audit the existing setup, document every issue we find, fix it, and verify the fix with real test events before closing.",
+    a: "Yes, and this is one of the most common projects we take on. Most stores have Google Analytics 4 running but misconfigured: duplicate events, missing ecommerce data, wrong conversion event settings, or pixels firing on incorrect triggers. We audit the existing setup, document every issue we find, fix it, and verify the fix with real test events before closing.",
   },
   {
-    q: "What tools do you work with?",
-    a: "GA4, Google Tag Manager, Google Ads conversion tracking, Meta Pixel and Conversions API, TikTok Pixel, and Looker Studio for dashboards. For stores that want third-party attribution tools, we have experience with Elevar and Littledata. We don't lock you into proprietary tools — everything we build runs on platforms you own and control.",
+    q: "Does Shopify support Google Analytics 4?",
+    a: "Yes — Shopify has a native Google Analytics 4 integration through the Google channel app. The problem is what it doesn't do. The native integration only fires a basic purchase event and misses add-to-cart, begin-checkout, and product view events entirely. It also duplicates the purchase event if a buyer reloads the thank-you page, which inflates transaction counts in GA4. A proper Shopify Google Analytics 4 setup goes through Google Tag Manager with the full ecommerce event suite configured, attribution settings validated, and a server-side Conversions API connection for purchases that client-side tracking misses. That's the gap between having GA4 on your store and having GA4 working.",
   },
   {
     q: "What does the project include?",
-    a: "Every project covers an audit of the existing setup, full implementation of agreed tracking events, validation with real test purchases, a Looker Studio reporting dashboard, and written documentation of every tag and event. We do not hand over a setup we haven't tested. The project closes with a walkthrough session so your team knows exactly what was built and how to maintain it.",
+    a: "Every project covers an audit of your existing Google Analytics, GTM, and pixel setup, full implementation of agreed tracking events, validation with real test purchases, a Looker Studio reporting dashboard, and written documentation of every tag and event. We do not hand over a setup we haven't tested. The project closes with a walkthrough session so your team knows exactly what was built and how to maintain it.",
   },
 ];
 
@@ -336,14 +336,14 @@ export default function Page() {
           <div>
             <span className="std-badge">Shopify Analytics &amp; Tracking Agency</span>
             <h1 className="std-hero-h1 font-bold mt-5" style={{ color: C_WHITE, fontSize: "48px", lineHeight: 1.15, margin: "20px 0 0" }}>
-              Shopify Analytics and Tracking Setup{" "}
+              Shopify Google Analytics Setup and Conversion Tracking{" "}
               That{" "}
               <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                 Gets Your Numbers Right
               </span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
-              9 out of 10 Shopify stores have tracking errors they don&apos;t know about. Wrong data means wrong ad decisions and wasted budget. We set up GA4, GTM, and conversion pixels correctly, validate every event, and hand you a store where the numbers can be trusted.
+              9 out of 10 Shopify stores have Google Analytics or pixel tracking errors they don&apos;t know about. Wrong data means wrong ad decisions and wasted budget. We configure GA4, GTM, and conversion pixels correctly, validate every event, and give you a store where the numbers can be trusted.
             </p>
             <div className="std-hero-stats">
               {[
@@ -392,7 +392,7 @@ export default function Page() {
             150+ Shopify Stores Tracked. Here&apos;s Who Trusts Us.
           </h2>
           <p className="text-center" style={{ color: C_TEXT, fontSize: 16, lineHeight: "26px", margin: "10px 0 0", textAlign: "center" }}>
-            From DTC startups to global brands. Every store we work with runs on Shopify. No WordPress, no WooCommerce.
+            From DTC startups to global brands. Every store we track and configure analytics for runs on Shopify. No WordPress, no WooCommerce.
           </p>
 
           <div className="std-trust-carousel" style={{ marginTop: 20, width: "100%", overflow: "hidden" }}>
@@ -423,7 +423,7 @@ export default function Page() {
               6 Shopify Tracking Problems That Are Costing You Money Right Now
             </h2>
             <p className="sat-feat-desc">
-              Most stores assume their tracking works because orders are coming in. These are the errors we find on almost every store we audit.
+              Most stores assume their Google Analytics and pixel tracking works because orders are coming in. These are the errors we find on almost every Shopify store we audit.
             </p>
           </div>
 
@@ -469,10 +469,10 @@ export default function Page() {
           <div className="std-solutions-left" style={{ position: "sticky", top: "120px", alignSelf: "start" }}>
             <span className="std-label" style={{ color: C_TEXT }}>What&apos;s Included</span>
             <h2 style={{ color: C_DARK, fontSize: 42, fontWeight: 700, lineHeight: 1.2, margin: "12px 0 0" }}>
-              What&apos;s Included in Our Shopify Analytics &amp; Tracking Setup
+              What&apos;s Included in Our Shopify Google Analytics and Tracking Setup
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              Every engagement covers an audit of your existing setup, full implementation, event validation, and a reporting dashboard. We do not hand over tracking we haven&apos;t tested.
+              Every engagement covers an audit of your Google Analytics, GTM, and pixel setup, full implementation, event validation, and a reporting dashboard. We do not hand over tracking we haven&apos;t tested.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
               Book a Free Strategy Call
@@ -496,7 +496,7 @@ export default function Page() {
             className="text-[28px] sm:text-[36px] md:text-[32px] lg:text-[42px] font-bold max-sm:font-semibold"
             style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", lineHeight: 1.2, margin: 0 }}
           >
-            How Our Shopify Analytics Setup Process Works
+            How Our Shopify Google Analytics Setup and Tracking Process Works
           </h2>
 
           <p
@@ -553,7 +553,7 @@ export default function Page() {
             </span>
           </h2>
           <p style={{ fontFamily: "Poppins, sans-serif", fontSize: 16, lineHeight: 1.75, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
-            Most store owners try to solve tracking with a plugin install. Here&apos;s what that misses.
+            Most store owners try to solve Google Analytics and conversion tracking with a plugin install. Here&apos;s what that misses.
           </p>
 
           <div className="sat-compare-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: 20, marginTop: 10 }}>
@@ -641,24 +641,24 @@ export default function Page() {
           <h2 className="sat-why-heading">
             Why Brands Choose Ecomm Wizards for{" "}<br className="sat-why-br-lg" />
             <span style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Shopify Analytics &amp; Tracking
+              Shopify Google Analytics Setup and Conversion Tracking
             </span>
           </h2>
 
           <p className="sat-why-desc">
-            We&apos;ve audited tracking setups on 150+ Shopify stores. Here&apos;s what makes our setup different from an app install or a generic web developer:
+            We&apos;ve audited Google Analytics and tracking setups on 150+ Shopify stores. Here&apos;s what separates our GA4 configuration from an app install or a generic developer:
           </p>
 
           <div className="sat-why-grid">
             {[
               {
                 title: "Shopify-Only Focus",
-                desc: (<>Every store we track runs on Shopify. We know the checkout flow, the app ecosystem, and the exact points where Shopify&apos;s architecture breaks standard tracking implementations.</>),
+                desc: (<>Every store we track runs on Shopify. We know the checkout flow, the app ecosystem, and the exact points where Shopify&apos;s architecture breaks Google Analytics and pixel tracking implementations.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4 l3 2.4 l3.7 -0.6 l1.6 3.4 l3.4 1.6 l-0.6 3.7 l2.4 3 l-2.4 3 l0.6 3.7 l-3.4 1.6 l-1.6 3.4 l-3.7 -0.6 l-3 2.4 l-3 -2.4 l-3.7 0.6 l-1.6 -3.4 l-3.4 -1.6 l0.6 -3.7 l-2.4 -3 l2.4 -3 l-0.6 -3.7 l3.4 -1.6 l1.6 -3.4 l3.7 0.6 z" /><polyline points="11,16.5 14.5,20 21,12.5" /></svg>),
               },
               {
                 title: "We Validate Before We Hand Over",
-                desc: (<>We don&apos;t close a project until every event has been tested with real user journeys. You get a verified setup, not a &ldquo;should be working&rdquo; setup.</>),
+                desc: (<>We don&apos;t close a project until every Google Analytics event and pixel conversion has been tested with real user journeys. You get a verified setup, not a &ldquo;should be working&rdquo; setup.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="16" cy="16" r="12"/><path d="M10 16l4 4 8-8"/></svg>),
               },
               {
@@ -807,7 +807,7 @@ export default function Page() {
         aria-label="Frequently asked questions about Shopify analytics and tracking setup"
       >
         <div className="sat-faq__inner mx-auto" style={{ maxWidth: "1100px" }}>
-          <h2 className="sat-faq__title">Shopify Analytics &amp; Tracking FAQs</h2>
+          <h2 className="sat-faq__title">Shopify Google Analytics &amp; Tracking Setup FAQs</h2>
 
           <SatFaqAccordion faqs={FAQS} />
         </div>
