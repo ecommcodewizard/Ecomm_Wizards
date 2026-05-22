@@ -64,7 +64,7 @@ const NAV: NavItem[] = [
     children: [
       { label: "Custom App Development",   href: "/shopify-app-development",                description: "Private & public Shopify apps" },
       { label: "Mobile App Development",   href: "/shopify-mobile-app-development",         description: "iOS & Android shopping apps" },
-      { label: "App Setup & Optimisation", href: "/shopify-app-setup-and-app-optimization", description: "Get the most from your app stack" },
+      { label: "App Setup & Optimisation", href: "/services/shopify-app-setup-and-app-optimization", description: "Get the most from your app stack" },
       { label: "Shopify Integrations",     href: "/shopify-integrations-erp-crm-3pl-etc",   description: "ERP, CRM, 3PL & more" },
     ],
   },
