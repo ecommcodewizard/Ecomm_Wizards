@@ -8,7 +8,7 @@ import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/Case
 export const metadata: Metadata = {
   title: "Shopify SEO Agency | Expert SEO Services for Shopify | Ecomm Wizards",
   description:
-    "Shopify SEO agency for 150+ stores. Expert SEO services for Shopify that fix technical issues, build the keyword strategy, and grow organic revenue month over month.",
+    "Shopify SEO agency for 150+ stores. Our SEO services for Shopify fix technical issues, map keywords to buyer intent, and grow organic revenue that compounds month over month.",
 };
 
 const C_DARK  = "#000000";
@@ -116,7 +116,7 @@ const TRUST_LOGOS = [
 const SEO_PAINS = [
   {
     name: "Shopify Creates Duplicate URLs by Default",
-    desc: "Shopify generates two URLs for every product — /products/x and /collections/name/products/x. Without correct canonical tags, Google splits your ranking signals between both pages. You rank half as well as you should on every product.",
+    desc: "Shopify generates two URLs for every product: /products/x and /collections/name/products/x. Without correct canonical tags, Google splits your ranking signals between both pages. You rank half as well as you should on every product.",
     cost: "Duplicate URL structure from Shopify defaults dilutes your authority before you've written a single word of content.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
@@ -138,7 +138,7 @@ const SEO_PAINS = [
     ),
   },
   {
-    name: "Collection Pages Are Your Best Ranking Asset — And They're Empty",
+    name: "Collection Pages Are Your Best Ranking Asset. And They're Empty.",
     desc: "Collection pages rank for high-volume, high-intent queries: 'men's running shoes', not 'Nike Air Max 270 size 10'. Most stores leave collection pages as blank product grids with no copy.",
     cost: "Under-optimized collection pages are the single biggest missed organic revenue opportunity in a Shopify store.",
     icon: (
@@ -176,7 +176,7 @@ const SEO_PAINS = [
   {
     name: "Your Keyword Strategy Targets Features, Not Buyers",
     desc: "Most stores optimize for brand names and product specs. Real buyers search 'best running shoes for flat feet' or 'gifts for men under £50'. Buyer-intent keyword mapping puts you in front of shoppers before your competitors do.",
-    cost: "A feature-focused keyword strategy misses the highest-converting traffic — buyers who search before they decide.",
+    cost: "A feature-focused keyword strategy misses the highest-converting traffic: buyers who search before they decide.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
         <circle cx="14" cy="14" r="10" stroke="currentColor" strokeWidth="1.5"/>
@@ -203,7 +203,7 @@ const SSE_ITEMS = [
   },
   {
     title: "On-Page Optimization",
-    body: "We write and optimize title tags, meta descriptions, H1s, and collection page copy for the queries your buyers use. Every element earns its place — no filler copy written to hit a word count.",
+    body: "We write and optimize title tags, meta descriptions, H1s, and collection page copy for the queries your buyers use. Every element earns its place. No filler copy written to hit a word count.",
   },
   {
     title: "Content Strategy & Blog SEO",
@@ -215,15 +215,15 @@ const SSE_ITEMS = [
   },
   {
     title: "Schema & Structured Data",
-    body: "We implement Product, Review, BreadcrumbList, Organization, and FAQ schema. Correct schema gets your listings rich results — star ratings, prices, and availability in search — increasing click-through rate before a visitor lands on your page.",
+    body: "We implement Product, Review, BreadcrumbList, Organization, and FAQ schema. Correct schema gets your listings rich results: star ratings, prices, and availability in search. This increases click-through rate before a visitor lands on your page.",
   },
   {
     title: "SEO Reporting & Monitoring",
-    body: "Monthly reports covering keyword rankings, organic traffic, revenue attribution from GA4, and technical health. You see what changed, why it changed, and what we're doing next. No vanity metrics — just numbers that connect to revenue.",
+    body: "Monthly reports covering keyword rankings, organic traffic, revenue attribution from GA4, and technical health. You see what changed, why it changed, and what we're doing next. No vanity metrics. Just numbers that connect to revenue.",
   },
   {
     title: "AI Search Optimization",
-    body: "Google AI Overviews now appear above traditional results for a large share of commercial queries. We optimize your content structure, FAQ markup, and entity signals so Google's AI pulls from your pages when answering relevant buyer queries. This includes structuring collection and blog content for AI extraction, implementing FAQ schema that feeds AI-generated answers, and building the brand signals that make AI systems recognize your store as an authority in your category.",
+    body: "Google AI Overviews now appear above organic results for a growing share of buyer queries. If your store isn't cited there, those visitors never scroll down to find you. We get your pages into those answers: we structure collection and blog content so Google's AI can extract answers from it, implement the FAQ schema that feeds AI responses, and build the brand signals that put your store on Google's shortlist for your category.",
   },
 ];
 
@@ -232,7 +232,7 @@ const NATIVE_PROS = [
   "Knows Shopify's duplicate URL and canonical structure by default.",
   "Keyword maps built for Shopify collection and product page hierarchy.",
   "Core Web Vitals fixes target app script conflicts, not generic issues.",
-  "Schema covers Product, Review, and BreadcrumbList — Shopify-specific patterns.",
+  "Schema covers Product, Review, and BreadcrumbList: Shopify-specific patterns.",
   "Content strategy built around buyer intent across all three search stages.",
   "Link building targets ecommerce-relevant domains and collection pages, not just the homepage.",
   "Optimizes content and schema for Google AI Overviews and AI search citations.",
@@ -244,14 +244,14 @@ const BUILDER_CONS = [
   { text: "Generic schema implementation missing Shopify-specific structured data.",     warn: false },
   { text: "Content briefs written without understanding ecommerce buying stages.",       warn: true  },
   { text: "Backlinks built to the homepage, not to the collection pages that rank.",     warn: true  },
-  { text: "No strategy for AI search visibility — traditional SEO playbook only.",       warn: true  },
+  { text: "No strategy for AI search visibility. Traditional SEO playbook only.",        warn: true  },
 ];
 
 /* ── FAQs ── */
 const FAQS = [
   {
     q: "How long does Shopify SEO take to show results?",
-    a: "Most stores using our Shopify SEO services see meaningful keyword movement within 60–90 days of technical and on-page work going live. Significant organic revenue impact typically comes in months 4–6 as content builds authority and links accumulate. SEO is a compounding channel — the gains in month 6 are larger than month 3, and month 12 larger than month 6. We share realistic expectations in the discovery call based on your current rankings and competition level.",
+    a: "Most stores using our Shopify SEO services see meaningful keyword movement within 60–90 days of technical and on-page work going live. Significant organic revenue impact typically comes in months 4–6 as content builds authority and links accumulate. SEO is a compounding channel: the gains in month 6 are larger than month 3, and month 12 larger than month 6. We share realistic expectations in the discovery call based on your current rankings and competition level.",
   },
   {
     q: "What makes Shopify SEO different from standard SEO?",
@@ -263,7 +263,7 @@ const FAQS = [
   },
   {
     q: "Do you write the SEO content or just advise?",
-    a: "We write it. Blog posts, collection page copy, product meta descriptions, and title tags are all part of the service. Every piece is written for the specific buyer intent of the query it targets — not generic content created to hit a word count.",
+    a: "We write it. Blog posts, collection page copy, product meta descriptions, and title tags are all part of the service. Every piece is written for the specific buyer intent of the query it targets. Not generic content created to hit a word count.",
   },
   {
     q: "Can you run SEO on a Shopify store you did not build?",
@@ -275,27 +275,19 @@ const FAQS = [
   },
   {
     q: "What keywords does your Shopify SEO service target?",
-    a: "We build a keyword map across three intent types: transactional queries for product and collection pages, commercial investigation queries for comparison and best-of content, and informational queries for buyers in the research stage. Most agencies only target transactional keywords — missing buyers who research before they purchase, which is the majority of high-ticket ecommerce traffic.",
-  },
-  {
-    q: "Do you handle SEO for Shopify Plus stores?",
-    a: "Yes. Shopify Plus adds complexity: multi-currency and multi-market stores, international SEO with hreflang, custom checkout pages, and enterprise-scale content requirements. We have direct experience with Shopify Markets and the technical configuration multi-region stores require to rank in each market correctly.",
+    a: "We map keywords across three buyer stages: ready to buy, comparing options, and still researching. Product and collection pages target the first group. Comparison and best-of content targets the second. Blog content captures buyers in the third stage before they land on a competitor's page. Most agencies only go after the ready-to-buy keywords. The buyers who research before they purchase are where most high-ticket ecommerce revenue actually comes from.",
   },
   {
     q: "How do you measure the results of your Shopify SEO services?",
-    a: "Primary metrics are organic revenue and transactions from Google Analytics 4. Secondary metrics are keyword rankings for target queries, organic clicks and impressions from Google Search Console, and Core Web Vitals scores. We report all of this monthly with commentary on what changed and why — not a dashboard dump without explanation.",
+    a: "We measure revenue. Organic transactions from GA4 is the headline number, not rankings or sessions in isolation. We also track keyword rankings for your target queries, organic clicks and impressions from Search Console, and Core Web Vitals. Every month you get a report with commentary on what moved and why. Not a spreadsheet you have to decode yourself.",
   },
   {
     q: "Do you optimize for Google AI Overviews and AI-powered search?",
-    a: "Yes. Google AI Overviews now appear above organic results for a significant share of commercial queries — and getting cited in an AI-generated answer drives clicks that never reach traditional rankings. We optimize your content structure, FAQ schema, and entity signals to earn citations in AI Overviews for the queries your buyers actually use. For stores where it's relevant, we also monitor brand visibility in ChatGPT and Perplexity.",
-  },
-  {
-    q: "What does AI search optimization actually involve?",
-    a: "Three things: structured content, schema, and entity recognition. AI systems extract answers from pages with clear question-and-answer-formatted content and correctly implemented FAQ and HowTo schema. Entity optimization means building enough brand signals — mentions, links, and structured data — that AI systems identify your store as an authority in your category. For Shopify specifically, this means optimizing collection and blog pages to answer the buyer questions AI Overviews pull content for.",
+    a: "Yes. Google AI Overviews now appear above organic results for a significant share of commercial queries. Getting cited in an AI-generated answer drives clicks that never reach traditional rankings. We optimize your content structure, FAQ schema, and entity signals to earn citations in AI Overviews for the queries your buyers actually use. For stores where it's relevant, we also monitor brand visibility in ChatGPT and Perplexity.",
   },
   {
     q: "What is included in the monthly retainer?",
-    a: "Every Shopify SEO service retainer covers technical monitoring and fixes, keyword rank tracking and reporting, content production, link building, and a monthly strategy call. Scope scales with retainer size. We scope each engagement after the discovery call. No fixed packages that do not fit your store's actual needs.",
+    a: "Every Shopify SEO service retainer covers technical monitoring and fixes, keyword rank tracking and reporting, content production, link building, and a monthly strategy call. Scope scales with retainer size. We scope every engagement after the discovery call. No cookie-cutter packages.",
   },
 ];
 
@@ -528,8 +520,8 @@ export default function Page() {
             style={{ maxWidth: "calc(66.667% - 7px)", marginLeft: "auto", marginRight: "auto", width: "100%" }}
           >
             {[
-              { step: "04.", title: "Content & Links", desc: "We publish buyer-intent content and build links to your highest-value pages. Both run in parallel from month one — not sequentially, which is how most agencies slow their own results." },
-              { step: "05.", title: "Monitor & Iterate", desc: "We track rankings, clicks, and revenue attribution monthly. We adjust strategy based on what's working — not a static plan written in month one and never revisited." },
+              { step: "04.", title: "Content & Links", desc: "We publish buyer-intent content and build links to your highest-value pages. Both run in parallel from month one, not sequentially, which is how most agencies slow their own results." },
+              { step: "05.", title: "Monitor & Iterate", desc: "We track rankings, clicks, and revenue attribution monthly. We adjust strategy based on what's working, not a static plan written in month one and never revisited." },
             ].map(({ step, title, desc }) => (
               <div key={step} className="p-[30px] max-sm:p-[15px] md:max-lg:p-[16px] lg:max-xl:p-[20px]" style={{ background: "#FFFFFF", borderRadius: "16px", boxSizing: "border-box" }}>
                 <p className="text-[50px] max-sm:text-[35px] md:max-lg:text-[40px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "rgba(0,0,0,0.12)", lineHeight: 1, margin: "0 0 10px" }}>{step}</p>
@@ -616,7 +608,7 @@ export default function Page() {
         <div className="sse-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
           <h2 className="sse-results-heading">Shopify SEO Results From the Stores We&apos;ve Grown</h2>
           <p className="sse-results-desc">
-            Not projections. Real outcomes from Shopify stores we&apos;ve audited, rebuilt, and ranked — more traffic, better attribution, and more revenue.
+            Not projections. Real outcomes from Shopify stores we&apos;ve audited, rebuilt, and ranked: more traffic, better attribution, and more revenue.
           </p>
           <CaseStudySlider slides={CASE_STUDY_SLIDES} intervalMs={6000} showDots={false} />
         </div>
@@ -657,7 +649,7 @@ export default function Page() {
               },
               {
                 title: "Revenue-Attributed Reporting",
-                desc: (<>We tie organic traffic to revenue in every report. Not rankings, not sessions — actual revenue from Google Analytics 4. You always know the return on your SEO spend.</>),
+                desc: (<>We tie organic traffic to revenue in every report. Not rankings, not sessions. Actual revenue from Google Analytics 4. You always know the return on your SEO spend.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 24l6-8 6 4 8-12"/><circle cx="26" cy="6" r="3"/></svg>),
               },
               {
