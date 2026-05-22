@@ -731,7 +731,7 @@ export default function Page() {
         .std-hero-stat-num { font-size: 28px; font-weight: 800; line-height: 1; background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .std-hero-stat-label { font-size: 13px; font-weight: 500; color: #ffffff; letter-spacing: .02em; }
 
-        @media (min-width: 1025px) and (max-width: 1270px) {
+        @media (min-width: 1025px) and (max-width: 1307px) {
           .std-hero-stats { flex-wrap: nowrap !important; }
           .std-hero-stat-item { padding-right: 18px !important; margin-right: 18px !important; }
           .std-hero-stat-num { font-size: 24px !important; }

@@ -1199,7 +1199,7 @@ export default function Page() {
           letter-spacing: .02em;
         }
 
-        @media (min-width: 1025px) and (max-width: 1270px) {
+        @media (min-width: 1025px) and (max-width: 1307px) {
           .std-hero-stats { flex-wrap: nowrap !important; }
           .std-hero-stat-item { padding-right: 18px !important; margin-right: 18px !important; }
           .std-hero-stat-num { font-size: 24px !important; }
