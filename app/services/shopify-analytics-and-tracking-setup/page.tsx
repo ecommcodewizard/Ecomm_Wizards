@@ -53,48 +53,37 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
 /* ── Case study cards (Our Work grid) ── */
 const CASE_STUDIES = [
   {
-    brand: "Everlast",
-    metric: "+152%",
-    metricLabel: "Conversion Rate",
-    tags: ["Shopify Plus", "CRO", "Theme Redesign"],
-    industry: "Sports & Fitness",
-    image: "/images/Case studies/Everlast-banner.webp",
-    video: "/images/Case%20studies/Everlast%20video.mp4",
-    href: "/case-studies/everlast-shopify-plus-sports-redesign",
-    description: "A Shopify Plus rebuild for Everlast: dual B2C and trade checkout architecture, product comparison tooling, and 152% conversion rate lift for the world's most iconic boxing brand.",
-  },
-  {
-    brand: "Dryrobe",
-    metric: "+89%",
-    metricLabel: "Online Revenue",
-    tags: ["Shopify Plus", "Theme Development", "UX Design"],
-    industry: "Fashion & Apparel",
-    image: "/images/Case studies/Dryrobe hero section.webp",
-    video: "/images/Case%20studies/dryrobe%20video%20test.mp4",
-    href: "/case-studies/dryrobe-shopify-plus-redesign",
-    description: "Three fragmented Shopify stores unified into one international Shopify Plus architecture, with a custom Size Finder that cut returns by 31% and grew online revenue 89%.",
-  },
-  {
-    brand: "Wild",
-    metric: "80K+",
-    metricLabel: "Monthly Subscribers",
-    tags: ["Shopify Plus", "Subscriptions"],
-    industry: "Cosmetics & Beauty",
-    image: "/images/Case studies/WeareWild.webp",
-    video: "/images/Case%20studies/WeareWild%20video.mp4",
-    href: "/case-studies/wild-shopify-plus-subscriptions",
-    description: "A subscription-first Shopify Plus store built from zero for Wild, scaling to 80,000+ active monthly subscribers within twelve months and expanding into Germany.",
-  },
-  {
-    brand: "Candy Kittens",
-    metric: "+182%",
-    metricLabel: "Conversion Rate",
-    tags: ["Theme Development", "Shopify CRO"],
+    brand: "VITHIT",
+    metric: "+115%",
+    metricLabel: "Revenue Growth YoY",
+    tags: ["Shopify Plus", "Paid Media", "Full-Funnel CRO"],
     industry: "Food & Beverages",
-    image: "/images/Case studies/Candy Kittens hero section.webp",
-    video: "/images/Case%20studies/Candy%20Kittens%20video.mp4",
-    href: "/case-studies/candy-kittens-shopify-food-beverage-cro",
-    description: "A full Shopify theme redesign for Candy Kittens, the UK's leading better-for-you confectionery brand.",
+    image: "/images/Case%20studies/VITHIT.webp",
+    video: "/images/Case%20studies/VITHIT%20video.mp4",
+    href: "/case-studies/vithit-shopify-plus-d2c",
+    description: "A global functional drinks brand in 15 countries grew D2C revenue 115% year on year and lifted conversion rate 170% through a full-funnel paid media programme built on accurate conversion tracking and attribution.",
+  },
+  {
+    brand: "Twillory",
+    metric: "$5.4M",
+    metricLabel: "New Annual Revenue",
+    tags: ["Shopify Plus", "CRO", "A/B Testing"],
+    industry: "Fashion & Apparel",
+    image: "/images/Case%20studies/Twillory%20hero%20section.png",
+    video: "/images/Case%20studies/Twillory%20video.mp4",
+    href: "/case-studies/twillory-shopify-cro",
+    description: "A men's performance shirt brand added $5.4M in new annual revenue and $455k in the first 90 days through a systematic CRO programme, A/B testing every interface component against clean analytics data.",
+  },
+  {
+    brand: "111SKIN",
+    metric: "+46%",
+    metricLabel: "Conversion Rate",
+    tags: ["Shopify Plus", "CRO", "Data-Driven"],
+    industry: "Cosmetics & Beauty",
+    image: "/images/Case%20studies/111skin-hero.jpg",
+    video: "/images/Case%20studies/111skin%20video.mp4",
+    href: "/case-studies/111skin-shopify-cro-redesign",
+    description: "A dermatologist-founded luxury skincare brand ran a data-driven CRO roadmap that grew conversion rate 46% and revenue 21%, with every decision traced back to accurate event data from a properly configured GA4 and GTM setup.",
   },
 ];
 
@@ -169,7 +158,7 @@ const SAT_PAINS = [
   {
     name: "Cookie Consent Blocks Your EU Tracking by Default",
     desc: "A cookie banner with no Consent Mode v2 configured blocks all tracking for every visitor who clicks Decline. If you sell to Europe, you lose the analytics data for a significant chunk of visitors entirely.",
-    cost: "Without Consent Mode, any visitor who declines a cookie banner becomes completely invisible — removed from all attribution and remarketing audiences.",
+    cost: "Without Consent Mode, any visitor who declines a cookie banner becomes completely invisible, removed from all attribution and remarketing audiences.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
         <circle cx="14" cy="14" r="11" stroke="currentColor" strokeWidth="1.5"/>
@@ -244,11 +233,11 @@ const NATIVE_PROS = [
   "Existing errors audited and fixed before new tracking layers are added on top.",
 ];
 const BUILDER_CONS = [
-  { text: "Client-side only — loses 20-40% of conversions to iOS privacy and ad blockers.", warn: true  },
-  { text: "No pre-launch validation — broken events surface after ad budget is already spent.", warn: true  },
+  { text: "Client-side only: loses 20-40% of conversions to iOS privacy and ad blockers.", warn: true  },
+  { text: "No pre-launch validation: broken events surface after ad budget is already spent.", warn: true  },
   { text: "Duplicate events inflate conversion counts and mislead campaign optimization.",      warn: true  },
   { text: "Theme updates silently break pixel code with no warning or fallback.",              warn: false },
-  { text: "GDPR Consent Mode rarely configured — EU traffic goes dark by default.",           warn: false },
+  { text: "GDPR Consent Mode rarely configured: EU traffic goes dark by default.",           warn: false },
   { text: "Support tied to the app roadmap, not your store's specific tracking setup.",       warn: false },
 ];
 
@@ -260,7 +249,7 @@ const FAQS = [
   },
   {
     q: "What Google Analytics 4 ecommerce events do you configure for Shopify?",
-    a: "We configure the full standard GA4 ecommerce event set for your Shopify store: view_item, add_to_cart, begin_checkout, add_payment_info, and purchase. We also set up remove_from_cart and view_item_list for stores that need funnel visibility at the collection level. If your store has specific behaviors worth measuring — subscription sign-ups, wishlist adds, quiz completions — those go in as custom events.",
+    a: "We configure the full standard GA4 ecommerce event set for your Shopify store: view_item, add_to_cart, begin_checkout, add_payment_info, and purchase. We also set up remove_from_cart and view_item_list for stores that need funnel visibility at the collection level. If your store has specific behaviors worth measuring, such as subscription sign-ups, wishlist adds, or quiz completions. Those go in as custom events.",
   },
   {
     q: "Do we need server-side tracking?",
@@ -288,7 +277,7 @@ const FAQS = [
   },
   {
     q: "Does Shopify support Google Analytics 4?",
-    a: "Yes — Shopify has a native Google Analytics 4 integration through the Google channel app. The problem is what it doesn't do. The native integration only fires a basic purchase event and misses add-to-cart, begin-checkout, and product view events entirely. It also duplicates the purchase event if a buyer reloads the thank-you page, which inflates transaction counts in GA4. A proper Shopify Google Analytics 4 setup goes through Google Tag Manager with the full ecommerce event suite configured, attribution settings validated, and a server-side Conversions API connection for purchases that client-side tracking misses. That's the gap between having GA4 on your store and having GA4 working.",
+    a: "Yes. Shopify has a native Google Analytics 4 integration through the Google channel app. The problem is what it doesn't do. The native integration only fires a basic purchase event and misses add-to-cart, begin-checkout, and product view events entirely. It also duplicates the purchase event if a buyer reloads the thank-you page, which inflates transaction counts in GA4. A proper Shopify Google Analytics 4 setup goes through Google Tag Manager with the full ecommerce event suite configured, attribution settings validated, and a server-side Conversions API connection for purchases that client-side tracking misses. That's the gap between having GA4 on your store and having GA4 working.",
   },
   {
     q: "What does the project include?",
@@ -347,10 +336,10 @@ export default function Page() {
             </p>
             <div className="std-hero-stats">
               {[
-                { number: "150+",  label: "Stores Tracked" },
-                { number: "9/10",  label: "Stores Have Broken Tracking" },
-                { number: "100%",  label: "Events Validated Before Handover" },
-                { number: "4.9★", label: "Client Rating" },
+                { number: "150+",   label: "Stores Tracked" },
+                { number: "10–40%", label: "Conversions Recovered" },
+                { number: "100%",   label: "Events Validated" },
+                { number: "4.9★",  label: "Client Rating" },
               ].map((s) => (
                 <div key={s.label} className="std-hero-stat-item">
                   <span className="std-hero-stat-num">{s.number}</span>
@@ -373,7 +362,7 @@ export default function Page() {
 
           <div className="sat-hero-img-wrap">
             <Image
-              src="/images/performance-1.webp"
+              src="/images/migration-shopify-right-image.webp"
               alt="Shopify analytics and tracking setup dashboard showing GA4 and pixel configuration"
               width={640}
               height={480}
@@ -442,8 +431,8 @@ export default function Page() {
         </div>
 
         <style dangerouslySetInnerHTML={{ __html: `
-          .sat-feat-heading { color: #000; font-family: 'Poppins', sans-serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-align: center; margin: 0 auto 16px; max-width: 800px; }
-          .sat-feat-desc { color: rgba(0,0,0,.75); font-family: 'Poppins', sans-serif; font-size: 18px; line-height: 28px; text-align: center; margin: 0 auto 24px; max-width: 760px; }
+          .sat-feat-heading { color: #000; font-family: 'Poppins', sans-serif; font-size: 42px; font-weight: 700; line-height: 1.2; text-align: center; margin: 0 auto 16px; max-width: 1000px; }
+          .sat-feat-desc { color: rgba(0,0,0,.75); font-family: 'Poppins', sans-serif; font-size: 18px; line-height: 28px; text-align: center; margin: 0 auto 24px; max-width: 1000px; }
           .sat-feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
           .sat-feat-card { background: #fff; border-radius: 16px; padding: 28px; border: 1px solid rgba(0,0,0,0.07); display: flex; flex-direction: column; gap: 12px; }
           .sat-feat-icon { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: rgba(61,199,122,0.1); border-radius: 12px; color: #2A9555; flex-shrink: 0; }
@@ -451,9 +440,6 @@ export default function Page() {
           .sat-feat-desc-text { font-family: 'Poppins', sans-serif; font-size: 14px; color: #334155; line-height: 1.7; margin: 0; flex-grow: 1; }
           .sat-feat-roi { font-family: 'Poppins', sans-serif; font-size: 13px; color: #2A9555; line-height: 1.5; background: rgba(61,199,122,0.08); border-radius: 8px; padding: 10px 14px; border-left: 3px solid #3DC77A; margin-top: auto; }
           .sat-feat-roi-label { font-weight: 700; }
-          @media (min-width: 1024px) { .sat-feat-title-block { width: -moz-fit-content; width: fit-content; margin: 0 auto 8px; } .sat-feat-title-block .sat-feat-desc { max-width: 100%; margin-left: 0; margin-right: 0; } }
-          @media (min-width: 1024px) and (max-width: 1349px) { .sat-feat-title-block { width: 100% !important; } .sat-feat-heading { max-width: 100% !important; } }
-          @media (min-width: 1350px) { .sat-feat-heading { max-width: none; white-space: nowrap; } }
           @media (max-width: 1024px) { .sat-feat-heading { font-size: 32px !important; } .sat-feat-desc { font-size: 16px !important; margin-bottom: 24px !important; } .sat-feat-grid { grid-template-columns: repeat(2, 1fr) !important; } }
           @media (max-width: 768px) { .sat-feat-desc { margin-bottom: 16px !important; } }
           @media (max-width: 640px) { .sat-feat { padding: 40px 16px !important; } .sat-feat-heading { font-size: 26px !important; } .sat-feat-desc { font-size: 15px !important; } .sat-feat-grid { grid-template-columns: 1fr !important; } }
@@ -529,7 +515,7 @@ export default function Page() {
             style={{ maxWidth: "calc(66.667% - 7px)", marginLeft: "auto", marginRight: "auto", width: "100%" }}
           >
             {[
-              { step: "04.", title: "Test & Verify", desc: "We run every tracked event through real user journeys: add-to-cart, checkout, purchase — all verified in DebugView and documented." },
+              { step: "04.", title: "Test & Verify", desc: "We run every tracked event through real user journeys: add-to-cart, checkout, purchase, all verified in DebugView and documented." },
               { step: "05.", title: "Hand Over", desc: "We deliver a clean dashboard, a written record of every tag and event, and a walkthrough so your team knows what's tracked and how to use it." },
             ].map(({ step, title, desc }) => (
               <div key={step} className="p-[30px] max-sm:p-[15px] md:max-lg:p-[16px] lg:max-xl:p-[20px]" style={{ background: "#FFFFFF", borderRadius: "16px", boxSizing: "border-box" }}>
@@ -663,7 +649,7 @@ export default function Page() {
               },
               {
                 title: "Server-Side by Default Where It Counts",
-                desc: (<>For stores with significant mobile traffic or heavy paid social spend, we implement server-side event matching as part of the standard setup. It&apos;s not an upgrade — it&apos;s what accurate tracking requires in 2025.</>),
+                desc: (<>For stores with significant mobile traffic or heavy paid social spend, we implement server-side event matching as part of the standard setup. It&apos;s not an upgrade. It&apos;s what accurate tracking requires in 2025.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="6" width="24" height="8" rx="2"/><rect x="4" y="18" width="24" height="8" rx="2"/><circle cx="8" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="8" cy="22" r="1" fill="currentColor" stroke="none"/></svg>),
               },
               {
@@ -673,7 +659,7 @@ export default function Page() {
               },
               {
                 title: "You Own Everything",
-                desc: (<>The GTM container, the GA4 property, the pixel accounts — all set up under your own accounts. If we stop working together, nothing breaks and nothing needs to be migrated.</>),
+                desc: (<>The GTM container, the GA4 property, the pixel accounts, all set up under your own accounts. If we stop working together, nothing breaks and nothing needs to be migrated.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4l-2 2-4-2-2 4-4 2 2 4-2 4 4 2 2 4 4-2 4 2 2-4 4-2-2-4 2-4-4-2z"/><circle cx="16" cy="16" r="3"/></svg>),
               },
               {
