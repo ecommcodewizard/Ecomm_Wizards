@@ -98,15 +98,6 @@ const CASE_STUDIES = [
   },
 ];
 
-/* ── Phone slider images ── */
-const PHONE_COL1 = [
-  "/images/partner-images-1-1.webp",
-  "/images/partner-images-1-2.webp",
-  "/images/partner-images-1-3.webp",
-  "/images/partner-images-1-4.webp",
-];
-const PHONE_COL2 = ["/images/partner-images-2-1.webp", "/images/partner-images-2-3.webp"];
-const PHONE_COL3 = ["/images/partner-images-3-1.webp", "/images/partner-images-3-2.webp"];
 
 /* ── Pain point cards ── */
 const APP_PAINS = [
@@ -351,33 +342,16 @@ export default function Page() {
             </span>
           </div>
 
-          <div className="s20-phones-wrap" aria-hidden="true">
-            <div className="s20-phones">
-              <div className="s20-phones-col s20-phones-col--up1">
-                {[...PHONE_COL1, ...PHONE_COL1].map((src, i) => (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <div key={i} className="s20-phone-frame">
-                    <img src={src} alt="" width={130} height={274} loading={i < PHONE_COL1.length ? "eager" : "lazy"} />
-                  </div>
-                ))}
-              </div>
-              <div className="s20-phones-col s20-phones-col--down">
-                {[...PHONE_COL2, ...PHONE_COL2].map((src, i) => (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <div key={i} className="s20-phone-frame">
-                    <img src={src} alt="" width={130} height={274} loading={i < PHONE_COL2.length ? "eager" : "lazy"} />
-                  </div>
-                ))}
-              </div>
-              <div className="s20-phones-col s20-phones-col--up2">
-                {[...PHONE_COL3, ...PHONE_COL3].map((src, i) => (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <div key={i} className="s20-phone-frame">
-                    <img src={src} alt="" width={130} height={274} loading={i < PHONE_COL3.length ? "eager" : "lazy"} />
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="sao-hero-img-wrap">
+            <Image
+              src="/images/Store performance.webp"
+              alt="Shopify store performance dashboard showing app optimization results"
+              width={640}
+              height={480}
+              priority
+              className="sao-hero-img"
+              style={{ width: "100%", height: "auto", borderRadius: "16px", display: "block" }}
+            />
           </div>
         </div>
       </section>
@@ -808,45 +782,11 @@ export default function Page() {
 
       {/* ── Page CSS ── */}
       <style dangerouslySetInnerHTML={{ __html: `
-        /* ── Phone slider ── */
-        .s20-phones-wrap { position: relative; height: 520px; overflow: hidden; border-radius: 16px; }
-        .s20-phones-wrap::before, .s20-phones-wrap::after { content: ''; position: absolute; left: 0; right: 0; height: 100px; z-index: 2; pointer-events: none; }
-        .s20-phones-wrap::before { top: 0; background: linear-gradient(to bottom, #000000 0%, transparent 100%); }
-        .s20-phones-wrap::after  { bottom: 0; background: linear-gradient(to top, #000000 0%, transparent 100%); }
-        .s20-phones { display: flex; gap: 10px; height: 100%; justify-content: center; }
-        .s20-phones-col { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
-        .s20-phone-frame { width: 130px; height: 274px; border-radius: 22px; overflow: hidden; flex-shrink: 0; background: #111; border: 2px solid rgba(255,255,255,0.10); box-shadow: 0 4px 24px rgba(0,0,0,0.55); }
-        .s20-phone-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .s20-phones-col--up1  { animation: s20Up1 22s linear infinite; }
-        .s20-phones-col--down { margin-top: -120px; animation: s20Down 16s linear infinite; }
-        .s20-phones-col--up2  { margin-top: -60px;  animation: s20Up2 19s linear infinite; }
-        @keyframes s20Up1  { 0% { transform: translateY(0);      } 100% { transform: translateY(-1136px); } }
-        @keyframes s20Down { 0% { transform: translateY(-568px); } 100% { transform: translateY(0);       } }
-        @keyframes s20Up2  { 0% { transform: translateY(0);      } 100% { transform: translateY(-568px);  } }
-        @media (max-width: 1023px) {
-          .s20-phones-wrap { height: 380px; border-radius: 12px; }
-          .s20-phone-frame { width: 115px; height: 242px; border-radius: 20px; }
-          .s20-phones-col--down { margin-top: -106px; } .s20-phones-col--up2 { margin-top: -53px; }
-          @keyframes s20Up1  { 0% { transform: translateY(0);      } 100% { transform: translateY(-1008px); } }
-          @keyframes s20Down { 0% { transform: translateY(-504px); } 100% { transform: translateY(0);       } }
-          @keyframes s20Up2  { 0% { transform: translateY(0);      } 100% { transform: translateY(-504px);  } }
-        }
-        @media (max-width: 767px) {
-          .s20-phones-wrap { height: 260px; border-radius: 10px; margin-top: 4px; }
-          .s20-phones-wrap::before, .s20-phones-wrap::after { height: 70px; }
-          .s20-phone-frame { width: 110px; height: 232px; border-radius: 18px; }
-          .s20-phones-col--down { margin-top: -100px; } .s20-phones-col--up2 { display: none; }
-          @keyframes s20Up1  { 0% { transform: translateY(0);      } 100% { transform: translateY(-968px); } }
-          @keyframes s20Down { 0% { transform: translateY(-484px); } 100% { transform: translateY(0);      } }
-        }
-        @media (min-width: 1440px) {
-          .s20-phones-wrap { height: 620px; }
-          .s20-phone-frame { width: 160px; height: 337px; border-radius: 26px; }
-          .s20-phones-col--down { margin-top: -148px; } .s20-phones-col--up2 { margin-top: -74px; }
-          @keyframes s20Up1  { 0% { transform: translateY(0);       } 100% { transform: translateY(-1388px); } }
-          @keyframes s20Down { 0% { transform: translateY(-694px);  } 100% { transform: translateY(0);       } }
-          @keyframes s20Up2  { 0% { transform: translateY(0);       } 100% { transform: translateY(-694px);  } }
-        }
+        /* ── Hero image ── */
+        .sao-hero-img-wrap { display: flex; align-items: center; justify-content: center; }
+        .sao-hero-img { width: 100%; height: auto; border-radius: 16px; display: block; box-shadow: 0 24px 64px rgba(0,0,0,0.45); }
+        @media (max-width: 1023px) { .sao-hero-img-wrap { margin-top: 8px; } }
+        @media (max-width: 640px) { .sao-hero-img { border-radius: 10px; } }
 
         .std-badge {
           display: inline-block; padding: 6px 16px;
