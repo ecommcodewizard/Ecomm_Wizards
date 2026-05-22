@@ -2478,9 +2478,9 @@ export default function Page() {
             flex: 0 0 auto;
             padding: 14px 18px;
             gap: 10px;
-            height: 900px;
-            min-height: 900px;
-            max-height: 900px;
+            height: 500px;
+            min-height: 500px;
+            max-height: 500px;
           }
           .w2s-compare-mobile-track img { border-radius: 12px; }
         }
