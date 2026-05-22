@@ -6,9 +6,9 @@ import SseFaqAccordion from "./SseFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 export const metadata: Metadata = {
-  title: "Shopify SEO Agency | Organic Traffic That Drives Revenue | Ecomm Wizards",
+  title: "Shopify SEO Agency | Expert SEO Services for Shopify | Ecomm Wizards",
   description:
-    "Shopify SEO agency for 150+ stores. We audit your store, fix Shopify-specific technical issues, and build the organic channel that drives revenue — not just rankings.",
+    "Shopify SEO agency for 150+ stores. Expert SEO services for Shopify that fix technical issues, build the keyword strategy, and grow organic revenue month over month.",
 };
 
 const C_DARK  = "#000000";
@@ -251,11 +251,11 @@ const BUILDER_CONS = [
 const FAQS = [
   {
     q: "How long does Shopify SEO take to show results?",
-    a: "Most stores see meaningful keyword movement within 60–90 days of technical and on-page work going live. Significant organic revenue impact typically comes in months 4–6 as content builds authority and links accumulate. SEO is a compounding channel — the gains in month 6 are larger than month 3, and month 12 larger than month 6. We share realistic expectations in the discovery call based on your current rankings and competition level.",
+    a: "Most stores using our Shopify SEO services see meaningful keyword movement within 60–90 days of technical and on-page work going live. Significant organic revenue impact typically comes in months 4–6 as content builds authority and links accumulate. SEO is a compounding channel — the gains in month 6 are larger than month 3, and month 12 larger than month 6. We share realistic expectations in the discovery call based on your current rankings and competition level.",
   },
   {
     q: "What makes Shopify SEO different from standard SEO?",
-    a: "Shopify has platform-specific issues most generic agencies miss: duplicate product URLs from collection hierarchies, thin variant pages with identical content, limited URL structure control, and Core Web Vitals scores damaged by third-party apps. Fixing these correctly requires knowing how Shopify generates URLs and handles canonical tags — not applying a generic SEO checklist written for WordPress.",
+    a: "Shopify has platform-specific issues most generic agencies miss: duplicate product URLs from collection hierarchies, thin variant pages with identical content, limited URL structure control, and Core Web Vitals scores damaged by third-party apps. Any Shopify SEO company that works across platforms applies a generic checklist. Fixing Shopify correctly means knowing how it generates URLs and handles canonical tags from the inside, not applying the same playbook they use for WordPress clients.",
   },
   {
     q: "What does your Shopify SEO audit cover?",
@@ -267,14 +267,14 @@ const FAQS = [
   },
   {
     q: "Can you run SEO on a Shopify store you did not build?",
-    a: "Yes — the majority of our SEO clients come to us with existing stores. We audit what is there, fix what is broken, and build the organic strategy on top of the corrected foundation. We do not require you to have used us for development.",
+    a: "Yes. Most clients hire us as their Shopify SEO consultant after building their store themselves or with another developer. We audit what is there, fix what is broken, and build the organic strategy on a corrected foundation. We do not require you to have used us for development.",
   },
   {
     q: "How do you build links for Shopify stores?",
     a: "We focus on three sources: editorial coverage in relevant trade and consumer publications, brand and supplier mention acquisition, and digital PR content that earns links from high-authority domains. We do not use directory submissions, private blog networks, or any tactic that violates Google's link spam guidelines.",
   },
   {
-    q: "What keywords do you target?",
+    q: "What keywords does your Shopify SEO service target?",
     a: "We build a keyword map across three intent types: transactional queries for product and collection pages, commercial investigation queries for comparison and best-of content, and informational queries for buyers in the research stage. Most agencies only target transactional keywords — missing buyers who research before they purchase, which is the majority of high-ticket ecommerce traffic.",
   },
   {
@@ -282,7 +282,7 @@ const FAQS = [
     a: "Yes. Shopify Plus adds complexity: multi-currency and multi-market stores, international SEO with hreflang, custom checkout pages, and enterprise-scale content requirements. We have direct experience with Shopify Markets and the technical configuration multi-region stores require to rank in each market correctly.",
   },
   {
-    q: "How do you measure SEO success?",
+    q: "How do you measure the results of your Shopify SEO services?",
     a: "Primary metrics are organic revenue and transactions from Google Analytics 4. Secondary metrics are keyword rankings for target queries, organic clicks and impressions from Google Search Console, and Core Web Vitals scores. We report all of this monthly with commentary on what changed and why — not a dashboard dump without explanation.",
   },
   {
@@ -295,7 +295,7 @@ const FAQS = [
   },
   {
     q: "What is included in the monthly retainer?",
-    a: "Every retainer covers technical SEO monitoring and fixes, keyword rank tracking and reporting, a set number of content pieces per month, link building activity, and a monthly strategy call. Scope scales with retainer size. We scope each engagement after the discovery call — no fixed packages that do not fit your store's actual needs.",
+    a: "Every Shopify SEO service retainer covers technical monitoring and fixes, keyword rank tracking and reporting, content production, link building, and a monthly strategy call. Scope scales with retainer size. We scope each engagement after the discovery call. No fixed packages that do not fit your store's actual needs.",
   },
 ];
 
@@ -339,13 +339,13 @@ export default function Page() {
           <div>
             <span className="std-badge">Shopify SEO Agency</span>
             <h1 className="std-hero-h1 font-bold mt-5" style={{ color: C_WHITE, fontSize: "48px", lineHeight: 1.15, margin: "20px 0 0" }}>
-              Shopify SEO That Builds{" "}
+              Shopify SEO Agency That Builds{" "}
               <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                 Organic Revenue
               </span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
-              Most Shopify stores rely entirely on paid ads and ignore organic. We build the SEO channel — technical foundations, keyword strategies, and content that ranks for buyers, not browsers.
+              Most Shopify stores rely entirely on paid ads and ignore organic. Our Shopify SEO experts build the channel: technical foundations, keyword strategies, and content that ranks for buyers, not browsers.
             </p>
             <div className="std-hero-stats">
               {[
@@ -391,10 +391,10 @@ export default function Page() {
       <section className="std-trust" style={{ background: C_WHITE }} aria-label="Brands that trust Ecomm Wizards for Shopify SEO">
         <div className="mx-auto" style={{ maxWidth: "1320px", padding: "48px 20px" }}>
           <h2 style={{ color: C_DARK, fontSize: 30, fontWeight: 700, lineHeight: 1.3, margin: 0, textAlign: "center", fontFamily: "'Poppins', sans-serif" }}>
-            150+ Shopify Stores Ranked. Here&apos;s Who Trusts Us.
+            150+ Stores Ranked With Our Shopify SEO Services. Here&apos;s Who Trusts Us.
           </h2>
           <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "26px", margin: "10px 0 0", textAlign: "center", fontFamily: "'Poppins', sans-serif" }}>
-            From DTC startups to global brands. Every store ranked on Shopify — no WordPress, no WooCommerce.
+            From DTC startups to global brands. Every store we work with runs on Shopify. No WordPress, no WooCommerce.
           </p>
 
           <div className="std-trust-carousel" style={{ marginTop: 20, width: "100%", overflow: "hidden" }}>
@@ -425,7 +425,7 @@ export default function Page() {
               6 Shopify SEO Problems Costing You Organic Revenue Right Now
             </h2>
             <p className="sse-feat-desc">
-              Shopify&apos;s default setup creates SEO problems most store owners never know exist. Here&apos;s what they are and what they cost.
+              Shopify&apos;s default setup creates SEO problems most store owners never know exist. These are the issues our Shopify SEO services fix before anything else.
             </p>
           </div>
 
@@ -468,10 +468,10 @@ export default function Page() {
           <div className="std-solutions-left" style={{ position: "sticky", top: "120px", alignSelf: "start" }}>
             <span className="std-label" style={{ color: C_TEXT }}>What&apos;s Included</span>
             <h2 style={{ color: C_DARK, fontSize: 42, fontWeight: 700, lineHeight: 1.2, margin: "12px 0 0" }}>
-              What&apos;s Included in Every Shopify SEO Engagement
+              What&apos;s Included in Our Shopify SEO Services
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              Every retainer covers a full technical audit, keyword mapping, on-page optimization, content, link building, and monthly reporting. Scope scales with retainer size — no hidden add-ons.
+              Every Shopify SEO services retainer covers a full technical audit, keyword mapping, on-page optimization, content, link building, and monthly reporting. Scope scales with retainer size. No hidden add-ons.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
               Book a Free Strategy Call
@@ -546,20 +546,20 @@ export default function Page() {
         <div className="mx-auto" style={{ maxWidth: 1320, padding: "60px 0" }}>
 
           <h2 className="sse-compare-h2" style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(28px, 4.1vw, 42px)", fontWeight: 700, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
-            Shopify SEO Specialist vs.{" "}
+            Shopify SEO Expert vs.{" "}
             <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Generic SEO Agency
             </span>
           </h2>
           <p style={{ fontFamily: "Poppins, sans-serif", fontSize: 16, lineHeight: 1.75, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
-            A generic agency applies the same playbook to Shopify, WordPress, and WooCommerce. Here&apos;s what that costs your rankings.
+            A generic agency applies the same playbook to Shopify, WordPress, and WooCommerce. Here&apos;s what that costs your Shopify SEO rankings.
           </p>
 
           <div className="sse-compare-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: 20, marginTop: 10 }}>
 
             <div className="sse-compare-card" style={{ background: "#121212", borderRadius: 16, overflow: "hidden", padding: 30, marginTop: 10 }}>
               <span className="sse-compare-badge" style={{ display: "inline-block", background: "rgba(61,199,122,0.15)", color: "#3DC77A", fontFamily: "Poppins, sans-serif", fontSize: 18, fontWeight: 600, borderRadius: 999, padding: "6px 16px", marginBottom: 20, border: "1px solid rgba(61,199,122,0.3)" }}>
-                ✓ Shopify SEO Specialist
+                ✓ Shopify SEO Expert
               </span>
               <ul className="sse-compare-list" style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
                 {NATIVE_PROS.map((item) => (
@@ -614,7 +614,7 @@ export default function Page() {
         style={{ background: C_CREAM, color: C_TEXT, fontFamily: "'Poppins', sans-serif", fontSize: "16px", padding: "40px 20px" }}
       >
         <div className="sse-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
-          <h2 className="sse-results-heading">Results From the Stores We&apos;ve Grown</h2>
+          <h2 className="sse-results-heading">Shopify SEO Results From the Stores We&apos;ve Grown</h2>
           <p className="sse-results-desc">
             Not projections. Real outcomes from Shopify stores we&apos;ve audited, rebuilt, and ranked — more traffic, better attribution, and more revenue.
           </p>
