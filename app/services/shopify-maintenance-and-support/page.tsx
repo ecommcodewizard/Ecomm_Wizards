@@ -6,9 +6,9 @@ import SmsFaqAccordion from "./SmsFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 export const metadata: Metadata = {
-  title: "Shopify Maintenance and Support | Ongoing Shopify Care Plans | Ecomm Wizards",
+  title: "Shopify Maintenance Services | Shopify Support and Maintenance | Ecomm Wizards",
   description:
-    "Shopify maintenance and support for 150+ stores. We monitor, audit, and fix your store every month so problems get caught before your customers do.",
+    "Shopify maintenance services for 150+ stores. Ongoing shopify support and maintenance on a monthly retainer. We audit, monitor, and fix your store before problems reach your customers.",
 };
 
 const C_DARK  = "#000000";
@@ -145,7 +145,7 @@ const SMS_PAINS = [
   {
     name: "Security Vulnerabilities Sit Undetected for Months",
     desc: "Outdated app versions and unpatched code create security gaps. Most stores never audit these unless something goes wrong. By then, customer data may already be at risk.",
-    cost: "A single security incident costs more in damage control and lost trust than a full year of maintenance.",
+    cost: "One security incident costs more to clean up than a full year of monthly maintenance. And it destroys customer trust.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
         <rect x="8" y="3" width="12" height="22" rx="3" stroke="currentColor" strokeWidth="1.5"/>
@@ -172,7 +172,7 @@ const SMS_PAINS = [
   {
     name: "Tracking Breaks Silently After Every Theme Update",
     desc: "GA4 events, Meta pixels, and conversion tracking code live inside theme files. When you update your theme, tracking can break without any visible warning. Your data looks fine, but conversions stop registering correctly.",
-    cost: "Broken tracking sends ad budget to channels that appear to perform but are not being measured correctly.",
+    cost: "Broken tracking sends ad budget to channels that look like they're working but aren't. You scale what's losing you money.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
         <path d="M14 4L2 24h24L14 4z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -187,23 +187,23 @@ const SMS_PAINS = [
 const SMS_ITEMS = [
   {
     title: "Monthly Store Health Audit",
-    body: "We run a full diagnostic of your store every month: page speed scores, broken links, app conflicts, JavaScript errors, checkout flow, and tracking accuracy. You receive a written report of every issue found and what we did about it. Nothing is left undocumented.",
+    body: "The foundation of our shopify maintenance service: a full monthly diagnostic covering page speed, broken links, app conflicts, JavaScript errors, checkout flow, and tracking accuracy. You get a written report of every issue found and every fix applied. We document everything.",
   },
   {
     title: "Bug Fixes and Troubleshooting",
-    body: "When something breaks, a broken filter, a layout issue, a checkout error, an app conflict, we fix it within your monthly hours. No separate invoice, no scoping call, no waiting for a quote. Most bugs are resolved within one business day of being reported.",
+    body: "When something breaks, a broken filter, a layout issue, a checkout error, an app conflict, we fix it within your monthly hours. No separate invoice, no scoping call, no waiting for a quote. We resolve most bugs within one business day.",
   },
   {
     title: "Speed and Performance Optimization",
-    body: "We track your Core Web Vitals monthly and address what is dragging your scores down: unoptimized images, render-blocking scripts, unused app JavaScript, and lazy loading gaps. Faster stores convert better and rank higher. We measure and report every change.",
+    body: "We track Core Web Vitals monthly as part of our shopify website maintenance checks and fix what drags your scores down: unoptimized images, render-blocking scripts, unused app JavaScript, and lazy loading gaps. Faster stores convert better and rank higher. We measure and report every change.",
   },
   {
     title: "Theme Updates and Compatibility Management",
-    body: "When Shopify releases platform updates or you need to update your theme version, we manage the process: testing in a development environment first, preserving your customizations, and verifying nothing breaks before anything goes live on your store.",
+    body: "When Shopify releases platform updates or you need to update your theme version, we run it through a development environment first. We preserve your customizations, test everything, and push nothing live until we have confirmed it works.",
   },
   {
     title: "App Management and Conflict Resolution",
-    body: "We review every installed app's impact on your store: unused apps adding page weight, conflicting scripts, apps with known vulnerabilities in older versions. We update, remove, or replace apps to keep your store clean and your load times fast.",
+    body: "App management is part of every shopify store maintenance plan we run. We review every installed app's impact: unused apps adding page weight, conflicting scripts, apps with known vulnerabilities in older versions. We update, remove, or replace apps to keep your store clean and your load times fast.",
   },
   {
     title: "Security Monitoring and Hardening",
@@ -211,7 +211,7 @@ const SMS_ITEMS = [
   },
   {
     title: "On-Demand Development Hours",
-    body: "Each plan includes development hours for changes that come up during the month: new sections, conversion improvements, feature additions, or integrations. Hours are tracked in your monthly report so you see exactly where they went and what they produced.",
+    body: "Each shopify maintenance services plan includes development hours for work that comes up during the month: new sections, conversion improvements, feature additions, or integrations. Your monthly report shows exactly where every hour went and what it produced.",
   },
   {
     title: "Monthly Reporting and Full Transparency",
@@ -226,7 +226,7 @@ const NATIVE_PROS = [
   "Shopify-only team that knows where platform updates cause breaks.",
   "Guaranteed response time: no searching for available freelancers when things break.",
   "Full written record of every change made, every hour used, every issue found.",
-  "Platform updates tested in development before going live on your store.",
+  "We test platform updates in development before anything goes live on your store.",
 ];
 const BUILDER_CONS = [
   { text: "Issues surface when a customer complains or sales data drops.", warn: true  },
@@ -240,44 +240,44 @@ const BUILDER_CONS = [
 /* ── FAQs ── */
 const FAQS = [
   {
-    q: "What does Shopify maintenance and support include each month?",
-    a: "Every engagement covers a monthly store health audit, bug fixes and troubleshooting within your allocated hours, performance monitoring, security reviews, app management, and a written report of everything completed. Development hours in your plan can be used for any agreed task: fixes, small features, conversion tweaks, or content updates.",
+    q: "What does your Shopify maintenance service include each month?",
+    a: "Our shopify maintenance service covers a monthly store health audit, bug fixes and troubleshooting within your allocated hours, performance monitoring, security reviews, app management, and a written report of everything completed. Development hours in your plan can be used for any agreed task: fixes, small features, conversion tweaks, or content updates.",
   },
   {
-    q: "How is this different from Shopify's own support?",
-    a: "Shopify's support team handles billing questions and platform-level issues. They cannot help with custom theme code, third-party app conflicts, performance optimization, or development work. We cover everything Shopify's support doesn't touch.",
+    q: "How do your Shopify maintenance services differ from Shopify's own support?",
+    a: "Shopify's support team handles billing questions and platform-level issues. They cannot help with custom theme code, third-party app conflicts, performance optimization, or development work. Our shopify maintenance services cover everything Shopify's support doesn't touch.",
   },
   {
-    q: "What happens when there is an emergency outside business hours?",
-    a: "Checkout errors, broken payment flows, and site downtime are treated as emergencies regardless of when they happen. Clients on our retainer get a direct contact line for urgent issues that cannot wait until the next business day.",
+    q: "What happens when there is a store emergency outside business hours?",
+    a: "Checkout errors, broken payment flows, and site downtime get treated as emergencies regardless of when they happen. Clients on retainer get a direct contact line for urgent issues that cannot wait until the next business day.",
   },
   {
     q: "Can you work alongside our existing developer or agency?",
-    a: "Yes. We work alongside in-house developers and other agencies regularly. We agree on scope and access boundaries upfront so there are no conflicts. Many clients use us specifically to handle the ongoing monitoring and maintenance their existing developer does not have capacity for.",
+    a: "Yes. We work alongside in-house developers and other agencies regularly. We agree on scope and access boundaries upfront so there are no conflicts. Many clients use us specifically to handle the ongoing shopify support and maintenance their existing developer does not have capacity for.",
   },
   {
-    q: "What does onboarding look like and how long does it take?",
-    a: "Onboarding takes one to two weeks. We start with a full store audit covering speed, code quality, security, tracking, and your app stack. We deliver a written findings report before any work begins. You approve the priority plan before we touch your store.",
+    q: "How do I get started with a Shopify maintenance and support service?",
+    a: "Getting started with our shopify maintenance and support service takes one to two weeks of onboarding. We start with a full store audit covering speed, code quality, security, tracking, and your app stack. We deliver a written findings report before any work begins. You approve the priority plan before we touch your store.",
   },
   {
-    q: "Do you work with custom theme code?",
-    a: "Yes. All of our developers work directly in Shopify Liquid and JavaScript. We handle custom themes, custom sections, and legacy code from previous developers. We document what we find and what we change so the next person who works on your store is not starting from zero.",
+    q: "What is Shopify website maintenance and why does my store need it?",
+    a: "Shopify website maintenance is the ongoing work that keeps your store running correctly after every app update, theme change, and platform release. It covers page speed, bug fixes, security reviews, tracking verification, and compatibility between your theme and apps. Most stores skip it until something breaks visibly. By then the cost in lost sales or emergency dev fees is always higher than what a structured shopify maintenance service costs monthly. Without regular care, Shopify stores degrade slowly: performance drops, app conflicts pile up, and security gaps sit undetected until they become incidents.",
   },
   {
-    q: "How do you handle Shopify platform updates?",
-    a: "We track Shopify's platform changelog and test updates in a development environment before they go live on your store. For theme updates, we run a full comparison between the current and updated version, preserve your customizations, and verify nothing breaks before the update is pushed live.",
+    q: "How do you handle Shopify platform and theme updates?",
+    a: "We track Shopify's platform changelog and test updates in a development environment before anything goes live. For theme updates, we compare the current and updated version, preserve your customizations including custom Liquid and JavaScript, and confirm nothing breaks before we push live. We document all custom code so the next developer on your store starts with context, not a blank slate.",
   },
   {
-    q: "What does the monthly report include?",
+    q: "What does the monthly Shopify maintenance report include?",
     a: "The monthly report covers every task completed with hours logged, issues found during the health audit, current performance benchmarks including Core Web Vitals and page speed, a security review summary, and a plan for the following month. You never have to ask what we did. It is already documented.",
   },
   {
-    q: "Can we cancel at any time?",
+    q: "Can we cancel our Shopify maintenance service at any time?",
     a: "Yes. We operate on a rolling monthly basis with 30 days notice. No lock-in, no cancellation fees. We would rather earn the renewal every month than hold clients to a contract they no longer want.",
   },
   {
-    q: "Do unused development hours roll over to the next month?",
-    a: "Unused hours do not roll over. Monthly hours are priced to reflect the monitoring, audit, and reporting infrastructure we maintain regardless of task volume in any given month. If you consistently have hours left over, we will recommend adjusting your plan down to a better fit.",
+    q: "Do unused hours in your Shopify maintenance packages roll over to the next month?",
+    a: "Unused hours do not roll over. Our shopify maintenance packages are priced to reflect the monitoring, audit, and reporting infrastructure we maintain regardless of task volume in any given month. If you consistently have hours left over, we will recommend adjusting your plan down to a better fit.",
   },
 ];
 
@@ -319,22 +319,21 @@ export default function Page() {
           style={{ maxWidth: "1320px", padding: "60px 20px" }}
         >
           <div>
-            <span className="std-badge">Shopify Maintenance &amp; Support Agency</span>
+            <span className="std-badge">Shopify Maintenance Services &amp; Support</span>
             <h1 className="std-hero-h1 font-bold mt-5" style={{ color: C_WHITE, fontSize: "48px", lineHeight: 1.15, margin: "20px 0 0" }}>
-              Shopify Maintenance and Support{" "}
-              That{" "}
+              Shopify Maintenance Services and Support{" "}
               <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                Catches Problems Before Your Customers Do
+                That Catch Problems Before Your Customers Do
               </span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
-              Most Shopify stores run on code that breaks silently after every app update, theme change, or platform release. We monitor, audit, and fix your store on a monthly retainer so you find out about problems from us, not from a customer complaint.
+              Every app update, theme change, and platform release can break your store without any visible warning. Our shopify maintenance services audit monthly, fix bugs on retainer, and monitor performance continuously so you hear about problems from us, not from a customer.
             </p>
             <div className="std-hero-stats">
               {[
                 { number: "150+",  label: "Stores Maintained" },
-                { number: "9/10",  label: "Issues Caught Proactively" },
-                { number: "24/7",  label: "Store Monitoring" },
+                { number: "24hr",  label: "Avg Bug Fix" },
+                { number: "18mo+", label: "Avg Retainer" },
                 { number: "4.9★", label: "Client Rating" },
               ].map((s) => (
                 <div key={s.label} className="std-hero-stat-item">
@@ -377,7 +376,7 @@ export default function Page() {
             150+ Shopify Stores Maintained. Here&apos;s Who Trusts Us.
           </h2>
           <p className="text-center" style={{ color: C_TEXT, fontSize: 16, lineHeight: "26px", margin: "10px 0 0", textAlign: "center" }}>
-            From DTC startups to global brands. Every store we maintain and support runs on Shopify. No WordPress, no WooCommerce.
+            From DTC startups to global brands. Our shopify support and maintenance services run exclusively on Shopify. No WordPress, no WooCommerce.
           </p>
 
           <div className="std-trust-carousel" style={{ marginTop: 20, width: "100%", overflow: "hidden" }}>
@@ -408,7 +407,7 @@ export default function Page() {
               6 Ways a Neglected Shopify Store Quietly Loses You Revenue
             </h2>
             <p className="sms-feat-desc">
-              Most stores have no one checking whether things still work after every app update, theme change, and Shopify release. These are the problems we find on almost every store we audit.
+              Most stores have no one checking whether things still work after each app update, theme change, or platform release. These are the problems we find on almost every store we audit.
             </p>
           </div>
 
@@ -451,10 +450,10 @@ export default function Page() {
           <div className="std-solutions-left" style={{ position: "sticky", top: "120px", alignSelf: "start" }}>
             <span className="std-label" style={{ color: C_TEXT }}>What&apos;s Included</span>
             <h2 style={{ color: C_DARK, fontSize: 42, fontWeight: 700, lineHeight: 1.2, margin: "12px 0 0" }}>
-              What&apos;s Included in Our Shopify Maintenance and Support Plans
+              What&apos;s Included in Our Shopify Maintenance Services
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              Every engagement covers a monthly store audit, bug fixes within your allocated hours, performance monitoring, security reviews, and a written report of everything completed. We do not hand over a month without showing our work.
+              Every shopify maintenance service includes a monthly store audit, bug fixes within your hours, performance monitoring, security reviews, and a written report of everything done. We never close a month without showing our work.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
               Book a Free Store Audit
@@ -478,14 +477,14 @@ export default function Page() {
             className="text-[28px] sm:text-[36px] md:text-[32px] lg:text-[42px] font-bold max-sm:font-semibold"
             style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", lineHeight: 1.2, margin: 0 }}
           >
-            How Our Shopify Maintenance and Support Process Works
+            How Our Shopify Maintenance Service and Support Process Works
           </h2>
 
           <p
             className="text-[16px] max-sm:text-[14px]"
             style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", marginTop: "16px", lineHeight: 1.65 }}
           >
-            Five steps from your first audit to an ongoing partnership that stays ahead of problems.
+            Five steps from your first audit to a shopify maintenance service running on a fixed monthly cycle.
             <br className="hidden sm:block lg:hidden" />{" "}
             Most stores are fully onboarded within two weeks.
           </p>
@@ -493,9 +492,9 @@ export default function Page() {
           {/* Row 1 — 3 cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-[20px] md:max-lg:mt-[16px]">
             {[
-              { step: "01.", title: "Audit", desc: "We run a full diagnostic of your store before touching anything: speed, security, tracking, code quality, and app stack. Every issue is documented in a written findings report." },
+              { step: "01.", title: "Audit", desc: "We run a full diagnostic before touching anything: speed, security, tracking, code quality, and app stack. We document every issue in a written findings report." },
               { step: "02.", title: "Priority Plan", desc: "We present a prioritized list of what needs immediate fixing, what to optimize over time, and what to monitor ongoing. You approve the plan before work starts." },
-              { step: "03.", title: "Onboarding", desc: "We resolve the highest-priority issues in the first two weeks and set up monitoring infrastructure for ongoing health checks." },
+              { step: "03.", title: "Onboarding", desc: "We fix the highest-priority issues in the first two weeks and set up monitoring for ongoing health checks." },
             ].map(({ step, title, desc }) => (
               <div key={step} className="p-[30px] max-sm:p-[15px] md:max-lg:p-[16px] lg:max-xl:p-[20px]" style={{ background: "#FFFFFF", borderRadius: "16px", boxSizing: "border-box" }}>
                 <p className="text-[50px] max-sm:text-[35px] md:max-lg:text-[40px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "rgba(0,0,0,0.12)", lineHeight: 1, margin: "0 0 10px" }}>{step}</p>
@@ -512,7 +511,7 @@ export default function Page() {
           >
             {[
               { step: "04.", title: "Monthly Cycle", desc: "Every month: health audit, bug fixes, development work within your hours, and a written report of everything completed." },
-              { step: "05.", title: "Ongoing Partnership", desc: "The longer we maintain your store, the better we know it. Most issues get caught before they affect customers because we know where to look." },
+              { step: "05.", title: "Ongoing Partnership", desc: "The longer we maintain your store, the better we know it. We catch most issues before they reach customers because we know exactly where Shopify breaks." },
             ].map(({ step, title, desc }) => (
               <div key={step} className="p-[30px] max-sm:p-[15px] md:max-lg:p-[16px] lg:max-xl:p-[20px]" style={{ background: "#FFFFFF", borderRadius: "16px", boxSizing: "border-box" }}>
                 <p className="text-[50px] max-sm:text-[35px] md:max-lg:text-[40px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "rgba(0,0,0,0.12)", lineHeight: 1, margin: "0 0 10px" }}>{step}</p>
@@ -535,7 +534,7 @@ export default function Page() {
             </span>
           </h2>
           <p style={{ fontFamily: "Poppins, sans-serif", fontSize: 16, lineHeight: 1.75, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
-            Most stores handle maintenance reactively: something breaks, they find a developer, they wait, they pay. Here is what that approach costs you.
+            Most stores run shopify website maintenance reactively. Something breaks, they find a developer, they wait, they pay. Here is what that costs.
           </p>
 
           <div className="sms-compare-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: 20, marginTop: 10 }}>
@@ -599,7 +598,7 @@ export default function Page() {
         <div className="sms-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
           <h2 className="sms-results-heading">Results From the Stores We Maintain</h2>
           <p className="sms-results-desc">
-            Not projections. Real outcomes from Shopify stores where ongoing maintenance and platform optimization compounded into measurable revenue growth.
+            Not projections. Real numbers from stores where consistent monthly maintenance and platform work produced measurable revenue growth.
           </p>
           <CaseStudySlider slides={CASE_STUDY_SLIDES} intervalMs={6000} showDots={false} />
         </div>
@@ -623,34 +622,34 @@ export default function Page() {
           <h2 className="sms-why-heading">
             Why Brands Choose Ecomm Wizards for{" "}<br className="sms-why-br-lg" />
             <span style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Shopify Maintenance and Support
+              Shopify Maintenance Services and Support
             </span>
           </h2>
 
           <p className="sms-why-desc">
-            We have maintained Shopify stores for 150+ brands. Here is what separates a structured monthly retainer from hiring a developer when something breaks:
+            We have run shopify maintenance services for 150+ brands. Here is what separates a structured monthly retainer from calling a developer when something breaks:
           </p>
 
           <div className="sms-why-grid">
             {[
               {
                 title: "Shopify-Only Focus",
-                desc: (<>Every store we maintain runs on Shopify. We know where the platform breaks after updates, which apps conflict, and how Shopify&apos;s checkout handles edge cases that trip up developers who treat it like any other platform.</>),
+                desc: (<>Every shopify maintenance service we run is for Shopify-only stores. We know where the platform breaks after updates, which apps conflict, and how Shopify&apos;s checkout handles edge cases that trip up developers who treat it like any other platform.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4 l3 2.4 l3.7 -0.6 l1.6 3.4 l3.4 1.6 l-0.6 3.7 l2.4 3 l-2.4 3 l0.6 3.7 l-3.4 1.6 l-1.6 3.4 l-3.7 -0.6 l-3 2.4 l-3 -2.4 l-3.7 0.6 l-1.6 -3.4 l-3.4 -1.6 l0.6 -3.7 l-2.4 -3 l2.4 -3 l-0.6 -3.7 l3.4 -1.6 l1.6 -3.4 l3.7 0.6 z" /><polyline points="11,16.5 14.5,20 21,12.5" /></svg>),
               },
               {
                 title: "Proactive, Not Reactive",
-                desc: (<>We catch the majority of issues before they reach your customers. Monthly audits, performance monitoring, and Shopify changelog reviews mean you hear about problems from us first, not from a customer support ticket.</>),
+                desc: (<>We catch most issues before your customers see them. Monthly audits, performance monitoring, and Shopify changelog reviews mean you hear about problems from us, not from a support ticket.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="16" cy="16" r="12"/><path d="M10 16l4 4 8-8"/></svg>),
               },
               {
                 title: "Full Transparency Every Month",
-                desc: (<>Every task, every hour, every fix is documented in your monthly report. You see what was done, what it cost in hours, and what we found. Nothing we do is invisible and nothing is billed without a record.</>),
+                desc: (<>Every task, every hour, every fix goes into your monthly report. You see exactly what we did, what it cost in hours, and what we found. Nothing is billed without a record.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="6" width="24" height="8" rx="2"/><rect x="4" y="18" width="24" height="8" rx="2"/><circle cx="8" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="8" cy="22" r="1" fill="currentColor" stroke="none"/></svg>),
               },
               {
                 title: "Fast Response When It Matters",
-                desc: (<>Routine work runs on a planned monthly cycle. Emergencies, broken checkout, payment failures, site downtime, get treated as emergencies. We do not leave you waiting when traffic is live and something is broken.</>),
+                desc: (<>Routine work runs on a planned monthly cycle. Broken checkout, payment failures, and site downtime get our immediate attention. We do not leave you waiting when traffic is live and something is broken.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="6" y="3" width="18" height="24" rx="2"/><path d="M10 10h12M10 15h12M10 20h7"/></svg>),
               },
               {
@@ -660,7 +659,7 @@ export default function Page() {
               },
               {
                 title: "Long-Term Partnership",
-                desc: (<>Most of our clients stay on retainer for 18 months or more. The longer we maintain your store, the better we know it. We build institutional knowledge of your store, not just task lists. <span className="sms-why-hl">We stay until it&apos;s right.</span></>),
+                desc: (<>Most of our clients stay on retainer for 18 months or more. The longer we maintain your store, the better we know it. We learn your store&apos;s edge cases, your custom code, your history. <span className="sms-why-hl">We stay until it&apos;s right.</span></>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M16 3L5 8v9c0 6.1 4.7 11.8 11 13 6.3-1.2 11-6.9 11-13V8L16 3z"/><path d="M11 16l3 3 7-7"/></svg>),
               },
             ].map((card) => (
@@ -673,7 +672,7 @@ export default function Page() {
           </div>
 
           <p className="sms-why-closing">
-            Every store we maintain gets a monthly audit, documented fixes, and a written report. We know where Shopify breaks after updates. We catch problems before your customers do.
+            Every shopify maintenance service we run includes a monthly audit, documented fixes, and a written report. We know where Shopify breaks after updates. We catch problems before your customers do.
           </p>
 
           <div style={{ display: "flex", justifyContent: "center" }}>
@@ -789,7 +788,7 @@ export default function Page() {
         aria-label="Frequently asked questions about Shopify maintenance and support"
       >
         <div className="sms-faq__inner mx-auto" style={{ maxWidth: "1100px" }}>
-          <h2 className="sms-faq__title">Shopify Maintenance &amp; Support FAQs</h2>
+          <h2 className="sms-faq__title">Shopify Maintenance Services FAQs</h2>
 
           <SmsFaqAccordion faqs={FAQS} />
         </div>
