@@ -54,7 +54,7 @@ const NAV: NavItem[] = [
       { label: "Store Audit",           href: "/shopify-store-audit",                             description: "Expert review of your entire store" },
       { label: "CRO Agency",            href: "/shopify-conversion-rate-optimization-cro-agency", description: "Turn more visitors into buyers" },
       { label: "A/B Testing",           href: "/a-b-testing",                                    description: "Data-driven experimentation" },
-      { label: "Analytics & Tracking",  href: "/shopify-analytics-and-tracking-setup",            description: "GA4, GTM, pixels — done right" },
+      { label: "Analytics & Tracking",  href: "/services/shopify-analytics-and-tracking-setup",  description: "GA4, GTM, pixels — done right" },
       { label: "SEO Agency",            href: "/services/shopify-seo-agency",                     description: "Organic growth for Shopify stores" },
       { label: "Maintenance & Support", href: "/shopify-maintenance-and-support",                 description: "Ongoing care for your store" },
     ],
@@ -76,7 +76,7 @@ const NAV: NavItem[] = [
       { label: "Shopify SEO",          href: "/services/shopify-seo-agency",                     description: "Rank higher, earn more organic traffic" },
       { label: "CRO Agency",           href: "/shopify-conversion-rate-optimization-cro-agency", description: "Systematic conversion improvements" },
       { label: "Landing Page Design",  href: "/shopify-landing-page-design",                    description: "Campaign pages built to convert" },
-      { label: "Analytics & Tracking", href: "/shopify-analytics-and-tracking-setup",            description: "Full-funnel measurement setup" },
+      { label: "Analytics & Tracking", href: "/services/shopify-analytics-and-tracking-setup",  description: "Full-funnel measurement setup" },
     ],
   },
 ];

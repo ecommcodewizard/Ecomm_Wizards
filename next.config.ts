@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         destination: "/services/shopify-seo-agency",
         permanent: true,
       },
+      {
+        source: "/shopify-analytics-and-tracking-setup",
+        destination: "/services/shopify-analytics-and-tracking-setup",
+        permanent: true,
+      },
     ];
   },
 };

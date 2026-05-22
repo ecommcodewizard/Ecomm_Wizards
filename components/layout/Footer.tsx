@@ -68,7 +68,7 @@ const GET_STARTED = [
   { label: "Shopify Integrations (ERP, CRM, 3PL)",href: "/shopify-integrations-erp-crm-3pl-etc" },
   { label: "Shopify App Setup & Optimisation",     href: "/services/shopify-app-setup-and-app-optimization" },
   { label: "Shopify 2.0 Development",             href: "/services/shopify-2-0-development" },
-  { label: "Shopify Analytics and Tracking Setup", href: "/shopify-analytics-and-tracking-setup" },
+  { label: "Shopify Analytics and Tracking Setup", href: "/services/shopify-analytics-and-tracking-setup" },
   { label: "Klaviyo Audit",                        href: "/klaviyo-audit" },
 ];
 
