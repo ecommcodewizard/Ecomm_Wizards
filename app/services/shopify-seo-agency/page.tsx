@@ -373,7 +373,7 @@ export default function Page() {
               height={480}
               priority
               className="sse-hero-img"
-              style={{ width: "100%", height: "auto", borderRadius: "16px", display: "block" }}
+              style={{ width: "100%", height: "420px", objectFit: "cover", borderRadius: "16px", display: "block" }}
             />
           </div>
         </div>
@@ -834,9 +834,9 @@ export default function Page() {
       <style dangerouslySetInnerHTML={{ __html: `
         /* ── Hero image ── */
         .sse-hero-img-wrap { display: flex; align-items: center; justify-content: center; }
-        .sse-hero-img { width: 100%; height: auto; border-radius: 16px; display: block; box-shadow: 0 24px 64px rgba(0,0,0,0.45); }
+        .sse-hero-img { width: 100%; height: 420px; object-fit: cover; border-radius: 16px; display: block; box-shadow: 0 24px 64px rgba(0,0,0,0.45); }
         @media (max-width: 1023px) { .sse-hero-img-wrap { margin-top: 8px; } }
-        @media (max-width: 640px) { .sse-hero-img { border-radius: 10px; } }
+        @media (max-width: 640px) { .sse-hero-img { height: 280px !important; border-radius: 10px; } }
 
         /* ── Trust bar ── */
         .std-trust-track { display: flex; align-items: center; gap: 80px; width: max-content; animation: sseTrustScroll 32s linear infinite; }
