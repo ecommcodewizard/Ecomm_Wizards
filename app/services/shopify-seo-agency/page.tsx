@@ -221,6 +221,10 @@ const SSE_ITEMS = [
     title: "SEO Reporting & Monitoring",
     body: "Monthly reports covering keyword rankings, organic traffic, revenue attribution from GA4, and technical health. You see what changed, why it changed, and what we're doing next. No vanity metrics — just numbers that connect to revenue.",
   },
+  {
+    title: "AI Search Optimization",
+    body: "Google AI Overviews now appear above traditional results for a large share of commercial queries. We optimize your content structure, FAQ markup, and entity signals so Google's AI pulls from your pages when answering relevant buyer queries. This includes structuring collection and blog content for AI extraction, implementing FAQ schema that feeds AI-generated answers, and building the brand signals that make AI systems recognize your store as an authority in your category.",
+  },
 ];
 
 /* ── Compare section data ── */
@@ -231,6 +235,7 @@ const NATIVE_PROS = [
   "Schema covers Product, Review, and BreadcrumbList — Shopify-specific patterns.",
   "Content strategy built around buyer intent across all three search stages.",
   "Link building targets ecommerce-relevant domains and collection pages, not just the homepage.",
+  "Optimizes content and schema for Google AI Overviews and AI search citations.",
 ];
 const BUILDER_CONS = [
   { text: "Applies the same SEO playbook across WordPress, WooCommerce, and Shopify.", warn: false },
@@ -239,6 +244,7 @@ const BUILDER_CONS = [
   { text: "Generic schema implementation missing Shopify-specific structured data.",     warn: false },
   { text: "Content briefs written without understanding ecommerce buying stages.",       warn: true  },
   { text: "Backlinks built to the homepage, not to the collection pages that rank.",     warn: true  },
+  { text: "No strategy for AI search visibility — traditional SEO playbook only.",       warn: true  },
 ];
 
 /* ── FAQs ── */
@@ -278,6 +284,14 @@ const FAQS = [
   {
     q: "How do you measure SEO success?",
     a: "Primary metrics are organic revenue and transactions from Google Analytics 4. Secondary metrics are keyword rankings for target queries, organic clicks and impressions from Google Search Console, and Core Web Vitals scores. We report all of this monthly with commentary on what changed and why — not a dashboard dump without explanation.",
+  },
+  {
+    q: "Do you optimize for Google AI Overviews and AI-powered search?",
+    a: "Yes. Google AI Overviews now appear above organic results for a significant share of commercial queries — and getting cited in an AI-generated answer drives clicks that never reach traditional rankings. We optimize your content structure, FAQ schema, and entity signals to earn citations in AI Overviews for the queries your buyers actually use. For stores where it's relevant, we also monitor brand visibility in ChatGPT and Perplexity.",
+  },
+  {
+    q: "What does AI search optimization actually involve?",
+    a: "Three things: structured content, schema, and entity recognition. AI systems extract answers from pages with clear question-and-answer-formatted content and correctly implemented FAQ and HowTo schema. Entity optimization means building enough brand signals — mentions, links, and structured data — that AI systems identify your store as an authority in your category. For Shopify specifically, this means optimizing collection and blog pages to answer the buyer questions AI Overviews pull content for.",
   },
   {
     q: "What is included in the monthly retainer?",

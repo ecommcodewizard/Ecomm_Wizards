@@ -309,8 +309,9 @@ export default function Page() {
             <span className="std-badge">Shopify App Setup &amp; Optimization Agency</span>
             <h1 className="std-hero-h1 font-bold mt-5" style={{ color: C_WHITE, fontSize: "48px", lineHeight: 1.15, margin: "20px 0 0" }}>
               Shopify App Setup and Optimization{" "}
+              That{" "}
               <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                That Keeps Your Store Fast
+                Keeps Your Store Fast
               </span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
@@ -344,7 +345,7 @@ export default function Page() {
 
           <div className="sao-hero-img-wrap">
             <Image
-              src="/images/Store performance.webp"
+              src="/images/Store%20performance.webp"
               alt="Shopify store performance dashboard showing app optimization results"
               width={640}
               height={480}
