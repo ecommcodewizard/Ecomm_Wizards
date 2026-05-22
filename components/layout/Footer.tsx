@@ -64,7 +64,7 @@ const GET_STARTED = [
   { label: "Shopify Plus Development",             href: "/services/shopify-plus-development" },
   { label: "Shopify SEO Agency",                   href: "/services/shopify-seo-agency" },
   { label: "Shopify Landing Page Design",          href: "/services/shopify-landing-page-design" },
-  { label: "Shopify Maintenance and Support",      href: "/shopify-maintenance-and-support" },
+  { label: "Shopify Maintenance and Support",      href: "/services/shopify-maintenance-and-support" },
   { label: "Shopify Integrations (ERP, CRM, 3PL)",href: "/shopify-integrations-erp-crm-3pl-etc" },
   { label: "Shopify App Setup & Optimisation",     href: "/services/shopify-app-setup-and-app-optimization" },
   { label: "Shopify 2.0 Development",             href: "/services/shopify-2-0-development" },

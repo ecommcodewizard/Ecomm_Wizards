@@ -18,6 +18,11 @@ const nextConfig: NextConfig = {
         destination: "/services/shopify-analytics-and-tracking-setup",
         permanent: true,
       },
+      {
+        source: "/shopify-maintenance-and-support",
+        destination: "/services/shopify-maintenance-and-support",
+        permanent: true,
+      },
     ];
   },
 };
