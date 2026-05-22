@@ -6,9 +6,9 @@ import SaoFaqAccordion from "./SaoFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 export const metadata: Metadata = {
-  title: "Shopify App Setup & Optimization | Faster Store, Better Conversions | Ecomm Wizards",
+  title: "Shopify App Setup Service | App Stack Optimization | Ecomm Wizards",
   description:
-    "150+ Shopify stores optimized. Expert app setup, conflict auditing, and performance optimization. Get a faster store and better tracking without adding more apps.",
+    "Shopify app setup and optimization for 150+ stores. We audit your full app stack, remove dead weight, and configure everything for faster pages, accurate tracking, and better conversions.",
 };
 
 const C_DARK  = "#000000";
@@ -217,20 +217,20 @@ const SAO_ITEMS = [
 
 /* ── Compare section data ── */
 const NATIVE_PROS = [
-  "Speed impact measured before any app goes live.",
-  "Configured for your product catalogue and audience, not default settings.",
-  "Full conflict audit across every installed app before and after changes.",
-  "Third-party performance testing with Lighthouse and WebPageTest.",
-  "Proactive monitoring with a documented rollback plan for every app.",
-  "Zero-downtime migrations with full data verification.",
+  "Speed impact tested before any app is installed or goes live.",
+  "Configured for your catalogue and audience, not generic defaults.",
+  "Full conflict audit across every installed app before and after.",
+  "Third-party performance testing via Lighthouse and WebPageTest.",
+  "Proactive monitoring with a rollback plan documented per app.",
+  "Zero-downtime app migrations with complete data verification.",
 ];
 const BUILDER_CONS = [
-  { text: "Install apps without measuring speed impact.",                        warn: false },
-  { text: "Use default settings designed for the average store, not yours.",     warn: false },
-  { text: "No cross-app conflict testing before going live.",                    warn: false },
-  { text: "Trust the app's own analytics to tell you if it's working.",         warn: false },
-  { text: "Fix problems after customers have already reported them.",            warn: true  },
-  { text: "Lose data during app migrations without a recovery plan.",           warn: true  },
+  { text: "Install apps without checking their speed impact on your store.",  warn: false },
+  { text: "Use default settings built for the average store, not yours.",      warn: false },
+  { text: "No conflict testing across apps before pushing changes live.",      warn: false },
+  { text: "Rely on the app's own analytics to tell you if it's working.",     warn: false },
+  { text: "Fix problems only after customers have already reported them.",     warn: true  },
+  { text: "Lose data during migrations with no rollback plan in place.",       warn: true  },
 ];
 
 /* ── FAQs ── */
@@ -244,11 +244,11 @@ const FAQS = [
     a: "It depends on your store's biggest constraint. If email revenue is low, a proper Klaviyo setup beats any new app. If cart abandonment is high, a well-configured upsell is worth more than a new review widget. We match app recommendations to your specific gaps, not a generic stack.",
   },
   {
-    q: "Can apps really slow down my store that much?",
+    q: "Can Shopify apps really slow down my store that much?",
     a: "Yes. A single poorly configured app can add 1–3 seconds to your Time to Interactive. Run Google PageSpeed Insights on your current store and check the Eliminate render-blocking resources warning — you will likely see app scripts listed. Speed is directly tied to conversion rate: a 1-second improvement typically lifts conversions 7–12%.",
   },
   {
-    q: "What does your audit actually look at?",
+    q: "What does your Shopify app setup audit cover?",
     a: "We review your full app list, measure each app's JavaScript payload and render-blocking impact, check for duplicate functionality across apps, flag any apps leaving orphaned scripts after uninstallation, and test for theme conflicts on your three most important page types.",
   },
   {
@@ -256,8 +256,8 @@ const FAQS = [
     a: "App-agnostic. We have worked with virtually every major Shopify app category — reviews, email, upsells, subscriptions, loyalty, analytics — and we recommend based on what performs, not what we are affiliated with. For reference: for email we typically recommend Klaviyo for stores doing $50K+/month, or Omnisend for earlier-stage stores. For reviews: Judge.me or Okendo. For upsells: ReConvert or Rebuy.",
   },
   {
-    q: "How long does a full app setup project take?",
-    a: "An audit and cleanup typically takes 3–5 business days. A full setup including new app configuration, migration, and documentation runs 7–14 days depending on complexity. We give you a specific timeline after the discovery call.",
+    q: "How long does a Shopify app setup project take?",
+    a: "An audit and cleanup typically takes 3–5 business days. A full Shopify app setup including new app configuration, migration, and documentation runs 7–14 days depending on complexity. We give you a specific timeline after the discovery call.",
   },
   {
     q: "What happens if an app conflicts with my theme?",
@@ -315,7 +315,7 @@ export default function Page() {
           style={{ maxWidth: "1320px", padding: "60px 20px" }}
         >
           <div>
-            <span className="std-badge">Certified Shopify App Optimization Agency</span>
+            <span className="std-badge">Shopify App Setup &amp; Optimization Agency</span>
             <h1 className="std-hero-h1 font-bold mt-5" style={{ color: C_WHITE, fontSize: "48px", lineHeight: 1.15, margin: "20px 0 0" }}>
               Shopify App Setup and Optimization{" "}
               <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
@@ -323,7 +323,7 @@ export default function Page() {
               </span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
-              We audit what&apos;s installed, remove what&apos;s dead weight, and configure the rest so your store loads fast, tracks accurately, and converts at its best.
+              We audit your full Shopify app stack, remove what&apos;s dead weight, and configure the rest so your pages load fast, your tracking fires correctly, and your store converts.
             </p>
             <div className="std-hero-stats">
               {[
@@ -387,7 +387,7 @@ export default function Page() {
         <div className="mx-auto" style={{ maxWidth: "1320px" }}>
           <div className="sao-feat-title-block">
             <h2 className="sao-feat-heading">
-              6 Ways Apps Are Costing Your Store Money Right Now
+              6 Ways Your Shopify Apps Are Costing You Money Right Now
             </h2>
             <p className="sao-feat-desc">
               Most stores run 15–30 apps. A third are duplicates. Another third slow every page load. Here&apos;s what that actually costs.
@@ -418,7 +418,9 @@ export default function Page() {
           .sao-feat-desc-text { font-family: 'Poppins', sans-serif; font-size: 14px; color: #334155; line-height: 1.7; margin: 0; flex-grow: 1; }
           .sao-feat-roi { font-family: 'Poppins', sans-serif; font-size: 13px; color: #2A9555; line-height: 1.5; background: rgba(61,199,122,0.08); border-radius: 8px; padding: 10px 14px; border-left: 3px solid #3DC77A; margin-top: auto; }
           .sao-feat-roi-label { font-weight: 700; }
-          @media (min-width: 1024px) { .sao-feat-title-block { width: -moz-fit-content; width: fit-content; margin: 0 auto 8px; } .sao-feat-heading { max-width: none; white-space: nowrap; } .sao-feat-title-block .sao-feat-desc { max-width: 100%; margin-left: 0; margin-right: 0; } }
+          @media (min-width: 1024px) { .sao-feat-title-block { width: -moz-fit-content; width: fit-content; margin: 0 auto 8px; } .sao-feat-title-block .sao-feat-desc { max-width: 100%; margin-left: 0; margin-right: 0; } }
+          @media (min-width: 1024px) and (max-width: 1349px) { .sao-feat-title-block { width: 100% !important; } .sao-feat-heading { max-width: 100% !important; } }
+          @media (min-width: 1350px) { .sao-feat-heading { max-width: none; white-space: nowrap; } }
           @media (max-width: 1024px) { .sao-feat-heading { font-size: 32px !important; } .sao-feat-desc { font-size: 16px !important; margin-bottom: 24px !important; } .sao-feat-grid { grid-template-columns: repeat(2, 1fr) !important; } }
           @media (max-width: 768px) { .sao-feat-desc { margin-bottom: 16px !important; } }
           @media (max-width: 640px) { .sao-feat { padding: 40px 16px !important; } .sao-feat-heading { font-size: 26px !important; } .sao-feat-desc { font-size: 15px !important; } .sao-feat-grid { grid-template-columns: 1fr !important; } }
@@ -434,7 +436,7 @@ export default function Page() {
           <div className="std-solutions-left" style={{ position: "sticky", top: "120px", alignSelf: "start" }}>
             <span className="std-label" style={{ color: C_TEXT }}>What&apos;s Included</span>
             <h2 style={{ color: C_DARK, fontSize: 42, fontWeight: 700, lineHeight: 1.2, margin: "12px 0 0" }}>
-              What&apos;s Included in Every App Setup &amp; Optimization Project
+              What&apos;s Included in Every Shopify App Setup &amp; Optimization Project
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
               Every engagement covers an audit, configuration, speed testing, tracking setup, and 30 days of monitoring. No add-ons, no surprises.
@@ -461,14 +463,14 @@ export default function Page() {
             className="text-[28px] sm:text-[36px] md:text-[32px] lg:text-[42px] font-bold max-sm:font-semibold"
             style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", lineHeight: 1.2, margin: 0 }}
           >
-            How We Optimize Your Shopify App Stack
+            How Our Shopify App Setup Process Works
           </h2>
 
           <p
             className="text-[16px] max-sm:text-[14px]"
             style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", marginTop: "16px", lineHeight: 1.65 }}
           >
-            A clear five-step process from audit to optimized store.
+            Five steps from audit to a fully configured Shopify app stack.
             <br className="hidden sm:block lg:hidden" />{" "}
             Most projects complete in 7 to 14 days.
           </p>
@@ -512,13 +514,13 @@ export default function Page() {
         <div className="mx-auto" style={{ maxWidth: 1320, padding: "60px 0" }}>
 
           <h2 className="sao-compare-h2" style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(28px, 4.1vw, 42px)", fontWeight: 700, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
-            Professional App Setup vs.{" "}
+            Professional Shopify App Setup vs.{" "}
             <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Doing It Yourself
             </span>
           </h2>
           <p style={{ fontFamily: "Poppins, sans-serif", fontSize: 16, lineHeight: 1.75, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
-            DIY app management looks free until a conflict breaks your cart on a Friday night. Here&apos;s what professional setup actually prevents.
+            DIY Shopify app management looks free until a conflict breaks your cart on a Friday night. Here&apos;s what professional app setup actually prevents.
           </p>
 
           <div className="sao-compare-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: 20, marginTop: 10 }}>
@@ -604,14 +606,14 @@ export default function Page() {
         <div className="sao-why-inner mx-auto" style={{ maxWidth: "1320px" }}>
 
           <h2 className="sao-why-heading">
-            Why Brands Trust Ecomm Wizards With{" "}<br className="sao-why-br-lg" />
+            Why Brands Choose Ecomm Wizards for{" "}<br className="sao-why-br-lg" />
             <span style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Their Shopify App Stack
+              Shopify App Setup and Optimization
             </span>
           </h2>
 
           <p className="sao-why-desc">
-            We have audited and optimized app stacks for 150+ Shopify stores. Here is what separates our app setup service from every other agency:
+            We have completed Shopify app setup and optimization for 150+ stores. Here is what separates our service from every other agency:
           </p>
 
           <div className="sao-why-grid">
