@@ -17,6 +17,7 @@ const SERVICE_TAGS = [
   { label: "Shopify Theme Customizations",     href: "/shopify-theme-development" },
   { label: "Shopify Audit",                    href: "/shopify-store-audit" },
   { label: "Convert Figma to Shopify",         href: "/figma-to-shopify-conversion" },
+  { label: "Shopify Development Agency",        href: "/services/shopify-development-agency" },
   { label: "ERP Connections to Shopify",       href: "/services/shopify-integration-services" },
   { label: "Shopify App Development",          href: "/shopify-app-development" },
   { label: "Mobile App Development",           href: "/shopify-mobile-app-development" },
@@ -57,6 +58,7 @@ const MIGRATION = [
 ];
 
 const GET_STARTED = [
+  { label: "Shopify Development Agency",            href: "/services/shopify-development-agency" },
   { label: "Shopify UX and UI Design",             href: "/shopify-ux-and-ui-design" },
   { label: "Headless Shopify Agency",              href: "/headless-shopify-agency" },
   { label: "Shopify CRO Agency",                   href: "/shopify-conversion-rate-optimization-cro-agency" },
