@@ -354,7 +354,7 @@ export default function Page() {
 
           <div className="si-hero-img-wrap">
             <Image
-              src="/images/Store performance.webp"
+              src="/images/erp-banner-image_1024x1024.webp"
               alt="Shopify integration services dashboard showing live ERP and CRM connections"
               width={640}
               height={480}
