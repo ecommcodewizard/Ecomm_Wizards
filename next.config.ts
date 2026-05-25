@@ -23,6 +23,11 @@ const nextConfig: NextConfig = {
         destination: "/services/shopify-maintenance-and-support",
         permanent: true,
       },
+      {
+        source: "/services/shopify-integrations",
+        destination: "/services/shopify-integration-services",
+        permanent: true,
+      },
     ];
   },
 };
