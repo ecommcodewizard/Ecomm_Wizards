@@ -75,6 +75,17 @@ const CASE_STUDIES = [
     description: "America's top-rated performance sock brand rebuilt their Shopify theme from scratch with custom PLPs, dynamic PDPs, and metafield-driven automation that eliminated recurring manual overhead and grew add-to-cart rate 32%.",
   },
   {
+    brand: "Dryrobe",
+    metric: "+89%",
+    metricLabel: "Online Revenue",
+    tags: ["Shopify Plus", "Custom Theme", "Internationalisation"],
+    industry: "Outdoor & Sports",
+    image: "/images/Case%20studies/Dryrobe%20hero%20section.webp",
+    video: "/images/Case%20studies/dryrobe%20video.mp4",
+    href: "/case-studies/dryrobe-shopify-plus-redesign",
+    description: "The outdoor apparel brand consolidated three separate Shopify stores into a single Shopify Plus build with full internationalisation, a custom product finder, and brand storytelling woven into the store architecture. Online revenue grew 89% in the first year.",
+  },
+  {
     brand: "Capelli Sports",
     metric: "+24%",
     metricLabel: "Conversion Rate",
@@ -105,8 +116,8 @@ const TRUST_LOGOS = [
 const SDA_PAINS = [
   {
     name: "Slow Theme Dragging Down Your Conversion Rate",
-    desc: "Your theme is bloated with unused app scripts and unoptimised assets. Every extra second of load time costs you conversion. LCP above 2.5 seconds and you are losing buyers before they see your product.",
-    cost: "At £2M GMV, a 0.5% conversion lift from speed work alone is worth £50,000 in annual revenue. Most stores leave it on the table.",
+    desc: "Your theme carries unused app scripts and unoptimised assets that slow every page load. Every extra second costs you conversion. An LCP above 2.5 seconds means buyers leave before they see your first product image.",
+    cost: "At $2M GMV, a 0.5% conversion lift from speed work alone is worth $50,000 in annual revenue. Most stores leave it on the table.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
         <circle cx="14" cy="14" r="11" stroke="currentColor" strokeWidth="1.5"/>
@@ -129,7 +140,7 @@ const SDA_PAINS = [
   },
   {
     name: "Features Your Business Needs That No Shopify App Covers",
-    desc: "Custom product configurators, trade pricing, bundle builders, bespoke checkout flows — these cannot be delivered by installing an app. If your product or business model has any complexity, you need custom development.",
+    desc: "Custom product configurators, trade pricing, bundle builders, custom checkout flows: these cannot be delivered by installing an app. If your product or business model has any complexity, you need custom Shopify development.",
     cost: "Every workaround app adds to your monthly SaaS bill, slows your store, and introduces a dependency on a vendor you do not control.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
@@ -138,7 +149,7 @@ const SDA_PAINS = [
     ),
   },
   {
-    name: "Migration Risk — Downtime, SEO Loss, and Broken Data",
+    name: "Migration Risk: Downtime, SEO Loss, and Broken Data",
     desc: "Moving from WooCommerce, Magento, or BigCommerce without a structured plan means downtime, lost search rankings, broken redirects, and corrupted order history. Most agencies underestimate the complexity.",
     cost: "A poorly executed migration can cost more in lost organic traffic than the entire migration project cost. Stores lose 40-60% of organic rankings from broken redirects alone.",
     icon: (
@@ -151,7 +162,7 @@ const SDA_PAINS = [
   {
     name: "App Bloat Killing Load Time and Monthly Cost",
     desc: "The average Shopify store installs 6-12 apps over its lifetime. Each one adds scripts to every page load. Overlapping and unused apps are one of the leading causes of Core Web Vitals failures.",
-    cost: "Each installed app averages £30-£60 per month. Ten apps costs £3,600-£7,200 annually — and most stores run several that deliver no measurable impact.",
+    cost: "Each installed app averages $30-$60 per month. Ten apps costs $3,600-$7,200 annually. Most stores run several that deliver no measurable impact.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
         <rect x="4" y="4" width="8" height="8" rx="1.5" stroke="currentColor" strokeWidth="1.5"/>
@@ -164,7 +175,7 @@ const SDA_PAINS = [
   {
     name: "No Reliable Development Partner for Post-Launch Work",
     desc: "Your store launched, the agency moved on, and now every change requires finding a freelancer, briefing them from scratch, and hoping they understand your Shopify setup. The cost accumulates quietly.",
-    cost: "Merchants without a retained development partner spend an average of 3x more on ad hoc fixes than those with an ongoing agency relationship — and see less improvement per pound spent.",
+    cost: "Merchants without a retained development partner spend an average of 3x more on ad hoc fixes than those with an ongoing Shopify development agency relationship, and see less improvement per pound spent.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
         <circle cx="14" cy="10" r="5" stroke="currentColor" strokeWidth="1.5"/>
@@ -179,15 +190,15 @@ const SDA_PAINS = [
 const SDA_ITEMS = [
   {
     title: "Custom Shopify Theme Development",
-    body: "Every pixel of your store designed and built from scratch against your brand guidelines. Custom Liquid components, section schema, metafield architecture, and mobile-first responsive build. No template constraints. No workaround CSS. We design for your conversion goals, not for a theme demo. Your store will not look like anyone else's.",
+    body: "Every page of your store designed and built from scratch to your brand guidelines. Custom Liquid components, section schema, metafield architecture, and mobile-first build. This is what custom Shopify development actually means: no template constraints, no workaround CSS, no design decisions inherited from a theme vendor. Your store will not look like any other store.",
   },
   {
     title: "Shopify Plus Development",
-    body: "Shopify Plus unlocks checkout extensibility, Shopify Functions, multi-store management via the Organisation Admin, and enterprise-grade automation through Shopify Flow. We build on every Plus-exclusive feature: custom checkout UI extensions, B2B wholesale channels, Markets for multi-currency and multi-region, and Launchpad for campaign automation. Built for stores doing serious volume.",
+    body: "Shopify Plus gives you checkout extensibility, Shopify Functions, multi-store management via the Organisation Admin, and automation through Shopify Flow. As a Shopify Plus development agency, we build on every Plus-exclusive feature: custom checkout UI extensions, B2B wholesale channels, Markets for multi-currency and multi-region, and Launchpad for campaign automation. The right build for stores doing serious volume.",
   },
   {
     title: "Shopify Store Migration & Replatforming",
-    body: "Migrate from WooCommerce, Magento, BigCommerce, Salesforce Commerce Cloud, or any custom platform. Full product, customer, and order history migration. 301 redirect mapping for every URL. SEO equity preservation as the primary goal. Zero downtime cut-over. We have migrated stores with 500,000+ SKUs and retained 95%+ of organic ranking positions through the transition.",
+    body: "Migrate from WooCommerce, Magento, BigCommerce, Salesforce Commerce Cloud, or any custom platform to Shopify. Full product, customer, and order history migration. 301 redirect mapping for every URL. SEO preservation is treated as the primary goal throughout the project, not an afterthought. Zero downtime cut-over. We have migrated stores with 500,000+ SKUs and retained 95%+ of organic search rankings through the transition.",
   },
   {
     title: "Custom App & Feature Development",
@@ -203,7 +214,7 @@ const SDA_ITEMS = [
   },
   {
     title: "Headless Shopify Development",
-    body: "Decouple your Shopify storefront from the Liquid layer using Next.js or Shopify Hydrogen. Full creative freedom over the frontend while keeping Shopify as your commerce engine. Server-side rendering, sub-100ms TTFB, and complete control over the user experience. For brands where performance and design control are non-negotiable.",
+    body: "Decouple your Shopify storefront from the Liquid layer using Next.js or Shopify Hydrogen. Full creative freedom over the frontend while keeping Shopify as your commerce engine. Server-side rendering, sub-100ms TTFB, and complete control over the user experience. This is advanced Shopify web development for brands where performance and design precision are non-negotiable.",
   },
   {
     title: "Performance & Speed Optimisation",
@@ -300,7 +311,7 @@ const SDA_INDUSTRIES = [
 const SDA_PROS = [
   "Pixel-perfect brand execution. Built to your design, not a template's constraints.",
   "You own 100% of the code. No vendor lock-in. No recurring licence fees.",
-  "Custom features built directly on Shopify's APIs. No fragile app dependencies.",
+  "Built directly on Shopify APIs. No fragile app dependencies.",
   "Architecture designed to scale with your GMV, not against it.",
   "Full documentation and code handover at project completion.",
   "60 days post-launch support and monitoring included in every project.",
@@ -319,43 +330,43 @@ const SDA_CONS = [
 const SDA_FAQS = [
   {
     q: "How much does Shopify development cost?",
-    a: "Development cost depends on scope. A custom theme build typically starts from £8,000 to £15,000. Shopify Plus builds with custom features, B2B functionality, or complex integrations typically run £15,000 to £40,000. Platform migrations from WooCommerce or Magento with data migration, custom development, and SEO preservation start from £12,000. Every project is scoped and fixed-price before development begins. No hourly billing, no scope creep invoices.",
+    a: "Custom Shopify development cost depends on what you need built. A custom theme build typically starts from £8,000 to £15,000. Shopify Plus builds with custom features, B2B functionality, or complex integrations typically run £15,000 to £40,000. Platform migrations from WooCommerce or Magento with full data migration and SEO preservation start from £12,000. Every project is fixed price before development begins. No hourly billing. No invoices you did not see coming.",
   },
   {
     q: "How long does a Shopify development project take?",
-    a: "Most Shopify development projects are live within six weeks of kickoff. A custom theme build with standard features typically takes four to six weeks. Shopify Plus projects with custom app development or complex integrations can run six to ten weeks. Platform migrations with large product catalogues typically take six to eight weeks. We agree the exact go-live date before development starts. You know the launch date on Day 1.",
+    a: "Most Shopify store development projects are live within six weeks of kickoff. A custom theme build typically takes four to six weeks. Shopify Plus projects with custom app development or complex integrations run six to ten weeks. Platform migrations with large product catalogues typically take six to eight weeks. We agree the exact go-live date before development starts. You know the launch date on Day 1. There are no timeline surprises.",
   },
   {
     q: "Do you build on Shopify Plus?",
-    a: "Yes. We build on Shopify Plus for brands that need checkout extensibility, Shopify Functions, multi-store management, B2B wholesale channels, or Shopify Markets for multi-currency and multi-region. We advise on whether Plus is right for your business at the scoping stage and do not recommend it unless you will genuinely use the features it unlocks.",
+    a: "Yes. Our Shopify Plus development work covers checkout extensibility, Shopify Functions, multi-store management, B2B wholesale channels, and Shopify Markets for multi-currency and multi-region. We advise on whether Plus is right for your business at the outset. We do not recommend it unless the feature set genuinely applies to your volume and operational requirements.",
   },
   {
     q: "Can you migrate our store from WooCommerce, Magento, or BigCommerce?",
-    a: "Yes. We migrate from WooCommerce, Magento, BigCommerce, Salesforce Commerce Cloud, Prestashop, and custom-built platforms. Full product, customer, and order history migration. 301 redirect mapping for every URL. SEO equity preservation as the primary goal. Zero downtime cut-over. We have retained 95%+ of organic search rankings through large-scale migrations when the redirect mapping is done properly.",
+    a: "Yes. As a Shopify development agency that has handled large-scale migrations, we move stores from WooCommerce, Magento, BigCommerce, Salesforce Commerce Cloud, Prestashop, and custom-built platforms. Full product, customer, and order history migration. 301 redirect mapping for every URL. SEO preservation is treated as the primary goal throughout. Zero downtime cut-over. When the redirect mapping is done properly, 95%+ of organic search rankings come through the migration intact.",
   },
   {
     q: "What is the difference between a Shopify theme and custom development?",
-    a: "A Shopify theme is a pre-built template — either from the Shopify Theme Store or purchased from a third party. Thousands of stores run the same theme, often with minor CSS changes. Custom development means your storefront is built from scratch with every component designed and coded to your brand and business requirements. Custom development gives you code you own, features that do not exist in any theme, and a store that does not look like your competitors.",
+    a: "A Shopify theme is a pre-built template from the Shopify Theme Store or a third-party marketplace. Thousands of stores run the same theme with minor CSS tweaks. Custom Shopify development means your storefront is built from scratch with every component designed and coded to your brand and business requirements. Custom development gives you code you own, features that do not exist in any theme, and a store that does not look like your competitors. The difference is not cosmetic. It affects conversion, performance, and how well your store scales as your business grows.",
   },
   {
     q: "Do we own the code after the project is complete?",
-    a: "Yes. Every line of code, every Liquid component, every metafield schema, and every configuration is transferred to you at project completion. We deliver full documentation alongside the code. There is no proprietary system on our end. If you stop working with us, your store keeps running and any developer can maintain it.",
+    a: "Yes. Every line of code, every Liquid component, every metafield schema, and every configuration is yours at project completion. We deliver full documentation alongside the code. There is no proprietary system. Any Shopify development company or in-house developer can take the codebase and maintain it. If you stop working with us, your store runs exactly as we built it.",
   },
   {
     q: "Do you offer support after launch?",
-    a: "Every project includes a 60-day post-launch support window as standard. Any incident during those 60 days is handled by us at no additional cost. After the 60-day window, we offer ongoing support retainers for stores that want a retained development partner. We also offer ad hoc support and maintenance on a project basis.",
+    a: "Every project includes a 60-day post-launch support window as standard. Any incident during those 60 days is handled by us at no additional cost. After the 60-day window, we offer ongoing support retainers for stores that want a retained Shopify development agency rather than relying on ad hoc freelancers. We also take on support and maintenance work on a project basis.",
   },
   {
     q: "Can you build features that do not exist in the Shopify App Store?",
-    a: "Yes. Custom features built on Shopify's Admin API, Storefront API, Shopify Functions, and webhooks can replicate almost any functionality. Custom product configurators, trade pricing engines, loyalty mechanics, subscription flows, and B2B quote tools are all features we have built from scratch. If a feature can be described clearly, we can scope it.",
+    a: "Yes. Custom Shopify development built on the Admin API, Storefront API, Shopify Functions, and webhooks can replicate almost any functionality. Custom product configurators, trade pricing engines, loyalty mechanics, subscription flows, B2B quote tools, and custom admin panels are all features we have built from scratch. If a feature can be described clearly, it can be built.",
   },
   {
     q: "How do you protect SEO rankings during a migration?",
-    a: "SEO preservation starts with a full URL audit before a single redirect is written. We map every existing URL to its Shopify equivalent, generate the full 301 redirect file, and test every redirect in staging before go-live. We preserve canonical tags, structured data, meta descriptions, and heading structure through the migration. We monitor Google Search Console for crawl errors in the 30 days post-launch and fix any issues immediately. Most of our migrations retain 90-95%+ of organic search rankings.",
+    a: "SEO preservation starts with a full URL audit before a single redirect is written. We map every existing URL to its Shopify equivalent, generate the full 301 redirect file, and test every redirect in staging before go-live. We preserve canonical tags, structured data, meta descriptions, and heading structure through the migration. Google Search Console is monitored for crawl errors in the 30 days post-launch and any issues are fixed immediately. Most migrations handled by our Shopify development agency retain 90-95%+ of organic search rankings.",
   },
   {
     q: "How do we get started?",
-    a: "The first step is a free Discovery Call. We spend 30 minutes understanding your current setup, your goals, and what you need built. From there we produce a written Scope of Work with full cost and timeline — usually within 48 hours. Most clients move from the Discovery Call to a signed scope within one week. From scope sign-off to go-live, most Shopify development projects complete within six weeks.",
+    a: "The first step is a free Discovery Call. We spend 30 minutes on your current store, your goals, and what you need built. From there we produce a written Scope of Work with the full cost and timeline, usually within 48 hours. Most clients move from the Discovery Call to a signed project within one week. From sign-off to go-live, most Shopify development projects complete within six weeks.",
   },
 ];
 
@@ -405,15 +416,15 @@ export default function Page() {
               </span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
-              Your store is the most important sales channel your business has. We build it properly. Custom Shopify themes, Shopify Plus development, platform migrations, and features your business actually needs. 100+ stores live. Fixed price. 6-week delivery.
+              Your store is the most important sales channel your business has. We build it right. Custom Shopify theme development, Shopify Plus builds, platform migrations, and every piece of Shopify web development your business actually needs. We have delivered 100+ stores, all on a fixed price, with a go-live date confirmed before we write a single line of code.
             </p>
 
             <div className="std-hero-stats">
               {[
                 { number: "100+",    label: "Stores Built" },
-                { number: "6 Wks",   label: "Avg. Delivery" },
-                { number: "£150M+",  label: "GMV Managed" },
-                { number: "4.9★",    label: "Client Rating" },
+                { number: "$150M+",  label: "Client GMV" },
+                { number: "95%+",    label: "Rankings Retained" },
+                { number: "60 Days", label: "Support Included" },
               ].map((s) => (
                 <div key={s.label} className="std-hero-stat-item">
                   <span className="std-hero-stat-num">{s.number}</span>
@@ -449,13 +460,13 @@ export default function Page() {
             {/* Partner badge */}
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginTop: "24px" }}>
               <Image src="/images/shopify-icon.svg" alt="Shopify Partner" width={22} height={22} style={{ opacity: 0.8 }} />
-              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 500 }}>Shopify Partner — 100+ stores built exclusively on Shopify</span>
+              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 500 }}>Shopify Partner. 100+ stores built exclusively on Shopify.</span>
             </div>
           </div>
 
           <div className="si-hero-img-wrap">
             <Image
-              src="/images/Store performance.webp"
+              src="/images/Group_1000003974_d0eba414-7aec-4930-b534-a4dcc91d004e_1024x1024.png"
               alt="Shopify development agency building a custom Shopify store"
               width={640}
               height={480}
@@ -474,7 +485,7 @@ export default function Page() {
             100+ Shopify Stores Built. Here&apos;s Who Trusts Us.
           </h2>
           <p className="text-center" style={{ color: C_TEXT, fontSize: 16, lineHeight: "26px", margin: "10px 0 0", textAlign: "center" }}>
-            We build exclusively on Shopify. Not WordPress. Not Magento. Not WooCommerce.
+            We build exclusively on Shopify. Every project is built and launched in-house by developers who work on Shopify full-time and nothing else.
           </p>
           <div className="std-trust-carousel" style={{ marginTop: 20, width: "100%", overflow: "hidden" }}>
             <div className="sda-trust-track">
@@ -501,37 +512,53 @@ export default function Page() {
         <div className="mx-auto" style={{ maxWidth: "1320px" }}>
           <div className="sda-edu-grid">
             <div className="sda-edu-left">
-              <span className="std-label" style={{ color: C_TEXT }}>Understanding the Service</span>
-              <h2 style={{ color: C_DARK, fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 700, lineHeight: 1.2, margin: "12px 0 24px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px" }}>
+                <span style={{ display: "block", width: "28px", height: "3px", background: "linear-gradient(90deg, #3DC77A, #A8F0B4)", borderRadius: "2px", flexShrink: 0 }} />
+                <span className="std-label" style={{ color: C_TEXT }}>Understanding the Service</span>
+              </div>
+              <h2 style={{ color: C_DARK, fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 700, lineHeight: 1.2, margin: "0 0 16px" }}>
                 What Is Shopify Development and Who Needs It?
               </h2>
-              <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: "0 0 18px" }}>
-                Shopify development is the process of building, customising, and extending your Shopify store beyond what the platform provides out of the box. Every Shopify store starts with a theme — but the brands that outperform their competitors are not running a downloaded template. They have invested in custom development that makes their store work the way their business works.
+              <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: "0 0 10px" }}>
+                Shopify development is the work of building, customising, and extending your store beyond what the platform gives you out of the box. Every Shopify store starts with a theme. The brands that consistently outperform their competitors are not running a downloaded template. They invested in custom Shopify development that makes their store work the way their business works.
               </p>
-              <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: "0 0 18px" }}>
-                A Shopify development agency builds the features your customers need that no app covers. It creates a storefront that reflects your brand precisely, not a modified version of a theme 10,000 other stores are running. And it ensures that as your business scales — more SKUs, more markets, more complexity — your store scales with it without breaking.
+              <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: "0 0 10px" }}>
+                A Shopify development agency builds the features no app covers: custom checkout flows, product configurators, trade pricing, and integrations built to your exact spec. It creates a storefront that reflects your brand precisely, not a modified version of a theme 10,000 other stores run. As your business scales with more SKUs, more markets, and more operational complexity, your store scales with it.
               </p>
               <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: 0 }}>
-                Shopify development is not about using Shopify. It is about using Shopify to its full capability — the APIs, the platform architecture, and the custom code layer that separates a high-performing store from one that just exists.
+                Shopify development is not about using Shopify. It is about using Shopify to its full capability: the APIs, the platform architecture, and the custom code layer that separates a store that converts from one that just exists.
               </p>
             </div>
             <div className="sda-edu-right">
-              <div style={{ background: C_CREAM, borderRadius: "20px", padding: "36px", height: "100%" }}>
-                <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 16, fontWeight: 700, color: C_DARK, margin: "0 0 20px" }}>
-                  You need a Shopify development agency if:
-                </p>
-                {[
-                  "Your store is underperforming relative to your traffic and you do not know exactly why",
-                  "You need custom features that apps cannot deliver — configurators, trade pricing, bespoke checkout flows",
-                  "You are on WooCommerce, Magento, or BigCommerce and want to migrate without losing SEO or data",
-                  "You are on Shopify but running a theme that limits your brand and your conversion rate",
-                  "You need a development partner who knows Shopify deeply, not one who builds on ten platforms at once",
-                ].map((item) => (
-                  <div key={item} style={{ display: "flex", alignItems: "flex-start", gap: "12px", marginBottom: "16px" }}>
-                    <span style={{ flexShrink: 0, marginTop: "3px" }}><CheckIcon /></span>
-                    <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, color: C_TEXT, lineHeight: "24px", margin: 0 }}>{item}</p>
-                  </div>
-                ))}
+              <div style={{
+                background: C_WHITE,
+                borderRadius: "20px",
+                padding: "0",
+                height: "100%",
+                border: "1px solid rgba(61,199,122,0.22)",
+                boxShadow: "0 8px 40px rgba(0,0,0,0.07)",
+                overflow: "hidden",
+                boxSizing: "border-box",
+              }}>
+                {/* Green accent bar */}
+                <div style={{ height: "4px", background: "linear-gradient(90deg, #3DC77A 0%, #A8F0B4 50%, #2A9555 100%)" }} />
+                <div style={{ padding: "28px 32px 32px" }}>
+                  <p className="sda-edu-right-heading" style={{ fontFamily: "'Poppins', sans-serif", fontSize: 17, fontWeight: 700, color: C_DARK, margin: "0 0 22px", lineHeight: 1.3 }}>
+                    You need a Shopify development agency if:
+                  </p>
+                  {[
+                    "Your store has traffic but your conversion rate does not reflect it",
+                    "You need custom Shopify development work that apps cannot deliver: configurators, trade pricing, custom checkout flows",
+                    "You are on WooCommerce, Magento, or BigCommerce and want to migrate to Shopify without losing SEO rankings or order data",
+                    "You are already on Shopify but your current theme is limiting your brand and your conversion rate",
+                    "You need a Shopify development company that works exclusively on Shopify, not one juggling ten platforms at once",
+                  ].map((item, i, arr) => (
+                    <div key={item} style={{ display: "flex", alignItems: "flex-start", gap: "12px", paddingBottom: "14px", marginBottom: i < arr.length - 1 ? "14px" : 0, borderBottom: i < arr.length - 1 ? "1px solid rgba(0,0,0,0.06)" : "none" }}>
+                      <span style={{ flexShrink: 0, marginTop: "2px" }}><CheckIcon /></span>
+                      <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, color: C_TEXT, lineHeight: "24px", margin: 0 }}>{item}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -540,6 +567,7 @@ export default function Page() {
           .sda-edu-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: start; }
           @media (max-width: 1024px) { .sda-edu-grid { gap: 40px; } }
           @media (max-width: 768px) { .sda-edu-grid { grid-template-columns: 1fr; gap: 32px; } }
+          @media (max-width: 640px) { .sda-edu-left p { font-size: 14px !important; line-height: 24px !important; } .sda-edu-right p { font-size: 14px !important; line-height: 22px !important; } .sda-edu-right p.sda-edu-right-heading { font-size: 16px !important; margin-bottom: 16px !important; } }
         ` }} />
       </section>
 
@@ -551,7 +579,7 @@ export default function Page() {
               6 Development Problems We Find on Almost Every Store We Audit
             </h2>
             <p className="si-feat-desc">
-              If your store was not built properly, it is costing you revenue every day. These are the problems we find on almost every audit — and fix on every project.
+              If your store was not built properly, it is costing you revenue every day. We find at least three of these on every store we audit.
             </p>
           </div>
           <div className="si-feat-grid">
@@ -595,7 +623,7 @@ export default function Page() {
               Every Shopify Development Service Your Store Needs
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              From custom theme builds and Shopify Plus development to platform migrations and performance work. We cover every development need a Shopify store has — all in-house, all fixed-price.
+              From custom Shopify theme development and Shopify Plus builds to platform migrations and performance work. We cover every Shopify web development need your store has. All in-house. All fixed price.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
               Book a Free Discovery Call
@@ -606,367 +634,6 @@ export default function Page() {
           </div>
           <SdaAccordion items={SDA_ITEMS} />
         </div>
-      </section>
-
-      {/* ── §6 Industries We Serve (CREAM) ── */}
-      <section style={{ background: C_CREAM, padding: "60px 20px" }} aria-label="Industries Ecomm Wizards builds Shopify stores for">
-        <div className="mx-auto" style={{ maxWidth: "1320px" }}>
-          <h2 style={{ color: C_DARK, fontFamily: "'Poppins', sans-serif", fontSize: "clamp(28px, 3.5vw, 42px)", fontWeight: 700, lineHeight: 1.2, textAlign: "center", margin: "0 0 12px" }}>
-            Industries We Build Shopify Stores For
-          </h2>
-          <p style={{ color: "rgba(0,0,0,0.65)", fontFamily: "'Poppins', sans-serif", fontSize: 16, lineHeight: "26px", textAlign: "center", margin: "0 auto 40px", maxWidth: "620px" }}>
-            Every sector has different development requirements. Here are the industries we build for most — and what we specialise in for each.
-          </p>
-          <div className="sda-ind-grid">
-            {SDA_INDUSTRIES.map((ind) => (
-              <div key={ind.name} className="sda-ind-card">
-                <span className="sda-ind-icon" aria-hidden="true">{ind.icon}</span>
-                <h3 className="sda-ind-name">{ind.name}</h3>
-                <p className="sda-ind-desc">{ind.desc}</p>
-              </div>
-            ))}
-          </div>
-          <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, color: "rgba(0,0,0,0.5)", textAlign: "center", margin: "32px 0 0" }}>
-            Not on this list? We build for all sectors. The platform is always Shopify.
-          </p>
-        </div>
-        <style dangerouslySetInnerHTML={{ __html: `
-          .sda-ind-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-          .sda-ind-card { background: #fff; border-radius: 16px; padding: 24px; border: 1px solid rgba(0,0,0,0.07); display: flex; flex-direction: column; gap: 10px; }
-          .sda-ind-icon { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: rgba(61,199,122,0.1); border-radius: 12px; color: #2A9555; flex-shrink: 0; }
-          .sda-ind-name { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: #000; margin: 0; line-height: 1.3; }
-          .sda-ind-desc { font-family: 'Poppins', sans-serif; font-size: 13px; color: #334155; line-height: 1.65; margin: 0; }
-          @media (max-width: 1024px) { .sda-ind-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 12px !important; } .sda-ind-card { padding: 18px !important; } }
-          @media (max-width: 768px) { .sda-ind-grid { grid-template-columns: repeat(2, 1fr) !important; } }
-          @media (max-width: 480px) { .sda-ind-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; } .sda-ind-card { padding: 16px !important; } }
-        ` }} />
-      </section>
-
-      {/* ── §7 Process (WHITE with CREAM inner) ── */}
-      <section className="std-process max-sm:!py-[40px]" style={{ background: C_WHITE, padding: "53px 20px" }} aria-label="Our Shopify development process">
-        <div
-          className="py-[40px] px-[48px] max-sm:py-[20px] max-sm:px-[20px] max-sm:!h-auto md:max-lg:py-[20px] md:max-lg:!h-auto lg:max-xl:py-[30px] lg:max-xl:px-[40px]"
-          style={{ maxWidth: "1320px", margin: "0 auto", background: C_CREAM, borderRadius: "28px", boxSizing: "border-box", overflow: "hidden" }}
-        >
-          <h2
-            className="text-[28px] sm:text-[36px] md:text-[32px] lg:text-[42px] font-bold max-sm:font-semibold"
-            style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", lineHeight: 1.2, margin: 0 }}
-          >
-            From Brief to a Live Shopify Store in 6 Weeks
-          </h2>
-          <p
-            className="text-[16px] max-sm:text-[14px]"
-            style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", marginTop: "16px", lineHeight: 1.65 }}
-          >
-            Five phases. One defined scope.
-            <br className="hidden sm:block lg:hidden" />{" "}
-            Most Shopify development projects are live within six weeks of kickoff.
-          </p>
-
-          {/* Row 1 — 3 cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-[20px] md:max-lg:mt-[16px]">
-            {[
-              { step: "01.", title: "Discovery & Scope",    desc: "We map your requirements, document your existing stack, and define the full scope in writing. You receive a Scope of Work document before a single line of code is written. No ambiguity. No scope creep." },
-              { step: "02.", title: "Design & Wireframes",  desc: "Wireframes and high-fidelity designs built against your brand guidelines in Figma. Every page, every state, every responsive breakpoint. You approve the design before development begins." },
-              { step: "03.", title: "Development & Build",  desc: "Custom Liquid development, component architecture, metafield configuration, and third-party integrations. Weekly progress updates. Builds go into a staging environment for your review at each milestone." },
-            ].map(({ step, title, desc }) => (
-              <div key={step} className="p-[30px] max-sm:p-[15px] md:max-lg:p-[16px] lg:max-xl:p-[20px]" style={{ background: "#FFFFFF", borderRadius: "16px", boxSizing: "border-box" }}>
-                <p className="text-[50px] max-sm:text-[35px] md:max-lg:text-[40px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "rgba(0,0,0,0.12)", lineHeight: 1, margin: "0 0 10px" }}>{step}</p>
-                <h3 className="text-[20px] max-sm:text-[18px] md:max-lg:text-[18px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "#000000", lineHeight: 1.3, margin: "0 0 10px" }}>{title}</h3>
-                <p className="text-[15px] max-sm:text-[14px] md:max-lg:text-[14px]" style={{ fontFamily: "'Poppins', sans-serif", color: "rgba(0,0,0,0.8)", lineHeight: 1.7, margin: 0 }}>{desc}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Row 2 — 2 cards centred */}
-          <div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-[20px] max-sm:!max-w-full md:max-lg:mt-[16px] md:max-lg:!max-w-[428px]"
-            style={{ maxWidth: "calc(66.667% - 7px)", marginLeft: "auto", marginRight: "auto", width: "100%" }}
-          >
-            {[
-              { step: "04.", title: "QA & Testing",       desc: "End-to-end testing across devices, browsers, and edge cases. Performance testing against Core Web Vitals benchmarks. Accessibility checks. We do not hand over a build that has not been stress-tested." },
-              { step: "05.", title: "Launch & Handover",  desc: "Controlled go-live with rollback plan in place. Full documentation of every custom component, metafield schema, and integration. Code transferred to your repository. 60-day support window begins from launch day." },
-            ].map(({ step, title, desc }) => (
-              <div key={step} className="p-[30px] max-sm:p-[15px] md:max-lg:p-[16px] lg:max-xl:p-[20px]" style={{ background: "#FFFFFF", borderRadius: "16px", boxSizing: "border-box" }}>
-                <p className="text-[50px] max-sm:text-[35px] md:max-lg:text-[40px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "rgba(0,0,0,0.12)", lineHeight: 1, margin: "0 0 10px" }}>{step}</p>
-                <h3 className="text-[20px] max-sm:text-[18px] md:max-lg:text-[18px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "#000000", lineHeight: 1.3, margin: "0 0 10px" }}>{title}</h3>
-                <p className="text-[15px] max-sm:text-[14px] md:max-lg:text-[14px]" style={{ fontFamily: "'Poppins', sans-serif", color: "rgba(0,0,0,0.8)", lineHeight: 1.7, margin: 0 }}>{desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── §8 Platform Comparison (CREAM) ── */}
-      <section style={{ background: C_CREAM, padding: "60px 20px" }} aria-label="Shopify vs WooCommerce vs BigCommerce comparison">
-        <div className="mx-auto" style={{ maxWidth: "1320px" }}>
-          <h2 style={{ color: C_DARK, fontFamily: "'Poppins', sans-serif", fontSize: "clamp(28px, 3.5vw, 42px)", fontWeight: 700, lineHeight: 1.2, textAlign: "center", margin: "0 0 12px" }}>
-            Shopify vs WooCommerce vs BigCommerce
-          </h2>
-          <p style={{ color: "rgba(0,0,0,0.65)", fontFamily: "'Poppins', sans-serif", fontSize: 16, lineHeight: "26px", textAlign: "center", margin: "0 auto 40px", maxWidth: "640px" }}>
-            We build exclusively on Shopify. Here is why — and where Shopify genuinely wins over the alternatives.
-          </p>
-
-          <div className="sda-plat-grid">
-            {/* Shopify — featured */}
-            <div className="sda-plat-card sda-plat-card--featured">
-              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
-                <Image src="/images/shopify-icon.svg" alt="" width={24} height={24} aria-hidden />
-                <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 20, fontWeight: 700, color: "#000", margin: 0 }}>Shopify</h3>
-              </div>
-              <span style={{ display: "inline-block", background: "rgba(61,199,122,0.15)", color: "#2A9555", fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 600, borderRadius: "999px", padding: "3px 12px", marginBottom: "20px", border: "1px solid rgba(61,199,122,0.3)" }}>Our Platform</span>
-              {[
-                { label: "Hosting & Security", verdict: "Fully managed. Shopify handles uptime, SSL, and PCI compliance." },
-                { label: "Checkout Flexibility", verdict: "Full checkout extensibility via Shopify Functions on Plus." },
-                { label: "App Ecosystem", verdict: "8,000+ vetted apps. Quality controlled by Shopify review process." },
-                { label: "Cost of Ownership", verdict: "Predictable monthly fee. Transaction fees waived on Shopify Payments." },
-                { label: "Scalability", verdict: "Black Friday-tested infrastructure. No server management required." },
-                { label: "Support", verdict: "24/7 Shopify support plus a global developer community." },
-              ].map((row) => (
-                <div key={row.label} style={{ display: "flex", gap: "10px", alignItems: "flex-start", marginBottom: "14px" }}>
-                  <span style={{ flexShrink: 0, marginTop: "2px" }}><CheckIcon /></span>
-                  <div>
-                    <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 600, color: "rgba(0,0,0,0.4)", margin: "0 0 2px", textTransform: "uppercase", letterSpacing: "0.04em" }}>{row.label}</p>
-                    <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 14, color: "#000", margin: 0, lineHeight: 1.5 }}>{row.verdict}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* WooCommerce */}
-            <div className="sda-plat-card">
-              <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 20, fontWeight: 700, color: "#000", margin: "0 0 8px" }}>WooCommerce</h3>
-              <span style={{ display: "inline-block", background: "rgba(239,68,68,0.08)", color: "#ef4444", fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 600, borderRadius: "999px", padding: "3px 12px", marginBottom: "20px", border: "1px solid rgba(239,68,68,0.2)" }}>Self-Hosted</span>
-              {[
-                { label: "Hosting & Security", verdict: "Self-hosted. You manage servers, security patches, and SSL renewals." },
-                { label: "Checkout Flexibility", verdict: "Plugin-dependent. Every customisation adds technical debt and risk." },
-                { label: "App Ecosystem", verdict: "59,000+ plugins. Quality varies — many abandoned or poorly maintained." },
-                { label: "Cost of Ownership", verdict: "Free platform. Hosting, plugins, security, and dev time accumulate fast." },
-                { label: "Scalability", verdict: "Requires expensive server upgrades as traffic grows. Frequent downtime." },
-                { label: "Support", verdict: "Community forums only. No official support channel or SLA." },
-              ].map((row) => (
-                <div key={row.label} style={{ display: "flex", gap: "10px", alignItems: "flex-start", marginBottom: "14px" }}>
-                  <span style={{ flexShrink: 0, marginTop: "2px" }}><CrossIcon /></span>
-                  <div>
-                    <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 600, color: "rgba(0,0,0,0.4)", margin: "0 0 2px", textTransform: "uppercase", letterSpacing: "0.04em" }}>{row.label}</p>
-                    <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 14, color: "#334155", margin: 0, lineHeight: 1.5 }}>{row.verdict}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* BigCommerce */}
-            <div className="sda-plat-card">
-              <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 20, fontWeight: 700, color: "#000", margin: "0 0 8px" }}>BigCommerce</h3>
-              <span style={{ display: "inline-block", background: "rgba(245,158,11,0.1)", color: "#b45309", fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 600, borderRadius: "999px", padding: "3px 12px", marginBottom: "20px", border: "1px solid rgba(245,158,11,0.25)" }}>Hosted</span>
-              {[
-                { label: "Hosting & Security", verdict: "Hosted with SSL included. Less mature than Shopify infrastructure." },
-                { label: "Checkout Flexibility", verdict: "Limited customisation. No equivalent to Shopify Functions." },
-                { label: "App Ecosystem", verdict: "Smaller marketplace. Fewer specialist tools for DTC and Plus brands." },
-                { label: "Cost of Ownership", verdict: "Similar to Shopify but transaction fees apply with most payment providers." },
-                { label: "Scalability", verdict: "Handles growth but lacks Shopify Plus enterprise features at scale." },
-                { label: "Support", verdict: "Business hours support. Smaller developer network and community." },
-              ].map((row) => (
-                <div key={row.label} style={{ display: "flex", gap: "10px", alignItems: "flex-start", marginBottom: "14px" }}>
-                  <span style={{ flexShrink: 0, marginTop: "2px" }}><WarnIcon /></span>
-                  <div>
-                    <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 600, color: "rgba(0,0,0,0.4)", margin: "0 0 2px", textTransform: "uppercase", letterSpacing: "0.04em" }}>{row.label}</p>
-                    <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 14, color: "#334155", margin: 0, lineHeight: 1.5 }}>{row.verdict}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, color: "rgba(0,0,0,0.5)", textAlign: "center", margin: "32px 0 0" }}>
-            We build exclusively on Shopify because it outperforms on the metrics that grow revenue.
-          </p>
-        </div>
-        <style dangerouslySetInnerHTML={{ __html: `
-          .sda-plat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
-          .sda-plat-card { background: #fff; border-radius: 16px; padding: 28px; border: 1px solid rgba(0,0,0,0.08); }
-          .sda-plat-card--featured { border: 2px solid rgba(61,199,122,0.4); box-shadow: 0 4px 24px rgba(61,199,122,0.12); }
-          @media (max-width: 1024px) { .sda-plat-grid { gap: 14px !important; } .sda-plat-card { padding: 20px !important; } }
-          @media (max-width: 768px) { .sda-plat-grid { grid-template-columns: 1fr !important; } }
-        ` }} />
-      </section>
-
-      {/* ── §9 Compare (DARK) ── */}
-      <section className="sda-compare" style={{ background: C_DARK, padding: "0 20px" }} aria-label="Custom Shopify development vs template themes and freelancers">
-        <div className="mx-auto" style={{ maxWidth: 1320, padding: "60px 0" }}>
-          <h2 className="sda-compare-h2" style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(28px, 4.1vw, 42px)", fontWeight: 700, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
-            Custom Shopify Development vs.{" "}
-            <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Template Themes &amp; Freelancers
-            </span>
-          </h2>
-          <p style={{ fontFamily: "Poppins, sans-serif", fontSize: 16, lineHeight: 1.75, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
-            Most brands try to save money with a theme or a cheap freelancer. Here is what that decision costs over time.
-          </p>
-
-          <div className="sda-compare-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: 20, marginTop: 10 }}>
-
-            <div className="sda-compare-card" style={{ background: "#121212", borderRadius: 16, padding: 30, marginTop: 10 }}>
-              <span style={{ display: "inline-block", background: "rgba(61,199,122,0.15)", color: "#3DC77A", fontFamily: "Poppins, sans-serif", fontSize: 18, fontWeight: 600, borderRadius: 999, padding: "6px 16px", marginBottom: 20, border: "1px solid rgba(61,199,122,0.3)" }}>
-                ✓ Custom Development by Ecomm Wizards
-              </span>
-              <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
-                {SDA_PROS.map((item) => (
-                  <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontFamily: "Poppins, sans-serif", fontSize: 16, color: "#ffffff", lineHeight: 1.5 }}>
-                    <span style={{ flexShrink: 0, marginTop: 2 }}><CheckIcon /></span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="sda-compare-card" style={{ background: "#121212", borderRadius: 16, padding: 30, marginTop: 10 }}>
-              <span style={{ display: "inline-block", background: "rgba(239,68,68,0.12)", color: "#f87171", fontFamily: "Poppins, sans-serif", fontSize: 18, fontWeight: 600, borderRadius: 999, padding: "6px 16px", marginBottom: 20, border: "1px solid rgba(239,68,68,0.25)" }}>
-                ✕ Template Themes &amp; Generic Freelancers
-              </span>
-              <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
-                {SDA_CONS.map((item) => (
-                  <li key={item.text} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontFamily: "Poppins, sans-serif", fontSize: 16, color: "#ffffff", lineHeight: 1.5 }}>
-                    <span style={{ flexShrink: 0, marginTop: 2, color: item.warn ? "#fbbf24" : "#f87171" }}>
-                      {item.warn ? <WarnIcon /> : <CrossIcon />}
-                    </span>
-                    <span>{item.text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div style={{ display: "flex", justifyContent: "center", marginTop: 32 }}>
-            <span className="group inline-flex p-[2px] rounded-full" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
-              <Link
-                href="/book-shopify-consultation"
-                className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px]"
-                style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600 }}
-              >
-                <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Book a Free Discovery Call</span>
-                <span className="text-white group-hover:text-black transition-colors duration-300"><Arrow /></span>
-              </Link>
-            </span>
-          </div>
-        </div>
-        <style dangerouslySetInnerHTML={{ __html: `
-          @media (max-width: 768px) { .sda-compare-grid { gap: 12px !important; } .sda-compare-card { padding: 20px !important; } }
-        ` }} />
-      </section>
-
-      {/* ── §10 Results / Testimonial Slider (CREAM) ── */}
-      <section
-        className="sda-results-section"
-        style={{ background: C_CREAM, color: C_TEXT, fontFamily: "'Poppins', sans-serif", fontSize: "16px", padding: "40px 20px" }}
-        aria-label="Shopify development case study results"
-      >
-        <div className="sda-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
-          <h2 className="sda-results-heading">Real Shopify Development Projects. Measurable Results.</h2>
-          <p className="sda-results-desc">
-            Not projections. Real numbers from stores where proper development work produced documented, measurable improvements in conversion and revenue.
-          </p>
-          <CaseStudySlider slides={CASE_STUDY_SLIDES} intervalMs={6000} showDots={false} />
-        </div>
-        <style dangerouslySetInnerHTML={{ __html: `
-          .sda-results-heading { color:#000;font-family:'Poppins',sans-serif;font-size:42px;font-weight:700;line-height:52px;text-align:center;margin:0 auto 24px;max-width:1100px; }
-          .sda-results-desc { color:rgba(0,0,0,.8);font-family:'Poppins',sans-serif;font-size:18px;line-height:28px;text-align:center;margin:0 auto 24px;max-width:1056px; }
-          @media (max-width:1023px) { .sda-results-section { padding:44px 20px !important; } .sda-results-heading { font-size:30px !important;line-height:40px !important;margin-bottom:18px !important; } .sda-results-desc { font-size:16px !important;line-height:26px !important;margin-bottom:32px !important; } }
-          @media (max-width:640px) { .sda-results-section { padding:20px 16px !important; } .sda-results-heading { font-size:26px !important;line-height:34px !important; } .sda-results-desc { font-size:15px !important;line-height:24px !important; } }
-        ` }} />
-      </section>
-
-      {/* ── §11 Why Us (DARK) ── */}
-      <section
-        className="std-why sda-why-section"
-        style={{ background: C_DARK, color: C_TEXT, fontFamily: "'Poppins', sans-serif", fontSize: "16px", padding: "53px 20px" }}
-        aria-label="Why brands choose Ecomm Wizards as their Shopify development agency"
-      >
-        <div className="sda-why-inner mx-auto" style={{ maxWidth: "1320px" }}>
-          <h2 className="sda-why-heading">
-            Why Brands Choose Ecomm Wizards as Their{" "}<br className="sda-why-br-lg" />
-            <span style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Shopify Development Agency
-            </span>
-          </h2>
-          <p className="sda-why-desc">
-            We have built 100+ live Shopify stores. Here is what separates a properly built Shopify store from one that was pieced together with themes and workarounds:
-          </p>
-
-          <div className="sda-why-grid">
-            {[
-              {
-                title: "Shopify-Only Developers",
-                desc: (<>We work exclusively on Shopify. Not Shopify plus WooCommerce. Not Shopify plus Magento. Every developer on our team knows Shopify&apos;s API surface, Liquid, Shopify Functions, and the Storefront API in depth. Shopify is not one of the platforms we work on. It is the only one.</>),
-                icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4l-2 2-4-2-2 4-4 2 2 4-2 4 4 2 2 4 4-2 4 2 2-4 4-2-2-4 2-4-4-2z"/><circle cx="16" cy="16" r="3"/></svg>),
-              },
-              {
-                title: "Fixed Price, Confirmed on Day 1",
-                desc: (<>We scope before we build. Your project cost is agreed in writing before development starts. No hourly billing that grows with every question. No surprise invoices. <span className="sda-why-hl">You know the number on Day 1 and it does not change.</span></>),
-                icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="5" width="24" height="24" rx="3"/><path d="M22 3v4M10 3v4M4 13h24"/><path d="M10 19l3 3 6-6"/></svg>),
-              },
-              {
-                title: "You Own Every Line of Code",
-                desc: (<>Full code transfer and documentation at project completion. Every component, every metafield schema, and every integration lives in your repositories and accounts. No proprietary systems. No recurring fees. If you stop working with us, your store keeps running exactly as we built it.</>),
-                icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M6 10l-4 6 4 6"/><path d="M26 10l4 6-4 6"/><path d="M19 6l-6 20"/></svg>),
-              },
-              {
-                title: "100+ Live Shopify Stores Built",
-                desc: (<>We have built, migrated, and launched over 100 Shopify stores in production. DTC brands, Shopify Plus merchants, B2B distributors, and global retailers. The patterns, edge cases, and failure modes that trip up less experienced developers are ones we have already solved.</>),
-                icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 22L10 12l5 6 4-8 5 8"/><circle cx="23" cy="6" r="3"/><path d="M20.5 6H6" strokeDasharray="2 2"/></svg>),
-              },
-              {
-                title: "60 Days Post-Launch Support",
-                desc: (<>Go-live is not the finish line. We monitor every build for 60 days post-launch and respond to any incident within hours. Included in every project. <span className="sda-why-hl">You are not on your own the morning after launch.</span></>),
-                icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M16 3L5 8v9c0 6.1 4.7 11.8 11 13 6.3-1.2 11-6.9 11-13V8L16 3z"/><path d="M11 16l3 3 7-7"/></svg>),
-              },
-              {
-                title: "Shopify Plus Certified Partners",
-                desc: (<>We are Shopify Partners with experience building on Shopify Plus, Shopify Functions, Shopify Flow, and the full enterprise feature set. When Shopify releases new platform capabilities, we implement them for clients before competitors have documented them.</>),
-                icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4 l3 2.4 l3.7 -0.6 l1.6 3.4 l3.4 1.6 l-0.6 3.7 l2.4 3 l-2.4 3 l0.6 3.7 l-3.4 1.6 l-1.6 3.4 l-3.7 -0.6 l-3 2.4 l-3 -2.4 l-3.7 0.6 l-1.6 -3.4 l-3.4 -1.6 l0.6 -3.7 l-2.4 -3 l2.4 -3 l-0.6 -3.7 l3.4 -1.6 l1.6 -3.4 l3.7 0.6 z" /><polyline points="11,16.5 14.5,20 21,12.5" /></svg>),
-              },
-            ].map((card) => (
-              <div key={card.title} className="sda-why-card">
-                <span className="sda-why-icon" aria-hidden="true">{card.icon}</span>
-                <h3 className="sda-why-card-title">{card.title}</h3>
-                <p className="sda-why-card-desc">{card.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <p className="sda-why-closing">
-            Every store we build is documented, tested, and handed over completely. We know Shopify&apos;s API surface, data model, and platform architecture. We catch edge cases before go-live, not after.
-          </p>
-
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <span className="group inline-flex p-[2px] rounded-full" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
-              <Link
-                href="/book-shopify-consultation"
-                className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px]"
-                style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600 }}
-              >
-                <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Book a Free Discovery Call</span>
-                <span className="text-white group-hover:text-black transition-colors duration-300"><Arrow /></span>
-              </Link>
-            </span>
-          </div>
-        </div>
-
-        <style dangerouslySetInnerHTML={{ __html: `
-          .sda-why-heading { color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 42px; font-weight: 700; line-height: 52px; text-align: center; margin: 0 auto 24px; max-width: 1320px; }
-          .sda-why-br-lg { display: inline; }
-          .sda-why-desc { color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 18px; line-height: 28px; text-align: center; margin: 0 auto 24px; max-width: 980px; }
-          .sda-why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 0 0 30px; }
-          .sda-why-card { position: relative; background: #0a0a0a; padding: 30px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; align-items: center; text-align: center; font-family: 'Poppins', sans-serif; font-size: 16px; }
-          .sda-why-card::before { content: ""; position: absolute; inset: 0; border-radius: 16px; padding: 1px; background: linear-gradient(140deg, rgba(168,240,180,0.45) 0%, rgba(74,184,114,0.0) 35%, rgba(74,184,114,0.0) 65%, rgba(78,183,113,0.45) 100%); -webkit-mask: linear-gradient(#000,#000) content-box, linear-gradient(#000,#000); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
-          .sda-why-icon { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; margin-bottom: 10px; color: #4FB872; }
-          .sda-why-card-title { color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 700; line-height: 30px; margin: 0 0 14px; }
-          .sda-why-card-desc { color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 15px; line-height: 24px; margin: 0; }
-          .sda-why-hl { font-weight: 700; background-image: linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-          .sda-why-closing { color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 18px; line-height: 28px; text-align: center; margin: 20px auto 20px; max-width: 1100px; }
-          @media (max-width: 1024px) { .std-why.sda-why-section { padding: 53px 20px !important; } .sda-why-heading { font-size: 30px !important; line-height: 40px !important; margin-bottom: 16px !important; } .sda-why-br-lg { display: none !important; } .sda-why-desc { font-size: 16px !important; margin-bottom: 16px !important; } .sda-why-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; margin-bottom: 20px !important; } .sda-why-card { padding: 24px !important; } .sda-why-card-title { font-size: 19px !important; } .sda-why-card-desc { font-size: 14px !important; } .sda-why-closing { font-size: 16px !important; margin-bottom: 24px !important; } }
-          @media (max-width: 640px) { .std-why.sda-why-section { padding: 20px 18px !important; } .sda-why-grid { grid-template-columns: 1fr !important; margin-bottom: 10px !important; } .sda-why-heading { font-size: 26px !important; line-height: 34px !important; margin-bottom: 10px !important; } .sda-why-card { padding: 22px 20px !important; } .sda-why-closing { margin-bottom: 10px !important; } }
-        ` }} />
       </section>
 
       {/* ── §12 Case Studies (CREAM) ── */}
@@ -1022,6 +689,364 @@ export default function Page() {
           .sda-cs-card-4th { display: none !important; }
           @media (max-width: 768px) { .sda-cs-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } .sda-cs-card-4th { display: flex !important; } }
           @media (max-width: 540px) { .sda-cs-grid { grid-template-columns: 1fr; } .sda-cs-card-4th { display: none !important; } }
+        ` }} />
+      </section>
+
+      {/* ── §7 Process (WHITE with CREAM inner) ── */}
+      <section className="std-process max-sm:!py-[40px]" style={{ background: C_WHITE, padding: "53px 20px" }} aria-label="Our Shopify development process">
+        <div
+          className="py-[40px] px-[48px] max-sm:py-[20px] max-sm:px-[20px] max-sm:!h-auto md:max-lg:py-[20px] md:max-lg:!h-auto lg:max-xl:py-[30px] lg:max-xl:px-[40px]"
+          style={{ maxWidth: "1320px", margin: "0 auto", background: C_CREAM, borderRadius: "28px", boxSizing: "border-box", overflow: "hidden" }}
+        >
+          <h2
+            className="text-[28px] sm:text-[36px] md:text-[32px] lg:text-[42px] font-bold max-sm:font-semibold"
+            style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", lineHeight: 1.2, margin: 0 }}
+          >
+            From Brief to a Live Shopify Store in 6 Weeks
+          </h2>
+          <p
+            className="text-[16px] max-sm:text-[14px]"
+            style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", marginTop: "16px", lineHeight: 1.65 }}
+          >
+            Five phases. One defined scope.
+            <br className="hidden sm:block lg:hidden" />{" "}
+            Most Shopify development projects are live within six weeks of kickoff.
+          </p>
+
+          {/* All 5 cards — unified grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 mt-[20px] md:max-lg:mt-[16px]">
+            {[
+              { step: "01.", title: "Discovery & Scope",    desc: "We map your requirements, document your existing stack, and define the full scope in writing. You receive a Scope of Work document before a single line of code is written. No ambiguity. No scope creep." },
+              { step: "02.", title: "Design & Wireframes",  desc: "Wireframes and high-fidelity designs built against your brand guidelines in Figma. Every page, every state, every responsive breakpoint. You approve the design before development begins." },
+              { step: "03.", title: "Development & Build",  desc: "Custom Liquid development, component architecture, metafield configuration, and third-party integrations. Weekly progress updates. Builds go into a staging environment for your review at each milestone." },
+              { step: "04.", title: "QA & Testing",        desc: "End-to-end testing across devices, browsers, and edge cases. Performance testing against Core Web Vitals benchmarks. Accessibility checks. We do not hand over a build that has not been stress-tested." },
+              { step: "05.", title: "Launch & Handover",   desc: "Controlled go-live with rollback plan in place. Full documentation of every custom component, metafield schema, and integration. Code transferred to your repository. 60-day support window begins from launch day." },
+            ].map(({ step, title, desc }, i, arr) => {
+              const lgClass =
+                i < 3 ? " lg:col-span-2" :
+                i === 3 ? " lg:[grid-column:2/4]" :
+                " lg:[grid-column:4/6]";
+              const smLastClass = i === arr.length - 1 ? " sm:col-span-2 sm:max-w-[360px] sm:mx-auto lg:max-w-none lg:mx-0" : "";
+              return (
+              <div key={step} className={`p-[30px] max-sm:p-[15px] md:max-lg:p-[16px] lg:max-xl:p-[20px]${lgClass}${smLastClass}`} style={{ background: "#FFFFFF", borderRadius: "16px", boxSizing: "border-box" }}>
+                <p className="text-[50px] max-sm:text-[35px] md:max-lg:text-[40px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "rgba(0,0,0,0.12)", lineHeight: 1, margin: "0 0 10px" }}>{step}</p>
+                <h3 className="text-[20px] max-sm:text-[18px] md:max-lg:text-[18px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "#000000", lineHeight: 1.3, margin: "0 0 10px" }}>{title}</h3>
+                <p className="text-[15px] max-sm:text-[14px] md:max-lg:text-[14px]" style={{ fontFamily: "'Poppins', sans-serif", color: "rgba(0,0,0,0.8)", lineHeight: 1.7, margin: 0 }}>{desc}</p>
+              </div>
+            );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── §9 Compare (DARK) ── */}
+      <section className="sda-compare" style={{ background: C_DARK, padding: "0 20px" }} aria-label="Why a Shopify development agency outperforms templates and freelancers">
+        <div className="mx-auto" style={{ maxWidth: 1320, padding: "60px 0" }}>
+          <h2 className="sda-compare-h2" style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(28px, 4.1vw, 42px)", fontWeight: 700, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
+            Why a{" "}
+            <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              Shopify Development Agency
+            </span>{" "}
+            Outperforms Templates and Freelancers
+          </h2>
+          <p style={{ fontFamily: "Poppins, sans-serif", fontSize: 16, lineHeight: 1.75, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
+            Most brands try to save money with a theme or a cheap freelancer. Here is what that decision costs over time.
+          </p>
+
+          <div className="sda-compare-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: 20, marginTop: 10 }}>
+
+            <div className="sda-compare-card" style={{ background: "#121212", borderRadius: 16, padding: 30, marginTop: 10 }}>
+              <span className="sda-compare-pill" style={{ display: "inline-block", background: "rgba(61,199,122,0.15)", color: "#3DC77A", fontFamily: "Poppins, sans-serif", fontSize: 18, fontWeight: 600, borderRadius: 999, padding: "6px 16px", marginBottom: 20, border: "1px solid rgba(61,199,122,0.3)" }}>
+                ✓ Custom Development by Ecomm Wizards
+              </span>
+              <ul className="sda-compare-list" style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
+                {SDA_PROS.map((item) => (
+                  <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontFamily: "Poppins, sans-serif", fontSize: 16, color: "#ffffff", lineHeight: 1.5 }}>
+                    <span style={{ flexShrink: 0, marginTop: 2 }}><CheckIcon /></span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="sda-compare-card" style={{ background: "#121212", borderRadius: 16, padding: 30, marginTop: 10 }}>
+              <span className="sda-compare-pill" style={{ display: "inline-block", background: "rgba(239,68,68,0.12)", color: "#f87171", fontFamily: "Poppins, sans-serif", fontSize: 18, fontWeight: 600, borderRadius: 999, padding: "6px 16px", marginBottom: 20, border: "1px solid rgba(239,68,68,0.25)" }}>
+                ✕ Template Themes &amp; Generic Freelancers
+              </span>
+              <ul className="sda-compare-list" style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
+                {SDA_CONS.map((item) => (
+                  <li key={item.text} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontFamily: "Poppins, sans-serif", fontSize: 16, color: "#ffffff", lineHeight: 1.5 }}>
+                    <span style={{ flexShrink: 0, marginTop: 2, color: item.warn ? "#fbbf24" : "#f87171" }}>
+                      {item.warn ? <WarnIcon /> : <CrossIcon />}
+                    </span>
+                    <span>{item.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div style={{ display: "flex", justifyContent: "center", marginTop: 32 }}>
+            <span className="group inline-flex p-[2px] rounded-full" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
+              <Link
+                href="/book-shopify-consultation"
+                className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px]"
+                style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600 }}
+              >
+                <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Book a Free Discovery Call</span>
+                <span className="text-white group-hover:text-black transition-colors duration-300"><Arrow /></span>
+              </Link>
+            </span>
+          </div>
+        </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 1024px) { .sda-compare-pill { font-size: 17px !important; } }
+          @media (max-width: 768px) { .sda-compare-grid { gap: 12px !important; } .sda-compare-card { padding: 20px !important; } .sda-compare-pill { font-size: 15px !important; } .sda-compare-list li { font-size: 13px !important; } }
+          @media (max-width: 640px) { .sda-compare-h2 { line-height: 1.25 !important; } }
+        ` }} />
+      </section>
+
+      {/* ── §6 Industries We Serve (CREAM) ── */}
+      <section style={{ background: C_CREAM, padding: "60px 20px" }} aria-label="Industries Ecomm Wizards builds Shopify stores for">
+        <div className="mx-auto" style={{ maxWidth: "1320px" }}>
+          <h2 style={{ color: C_DARK, fontFamily: "'Poppins', sans-serif", fontSize: "clamp(28px, 3.5vw, 42px)", fontWeight: 700, lineHeight: 1.2, textAlign: "center", margin: "0 0 12px" }}>
+            Industries We Build Shopify Stores For
+          </h2>
+          <p style={{ color: "#000000", fontFamily: "'Poppins', sans-serif", fontSize: 16, lineHeight: "26px", textAlign: "center", margin: "0 auto 40px", maxWidth: "620px" }}>
+            Every sector has different development requirements. Here are the industries we build for most, and what we specialise in for each.
+          </p>
+          <div className="sda-ind-grid">
+            {SDA_INDUSTRIES.map((ind) => (
+              <div key={ind.name} className="sda-ind-card">
+                <span className="sda-ind-icon" aria-hidden="true">{ind.icon}</span>
+                <h3 className="sda-ind-name">{ind.name}</h3>
+                <p className="sda-ind-desc">{ind.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, color: "#000000", textAlign: "center", margin: "32px 0 0" }}>
+            Not on this list? We build for all sectors. The platform is always Shopify.
+          </p>
+        </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          .sda-ind-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+          .sda-ind-card { background: #fff; border-radius: 16px; padding: 24px; border: 1px solid rgba(0,0,0,0.07); display: flex; flex-direction: column; gap: 10px; }
+          .sda-ind-icon { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: rgba(61,199,122,0.1); border-radius: 12px; color: #2A9555; flex-shrink: 0; }
+          .sda-ind-name { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: #000; margin: 0; line-height: 1.3; }
+          .sda-ind-desc { font-family: 'Poppins', sans-serif; font-size: 13px; color: #334155; line-height: 1.65; margin: 0; }
+          @media (max-width: 1024px) { .sda-ind-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 12px !important; } .sda-ind-card { padding: 18px !important; } }
+          @media (max-width: 768px) { .sda-ind-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+          @media (max-width: 480px) { .sda-ind-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; } .sda-ind-card { padding: 16px !important; } }
+        ` }} />
+      </section>
+
+      {/* ── §8 Platform Comparison (WHITE) ── */}
+      <section style={{ background: C_WHITE, padding: "60px 20px" }} aria-label="Shopify vs WooCommerce vs BigCommerce comparison">
+        <div className="mx-auto" style={{ maxWidth: "1320px" }}>
+          <h2 style={{ color: C_DARK, fontFamily: "'Poppins', sans-serif", fontSize: "clamp(28px, 3.5vw, 42px)", fontWeight: 700, lineHeight: 1.2, textAlign: "center", margin: "0 0 12px" }}>
+            Shopify vs WooCommerce vs BigCommerce
+          </h2>
+          <p style={{ color: "#000000", fontFamily: "'Poppins', sans-serif", fontSize: 16, lineHeight: "26px", textAlign: "center", margin: "0 auto 20px", maxWidth: "640px" }}>
+            We build exclusively on Shopify. Here is why, and where Shopify genuinely wins over the alternatives.
+          </p>
+
+          <div className="sda-plat-grid">
+            {/* Shopify — featured */}
+            <div className="sda-plat-card sda-plat-card--featured">
+              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
+                <Image src="/images/shopify-icon.svg" alt="" width={24} height={24} aria-hidden />
+                <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 20, fontWeight: 700, color: "#000", margin: 0 }}>Shopify</h3>
+              </div>
+              <span style={{ display: "inline-block", background: "rgba(61,199,122,0.15)", color: "#2A9555", fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 600, borderRadius: "999px", padding: "3px 12px", marginBottom: "20px", border: "1px solid rgba(61,199,122,0.3)" }}>Our Platform</span>
+              {[
+                { label: "Hosting & Security", verdict: "Fully managed. Shopify handles uptime, SSL, and PCI compliance." },
+                { label: "Checkout Flexibility", verdict: "Full checkout extensibility via Shopify Functions on Plus." },
+                { label: "App Ecosystem", verdict: "8,000+ vetted apps. Quality controlled by Shopify review process." },
+                { label: "Cost of Ownership", verdict: "Predictable monthly fee. Transaction fees waived on Shopify Payments." },
+                { label: "Scalability", verdict: "Black Friday-tested infrastructure. No server management required." },
+                { label: "Support", verdict: "24/7 Shopify support plus a global developer community." },
+              ].map((row) => (
+                <div key={row.label} style={{ display: "flex", gap: "10px", alignItems: "flex-start", marginBottom: "14px" }}>
+                  <span style={{ flexShrink: 0, marginTop: "2px" }}><CheckIcon /></span>
+                  <div>
+                    <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 700, color: "#000000", margin: "0 0 2px", textTransform: "uppercase", letterSpacing: "0.08em" }}>{row.label}</p>
+                    <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 14, color: "#000", margin: 0, lineHeight: 1.5 }}>{row.verdict}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* WooCommerce */}
+            <div className="sda-plat-card">
+              <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 20, fontWeight: 700, color: "#000", margin: "0 0 8px" }}>WooCommerce</h3>
+              <span style={{ display: "inline-block", background: "rgba(239,68,68,0.08)", color: "#ef4444", fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 600, borderRadius: "999px", padding: "3px 12px", marginBottom: "20px", border: "1px solid rgba(239,68,68,0.2)" }}>Self-Hosted</span>
+              {[
+                { label: "Hosting & Security", verdict: "Self-hosted. You manage servers, security patches, and SSL renewals." },
+                { label: "Checkout Flexibility", verdict: "Plugin-dependent. Every customisation adds technical debt and risk." },
+                { label: "App Ecosystem", verdict: "59,000+ plugins. Quality varies wildly. Many are abandoned or unmaintained." },
+                { label: "Cost of Ownership", verdict: "Free platform. Hosting, plugins, security, and dev time accumulate fast." },
+                { label: "Scalability", verdict: "Requires expensive server upgrades as traffic grows. Frequent downtime." },
+                { label: "Support", verdict: "Community forums only. No official support channel or SLA." },
+              ].map((row) => (
+                <div key={row.label} style={{ display: "flex", gap: "10px", alignItems: "flex-start", marginBottom: "14px" }}>
+                  <span style={{ flexShrink: 0, marginTop: "2px" }}><CrossIcon /></span>
+                  <div>
+                    <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 700, color: "#000000", margin: "0 0 2px", textTransform: "uppercase", letterSpacing: "0.08em" }}>{row.label}</p>
+                    <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 14, color: "#334155", margin: 0, lineHeight: 1.5 }}>{row.verdict}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* BigCommerce */}
+            <div className="sda-plat-card">
+              <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 20, fontWeight: 700, color: "#000", margin: "0 0 8px" }}>BigCommerce</h3>
+              <span style={{ display: "inline-block", background: "rgba(245,158,11,0.1)", color: "#b45309", fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 600, borderRadius: "999px", padding: "3px 12px", marginBottom: "20px", border: "1px solid rgba(245,158,11,0.25)" }}>Hosted</span>
+              {[
+                { label: "Hosting & Security", verdict: "Hosted with SSL included. Less mature than Shopify infrastructure." },
+                { label: "Checkout Flexibility", verdict: "Limited customisation. No equivalent to Shopify Functions." },
+                { label: "App Ecosystem", verdict: "Smaller marketplace. Fewer specialist tools for DTC and Plus brands." },
+                { label: "Cost of Ownership", verdict: "Similar to Shopify but transaction fees apply with most payment providers." },
+                { label: "Scalability", verdict: "Handles growth but lacks Shopify Plus enterprise features at scale." },
+                { label: "Support", verdict: "Business hours support. Smaller developer network and community." },
+              ].map((row) => (
+                <div key={row.label} style={{ display: "flex", gap: "10px", alignItems: "flex-start", marginBottom: "14px" }}>
+                  <span style={{ flexShrink: 0, marginTop: "2px" }}><WarnIcon /></span>
+                  <div>
+                    <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 700, color: "#000000", margin: "0 0 2px", textTransform: "uppercase", letterSpacing: "0.08em" }}>{row.label}</p>
+                    <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 14, color: "#334155", margin: 0, lineHeight: 1.5 }}>{row.verdict}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, color: "#000000", textAlign: "center", margin: "32px 0 0" }}>
+            We build exclusively on Shopify because it outperforms on the metrics that grow revenue.
+          </p>
+        </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          .sda-plat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+          .sda-plat-card { background: #FBF7ED; border-radius: 16px; padding: 28px; border: 1px solid rgba(0,0,0,0.08); }
+          .sda-plat-card--featured { border: 2px solid rgba(61,199,122,0.4); box-shadow: 0 4px 24px rgba(61,199,122,0.12); }
+          @media (max-width: 1024px) { .sda-plat-grid { gap: 14px !important; } .sda-plat-card { padding: 20px !important; } }
+          @media (max-width: 768px) { .sda-plat-grid { grid-template-columns: repeat(2, 1fr) !important; max-width: none; margin: 0; } .sda-plat-card:first-child { grid-column: 1 / -1; max-width: 88%; margin-left: auto; margin-right: auto; } .sda-plat-card { padding: 16px !important; } }
+          @media (max-width: 480px) { .sda-plat-grid { grid-template-columns: 1fr !important; max-width: 520px; margin-left: auto !important; margin-right: auto !important; } .sda-plat-card:first-child { grid-column: auto; } }
+        ` }} />
+      </section>
+
+      {/* ── §11 Why Us (DARK) ── */}
+      <section
+        className="std-why sda-why-section"
+        style={{ background: C_DARK, color: C_TEXT, fontFamily: "'Poppins', sans-serif", fontSize: "16px", padding: "53px 20px" }}
+        aria-label="Why brands choose Ecomm Wizards as their Shopify development agency"
+      >
+        <div className="sda-why-inner mx-auto" style={{ maxWidth: "1320px" }}>
+          <h2 className="sda-why-heading">
+            Why Brands Choose Ecomm Wizards as Their{" "}<br className="sda-why-br-lg" />
+            <span style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              Shopify Development Agency
+            </span>
+          </h2>
+          <p className="sda-why-desc">
+            We have built 100+ live Shopify stores. Here is what separates a properly built Shopify store from one that was pieced together with themes and workarounds:
+          </p>
+
+          <div className="sda-why-grid">
+            {[
+              {
+                title: "Shopify-Only Developers",
+                desc: (<>We work exclusively on Shopify. Not Shopify alongside WooCommerce or Magento. Every developer knows Shopify&apos;s API surface, Liquid, Shopify Functions, and the Storefront API in depth. When you hire a Shopify developer through us, you get someone who works on Shopify full-time and nothing else.</>),
+                icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4l-2 2-4-2-2 4-4 2 2 4-2 4 4 2 2 4 4-2 4 2 2-4 4-2-2-4 2-4-4-2z"/><circle cx="16" cy="16" r="3"/></svg>),
+              },
+              {
+                title: "Fixed Price, Confirmed on Day 1",
+                desc: (<>We define the full project before development starts. Your cost is agreed in writing before a line of code is written. No hourly billing. No surprise invoices. No extra charges at final delivery. <span className="sda-why-hl">You know the full number on Day 1 and it does not change.</span></>),
+                icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="5" width="24" height="24" rx="3"/><path d="M22 3v4M10 3v4M4 13h24"/><path d="M10 19l3 3 6-6"/></svg>),
+              },
+              {
+                title: "You Own Every Line of Code",
+                desc: (<>Full code transfer and documentation at project completion. Every component, every metafield schema, and every integration lives in your repositories and accounts. No proprietary systems. No recurring licence fees. If you stop working with us, your store keeps running exactly as we built it.</>),
+                icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M6 10l-4 6 4 6"/><path d="M26 10l4 6-4 6"/><path d="M19 6l-6 20"/></svg>),
+              },
+              {
+                title: "100+ Live Shopify Stores Built",
+                desc: (<>We have built, migrated, and launched over 100 Shopify stores. DTC brands, Shopify Plus merchants, B2B distributors, and global retailers. Every project adds to a body of pattern knowledge most developers never build up. The edge cases that catch other agencies are ones we solved years ago.</>),
+                icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 22L10 12l5 6 4-8 5 8"/><circle cx="23" cy="6" r="3"/><path d="M20.5 6H6" strokeDasharray="2 2"/></svg>),
+              },
+              {
+                title: "60 Days Post-Launch Support",
+                desc: (<>Go-live is not the finish line. We monitor every build for 60 days post-launch and respond to any incident within hours. If a bug, a performance issue, or a broken integration comes up after launch, we fix it. <span className="sda-why-hl">You are not on your own the morning after launch.</span></>),
+                icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M16 3L5 8v9c0 6.1 4.7 11.8 11 13 6.3-1.2 11-6.9 11-13V8L16 3z"/><path d="M11 16l3 3 7-7"/></svg>),
+              },
+              {
+                title: "Shopify Plus Certified Partners",
+                desc: (<>We are Shopify Partners with hands-on experience on Shopify Plus, Shopify Functions, Shopify Flow, and the full enterprise feature set. Every Shopify platform update that could affect your store, we test it and document it before your next project goes live. Your store is never caught off guard.</>),
+                icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4 l3 2.4 l3.7 -0.6 l1.6 3.4 l3.4 1.6 l-0.6 3.7 l2.4 3 l-2.4 3 l0.6 3.7 l-3.4 1.6 l-1.6 3.4 l-3.7 -0.6 l-3 2.4 l-3 -2.4 l-3.7 0.6 l-1.6 -3.4 l-3.4 -1.6 l0.6 -3.7 l-2.4 -3 l2.4 -3 l-0.6 -3.7 l3.4 -1.6 l1.6 -3.4 l3.7 0.6 z" /><polyline points="11,16.5 14.5,20 21,12.5" /></svg>),
+              },
+            ].map((card) => (
+              <div key={card.title} className="sda-why-card">
+                <span className="sda-why-icon" aria-hidden="true">{card.icon}</span>
+                <h3 className="sda-why-card-title">{card.title}</h3>
+                <p className="sda-why-card-desc">{card.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="sda-why-closing">
+            Every store we build is documented, tested, and handed over completely. A Shopify development company that knows the platform deeply catches edge cases before go-live, not after. We know the API surface, the data model, and the architecture well enough to know exactly where things break.
+          </p>
+
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <span className="group inline-flex p-[2px] rounded-full" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
+              <Link
+                href="/book-shopify-consultation"
+                className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px]"
+                style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600 }}
+              >
+                <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Book a Free Discovery Call</span>
+                <span className="text-white group-hover:text-black transition-colors duration-300"><Arrow /></span>
+              </Link>
+            </span>
+          </div>
+        </div>
+
+        <style dangerouslySetInnerHTML={{ __html: `
+          .sda-why-heading { color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 42px; font-weight: 700; line-height: 52px; text-align: center; margin: 0 auto 24px; max-width: 1320px; }
+          .sda-why-br-lg { display: inline; }
+          .sda-why-desc { color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 18px; line-height: 28px; text-align: center; margin: 0 auto 24px; max-width: 980px; }
+          .sda-why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 0 0 30px; }
+          .sda-why-card { position: relative; background: #0a0a0a; padding: 30px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; align-items: center; text-align: center; font-family: 'Poppins', sans-serif; font-size: 16px; }
+          .sda-why-card::before { content: ""; position: absolute; inset: 0; border-radius: 16px; padding: 1px; background: linear-gradient(140deg, rgba(168,240,180,0.45) 0%, rgba(74,184,114,0.0) 35%, rgba(74,184,114,0.0) 65%, rgba(78,183,113,0.45) 100%); -webkit-mask: linear-gradient(#000,#000) content-box, linear-gradient(#000,#000); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+          .sda-why-icon { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; margin-bottom: 10px; color: #4FB872; }
+          .sda-why-card-title { color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 700; line-height: 30px; margin: 0 0 14px; }
+          .sda-why-card-desc { color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 15px; line-height: 24px; margin: 0; }
+          .sda-why-hl { font-weight: 700; background-image: linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+          .sda-why-closing { color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 18px; line-height: 28px; text-align: center; margin: 20px auto 20px; max-width: 1100px; }
+          @media (max-width: 1024px) { .std-why.sda-why-section { padding: 53px 20px !important; } .sda-why-heading { font-size: 30px !important; line-height: 40px !important; margin-bottom: 16px !important; } .sda-why-br-lg { display: none !important; } .sda-why-desc { font-size: 16px !important; margin-bottom: 16px !important; } .sda-why-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; margin-bottom: 20px !important; } .sda-why-card { padding: 24px !important; } .sda-why-card-title { font-size: 19px !important; } .sda-why-card-desc { font-size: 14px !important; } .sda-why-closing { font-size: 16px !important; margin-bottom: 24px !important; } }
+          @media (max-width: 640px) { .std-why.sda-why-section { padding: 20px 18px !important; } .sda-why-grid { grid-template-columns: 1fr !important; margin-bottom: 10px !important; } .sda-why-heading { font-size: 26px !important; line-height: 34px !important; margin-bottom: 10px !important; } .sda-why-card { padding: 22px 20px !important; } .sda-why-closing { margin-bottom: 10px !important; } }
+        ` }} />
+      </section>
+
+      {/* ── §10 Results / Testimonial Slider (CREAM) ── */}
+      <section
+        className="sda-results-section"
+        style={{ background: C_CREAM, color: C_TEXT, fontFamily: "'Poppins', sans-serif", fontSize: "16px", padding: "40px 20px" }}
+        aria-label="Shopify development case study results"
+      >
+        <div className="sda-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
+          <h2 className="sda-results-heading">Real Shopify Development Projects. Measurable Results.</h2>
+          <p className="sda-results-desc">
+            Not projections. Real numbers from stores where proper development work produced documented, measurable improvements in conversion and revenue.
+          </p>
+          <CaseStudySlider slides={CASE_STUDY_SLIDES} intervalMs={6000} showDots={false} />
+        </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          .sda-results-heading { color:#000;font-family:'Poppins',sans-serif;font-size:42px;font-weight:700;line-height:52px;text-align:center;margin:0 auto 24px;max-width:1100px; }
+          .sda-results-desc { color:rgba(0,0,0,.8);font-family:'Poppins',sans-serif;font-size:18px;line-height:28px;text-align:center;margin:0 auto 24px;max-width:1056px; }
+          @media (max-width:1023px) { .sda-results-section { padding:44px 20px !important; } .sda-results-heading { font-size:30px !important;line-height:40px !important;margin-bottom:18px !important; } .sda-results-desc { font-size:16px !important;line-height:26px !important;margin-bottom:32px !important; } }
+          @media (max-width:768px) { .sda-results-desc { margin-bottom:18px !important; } }
+          @media (max-width:640px) { .sda-results-section { padding:20px 16px !important; } .sda-results-heading { font-size:26px !important;line-height:34px !important; } .sda-results-desc { font-size:15px !important;line-height:24px !important; } }
         ` }} />
       </section>
 
@@ -1109,6 +1134,10 @@ export default function Page() {
         .std-acc-icon--open { transform: rotate(180deg); }
 
         /* Responsive hero */
+        @media (max-width: 1280px) {
+          .std-hero-stats { flex-wrap: nowrap !important; }
+          .std-hero-stat-item { padding-right: 20px !important; margin-right: 20px !important; }
+        }
         @media (max-width: 1024px) {
           .std-hero-h1 { font-size: 40px !important; }
           .std-solutions h2 { font-size: 38px !important; }
