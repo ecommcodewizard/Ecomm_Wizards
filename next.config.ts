@@ -33,6 +33,11 @@ const nextConfig: NextConfig = {
         destination: "/services/shopify-development-agency",
         permanent: true,
       },
+      {
+        source: "/shopify-conversion-rate-optimization-cro-agency",
+        destination: "/services/shopify-cro-agency",
+        permanent: true,
+      },
     ];
   },
 };
