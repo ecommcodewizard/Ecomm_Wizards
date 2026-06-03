@@ -344,10 +344,6 @@ const SCRO_FAQS = [
     a: "The average Shopify store converts at 1.3%. Stores in the top quartile convert at 3% or above. Shopify Plus stores running a structured CRO program typically sit at 3 to 5%. The number that matters most is not the industry average but the gap between your current rate and what your traffic quality and product margins support. A Shopify CRO audit tells you your store's realistic conversion ceiling.",
   },
   {
-    q: "How many A/B tests do you run per month?",
-    a: "We run 2 to 4 tests per month depending on your store's traffic volume. Each test needs a minimum of 2 weeks to reach statistical significance at 95% confidence. Higher-traffic stores can run concurrent tests on different pages. Lower-traffic stores run them in sequence. We prioritize by revenue impact, so the highest-value test goes live first, regardless of how easy it is to build.",
-  },
-  {
     q: "Do you need Shopify Plus for CRO?",
     a: "No. Shopify CRO works on standard Shopify for any store with 10,000+ monthly sessions. Shopify Plus adds Checkout Extensibility, which lets us test and optimize checkout at a deeper level than standard Shopify allows. Our Shopify Plus CRO services build on that. For stores on standard Shopify, we focus on PDP, homepage, navigation, mobile UX, and pre-checkout pages, all of which move conversion regardless of plan. CRO for Shopify Plus simply has more surface area to test.",
   },
@@ -558,7 +554,7 @@ export default function Page() {
               &ldquo;We needed a store that could handle serious athletes, casual fitness buyers, and trade accounts in one place. Ecomm Wizards built exactly that. The conversion numbers and trade portal revenue both exceeded what we projected.&rdquo;
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-              <Image src="/images/Case%20studies/Daniel%20Summerson.jpg" alt="Daniel Summerson" width={44} height={44} style={{ borderRadius: "50%", objectFit: "cover", flexShrink: 0, width: "44px", height: "44px" }} />
+              <Image src="/images/Case%20studies/Daniel%20Summerson.jpg" alt="Daniel Summerson" width={44} height={44} style={{ borderRadius: "50%", objectFit: "cover", objectPosition: "center 20%", flexShrink: 0, width: "44px", height: "44px" }} />
               <div>
                 <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 14, fontWeight: 700, color: C_DARK, margin: 0 }}>Daniel Summerson</p>
                 <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: C_TEXT, margin: 0 }}>Managing Director, Everlast Gyms. <strong style={{ color: "#2A9555" }}>+152% Conversion Rate</strong></p>

@@ -6,9 +6,9 @@ import HlFaqAccordion from "./HlFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 export const metadata: Metadata = {
-  title: "Headless Shopify Agency | Hydrogen & Next.js Storefronts | Ecomm Wizards",
+  title: "Headless Shopify Agency | Hydrogen & Next.js Development | Ecomm Wizards",
   description:
-    "Headless Shopify agency building Hydrogen and Next.js storefronts. Sub-second load times, total design freedom, Shopify's commerce engine. Book a free architecture call.",
+    "Headless Shopify agency for Hydrogen and Next.js development. Headless commerce storefronts with sub-second load times and total design freedom. Book a free architecture call.",
 };
 
 const C_DARK  = "#000000";
@@ -191,11 +191,11 @@ const SHL_PAINS = [
 const SHL_ITEMS = [
   {
     title: "Headless Strategy & Architecture",
-    body: "Before we write code, we map the right architecture for your store: which pages go headless, how data flows through the Storefront API, where your CMS sits, and how it all stays fast and maintainable. If a theme is the smarter call, we say so here. Every headless Shopify build starts with an architecture you understand and own.",
+    body: "Before we write code, we map the right headless commerce architecture for your store: which pages go headless, how data flows through the Storefront API, where your CMS sits, and how it all stays fast and maintainable. If a theme is the smarter call, we say so here. Every headless Shopify build starts with an architecture you understand and own.",
   },
   {
     title: "Hydrogen Storefront Development",
-    body: "Hydrogen is Shopify's official React framework, built on Remix and hosted on Oxygen. We build commerce-first headless storefronts on Hydrogen when tight Shopify integration and the path of least resistance matter most. You get a fast, Shopify-native frontend with first-class access to the Storefront API.",
+    body: "Hydrogen is Shopify's official React framework, built on Remix and hosted on Oxygen. We do headless Shopify development on Hydrogen for commerce-first storefronts, when tight Shopify integration and the path of least resistance matter most. You get a fast, Shopify-native frontend with first-class access to the Storefront API.",
   },
   {
     title: "Next.js Storefront Development",
@@ -207,7 +207,7 @@ const SHL_ITEMS = [
   },
   {
     title: "Theme-to-Headless Migration",
-    body: "Moving an existing Shopify store to headless without losing rankings or revenue takes a plan. We map every URL, preserve your SEO, rebuild storefront app functionality as headless-native code, and cut over with zero downtime. Your backend keeps running on Shopify the whole time.",
+    body: "Moving an existing Shopify store to a headless Shopify store without losing rankings or revenue takes a plan. We map every URL, preserve your SEO, rebuild storefront app functionality as headless-native code, and cut over with zero downtime. Your backend keeps running on Shopify the whole time.",
   },
   {
     title: "Headless Performance & Core Web Vitals",
@@ -219,7 +219,7 @@ const SHL_ITEMS = [
   },
   {
     title: "Ongoing Headless Support & Maintenance",
-    body: "A headless storefront does not auto-update like a theme, so it needs a real maintenance partner. We monitor performance, ship updates, and extend the build as your business grows. Every project includes a 60-day support window, with ongoing retainers for teams that want us on call.",
+    body: "A headless storefront does not auto-update like a theme, so it needs a real maintenance partner. As a headless Shopify development company, we monitor performance, ship updates, and extend the build as your business grows. Every project includes a 60-day support window, with ongoing retainers and dedicated Shopify headless developers for teams that want us on call.",
   },
 ];
 
@@ -330,8 +330,8 @@ const SHL_CONS = [
 /* ── FAQs ── */
 const SHL_FAQS = [
   {
-    q: "What is headless Shopify?",
-    a: "Headless Shopify means separating your storefront (the head, everything the customer sees) from Shopify's backend (the commerce engine that runs products, checkout, and orders). The two talk to each other through the Storefront API. You build a fully custom frontend on a framework like Hydrogen or Next.js, while Shopify keeps doing what it does best. The result is total design freedom and far faster load times than a theme can reach.",
+    q: "What is headless Shopify, and what does headless Shopify mean?",
+    a: "Headless Shopify means separating your storefront (the head, everything the customer sees) from Shopify's backend (the commerce engine that runs products, checkout, and orders). The two talk to each other through the Storefront API. In Shopify headless commerce you build a fully custom frontend on a framework like Hydrogen or Next.js, while Shopify keeps doing what it does best. The result is total design freedom and far faster load times than a theme can reach.",
   },
   {
     q: "Is headless right for my store, and when is it not?",
@@ -343,11 +343,11 @@ const SHL_FAQS = [
   },
   {
     q: "Do I need Shopify Plus for a headless build?",
-    a: "Not strictly. You can use the Storefront API to build a headless storefront on any Shopify plan. Shopify Plus adds Checkout UI Extensions, Shopify Functions, and B2B features that headless builds frequently use, and Oxygen hosting for Hydrogen is included with Plus. Most brands seriously considering headless are on or moving to Plus anyway, but we will tell you whether your build actually needs it.",
+    a: "Not strictly. You can use the Storefront API to build a headless Shopify store on any Shopify plan. Shopify Plus headless builds add Checkout UI Extensions, Shopify Functions, and B2B features that headless commerce frequently uses, and Oxygen hosting for Hydrogen is included with Plus. Most brands seriously considering headless are on or moving to Plus anyway, but we will tell you whether your build actually needs it.",
   },
   {
     q: "How much does a headless Shopify build cost?",
-    a: "It depends entirely on scope: how many pages go headless, your catalog complexity, which systems you integrate, whether you need design from scratch, and your CMS choice. Headless is a larger investment than a theme build, which is exactly why we start with an architecture call to scope it properly. We give you a fixed price in writing before any work begins, so you never see a surprise invoice.",
+    a: "It depends entirely on scope: how many pages go headless, your catalog complexity, which systems you integrate, whether you need design from scratch, and your CMS choice. Headless Shopify development is a larger investment than a theme build, which is exactly why we start with an architecture call to scope it properly. We give you a fixed price in writing before any work begins, so you never see a surprise invoice.",
   },
   {
     q: "How long does a headless build take?",
@@ -358,12 +358,8 @@ const SHL_FAQS = [
     a: "Your backend apps keep working: inventory, orders, subscriptions, and anything that lives in the Shopify admin runs exactly as before. Storefront apps that inject JavaScript into your theme, like pop-ups, live chat, and upsell widgets, do not carry over automatically. We rebuild that functionality as headless-native code or swap in headless-compatible tools. We audit your full app stack at the start so there are no surprises.",
   },
   {
-    q: "Does headless help or hurt SEO?",
-    a: "Done right, headless helps. Faster load times and green Core Web Vitals are direct ranking signals, and server-side rendering means Google sees fully rendered pages. Done wrong, with client-side-only rendering, headless can hurt SEO because crawlers do not see your content. We build with server-side rendering, preserve your URL structure and metadata, and treat SEO as a launch requirement, not an afterthought.",
-  },
-  {
-    q: "Can you migrate my existing store to headless without losing rankings?",
-    a: "Yes. We map every existing URL, preserve your redirects, metadata, and structured data, and rebuild storefront functionality as headless-native code. Your Shopify backend keeps running the whole time, so there is no downtime at checkout. We stage and test the full build before cutover and monitor Google Search Console closely in the weeks after launch.",
+    q: "Is headless Shopify better for SEO?",
+    a: "Done right, headless Shopify is better for SEO. Faster load times and green Core Web Vitals are direct ranking signals, and server-side rendering means Google sees fully rendered pages. Done wrong, with client-side-only rendering, headless can hurt SEO because crawlers do not see your content. We build with server-side rendering, preserve your URL structure and metadata, and treat SEO as a launch requirement, not an afterthought.",
   },
   {
     q: "Do we own the code?",
@@ -446,15 +442,15 @@ export default function Page() {
               </span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
-              A theme can only take your store so far. We separate your storefront from Shopify&apos;s backend so you get total design freedom and sub-second load times, while Shopify keeps running products, checkout, and orders. We build headless storefronts on Hydrogen and Next.js for brands that have outgrown what a theme can do.
+              A theme can only take your store so far. We separate your storefront from Shopify&apos;s backend so you get total design freedom and sub-second load times, while Shopify keeps running products, checkout, and orders. We handle the full headless commerce build, from architecture to launch, with headless Shopify development on Hydrogen and Next.js for brands that have outgrown what a theme can do.
             </p>
 
             <div className="std-hero-stats">
               {[
                 { number: "100+",   label: "Stores Built" },
                 { number: "0.8s",   label: "Avg. Load Time" },
+                { number: "90+",    label: "Lighthouse Score" },
                 { number: "$150M+", label: "Client GMV" },
-                { number: "60 Days", label: "Support Included" },
               ].map((s) => (
                 <div key={s.label} className="std-hero-stat-item">
                   <span className="std-hero-stat-num">{s.number}</span>
@@ -530,7 +526,7 @@ export default function Page() {
             100+ Shopify Stores Built. Here&apos;s Who Trusts Us.
           </h2>
           <p className="text-center" style={{ color: C_TEXT, fontSize: 16, lineHeight: "26px", margin: "10px 0 0", textAlign: "center" }}>
-            We build exclusively on Shopify. Every headless build is engineered in-house by developers who work on Shopify and modern frontend frameworks full-time.
+            We build exclusively on Shopify. Every headless commerce build is engineered in-house by Shopify headless developers who work on the platform and modern frontend frameworks full-time.
           </p>
           <div className="std-trust-carousel" style={{ marginTop: 20, width: "100%", overflow: "hidden" }}>
             <div className="shl-trust-track">
@@ -552,10 +548,10 @@ export default function Page() {
 
           <div style={{ maxWidth: "780px", margin: "36px auto 0", padding: "28px 32px", borderLeft: "4px solid #3DC77A", background: "rgba(61,199,122,0.05)", borderRadius: "0 12px 12px 0" }}>
             <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 18, fontWeight: 500, color: C_DARK, lineHeight: 1.6, margin: "0 0 16px", fontStyle: "italic" }}>
-              &ldquo;We needed a store that could handle serious athletes, casual fitness buyers, and trade accounts in one place. Ecomm Wizards built exactly that, and the speed and conversion numbers both exceeded what we projected.&rdquo;
+              &ldquo;We had pushed our theme as far as it could go. Ecomm Wizards rebuilt the storefront as a fully custom headless build, and the speed jump was instant. We finally have the design freedom we wanted, with none of the template limits we were fighting before.&rdquo;
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-              <Image src="/images/Case%20studies/Daniel%20Summerson.jpg" alt="Daniel Summerson" width={44} height={44} style={{ borderRadius: "50%", objectFit: "cover", flexShrink: 0, width: "44px", height: "44px" }} />
+              <Image src="/images/Case%20studies/Daniel%20Summerson.jpg" alt="Daniel Summerson" width={44} height={44} style={{ borderRadius: "50%", objectFit: "cover", objectPosition: "center 20%", flexShrink: 0, width: "44px", height: "44px" }} />
               <div>
                 <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 14, fontWeight: 700, color: C_DARK, margin: 0 }}>Daniel Summerson</p>
                 <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: C_TEXT, margin: 0 }}>Managing Director, Everlast Gyms. <strong style={{ color: "#2A9555" }}>+152% Conversion Rate</strong></p>
@@ -583,13 +579,13 @@ export default function Page() {
                 What Is Headless Shopify and Who Actually Needs It?
               </h2>
               <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: "0 0 10px" }}>
-                Headless Shopify means splitting the head, everything your customer sees and interacts with, from the body, the Shopify backend that runs products, checkout, and orders. The two connect through the Storefront API. You build a fully custom frontend on a framework like Hydrogen or Next.js, and Shopify keeps doing the commerce heavy lifting underneath.
+                Headless Shopify means splitting the head, everything your customer sees and interacts with, from the body, the Shopify backend that runs products, checkout, and orders. The two connect through the Storefront API. In Shopify headless commerce you build a fully custom frontend on a framework like Hydrogen or Next.js, and Shopify keeps doing the commerce heavy lifting underneath.
               </p>
               <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: "0 0 10px" }}>
-                Brands move to headless for four reasons: raw speed, total design freedom, the ability to integrate complex external systems, and serving multiple markets and channels from one backend. A theme caps all four. A headless storefront removes the ceiling.
+                The advantages of a headless Shopify store come down to four things: raw speed, total design freedom, the ability to integrate complex external systems, and serving multiple markets and channels from one backend. A theme caps all four. A headless ecommerce build removes the ceiling.
               </p>
               <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: 0 }}>
-                Here is the honest part. Headless adds cost and complexity. It is the right call only when a theme genuinely cannot do the job. If a fast premium theme would serve you better, we will tell you that on the first call. We only build headless when there is a clear reason to.
+                Here is the honest part. Headless Shopify development adds cost and complexity. It is the right call only when a theme genuinely cannot do the job. If a fast premium theme would serve you better, we will tell you that on the first call. We only build headless when there is a clear reason to.
               </p>
             </div>
             <div className="shl-edu-right">
@@ -683,7 +679,7 @@ export default function Page() {
             </span>
           </h2>
           <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 16, color: "rgba(255,255,255,0.75)", textAlign: "center", margin: "0 auto 40px", maxWidth: "680px", lineHeight: "26px" }}>
-            Headless is powerful and expensive. It pays off for the right store and wastes money for the wrong one. Here is how to know which you are before you spend a penny.
+            Headless commerce is powerful and expensive. It pays off for the right store and wastes money for the wrong one. Here is how to know which you are before you spend a penny.
           </p>
 
           <div className="shl-qual-grid">
@@ -752,7 +748,7 @@ export default function Page() {
               Every Headless Shopify Service Your Build Needs
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              From architecture and Hydrogen or Next.js development to CMS integration, migration, and ongoing support. Every headless Shopify development service your build needs, in-house and fixed price.
+              Our headless Shopify development services cover the full headless commerce build: architecture, Hydrogen or Next.js development, CMS integration, migration, and ongoing support. Every service your build needs, in-house and fixed price.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
               Book a Free Architecture Call
@@ -780,7 +776,7 @@ export default function Page() {
             <div className="shl-fw-card">
               <div className="shl-fw-head">
                 <span className="shl-fw-icon" aria-hidden="true">
-                  <svg width="26" height="26" viewBox="0 0 28 28" fill="none"><path d="M14 3l9 5v8l-9 5-9-5V8l9-5z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/><path d="M14 13l9-5M14 13v10M14 13L5 8" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/></svg>
+                  <Image src="/images/Hydrogen logo icon svg.webp" alt="Hydrogen" width={28} height={28} style={{ objectFit: "contain", width: "28px", height: "28px" }} />
                 </span>
                 <div>
                   <p className="shl-fw-name">Hydrogen + Oxygen</p>
@@ -795,7 +791,7 @@ export default function Page() {
             <div className="shl-fw-card">
               <div className="shl-fw-head">
                 <span className="shl-fw-icon" aria-hidden="true">
-                  <svg width="26" height="26" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="11" stroke="currentColor" strokeWidth="1.6"/><path d="M9 9v10M9 9l8 10M19 9v10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <Image src="/images/next-js logo icon svg.svg" alt="Next.js" width={28} height={28} style={{ objectFit: "contain", width: "28px", height: "28px" }} />
                 </span>
                 <div>
                   <p className="shl-fw-name">Next.js + Vercel</p>
@@ -808,23 +804,23 @@ export default function Page() {
               <p className="shl-fw-best"><strong>Best when:</strong> your build is content-heavy, multi-market, or needs architecture beyond pure commerce.</p>
             </div>
           </div>
-          <p className="shl-fw-note">We pick the right one per project. We do not force every build into one framework, and we will explain the trade-off in plain terms on the architecture call.</p>
+          <p className="shl-fw-note">We pick the right headless framework per project. We do not force every headless Shopify development build into one stack, and we will explain the trade-off in plain terms on the architecture call.</p>
 
           {/* Tools grid */}
           <div className="shl-tools-grid">
             {[
-              { name: "Hydrogen", abbr: "Framework", desc: "Shopify's official React framework for commerce-first headless builds." },
-              { name: "Next.js", abbr: "Framework", desc: "Mature React framework for content-heavy and multi-market storefronts." },
-              { name: "Remix", abbr: "Framework", desc: "The web framework Hydrogen is built on, tuned for fast data loading." },
-              { name: "Oxygen", abbr: "Hosting", desc: "Shopify's global hosting for Hydrogen, free on Shopify Plus." },
-              { name: "Vercel", abbr: "Hosting", desc: "Edge hosting for Next.js with instant global delivery and previews." },
-              { name: "Sanity", abbr: "Headless CMS", desc: "Real-time, developer-friendly CMS for editorial and landing pages." },
-              { name: "Contentful", abbr: "Headless CMS", desc: "Enterprise headless CMS for structured, multi-channel content." },
-              { name: "Storefront API", abbr: "GraphQL", desc: "Shopify's GraphQL API that connects your frontend to the backend." },
+              { name: "Hydrogen", abbr: "Framework", desc: "Shopify's official React framework for commerce-first headless builds.", logo: "/images/Hydrogen logo icon svg.webp" },
+              { name: "Next.js", abbr: "Framework", desc: "Mature React framework for content-heavy and multi-market storefronts.", logo: "/images/next-js logo icon svg.svg" },
+              { name: "Remix", abbr: "Framework", desc: "The web framework Hydrogen is built on, tuned for fast data loading.", logo: "/images/remix logo icon.png" },
+              { name: "Oxygen", abbr: "Hosting", desc: "Shopify's global hosting for Hydrogen, free on Shopify Plus.", logo: "/images/shopify-icon.svg" },
+              { name: "Vercel", abbr: "Hosting", desc: "Edge hosting for Next.js with instant global delivery and previews.", logo: "/images/vercel logo icon svg.svg" },
+              { name: "Sanity", abbr: "Headless CMS", desc: "Real-time, developer-friendly CMS for editorial and landing pages.", logo: "/images/Sanity logo icon.png" },
+              { name: "Contentful", abbr: "Headless CMS", desc: "Enterprise headless CMS for structured, multi-channel content.", logo: "/images/Contentful logo icon.webp" },
+              { name: "Storefront API", abbr: "GraphQL", desc: "Shopify's GraphQL API that connects your frontend to the backend.", logo: "/images/GraphQL logo icon.png" },
             ].map((tool) => (
               <div key={tool.name} className="shl-tool-card">
                 <div className="shl-tool-icon" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <Image src={tool.logo} alt={tool.name} width={26} height={26} style={{ objectFit: "contain", width: "26px", height: "26px" }} />
                 </div>
                 <div>
                   <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 700, color: C_DARK, margin: "0 0 2px", lineHeight: 1.3 }}>{tool.name}</p>
@@ -872,12 +868,12 @@ export default function Page() {
           >
             Five phases. One defined scope.
             <br className="hidden sm:block lg:hidden" />{" "}
-            Most headless Shopify builds go live within 8 to 12 weeks of kickoff.
+            Most headless Shopify development builds go live within 8 to 12 weeks of kickoff.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 mt-[20px] md:max-lg:mt-[16px]">
             {[
-              { step: "01.", title: "Discovery & Architecture", desc: "We map the right architecture: which pages go headless, how data flows through the Storefront API, where your CMS sits, and which framework fits. You get a written technical plan before any code." },
+              { step: "01.", title: "Discovery & Architecture", desc: "We map the right headless commerce architecture: which pages go headless, how data flows through the Storefront API, where your CMS sits, and which framework fits. You get a written technical plan before any code." },
               { step: "02.", title: "Design & Frontend Build",  desc: "We design and build the custom storefront on Hydrogen or Next.js, component by component, against your brand. You review work in a live staging environment at every milestone." },
               { step: "03.", title: "Backend & API Integration", desc: "We wire the storefront to Shopify and your external systems: CMS, search, personalization, ERP, and subscriptions. Everything complex runs cleanly behind a fast frontend." },
               { step: "04.", title: "QA & Performance Hardening", desc: "End-to-end testing across devices and browsers, plus performance hardening against Core Web Vitals and server-side rendering checks. We do not ship a build that has not hit its speed budget." },
@@ -966,7 +962,7 @@ export default function Page() {
             </span>
           </h2>
           <p style={{ fontFamily: "Poppins, sans-serif", fontSize: 16, color: "rgba(255,255,255,0.7)", textAlign: "center", margin: "0 auto 32px", maxWidth: 680 }}>
-            A theme is the right call for most stores, and we build fast ones. But once you have outgrown one, here is what headless gives you that a theme cannot.
+            A theme is the right call for most stores, and we build fast ones. But once you have outgrown one, here is what a headless commerce storefront gives you that a theme cannot.
           </p>
 
           <div className="shl-compare-grid">
@@ -1029,7 +1025,7 @@ export default function Page() {
             Headless Shopify Stores We Build Across Every Sector
           </h2>
           <p style={{ color: "#000000", fontFamily: "'Poppins', sans-serif", fontSize: 16, lineHeight: "26px", textAlign: "center", margin: "0 auto 40px", maxWidth: "640px" }}>
-            Headless pays off most for brands with complexity a theme cannot handle. Here are the sectors we build for, and what we focus on in each.
+            Headless ecommerce pays off most for brands with complexity a theme cannot handle. Here are the sectors we build headless Shopify stores for, and what we focus on in each.
           </p>
           <div className="shl-ind-grid">
             {SHL_INDUSTRIES.map((ind) => (
@@ -1070,14 +1066,14 @@ export default function Page() {
             </span>
           </h2>
           <p className="shl-why-desc">
-            We have built 100+ live Shopify stores. Here is what separates a headless build that pays off from one that becomes an expensive maintenance problem:
+            We are a headless commerce agency that works only on Shopify, with 100+ live stores built. Here is what separates a headless build that pays off from one that becomes an expensive maintenance problem:
           </p>
 
           <div className="shl-why-grid">
             {[
               {
                 title: "Hydrogen + Next.js Experts",
-                desc: "We build on both Shopify's official Hydrogen framework and Next.js, and we choose per project. You get a team that knows the Storefront API, server-side rendering, and modern frontend architecture in depth, not a theme shop guessing at headless.",
+                desc: "We build on both Shopify's official Hydrogen framework and Next.js, and we choose per project. You get dedicated Shopify headless developers who know the Storefront API, server-side rendering, and modern frontend architecture in depth, not a theme shop guessing at headless.",
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M11 9l-6 7 6 7M21 9l6 7-6 7"/></svg>),
               },
               {
@@ -1115,7 +1111,7 @@ export default function Page() {
           </div>
 
           <p className="shl-why-closing">
-            We document every headless build, test it, and hand it over in full. A headless Shopify agency that knows the platform deeply protects your speed, your SEO, and your roadmap, before they become problems. It is why brands trust us with the builds a theme cannot deliver.
+            We document every headless build, test it, and hand it over in full. A headless Shopify agency that knows the platform deeply protects your speed, your SEO, and your roadmap, before they become problems. It is what makes us one of the top headless Shopify agencies for brands that have outgrown a theme, and why clients rank us among the best headless Shopify agencies they have worked with.
           </p>
 
           <div style={{ display: "flex", justifyContent: "center" }}>
