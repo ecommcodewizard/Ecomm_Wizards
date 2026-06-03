@@ -371,16 +371,6 @@ const SHL_FAQS = [
   },
 ];
 
-/* ── Phone slider images ── */
-const PHONE_COL1 = [
-  "/images/partner-images-1-1.webp",
-  "/images/partner-images-1-2.webp",
-  "/images/partner-images-1-3.webp",
-  "/images/partner-images-1-4.webp",
-];
-const PHONE_COL2 = ["/images/partner-images-2-1.webp", "/images/partner-images-2-3.webp"];
-const PHONE_COL3 = ["/images/partner-images-3-1.webp", "/images/partner-images-3-2.webp"];
-
 /* ── Shared SVGs ── */
 const Arrow = () => (
   <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden>
@@ -488,33 +478,15 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="s20-phones-wrap" aria-hidden="true">
-            <div className="s20-phones">
-              <div className="s20-phones-col s20-phones-col--up1">
-                {[...PHONE_COL1, ...PHONE_COL1].map((src, i) => (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <div key={i} className="s20-phone-frame">
-                    <img src={src} alt="" width={130} height={274} loading={i < PHONE_COL1.length ? "eager" : "lazy"} />
-                  </div>
-                ))}
-              </div>
-              <div className="s20-phones-col s20-phones-col--down">
-                {[...PHONE_COL2, ...PHONE_COL2].map((src, i) => (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <div key={i} className="s20-phone-frame">
-                    <img src={src} alt="" width={130} height={274} loading={i < PHONE_COL2.length ? "eager" : "lazy"} />
-                  </div>
-                ))}
-              </div>
-              <div className="s20-phones-col s20-phones-col--up2">
-                {[...PHONE_COL3, ...PHONE_COL3].map((src, i) => (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <div key={i} className="s20-phone-frame">
-                    <img src={src} alt="" width={130} height={274} loading={i < PHONE_COL3.length ? "eager" : "lazy"} />
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="shl-hero-img-wrap" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <Image
+              src="/images/seeamleass-right.webp"
+              alt="Headless Shopify storefront built on Hydrogen and Next.js"
+              width={640}
+              height={520}
+              priority
+              style={{ width: "100%", height: "auto", display: "block", borderRadius: "16px" }}
+            />
           </div>
         </div>
       </section>
