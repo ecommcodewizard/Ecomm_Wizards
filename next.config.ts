@@ -38,6 +38,11 @@ const nextConfig: NextConfig = {
         destination: "/services/shopify-cro-agency",
         permanent: true,
       },
+      {
+        source: "/headless-shopify-agency",
+        destination: "/services/headless-shopify-agency",
+        permanent: true,
+      },
     ];
   },
 };

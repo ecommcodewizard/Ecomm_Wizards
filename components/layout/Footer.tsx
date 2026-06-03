@@ -60,7 +60,7 @@ const MIGRATION = [
 const GET_STARTED = [
   { label: "Shopify Development Agency",            href: "/services/shopify-development-agency" },
   { label: "Shopify UX and UI Design",             href: "/shopify-ux-and-ui-design" },
-  { label: "Headless Shopify Agency",              href: "/headless-shopify-agency" },
+  { label: "Headless Shopify Agency",              href: "/services/headless-shopify-agency" },
   { label: "Shopify CRO Agency",                   href: "/services/shopify-cro-agency" },
   { label: "Shopify Theme Development",            href: "/shopify-theme-development" },
   { label: "Shopify Plus Development",             href: "/services/shopify-plus-development" },
