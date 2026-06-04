@@ -13,7 +13,7 @@ const TESTIMONIALS = [
     company: "Puma",
     stat: "61%",
     statLabel: "Customer Engagement",
-    quote: "Their innovative approach to Shopify development completely revolutionized our customer journey. The technical expertise combined with creative, data-driven solutions delivered exceptional ROI and measurably improved every stage of our conversion funnel.",
+    quote: "Their fresh approach to Shopify development completely reshaped our customer journey. The technical expertise combined with creative, data-driven solutions delivered exceptional ROI and measurably improved every stage of our conversion funnel.",
     initials: "MH",
     name: "Michael Harris",
     title: "VP of Digital, Puma",
@@ -31,7 +31,7 @@ const TESTIMONIALS = [
     company: "Nike",
     stat: "52%",
     statLabel: "Revenue Growth in 8 Months",
-    quote: "The team's deep expertise in Shopify optimization completely transformed our online presence. Their strategic, data-backed approach to conversion rate optimization and seamless user experience design exceeded every expectation we had set going into the engagement.",
+    quote: "The team's deep expertise in Shopify optimization completely transformed our online presence. Their strategic, data-backed approach to conversion rate optimization and smooth user experience design exceeded every expectation we had set going into the engagement.",
     initials: "RK",
     name: "Robert Kim",
     title: "E-Commerce Manager, Nike",
@@ -49,7 +49,7 @@ const TESTIMONIALS = [
     company: "Reebok",
     stat: "43%",
     statLabel: "Mobile Sales Growth",
-    quote: "Truly game-changing results for our e-commerce platform. The seamless integrations, powerful backend improvements, and strategic UX refinements have significantly enhanced both our operational efficiency and long-term customer satisfaction scores.",
+    quote: "Truly standout results for our ecommerce platform. The smooth integrations, powerful backend improvements, and strategic UX refinements have significantly improved both our operational efficiency and long-term customer satisfaction scores.",
     initials: "LC",
     name: "Lisa Chen",
     title: "Head of E-Commerce, Reebok",
@@ -400,7 +400,7 @@ export default function SocialProofSection() {
               marginBottom: "20px",
             }}
           >
-            Trusted by the Worlds Most Innovative Brands
+            Trusted by the World&apos;s Most Ambitious Brands
           </h2>
 
           {/* Scrolling grid container */}

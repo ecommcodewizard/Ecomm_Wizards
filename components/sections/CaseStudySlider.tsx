@@ -5,6 +5,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 export type CaseStudySlide = {
   key: string;
   image: string;
+  alt?: string;
   apps: string[];
   headline: ReactNode;
   quote: ReactNode;
@@ -58,7 +59,7 @@ export default function CaseStudySlider({ slides, intervalMs = 6000, showDots = 
             {/* Left: image */}
             <div className="ssd-results-slide-image">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={s.image} alt="" />
+              <img src={s.image} alt={s.alt ?? ""} loading="lazy" decoding="async" />
             </div>
 
             {/* Right: content */}
@@ -69,7 +70,7 @@ export default function CaseStudySlider({ slides, intervalMs = 6000, showDots = 
                   {s.apps.map((src, i) => (
                     <span key={i} className="ssd-results-app-chip">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={src} alt="" />
+                      <img src={src} alt="" loading="lazy" decoding="async" />
                     </span>
                   ))}
                 </span>
@@ -88,7 +89,7 @@ export default function CaseStudySlider({ slides, intervalMs = 6000, showDots = 
                 <p className="ssd-results-quote-text">{s.quote}</p>
                 <div className="ssd-results-quote-person">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={s.avatar} alt={s.name} className="ssd-results-quote-avatar" />
+                  <img src={s.avatar} alt={s.name} className="ssd-results-quote-avatar" loading="lazy" decoding="async" />
                   <div>
                     <div className="ssd-results-quote-name">{s.name}</div>
                     <div className="ssd-results-quote-role">{s.role}</div>

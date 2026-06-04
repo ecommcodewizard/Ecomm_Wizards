@@ -9,21 +9,23 @@ const stats = [
   { value: "700+",   label: "Stores Built" },
 ];
 
+// Decorative partner-logo marquee: meaningful alt on the Shopify mark, empty alt
+// on the unnamed partner logos (correct for decorative imagery).
 const logos = [
-  { src: "/images/shopify_150_1024x1024.svg", alt: "Shopify" },
-  { src: "/images/partner_logo_2.svg",  alt: "Partner 2" },
-  { src: "/images/partner_logo_3.svg",  alt: "Partner 3" },
-  { src: "/images/partner_logo_4.svg",  alt: "Partner 4" },
-  { src: "/images/partner_logo_5.svg",  alt: "Partner 5" },
-  { src: "/images/partner_logo_6.svg",  alt: "Partner 6" },
-  { src: "/images/partner_logo_7.svg",  alt: "Partner 7" },
-  { src: "/images/partner_logo_8.svg",  alt: "Partner 8" },
-  { src: "/images/partner_logo_9.svg",  alt: "Partner 9" },
-  { src: "/images/partner_logo_10.svg", alt: "Partner 10" },
-  { src: "/images/partner_logo_11.svg", alt: "Partner 11" },
-  { src: "/images/partner_logo_12.svg", alt: "Partner 12" },
-  { src: "/images/partner_logo_13.svg", alt: "Partner 13" },
-  { src: "/images/partner_logo_14.svg", alt: "Partner 14" },
+  { src: "/images/shopify_150_1024x1024.svg", alt: "Shopify Partner" },
+  { src: "/images/partner_logo_2.svg",  alt: "" },
+  { src: "/images/partner_logo_3.svg",  alt: "" },
+  { src: "/images/partner_logo_4.svg",  alt: "" },
+  { src: "/images/partner_logo_5.svg",  alt: "" },
+  { src: "/images/partner_logo_6.svg",  alt: "" },
+  { src: "/images/partner_logo_7.svg",  alt: "" },
+  { src: "/images/partner_logo_8.svg",  alt: "" },
+  { src: "/images/partner_logo_9.svg",  alt: "" },
+  { src: "/images/partner_logo_10.svg", alt: "" },
+  { src: "/images/partner_logo_11.svg", alt: "" },
+  { src: "/images/partner_logo_12.svg", alt: "" },
+  { src: "/images/partner_logo_13.svg", alt: "" },
+  { src: "/images/partner_logo_14.svg", alt: "" },
 ];
 
 const doubled = [...logos, ...logos];

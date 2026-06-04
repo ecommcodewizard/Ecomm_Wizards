@@ -3,7 +3,7 @@ const ITEMS = [
     key: "recommendations",
     title: "AI Product Recommendations",
     description:
-      'No generic “you might also like” nonsense. Our AI learns what your customers want – and shows them exactly that. Higher conversions. Bigger carts. Personalization that feels like magic.',
+      'No generic “you might also like” nonsense. Our AI learns what your customers want, then shows them exactly that. Higher conversions. Bigger carts. Personalization that feels like magic.',
     image: "/images/ai-powered-1.webp",
     href: "/book-shopify-consultation",
   },
@@ -90,6 +90,8 @@ export default function AiAppsSlider() {
               <img
                 src={item.image}
                 alt={item.title}
+                loading="lazy"
+                decoding="async"
                 className="ai-apps-card-img"
                 style={{ width: "100%", aspectRatio: "422/294", objectFit: "cover", display: "block", borderRadius: 10, marginBottom: 16 }}
               />
@@ -180,7 +182,9 @@ export default function AiAppsSlider() {
                 <img
                   key={i}
                   src={src}
-                  alt={`partner-${i + 1}`}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     height: 50,
                     width: "auto",

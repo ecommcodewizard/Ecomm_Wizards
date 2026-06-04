@@ -19,7 +19,9 @@ interface Props {
   buttonText?: string;
   buttonHref?: string;
   videoSrc?: string;
+  videoPoster?: string;
   imageSrc?: string;
+  imageAlt?: string;
   paddingTop?: string;
   paddingBottom?: string;
   reverseLayout?: boolean;
@@ -192,7 +194,9 @@ export default function ShopifyDesignSection({
   buttonText = "Book a Call",
   buttonHref = "/book-shopify-consultation",
   videoSrc = "/images/d7f14fb290a1484cbb32e6037b39d7f1.mp4",
+  videoPoster,
   imageSrc,
+  imageAlt = "",
   paddingTop = "53px",
   paddingBottom = "5px",
   reverseLayout = false,
@@ -228,7 +232,7 @@ export default function ShopifyDesignSection({
   const activeH3 = h3Content ?? (
     <>Shopify{" "}<strong style={{ fontWeight: 600 }}>Design &amp; Development</strong>{" "}Services</>
   );
-  const activeDescription = description ?? "Shopify stores built for performance, conversion, and long-term scale. Whether you're launching fresh or upgrading to Shopify Plus, our Shopify development services make it seamless.";
+  const activeDescription = description ?? "Shopify stores built for performance, conversion, and long-term scale. Whether you're launching fresh or upgrading to Shopify Plus, our Shopify development services cover every step.";
 
   return (
     <>
@@ -460,8 +464,9 @@ export default function ShopifyDesignSection({
                   {imageSrc ? (
                     <Image
                       src={imageSrc}
-                      alt=""
+                      alt={imageAlt}
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       style={{ objectFit: imageFit }}
                     />
                   ) : (
@@ -471,6 +476,9 @@ export default function ShopifyDesignSection({
                       muted
                       loop
                       playsInline
+                      preload="none"
+                      poster={videoPoster}
+                      aria-label={imageAlt || undefined}
                       style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                     />
                   )}

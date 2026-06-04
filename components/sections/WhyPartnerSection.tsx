@@ -97,6 +97,8 @@ export default function WhyPartnerSection() {
                 <img
                   src={src}
                   alt=""
+                  loading="lazy"
+                  decoding="async"
                   style={{ width: 148, height: 78, objectFit: "contain", display: "block" }}
                 />
               </div>

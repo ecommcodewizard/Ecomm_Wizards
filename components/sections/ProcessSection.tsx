@@ -2,7 +2,7 @@ const STEPS = [
   {
     step: "01.",
     title: "Discover & Strategy",
-    desc: "We analyze your store, data, and goals to build a tailored Shopify growth roadmap.",
+    desc: "We analyze your store, data, and goals to build a custom Shopify growth roadmap.",
   },
   {
     step: "02.",

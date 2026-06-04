@@ -12,11 +12,28 @@ import MobileAppSection from "@/components/sections/MobileAppSection";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import WhyPartnerSection from "@/components/sections/WhyPartnerSection";
 
+const HOME_TITLE = "Shopify Agency | Design, CRO, Development & Growth Experts";
+const HOME_DESCRIPTION =
+  "Award-winning Shopify agency helping brands scale with high-converting design, CRO, SEO, and development. 700+ stores built. $900M+ revenue generated. Get your free audit.";
+
 export const metadata: Metadata = {
-  title: "Shopify Agency | Design, CRO, Development & Growth Experts | Ecomm Wizards",
-  description:
-    "Award-winning Shopify agency helping brands scale with high-converting design, CRO, SEO, and development. 700+ stores built. $900M+ revenue generated. Get your free audit.",
+  title: { absolute: HOME_TITLE },
+  description: HOME_DESCRIPTION,
   alternates: { canonical: "https://ecommwizards.com" },
+  openGraph: {
+    type: "website",
+    siteName: "Ecomm Wizards",
+    url: "https://ecommwizards.com",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    images: [{ url: "/images/main-hero-f-desktop.webp", alt: "Shopify agency building high-converting Shopify stores" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    images: ["/images/main-hero-f-desktop.webp"],
+  },
 };
 
 // â"€â"€â"€ Data â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
@@ -25,9 +42,10 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
   {
     key: "eby",
     image: "/images/Frame_1000004320.webp",
+    alt: "EBY by Sofia Vergara Shopify store designed and built by Ecomm Wizards",
     apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/klaviyo.svg", "/images/yotpo.svg"],
     headline: (<>An elegant <strong>Shopify Store</strong> designed and built for <strong>EBY</strong> by <strong>Sofia Vergara</strong></>),
-    quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally — we couldn&apos;t be happier!&rdquo;</>),
+    quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally, and we couldn&apos;t be happier!&rdquo;</>),
     avatar: "/images/eby_dce31a54-eb36-409c-a8d7-e22fd8297de3_medium.webp",
     name: "EBY by Sofia Vergara",
     role: "Marketing Manager",
@@ -35,6 +53,7 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
   {
     key: "harvard",
     image: "/images/harvard-2_b0d9924a-412f-449b-94c3-0806b1d672ba.webp",
+    alt: "Harvard University Shopify store designed and built by Ecomm Wizards",
     apps: ["/images/shopify-icon.svg", "/images/klaviyo.svg", "/images/yotpo.svg", "/images/gorgias.svg"],
     headline: (<>A sophisticated <strong>Shopify Store</strong> designed and built for a <strong>Harvard University</strong></>),
     quote: (<>&ldquo;Our experience with EW was excellent, characterized by an <strong>efficient workflow</strong> and <strong>professional execution</strong>; we couldn&apos;t be more delighted&rdquo;</>),
@@ -45,6 +64,7 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
   {
     key: "bark",
     image: "/images/ai-bark-casestudy.webp",
+    alt: "Bark dynamically personalized Shopify store developed by Ecomm Wizards",
     apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/Subtract.svg", "/images/64f098c0e38dec3a384cb182_rebuy.svg"],
     headline: (<>A dynamically personalized <strong>Shopify Store</strong> developed &amp; maintained for <strong>Bark</strong></>),
     quote: (<>&ldquo;Their immense knowledge of Shopify Plus and exceptional communication skills, accompanied by a <strong>can-do attitude</strong> made Ecomm Wizards a fantastic partner.&rdquo;</>),
@@ -67,7 +87,7 @@ const STATS = [
 const SERVICES = [
   {
     title: "Shopify Store Development",
-    desc: "Custom themes, Shopify Plus, headless storefronts — built from strategy to launch.",
+    desc: "Custom themes, Shopify Plus, headless storefronts, built from strategy to launch.",
     href: "/shopify-store-development",
   },
   {
@@ -92,7 +112,7 @@ const SERVICES = [
   },
   {
     title: "B2B & POS Setup",
-    desc: "Wholesale portals, net terms, Shopify POS, and omnichannel selling — all in one.",
+    desc: "Wholesale portals, net terms, Shopify POS, and omnichannel selling, all in one.",
     href: "/shopify-b2b-store-setup",
   },
 ];
@@ -115,7 +135,7 @@ const BAR_DATA = [
 
 const PROCESS = [
   { step: "01", title: "Discovery & Strategy",  desc: "We audit your brand, market, and goals to define the perfect Shopify roadmap." },
-  { step: "02", title: "Design & UX",           desc: "High-fidelity wireframes and mockups built to convert — reviewed and approved by you." },
+  { step: "02", title: "Design & UX",           desc: "High-fidelity wireframes and mockups built to convert, reviewed and approved by you." },
   { step: "03", title: "Build & Integrate",     desc: "Clean, optimised code. Mobile-first. Every app, integration, and feature tested." },
   { step: "04", title: "Launch & Scale",        desc: "Zero-downtime go-live, full training, and ongoing optimisation to keep growing." },
 ];
@@ -131,7 +151,7 @@ const TESTIMONIALS = [
     initials: "SR",
     name: "Sarah R.",
     company: "Health & Beauty",
-    quote: "The migration from WooCommerce was seamless. Zero downtime, zero data loss, and our store is faster than ever.",
+    quote: "The migration from WooCommerce went smoothly. Zero downtime, zero data loss, and our store is faster than ever.",
   },
   {
     initials: "DK",
@@ -143,7 +163,7 @@ const TESTIMONIALS = [
 
 const PLANS = [
   "Free store audit & growth roadmap",
-  "Fixed-price quotes — no surprise invoices",
+  "Fixed-price quotes, no surprise invoices",
   "Dedicated project manager",
   "Shopify Plus Certified Partner",
   "Post-launch support included",
@@ -181,8 +201,9 @@ export default function HomePage() {
         {/* Background image */}
         <Image
           src="/images/main-hero-f-desktop.webp"
-          alt="Hero background"
+          alt="Ecomm Wizards Shopify agency building high-converting Shopify stores"
           fill
+          sizes="100vw"
           className="absolute inset-0 object-cover"
           style={{ opacity: 0.6 }}
           priority
@@ -216,7 +237,7 @@ export default function HomePage() {
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Book a Call</span>
-                  <Image src="/images/arrow vector.png" alt="arrow" width={16} height={16} className="transition-all duration-300 group-hover:brightness-0" />
+                  <Image src="/images/arrow vector.png" alt="" width={16} height={16} className="transition-all duration-300 group-hover:brightness-0" />
                 </Link>
               </span>
               <Image
@@ -464,7 +485,7 @@ export default function HomePage() {
               textAlign: "center",
             }}
           >
-            We started EcommWizards because we were tired of watching brands get burned by agencies that overpromise and underdeliver. As a full-service Shopify Plus agency, we combine design, development, CRO, SEO, and retention marketing to help brands scale faster and more profitably. Whether you need a new Shopify store, migration, custom development, UX optimization, or full-funnel marketing &mdash; we build strategies focused on{" "}
+            We started EcommWizards because we were tired of watching brands get burned by agencies that overpromise and underdeliver. As a full-service Shopify Plus agency, we combine design, development, CRO, SEO, and retention marketing to help brands scale faster and more profitably. Whether you need a new Shopify store, migration, custom development, UX optimization, or full-funnel marketing, we build strategies focused on{" "}
             <strong style={{ fontWeight: 700 }}>revenue growth, not just aesthetics.</strong> Every project gets a dedicated strategist, not a project manager. Whether it&apos;s design, development, or marketing, we do it strategically to hit your sales targets.
           </p>
         </div>
@@ -518,8 +539,9 @@ export default function HomePage() {
           <div className="w-full md:w-[calc(50%-10px)] min-[1440px]:w-[650px] h-[320px] sm:h-auto md:h-[780px] lg:h-[879px] min-[1440px]:h-[801px]" style={{ borderRadius: "20px", overflow: "hidden", position: "relative" }}>
             <Image
               src="/images/image-4.png"
-              alt="Ecomm Wizards office"
+              alt="The Ecomm Wizards Shopify agency team at work in the office"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
             {/* Stats card overlay */}
@@ -539,15 +561,16 @@ export default function HomePage() {
       <ProcessSection />
 
       {/* ── Shopify Design & Development ── */}
-      <ShopifyDesignSection mobileYPadding="max-sm:!pt-[40px] max-sm:!pb-[10px]" />
+      <ShopifyDesignSection imageAlt="Shopify design agency building a custom high-converting Shopify store" mobileYPadding="max-sm:!pt-[40px] max-sm:!pb-[10px]" />
       <ShopifyDesignSection
         showHeading={false}
         h3Content={<>Shopify <strong style={{ fontWeight: 600 }}>Migration</strong> Services</>}
-        description="Moving from Magento, WooCommerce, BigCommerce or any other platform to Shopify? Don't lose your SEO rankings or customer data. Our Shopify Migration Experts handle the transition seamlessly."
+        description="Moving from Magento, WooCommerce, BigCommerce or any other platform to Shopify? Don't lose your SEO rankings or customer data. Our Shopify Migration Experts handle the full move for you, start to finish."
         services={MIGRATION_SERVICES}
         buttonText="Get a Free Migration Consultation"
         buttonHref="/migration"
         imageSrc="/images/video_cover_2048x.webp"
+        imageAlt="Shopify migration services moving a store to Shopify without data loss"
         paddingTop="5px"
         reverseLayout
         mobileYPadding="max-sm:!py-[10px]"
@@ -555,11 +578,12 @@ export default function HomePage() {
       <ShopifyDesignSection
         showHeading={false}
         h3Content={<><span style={GRADIENT_TEXT}>Custom</span> <strong style={{ fontWeight: 600, ...GRADIENT_TEXT }}>Shopify Development</strong> Services</>}
-        description="Off-the-shelf won't cut it for ya? We build custom themes, private apps, and bespoke functionality tailored to how your business actually operates."
+        description="Off-the-shelf won't cut it for ya? We build custom themes, private apps, and custom functionality that fits how your business actually operates."
         services={CUSTOM_DEV_SERVICES}
         buttonText="Request a Custom Quote"
         buttonHref="/book-shopify-consultation"
         imageSrc="/images/ecommwizards_1.jpg"
+        imageAlt="Shopify development agency building custom Shopify themes and apps"
         paddingTop="5px"
         mobileYPadding="max-sm:!py-[10px]"
         bgImage="/images/Group_1000004265.svg"
@@ -574,6 +598,7 @@ export default function HomePage() {
         buttonText="Get a Free UX Audit"
         buttonHref="/free-shopify-store-audit"
         imageSrc="/images/concept_image_1024x1024.webp"
+        imageAlt="Shopify design agency optimizing store UX and checkout flow"
         paddingTop="5px"
         reverseLayout
         mobileYPadding="max-sm:!py-[10px]"
@@ -616,7 +641,7 @@ export default function HomePage() {
             {/* Counter image */}
             <Image
               src="/images/ai-counter-image-1.webp"
-              alt="Shopify results dashboard"
+              alt="Shopify CRO agency conversion results dashboard"
               width={640}
               height={360}
               className="w-full h-auto"
@@ -633,6 +658,7 @@ export default function HomePage() {
         buttonText="Explore B2B Solutions"
         buttonHref="/book-shopify-consultation"
         imageSrc="/images/b2b-d2c.webp"
+        imageAlt="Shopify Plus agency building a unified B2B and D2C wholesale store"
         wrapHeading
         paddingTop="5px"
         reverseLayout
@@ -651,6 +677,7 @@ export default function HomePage() {
         buttonText="Get Copy That Converts"
         buttonHref="/book-shopify-consultation"
         imageSrc="/images/view-messy-office-workspace-with-laptop-device.webp"
+        imageAlt="Shopify copywriting team writing high-converting product pages"
         paddingTop="5px"
         wrapHeading
         mdAutoHeight
@@ -659,11 +686,12 @@ export default function HomePage() {
       <ShopifyDesignSection
         showHeading={false}
         h3Content={<><strong style={{ fontWeight: 600 }}>Dynamically</strong> Personalized Shopify Store</>}
-        description="One-size-fits-all is dead. We build stores that adapt in real-time – showing the right products, offers, and content based on who's browsing. Every visitor gets a tailored experience."
+        description="One-size-fits-all is dead. We build stores that adapt in real time, showing the right products, offers, and content based on who's browsing. Every visitor gets an experience matched to them."
         services={PERSONALIZATION_SERVICES}
         buttonText="Personalize Your Store"
         buttonHref="/book-shopify-consultation"
         imageSrc="/images/ai-personalised.webp"
+        imageAlt="Dynamically personalized Shopify store experience powered by AI"
         paddingTop="5px"
         reverseLayout
         wrapHeading
@@ -673,11 +701,12 @@ export default function HomePage() {
       <ShopifyDesignSection
         showHeading={false}
         h3Content={<>Shopify <strong style={{ fontWeight: 600, ...GRADIENT_TEXT }}>SEO & AI</strong> Search Optimization</>}
-        description="Google is just the start. We optimize your Shopify store for traditional search AND AI engines like ChatGPT and Gemini — so you show up wherever your customers are looking."
+        description="Google is just the start. We optimize your Shopify store for traditional search and AI engines like ChatGPT and Gemini, so you show up wherever your customers are looking."
         services={SEO_AI_SERVICES}
         buttonText="Get Found Everywhere"
         buttonHref="/shopify-seo-agency"
         imageSrc="/images/ai-agent-main.webp"
+        imageAlt="Shopify SEO agency optimizing a store for Google and AI search"
         paddingTop="5px"
         wrapHeading
         mobileYPadding="max-sm:!py-[10px]"
@@ -693,6 +722,7 @@ export default function HomePage() {
         buttonText="Boost Your Retention"
         buttonHref="/book-shopify-consultation"
         imageSrc="/images/pexels-kindelmedia-7688116.jpg"
+        imageAlt="Shopify retention marketing with email and loyalty flows"
         paddingTop="5px"
         reverseLayout
         mdAutoHeight
@@ -701,11 +731,12 @@ export default function HomePage() {
       <ShopifyDesignSection
         showHeading={false}
         h3Content={<>Why <strong style={{ fontWeight: 600 }}>Shopify Plus</strong> Wins for B2B Commerce</>}
-        description="Shopify Plus is the only platform built to handle wholesale and DTC from a single store — native B2B features, no costly middleware, no workarounds. Give wholesale buyers a dedicated portal while running your retail store from the same dashboard."
+        description="Shopify Plus is the only platform built to handle wholesale and DTC from a single store, with native B2B features, no costly middleware, and no workarounds. Give wholesale buyers a dedicated portal while running your retail store from the same dashboard."
         services={WHY_B2B_SERVICES}
         buttonText="Build Your B2B Store"
         buttonHref="/book-shopify-consultation"
         imageSrc="/images/Image_7c2e1efa-3310-4bd5-815f-a21c1097455a-scaled.webp"
+        imageAlt="Shopify Plus B2B commerce store with a dedicated wholesale portal"
         paddingTop="5px"
         wrapHeading
         mdAutoHeight
@@ -715,11 +746,12 @@ export default function HomePage() {
       <ShopifyDesignSection
         showHeading={false}
         h3Content={<>Shopify <strong style={{ fontWeight: 600, ...GRADIENT_TEXT }}>POS Setup</strong> & Configuration</>}
-        description="Unify your online and offline sales. We set up Shopify POS so your inventory, orders, and customer data stay synced – whether you're selling in-store, at pop-ups, or on the go."
+        description="Unify your online and offline sales. We set up Shopify POS so your inventory, orders, and customer data stay synced, whether you're selling in-store, at pop-ups, or on the go."
         services={POS_SERVICES}
         buttonText="Get Your POS Running"
         buttonHref="/book-shopify-consultation"
         imageSrc="/images/seeamleass-right.webp"
+        imageAlt="Shopify POS setup syncing online and in-store sales"
         wrapHeading
         paddingTop="5px"
         reverseLayout
@@ -733,11 +765,12 @@ export default function HomePage() {
       <ShopifyDesignSection
         showHeading={false}
         h3Content={<>Shopify <strong style={{ fontWeight: 700, color: "#000000" }}>AI Automation</strong> Services</>}
-        description="From inventory updates to customer support – we set up AI agents that handle the repetitive stuff so you can focus on growth. Your store runs itself."
+        description="From inventory updates to customer support, we set up AI agents that handle the repetitive work so you can focus on growth. Your store runs itself."
         services={AI_AUTOMATION_SERVICES}
         buttonText="Automate Your Store"
         buttonHref="/book-shopify-consultation"
         imageSrc="/images/ai-shopify-apps.webp"
+        imageAlt="Shopify AI automation agency setting up AI agents for store operations"
         paddingTop="5px"
         wrapHeading
         mdAutoHeight

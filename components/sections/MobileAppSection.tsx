@@ -46,7 +46,7 @@ export default function MobileAppSection({ bgColor = "#FBF7ED" }: { bgColor?: st
           <div className="mobile-col-1" style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {[...COL1, ...COL1].map((src, i) => (
               // eslint-disable-next-line @next/next/no-img-element
-              <img key={i} src={src} alt="" style={{ width: "100%", borderRadius: 12, display: "block", flexShrink: 0 }} />
+              <img key={i} src={src} alt={i < COL1.length ? "Shopify mobile app and store design example" : ""} loading="lazy" decoding="async" style={{ width: "100%", borderRadius: 12, display: "block", flexShrink: 0 }} />
             ))}
           </div>
 
@@ -54,7 +54,7 @@ export default function MobileAppSection({ bgColor = "#FBF7ED" }: { bgColor?: st
           <div className="mobile-col-2" style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 40 }}>
             {[...COL2, ...COL2, ...COL2].map((src, i) => (
               // eslint-disable-next-line @next/next/no-img-element
-              <img key={i} src={src} alt="" style={{ width: "100%", borderRadius: 12, display: "block", flexShrink: 0 }} />
+              <img key={i} src={src} alt={i < COL2.length ? "Shopify mobile app and store design example" : ""} loading="lazy" decoding="async" style={{ width: "100%", borderRadius: 12, display: "block", flexShrink: 0 }} />
             ))}
           </div>
 
@@ -62,7 +62,7 @@ export default function MobileAppSection({ bgColor = "#FBF7ED" }: { bgColor?: st
           <div className="mobile-col-3" style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: -40 }}>
             {[...COL3, ...COL3, ...COL3].map((src, i) => (
               // eslint-disable-next-line @next/next/no-img-element
-              <img key={i} src={src} alt="" style={{ width: "100%", borderRadius: 12, display: "block", flexShrink: 0 }} />
+              <img key={i} src={src} alt={i < COL3.length ? "Shopify mobile app and store design example" : ""} loading="lazy" decoding="async" style={{ width: "100%", borderRadius: 12, display: "block", flexShrink: 0 }} />
             ))}
           </div>
         </div>
@@ -94,7 +94,7 @@ export default function MobileAppSection({ bgColor = "#FBF7ED" }: { bgColor?: st
               margin: "0 0 32px",
             }}
           >
-            Your customers live on their phones. Meet them there. We transform your store into a native mobile app – fast, seamless, and built for buyers on the go. Push notifications, personalized offers, and a direct line to your brand. Lower acquisition costs. Higher loyalty. No app store headaches.
+            Your customers live on their phones. Meet them there. We turn your store into a native mobile app that is fast, smooth, and built for buyers on the go. Push notifications, personalized offers, and a direct line to your brand. Lower acquisition costs. Higher loyalty. No app store headaches.
           </p>
 
           <span className="group inline-flex p-[2px] rounded-full get-started-btn-wrap">

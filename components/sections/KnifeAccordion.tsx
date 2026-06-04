@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 const items = [
-  { title: "One Team, Zero Gaps",           body: "Shopify Design, dev, and marketing working together — not in silos." },
+  { title: "One Team, Zero Gaps",           body: "Shopify Design, dev, and marketing working together, not in silos." },
   { title: "Ecommerce Strategy First",      body: "Every Shopify project gets a dedicated strategist, not a task manager." },
   { title: "Launch Fast, Scale Faster",     body: "We start in days, not weeks. Speed without cutting corners." },
   { title: "Built to Convert",              body: "Pretty stores don't pay bills. Ours are designed to sell." },
