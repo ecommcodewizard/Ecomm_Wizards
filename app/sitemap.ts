@@ -60,7 +60,7 @@ const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.S
   // Migration / platform-to-Shopify
   { path: "/migration", priority: 0.7, changeFrequency: "monthly" },
   { path: "/migrate-to-shopify", priority: 0.7, changeFrequency: "monthly" },
-  { path: "/figma-to-shopify-conversion", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/services/figma-to-shopify-conversion", priority: 0.6, changeFrequency: "monthly" },
   { path: "/amazon-to-shopify", priority: 0.6, changeFrequency: "monthly" },
   { path: "/woocommerce-to-shopify", priority: 0.6, changeFrequency: "monthly" },
   { path: "/magento-to-shopify", priority: 0.6, changeFrequency: "monthly" },

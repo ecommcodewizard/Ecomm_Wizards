@@ -1,11 +1,47 @@
 import type { Metadata } from "next";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import KnifeAccordion from "@/components/sections/KnifeAccordion";
+
+const META_DESCRIPTION =
+  "Convert your Figma files into a pixel-perfect custom Shopify store. Expert Shopify developers, Shopify 2.0 builds, free blueprint & quote. 700+ brands launched.";
+const CANONICAL_URL = "https://ecommwizards.com/services/figma-to-shopify-conversion";
 
 export const metadata: Metadata = {
-  title: "Figma to Shopify Conversion | Pixel-Perfect Builds",
-  description:
-    "Convert your Figma files into a pixel-perfect custom Shopify store. Expert Shopify developers, Shopify 2.0 builds, free blueprint & quote. 700+ brands launched.",
-  alternates: { canonical: "https://ecommwizards.com/services/figma-to-shopify-conversion/" },
+  // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
+  // template would otherwise append the brand to this custom title.
+  title: { absolute: "Figma to Shopify Conversion | Pixel-Perfect Builds" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "figma to shopify conversion",
+    "convert figma to shopify",
+    "figma to shopify development service",
+    "figma to shopify agency",
+    "hire figma to shopify developer",
+    "figma to shopify expert",
+    "shopify liquid development from figma",
+    "shopify 2.0 figma conversion",
+    "figma to shopify responsive design",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Figma to Shopify Conversion | Pixel-Perfect Builds",
+    description: META_DESCRIPTION,
+    images: [
+      {
+        url: "/images/Group_1000004395.webp",
+        alt: "Figma design converted into a pixel-perfect custom Shopify store by Ecomm Wizards",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Figma to Shopify Conversion | Pixel-Perfect Builds",
+    description: META_DESCRIPTION,
+    images: ["/images/Group_1000004395.webp"],
+  },
 };
 
 const GRADIENT =
@@ -32,7 +68,7 @@ const PILLARS = [
   },
   {
     title: "Pillar 4: Fast Turnaround, Zero Chaos",
-    body: "Tailored quote within 24 hours. GitHub-powered version control. A structured, stage-by-stage workflow from Figma file to Shopify launch. Most projects complete in 2–6 weeks depending on scope.",
+    body: "Fixed-price quote within 24 hours. GitHub-powered version control. A structured, stage-by-stage workflow from Figma file to Shopify launch. Most projects ship in 2-6 weeks depending on scope.",
   },
 ];
 
@@ -169,7 +205,7 @@ const CASE_STUDIES: CaseStudySlide[] = [
     ),
     quote: (
       <>
-        &ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally &mdash; we couldn&rsquo;t be happier!&rdquo;
+        &ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally. We couldn&rsquo;t be happier!&rdquo;
       </>
     ),
     avatar: "/images/eby_dce31a54-eb36-409c-a8d7-e22fd8297de3_medium.webp",
@@ -248,7 +284,7 @@ const TOOLS = [
 const FAQS = [
   {
     q: "How long does a Figma to Shopify conversion take?",
-    a: "Most projects complete in 2–6 weeks. Simple builds (homepage + key pages) take 2–3 weeks. Complex builds with custom features or Shopify Plus integrations take 4–8 weeks. Every quote includes a clear timeline.",
+    a: "Most projects ship in 2-6 weeks. Simple builds (homepage + key pages) take 2-3 weeks. Complex builds with custom features or Shopify Plus integrations take 4-8 weeks. Every quote includes a clear timeline.",
   },
   {
     q: "How much does Figma to Shopify conversion cost?",
@@ -290,36 +326,43 @@ export default function FigmaToShopifyConversionPage() {
         >
           {/* Left: text */}
           <div className="text-center lg:text-left">
-            <h1 className="font-semibold leading-[1.1] tracking-tight text-white text-[34px] sm:text-[44px] lg:text-[56px] xl:text-[60px]">
+            <h1 className="font-semibold leading-[1.1] tracking-tight text-white text-[34px] sm:text-[44px] lg:text-[48px]">
               <span style={GRADIENT_TEXT}>Figma to Shopify</span>{" "}
               <span className="whitespace-nowrap sm:whitespace-normal">Conversion</span>{" "}
               That&rsquo;s Pixel-Perfect
             </h1>
 
-            <p className="mt-6 text-white/85 text-[15px] sm:text-base lg:text-[17px] leading-[1.7]">
+            <p className="mt-6 text-white text-[15px] sm:text-base lg:text-[16px] leading-[1.7]">
               You spent weeks getting your Figma file exactly right. Don&rsquo;t let a developer lose it in translation.
             </p>
-            <p className="mt-5 text-white/85 text-[15px] sm:text-base lg:text-[17px] leading-[1.7]">
+            <p className="mt-5 text-white text-[15px] sm:text-base lg:text-[16px] leading-[1.7]">
               We convert your Figma design into a custom Shopify store, every gradient, every interaction, every detail, exactly as intended. Fast, responsive, and built to convert from day one.
             </p>
 
-            <a
-              href="/book-shopify-consultation/"
-              className="mt-8 inline-flex items-center gap-3 rounded-full border px-7 py-3 text-white text-[15px] sm:text-base transition hover:bg-white/5"
-              style={{ borderColor: "#4FB872" }}
-            >
-              Submit Your Figma File
-              <span aria-hidden className="text-lg leading-none">→</span>
-            </a>
+            <div className="mt-8 inline-flex p-[2px] rounded-full" style={{ background: GRADIENT }}>
+              <a
+                href="/book-shopify-consultation/"
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-black hover:bg-white transition-all duration-300 px-[28px] py-[16px] sm:px-[40px] sm:py-[20px] text-[15px] sm:text-[16px]"
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}
+              >
+                <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">
+                  Submit Your Figma File
+                </span>
+                <svg width="18" height="13" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white group-hover:text-black transition-colors duration-300">
+                  <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+            </div>
           </div>
 
           {/* Right: hero image */}
           <div className="order-last lg:order-none">
             <img
               src="/images/Group_1000004395.webp"
-              alt="Figma to Shopify conversion"
+              alt="Figma design converted into a pixel-perfect custom Shopify store"
               width={1024}
               height={795}
+              fetchPriority="high"
               className="w-full h-auto"
             />
           </div>
@@ -345,7 +388,7 @@ export default function FigmaToShopifyConversionPage() {
             style={{
               color: "#000000",
               fontFamily: "'Poppins', sans-serif",
-              fontSize: "22px",
+              fontSize: "32px",
               fontWeight: 700,
               lineHeight: 1.45,
               margin: 0,
@@ -421,7 +464,7 @@ export default function FigmaToShopifyConversionPage() {
           @media (max-width: 1023px) {
             .f2s-trust-section { padding: 0 16px; }
             .f2s-trust-inner { padding: 36px 0 !important; }
-            .f2s-trust-heading { font-size: 20px !important; }
+            .f2s-trust-heading { font-size: 24px !important; }
             .f2s-trust-carousel { margin-top: 24px !important; }
             .f2s-trust-track { gap: 32px; animation-duration: 22s; }
             .f2s-trust-slide { width: 174.99px; height: 84.44px; }
@@ -450,31 +493,12 @@ export default function FigmaToShopifyConversionPage() {
               </h2>
               <p className="f2s-why__intro">
                 Most agencies drop a Figma file into Shopify and call it done. We&rsquo;re not that agency.
-                We build a complete Shopify design system, custom Liquid themes, advanced functionality, seamless integrations, built to perform, not just look right.
+                We build a complete Shopify design system: custom Liquid themes, advanced functionality, and integrations that hold up under real traffic. Built to perform, not just look right.
               </p>
 
-              <ul className="f2s-why__pillars">
-                {PILLARS.map((p, i) => (
-                  <li key={p.title} className="f2s-why__pillar">
-                    <details open={i === 0}>
-                      <summary>
-                        <span className="f2s-why__pillar-title">{p.title}</span>
-                        <span className="f2s-why__chev" aria-hidden>
-                          <svg viewBox="0 0 32 32" width="14" height="14">
-                            <path
-                              d="M31.582 8.495c-0.578-0.613-1.544-0.635-2.153-0.059l-13.43 12.723-13.428-12.723c-0.61-0.578-1.574-0.553-2.153 0.059-0.579 0.611-0.553 1.576 0.058 2.155l14.477 13.715c0.293 0.277 0.67 0.418 1.047 0.418s0.756-0.14 1.048-0.418l14.477-13.715c0.611-0.579 0.637-1.544 0.058-2.155z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </span>
-                      </summary>
-                      <div className="f2s-why__pillar-body">
-                        <p>{p.body}</p>
-                      </div>
-                    </details>
-                  </li>
-                ))}
-              </ul>
+              <div className="f2s-why__pillars">
+                <KnifeAccordion items={PILLARS} />
+              </div>
             </div>
 
             {/* Right: single black panel containing static image + video */}
@@ -483,17 +507,20 @@ export default function FigmaToShopifyConversionPage() {
               <img
                 className="f2s-why__mediaImg"
                 src="/images/image-699.webp"
-                alt=""
+                alt="Custom Shopify store built from a Figma design"
                 width={860}
                 height={1024}
+                loading="lazy"
+                decoding="async"
               />
               <video
                 className="f2s-why__mediaVideo"
-                src="https://ecommwizards.com/wp-content/uploads/2026/01/5a8e17ef773c4b6a9675ecd2347ac9de.HD-1080p-7.2Mbps-58742493-1.mp4"
+                src="/images/5a8e17ef773c4b6a9675ecd2347ac9de.HD-1080p-7.2Mbps-58742493-1.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
+                preload="none"
               />
             </div>
           </div>
@@ -535,37 +562,6 @@ export default function FigmaToShopifyConversionPage() {
             padding: 0;
             list-style: none;
           }
-          .f2s-why__pillar { border-top: 1px solid #E5E7EB; }
-          .f2s-why__pillar:last-child { border-bottom: 1px solid #E5E7EB; }
-          .f2s-why__pillar details > summary {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            padding: 18px 0;
-            list-style: none;
-            cursor: pointer;
-            color: #000000;
-            font-weight: 600;
-            font-size: 16px;
-          }
-          .f2s-why__pillar details > summary::-webkit-details-marker { display: none; }
-          .f2s-why__pillar-title { flex: 1; }
-          .f2s-why__chev {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: #000000;
-            transition: transform 0.2s ease;
-          }
-          .f2s-why__pillar details[open] > summary .f2s-why__chev { transform: rotate(180deg); }
-          .f2s-why__pillar-body { padding: 0 0 22px; }
-          .f2s-why__pillar-body p {
-            margin: 0;
-            color: #334155;
-            font-size: 15px;
-            line-height: 1.7;
-          }
 
           /* Right: single black panel housing both media items */
           .f2s-why__media {
@@ -602,8 +598,6 @@ export default function FigmaToShopifyConversionPage() {
             .f2s-why__card { padding: 48px; }
             .f2s-why__title { font-size: 38px; }
             .f2s-why__intro { font-size: 16px; }
-            .f2s-why__pillar details > summary { font-size: 17px; padding: 20px 0; }
-            .f2s-why__pillar-body p { font-size: 15px; }
           }
 
           /* Mobile-only fine tuning */
@@ -692,16 +686,21 @@ export default function FigmaToShopifyConversionPage() {
             margin: 14px 0 0;
           }
 
+          /* Tablet: two cards per row */
+          @media (min-width: 768px) and (max-width: 1023px) {
+            .f2s-steps__list { grid-template-columns: 1fr 1fr; }
+          }
+
           @media (min-width: 1024px) {
-            .f2s-steps__inner { padding: 72px 20px; }
+            .f2s-steps__inner { padding: 60px 20px; }
             .f2s-steps__title { font-size: 40px; }
             .f2s-steps__list {
               grid-template-columns: 1fr 1fr;
               gap: 30px;
-              margin-top: 48px;
+              margin-top: 32px;
             }
             .f2s-steps__card { padding: 40px 36px; }
-            .f2s-steps__num { font-size: 64px; margin-bottom: 40px; }
+            .f2s-steps__num { font-size: 64px; margin-bottom: 24px; }
             .f2s-steps__heading { font-size: 22px; }
             .f2s-steps__body { font-size: 16px; margin-top: 16px; }
           }
@@ -744,11 +743,12 @@ export default function FigmaToShopifyConversionPage() {
             </div>
             <div className="f2s-pair__media">
               <video
-                src="https://ecommwizards.com/wp-content/uploads/2026/01/d7f14fb290a1484cbb32e6037b39d7f1.mp4"
+                src="/images/d7f14fb290a1484cbb32e6037b39d7f1.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
+                preload="none"
               />
             </div>
           </div>
@@ -777,7 +777,7 @@ export default function FigmaToShopifyConversionPage() {
             </div>
             <div className="f2s-pair__media">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/video_cover_2048x.webp" alt="" width={1024} height={765} />
+              <img src="/images/video_cover_2048x.webp" alt="Ecomm Wizards developers building a custom Shopify store" width={1024} height={765} loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -888,6 +888,8 @@ export default function FigmaToShopifyConversionPage() {
           /* Mobile feature row: icon on LEFT */
           @media (max-width: 1023px) {
             .f2s-pair__feature { flex-direction: row-reverse; justify-content: flex-end; }
+            /* Media (image/video) first, then the text on both cards */
+            .f2s-pair__media { order: -1; padding: 24px 24px 0; }
           }
 
           /* Desktop layout */
@@ -934,7 +936,7 @@ export default function FigmaToShopifyConversionPage() {
                 <p className="ssd-results-card-quote">{q.quote}</p>
                 <div className="ssd-results-card-logo">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={q.logo} alt="" />
+                  <img src={q.logo} alt="" loading="lazy" decoding="async" />
                 </div>
               </div>
             ))}
@@ -976,7 +978,7 @@ export default function FigmaToShopifyConversionPage() {
                 Your Figma Design Deserves Better Than &ldquo;Close Enough&rdquo;
               </h3>
               <p className="f2s-tools__ctaBody">
-                Submit your Figma file today and we&rsquo;ll convert one page to Shopify &mdash; completely free. See the quality before you commit.
+                Submit your Figma file today and we&rsquo;ll convert one page to Shopify, completely free. See the quality before you commit.
               </p>
               <a className="f2s-tools__btn" href="/book-shopify-consultation/">
                 Claim Your Free Page
@@ -989,7 +991,7 @@ export default function FigmaToShopifyConversionPage() {
                 100% Satisfaction.<br />Zero Risk.
               </h3>
               <p className="f2s-tools__ctaBody">
-                Still have questions about our Figma to Shopify conversion process? Let&rsquo;s talk &mdash; no pressure, no pitch. Just answers.
+                Still have questions about our Figma to Shopify conversion process? Let&rsquo;s talk. No pressure, no pitch. Just answers.
               </p>
               <a className="f2s-tools__btn" href="/book-shopify-consultation/">
                 Chat With Our Team
@@ -1045,6 +1047,15 @@ export default function FigmaToShopifyConversionPage() {
             font-size: 15px;
             line-height: 1.4;
           }
+          /* 768 and below: icon next to the text, centered */
+          @media (max-width: 768px) {
+            .f2s-tools__pill {
+              flex-direction: row;
+              justify-content: center;
+              text-align: center;
+              gap: 14px;
+            }
+          }
 
           /* CTA black panel containing two inner cards */
           .f2s-tools__ctaWrap {
@@ -1087,31 +1098,31 @@ export default function FigmaToShopifyConversionPage() {
           }
 
           /* CTA pill button */
+          /* Matches the Shopify Audit hero button: gradient ring, black fill → white on hover, white text → black */
           .f2s-tools__btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
-            background: transparent;
             color: #FFFFFF;
-            border: 2px solid #4FB872;
+            border: 2px solid transparent;
             border-radius: 999px;
-            padding: 12px 26px;
+            padding: 16px 28px;
+            font-family: 'Poppins', sans-serif;
             font-size: 15px;
             font-weight: 500;
             text-decoration: none;
-            transition: background 0.3s ease;
-          }
-          .f2s-tools__btn:hover,
-          .f2s-tools__btn:focus,
-          .f2s-tools__btn:active,
-          .f2s-tools__btn:visited {
-            color: #FFFFFF;
-          }
-          .f2s-tools__btn:hover {
-            border-color: transparent;
             background:
-              linear-gradient(#181818, #181818) padding-box,
+              linear-gradient(#000000, #000000) padding-box,
+              linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%) border-box;
+            transition: background 0.3s ease, color 0.3s ease;
+          }
+          .f2s-tools__btn:visited { color: #FFFFFF; }
+          .f2s-tools__btn:hover,
+          .f2s-tools__btn:focus {
+            color: #000000;
+            background:
+              linear-gradient(#FFFFFF, #FFFFFF) padding-box,
               linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%) border-box;
           }
           .f2s-tools__btnArrow { font-size: 18px; line-height: 1; }
@@ -1149,7 +1160,7 @@ export default function FigmaToShopifyConversionPage() {
             .f2s-tools__ctaCard { padding: 56px 40px; }
             .f2s-tools__ctaTitle { font-size: 24px; }
             .f2s-tools__ctaBody { font-size: 15px; margin: 16px 0 28px; }
-            .f2s-tools__btn { font-size: 16px; padding: 14px 30px; }
+            .f2s-tools__btn { font-size: 16px; padding: 20px 40px; }
           }
         ` }} />
       </section>
@@ -1168,32 +1179,34 @@ export default function FigmaToShopifyConversionPage() {
         >
           <h2 className="f2s-faqs__title">Frequently Asked Questions</h2>
 
-          <ul className="f2s-faqs__list">
-            {FAQS.map((f, i) => (
-              <li key={f.q} className="f2s-faqs__item">
-                <details open={i === 0}>
-                  <summary>
-                    <span className="f2s-faqs__q">{f.q}</span>
-                    <span className="f2s-faqs__chev" aria-hidden>
-                      <svg viewBox="0 0 32 32" width="14" height="14">
-                        <path
-                          d="M31.582 8.495c-0.578-0.613-1.544-0.635-2.153-0.059l-13.43 12.723-13.428-12.723c-0.61-0.578-1.574-0.553-2.153 0.059-0.579 0.611-0.553 1.576 0.058 2.155l14.477 13.715c0.293 0.277 0.67 0.418 1.047 0.418s0.756-0.14 1.048-0.418l14.477-13.715c0.611-0.579 0.637-1.544 0.058-2.155z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    </span>
-                  </summary>
-                  <div className="f2s-faqs__a">
-                    <p>{f.a}</p>
-                  </div>
-                </details>
-              </li>
-            ))}
-          </ul>
+          <div className="f2s-faqs__list">
+            <KnifeAccordion items={FAQS.map((f) => ({ title: f.q, body: f.a }))} />
+          </div>
         </div>
 
+        {/* Breadcrumb structured data — Services › Figma to Shopify Conversion */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+                { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: "Figma to Shopify Conversion",
+                  item: "https://ecommwizards.com/services/figma-to-shopify-conversion",
+                },
+              ],
+            }),
+          }}
+        />
+
         {/* FAQPage JSON-LD — scoped to this page only via Next.js per-route rendering.
-            This script renders only on /figma-to-shopify-conversion. Do not move to layout.tsx. */}
+            This script renders only on /services/figma-to-shopify-conversion. Do not move to layout.tsx. */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -1220,55 +1233,11 @@ export default function FigmaToShopifyConversionPage() {
             text-align: center;
             margin: 0 0 32px;
           }
-          .f2s-faqs__list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            border-top: 1px solid #E5E7EB;
-          }
-          .f2s-faqs__item { border-bottom: 1px solid #E5E7EB; }
-          .f2s-faqs__item details > summary {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            padding: 18px 0;
-            list-style: none;
-            cursor: pointer;
-          }
-          .f2s-faqs__item details > summary::-webkit-details-marker { display: none; }
-          .f2s-faqs__q {
-            color: #000000;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 1.4;
-            flex: 1;
-          }
-          .f2s-faqs__chev {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: #000000;
-            flex-shrink: 0;
-            transition: transform 0.2s ease;
-          }
-          .f2s-faqs__item details[open] > summary .f2s-faqs__chev { transform: rotate(180deg); }
-          .f2s-faqs__a { padding: 0 0 22px; }
-          .f2s-faqs__a p {
-            margin: 0;
-            color: #334155;
-            font-family: 'Poppins', sans-serif;
-            font-size: 15px;
-            line-height: 1.7;
-          }
+          .f2s-faqs__list { margin: 0; padding: 0; }
 
           @media (min-width: 1024px) {
             .f2s-faqs__inner { padding: 72px 20px; }
             .f2s-faqs__title { font-size: 44px; margin-bottom: 40px; }
-            .f2s-faqs__item details > summary { padding: 22px 0; }
-            .f2s-faqs__q { font-size: 17px; }
-            .f2s-faqs__a p { font-size: 16px; }
           }
         ` }} />
       </section>

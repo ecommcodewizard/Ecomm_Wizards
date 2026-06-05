@@ -30,7 +30,7 @@ const NAV: NavItem[] = [
       { label: "Shopify 2.0",           href: "/shopify-2-0-development",       description: "Leverage the latest Shopify architecture" },
       { label: "Shopify Plus",          href: "/services/shopify-plus-development",      description: "Enterprise-grade builds on Plus" },
       { label: "Headless Shopify",      href: "/services/headless-shopify-agency", description: "Next.js / Hydrogen storefronts" },
-      { label: "Figma to Shopify",      href: "/figma-to-shopify-conversion",   description: "Pixel-perfect design → production" },
+      { label: "Figma to Shopify",      href: "/services/figma-to-shopify-conversion",   description: "Pixel-perfect design → production" },
       { label: "UX & UI Design",        href: "/shopify-ux-and-ui-design",      description: "Design that converts" },
       { label: "Landing Page Design",   href: "/shopify-landing-page-design",   description: "Campaign pages that drive sales" },
     ],
