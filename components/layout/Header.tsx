@@ -69,7 +69,7 @@ const NAV: NavItem[] = [
       { label: "Shopify Integrations",     href: "/services/shopify-integration-services",   description: "ERP, CRM, 3PL & more" },
     ],
   },
-  { label: "B2B", href: "/shopify-b2b-store-setup" },
+  { label: "B2B", href: "/services/shopify-b2b-store-setup" },
   { label: "POS", href: "/services/shopify-pos-setup" },
   {
     label: "Marketing",

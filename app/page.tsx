@@ -113,7 +113,7 @@ const SERVICES = [
   {
     title: "B2B & POS Setup",
     desc: "Wholesale portals, net terms, Shopify POS, and omnichannel selling, all in one.",
-    href: "/shopify-b2b-store-setup",
+    href: "/services/shopify-b2b-store-setup",
   },
 ];
 

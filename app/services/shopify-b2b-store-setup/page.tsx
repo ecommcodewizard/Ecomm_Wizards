@@ -1,10 +1,45 @@
 import type { Metadata } from "next";
 
+const META_DESCRIPTION =
+  "Build a unified Shopify B2B store with custom pricing, net payment terms, wholesale portals, and ERP integration. Shopify Plus Preferred Partner. 1,000+ brands built.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-b2b-store-setup";
+
 export const metadata: Metadata = {
-  title: "Shopify B2B Store Setup | Wholesale & D2C From One Platform",
-  description:
-    "Shopify Plus B2B agency that builds unified wholesale + D2C operations on a single store. Custom pricing, net terms, ERP sync, self-serve buyer portals. Fixed-price quotes.",
-  alternates: { canonical: "https://ecommwizards.com/services/shopify-b2b-store-setup/" },
+  // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
+  // template would otherwise append the brand to this custom title.
+  title: { absolute: "Shopify B2B Agency | Wholesale and D2C on Shopify Plus" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify b2b",
+    "shopify b2b ecommerce",
+    "shopify plus b2b",
+    "shopify wholesale",
+    "shopify b2b agency",
+    "shopify b2b setup",
+    "wholesale shopify store",
+    "shopify b2b developer",
+    "shopify wholesale portal",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify B2B Agency | Wholesale and D2C on Shopify Plus",
+    description: META_DESCRIPTION,
+    images: [
+      {
+        url: "/images/B2B-hero-image.webp",
+        alt: "Shopify Plus B2B store running wholesale and D2C from one platform",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify B2B Agency | Wholesale and D2C on Shopify Plus",
+    description: META_DESCRIPTION,
+    images: ["/images/B2B-hero-image.webp"],
+  },
 };
 
 const GRADIENT =
@@ -45,7 +80,7 @@ const AUDIENCE = [
 const TABLE_ROWS = [
   {
     benefit: "Operational Unity",
-    desc: "Run Shopify B2B and D2C on one platform with seamless ERP integration",
+    desc: "Run Shopify B2B and D2C on one platform with real-time ERP integration",
     impact: "Cuts tech debt by 20 to 30%, eliminating duplicate systems and slashing maintenance costs",
   },
   {
@@ -278,6 +313,21 @@ const FAQ_SCHEMA = {
   })),
 };
 
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Shopify B2B Agency",
+      item: CANONICAL_URL,
+    },
+  ],
+};
+
 export default function ShopifyB2BPage() {
   return (
     <>
@@ -288,41 +338,48 @@ export default function ShopifyB2BPage() {
           style={{ maxWidth: "1320px" }}
         >
           <div className="text-center lg:text-left">
-            <h1 className="font-semibold leading-[1.15] tracking-tight text-white text-[34px] sm:text-[44px] lg:text-[50px] xl:text-[54px]">
+            <h1 className="font-semibold leading-[1.15] tracking-tight text-white text-[34px] sm:text-[44px] lg:text-[42px] xl:text-[48px]">
               Shopify Plus B2B Solutions: Run Wholesale and D2C{" "}
               <span style={GRADIENT_TEXT}>From One Powerful Platform</span>
             </h1>
-            <p className="mt-7 text-white text-[18px] sm:text-[20px] lg:text-[22px] font-bold leading-[1.4]">
+            <p className="mt-6 text-white text-[18px] sm:text-[20px] lg:text-[20px] font-bold leading-[1.4]">
               Stop Managing Two Businesses Separately. B2B Shopify Was Built for This.
             </p>
-            <p className="mt-5 text-white/85 text-[15px] sm:text-base lg:text-[16px] leading-[1.7]">
+            <p className="mt-5 text-white text-[15px] leading-[1.7]">
               Most wholesale businesses are stuck juggling a patchwork of tools. A separate wholesale portal here, a
               manual pricing spreadsheet there, and a D2C store that has no idea the other exists. It is slow, it is
               expensive, and it breaks at scale.
             </p>
-            <p className="mt-4 text-white/85 text-[15px] sm:text-base lg:text-[16px] leading-[1.7]">
+            <p className="mt-4 text-white text-[15px] leading-[1.7]">
               Ecomm Wizards is a dedicated Shopify B2B agency that builds unified commerce solutions where your
               wholesale and D2C operations run together on a single Shopify Plus B2B infrastructure. Whether you are
-              launching Shopify wholesale from scratch or migrating off a clunky legacy platform, we make Shopify for
-              B2B feel effortless for your team and your buyers.
+              launching Shopify wholesale from scratch or migrating off a clunky legacy platform, we build Shopify for
+              B2B to work the way your team and your buyers already do.
             </p>
-            <a
-              href={CONSULT}
-              className="cta-pill-invert mt-7 inline-flex items-center gap-3 rounded-full border px-7 py-3 text-[15px] sm:text-base transition"
-            >
-              Book a Free Consultation
-              <span aria-hidden className="text-lg leading-none">→</span>
-            </a>
+            <div className="mt-7 inline-flex p-[2px] rounded-full" style={{ background: GRADIENT }}>
+              <a
+                href={CONSULT}
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-black hover:bg-white transition-all duration-300 px-[28px] py-[16px] sm:px-[40px] sm:py-[20px] text-[15px] sm:text-[16px]"
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}
+              >
+                <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Book a Free Consultation</span>
+                <svg width="18" height="13" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white group-hover:text-black transition-colors duration-300">
+                  <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+            </div>
           </div>
 
           <div className="order-last lg:order-none">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/B2B-hero-image.webp"
-              alt="Shopify Plus B2B unified DTC and wholesale storefronts"
+              alt="Shopify Plus B2B store running wholesale and D2C from one platform"
               width={1184}
               height={1176}
               className="w-full h-auto"
+              decoding="async"
+              fetchPriority="high"
               style={{ filter: "hue-rotate(100deg) saturate(1.05)" }}
             />
           </div>
@@ -334,7 +391,7 @@ export default function ShopifyB2BPage() {
         <div className="b2b-trust-inner mx-auto" style={{ maxWidth: "1320px", padding: "60px 0" }}>
           <h2
             className="b2b-trust-heading text-center"
-            style={{ color: "#1e293b", fontSize: "22px", fontWeight: 700, lineHeight: 1.45, margin: 0 }}
+            style={{ color: "#1e293b", fontSize: "32px", fontWeight: 700, lineHeight: 1.45, margin: 0 }}
           >
             Trusted by Leading Shopify Brands
           </h2>
@@ -362,7 +419,7 @@ export default function ShopifyB2BPage() {
       {/* ── 3. Who We Build For ─────────────────────────────────────── */}
       <section style={{ background: "#FBF7ED", fontFamily: "'Poppins', sans-serif" }}>
         <div className="mx-auto py-[40px] px-[15px] lg:py-[60px] lg:px-[20px]" style={{ maxWidth: "1320px" }}>
-          <h2 className="text-center font-bold leading-[1.2] text-[#1e293b] text-[34px] sm:text-[42px] lg:text-[48px]">
+          <h2 className="text-center font-bold leading-[1.2] text-[#1e293b] text-[34px] sm:text-[42px] lg:text-[42px]">
             Who We Build Shopify B2B Stores For
           </h2>
           <p className="mx-auto mt-5 max-w-[900px] text-center text-[#334155] text-[15px] sm:text-base leading-[1.7]">
@@ -382,7 +439,7 @@ export default function ShopifyB2BPage() {
       {/* ── 4. Why Wholesalers Are Moving (intro, white) ─────────────── */}
       <section style={{ background: "#FFFFFF", fontFamily: "'Poppins', sans-serif" }}>
         <div className="mx-auto py-[40px] px-[15px] lg:py-[60px] lg:px-[20px] text-center" style={{ maxWidth: "1320px" }}>
-          <h2 className="font-bold leading-[1.2] text-[#1e293b] text-[34px] sm:text-[42px] lg:text-[48px]">
+          <h2 className="font-bold leading-[1.2] text-[#1e293b] text-[34px] sm:text-[42px] lg:text-[42px]">
             Why Are Smart Wholesalers Moving to B2B Shopify?
           </h2>
           <p className="mx-auto mt-6 max-w-[1100px] text-[#334155] text-[15px] sm:text-base leading-[1.85]">
@@ -396,55 +453,49 @@ export default function ShopifyB2BPage() {
 
       {/* ── 5. Comparison Table (black) ─────────────────────────────── */}
       <section style={{ background: "#000000", fontFamily: "'Poppins', sans-serif" }}>
-        <div className="mx-auto py-[40px] px-[15px] lg:py-[60px] lg:px-[20px]" style={{ maxWidth: "1320px" }}>
+        <div className="mx-auto py-[40px] px-[15px] lg:py-[50px] lg:px-[20px]" style={{ maxWidth: "1320px" }}>
           <div className="rounded-[20px] p-5 sm:p-8 lg:p-10" style={{ background: "#0a0a0a", border: "1px solid rgba(255,255,255,0.08)" }}>
-            <div className="grid gap-5 lg:gap-7 lg:grid-cols-3">
+            <div className="b2b-compare grid gap-5 lg:gap-7 lg:grid-cols-3">
               {/* col 1 — benefit labels */}
-              <div className="rounded-[14px] p-5 sm:p-6" style={{ background: "#121212" }}>
+              <div className="b2b-compare-col rounded-[14px] p-5 sm:p-6" style={{ background: "#121212" }}>
                 <div className="b2b-col-head" style={{ background: GRADIENT }}>Benefits</div>
-                <ul className="mt-5">
-                  {TABLE_ROWS.map((r, i) => (
-                    <li
-                      key={r.benefit}
-                      className="py-5 text-white text-[15px] sm:text-base leading-[1.5]"
-                      style={{ borderTop: i === 0 ? "none" : "1px solid rgba(255,255,255,0.10)" }}
-                    >
-                      {r.benefit}
-                    </li>
-                  ))}
-                </ul>
+                {TABLE_ROWS.map((r, i) => (
+                  <div
+                    key={r.benefit}
+                    className={`${i === 0 ? "mt-5 lg:mt-0 " : ""}lg:flex lg:flex-col lg:justify-center py-5 text-white text-[15px] sm:text-base leading-[1.5]`}
+                    style={{ borderTop: i === 0 ? "none" : "1px solid rgba(255,255,255,0.10)" }}
+                  >
+                    {r.benefit}
+                  </div>
+                ))}
               </div>
 
               {/* col 2 — descriptions */}
-              <div className="rounded-[14px] p-5 sm:p-6" style={{ background: "#121212" }}>
+              <div className="b2b-compare-col rounded-[14px] p-5 sm:p-6" style={{ background: "#121212" }}>
                 <div className="b2b-col-head" style={{ background: GRADIENT }}>Description</div>
-                <ul className="mt-5">
-                  {TABLE_ROWS.map((r, i) => (
-                    <li
-                      key={r.benefit}
-                      className="py-5 text-white/85 text-[14px] sm:text-[15px] leading-[1.6]"
-                      style={{ borderTop: i === 0 ? "none" : "1px solid rgba(255,255,255,0.10)" }}
-                    >
-                      {r.desc}
-                    </li>
-                  ))}
-                </ul>
+                {TABLE_ROWS.map((r, i) => (
+                  <div
+                    key={r.benefit}
+                    className={`${i === 0 ? "mt-5 lg:mt-0 " : ""}lg:flex lg:flex-col lg:justify-center py-5 text-white/85 text-[14px] sm:text-[15px] leading-[1.6]`}
+                    style={{ borderTop: i === 0 ? "none" : "1px solid rgba(255,255,255,0.10)" }}
+                  >
+                    {r.desc}
+                  </div>
+                ))}
               </div>
 
               {/* col 3 — impact */}
-              <div className="rounded-[14px] p-5 sm:p-6" style={{ background: "#121212" }}>
+              <div className="b2b-compare-col rounded-[14px] p-5 sm:p-6" style={{ background: "#121212" }}>
                 <div className="b2b-col-head" style={{ background: GRADIENT }}>Impact on Your Business</div>
-                <ul className="mt-5">
-                  {TABLE_ROWS.map((r, i) => (
-                    <li
-                      key={r.benefit}
-                      className="py-5 text-white/85 text-[14px] sm:text-[15px] leading-[1.6]"
-                      style={{ borderTop: i === 0 ? "none" : "1px solid rgba(255,255,255,0.10)" }}
-                    >
-                      {r.impact}
-                    </li>
-                  ))}
-                </ul>
+                {TABLE_ROWS.map((r, i) => (
+                  <div
+                    key={r.benefit}
+                    className={`${i === 0 ? "mt-5 lg:mt-0 " : ""}lg:flex lg:flex-col lg:justify-center py-5 text-white/85 text-[14px] sm:text-[15px] leading-[1.6]`}
+                    style={{ borderTop: i === 0 ? "none" : "1px solid rgba(255,255,255,0.10)" }}
+                  >
+                    {r.impact}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -460,7 +511,7 @@ export default function ShopifyB2BPage() {
       {/* ── 6. Features Grid (cream, 3x3) ───────────────────────────── */}
       <section style={{ background: "#FBF7ED", fontFamily: "'Poppins', sans-serif" }}>
         <div className="mx-auto py-[40px] px-[15px] lg:py-[60px] lg:px-[20px]" style={{ maxWidth: "1320px" }}>
-          <h2 className="text-center font-bold leading-[1.2] text-[#1e293b] text-[32px] sm:text-[40px] lg:text-[46px]">
+          <h2 className="text-center font-bold leading-[1.2] text-[#1e293b] text-[32px] sm:text-[40px] lg:text-[42px]">
             Every Feature Your Wholesale Shopify Store Needs,<br className="hidden lg:block" /> Built and Configured by
             Experts
           </h2>
@@ -480,10 +531,10 @@ export default function ShopifyB2BPage() {
         </div>
       </section>
 
-      {/* ── 7. Process (cream, image left + 5 steps right) ──────────── */}
-      <section style={{ background: "#FBF7ED", fontFamily: "'Poppins', sans-serif" }}>
+      {/* ── 7. Process (white, image left + 5 steps right) ──────────── */}
+      <section style={{ background: "#FFFFFF", fontFamily: "'Poppins', sans-serif" }}>
         <div className="mx-auto py-[40px] px-[15px] lg:py-[60px] lg:px-[20px]" style={{ maxWidth: "1320px" }}>
-          <h2 className="text-center font-bold leading-[1.2] text-[#1e293b] text-[32px] sm:text-[40px] lg:text-[46px]">
+          <h2 className="text-center font-bold leading-[1.2] text-[#1e293b] text-[32px] sm:text-[40px] lg:text-[42px]">
             How We Build Your Shopify B2B Operation:<br className="hidden lg:block" /> From Strategy to Scale
           </h2>
           <p className="mx-auto mt-5 max-w-[1050px] text-center text-[#334155] text-[15px] sm:text-base leading-[1.7]">
@@ -493,14 +544,16 @@ export default function ShopifyB2BPage() {
           </p>
 
           <div className="mt-12 grid gap-[30px] lg:grid-cols-2 lg:items-center">
-            <div>
+            <div className="md:max-w-[440px] md:mx-auto lg:max-w-none">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/b2b-tab-image-desktop.webp"
-                alt="Shopify B2B wholesale build preview"
+                alt="Shopify B2B wholesale store build with buyer portal login and bulk order form"
                 width={800}
                 height={937}
                 className="w-full h-auto"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="flex flex-col">
@@ -525,7 +578,7 @@ export default function ShopifyB2BPage() {
       {/* ── 8. Mini Case Studies (cream, 2x2) ───────────────────────── */}
       <section style={{ background: "#FBF7ED", fontFamily: "'Poppins', sans-serif" }}>
         <div className="mx-auto py-[40px] px-[15px] lg:py-[60px] lg:px-[20px]" style={{ maxWidth: "1320px" }}>
-          <h2 className="text-center font-bold leading-[1.2] text-[#1e293b] text-[32px] sm:text-[40px] lg:text-[46px]">
+          <h2 className="text-center font-bold leading-[1.2] text-[#1e293b] text-[32px] sm:text-[40px] lg:text-[42px]">
             Real Brands. Real Shopify B2B Results.
           </h2>
           <p className="mx-auto mt-5 max-w-[1100px] text-center text-[#334155] text-[15px] sm:text-base leading-[1.7]">
@@ -543,7 +596,7 @@ export default function ShopifyB2BPage() {
                 </div>
                 <div className="w-full sm:w-[200px] lg:w-[230px] flex-shrink-0">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={c.img} alt={c.t} className="w-full h-auto" />
+                  <img src={c.img} alt={`${c.t} Shopify B2B case study`} className="w-full h-auto" loading="lazy" decoding="async" />
                 </div>
               </div>
             ))}
@@ -565,10 +618,12 @@ export default function ShopifyB2BPage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/b2b-content-image.webp"
-                alt="B2B wholesale portal screenshot"
+                alt="Shopify B2B wholesale buyer portal built by Ecomm Wizards"
                 width={1024}
                 height={664}
                 className="w-full h-auto rounded-[14px]"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div>
@@ -580,7 +635,7 @@ export default function ShopifyB2BPage() {
                 <b>Shopify B2B agency support</b> partner built specifically around the complexity that comes with
                 scaling on Shopify Plus. From <b>B2B Shopify</b> builds and ERP integrations to custom app development,
                 UX audits, Hydrogen migrations, CRO, Figma conversions, AI commerce integrations, and subscription
-                models &ndash; we cover every layer of the Shopify ecosystem.
+                models, we cover every layer of the Shopify ecosystem.
               </p>
             </div>
           </div>
@@ -592,6 +647,10 @@ export default function ShopifyB2BPage() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
         <div className="b2b-faq-inner mx-auto py-[40px] px-[15px] lg:py-[60px] lg:px-[20px]" style={{ maxWidth: "1320px" }}>
           <h2 className="b2b-faq-title">Frequently Asked Questions</h2>
@@ -622,7 +681,7 @@ export default function ShopifyB2BPage() {
                     </span>
                   </label>
                   <div className="b2b-faq-bodyc">
-                    <p>{f.a}</p>
+                    <div className="b2b-faq-in"><p>{f.a}</p></div>
                   </div>
                 </div>
               ))}
@@ -646,6 +705,16 @@ export default function ShopifyB2BPage() {
         }
         @media (min-width: 1024px) {
           .b2b-col-head { font-size: 17px; }
+          /* Align every row across the 3 comparison columns (subgrid) */
+          .b2b-compare {
+            grid-template-rows: auto repeat(5, auto);
+            row-gap: 0;
+          }
+          .b2b-compare-col {
+            grid-row: 1 / -1;
+            display: grid;
+            grid-template-rows: subgrid;
+          }
         }
 
         /* FAQ accordion */
@@ -654,7 +723,7 @@ export default function ShopifyB2BPage() {
           text-align: center; margin: 0 0 40px;
         }
         @media (min-width: 1024px) {
-          .b2b-faq-title { font-size: 40px; margin-bottom: 50px; }
+          .b2b-faq-title { font-size: 42px; margin-bottom: 50px; }
         }
         .b2b-faq-acc { position: relative; }
         .b2b-faq-rad { position: absolute; opacity: 0; pointer-events: none; width: 1px; height: 1px; }
@@ -672,10 +741,12 @@ export default function ShopifyB2BPage() {
         }
         .b2b-faq-up   { display: none; }
         .b2b-faq-down { display: block; }
-        .b2b-faq-bodyc { display: none; padding: 0 60px 24px 0; }
-        .b2b-faq-bodyc p { color: #334155; font-size: 15px; line-height: 1.75; margin: 0; }
+        .b2b-faq-bodyc { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows 0.3s ease, opacity 0.25s ease; }
+        .b2b-faq-in { overflow: hidden; min-height: 0; }
+        .b2b-faq-bodyc p { color: #334155; font-size: 15px; line-height: 1.75; margin: 0; padding: 0 60px 24px 0; }
         ${FAQS.map((_, i) => `#b2b-faq-${i}:checked ~ .b2b-faq-list [data-faq="b2b-faq-${i}"] .b2b-faq-bodyc`).join(",\n        ")} {
-          display: block;
+          grid-template-rows: 1fr;
+          opacity: 1;
         }
         ${FAQS.map((_, i) => `#b2b-faq-${i}:checked ~ .b2b-faq-list [data-faq="b2b-faq-${i}"] .b2b-faq-down`).join(",\n        ")} {
           display: none;
@@ -714,7 +785,7 @@ export default function ShopifyB2BPage() {
         @media (max-width: 1023px) {
           .b2b-trust       { padding: 0 16px; }
           .b2b-trust-inner { padding: 36px 0 !important; }
-          .b2b-trust-heading { font-size: 20px !important; }
+          .b2b-trust-heading { font-size: 24px !important; }
           .b2b-trust-carousel { margin-top: 24px !important; }
           .b2b-trust-track { gap: 32px; animation-duration: 22s; }
           .b2b-trust-slide { width: 174.99px; height: 84.44px; }

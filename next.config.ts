@@ -71,6 +71,11 @@ const nextConfig: NextConfig = {
         destination: "/services/shopify-pos-setup",
         permanent: true,
       },
+      {
+        source: "/shopify-b2b-store-setup",
+        destination: "/services/shopify-b2b-store-setup",
+        permanent: true,
+      },
     ];
   },
 };

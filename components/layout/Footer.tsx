@@ -25,7 +25,7 @@ const SERVICE_TAGS = [
   { label: "Site Speed Optimizations",         href: "/shopify-speed-optimization" },
   { label: "Point of Sale (POS) for Business", href: "/services/shopify-pos-setup" },
   { label: "A/B Testing for CRO, AOV & CLV",  href: "/a-b-testing" },
-  { label: "B2B Solutions",                    href: "/shopify-b2b-store-setup" },
+  { label: "B2B Solutions",                    href: "/services/shopify-b2b-store-setup" },
   { label: "Shopify SEO Agency",               href: "/services/shopify-seo-agency" },
   { label: "Book a Demo",                      href: "/book-shopify-consultation" },
   { label: "Shopify Landing Page Design",      href: "/services/shopify-landing-page-design" },
