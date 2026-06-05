@@ -1,4 +1,5 @@
-import KnifeAccordion from "@/components/sections/KnifeAccordion";
+import type { ReactNode } from "react";
+import KnifeAccordion, { type KnifeAccordionItem } from "@/components/sections/KnifeAccordion";
 
 const PHONE_LOGOS = [
   "/images/trust_logo_hover_1.svg",
@@ -20,7 +21,23 @@ const PHONE_LOGOS = [
   "/images/everlast-icon.svg",
 ];
 
-export default function WhyPartnerSection() {
+const DEFAULT_HEADING = (
+  <>Why Partner with<br />{" "}<strong style={{ fontWeight: 700 }}>Ecomm Wizards?</strong></>
+);
+const DEFAULT_DESCRIPTION =
+  "Partner with Ecomm Wizards to ensure your store evolves with AI, maintaining a competitive edge in the ever-changing eCommerce landscape.";
+
+type WhyPartnerSectionProps = {
+  heading?: ReactNode;
+  description?: string;
+  accordionItems?: KnifeAccordionItem[];
+};
+
+export default function WhyPartnerSection({
+  heading = DEFAULT_HEADING,
+  description = DEFAULT_DESCRIPTION,
+  accordionItems,
+}: WhyPartnerSectionProps = {}) {
   return (
     <section className="why-partner-section" style={{ background: "#ffffff", padding: "0 20px" }}>
       <div
@@ -48,7 +65,7 @@ export default function WhyPartnerSection() {
               margin: "0 0 20px",
             }}
           >
-            Why Partner with<br />{" "}<strong style={{ fontWeight: 700 }}>Ecomm Wizards?</strong>
+            {heading}
           </h2>
           <p
             className="why-partner-desc"
@@ -60,7 +77,7 @@ export default function WhyPartnerSection() {
               margin: 0,
             }}
           >
-            Partner with Ecomm Wizards to ensure your store evolves with AI, maintaining a competitive edge in the ever-changing eCommerce landscape.
+            {description}
           </p>
         </div>
 
@@ -108,7 +125,7 @@ export default function WhyPartnerSection() {
 
         {/* Right: accordion */}
         <div className="why-partner-accordion">
-          <KnifeAccordion />
+          <KnifeAccordion items={accordionItems} />
         </div>
       </div>
     </section>

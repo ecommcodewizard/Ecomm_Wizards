@@ -51,6 +51,11 @@ const nextConfig: NextConfig = {
         destination: "/services/shopify-store-development",
         permanent: true,
       },
+      {
+        source: "/shopify-store-audit",
+        destination: "/services/shopify-store-audit",
+        permanent: true,
+      },
     ];
   },
 };

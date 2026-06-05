@@ -1,7 +1,9 @@
 "use client";
 import { useState } from "react";
 
-const items = [
+export type KnifeAccordionItem = { title: string; body: string };
+
+const DEFAULT_ITEMS: KnifeAccordionItem[] = [
   { title: "One Team, Zero Gaps",           body: "Shopify Design, dev, and marketing working together, not in silos." },
   { title: "Ecommerce Strategy First",      body: "Every Shopify project gets a dedicated strategist, not a task manager." },
   { title: "Launch Fast, Scale Faster",     body: "We start in days, not weeks. Speed without cutting corners." },
@@ -9,15 +11,22 @@ const items = [
   { title: "Traffic That Actually Buys",    body: "Media buying, funnels, and retention built around your margins." },
 ];
 
-export default function KnifeAccordion() {
+type KnifeAccordionProps = { items?: KnifeAccordionItem[]; variant?: "light" | "dark" };
+
+export default function KnifeAccordion({ items = DEFAULT_ITEMS, variant = "light" }: KnifeAccordionProps) {
   const [openIndex, setOpenIndex] = useState(0);
+  const dark = variant === "dark";
+  const lineColor = dark ? "rgba(255,255,255,0.18)" : "rgba(0,0,0,0.12)";
+  const titleColor = dark ? "#FFFFFF" : "#000000";
+  const bodyColor = dark ? "rgba(255,255,255,0.75)" : "#000000CC";
+  const arrowColor = dark ? "#FFFFFF" : "#000000";
 
   return (
     <div>
       {items.map((item, i) => {
         const isOpen = openIndex === i;
         return (
-          <div key={item.title} style={{ borderBottom: "1px solid rgba(0,0,0,0.12)", borderTop: i === 0 ? "1px solid rgba(0,0,0,0.12)" : undefined }}>
+          <div key={item.title} style={{ borderBottom: `1px solid ${lineColor}`, borderTop: i === 0 ? `1px solid ${lineColor}` : undefined }}>
             <button
               onClick={() => setOpenIndex(isOpen ? -1 : i)}
               style={{
@@ -32,17 +41,17 @@ export default function KnifeAccordion() {
                 textAlign: "left",
               }}
             >
-              <span className="knife-accordion-title" style={{ fontFamily: "'Poppins', sans-serif", fontSize: 18, fontWeight: 600, color: "#000000", padding: "0 10px 0 0" }}>
+              <span className="knife-accordion-title" style={{ fontFamily: "'Poppins', sans-serif", fontSize: 18, fontWeight: 600, color: titleColor, padding: "0 10px 0 0" }}>
                 {item.title}
               </span>
               <span style={{ flexShrink: 0 }}>
                 {isOpen ? (
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path d="M9 16V3M9 3L5 8M9 3L13 8" stroke="#000000" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M9 16V3M9 3L5 8M9 3L13 8" stroke={arrowColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 ) : (
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path d="M4 6L9 12L14 6" stroke="#000000" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M4 6L9 12L14 6" stroke={arrowColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 )}
               </span>
@@ -58,7 +67,7 @@ export default function KnifeAccordion() {
             >
               <div style={{ overflow: "hidden" }}>
                 <div style={{ padding: "10px 15px" }}>
-                  <p className="knife-accordion-body" style={{ fontFamily: "'Poppins', sans-serif", fontSize: 16, color: "#000000CC", lineHeight: "1.6", margin: 0 }}>
+                  <p className="knife-accordion-body" style={{ fontFamily: "'Poppins', sans-serif", fontSize: 16, color: bodyColor, lineHeight: "1.6", margin: 0 }}>
                     {item.body}
                   </p>
                 </div>

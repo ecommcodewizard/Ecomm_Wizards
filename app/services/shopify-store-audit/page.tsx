@@ -5,6 +5,8 @@ import AuditRebuildSection from "@/components/sections/AuditRebuildSection";
 import StatsCard from "@/components/sections/StatsCard";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import AuditUrgencySection from "@/components/sections/AuditUrgencySection";
+import WhyPartnerSection from "@/components/sections/WhyPartnerSection";
+import KnifeAccordion from "@/components/sections/KnifeAccordion";
 
 const CASE_STUDY_SLIDES: CaseStudySlide[] = [
   {
@@ -19,7 +21,7 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
     ),
     quote: (
       <>
-        &ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally — we couldn&apos;t be happier!&rdquo;
+        &ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally. We couldn&apos;t be happier!&rdquo;
       </>
     ),
     avatar: "/images/Sofia_Jimenez.webp",
@@ -67,12 +69,70 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
   },
 ];
 
+const META_DESCRIPTION =
+  "Get a free Shopify store audit from conversion experts. We analyze CRO, SEO, speed, and UX to uncover hidden revenue leaks. Request yours today.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-store-audit";
+
 export const metadata: Metadata = {
-  title: "Free Shopify Store Audit | Conversion Experts",
-  description:
-    "Get a free Shopify store audit from conversion experts. We analyze CRO, SEO, speed, and UX to uncover hidden revenue leaks. Request yours today.",
-  alternates: { canonical: "https://ecommwizards.com/services/shopify-store-audit/" },
+  // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
+  // template would otherwise append the brand to this custom title.
+  title: { absolute: "Free Shopify Store Audit | Conversion Experts" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "Shopify store audit",
+    "free Shopify store audit",
+    "Shopify CRO audit",
+    "Shopify conversion audit",
+    "professional Shopify audit",
+    "Shopify website audit",
+    "Shopify store analysis",
+    "Shopify UX audit",
+    "Shopify SEO audit",
+    "Shopify store improvement plan",
+    "Shopify store developers",
+    "hire Shopify developers",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Free Shopify Store Audit | Conversion Experts",
+    description: META_DESCRIPTION,
+    images: [
+      {
+        url: "/images/shopify-audit-unlock.webp",
+        alt: "Free Shopify store audit by Ecomm Wizards conversion experts",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Shopify Store Audit | Conversion Experts",
+    description: META_DESCRIPTION,
+    images: ["/images/shopify-audit-unlock.webp"],
+  },
 };
+
+// Single source of truth for the FAQ — used by both the FAQPage JSON-LD and the UI.
+const AUDIT_FAQS = [
+  {
+    q: "What do I need to get started?",
+    a: "Just admin access to your Shopify store. If you don't have heatmapping or analytics tools installed, our Shopify experts will set them up as part of your data-driven Shopify audit.",
+  },
+  {
+    q: "How fast will I get results?",
+    a: "3-5 business days. We deliver your complete Shopify conversion audit with prototypes, recommendations, and a 30-minute strategy session, faster than most agencies take to schedule a kickoff call.",
+  },
+  {
+    q: "What if the audit doesn't deliver?",
+    a: "100% money-back guarantee. If our professional Shopify audit doesn't uncover actionable revenue opportunities, we refund every dollar. Just email us for the refund. No questions asked.",
+  },
+  {
+    q: "Can I start with just one page?",
+    a: "Absolutely. Our single-page Shopify store audit lets you test our process on your biggest bottleneck first. Once you see the results, scaling to the full-funnel audit is easy.",
+  },
+];
 
 const GRADIENT =
   "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)";
@@ -98,7 +158,7 @@ export default function Page() {
           {/* Left: text */}
           <div className="text-center lg:text-left">
             <h1
-              className="text-[34px] sm:text-[44px] lg:text-[48px] min-[1440px]:text-[56px] leading-[1.15]"
+              className="text-[34px] sm:text-[40px] lg:text-[40px] min-[1440px]:text-[42px] leading-[1.15]"
               style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}
             >
               <span style={GRADIENT_TEXT}>Free Shopify Store Audit</span>{" "}
@@ -106,7 +166,7 @@ export default function Page() {
             </h1>
 
             <p
-              className="mt-[24px] text-[18px] sm:text-[20px] lg:text-[22px] leading-[1.5]"
+              className="mt-[18px] md:mt-[16px] lg:mt-[20px] text-[18px] sm:text-[20px] lg:text-[20px] leading-[1.5]"
               style={{ color: "#FFFFFF", fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}
             >
               Get a Professional Shopify Audit from experienced Shopify Experts that
@@ -115,7 +175,7 @@ export default function Page() {
             </p>
 
             <p
-              className="mt-[20px] text-[15px] sm:text-[16px] leading-[1.7]"
+              className="mt-[18px] md:mt-[16px] lg:mt-[20px] text-[15px] sm:text-[16px] lg:text-[14px] leading-[1.7]"
               style={{ color: "#FFFFFF", fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}
             >
               Trusted by 700+ brands like Andrea Maack and RevGum, our Shopify
@@ -126,7 +186,7 @@ export default function Page() {
               improve CLV.
             </p>
 
-            <div className="mt-[36px] inline-flex p-[2px] rounded-full" style={{ background: GRADIENT }}>
+            <div className="mt-[24px] lg:mt-[36px] inline-flex p-[2px] rounded-full" style={{ background: GRADIENT }}>
               <Link
                 href="/free-shopify-store-audit"
                 className="group inline-flex items-center justify-center gap-3 rounded-full bg-black hover:bg-white transition-all duration-300 px-[28px] py-[16px] sm:px-[40px] sm:py-[20px] text-[15px] sm:text-[16px]"
@@ -212,7 +272,7 @@ export default function Page() {
               },
               {
                 title: "The Revenue Blueprint",
-                desc: "This isn't a PDF full of theories. Our professional Shopify audit delivers a complete Shopify store improvement plan with clickable prototypes that show you the before and after. We rebuild key pages, test new flows, and map out a data-driven Shopify audit tailored to your store's biggest conversion gaps.",
+                desc: "This isn't a PDF full of theories. Our professional Shopify audit delivers a complete Shopify store improvement plan with clickable prototypes that show you the before and after. We rebuild key pages, test new flows, and map out a data-driven Shopify audit built around your store's biggest conversion gaps.",
                 icon: (
                   <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden>
                     {/* Stacked coins behind, right side */}
@@ -412,66 +472,32 @@ export default function Page() {
               What&rsquo;s included in the Audit
             </h2>
 
-            <div className="mt-6 sm:mt-8 border-t" style={{ borderColor: "rgba(255,255,255,0.18)" }}>
-              {[
-                {
-                  q: "Behavioral Analytics That Tell the Truth",
-                  a: "We track real user behavior: heat maps, scroll depth, session replays, so our data-driven Shopify audit is built on what customers actually do, not what you think they do.",
-                },
-                {
-                  q: "Analytics-Backed Recommendations",
-                  a: "Every change we recommend comes with the numbers to prove it. Our Shopify conversion audit ties every UX/UI tweak directly to CRO, AOV, and CLV improvements, so you know exactly what drives revenue.",
-                },
-                {
-                  q: "Ready-to-Launch Prototypes",
-                  a: "No vague mockups. Our professional Shopify audit includes interactive Figma prototypes you can click through, test with your team, and hand off to developers the same day. Zero guesswork.",
-                },
-                {
-                  q: "Full-Funnel Store Analysis",
-                  a: "We audit every critical touchpoint—homepage, collections, product pages, cart, checkout, and account pages. Our Shopify store improvement plan covers the entire customer journey, not just the homepage.",
-                },
-                {
-                  q: "Proven Results from Shopify Experts",
-                  a: "Stores that implement our Shopify growth audit see 15% higher conversions on average, with some brands outpacing competitors by 36%. That's what happens when you fix the right problems.",
-                },
-              ].map((item) => (
-                <details
-                  key={item.q}
-                  className="group border-b py-5 sm:py-6"
-                  style={{ borderColor: "rgba(255,255,255,0.18)" }}
-                >
-                  <summary
-                    className="flex items-center justify-between gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden"
-                  >
-                    <span
-                      className="text-[16px] sm:text-[18px] leading-[1.4]"
-                      style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, color: "#FFFFFF" }}
-                    >
-                      {item.q}
-                    </span>
-                    <svg
-                      width="22"
-                      height="22"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      stroke="#FFFFFF"
-                      strokeWidth="2.4"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="shrink-0 transition-transform duration-300 group-open:rotate-180"
-                      aria-hidden
-                    >
-                      <polyline points="6 12 16 22 26 12" />
-                    </svg>
-                  </summary>
-                  <p
-                    className="mt-3 text-[14px] sm:text-[15px] leading-[1.7]"
-                    style={{ fontFamily: "'Poppins', sans-serif", color: "rgba(255,255,255,0.75)" }}
-                  >
-                    {item.a}
-                  </p>
-                </details>
-              ))}
+            <div className="mt-6 sm:mt-8">
+              <KnifeAccordion
+                variant="dark"
+                items={[
+                  {
+                    title: "Behavioral Analytics That Tell the Truth",
+                    body: "We track real user behavior: heat maps, scroll depth, session replays, so our data-driven Shopify audit is built on what customers actually do, not what you think they do.",
+                  },
+                  {
+                    title: "Analytics-Backed Recommendations",
+                    body: "Every change we recommend comes with the numbers to prove it. Our Shopify conversion audit ties every UX/UI tweak directly to CRO, AOV, and CLV improvements, so you know exactly what drives revenue.",
+                  },
+                  {
+                    title: "Ready-to-Launch Prototypes",
+                    body: "No vague mockups. Our professional Shopify audit includes interactive Figma prototypes you can click through, test with your team, and hand off to developers the same day. Zero guesswork.",
+                  },
+                  {
+                    title: "Full-Funnel Store Analysis",
+                    body: "We audit every critical touchpoint: homepage, collections, product pages, cart, checkout, and account pages. Our Shopify store improvement plan covers the entire customer journey, not just the homepage.",
+                  },
+                  {
+                    title: "Proven Results from Shopify Experts",
+                    body: "Stores that implement our Shopify growth audit see 15% higher conversions on average, with some brands outpacing competitors by 36%. That's what happens when you fix the right problems.",
+                  },
+                ]}
+              />
             </div>
           </div>
         </div>
@@ -625,7 +651,7 @@ export default function Page() {
           <div className="ssd-results-cards">
             {[
               {
-                quote: "Ecomm Grey transformed our UX—conversions up 25%!",
+                quote: "Ecomm Wizards transformed our UX, conversions up 25%!",
                 logo: "/images/Frame_1000007615.webp",
                 logoAlt: "EBY",
               },
@@ -644,7 +670,7 @@ export default function Page() {
                 <p className="ssd-results-card-quote">{c.quote}</p>
                 <div className="ssd-results-card-logo">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={c.logo} alt={c.logoAlt} />
+                  <img src={c.logo} alt={`${c.logoAlt} Shopify store audit client logo`} loading="lazy" decoding="async" />
                 </div>
               </div>
             ))}
@@ -657,189 +683,71 @@ export default function Page() {
       {/* ── Claim Your Free Audit (72h weekly countdown) ─────────── */}
       <AuditUrgencySection />
 
-      {/* ── Why Our Shopify Audit Gets Different Results ─────────── */}
-      <section
-        className="w-full"
-        style={{ background: "#FFFFFF", fontFamily: "'Poppins', sans-serif" }}
-      >
-        <div
-          className="mx-auto px-[15px] sm:px-[20px] py-[40px] sm:py-[50px] lg:py-[60px] grid items-center gap-y-[30px] gap-x-[16px] lg:grid-cols-[1fr_231px_minmax(0,540px)]"
-          style={{ maxWidth: "1320px" }}
-        >
-          {/* Col 1: heading + paragraph */}
-          <div>
-            <h2
-              className="text-[28px] sm:text-[34px] lg:text-[40px] leading-[1.2] text-center lg:text-left"
-              style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "#000000" }}
-            >
-              Why Our Shopify Audit for DTC Brands Gets Different Results
-            </h2>
-            <p
-              className="mt-4 text-[14px] sm:text-[15px] leading-[1.7] text-center lg:text-left"
-              style={{ fontFamily: "'Poppins', sans-serif", color: "#334155" }}
-            >
-              Most agencies hand you a list of problems. We deliver tested solutions that make you money.
-            </p>
-          </div>
+      {/* ── Why Our Shopify Audit Gets Different Results (homepage "Why Partner" layout) ── */}
+      <WhyPartnerSection
+        heading={
+          <>
+            Why Our Shopify Audit<br />{" "}
+            <strong style={{ fontWeight: 700 }}>Gets Different Results</strong>
+          </>
+        }
+        description="Most agencies hand you a list of problems. Our Shopify store audit delivers tested solutions, backed by conversion data and before/after projections, so you know exactly what will move revenue before you change a thing."
+        accordionItems={[
+          {
+            title: "Metrics-Driven Recommendations",
+            body: "Every fix in our Shopify audit comes with conversion data, heatmap evidence, and clickable prototypes, so you can test immediately without waiting for dev work.",
+          },
+          {
+            title: "Results You Can Actually Track",
+            body: "We don't give you vague suggestions. Our data-driven Shopify audit includes before/after projections for CRO, AOV, and CLV so you know exactly what success looks like before you implement a single change.",
+          },
+          {
+            title: "ROI-Obsessed Approach",
+            body: "We only recommend changes that move revenue. Our professional Shopify audit prioritizes the highest-impact fixes first, the ones proven to generate up to 5x returns in the first 30 days.",
+          },
+          {
+            title: "Hands-On Partnership",
+            body: "This isn't a 'here's your report, good luck' situation. Our Shopify experts walk you through every recommendation, answer technical questions, and help your team execute.",
+          },
+        ]}
+      />
 
-          {/* Col 2: vertical brand marquee */}
-          <div className="relative mx-auto w-full max-w-[460px] lg:max-w-[231px] aspect-[460/680] lg:aspect-[231/450] overflow-hidden rounded-[18px]" style={{ background: "#0A0A0A" }}>
-            {/* Brand-rotated confetti backdrop (gold → olive via hue-rotate) */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/confity-back-image.webp"
-              alt=""
-              aria-hidden
-              className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-              style={{ filter: "hue-rotate(95deg) saturate(0.95) brightness(1)", opacity: 0.85 }}
-            />
-
-            {/* Olive-green radial glows (corners) */}
-            <div
-              aria-hidden
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background: [
-                  "radial-gradient(circle at 88% 6%, rgba(79,184,114,0.55) 0%, rgba(79,184,114,0) 38%)",
-                  "radial-gradient(circle at 8% 96%, rgba(168,240,180,0.42) 0%, rgba(168,240,180,0) 42%)",
-                  "radial-gradient(circle at 50% 100%, rgba(42,149,85,0.40) 0%, rgba(42,149,85,0) 55%)",
-                ].join(", "),
-              }}
-            />
-
-            {/* Bottom fan rays — olive streaks coming up from the bottom edge */}
-            <svg
-              aria-hidden
-              viewBox="0 0 231 450"
-              preserveAspectRatio="none"
-              className="absolute inset-0 w-full h-full pointer-events-none"
-              style={{ mixBlendMode: "screen", opacity: 0.55 }}
-            >
-              <defs>
-                <linearGradient id="ray-grad" x1="0%" y1="100%" x2="0%" y2="0%">
-                  <stop offset="0%" stopColor="#A8F0B4" stopOpacity="0.85" />
-                  <stop offset="60%" stopColor="#3DC77A" stopOpacity="0.25" />
-                  <stop offset="100%" stopColor="#3DC77A" stopOpacity="0" />
-                </linearGradient>
-                <linearGradient id="ray-grad-2" x1="0%" y1="100%" x2="0%" y2="0%">
-                  <stop offset="0%" stopColor="#4FB872" stopOpacity="0.8" />
-                  <stop offset="70%" stopColor="#2A9555" stopOpacity="0.18" />
-                  <stop offset="100%" stopColor="#2A9555" stopOpacity="0" />
-                </linearGradient>
-              </defs>
-              <g transform="translate(115.5 450)">
-                {Array.from({ length: 11 }).map((_, i) => {
-                  const angle = -90 + (i - 5) * 12;
-                  return (
-                    <rect
-                      key={i}
-                      x="-1"
-                      y="-260"
-                      width="2"
-                      height="260"
-                      transform={`rotate(${angle})`}
-                      fill={i % 2 === 0 ? "url(#ray-grad)" : "url(#ray-grad-2)"}
-                    />
-                  );
-                })}
-              </g>
-            </svg>
-
-            {/* Top edge soft olive line */}
-            <div
-              aria-hidden
-              className="absolute left-0 right-0 top-0 pointer-events-none"
-              style={{
-                height: "2px",
-                background:
-                  "linear-gradient(90deg, rgba(79,184,114,0) 0%, rgba(168,240,180,0.7) 50%, rgba(79,184,114,0) 100%)",
-              }}
-            />
-
-            <div
-              className="logo-col-up relative flex flex-col items-center gap-3 py-3"
-              style={{ width: "100%" }}
-            >
-              {(() => {
-                const logos = [
-                  { src: "/images/ai-cashmere.svg", alt: "The Cashmere Sale" },
-                  { src: "/images/ai-smurfs.svg", alt: "The Smurfs" },
-                  { src: "/images/ai-everlast.svg", alt: "Everlast" },
-                  { src: "/images/ai-harward.svg", alt: "Harvard University" },
-                  { src: "/images/ai-ipsy.svg", alt: "Ipsy" },
-                ];
-                return [...logos, ...logos].map((l, i) => (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <div
-                    key={i}
-                    className="flex items-center justify-center w-[180px] h-[100px] rounded-[8px]"
-                    style={{ background: "#FFFFFF", flexShrink: 0 }}
-                  >
-                    <img src={l.src} alt={l.alt} className="max-w-[78%] max-h-[72%] object-contain" />
-                  </div>
-                ));
-              })()}
-            </div>
-          </div>
-
-          {/* Col 3: accordion */}
-          <div className="border-t" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
-            {[
+      {/* Breadcrumb structured data — Services › Shopify Store Audit */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+              { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
               {
-                q: "Metrics-Driven Recommendations",
-                a: "Every fix in our Shopify audit for ecommerce stores comes with conversion data, heatmap evidence, and clickable prototypes – so you can test immediately without waiting for dev work.",
+                "@type": "ListItem",
+                position: 3,
+                name: "Shopify Store Audit",
+                item: "https://ecommwizards.com/services/shopify-store-audit",
               },
-              {
-                q: "Results You Can Actually Track",
-                a: "We don't give you vague suggestions. Our data-driven Shopify audit includes before/after projections for CRO, AOV, and CLV so you know exactly what success looks like before you implement a single change.",
-              },
-              {
-                q: "ROI-Obsessed Approach",
-                a: "We only recommend changes that move revenue. Our professional Shopify audit prioritizes the highest-impact fixes first – the ones proven to generate up to 5x returns in the first 30 days.",
-              },
-              {
-                q: "Hands-On Partnership",
-                a: "This isn't a “here's your report, good luck” situation. Our Shopify experts walk you through every recommendation, answer technical questions, and help your team execute flawlessly.",
-              },
-            ].map((item) => (
-              <details
-                key={item.q}
-                className="group border-b py-4 sm:py-5"
-                style={{ borderColor: "rgba(0,0,0,0.08)" }}
-              >
-                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                  <span
-                    className="text-[15px] sm:text-[17px] leading-[1.4]"
-                    style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, color: "#000000" }}
-                  >
-                    {item.q}
-                  </span>
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    stroke="#000000"
-                    strokeWidth="2.4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="shrink-0 transition-transform duration-300 group-open:rotate-180"
-                    aria-hidden
-                  >
-                    <polyline points="6 12 16 22 26 12" />
-                  </svg>
-                </summary>
-                <p
-                  className="mt-3 text-[13px] sm:text-[14px] leading-[1.7]"
-                  style={{ fontFamily: "'Poppins', sans-serif", color: "#334155" }}
-                >
-                  {item.a}
-                </p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+            ],
+          }),
+        }}
+      />
+
+      {/* FAQ structured data — applies only to this page */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: AUDIT_FAQS.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          }),
+        }}
+      />
 
       {/* ── Questions About Our Shopify Store Audit + Final CTA ──── */}
       <section
@@ -852,6 +760,8 @@ export default function Page() {
           src="/images/background-scaled.webp"
           alt=""
           aria-hidden
+          loading="lazy"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
           style={{ filter: "hue-rotate(95deg) saturate(0.9) brightness(0.9)", opacity: 0.5 }}
         />
@@ -870,24 +780,7 @@ export default function Page() {
             </h2>
 
             <div className="mt-6 sm:mt-8 border-t" style={{ borderColor: "rgba(255,255,255,0.14)" }}>
-              {[
-                {
-                  q: "What do I need to get started?",
-                  a: "Just admin access to your Shopify store. If you don't have heatmapping or analytics tools installed, our Shopify experts will set them up as part of your data-driven Shopify audit.",
-                },
-                {
-                  q: "How fast will I get results?",
-                  a: "3-5 business days. We deliver your complete Shopify conversion audit with prototypes, recommendations, and a 30-minute strategy session—faster than most agencies take to schedule a kickoff call.",
-                },
-                {
-                  q: "What if the audit doesn't deliver?",
-                  a: "100% money-back guarantee. If our professional Shopify audit doesn't uncover actionable revenue opportunities, we refund every dollar. Just email us for the refund. No Questions asked.",
-                },
-                {
-                  q: "Can I start with just one page?",
-                  a: "Absolutely. Our single-page Shopify store audit lets you test our process on your biggest bottleneck first. Once you see the results, scaling to the full-funnel audit is easy.",
-                },
-              ].map((item) => (
+              {AUDIT_FAQS.map((item) => (
                 <div
                   key={item.q}
                   className="border-b py-5 sm:py-6"

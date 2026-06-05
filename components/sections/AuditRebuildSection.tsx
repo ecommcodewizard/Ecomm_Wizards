@@ -156,7 +156,7 @@ function DataDrivenPanel({ data }: { data: typeof PANEL_COPY[TabKey] }) {
           <div key={s.label} className="rounded-[10px] border border-[#E5E7EB] p-3 sm:p-4">
             <p className="text-[11.5px] sm:text-[12px] font-semibold text-[#1a1a1a]">{s.label}</p>
             <div className="mt-1 flex items-center gap-1">
-              <span className="text-[22px] sm:text-[26px] font-light text-[#475569]">{s.value}</span>
+              <span className="text-[22px] sm:text-[26px] lg:text-[18px] font-light text-[#475569]">{s.value}</span>
               <UpArrow />
             </div>
           </div>

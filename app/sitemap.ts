@@ -49,7 +49,7 @@ const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.S
   { path: "/shopify-mobile-app-development", priority: 0.7, changeFrequency: "monthly" },
   { path: "/shopify-b2b-store-setup", priority: 0.7, changeFrequency: "monthly" },
   { path: "/shopify-pos-setup", priority: 0.7, changeFrequency: "monthly" },
-  { path: "/shopify-store-audit", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/services/shopify-store-audit", priority: 0.7, changeFrequency: "monthly" },
   { path: "/shopify-speed-optimization", priority: 0.7, changeFrequency: "monthly" },
   { path: "/shopify-ux-and-ui-design", priority: 0.7, changeFrequency: "monthly" },
   { path: "/shopify-integrations-erp-crm-3pl-etc", priority: 0.6, changeFrequency: "monthly" },

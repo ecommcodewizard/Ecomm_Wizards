@@ -15,7 +15,7 @@ const CITIES = [
 const SERVICE_TAGS = [
   { label: "Build a New Shopify Store",        href: "/services/shopify-store-development" },
   { label: "Shopify Theme Customizations",     href: "/shopify-theme-development" },
-  { label: "Shopify Audit",                    href: "/shopify-store-audit" },
+  { label: "Shopify Audit",                    href: "/services/shopify-store-audit" },
   { label: "Convert Figma to Shopify",         href: "/figma-to-shopify-conversion" },
   { label: "Shopify Development Agency",        href: "/services/shopify-development-agency" },
   { label: "ERP Connections to Shopify",       href: "/services/shopify-integration-services" },
