@@ -81,6 +81,11 @@ const nextConfig: NextConfig = {
         destination: "/services/a-b-testing",
         permanent: true,
       },
+      {
+        source: "/shopify-speed-optimization",
+        destination: "/services/shopify-speed-optimization",
+        permanent: true,
+      },
     ];
   },
 };

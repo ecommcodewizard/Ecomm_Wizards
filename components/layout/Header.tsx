@@ -51,7 +51,7 @@ const NAV: NavItem[] = [
   {
     label: "Optimize",
     children: [
-      { label: "Speed Optimization",    href: "/shopify-speed-optimization",                      description: "Sub-2s load times that lift revenue" },
+      { label: "Speed Optimization",    href: "/services/shopify-speed-optimization",             description: "Sub-2s load times that lift revenue" },
       { label: "Store Audit",           href: "/services/shopify-store-audit",                    description: "Expert review of your entire store" },
       { label: "CRO Agency",            href: "/services/shopify-cro-agency", description: "Turn more visitors into buyers" },
       { label: "A/B Testing",           href: "/services/a-b-testing",                           description: "Data-driven experimentation" },

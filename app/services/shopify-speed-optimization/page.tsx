@@ -3,10 +3,56 @@ import Image from "next/image";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
+const META_DESCRIPTION =
+  "Shopify speed optimization that fixes the root cause. We strip bloat, rebuild theme code, and ship measurable Core Web Vitals wins for Shopify Plus stores. Money back guarantee.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-speed-optimization";
+
 export const metadata: Metadata = {
-  title: "Shopify Speed Optimization Services | Ecomm Wizards",
-  description:
-    "Shopify speed optimization services that actually fix the problem. We strip bloat, rebuild theme architecture, and ship measurable Core Web Vitals wins for Shopify Plus stores.",
+  // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
+  // template would otherwise append the brand to this custom title.
+  title: { absolute: "Shopify Speed Optimization Services | Core Web Vitals Experts" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify speed optimization",
+    "shopify speed optimization services",
+    "shopify page speed",
+    "shopify core web vitals",
+    "shopify performance optimization",
+    "optimize shopify store speed",
+    "shopify plus speed optimization",
+    "shopify site speed",
+    "speed up shopify store",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify Speed Optimization Services | Core Web Vitals Experts",
+    description: META_DESCRIPTION,
+    images: [
+      {
+        url: "/images/speed-image4-scaled.webp",
+        alt: "Shopify speed optimization results showing high Core Web Vitals scores",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify Speed Optimization Services | Core Web Vitals Experts",
+    description: META_DESCRIPTION,
+    images: ["/images/speed-image4-scaled.webp"],
+  },
+};
+
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Shopify Speed Optimization", item: CANONICAL_URL },
+  ],
 };
 
 const GRADIENT_TEXT = {
@@ -80,7 +126,7 @@ const MONTHLY_SERVICES = [
   {
     image: "/images/services-8_1024x1024.webp",
     title: "Caching Strategy Implementation",
-    desc: "Leverage browser and server caching to minimize load times for repeat visitors. Explore custom caching solutions beyond Shopify Plus's automatic handling for further optimization.",
+    desc: "Use browser and server caching to cut load times for repeat visitors. We configure custom caching beyond Shopify Plus's automatic handling for further gains.",
   },
   {
     image: "/images/services-9_1024x1024.webp",
@@ -159,7 +205,7 @@ const WHY_TRUST_CARDS = [
   },
   {
     title: "100% Money-Back Guarantee",
-    desc: "We stand behind every Shopify store speed optimization engagement with a full money back guarantee. If we do not deliver the improvement we promised, you do not pay. That includes third party integrations, custom logic, and checkout optimizations. The faster and more seamless your store runs, the higher your conversion rates climb.",
+    desc: "We stand behind every Shopify store speed optimization engagement with a full money back guarantee. If we do not deliver the improvement we promised, you do not pay. That includes third party integrations, custom logic, and checkout optimizations. The faster your store runs, the higher your conversion rates climb.",
     icon: <IconBadge />,
   },
 ];
@@ -232,7 +278,7 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
     image: "/images/Frame_1000004320.webp",
     apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/klaviyo.svg", "/images/yotpo.svg"],
     headline: (<>An elegant <strong>Shopify Store</strong> designed and built for <strong>EBY</strong> by <strong>Sofia Vergara</strong></>),
-    quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally — we couldn&apos;t be happier!&rdquo;</>),
+    quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally. We couldn&apos;t be happier!&rdquo;</>),
     avatar: "/images/eby_dce31a54-eb36-409c-a8d7-e22fd8297de3_medium.webp",
     name: "EBY by Sofia Vergara",
     role: "Marketing Manager",
@@ -329,7 +375,7 @@ function StatsImageTipsBlock({
     <div className="relative">
       <Image
         src="/images/speed-image4-scaled.webp"
-        alt="Shopify speed optimization results — home page desktop scores"
+        alt="Shopify speed optimization results: high desktop Core Web Vitals scores"
         width={1024}
         height={615}
         className="h-auto w-full rounded-2xl"
@@ -400,8 +446,16 @@ function StatsImageTipsBlock({
 export default function Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
+      />
       {/* ── Mobile (<= 768px) overrides — single source of truth for the whole page ── */}
       <style dangerouslySetInnerHTML={{ __html: `
+        /* Tablet / small laptop (769–1024px): cap the hero H1 */
+        @media (min-width: 769px) and (max-width: 1024px) {
+          .speed-hero-h1 { font-size: 42px !important; line-height: 52px !important; }
+        }
         @media (max-width: 768px) {
           /* 1 — Hero */
           .speed-hero { padding: 40px 15px !important; }
@@ -414,7 +468,7 @@ export default function Page() {
           /* 2 — Trusted by Leading marquee */
           .speed-trust { padding: 0 15px !important; }
           .speed-trust-inner { padding: 36px 0 !important; }
-          .speed-trust-heading { font-size: 18px !important; }
+          .speed-trust-heading { font-size: 24px !important; }
           .speed-trust-track { gap: 28px !important; animation-duration: 22s !important; }
           .speed-trust-slide { width: 140px !important; height: 68px !important; }
           .speed-trust-logo { width: 140px !important; height: 68px !important; }
@@ -423,8 +477,10 @@ export default function Page() {
           .speed-services-section { padding: 40px 15px !important; }
           .speed-services-heading { font-size: 26px !important; line-height: 34px !important; margin-bottom: 24px !important; }
           .speed-services-wrap { padding: 16px !important; border-radius: 18px !important; }
-          .speed-services-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
-          .speed-flip-card { min-height: 260px !important; }
+          .speed-services-grid { grid-template-columns: 1fr 1fr !important; gap: 14px !important; }
+          .speed-flip-card { min-height: auto !important; }
+          .speed-flip-inner { min-height: auto !important; }
+          .speed-flip-front { position: relative !important; justify-content: flex-start !important; }
           .speed-flip-image { min-height: 160px !important; }
           .speed-flip-image img { max-height: 160px !important; }
           .speed-flip-title { font-size: 14.5px !important; }
@@ -476,6 +532,20 @@ export default function Page() {
           .speed-cards-card p { font-size: 14.5px !important; line-height: 24px !important; margin-top: 14px !important; }
           .speed-card-icon svg { width: 46px !important; height: 46px !important; }
         }
+        /* Phones (< 640px): one service card per row, static (no flip), desc under the title */
+        @media (max-width: 639px) {
+          .speed-services-grid { grid-template-columns: 1fr !important; }
+          .speed-flip-back { display: none !important; }
+          .speed-flip-card:hover .speed-flip-front,
+          .speed-flip-card:focus-within .speed-flip-front { opacity: 1 !important; }
+          .speed-flip-mobile-desc {
+            display: block;
+            color: rgba(30,41,59,0.85);
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px; line-height: 22px;
+            margin: 8px 0 0;
+          }
+        }
       ` }} />
 
       {/* 1 — A Slow Shopify Store Is an Expensive Problem (dark hero w/ scrolling phones) */}
@@ -485,15 +555,15 @@ export default function Page() {
           style={{ maxWidth: "1320px" }}
         >
           <div>
-            <h1 className="speed-hero-h1 font-bold" style={{ color: "#FFFFFF", fontSize: "52px", lineHeight: "62px" }}>
+            <h1 className="speed-hero-h1 font-bold" style={{ color: "#FFFFFF", fontSize: "48px", lineHeight: "58px" }}>
               A Slow <span style={GRADIENT_TEXT}>Shopify Store</span> Is an Expensive Problem
             </h1>
-            <p className="speed-hero-p mt-8 max-w-[560px] text-[16px] leading-[26px]" style={{ color: "rgba(255,255,255,0.75)" }}>
+            <p className="speed-hero-p mt-6 max-w-[560px] text-[16px] leading-[26px]" style={{ color: "#FFFFFF" }}>
               Three seconds. That is all the patience your customers have. After that, they are gone. They did not add
               to cart. They did not browse your collection. They bounced, and they are not coming back. Worse? Google
               saw the whole thing and pushed your rankings down because of it.
             </p>
-            <p className="mt-5 max-w-[560px] text-[16px] leading-[26px]" style={{ color: "rgba(255,255,255,0.75)" }}>
+            <p className="speed-hero-p mt-5 max-w-[560px] text-[16px] leading-[26px]" style={{ color: "#FFFFFF" }}>
               Ecomm Wizards delivers <strong className="font-semibold text-white">Shopify speed optimization services</strong>{" "}
               that actually fix the problem instead of just diagnosing it. We dig into your theme architecture, strip out
               the bloated scripts, compress what needs compressing, and rebuild what needs rebuilding. No fluff reports.
@@ -501,16 +571,18 @@ export default function Page() {
               <strong className="font-semibold text-white">optimize Shopify store speed</strong> for a living doing what
               they do best.
             </p>
-            <Link
-              href="/book-shopify-consultation"
-              className="cta-pill-invert mt-10 inline-flex items-center gap-3 rounded-full border px-7 py-3.5 text-[15px] font-semibold transition"
-              style={{ borderWidth: 1 }}
-            >
-              Make My Store Faster
-              <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden>
-                <path d="M1 7h15M10 1l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
+            <div className="mt-10 inline-flex p-[2px] rounded-full" style={{ background: "var(--brand-gradient)" }}>
+              <Link
+                href="/book-shopify-consultation"
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-black hover:bg-white transition-all duration-300 px-[28px] py-[16px] sm:px-[40px] sm:py-[20px] text-[15px] sm:text-[16px]"
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}
+              >
+                <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Make My Store Faster</span>
+                <svg width="18" height="13" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white group-hover:text-black transition-colors duration-300">
+                  <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+            </div>
           </div>
 
           <div className="speed-hero-phones grid grid-cols-2 gap-5">
@@ -528,7 +600,7 @@ export default function Page() {
                     <Image
                       key={i}
                       src={src}
-                      alt=""
+                      alt={i < PHONE_IMAGES.length ? "Shopify store page optimized for fast mobile load times" : ""}
                       width={400}
                       height={520}
                       className="block h-auto w-full"
@@ -546,7 +618,7 @@ export default function Page() {
         <div className="speed-trust-inner mx-auto" style={{ maxWidth: "1320px", padding: "60px 0" }}>
           <h2
             className="speed-trust-heading text-center"
-            style={{ color: "#000000", fontSize: "22px", fontWeight: 700, lineHeight: 1.45, margin: 0 }}
+            style={{ color: "#000000", fontSize: "32px", fontWeight: 700, lineHeight: 1.45, margin: 0 }}
           >
             Trusted by Leading Shopify Brands
           </h2>
@@ -617,6 +689,7 @@ export default function Page() {
                         />
                       </div>
                       <h3 className="speed-flip-title">{s.title}</h3>
+                      <p className="speed-flip-mobile-desc">{s.desc}</p>
                     </div>
                     <div className="speed-flip-back">
                       <h3 className="speed-flip-back-title">{s.title}</h3>
@@ -634,26 +707,28 @@ export default function Page() {
                   minHeight: 320,
                 }}
               >
-                <h3 className="text-[22px] font-bold leading-tight">
+                <h3 className="text-[22px] font-bold leading-tight" style={{ color: "#FFFFFF", WebkitTextFillColor: "#FFFFFF" }}>
                   Site Speed &amp; Optimization Service
                 </h3>
                 <p className="mt-4 text-[13px] uppercase tracking-wide" style={{ color: "rgba(255,255,255,0.7)" }}>
                   Monthly Subscription
                 </p>
-                <p className="mt-1 text-[30px] font-bold">$1,999.95/mo</p>
+                <p className="mt-1 text-[30px] font-bold" style={{ color: "#FFFFFF", WebkitTextFillColor: "#FFFFFF" }}>$1,999.95/mo</p>
                 <p className="mt-1 text-[13px]" style={{ color: "rgba(255,255,255,0.75)" }}>
                   for Shopify Plus Stores
                 </p>
-                <Link
-                  href="/book-shopify-consultation"
-                  className="cta-pill-invert mt-5 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-[13px] font-semibold"
-                  style={{ borderWidth: 1 }}
-                >
-                  Subscribe Now
-                  <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden>
-                    <path d="M1 5h11M8 1l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </Link>
+                <div className="mt-5 flex w-full p-[2px] rounded-full" style={{ background: "var(--brand-gradient)" }}>
+                  <Link
+                    href="/book-shopify-consultation"
+                    className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-black hover:bg-white transition-all duration-300 px-[24px] py-[16px] text-[15px] sm:text-[16px]"
+                    style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}
+                  >
+                    <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Subscribe Now</span>
+                    <svg width="18" height="13" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white group-hover:text-black transition-colors duration-300">
+                      <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -708,6 +783,7 @@ export default function Page() {
             font-size: 15px; font-weight: 600; line-height: 22px;
             margin: 14px 0 0;
           }
+          .speed-flip-mobile-desc { display: none; }
           .speed-flip-back-title {
             color: #A8F0B4; font-family: 'Poppins', sans-serif;
             font-size: 16px; font-weight: 700; line-height: 22px;
@@ -827,7 +903,7 @@ export default function Page() {
                 <p className="ssd-results-card-quote">{c.text}</p>
                 <div className="ssd-results-card-logo">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={c.logo} alt={c.logoAlt} />
+                  <img src={c.logo} alt={`${c.logoAlt} Shopify speed optimization client`} loading="lazy" decoding="async" />
                 </div>
                 <p className="ssd-results-card-person">{c.person}</p>
               </div>
@@ -852,7 +928,7 @@ export default function Page() {
             className="text-center font-bold"
             style={{ fontSize: "42px", fontWeight: 700, color: "#000", lineHeight: "52px", margin: "0 auto 40px", maxWidth: "780px" }}
           >
-            Trusted by the Worlds Most<br />Innovative Brands
+            Trusted by the World&apos;s<br />Top Brands
           </h2>
 
           {INNOVATIVE_BRAND_ROWS.map((row, rowIdx) => (
