@@ -66,6 +66,11 @@ const nextConfig: NextConfig = {
         destination: "/services/shopify-app-development",
         permanent: true,
       },
+      {
+        source: "/shopify-pos-setup",
+        destination: "/services/shopify-pos-setup",
+        permanent: true,
+      },
     ];
   },
 };

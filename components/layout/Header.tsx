@@ -70,7 +70,7 @@ const NAV: NavItem[] = [
     ],
   },
   { label: "B2B", href: "/shopify-b2b-store-setup" },
-  { label: "POS", href: "/shopify-pos-setup" },
+  { label: "POS", href: "/services/shopify-pos-setup" },
   {
     label: "Marketing",
     children: [

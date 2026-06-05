@@ -23,7 +23,7 @@ const SERVICE_TAGS = [
   { label: "Mobile App Development",           href: "/shopify-mobile-app-development" },
   { label: "On Demand Dev with Bulk Hours",    href: "/services/shopify-store-development" },
   { label: "Site Speed Optimizations",         href: "/shopify-speed-optimization" },
-  { label: "Point of Sale (POS) for Business", href: "/shopify-pos-setup" },
+  { label: "Point of Sale (POS) for Business", href: "/services/shopify-pos-setup" },
   { label: "A/B Testing for CRO, AOV & CLV",  href: "/a-b-testing" },
   { label: "B2B Solutions",                    href: "/shopify-b2b-store-setup" },
   { label: "Shopify SEO Agency",               href: "/services/shopify-seo-agency" },

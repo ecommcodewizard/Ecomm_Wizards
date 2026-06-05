@@ -1,10 +1,44 @@
 import type { Metadata } from "next";
 
+const META_DESCRIPTION =
+  "Expert Shopify POS setup, hardware configuration, and POS migration from Square, Lightspeed, or Clover. Remote service for single stores to 50+ locations. Get a free quote.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-pos-setup";
+
 export const metadata: Metadata = {
-  title: "Shopify POS Setup Service | Remote Configuration and Migration",
-  description:
-    "Expert Shopify POS setup, hardware configuration, and POS migration from Square, Lightspeed, or Clover. Remote service for single stores to 50+ locations. Get a free quote.",
-  alternates: { canonical: "https://ecommwizards.com/services/shopify-pos-setup/" },
+  // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
+  // template would otherwise append the brand to this custom title.
+  title: { absolute: "Shopify POS Setup Service | Remote Configuration and Migration" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify pos setup",
+    "shopify pos setup service",
+    "shopify point of sale setup",
+    "shopify pos hardware setup",
+    "migrate square to shopify pos",
+    "migrate lightspeed to shopify pos",
+    "shopify pos migration service",
+    "shopify pos configuration",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify POS Setup Service | Remote Configuration and Migration",
+    description: META_DESCRIPTION,
+    images: [
+      {
+        url: "/images/pos-hero.webp",
+        alt: "Shopify POS setup by Ecomm Wizards: terminal, tablet, and hardware",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify POS Setup Service | Remote Configuration and Migration",
+    description: META_DESCRIPTION,
+    images: ["/images/pos-hero.webp"],
+  },
 };
 
 const GRADIENT =
@@ -44,7 +78,7 @@ const SQUARE_REASONS = [
     a: "Add locations, staff, and features as your business grows. Shopify adapts with you. You will not need to rebuild.",
   },
   {
-    q: "Always Innovating",
+    q: "Always Improving",
     a: "Shopify ships new POS features faster than any competitor. Your Shopify POS setup stays current without expensive hardware upgrades.",
   },
 ];
@@ -52,7 +86,7 @@ const SQUARE_REASONS = [
 const LIGHTSPEED_REASONS = [
   {
     n: "1",
-    title: "Nonstop Platform Innovation",
+    title: "Nonstop Platform Updates",
     desc: "Shopify ships new POS features faster than any competitor. Your Shopify POS configuration stays modern without paying for expensive upgrades.",
   },
   {
@@ -118,7 +152,7 @@ const COST_ROWS = [
 const WHAT_YOU_GET = [
   {
     title: "Real-Time Inventory Sync",
-    desc: "Knockdown strategies from Square, Lightspeed, or legacy systems.",
+    desc: "Stock counts stay accurate across every location, so you stop overselling and stockouts.",
     img: "/images/pos-card-1.webp",
   },
   {
@@ -128,12 +162,12 @@ const WHAT_YOU_GET = [
   },
   {
     title: "Data Integrity",
-    desc: "Unlock Shopify's residual commissions for recurring revenue.",
+    desc: "Products, customers, orders, and gift cards transfer with zero data loss.",
     img: "/images/pos-card-3.webp",
   },
   {
-    title: "Tailored POS Migrations",
-    desc: "Real-time across locations to avoid stockouts.",
+    title: "Custom POS Migrations",
+    desc: "We move you off Square, Lightspeed, or any legacy system without disrupting sales.",
     img: "/images/pos-card-4.webp",
   },
 ];
@@ -161,7 +195,7 @@ const PROCESS_STEPS = [
   {
     n: "01.",
     title: "Discovery & Strategy",
-    desc: "We review your current POS setup, locations, data, and workflows. You get a clear migration plan tailored to your business, not a generic template.",
+    desc: "We review your current POS setup, locations, data, and workflows. You get a clear migration plan built for your business, not a generic template.",
   },
   {
     n: "02.",
@@ -221,11 +255,13 @@ const FAQS = [
     q: "Can you set up Shopify POS for multiple locations?",
     a: "Yes. Shopify POS multi-location setup is one of our most common projects. We configure inventory sync, staff permissions, tax profiles, and hardware across every location from a single remote session. Whether you have two locations or fifty, the process is the same.",
   },
-  // TODO: FAQ #5 — "Do you handle Shopify POS hardware setup remotely?"
-  // Source had wrong answer (text from app-dev page). Waiting on correct copy from user.
+  {
+    q: "Do you handle Shopify POS hardware setup remotely?",
+    a: "Yes. We configure your Shopify POS hardware remotely, including card readers, receipt printers, barcode scanners, and cash drawers. We send a step-by-step pairing guide, walk your team through it on a call, and confirm every device works before you go live. You do not need an on-site technician.",
+  },
   {
     q: "What is Shopify POS Pro and do I need it?",
-    a: "Shopify POS Pro is the advanced plan that unlocks unlimited staff registers, detailed analytics, smart inventory management, and advanced checkout customizations. It is recommended for any retail business with more than one location or a team of more than two staff members. We help you determine the right plan during your discovery call.",
+    a: "Shopify POS Pro is the advanced plan that includes unlimited staff registers, detailed analytics, smart inventory management, and advanced checkout customizations. It is recommended for any retail business with more than one location or a team of more than two staff members. We help you determine the right plan during your discovery call.",
   },
   {
     q: "How much does a Shopify POS setup service cost?",
@@ -247,6 +283,21 @@ const FAQ_SCHEMA = {
   })),
 };
 
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Shopify POS Setup",
+      item: "https://ecommwizards.com/services/shopify-pos-setup",
+    },
+  ],
+};
+
 export default function ShopifyPOSSetupPage() {
   return (
     <>
@@ -257,25 +308,30 @@ export default function ShopifyPOSSetupPage() {
           style={{ maxWidth: "1320px" }}
         >
           <div className="text-center lg:text-left">
-            <h1 className="font-semibold leading-[1.15] tracking-tight text-white text-[34px] sm:text-[44px] lg:text-[52px] xl:text-[58px]">
+            <h1 className="font-semibold leading-[1.15] tracking-tight text-white text-[34px] sm:text-[44px] lg:text-[48px]">
               <span style={GRADIENT_TEXT}>Shopify POS Setup</span> That Connects Your Store to the Street
             </h1>
-            <p className="mt-7 text-white text-[18px] sm:text-[20px] lg:text-[22px] font-semibold leading-[1.4]">
+            <p className="mt-6 text-white text-[22px] font-semibold leading-[1.4]">
               One System. Every Sale. Online and In-Person.
             </p>
-            <p className="mt-5 text-white/85 text-[15px] sm:text-base lg:text-[16px] leading-[1.7]">
+            <p className="mt-5 text-white text-[15px] sm:text-base lg:text-[16px] leading-[1.7]">
               Running your online store on Shopify but using Square, Lightspeed, or Clover at the register? That disconnect is costing you money and you already know it. Inventory mismatches, double data entry, and fragmented customer profiles silently eat into your margins every day.
             </p>
-            <p className="mt-4 text-white/85 text-[15px] sm:text-base lg:text-[16px] leading-[1.7]">
+            <p className="mt-4 text-white text-[15px] sm:text-base lg:text-[16px] leading-[1.7]">
               Start with a low-risk pilot alongside your current system.
             </p>
-            <a
-              href={CONSULT}
-              className="cta-pill-invert mt-7 inline-flex items-center gap-3 rounded-full border px-7 py-3 text-[15px] sm:text-base transition"
-            >
-              Book a Free Consultation
-              <span aria-hidden className="text-lg leading-none">→</span>
-            </a>
+            <div className="mt-6 inline-flex p-[2px] rounded-full" style={{ background: GRADIENT }}>
+              <a
+                href={CONSULT}
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-black hover:bg-white transition-all duration-300 px-[28px] py-[16px] sm:px-[40px] sm:py-[20px] text-[15px] sm:text-[16px]"
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}
+              >
+                <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Book a Free Consultation</span>
+                <svg width="18" height="13" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white group-hover:text-black transition-colors duration-300">
+                  <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+            </div>
             <p className="mt-5 text-white/85 text-[14px] sm:text-[15px] leading-[1.6]">
               Response within 24 hours. Fixed-price quotes. Zero obligation.
             </p>
@@ -283,7 +339,7 @@ export default function ShopifyPOSSetupPage() {
 
           <div className="order-last lg:order-none">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/pos-hero.webp" alt="Shopify POS terminal and tablet" width={780} height={697} className="w-full h-auto" />
+            <img src="/images/pos-hero.webp" alt="Shopify POS setup with terminal, tablet, and card reader" width={780} height={697} fetchPriority="high" className="w-full h-auto" />
           </div>
         </div>
       </section>
@@ -291,10 +347,10 @@ export default function ShopifyPOSSetupPage() {
       {/* ── 2. Why Brands Are Ditching Legacy POS ────────────────────── */}
       <section style={{ background: "#FBF7ED", fontFamily: "'Poppins', sans-serif" }}>
         <div className="mx-auto py-[40px] px-[15px] lg:py-[60px] lg:px-[20px] text-center" style={{ maxWidth: "1320px" }}>
-          <h2 className="font-bold leading-[1.2] text-[#1e293b] text-[34px] sm:text-[42px] lg:text-[48px]">
+          <h2 className="font-bold leading-[1.2] text-[#1e293b] text-[34px] sm:text-[36px] lg:text-[48px]">
             Why Brands Are Ditching Legacy POS<br className="hidden sm:block" /> for Shopify Point of Sale
           </h2>
-          <p className="mx-auto mt-8 max-w-[1100px] text-[#334155] text-[15px] sm:text-base leading-[1.85]">
+          <p className="mx-auto mt-5 md:mt-6 lg:mt-8 max-w-[1100px] text-[#334155] text-[15px] sm:text-base leading-[1.85]">
             Shopify POS was built for unified commerce. One inventory, one customer profile, one dashboard. No more patching separate systems together and hoping the data syncs. Merchants who complete the Shopify POS setup see higher conversions, fewer support headaches, and a retail experience that feels modern. Below are the reasons brands are switching. If any of them sound familiar, talk to us about a Shopify POS setup plan built around your business.
           </p>
         </div>
@@ -303,10 +359,10 @@ export default function ShopifyPOSSetupPage() {
       {/* ── 3. From Square to Shopify POS (accordion) ────────────────── */}
       <section style={{ background: "#FFFFFF", fontFamily: "'Poppins', sans-serif" }}>
         <div className="mx-auto py-[40px] px-[15px] lg:py-[60px] lg:px-[20px]" style={{ maxWidth: "1320px" }}>
-          <h2 className="text-center font-bold leading-[1.2] text-[#1e293b] text-[34px] sm:text-[42px] lg:text-[48px]">
-            From <span className="font-extrabold">Square to Shopify POS</span>: 7 Key Reasons<br className="hidden sm:block" /> Retailers Are Making the Switch
+          <h2 className="text-center font-bold leading-[1.2] text-[#1e293b] text-[34px] sm:text-[36px] lg:text-[40px] xl:text-[48px]">
+            From <span className="font-extrabold">Square to Shopify POS</span>: 7 Key Reasons<br className="hidden lg:block" /> Retailers Are Making the Switch
           </h2>
-          <p className="mx-auto mt-5 max-w-[900px] text-center text-[#334155] text-[15px] sm:text-base leading-[1.7]">
+          <p className="mx-auto mt-5 max-w-[900px] lg:max-w-none lg:whitespace-nowrap text-center text-[#334155] text-[15px] sm:text-base leading-[1.7]">
             Growth-focused brands choose Shopify POS setup for scalable, unified retail operations that Square cannot match.
           </p>
 
@@ -315,15 +371,20 @@ export default function ShopifyPOSSetupPage() {
             <div className="flex flex-col gap-[20px]">
               <div className="rounded-[18px] p-6 sm:p-10" style={{ background: "#FBF7ED" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/reasons-1.webp" alt="Mobile dashboards from real Shopify stores" className="w-full h-auto" />
+                <img src="/images/reasons-1.webp" alt="Mobile dashboards from real Shopify stores" loading="lazy" decoding="async" className="w-full h-auto" />
                 <div className="mt-7 flex justify-center">
-                  <a
-                    href={CONSULT}
-                    className="cta-pill-solid inline-flex items-center gap-3 rounded-full border px-7 py-3 text-[15px] sm:text-base transition"
-                  >
-                    Book a Free Consultation
-                    <span aria-hidden className="text-lg leading-none">→</span>
-                  </a>
+                  <div className="inline-flex p-[2px] rounded-full" style={{ background: GRADIENT }}>
+                    <a
+                      href={CONSULT}
+                      className="group inline-flex items-center justify-center gap-3 rounded-full bg-black hover:bg-white transition-all duration-300 px-[28px] py-[16px] sm:px-[40px] sm:py-[20px] text-[15px] sm:text-[16px]"
+                      style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}
+                    >
+                      <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Book a Free Consultation</span>
+                      <svg width="18" height="13" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white group-hover:text-black transition-colors duration-300">
+                        <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
               <div className="rounded-[14px] p-6 sm:p-7" style={{ background: "#FBF7ED" }}>
@@ -361,7 +422,7 @@ export default function ShopifyPOSSetupPage() {
                       </span>
                     </label>
                     <div className="pos-sq-bodyc">
-                      <p>{r.a}</p>
+                      <div className="pos-acc-in"><p>{r.a}</p></div>
                     </div>
                   </div>
                 ))}
@@ -374,14 +435,14 @@ export default function ShopifyPOSSetupPage() {
       {/* ── 4. From Lightspeed to Shopify POS (image + 6 cards) ──────── */}
       <section style={{ background: "#FBF7ED", fontFamily: "'Poppins', sans-serif" }}>
         <div className="mx-auto py-[40px] px-[15px] lg:py-[60px] lg:px-[20px]" style={{ maxWidth: "1320px" }}>
-          <h2 className="text-center font-bold leading-[1.2] text-[#1e293b] text-[34px] sm:text-[42px] lg:text-[48px]">
-            From <span className="font-extrabold">Lightspeed to Shopify POS</span> : 6 Reasons<br className="hidden sm:block" /> Retailers Are Switching
+          <h2 className="text-center font-bold leading-[1.2] text-[#1e293b] text-[34px] sm:text-[36px] lg:text-[40px] xl:text-[48px]">
+            From <span className="font-extrabold">Lightspeed to Shopify POS</span> : 6 Reasons<br className="hidden lg:block" /> Retailers Are Switching
           </h2>
 
           <div className="mt-12 grid gap-[30px] lg:grid-cols-[minmax(0,420px)_1fr] items-start">
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/lightspeed-image.webp" alt="Why retailers switch from Lightspeed to Shopify POS" className="w-full h-auto rounded-[14px]" />
+              <img src="/images/lightspeed-image.webp" alt="Why retailers switch from Lightspeed to Shopify POS" loading="lazy" decoding="async" className="w-full h-auto rounded-[14px]" />
             </div>
             <div className="grid gap-[20px] sm:grid-cols-2">
               {LIGHTSPEED_REASONS.map((r) => (
@@ -402,7 +463,7 @@ export default function ShopifyPOSSetupPage() {
         <div className="mx-auto py-[40px] px-[15px] lg:py-[60px] lg:px-[20px]" style={{ maxWidth: "1320px" }}>
           <div className="grid gap-[40px] lg:grid-cols-2 items-start">
             <div>
-              <h2 className="font-bold leading-[1.2] text-white text-[32px] sm:text-[38px] lg:text-[44px]">
+              <h2 className="font-bold leading-[1.2] text-white text-[32px] sm:text-[34px] lg:text-[36px] xl:text-[44px]">
                 The Numbers Do Not Lie:<br /> Shopify POS Costs Less
               </h2>
               <p className="mt-5 text-white/85 text-[15px] sm:text-base leading-[1.7]">
@@ -421,13 +482,18 @@ export default function ShopifyPOSSetupPage() {
                 ))}
               </div>
               <div className="mt-8 flex justify-center lg:justify-start">
-                <a
-                  href={CONSULT}
-                  className="cta-pill-invert inline-flex items-center gap-3 rounded-full border px-7 py-3 text-[15px] sm:text-base transition"
-                >
-                  Book a Free Consultation
-                  <span aria-hidden className="text-lg leading-none">→</span>
-                </a>
+                <div className="inline-flex p-[2px] rounded-full" style={{ background: GRADIENT }}>
+                  <a
+                    href={CONSULT}
+                    className="group inline-flex items-center justify-center gap-3 rounded-full bg-black hover:bg-white transition-all duration-300 px-[28px] py-[16px] sm:px-[40px] sm:py-[20px] text-[15px] sm:text-[16px]"
+                    style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}
+                  >
+                    <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Book a Free Consultation</span>
+                    <svg width="18" height="13" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white group-hover:text-black transition-colors duration-300">
+                      <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -479,7 +545,7 @@ export default function ShopifyPOSSetupPage() {
                 <p className="mt-3 text-[#334155] text-[14px] leading-[1.6]">{c.desc}</p>
                 <div className="mt-auto pt-6 flex items-center justify-center">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={c.img} alt={c.title} className="w-full h-auto" />
+                  <img src={c.img} alt={c.title} loading="lazy" decoding="async" className="w-full h-auto" />
                 </div>
               </div>
             ))}
@@ -496,25 +562,30 @@ export default function ShopifyPOSSetupPage() {
         <div className="mx-auto py-[40px] px-[15px] lg:py-[60px] lg:px-[20px]" style={{ maxWidth: "1320px" }}>
           <div className="grid gap-[30px] lg:grid-cols-2 items-stretch">
             <div className="rounded-[18px] p-8 sm:p-10 flex flex-col" style={{ background: "#121212" }}>
-              <h2 className="font-bold leading-[1.2] text-white text-[30px] sm:text-[36px] lg:text-[40px]">
+              <h2 className="font-bold leading-[1.2] text-white text-[30px] sm:text-[32px] lg:text-[40px]">
                 Exclusive Perks When You Commit to <span style={GRADIENT_TEXT}>Shopify POS Pro</span> Annually
               </h2>
               <p className="mt-6 text-center text-white/85 text-[15px] sm:text-base leading-[1.7]">
-                Lock in Shopify POS Pro for one year and unlock over $2,300 in value per location. These offers make the switch to Shopify POS easier, cheaper, and practically risk-free. Ecomm Wizards handles all setup remotely.
+                Lock in Shopify POS Pro for one year and get over $2,300 in value per location. These offers make the switch to Shopify POS easier, cheaper, and practically risk-free. Ecomm Wizards handles all setup remotely.
               </p>
               <div className="mt-8 flex justify-center">
-                <a
-                  href={CONSULT}
-                  className="cta-pill-invert inline-flex items-center gap-3 rounded-full border px-7 py-3 text-[15px] sm:text-base transition"
-                >
-                  Book a Free Consultation
-                  <span aria-hidden className="text-lg leading-none">→</span>
-                </a>
+                <div className="inline-flex p-[2px] rounded-full" style={{ background: GRADIENT }}>
+                  <a
+                    href={CONSULT}
+                    className="group inline-flex items-center justify-center gap-3 rounded-full bg-black hover:bg-white transition-all duration-300 px-[28px] py-[16px] sm:px-[40px] sm:py-[20px] text-[15px] sm:text-[16px]"
+                    style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}
+                  >
+                    <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Book a Free Consultation</span>
+                    <svg width="18" height="13" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white group-hover:text-black transition-colors duration-300">
+                      <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
             <div className="rounded-[18px] overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/pos-pro-offer.webp" alt="Shopify POS Pro hardware" className="w-full h-auto lg:h-full object-cover" />
+              <img src="/images/pos-pro-offer.webp" alt="Shopify POS Pro hardware" loading="lazy" decoding="async" className="w-full h-auto lg:h-full object-cover" />
             </div>
           </div>
 
@@ -537,23 +608,21 @@ export default function ShopifyPOSSetupPage() {
       <section style={{ background: "#FBF7ED", fontFamily: "'Poppins', sans-serif" }}>
         <div className="mx-auto py-[40px] px-[15px] lg:py-[60px] lg:px-[20px]" style={{ maxWidth: "1320px" }}>
           <h2 className="text-center font-bold leading-[1.2] text-[#1e293b] text-[32px] sm:text-[40px] lg:text-[46px]">
-            Our Proven Shopify POS Setup<br className="hidden sm:block" /> Process
+            Our Proven Shopify POS Setup<br className="hidden sm:block lg:hidden" /> Process
           </h2>
           <p className="mx-auto mt-5 max-w-[900px] text-center text-[#334155] text-[15px] sm:text-base leading-[1.7]">
             From the first call with us to hitting your goal. You can <span className="text-[#1e293b] font-semibold">join us at any stage</span>. Here is how we work.
           </p>
 
-          {/* row 1 — steps 1-3 */}
-          <div className="mt-12 grid gap-[20px] lg:grid-cols-3">
-            {PROCESS_STEPS.slice(0, 3).map((s) => (
-              <ProcessCard key={s.n} step={s} />
-            ))}
-          </div>
-          {/* row 2 — steps 4-5 (offset center) */}
-          <div className="mt-[20px] grid gap-[20px] lg:grid-cols-3">
-            <div className="hidden lg:block" />
-            {PROCESS_STEPS.slice(3, 5).map((s) => (
-              <ProcessCard key={s.n} step={s} />
+          {/* steps 1-5: 1 col mobile; 2 per line at 768 (5th centered); 3 per line on desktop (last row centered) */}
+          <div className="mt-12 grid gap-[20px] md:grid-cols-4 lg:grid-cols-6">
+            {PROCESS_STEPS.map((s, i) => (
+              <div
+                key={s.n}
+                className={`md:col-span-2${i === 3 ? " lg:col-start-2" : ""}${i === 4 ? " md:col-start-2 lg:col-start-auto" : ""}`}
+              >
+                <ProcessCard step={s} />
+              </div>
             ))}
           </div>
         </div>
@@ -579,6 +648,10 @@ export default function ShopifyPOSSetupPage() {
 
       {/* ── 10. FAQ ──────────────────────────────────────────────────── */}
       <section className="pos-faq-section" style={{ background: "#FFFFFF", fontFamily: "'Poppins', sans-serif" }}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
@@ -608,7 +681,7 @@ export default function ShopifyPOSSetupPage() {
                     </span>
                   </label>
                   <div className="pos-faq-bodyc">
-                    <p>{f.a}</p>
+                    <div className="pos-acc-in"><p>{f.a}</p></div>
                   </div>
                 </div>
               ))}
@@ -627,7 +700,7 @@ export default function ShopifyPOSSetupPage() {
         .pos-sq-item:last-child { border-bottom: 1px solid rgba(0,0,0,0.10); }
         .pos-sq-head {
           display: flex; align-items: center; justify-content: space-between;
-          padding: 22px 4px; cursor: pointer; gap: 16px;
+          padding: 15px 4px; cursor: pointer; gap: 16px;
         }
         .pos-sq-q { color: #1e293b; font-size: 17px; font-weight: 600; line-height: 1.4; }
         .pos-sq-ico {
@@ -637,13 +710,18 @@ export default function ShopifyPOSSetupPage() {
         .pos-sq-up   { display: none; }
         .pos-sq-down { display: block; }
         .pos-sq-bodyc {
-          display: none; padding: 0 4px 22px;
+          display: grid;
+          grid-template-rows: 0fr;
+          opacity: 0;
+          transition: grid-template-rows 0.28s ease, opacity 0.22s ease;
         }
+        .pos-acc-in { overflow: hidden; min-height: 0; }
         .pos-sq-bodyc p {
-          color: #334155; font-size: 15px; line-height: 1.7; margin: 0;
+          color: #334155; font-size: 15px; line-height: 1.7; margin: 0; padding: 0 4px 15px;
         }
         ${SQUARE_REASONS.map((_, i) => `#pos-sq-${i}:checked ~ .pos-sq-list [data-faq="pos-sq-${i}"] .pos-sq-bodyc`).join(",\n        ")} {
-          display: block;
+          grid-template-rows: 1fr;
+          opacity: 1;
         }
         ${SQUARE_REASONS.map((_, i) => `#pos-sq-${i}:checked ~ .pos-sq-list [data-faq="pos-sq-${i}"] .pos-sq-down`).join(",\n        ")} {
           display: none;
@@ -664,7 +742,7 @@ export default function ShopifyPOSSetupPage() {
         .pos-faq-item:last-child { border-bottom: 1px solid rgba(0,0,0,0.10); }
         .pos-faq-head {
           display: flex; align-items: center; justify-content: space-between;
-          padding: 24px 0; cursor: pointer; gap: 16px;
+          padding: 15px 0; cursor: pointer; gap: 16px;
         }
         .pos-faq-q { color: #1e293b; font-size: 17px; font-weight: 600; line-height: 1.4; }
         .pos-faq-ico {
@@ -673,10 +751,11 @@ export default function ShopifyPOSSetupPage() {
         }
         .pos-faq-up   { display: none; }
         .pos-faq-down { display: block; }
-        .pos-faq-bodyc { display: none; padding: 0 60px 24px 0; }
-        .pos-faq-bodyc p { color: #334155; font-size: 15px; line-height: 1.75; margin: 0; }
+        .pos-faq-bodyc { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows 0.28s ease, opacity 0.22s ease; }
+        .pos-faq-bodyc p { color: #334155; font-size: 15px; line-height: 1.75; margin: 0; padding: 0 0 15px 0; }
         ${FAQS.map((_, i) => `#pos-faq-${i}:checked ~ .pos-faq-list [data-faq="pos-faq-${i}"] .pos-faq-bodyc`).join(",\n        ")} {
-          display: block;
+          grid-template-rows: 1fr;
+          opacity: 1;
         }
         ${FAQS.map((_, i) => `#pos-faq-${i}:checked ~ .pos-faq-list [data-faq="pos-faq-${i}"] .pos-faq-down`).join(",\n        ")} {
           display: none;
@@ -692,7 +771,7 @@ export default function ShopifyPOSSetupPage() {
 /* Process card: faded "01." numeral over title + body */
 function ProcessCard({ step }: { step: { n: string; title: string; desc: string } }) {
   return (
-    <div className="rounded-[18px] bg-white p-7 sm:p-8">
+    <div className="h-full rounded-[18px] bg-white p-7 sm:p-8">
       <span className="block font-bold text-[44px] sm:text-[52px] leading-none text-[#1e293b]/15">{step.n}</span>
       <h3 className="mt-3 font-bold text-[#1e293b] text-[22px] sm:text-[24px] leading-[1.25]">{step.title}</h3>
       <p className="mt-4 text-[#334155] text-[15px] leading-[1.7]">{step.desc}</p>
