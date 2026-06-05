@@ -1,10 +1,44 @@
 import type { Metadata } from "next";
 
+const META_DESCRIPTION =
+  "Hire expert Shopify app developers to build custom private apps or launch on the Shopify App Store. Shopify Plus Preferred Partner. 700+ merchants. Get a free quote.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-app-development";
+
 export const metadata: Metadata = {
-  title: "Shopify App Development Company | Private and Public Apps",
-  description:
-    "Hire expert Shopify app developers to build custom private apps or launch on the Shopify App Store. Shopify Plus Preferred Partner. 700+ merchants. Get a free quote.",
-  alternates: { canonical: "https://ecommwizards.com/services/shopify-app-development/" },
+  // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
+  // template would otherwise append the brand to this custom title.
+  title: { absolute: "Shopify App Development Company | Private and Public Apps" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify app development",
+    "hire shopify app developer",
+    "custom shopify app development",
+    "shopify app development company",
+    "shopify app development services",
+    "private shopify app",
+    "shopify app store development",
+    "shopify plus app development",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify App Development Company | Private and Public Apps",
+    description: META_DESCRIPTION,
+    images: [
+      {
+        url: "/images/results.webp",
+        alt: "Shopify app development results by Ecomm Wizards",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify App Development Company | Private and Public Apps",
+    description: META_DESCRIPTION,
+    images: ["/images/results.webp"],
+  },
 };
 
 const FAQS = [
@@ -52,6 +86,21 @@ const FAQ_SCHEMA = {
   })),
 };
 
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Shopify App Development",
+      item: "https://ecommwizards.com/services/shopify-app-development",
+    },
+  ],
+};
+
 const GRADIENT =
   "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)";
 const GRADIENT_TEXT = {
@@ -75,22 +124,29 @@ export default function ShopifyAppDevelopmentPage() {
         >
           {/* Left: text */}
           <div className="text-center lg:text-left">
-            <h1 className="font-semibold leading-[1.1] tracking-tight text-white text-[34px] sm:text-[44px] lg:text-[52px] xl:text-[58px]">
+            <h1 className="font-semibold leading-[1.1] tracking-tight text-white text-[34px] sm:text-[44px] lg:text-[48px]">
               <span style={GRADIENT_TEXT}>Hire a Shopify App Developer</span>{" "}
               Who Builds Apps That Actually Grow Your Store.
             </h1>
 
-            <p className="mt-6 text-white/85 text-[15px] sm:text-base lg:text-[17px] leading-[1.7]">
+            <p className="mt-6 text-white text-[15px] sm:text-base lg:text-[16px] leading-[1.7]">
               Need a private custom Shopify app built for your store, or a public app launched on the Shopify App Store? Our Shopify app development company builds both. Clean code, on-time delivery, results you can measure. We connect your store to the tools, workflows, and custom features it needs through expert Shopify API integration and custom development. Whether you are on Shopify, Shopify Plus, or scaling toward enterprise-level volume, our Shopify app development services are built to perform from day one.
             </p>
 
-            <a
-              href="/contact-shopify-agency/"
-              className="cta-pill-invert mt-8 inline-flex items-center gap-3 rounded-full border px-7 py-3 text-[15px] sm:text-base transition"
-            >
-              Schedule a Call
-              <span aria-hidden className="text-lg leading-none">→</span>
-            </a>
+            <div className="mt-8 inline-flex p-[2px] rounded-full" style={{ background: GRADIENT }}>
+              <a
+                href="/contact-shopify-agency/"
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-black hover:bg-white transition-all duration-300 px-[28px] py-[16px] sm:px-[40px] sm:py-[20px] text-[15px] sm:text-[16px]"
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}
+              >
+                <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">
+                  Schedule a Call
+                </span>
+                <svg width="18" height="13" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white group-hover:text-black transition-colors duration-300">
+                  <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+            </div>
 
             <p className="mt-6 text-white/85 text-[14px] sm:text-[15px] leading-[1.6]">
               Response within 24 hours. Fixed-price quotes. Zero obligation.
@@ -102,9 +158,10 @@ export default function ShopifyAppDevelopmentPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/Code-typing-bro.svg"
-              alt="Shopify app developer at work"
+              alt="Shopify app developer building a custom Shopify app"
               width={500}
               height={500}
+              fetchPriority="high"
               className="w-full h-auto"
             />
           </div>
@@ -130,7 +187,7 @@ export default function ShopifyAppDevelopmentPage() {
             style={{
               color: "#000000",
               fontFamily: "'Poppins', sans-serif",
-              fontSize: "22px",
+              fontSize: "32px",
               fontWeight: 700,
               lineHeight: 1.45,
               margin: 0,
@@ -203,7 +260,7 @@ export default function ShopifyAppDevelopmentPage() {
           }
           @media (max-width: 1023px) {
             .sad-trust-inner    { padding: 40px 16px !important; }
-            .sad-trust-heading  { font-size: 20px !important; }
+            .sad-trust-heading  { font-size: 24px !important; }
             .sad-trust-carousel { margin-top: 24px !important; }
             .sad-trust-track    { gap: 24px; animation-duration: 26s; }
             .sad-trust-slide,
@@ -361,7 +418,7 @@ export default function ShopifyAppDevelopmentPage() {
           }
           .sad-about-item {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 18px;
             padding: 20px 0;
             border-top: 1px solid rgba(0, 0, 0, 0.08);
@@ -375,7 +432,6 @@ export default function ShopifyAppDevelopmentPage() {
             justify-content: center;
             width: 40px;
             height: 40px;
-            margin-top: 2px;
           }
           .sad-about-text {
             color: #334155;
@@ -437,7 +493,7 @@ export default function ShopifyAppDevelopmentPage() {
                     </span>
                     <div className="sad-card-body">
                       <h4 className="sad-card-h">Custom Shopify API Integration</h4>
-                      <p className="sad-card-p">Connect your Shopify store to your CRM, ERP, 3PL, or any third-party platform. Seamlessly and without the workarounds.</p>
+                      <p className="sad-card-p">Connect your Shopify store to your CRM, ERP, 3PL, or any third-party platform without the workarounds.</p>
                     </div>
                   </div>
 
@@ -634,7 +690,7 @@ export default function ShopifyAppDevelopmentPage() {
           }
 
           @media (min-width: 1024px) {
-            .sad-types-title { font-size: 44px; margin-bottom: 50px; }
+            .sad-types-title { font-size: 44px; margin-bottom: 24px; }
             .sad-panel { padding: 60px 56px; margin-top: 40px; border-radius: 32px; }
             .sad-panel-grid { grid-template-columns: 1.05fr 1fr; gap: 60px; }
             .sad-panel--rev .sad-panel-grid { grid-template-columns: 1fr 1.05fr; }
@@ -645,7 +701,7 @@ export default function ShopifyAppDevelopmentPage() {
             .sad-types-inner { padding: 50px 16px !important; }
             .sad-panel { padding: 32px 20px; border-radius: 22px; }
             .sad-panel-content { text-align: center; }
-            .sad-panel-art { order: 99; }
+            .sad-panel-art { order: -1; }
             .sad-card { text-align: left; }
           }
         ` }} />
@@ -752,7 +808,7 @@ export default function ShopifyAppDevelopmentPage() {
                   <div className="sad-tabpanel-cards">
                     <div className="sad-mini-card">
                       <h4 className="sad-mini-h">UI/UX Prototyping</h4>
-                      <p className="sad-mini-p">We wireframe and prototype every user flow before a single line of code is written &mdash; so you can see, test, and refine the experience upfront, not after launch.</p>
+                      <p className="sad-mini-p">We wireframe and prototype every user flow before a single line of code is written, so you can see, test, and refine the experience upfront, not after launch.</p>
                     </div>
                     <div className="sad-mini-card">
                       <h4 className="sad-mini-h">Merchant &amp; User Experience</h4>
@@ -774,7 +830,7 @@ export default function ShopifyAppDevelopmentPage() {
                     <img src="/images/develop.webp" alt="Develop" width={1024} height={414} loading="lazy" />
                   </div>
                   <h3 className="sad-tabpanel-h">3. Develop</h3>
-                  <p className="sad-tabpanel-quote">&ldquo;Your online store is the heart of your business&mdash;don&rsquo;t let bad development slow you down.&rdquo;</p>
+                  <p className="sad-tabpanel-quote">&ldquo;Your online store is the heart of your business. Don&rsquo;t let bad development slow you down.&rdquo;</p>
                   <div className="sad-tabpanel-cards">
                     <div className="sad-mini-card">
                       <h4 className="sad-mini-h">Expert Coding</h4>
@@ -800,7 +856,7 @@ export default function ShopifyAppDevelopmentPage() {
                     <img src="/images/deploy.webp" alt="Deploy" width={1024} height={414} loading="lazy" />
                   </div>
                   <h3 className="sad-tabpanel-h">4. Deploy</h3>
-                  <p className="sad-tabpanel-quote">&ldquo;No more &lsquo;Oops! That update broke the live site!&rsquo; thanks to our robust deployment process.&rdquo;</p>
+                  <p className="sad-tabpanel-quote">&ldquo;No more &lsquo;Oops! That update broke the live site!&rsquo; thanks to our reliable deployment process.&rdquo;</p>
                   <div className="sad-tabpanel-cards">
                     <div className="sad-mini-card">
                       <h4 className="sad-mini-h">Version Control via GitHub</h4>
@@ -1116,11 +1172,14 @@ export default function ShopifyAppDevelopmentPage() {
           .sad-acc-down { display: block; }
 
           .sad-acc-body {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
+            display: grid;
+            grid-template-rows: 0fr;
+            opacity: 0;
+            transition: grid-template-rows 0.28s ease, opacity 0.22s ease;
           }
           .sad-acc-body p {
+            overflow: hidden;
+            min-height: 0;
             color: #334155;
             font-size: 15px;
             line-height: 1.7;
@@ -1133,7 +1192,8 @@ export default function ShopifyAppDevelopmentPage() {
           #sad-acc-2:checked ~ .sad-acc-list [data-acc="sad-acc-2"] .sad-acc-body,
           #sad-acc-3:checked ~ .sad-acc-list [data-acc="sad-acc-3"] .sad-acc-body,
           #sad-acc-4:checked ~ .sad-acc-list [data-acc="sad-acc-4"] .sad-acc-body {
-            max-height: 400px;
+            grid-template-rows: 1fr;
+            opacity: 1;
           }
           #sad-acc-1:checked ~ .sad-acc-list [data-acc="sad-acc-1"] .sad-acc-down,
           #sad-acc-2:checked ~ .sad-acc-list [data-acc="sad-acc-2"] .sad-acc-down,
@@ -1180,7 +1240,7 @@ export default function ShopifyAppDevelopmentPage() {
             <div className="sad-stories-grid">
               <div className="sad-stories-left">
                 <p className="sad-stories-quote">
-                  &ldquo;Ecomm Wizards has been an invaluable partner&mdash;our custom app doubled our operational efficiency and saved us hours every day.&rdquo;
+                  &ldquo;Ecomm Wizards has been an invaluable partner. Our custom app doubled our operational efficiency and saved us hours every day.&rdquo;
                 </p>
                 <div className="sad-stories-author">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -1454,11 +1514,14 @@ export default function ShopifyAppDevelopmentPage() {
           .sad-why-up   { display: none; }
           .sad-why-down { display: block; }
           .sad-why-bodyc {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
+            display: grid;
+            grid-template-rows: 0fr;
+            opacity: 0;
+            transition: grid-template-rows 0.28s ease, opacity 0.22s ease;
           }
           .sad-why-bodyc p {
+            overflow: hidden;
+            min-height: 0;
             color: #334155;
             font-size: 15px;
             line-height: 1.7;
@@ -1472,7 +1535,8 @@ export default function ShopifyAppDevelopmentPage() {
           #sad-why-3:checked ~ .sad-why-list [data-why="sad-why-3"] .sad-why-bodyc,
           #sad-why-4:checked ~ .sad-why-list [data-why="sad-why-4"] .sad-why-bodyc,
           #sad-why-5:checked ~ .sad-why-list [data-why="sad-why-5"] .sad-why-bodyc {
-            max-height: 400px;
+            grid-template-rows: 1fr;
+            opacity: 1;
           }
           #sad-why-1:checked ~ .sad-why-list [data-why="sad-why-1"] .sad-why-down,
           #sad-why-2:checked ~ .sad-why-list [data-why="sad-why-2"] .sad-why-down,
@@ -1508,7 +1572,11 @@ export default function ShopifyAppDevelopmentPage() {
         className="sad-faq-section"
         style={{ background: "#FFFFFF", fontFamily: "'Poppins', sans-serif" }}
       >
-        {/* page-scoped FAQPage JSON-LD schema */}
+        {/* page-scoped Breadcrumb + FAQPage JSON-LD schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
@@ -1595,11 +1663,14 @@ export default function ShopifyAppDevelopmentPage() {
           .sad-faq-up   { display: none; }
           .sad-faq-down { display: block; }
           .sad-faq-bodyc {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.35s ease;
+            display: grid;
+            grid-template-rows: 0fr;
+            opacity: 0;
+            transition: grid-template-rows 0.28s ease, opacity 0.22s ease;
           }
           .sad-faq-bodyc p {
+            overflow: hidden;
+            min-height: 0;
             color: #334155;
             font-size: 15px;
             line-height: 1.7;
@@ -1609,7 +1680,8 @@ export default function ShopifyAppDevelopmentPage() {
 
           /* open state — driven by checked radio */
           ${FAQS.map((_, i) => `#sad-faq-${i}:checked ~ .sad-faq-list [data-faq="sad-faq-${i}"] .sad-faq-bodyc`).join(",\n          ")} {
-            max-height: 600px;
+            grid-template-rows: 1fr;
+            opacity: 1;
           }
           ${FAQS.map((_, i) => `#sad-faq-${i}:checked ~ .sad-faq-list [data-faq="sad-faq-${i}"] .sad-faq-down`).join(",\n          ")} {
             display: none;
@@ -1643,7 +1715,7 @@ export default function ShopifyAppDevelopmentPage() {
             Our Valued <b>Partners</b>
           </h2>
           <p className="sad-partners-p">
-            The best <b>Shopify app development agency</b> doesn&rsquo;t work in isolation &mdash; it works within the ecosystem. Over nearly a decade, Ecomm Wizards has built deep, working relationships with the platforms and tools that power the world&rsquo;s top Shopify stores. These aren&rsquo;t logo badges we collected &mdash; they&rsquo;re active partnerships that make our solutions faster, smarter, and better integrated for every merchant we serve.
+            The best <b>Shopify app development agency</b> doesn&rsquo;t work in isolation. It works within the ecosystem. Over nearly a decade, Ecomm Wizards has built deep, working relationships with the platforms and tools that power the world&rsquo;s top Shopify stores. These aren&rsquo;t logo badges we collected. They&rsquo;re active partnerships that make our solutions faster, smarter, and better integrated for every merchant we serve.
           </p>
 
           <div className="sad-partners-grid">

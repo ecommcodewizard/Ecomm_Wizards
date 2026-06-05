@@ -61,6 +61,11 @@ const nextConfig: NextConfig = {
         destination: "/services/figma-to-shopify-conversion",
         permanent: true,
       },
+      {
+        source: "/shopify-app-development",
+        destination: "/services/shopify-app-development",
+        permanent: true,
+      },
     ];
   },
 };

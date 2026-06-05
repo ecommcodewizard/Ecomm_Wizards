@@ -103,7 +103,7 @@ const SERVICES = [
   {
     title: "Custom App Development",
     desc: "Private and public Shopify apps, ERP/CRM integrations, and mobile apps.",
-    href: "/shopify-app-development",
+    href: "/services/shopify-app-development",
   },
   {
     title: "Shopify SEO Agency",
