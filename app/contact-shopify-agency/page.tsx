@@ -456,6 +456,7 @@ export default function ContactPage() {
               <FormSelect
                 name="budget"
                 label="Budget"
+                required
                 half
                 options={[
                   "Under $5,000",
@@ -469,6 +470,7 @@ export default function ContactPage() {
               <FormSelect
                 name="services"
                 label="Services Of Interest"
+                required
                 half
                 options={[
                   "Build a New Shopify Store",
@@ -487,6 +489,7 @@ export default function ContactPage() {
               <FormSelect
                 name="referral"
                 label="How Did You Find Us"
+                required
                 options={[
                   "Google Search",
                   "Referral",
@@ -662,6 +665,7 @@ export default function ContactPage() {
           }
           @media (max-width: 639.98px) {
             .contact-form-section .contact-form-fields { grid-template-columns: 1fr !important; }
+            .contact-form-section .elementor-field-group-full { grid-column: auto !important; }
             .contact-form-section .contact-form-submit { width: 100% !important; }
             .contact-form-section #field-project-details { min-height: 50px !important; height: 50px !important; }
           }
