@@ -19,13 +19,13 @@ const MILESTONES: Milestone[] = [
   {
     year: "2018",
     title: "First Million Generated",
-    desc: "Hit $1M in revenue generated for merchants. Referrals started rolling in. Team grew to 10. The grind was real - and it was working.",
+    desc: "Hit $1M in revenue generated for merchants. Referrals started rolling in. Team grew to 10. The grind was real, and it was working.",
     position: "above",
   },
   {
     year: "2019",
     title: "Shopify Partner Status",
-    desc: "Officially became a Shopify Partner. Crossed 50+ stores built. Expanded into full-service - design, dev, and strategy under one roof.",
+    desc: "Officially became a Shopify Partner. Crossed 50+ stores built. Expanded into full-service: design, dev, and strategy under one roof.",
     position: "below",
   },
   {
@@ -55,19 +55,19 @@ const MILESTONES: Milestone[] = [
   {
     year: "2024",
     title: "Global Expansion",
-    desc: "Expanded across North America and Europe. 80+ team members. 650+ stores shipped. $750M+ revenue milestone unlocked.",
+    desc: "Expanded across North America and Europe. 80+ team members. 650+ stores shipped. $750M+ revenue milestone reached.",
     position: "above",
   },
   {
     year: "2025",
     title: "$900M+ and Counting",
-    desc: "700+ stores built. $900M+ in revenue generated for merchants. Full-stack Shopify Plus agency - and we're just getting started.",
+    desc: "700+ stores built. $900M+ in revenue generated for merchants. Full-stack Shopify Plus agency, and we're just getting started.",
     position: "below",
   },
   {
     year: "2026",
     title: "Chasing the Billion",
-    desc: "$1B+ in client revenue - that's the target. New markets. New partnerships. Same obsession with results. This is the year we cement our legacy.",
+    desc: "$1B+ in client revenue. That's the target. New markets. New partnerships. Same obsession with results. This is the year we cement our legacy.",
     position: "above",
   },
 ];
@@ -171,7 +171,7 @@ export default function JourneyTimeline() {
 
       <style dangerouslySetInnerHTML={{ __html: `
         .journey-section {
-          padding: 80px 20px 40px;
+          padding: 60px 20px 40px;
           color: #334155;
           font-family: 'Poppins', sans-serif;
           font-size: 16px;
@@ -180,17 +180,14 @@ export default function JourneyTimeline() {
         }
         .journey-title {
           font-family: 'Poppins', sans-serif;
-          font-size: 42px;
+          font-size: clamp(26px, 4.5vw, 42px);
           font-weight: 700;
           color: #000000;
-          line-height: 52.01px;
-          width: 1055.99px;
+          line-height: 1.25;
           max-width: 100%;
-          height: 52.01px;
           text-align: center;
-          margin: 0 auto 48px;
-          padding: 0;
-          white-space: nowrap;
+          margin: 0 auto 20px;
+          padding: 0 20px;
         }
         .timelineContainer {
           width: 1320px;
@@ -350,7 +347,7 @@ export default function JourneyTimeline() {
             line-height: 40px !important;
             height: auto !important;
             width: 100% !important;
-            max-width: 400px !important;
+            max-width: 100% !important;
             white-space: normal !important;
             margin: 0 auto 32px !important;
             padding: 0 15px !important;

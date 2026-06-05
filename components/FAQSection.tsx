@@ -34,15 +34,14 @@ export default function FAQSection({
           aria-level={2}
           style={{
             fontFamily: "'Poppins', sans-serif",
-            fontSize: "42px",
+            fontSize: "clamp(26px, 4.5vw, 42px)",
             fontWeight: 700,
             color: "#000000",
-            lineHeight: "52px",
-            width: "1055.99px",
-            maxWidth: "100%",
+            lineHeight: 1.25,
+            maxWidth: "1056px",
             textAlign: "center",
             margin: "0 auto 40px",
-            padding: 0,
+            padding: "0 16px",
           }}
         >
           {title}

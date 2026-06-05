@@ -22,7 +22,7 @@ const TABS: Tab[] = [
     cta: "Get a Free Shopify Store Audit",
     image: {
       src: "/images/ux_ui_image_1024x1024.webp",
-      alt: "UX + UI Shopify Audit - Ecomm Wizards",
+      alt: "UX and UI Shopify audit by Ecomm Wizards",
     },
   },
   {
@@ -30,11 +30,11 @@ const TABS: Tab[] = [
     label: "Build a New Shopify Store",
     heading: "Get a Free Concept Design",
     description:
-      "We'll create a homepage concept tailored to your brand - on the house. See what's possible before you commit to anything.",
+      "We'll create a homepage concept built for your brand, on the house. See what's possible before you commit to anything.",
     cta: "Get a Free Shopify Concept Design",
     image: {
       src: "/images/video_cover_2048x.webp",
-      alt: "Build a new Shopify store - Ecomm Wizards",
+      alt: "Build a new Shopify store with Ecomm Wizards",
     },
   },
 ];
@@ -81,7 +81,7 @@ export default function AboutContactSection() {
                   border: "none",
                   cursor: "pointer",
                   transition: "background 0.2s ease, color 0.2s ease",
-                  flex: "0 0 auto",
+                  flex: "1 1 0",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -118,13 +118,11 @@ export default function AboutContactSection() {
               aria-level={2}
               style={{
                 fontFamily: "'Poppins', sans-serif",
-                fontSize: "30px",
+                fontSize: "clamp(22px, 3vw, 30px)",
                 fontWeight: 700,
                 color: "#000000",
-                lineHeight: "40px",
-                width: "600px",
+                lineHeight: 1.3,
                 maxWidth: "100%",
-                height: "40px",
                 margin: "0 0 16px",
                 padding: 0,
               }}
@@ -330,22 +328,16 @@ export default function AboutContactSection() {
         }
         .about-contact-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(2, minmax(0, 1fr));
           column-gap: 0;
         }
         @media (max-width: 1024px) {
-          .about-contact-inner {
-            flex-direction: column;
-          }
-          .about-contact-left {
-            order: 1;
-          }
-          .about-contact-right {
-            order: 2;
-            width: 100%;
-            max-height: 360px;
-            overflow: hidden;
-          }
+          .about-contact-section .about-contact-body { padding: 24px !important; min-height: 0 !important; }
+          .about-contact-inner { gap: 24px !important; }
+          .about-contact-left { flex: 1 1 0 !important; }
+          .about-contact-right { flex: 1 1 0 !important; }
+          .about-contact-section .about-contact-desc { margin-bottom: 18px !important; }
+          .about-contact-section .elementor-field-type-text { margin-bottom: 14px !important; padding: 0 6px !important; }
         }
         @media (max-width: 768px) {
           .about-contact-section { padding: 40px 15px 0 !important; }
@@ -354,8 +346,8 @@ export default function AboutContactSection() {
             gap: 0;
           }
           .about-contact-tab {
-            width: 190.77px !important;
-            max-width: 190.77px !important;
+            width: auto !important;
+            max-width: 50% !important;
             height: 44px !important;
             padding: 12px 16px !important;
             font-size: 14px !important;
@@ -363,7 +355,7 @@ export default function AboutContactSection() {
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
-            white-space: normal !important;
+            white-space: nowrap !important;
             text-align: center !important;
             box-sizing: border-box !important;
           }
@@ -371,12 +363,12 @@ export default function AboutContactSection() {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 118.82px;
-            max-width: 118.82px;
-            height: 20px;
+            width: auto;
+            max-width: 100%;
+            height: auto;
             line-height: 20px;
             font-size: 14px;
-            white-space: normal;
+            white-space: nowrap;
             text-align: center;
           }
           .about-contact-section .about-contact-body {
@@ -398,8 +390,13 @@ export default function AboutContactSection() {
           .about-contact-section .elementor-button {
             width: 100% !important;
             min-width: 0 !important;
+            font-size: 12px !important;
           }
-          .about-contact-right { max-height: 240px; }
+        }
+        @media (max-width: 639.98px) {
+          .about-contact-inner { flex-direction: column !important; }
+          .about-contact-left { order: 1; }
+          .about-contact-right { order: 2; width: 100% !important; flex: 0 0 auto !important; max-height: 240px; overflow: hidden; }
         }
       ` }} />
     </section>

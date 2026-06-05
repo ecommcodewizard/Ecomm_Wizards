@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import AboutHero from "@/components/ui/AboutHero";
@@ -9,23 +9,44 @@ import FAQSection from "@/components/FAQSection";
 import { ABOUT_FAQS } from "@/lib/about-faqs";
 import AboutContactSection from "@/components/AboutContactSection";
 
+const ABOUT_TITLE = "About Ecomm Wizards | Leading Shopify Plus Agency";
+const ABOUT_DESCRIPTION =
+  "Ecomm Wizards is a leading Shopify Plus agency with 8+ years of experience and $900M+ in client revenue. Meet the team behind 700+ successful Shopify stores.";
+const ABOUT_URL = "https://ecommwizards.com/about-shopify-agency";
+const ABOUT_OG_IMAGE = "/images/new_image_grande.webp";
+
 export const metadata: Metadata = {
-  title: "About Ecomm Wizards | Leading Shopify Plus Agency",
-  description: "Ecomm Wizards is a leading Shopify Plus agency with 8+ years of experience and $900M+ in client revenue. Meet the team behind 700+ successful Shopify stores.",
+  title: { absolute: ABOUT_TITLE },
+  description: ABOUT_DESCRIPTION,
+  alternates: { canonical: ABOUT_URL },
+  openGraph: {
+    type: "website",
+    siteName: "Ecomm Wizards",
+    url: ABOUT_URL,
+    title: ABOUT_TITLE,
+    description: ABOUT_DESCRIPTION,
+    images: [{ url: ABOUT_OG_IMAGE, alt: "The Ecomm Wizards team, a leading Shopify Plus agency" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: ABOUT_TITLE,
+    description: ABOUT_DESCRIPTION,
+    images: [ABOUT_OG_IMAGE],
+  },
 };
 
 const VALUES = [
   {
     title: "100% Satisfaction Guarantee",
-    desc: "We stand behind every project we deliver. If you're not satisfied, we make it right â€” no excuses.",
+    desc: "We stand behind every project we deliver. If you're not satisfied, we make it right, no excuses.",
   },
   {
     title: "Result-Oriented Approach",
     desc: "We don't measure success by deliverables. We measure it by revenue, conversions, and growth for your brand.",
   },
   {
-    title: "A Hub for Innovative Minds",
-    desc: "Our team continuously trains on Shopify Plus features, AI tools, and conversion psychology â€” staying ahead so you don't have to.",
+    title: "A Hub for Driven Minds",
+    desc: "Our team continuously trains on Shopify Plus features, AI tools, and conversion psychology, staying ahead so you don't have to.",
   },
   {
     title: "Ownership Mentality",
@@ -36,7 +57,7 @@ const VALUES = [
 const JOURNEY = [
   { year: "2018", title: "Founded",          desc: "Started as a boutique Shopify development shop focused on high-converting custom themes." },
   { year: "2019", title: "First 50 Stores",  desc: "Grew rapidly through referrals, building a reputation for speed and quality." },
-  { year: "2021", title: "Shopify Plus Partner", desc: "Became an official Shopify Plus Partner, unlocking enterprise-grade capabilities." },
+  { year: "2021", title: "Shopify Plus Partner", desc: "Became an official Shopify Plus Partner, gaining enterprise-grade capabilities." },
   { year: "2023", title: "500+ Stores",      desc: "Passed 500 successful store launches with $500M+ in client revenue tracked." },
   { year: "2026", title: "700+ Stores",      desc: "Now a multi-award-winning agency with $900M+ in client revenue and a global team." },
 ];
@@ -135,7 +156,7 @@ export default function AboutPage() {
               >
                 <Image
                   src="/images/new-about-image_1_2048x2048-1.webp"
-                  alt="Ecomm Wizards client ecommerce store workflow"
+                  alt="The Ecomm Wizards Shopify development agency reviewing a client store"
                   fill
                   className="object-cover"
                 />
@@ -358,35 +379,35 @@ export default function AboutPage() {
       </section>
 
       {/* Mission â€” revenue machines */}
-      <section style={{ background: "#F1F5FF", padding: "80px 20px" }}>
+      <section className="about-mission-section" style={{ background: "#F1F5FF", padding: "60px 20px" }}>
         <div className="mx-auto" style={{ maxWidth: "1320px" }}>
           <h2
-            className="elementor-heading-title elementor-size-default text-center mx-auto"
+            className="elementor-heading-title elementor-size-default text-center mx-auto about-mission-h2"
             role="heading"
             aria-level={2}
             style={{
               fontFamily: "'Poppins', sans-serif",
-              fontSize: "30px",
+              fontSize: "clamp(22px, 4vw, 30px)",
               fontWeight: 400,
               color: "#000000",
-              lineHeight: "40px",
+              lineHeight: 1.35,
               maxWidth: "1253.5px",
               width: "100%",
               marginBottom: "20px",
             }}
           >
-            At <strong style={{ fontWeight: 700 }}>Ecomm Wizards</strong>, we don&apos;t just build Shopify stores - we build revenue machines.
+            At <strong style={{ fontWeight: 700 }}>Ecomm Wizards</strong>, we don&apos;t just build Shopify stores, we build revenue machines.
           </h2>
 
           <p
-            className="text-center mx-auto"
+            className="text-center mx-auto about-mission-intro"
             style={{
               fontFamily: "'Poppins', sans-serif",
               fontSize: "clamp(15px, 1.4vw, 19px)",
               color: "rgba(0, 0, 0, 0.8)",
               lineHeight: 1.5,
               maxWidth: "1320px",
-              marginBottom: "56px",
+              marginBottom: "30px",
             }}
           >
             Headquartered in Toronto with teams across America, Europe, and Asia we combine design obsession with technical precision to help DTC brands outperform their competition.
@@ -398,7 +419,7 @@ export default function AboutPage() {
             {[
               {
                 title: "100% Satisfaction Guarantee",
-                desc: "If you're not happy, we're not done. We don't hide behind contracts or excuses. Every project gets our full attention until it exceeds your expectations - period.",
+                desc: "If you're not happy, we're not done. We don't hide behind contracts or excuses. Every project gets our full attention until it exceeds your expectations. Period.",
                 icon: (
                   <svg height="50" viewBox="0 0 64 64" fill="none" stroke="url(#about-grad)" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -418,7 +439,7 @@ export default function AboutPage() {
               },
               {
                 title: "Result-oriented Approach",
-                desc: "Pretty stores are easy. Stores that convert? That's the hard part. We obsess over the details that actually move the needle - speed, UX, and conversion KPIs- so your revenue doesn't just grow, it compounds.",
+                desc: "Pretty stores are easy. Stores that convert? That's the hard part. We obsess over the details that actually move the needle: speed, UX, and conversion KPIs, so your revenue doesn't just grow, it compounds.",
                 icon: (
                   <svg height="50" viewBox="0 0 64 64" fill="none" stroke="url(#about-grad)" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
                     <path d="M32 4 L56 12 V30 C56 44 46 54 32 60 C18 54 8 44 8 30 V12 Z" />
@@ -427,7 +448,7 @@ export default function AboutPage() {
                 ),
               },
               {
-                title: "A Hub for Innovative Minds",
+                title: "A Hub for Driven Minds",
                 desc: "We attract people who hate mediocrity. Designers who push pixels until they're perfect. Developers who write clean code. Strategists who think three steps ahead. That Alpha energy shows up in every project we ship.",
                 icon: (
                   <svg height="50" viewBox="0 0 64 64" fill="none" stroke="url(#about-grad)" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
@@ -442,6 +463,7 @@ export default function AboutPage() {
             ].map((box) => (
               <div
                 key={box.title}
+                className="about-mission-card"
                 style={{
                   background: "#FFFFFF",
                   padding: "30px",
@@ -469,6 +491,7 @@ export default function AboutPage() {
                   {box.icon}
                 </div>
                 <span
+                  className="about-mission-card-title"
                   style={{
                     display: "block",
                     fontFamily: "'Poppins', sans-serif",
@@ -484,7 +507,7 @@ export default function AboutPage() {
                   {box.title}
                 </span>
                 <p
-                  className="elementor-icon-box-description"
+                  className="elementor-icon-box-description about-mission-card-desc"
                   style={{
                     fontFamily: "'Poppins', sans-serif",
                     fontSize: "16px",
@@ -501,7 +524,7 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <div className="text-center" style={{ marginTop: "48px" }}>
+          <div className="text-center about-mission-cta" style={{ marginTop: "30px" }}>
             <Link
               href="/free-shopify-store-audit"
               className="elementor-button elementor-button-link elementor-size-sm transition-shadow duration-200 hover:shadow-[0_0_0_2px_#3DC77A]"
@@ -529,6 +552,20 @@ export default function AboutPage() {
             </Link>
           </div>
         </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 1024px) {
+            .about-mission-section { padding: 40px 20px !important; }
+            .about-mission-card { padding: 24px !important; }
+            .about-mission-card-title { font-size: 20px !important; line-height: 1.3 !important; }
+            .about-mission-card-desc { font-size: 14px !important; line-height: 22px !important; }
+          }
+          @media (max-width: 639.98px) {
+            .about-mission-h2 { margin-bottom: 20px !important; }
+            .about-mission-intro { margin-bottom: 20px !important; }
+            .about-mission-cta { margin-top: 20px !important; }
+            .about-mission-card { min-height: 0 !important; }
+          }
+        ` }} />
       </section>
 
       {/* Why Work with Ecomm Wizards — horizontal scrolling marquee */}
@@ -725,18 +762,14 @@ export default function AboutPage() {
             aria-level={2}
             style={{
               fontFamily: "'Poppins', sans-serif",
-              fontSize: "42px",
+              fontSize: "clamp(26px, 4.5vw, 42px)",
               fontWeight: 700,
               color: "#000000",
-              lineHeight: "52px",
-              height: "52px",
-              width: "1246.56px",
+              lineHeight: 1.25,
               maxWidth: "100%",
               textAlign: "center",
               margin: "0 auto",
-              padding: 0,
-              whiteSpace: "nowrap",
-              overflow: "visible",
+              padding: "0 20px",
             }}
           >
             The Culture Behind Our High-Performance Shopify Agency
@@ -746,7 +779,7 @@ export default function AboutPage() {
             <div className="culture-cell culture-cell--left">
               <Image
                 src="/images/culture_image_one_1024x1024.webp"
-                alt="Ecomm Wizards team member working"
+                alt="Ecomm Wizards Shopify Plus experts collaborating in the office"
                 width={1024}
                 height={1024}
                 className="culture-image"
@@ -755,7 +788,7 @@ export default function AboutPage() {
             <div className="culture-cell culture-cell--mid-top">
               <Image
                 src="/images/culture_image_two_1024x1024.webp"
-                alt="Ecomm Wizards designer at work"
+                alt="A Shopify designer at the Ecomm Wizards Shopify design agency"
                 width={1024}
                 height={1024}
                 className="culture-image"
@@ -764,7 +797,7 @@ export default function AboutPage() {
             <div className="culture-cell culture-cell--mid-bottom">
               <Image
                 src="/images/culture_image_three_1024x1024.webp"
-                alt="Ecomm Wizards developer at work"
+                alt="A Shopify developer on the Ecomm Wizards development team"
                 width={1024}
                 height={1024}
                 className="culture-image"
@@ -773,7 +806,7 @@ export default function AboutPage() {
             <div className="culture-cell culture-cell--right">
               <Image
                 src="/images/culture_image_four_1024x1024.webp"
-                alt="Ecomm Wizards strategist at work"
+                alt="The Ecomm Wizards ecommerce agency team at work"
                 width={1024}
                 height={1024}
                 className="culture-image"
@@ -781,10 +814,8 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <h2
+          <p
             className="culture-body elementor-heading-title elementor-size-default"
-            role="heading"
-            aria-level={2}
             style={{
               fontFamily: "'Poppins', sans-serif",
               fontSize: "22px",
@@ -798,7 +829,7 @@ export default function AboutPage() {
             }}
           >
             We believe excellent compounds. Our team continuously trains on the latest Shopify Plus features, ecommerce trends, AI tools, and conversion psychology frameworks. We foster a culture of ownership, every Shopify project is treated like it&rsquo;s our own brand. No shortcuts. No templates. No recycled strategies.
-          </h2>
+          </p>
         </div>
 
         <style dangerouslySetInnerHTML={{ __html: `
@@ -845,14 +876,14 @@ export default function AboutPage() {
               line-height: 40px !important;
               height: auto !important;
               width: 100% !important;
-              max-width: 400px !important;
+              max-width: 100% !important;
               white-space: normal !important;
               padding: 0 15px !important;
             }
             .culture-section .culture-body { font-size: 16px !important; line-height: 26px !important; }
             .culture-inner { padding: 40px 0 !important; }
             .culture-grid {
-              grid-template-columns: 1fr;
+              grid-template-columns: 1fr 1fr;
               grid-template-rows: auto;
               gap: 12px;
               margin: 28px 15px;
@@ -861,7 +892,7 @@ export default function AboutPage() {
             .culture-cell--mid-top,
             .culture-cell--mid-bottom,
             .culture-cell--right {
-              grid-column: 1;
+              grid-column: auto;
               grid-row: auto;
               min-height: 0;
               aspect-ratio: 1 / 1;
@@ -889,17 +920,14 @@ export default function AboutPage() {
             aria-level={2}
             style={{
               fontFamily: "'Poppins', sans-serif",
-              fontSize: "42px",
+              fontSize: "clamp(26px, 4.5vw, 42px)",
               fontWeight: 700,
               color: "#000000",
-              lineHeight: "52px",
-              height: "52px",
-              width: "533.62px",
+              lineHeight: 1.25,
               maxWidth: "100%",
               textAlign: "center",
               margin: "0 auto",
-              padding: 0,
-              whiteSpace: "nowrap",
+              padding: "0 20px",
             }}
           >
             A Note From Our Founder
@@ -940,14 +968,14 @@ export default function AboutPage() {
               We saw too many ecommerce brands struggling with generic agencies that treated Shopify like &ldquo;just another CMS.&rdquo; But Shopify is an ecosystem, and mastering it requires deep platform expertise.
             </p>
             <p style={{ margin: "24px 0 0" }}>
-              So here&rsquo;s my commitment: if you partner with our Shopify experts, you won&rsquo;t just keep up &ndash; you&rsquo;ll lead. We&rsquo;ll make sure of it.
+              So here&rsquo;s my commitment: if you partner with our Shopify experts, you won&rsquo;t just keep up, you&rsquo;ll lead. We&rsquo;ll make sure of it.
             </p>
             <p style={{ margin: "24px 0 0" }}>
               The future belongs to brands that move now. Let&rsquo;s make sure you&rsquo;re one of them.
             </p>
           </div>
 
-          <div className="text-center" style={{ marginTop: "40px" }}>
+          <div className="text-center founder-note-cta" style={{ marginTop: "40px" }}>
             <Link
               href="/contact"
               className="elementor-button elementor-button-link elementor-size-sm transition-shadow duration-200 hover:shadow-[0_0_0_2px_#3DC77A]"
@@ -986,7 +1014,7 @@ export default function AboutPage() {
               line-height: 40px !important;
               height: auto !important;
               width: 100% !important;
-              max-width: 400px !important;
+              max-width: 100% !important;
               white-space: normal !important;
               padding: 0 15px !important;
             }
@@ -1001,10 +1029,14 @@ export default function AboutPage() {
               line-height: 22px !important;
             }
           }
+          @media (max-width: 639.98px) {
+            .founder-note-section .founder-note-body p + p { margin-top: 16px !important; }
+            .founder-note-section .founder-note-cta { margin-top: 24px !important; }
+          }
         ` }} />
       </section>
 
-      {/* Trusted by the Worlds Most Innovative Brands */}
+      {/* Trusted by the World's Most Ambitious Brands */}
       <section
         className="trusted-brands-section"
         style={{ background: "#FFFFFF", padding: "0 20px" }}
@@ -1032,52 +1064,51 @@ export default function AboutPage() {
             aria-level={2}
             style={{
               fontFamily: "'Poppins', sans-serif",
-              fontSize: "42px",
+              fontSize: "clamp(26px, 4.5vw, 42px)",
               fontWeight: 700,
               color: "#000000",
-              lineHeight: "52px",
-              width: "791.99px",
-              maxWidth: "100%",
+              lineHeight: 1.25,
+              maxWidth: "820px",
               textAlign: "center",
               margin: "0 auto 40px",
-              padding: 0,
+              padding: "0 20px",
             }}
           >
-            Trusted by the Worlds Most Innovative Brands
+            Trusted by the World&apos;s Most Ambitious Brands
           </h2>
 
           {(() => {
             const rows: { logos: { src: string; alt: string }[]; direction: "left" | "right"; duration: number }[] = [
               {
                 logos: [
-                  { src: "/images/trust_logo_hover_1.svg", alt: "Brand" },
-                  { src: "/images/trust_logo_hover_2.svg", alt: "Brand" },
-                  { src: "/images/trust_logo_hover_10.svg", alt: "Brand" },
-                  { src: "/images/trust_logo_hover_11.svg", alt: "Brand" },
-                  { src: "/images/trust_logo_hover_12.svg", alt: "Brand" },
-                  { src: "/images/trust_logo_hover_13.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_hover_1.svg", alt: "" },
+                  { src: "/images/trust_logo_hover_2.svg", alt: "" },
+                  { src: "/images/trust_logo_hover_10.svg", alt: "" },
+                  { src: "/images/trust_logo_hover_11.svg", alt: "" },
+                  { src: "/images/trust_logo_hover_12.svg", alt: "" },
+                  { src: "/images/trust_logo_hover_13.svg", alt: "" },
                 ],
                 direction: "left",
                 duration: 40,
               },
               {
                 logos: [
-                  { src: "/images/trust_logo_hover_14.svg", alt: "Brand" },
-                  { src: "/images/trust_logo_2.svg", alt: "Brand" },
-                  { src: "/images/trust_logo_6.svg", alt: "Brand" },
-                  { src: "/images/trust_logo_7.svg", alt: "Brand" },
-                  { src: "/images/trust_logo_20.svg", alt: "Brand" },
-                  { src: "/images/trust_logo_26.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_hover_14.svg", alt: "" },
+                  { src: "/images/trust_logo_2.svg", alt: "" },
+                  { src: "/images/trust_logo_6.svg", alt: "" },
+                  { src: "/images/trust_logo_7.svg", alt: "" },
+                  { src: "/images/trust_logo_20.svg", alt: "" },
+                  { src: "/images/trust_logo_26.svg", alt: "" },
                 ],
                 direction: "right",
                 duration: 42,
               },
               {
                 logos: [
-                  { src: "/images/trust_logo_27.svg", alt: "Brand" },
-                  { src: "/images/trust_logo_31.svg", alt: "Brand" },
-                  { src: "/images/trust_logo_32.svg", alt: "Brand" },
-                  { src: "/images/trust_logo_new_1.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_27.svg", alt: "" },
+                  { src: "/images/trust_logo_31.svg", alt: "" },
+                  { src: "/images/trust_logo_32.svg", alt: "" },
+                  { src: "/images/trust_logo_new_1.svg", alt: "" },
                   { src: "/images/Group_38643.svg", alt: "Crown & Paw" },
                   { src: "/images/ipsy-logo.svg", alt: "IPSY" },
                 ],
@@ -1089,7 +1120,7 @@ export default function AboutPage() {
                   { src: "/images/everlast-icon.svg", alt: "Everlast" },
                   { src: "/images/biopure.svg", alt: "BioPure" },
                   { src: "/images/chalet.svg", alt: "Chalet" },
-                  { src: "/images/trust_logo_hover_3.svg", alt: "Brand" },
+                  { src: "/images/trust_logo_hover_3.svg", alt: "" },
                   { src: "/images/kaval-new.webp", alt: "Kaval" },
                 ],
                 direction: "right",
@@ -1178,6 +1209,13 @@ export default function AboutPage() {
           @media (prefers-reduced-motion: reduce) {
             .trusted-brands-track { animation: none; }
           }
+          @media (max-width: 1024px) {
+            .trusted-brands-section .trusted-brands-inner {
+              min-height: 0 !important;
+              padding: 44px 0 !important;
+              justify-content: flex-start !important;
+            }
+          }
           @media (max-width: 768px) {
             .trusted-brands-section {
               padding: 0 15px !important;
@@ -1192,7 +1230,7 @@ export default function AboutPage() {
               font-size: 28px !important;
               line-height: 38px !important;
               width: 100% !important;
-              max-width: 400px !important;
+              max-width: 100% !important;
               margin: 0 auto 20px !important;
             }
             .trusted-brands-row { margin-bottom: 10px; }
@@ -1240,10 +1278,10 @@ export default function AboutPage() {
               aria-level={2}
               style={{
                 fontFamily: "'Poppins', sans-serif",
-                fontSize: "40px",
+                fontSize: "clamp(28px, 3.6vw, 40px)",
                 fontWeight: 700,
                 color: "#000000",
-                lineHeight: "50px",
+                lineHeight: 1.25,
                 width: "630px",
                 maxWidth: "100%",
                 margin: "0 0 36px",
@@ -1342,7 +1380,7 @@ export default function AboutPage() {
           >
             <Image
               src="/images/new_image_grande.webp"
-              alt="Award Winning Team - Ecomm Wizards"
+              alt="Award winning team at Ecomm Wizards"
               width={1260}
               height={1233}
               className="attachment-large size-large wp-image-1478 bv-tag-attr-replace bv-lazyload-tag-img"
@@ -1361,27 +1399,27 @@ export default function AboutPage() {
 
         <style dangerouslySetInnerHTML={{ __html: `
           @media (max-width: 1024px) {
-            .award-team-section .award-team-inner {
-              flex-direction: column !important;
-              align-items: stretch !important;
+            .award-team-section .award-team-left { flex: 1 1 0 !important; min-width: 0 !important; }
+            .award-team-section .award-team-right { flex: 1 1 0 !important; min-width: 0 !important; }
+            .award-team-section .award-team-grid {
+              gap: 16px 12px !important;
+              max-width: 100% !important;
             }
-            .award-team-section .award-team-right {
-              flex: 0 0 auto !important;
-              order: 2;
-            }
-            .award-team-section .award-team-left {
-              order: 1;
-            }
-            .award-team-section .award-team-right img {
-              margin: 0 auto;
-            }
+            .award-team-section .award-team-item { width: 100% !important; }
+            .award-team-section .award-team-label { width: 100% !important; }
+            .award-team-section .award-team-right img { width: 100% !important; max-width: 100% !important; }
           }
           @media (max-width: 768px) {
             .award-team-section { padding: 0 15px !important; }
             .award-team-section .award-team-inner {
+              flex-direction: column !important;
+              align-items: stretch !important;
               padding: 40px 0 !important;
               gap: 28px !important;
             }
+            .award-team-section .award-team-left { order: 1; }
+            .award-team-section .award-team-right { order: 2; flex: 0 0 auto !important; }
+            .award-team-section .award-team-right img { width: 100% !important; max-width: 480px !important; margin: 0 auto; }
             .award-team-section .award-team-title {
               font-size: 28px !important;
               line-height: 38px !important;
@@ -1438,17 +1476,14 @@ export default function AboutPage() {
             aria-level={2}
             style={{
               fontFamily: "'Poppins', sans-serif",
-              fontSize: "35px",
+              fontSize: "clamp(26px, 4vw, 35px)",
               fontWeight: 700,
               color: "#000000",
-              lineHeight: "50px",
-              height: "50px",
-              width: "362.68px",
+              lineHeight: 1.3,
               maxWidth: "100%",
               textAlign: "center",
               margin: "0 auto 20px",
-              padding: 0,
-              whiteSpace: "nowrap",
+              padding: "0 20px",
             }}
           >
             Our Valued Partners
@@ -1462,7 +1497,7 @@ export default function AboutPage() {
               margin: "0 auto 40px",
               padding: 0,
               color: "#000000CC",
-              fontFamily: "Nunito, sans-serif",
+              fontFamily: "'Poppins', sans-serif",
               fontSize: "20px",
               lineHeight: "30px",
               textAlign: "center",
@@ -1542,6 +1577,9 @@ export default function AboutPage() {
           @media (max-width: 1024px) {
             .valued-partners-section .valued-partners-grid {
               grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            }
+            .valued-partners-section .valued-partners-cell {
+              width: 100% !important;
             }
           }
           @media (max-width: 768px) {

@@ -11,7 +11,7 @@ export default function AboutHero() {
         <div className="flex flex-col lg:flex-row lg:items-center">
 
           {/* Left: Text content */}
-          <div className="flex-1 pt-0 pb-16 sm:pt-16 sm:pb-20 lg:pt-12 lg:pb-28 lg:pr-12">
+          <div className="flex-1 pt-[30px] pb-[30px] sm:pt-16 sm:pb-20 lg:pt-12 lg:pb-28 lg:pr-12">
             <h1
               className="font-bold leading-tight"
               style={{
@@ -34,7 +34,6 @@ export default function AboutHero() {
                 fontSize: "16px",
                 lineHeight: "1.75",
                 maxWidth: "560px",
-                opacity: 0.9,
               }}
             >
               We&apos;re a global Shopify Plus agency helping ambitious ecommerce
@@ -69,7 +68,7 @@ export default function AboutHero() {
 
             <Image
               src="/images/about_main_image_1024x1024.webp"
-              alt="About Ecomm Wizards"
+              alt="Ecomm Wizards, a leading Shopify Plus agency"
               width={451}
               height={576}
               priority

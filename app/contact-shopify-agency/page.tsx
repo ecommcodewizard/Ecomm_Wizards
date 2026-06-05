@@ -1,9 +1,29 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const CONTACT_TITLE = "Hire a Shopify Plus Agency | Contact Ecomm Wizards";
+const CONTACT_DESCRIPTION =
+  "Ready to scale your store? Hire Ecomm Wizards, a certified Shopify Plus agency. Contact our experts today for a free audit and custom scaling roadmap!";
+const CONTACT_URL = "https://ecommwizards.com/contact-shopify-agency";
+
 export const metadata: Metadata = {
-  title: "Hire a Shopify Plus Agency | Contact Ecomm Wizards",
-  description: "Ready to scale your store? Hire Ecomm Wizards, a certified Shopify Plus agency. Contact our experts today for a free audit and custom scaling roadmap.",
+  title: { absolute: CONTACT_TITLE },
+  description: CONTACT_DESCRIPTION,
+  alternates: { canonical: CONTACT_URL },
+  openGraph: {
+    type: "website",
+    siteName: "Ecomm Wizards",
+    url: CONTACT_URL,
+    title: CONTACT_TITLE,
+    description: CONTACT_DESCRIPTION,
+    images: [{ url: "/images/main-hero-f-desktop.webp", alt: "Contact Ecomm Wizards, a certified Shopify Plus agency" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: CONTACT_TITLE,
+    description: CONTACT_DESCRIPTION,
+    images: ["/images/main-hero-f-desktop.webp"],
+  },
 };
 
 const HERO_STATS = [
@@ -182,12 +202,11 @@ export default function ContactPage() {
             className="contact-hero-title elementor-heading-title elementor-size-default"
             style={{
               fontFamily: "'Poppins', sans-serif",
-              fontSize: "42px",
+              fontSize: "clamp(26px, 4.5vw, 42px)",
               fontWeight: 700,
               color: "#000000",
-              lineHeight: "52px",
-              width: "932.2px",
-              maxWidth: "100%",
+              lineHeight: 1.25,
+              maxWidth: "1000px",
               margin: 0,
               padding: 0,
             }}
@@ -198,8 +217,7 @@ export default function ContactPage() {
           <div
             className="contact-hero-desc"
             style={{
-              width: "780px",
-              maxWidth: "100%",
+              maxWidth: "960px",
               margin: "24px 0 0",
               padding: 0,
               color: "#000000CC",
@@ -208,40 +226,38 @@ export default function ContactPage() {
               lineHeight: "26px",
             }}
           >
-            Let&rsquo;s talk about your store. Ecom Wizards is a full-service Shopify Plus Agency
-            delivering high-performance builds for growing DTC brands. Tell us about your project,
-            whether it&rsquo;s custom Shopify theme development, Shopify migrations, or CRO audits,
-            and our Shopify experts will map out your scaling roadmap.
+            Let&rsquo;s talk about your store. Ecomm Wizards is a full-service Shopify Plus and
+            enterprise Shopify agency building high-performance stores for growing DTC brands. Tell
+            us about your project, whether you want a Shopify migration, custom development, a CRO
+            audit, or an SEO review, and our Shopify experts will map out your growth strategy.
+            Contact our Shopify agency to get started.
           </div>
 
         </div>
 
         <style dangerouslySetInnerHTML={{ __html: `
+          @media (max-width: 1024px) {
+            .contact-hero-section .contact-hero-inner { padding: 70px 0 36px !important; }
+          }
           @media (max-width: 768px) {
             .contact-hero-section { padding: 0 15px !important; }
             .contact-hero-section .contact-hero-inner {
               padding: 56px 0 40px !important;
             }
             .contact-hero-section .contact-hero-title {
-              font-size: 30px !important;
-              line-height: 40px !important;
-              width: 380px !important;
-              max-width: 100% !important;
-              height: 80px !important;
+              font-size: 28px !important;
+              line-height: 1.3 !important;
             }
             .contact-hero-section .contact-hero-desc {
-              font-size: 16px !important;
-              line-height: 26px !important;
+              font-size: 15px !important;
+              line-height: 24px !important;
               margin-top: 18px !important;
-              width: 380px !important;
-              max-width: 100% !important;
-              height: 182px !important;
             }
           }
         ` }} />
       </section>
 
-      {/* Stats strip — infinite slider */}
+      {/* Stats strip - infinite slider */}
       <section
         className="contact-stats-section"
         style={{
@@ -415,7 +431,7 @@ export default function ContactPage() {
               style={{
                 width: "auto",
                 maxWidth: "100%",
-                margin: "0 -12.5px -20px",
+                margin: "0 0 -20px",
                 color: "#334155",
                 fontFamily: "'Poppins', sans-serif",
                 fontSize: "16px",
@@ -507,10 +523,10 @@ export default function ContactPage() {
                   id="field-project-details"
                   name="project_details"
                   required
-                  rows={5}
+                  rows={3}
                   style={{
                     width: "100%",
-                    minHeight: "120px",
+                    minHeight: "90px",
                     padding: "12px",
                     border: "1px solid #D9D9D9",
                     background: "transparent",
@@ -558,7 +574,7 @@ export default function ContactPage() {
                 />
               </div>
 
-              <div style={{ padding: "0 12.5px" }}>
+              <div style={{ padding: 0 }}>
                 <button
                   type="submit"
                   className="elementor-button elementor-size-sm contact-form-submit"
@@ -595,8 +611,9 @@ export default function ContactPage() {
           .contact-form-section .contact-form-fields {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            column-gap: 0;
+            column-gap: 24px;
           }
+          .contact-form-section .elementor-field-group { padding: 0 !important; }
           .contact-form-section .elementor-field-group-full {
             grid-column: span 2;
           }
@@ -622,6 +639,11 @@ export default function ContactPage() {
             box-shadow: 0 0 0 2px #3DC77A;
             outline: none;
           }
+          @media (max-width: 1024px) {
+            .contact-form-section { padding: 0 30px 0 20px !important; }
+            .contact-form-section .contact-form-inner { min-height: 0 !important; padding: 48px 0 !important; }
+            .contact-form-section #field-project-details { min-height: 70px !important; height: 70px !important; }
+          }
           @media (max-width: 768px) {
             .contact-form-section { padding: 0 15px !important; }
             .contact-form-section .contact-form-inner {
@@ -636,16 +658,12 @@ export default function ContactPage() {
               width: 100% !important;
               padding: 0 6px !important;
             }
-            .contact-form-section .contact-form-fields {
-              grid-template-columns: 1fr !important;
-              margin: 0 0 -20px !important;
-            }
-            .contact-form-section .elementor-field-group {
-              padding: 0 !important;
-            }
-            .contact-form-section .contact-form-submit {
-              width: 100% !important;
-            }
+            .contact-form-section #field-project-details { min-height: 60px !important; height: 60px !important; }
+          }
+          @media (max-width: 639.98px) {
+            .contact-form-section .contact-form-fields { grid-template-columns: 1fr !important; }
+            .contact-form-section .contact-form-submit { width: 100% !important; }
+            .contact-form-section #field-project-details { min-height: 50px !important; height: 50px !important; }
           }
         ` }} />
       </section>
@@ -676,10 +694,10 @@ export default function ContactPage() {
             aria-level={2}
             style={{
               fontFamily: "'Poppins', sans-serif",
-              fontSize: "42px",
+              fontSize: "clamp(26px, 4.5vw, 42px)",
               fontWeight: 700,
               color: "#000000",
-              lineHeight: "52px",
+              lineHeight: 1.25,
               maxWidth: "768px",
               margin: 0,
               padding: 0,
@@ -700,7 +718,7 @@ export default function ContactPage() {
             }}
           >
             Get a free Shopify store audit and we&apos;ll show you exactly where you&apos;re
-            losing revenue.
+            losing revenue. It&apos;s the easiest way to start a Shopify Plus consultation with our team.
           </p>
 
           <Link
@@ -747,6 +765,9 @@ export default function ContactPage() {
               linear-gradient(135deg, #3DC77A 0%, #2A9555 50%, #1F6B3E 100%) border-box !important;
             border: 2px solid transparent !important;
             transform: translateY(-1px);
+          }
+          @media (max-width: 1024px) {
+            .contact-final-cta-section .contact-final-cta-inner { padding: 48px 0 !important; }
           }
           @media (max-width: 768px) {
             .contact-final-cta-section { padding: 0 15px !important; }
