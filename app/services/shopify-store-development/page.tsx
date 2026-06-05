@@ -16,7 +16,7 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
     ),
     quote: (
       <>
-        &ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally — we couldn&apos;t be happier!&rdquo;
+        &ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally. We couldn&apos;t be happier!&rdquo;
       </>
     ),
     avatar: "/images/Sofia_Jimenez.webp",
@@ -67,9 +67,49 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
 const OLIVE_GRADIENT =
   "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)";
 
+const META_DESCRIPTION =
+  "Custom Shopify store development built for speed, scalability, and conversions. 700+ stores launched. Speak with our Shopify experts today.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-store-development";
+
 export const metadata: Metadata = {
-  title: "Custom Shopify Store Development | Ecomm Wizards",
-  description: "Custom Shopify store development built for speed, scalability, and conversions. 700+ stores launched. Speak with our Shopify experts today.",
+  // `absolute` renders the title exactly as written; the root layout applies a
+  // "%s | Ecomm Wizards" template that would otherwise double the brand.
+  title: { absolute: "Custom Shopify Store Development | Ecomm Wizards" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "Shopify store development",
+    "custom Shopify store",
+    "Shopify development agency",
+    "Shopify website development",
+    "Shopify ecommerce development",
+    "build a Shopify store",
+    "Shopify store design and development",
+    "Shopify store setup",
+    "professional Shopify store",
+    "Shopify store developers",
+    "hire Shopify developers",
+    "Shopify Plus store development",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Custom Shopify Store Development | Ecomm Wizards",
+    description: META_DESCRIPTION,
+    images: [
+      {
+        url: "/images/Frame_1000004320.webp",
+        alt: "Custom Shopify store built by the Ecomm Wizards Shopify store development team",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Shopify Store Development | Ecomm Wizards",
+    description: META_DESCRIPTION,
+    images: ["/images/Frame_1000004320.webp"],
+  },
 };
 
 const PROCESS = [
@@ -177,7 +217,7 @@ const FAQS = [
   },
   {
     q: "Can you integrate my existing systems?",
-    a: "Our Shopify ecommerce development agency connects ERP platforms, warehouse tools, POS systems, CRMs, and legacy databases seamlessly.",
+    a: "Yes. Our Shopify ecommerce development agency connects ERP platforms, warehouse tools, POS systems, CRMs, and legacy databases to your store.",
   },
   {
     q: "What if I need changes post-launch?",
@@ -237,7 +277,7 @@ export default function ShopifyStoreDevelopmentPage() {
                   backgroundClip: "text",
                 }}
               >
-                Shopify Development Agency
+                Shopify Store Development
               </span>{" "}
               That Builds High-Converting Stores
             </h1>
@@ -270,45 +310,27 @@ export default function ShopifyStoreDevelopmentPage() {
               conversion-focused built to scale with your brand.
             </p>
 
-            {/* CTA */}
+            {/* CTA — matches the homepage hero button exactly */}
             <div className="mt-8">
               <span
-                className="inline-flex p-[2px] rounded-full"
+                className="group inline-flex p-[2px] rounded-full"
                 style={{ background: OLIVE_GRADIENT }}
               >
                 <Link
                   href="/book-shopify-consultation"
-                  className="ssd-hero-cta group inline-flex items-center gap-2 rounded-full"
-                  style={{
-                    padding: "20px 45px",
-                    fontFamily: "'Poppins', sans-serif",
-                    fontSize: "16px",
-                    color: "#FFFFFF",
-                    lineHeight: 1,
-                    background: "#000000",
-                    transition: "background 0.25s ease, color 0.25s ease",
-                  }}
+                  className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px] h-[52px] sm:px-[45px] sm:py-[20px] sm:h-[60px] text-[15px] sm:text-[16px]"
+                  style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
-                  <span className="ssd-hero-cta-label whitespace-nowrap">
+                  <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">
                     Book a Call
                   </span>
-                  <svg
-                    className="ssd-hero-cta-arrow"
-                    width="18"
-                    height="12"
-                    viewBox="0 0 15 10.55"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55"
-                      stroke="currentColor"
-                      strokeWidth="1.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <Image
+                    src="/images/arrow vector.png"
+                    alt=""
+                    width={16}
+                    height={16}
+                    className="transition-all duration-300 group-hover:brightness-0"
+                  />
                 </Link>
               </span>
             </div>
@@ -368,33 +390,6 @@ export default function ShopifyStoreDevelopmentPage() {
         </div>
 
         <style dangerouslySetInnerHTML={{ __html: `
-          .ssd-hero-cta-label {
-            background-image: ${OLIVE_GRADIENT};
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            transition: color 0.25s ease, background 0.25s ease;
-          }
-          .ssd-hero-cta-arrow {
-            color: #FFFFFF;
-            transition: color 0.25s ease;
-          }
-          .ssd-hero-cta:hover,
-          .ssd-hero-cta:focus-visible {
-            background: #FFFFFF !important;
-            outline: none;
-          }
-          .ssd-hero-cta:hover .ssd-hero-cta-label,
-          .ssd-hero-cta:focus-visible .ssd-hero-cta-label {
-            color: #000000;
-            -webkit-text-fill-color: #000000;
-            background: none;
-          }
-          .ssd-hero-cta:hover .ssd-hero-cta-arrow,
-          .ssd-hero-cta:focus-visible .ssd-hero-cta-arrow {
-            color: #000000;
-          }
-
           /* Tilted grid wrapper — rotates the whole slider +15° clockwise (top leans right) */
           .ssd-hero-tilt {
             position: absolute;
@@ -480,6 +475,49 @@ export default function ShopifyStoreDevelopmentPage() {
             animation-play-state: paused;
           }
 
+          /* Feather all four edges so the cards fade into the black background */
+          .ssd-hero-slider {
+            -webkit-mask-image: radial-gradient(ellipse at center, #000 50%, rgba(0,0,0,0.25) 80%, transparent 100%);
+                    mask-image: radial-gradient(ellipse at center, #000 50%, rgba(0,0,0,0.25) 80%, transparent 100%);
+          }
+
+          /* Small-desktop / large-tablet (1024–1319): the desktop row layout kicks in
+             at lg (1024px) but text 645 + gap 40 + slider 625 (~1310px) is wider than
+             the viewport, so the slider gets clipped on the right. Shrink the heading,
+             columns, and gap so the whole row fits. */
+          @media (min-width: 1024px) and (max-width: 1319.98px) {
+            .ssd-hero-inner { padding: 56px 32px !important; gap: 32px !important; }
+            .ssd-hero-text {
+              max-width: none !important;
+              flex: 1 1 0 !important;
+              min-width: 0 !important;
+            }
+            .ssd-hero-text h1 { font-size: 40px !important; line-height: 1.22 !important; }
+            .ssd-hero-text h2 { font-size: 20px !important; line-height: 1.4 !important; }
+            .ssd-hero-text p { font-size: 14px !important; line-height: 1.65 !important; }
+            .ssd-hero-text .mt-8 { margin-top: 24px !important; }
+            .ssd-hero-slider {
+              flex: 0 1 auto !important;
+              width: 420px !important;
+              height: 340px !important;
+              min-width: 0 !important;
+            }
+            /* Cards 190 × 132 actual → rotated 15° they read ~218 × 177 in DevTools */
+            .ssd-hero-tilt { grid-template-columns: 190px 190px 190px; }
+            .ssd-hero-col { width: 190px; height: 420px; }   /* 3 × 132 + 2 × 12 */
+            .ssd-hero-card { width: 190px; height: 132px; }
+            @keyframes ssdMarqueeUp1024 {
+              0%   { transform: translateY(0); }
+              100% { transform: translateY(-432px); }   /* 3 × (132 + 12) */
+            }
+            @keyframes ssdMarqueeDown1024 {
+              0%   { transform: translateY(-432px); }
+              100% { transform: translateY(0); }
+            }
+            .ssd-hero-marquee-up   { animation-name: ssdMarqueeUp1024; }
+            .ssd-hero-marquee-down { animation-name: ssdMarqueeDown1024; }
+          }
+
           @media (max-width: 1023px) {
             /* Pull text + button off the screen edges */
             .ssd-hero-inner { padding: 28px 20px 44px !important; gap: 28px !important; }
@@ -507,13 +545,7 @@ export default function ShopifyStoreDevelopmentPage() {
               line-height: 26px !important;
               margin-top: 18px !important;
             }
-            /* CTA — spec: 150.93 × 50, 14px Poppins, padding 16px 22px */
             .ssd-hero-text .mt-8 { margin-top: 24px !important; }
-            .ssd-hero-cta {
-              padding: 16px 22px !important;
-              font-size: 14px !important;
-              gap: 8px !important;
-            }
             /* Slider sits below text and stays clear of the side gutter */
             .ssd-hero-slider {
               width: 100% !important;
@@ -526,7 +558,6 @@ export default function ShopifyStoreDevelopmentPage() {
             .ssd-hero-text h1 { font-size: 32px !important; line-height: 42px !important; }
             .ssd-hero-text h2 { font-size: 20px !important; line-height: 30px !important; }
             .ssd-hero-text p  { font-size: 16px !important; line-height: 26px !important; }
-            .ssd-hero-cta     { padding: 16px 22px !important; font-size: 14px !important; }
             .ssd-hero-tilt {
               width: 540px;
               height: 600px;
@@ -562,7 +593,7 @@ export default function ShopifyStoreDevelopmentPage() {
           className="ssd-trust-inner mx-auto"
           style={{
             maxWidth: "1320px",
-            padding: "60px 0",
+            padding: "50px 0",
           }}
         >
           <h2
@@ -570,7 +601,7 @@ export default function ShopifyStoreDevelopmentPage() {
             style={{
               color: "#000000",
               fontFamily: "'Poppins', sans-serif",
-              fontSize: "22px",
+              fontSize: "32px",
               fontWeight: 700,
               lineHeight: 1.45,
               margin: 0,
@@ -620,12 +651,18 @@ export default function ShopifyStoreDevelopmentPage() {
         </div>
 
         <style dangerouslySetInnerHTML={{ __html: `
+          /* Auto-scrolling logo marquee (two identical sets → translateX(-50%) loops seamlessly).
+             Per-item margin (not gap) keeps the loop seamless because every slide, including the
+             boundary one, carries equal spacing. */
           .ssd-trust-track {
             display: flex;
             align-items: center;
-            justify-content: space-around;
-            gap: 24px;
-            width: 100%;
+            width: max-content;
+            animation: ssdTrustScroll 40s linear infinite;
+            will-change: transform;
+          }
+          .ssd-trust-carousel:hover .ssd-trust-track {
+            animation-play-state: paused;
           }
           .ssd-trust-slide {
             flex: 0 0 auto;
@@ -634,6 +671,7 @@ export default function ShopifyStoreDevelopmentPage() {
             justify-content: center;
             width: 178.32px;
             height: 86.04px;
+            margin: 0 32px;
           }
           .ssd-trust-logo {
             width: 178.32px;
@@ -641,34 +679,26 @@ export default function ShopifyStoreDevelopmentPage() {
             object-fit: contain;
             display: block;
           }
-          /* Hide the duplicate set on desktop — only need it for the mobile marquee */
-          .ssd-trust-slide:nth-child(n + 7) { display: none; }
+          @keyframes ssdTrustScroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
 
           @media (max-width: 1023px) {
             .ssd-trust-section { padding: 0 16px; }
             .ssd-trust-inner { padding: 36px 0 !important; }
-            .ssd-trust-heading { font-size: 20px !important; }
+            .ssd-trust-heading { font-size: 24px !important; }
             .ssd-trust-carousel { margin-top: 24px !important; }
-            /* Show all (originals + dupes) and run an auto-scroll marquee */
-            .ssd-trust-slide:nth-child(n + 7) { display: flex !important; }
-            .ssd-trust-track {
-              width: max-content;
-              justify-content: flex-start;
-              gap: 32px;
-              animation: ssdTrustScroll 28s linear infinite;
-            }
+            .ssd-trust-track { animation-duration: 28s; }
             /* Per inspector: each logo on mobile is 174.99 × 84.44 */
             .ssd-trust-slide {
               width: 174.99px;
               height: 84.44px;
+              margin: 0 16px;
             }
             .ssd-trust-logo {
               width: 174.99px;
               height: 84.44px;
-            }
-            @keyframes ssdTrustScroll {
-              0%   { transform: translateX(0); }
-              100% { transform: translateX(-50%); }
             }
           }
         ` }} />
@@ -697,7 +727,7 @@ export default function ShopifyStoreDevelopmentPage() {
               fontSize: "42px",
               fontWeight: 700,
               lineHeight: "52px",
-              margin: "0 auto 28px",
+              margin: "0 auto 24px",
               maxWidth: "924px",
             }}
           >
@@ -711,7 +741,7 @@ export default function ShopifyStoreDevelopmentPage() {
               fontFamily: "'Poppins', sans-serif",
               fontSize: "18px",
               lineHeight: "28px",
-              margin: "0 auto 31.5px",
+              margin: "0 auto 24px",
               maxWidth: "1320px",
             }}
           >
@@ -730,8 +760,8 @@ export default function ShopifyStoreDevelopmentPage() {
           @media (max-width: 1023px) {
             .ssd-what-section { padding: 44px 20px !important; }
             .ssd-what-heading {
-              font-size: 30px !important;     /* per inspector: 400 × 120, 30px Poppins */
-              line-height: 40px !important;
+              font-size: 32px !important;
+              line-height: 42px !important;
               margin: 0 auto 24px !important;
             }
             .ssd-what-desc {
@@ -838,14 +868,22 @@ export default function ShopifyStoreDevelopmentPage() {
                 {/* Static divider */}
                 <hr className="ssd-who-stat-divider" />
 
-                {/* Static logo row */}
+                {/* Logo marquee — auto-scrolls, pauses on hover */}
                 <div className="ssd-who-stat-logos">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/partner_logo_7.svg" alt="Okendo"  className="ssd-who-stat-logo" />
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/partner_logo_6.svg" alt="Gorgias" className="ssd-who-stat-logo" />
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/partner_logo_5.svg" alt="Klaviyo" className="ssd-who-stat-logo" />
+                  <div className="ssd-who-stat-logos-track">
+                    {(() => {
+                      const logos = [
+                        { src: "/images/partner_logo_7.svg", alt: "Okendo" },
+                        { src: "/images/partner_logo_6.svg", alt: "Gorgias" },
+                        { src: "/images/partner_logo_5.svg", alt: "Klaviyo" },
+                      ];
+                      // 4 copies → each -50% half overflows the card, so the loop is seamless
+                      return [...logos, ...logos, ...logos, ...logos].map((l, i) => (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img key={i} src={l.src} alt={i < 3 ? l.alt : ""} className="ssd-who-stat-logo" loading="lazy" decoding="async" />
+                      ));
+                    })()}
+                  </div>
                 </div>
               </div>
             </div>
@@ -886,7 +924,7 @@ export default function ShopifyStoreDevelopmentPage() {
             font-size: 40px;
             font-weight: 700;
             line-height: 50px;
-            margin: 0 0 32px;
+            margin: 0 0 24px;
             max-width: 590px;
           }
           .ssd-who-items {
@@ -932,7 +970,7 @@ export default function ShopifyStoreDevelopmentPage() {
           }
 
           /* ── CTA (287.59 × 60, padding 20 45, #000 / #FFF) ──────────── */
-          .ssd-who-cta-wrap { margin-top: 28px; }
+          .ssd-who-cta-wrap { margin-top: 24px; }
           .ssd-who-cta {
             display: inline-flex;
             align-items: center;
@@ -1045,19 +1083,33 @@ export default function ShopifyStoreDevelopmentPage() {
             width: 100%;
           }
 
-          /* Static logo row */
+          /* Logo marquee (two identical halves → translateX(-50%) loops seamlessly).
+             Per-item margin keeps the loop seamless across the boundary. */
           .ssd-who-stat-logos {
+            width: 100%;
+            overflow: hidden;
+          }
+          .ssd-who-stat-logos-track {
             display: flex;
             align-items: center;
-            justify-content: space-around;
-            gap: 16px;
-            width: 100%;
+            width: max-content;
+            animation: ssdWhoLogosScroll 20s linear infinite;
+            will-change: transform;
+          }
+          .ssd-who-stat-card:hover .ssd-who-stat-logos-track {
+            animation-play-state: paused;
           }
           .ssd-who-stat-logo {
+            flex: 0 0 auto;
             height: 32px;
             max-width: 150px;
             object-fit: contain;
             display: block;
+            margin: 0 28px;
+          }
+          @keyframes ssdWhoLogosScroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
           }
 
           /* Slide timing: 4 unique + 1 dup = 5 stops over 24s.
@@ -1068,6 +1120,20 @@ export default function ShopifyStoreDevelopmentPage() {
             42%,  58% { transform: translateX(-40%); }
             62%,  78% { transform: translateX(-60%); }
             82%, 100% { transform: translateX(-80%); }
+          }
+
+          /* Small-desktop / large-tablet (1024–1319): the fixed 590px stat card +
+             default min-width:auto pins the right column to its 650px max and starves
+             the left. min-width:0 lets both shrink to equal halves; the card fills its
+             column instead of forcing 590px. */
+          @media (min-width: 1024px) and (max-width: 1319.98px) {
+            .ssd-who-left,
+            .ssd-who-right {
+              flex: 1 1 0 !important;
+              min-width: 0 !important;
+              max-width: none !important;
+            }
+            .ssd-who-stat-card { width: 100% !important; }
           }
 
           /* ── Tablet & mobile ────────────────────────────────────────── */
@@ -1201,9 +1267,10 @@ export default function ShopifyStoreDevelopmentPage() {
               <div className="ssd-process-image-wrap">
                 <Image
                   src="/images/olaplex-px-new-2.webp"
-                  alt="Shopify development workflow — design, code, and launch"
+                  alt="Shopify store development workflow: design, build, and launch"
                   width={630}
                   height={678}
+                  sizes="(max-width: 1023px) 100vw, 630px"
                   className="ssd-process-image"
                 />
               </div>
@@ -1450,7 +1517,7 @@ export default function ShopifyStoreDevelopmentPage() {
           color: "#334155",
           fontFamily: "'Poppins', sans-serif",
           fontSize: "16px",
-          padding: "80px 20px",
+          padding: "53px 20px",
         }}
       >
         <div
@@ -1459,7 +1526,17 @@ export default function ShopifyStoreDevelopmentPage() {
         >
           {/* Heading */}
           <h2 className="ssd-why-heading">
-            Why Brands Choose Ecomm Wizards for Shopify Development
+            Why Brands Choose Ecomm Wizards for{" "}
+            <span
+              style={{
+                background: OLIVE_GRADIENT,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              Shopify Development
+            </span>
           </h2>
 
           {/* Top description */}
@@ -1477,9 +1554,9 @@ export default function ShopifyStoreDevelopmentPage() {
                 title: "Brand-First Design That Converts",
                 desc: (
                   <>
-                    Every UX/UI element is crafted to reflect your brand identity
+                    Every UX/UI element is built to reflect your brand identity
                     and guide customers toward purchase. Our Shopify website
-                    development agency focuses on seamless cross-device
+                    development agency focuses on cross-device
                     experiences that consistently deliver{" "}
                     <span className="ssd-why-hl">25%+ higher conversion rates</span>{" "}
                     compared to generic themes.
@@ -1584,7 +1661,7 @@ export default function ShopifyStoreDevelopmentPage() {
                     Dedicated Slack channels, weekly strategy calls, and
                     post-launch speed optimizations that deliver{" "}
                     <span className="ssd-why-hl">52% faster load times</span>. We
-                    don&apos;t disappear after launch — we continuously improve
+                    don&apos;t disappear after launch. We continuously improve
                     your store&apos;s performance.
                   </>
                 ),
@@ -1635,12 +1712,23 @@ export default function ShopifyStoreDevelopmentPage() {
 
           {/* CTA */}
           <div className="ssd-why-cta-wrap">
-            <Link href="/book-shopify-consultation" className="ssd-why-cta">
-              <span className="ssd-why-cta-label">Book a Call</span>
-              <svg className="ssd-why-cta-arrow" width="18" height="13" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
+            <span
+              className="group inline-flex p-[2px] rounded-full"
+              style={{ background: OLIVE_GRADIENT }}
+            >
+              <Link
+                href="/book-shopify-consultation"
+                className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px]"
+                style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600 }}
+              >
+                <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Book a Call</span>
+                <span className="text-white group-hover:text-black transition-colors duration-300">
+                  <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+                    <path d="M1 7h15M10 1l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </Link>
+            </span>
           </div>
         </div>
 
@@ -1661,7 +1749,7 @@ export default function ShopifyStoreDevelopmentPage() {
             font-size: 18px;
             line-height: 28px;
             text-align: center;
-            margin: 0 auto 56px;
+            margin: 0 auto 24px;
             max-width: 980px;
           }
 
@@ -1670,7 +1758,7 @@ export default function ShopifyStoreDevelopmentPage() {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            margin: 0 0 56px;
+            margin: 0 0 30px;
           }
           .ssd-why-card {
             position: relative;
@@ -1708,7 +1796,7 @@ export default function ShopifyStoreDevelopmentPage() {
             justify-content: center;
             width: 56px;
             height: 56px;
-            margin-bottom: 22px;
+            margin-bottom: 10px;
             color: #4FB872;
             background-image: linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%);
             -webkit-background-clip: text;
@@ -1718,7 +1806,7 @@ export default function ShopifyStoreDevelopmentPage() {
           .ssd-why-card-title {
             color: #FFFFFF;
             font-family: 'Poppins', sans-serif;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
             line-height: 30px;
             margin: 0 0 14px;
@@ -1744,81 +1832,39 @@ export default function ShopifyStoreDevelopmentPage() {
             font-size: 18px;
             line-height: 28px;
             text-align: center;
-            margin: 20px auto 36px;
-            max-width: 1202.78px;
+            margin: 20px auto 20px;
+            max-width: 1100px;
           }
 
-          /* CTA: 211.05 × 56, padding 18 × 40, black bg with WHITE border, white text.
-             On hover: full WHITE bg, olive-green gradient text + arrow. */
+          /* CTA — matches the CRO "Why Us" button (gradient ring, black→white on hover) */
           .ssd-why-cta-wrap {
             display: flex;
             justify-content: center;
           }
-          .ssd-why-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 16px 38px;       /* 2px shaved each side; 2px white border restores 211.05 × 56 */
-            background: #000000;
-            color: #FFFFFF;
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            line-height: 1;
-            border: 2px solid #FFFFFF;
-            border-radius: 999px;
-            text-decoration: none;
-            transition: background 0.3s ease, border-color 0.3s ease;
-          }
-          .ssd-why-cta-label {
-            color: #FFFFFF;
-            transition: color 0.3s ease;
-          }
-          .ssd-why-cta-arrow {
-            color: #FFFFFF;
-            transition: color 0.3s ease;
-          }
-          .ssd-why-cta:hover,
-          .ssd-why-cta:focus-visible {
-            outline: none;
-            background: #FFFFFF;
-            border-color: #FFFFFF;
-          }
-          .ssd-why-cta:hover .ssd-why-cta-label,
-          .ssd-why-cta:focus-visible .ssd-why-cta-label {
-            background-image: linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-          }
-          .ssd-why-cta:hover .ssd-why-cta-arrow,
-          .ssd-why-cta:focus-visible .ssd-why-cta-arrow {
-            color: #2A9555;
-          }
 
           /* Tablet & mobile */
           @media (max-width: 1023px) {
-            .ssd-why-section { padding: 56px 20px !important; }
-            .ssd-why-heading { font-size: 30px !important; line-height: 40px !important; margin-bottom: 18px !important; }
-            .ssd-why-desc { font-size: 16px !important; line-height: 26px !important; margin-bottom: 36px !important; }
+            .ssd-why-section { padding: 53px 20px !important; }
+            .ssd-why-heading { font-size: 30px !important; line-height: 40px !important; margin-bottom: 16px !important; }
+            .ssd-why-desc { font-size: 16px !important; line-height: 26px !important; margin-bottom: 16px !important; }
             .ssd-why-grid {
               grid-template-columns: repeat(2, 1fr) !important;
               gap: 16px !important;
-              margin-bottom: 36px !important;
+              margin-bottom: 20px !important;
             }
             .ssd-why-card { padding: 24px !important; min-height: 0 !important; }
             .ssd-why-card-title { font-size: 19px !important; line-height: 26px !important; }
             .ssd-why-card-desc  { font-size: 14px !important; line-height: 22px !important; }
             .ssd-why-closing { font-size: 16px !important; line-height: 26px !important; margin-bottom: 24px !important; }
-            .ssd-why-cta { padding: 14px 32px !important; font-size: 14px !important; }
           }
           @media (max-width: 640px) {
-            .ssd-why-section { padding: 44px 16px !important; }
-            .ssd-why-grid { grid-template-columns: 1fr !important; }
-            .ssd-why-heading { font-size: 26px !important; line-height: 34px !important; }
+            .ssd-why-section { padding: 20px 18px !important; }
+            .ssd-why-grid { grid-template-columns: 1fr !important; margin-bottom: 10px !important; }
+            .ssd-why-heading { font-size: 26px !important; line-height: 34px !important; margin-bottom: 10px !important; }
             .ssd-why-desc { font-size: 15px !important; line-height: 24px !important; }
             .ssd-why-card { padding: 22px 20px !important; }
+            .ssd-why-closing { margin-bottom: 10px !important; }
             .ssd-why-icon { width: 48px; height: 48px; margin-bottom: 16px; }
-            .ssd-why-cta { width: 100% !important; max-width: 320px; justify-content: center !important; }
           }
         ` }} />
 
@@ -1870,19 +1916,19 @@ export default function ShopifyStoreDevelopmentPage() {
           <div className="ssd-results-cards">
             {[
               {
-                quote: "Elegant custom store with Recharge and Klaviyo— “Top-notch experience from start to finish!”",
+                quote: "Elegant custom store with Recharge and Klaviyo. “Top-notch experience from start to finish!”",
                 logo: "/images/Frame_1000007615.webp",
                 logoAlt: "EBY",
                 person: "Sofia Vergara, Marketing Manager",
               },
               {
-                quote: "Sophisticated site with AI and Swatch King— “Efficient workflow and professional execution.”",
+                quote: "Sophisticated site with AI and Swatch King. “Efficient workflow and professional execution.”",
                 logo: "/images/Frame_1000007615-1.avif",
                 logoAlt: "The Harvard Shop",
                 person: "Daniyal S.",
               },
               {
-                quote: "Dynamic, personalized build with Rebuy and Subtract—resulting in exceptional communication and results.",
+                quote: "Dynamic, personalized build with Rebuy and Subtract, resulting in exceptional communication and results.",
                 logo: "/images/Frame_1000007615-2.avif",
                 logoAlt: "BARK",
                 person: "Nari Sitaraman, CTO",
@@ -1892,7 +1938,7 @@ export default function ShopifyStoreDevelopmentPage() {
                 <p className="ssd-results-card-quote">{c.quote}</p>
                 <div className="ssd-results-card-logo">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={c.logo} alt={c.logoAlt} />
+                  <img src={c.logo} alt={`${c.logoAlt} Shopify store built by Ecomm Wizards`} loading="lazy" decoding="async" />
                 </div>
                 <p className="ssd-results-card-person">{c.person}</p>
               </div>
@@ -2211,6 +2257,27 @@ export default function ShopifyStoreDevelopmentPage() {
         ` }} />
       </section>
 
+      {/* Breadcrumb structured data — Services › Shopify Store Development */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+              { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "Shopify Store Development",
+                item: "https://ecommwizards.com/services/shopify-store-development",
+              },
+            ],
+          }),
+        }}
+      />
+
       {/* FAQ structured data — applies only to this page */}
       <script
         type="application/ld+json"
@@ -2257,8 +2324,10 @@ export default function ShopifyStoreDevelopmentPage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/faqs-test-drive.webp"
-                  alt="Customer support team available to help"
+                  alt="Ecomm Wizards Shopify store development team ready to answer your questions"
                   className="ssd-faq-image"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="ssd-faq-cta-row">

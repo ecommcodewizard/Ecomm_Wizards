@@ -46,6 +46,11 @@ const nextConfig: NextConfig = {
         destination: "/services/headless-shopify-agency",
         permanent: true,
       },
+      {
+        source: "/shopify-store-development",
+        destination: "/services/shopify-store-development",
+        permanent: true,
+      },
     ];
   },
 };

@@ -25,7 +25,7 @@ const NAV: NavItem[] = [
     label: "Build",
     children: [
       { label: "Shopify Development Agency", href: "/services/shopify-development-agency", description: "Custom builds, Shopify Plus & migrations" },
-      { label: "New Shopify Store",     href: "/shopify-store-development",     description: "Launch a high-converting store from scratch" },
+      { label: "New Shopify Store",     href: "/services/shopify-store-development",     description: "Launch a high-converting store from scratch" },
       { label: "Theme Development",     href: "/services/shopify-theme-development", description: "Custom Liquid themes built to your brand" },
       { label: "Shopify 2.0",           href: "/shopify-2-0-development",       description: "Leverage the latest Shopify architecture" },
       { label: "Shopify Plus",          href: "/services/shopify-plus-development",      description: "Enterprise-grade builds on Plus" },

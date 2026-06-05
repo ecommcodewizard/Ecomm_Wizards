@@ -13,7 +13,7 @@ const CITIES = [
 ];
 
 const SERVICE_TAGS = [
-  { label: "Build a New Shopify Store",        href: "/shopify-store-development" },
+  { label: "Build a New Shopify Store",        href: "/services/shopify-store-development" },
   { label: "Shopify Theme Customizations",     href: "/shopify-theme-development" },
   { label: "Shopify Audit",                    href: "/shopify-store-audit" },
   { label: "Convert Figma to Shopify",         href: "/figma-to-shopify-conversion" },
@@ -21,7 +21,7 @@ const SERVICE_TAGS = [
   { label: "ERP Connections to Shopify",       href: "/services/shopify-integration-services" },
   { label: "Shopify App Development",          href: "/shopify-app-development" },
   { label: "Mobile App Development",           href: "/shopify-mobile-app-development" },
-  { label: "On Demand Dev with Bulk Hours",    href: "/shopify-store-development" },
+  { label: "On Demand Dev with Bulk Hours",    href: "/services/shopify-store-development" },
   { label: "Site Speed Optimizations",         href: "/shopify-speed-optimization" },
   { label: "Point of Sale (POS) for Business", href: "/shopify-pos-setup" },
   { label: "A/B Testing for CRO, AOV & CLV",  href: "/a-b-testing" },

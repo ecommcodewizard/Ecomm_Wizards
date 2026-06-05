@@ -44,7 +44,7 @@ const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.S
   { path: "/services/shopify-integration-services", priority: 0.7, changeFrequency: "monthly" },
 
   // Standalone service / topic pages
-  { path: "/shopify-store-development", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/services/shopify-store-development", priority: 0.8, changeFrequency: "monthly" },
   { path: "/shopify-app-development", priority: 0.8, changeFrequency: "monthly" },
   { path: "/shopify-mobile-app-development", priority: 0.7, changeFrequency: "monthly" },
   { path: "/shopify-b2b-store-setup", priority: 0.7, changeFrequency: "monthly" },

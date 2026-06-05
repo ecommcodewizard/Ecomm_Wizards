@@ -88,7 +88,7 @@ const SERVICES = [
   {
     title: "Shopify Store Development",
     desc: "Custom themes, Shopify Plus, headless storefronts, built from strategy to launch.",
-    href: "/shopify-store-development",
+    href: "/services/shopify-store-development",
   },
   {
     title: "Store Migration",
