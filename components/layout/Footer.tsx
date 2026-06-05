@@ -24,7 +24,7 @@ const SERVICE_TAGS = [
   { label: "On Demand Dev with Bulk Hours",    href: "/services/shopify-store-development" },
   { label: "Site Speed Optimizations",         href: "/shopify-speed-optimization" },
   { label: "Point of Sale (POS) for Business", href: "/services/shopify-pos-setup" },
-  { label: "A/B Testing for CRO, AOV & CLV",  href: "/a-b-testing" },
+  { label: "A/B Testing for CRO, AOV & CLV",  href: "/services/a-b-testing" },
   { label: "B2B Solutions",                    href: "/services/shopify-b2b-store-setup" },
   { label: "Shopify SEO Agency",               href: "/services/shopify-seo-agency" },
   { label: "Book a Demo",                      href: "/book-shopify-consultation" },

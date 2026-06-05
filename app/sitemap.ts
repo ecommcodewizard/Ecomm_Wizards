@@ -55,7 +55,7 @@ const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.S
   { path: "/shopify-integrations-erp-crm-3pl-etc", priority: 0.6, changeFrequency: "monthly" },
   { path: "/erp-connections-to-shopify", priority: 0.6, changeFrequency: "monthly" },
   { path: "/liquid-to-shopify-hydrogen", priority: 0.6, changeFrequency: "monthly" },
-  { path: "/a-b-testing", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/services/a-b-testing", priority: 0.6, changeFrequency: "monthly" },
 
   // Migration / platform-to-Shopify
   { path: "/migration", priority: 0.7, changeFrequency: "monthly" },

@@ -4,10 +4,56 @@ import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ABTestingFAQ from "@/components/sections/ABTestingFAQ";
 
+const META_DESCRIPTION =
+  "Shopify A/B testing run by Shoplift Certified experts. We design, launch, and analyze high-impact tests that lift your CVR, RPV, and AOV with real statistical proof.";
+const CANONICAL_URL = "https://ecommwizards.com/services/a-b-testing";
+
 export const metadata: Metadata = {
-  title: "Shopify A/B Testing That Actually Moves the Needle | Ecomm Wizards",
-  description:
-    "Ecomm Wizards designs, launches, and runs high-impact A/B testing on Shopify Plus using Shoplift — every layout tweak, headline swap, and checkout change backed by real data.",
+  // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
+  // template would otherwise append the brand to this custom title.
+  title: { absolute: "Shopify A/B Testing Agency | Shoplift Certified Experts" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify a/b testing",
+    "shopify a/b testing agency",
+    "shopify ab testing",
+    "shopify cro",
+    "shoplift a/b testing",
+    "shopify conversion rate optimization",
+    "a/b testing for ecommerce",
+    "shopify split testing",
+    "shopify experimentation",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify A/B Testing Agency | Shoplift Certified Experts",
+    description: META_DESCRIPTION,
+    images: [
+      {
+        url: "/images/ab-testing-hero.webp",
+        alt: "Shopify A/B testing dashboard comparing variant performance with Shoplift",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify A/B Testing Agency | Shoplift Certified Experts",
+    description: META_DESCRIPTION,
+    images: ["/images/ab-testing-hero.webp"],
+  },
+};
+
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Shopify A/B Testing", item: CANONICAL_URL },
+  ],
 };
 
 const GRADIENT_TEXT = {
@@ -85,19 +131,19 @@ const WHY_SHOPLIFT = [
 
 const TESTIMONIAL_CARDS = [
   {
-    text: "Elegant custom store with Recharge and Klaviyo— “Top-notch experience from start to finish!”",
+    text: "Elegant custom store with Recharge and Klaviyo. “Top-notch experience from start to finish!”",
     logo: "/images/Frame_1000007615.webp",
     logoAlt: "EBY",
     name: "Sofia Vergara, Marketing Manager",
   },
   {
-    text: "Sophisticated site with AI and Swatch King— “Efficient workflow and professional execution.”",
+    text: "Sophisticated site with AI and Swatch King. “Efficient workflow and professional execution.”",
     logo: "/images/Frame_1000007615-1.avif",
     logoAlt: "The Harvard Shop",
     name: "Daniyal S.",
   },
   {
-    text: "Dynamic, personalized build with Rebuy and Subtract—resulting in exceptional communication and results.",
+    text: "Dynamic, personalized build with Rebuy and Subtract, resulting in exceptional communication and results.",
     logo: "/images/Frame_1000007615-2.avif",
     logoAlt: "BARK",
     name: "Nari Sitaraman, CTO",
@@ -107,7 +153,7 @@ const TESTIMONIAL_CARDS = [
 const TEST_DRIVE_STEPS = [
   {
     title: "Strategy Sprint:",
-    desc: " Ecomm Wizards runs a focused strategy session to identify your single highest leverage test. We define the success metric, set guardrails, and align on what \"winning\" looks like before a single pixel moves. This is Shopify A/B testing done with intent, not random experiments thrown at the wall.",
+    desc: " Ecomm Wizards runs a focused strategy session to identify your single highest impact test. We define the success metric, set guardrails, and align on what \"winning\" looks like before a single pixel moves. This is Shopify A/B testing done with intent, not random experiments thrown at the wall.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-6 w-6">
         <path d="M9 18h6M10 21h4" strokeLinecap="round" />
@@ -295,7 +341,7 @@ const AB_FAQS = [
   {
     question: "What about statistical rigor?",
     answer:
-      "Every test uses pre-calculated sample sizes and both Bayesian and frequentist significance models. No peeking, no false winners — only deployments backed by real math.",
+      "Every test uses pre-calculated sample sizes and both Bayesian and frequentist significance models. No peeking, no false winners, only deployments backed by real math.",
   },
   {
     question: "How deep is the reporting?",
@@ -305,9 +351,19 @@ const AB_FAQS = [
   {
     question: "What is the standard trial?",
     answer:
-      "Most brands get 14 days through the Shopify App Store. Our clients get 30 days with priority onboarding — double the runway to validate your first test before committing a cent.",
+      "Most brands get 14 days through the Shopify App Store. Our clients get 30 days with priority onboarding, double the runway to validate your first test before committing a cent.",
   },
 ];
+
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: AB_FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
+};
 
 const CASE_STUDIES: CaseStudySlide[] = [
   {
@@ -315,7 +371,7 @@ const CASE_STUDIES: CaseStudySlide[] = [
     image: "/images/Frame_1000004320.webp",
     apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/klaviyo.svg", "/images/yotpo.svg"],
     headline: (<>An elegant <strong>Shopify Store</strong> designed and built for <strong>EBY</strong> by <strong>Sofia Vergara</strong></>),
-    quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally — we couldn&apos;t be happier!&rdquo;</>),
+    quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally. We couldn&apos;t be happier!&rdquo;</>),
     avatar: "/images/eby_dce31a54-eb36-409c-a8d7-e22fd8297de3_medium.webp",
     name: "EBY by Sofia Vergara",
     role: "Marketing Manager",
@@ -345,29 +401,32 @@ const CASE_STUDIES: CaseStudySlide[] = [
 export default function ABTestingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
+      />
       {/* 1 — HERO */}
       <section className="relative overflow-hidden" style={{ background: "#000000", fontFamily: "'Poppins', sans-serif" }}>
-        <div className="mx-auto grid items-center gap-8 px-[15px] pt-14 pb-10 sm:gap-10 sm:px-5 sm:pt-28 sm:pb-24 lg:grid-cols-[1.05fr_1fr] lg:gap-12" style={{ maxWidth: "var(--container-max)" }}>
+        <div className="mx-auto grid items-center gap-8 px-[15px] pt-14 pb-10 sm:gap-10 sm:px-5 md:px-[20px] sm:pt-[60px] sm:pb-[60px] lg:grid-cols-[1.05fr_1fr] lg:gap-12 lg:px-[20px]" style={{ maxWidth: "var(--container-max)" }}>
           <div>
-            <h1 className="font-bold text-white text-[34px] leading-[42px] sm:text-[44px] sm:leading-[54px] lg:text-[52px] lg:leading-[62px]">
+            <h1 className="font-bold text-white text-[34px] leading-[42px] sm:text-[44px] sm:leading-[54px] lg:text-[48px] lg:leading-[58px]">
               Shopify <span style={GRADIENT_TEXT}>A/B Testing</span> That Actually Moves the Needle.
             </h1>
-            <p className="mt-6 max-w-2xl text-[14.5px] leading-[26px] text-white/75 sm:text-[15px]">
+            <p className="mt-6 max-w-2xl text-[14.5px] leading-[26px] text-white sm:text-[15px]">
               Ecomm Wizards designs, launches, and runs high impact <strong className="font-semibold text-white">A/B testing on Shopify</strong> Plus using Shoplift, the only Shopify Plus Certified testing app, so every layout tweak, headline swap, and checkout change is backed by real data, not gut feelings. <strong className="font-semibold text-white">best A/B testing tools for ecommerce personalization</strong> with conversion expertise to lift your CVR, RPV, and AOV. No more hoping a new banner works. No more copying what your competitor did last month. Just clean, statistically valid tests that tell you exactly what your customers want and how to give it to them.
             </p>
-            <div className="mt-8">
+            <div className="mt-8 inline-flex p-[2px] rounded-full" style={{ background: "var(--brand-gradient)" }}>
               <Link
                 href="/book-shopify-consultation"
-                className="flex w-full items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold text-white transition-all sm:inline-flex sm:w-auto"
-                style={{
-                  border: "1.5px solid transparent",
-                  borderRadius: "var(--radius-full)",
-                  background:
-                    "linear-gradient(#000000,#000000) padding-box, var(--brand-gradient) border-box",
-                }}
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-black hover:bg-white transition-all duration-300 px-[28px] py-[16px] sm:px-[40px] sm:py-[20px] text-[15px] sm:text-[16px]"
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}
               >
-                Start the A/B Test Drive
-                <svg width="16" height="12" viewBox="0 0 15 10.55" fill="none">
+                <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Start the A/B Test Drive</span>
+                <svg width="18" height="13" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white group-hover:text-black transition-colors duration-300">
                   <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </Link>
@@ -375,20 +434,21 @@ export default function ABTestingPage() {
           </div>
           <div className="relative">
             <Image
-              src="/images/Group_1000004402.webp"
-              alt="A/B testing Shopify variant with Shoplift integration"
-              width={1200}
-              height={950}
+              src="/images/ab-testing-hero.webp"
+              alt="Shopify A/B testing dashboard comparing variant performance with Shoplift"
+              width={1400}
+              height={1109}
               className="h-auto w-full"
               priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
         </div>
       </section>
 
       {/* 2 — WHY START NOW */}
-      <section className="bg-white py-10 sm:py-20 lg:py-24" style={{ fontFamily: "'Poppins', sans-serif" }}>
-        <div className="mx-auto grid items-center gap-8 px-[15px] sm:gap-10 sm:px-5 lg:grid-cols-2 lg:gap-16" style={{ maxWidth: "var(--container-max)" }}>
+      <section className="bg-white py-10 sm:py-20 lg:py-[60px]" style={{ fontFamily: "'Poppins', sans-serif" }}>
+        <div className="mx-auto grid items-center gap-8 px-[15px] sm:gap-10 sm:px-5 md:px-[20px] lg:px-[20px] lg:grid-cols-2 lg:gap-16" style={{ maxWidth: "var(--container-max)" }}>
           <div>
             <Image
               src="/images/Group_1000004415.webp"
@@ -402,9 +462,9 @@ export default function ABTestingPage() {
             <h2 className="font-bold text-[28px] leading-[36px] sm:text-[36px] sm:leading-[46px] lg:text-[42px] lg:leading-[52px]" style={{ color: "#000000" }}>
               Why Start Shopify A/B Testing Now?
             </h2>
-            <div className="mt-6 space-y-5 sm:mt-8 sm:space-y-7">
+            <div className="mt-6 space-y-5 sm:mt-6 sm:space-y-5">
               {PAIN_POINTS.map((p) => (
-                <div key={p.title} className="border-t border-slate-200 pt-5 sm:pt-6">
+                <div key={p.title} className="border-t border-slate-200 pt-5">
                   {/* Mobile: icon-left, title beside, body wraps under title */}
                   <div className="flex items-start gap-3 lg:hidden">
                     <span className="shrink-0" style={{ color: "#334155" }}>{p.icon}</span>
@@ -432,18 +492,18 @@ export default function ABTestingPage() {
       </section>
 
       {/* 3 — WHY SHOPLIFT */}
-      <section className="py-10 sm:py-20 lg:py-24" style={{ background: "#000000", fontFamily: "'Poppins', sans-serif" }}>
-        <div className="mx-auto px-[15px] sm:px-5" style={{ maxWidth: "var(--container-max)" }}>
-          <h2 className="mx-auto max-w-3xl text-center font-bold text-white text-[28px] leading-[36px] sm:text-[36px] sm:leading-[46px] lg:text-[42px] lg:leading-[52px]">
+      <section className="py-10 sm:py-20 lg:py-[60px]" style={{ background: "#000000", fontFamily: "'Poppins', sans-serif" }}>
+        <div className="mx-auto px-[15px] sm:px-5 md:px-[20px] lg:px-[20px]" style={{ maxWidth: "var(--container-max)" }}>
+          <h2 className="mx-auto max-w-3xl lg:max-w-none lg:whitespace-nowrap text-center font-bold text-white text-[28px] leading-[36px] sm:text-[36px] sm:leading-[46px] lg:text-[42px] lg:leading-[52px]">
             Why Shoplift, and Why with Ecomm Wizards?
           </h2>
           <div className="mt-8 grid gap-5 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-5">
             {WHY_SHOPLIFT.map((c) => (
               <div key={c.title} className="flex flex-col rounded-[14px] p-6 sm:p-7" style={{ background: "#121212", border: "1px solid rgba(255,255,255,0.06)" }}>
                 <h3 className="text-[19px] font-semibold leading-snug text-white sm:text-[20px]">{c.title}</h3>
-                <p className="mt-3 text-[13.5px] leading-[22px] text-white/65 sm:mt-4">{c.desc}</p>
+                <p className="mt-3 text-[13.5px] leading-[22px] text-white sm:mt-4">{c.desc}</p>
                 <div className="mt-5 sm:mt-6">
-                  <Image src={c.image} alt="" width={460} height={320} className="h-auto w-full rounded-[10px]" />
+                  <Image src={c.image} alt={`Shopify A/B testing with Shoplift: ${c.title.replace(/\.+$/, "")}`} width={460} height={320} className="h-auto w-full rounded-[10px]" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
                 </div>
               </div>
             ))}
@@ -472,7 +532,7 @@ export default function ABTestingPage() {
                 <p className="ssd-results-card-quote">{t.text}</p>
                 <div className="ssd-results-card-logo">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={t.logo} alt={t.logoAlt} />
+                  <img src={t.logo} alt={`${t.logoAlt} Shopify A/B testing client`} loading="lazy" decoding="async" />
                 </div>
                 <p className="ssd-results-card-person">{t.name}</p>
               </div>
@@ -483,8 +543,8 @@ export default function ABTestingPage() {
       </section>
 
       {/* 5 — THE A/B TEST DRIVE */}
-      <section className="py-10 sm:py-20 lg:py-24" style={{ background: "#ffffff", fontFamily: "'Poppins', sans-serif" }}>
-        <div className="mx-auto px-[15px] sm:px-5" style={{ maxWidth: "var(--container-max)" }}>
+      <section className="py-10 sm:py-20 lg:py-[60px]" style={{ background: "#ffffff", fontFamily: "'Poppins', sans-serif" }}>
+        <div className="mx-auto px-[15px] sm:px-5 md:px-[20px] lg:px-[20px]" style={{ maxWidth: "var(--container-max)" }}>
           <h2 className="text-center font-bold text-[28px] leading-[36px] sm:text-[36px] sm:leading-[46px] lg:text-[42px] lg:leading-[52px]" style={{ color: "#000000" }}>
             The A/B Test Drive
           </h2>
@@ -493,7 +553,7 @@ export default function ABTestingPage() {
               <h3 className="text-[20px] font-bold leading-snug sm:text-[26px]" style={{ color: "#000000" }}>
                 What you get (60–90 minutes to kickoff)
               </h3>
-              <div className="mt-5 space-y-5 sm:mt-7 sm:space-y-6">
+              <div className="mt-5 space-y-5 sm:mt-7">
                 {TEST_DRIVE_STEPS.map((s) => (
                   <div key={s.title} className="border-t pt-4 sm:pt-5" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
                     <div className="flex gap-3 sm:gap-4">
@@ -520,8 +580,8 @@ export default function ABTestingPage() {
       </section>
 
       {/* 6 — OUR GUARANTEE */}
-      <section className="py-10 sm:py-20 lg:py-24" style={{ background: "#FBF7ED", fontFamily: "'Poppins', sans-serif" }}>
-        <div className="mx-auto grid items-center gap-8 px-[15px] sm:gap-10 sm:px-5 lg:grid-cols-2 lg:gap-16" style={{ maxWidth: "var(--container-max)" }}>
+      <section className="py-10 sm:py-20 lg:py-[60px]" style={{ background: "#FBF7ED", fontFamily: "'Poppins', sans-serif" }}>
+        <div className="mx-auto grid items-center gap-8 px-[15px] sm:gap-10 sm:px-5 md:px-[20px] lg:px-[20px] lg:grid-cols-2 lg:gap-16" style={{ maxWidth: "var(--container-max)" }}>
           <div className="order-2 lg:order-1">
             <Image
               src="/images/ab-guarantee.webp"
@@ -535,7 +595,7 @@ export default function ABTestingPage() {
             <h2 className="font-bold text-[28px] leading-[36px] sm:text-[36px] sm:leading-[46px] lg:text-[42px] lg:leading-[52px]" style={{ color: "#000000" }}>
               Our Guarantee
             </h2>
-            <div className="mt-8 space-y-7">
+            <div className="mt-8 space-y-5">
               {GUARANTEES.map((g) => (
                 <div key={g.title} className="border-t pt-5" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
                   <div className="flex gap-4">
@@ -553,14 +613,14 @@ export default function ABTestingPage() {
 
       {/* 7 — WHAT WE'LL TEST FIRST */}
       <section
-        className="relative overflow-hidden py-10 sm:py-20 lg:py-24"
+        className="relative overflow-hidden py-10 sm:py-20 lg:py-[60px]"
         style={{
           background:
             "radial-gradient(ellipse at top, rgba(78,183,113,0.22) 0%, rgba(0,0,0,0) 55%), #000000",
           fontFamily: "'Poppins', sans-serif",
         }}
       >
-        <div className="relative mx-auto px-[15px] sm:px-5" style={{ maxWidth: "var(--container-max)" }}>
+        <div className="relative mx-auto px-[15px] sm:px-5 md:px-[20px] lg:px-[20px]" style={{ maxWidth: "var(--container-max)" }}>
           <h2 className="text-center font-bold text-white text-[28px] leading-[36px] sm:text-[36px] sm:leading-[46px] lg:text-[42px] lg:leading-[52px]">
             What we&rsquo;ll test first
           </h2>
@@ -573,7 +633,7 @@ export default function ABTestingPage() {
               >
                 <span style={{ color: "#4EB771" }}>{t.icon}</span>
                 <h3 className="mt-4 text-[19px] font-semibold leading-snug text-white sm:mt-5 sm:text-[20px]">{t.title}</h3>
-                <p className="mt-3 text-[13.5px] leading-[22px] text-white/65 sm:mt-4">{t.desc}</p>
+                <p className="mt-3 text-[13.5px] leading-[22px] text-white sm:mt-4">{t.desc}</p>
               </div>
             ))}
           </div>
@@ -581,8 +641,8 @@ export default function ABTestingPage() {
       </section>
 
       {/* 8 — HOW IT WORKS */}
-      <section className="bg-white py-10 sm:py-20 lg:py-24" style={{ fontFamily: "'Poppins', sans-serif" }}>
-        <div className="mx-auto grid gap-8 px-[15px] sm:gap-10 sm:px-5 lg:grid-cols-2 lg:gap-16" style={{ maxWidth: "var(--container-max)" }}>
+      <section className="bg-white py-10 sm:py-20 lg:py-[60px]" style={{ fontFamily: "'Poppins', sans-serif" }}>
+        <div className="mx-auto grid gap-8 px-[15px] sm:gap-10 sm:px-5 md:px-[20px] lg:px-[20px] lg:grid-cols-2 lg:gap-16" style={{ maxWidth: "var(--container-max)" }}>
           <div>
             <h2 className="font-bold text-[28px] leading-[36px] sm:text-[36px] sm:leading-[46px] lg:text-[42px] lg:leading-[52px]" style={{ color: "#000000" }}>
               How it works
@@ -600,7 +660,7 @@ export default function ABTestingPage() {
               />
             </div>
           </div>
-          <div className="space-y-5 sm:space-y-7">
+          <div className="space-y-5">
             {HOW_IT_WORKS.map((s) => (
               <div key={s.title} className="border-t pt-5" style={{ borderColor: "rgba(0,0,0,0.08)" }}>
                 {/* Mobile: icon-left, title beside, body wraps under title */}

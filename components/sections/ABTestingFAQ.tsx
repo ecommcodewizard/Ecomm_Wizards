@@ -9,12 +9,12 @@ export default function ABTestingFAQ({ faqs }: { faqs: FAQ[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-10 sm:py-20 lg:py-24" style={{ background: "#000000", fontFamily: "'Poppins', sans-serif" }}>
-      <div className="mx-auto grid gap-8 px-[15px] sm:gap-10 sm:px-5 lg:grid-cols-[1.1fr_1fr] lg:gap-14" style={{ maxWidth: "var(--container-max)" }}>
+    <section className="py-10 sm:py-20 lg:py-[60px]" style={{ background: "#000000", fontFamily: "'Poppins', sans-serif" }}>
+      <div className="mx-auto grid gap-8 px-[15px] sm:gap-10 sm:px-5 md:px-[20px] lg:px-[20px] lg:grid-cols-[1.1fr_1fr] lg:gap-14" style={{ maxWidth: "var(--container-max)" }}>
         {/* Left — FAQ accordion */}
         <div>
           <h2 className="font-bold text-white text-[28px] leading-[36px] sm:text-[36px] sm:leading-[46px] lg:text-[42px] lg:leading-[52px]">
-            Frequently asked questions
+            Frequently Asked Questions
           </h2>
           <div className="mt-8">
             {faqs.map((faq, idx) => {
@@ -50,15 +50,17 @@ export default function ABTestingFAQ({ faqs }: { faqs: FAQ[] }) {
                     id={`ab-faq-panel-${idx}`}
                     role="region"
                     style={{
-                      maxHeight: isOpen ? "500px" : "0px",
-                      overflow: "hidden",
-                      transition: "max-height 0.3s ease, padding 0.3s ease",
-                      paddingBottom: isOpen ? "20px" : "0px",
+                      display: "grid",
+                      gridTemplateRows: isOpen ? "1fr" : "0fr",
+                      opacity: isOpen ? 1 : 0,
+                      transition: "grid-template-rows 0.3s ease, opacity 0.25s ease",
                     }}
                   >
-                    <p className="text-[14.5px] leading-[24px] text-white/70">
-                      {faq.answer}
-                    </p>
+                    <div style={{ overflow: "hidden", minHeight: 0 }}>
+                      <p className="text-[14.5px] leading-[24px] text-white pb-5">
+                        {faq.answer}
+                      </p>
+                    </div>
                   </div>
                 </div>
               );
@@ -73,24 +75,21 @@ export default function ABTestingFAQ({ faqs }: { faqs: FAQ[] }) {
             <h2 className="font-bold text-white text-[22px] leading-[30px] sm:text-[30px] sm:leading-[40px] lg:text-[34px] lg:leading-[44px]">
               Ready to Run Your First Winning Test?
             </h2>
-            <p className="mt-4 text-[13.5px] leading-[22px] text-white/65 sm:mt-5 sm:text-[14px]">
+            <p className="mt-4 text-[13.5px] leading-[22px] text-white sm:mt-5 sm:text-[14px]">
               Results vary by traffic and audience. All uplift figures come from real case studies and Shoplift reporting. Benchmarks are directional, not guarantees. But when the best A/B testing tools for ecommerce personalization meet a team that knows how to use them, the wins speak for themselves.
             </p>
-            <Link
-              href="/book-shopify-consultation"
-              className="mt-6 flex w-full items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold text-white transition-all sm:mt-8 sm:inline-flex sm:w-auto"
-              style={{
-                border: "1.5px solid transparent",
-                borderRadius: "var(--radius-full)",
-                background:
-                  "linear-gradient(#1a1a1a,#1a1a1a) padding-box, var(--brand-gradient) border-box",
-              }}
-            >
-              Start the A/B Test Drive
-              <svg width="16" height="12" viewBox="0 0 15 10.55" fill="none">
-                <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
+            <div className="mt-6 inline-flex p-[2px] rounded-full sm:mt-8" style={{ background: "var(--brand-gradient)" }}>
+              <Link
+                href="/book-shopify-consultation"
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-black hover:bg-white transition-all duration-300 px-[28px] py-[16px] sm:px-[40px] sm:py-[20px] text-[15px] sm:text-[16px]"
+                style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}
+              >
+                <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Start the A/B Test Drive</span>
+                <svg width="18" height="13" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white group-hover:text-black transition-colors duration-300">
+                  <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

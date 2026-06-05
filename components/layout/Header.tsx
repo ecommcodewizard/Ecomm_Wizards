@@ -54,7 +54,7 @@ const NAV: NavItem[] = [
       { label: "Speed Optimization",    href: "/shopify-speed-optimization",                      description: "Sub-2s load times that lift revenue" },
       { label: "Store Audit",           href: "/services/shopify-store-audit",                    description: "Expert review of your entire store" },
       { label: "CRO Agency",            href: "/services/shopify-cro-agency", description: "Turn more visitors into buyers" },
-      { label: "A/B Testing",           href: "/a-b-testing",                                    description: "Data-driven experimentation" },
+      { label: "A/B Testing",           href: "/services/a-b-testing",                           description: "Data-driven experimentation" },
       { label: "Analytics & Tracking",  href: "/services/shopify-analytics-and-tracking-setup",  description: "GA4, GTM, pixels — done right" },
       { label: "SEO Agency",            href: "/services/shopify-seo-agency",                     description: "Organic growth for Shopify stores" },
       { label: "Maintenance & Support", href: "/services/shopify-maintenance-and-support",                 description: "Ongoing care for your store" },
