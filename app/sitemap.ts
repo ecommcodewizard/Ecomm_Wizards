@@ -54,19 +54,18 @@ const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.S
   { path: "/services/shopify-ux-and-ui-design", priority: 0.7, changeFrequency: "monthly" },
   { path: "/shopify-integrations-erp-crm-3pl-etc", priority: 0.6, changeFrequency: "monthly" },
   { path: "/erp-connections-to-shopify", priority: 0.6, changeFrequency: "monthly" },
-  { path: "/liquid-to-shopify-hydrogen", priority: 0.6, changeFrequency: "monthly" },
   { path: "/services/a-b-testing", priority: 0.6, changeFrequency: "monthly" },
 
-  // Migration / platform-to-Shopify
-  { path: "/migration", priority: 0.7, changeFrequency: "monthly" },
-  { path: "/migrate-to-shopify", priority: 0.7, changeFrequency: "monthly" },
+  // Migration / platform-to-Shopify (nested under /services/migration)
+  { path: "/services/migration", priority: 0.7, changeFrequency: "monthly" },
   { path: "/services/figma-to-shopify-conversion", priority: 0.6, changeFrequency: "monthly" },
-  { path: "/amazon-to-shopify", priority: 0.6, changeFrequency: "monthly" },
-  { path: "/woocommerce-to-shopify", priority: 0.6, changeFrequency: "monthly" },
-  { path: "/magento-to-shopify", priority: 0.6, changeFrequency: "monthly" },
-  { path: "/bigcommerce-to-shopify", priority: 0.6, changeFrequency: "monthly" },
-  { path: "/prestashop-to-shopify", priority: 0.6, changeFrequency: "monthly" },
-  { path: "/salesforce-to-shopify", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/services/migration/amazon-to-shopify", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/services/migration/woocommerce-to-shopify", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/services/migration/magento-to-shopify", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/services/migration/bigcommerce-to-shopify", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/services/migration/prestashop-to-shopify", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/services/migration/salesforce-to-shopify", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/services/migration/liquid-to-shopify-hydrogen", priority: 0.6, changeFrequency: "monthly" },
 
   // Campaign
   { path: "/q4-breakthrough-journey", priority: 0.5, changeFrequency: "monthly" },

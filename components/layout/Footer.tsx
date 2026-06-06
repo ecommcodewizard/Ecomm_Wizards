@@ -47,14 +47,14 @@ const AWARDS = [
 ];
 
 const MIGRATION = [
-  { label: "Migrate to Shopify",              href: "/migration" },
-  { label: "Migrate from Magento",            href: "/magento-to-shopify" },
-  { label: "Migrate from BigCommerce",        href: "/bigcommerce-to-shopify" },
-  { label: "Migrate from WooCommerce",        href: "/woocommerce-to-shopify" },
-  { label: "Migrate from Amazon",             href: "/amazon-to-shopify" },
-  { label: "Migrate from Salesforce",         href: "/salesforce-to-shopify" },
-  { label: "Migrate from Prestashop",         href: "/prestashop-to-shopify" },
-  { label: "Migrate from Liquid to Hydrogen", href: "/liquid-to-shopify-hydrogen" },
+  { label: "Migrate to Shopify",              href: "/services/migration" },
+  { label: "Migrate from Magento",            href: "/services/migration/magento-to-shopify" },
+  { label: "Migrate from BigCommerce",        href: "/services/migration/bigcommerce-to-shopify" },
+  { label: "Migrate from WooCommerce",        href: "/services/migration/woocommerce-to-shopify" },
+  { label: "Migrate from Amazon",             href: "/services/migration/amazon-to-shopify" },
+  { label: "Migrate from Salesforce",         href: "/services/migration/salesforce-to-shopify" },
+  { label: "Migrate from Prestashop",         href: "/services/migration/prestashop-to-shopify" },
+  { label: "Migrate from Liquid to Hydrogen", href: "/services/migration/liquid-to-shopify-hydrogen" },
 ];
 
 const GET_STARTED = [

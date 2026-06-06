@@ -96,6 +96,16 @@ const nextConfig: NextConfig = {
         destination: "/services/klaviyo-audit",
         permanent: true,
       },
+      { source: "/migration", destination: "/services/migration", permanent: true },
+      { source: "/amazon-to-shopify", destination: "/services/migration/amazon-to-shopify", permanent: true },
+      { source: "/woocommerce-to-shopify", destination: "/services/migration/woocommerce-to-shopify", permanent: true },
+      { source: "/bigcommerce-to-shopify", destination: "/services/migration/bigcommerce-to-shopify", permanent: true },
+      { source: "/magento-to-shopify", destination: "/services/migration/magento-to-shopify", permanent: true },
+      { source: "/prestashop-to-shopify", destination: "/services/migration/prestashop-to-shopify", permanent: true },
+      { source: "/salesforce-to-shopify", destination: "/services/migration/salesforce-to-shopify", permanent: true },
+      { source: "/liquid-to-shopify-hydrogen", destination: "/services/migration/liquid-to-shopify-hydrogen", permanent: true },
+      // migrate-to-shopify page removed; send its traffic to the migration hub
+      { source: "/migrate-to-shopify", destination: "/services/migration", permanent: true },
     ];
   },
 };

@@ -2,10 +2,46 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
+const META_DESCRIPTION =
+  "Shopify migration agency for brands that can't afford downtime. We move your store, products, customers, orders, and SEO to Shopify or Shopify Plus with zero data loss.";
+const CANONICAL_URL = "https://ecommwizards.com/services/migration";
+
 export const metadata: Metadata = {
-  title: "Migration - Ecomm Wizards",
-  description:
-    "The best Shopify migration agency for brands that can't afford downtime. End-to-end Shopify and Shopify Plus migration with zero data loss and zero lost revenue.",
+  // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
+  // template would otherwise append the brand to this custom title.
+  title: { absolute: "Shopify Migration Agency | Migrate to Shopify, Zero Downtime" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify migration",
+    "migration to shopify",
+    "migrate to shopify",
+    "shopify migration agency",
+    "shopify migration services",
+    "shopify plus migration",
+    "ecommerce migration to shopify",
+    "shopify replatforming",
+    "shopify migration company",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify Migration Agency | Migrate to Shopify, Zero Downtime",
+    description: META_DESCRIPTION,
+    images: [
+      {
+        url: "/images/migration-shopify-right-image.webp",
+        alt: "Shopify migration: store and admin moved to Shopify by Ecomm Wizards",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify Migration Agency | Migrate to Shopify, Zero Downtime",
+    description: META_DESCRIPTION,
+    images: ["/images/migration-shopify-right-image.webp"],
+  },
 };
 
 const CONSULT_URL = "/book-shopify-consultation";
@@ -135,7 +171,7 @@ const MIGRATION_SLIDES: CaseStudySlide[] = [
     image: "/images/Frame_1000004320.webp",
     apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/Subtract.svg", "/images/64f098c0e38dec3a384cb182_rebuy.svg"],
     headline: (<>An elegant <strong>Shopify Store</strong> designed and built for EBY by <strong>Sofia Vergara</strong></>),
-    quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally &ndash; we couldn&rsquo;t be happier!&rdquo;</>),
+    quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally. We couldn&rsquo;t be happier!&rdquo;</>),
     avatar: "/images/eby_dce31a54-eb36-409c-a8d7-e22fd8297de3_medium.webp",
     name: "EBY by Sofia Vergara",
     role: "Marketing Manager",
@@ -162,58 +198,56 @@ const WHY_WORK_ITEMS = [
   "100% Client Satisfaction",
 ];
 
-const INNOVATIVE_ROWS = [
+const FAQS = [
   {
-    direction: "left" as const,
-    duration: 40,
-    logos: [
-      { src: "/images/trust_logo_7.svg", alt: "Sofia Vergara" },
-      { src: "/images/trust_logo_6.svg", alt: "Bark Box" },
-      { src: "/images/trust_logo_hover_3.svg", alt: "Harvard" },
-      { src: "/images/trust_logo_hover_2.svg", alt: "Smurfs" },
-      { src: "/images/trust_logo_hover_1.svg", alt: "Peanuts" },
-      { src: "/images/trust_logo_2.svg", alt: "Trust" },
-      { src: "/images/trust_logo_new_1.svg", alt: "Trust" },
-    ],
+    q: "Will I lose my SEO rankings when I migrate to Shopify?",
+    a: "No. We protect your SEO during the migration by mapping every URL, setting up 301 redirects, and carrying over metadata, structured data, and content. Google sees a clean handoff, so your rankings and traffic stay intact.",
   },
   {
-    direction: "right" as const,
-    duration: 42,
-    logos: [
-      { src: "/images/ipsy-logo.svg", alt: "Ipsy" },
-      { src: "/images/everlast-icon.svg", alt: "Everlast" },
-      { src: "/images/trust_logo_hover_10.svg", alt: "SarahChloe" },
-      { src: "/images/trust_logo_32.svg", alt: "Forme" },
-      { src: "/images/trust_logo_31.svg", alt: "Oshen" },
-      { src: "/images/trust_logo_20.svg", alt: "Olaplex" },
-    ],
+    q: "How long does a Shopify migration take?",
+    a: "Most migrations run two to six weeks depending on catalog size, custom features, and integrations. We scope the exact timeline on your discovery call and give you a clear plan before any work begins.",
   },
   {
-    direction: "left" as const,
-    duration: 44,
-    logos: [
-      { src: "/images/trust_logo_27.svg", alt: "Lucky" },
-      { src: "/images/trust_logo_26.svg", alt: "Ulta" },
-      { src: "/images/trust_logo_hover_14.svg", alt: "Blippi" },
-      { src: "/images/trust_logo_hover_13.svg", alt: "Sesame Street" },
-      { src: "/images/trust_logo_hover_12.svg", alt: "Lids" },
-      { src: "/images/trust_logo_hover_11.svg", alt: "Cellar" },
-    ],
+    q: "Will my store go down during the migration?",
+    a: "No. We build and test your new Shopify store in parallel while your current store keeps selling. We only point the domain over once everything is verified, so your customers never see downtime.",
   },
   {
-    direction: "right" as const,
-    duration: 46,
-    logos: [
-      { src: "/images/bottle-barn-final.webp", alt: "Bottle Barn" },
-      { src: "/images/ebbets-fields-final-1.webp", alt: "Ebbets Fields" },
-      { src: "/images/Group_38643.svg", alt: "Group" },
-      { src: "/images/biopure.svg", alt: "BioPure" },
-      { src: "/images/kaval-new.webp", alt: "Kaval" },
-      { src: "/images/chalet.svg", alt: "Chalet" },
-      { src: "/images/ebbets-fields-final.webp", alt: "Ebbets Fields" },
-    ],
+    q: "What data can you migrate to Shopify?",
+    a: "Products, variants, customers, full order history, content, blogs, reviews, and SEO assets. If it lives on your current platform, we map it to Shopify so nothing breaks and nothing duplicates.",
+  },
+  {
+    q: "How much does a Shopify migration cost?",
+    a: "Cost depends on your catalog size, custom functionality, and the integrations you need rebuilt. We give fixed-price quotes with no hourly surprises. Book a call and we will send a detailed breakdown.",
+  },
+  {
+    q: "What happens to my apps and integrations?",
+    a: "We audit every integration you rely on, from ERP and 3PL to email and reviews, then rebuild or replace each one on Shopify so your operations keep running the day you go live.",
+  },
+  {
+    q: "Do you migrate to Shopify or Shopify Plus?",
+    a: "Both. We help you choose the right plan for your volume, then handle the full build. If you are scaling fast, our Shopify Plus migration experts set you up for high-traffic sales and B2B from day one.",
   },
 ];
+
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Shopify Migration", item: "https://ecommwizards.com/services/migration" },
+  ],
+};
 
 const FIX_CARDS = [
   {
@@ -313,7 +347,7 @@ const WHY_REASONS = [
   },
   {
     Icon: IconGear,
-    title: "Tailored for Every Business",
+    title: "Built for Every Business",
     body:
       "Built Around Your Business Model D2C, B2B, wholesale, POS, hybrid, subscription. It does not matter how complex your operation is. As a top Shopify migration agency, we customize every migration to fit your specific channels, workflows, and integrations instead of forcing you into a one size fits all template.",
   },
@@ -334,6 +368,14 @@ const WHY_REASONS = [
 export default function Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
+      />
       {/* 1 — Hero */}
       <section className="mig-hero">
         <div className="mig-hero-inner">
@@ -375,7 +417,7 @@ export default function Page() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/migration-shopify-right-image.webp"
-              alt="Shopify admin and storefront mockups"
+              alt="Shopify migration result: store and admin after moving to Shopify"
               width={1024}
               height={838}
               loading="eager"
@@ -385,7 +427,27 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 2 — Why 300+ Brands Chose Ecomm Wizards */}
+      {/* 2 — Brands That Trusted Us With Their Migration (trust bar) */}
+      <section className="mig-trust">
+        <div className="mig-trust-inner">
+          <h2 className="mig-trust-h2">Brands That Trusted Us With Their Migration</h2>
+          <p className="mig-trust-lede">
+            We have helped some of the most recognized brands in the world move to Shopify, and we will do the same for you.
+          </p>
+          <div className="mig-trust-carousel" aria-label="Brand logos">
+            <div className="mig-trust-track">
+              {[...TRUST_LOGOS, ...TRUST_LOGOS].map((l, i) => (
+                <div key={i} className="mig-trust-slide">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={l.src} alt={i < TRUST_LOGOS.length ? l.alt : ""} loading="lazy" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3 — Why 300+ Brands Chose Ecomm Wizards */}
       <section className="mig-why">
         <div className="mig-why-inner">
           <div className="mig-why-copy">
@@ -495,27 +557,7 @@ export default function Page() {
           </div>
           <div className="mig-whyshopify-visual" aria-hidden>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/why_shopify_1024x1024.webp" alt="" width={994} height={1024} loading="lazy" />
-          </div>
-        </div>
-      </section>
-
-      {/* 6 — Brands That Trusted Us With Their Migration */}
-      <section className="mig-trust">
-        <div className="mig-trust-inner">
-          <h2 className="mig-trust-h2">Brands That Trusted Us With Their Migration</h2>
-          <p className="mig-trust-lede">
-            We have helped some of the most recognized brands in the world move to Shopify, and we will do the same for you.
-          </p>
-          <div className="mig-trust-carousel" aria-label="Brand logos">
-            <div className="mig-trust-track">
-              {[...TRUST_LOGOS, ...TRUST_LOGOS].map((l, i) => (
-                <div key={i} className="mig-trust-slide">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={l.src} alt={i < TRUST_LOGOS.length ? l.alt : ""} loading="lazy" />
-                </div>
-              ))}
-            </div>
+            <img src="/images/mig-why-shopify-diagram.webp" alt="Migrating from Magento, BigCommerce, and WooCommerce to Shopify with Ecomm Wizards" width={1000} height={1030} loading="lazy" />
           </div>
         </div>
       </section>
@@ -540,31 +582,6 @@ export default function Page() {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* 8 — Your Old Platform Has Cost You Enough */}
-      <section className="mig-fix">
-        <div className="mig-fix-inner">
-          <h2 className="mig-fix-h2">Your Old Platform Has Cost You Enough. Let&rsquo;s Fix That.</h2>
-          <div className="mig-fix-cards">
-            {FIX_CARDS.map((c) => (
-              <article key={c.title} className="mig-fix-card">
-                <div className="mig-fix-card-copy">
-                  <h3 className="mig-fix-card-title">{c.title}</h3>
-                  <p className="mig-fix-card-body">{c.body}</p>
-                  <Link href={c.cta.href} className="mig-fix-card-cta">
-                    <span>{c.cta.label}</span>
-                    <Arrow />
-                  </Link>
-                </div>
-                <div className="mig-fix-card-visual" aria-hidden>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={c.img} alt="" loading="lazy" />
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </section>
@@ -605,27 +622,53 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 11 — Trusted by the Worlds Most Innovative Brands */}
-      <section className="mig-innov">
-        <div className="mig-innov-inner">
-          <h2 className="mig-innov-h2">
-            Trusted by the Worlds Most<br />Innovative Brands
-          </h2>
-          {INNOVATIVE_ROWS.map((row, rowIdx) => (
-            <div className="mig-innov-row" key={rowIdx}>
-              <ul
-                className={`mig-innov-track ${row.direction === "right" ? "mig-innov-track--reverse" : ""}`}
-                style={{ animationDuration: `${row.duration}s` }}
-              >
-                {[...row.logos, ...row.logos].map((logo, i) => (
-                  <li key={`${logo.src}-${i}`} className="mig-innov-slide">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={logo.src} alt={logo.alt} />
-                  </li>
-                ))}
-              </ul>
+      {/* 11 — Your Old Platform Has Cost You Enough (final CTA, moved here) */}
+      <section className="mig-fix">
+        <div className="mig-fix-inner">
+          <h2 className="mig-fix-h2">Your Old Platform Has Cost You Enough. Let&rsquo;s Fix That.</h2>
+          <div className="mig-fix-cards">
+            {FIX_CARDS.map((c) => (
+              <article key={c.title} className="mig-fix-card">
+                <div className="mig-fix-card-copy">
+                  <h3 className="mig-fix-card-title">{c.title}</h3>
+                  <p className="mig-fix-card-body">{c.body}</p>
+                  <Link href={c.cta.href} className="mig-fix-card-cta">
+                    <span>{c.cta.label}</span>
+                    <Arrow />
+                  </Link>
+                </div>
+                <div className="mig-fix-card-visual" aria-hidden>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={c.img} alt="" loading="lazy" />
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 12 — FAQ (final section) */}
+      <section className="mig-faq">
+        <div className="mig-faq-inner">
+          <h2 className="mig-faq-h2">Migration Questions, Answered</h2>
+          <div className="mig-faq-acc">
+            {FAQS.map((_, i) => (
+              <input key={i} className="mig-faq-rad" type="radio" id={`mig-faq-${i}`} name="mig-faq-acc" defaultChecked={i === 0} />
+            ))}
+            <div className="mig-faq-list">
+              {FAQS.map((f, i) => (
+                <div key={i} className="mig-faq-item" data-faq={`mig-faq-${i}`}>
+                  <label htmlFor={`mig-faq-${i}`} className="mig-faq-head">
+                    <span className="mig-faq-q">{f.q}</span>
+                    <span className="mig-faq-ico" aria-hidden>
+                      <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor"><path d="M31.6 8.5c-.6-.6-1.5-.6-2.2-.1L16 21.2 2.6 8.4c-.6-.6-1.6-.5-2.2.1-.6.6-.5 1.6.1 2.2l14.5 13.7c.3.3.7.4 1 .4s.8-.1 1-.4l14.5-13.7c.6-.6.7-1.6.1-2.2z" /></svg>
+                    </span>
+                  </label>
+                  <div className="mig-faq-bodyc"><div className="mig-faq-in"><p>{f.a}</p></div></div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
@@ -636,12 +679,12 @@ export default function Page() {
            ────────────────────────────────────────────── */
 
         /* 1 — Hero */
-        .mig-hero { background: #000000; padding: 90px 40px 110px; overflow: hidden; }
+        .mig-hero { background: #000000; padding: 60px 40px; overflow: hidden; }
         .mig-hero-inner { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 1fr; gap: 60px; align-items: center; }
         .mig-hero-copy { color: #FFFFFF; }
-        .mig-hero-h1 { color: #FFFFFF; font-size: 56px; font-weight: 700; line-height: 1.16; margin: 0 0 28px; letter-spacing: -0.6px; }
+        .mig-hero-h1 { color: #FFFFFF; font-size: 48px; font-weight: 700; line-height: 1.16; margin: 0 0 28px; letter-spacing: -0.6px; }
         .mig-hero-lead { color: #FFFFFF; font-size: 16px; font-weight: 600; line-height: 1.6; margin: 0 0 24px; }
-        .mig-hero-body { color: rgba(255,255,255,0.78); font-size: 16px; line-height: 1.75; margin: 0 0 22px; }
+        .mig-hero-body { color: #FFFFFF; font-size: 16px; line-height: 1.75; margin: 0 0 22px; }
         .mig-hero-body strong { color: #FFFFFF; font-weight: 700; }
         .mig-hero-ctas { display: flex; flex-direction: column; align-items: flex-start; gap: 28px; margin-top: 14px; }
 
@@ -664,12 +707,20 @@ export default function Page() {
         .mig-hero-visual { display: flex; justify-content: center; align-items: center; }
         .mig-hero-visual img { width: 100%; height: auto; max-width: 640px; display: block; }
 
+        /* ── Laptop (1024) ── */
+        @media (max-width: 1024px) {
+          .mig-hero-h1 { font-size: 44px; margin-bottom: 24px; }
+          .mig-hero-lead { margin-bottom: 20px; }
+          .mig-hero-body { font-size: 15px; margin-bottom: 20px; }
+        }
+
         /* ── Tablet ── */
         @media (max-width: 1023px) {
           .mig-hero { padding: 60px 24px 80px; }
           .mig-hero-inner { grid-template-columns: 1fr; gap: 44px; }
-          .mig-hero-h1 { font-size: 40px; letter-spacing: -0.3px; margin-bottom: 20px; }
-          .mig-hero-body { font-size: 15px; line-height: 1.7; }
+          .mig-hero-h1 { font-size: 40px; letter-spacing: -0.3px; margin-bottom: 16px; }
+          .mig-hero-lead { margin-bottom: 16px; }
+          .mig-hero-body { font-size: 15px; line-height: 1.7; margin-bottom: 16px; }
           .mig-hero-visual img { max-width: 560px; margin: 0 auto; }
         }
 
@@ -686,11 +737,11 @@ export default function Page() {
         }
 
         /* 2 — Why 300+ Brands */
-        .mig-why { background: #FFFFFF; padding: 90px 40px; }
+        .mig-why { background: #FFFFFF; padding: 60px 40px; }
         .mig-why-inner { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-        .mig-why-h2 { color: #111111; font-size: 42px; font-weight: 700; line-height: 1.18; margin: 0 0 36px; letter-spacing: -0.4px; }
+        .mig-why-h2 { color: #111111; font-size: 42px; font-weight: 700; line-height: 1.18; margin: 0 0 24px; letter-spacing: -0.4px; }
         .mig-why-list { list-style: none; padding: 0; margin: 0; }
-        .mig-why-item { display: grid; grid-template-columns: 28px 1fr; column-gap: 14px; align-items: start; padding: 22px 0; border-bottom: 1px solid #E5E7EB; }
+        .mig-why-item { display: grid; grid-template-columns: 28px 1fr; column-gap: 14px; align-items: start; padding: 16px 0; border-bottom: 1px solid #E5E7EB; }
         .mig-why-item:first-child { padding-top: 0; }
         .mig-why-item:last-child { border-bottom: 0; padding-bottom: 0; }
         .mig-why-icon { color: #111111; line-height: 0; padding-top: 4px; }
@@ -705,8 +756,13 @@ export default function Page() {
         @keyframes mig-scroll-up { from { transform: translateY(0); } to { transform: translateY(-50%); } }
         @media (prefers-reduced-motion: reduce) { .mig-why-track { animation: none; } }
 
+        @media (max-width: 1024px) {
+          .mig-why-item { padding: 10px 0; }
+          .mig-why-body { font-size: 14px; }
+        }
+
         @media (max-width: 1023px) {
-          .mig-why { padding: 64px 24px; }
+          .mig-why { padding: 60px 20px; }
           .mig-why-inner { grid-template-columns: 1fr; gap: 40px; }
           .mig-why-h2 { font-size: 30px; margin-bottom: 24px; }
           .mig-why-scroll { height: 520px; }
@@ -714,7 +770,7 @@ export default function Page() {
         @media (max-width: 639px) {
           .mig-why { padding: 44px 15px; }
           .mig-why-h2 { font-size: 24px; line-height: 1.2; margin-bottom: 18px; letter-spacing: -0.2px; }
-          .mig-why-item { padding: 16px 0; grid-template-columns: 22px 1fr; column-gap: 12px; }
+          .mig-why-item { padding: 10px 0; grid-template-columns: 22px 1fr; column-gap: 12px; }
           .mig-why-icon svg { width: 18px; height: 18px; }
           .mig-why-title { font-size: 15px; margin-bottom: 6px; }
           .mig-why-body { font-size: 13.5px; line-height: 1.65; }
@@ -724,27 +780,34 @@ export default function Page() {
         }
 
         /* 3 — Everything Moves */
-        .mig-moves { background: #F0F5FA; padding: 90px 40px; }
+        .mig-moves { background: #F0F5FA; padding: 60px 40px; }
         .mig-moves-inner { max-width: 1320px; margin: 0 auto; }
-        .mig-moves-h2 { color: #111111; font-size: 42px; font-weight: 700; line-height: 1.2; letter-spacing: -0.4px; text-align: center; margin: 0 0 56px; }
+        .mig-moves-h2 { color: #111111; font-size: 42px; font-weight: 700; line-height: 1.2; letter-spacing: -0.4px; text-align: center; margin: 0 0 30px; }
         .mig-moves-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 60px; align-items: start; }
         .mig-moves-list { list-style: none; padding: 0; margin: 0; }
-        .mig-moves-row { display: grid; grid-template-columns: 190px 1fr; gap: 32px; padding: 26px 0; border-bottom: 1px dashed #B6C2D2; align-items: start; }
+        .mig-moves-row { display: grid; grid-template-columns: 190px 1fr; gap: 32px; padding: 16px 0; border-bottom: 1px dashed #B6C2D2; align-items: start; }
         .mig-moves-row:first-child { padding-top: 0; }
         .mig-moves-row:last-child { border-bottom: 0; }
         .mig-moves-pill { display: inline-flex; align-items: center; justify-content: center; background: #FFFFFF; color: #111111; font-size: 22px; font-weight: 700; padding: 22px 26px; border-radius: 14px; min-height: 64px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
         .mig-moves-body { color: #334155; font-size: 15px; line-height: 1.75; margin: 0; }
 
-        .mig-moves-visual { position: relative; width: 100%; aspect-ratio: 1024 / 946; }
+        .mig-moves-visual { position: relative; width: 100%; aspect-ratio: 1024 / 946; margin-top: 48px; }
         .mig-moves-img-back { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 12px; box-shadow: 0 16px 48px rgba(15, 23, 42, 0.10); }
         .mig-moves-img-front { position: absolute; right: -6%; bottom: -12%; width: 42%; height: auto; display: block; border-radius: 18px; box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18); }
 
+        @media (max-width: 1024px) {
+          .mig-moves-grid { grid-template-columns: 1.35fr 1fr; gap: 40px; }
+          .mig-moves-row { padding: 10px 0; grid-template-columns: 150px 1fr; gap: 24px; }
+          .mig-moves-body { font-size: 14px; }
+        }
+
         @media (max-width: 1023px) {
-          .mig-moves { padding: 64px 24px; }
+          .mig-moves { padding: 60px 20px; }
           .mig-moves-h2 { font-size: 30px; margin-bottom: 36px; }
           .mig-moves-grid { grid-template-columns: 1fr; gap: 44px; }
-          .mig-moves-row { grid-template-columns: 160px 1fr; gap: 24px; padding: 20px 0; }
+          .mig-moves-row { grid-template-columns: 160px 1fr; gap: 24px; padding: 10px 0; }
           .mig-moves-pill { font-size: 18px; padding: 18px 22px; min-height: 56px; }
+          .mig-moves-visual { max-width: 460px; margin: 32px auto 0; }
           .mig-moves-img-front { right: 0; bottom: -8%; width: 38%; }
         }
         @media (max-width: 639px) {
@@ -757,12 +820,12 @@ export default function Page() {
         }
 
         /* 4 — Three Phases */
-        .mig-phases { background: #FFFFFF; padding: 90px 40px; }
+        .mig-phases { background: #FFFFFF; padding: 60px 40px; }
         .mig-phases-inner { max-width: 1320px; margin: 0 auto; }
-        .mig-phases-h2 { color: #111111; font-size: 42px; font-weight: 700; line-height: 1.2; letter-spacing: -0.4px; text-align: center; margin: 0 0 56px; }
+        .mig-phases-h2 { color: #111111; font-size: 42px; font-weight: 700; line-height: 1.2; letter-spacing: -0.4px; text-align: center; margin: 0 0 30px; }
         .mig-phases-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
         .mig-phase { position: relative; padding: 0 40px; }
-        .mig-phase:first-child { padding-left: 0; }
+        .mig-phase:first-child { padding-right: 0; }
         .mig-phase:last-child { padding-right: 0; }
         .mig-phase:not(:last-child)::after { content: ''; position: absolute; top: 40px; right: 0; width: 60px; height: 2px; background-image: repeating-linear-gradient(to right, #CBD5E1 0 8px, transparent 8px 16px); transform: translateX(50%); }
         .mig-phase-icon-wrap { width: 80px; height: 80px; margin-bottom: 32px; }
@@ -773,17 +836,21 @@ export default function Page() {
         .mig-phase-body { color: rgba(0,0,0,0.8); font-size: 15px; line-height: 1.7; margin: 0; max-width: 360px; }
         .mig-phase-body strong { color: #111111; font-weight: 700; }
 
+        @media (max-width: 1024px) {
+          .mig-phase-body { font-size: 14px; }
+        }
+
         @media (max-width: 1023px) {
-          .mig-phases { padding: 64px 24px; }
-          .mig-phases-h2 { font-size: 30px; margin-bottom: 36px; }
-          .mig-phases-list { grid-template-columns: 1fr; gap: 36px; }
+          .mig-phases { padding: 60px 20px; }
+          .mig-phases-h2 { font-size: 30px; margin-bottom: 20px; }
+          .mig-phases-list { grid-template-columns: repeat(3, 1fr); gap: 24px; }
           .mig-phase { padding: 0; }
           .mig-phase:not(:last-child)::after { display: none; }
         }
         @media (max-width: 639px) {
           .mig-phases { padding: 44px 15px; }
           .mig-phases-h2 { font-size: 22px; margin-bottom: 24px; letter-spacing: -0.2px; }
-          .mig-phases-list { gap: 28px; }
+          .mig-phases-list { grid-template-columns: 1fr; gap: 28px; }
           .mig-phase-icon-wrap { width: 64px; height: 64px; margin-bottom: 22px; }
           .mig-phase-icon-box { width: 64px; height: 64px; }
           .mig-phase-icon-box svg { width: 36px; height: 36px; }
@@ -793,7 +860,7 @@ export default function Page() {
         }
 
         /* 5 — Why Shopify Is Where Growing Brands End Up */
-        .mig-whyshopify { background: #FBF7ED; padding: 90px 40px; }
+        .mig-whyshopify { background: #FBF7ED; padding: 60px 40px; }
         .mig-whyshopify-inner { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .mig-whyshopify-h2 { color: #111111; font-size: 38px; font-weight: 700; line-height: 1.2; letter-spacing: -0.3px; margin: 0 0 36px; max-width: 460px; }
         .mig-whyshopify-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 22px; }
@@ -804,10 +871,10 @@ export default function Page() {
         .mig-whyshopify-visual img { width: 100%; height: auto; max-width: 620px; display: block; }
 
         @media (max-width: 1023px) {
-          .mig-whyshopify { padding: 64px 24px; }
+          .mig-whyshopify { padding: 60px 20px; }
           .mig-whyshopify-inner { grid-template-columns: 1fr; gap: 44px; }
           .mig-whyshopify-h2 { font-size: 28px; max-width: none; margin-bottom: 28px; }
-          .mig-whyshopify-visual img { max-width: 540px; margin: 0 auto; }
+          .mig-whyshopify-visual img { max-width: 420px; margin: 0 auto; }
         }
         @media (max-width: 639px) {
           .mig-whyshopify { padding: 44px 15px; }
@@ -820,7 +887,7 @@ export default function Page() {
         }
 
         /* 6 — Brands That Trusted Us */
-        .mig-trust { background: #FFFFFF; padding: 70px 40px; }
+        .mig-trust { background: #FFFFFF; padding: 60px 40px; }
         .mig-trust-inner { max-width: 1320px; margin: 0 auto; }
         .mig-trust-h2 { color: #111111; font-size: 26px; font-weight: 700; line-height: 1.3; text-align: center; margin: 0 0 14px; }
         .mig-trust-lede { color: #334155; font-size: 15px; line-height: 1.6; text-align: center; margin: 0 auto 44px; max-width: 760px; }
@@ -833,7 +900,7 @@ export default function Page() {
         @media (prefers-reduced-motion: reduce) { .mig-trust-track { animation: none; } }
 
         @media (max-width: 1023px) {
-          .mig-trust { padding: 56px 24px; }
+          .mig-trust { padding: 60px 20px; }
           .mig-trust-slide { padding: 0 32px; }
           .mig-trust-slide img { height: 56px; }
         }
@@ -847,7 +914,7 @@ export default function Page() {
         }
 
         /* 7 — What You Get */
-        .mig-getwhat { background: #FFFFFF; padding: 70px 40px 100px; }
+        .mig-getwhat { background: #FFFFFF; padding: 60px 40px; }
         .mig-getwhat-inner { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .mig-getwhat-visual { width: 100%; aspect-ratio: 4 / 5; background: #EDE6DA; border-radius: 6px; overflow: hidden; }
         .mig-getwhat-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -860,10 +927,10 @@ export default function Page() {
         .mig-getwhat-body b { color: #111111; font-weight: 700; }
 
         @media (max-width: 1023px) {
-          .mig-getwhat { padding: 56px 24px; }
+          .mig-getwhat { padding: 60px 20px; }
           .mig-getwhat-inner { grid-template-columns: 1fr; gap: 36px; }
           .mig-getwhat-h2 { font-size: 26px; }
-          .mig-getwhat-visual { max-width: 520px; margin: 0 auto; aspect-ratio: 4 / 5; }
+          .mig-getwhat-visual { max-width: 420px; margin: 0 auto; aspect-ratio: 4 / 5; }
         }
         @media (max-width: 639px) {
           .mig-getwhat { padding: 40px 15px; }
@@ -877,9 +944,9 @@ export default function Page() {
         }
 
         /* 8 — Your Old Platform Has Cost You Enough */
-        .mig-fix { background: #FBF7ED; padding: 70px 40px 90px; }
+        .mig-fix { background: #FBF7ED; padding: 60px 40px; }
         .mig-fix-inner { max-width: 1320px; margin: 0 auto; }
-        .mig-fix-h2 { color: #111111; font-size: 38px; font-weight: 700; line-height: 1.25; letter-spacing: -0.3px; text-align: center; margin: 0 auto 44px; max-width: 940px; }
+        .mig-fix-h2 { color: #111111; font-size: 38px; font-weight: 700; line-height: 1.25; letter-spacing: -0.3px; text-align: center; margin: 0 auto 30px; max-width: 1080px; }
         .mig-fix-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
         .mig-fix-card { background: #FFFFFF; border-radius: 16px; padding: 36px; display: grid; grid-template-columns: 1fr 220px; gap: 28px; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
         .mig-fix-card-copy { display: flex; flex-direction: column; }
@@ -896,8 +963,12 @@ export default function Page() {
         .mig-fix-card-visual { width: 100%; }
         .mig-fix-card-visual img { width: 100%; height: auto; display: block; border-radius: 8px; }
 
+        @media (max-width: 1024px) {
+          .mig-fix-cards { grid-template-columns: 1fr; }
+        }
+
         @media (max-width: 1023px) {
-          .mig-fix { padding: 56px 24px 72px; }
+          .mig-fix { padding: 60px 20px; }
           .mig-fix-h2 { font-size: 28px; margin-bottom: 32px; }
           .mig-fix-cards { grid-template-columns: 1fr; gap: 22px; }
           .mig-fix-card { padding: 28px; grid-template-columns: 1fr 180px; gap: 22px; }
@@ -949,34 +1020,36 @@ export default function Page() {
           .mig-whywork-track { animation-duration: 24s; }
         }
 
-        /* 11 — Trusted by the Worlds Most Innovative Brands (4-row marquee) */
-        .mig-innov { background: #FFFFFF; padding: 0 20px; }
-        .mig-innov-inner { max-width: 1320px; margin: 0 auto; padding: 60px 0; color: #334155; font-family: 'Poppins', sans-serif; }
-        .mig-innov-h2 { color: #000; font-size: 42px; font-weight: 700; line-height: 52px; text-align: center; margin: 0 auto 40px; max-width: 780px; }
-        .mig-innov-row { overflow: hidden; margin-bottom: 32px; max-width: 1320px; margin-left: auto; margin-right: auto; }
-        .mig-innov-row:last-child { margin-bottom: 0; }
-        .mig-innov-track { display: flex; align-items: center; gap: 60px; width: max-content; margin: 0 auto; padding: 0; list-style: none; animation: mig-innov-scroll 40s linear infinite; }
-        .mig-innov-track--reverse { animation-name: mig-innov-scroll-reverse; }
-        .mig-innov-row:hover .mig-innov-track { animation-play-state: paused; }
-        .mig-innov-slide { flex-shrink: 0; width: 200px; height: 90px; display: flex; align-items: center; justify-content: center; }
-        .mig-innov-slide img { width: 200px; height: 90px; object-fit: contain; display: block; }
-        @keyframes mig-innov-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-        @keyframes mig-innov-scroll-reverse { from { transform: translateX(-50%); } to { transform: translateX(0); } }
-        @media (prefers-reduced-motion: reduce) { .mig-innov-track { animation: none; } }
-
+        /* 12 — FAQ (smooth accordion) */
+        .mig-faq { background: #FFFFFF; padding: 60px 40px; }
+        .mig-faq-inner { max-width: 900px; margin: 0 auto; }
+        .mig-faq-h2 { color: #111111; font-size: 42px; font-weight: 700; line-height: 1.2; letter-spacing: -0.4px; text-align: center; margin: 0 0 40px; }
+        .mig-faq-acc { position: relative; }
+        .mig-faq-rad { position: absolute; opacity: 0; pointer-events: none; width: 1px; height: 1px; }
+        .mig-faq-list { display: flex; flex-direction: column; }
+        .mig-faq-item { border-top: 1px solid rgba(0,0,0,0.10); }
+        .mig-faq-item:last-child { border-bottom: 1px solid rgba(0,0,0,0.10); }
+        .mig-faq-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; cursor: pointer; }
+        .mig-faq-q { color: #111111; font-size: 17px; font-weight: 600; line-height: 1.4; }
+        .mig-faq-ico { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; color: #111111; flex: 0 0 auto; transition: transform .3s ease; }
+        .mig-faq-bodyc { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .3s ease, opacity .25s ease; }
+        .mig-faq-in { overflow: hidden; min-height: 0; }
+        .mig-faq-bodyc p { color: #334155; font-size: 15px; line-height: 1.75; margin: 0; padding: 0 40px 22px 0; }
+        ${FAQS.map((_, i) => `#mig-faq-${i}:checked ~ .mig-faq-list [data-faq="mig-faq-${i}"] .mig-faq-bodyc`).join(",\n        ")} {
+          grid-template-rows: 1fr; opacity: 1;
+        }
+        ${FAQS.map((_, i) => `#mig-faq-${i}:checked ~ .mig-faq-list [data-faq="mig-faq-${i}"] .mig-faq-ico`).join(",\n        ")} {
+          transform: rotate(180deg);
+        }
         @media (max-width: 1023px) {
-          .mig-innov { padding: 0 24px; }
-          .mig-innov-inner { padding: 44px 0; }
-          .mig-innov-h2 { font-size: 30px; line-height: 40px; margin-bottom: 28px; }
+          .mig-faq { padding: 60px 20px; }
+          .mig-faq-h2 { font-size: 30px; margin-bottom: 32px; }
         }
         @media (max-width: 639px) {
-          .mig-innov { padding: 0 15px; }
-          .mig-innov-inner { padding: 40px 0; }
-          .mig-innov-h2 { font-size: 22px; line-height: 30px; margin-bottom: 24px; letter-spacing: -0.2px; max-width: 320px; }
-          .mig-innov-row { margin-bottom: 22px; }
-          .mig-innov-track { gap: 32px; animation-duration: 26s; }
-          .mig-innov-slide { width: 130px; height: 60px; }
-          .mig-innov-slide img { width: 130px; height: 60px; }
+          .mig-faq { padding: 44px 15px; }
+          .mig-faq-h2 { font-size: 22px; margin-bottom: 24px; letter-spacing: -0.2px; }
+          .mig-faq-q { font-size: 15px; }
+          .mig-faq-bodyc p { font-size: 14px; padding-right: 0; }
         }
       ` }} />
     </>

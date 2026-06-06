@@ -38,14 +38,14 @@ const NAV: NavItem[] = [
   {
     label: "Migrate",
     children: [
-      { label: "Migration Overview",    href: "/migration",                     description: "Zero data loss, zero downtime migration" },
-      { label: "WooCommerce → Shopify", href: "/woocommerce-to-shopify",        description: "Move your WooCommerce store" },
-      { label: "BigCommerce → Shopify", href: "/bigcommerce-to-shopify",        description: "Seamless BigCommerce migration" },
-      { label: "Magento → Shopify",     href: "/magento-to-shopify",            description: "Escape Magento complexity" },
-      { label: "Amazon → Shopify",      href: "/amazon-to-shopify",             description: "Own your storefront & customer data" },
-      { label: "Prestashop → Shopify",  href: "/prestashop-to-shopify",         description: "Full catalog & order migration" },
-      { label: "Salesforce → Shopify",  href: "/salesforce-to-shopify",         description: "Commerce Cloud exit strategy" },
-      { label: "Liquid → Hydrogen",     href: "/liquid-to-shopify-hydrogen",    description: "Modernise with headless architecture" },
+      { label: "Migration Overview",    href: "/services/migration",                                description: "Zero data loss, zero downtime migration" },
+      { label: "WooCommerce → Shopify", href: "/services/migration/woocommerce-to-shopify",         description: "Move your WooCommerce store" },
+      { label: "BigCommerce → Shopify", href: "/services/migration/bigcommerce-to-shopify",         description: "Seamless BigCommerce migration" },
+      { label: "Magento → Shopify",     href: "/services/migration/magento-to-shopify",             description: "Escape Magento complexity" },
+      { label: "Amazon → Shopify",      href: "/services/migration/amazon-to-shopify",              description: "Own your storefront & customer data" },
+      { label: "Prestashop → Shopify",  href: "/services/migration/prestashop-to-shopify",          description: "Full catalog & order migration" },
+      { label: "Salesforce → Shopify",  href: "/services/migration/salesforce-to-shopify",          description: "Commerce Cloud exit strategy" },
+      { label: "Liquid → Hydrogen",     href: "/services/migration/liquid-to-shopify-hydrogen",     description: "Modernise with headless architecture" },
     ],
   },
   {

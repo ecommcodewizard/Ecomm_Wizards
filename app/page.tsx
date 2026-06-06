@@ -93,7 +93,7 @@ const SERVICES = [
   {
     title: "Store Migration",
     desc: "Zero data loss migrations from WooCommerce, Magento, BigCommerce, and more.",
-    href: "/migration",
+    href: "/services/migration",
   },
   {
     title: "CRO & Optimisation",
@@ -568,7 +568,7 @@ export default function HomePage() {
         description="Moving from Magento, WooCommerce, BigCommerce or any other platform to Shopify? Don't lose your SEO rankings or customer data. Our Shopify Migration Experts handle the full move for you, start to finish."
         services={MIGRATION_SERVICES}
         buttonText="Get a Free Migration Consultation"
-        buttonHref="/migration"
+        buttonHref="/services/migration"
         imageSrc="/images/video_cover_2048x.webp"
         imageAlt="Shopify migration services moving a store to Shopify without data loss"
         paddingTop="5px"
