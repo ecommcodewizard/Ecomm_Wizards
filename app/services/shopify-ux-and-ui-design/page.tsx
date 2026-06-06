@@ -2,10 +2,56 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+const META_DESCRIPTION =
+  "Shopify UX and UI design that turns visitors into customers. We rebuild your store, product pages, cart, and emails around how people actually buy. Data-backed, not guesswork.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-ux-and-ui-design";
+
 export const metadata: Metadata = {
-  title: "Shopify UX and UI Design - Ecomm Wizards",
-  description:
-    "Shopify UI UX design that turns visitors into loyal customers. Data-backed UX/UI systems, custom app interfaces, email design and clickable prototypes by Ecomm Wizards.",
+  // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
+  // template would otherwise append the brand to this custom title.
+  title: { absolute: "Shopify UX and UI Design Agency | Stores That Convert" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify ux and ui design",
+    "shopify ui ux design",
+    "shopify ux design",
+    "shopify ui design",
+    "shopify ux design agency",
+    "shopify store design",
+    "shopify ux ui design services",
+    "ecommerce ux design",
+    "shopify conversion design",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify UX and UI Design Agency | Stores That Convert",
+    description: META_DESCRIPTION,
+    images: [
+      {
+        url: "/images/Group_1000003974_d0eba414-7aec-4930-b534-a4dcc91d004e_1024x1024.png",
+        alt: "Shopify UX and UI design mockups for Olaplex, Buddy Scripts, and Everlast storefronts",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify UX and UI Design Agency | Stores That Convert",
+    description: META_DESCRIPTION,
+    images: ["/images/Group_1000003974_d0eba414-7aec-4930-b534-a4dcc91d004e_1024x1024.png"],
+  },
+};
+
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Shopify UX and UI Design", item: CANONICAL_URL },
+  ],
 };
 
 const GRADIENT_TEXT = {
@@ -189,17 +235,21 @@ const CheckCircle = () => (
 export default function Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
+      />
       {/* 1 — Hero (dark) */}
       <section className="uxui-hero" style={{ background: "#000000" }} aria-label="Shopify UI UX Design hero">
         <div
           className="uxui-hero-grid mx-auto grid gap-10 lg:grid-cols-[1.05fr_1fr] lg:items-center"
-          style={{ maxWidth: "1320px", padding: "80px 20px" }}
+          style={{ maxWidth: "1320px", padding: "60px 20px" }}
         >
           <div>
-            <h1 className="uxui-hero-h1 font-bold" style={{ color: "#FFFFFF", fontSize: "56px", lineHeight: 1.18, margin: 0 }}>
+            <h1 className="uxui-hero-h1 font-bold" style={{ color: "#FFFFFF", fontSize: "48px", lineHeight: 1.18, margin: 0 }}>
               Shopify <span style={GRADIENT_TEXT}>UI UX Design</span> That Turns Visitors Into Loyal Customers
             </h1>
-            <p className="uxui-hero-p mt-7 max-w-[600px]" style={{ color: "rgba(255,255,255,0.78)", fontSize: 16, lineHeight: "28px" }}>
+            <p className="uxui-hero-p mt-6 max-w-[600px]" style={{ color: "#FFFFFF", fontSize: 16, lineHeight: "28px" }}>
               Your store gets one chance to make a first impression. If the layout confuses people, if the navigation feels
               clunky, if the checkout creates even a second of hesitation, they leave. Ecomm Wizards builds Shopify UI UX
               design systems that remove every point of friction between your customer and the buy button. No templates.
@@ -214,7 +264,7 @@ export default function Page() {
           <div className="uxui-hero-image relative">
             <Image
               src="/images/Group_1000003974_d0eba414-7aec-4930-b534-a4dcc91d004e_1024x1024.png"
-              alt="Shopify UI UX design mockups — Olaplex, Buddy Scripts and Everlast storefronts above a laptop"
+              alt="Shopify UX and UI design mockups for Olaplex, Buddy Scripts, and Everlast storefronts above a laptop"
               width={1024}
               height={648}
               priority
@@ -226,12 +276,12 @@ export default function Page() {
 
       {/* 2 — Innovative Brands logo slider (white) */}
       <section className="uxui-trust" style={{ background: "#FFFFFF" }} aria-label="Brands that work with Ecomm Wizards">
-        <div className="mx-auto" style={{ maxWidth: "1320px", padding: "70px 20px 80px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1320px", padding: "50px 20px" }}>
           <h2 className="uxui-trust-h2 text-center" style={{ color: C_DARK, fontSize: 32, fontWeight: 700, lineHeight: 1.3, margin: 0 }}>
-            The <b>World&rsquo;s Most Innovative</b> Brands <span aria-hidden>🤝</span> Work with <b>Ecomm Wizards</b>
+            The <b>World&rsquo;s Top</b> Brands <span aria-hidden>🤝</span> Work with <b>Ecomm Wizards</b>
           </h2>
 
-          <div className="uxui-trust-carousel" style={{ marginTop: 50, width: "100%", overflow: "hidden" }}>
+          <div className="uxui-trust-carousel" style={{ marginTop: 28, width: "100%", overflow: "hidden" }}>
             <div className="uxui-trust-track">
               {[...TRUST_LOGOS, ...TRUST_LOGOS].map((l, i) => (
                 <div key={i} className="uxui-trust-slide">
@@ -248,14 +298,14 @@ export default function Page() {
       <section className="uxui-wwd" style={{ background: C_CREAM }} aria-label="What we actually do">
         <div
           className="uxui-wwd-grid mx-auto grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center"
-          style={{ maxWidth: "1320px", padding: "90px 20px" }}
+          style={{ maxWidth: "1320px", padding: "60px 20px" }}
         >
           <div className="uxui-wwd-image">
             <Image
-              src="/images/Group_1000003963_845c2075-faa7-4162-9fbb-11df7e2cf529-scaled.webp"
+              src="/images/uxui-what-we-do.webp"
               alt="Shopify store UX/UI design mockups for Jessakae with Arctic Grey Shopify Plus Experts five star review"
-              width={962}
-              height={1024}
+              width={1000}
+              height={1041}
               className="block h-auto w-full"
             />
           </div>
@@ -266,16 +316,17 @@ export default function Page() {
             </h2>
 
             <div className="uxui-acc" style={{ marginTop: 28 }}>
-              {WHAT_WE_DO.map((it) => (
-                <details key={it.title} className="uxui-acc-item" open={it.open}>
-                  <summary>
+              {WHAT_WE_DO.map((it, i) => (
+                <div key={it.title} className="uxui-acc-item">
+                  <input type="radio" name="uxui-acc-wwd" className="uxui-acc-cb" id={`uxui-acc-wwd-${i}`} defaultChecked={it.open} />
+                  <label htmlFor={`uxui-acc-wwd-${i}`} className="uxui-acc-summary">
                     <span>{it.title}</span>
                     <svg className="uxui-acc-icon" viewBox="0 0 32 32" width="18" height="18" aria-hidden>
                       <path d="M31.6 8.5c-.6-.6-1.5-.6-2.2-.1L16 21.2 2.6 8.4c-.6-.6-1.6-.5-2.2.1-.6.6-.5 1.6.1 2.2l14.5 13.7c.3.3.7.4 1 .4s.8-.1 1-.4l14.5-13.7c.6-.6.7-1.6.1-2.2z" fill="currentColor" />
                     </svg>
-                  </summary>
-                  <p>{it.body}</p>
-                </details>
+                  </label>
+                  <div className="uxui-acc-body"><div className="uxui-acc-body-inner"><p>{it.body}</p></div></div>
+                </div>
               ))}
             </div>
 
@@ -287,9 +338,9 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 4 — Where the Real Revenue Leaks Hide (cream, 4 radio tabs, vertical marquee mockups) */}
-      <section className="uxui-funnel" style={{ background: C_CREAM }} aria-label="Where the real revenue leaks hide">
-        <div className="mx-auto" style={{ maxWidth: "1320px", padding: "90px 20px" }}>
+      {/* 4 — Where the Real Revenue Leaks Hide (white, 4 radio tabs, vertical marquee mockups) */}
+      <section className="uxui-funnel" style={{ background: "#FFFFFF" }} aria-label="Where the real revenue leaks hide">
+        <div className="mx-auto" style={{ maxWidth: "1320px", padding: "60px 20px" }}>
           <h2 className="text-center" style={{ color: C_DARK, fontSize: 44, fontWeight: 700, lineHeight: 1.2, margin: 0 }}>
             Where the Real Revenue Leaks Hide
           </h2>
@@ -336,7 +387,7 @@ export default function Page() {
                         <div key={col} className="uxui-tab-mcol">
                           <div className="uxui-tab-mtrack" style={{ animationDuration: col === 0 ? "22s" : "28s" }}>
                             {[...FUNNEL_MOCKUPS, ...FUNNEL_MOCKUPS].map((src, i) => (
-                              <Image key={i} src={src} alt="" width={500} height={420} className="block h-auto w-full rounded-md" />
+                              <Image key={i} src={src} alt={i < FUNNEL_MOCKUPS.length ? "Shopify page UX and UI design mockup" : ""} width={500} height={420} className="block h-auto w-full rounded-md" />
                             ))}
                           </div>
                         </div>
@@ -370,7 +421,7 @@ export default function Page() {
       <section className="uxui-emails" style={{ background: C_SOFT_BLUE }} aria-label="Email design">
         <div
           className="uxui-emails-grid mx-auto grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:items-center"
-          style={{ maxWidth: "1320px", padding: "90px 20px" }}
+          style={{ maxWidth: "1320px", padding: "60px 20px" }}
         >
           <div className="uxui-emails-image">
             <Image
@@ -394,16 +445,17 @@ export default function Page() {
             </p>
 
             <div className="uxui-acc" style={{ marginTop: 28 }}>
-              {EMAIL_ACCORDION.map((it) => (
-                <details key={it.title} className="uxui-acc-item" open={it.open}>
-                  <summary>
+              {EMAIL_ACCORDION.map((it, i) => (
+                <div key={it.title} className="uxui-acc-item">
+                  <input type="radio" name="uxui-acc-email" className="uxui-acc-cb" id={`uxui-acc-email-${i}`} defaultChecked={it.open} />
+                  <label htmlFor={`uxui-acc-email-${i}`} className="uxui-acc-summary">
                     <span>{it.title}</span>
                     <svg className="uxui-acc-icon" viewBox="0 0 32 32" width="18" height="18" aria-hidden>
                       <path d="M31.6 8.5c-.6-.6-1.5-.6-2.2-.1L16 21.2 2.6 8.4c-.6-.6-1.6-.5-2.2.1-.6.6-.5 1.6.1 2.2l14.5 13.7c.3.3.7.4 1 .4s.8-.1 1-.4l14.5-13.7c.6-.6.7-1.6.1-2.2z" fill="currentColor" />
                     </svg>
-                  </summary>
-                  <p>{it.body}</p>
-                </details>
+                  </label>
+                  <div className="uxui-acc-body"><div className="uxui-acc-body-inner"><p>{it.body}</p></div></div>
+                </div>
               ))}
             </div>
 
@@ -417,7 +469,7 @@ export default function Page() {
 
       {/* 7 — Shopify Apps (white, text+checks, then horizontal marquee rows) */}
       <section className="uxui-apps" style={{ background: "#FFFFFF" }} aria-label="Shopify app design">
-        <div className="mx-auto" style={{ maxWidth: "1320px", padding: "90px 20px 30px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1320px", padding: "60px 20px 30px" }}>
           <div className="uxui-apps-grid grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div>
               <h2 style={{ color: C_DARK, fontSize: 36, fontWeight: 700, lineHeight: 1.25, margin: 0 }}>
@@ -472,7 +524,7 @@ export default function Page() {
       <section className="uxui-proto" style={{ background: C_SOFT_BLUE }} aria-label="Clickable prototypes">
         <div
           className="uxui-proto-grid mx-auto grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-center"
-          style={{ maxWidth: "1320px", padding: "90px 20px" }}
+          style={{ maxWidth: "1320px", padding: "60px 20px" }}
         >
           <div>
             <h2 style={{ color: C_DARK, fontSize: 36, fontWeight: 700, lineHeight: 1.25, margin: 0 }}>
@@ -498,7 +550,7 @@ export default function Page() {
             </Link>
           </div>
 
-          <div>
+          <div className="uxui-proto-image">
             <Image
               src="/images/get_started.webp"
               alt="Designer reviewing clickable Figma prototype on a laptop with headphones"
@@ -530,7 +582,7 @@ export default function Page() {
 
       {/* 10 — Build a Brand (white, text+checks, then horizontal marquee rows) */}
       <section className="uxui-brand" style={{ background: "#FFFFFF" }} aria-label="Brand identity design">
-        <div className="mx-auto" style={{ maxWidth: "1320px", padding: "90px 20px 30px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1320px", padding: "60px 20px 30px" }}>
           <div className="uxui-brand-grid grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div>
               <h2 style={{ color: C_DARK, fontSize: 36, fontWeight: 700, lineHeight: 1.25, margin: 0 }}>
@@ -539,7 +591,7 @@ export default function Page() {
               <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
                 Your logo, your colors, your fonts, the way your store feels the moment someone lands on it. That is your
                 brand. And if it looks generic, your customers will treat you like a generic store. We build complete brand
-                identity systems tailored to ecommerce, so every piece of your Shopify UI UX design tells the same story
+                identity systems built for ecommerce, so every piece of your Shopify UI UX design tells the same story
                 and builds the same trust, whether a customer finds you through an ad, an email, or a Google search.
               </p>
               <Link href="/book-shopify-consultation" className="uxui-cta-dark mt-8 inline-flex items-center gap-3">
@@ -564,7 +616,7 @@ export default function Page() {
             <div className="uxui-h-track uxui-h-left">
               {[...BRAND_ROW_A, ...BRAND_ROW_A].map((src, i) => (
                 <div key={i} className="uxui-h-card uxui-brand-card">
-                  <Image src={src} alt="Brand identity sample — typography and logo system" width={460} height={340} className="block h-auto w-full" />
+                  <Image src={src} alt="Shopify brand identity sample: typography and logo system" width={460} height={340} className="block h-auto w-full" />
                 </div>
               ))}
             </div>
@@ -573,7 +625,7 @@ export default function Page() {
             <div className="uxui-h-track uxui-h-right">
               {[...BRAND_ROW_B, ...BRAND_ROW_B].map((src, i) => (
                 <div key={i} className="uxui-h-card uxui-brand-card">
-                  <Image src={src} alt="Brand identity sample — color palette and brand guidelines" width={460} height={340} className="block h-auto w-full" />
+                  <Image src={src} alt="Shopify brand identity sample: color palette and brand guidelines" width={460} height={340} className="block h-auto w-full" />
                 </div>
               ))}
             </div>
@@ -584,19 +636,22 @@ export default function Page() {
       {/* ── Page CSS ── */}
       <style dangerouslySetInnerHTML={{ __html: `
         /* Hero CTA — dark fill with gradient border. Hover: invert to white + black text. */
-        .uxui-hero-cta {
+        /* All CTAs match the Shopify Audit hero button: 2px brand-gradient ring,
+           black pill, invert to white fill + black text on hover. */
+        .uxui-hero-cta, .uxui-cta-dark {
           color: #FFFFFF;
-          border: 1px solid transparent;
+          border: 2px solid transparent;
           border-radius: 999px;
-          padding: 14px 28px;
-          font-size: 15px;
-          font-weight: 600;
+          padding: 16px 40px;
+          font-size: 16px;
+          font-weight: 500;
+          font-family: 'Poppins', sans-serif;
           background:
             linear-gradient(#000, #000) padding-box,
             var(--brand-gradient) border-box;
           transition: background .3s ease, color .3s ease, transform .25s ease, box-shadow .25s ease;
         }
-        .uxui-hero-cta:hover {
+        .uxui-hero-cta:hover, .uxui-cta-dark:hover {
           color: #000000;
           background:
             linear-gradient(#FFFFFF, #FFFFFF) padding-box,
@@ -604,31 +659,10 @@ export default function Page() {
           transform: translateY(-1px);
           box-shadow: 0 10px 30px -10px rgba(168,240,180,.45);
         }
-        .uxui-hero-cta:focus, .uxui-hero-cta:active, .uxui-hero-cta:visited { color: #FFFFFF; }
-        .uxui-hero-cta:hover:focus, .uxui-hero-cta:hover:active { color: #000000; }
-
-        /* Dark CTA — solid dark pill. Hover: keep dark fill, swap border to brand gradient. */
-        .uxui-cta-dark {
-          color: #FFFFFF;
-          border: 1px solid transparent;
-          border-radius: 999px;
-          padding: 16px 30px;
-          font-size: 15px;
-          font-weight: 600;
-          background:
-            linear-gradient(${C_DARK}, ${C_DARK}) padding-box,
-            ${C_DARK} border-box;
-          transition: background .3s ease, transform .25s ease, box-shadow .25s ease;
-        }
-        .uxui-cta-dark:hover {
-          color: #FFFFFF;
-          background:
-            linear-gradient(${C_DARK}, ${C_DARK}) padding-box,
-            var(--brand-gradient) border-box;
-          transform: translateY(-1px);
-          box-shadow: 0 10px 28px -10px rgba(0,0,0,.45);
-        }
-        .uxui-cta-dark:focus, .uxui-cta-dark:visited, .uxui-cta-dark:active { color: #FFFFFF; }
+        .uxui-hero-cta:focus, .uxui-hero-cta:active, .uxui-hero-cta:visited,
+        .uxui-cta-dark:focus, .uxui-cta-dark:active, .uxui-cta-dark:visited { color: #FFFFFF; }
+        .uxui-hero-cta:hover:focus, .uxui-hero-cta:hover:active,
+        .uxui-cta-dark:hover:focus, .uxui-cta-dark:hover:active { color: #000000; }
 
         /* Trust carousel — larger logos */
         .uxui-trust-track {
@@ -648,30 +682,35 @@ export default function Page() {
         /* Accordion */
         .uxui-acc-item { border-top: 1px solid rgba(17,17,17,.18); padding: 18px 0; }
         .uxui-acc-item:last-child { border-bottom: 1px solid rgba(17,17,17,.18); }
-        .uxui-acc-item > summary {
+        .uxui-acc-cb { position: absolute; opacity: 0; pointer-events: none; width: 1px; height: 1px; }
+        .uxui-acc-summary {
           list-style: none; cursor: pointer;
           display: flex; align-items: center; justify-content: space-between; gap: 16px;
           color: ${C_DARK}; font-size: 17px; font-weight: 700; line-height: 1.4;
         }
-        .uxui-acc-item > summary::-webkit-details-marker { display: none; }
-        .uxui-acc-item > summary > span { flex: 1; }
+        .uxui-acc-summary > span { flex: 1; }
         .uxui-acc-icon { flex: 0 0 18px; color: ${C_DARK}; transition: transform .3s ease; }
-        .uxui-acc-item[open] > summary .uxui-acc-icon { transform: rotate(180deg); }
-        .uxui-acc-item > p { margin: 14px 0 4px; color: ${C_TEXT}; font-size: 15px; line-height: 26px; }
+        .uxui-acc-cb:checked ~ .uxui-acc-summary .uxui-acc-icon { transform: rotate(180deg); }
+        /* Smooth expand/collapse: grid-template-rows 0fr -> 1fr with an inner overflow-hidden wrapper (matches the Audit accordion). */
+        .uxui-acc-body { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .3s ease, opacity .25s ease; }
+        .uxui-acc-cb:checked ~ .uxui-acc-body { grid-template-rows: 1fr; opacity: 1; }
+        .uxui-acc-body-inner { overflow: hidden; min-height: 0; }
+        .uxui-acc-body p { margin: 14px 0 4px; color: ${C_TEXT}; font-size: 15px; line-height: 26px; }
 
         /* Funnel tabs */
         .uxui-tabs > input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; width: 0; height: 0; }
         .uxui-tab-labels {
           display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; background: transparent;
+          padding-bottom: 10px;
         }
         .uxui-tab-label {
           display: flex; align-items: center; justify-content: center; text-align: center;
-          padding: 22px 18px; background: rgba(255,255,255,.55); border-radius: 6px 6px 0 0;
+          padding: 22px 18px; background: ${C_CREAM}; border-radius: 6px 6px 0 0;
           color: ${C_DARK}; font-size: 16px; font-weight: 700; line-height: 1.3;
           cursor: pointer; transition: background .25s ease, color .25s ease;
         }
-        .uxui-tab-label:hover { background: rgba(255,255,255,.85); }
-        .uxui-tab-panels { background: rgba(255,255,255,.55); border-radius: 0 0 12px 12px; }
+        .uxui-tab-label:hover { background: #F3ECD9; }
+        .uxui-tab-panels { background: ${C_CREAM}; border-radius: 0 0 12px 12px; }
         .uxui-tab-panel { display: none; }
         .uxui-tab-panel-inner {
           display: grid; grid-template-columns: 1fr 1.15fr; gap: 60px;
@@ -750,11 +789,23 @@ export default function Page() {
         /* ── Responsive ── */
         @media (max-width: 1024px) {
           .uxui-hero-h1 { font-size: 44px !important; }
-          .uxui-tab-panel-inner { grid-template-columns: 1fr !important; padding: 40px 28px !important; gap: 36px; }
-          .uxui-tab-marquee { height: 480px; }
+          .uxui-hero-image { max-width: 600px; margin-left: auto; margin-right: auto; }
+          .uxui-wwd-image { max-width: 600px; margin-left: auto; margin-right: auto; }
+          .uxui-emails-image { max-width: 600px; margin-left: auto; margin-right: auto; }
+          .uxui-proto-image { max-width: 600px; margin-left: auto; margin-right: auto; }
+          .uxui-funnel h2 { font-size: 42px !important; }
+          .uxui-tab-labels { grid-template-columns: 1fr 1fr !important; }
+          .uxui-tab-panel-inner { grid-template-columns: 1fr 1fr !important; padding: 40px 28px !important; gap: 36px; }
+          .uxui-tab-marquee { height: 407px; }
           .uxui-awards-row { grid-template-columns: repeat(3, 1fr); gap: 36px 24px; }
           .uxui-h-card { width: 380px; }
           .uxui-brand-card { width: 300px; }
+        }
+        /* Tablet (641-768): fit the funnel heading + intro on one line, trim app slider cards */
+        @media (min-width: 641px) and (max-width: 768px) {
+          .uxui-funnel h2 { font-size: 32px !important; }
+          .uxui-funnel > div > p { font-size: 14px !important; }
+          .uxui-apps .uxui-h-card { width: 320px !important; }
         }
 
         /* Mobile (≤ 640px) — pulled together for a 430px viewport */
@@ -796,8 +847,8 @@ export default function Page() {
           .uxui-cta-dark { padding: 13px 22px !important; font-size: 14px !important; }
 
           /* Accordion */
-          .uxui-acc-item > summary { font-size: 15px !important; }
-          .uxui-acc-item > p { font-size: 14px !important; line-height: 24px !important; }
+          .uxui-acc-summary { font-size: 15px !important; }
+          .uxui-acc-body p { font-size: 14px !important; line-height: 24px !important; }
 
           /* Funnel */
           .uxui-funnel h2 { font-size: 28px !important; }
@@ -805,7 +856,7 @@ export default function Page() {
           .uxui-tab-labels { grid-template-columns: 1fr 1fr !important; gap: 6px !important; }
           .uxui-tab-label { padding: 14px 12px !important; font-size: 13px !important; line-height: 1.3 !important; border-radius: 6px !important; }
           .uxui-tab-panels { border-radius: 10px !important; margin-top: 6px; }
-          .uxui-tab-panel-inner { padding: 28px 18px !important; gap: 28px !important; }
+          .uxui-tab-panel-inner { grid-template-columns: 1fr !important; padding: 28px 18px !important; gap: 28px !important; }
           .uxui-tab-text h3 { font-size: 22px !important; line-height: 1.3 !important; margin: 14px 0 14px !important; }
           .uxui-tab-text p { font-size: 14px !important; line-height: 24px !important; }
           .uxui-tab-marquee { height: 360px !important; gap: 12px !important; }

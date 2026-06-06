@@ -86,6 +86,11 @@ const nextConfig: NextConfig = {
         destination: "/services/shopify-speed-optimization",
         permanent: true,
       },
+      {
+        source: "/shopify-ux-and-ui-design",
+        destination: "/services/shopify-ux-and-ui-design",
+        permanent: true,
+      },
     ];
   },
 };

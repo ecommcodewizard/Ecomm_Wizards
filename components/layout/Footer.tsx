@@ -42,7 +42,7 @@ const COMPANY = [
 const AWARDS = [
   { label: "Write a Review", href: "/reviews" },
   { label: "Reviews",        href: "/reviews" },
-  { label: "UX & UI Audit",  href: "/shopify-ux-and-ui-design" },
+  { label: "UX & UI Audit",  href: "/services/shopify-ux-and-ui-design" },
   { label: "Case Studies",   href: "/case-studies" },
 ];
 
@@ -59,7 +59,7 @@ const MIGRATION = [
 
 const GET_STARTED = [
   { label: "Shopify Development Agency",            href: "/services/shopify-development-agency" },
-  { label: "Shopify UX and UI Design",             href: "/shopify-ux-and-ui-design" },
+  { label: "Shopify UX and UI Design",             href: "/services/shopify-ux-and-ui-design" },
   { label: "Headless Shopify Agency",              href: "/services/headless-shopify-agency" },
   { label: "Shopify CRO Agency",                   href: "/services/shopify-cro-agency" },
   { label: "Shopify Theme Development",            href: "/shopify-theme-development" },
