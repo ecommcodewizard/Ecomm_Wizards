@@ -91,6 +91,11 @@ const nextConfig: NextConfig = {
         destination: "/services/shopify-ux-and-ui-design",
         permanent: true,
       },
+      {
+        source: "/klaviyo-audit",
+        destination: "/services/klaviyo-audit",
+        permanent: true,
+      },
     ];
   },
 };

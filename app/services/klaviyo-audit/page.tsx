@@ -1,11 +1,73 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import CalEmbed from "./CalEmbed";
+
+const META_DESCRIPTION =
+  "Free Klaviyo audit for Shopify brands doing $50K+ per month. We find missed automation, underperforming flows, and revenue gaps in your email and SMS setup.";
+const CANONICAL_URL = "https://ecommwizards.com/services/klaviyo-audit";
 
 export const metadata: Metadata = {
-  title: "Klaviyo Audit - Ecomm Wizards",
-  description:
-    "Free Klaviyo audit for Shopify brands doing $50K+/month. Uncover missed automation, underperforming flows, and revenue gaps in your email and SMS setup.",
+  // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
+  // template would otherwise append the brand to this custom title.
+  title: { absolute: "Klaviyo Audit for Shopify Brands | Free Email Revenue Review" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "klaviyo audit",
+    "free klaviyo audit",
+    "klaviyo email audit",
+    "klaviyo audit for shopify",
+    "klaviyo flow audit",
+    "klaviyo deliverability audit",
+    "shopify email marketing audit",
+    "klaviyo account review",
+    "klaviyo audit service",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Klaviyo Audit for Shopify Brands | Free Email Revenue Review",
+    description: META_DESCRIPTION,
+    images: [
+      {
+        url: "/images/368b34d129434b1e37c56b68c6b45d6d-1-1024x486.webp",
+        alt: "Klaviyo audit revenue results dashboard for a Shopify brand",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Klaviyo Audit for Shopify Brands | Free Email Revenue Review",
+    description: META_DESCRIPTION,
+    images: ["/images/368b34d129434b1e37c56b68c6b45d6d-1-1024x486.webp"],
+  },
+};
+
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    ["What is a Klaviyo audit?", "A Klaviyo audit is a structured review of your email and SMS setup that identifies revenue gaps, underperforming flows, deliverability issues, and missed automation opportunities affecting ecommerce growth."],
+    ["Is a Klaviyo audit really free?", "Yes. Our Klaviyo audit is completely free with no contracts or credit card required. You receive actionable insights and a clear roadmap without any obligation to continue working with us."],
+    ["Who should get a Klaviyo audit?", "A Klaviyo audit is best for Shopify brands generating $50,000 or more per month that want to improve email revenue, automation performance, and customer retention without increasing ad spend."],
+    ["What does a Klaviyo audit include?", "The audit covers flows, campaigns, segmentation, deliverability, list health, design, and automation gaps. You also receive a prioritized action plan ranked by impact and implementation effort."],
+    ["How long does a Klaviyo audit take?", "The audit review call takes about 30 minutes. Preparation happens in advance, so the call focuses on findings, missed revenue opportunities, and clear next steps you can implement immediately."],
+    ["How much revenue can a Klaviyo audit recover?", "Results vary by traffic and execution, but many brands uncover several improvements worth thousands in monthly revenue by fixing broken flows, missed automations, and segmentation inefficiencies."],
+    ["How to evaluate segment performance in Klaviyo?", "We evaluate segment performance in Klaviyo by reviewing engagement metrics, conversion rates, audience logic, overlap, and campaign results to identify weak targeting and missed personalization opportunities."],
+    ["Do I need Shopify to get a Klaviyo audit?", "Yes. Our Klaviyo audits are built specifically for Shopify and Shopify Plus stores to align with ecommerce data, customer behavior, and revenue attribution."],
+  ].map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+};
+
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Klaviyo Audit", item: CANONICAL_URL },
+  ],
 };
 
 const AUDIT_URL = "/free-shopify-store-audit";
@@ -181,7 +243,7 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
     image: "/images/Frame_1000004320.webp",
     apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/klaviyo.svg", "/images/yotpo.svg"],
     headline: (<>An elegant <strong>Shopify Store</strong> designed and built for <strong>EBY</strong> by <strong>Sofia Vergara</strong></>),
-    quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally — we couldn&apos;t be happier!&rdquo;</>),
+    quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally. We couldn&apos;t be happier!&rdquo;</>),
     avatar: "/images/eby_dce31a54-eb36-409c-a8d7-e22fd8297de3_medium.webp",
     name: "EBY by Sofia Vergara",
     role: "Marketing Manager",
@@ -224,25 +286,22 @@ const FAQS = [
   { q: "Who should get a Klaviyo audit?", a: <>A Klaviyo audit is best for Shopify brands generating $50,000 or more per month that want to improve email revenue, automation performance, and customer retention without increasing ad spend.</> },
   { q: "What does a Klaviyo audit include?", a: <>The audit covers flows, campaigns, segmentation, deliverability, list health, design, and automation gaps. You also receive a prioritized action plan ranked by impact and implementation effort.</> },
   { q: "How long does a Klaviyo audit take?", a: <>The audit review call takes about 30 minutes. Preparation happens in advance, so the call focuses on findings, missed revenue opportunities, and clear next steps you can implement immediately.</> },
-  { q: "How much revenue can a Klaviyo audit unlock?", a: <>Results vary by traffic and execution, but many brands uncover several improvements worth thousands in monthly revenue by fixing broken flows, missed automations, and segmentation inefficiencies.</> },
+  { q: "How much revenue can a Klaviyo audit recover?", a: <>Results vary by traffic and execution, but many brands uncover several improvements worth thousands in monthly revenue by fixing broken flows, missed automations, and segmentation inefficiencies.</> },
   { q: "How to evaluate segment performance in Klaviyo?", a: <>We evaluate segment performance in Klaviyo by reviewing engagement metrics, conversion rates, audience logic, overlap, and campaign results to identify weak targeting and missed personalization opportunities.</> },
   { q: "Do I need Shopify to get a Klaviyo audit?", a: <>Yes. Our Klaviyo audits are built specifically for Shopify and Shopify Plus stores to align with ecommerce data, customer behavior, and revenue attribution.</> },
-];
-
-const CAL_DAYS = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
-const CAL_GRID: ({ d: number; muted?: boolean; sel?: boolean; sub?: string } | null)[] = [
-  null, null, null, null, null,
-  { d: 8 }, { d: 9 },
-  { d: 10 }, { d: 11 }, { d: 12 }, { d: 13 }, { d: 14 }, { d: 15 }, { d: 16 },
-  { d: 17 }, { d: 18, sel: true }, { d: 19 }, { d: 20 }, { d: 21 }, { d: 22 }, { d: 23 },
-  { d: 24 }, { d: 25 }, { d: 26 }, { d: 27 }, { d: 28 }, { d: 29 }, { d: 30 },
-  { d: 31, muted: true }, { d: 1, sub: "JUN" }, { d: 2 }, { d: 3 }, { d: 4 }, { d: 5 }, { d: 6 },
-  { d: 7, muted: true }, { d: 8, muted: true }, { d: 9, muted: true }, { d: 10, muted: true }, { d: 11, muted: true }, { d: 12, muted: true }, { d: 13, muted: true },
 ];
 
 export default function Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
+      />
       <GradDefs />
 
       {/* 1 — Hero */}
@@ -258,7 +317,7 @@ export default function Page() {
               Our Klaviyo audit is a revenue-focused email marketing audit designed for Shopify brands.
               We review your existing email and SMS setup to uncover missed automation, underperforming
               flows, and revenue gaps using the same framework that has driven over $54M in
-              Klaviyo-attributed revenue for 7&ndash;9 figure brands in the past year.
+              Klaviyo-attributed revenue for 7 to 9 figure brands in the past year.
             </p>
             <ul className="kv-hero-features">
               {HERO_FEATURES.map((f) => (
@@ -276,19 +335,19 @@ export default function Page() {
               <div className="kv-hero-phone-col kv-hero-phone-col-a">
                 {[...HERO_PHONES_COL_A, ...HERO_PHONES_COL_A].map((src, i) => (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img key={i} src={src} alt="" loading="eager" />
+                  <img key={i} src={src} alt={i === 0 ? "Klaviyo email and SMS flow example for a Shopify store" : ""} loading="eager" />
                 ))}
               </div>
               <div className="kv-hero-phone-col kv-hero-phone-col-b">
                 {[...HERO_PHONES_COL_B, ...HERO_PHONES_COL_B].map((src, i) => (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img key={i} src={src} alt="" loading="eager" />
+                  <img key={i} src={src} alt={i === 0 ? "Klaviyo email and SMS flow example for a Shopify store" : ""} loading="eager" />
                 ))}
               </div>
               <div className="kv-hero-phone-col kv-hero-phone-col-c">
                 {[...HERO_PHONES_COL_C, ...HERO_PHONES_COL_C].map((src, i) => (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img key={i} src={src} alt="" loading="eager" />
+                  <img key={i} src={src} alt={i === 0 ? "Klaviyo email and SMS flow example for a Shopify store" : ""} loading="eager" />
                 ))}
               </div>
             </div>
@@ -348,7 +407,7 @@ export default function Page() {
               effort. We also quantify, to the dollar, how much revenue your brand leaves on the
               table each month, so you know exactly what to implement first.
             </p>
-            <p className="kv-plus-tag"><HeroCheck /><span>100% Tailored to Your Business</span></p>
+            <p className="kv-plus-tag"><HeroCheck /><span>100% Built Around Your Business</span></p>
           </div>
         </div>
       </section>
@@ -413,7 +472,7 @@ export default function Page() {
                 <p className="kv-founder-quote">{c.text}</p>
                 <div className="kv-founder-logo">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={c.logo} alt={c.logoAlt} />
+                  <img src={c.logo} alt={`${c.logoAlt} Klaviyo audit client`} loading="lazy" decoding="async" />
                 </div>
               </div>
             ))}
@@ -425,7 +484,7 @@ export default function Page() {
       {/* 7 — Mid CTA */}
       <section className="kv-midcta">
         <div className="kv-midcta-inner">
-          <h2 className="kv-h2">Ready to Unlock Missed Revenue?</h2>
+          <h2 className="kv-h2">Ready to Recover Missed Revenue?</h2>
           <p className="kv-lede">
             Get a free Klaviyo audit and see where your current email and SMS setup leaves revenue
             on the table. Most brands uncover 3 to 5 immediate improvements that materially impact
@@ -500,42 +559,7 @@ export default function Page() {
           </div>
 
           <div className="kv-chat-right">
-            <div className="kv-cal" id="calcom-custom-embed" aria-label="Booking calendar">
-              <div className="kv-cal-header">
-                <span className="kv-cal-month">May <span className="kv-cal-year">2026</span></span>
-                <div className="kv-cal-nav">
-                  <button type="button" aria-label="Previous month">&lsaquo;</button>
-                  <button type="button" aria-label="Next month">&rsaquo;</button>
-                </div>
-              </div>
-              <div className="kv-cal-days">
-                {CAL_DAYS.map((d) => <span key={d}>{d}</span>)}
-              </div>
-              <div className="kv-cal-grid">
-                {CAL_GRID.map((cell, i) => (
-                  <div key={i} className={`kv-cal-cell${cell?.sel ? " is-sel" : ""}${cell?.muted ? " is-muted" : ""}`}>
-                    {cell ? (
-                      <>
-                        {cell.sub && <span className="kv-cal-sub">{cell.sub}</span>}
-                        <span className="kv-cal-num">{cell.d}</span>
-                      </>
-                    ) : null}
-                  </div>
-                ))}
-              </div>
-              <div className="kv-cal-foot">
-                <div className="kv-cal-foot-day">Mon <span>18</span></div>
-                <div className="kv-cal-foot-toggle">
-                  <button type="button" className="is-on">12h</button>
-                  <button type="button">24h</button>
-                </div>
-              </div>
-              <div className="kv-cal-slots">
-                <button type="button" className="is-sel">10:30pm</button>
-                <button type="button">11:00pm</button>
-                <button type="button">11:30pm</button>
-              </div>
-            </div>
+            <CalEmbed />
           </div>
         </div>
       </section>
@@ -580,12 +604,12 @@ export default function Page() {
         .kv-hero { background: #000000; padding: 90px 40px 110px; overflow: hidden; }
         .kv-hero-inner { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
         .kv-hero-eyebrow { color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0 0 28px; line-height: 1.4; }
-        .kv-hero-h1 { color: #FFFFFF; font-size: 60px; font-weight: 700; line-height: 1.14; margin: 0 0 28px; letter-spacing: -0.8px; }
-        .kv-hero-sub { color: rgba(255,255,255,0.78); font-size: 16px; line-height: 1.75; margin: 0 0 30px; max-width: 620px; }
+        .kv-hero-h1 { color: #FFFFFF; font-size: 48px; font-weight: 700; line-height: 1.14; margin: 0 0 28px; letter-spacing: -0.8px; }
+        .kv-hero-sub { color: #FFFFFF; font-size: 16px; line-height: 1.75; margin: 0 0 30px; max-width: 620px; }
         .kv-hero-features { list-style: none; padding: 0; margin: 0 0 40px; display: flex; flex-wrap: wrap; gap: 28px; }
         .kv-hero-features li { display: inline-flex; align-items: center; gap: 10px; color: #FFFFFF; font-size: 16px; font-weight: 500; }
-        .kv-hero-phones { position: relative; height: 640px; perspective: 1200px; }
-        .kv-hero-phone-mask { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; padding: 0 20px; overflow: hidden; transform: rotate(12deg) scale(1.22); transform-origin: 50% 50%; mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%); }
+        .kv-hero-phones { position: relative; height: 560px; perspective: 1200px; }
+        .kv-hero-phone-mask { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; padding: 0 20px; overflow: hidden; transform: rotate(12deg) scale(1.1); transform-origin: 50% 50%; mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%); }
         .kv-hero-phone-col { display: flex; flex-direction: column; gap: 18px; will-change: transform; }
         .kv-hero-phone-col img { width: 100%; height: auto; display: block; border-radius: 22px; box-shadow: 0 28px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.05); background: #111; }
         .kv-hero-phone-col-a { animation: kv-phones-up 70s linear infinite; }
@@ -596,15 +620,15 @@ export default function Page() {
         @media (prefers-reduced-motion: reduce) { .kv-hero-phone-col-a, .kv-hero-phone-col-b, .kv-hero-phone-col-c { animation: none; } }
 
         /* 2 — Metrics */
-        .kv-metrics { background: #FFFFFF; padding: 80px 20px; }
+        .kv-metrics { background: #FFFFFF; padding: 60px 20px; }
         .kv-metrics-inner { max-width: 1320px; margin: 0 auto; text-align: center; }
-        .kv-metrics-grid { list-style: none; padding: 0; margin: 0 0 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .kv-metrics-grid { list-style: none; padding: 0; margin: 0 0 30px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .kv-metric { background: #F1F2F4; border-radius: 14px; padding: 50px 24px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
         .kv-metric-value { color: #111111; font-size: 56px; font-weight: 700; line-height: 1; margin-top: 4px; }
         .kv-metric-label { color: #334155; font-size: 16px; font-weight: 500; }
 
         /* 3 — What You'll Get */
-        .kv-includes { background: #FBF7ED; padding: 90px 20px; }
+        .kv-includes { background: #FBF7ED; padding: 60px 20px; }
         .kv-includes-inner { max-width: 1320px; margin: 0 auto; }
         .kv-includes-grid { list-style: none; padding: 0; margin: 0 0 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .kv-include-card { background: #FFFFFF; border-radius: 16px; padding: 38px 36px 40px; }
@@ -617,7 +641,7 @@ export default function Page() {
         .kv-plus-tag { display: inline-flex; align-items: center; gap: 10px; color: #111111; font-size: 15px; font-weight: 500; margin: 0; }
 
         /* 4 — Real Results */
-        .kv-results { background: #FFFFFF; padding: 80px 20px; }
+        .kv-results { background: #FFFFFF; padding: 60px 20px; }
         .kv-results-inner { max-width: 1320px; margin: 0 auto; }
         .kv-results-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 24px; }
         .kv-result-row { background: #FBF1D8; border-radius: 18px; padding: 36px 44px; display: grid; grid-template-columns: 1fr 1fr 1.55fr; gap: 28px; align-items: center; }
@@ -641,7 +665,7 @@ export default function Page() {
         .kv-avg-note { color: #334155; font-size: 15px; margin: 0; }
 
         /* 6 — Founders saying */
-        .kv-founders { background: #FFFFFF; padding: 80px 20px; }
+        .kv-founders { background: #FFFFFF; padding: 60px 20px; }
         .kv-founders-inner { max-width: 1320px; margin: 0 auto; }
         .kv-founders-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 48px; }
         .kv-founder-card { background: #FAF1DA; border-radius: 16px; padding: 36px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; min-height: 280px; }
@@ -650,7 +674,7 @@ export default function Page() {
         .kv-founder-logo img { max-width: 150px; max-height: 60px; width: auto; height: auto; object-fit: contain; display: block; }
 
         /* 7 — Mid CTA */
-        .kv-midcta { background: #FBF7ED; padding: 80px 20px; }
+        .kv-midcta { background: #FBF7ED; padding: 60px 20px; }
         .kv-midcta-inner { max-width: 1320px; margin: 0 auto; text-align: center; }
         .kv-midcta-features { list-style: none; padding: 0; margin: 0 0 44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .kv-midcta-features li { background: #FFFFFF; border-radius: 16px; padding: 40px 32px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
@@ -687,6 +711,12 @@ export default function Page() {
         .kv-chat-testimonial figcaption strong { font-size: 15px; font-weight: 700; }
         .kv-chat-testimonial figcaption span { font-size: 12px; opacity: 0.7; }
 
+        /* cal.com inline embed */
+        .kvcal-wrap { position: relative; min-height: 600px; border-radius: 12px; overflow: hidden; background: #FFFFFF; }
+        .kvcal-loading { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-family: 'Poppins', sans-serif; font-size: 14px; }
+        .kvcal-inline { position: relative; width: 100%; min-height: 600px; }
+        .kvcal-inline iframe { width: 100% !important; }
+
         /* Calendar mock */
         .kv-cal { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 20px 24px 24px; font-size: 14px; color: #111111; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
         .kv-cal-header { display: flex; align-items: center; justify-content: space-between; padding: 6px 0 14px; }
@@ -714,7 +744,7 @@ export default function Page() {
         .kv-cal-slots button.is-sel { background: #F8FAFC; border-color: #CBD5E1; }
 
         /* 10 — FAQ */
-        .kv-faq { background: #FFFFFF; padding: 80px 20px; }
+        .kv-faq { background: #FFFFFF; padding: 60px 20px; }
         .kv-faq-inner { max-width: 1100px; margin: 0 auto; }
         .kv-faq-list { list-style: none; padding: 0; margin: 0; }
         .kv-faq-item { border-top: 1px solid #E5E7EB; }
@@ -726,6 +756,15 @@ export default function Page() {
         .kv-faq-answer { padding: 0 8px 26px; }
         .kv-faq-answer p { color: #334155; font-size: 16px; line-height: 1.65; margin: 0; }
 
+        /* ── Laptop (1024) ───────────────────────────────────────────── */
+        @media (max-width: 1024px) {
+          .kv-hero-h1 { font-size: 44px; margin-bottom: 24px; }
+          .kv-hero-eyebrow { font-size: 14px; white-space: nowrap; }
+          .kv-hero-features { flex-wrap: nowrap; gap: 14px; }
+          .kv-hero-features li { font-size: 14px; white-space: nowrap; }
+          .kv-hero-sub { margin-bottom: 24px; }
+        }
+
         /* ── Mobile + Tablet ─────────────────────────────────────────── */
         @media (max-width: 1023px) {
           .kv-h2 { font-size: 32px; line-height: 1.2; margin-bottom: 14px; }
@@ -734,19 +773,19 @@ export default function Page() {
           /* Hero */
           .kv-hero { padding: 60px 24px 80px; }
           .kv-hero-inner { grid-template-columns: 1fr; gap: 64px; }
-          .kv-hero-eyebrow { font-size: 14px; margin-bottom: 18px; }
+          .kv-hero-eyebrow { font-size: 14px; margin-bottom: 18px; white-space: normal; }
           .kv-hero-h1 { font-size: 40px; line-height: 1.16; margin-bottom: 20px; letter-spacing: -0.4px; }
-          .kv-hero-sub { font-size: 15px; line-height: 1.7; margin-bottom: 24px; }
-          .kv-hero-features { gap: 18px; margin-bottom: 30px; }
+          .kv-hero-sub { font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+          .kv-hero-features { gap: 18px; margin-bottom: 20px; flex-wrap: wrap; }
           .kv-hero-features li { font-size: 14px; }
-          .kv-hero-phones { height: 460px; }
-          .kv-hero-phone-mask { gap: 14px; padding: 0 8px; transform: rotate(12deg) scale(1.15); }
+          .kv-hero-phones { height: 410px; }
+          .kv-hero-phone-mask { gap: 14px; padding: 0 8px; transform: rotate(12deg) scale(1.08); }
           .kv-hero-phone-col { gap: 14px; }
           .kv-hero-phone-col img { border-radius: 16px; }
 
           /* Metrics */
           .kv-metrics { padding: 60px 24px; }
-          .kv-metrics-grid { grid-template-columns: 1fr; gap: 16px; margin-bottom: 36px; }
+          .kv-metrics-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 36px; }
           .kv-metric { padding: 36px 24px; }
           .kv-metric-value { font-size: 44px; }
 
@@ -762,9 +801,11 @@ export default function Page() {
           /* Real Results */
           .kv-results { padding: 60px 24px; }
           .kv-result-row { grid-template-columns: 1fr; padding: 28px 22px; gap: 22px; }
+          .kv-result-cat { margin-bottom: 14px; }
+          .kv-result-growth-sub { margin-bottom: 14px; }
           .kv-result-brand { font-size: 26px; }
           .kv-result-growth-value { font-size: 42px; }
-          .kv-result-stat { max-width: none; padding: 18px 20px; }
+          .kv-result-stat { max-width: none; padding: 16px; }
 
           /* Avg */
           .kv-avg { padding: 50px 24px 70px; }
@@ -808,12 +849,18 @@ export default function Page() {
         @media (max-width: 639px) {
           .kv-h2 { font-size: 28px; }
           .kv-lede { font-size: 14px; margin-bottom: 30px; }
+          .kv-metrics-grid { grid-template-columns: 1fr; }
+          /* All content sections (not hero): 40px vertical padding */
+          .kv-metrics, .kv-includes, .kv-results, .kv-avg, .kv-founders, .kv-midcta, .kv-chat, .kv-faq { padding: 40px 20px; }
+          .kv-marquee-section { padding: 0 20px 40px; }
 
           /* Hero — phone */
           .kv-hero { padding: 50px 20px 70px; }
           .kv-hero-inner { gap: 56px; }
-          .kv-hero-h1 { font-size: 32px; }
-          .kv-hero-features { flex-direction: column; align-items: flex-start; gap: 12px; }
+          .kv-hero-eyebrow { font-size: 13px; margin-bottom: 16px; }
+          .kv-hero-h1 { font-size: 32px; margin-bottom: 16px; }
+          .kv-hero-sub { font-size: 14px; margin-bottom: 16px; }
+          .kv-hero-features { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
           .kv-hero-phones { height: 420px; }
           .kv-hero-phone-mask { grid-template-columns: repeat(2, 1fr); transform: rotate(12deg) scale(1.05); mask-image: linear-gradient(to bottom, transparent 0%, #000 4%, #000 92%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 4%, #000 92%, transparent 100%); }
           .kv-hero-phone-col-c { display: none; }
@@ -840,6 +887,14 @@ export default function Page() {
           .kv-cal-cell { font-size: 12px; }
           .kv-cal-days { font-size: 10px; }
           .kv-cal-foot { margin-top: 16px; }
+        }
+
+        /* Tablet (640-1023): result chart on the right, shorter (text stacks on the left) */
+        @media (min-width: 640px) and (max-width: 1023px) {
+          .kv-result-row { grid-template-columns: 1fr 1fr; gap: 22px 28px; align-items: center; }
+          .kv-result-brand-col { grid-column: 1; grid-row: 1; }
+          .kv-result-growth-col { grid-column: 1; grid-row: 2; }
+          .kv-result-chart { grid-column: 2; grid-row: 1 / span 2; }
         }
       ` }} />
     </>

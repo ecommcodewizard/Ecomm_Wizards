@@ -27,7 +27,7 @@ const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.S
   // Lead gen
   { path: "/book-shopify-consultation", priority: 0.8, changeFrequency: "monthly" },
   { path: "/free-shopify-store-audit", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/klaviyo-audit", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/services/klaviyo-audit", priority: 0.6, changeFrequency: "monthly" },
 
   // Service pages (/services/*)
   { path: "/services/shopify-development-agency", priority: 0.9, changeFrequency: "monthly" },
