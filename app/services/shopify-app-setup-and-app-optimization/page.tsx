@@ -187,7 +187,7 @@ const APP_PAINS = [
   },
   {
     name: "Bad Updates Break Stores",
-    desc: "App developers push updates without warning. A misconfigured update to a cart app can kill revenue for 48 hours before you notice — especially if it drops on a Friday night.",
+    desc: "App developers push updates without warning. A misconfigured update to a cart app can kill revenue for 48 hours before you notice, especially if it drops on a Friday night.",
     cost: "An unmonitored app update breaking cart functionality can cost thousands in lost revenue per hour.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
@@ -210,7 +210,7 @@ const SAO_ITEMS = [
   },
   {
     title: "Performance Optimization",
-    body: "We identify which apps drag your Lighthouse score and fix the root cause — whether that means reconfiguring, replacing, or removing them. Target: 85+ on mobile.",
+    body: "We identify which apps drag your Lighthouse score and fix the root cause, whether that means reconfiguring, replacing, or removing them. Target: 85+ on mobile.",
   },
   {
     title: "Shopify 2.0 Integration",
@@ -218,11 +218,11 @@ const SAO_ITEMS = [
   },
   {
     title: "Conversion App Setup",
-    body: "Reviews, upsells, urgency timers, social proof widgets — configured for maximum lift without the noise that hurts trust or slows your pages.",
+    body: "Reviews, upsells, urgency timers, social proof widgets, configured for maximum lift without the noise that hurts trust or slows your pages.",
   },
   {
     title: "Analytics & Tracking",
-    body: "GA4, Meta Pixel, TikTok Pixel, Klaviyo events — configured to fire correctly. Accurate attribution means you make decisions on real data, not inflated numbers.",
+    body: "GA4, Meta Pixel, TikTok Pixel, Klaviyo events, configured to fire correctly. Accurate attribution means you make decisions on real data, not inflated numbers.",
   },
   {
     title: "App Migration",
@@ -267,7 +267,7 @@ const BREADCRUMB_SCHEMA = {
 const FAQS = [
   {
     q: "How many apps should a Shopify store have?",
-    a: "Most stores perform best with 10–18 apps. Beyond that, cumulative script load starts hurting page speed and the conversion gains from additional apps rarely offset the cost. The right number depends on your revenue stage and catalogue complexity — we give you a specific recommendation after the audit.",
+    a: "Most stores perform best with 10–18 apps. Beyond that, cumulative script load starts hurting page speed and the conversion gains from additional apps rarely offset the cost. The right number depends on your revenue stage and catalogue complexity. We give you a specific recommendation after the audit.",
   },
   {
     q: "Which apps are actually worth paying for?",
@@ -275,7 +275,7 @@ const FAQS = [
   },
   {
     q: "Can Shopify apps really slow down my store that much?",
-    a: "Yes. A single poorly configured app can add 1–3 seconds to your Time to Interactive. Run Google PageSpeed Insights on your current store and check the Eliminate render-blocking resources warning — you will likely see app scripts listed. Speed is directly tied to conversion rate: a 1-second improvement typically lifts conversions 7–12%.",
+    a: "Yes. A single poorly configured app can add 1–3 seconds to your Time to Interactive. Run Google PageSpeed Insights on your current store and check the Eliminate render-blocking resources warning, and you will likely see app scripts listed. Speed is directly tied to conversion rate: a 1-second improvement typically lifts conversions 7–12%.",
   },
   {
     q: "What does your Shopify app setup audit cover?",
@@ -283,7 +283,7 @@ const FAQS = [
   },
   {
     q: "Do you work with specific apps or are you app-agnostic?",
-    a: "App-agnostic. We have worked with virtually every major Shopify app category — reviews, email, upsells, subscriptions, loyalty, analytics — and we recommend based on what performs, not what we are affiliated with. For reference: for email we typically recommend Klaviyo for stores doing $50K+/month, or Omnisend for earlier-stage stores. For reviews: Judge.me or Okendo. For upsells: ReConvert or Rebuy.",
+    a: "App-agnostic. We have worked with virtually every major Shopify app category, including reviews, email, upsells, subscriptions, loyalty, and analytics. We recommend based on what performs, not what we are affiliated with. For reference: for email we typically recommend Klaviyo for stores doing $50K+/month, or Omnisend for earlier-stage stores. For reviews: Judge.me or Okendo. For upsells: ReConvert or Rebuy.",
   },
   {
     q: "How long does a Shopify app setup project take?",
@@ -295,11 +295,11 @@ const FAQS = [
   },
   {
     q: "Do I need to uninstall apps before you start?",
-    a: "No — the audit is more useful with everything installed. We document the full picture first, then give you a prioritized recommendation. You approve the cut list before we remove anything.",
+    a: "No. The audit is more useful with everything installed. We document the full picture first, then give you a prioritized recommendation. You approve the cut list before we remove anything.",
   },
   {
     q: "What apps do you recommend for email, reviews, and upsells?",
-    a: "For email: Klaviyo for stores doing $50K+/month in revenue, Omnisend for earlier-stage stores. For reviews: Judge.me for most stores, Okendo if you need UGC and advanced filtering. For upsells: ReConvert or Rebuy depending on AOV goals. These are starting points — we give a specific recommendation after reviewing your current stack.",
+    a: "For email: Klaviyo for stores doing $50K+/month in revenue, Omnisend for earlier-stage stores. For reviews: Judge.me for most stores, Okendo if you need UGC and advanced filtering. For upsells: ReConvert or Rebuy depending on AOV goals. These are starting points. We give a specific recommendation after reviewing your current stack.",
   },
   {
     q: "Do you offer ongoing monitoring after the initial setup?",
@@ -598,7 +598,7 @@ export default function Page() {
         <div className="sao-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
           <h2 className="sao-results-heading">Results Our Clients Actually Got</h2>
           <p className="sao-results-desc">
-            Not projections. Real outcomes from Shopify stores we&apos;ve audited, rebuilt, and optimized — faster stores, better tracking, and more revenue.
+            Not projections. Real outcomes from Shopify stores we&apos;ve audited, rebuilt, and optimized: faster stores, better tracking, and more revenue.
           </p>
           <CaseStudySlider slides={CASE_STUDY_SLIDES} intervalMs={6000} showDots={false} />
         </div>

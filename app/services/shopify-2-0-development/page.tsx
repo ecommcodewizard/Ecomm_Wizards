@@ -137,7 +137,7 @@ const S20_FEATURES = [
     ),
   },
   {
-    name: "App Blocks — No Script Injections",
+    name: "App Blocks, No Script Injections",
     desc: "Apps install cleanly as native App Blocks through the theme editor. No injected scripts, no broken layouts, no conflicts when themes or apps update.",
     roi: "Clean App Block installs reduce store load time by up to 40% vs legacy script injection methods.",
     icon: (
