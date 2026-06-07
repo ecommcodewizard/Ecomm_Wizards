@@ -106,6 +106,7 @@ const nextConfig: NextConfig = {
       { source: "/liquid-to-shopify-hydrogen", destination: "/services/migration/liquid-to-shopify-hydrogen", permanent: true },
       // migrate-to-shopify page removed; send its traffic to the migration hub
       { source: "/migrate-to-shopify", destination: "/services/migration", permanent: true },
+      { source: "/erp-connections-to-shopify", destination: "/services/erp-connections-to-shopify", permanent: true },
     ];
   },
 };

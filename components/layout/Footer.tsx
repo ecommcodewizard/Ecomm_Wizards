@@ -18,7 +18,7 @@ const SERVICE_TAGS = [
   { label: "Shopify Audit",                    href: "/services/shopify-store-audit" },
   { label: "Convert Figma to Shopify",         href: "/services/figma-to-shopify-conversion" },
   { label: "Shopify Development Agency",        href: "/services/shopify-development-agency" },
-  { label: "ERP Connections to Shopify",       href: "/services/shopify-integration-services" },
+  { label: "ERP Connections to Shopify",       href: "/services/erp-connections-to-shopify" },
   { label: "Shopify App Development",          href: "/services/shopify-app-development" },
   { label: "Mobile App Development",           href: "/shopify-mobile-app-development" },
   { label: "On Demand Dev with Bulk Hours",    href: "/services/shopify-store-development" },
