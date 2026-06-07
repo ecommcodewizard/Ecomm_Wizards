@@ -2,10 +2,45 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
+const META_DESCRIPTION =
+  "BigCommerce to Shopify migration done without downtime. We move your products, customers, orders, and SEO to Shopify or Shopify Plus with zero data loss. Get a free quote.";
+const CANONICAL_URL = "https://ecommwizards.com/services/migration/bigcommerce-to-shopify";
+
 export const metadata: Metadata = {
-  title: "BigCommerce to Shopify Plus Migration Agency | Ecomm Wizards",
-  description:
-    "Top agency for BigCommerce to Shopify Plus migration and one of the best vendors for migrating to Shopify from BigCommerce. We follow the best practices for migrating ecommerce store to Shopify Plus — zero data loss, zero downtime.",
+  // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
+  // template would otherwise append the brand to this custom title.
+  title: { absolute: "BigCommerce to Shopify Migration Agency | Zero Downtime" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "bigcommerce to shopify migration",
+    "migrate from bigcommerce to shopify",
+    "bigcommerce to shopify plus migration",
+    "bigcommerce to shopify",
+    "bigcommerce migration agency",
+    "bigcommerce to shopify migration services",
+    "switch from bigcommerce to shopify",
+    "bigcommerce shopify migration company",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "BigCommerce to Shopify Migration Agency | Zero Downtime",
+    description: META_DESCRIPTION,
+    images: [
+      {
+        url: "/images/bigcommerce-hero-bg.png",
+        alt: "BigCommerce to Shopify migration by Ecomm Wizards",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BigCommerce to Shopify Migration Agency | Zero Downtime",
+    description: META_DESCRIPTION,
+    images: ["/images/bigcommerce-hero-bg.png"],
+  },
 };
 
 const TEST_DRIVE_URL = "/free-shopify-store-audit";
@@ -52,7 +87,7 @@ const MIGRATION_SLIDES: CaseStudySlide[] = [
     image: "/images/Frame_1000004320.webp",
     apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/Subtract.svg", "/images/64f098c0e38dec3a384cb182_rebuy.svg"],
     headline: (<>An elegant <strong>Shopify Store</strong> designed and built for EBY by <strong>Sofia Vergara</strong></>),
-    quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally &ndash; we couldn&rsquo;t be happier!&rdquo;</>),
+    quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally. We couldn&rsquo;t be happier!&rdquo;</>),
     avatar: "/images/eby_dce31a54-eb36-409c-a8d7-e22fd8297de3_medium.webp",
     name: "EBY by Sofia Vergara",
     role: "Marketing Manager",
@@ -207,7 +242,7 @@ const MIGRATE_CARDS = [
     Icon: IconChecklist,
     title: "What Challenges Should You Expect?",
     body:
-      "Migrating from BigCommerce always carries risk — SEO losses, broken redirects, mismatched orders. With our guidance and the best practices for migrating ecommerce store to Shopify Plus, every redirect, every record, and every line of metadata is protected from kickoff to go-live, so nothing breaks and nothing leaks.",
+      "Migrating from BigCommerce always carries risk: SEO losses, broken redirects, mismatched orders. With our guidance and the best practices for migrating ecommerce store to Shopify Plus, every redirect, every record, and every line of metadata is protected from kickoff to go-live, so nothing breaks and nothing leaks.",
   },
 ];
 
@@ -218,19 +253,79 @@ const Arrow = () => (
   </svg>
 );
 
+const FAQS = [
+  {
+    q: "Will I lose my SEO rankings migrating from BigCommerce to Shopify?",
+    a: "No. We protect your SEO by mapping every BigCommerce URL, setting up 301 redirects, and carrying over metadata, structured data, and content. Google sees a clean handoff, so your rankings and traffic stay intact.",
+  },
+  {
+    q: "How long does a BigCommerce to Shopify migration take?",
+    a: "Most BigCommerce migrations run two to six weeks depending on catalog size, custom features, and integrations. We scope the exact timeline on your discovery call and give you a clear plan before any work begins.",
+  },
+  {
+    q: "Will my BigCommerce store go down during the migration?",
+    a: "No. We build and test your new Shopify store in parallel while your BigCommerce store keeps selling. We only point the domain over once everything is verified, so your customers never see downtime.",
+  },
+  {
+    q: "What data transfers from BigCommerce to Shopify?",
+    a: "Products, variants, customers, full order history, content, blogs, reviews, and SEO assets. Anything that lives in your BigCommerce store gets mapped to Shopify so nothing breaks and nothing duplicates.",
+  },
+  {
+    q: "How much does a BigCommerce to Shopify migration cost?",
+    a: "Cost depends on your catalog size, custom functionality, and the integrations you need rebuilt. We give fixed-price quotes with no hourly surprises. Book a call and we will send a detailed breakdown.",
+  },
+  {
+    q: "What happens to my BigCommerce apps and integrations?",
+    a: "We audit every integration you rely on, from ERP and 3PL to email, POS, and reviews, then rebuild or replace each one on Shopify so your operations keep running the day you go live.",
+  },
+  {
+    q: "Do you migrate to Shopify or Shopify Plus?",
+    a: "Both. We help you choose the right plan for your volume, then handle the full build. If you are scaling past BigCommerce Enterprise, our Shopify Plus migration experts set you up for high-traffic sales and B2B from day one.",
+  },
+];
+
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Migration", item: "https://ecommwizards.com/services/migration" },
+    { "@type": "ListItem", position: 4, name: "BigCommerce to Shopify", item: "https://ecommwizards.com/services/migration/bigcommerce-to-shopify" },
+  ],
+};
+
 export default function Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
+      />
       {/* 1 — Hero */}
       <section className="b2s-hero">
         <div className="b2s-hero-inner">
           <div className="b2s-hero-copy">
             <h1 className="b2s-hero-h1">
-              BigCommerce to Shopify Plus Migration, Done Without Downtime
+              <span style={GRADIENT_TEXT}>BigCommerce to Shopify</span> Plus Migration, Done Without Downtime
             </h1>
             <p className="b2s-hero-lead">
               Done patching, paying, and praying your way around BigCommerce? Ecomm Wizards is one
-              of the best vendors for migrating to Shopify from BigCommerce &mdash; lifting your
+              of the best vendors for migrating to Shopify from BigCommerce. We lift your
               products, customers, orders, and SEO equity onto Shopify Plus without losing a single
               day of revenue.
             </p>
@@ -253,7 +348,7 @@ export default function Page() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/bigcommerce-hero-bg.png"
-              alt="Shopify admin and storefront mockups"
+              alt="BigCommerce to Shopify migration: Shopify admin and storefront after the move"
               loading="lazy"
             />
           </div>
@@ -265,14 +360,14 @@ export default function Page() {
         <div className="b2s-why-inner">
           <p className="b2s-why-eyebrow">Why Shopify Plus?</p>
           <h2 className="b2s-why-h2">
-            For Seasoned Brands<br />Outgrowing BigCommerce
+            For Seasoned Brands Outgrowing BigCommerce
           </h2>
 
           <div className="b2s-why-grid">
             <div className="b2s-why-copy">
               <h3 className="b2s-why-pillar">Higher Revenue, Lower Risk</h3>
               <p className="b2s-why-lead">
-                Shopify&rsquo;s checkout converts 12% better than BigCommerce&rsquo;s &mdash; and
+                Shopify&rsquo;s checkout converts 12% better than BigCommerce&rsquo;s, and
                 when you follow the best practices for migrating ecommerce store to Shopify Plus,
                 those gains stack across every channel from day one.
               </p>
@@ -282,7 +377,7 @@ export default function Page() {
                   <h4 className="b2s-why-title">Higher Conversion</h4>
                   <p className="b2s-why-body">
                     Shopify Plus checkout converts 12% better than BigCommerce, paired with Shop
-                    Pay &mdash; the best-converting accelerated checkout on the internet. With more
+                    Pay, the best-converting accelerated checkout on the internet. With more
                     than 150 million users already signed up, brands convert first-time visitors
                     into customers, and Shop Pay can boost conversion up to 50% over guest
                     checkout.
@@ -291,7 +386,7 @@ export default function Page() {
                 <li className="b2s-why-item">
                   <h4 className="b2s-why-title">Native Growth Tools</h4>
                   <p className="b2s-why-body">
-                    Shop Pay, Shop App, Shop Instalments, and Audiences &mdash; native growth tools
+                    Shop Pay, Shop App, Shop Instalments, and Audiences, native growth tools
                     designed to help merchants increase sales and revenue, available only on
                     Shopify Plus and a key reason brands hire a top agency for BigCommerce to
                     Shopify Plus migration to make the switch quickly.
@@ -300,8 +395,8 @@ export default function Page() {
                 <li className="b2s-why-item">
                   <h4 className="b2s-why-title">Unified Selling</h4>
                   <p className="b2s-why-body">
-                    Unified selling across every sales channel &mdash; online, offline POS, and
-                    B2B &mdash; in one platform. BigCommerce relies on apps or third-party tools
+                    Unified selling across every sales channel: online, offline POS, and
+                    B2B, in one platform. BigCommerce relies on apps or third-party tools
                     for POS and B2B, which fragments the user experience and quietly erodes margin
                     every quarter you stay on the platform.
                   </p>
@@ -362,8 +457,8 @@ export default function Page() {
             <div className="b2s-innov-copy">
               <h2 className="b2s-innov-h2">Why Shopify Plus Wins on Innovation</h2>
               <p className="b2s-innov-sub">
-                Shopify ships features faster than BigCommerce or any other commerce platform
-                &mdash; the reason every top agency for BigCommerce to Shopify Plus migration ends
+                Shopify ships features faster than BigCommerce or any other commerce platform.
+                That is the reason every top agency for BigCommerce to Shopify Plus migration ends
                 up recommending it for long-term growth.
               </p>
               <div className="b2s-innov-ctas">
@@ -466,7 +561,7 @@ export default function Page() {
             <div className="b2s-conv-copy">
               <p className="b2s-conv-lede">
                 On <strong>&ldquo;like-to-like&rdquo;</strong> samples, Shopify outperforms peers
-                by up to <strong>36%, and by 15.2% on average</strong> &mdash; the uplift you can
+                by up to <strong>36%, and by 15.2% on average</strong>, the uplift you can
                 expect when you follow the best practices for migrating ecommerce store to Shopify
                 Plus.
               </p>
@@ -496,7 +591,7 @@ export default function Page() {
               <h3 className="b2s-mratio-h3">Migration Ratio: ~6 to 1</h3>
               <p className="b2s-mratio-sub">
                 Migrations in top <strong>1,000,000 ranked</strong> sites between Jan 1, 2023
-                &ndash; August 9, 2024
+                to August 9, 2024
               </p>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -586,12 +681,12 @@ export default function Page() {
         <div className="b2s-howto-inner">
           <h2 className="b2s-howto-h2">
             At Ecomm Wizards, we treat every BigCommerce migration like the high-stakes project it
-            is &mdash; which is exactly why we are ranked among the best agencies for BigCommerce
+            is. That is exactly why we are ranked among the best agencies for BigCommerce
             to Shopify migration 2026.
           </h2>
           <p className="b2s-howto-lead">
             We follow the best practices for migrating ecommerce store to Shopify Plus on every
-            project &mdash; mapping your BigCommerce customer, sales, and product data with the
+            project, mapping your BigCommerce customer, sales, and product data with the
             precision of a top agency for BigCommerce to Shopify Plus migration so you stay focused
             on running the business while we handle the platform switch.
           </p>
@@ -680,7 +775,7 @@ export default function Page() {
       <section className="mig-innov">
         <div className="mig-innov-inner">
           <h2 className="mig-innov-h2">
-            Trusted by the World&rsquo;s Most<br />Innovative Brands on Shopify Plus
+            Trusted by the World&rsquo;s<br />Top Brands on Shopify Plus
           </h2>
           {INNOVATIVE_ROWS.map((row, rowIdx) => (
             <div className="mig-innov-row" key={rowIdx}>
@@ -697,6 +792,31 @@ export default function Page() {
               </ul>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="b2s-faq">
+        <div className="b2s-faq-inner">
+          <h2 className="b2s-faq-h2">BigCommerce to Shopify Migration FAQs</h2>
+          <div className="b2s-faq-acc">
+            {FAQS.map((_, i) => (
+              <input key={i} className="b2s-faq-rad" type="radio" id={`b2s-faq-${i}`} name="b2s-faq-acc" defaultChecked={i === 0} />
+            ))}
+            <div className="b2s-faq-list">
+              {FAQS.map((f, i) => (
+                <div key={i} className="b2s-faq-item" data-faq={`b2s-faq-${i}`}>
+                  <label htmlFor={`b2s-faq-${i}`} className="b2s-faq-head">
+                    <span className="b2s-faq-q">{f.q}</span>
+                    <span className="b2s-faq-ico" aria-hidden>
+                      <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor"><path d="M31.6 8.5c-.6-.6-1.5-.6-2.2-.1L16 21.2 2.6 8.4c-.6-.6-1.6-.5-2.2.1-.6.6-.5 1.6.1 2.2l14.5 13.7c.3.3.7.4 1 .4s.8-.1 1-.4l14.5-13.7c.6-.6.7-1.6.1-2.2z" /></svg>
+                    </span>
+                  </label>
+                  <div className="b2s-faq-bodyc"><div className="b2s-faq-in"><p>{f.a}</p></div></div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -751,10 +871,10 @@ export default function Page() {
           margin: 0 0 22px;
         }
         .b2s-hero-lead {
-          color: rgba(255,255,255,0.85);
+          color: #FFFFFF;
           font-size: 16px;
           line-height: 1.75;
-          margin: 0 0 32px;
+          margin: 0 0 24px;
         }
         .b2s-hero-ctas { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; margin-bottom: 30px; }
 
@@ -807,6 +927,12 @@ export default function Page() {
 
         .b2s-hero-visual-stack { display: none; }
 
+        /* ── Laptop (1024) ── */
+        @media (max-width: 1024px) {
+          .b2s-hero-h1 { font-size: 40px; }
+          .b2s-hero-copy { max-width: 480px; }
+        }
+
         /* ── Tablet ── */
         @media (max-width: 1023px) {
           .b2s-hero {
@@ -825,8 +951,8 @@ export default function Page() {
         @media (max-width: 639px) {
           .b2s-hero { padding: 44px 15px 44px; }
           .b2s-hero-h1 { font-size: 26px; line-height: 1.2; margin-bottom: 14px; letter-spacing: -0.2px; }
-          .b2s-hero-lead { font-size: 14px; line-height: 1.65; margin-bottom: 22px; }
-          .b2s-hero-ctas { gap: 18px; margin-bottom: 22px; }
+          .b2s-hero-lead { font-size: 14px; line-height: 1.65; margin-bottom: 14px; }
+          .b2s-hero-ctas { gap: 18px; margin-bottom: 14px; }
           .b2s-cta-outline { width: 100%; justify-content: center; padding: 14px 20px; font-size: 14px; }
           .b2s-hero-text-link { font-size: 14px; }
           .b2s-hero-trust { font-size: 13px; }
@@ -834,14 +960,14 @@ export default function Page() {
         }
 
         /* 2 — Why Shopify? */
-        .b2s-why { background: #FFFFFF; padding: 90px 40px; }
+        .b2s-why { background: #FFFFFF; padding: 60px 40px; }
         .b2s-why-inner { max-width: 1320px; margin: 0 auto; }
         .b2s-why-eyebrow { text-align: center; color: #111111; font-size: 20px; font-weight: 500; line-height: 1.3; margin: 0 0 14px; }
-        .b2s-why-h2 { text-align: center; color: #111111; font-size: 48px; font-weight: 700; line-height: 1.15; letter-spacing: -0.4px; margin: 0 0 64px; }
+        .b2s-why-h2 { text-align: center; color: #111111; font-size: 48px; font-weight: 700; line-height: 1.15; letter-spacing: -0.4px; margin: 0 0 30px; }
         .b2s-why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 
         .b2s-why-pillar { color: #111111; font-size: 38px; font-weight: 700; line-height: 1.2; letter-spacing: -0.3px; margin: 0 0 18px; }
-        .b2s-why-lead { color: #334155; font-size: 15px; line-height: 1.7; margin: 0 0 36px; max-width: 520px; }
+        .b2s-why-lead { color: #334155; font-size: 15px; line-height: 1.7; margin: 0 0 24px; max-width: 520px; }
 
         .b2s-why-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 26px; }
         .b2s-why-item { border-left: 3px solid #111111; padding: 4px 0 4px 22px; }
@@ -850,6 +976,13 @@ export default function Page() {
 
         .b2s-why-visual { display: flex; justify-content: center; align-items: center; }
         .b2s-why-visual img { width: 100%; height: auto; max-width: 620px; display: block; }
+
+        /* ── Laptop (1024) ── */
+        @media (max-width: 1024px) {
+          .b2s-why-h2 { font-size: 42px; margin-bottom: 24px; }
+          .b2s-why-pillar { font-size: 32px; }
+          .b2s-why-lead { font-size: 14px; margin-bottom: 18px; }
+        }
 
         @media (max-width: 1023px) {
           .b2s-why { padding: 64px 24px; }
@@ -872,7 +1005,7 @@ export default function Page() {
         }
 
         /* 3 — Hundreds of brands migrated */
-        .b2s-migrated { background: #F0F5FA; padding: 80px 40px; }
+        .b2s-migrated { background: #F0F5FA; padding: 60px 40px; }
         .b2s-migrated-inner { max-width: 1320px; margin: 0 auto; }
         .b2s-migrated-h2 { text-align: center; color: #111111; font-size: 30px; font-weight: 600; line-height: 1.3; margin: 0 0 56px; }
 
@@ -906,11 +1039,11 @@ export default function Page() {
         }
 
         /* 4 + 5 — Why Shopify's Different / Site Speed + TCO */
-        .b2s-innov { background: #FFFFFF; padding: 90px 40px; }
+        .b2s-innov { background: #FFFFFF; padding: 60px 40px; }
         .b2s-innov-inner { max-width: 1320px; margin: 0 auto; }
         .b2s-innov-top { display: grid; grid-template-columns: 1fr 1.05fr; gap: 80px; align-items: center; margin-bottom: 60px; }
         .b2s-innov-h2 { color: #111111; font-size: 42px; font-weight: 700; line-height: 1.18; letter-spacing: -0.4px; margin: 0 0 22px; }
-        .b2s-innov-sub { background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent; font-size: 22px; font-weight: 500; line-height: 1.4; margin: 0 0 36px; max-width: 460px; }
+        .b2s-innov-sub { color: #111111; font-size: 22px; font-weight: 500; line-height: 1.4; margin: 0 0 36px; max-width: 460px; }
         .b2s-innov-ctas { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
 
         .b2s-cta-solid,
@@ -967,7 +1100,7 @@ export default function Page() {
           background-size: 100% 1px, 1px 100%;
           background-position: top left, top left;
           background-repeat: repeat-x, repeat-y;
-          padding: 80px 40px;
+          padding: 60px 40px;
         }
         .b2s-speed-inner { max-width: 1320px; margin: 0 auto; position: relative; }
         .b2s-speed-inner::before,
@@ -997,35 +1130,41 @@ export default function Page() {
         }
 
         /* 7 — Conversion Comparison */
-        .b2s-conv { background: #FBF7ED; padding: 90px 40px; }
+        .b2s-conv { background: #FBF7ED; padding: 60px 40px; }
         .b2s-conv-inner { max-width: 1320px; margin: 0 auto; }
-        .b2s-conv-h2 { text-align: center; color: #111111; font-size: 42px; font-weight: 400; line-height: 1.22; letter-spacing: -0.3px; margin: 0 0 64px; }
+        .b2s-conv-h2 { text-align: center; color: #111111; font-size: 42px; font-weight: 400; line-height: 1.22; letter-spacing: -0.3px; margin: 0 0 30px; }
         .b2s-conv-h2 strong { font-weight: 700; }
 
         .b2s-conv-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 60px; align-items: center; }
         .b2s-conv-visual img { width: 100%; height: auto; display: block; border-radius: 14px; }
 
         .b2s-conv-copy { color: #8B6A1F; }
-        .b2s-conv-lede { background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent; font-size: 22px; font-weight: 500; line-height: 1.45; margin: 0 0 28px; }
+        .b2s-conv-lede { color: #111111; font-size: 22px; font-weight: 500; line-height: 1.45; margin: 0 0 24px; }
         .b2s-conv-lede strong { font-weight: 700; }
         .b2s-conv-body { color: #111111; font-size: 15px; line-height: 1.7; margin: 0 0 18px; }
         .b2s-conv-body:last-child { margin-bottom: 0; }
 
+        /* ── Laptop (1024) ── */
+        @media (max-width: 1024px) {
+          .b2s-conv-h2 { margin-bottom: 24px; }
+          .b2s-conv-lede { margin-bottom: 18px; }
+        }
+
         @media (max-width: 1023px) {
           .b2s-conv { padding: 64px 24px; }
-          .b2s-conv-h2 { font-size: 32px; margin-bottom: 40px; }
+          .b2s-conv-h2 { font-size: 32px; margin-bottom: 24px; }
           .b2s-conv-grid { grid-template-columns: 1fr; gap: 40px; }
           .b2s-conv-lede { font-size: 18px; }
         }
         @media (max-width: 639px) {
           .b2s-conv { padding: 44px 15px; }
-          .b2s-conv-h2 { font-size: 22px; line-height: 1.25; margin-bottom: 28px; letter-spacing: -0.2px; }
-          .b2s-conv-lede { font-size: 16px; margin-bottom: 20px; }
+          .b2s-conv-h2 { font-size: 22px; line-height: 1.25; margin-bottom: 16px; letter-spacing: -0.2px; }
+          .b2s-conv-lede { font-size: 16px; margin-bottom: 12px; }
           .b2s-conv-body { font-size: 13.5px; line-height: 1.65; margin-bottom: 14px; }
         }
 
         /* 8 — Migration Ratio + Market Share */
-        .b2s-mratio { background: #F0F5FA; padding: 80px 40px 40px; }
+        .b2s-mratio { background: #F0F5FA; padding: 60px 40px 40px; }
         .b2s-mratio-inner { max-width: 1320px; margin: 0 auto; }
         .b2s-mratio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
         .b2s-mratio-card { background: #FFFFFF; border-radius: 18px; padding: 44px 44px 36px; position: relative; border: 1px solid transparent; background-image: linear-gradient(#FFFFFF, #FFFFFF), var(--brand-gradient); background-origin: border-box; background-clip: padding-box, border-box; }
@@ -1048,14 +1187,14 @@ export default function Page() {
         }
 
         /* 9 — BigCommerce vs Shopify stat table */
-        .b2s-stats { background: #F0F5FA; padding: 40px 40px 90px; }
+        .b2s-stats { background: #F0F5FA; padding: 40px 40px 60px; }
         .b2s-stats-inner { max-width: 1320px; margin: 0 auto; }
         .b2s-stats-card { background: #FFFFFF; border-radius: 18px; padding: 50px 56px; box-shadow: 0 1px 3px rgba(15,23,42,0.04); }
         .b2s-stats-headrow { display: grid; grid-template-columns: 0.85fr 1fr 1fr; padding: 0 0 28px; }
         .b2s-stats-headcell { color: #111111; font-size: 22px; font-weight: 500; }
 
         .b2s-stats-row { display: grid; grid-template-columns: 0.85fr 1fr 1fr; gap: 0; padding: 36px 0; border-top: 1px solid #E5E7EB; border-radius: 14px; align-items: center; position: relative; }
-        .b2s-stats-row { border: 1px solid #E5E7EB; border-radius: 14px; padding: 36px 28px; margin-top: 18px; }
+        .b2s-stats-row { border: 1px solid #E5E7EB; border-radius: 14px; padding: 28px; margin-top: 18px; align-items: stretch; }
         .b2s-stats-row:first-of-type { margin-top: 8px; }
 
         .b2s-stats-aside { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; max-width: 240px; }
@@ -1064,7 +1203,9 @@ export default function Page() {
         .b2s-stats-aside-cap { color: #1E293B; font-size: 13.5px; line-height: 1.55; margin: 4px 0 0; }
         .b2s-stats-cap-num { margin: 6px 0 0 !important; font-size: 36px !important; }
 
-        .b2s-stats-cell { display: flex; flex-direction: column; gap: 6px; padding-right: 12px; }
+        .b2s-stats-cell { display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 8px 14px; }
+        .b2s-stats-cell:last-child { background: #EAF7F0; border-radius: 12px; }
+        .b2s-stats-headcell:last-child { padding-left: 14px; }
         .b2s-stats-cell .b2s-stats-num + .b2s-stats-lbl { margin-bottom: 18px; }
         .b2s-stats-cell .b2s-stats-lbl:last-child { margin-bottom: 0; }
         .b2s-stats-num { font-size: 36px; font-weight: 800; line-height: 1.1; margin: 0; letter-spacing: -0.5px; }
@@ -1084,21 +1225,22 @@ export default function Page() {
         @media (max-width: 639px) {
           .b2s-stats { padding: 24px 15px 44px; }
           .b2s-stats-card { padding: 24px 18px; border-radius: 14px; }
-          .b2s-stats-headrow { grid-template-columns: 1fr 1fr; padding-bottom: 12px; }
-          .b2s-stats-headrow .b2s-stats-headcell:first-child { display: none; }
-          .b2s-stats-headcell { font-size: 15px; }
-          .b2s-stats-row { grid-template-columns: 1fr 1fr; padding: 20px 14px; gap: 12px; }
-          .b2s-stats-aside { grid-column: 1 / -1; max-width: none; flex-direction: row; align-items: center; gap: 14px; padding-bottom: 8px; border-bottom: 1px solid #E5E7EB; margin-bottom: 8px; }
+          .b2s-stats-headrow { grid-template-columns: 0.7fr 1fr 1fr; padding-bottom: 12px; }
+          .b2s-stats-headcell { font-size: 13px; }
+          .b2s-stats-headcell:last-child { padding-left: 8px; }
+          .b2s-stats-row { grid-template-columns: 0.7fr 1fr 1fr; padding: 16px 12px; gap: 8px; }
+          .b2s-stats-aside { max-width: none; }
+          .b2s-stats-cell { padding: 6px 8px; }
           .b2s-stats-gartner, .b2s-stats-shopify { width: 80px; }
           .b2s-stats-aside-cap { font-size: 12px; flex: 1; }
-          .b2s-stats-cap-num { font-size: 24px !important; }
-          .b2s-stats-num { font-size: 22px; }
-          .b2s-stats-lbl { font-size: 12.5px; }
+          .b2s-stats-cap-num { font-size: 22px !important; }
+          .b2s-stats-num { font-size: 18px; }
+          .b2s-stats-lbl { font-size: 11.5px; }
           .b2s-stats-cell .b2s-stats-num + .b2s-stats-lbl { margin-bottom: 12px; }
         }
 
         /* 10 — How to Migrate from BigCommerce to Shopify */
-        .b2s-howto { background: #FBF7ED; padding: 90px 40px; }
+        .b2s-howto { background: #FBF7ED; padding: 60px 40px; }
         .b2s-howto-inner { max-width: 1320px; margin: 0 auto; }
         .b2s-howto-h2 { text-align: center; color: #111111; font-size: 30px; font-weight: 700; line-height: 1.35; letter-spacing: -0.2px; margin: 0 auto 22px; max-width: 1100px; }
         .b2s-howto-lead { text-align: center; color: #111111; font-size: 15px; line-height: 1.7; margin: 0 auto 56px; max-width: 1040px; }
@@ -1165,7 +1307,7 @@ export default function Page() {
         }
 
         /* 14 — Awards & Recognition */
-        .b2s-awards { background: #F0F5FA; padding: 30px 40px 80px; }
+        .b2s-awards { background: #F0F5FA; padding: 30px 40px 60px; }
         .b2s-awards-inner { max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
         .b2s-awards-card { background: #FFFFFF; border-radius: 18px; padding: 40px 40px 36px; display: grid; gap: 24px; align-items: start; box-shadow: 0 1px 3px rgba(15,23,42,0.04); }
         .b2s-awards-card--5 { grid-template-columns: repeat(5, 1fr); }
@@ -1265,9 +1407,9 @@ export default function Page() {
           .b2s-hero { padding: 52px 28px 52px; }
           .b2s-hero-inner { padding: 0; }
           .b2s-hero-copy { max-width: none; }
-          .b2s-hero-h1 { font-size: 34px; line-height: 1.18; margin-bottom: 18px; }
-          .b2s-hero-lead { font-size: 14.5px; margin-bottom: 26px; }
-          .b2s-hero-ctas { gap: 22px; margin-bottom: 24px; }
+          .b2s-hero-h1 { font-size: 34px; line-height: 1.18; margin-bottom: 16px; }
+          .b2s-hero-lead { font-size: 14.5px; margin-bottom: 16px; }
+          .b2s-hero-ctas { gap: 22px; margin-bottom: 16px; }
           .b2s-cta-outline { padding: 14px 26px; font-size: 14px; }
           .b2s-hero-text-link { font-size: 14px; }
           .b2s-hero-trust { font-size: 13.5px; }
@@ -1275,10 +1417,10 @@ export default function Page() {
 
           /* 2 — Why Shopify */
           .b2s-why { padding: 56px 28px; }
-          .b2s-why-h2 { font-size: 30px; margin-bottom: 36px; }
+          .b2s-why-h2 { font-size: 30px; margin-bottom: 16px; }
           .b2s-why-grid { gap: 40px; }
-          .b2s-why-pillar { font-size: 26px; margin-bottom: 14px; }
-          .b2s-why-lead { font-size: 14.5px; margin-bottom: 28px; }
+          .b2s-why-pillar { font-size: 26px; margin-bottom: 10px; }
+          .b2s-why-lead { font-size: 14px; margin-bottom: 14px; }
           .b2s-why-list { gap: 22px; }
           .b2s-why-title { font-size: 16px; }
           .b2s-why-body { font-size: 14px; line-height: 1.65; }
@@ -1295,6 +1437,7 @@ export default function Page() {
           .b2s-innov-top { gap: 36px; margin-bottom: 36px; }
           .b2s-innov-h2 { font-size: 28px; margin-bottom: 16px; }
           .b2s-innov-sub { font-size: 16px; max-width: none; }
+          .b2s-innov-cards { grid-template-columns: 1fr 1fr; }
           .b2s-innov-card { padding: 28px 24px; }
           .b2s-innov-card-h3 { font-size: 20px; margin-bottom: 18px; }
 
@@ -1304,14 +1447,14 @@ export default function Page() {
 
           /* 7 — Conversion */
           .b2s-conv { padding: 56px 28px; }
-          .b2s-conv-h2 { font-size: 28px; margin-bottom: 36px; }
+          .b2s-conv-h2 { font-size: 28px; margin-bottom: 20px; }
           .b2s-conv-grid { gap: 36px; }
-          .b2s-conv-lede { font-size: 17px; }
+          .b2s-conv-lede { font-size: 17px; margin-bottom: 16px; }
           .b2s-conv-body { font-size: 14px; }
 
           /* 8 — Migration ratio cards */
           .b2s-mratio { padding: 52px 28px 28px; }
-          .b2s-mratio-grid { gap: 22px; }
+          .b2s-mratio-grid { grid-template-columns: 1fr 1fr; gap: 22px; }
           .b2s-mratio-card { padding: 28px 24px 24px; }
           .b2s-mratio-h3 { font-size: 22px; margin-bottom: 10px; }
           .b2s-mratio-sub { font-size: 13px; margin-bottom: 18px; }
@@ -1520,6 +1663,38 @@ export default function Page() {
 
           /* 11 — Migration case studies (uses ssd-results-* from globals) */
           .ssd-results-inner { max-width: 1600px !important; }
+        }
+
+        /* FAQ (smooth accordion) */
+        .b2s-faq { background: #FFFFFF; padding: 60px 40px; }
+        .b2s-faq-inner { max-width: 860px; margin: 0 auto; }
+        .b2s-faq-h2 { color: #111111; font-size: 36px; font-weight: 700; line-height: 1.2; letter-spacing: -0.3px; text-align: center; margin: 0 0 36px; }
+        .b2s-faq-acc { position: relative; }
+        .b2s-faq-rad { position: absolute; opacity: 0; pointer-events: none; width: 1px; height: 1px; }
+        .b2s-faq-list { display: flex; flex-direction: column; }
+        .b2s-faq-item { border-top: 1px solid #E5E7EB; }
+        .b2s-faq-item:last-child { border-bottom: 1px solid #E5E7EB; }
+        .b2s-faq-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; cursor: pointer; }
+        .b2s-faq-q { color: #111111; font-size: 17px; font-weight: 600; line-height: 1.4; }
+        .b2s-faq-ico { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; color: #111111; flex: 0 0 auto; transition: transform .3s ease; }
+        .b2s-faq-bodyc { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .3s ease, opacity .25s ease; }
+        .b2s-faq-in { overflow: hidden; min-height: 0; }
+        .b2s-faq-bodyc p { color: #334155; font-size: 15px; line-height: 1.75; margin: 0; padding: 0 40px 22px 0; }
+        ${FAQS.map((_, i) => `#b2s-faq-${i}:checked ~ .b2s-faq-list [data-faq="b2s-faq-${i}"] .b2s-faq-bodyc`).join(",\n        ")} {
+          grid-template-rows: 1fr; opacity: 1;
+        }
+        ${FAQS.map((_, i) => `#b2s-faq-${i}:checked ~ .b2s-faq-list [data-faq="b2s-faq-${i}"] .b2s-faq-ico`).join(",\n        ")} {
+          transform: rotate(180deg);
+        }
+        @media (max-width: 1023px) {
+          .b2s-faq { padding: 60px 24px; }
+          .b2s-faq-h2 { font-size: 28px; margin-bottom: 28px; }
+        }
+        @media (max-width: 639px) {
+          .b2s-faq { padding: 44px 15px; }
+          .b2s-faq-h2 { font-size: 22px; }
+          .b2s-faq-q { font-size: 15px; }
+          .b2s-faq-bodyc p { font-size: 14px; padding-right: 0; }
         }
       ` }} />
     </>
