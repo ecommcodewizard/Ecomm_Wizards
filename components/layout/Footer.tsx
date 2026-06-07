@@ -14,7 +14,7 @@ const CITIES = [
 
 const SERVICE_TAGS = [
   { label: "Build a New Shopify Store",        href: "/services/shopify-store-development" },
-  { label: "Shopify Theme Customizations",     href: "/shopify-theme-development" },
+  { label: "Shopify Theme Customizations",     href: "/services/shopify-theme-development" },
   { label: "Shopify Audit",                    href: "/services/shopify-store-audit" },
   { label: "Convert Figma to Shopify",         href: "/services/figma-to-shopify-conversion" },
   { label: "Shopify Development Agency",        href: "/services/shopify-development-agency" },
@@ -62,7 +62,7 @@ const GET_STARTED = [
   { label: "Shopify UX and UI Design",             href: "/services/shopify-ux-and-ui-design" },
   { label: "Headless Shopify Agency",              href: "/services/headless-shopify-agency" },
   { label: "Shopify CRO Agency",                   href: "/services/shopify-cro-agency" },
-  { label: "Shopify Theme Development",            href: "/shopify-theme-development" },
+  { label: "Shopify Theme Development",            href: "/services/shopify-theme-development" },
   { label: "Shopify Plus Development",             href: "/services/shopify-plus-development" },
   { label: "Shopify SEO Agency",                   href: "/services/shopify-seo-agency" },
   { label: "Shopify Landing Page Design",          href: "/services/shopify-landing-page-design" },

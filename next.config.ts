@@ -107,6 +107,9 @@ const nextConfig: NextConfig = {
       // migrate-to-shopify page removed; send its traffic to the migration hub
       { source: "/migrate-to-shopify", destination: "/services/migration", permanent: true },
       { source: "/erp-connections-to-shopify", destination: "/services/erp-connections-to-shopify", permanent: true },
+      // Removed top-level duplicates; canonical pages live under /services
+      { source: "/shopify-integrations-erp-crm-3pl-etc", destination: "/services/shopify-integration-services", permanent: true },
+      { source: "/shopify-theme-development", destination: "/services/shopify-theme-development", permanent: true },
     ];
   },
 };

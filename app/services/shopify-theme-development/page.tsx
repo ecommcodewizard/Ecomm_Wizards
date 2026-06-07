@@ -1026,7 +1026,7 @@ export default function Page() {
           <div style={{ display: "flex", justifyContent: "center" }}>
             <span className="group inline-flex p-[2px] rounded-full" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
               <Link
-                href="/shopify-maintenance-and-support"
+                href="/services/shopify-maintenance-and-support"
                 className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px]"
                 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600 }}
               >

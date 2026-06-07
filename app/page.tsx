@@ -98,7 +98,7 @@ const SERVICES = [
   {
     title: "CRO & Optimisation",
     desc: "A/B testing, speed optimisation, and store audits that turn visitors into buyers.",
-    href: "/shopify-conversion-rate-optimization-cro-agency",
+    href: "/services/shopify-cro-agency",
   },
   {
     title: "Custom App Development",
@@ -330,7 +330,7 @@ export default function HomePage() {
 
               <span className="mt-[10px] sm:mt-[16px] flex p-[2px] rounded-lg" style={{ width: "258.5px", maxWidth: "100%", background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
                 <Link
-                  href="/shopify-conversion-rate-optimization-cro-agency"
+                  href="/services/shopify-cro-agency"
                   className="flex items-center justify-center gap-2 rounded-lg text-white transition-all hover:text-[#3DC77A] text-[15px] sm:text-[15px] lg:text-[13px] h-[43px] sm:h-[51px] lg:h-[43px] py-[12px] px-[6px] sm:py-[16px] sm:px-[25px] lg:py-[12px] lg:px-[10px] w-full"
                   style={{ fontFamily: "'Poppins', sans-serif", background: "#121212" }}
                 >
@@ -609,7 +609,7 @@ export default function HomePage() {
         description="Gut feelings don't scale. We dig into your data, run A/B tests, and fix what's leaking revenue. Every tweak is backed by numbers, buyer behavior, and psychology."
         services={CRO_SERVICES}
         buttonText="Optimize Your Conversions"
-        buttonHref="/shopify-conversion-rate-optimization-cro-agency"
+        buttonHref="/services/shopify-cro-agency"
         paddingTop="5px"
         wrapHeading
         mobileYPadding="max-sm:!py-[10px]"
