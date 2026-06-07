@@ -4,14 +4,108 @@ import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/Case
 import RodeoCarousel, { type RodeoSlide } from "@/components/sections/RodeoCarousel";
 import CustomizerCarousel, { type CustomizerSlide } from "@/components/sections/CustomizerCarousel";
 
+const META_DESCRIPTION =
+  "Magento to Shopify migration done without downtime. We move your products, customers, orders, and SEO to Shopify or Shopify Plus with zero data loss. Get a free test drive.";
+const CANONICAL_URL = "https://ecommwizards.com/services/migration/magento-to-shopify";
+
 export const metadata: Metadata = {
-  title: "Top Agency for Magento to Shopify Plus Migration | Ecomm Wizards",
-  description:
-    "We're the top agency for magento to shopify plus migration. Talk to us about your magento to shopify migration service and we'll handle every product, order, customer, and redirect for you. Risk free test drive on the house.",
+  // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
+  // template would otherwise append the brand to this custom title.
+  title: { absolute: "Magento to Shopify Migration Agency | Zero Downtime" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "magento to shopify migration",
+    "migrate from magento to shopify",
+    "magento to shopify migration services",
+    "magento to shopify",
+    "magento migration agency",
+    "magento to shopify plus migration",
+    "switch from magento to shopify",
+    "magento shopify migration company",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Magento to Shopify Migration Agency | Zero Downtime",
+    description: META_DESCRIPTION,
+    images: [
+      {
+        url: "/images/magento-hero-scaled.webp",
+        alt: "Magento to Shopify migration by Ecomm Wizards",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Magento to Shopify Migration Agency | Zero Downtime",
+    description: META_DESCRIPTION,
+    images: ["/images/magento-hero-scaled.webp"],
+  },
 };
 
 const TEST_DRIVE_URL = "/free-shopify-store-audit";
 const CALL_URL = "/book-shopify-consultation";
+
+const GRADIENT_TEXT = {
+  background: "var(--brand-gradient)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  backgroundClip: "text",
+} as const;
+
+const FAQS = [
+  {
+    q: "Will I lose my SEO rankings when I migrate from Magento to Shopify?",
+    a: "No. We map every Magento URL, set up 301 redirects, and carry over your metadata, structured data, and content. Google sees a clean handoff, so your rankings and organic traffic hold steady through the move.",
+  },
+  {
+    q: "How long does a Magento to Shopify migration take?",
+    a: "Most Magento migrations run four to eight weeks depending on catalog size, custom functionality, and the extensions you rely on. We scope the exact timeline on your discovery call and hand you a clear plan before any work starts.",
+  },
+  {
+    q: "Will my Magento store go down during the migration?",
+    a: "No. We build and test your Shopify store in parallel while your Magento store keeps selling. We only point the domain over once everything checks out, so your customers never hit a dead site.",
+  },
+  {
+    q: "What data transfers from Magento to Shopify?",
+    a: "Products and variants, customers, full order history, blog posts and pages, reviews, coupons, and SEO assets. Anything that lives in your Magento store gets mapped to Shopify so nothing breaks and nothing duplicates.",
+  },
+  {
+    q: "How much does a Magento to Shopify migration cost?",
+    a: "Cost depends on your catalog size, custom features, and the integrations you need rebuilt. We quote fixed prices with no hourly surprises. Book a call and we will send a detailed breakdown for your store.",
+  },
+  {
+    q: "What happens to my Magento extensions and integrations?",
+    a: "We audit every extension and integration you depend on, from ERP and payments to email, reviews, and search, then rebuild or replace each one with a Shopify app so your operations keep running the day you launch.",
+  },
+  {
+    q: "Should I move to Shopify or Shopify Plus, and what about Magento 1?",
+    a: "If you are still on Magento 1 or stretching Magento 2 past its limits, we help you pick the right plan, then handle the full build. Most high-volume Magento brands land on Shopify Plus for high-traffic sales and B2B from day one.",
+  },
+];
+
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Migration", item: "https://ecommwizards.com/services/migration" },
+    { "@type": "ListItem", position: 4, name: "Magento to Shopify", item: "https://ecommwizards.com/services/migration/magento-to-shopify" },
+  ],
+};
 
 const MIGRATION_CASE_CARDS = [
   {
@@ -493,12 +587,20 @@ const Arrow = () => (
 export default function Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
+      />
       {/* 1 — Hero (WP source: "Seamless Migration to Shopify / Your WooCommerce Store's Next Destination") */}
       <section className="w2s-hero">
         <div className="w2s-hero-inner">
           <div className="w2s-hero-copy">
             <h1 className="w2s-hero-h1">
-              You found the top agency for magento to shopify plus migration, and we&rsquo;ll handle the messy parts for you.
+              <span style={GRADIENT_TEXT}>Magento to Shopify</span> migration, done without the headaches.
             </h1>
             <p className="w2s-hero-lead">
               Look, you run an ecommerce brand, and we run magento to shopify migration projects
@@ -511,21 +613,21 @@ export default function Page() {
                 <span>Try it Free</span>
                 <Arrow />
               </Link>
-              <p className="w2s-hero-risk">
-                Test our magento to shopify migration service before you commit a cent.<br />
-                Risk free, no pressure, no sales pitch.
-              </p>
             </div>
+            <p className="w2s-hero-risk">
+              Test our magento to shopify migration service before you commit a cent.<br />
+              Risk free, no pressure, no sales pitch.
+            </p>
           </div>
 
           <div className="w2s-hero-visual">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/woocommerce-hero-scaled.webp"
-              alt="Magento store transitioning to Shopify analytics dashboard"
+              src="/images/magento-hero-scaled.webp"
+              alt="Magento to Shopify migration dashboard showing products, orders, and customers"
               width={1024}
               height={1024}
-              loading="eager"
+              loading="lazy"
             />
           </div>
         </div>
@@ -664,10 +766,10 @@ export default function Page() {
           <div className="w2s-scalable-visual">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/build-step-image-1.webp"
-              alt="Shopify Plus admin and customizer interface showcasing OLAPLEX store"
-              width={952}
-              height={1024}
+              src="/images/woocommerce-scalable.webp"
+              alt="Shopify Plus customizer building the OLAPLEX storefront on desktop and mobile"
+              width={1080}
+              height={1162}
               loading="lazy"
             />
           </div>
@@ -847,7 +949,7 @@ export default function Page() {
                 />
                 <span className="w2s-compare-logo-overlay" aria-hidden="true">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/ecomm-green-logo-cropped.png" alt="" />
+                  <img src="/images/ecomm-green-logo-cropped.png" alt="" loading="lazy" />
                 </span>
               </div>
               <blockquote className="w2s-compare-quote">
@@ -1104,10 +1206,10 @@ export default function Page() {
             <div className="w2s-compare-split-visual w2s-compare-global-visual">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/build-step-image-1.webp"
+                src="/images/woocommerce-scalable.webp"
                 alt="Shopify Plus admin showcasing OLAPLEX omnichannel store"
-                width={952}
-                height={1024}
+                width={1080}
+                height={1162}
                 loading="lazy"
               />
             </div>
@@ -1145,7 +1247,7 @@ export default function Page() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/data-transfernew_0584e32e-af30-477d-821f-3e09e5592468-scaled.webp"
-              alt="Woman with tablet reviewing migration data"
+              alt="Reviewing Magento to Shopify migration data on a tablet"
               loading="lazy"
             />
           </div>
@@ -1235,7 +1337,7 @@ export default function Page() {
       <section className="mig-innov">
         <div className="mig-innov-inner">
           <h2 className="mig-innov-h2">
-            Trusted by the World&rsquo;s Most<br />Innovative Brands on Shopify Plus
+            Trusted by the World&rsquo;s Most<br />Recognized Brands on Shopify Plus
           </h2>
           {INNOVATIVE_ROWS.map((row, rowIdx) => (
             <div className="mig-innov-row" key={rowIdx}>
@@ -1246,7 +1348,7 @@ export default function Page() {
                 {[...row.logos, ...row.logos].map((logo, i) => (
                   <li key={`${logo.src}-${i}`} className="mig-innov-slide">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={logo.src} alt={logo.alt} />
+                    <img src={logo.src} alt={logo.alt} loading="lazy" />
                   </li>
                 ))}
               </ul>
@@ -1284,12 +1386,37 @@ export default function Page() {
                 <p className="ssd-results-card-quote">{c.quote}</p>
                 <div className="ssd-results-card-logo">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={c.logo} alt={c.logoAlt} />
+                  <img src={c.logo} alt={c.logoAlt} loading="lazy" />
                 </div>
               </div>
             ))}
           </div>
           <CaseStudySlider slides={MIGRATION_SLIDES} intervalMs={6000} />
+        </div>
+      </section>
+
+      {/* FAQ — Magento to Shopify migration objections */}
+      <section className="w2s-faq">
+        <div className="w2s-faq-inner">
+          <h2 className="w2s-faq-h2">Magento to Shopify Migration FAQs</h2>
+          <div className="w2s-faq-acc">
+            {FAQS.map((_, i) => (
+              <input key={i} className="w2s-faq-rad" type="radio" id={`w2s-faq-${i}`} name="w2s-faq-acc" defaultChecked={i === 0} />
+            ))}
+            <div className="w2s-faq-list">
+              {FAQS.map((f, i) => (
+                <div key={i} className="w2s-faq-item" data-faq={`w2s-faq-${i}`}>
+                  <label htmlFor={`w2s-faq-${i}`} className="w2s-faq-head">
+                    <span className="w2s-faq-q">{f.q}</span>
+                    <span className="w2s-faq-ico" aria-hidden>
+                      <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor"><path d="M31.6 8.5c-.6-.6-1.5-.6-2.2-.1L16 21.2 2.6 8.4c-.6-.6-1.6-.5-2.2.1-.6.6-.5 1.6.1 2.2l14.5 13.7c.3.3.7.4 1 .4s.8-.1 1-.4l14.5-13.7c.6-.6.7-1.6.1-2.2z" /></svg>
+                    </span>
+                  </label>
+                  <div className="w2s-faq-bodyc"><div className="w2s-faq-in"><p>{f.a}</p></div></div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1357,41 +1484,46 @@ export default function Page() {
            bg → white, text → black.
            ============================================================ */
         .w2s-hero {
-          background: #000000;
-          padding: 60px 0;
-          overflow: hidden;
           position: relative;
+          background-color: #000000;
+          background-image:
+            linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.9) 26%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.18) 62%, rgba(0,0,0,0) 80%),
+            url("/images/magento-hero-scaled.webp");
+          background-repeat: no-repeat, no-repeat;
+          background-position: center, right center;
+          background-size: cover, cover;
+          min-height: 540px;
+          padding: 60px 20px;
+          display: flex;
+          align-items: center;
+          overflow: hidden;
         }
         .w2s-hero-inner {
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          gap: 40px;
-          padding-left: 40px;
-          padding-right: 40px;
-          min-height: 364px;
+          display: block;
+          width: 100%;
+          max-width: 1320px;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 0;
+          min-height: 0;
         }
         .w2s-hero-copy {
-          flex: 1 1 540px;
-          max-width: 640px;
-          min-width: 0;
-          padding: 10px;
+          color: #FFFFFF;
+          max-width: 620px;
         }
         .w2s-hero-h1 {
           color: #FFFFFF;
-          font-size: 36px;
-          font-weight: 500;
-          line-height: 1.25;
-          letter-spacing: -0.2px;
-          margin: 0 0 24px;
-          max-width: 540px;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.18;
+          letter-spacing: -0.4px;
+          margin: 0 0 22px;
         }
         .w2s-hero-lead {
-          color: rgba(255, 255, 255, 0.7);
+          color: #FFFFFF;
           font-size: 16px;
-          line-height: 1.7;
-          margin: 0 0 36px;
-          max-width: 520px;
+          line-height: 1.75;
+          margin: 0 0 24px;
           font-weight: 400;
         }
         .w2s-hero-cta-row {
@@ -1399,6 +1531,7 @@ export default function Page() {
           align-items: center;
           gap: 28px;
           flex-wrap: wrap;
+          margin-bottom: 30px;
         }
         .w2s-hero-cta,
         .w2s-hero-cta:link,
@@ -1408,7 +1541,7 @@ export default function Page() {
           display: inline-flex;
           align-items: center;
           gap: 12px;
-          padding: 16px 36px;
+          padding: 16px 32px;
           border-radius: 999px;
           color: #FFFFFF;
           font-size: 15px;
@@ -1426,104 +1559,77 @@ export default function Page() {
           transform: translateY(-1px);
         }
         .w2s-hero-risk {
-          color: rgba(255, 255, 255, 0.7);
-          font-size: 13.5px;
+          color: #FFFFFF;
+          font-size: 14px;
           line-height: 1.55;
           margin: 0;
-          max-width: 280px;
+          max-width: 520px;
           font-weight: 400;
         }
-        .w2s-hero-visual {
-          flex: 1 1 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 10px;
-          position: relative;
-          min-width: 0;
-        }
-        .w2s-hero-visual img {
-          width: 100%;
-          height: auto;
-          max-width: 100%;
-          display: block;
-          margin-right: -40px;
+        .w2s-hero-visual { display: none; }
+
+        /* Hero — laptop (1024): match BigCommerce */
+        @media (max-width: 1024px) {
+          .w2s-hero-h1 { font-size: 40px; }
+          .w2s-hero-copy { max-width: 480px; }
         }
 
-        /* Hero — tablet */
+        /* Hero — tablet: drop the full-bleed bg, stack the visual below the copy */
         @media (max-width: 1023px) {
-          .w2s-hero { padding: 60px 0; }
-          .w2s-hero-inner { flex-direction: column; gap: 40px; padding-left: 24px; padding-right: 24px; }
-          .w2s-hero-copy { max-width: none; flex: 1 1 auto; text-align: center; }
-          .w2s-hero-h1 { font-size: 30px; max-width: none; }
-          .w2s-hero-lead { font-size: 15px; margin-left: auto; margin-right: auto; }
-          .w2s-hero-cta-row { flex-direction: column; justify-content: center; align-items: center; gap: 18px; }
-          .w2s-hero-risk { max-width: 420px; margin: 0 auto; }
-          /* Image's right ~60% holds the cards; shift it left inside a fixed-aspect frame so the dense area sits centered in the viewport */
+          .w2s-hero { min-height: 0; padding: 56px 28px; background-image: none; }
+          .w2s-hero-inner { padding: 0; }
+          .w2s-hero-copy { max-width: none; }
+          .w2s-hero-h1 { font-size: 34px; letter-spacing: -0.3px; }
+          .w2s-hero-lead { font-size: 15px; }
           .w2s-hero-visual {
-            flex: 0 0 auto;
+            display: flex;
+            justify-content: center;
+            margin: 36px auto 0;
             width: 100%;
-            max-width: 560px;
-            aspect-ratio: 4 / 3;
-            padding: 0;
-            margin: 0 auto;
-            align-self: center;
-            justify-content: flex-start;
-            overflow: hidden;
-            border-radius: 14px;
+            max-width: 680px;
           }
           .w2s-hero-visual img {
-            width: 165%;
-            max-width: none;
-            height: 100%;
-            margin-left: -60%;
-            margin-right: 0;
-            object-fit: cover;
-            object-position: left center;
-            aspect-ratio: auto;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            margin: 0;
+            border-radius: 14px;
             display: block;
           }
         }
 
-        /* Hero — mobile (430): keep the tablet shift-and-crop so the dense card area fills the frame */
+        /* Hero — mobile */
         @media (max-width: 639px) {
-          .w2s-hero { padding: 40px 0; }
-          .w2s-hero-inner { gap: 28px; padding-left: 15px; padding-right: 15px; }
-          .w2s-hero-h1 { font-size: 24px; line-height: 1.25; letter-spacing: -0.1px; margin-bottom: 18px; max-width: none; }
-          .w2s-hero-lead { font-size: 14px; line-height: 1.7; margin-bottom: 26px; }
-          .w2s-hero-cta-row { gap: 16px; flex-direction: column; align-items: center; }
-          .w2s-hero-cta { width: 100%; justify-content: center; padding: 14px 22px; font-size: 14px; }
-          .w2s-hero-risk { font-size: 12.5px; max-width: 100%; text-align: center; }
-          .w2s-hero-visual {
-            width: 100%;
-            max-width: 400px;
-            aspect-ratio: 4 / 3;
-            overflow: hidden;
-            border-radius: 14px;
-            margin: 0 auto;
-          }
-          .w2s-hero-visual img {
-            width: 170%;
-            max-width: none;
-            height: 100%;
-            margin-left: -65%;
-            margin-right: 0;
-            object-fit: cover;
-            object-position: left center;
-            aspect-ratio: auto;
-            display: block;
-          }
+          .w2s-hero { padding: 44px 15px; }
+          .w2s-hero-h1 { font-size: 26px; line-height: 1.2; letter-spacing: -0.2px; margin-bottom: 14px; }
+          .w2s-hero-lead { font-size: 14px; line-height: 1.65; margin-bottom: 14px; }
+          .w2s-hero-cta-row { gap: 18px; margin-bottom: 14px; }
+          .w2s-hero-cta { width: 100%; justify-content: center; padding: 14px 20px; font-size: 14px; }
+          .w2s-hero-risk { font-size: 13px; max-width: 100%; }
+          .w2s-hero-visual { margin: 28px auto 0; max-width: 100%; }
+          .w2s-hero-visual img { border-radius: 14px; }
+        }
+
+        /* Hero — 768 band (iPad portrait): tighter type + visual cap, matches BigCommerce */
+        @media (min-width: 700px) and (max-width: 900px) {
+          .w2s-hero { padding: 52px 28px; }
+          .w2s-hero-h1 { font-size: 34px; line-height: 1.18; margin-bottom: 16px; }
+          .w2s-hero-lead { font-size: 14.5px; margin-bottom: 16px; }
+          .w2s-hero-cta-row { gap: 22px; margin-bottom: 16px; }
+          .w2s-hero-cta { padding: 14px 26px; font-size: 14px; }
+          .w2s-hero-risk { font-size: 13.5px; }
+          .w2s-hero-visual { max-width: 640px; }
         }
 
         /* Hero — 4K */
         @media (min-width: 1700px) {
-          .w2s-hero { padding: 60px 0; }
-          .w2s-hero-inner { max-width: 1600px; gap: 100px; padding-left: 40px; padding-right: 40px; }
-          .w2s-hero-h1 { font-size: 44px; margin-bottom: 28px; max-width: 640px; }
-          .w2s-hero-lead { font-size: 18px; max-width: 640px; margin-bottom: 44px; }
-          .w2s-hero-cta { padding: 18px 42px; font-size: 16px; }
-          .w2s-hero-risk { font-size: 14px; max-width: 320px; }
-          .w2s-hero-visual img { max-height: 480px; max-width: none; height: 100%; width: auto; }
+          .w2s-hero { padding: 80px 40px; min-height: 640px; }
+          .w2s-hero-inner { max-width: 1600px; }
+          .w2s-hero-copy { max-width: 760px; }
+          .w2s-hero-h1 { font-size: 56px; line-height: 1.15; margin-bottom: 28px; }
+          .w2s-hero-lead { font-size: 17px; line-height: 1.75; margin-bottom: 28px; }
+          .w2s-hero-cta { padding: 18px 40px; font-size: 16px; }
+          .w2s-hero-risk { font-size: 15px; }
         }
 
         /* ============================================================
@@ -3254,13 +3360,6 @@ export default function Page() {
            collapsing the grid.
            ============================================================ */
         @media (min-width: 1024px) and (max-width: 1280px) {
-          /* Hero: shrink copy slightly so the visual gets more space */
-          .w2s-hero-inner { gap: 32px; padding-left: 32px; padding-right: 32px; }
-          .w2s-hero-copy { flex: 1 1 460px; max-width: 520px; }
-          /* Hero image: don't bleed past the viewport edge; align to the LEFT of the visual column so every mockup card stays visible */
-          .w2s-hero-visual { justify-content: flex-start; padding: 10px 0; }
-          .w2s-hero-visual img { margin-right: 0; width: 100%; max-width: 100%; }
-
           /* Compare grid: smaller card padding so body text has room */
           .w2s-compare-card { padding: 30px 28px; }
           .w2s-compare-title { font-size: 26px; }
@@ -3398,6 +3497,38 @@ export default function Page() {
           .w2s-badges-row { gap: 18px; }
           .w2s-badges-slide { flex: 1 1 40%; height: 52px; min-width: 120px; }
           .w2s-badges-slide img { height: 36px; }
+        }
+
+        /* FAQ (smooth accordion) */
+        .w2s-faq { background: #FFFFFF; padding: 60px 40px; }
+        .w2s-faq-inner { max-width: 860px; margin: 0 auto; }
+        .w2s-faq-h2 { color: #111111; font-size: 36px; font-weight: 700; line-height: 1.2; letter-spacing: -0.3px; text-align: center; margin: 0 0 36px; }
+        .w2s-faq-acc { position: relative; }
+        .w2s-faq-rad { position: absolute; opacity: 0; pointer-events: none; width: 1px; height: 1px; }
+        .w2s-faq-list { display: flex; flex-direction: column; }
+        .w2s-faq-item { border-top: 1px solid #E5E7EB; }
+        .w2s-faq-item:last-child { border-bottom: 1px solid #E5E7EB; }
+        .w2s-faq-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; cursor: pointer; }
+        .w2s-faq-q { color: #111111; font-size: 17px; font-weight: 600; line-height: 1.4; }
+        .w2s-faq-ico { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; color: #111111; flex: 0 0 auto; transition: transform .3s ease; }
+        .w2s-faq-bodyc { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .3s ease, opacity .25s ease; }
+        .w2s-faq-in { overflow: hidden; min-height: 0; }
+        .w2s-faq-bodyc p { color: #334155; font-size: 15px; line-height: 1.75; margin: 0; padding: 0 40px 22px 0; }
+        ${FAQS.map((_, i) => `#w2s-faq-${i}:checked ~ .w2s-faq-list [data-faq="w2s-faq-${i}"] .w2s-faq-bodyc`).join(",\n        ")} {
+          grid-template-rows: 1fr; opacity: 1;
+        }
+        ${FAQS.map((_, i) => `#w2s-faq-${i}:checked ~ .w2s-faq-list [data-faq="w2s-faq-${i}"] .w2s-faq-ico`).join(",\n        ")} {
+          transform: rotate(180deg);
+        }
+        @media (max-width: 1023px) {
+          .w2s-faq { padding: 60px 24px; }
+          .w2s-faq-h2 { font-size: 28px; margin-bottom: 28px; }
+        }
+        @media (max-width: 639px) {
+          .w2s-faq { padding: 44px 15px; }
+          .w2s-faq-h2 { font-size: 22px; }
+          .w2s-faq-q { font-size: 15px; }
+          .w2s-faq-bodyc p { font-size: 14px; padding-right: 0; }
         }
       ` }} />
     </>
