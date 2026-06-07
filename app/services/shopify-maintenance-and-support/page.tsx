@@ -5,10 +5,38 @@ import SmsAccordion from "./SmsAccordion";
 import SmsFaqAccordion from "./SmsFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
+const META_DESCRIPTION =
+  "Shopify maintenance and support for 150+ stores. Monthly retainer covering audits, bug fixes, speed monitoring, and proactive care to keep your store healthy and converting.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-maintenance-and-support";
+
 export const metadata: Metadata = {
-  title: "Shopify Maintenance Services | Shopify Support and Maintenance | Ecomm Wizards",
-  description:
-    "Shopify maintenance services for 150+ stores. Ongoing shopify support and maintenance on a monthly retainer. We audit, monitor, and fix your store before problems reach your customers.",
+  title: { absolute: "Shopify Maintenance and Support | Ongoing Store Care" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify maintenance and support",
+    "shopify maintenance services",
+    "shopify support and maintenance",
+    "shopify website maintenance",
+    "shopify store maintenance",
+    "shopify maintenance packages",
+    "monthly shopify retainer",
+    "shopify bug fixes",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify Maintenance and Support | Ongoing Store Care",
+    description: META_DESCRIPTION,
+    images: [{ url: "/images/Store performance.webp", alt: "shopify maintenance and support by Ecomm Wizards" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify Maintenance and Support | Ongoing Store Care",
+    description: META_DESCRIPTION,
+    images: ["/images/Store performance.webp"],
+  },
 };
 
 const C_DARK  = "#000000";
@@ -236,6 +264,17 @@ const BUILDER_CONS = [
   { text: "No documentation: the next developer starts from zero each time.", warn: false },
   { text: "Platform updates silently break custom code with no monitoring in place.", warn: false },
 ];
+
+/* ── Breadcrumb schema ── */
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Maintenance and Support", item: "https://ecommwizards.com/services/shopify-maintenance-and-support" },
+  ],
+};
 
 /* ── FAQs ── */
 const FAQS = [
@@ -806,6 +845,10 @@ export default function Page() {
               })),
             }),
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
 
         <style dangerouslySetInnerHTML={{ __html: `

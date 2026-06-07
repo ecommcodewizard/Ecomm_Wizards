@@ -108,7 +108,7 @@ const SERVICES = [
   {
     title: "Shopify SEO Agency",
     desc: "Technical SEO, content strategy, and organic growth built for Shopify stores.",
-    href: "/shopify-seo-agency",
+    href: "/services/shopify-seo-agency",
   },
   {
     title: "B2B & POS Setup",
@@ -704,7 +704,7 @@ export default function HomePage() {
         description="Google is just the start. We optimize your Shopify store for traditional search and AI engines like ChatGPT and Gemini, so you show up wherever your customers are looking."
         services={SEO_AI_SERVICES}
         buttonText="Get Found Everywhere"
-        buttonHref="/shopify-seo-agency"
+        buttonHref="/services/shopify-seo-agency"
         imageSrc="/images/ai-agent-main.webp"
         imageAlt="Shopify SEO agency optimizing a store for Google and AI search"
         paddingTop="5px"

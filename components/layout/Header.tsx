@@ -73,7 +73,7 @@ const NAV: NavItem[] = [
     children: [
       { label: "Shopify SEO",          href: "/services/shopify-seo-agency",                     description: "Rank higher, earn more organic traffic" },
       { label: "CRO Agency",           href: "/services/shopify-cro-agency", description: "Systematic conversion improvements" },
-      { label: "Landing Page Design",  href: "/shopify-landing-page-design",                    description: "Campaign pages built to convert" },
+      { label: "Landing Page Design",  href: "/services/shopify-landing-page-design",                    description: "Campaign pages built to convert" },
       { label: "Analytics & Tracking", href: "/services/shopify-analytics-and-tracking-setup",  description: "Full-funnel measurement setup" },
     ],
   },

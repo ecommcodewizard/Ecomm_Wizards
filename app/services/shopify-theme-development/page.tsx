@@ -6,10 +6,38 @@ import SsdFaqAccordion from "./SsdFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ShopifyDesignSection from "@/components/sections/ShopifyDesignSection";
 
+const META_DESCRIPTION =
+  "Shopify theme development agency building custom Liquid themes on Shopify 2.0. Fast, mobile-first, and built to convert. 500+ themes built for leading ecommerce brands.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-theme-development";
+
 export const metadata: Metadata = {
-  title: "Shopify Theme Development Services | Custom Shopify Themes | Ecomm Wizards",
-  description:
-    "Shopify theme development services for ecommerce brands. We build custom Shopify themes on Shopify 2.0. Fast, mobile-first, and built to convert. 500+ themes built. Free audit.",
+  title: { absolute: "Shopify Theme Development Agency | Custom Liquid Themes" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify theme development",
+    "custom shopify theme",
+    "shopify theme development agency",
+    "shopify liquid theme",
+    "shopify 2.0 theme development",
+    "custom shopify theme development",
+    "shopify theme developer",
+    "shopify theme redesign",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify Theme Development Agency | Custom Liquid Themes",
+    description: META_DESCRIPTION,
+    images: [{ url: "/images/build-hero-4-1.webp", alt: "shopify theme development by Ecomm Wizards" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify Theme Development Agency | Custom Liquid Themes",
+    description: META_DESCRIPTION,
+    images: ["/images/build-hero-4-1.webp"],
+  },
 };
 
 /* ── Design tokens ── */
@@ -295,6 +323,17 @@ const POST_LAUNCH = [
     items: ["24-hour response guarantee", "Same-day critical issue resolution", "Dedicated Slack channel access"],
   },
 ];
+
+/* ── Breadcrumb schema ── */
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Shopify Theme Development", item: "https://ecommwizards.com/services/shopify-theme-development" },
+  ],
+};
 
 /* ── FAQ ── */
 const FAQS = [
@@ -1096,6 +1135,10 @@ export default function Page() {
               })),
             }),
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
 
         <style dangerouslySetInnerHTML={{ __html: `

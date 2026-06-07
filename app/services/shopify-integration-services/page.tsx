@@ -6,10 +6,38 @@ import SiFaqAccordion from "./SiFaqAccordion";
 import SiIntegrationsGrid from "./SiIntegrationsGrid";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
+const META_DESCRIPTION =
+  "Shopify integration services for ERP, CRM, 3PL, and custom APIs. Connect Shopify to NetSuite, Salesforce, Klaviyo, and more. API-native builds with fixed-price delivery and 60-day post-launch support.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-integration-services";
+
 export const metadata: Metadata = {
-  title: "Shopify Integration Services | ERP, CRM, 3PL & Custom APIs | Ecomm Wizards",
-  description:
-    "Shopify integration services for ERP, CRM, 3PL, and custom APIs. Connect Shopify to NetSuite, QuickBooks, Salesforce, and Klaviyo. API-native. Fixed price.",
+  title: { absolute: "Shopify Integration Services | ERP, CRM, 3PL and More" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify integration services",
+    "shopify erp integration",
+    "shopify crm integration",
+    "shopify 3pl integration",
+    "shopify api integration",
+    "shopify netsuite integration",
+    "shopify salesforce integration",
+    "shopify custom api",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify Integration Services | ERP, CRM, 3PL and More",
+    description: META_DESCRIPTION,
+    images: [{ url: "/images/erp-banner-image_1024x1024.webp", alt: "shopify integration services by Ecomm Wizards" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify Integration Services | ERP, CRM, 3PL and More",
+    description: META_DESCRIPTION,
+    images: ["/images/erp-banner-image_1024x1024.webp"],
+  },
 };
 
 const C_DARK  = "#000000";
@@ -233,6 +261,17 @@ const SI_CONS = [
   { text: "No documentation. The next developer starts from zero. Integration breaks, no one knows why.", warn: false },
   { text: "Support ends at go-live. If something breaks at 2am during a campaign, you are on your own.",  warn: false },
 ];
+
+/* ── Breadcrumb schema ── */
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Shopify Integrations", item: "https://ecommwizards.com/services/shopify-integration-services" },
+  ],
+};
 
 /* ── FAQs ── */
 const SI_FAQS = [
@@ -817,6 +856,10 @@ export default function Page() {
               })),
             }),
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
 
         <style dangerouslySetInnerHTML={{ __html: `

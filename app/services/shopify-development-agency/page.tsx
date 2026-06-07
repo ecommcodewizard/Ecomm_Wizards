@@ -5,10 +5,38 @@ import SdaAccordion from "./SdaAccordion";
 import SdaFaqAccordion from "./SdaFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
+const META_DESCRIPTION =
+  "Shopify development agency specializing in custom builds, theme development, Shopify Plus, and migrations. 100+ stores built. Fixed price. 6-week delivery.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-development-agency";
+
 export const metadata: Metadata = {
-  title: "Shopify Development Agency | Custom Builds, Migrations & Shopify Plus | Ecomm Wizards",
-  description:
-    "Shopify development agency specialising in custom builds, theme development, Shopify Plus, and migrations. 100+ stores built. Fixed price. 6-week delivery.",
+  title: { absolute: "Shopify Development Agency | Custom Builds and Shopify Plus" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify development agency",
+    "custom shopify development",
+    "shopify plus development",
+    "shopify theme development",
+    "shopify store development",
+    "shopify migration agency",
+    "shopify web development",
+    "shopify development company",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify Development Agency | Custom Builds and Shopify Plus",
+    description: META_DESCRIPTION,
+    images: [{ url: "/images/Group_1000003974_d0eba414-7aec-4930-b534-a4dcc91d004e_1024x1024.png", alt: "shopify development agency by Ecomm Wizards" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify Development Agency | Custom Builds and Shopify Plus",
+    description: META_DESCRIPTION,
+    images: ["/images/Group_1000003974_d0eba414-7aec-4930-b534-a4dcc91d004e_1024x1024.png"],
+  },
 };
 
 const C_DARK  = "#000000";
@@ -369,6 +397,16 @@ const SDA_FAQS = [
     a: "The first step is a free Discovery Call. We spend 30 minutes on your current store, your goals, and what you need built. From there we produce a written Scope of Work with the full cost and timeline, usually within 48 hours. Most clients move from the Discovery Call to a signed project within one week. From sign-off to go-live, most Shopify development projects complete within six weeks.",
   },
 ];
+
+const BREADCRUMB_SCHEMA_SDA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Shopify Development Agency", item: "https://ecommwizards.com/services/shopify-development-agency" },
+  ],
+};
 
 /* ── Shared SVGs ── */
 const Arrow = () => (
@@ -1074,6 +1112,10 @@ export default function Page() {
               })),
             }),
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA_SDA) }}
         />
 
         <style dangerouslySetInnerHTML={{ __html: `

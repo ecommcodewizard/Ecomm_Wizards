@@ -5,10 +5,38 @@ import HlAccordion from "./HlAccordion";
 import HlFaqAccordion from "./HlFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
+const META_DESCRIPTION =
+  "Headless Shopify agency for Hydrogen and Next.js development. Headless commerce storefronts with sub-second load times and total design freedom. Book a free architecture call.";
+const CANONICAL_URL = "https://ecommwizards.com/services/headless-shopify-agency";
+
 export const metadata: Metadata = {
-  title: "Headless Shopify Agency | Hydrogen & Next.js Development | Ecomm Wizards",
-  description:
-    "Headless Shopify agency for Hydrogen and Next.js development. Headless commerce storefronts with sub-second load times and total design freedom. Book a free architecture call.",
+  title: { absolute: "Headless Shopify Agency | Hydrogen and Custom Storefronts" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "headless shopify agency",
+    "headless shopify development",
+    "shopify hydrogen development",
+    "next.js shopify storefront",
+    "headless commerce shopify",
+    "shopify storefront api",
+    "headless shopify store",
+    "custom shopify storefront",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Headless Shopify Agency | Hydrogen and Custom Storefronts",
+    description: META_DESCRIPTION,
+    images: [{ url: "/images/seeamleass-right.webp", alt: "headless shopify agency by Ecomm Wizards" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Headless Shopify Agency | Hydrogen and Custom Storefronts",
+    description: META_DESCRIPTION,
+    images: ["/images/seeamleass-right.webp"],
+  },
 };
 
 const C_DARK  = "#000000";
@@ -371,6 +399,16 @@ const SHL_FAQS = [
   },
 ];
 
+const BREADCRUMB_SCHEMA_SHL = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Headless Shopify Agency", item: "https://ecommwizards.com/services/headless-shopify-agency" },
+  ],
+};
+
 /* ── Shared SVGs ── */
 const Arrow = () => (
   <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden>
@@ -415,6 +453,10 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA_SHL) }}
       />
 
       {/* ── §1 Hero (DARK) ── */}

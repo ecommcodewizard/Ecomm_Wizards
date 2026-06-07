@@ -5,10 +5,38 @@ import LpAccordion from "./LpAccordion";
 import LpFaqAccordion from "./LpFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
+const META_DESCRIPTION =
+  "Shopify landing page design for paid ads, product launches, and seasonal campaigns. 200+ pages built, 28.5% avg conversion lift. Fixed-price quotes within 24 hours.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-landing-page-design";
+
 export const metadata: Metadata = {
-  title: "Shopify Landing Page Design Agency | High-Converting Campaign Pages | Ecomm Wizards",
-  description:
-    "200+ Shopify landing pages built. $900M+ in client revenue. Custom Shopify landing page design for paid ads, product launches, and seasonal campaigns. Fixed-price quotes in 24 hours.",
+  title: { absolute: "Shopify Landing Page Design | High-Converting Pages" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify landing page design",
+    "shopify landing page agency",
+    "custom shopify landing pages",
+    "shopify paid ad landing page",
+    "shopify product launch page",
+    "shopify campaign page design",
+    "shopify 2.0 landing page",
+    "high converting shopify pages",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify Landing Page Design | High-Converting Pages",
+    description: META_DESCRIPTION,
+    images: [{ url: "/images/partner-images-1-1.webp", alt: "shopify landing page design by Ecomm Wizards" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify Landing Page Design | High-Converting Pages",
+    description: META_DESCRIPTION,
+    images: ["/images/partner-images-1-1.webp"],
+  },
 };
 
 const C_DARK  = "#000000";
@@ -207,6 +235,17 @@ const CASE_STUDIES = [
     description: "A full Shopify theme redesign for Candy Kittens, the UK's leading better-for-you confectionery brand.",
   },
 ];
+
+/* ── BreadcrumbList schema ── */
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Shopify Landing Page Design", item: "https://ecommwizards.com/services/shopify-landing-page-design" },
+  ],
+};
 
 /* ── FAQs ── */
 const FAQS = [
@@ -805,6 +844,10 @@ export default function Page() {
               })),
             }),
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
 
         <style dangerouslySetInnerHTML={{ __html: `

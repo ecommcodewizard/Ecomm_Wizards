@@ -5,10 +5,38 @@ import SseAccordion from "./SseAccordion";
 import SseFaqAccordion from "./SseFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
+const META_DESCRIPTION =
+  "Shopify SEO agency for 150+ stores. We fix technical issues, map keywords to buyer intent, and grow organic revenue that compounds month over month. 320% avg traffic lift.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-seo-agency";
+
 export const metadata: Metadata = {
-  title: "Shopify SEO Agency | Expert SEO Services for Shopify | Ecomm Wizards",
-  description:
-    "Shopify SEO agency for 150+ stores. Our SEO services for Shopify fix technical issues, map keywords to buyer intent, and grow organic revenue that compounds month over month.",
+  title: { absolute: "Shopify SEO Agency | Organic Growth for Shopify Stores" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify seo agency",
+    "shopify seo services",
+    "shopify seo expert",
+    "shopify seo consultant",
+    "shopify organic traffic",
+    "shopify technical seo",
+    "shopify keyword research",
+    "ecommerce seo shopify",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify SEO Agency | Organic Growth for Shopify Stores",
+    description: META_DESCRIPTION,
+    images: [{ url: "/images/performance-1.webp", alt: "shopify seo agency by Ecomm Wizards" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify SEO Agency | Organic Growth for Shopify Stores",
+    description: META_DESCRIPTION,
+    images: ["/images/performance-1.webp"],
+  },
 };
 
 const C_DARK  = "#000000";
@@ -246,6 +274,17 @@ const BUILDER_CONS = [
   { text: "Backlinks built to the homepage, not to the collection pages that rank.",     warn: true  },
   { text: "No strategy for AI search visibility. Traditional SEO playbook only.",        warn: true  },
 ];
+
+/* ── BreadcrumbList schema ── */
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Shopify SEO Agency", item: "https://ecommwizards.com/services/shopify-seo-agency" },
+  ],
+};
 
 /* ── FAQs ── */
 const FAQS = [
@@ -816,6 +855,10 @@ export default function Page() {
               })),
             }),
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
 
         <style dangerouslySetInnerHTML={{ __html: `

@@ -110,6 +110,8 @@ const nextConfig: NextConfig = {
       // Removed top-level duplicates; canonical pages live under /services
       { source: "/shopify-integrations-erp-crm-3pl-etc", destination: "/services/shopify-integration-services", permanent: true },
       { source: "/shopify-theme-development", destination: "/services/shopify-theme-development", permanent: true },
+      { source: "/shopify-landing-page-design", destination: "/services/shopify-landing-page-design", permanent: true },
+      { source: "/shopify-2-0-development", destination: "/services/shopify-2-0-development", permanent: true },
     ];
   },
 };

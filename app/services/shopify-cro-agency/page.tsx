@@ -5,10 +5,38 @@ import CroAccordion from "./CroAccordion";
 import CroFaqAccordion from "./CroFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
+const META_DESCRIPTION =
+  "Shopify CRO agency specializing in conversion rate optimization, A/B testing, and CRO audits for Shopify and Shopify Plus. 100+ stores optimized. Book a free audit.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-cro-agency";
+
 export const metadata: Metadata = {
-  title: "Shopify CRO Agency | Conversion Rate Optimization for Shopify & Shopify Plus | Ecomm Wizards",
-  description:
-    "Shopify CRO agency offering conversion rate optimization, A/B testing, and CRO audits for Shopify and Shopify Plus. 100+ stores optimized. Book a free CRO audit.",
+  title: { absolute: "Best Shopify CRO Agency | Conversion Rate Optimization" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify cro agency",
+    "shopify conversion rate optimization",
+    "shopify a/b testing",
+    "shopify cro audit",
+    "shopify plus cro",
+    "ecommerce conversion optimization",
+    "shopify cro services",
+    "conversion rate optimization shopify",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Best Shopify CRO Agency | Conversion Rate Optimization",
+    description: META_DESCRIPTION,
+    images: [{ url: "/images/main-hero-f-desktop.webp", alt: "shopify cro agency by Ecomm Wizards" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Best Shopify CRO Agency | Conversion Rate Optimization",
+    description: META_DESCRIPTION,
+    images: ["/images/main-hero-f-desktop.webp"],
+  },
 };
 
 const C_DARK  = "#000000";
@@ -373,6 +401,16 @@ const SCRO_FAQS = [
   },
 ];
 
+const BREADCRUMB_SCHEMA_SCRO = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Shopify CRO Agency", item: "https://ecommwizards.com/services/shopify-cro-agency" },
+  ],
+};
+
 /* ── Phone slider images ── */
 const PHONE_COL1 = [
   "/images/partner-images-1-1.webp",
@@ -427,6 +465,10 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA_SCRO) }}
       />
 
       {/* ── §1 Hero (DARK) ── */}

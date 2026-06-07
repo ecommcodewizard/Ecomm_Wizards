@@ -5,10 +5,38 @@ import SplusAccordion from "./SplusAccordion";
 import SplusFaqAccordion from "./SplusFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
+const META_DESCRIPTION =
+  "Shopify Plus development agency with 200+ enterprise stores built. Custom checkout extensions, B2B portals, ERP integrations, and zero-downtime migrations. $900M+ in client revenue.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-plus-development";
+
 export const metadata: Metadata = {
-  title: "Shopify Plus Development Agency | Hire Shopify Plus Developers | Ecomm Wizards",
-  description:
-    "Certified Shopify Plus development agency. 200+ Shopify Plus stores built by our expert developers. Custom Shopify Plus development: checkout extensions, B2B portals, ERP integrations, and zero-downtime migrations. $900M+ in client revenue.",
+  title: { absolute: "Shopify Plus Development Agency | Enterprise Builds" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify plus development",
+    "shopify plus development agency",
+    "shopify plus developer",
+    "shopify plus store development",
+    "enterprise shopify development",
+    "shopify plus checkout extensions",
+    "shopify plus b2b development",
+    "shopify plus migration",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify Plus Development Agency | Enterprise Builds",
+    description: META_DESCRIPTION,
+    images: [{ url: "/images/migration-shopify-right-image.webp", alt: "shopify plus development by Ecomm Wizards" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify Plus Development Agency | Enterprise Builds",
+    description: META_DESCRIPTION,
+    images: ["/images/migration-shopify-right-image.webp"],
+  },
 };
 
 const C_DARK  = "#000000";
@@ -192,6 +220,17 @@ const CASE_STUDIES = [
     description: "Henchman exited Magento, built a Shopify Plus B2B store with self-service wholesale ordering and Brightpearl ERP integration, and grew online revenue 58% while cutting platform costs by 45%.",
   },
 ];
+
+/* ── Breadcrumb schema ── */
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Shopify Plus Development", item: "https://ecommwizards.com/services/shopify-plus-development" },
+  ],
+};
 
 /* ── FAQs ── */
 const FAQS = [
@@ -465,7 +504,7 @@ export default function Page() {
               },
               {
                 title: "Enterprise Integration Depth",
-                desc: (<>We connect Shopify Plus to NetSuite, SAP, HubSpot, Salesforce, and bespoke 3PL systems. Real API integrations that <span className="spd-why-hl">sync reliably at scale</span>, not off-the-shelf connectors that break under volume.</>),
+                desc: (<>We connect Shopify Plus to NetSuite, SAP, HubSpot, Salesforce, and custom 3PL systems. Real API integrations that <span className="spd-why-hl">sync reliably at scale</span>, not off-the-shelf connectors that break under volume.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="7" cy="7" r="3" /><circle cx="25" cy="7" r="3" /><circle cx="7" cy="25" r="3" /><circle cx="25" cy="25" r="3" /><circle cx="16" cy="16" r="3" /><path d="M10 7h12M7 10v12M25 10v12M10 25h12M10 10l6 6M22 10l-6 6M10 22l6-6M22 22l-6-6" /></svg>),
               },
               {
@@ -701,6 +740,10 @@ export default function Page() {
               })),
             }),
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
 
         <style dangerouslySetInnerHTML={{ __html: `

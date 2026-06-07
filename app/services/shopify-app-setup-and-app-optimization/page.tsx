@@ -5,10 +5,38 @@ import SaoAccordion from "./SaoAccordion";
 import SaoFaqAccordion from "./SaoFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
+const META_DESCRIPTION =
+  "Shopify app setup and optimization for 150+ stores. We audit your full app stack, remove dead weight, and configure everything for faster pages, accurate tracking, and better conversions.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-app-setup-and-app-optimization";
+
 export const metadata: Metadata = {
-  title: "Shopify App Setup Service | App Stack Optimization | Ecomm Wizards",
-  description:
-    "Shopify app setup and optimization for 150+ stores. We audit your full app stack, remove dead weight, and configure everything for faster pages, accurate tracking, and better conversions.",
+  title: { absolute: "Shopify App Setup and Optimization | App Stack Experts" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify app setup and optimization",
+    "shopify app stack audit",
+    "shopify app configuration",
+    "shopify app performance",
+    "shopify app speed optimization",
+    "shopify tracking setup",
+    "shopify app management",
+    "shopify app installation service",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify App Setup and Optimization | App Stack Experts",
+    description: META_DESCRIPTION,
+    images: [{ url: "/images/Store%20performance.webp", alt: "shopify app setup and optimization by Ecomm Wizards" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify App Setup and Optimization | App Stack Experts",
+    description: META_DESCRIPTION,
+    images: ["/images/Store%20performance.webp"],
+  },
 };
 
 const C_DARK  = "#000000";
@@ -223,6 +251,17 @@ const BUILDER_CONS = [
   { text: "Fix problems only after customers have already reported them.",     warn: true  },
   { text: "Lose data during migrations with no rollback plan in place.",       warn: true  },
 ];
+
+/* ── BreadcrumbList schema ── */
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "App Setup and Optimization", item: "https://ecommwizards.com/services/shopify-app-setup-and-app-optimization" },
+  ],
+};
 
 /* ── FAQs ── */
 const FAQS = [
@@ -767,6 +806,10 @@ export default function Page() {
               })),
             }),
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
 
         <style dangerouslySetInnerHTML={{ __html: `

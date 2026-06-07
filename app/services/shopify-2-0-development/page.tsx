@@ -5,10 +5,38 @@ import S20Accordion from "./S20Accordion";
 import S20FaqAccordion from "./S20FaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
+const META_DESCRIPTION =
+  "Shopify 2.0 development agency with 200+ Online Store 2.0 builds. Custom theme development, 1.0 to 2.0 migrations, and native App Block integrations. $900M+ in client revenue.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-2-0-development";
+
 export const metadata: Metadata = {
-  title: "Shopify 2.0 Development Agency | Shopify 2.0 Theme Development | Ecomm Wizards",
-  description:
-    "200+ Shopify 2.0 stores built. $900M+ in client revenue. Custom Shopify 2.0 theme development, 1.0 to 2.0 migrations, and native App Block integrations.",
+  title: { absolute: "Shopify 2.0 Development | Online Store 2.0 Experts" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify 2.0 development",
+    "online store 2.0",
+    "shopify 2.0 theme development",
+    "shopify 2.0 migration",
+    "shopify 2.0 developer",
+    "shopify 1.0 to 2.0 migration",
+    "shopify online store 2.0",
+    "shopify 2.0 agency",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify 2.0 Development | Online Store 2.0 Experts",
+    description: META_DESCRIPTION,
+    images: [{ url: "/images/main-hero-f-desktop.webp", alt: "shopify 2.0 development by Ecomm Wizards" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify 2.0 Development | Online Store 2.0 Experts",
+    description: META_DESCRIPTION,
+    images: ["/images/main-hero-f-desktop.webp"],
+  },
 };
 
 const C_DARK  = "#000000";
@@ -208,6 +236,17 @@ const CASE_STUDIES = [
   },
 ];
 
+/* ── Breadcrumb schema ── */
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Shopify 2.0 Development", item: "https://ecommwizards.com/services/shopify-2-0-development" },
+  ],
+};
+
 /* ── FAQs ── */
 const FAQS = [
   {
@@ -240,7 +279,7 @@ const FAQS = [
   },
   {
     q: "What is the difference between Shopify 2.0 and Shopify Plus?",
-    a: "Shopify 2.0 refers to the theme framework, the architecture your storefront is built on. Shopify Plus is a subscription tier that unlocks enterprise features like checkout customisation, Shopify Flow, B2B commerce, and higher API limits. You can run a Shopify 2.0 theme on any Shopify plan, including standard Shopify and Shopify Plus.",
+    a: "Shopify 2.0 refers to the theme framework, the architecture your storefront is built on. Shopify Plus is a subscription tier that enables enterprise features like checkout customisation, Shopify Flow, B2B commerce, and higher API limits. You can run a Shopify 2.0 theme on any Shopify plan, including standard Shopify and Shopify Plus.",
   },
   {
     q: "Is Shopify 2.0 better than Shopify 1.0?",
@@ -496,7 +535,7 @@ export default function Page() {
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="8" width="24" height="16" rx="2"/><path d="M4 13h24M10 8v16M22 8v16"/></svg>),
               },
               {
-                title: "Team Empowerment as Standard",
+                title: "Team Enablement as Standard",
                 desc: (<>Every 2.0 project ends with a store your marketing team controls. Sections, blocks, and metafields configured so your team <span className="s20-why-hl">launches pages without calling a developer.</span></>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="10" r="4"/><circle cx="22" cy="10" r="4"/><path d="M4 28c0-4.418 3.582-8 8-8M14 22c1.293-.634 2.754-1 4.28-1C22.538 21 26 24.582 26 29"/></svg>),
               },
@@ -738,6 +777,10 @@ export default function Page() {
               })),
             }),
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
 
         <style dangerouslySetInnerHTML={{ __html: `

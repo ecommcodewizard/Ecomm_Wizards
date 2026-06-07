@@ -5,10 +5,38 @@ import SatAccordion from "./SatAccordion";
 import SatFaqAccordion from "./SatFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
+const META_DESCRIPTION =
+  "Shopify analytics and tracking setup for 150+ stores. We configure GA4, GTM, and conversion pixels correctly, validate every event, and give you data you can trust to make ad decisions.";
+const CANONICAL_URL = "https://ecommwizards.com/services/shopify-analytics-and-tracking-setup";
+
 export const metadata: Metadata = {
-  title: "Shopify Google Analytics Setup | GA4, GTM & Conversion Tracking | Ecomm Wizards",
-  description:
-    "Shopify Google Analytics setup for 150+ stores. We configure GA4, GTM, and conversion pixels correctly, validate every event, and give you data you can trust to make ad decisions.",
+  title: { absolute: "Shopify Analytics and Tracking Setup | GA4, GTM, Pixels" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify analytics and tracking setup",
+    "shopify ga4 setup",
+    "shopify google analytics setup",
+    "shopify gtm setup",
+    "shopify conversion tracking",
+    "shopify pixel setup",
+    "server-side tracking shopify",
+    "shopify tracking audit",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify Analytics and Tracking Setup | GA4, GTM, Pixels",
+    description: META_DESCRIPTION,
+    images: [{ url: "/images/migration-shopify-right-image.webp", alt: "shopify analytics and tracking setup by Ecomm Wizards" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify Analytics and Tracking Setup | GA4, GTM, Pixels",
+    description: META_DESCRIPTION,
+    images: ["/images/migration-shopify-right-image.webp"],
+  },
 };
 
 const C_DARK  = "#000000";
@@ -240,6 +268,17 @@ const BUILDER_CONS = [
   { text: "GDPR Consent Mode rarely configured: EU traffic goes dark by default.",           warn: false },
   { text: "Support tied to the app roadmap, not your store's specific tracking setup.",       warn: false },
 ];
+
+/* ── Breadcrumb schema ── */
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "Analytics and Tracking Setup", item: "https://ecommwizards.com/services/shopify-analytics-and-tracking-setup" },
+  ],
+};
 
 /* ── FAQs ── */
 const FAQS = [
@@ -811,6 +850,10 @@ export default function Page() {
               })),
             }),
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
 
         <style dangerouslySetInnerHTML={{ __html: `
