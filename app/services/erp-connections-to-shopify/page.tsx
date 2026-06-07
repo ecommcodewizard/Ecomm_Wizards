@@ -62,11 +62,45 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
   },
 ];
 
+const META_DESCRIPTION =
+  "Connect your ERP to Shopify with real-time bi-directional sync. NetSuite, SAP, Dynamics 365, Acumatica and more. Shopify Plus Preferred Partner. Get a free quote.";
+const CANONICAL_URL = "https://ecommwizards.com/services/erp-connections-to-shopify";
+
 export const metadata: Metadata = {
-  title: "Shopify ERP Integration Service | NetSuite, SAP and More",
-  description:
-    "Connect your ERP to Shopify with real-time bi-directional sync. NetSuite, SAP, Dynamics 365, Acumatica and more. Shopify Plus Preferred Partner. Get a free quote.",
-  alternates: { canonical: "https://ecommwizards.com/services/erp-connections-to-shopify/" },
+  // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
+  // template would otherwise append the brand to this custom title.
+  title: { absolute: "Shopify ERP Integration Service | NetSuite, SAP and More" },
+  description: META_DESCRIPTION,
+  keywords: [
+    "shopify erp integration",
+    "connect erp to shopify",
+    "erp for shopify",
+    "shopify netsuite integration",
+    "shopify sap integration",
+    "shopify erp crm integration",
+    "erp to shopify connector",
+    "shopify plus erp integration",
+  ],
+  alternates: { canonical: CANONICAL_URL },
+  openGraph: {
+    type: "website",
+    url: CANONICAL_URL,
+    siteName: "Ecomm Wizards",
+    title: "Shopify ERP Integration Service | NetSuite, SAP and More",
+    description: META_DESCRIPTION,
+    images: [
+      {
+        url: "/images/erp-banner-image_1024x1024.webp",
+        alt: "Shopify ERP integration by Ecomm Wizards",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shopify ERP Integration Service | NetSuite, SAP and More",
+    description: META_DESCRIPTION,
+    images: ["/images/erp-banner-image_1024x1024.webp"],
+  },
 };
 
 const GRADIENT =
@@ -328,6 +362,16 @@ const FAQ_SCHEMA = {
   })),
 };
 
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://ecommwizards.com/services" },
+    { "@type": "ListItem", position: 3, name: "ERP Connections to Shopify", item: "https://ecommwizards.com/services/erp-connections-to-shopify" },
+  ],
+};
+
 const ICON_PROPS = {
   width: 28,
   height: 28,
@@ -469,9 +513,10 @@ export default function ERPPage() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={r.img}
-                    alt=""
+                    alt={r.title}
                     className="w-full h-auto rounded-[14px] object-cover"
                     style={{ maxHeight: 460 }}
+                    loading="lazy"
                   />
                 </div>
                 <div className={r.imageLeft ? "order-2" : "order-2 lg:order-1"}>
@@ -541,6 +586,7 @@ export default function ERPPage() {
                 src="/images/performance-2.webp"
                 alt="ERP and Shopify data sync"
                 className="w-full h-auto rounded-[14px] object-cover"
+                loading="lazy"
               />
             </div>
           </div>
@@ -567,13 +613,13 @@ export default function ERPPage() {
                   style={{ background: "#F4ECD6", minHeight: 280 }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={s.img} alt={s.alt} className="w-full h-auto max-w-[420px] object-contain" />
+                  <img src={s.img} alt={s.alt} className="w-full h-auto max-w-[420px] object-contain" loading="lazy" />
                 </div>
               ) : (
                 <div key={s.name} className="rounded-[18px] bg-white p-6 sm:p-7 flex flex-col">
                   <div className="h-[64px] flex items-center">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={s.logo} alt={s.name} className="h-full w-auto object-contain" />
+                    <img src={s.logo} alt={s.name} className="h-full w-auto object-contain" loading="lazy" />
                   </div>
                   <h3 className="mt-5 font-bold text-[#1e293b] text-[20px] sm:text-[22px] leading-[1.3]">{s.name}</h3>
                   <p className="mt-3 text-[#334155] text-[15px] leading-[1.7]">{s.desc}</p>
@@ -610,7 +656,7 @@ export default function ERPPage() {
               <div key={s.title} className="text-center erp-process-cell">
                 <div className="mx-auto mb-6 flex h-[110px] w-[110px] items-center justify-center rounded-full bg-white">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={s.icon} alt="" className="h-[70px] w-[70px] object-contain" />
+                  <img src={s.icon} alt="" className="h-[70px] w-[70px] object-contain" loading="lazy" />
                 </div>
                 <h3 className="font-bold text-white text-[20px] sm:text-[22px] leading-[1.3]">{s.title}</h3>
                 <p className="mt-4 text-white/80 text-[15px] leading-[1.75] max-w-[360px] mx-auto">{s.body}</p>
@@ -643,6 +689,7 @@ export default function ERPPage() {
                 src="/images/erp-faq_1_1-scaled.webp"
                 alt="Advanced Shopify ERP integration features"
                 className="w-full h-auto rounded-[14px] object-cover"
+                loading="lazy"
               />
             </div>
             <div>
@@ -757,7 +804,7 @@ export default function ERPPage() {
               </div>
               <div className="w-full sm:w-[200px] lg:w-[240px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/call-image_1024x1024.webp" alt="Ready to integrate" className="w-full h-auto" />
+                <img src="/images/call-image_1024x1024.webp" alt="Ready to integrate" className="w-full h-auto" loading="lazy" />
               </div>
             </div>
 
@@ -780,7 +827,7 @@ export default function ERPPage() {
               </div>
               <div className="w-full sm:w-[200px] lg:w-[240px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/contact_1024x1024.webp" alt="Not sure where to start" className="w-full h-auto" />
+                <img src="/images/contact_1024x1024.webp" alt="Not sure where to start" className="w-full h-auto" loading="lazy" />
               </div>
             </div>
           </div>
@@ -790,6 +837,7 @@ export default function ERPPage() {
       {/* ── 12. FAQ ──────────────────────────────────────────────────── */}
       <section className="erp-faq-section" style={{ background: "#FFFFFF", fontFamily: "'Poppins', sans-serif" }}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }} />
         <div
           className="erp-faq-inner mx-auto py-[40px] px-[15px] lg:py-[60px] lg:px-[20px]"
           style={{ maxWidth: "1320px" }}
