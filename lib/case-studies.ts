@@ -72,7 +72,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroSubMetric: "Conversion Rate",
     heroImage: "/images/Case%20studies/111skin-hero.jpg",
     heroDescription:
-      "How a dermatologist-founded luxury skincare brand transformed their Shopify Plus store with a data-driven CRO roadmap, bespoke theme, and intelligent skin quiz — increasing conversions by 46% and revenue by 21%.",
+      "How a dermatologist-founded luxury skincare brand transformed their Shopify Plus store with a data-driven CRO roadmap, custom theme, and intelligent skin quiz, increasing conversions by 46% and revenue by 21%.",
     stats: [
       { label: "Higher Conversion Rate", value: "+46%", shortLabel: "Conversion Rate" },
       { label: "Increase in Revenue", value: "+21%", shortLabel: "Revenue" },
@@ -80,7 +80,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "Converting Premium Skincare Into Premium Revenue",
     challengeBody:
-      "111SKIN was born at 111 Harley Street, where Dr. Yannis Alexandrides has practised as one of London's most respected plastic surgeons for over three decades. Together with co-founder Eva Alexandridis, he built a skincare brand rooted in medical science and designed for real results. Today, 111SKIN is stocked in premium retailers worldwide and trusted by dermatologists, editors, and loyal customers who take their skincare seriously.\n\nWhen they came to us, their Shopify Plus store wasn't doing the brand justice. Customers found it hard to navigate the product range and match products to their specific skin concerns. Drop-off rates were high and the conversion rate was well below what a brand of this calibre should be achieving. They needed a proper CRO programme and a store experience that felt as premium as the products on the shelf.",
+      "111SKIN was born at 111 Harley Street, where Dr. Yannis Alexandrides has practised as one of London's most respected plastic surgeons for over three decades. Together with co-founder Eva Alexandridis, he built a skincare brand rooted in medical science and designed for real results. Today, 111SKIN is stocked in premium retailers worldwide and trusted by dermatologists, editors, and loyal customers who take their skincare seriously.\n\nWhen they came to us, their Shopify Plus store wasn't doing the brand justice. Customers found it hard to navigate the product range and match products to their specific skin concerns. Drop-off rates were high and the conversion rate was well below what a brand of this calibre should be achieving. They needed a proper CRO program and a store experience that felt as premium as the products on the shelf.",
     challengeImage: "/images/Case%20studies/111Skin%20mockup.jpeg",
     approachTitle: "CRO Roadmap for Growth",
     approachItems: [
@@ -91,7 +91,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         step: 2,
-        title: "Bespoke Shopify Theme Development",
+        title: "Custom Shopify Theme Development",
         desc: "The old theme was holding the brand back. We designed and built a new Shopify Plus theme from scratch, with product pages, collections, and checkout all built to feel premium and perform. Faster load times, cleaner layouts, and a store experience customers actually enjoyed using.",
       },
       {
@@ -102,7 +102,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 4,
         title: "Continuous A/B Testing & Iteration",
-        desc: "Every change was tested against the original before it went live. Product page layouts, UGC placement, discount visibility at checkout — nothing scaled until the data said it should. That discipline is what turned a series of small improvements into a 46% lift in conversion rate.",
+        desc: "Every change was tested against the original before it went live. Product page layouts, UGC placement, discount visibility at checkout: nothing scaled until the data said it should. That discipline is what turned a series of small improvements into a 46% lift in conversion rate.",
       },
     ],
     workTitle: "Inside the 111SKIN Build",
@@ -119,7 +119,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: "Average Order Value", before: "$188", after: "$196", improvement: "+4%" },
       { label: "Repeat Purchase Rate", before: "22%", after: "31%", improvement: "+41%" },
     ],
-    resultsDescription: "The CRO programme delivered results that went well beyond conversion rate. The 111SKIN Shopify Plus store now converts at 2.1%, up from 1.4% before we started working together. Revenue grew 21% year-on-year, average order value increased from $188 to $196, and the repeat purchase rate climbed from 22% to 31%. The bespoke theme, skin finder quiz, and ongoing A/B testing programme built a store experience that matches the quality of the brand, with a foundation that keeps improving over time.",
+    resultsDescription: "The CRO program delivered results that went well beyond conversion rate. The 111SKIN Shopify Plus store now converts at 2.1%, up from 1.4% before we started working together. Revenue grew 21% year-on-year, average order value increased from $188 to $196, and the repeat purchase rate climbed from 22% to 31%. The custom theme, skin finder quiz, and ongoing A/B testing program built a store experience that matches the quality of the brand, with a foundation that keeps improving over time.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
@@ -156,7 +156,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroSubMetric: "Conversion Rate",
     heroImage: "/images/Case%20studies/Evie-Lou.jpg",
     heroDescription:
-      "How a women's contemporary fashion brand rebuilt their Shopify Plus store around a mobile-first UX, smarter product discovery, and a retention programme that nearly doubled their conversion rate and added 47% organic revenue growth within a year.",
+      "How a women's contemporary fashion brand rebuilt their Shopify Plus store around a mobile-first UX, smarter product discovery, and a retention program that nearly doubled their conversion rate and added 47% organic revenue growth within a year.",
     stats: [
       { label: "Higher Conversion Rate", value: "+82%", shortLabel: "Conversion Rate" },
       { label: "Increase in AOV", value: "+31%", shortLabel: "AOV" },
@@ -174,7 +174,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         step: 2,
-        title: "Bespoke Shopify Plus Theme",
+        title: "Custom Shopify Plus Theme",
         desc: "The new theme was built around Evie Lou's aesthetic. Editorial collection pages with lookbook-style photography, a sticky size guide, and product pages structured to carry the full brand story alongside the purchase decision. No compromises, no template constraints.",
       },
       {
@@ -184,12 +184,12 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         step: 4,
-        title: "Klaviyo Retention Programme",
-        desc: "We rebuilt the full email architecture: welcome series, abandoned cart, browse abandon, and a post-purchase sequence engineered to drive the second purchase within 30 days. The retention programme lifted repeat purchase rate from 19% to 38%, turning one-time buyers into a loyal returning base.",
+        title: "Klaviyo Retention Program",
+        desc: "We rebuilt the full email architecture: welcome series, abandoned cart, browse abandon, and a post-purchase sequence engineered to drive the second purchase within 30 days. The retention program lifted repeat purchase rate from 19% to 38%, turning one-time buyers into a loyal returning base.",
       },
     ],
     workTitle: "Inside the Evie Lou Build",
-    workSubtitle: "Bespoke theme, mobile checkout rebuild, and a retention programme that works.",
+    workSubtitle: "Custom theme, mobile checkout rebuild, and a retention program that works.",
     workImages: [
       "/images/Case%20studies/evie-lou-about-page.webp",
       "/images/Case%20studies/evie-lou-1.webp",
@@ -203,7 +203,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: "Repeat Purchase Rate", before: "19%", after: "38%", improvement: "+100%" },
     ],
     resultsDescription:
-      "Conversion rate climbed from 1.1% to 2.0%, an 82% improvement driven by mobile UX and checkout optimisation. AOV lifted 31% as better product discovery and cross-sell logic increased basket size. Organic revenue grew 47% year-on-year, and the retention programme doubled the repeat purchase rate, fundamentally changing the unit economics of the business.",
+      "Conversion rate climbed from 1.1% to 2.0%, an 82% improvement driven by mobile UX and checkout optimization. AOV lifted 31% as better product discovery and cross-sell logic increased basket size. Organic revenue grew 47% year-on-year, and the retention program doubled the repeat purchase rate, fundamentally changing the unit economics of the business.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
@@ -250,18 +250,18 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "High Traffic, Low Loyalty, No Subscription Infrastructure",
     challengeBody:
-      "Happy Mammoth makes gut health and hormone balance supplements for health-conscious consumers who take their wellness seriously. Their content and paid channels drive consistent, high-intent traffic.\n\nWhen they came to us, almost all of that traffic was converting to one-time purchases. There was no subscription programme, no personalised recommendation journey, and email flows that barely touched the surface of what the customer relationship could be. Navigation was getting harder as the product range grew. The team knew the lifetime value was enormous. They just did not have the infrastructure to unlock it.",
+      "Happy Mammoth makes gut health and hormone balance supplements for health-conscious consumers who take their wellness seriously. Their content and paid channels drive consistent, high-intent traffic.\n\nWhen they came to us, almost all of that traffic was converting to one-time purchases. There was no subscription program, no personalized recommendation journey, and email flows that barely touched the surface of what the customer relationship could be. Navigation was getting harder as the product range grew. The team knew the lifetime value was enormous. They just did not have the infrastructure to capture it.",
     approachTitle: "From One-Time Buyers to Long-Term Subscribers",
     approachItems: [
       {
         step: 1,
         title: "Recharge Subscription Architecture",
-        desc: "We built a subscription programme that made subscribe-and-save the natural default, not an afterthought buried in small print. Smart in-cart prompts, bundle builders, and pause-vs-cancel flows were all built before launch. Subscription revenue more than doubled within the first quarter.",
+        desc: "We built a subscription program that made subscribe-and-save the natural default, not an afterthought buried in small print. Smart in-cart prompts, bundle builders, and pause-vs-cancel flows were all built before launch. Subscription revenue more than doubled within the first quarter.",
       },
       {
         step: 2,
         title: "Goals-Based Product Quiz",
-        desc: "Happy Mammoth's 'Find Your Perfect Formula' quiz was rebuilt from the ground up, mapping customer goals (gut health, hormone balance, energy, immunity) to personalised product stacks. Each result fed a dedicated email sequence. Quiz completions converted at 3.8x the rate of standard PDP visitors.",
+        desc: "Happy Mammoth's 'Find Your Perfect Formula' quiz was rebuilt from the ground up, mapping customer goals (gut health, hormone balance, energy, immunity) to personalized product stacks. Each result fed a dedicated email sequence. Quiz completions converted at 3.8x the rate of standard PDP visitors.",
       },
       {
         step: 3,
@@ -336,7 +336,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "A Premium Brand Selling Like a Commodity Online",
     challengeBody:
-      "Candy Kittens makes premium vegan sweets with standout packaging and a genuine retail presence in Sainsbury's and Waitrose. Co-founder Jamie Laing has built it into one of the most recognisable confectionery brands in the UK.\n\nWhen they came to us, the online store was not reflecting any of that. Gifting drove over 55% of revenue but the experience was buried in a standard collection page. No personalisation, no gift message option, no sense of occasion. Seasonal campaigns were constrained by a theme that could not execute them. Customers arrived inspired and left without buying.",
+      "Candy Kittens makes premium vegan sweets with standout packaging and a genuine retail presence in Sainsbury's and Waitrose. Co-founder Jamie Laing has built it into one of the most recognisable confectionery brands in the UK.\n\nWhen they came to us, the online store was not reflecting any of that. Gifting drove over 55% of revenue but the experience was buried in a standard collection page. No personalization, no gift message option, no sense of occasion. Seasonal campaigns were constrained by a theme that could not execute them. Customers arrived inspired and left without buying.",
     approachTitle: "Selling the Brand, Not Just the Sweets",
     approachItems: [
       {
@@ -347,12 +347,12 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 2,
         title: "Gift Finder & Occasion-Led Navigation",
-        desc: "A three-step gift finder guided shoppers by recipient, occasion, and budget to a curated product selection. Each result included complementary pairings, a bundle option, and a personalised gift message at checkout. The gift finder now drives 28% of all transactions.",
+        desc: "A three-step gift finder guided shoppers by recipient, occasion, and budget to a curated product selection. Each result included complementary pairings, a bundle option, and a personalized gift message at checkout. The gift finder now drives 28% of all transactions.",
       },
       {
         step: 3,
-        title: "Bespoke Shopify Plus Theme",
-        desc: "The new theme was built to match the brand's visual identity. Bold colour, playful typography, and product photography given the space to perform. Collection pages were redesigned around flavour discovery rather than a flat product grid. Add-to-cart rate on collection pages rose 57%.",
+        title: "Custom Shopify Plus Theme",
+        desc: "The new theme was built to match the brand's visual identity. Bold color, playful typography, and product photography given the space to perform. Collection pages were redesigned around flavour discovery rather than a flat product grid. Add-to-cart rate on collection pages rose 57%.",
       },
       {
         step: 4,
@@ -422,7 +422,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "An Iconic Brand Held Back by an Outdated Store",
     challengeBody:
-      "Everlast has been making boxing and fitness equipment for over 100 years. The brand is trusted by professional fighters and fitness enthusiasts worldwide and is one of the most recognised names in sport.\n\nWhen they came to us, the site was running on a default theme with limited product filtering across a large catalogue. A $230 professional boxing glove was being presented the same way as any commodity product. The store was also serving two very different audiences at once. Serious athletes buying technical equipment, and lifestyle fitness buyers, with no architecture built to handle both. A trade portal did not exist. Inventory issues were causing amendments on a significant portion of B2B orders.",
+      "Everlast has been making boxing and fitness equipment for over 100 years. The brand is trusted by professional fighters and fitness enthusiasts worldwide and is one of the most recognised names in sport.\n\nWhen they came to us, the site was running on a default theme with limited product filtering across a large catalog. A $230 professional boxing glove was being presented the same way as any commodity product. The store was also serving two very different audiences at once. Serious athletes buying technical equipment, and lifestyle fitness buyers, with no architecture built to handle both. A trade portal did not exist. Inventory issues were causing amendments on a significant portion of B2B orders.",
     approachTitle: "Built for Champions, Built for Scale",
     approachItems: [
       {
@@ -433,7 +433,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 2,
         title: "Sport & Discipline Navigation Architecture",
-        desc: "We restructured the catalogue around how athletes actually shop: by sport (Boxing, MMA, Fitness, Running), then by equipment type. Guided product finders for gloves and bags matched customers to the right spec for their level and discipline. Catalogue abandonment dropped 38%.",
+        desc: "We restructured the catalog around how athletes actually shop: by sport (Boxing, MMA, Fitness, Running), then by equipment type. Guided product finders for gloves and bags matched customers to the right spec for their level and discipline. Catalog abandonment dropped 38%.",
       },
       {
         step: 3,
@@ -469,7 +469,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { name: "Gorgias", logo: "/images/65739f17195baa7e77a72d2f_5efb82474d9adf8a3ca19488_logo-gorgias.svg" },
     ],
     sliderStats: [
-      "Catalogue abandonment down 38% post navigation rebuild",
+      "Catalog abandonment down 38% post navigation rebuild",
       "Mobile conversion rate up 188%",
       "Trade portal reached $432k/month in 6 months",
       "Cart abandonment rate down 31%",
@@ -500,15 +500,15 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroSubMetric: "Total Sales",
     heroImage: "/images/Case%20studies/Ronaldo%20Jewelry%20hero%20section%20img.webp",
     heroDescription:
-      "How a handcrafted wire-wrapped jewelry brand rebuilt their Shopify Plus store with high-fidelity product visualisation, a bespoke piece configurator, and a trust framework built for high-AOV transactions, driving a 250% increase in total sales.",
+      "How a handcrafted wire-wrapped jewelry brand rebuilt their Shopify Plus store with high-fidelity product visualisation, a custom piece configurator, and a trust framework built for high-AOV transactions, driving a 250% increase in total sales.",
     stats: [
       { label: "Increase in Total Sales", value: "+250%", shortLabel: "Total Sales" },
       { label: "Higher Conversion Rate", value: "+120%", shortLabel: "Conversion Rate" },
       { label: "Increase in AOV", value: "+46%", shortLabel: "AOV" },
     ],
-    challengeTitle: "Beautiful Jewellery, Invisible Online",
+    challengeTitle: "Beautiful Jewelry, Invisible Online",
     challengeBody:
-      "Ronaldo Designer Jewelry makes handcrafted wire-wrapped pieces that customers discover in boutiques and gift shops across the US. The craft behind every piece is what sells it in person.\n\nWhen they came to us, the online store was not doing the product justice. Photography was inconsistent. The mobile experience made handcrafted pieces look like costume jewellery. Customers had no way to examine the detail at the resolution the craftsmanship deserved. A loyal wholesale network was asking for a stronger DTC presence. Returning customers had no easy way to reorder. The gap between what the brand was and what the store communicated was getting wider every quarter.",
+      "Ronaldo Designer Jewelry makes handcrafted wire-wrapped pieces that customers discover in boutiques and gift shops across the US. The craft behind every piece is what sells it in person.\n\nWhen they came to us, the online store was not doing the product justice. Photography was inconsistent. The mobile experience made handcrafted pieces look like costume jewelry. Customers had no way to examine the detail at the resolution the craftsmanship deserved. A loyal wholesale network was asking for a stronger DTC presence. Returning customers had no easy way to reorder. The gap between what the brand was and what the store communicated was getting wider every quarter.",
     approachTitle: "A Store That Shows the Craft",
     approachItems: [
       {
@@ -518,13 +518,13 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         step: 2,
-        title: "Bespoke Piece Configurator",
+        title: "Custom Piece Configurator",
         desc: "An interactive configurator replaced the email-based custom piece inquiry process. Customers could select wire style, stone type, and engraving, with a live price update and rendered preview per configuration. Configuration starts now convert at 22%, versus 4% for the previous email-based flow.",
       },
       {
         step: 3,
         title: "Trust Architecture for High-AOV Purchases",
-        desc: "We built a trust layer designed for the specific hesitations around high-value online jewellery purchases: authenticity certificates, artisan story integration on every PDP, free returns positioned prominently, and a live chat entry point via Gorgias during business hours.",
+        desc: "We built a trust layer designed for the specific hesitations around high-value online jewelry purchases: authenticity certificates, artisan story integration on every PDP, free returns positioned prominently, and a live chat entry point via Gorgias during business hours.",
       },
       {
         step: 4,
@@ -547,7 +547,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: "Configurator Conversion", before: "4%", after: "22%", improvement: "+450%" },
     ],
     resultsDescription:
-      "Total sales grew 250% year-on-year following launch. Conversion rate doubled from 0.5% to 1.1%, strong for a high-AOV jewellery brand. AOV climbed 46% as the configurator drove customers toward higher-value bespoke pieces. Custom piece configuration requests converted at 22%, up from 4% on the old email flow.",
+      "Total sales grew 250% year-on-year following launch. Conversion rate doubled from 0.5% to 1.1%, strong for a high-AOV jewelry brand. AOV climbed 46% as the configurator drove customers toward higher-value custom pieces. Custom piece configuration requests converted at 22%, up from 4% on the old email flow.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "Yotpo", logo: "/images/partner_logo_2.svg" },
@@ -586,7 +586,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroSubMetric: "B2B Revenue",
     heroImage: "/images/Case%20studies/Mouldings%20One%20hero.webp",
     heroDescription:
-      "How a leading architectural mouldings supplier replaced a legacy trade portal with a bespoke Shopify Plus B2B store, automating wholesale ordering, cutting processing time by 74%, and growing B2B revenue by 50%.",
+      "How a leading architectural mouldings supplier replaced a legacy trade portal with a custom Shopify Plus B2B store, automating wholesale ordering, cutting processing time by 74%, and growing B2B revenue by 50%.",
     stats: [
       { label: "B2B Revenue Growth", value: "+50%", shortLabel: "B2B Revenue" },
       { label: "Order Processing Time", value: "-74%", shortLabel: "Processing Time" },
@@ -600,7 +600,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 1,
         title: "Shopify Plus B2B Architecture",
-        desc: "We built a dedicated B2B store on Shopify Plus using native B2B features: company accounts, location-based pricing, payment terms, and draft order management. We extended this with custom logic for tiered MOQs, delivery scheduling, and trade credit limits. Every account type sees its own tailored catalogue and pricing.",
+        desc: "We built a dedicated B2B store on Shopify Plus using native B2B features: company accounts, location-based pricing, payment terms, and draft order management. We extended this with custom logic for tiered MOQs, delivery scheduling, and trade credit limits. Every account type sees its own catalog and pricing.",
       },
       {
         step: 2,
@@ -670,7 +670,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroSubMetric: "Monthly Subscribers",
     heroImage: "/images/Case%20studies/WeareWild.webp",
     heroDescription:
-      "How one of Europe's fastest-growing sustainable personal care brands launched their first Shopify store, built a ReCharge subscription engine from zero, and scaled to over 80,000 active monthly subscribers within twelve months, then expanded into Germany with a localised storefront.",
+      "How one of Europe's fastest-growing sustainable personal care brands launched their first Shopify store, built a ReCharge subscription engine from zero, and scaled to over 80,000 active monthly subscribers within twelve months, then expanded into Germany with a localized storefront.",
     stats: [
       { label: "Monthly Subscribers at 12 Months", value: "80K+", shortLabel: "Subscribers" },
       { label: "Subscription Revenue Growth", value: "+218%", shortLabel: "Sub Revenue" },
@@ -693,17 +693,17 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         step: 3,
-        title: "Bespoke Scent-Swap Customer Portal",
+        title: "Custom Scent-Swap Customer Portal",
         desc: "A custom subscriber portal was built to let active customers swap their scent between deliveries without cancelling. The portal handled scent changes, frequency adjustments, delivery pausing, and gifting, all without customer support involvement. The scent-swap feature became the key retention mechanism, reducing churn 34% by removing the main reason subscribers cancelled.",
       },
       {
         step: 4,
         title: "International German Storefront",
-        desc: "Following the success of the UK store, we built a localised German Shopify Plus clone: translated content, EUR pricing, DE-compliant checkout flow, and local fulfilment routing. The international expansion was delivered in six weeks, using the UK store architecture as the foundation. Germany became Wild's second-largest market within three months of launch.",
+        desc: "Following the success of the UK store, we built a localized German Shopify Plus clone: translated content, EUR pricing, DE-compliant checkout flow, and local fulfillment routing. The international expansion was delivered in six weeks, using the UK store architecture as the foundation. Germany became Wild's second-largest market within three months of launch.",
       },
     ],
     workTitle: "Inside the Wild Build",
-    workSubtitle: "Subscription-first Shopify Plus store, bespoke scent-swap portal, and international expansion.",
+    workSubtitle: "Subscription-first Shopify Plus store, custom scent-swap portal, and international expansion.",
     workImages: [
       "/images/Case%20studies/WeareWild-1.png",
       "/images/Case%20studies/WeareWild-2.png",
@@ -775,16 +775,16 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 2,
         title: "Custom Activity and Size Finder",
-        desc: "A bespoke tool was built to guide customers to the right Dryrobe by sport and activity, with toggle navigation between use cases, integrated video guides, and a detailed size recommendation engine. The tool addressed the main driver of returns directly. Return rate fell 31% in the first quarter.",
+        desc: "A custom tool was built to guide customers to the right Dryrobe by sport and activity, with toggle navigation between use cases, integrated video guides, and a detailed size recommendation engine. The tool addressed the main driver of returns directly. Return rate fell 31% in the first quarter.",
       },
       {
         step: 3,
         title: "International Store Consolidation",
-        desc: "Three separate Shopify stores were consolidated into two: UK, EU, and ROW on one store, US and Canada on the other. Global-e handled multi-currency pricing, localised checkout flows, and international shipping logic. Managing the brand across markets became a single-team operation rather than three parallel workstreams.",
+        desc: "Three separate Shopify stores were consolidated into two: UK, EU, and ROW on one store, US and Canada on the other. Global-e handled multi-currency pricing, localized checkout flows, and international shipping logic. Managing the brand across markets became a single-team operation rather than three parallel workstreams.",
       },
       {
         step: 4,
-        title: "Checkout and Payments Optimisation",
+        title: "Checkout and Payments Optimization",
         desc: "Klarna buy-now-pay-later was added to serve the brand's higher-AOV purchase, alongside Avalara for international tax compliance, Loqate for address validation, and OneTrust for cookie consent across all markets. Checkout completion rate improved 23% as payment friction and form-field errors were eliminated.",
       },
     ],
@@ -856,7 +856,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 1,
         title: "CRO Audit and Growth Opportunity Mapping",
-        desc: "Swanky's Growth Accelerator programme began with a full CRO audit: heatmaps, session recordings, funnel analysis, and customer exit surveys. The audit quantified a €1M+ annual growth opportunity through landing page optimisation and product discovery improvements. Every subsequent test was built on that analysis, not guesswork.",
+        desc: "Swanky's Growth Accelerator program began with a full CRO audit: heatmaps, session recordings, funnel analysis, and customer exit surveys. The audit quantified a €1M+ annual growth opportunity through landing page optimization and product discovery improvements. Every subsequent test was built on that analysis, not guesswork.",
       },
       {
         step: 2,
@@ -866,15 +866,15 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 3,
         title: "Product Recommendation Quiz: Test 2",
-        desc: "A Quiz Kit-powered product recommendation quiz was built and added to the site navigation with a help-me-choose entry point. The quiz walked customers through situational questions to match them to the right Loop model. The result: a 5.9% uplift in new user conversion rate and 4.5% on desktop, equivalent to 2% of UK annual turnover. Zero-party data from every completion fed directly into Klaviyo personalisation.",
+        desc: "A Quiz Kit-powered product recommendation quiz was built and added to the site navigation with a help-me-choose entry point. The quiz walked customers through situational questions to match them to the right Loop model. The result: a 5.9% uplift in new user conversion rate and 4.5% on desktop, equivalent to 2% of UK annual turnover. Zero-party data from every completion fed directly into Klaviyo personalization.",
       },
       {
         step: 4,
-        title: "Zero-Party Data and Email Personalisation",
-        desc: "Every quiz completion generated structured preference data passed to Klaviyo for segmented follow-up. New customers received product-specific onboarding sequences based on their stated use case. The zero-party data layer transformed quiz traffic from a one-time conversion event into an ongoing personalisation asset for the email programme.",
+        title: "Zero-Party Data and Email Personalization",
+        desc: "Every quiz completion generated structured preference data passed to Klaviyo for segmented follow-up. New customers received product-specific onboarding sequences based on their stated use case. The zero-party data layer transformed quiz traffic from a one-time conversion event into an ongoing personalization asset for the email program.",
       },
     ],
-    workTitle: "Inside the Loop Earplugs Programme",
+    workTitle: "Inside the Loop Earplugs Program",
     workSubtitle: "CRO audit, landing page redesign, product quiz, and zero-party data infrastructure.",
     workImages: [
       "/images/Case%20studies/Loop%20Earplugs.webp",
@@ -886,10 +886,10 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: "Revenue Uplift (Test 1)", before: "Baseline", after: "+6.4%", improvement: "+6.4%" },
       { label: "New User CVR (Test 2)", before: "Baseline", after: "+5.9%", improvement: "+5.9%" },
       { label: "Countries Selling In", before: "Global brand", after: "100+ markets", improvement: "100+" },
-      { label: "Zero-Party Data", before: "None", after: "Live Klaviyo personalisation", improvement: "Built" },
+      { label: "Zero-Party Data", before: "None", after: "Live Klaviyo personalization", improvement: "Built" },
     ],
     resultsDescription:
-      "Test 1 delivered a 6.4% revenue uplift per session, representing 17% of Loop's UK annual revenue if applied to all traffic. Test 2, the product recommendation quiz, generated a 5.9% uplift in new user conversion rate and 4.5% on desktop, equivalent to 2% of UK annual turnover. Combined, the two tests validated a €1M+ annual growth opportunity. Zero-party data from every quiz completion now feeds Klaviyo personalisation for new customers.",
+      "Test 1 delivered a 6.4% revenue uplift per session, representing 17% of Loop's UK annual revenue if applied to all traffic. Test 2, the product recommendation quiz, generated a 5.9% uplift in new user conversion rate and 4.5% on desktop, equivalent to 2% of UK annual turnover. Combined, the two tests validated a €1M+ annual growth opportunity. Zero-party data from every quiz completion now feeds Klaviyo personalization for new customers.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
@@ -928,7 +928,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroSubMetric: "Mobile Conversion Rate",
     heroImage: "/images/Case%20studies/sneak-header-final.jpg",
     heroDescription:
-      "How a low-calorie energy powder brand with 80% mobile traffic rebuilt their Shopify store around mobile-first UX, a custom bundle builder, and performance optimisation to grow mobile conversion rate 68%, add-to-cart rate 52%, and hit a sub-3-second load time.",
+      "How a low-calorie energy powder brand with 80% mobile traffic rebuilt their Shopify store around mobile-first UX, a custom bundle builder, and performance optimization to grow mobile conversion rate 68%, add-to-cart rate 52%, and hit a sub-3-second load time.",
     stats: [
       { label: "Mobile Conversion Rate", value: "+68%", shortLabel: "Mobile CVR" },
       { label: "Add-to-Cart Rate Growth", value: "+52%", shortLabel: "Add-to-Cart" },
@@ -956,7 +956,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         step: 4,
-        title: "Performance Optimisation",
+        title: "Performance Optimization",
         desc: "Image compression, script deferral, and lazy loading were applied across the theme to hit sub-3s LCP on mobile. The store reached a 2.9s load time, down from over 4s before the rebuild. At the traffic volumes Sneak generates, that kind of improvement in load speed shows up directly in conversion.",
       },
     ],
@@ -1028,7 +1028,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 1,
         title: "No-Downtime WordPress to Shopify Migration",
-        desc: "The full migration, covering product catalogue, customer accounts, order history, and brand assets, was executed to a 99.9% uptime standard. A comprehensive URL redirect strategy was built before a single page moved, mapping every existing URL to its Shopify equivalent to protect the SEO equity Capelli had built across three regions. The switchover was transparent to customers and undetectable to search engines.",
+        desc: "The full migration, covering product catalog, customer accounts, order history, and brand assets, was executed to a 99.9% uptime standard. A comprehensive URL redirect strategy was built before a single page moved, mapping every existing URL to its Shopify equivalent to protect the SEO equity Capelli had built across three regions. The switchover was transparent to customers and undetectable to search engines.",
       },
       {
         step: 2,
@@ -1038,12 +1038,12 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 3,
         title: "Global Store Architecture",
-        desc: "Region-specific customisations were built for the Americas, European, and MENA markets: localised pricing, currency display, and shipping logic, all managed from a single Shopify store. Ten app integrations were implemented and QA-tested before launch, covering payments, reviews, loyalty, and customer service. Full global functionality was confirmed across all regions before go-live.",
+        desc: "Region-specific customizations were built for the Americas, European, and MENA markets: localized pricing, currency display, and shipping logic, all managed from a single Shopify store. Ten app integrations were implemented and QA-tested before launch, covering payments, reviews, loyalty, and customer service. Full global functionality was confirmed across all regions before go-live.",
       },
       {
         step: 4,
         title: "SEO Preservation Strategy",
-        desc: "A comprehensive redirect mapping programme preserved 95% of organic search equity through the migration. Every high-traffic URL was mapped, canonical tags were implemented correctly on the new platform, and structured data for products and collections was built into the Shopify theme from day one. Post-migration organic traffic held steady, then grew.",
+        desc: "A comprehensive redirect mapping program preserved 95% of organic search equity through the migration. Every high-traffic URL was mapped, canonical tags were implemented correctly on the new platform, and structured data for products and collections was built into the Shopify theme from day one. Post-migration organic traffic held steady, then grew.",
       },
     ],
     workTitle: "Inside the Capelli Sports Build",
@@ -1077,7 +1077,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Americas, Europe, and MENA: all regions on one Shopify store",
     ],
     quote:
-      "The migration was seamless. Our customers didn't notice a thing, and neither did Google. The new store architecture matched how our buyers actually shop and the conversion numbers followed. IT Geeks delivered exactly what they promised.",
+      "The migration was smooth. Our customers didn't notice a thing, and neither did Google. The new store architecture matched how our buyers actually shop and the conversion numbers followed. IT Geeks delivered exactly what they promised.",
     quotePerson: "George Altirs",
     quoteRole: "Founder & CEO, Capelli Sports",
     quoteAvatar: "/images/Case%20studies/George%20Altirs.jfif",
@@ -1100,7 +1100,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroSubMetric: "Conversion Rate",
     heroImage: "/images/Case%20studies/John%20Hardy-hero-update.jpg",
     heroDescription:
-      "How a luxury handcrafted jewelry brand replatformed from Salesforce Commerce Cloud to Shopify Plus in under three months, delivering a bespoke high-AOV theme, Shopify Markets Pro, and a full tech stack integration in time for Black Friday, and grew conversion rate by 71%.",
+      "How a luxury handcrafted jewelry brand replatformed from Salesforce Commerce Cloud to Shopify Plus in under three months, delivering a custom high-AOV theme, Shopify Markets Pro, and a full tech stack integration in time for Black Friday, and grew conversion rate by 71%.",
     stats: [
       { label: "Higher Conversion Rate", value: "+71%", shortLabel: "Conversion Rate" },
       { label: "Replatform Timeline", value: "<3 Months", shortLabel: "Timeline" },
@@ -1118,13 +1118,13 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         step: 2,
-        title: "Bespoke Luxury Theme and High-AOV UX",
+        title: "Custom Luxury Theme and High-AOV UX",
         desc: "The new Shopify Plus theme was built around John Hardy's visual language, with craft, provenance, and artisan story woven into every product page. Collection architecture was designed for high-consideration purchases: detailed imagery, material and technique storytelling, and an accessibility-compliant build meeting WCAG standards. The theme gave the internal team full content control without requiring developer involvement for updates.",
       },
       {
         step: 3,
         title: "Shopify Markets Pro and Customer Data Migration",
-        desc: "Shopify Markets Pro was implemented to handle international tax calculation via Avalara, fraud protection via Signifyd, and localised checkout experiences across all trading regions. Full customer account history and complete order records were migrated from Salesforce, ensuring no buyer lost their purchase history on the new platform.",
+        desc: "Shopify Markets Pro was implemented to handle international tax calculation via Avalara, fraud protection via Signifyd, and localized checkout experiences across all trading regions. Full customer account history and complete order records were migrated from Salesforce, ensuring no buyer lost their purchase history on the new platform.",
       },
       {
         step: 4,
@@ -1186,7 +1186,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroSubMetric: "B2B Sales Growth",
     heroImage: "/images/Case%20studies/Saddleback-hero%20image.webp",
     heroDescription:
-      "How a premium European cycling distributor replaced a clunky wholesale portal with a Shopify Plus B2B store, built a bespoke credit app, and launched CSV bulk ordering, growing B2B sales 881% in month one, driving +704% traffic, and winning B2B Website of the Year at the UK Digital Growth Awards.",
+      "How a premium European cycling distributor replaced a clunky wholesale portal with a Shopify Plus B2B store, built a custom credit app, and launched CSV bulk ordering, growing B2B sales 881% in month one, driving +704% traffic, and winning B2B Website of the Year at the UK Digital Growth Awards.",
     stats: [
       { label: "B2B Sales Growth", value: "+881%", shortLabel: "B2B Sales" },
       { label: "Traffic Growth", value: "+704%", shortLabel: "Traffic" },
@@ -1205,7 +1205,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 2,
         title: "Custom Credit App",
-        desc: "A bespoke credit app was built to give trade buyers real-time visibility of their available credit balance directly at checkout. Accounts with sufficient credit could apply it to their order without contacting the sales team. Accounts approaching their limit received proactive alerts. The credit app removed one of the biggest friction points in the wholesale ordering process.",
+        desc: "A custom credit app was built to give trade buyers real-time visibility of their available credit balance directly at checkout. Accounts with sufficient credit could apply it to their order without contacting the sales team. Accounts approaching their limit received proactive alerts. The credit app removed one of the biggest friction points in the wholesale ordering process.",
       },
       {
         step: 3,
@@ -1295,7 +1295,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 3,
         title: "Multi-Region Store Setup",
-        desc: "Three Shopify Plus instances were configured for the UK, US, and EU markets with localised pricing, currency, and content per region. The internal team gained full control over market-specific promotions and product visibility without needing developer input for routine updates.",
+        desc: "Three Shopify Plus instances were configured for the UK, US, and EU markets with localized pricing, currency, and content per region. The internal team gained full control over market-specific promotions and product visibility without needing developer input for routine updates.",
       },
       {
         step: 4,
@@ -1334,7 +1334,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Zero trading disruption during migration",
     ],
     quote:
-      "Moving off Magento was the right decision for the business. We now have a platform built for where This Works is going — internationalisation, subscriptions, and a customer experience that does justice to our products.",
+      "Moving off Magento was the right decision for the business. We now have a platform built for where This Works is going: internationalisation, subscriptions, and a customer experience that does justice to our products.",
     quotePerson: "Dr. Anna Persaud",
     quoteRole: "CEO, This Works",
     quoteAvatar: "/images/Case%20studies/Dr.%20Anna%20Persaud.jfif",
@@ -1357,7 +1357,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroSubMetric: "New Annual Revenue",
     heroImage: "/images/Case%20studies/Twillory%20hero%20section.png",
     heroDescription:
-      "How a men's premium performance shirt brand added $5.4 million in new annual revenue and $455k in the first 90 days through a systematic CRO programme, A/B testing every interface component, and building an education-first approach for first-time visitors.",
+      "How a men's premium performance shirt brand added $5.4 million in new annual revenue and $455k in the first 90 days through a systematic CRO program, A/B testing every interface component, and building an education-first approach for first-time visitors.",
     stats: [
       { label: "New Annual Revenue Added", value: "$5.4M", shortLabel: "Annual Revenue" },
       { label: "Revenue in First 90 Days", value: "$455k", shortLabel: "90-Day Revenue" },
@@ -1385,11 +1385,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         step: 4,
-        title: "Ongoing CRO Programme",
-        desc: "Rather than a one-off project, a continuous testing programme was established. New hypotheses were generated from analytics, session recordings, and customer data. The 70% test win rate reflects both the quality of the hypotheses and the rigour of the testing methodology.",
+        title: "Ongoing CRO Program",
+        desc: "Rather than a one-off project, a continuous testing program was established. New hypotheses were generated from analytics, session recordings, and customer data. The 70% test win rate reflects both the quality of the hypotheses and the rigour of the testing methodology.",
       },
     ],
-    workTitle: "Inside the Twillory CRO Programme",
+    workTitle: "Inside the Twillory CRO Program",
     workSubtitle: "Systematic A/B testing, first-visit education, and a 70% win rate on every test.",
     workImages: [
       "/images/Case%20studies/Twillory%20product%20page.png",
@@ -1400,11 +1400,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     results: [
       { label: "New Annual Revenue", before: "Pre-engagement baseline", after: "+$5.4M", improvement: "$5.4M" },
       { label: "Revenue in First 90 Days", before: "No CRO", after: "$455k added", improvement: "$455k" },
-      { label: "A/B Test Win Rate", before: "No testing programme", after: "70%", improvement: "70%" },
+      { label: "A/B Test Win Rate", before: "No testing program", after: "70%", improvement: "70%" },
       { label: "Time to First Revenue Win", before: "No CRO", after: "Within 90 days", improvement: "90 Days" },
     ],
     resultsDescription:
-      "$5.4 million in new annual revenue was added through the CRO programme. The first $455k landed within 90 days, before most of the larger interface changes had even been completed. Seventy percent of all A/B tests run added measurable revenue, a win rate that reflects both the quality of the testing hypotheses and the discipline applied to reading and acting on results.",
+      "$5.4 million in new annual revenue was added through the CRO program. The first $455k landed within 90 days, before most of the larger interface changes had even been completed. Seventy percent of all A/B tests run added measurable revenue, a win rate that reflects both the quality of the testing hypotheses and the discipline applied to reading and acting on results.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "Shoplift", logo: "/images/shoplift.svg" },
@@ -1456,8 +1456,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     approachItems: [
       {
         step: 1,
-        title: "Shopify 2.0 Bespoke Theme",
-        desc: "A bespoke theme was built for the UK, EU, and US stores using Shopify 2.0's Sections Everywhere architecture. The internal team gained the ability to update content, rearrange pages, and launch new sections without any developer dependency. This removed a significant operational bottleneck and reduced the cost of routine merchandising updates.",
+        title: "Shopify 2.0 Custom Theme",
+        desc: "A custom theme was built for the UK, EU, and US stores using Shopify 2.0's Sections Everywhere architecture. The internal team gained the ability to update content, rearrange pages, and launch new sections without any developer dependency. This removed a significant operational bottleneck and reduced the cost of routine merchandising updates.",
       },
       {
         step: 2,
@@ -1472,7 +1472,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 4,
         title: "Shopify Markets for International Expansion",
-        desc: "Shopify Markets was implemented to power the EU and US stores alongside the UK flagship. Localised pricing, currency display, and tax handling were configured per market. The architecture gave the team a clean foundation to add new markets without rebuilding infrastructure each time.",
+        desc: "Shopify Markets was implemented to power the EU and US stores alongside the UK flagship. Localized pricing, currency display, and tax handling were configured per market. The architecture gave the team a clean foundation to add new markets without rebuilding infrastructure each time.",
       },
     ],
     workTitle: "Inside the NEOM Wellbeing Build",
@@ -1506,7 +1506,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Native subscriptions replaced fragmented third-party tools",
     ],
     quote:
-      "The ability to open new stores with Shopify POS seamlessly integrated, providing a unified hub where we can monitor everything, represents a significant advancement for the business.",
+      "The ability to open new stores with Shopify POS fully integrated, providing a unified hub where we can monitor everything, represents a significant advancement for the business.",
     quotePerson: "Nicola Elliott",
     quoteRole: "Founder, NEOM Wellbeing",
     quoteAvatar: "/images/Case%20studies/Nicola%20Elliott.jpg",
@@ -1529,7 +1529,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroSubMetric: "Revenue Growth YoY",
     heroImage: "/images/Case%20studies/VITHIT.webp",
     heroDescription:
-      "How a global functional drinks brand operating in 15 countries grew D2C revenue 115% year on year, lifted conversion rate 170%, and raised average order value 31% by building a Shopify Plus D2C store, automating bundling and discounting, and running a full-funnel paid media and email programme.",
+      "How a global functional drinks brand operating in 15 countries grew D2C revenue 115% year on year, lifted conversion rate 170%, and raised average order value 31% by building a Shopify Plus D2C store, automating bundling and discounting, and running a full-funnel paid media and email program.",
     stats: [
       { label: "Revenue Growth YoY", value: "+115%", shortLabel: "Revenue" },
       { label: "Conversion Rate Lift", value: "+170%", shortLabel: "CVR" },
@@ -1553,16 +1553,16 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 3,
         title: "Klaviyo Email Automation",
-        desc: "A full email automation programme was built in Klaviyo covering welcome flows, abandon sequences, post-purchase, and win-back. Each flow was built around VITHIT's product education story, with campaign strategy built to convert first-time D2C buyers into repeat customers.",
+        desc: "A full email automation program was built in Klaviyo covering welcome flows, abandon sequences, post-purchase, and win-back. Each flow was built around VITHIT's product education story, with campaign strategy built to convert first-time D2C buyers into repeat customers.",
       },
       {
         step: 4,
         title: "Full-Funnel Paid Media",
-        desc: "Paid social campaigns across Meta and TikTok and paid search via Google were built and managed alongside the store. Creative strategy was aligned with the D2C product positioning, targeting customers who knew VITHIT from retail but had never bought direct. The combined paid and email programme drove the 115% year-on-year revenue growth.",
+        desc: "Paid social campaigns across Meta and TikTok and paid search via Google were built and managed alongside the store. Creative strategy was aligned with the D2C product positioning, targeting customers who knew VITHIT from retail but had never bought direct. The combined paid and email program drove the 115% year-on-year revenue growth.",
       },
     ],
     workTitle: "Inside the VITHIT Build",
-    workSubtitle: "Shopify Plus D2C, automated bundling, and a full-funnel paid and email programme.",
+    workSubtitle: "Shopify Plus D2C, automated bundling, and a full-funnel paid and email program.",
     workImages: [
       "/images/Case%20studies/VITHIT-12.webp",
       "/images/Case%20studies/VITHIT%202.jfif",
@@ -1576,7 +1576,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: "Traffic Spike Outages", before: "Recurring", after: "Zero incidents", improvement: "0" },
     ],
     resultsDescription:
-      "D2C revenue grew 115% year on year across the UK and Ireland following the Shopify Plus build and full-funnel growth programme. Conversion rate increased 170% and average order value grew 31% as the automated bundling, MOV discounting, and Klaviyo flows replaced the manual processes that had been slowing the business. The store handled record-breaking traffic spikes during campaign periods without a single stability issue.",
+      "D2C revenue grew 115% year on year across the UK and Ireland following the Shopify Plus build and full-funnel growth program. Conversion rate increased 170% and average order value grew 31% as the automated bundling, MOV discounting, and Klaviyo flows replaced the manual processes that had been slowing the business. The store handled record-breaking traffic spikes during campaign periods without a single stability issue.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
@@ -1629,12 +1629,12 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 1,
         title: "Custom Product Listing Pages",
-        desc: "Custom PLPs were built using the Shopify Collections API to bypass default product-per-page limits. Filtering by product type, sport, and activity was built in. Seasonal promotions are highlighted with colour-coded labels. Bundle savings are visible at the collection level so customers can see the value before they click through to a product.",
+        desc: "Custom PLPs were built using the Shopify Collections API to bypass default product-per-page limits. Filtering by product type, sport, and activity was built in. Seasonal promotions are highlighted with color-coded labels. Bundle savings are visible at the collection level so customers can see the value before they click through to a product.",
       },
       {
         step: 2,
         title: "Dynamic Product Detail Pages",
-        desc: "PDPs were rebuilt to handle the complexity of the Feetures range. Men's and women's tabs toggle size-specific variants without a page reload. Colour swatches update dynamically based on collection context. Upsell options were added at PDP level, individually tested to confirm they added revenue rather than friction. Below-the-fold content is driven by metafields, removing the need for manual copy updates per product.",
+        desc: "PDPs were rebuilt to handle the complexity of the Feetures range. Men's and women's tabs toggle size-specific variants without a page reload. Color swatches update dynamically based on collection context. Upsell options were added at PDP level, individually tested to confirm they added revenue rather than friction. Below-the-fold content is driven by metafields, removing the need for manual copy updates per product.",
       },
       {
         step: 3,
@@ -1644,7 +1644,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 4,
         title: "Metafield-Driven Content Automation",
-        desc: "Below-the-fold product content including technical specifications, activity guides, and care instructions was connected to Shopify metafields. The Feetures team can now update product content at scale without touching the theme code, removing a recurring source of manual work that had been slowing down catalogue management.",
+        desc: "Below-the-fold product content including technical specifications, activity guides, and care instructions was connected to Shopify metafields. The Feetures team can now update product content at scale without touching the theme code, removing a recurring source of manual work that had been slowing down catalog management.",
       },
     ],
     workTitle: "Inside the Feetures Build",
@@ -1696,12 +1696,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: "chlobo-shopify-plus-migration",
     brandName: "ChloBo",
     industry: "Jewelry & Accessories",
-    serviceType: "Shopify Plus Migration | UX Design | Personalisation",
+    serviceType: "Shopify Plus Migration | UX Design | Personalization",
     heroMetric: "+48%",
     heroSubMetric: "Conversion Rate",
     heroImage: "/images/Case%20studies/ChloBo%20hero%20image.webp",
     heroDescription:
-      "How a British luxury jewellery brand exited Magento, rebuilt on Shopify Plus with a UX research-led redesign, launched a custom engraving preview tool for personalised orders, and grew conversion rate 48% and mobile revenue 39% while cutting platform operating costs.",
+      "How a British luxury jewelry brand exited Magento, rebuilt on Shopify Plus with a UX research-led redesign, launched a custom engraving preview tool for personalized orders, and grew conversion rate 48% and mobile revenue 39% while cutting platform operating costs.",
     stats: [
       { label: "Higher Conversion Rate", value: "+48%", shortLabel: "Conversion Rate" },
       { label: "Mobile Revenue Growth", value: "+39%", shortLabel: "Mobile Revenue" },
@@ -1709,8 +1709,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "A Luxury Brand Trapped on an Expensive, Inflexible Platform",
     challengeBody:
-      "ChloBo makes handcrafted jewellery with a loyal following and a product range that customers genuinely build collections from. The stacking philosophy behind the brand creates high repeat purchase rates and a community of buyers who know exactly what they want.\n\nWhen they came to Underwaterpistol, Magento was the problem. Maintenance costs required constant external agency support for changes that should have been straightforward. The platform lacked the flexibility to build the kind of editorial, story-led shopping experience the brand needed to communicate the handcrafted nature of its products. The site design had fallen behind the quality of the jewellery it was selling. Growth was being actively constrained by a platform the business had outgrown.",
-    approachTitle: "Premium Experience. Full Team Control. Personalisation Built In.",
+      "ChloBo makes handcrafted jewelry with a loyal following and a product range that customers genuinely build collections from. The stacking philosophy behind the brand creates high repeat purchase rates and a community of buyers who know exactly what they want.\n\nWhen they came to Underwaterpistol, Magento was the problem. Maintenance costs required constant external agency support for changes that should have been straightforward. The platform lacked the flexibility to build the kind of editorial, story-led shopping experience the brand needed to communicate the handcrafted nature of its products. The site design had fallen behind the quality of the jewelry it was selling. Growth was being actively constrained by a platform the business had outgrown.",
+    approachTitle: "Premium Experience. Full Team Control. Personalization Built In.",
     approachItems: [
       {
         step: 1,
@@ -1720,21 +1720,21 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 2,
         title: "UX Research and Premium Redesign",
-        desc: "A UX research phase informed the redesign, mapping how ChloBo's customers browse and build collections. Navigation was streamlined to make stacking and gift-buying journeys more intuitive. The new design reflected the premium positioning of the jewellery: editorial imagery, craft storytelling, and a cleaner visual language throughout.",
+        desc: "A UX research phase informed the redesign, mapping how ChloBo's customers browse and build collections. Navigation was streamlined to make stacking and gift-buying journeys more intuitive. The new design reflected the premium positioning of the jewelry: editorial imagery, craft storytelling, and a cleaner visual language throughout.",
       },
       {
         step: 3,
         title: "Custom Engraving Preview Tool",
-        desc: "A custom engraving preview tool was built to let customers personalise selected pieces and see a real-time preview before they add to cart. The tool opened a new personalised product revenue stream that hadn't existed on Magento and gave ChloBo a clear point of difference in the gifting market.",
+        desc: "A custom engraving preview tool was built to let customers personalize selected pieces and see a real-time preview before they add to cart. The tool opened a new personalized product revenue stream that hadn't existed on Magento and gave ChloBo a clear point of difference in the gifting market.",
       },
       {
         step: 4,
         title: "Merchandising and Bundling",
-        desc: "Product bundling options were refined to support the stacking purchase behaviour that defines the ChloBo customer. Upsell mechanics were added at PDP and cart level. The internal team gained full control over content, product pages, and promotional activity without needing agency involvement for routine updates.",
+        desc: "Product bundling options were refined to support the stacking purchase behavior that defines the ChloBo customer. Upsell mechanics were added at PDP and cart level. The internal team gained full control over content, product pages, and promotional activity without needing agency involvement for routine updates.",
       },
     ],
     workTitle: "Inside the ChloBo Build",
-    workSubtitle: "Magento exit, UX-led redesign, and a custom engraving personalisation tool.",
+    workSubtitle: "Magento exit, UX-led redesign, and a custom engraving personalization tool.",
     workImages: [
       "/images/Case%20studies/ChloBo.jfif",
       "/images/Case%20studies/ChloBo-1.webp",
@@ -1745,10 +1745,10 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: "Conversion Rate", before: "Magento baseline", after: "+48%", improvement: "+48%" },
       { label: "Mobile Revenue", before: "Baseline", after: "+39%", improvement: "+39%" },
       { label: "Platform Operating Cost", before: "Magento overhead", after: "Shopify Plus", improvement: "-52%" },
-      { label: "Personalisation", before: "Not available", after: "Engraving live", improvement: "New" },
+      { label: "Personalization", before: "Not available", after: "Engraving live", improvement: "New" },
     ],
     resultsDescription:
-      "Conversion rate grew 48% and mobile revenue increased 39% following the Shopify Plus launch. Platform operating costs dropped 52% as the Magento maintenance overhead was replaced by Shopify Plus's predictable pricing. The custom engraving preview tool went live across the jewellery range, creating a personalised product revenue stream that hadn't existed before. The internal team now manages content, promotions, and new features without external agency support.",
+      "Conversion rate grew 48% and mobile revenue increased 39% following the Shopify Plus launch. Platform operating costs dropped 52% as the Magento maintenance overhead was replaced by Shopify Plus's predictable pricing. The custom engraving preview tool went live across the jewelry range, creating a personalized product revenue stream that hadn't existed before. The internal team now manages content, promotions, and new features without external agency support.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
@@ -1801,7 +1801,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 1,
         title: "Magento to Shopify Plus Migration",
-        desc: "The full migration covered product catalogue, customer accounts, and order history. Brightpearl ERP was integrated during the migration phase so order management, inventory sync, and fulfilment data moved to an automated flow from day one. URL redirects were built before the cutover to protect existing search rankings.",
+        desc: "The full migration covered product catalog, customer accounts, and order history. Brightpearl ERP was integrated during the migration phase so order management, inventory sync, and fulfillment data moved to an automated flow from day one. URL redirects were built before the cutover to protect existing search rankings.",
       },
       {
         step: 2,
@@ -1811,7 +1811,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         step: 3,
         title: "Brightpearl ERP Integration",
-        desc: "Brightpearl was integrated to automate the connection between the Shopify store and Henchman's back-end operations. Orders placed online flow directly into Brightpearl for fulfilment, inventory levels update in real time, and the manual reconciliation work that had been consuming team time was eliminated.",
+        desc: "Brightpearl was integrated to automate the connection between the Shopify store and Henchman's back-end operations. Orders placed online flow directly into Brightpearl for fulfillment, inventory levels update in real time, and the manual reconciliation work that had been consuming team time was eliminated.",
       },
       {
         step: 4,
@@ -1834,7 +1834,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: "ERP Order Automation", before: "Manual sync", after: "Brightpearl automated", improvement: "100%" },
     ],
     resultsDescription:
-      "Online revenue grew 58% following the Shopify Plus launch. Wholesale order processing time dropped 70% as trade buyers moved to self-service ordering through the B2B store rather than placing orders manually through the sales team. Platform operating costs fell 45% with Magento replaced by Shopify Plus. Brightpearl ERP integration automated the order-to-fulfilment flow, removing the manual reconciliation work that had been consuming operational resource.",
+      "Online revenue grew 58% following the Shopify Plus launch. Wholesale order processing time dropped 70% as trade buyers moved to self-service ordering through the B2B store rather than placing orders manually through the sales team. Platform operating costs fell 45% with Magento replaced by Shopify Plus. Brightpearl ERP integration automated the order-to-fulfillment flow, removing the manual reconciliation work that had been consuming operational resource.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "Brightpearl", logo: "/images/brightpearl.svg" },
@@ -1845,7 +1845,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Online revenue up 58% post-migration",
       "Wholesale order processing time down 70%",
       "Platform operating cost down 45%",
-      "Brightpearl ERP: orders automated from placement to fulfilment",
+      "Brightpearl ERP: orders automated from placement to fulfillment",
       "B2B price books: trade buyers see correct pricing on login",
       "Magento replaced: full internal content control restored",
     ],

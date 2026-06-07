@@ -9,6 +9,13 @@ import CTASection from "@/components/ui/CTASection";
 import BeforeAfterSlider from "./BeforeAfterSlider";
 import SpeedVideo from "../SpeedVideo";
 
+function caseStudyJsonLd(study: { slug: string; brandName: string; heroDescription: string; heroImage: string }) {
+  return [
+    { "@context": "https://schema.org", "@type": "Article", headline: `${study.brandName} Shopify Case Study`, description: study.heroDescription, image: `https://ecommwizards.com${study.heroImage}`, author: { "@type": "Organization", name: "Ecomm Wizards", url: "https://ecommwizards.com" }, publisher: { "@type": "Organization", name: "Ecomm Wizards", logo: { "@type": "ImageObject", url: "https://ecommwizards.com/images/ecomm-green.png" } }, mainEntityOfPage: `https://ecommwizards.com/case-studies/${study.slug}` },
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" }, { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://ecommwizards.com/case-studies" }, { "@type": "ListItem", position: 3, name: `${study.brandName} Case Study`, item: `https://ecommwizards.com/case-studies/${study.slug}` } ] },
+  ];
+}
+
 export async function generateStaticParams() {
   return [
     ...CASE_STUDIES.map((cs) => ({ slug: cs.slug })),
@@ -23,13 +30,18 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const cs = getCaseStudyBySlug(slug);
-  const app = getAppCaseStudyBySlug(slug);
-  const study = cs ?? app;
+  const study =
+    getCaseStudyBySlug(slug) ??
+    getAppCaseStudyBySlug(slug) ??
+    getKlaviyoCaseStudyBySlug(slug);
   if (!study) return {};
+  const CANONICAL = `https://ecommwizards.com/case-studies/${slug}`;
   return {
-    title: `${study.brandName} Case Study | ${study.heroMetric} ${study.heroSubMetric} | Ecomm Wizards`,
+    title: { absolute: `${study.brandName} Shopify Case Study | ${study.heroMetric} ${study.heroSubMetric}` },
     description: study.heroDescription,
+    alternates: { canonical: CANONICAL },
+    openGraph: { type: "article", url: CANONICAL, siteName: "Ecomm Wizards", title: `${study.brandName} Shopify Case Study`, description: study.heroDescription, images: [{ url: study.heroImage, alt: `${study.brandName} Shopify case study` }] },
+    twitter: { card: "summary_large_image", title: `${study.brandName} Shopify Case Study`, description: study.heroDescription, images: [study.heroImage] },
   };
 }
 
@@ -50,6 +62,7 @@ export default async function CaseStudyPage({
 
   return (
     <>
+      {caseStudyJsonLd(cs).map((s, i) => (<script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />))}
       <CaseStudyHero cs={cs} />
       <CaseStudyStats cs={cs} />
       <CaseStudyChallenge cs={cs} />
@@ -82,6 +95,7 @@ export default async function CaseStudyPage({
 function AppCaseStudyPage({ app }: { app: AppCaseStudy }) {
   return (
     <>
+      {caseStudyJsonLd(app).map((s, i) => (<script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />))}
       <CaseStudyHero cs={app} />
       <CaseStudyStats cs={app} />
       <AppCaseStudyOverview app={app} />
@@ -99,6 +113,7 @@ function AppCaseStudyPage({ app }: { app: AppCaseStudy }) {
 function KlaviyoCaseStudyPage({ study }: { study: KlaviyoCaseStudy }) {
   return (
     <>
+      {caseStudyJsonLd(study).map((s, i) => (<script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />))}
       <CaseStudyHero cs={study} />
       <CaseStudyStats cs={study} />
       <AppCaseStudyOverview app={study} />
@@ -914,7 +929,7 @@ function CaseStudyQuote({ cs }: { cs: CaseStudy }) {
           <div style={{ width: "64px", height: "64px", borderRadius: "50%", overflow: "hidden", flexShrink: 0, position: "relative", background: cs.quoteAvatarIsLogo ? "#0A0A0A" : "transparent" }}>
             {cs.quoteAvatar ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={cs.quoteAvatar} alt={cs.quotePerson} style={{ width: "100%", height: "100%", objectFit: cs.quoteAvatarIsLogo ? "contain" : "cover", objectPosition: "top", padding: cs.quoteAvatarIsLogo ? "4px" : undefined }} />
+              <img src={cs.quoteAvatar} alt={cs.quotePerson} loading="lazy" style={{ width: "100%", height: "100%", objectFit: cs.quoteAvatarIsLogo ? "contain" : "cover", objectPosition: "top", padding: cs.quoteAvatarIsLogo ? "4px" : undefined }} />
             ) : (
               <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg,#61ce70 0%,#4ab85a 100%)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Poppins',sans-serif", fontSize: "20px", fontWeight: 700, color: "#fff" }}>
                 {cs.quotePerson.charAt(0)}

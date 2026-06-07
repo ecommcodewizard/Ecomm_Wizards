@@ -30,7 +30,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
     heroImage: "/images/Case%20studies/teelaunch-shopify-app.webp",
     challengeImage: "/images/Case%20studies/teelaunch-shopify-app-1.webp",
     heroDescription:
-      "How we built the first print-on-demand fulfilment app on the Shopify App Store for teelaunch, reaching 50,000+ merchants, 20,000 daily downloads at peak, and earning a mention in Shopify's own keynote at Unite 2017.",
+      "How we built the first print-on-demand fulfillment app on the Shopify App Store for teelaunch, reaching 50,000+ merchants, 20,000 daily downloads at peak, and earning a mention in Shopify's own keynote at Unite 2017.",
     stats: [
       { label: "Merchants Onboarded", value: "50k+", shortLabel: "Merchants" },
       { label: "Daily Downloads (peak)", value: "20k", shortLabel: "Downloads/Day" },
@@ -44,18 +44,18 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
     },
     challengeTitle: "Building What Didn't Exist Yet",
     challengeBody:
-      "In 2015, there was no print-on-demand app on the Shopify App Store. No template to follow, no competitor to benchmark against, no proven model for how direct-to-garment fulfilment should work inside an ecommerce platform. teelaunch saw the gap: Shopify merchants wanted to sell custom products without holding inventory. They came to us to build the app that would define the category.\n\nThis was never going to be a straightforward build. We needed to figure out what their business model looked like inside Shopify, architect the fulfilment workflow from scratch, build the merchant-facing app and a separate admin backend, and design a supply chain that could handle orders at scale.\n\nWe also had to solve problems no one had solved before. How do you route an order from a merchant's Shopify store to the right print facility automatically? How do you handle product variants across hundreds of customisable SKUs? How do you build something robust enough to support tens of thousands of merchants from day one?",
+      "In 2015, there was no print-on-demand app on the Shopify App Store. No template to follow, no competitor to benchmark against, no proven model for how direct-to-garment fulfillment should work inside an ecommerce platform. teelaunch saw the gap: Shopify merchants wanted to sell custom products without holding inventory. They came to us to build the app that would define the category.\n\nThis was never going to be a straightforward build. We needed to figure out what their business model looked like inside Shopify, architect the fulfillment workflow from scratch, build the merchant-facing app and a separate admin backend, and design a supply chain that could handle orders at scale.\n\nWe also had to solve problems no one had solved before. How do you route an order from a merchant's Shopify store to the right print facility automatically? How do you handle product variants across hundreds of customizable SKUs? How do you build something reliable enough to support tens of thousands of merchants from day one?",
     approachTitle: "From concept to category leader.",
     approachItems: [
       {
         step: 1,
         title: "Product Architecture",
-        desc: "Started with business logic: how orders flow from a merchant's Shopify store through to fulfilment. Mapped every edge case, built microservices for bulk uploads and order routing, and chose a stack built to handle the volume we knew was coming.",
+        desc: "Started with business logic: how orders flow from a merchant's Shopify store through to fulfillment. Mapped every edge case, built microservices for bulk uploads and order routing, and chose a stack built to handle the volume we knew was coming.",
       },
       {
         step: 2,
         title: "App & Admin Build",
-        desc: "Built the teelaunch Shopify app end-to-end: merchant dashboard, product catalogue, print-spec configuration, order tracking. Developed the admin section and a separate market site for non-Shopify clients wanting access to the fulfilment network.",
+        desc: "Built the teelaunch Shopify app end-to-end: merchant dashboard, product catalog, print-spec configuration, order tracking. Developed the admin section and a separate market site for non-Shopify clients wanting access to the fulfillment network.",
       },
       {
         step: 3,
@@ -65,7 +65,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
       {
         step: 4,
         title: "Scale & Iteration",
-        desc: "Stayed on as long-term development partners as teelaunch grew. Pivoted the architecture to support sustainable scale, cut fulfilment time by 60%, reduced error rates by 75%, and maintained 99.98% API uptime across a merchant base that grew 10x in two years.",
+        desc: "Stayed on as long-term development partners as teelaunch grew. Pivoted the architecture to support sustainable scale, cut fulfillment time by 60%, reduced error rates by 75%, and maintained 99.98% API uptime across a merchant base that grew 10x in two years.",
       },
     ],
     workImages: [
@@ -77,7 +77,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
     results: [
       { label: "Shopify Merchants", before: "0", after: "50,000+", improvement: "50k+" },
       { label: "Business Growth in 2 Years", before: "1x", after: "10x", improvement: "10x" },
-      { label: "Fulfilment Time", before: "Manual routing", after: "Real-time", improvement: "-60%" },
+      { label: "Fulfillment Time", before: "Manual routing", after: "Real-time", improvement: "-60%" },
       { label: "Integration Error Rate", before: "High", after: "Minimal", improvement: "-75%" },
     ],
     resultsDescription:
@@ -130,7 +130,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
     },
     challengeTitle: "Addresses Were the Weakest Link in Delivery",
     challengeBody:
-      "Every Shopify merchant collects delivery addresses at checkout. The problem is that traditional addresses are unreliable. They point to the front of a building, miss rural properties entirely, or get misread by drivers. The result: lost parcels, failed deliveries, customer service tickets, and costly redeliveries.\n\nwhat3words had already divided the entire world into 3-metre squares, each with a unique 3-word address. The technology worked. What they needed was a seamless way for Shopify merchants to collect those addresses at checkout, validate them in real time, and pass them to delivery partners automatically.\n\nThere was no off-the-shelf solution. The app had to work across Shopify Basic and Shopify Plus, integrate cleanly with DHL, DPD, and Evri, support multiple themes and languages, and be simple enough for customers to use without explanation.",
+      "Every Shopify merchant collects delivery addresses at checkout. The problem is that traditional addresses are unreliable. They point to the front of a building, miss rural properties entirely, or get misread by drivers. The result: lost parcels, failed deliveries, customer service tickets, and costly redeliveries.\n\nwhat3words had already divided the entire world into 3-metre squares, each with a unique 3-word address. The technology worked. What they needed was a simple way for Shopify merchants to collect those addresses at checkout, validate them in real time, and pass them to delivery partners automatically.\n\nThere was no off-the-shelf solution. The app had to work across Shopify Basic and Shopify Plus, integrate cleanly with DHL, DPD, and Evri, support multiple themes and languages, and be simple enough for customers to use without explanation.",
     approachTitle: "Built for every merchant, tested for every edge case.",
     approachItems: [
       {
@@ -151,7 +151,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
       {
         step: 4,
         title: "Theme, Language and 5 Years of Iteration",
-        desc: "Engineered the app to work across every Shopify theme without custom configuration. Localised for multiple languages, built with country and region restrictions, and maintained as an ongoing technical partner as Shopify checkout extensibility evolved.",
+        desc: "Engineered the app to work across every Shopify theme without custom configuration. Localized for multiple languages, built with country and region restrictions, and maintained as an ongoing technical partner as Shopify checkout extensibility evolved.",
       },
     ],
     workImages: [
@@ -203,16 +203,16 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
     heroImage: "/images/Case%20studies/Vytronix.jpg",
     challengeImage: "/images/Case%20studies/vytronix-1.jpg",
     heroDescription:
-      "How we migrated Vytronix from Magento to Shopify, built a fully bespoke OS 2.0 theme with a custom account portal, and developed a private Shopify app for product registration so their service team could see everything in one place. One brief, one team, one delivery.",
+      "How we migrated Vytronix from Magento to Shopify, built a fully custom OS 2.0 theme with a custom account portal, and developed a private Shopify app for product registration so their service team could see everything in one place. One brief, one team, one delivery.",
     stats: [
       { label: "Platform Migrated", value: "Magento", shortLabel: "From Magento" },
-      { label: "Theme Build", value: "Bespoke", shortLabel: "Custom Theme" },
-      { label: "Registration Data", value: "100%", shortLabel: "Centralised" },
+      { label: "Theme Build", value: "Custom", shortLabel: "Custom Theme" },
+      { label: "Registration Data", value: "100%", shortLabel: "Centralized" },
     ],
     overview: {
       clientType: "Vytronix",
       industry: "Technology & Home Appliances",
-      goal: "Migration, bespoke theme and custom registration app",
+      goal: "Migration, custom theme and custom registration app",
       timeline: "Full project delivery",
     },
     challengeTitle: "One Brand, Three Problems to Solve at Once",
@@ -227,7 +227,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
       },
       {
         step: 2,
-        title: "Bespoke Theme and Account Portal",
+        title: "Custom Theme and Account Portal",
         desc: "Started with brand discovery and wireframes for every page. Built the theme pixel-perfect from the ground up on Shopify Online Store 2.0 with advanced product filtering, a fully custom account portal, native blogging, and a Trustpilot integration built directly into the design.",
       },
       {
@@ -238,7 +238,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
       {
         step: 4,
         title: "Infrastructure and Launch",
-        desc: "Hosted the registration app on Heroku using Shopify's Storefront API. Optimised the store for performance, ran a complete launch strategy, and handed over a store and app stack Vytronix could operate and grow without ongoing technical dependency.",
+        desc: "Hosted the registration app on Heroku using Shopify's Storefront API. Optimized the store for performance, ran a complete launch strategy, and handed over a store and app stack Vytronix could operate and grow without ongoing technical dependency.",
       },
     ],
     workImages: [
@@ -257,7 +257,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
       "One brief, one team, one delivery. The store migrated cleanly with SEO intact, the theme reflects the brand properly for the first time, and the registration app removed a manual process that was costing the service team time every single day.",
     sliderStats: [
       "Magento to Shopify",
-      "Bespoke OS 2.0 Theme",
+      "Custom OS 2.0 Theme",
       "Custom Account Portal",
       "Custom Private App",
       "Unified Customer Data",
@@ -309,12 +309,12 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
       {
         step: 1,
         title: "Custom Gift Card Page",
-        desc: "Built a custom Shopify theme page with expanded gift card form fields. Customers enter the recipient's name, email, a personal message, and the occasion. All details are captured as order properties and pass through automatically to the fulfilment workflow.",
+        desc: "Built a custom Shopify theme page with expanded gift card form fields. Customers enter the recipient's name, email, a personal message, and the occasion. All details are captured as order properties and pass through automatically to the fulfillment workflow.",
       },
       {
         step: 2,
         title: "Gift Card Pro App",
-        desc: "Developed Gift Card Pro, a custom Shopify app that intercepts completed gift card orders and triggers a new fulfilment workflow outside of Shopify's native system. The app reads the recipient details, generates the gift card, and delivers it directly to their inbox.",
+        desc: "Developed Gift Card Pro, a custom Shopify app that intercepts completed gift card orders and triggers a new fulfillment workflow outside of Shopify's native system. The app reads the recipient details, generates the gift card, and delivers it directly to their inbox.",
       },
       {
         step: 3,
@@ -340,7 +340,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
       { label: "Infrastructure", before: "Standard hosting", after: "AWS managed", improvement: "Scalable" },
     ],
     resultsDescription:
-      "Customers could finally buy a gift card and actually gift it. The recipient gets a tailored landing page, the card lands in their inbox, and the infrastructure held up when holiday traffic nearly tripled.",
+      "Customers could finally buy a gift card and actually gift it. The recipient gets a landing page matched to the occasion, the card lands in their inbox, and the infrastructure held up when holiday traffic nearly tripled.",
     sliderStats: [
       "3x Peak Traffic Handled",
       "Direct-to-Recipient",
@@ -393,7 +393,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
       {
         step: 1,
         title: "Threshold-Based Discount Engine",
-        desc: "Designed a bundle system where customers unlock progressively larger discounts as they add more items. Discount triggers and thresholds are fully configurable by the team in a real-time admin panel. No developer needed to adjust incentives.",
+        desc: "Designed a bundle system where customers earn progressively larger discounts as they add more items. Discount triggers and thresholds are fully configurable by the team in a real-time admin panel. No developer needed to adjust incentives.",
       },
       {
         step: 2,
@@ -408,7 +408,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
       {
         step: 4,
         title: "Theme App Block and Admin",
-        desc: "Engineered as a Shopify theme app block so the team can configure heading text, button copy, column counts, colours, and messaging variables directly from the theme editor. A/B testing copy changes without touching code.",
+        desc: "Engineered as a Shopify theme app block so the team can configure heading text, button copy, column counts, colors, and messaging variables directly from the theme editor. A/B testing copy changes without touching code.",
       },
     ],
     workImages: [
@@ -424,7 +424,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
       { label: "Live Since", before: "Pre-launch", after: "Aug 2024", improvement: "Aug 2024" },
     ],
     resultsDescription:
-      "61% increase in average order value from launch. Customers build exactly what they need, unlock discounts as they go, and emma&noah's team controls the entire experience from the theme editor without writing a line of code.",
+      "61% increase in average order value from launch. Customers build exactly what they need, earn discounts as they go, and emma&noah's team controls the entire experience from the theme editor without writing a line of code.",
     sliderStats: [
       "+61% AOV from Launch",
       "18 Collections",
@@ -482,7 +482,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
       {
         step: 2,
         title: "Custom Collaborative Wishlist App",
-        desc: "Built a bespoke Shopify app that lets customers save products and editorial content, create shareable mood boards, and send wish lists directly to friends and family. Designed for discovery and collaboration, not just bookmarking.",
+        desc: "Built a custom Shopify app that lets customers save products and editorial content, create shareable mood boards, and send wish lists directly to friends and family. Designed for discovery and collaboration, not just bookmarking.",
       },
       {
         step: 3,
@@ -492,7 +492,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
       {
         step: 4,
         title: "Platform Architecture for Growth",
-        desc: "Built on Shopify Plus with tech integrations and optimisations designed for a platform that expects to keep growing. Not a launch and leave. An architecture ABASK could build on as the brand and catalogue expanded.",
+        desc: "Built on Shopify Plus with tech integrations and optimizations designed for a platform that expects to keep growing. Not a launch and leave. An architecture ABASK could build on as the brand and catalog expanded.",
       },
     ],
     workImages: [

@@ -86,7 +86,7 @@ export const KLAVIYO_CASE_STUDIES: KlaviyoCaseStudy[] = [
       {
         step: 4,
         title: "List Health and Segmentation",
-        desc: "Cleaned the inactive list to protect sender reputation and rebuilt segments around VIP customers and early churn signals. Bounce rate dropped 27.1%. Open rate stabilised at 40.1% across 279,832 recipients.",
+        desc: "Cleaned the inactive list to protect sender reputation and rebuilt segments around VIP customers and early churn signals. Bounce rate dropped 27.1%. Open rate stabilized at 40.1% across 279,832 recipients.",
       },
     ],
     flowsBuilt: [
@@ -194,7 +194,7 @@ export const KLAVIYO_CASE_STUDIES: KlaviyoCaseStudy[] = [
     },
     challengeTitle: "Good product, loyal customers, no retention system.",
     challengeBody:
-      "Living in Sunshine makes surf storage that people actually recommend. Patented board racks, eco-friendly hammocks, wetsuit dryers — the kind of product that sells on word of mouth. The brand had 50,000 customers and a genuine community behind it. Klaviyo wasn't doing anything with any of that.\n\nThere were no lifecycle flows. Customers who bought came back only if they remembered to. Browsers who visited and left got nothing. The welcome series wasn't built. BFCM, early holiday, high-spend periods — none of it was being captured through email.\n\nThe list existed. The audience was there. The infrastructure just wasn't built.",
+      "Living in Sunshine makes surf storage that people actually recommend. Patented board racks, eco-friendly hammocks, wetsuit dryers, the kind of product that sells on word of mouth. The brand had 50,000 customers and a genuine community behind it. Klaviyo wasn't doing anything with any of that.\n\nThere were no lifecycle flows. Customers who bought came back only if they remembered to. Browsers who visited and left got nothing. The welcome series wasn't built. BFCM, early holiday, high-spend periods: none of it was being captured through email.\n\nThe list existed. The audience was there. The infrastructure just wasn't built.",
     approachTitle: "Built every flow, then built the seasonal stack on top.",
     approachItems: [
       {
@@ -205,7 +205,7 @@ export const KLAVIYO_CASE_STUDIES: KlaviyoCaseStudy[] = [
       {
         step: 2,
         title: "VIP and High-Spender Flow",
-        desc: "Identified the customers driving the most revenue and built a dedicated flow for them. A personalised experience for the people most likely to buy again and refer others.",
+        desc: "Identified the customers driving the most revenue and built a dedicated flow for them. A personalized experience for the people most likely to buy again and refer others.",
       },
       {
         step: 3,
@@ -242,7 +242,7 @@ export const KLAVIYO_CASE_STUDIES: KlaviyoCaseStudy[] = [
       {
         name: "VIP / High-Spender",
         icon: "⭐",
-        description: "Dedicated flow for the brand's highest-value customers. Personalised experience for the people most likely to buy again and refer others.",
+        description: "Dedicated flow for the brand's highest-value customers. Personalized experience for the people most likely to buy again and refer others.",
       },
       {
         name: "Other Flows",
@@ -324,18 +324,18 @@ export const KLAVIYO_CASE_STUDIES: KlaviyoCaseStudy[] = [
     },
     challengeTitle: "A brand with personality. The emails weren't showing any of it.",
     challengeBody:
-      "C&E Craft Co makes hand-poured soy candles with product names like 'Per My Last Email' and 'My Last Nerve, Oh Look it's on Fire'. The brand has a voice. Their customers get the humour. The email setup wasn't delivering any of it.\n\nNo welcome series was converting new subscribers into buyers. No cart or browse flows were recovering the traffic coming in from TikTok and Instagram. Seasonal moments — Father's Day, Labour Day, Independence Day, Graduation — were being left on the table entirely.\n\nThe list was growing. The infrastructure wasn't keeping up.",
+      "C&E Craft Co makes hand-poured soy candles with product names like 'Per My Last Email' and 'My Last Nerve, Oh Look it's on Fire'. The brand has a voice. Their customers get the humor. The email setup wasn't delivering any of it.\n\nNo welcome series was converting new subscribers into buyers. No cart or browse flows were recovering the traffic coming in from TikTok and Instagram. Seasonal moments like Father's Day, Labor Day, Independence Day, and Graduation were being left on the table entirely.\n\nThe list was growing. The infrastructure wasn't keeping up.",
     approachTitle: "Built the flows, then built the campaign calendar around the brand voice.",
     approachItems: [
       {
         step: 1,
         title: "3 Core Flows",
-        desc: "Built the welcome series, abandoned cart, and browse abandonment from scratch. Every email was written in the C&E Craft Co tone — the same irreverent, personality-driven voice that drives their organic growth on TikTok and Instagram.",
+        desc: "Built the welcome series, abandoned cart, and browse abandonment from scratch. Every email was written in the C&E Craft Co tone, the same irreverent, personality-driven voice that drives their organic growth on TikTok and Instagram.",
       },
       {
         step: 2,
         title: "Seasonal Campaign Calendar",
-        desc: "Built a campaign calendar around the moments that fit the brand. Father's Day, Labour Day, 4th of July, and Graduation each got a dedicated send — written to sound like C&E Craft Co, not a generic seasonal template.",
+        desc: "Built a campaign calendar around the moments that fit the brand. Father's Day, Labor Day, 4th of July, and Graduation each got a dedicated send written to sound like C&E Craft Co, not a generic seasonal template.",
       },
       {
         step: 3,
@@ -367,7 +367,7 @@ export const KLAVIYO_CASE_STUDIES: KlaviyoCaseStudy[] = [
       {
         name: "Father's Day",
         icon: "🎁",
-        description: "Dedicated campaign built around the gift-giving angle. C&E Craft Co products are natural gifting items — this send leaned into that with the brand's humour intact.",
+        description: "Dedicated campaign built around the gift-giving angle. C&E Craft Co products are natural gifting items, and this send leaned into that with the brand's humor intact.",
       },
       {
         name: "She's Back",
@@ -377,7 +377,7 @@ export const KLAVIYO_CASE_STUDIES: KlaviyoCaseStudy[] = [
       {
         name: "Other Campaigns",
         icon: "📅",
-        description: "Labour Day, 4th of July Independence Day, and Graduation. Each one built for its specific moment and audience, not repurposed from a generic template.",
+        description: "Labor Day, 4th of July Independence Day, and Graduation. Each one built for its specific moment and audience, not repurposed from a generic template.",
       },
     ],
     workImages: [
@@ -422,7 +422,7 @@ export const KLAVIYO_CASE_STUDIES: KlaviyoCaseStudy[] = [
       { name: "C&E Craft Co", logo: "/images/cecraft-logo.png", noFilter: true },
     ],
     quote:
-      "We always had the brand voice — we just needed the emails to actually sound like us. Now every flow and campaign feels like it came from us, not a template. The results speak for themselves.",
+      "We always had the brand voice. We just needed the emails to actually sound like us. Now every flow and campaign feels like it came from us, not a template. The results speak for themselves.",
     quotePerson: "Eryn Griffin",
     quoteRole: "Founder, C&E Craft Co",
     quoteAvatar: "/images/Case%20studies/Eryn%20Griffin.jfif",

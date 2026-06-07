@@ -2,14 +2,35 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { CASE_STUDIES } from "@/lib/case-studies";
+import { APP_CASE_STUDIES } from "@/lib/shopify-app-studies";
+import { KLAVIYO_CASE_STUDIES } from "@/lib/klaviyo-studies";
 import CaseStudiesGrid from "./CaseStudiesGrid";
 import ShopifyAppsSection from "./ShopifyAppsSection";
 
+const PAGE_TITLE = "Case Studies | Real Results for Real Brands | Ecomm Wizards";
+const PAGE_DESCRIPTION =
+  "See how Ecomm Wizards has helped Shopify brands across fashion, beauty, health, food, sports, jewellery, and B2B grow revenue, increase conversion rates, and scale their stores.";
+const PAGE_URL = "https://ecommwizards.com/case-studies";
+const OG_IMAGE = "/images/main-hero-f-desktop.webp";
+
 export const metadata: Metadata = {
-  title: "Case Studies | Real Results for Real Brands | Ecomm Wizards",
-  description:
-    "See how Ecomm Wizards has helped Shopify brands across fashion, beauty, health, food, sports, jewellery, and B2B grow revenue, increase conversion rates, and scale their stores.",
-  alternates: { canonical: "https://ecommwizards.com/case-studies" },
+  title: { absolute: PAGE_TITLE },
+  description: PAGE_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  openGraph: {
+    type: "website",
+    url: PAGE_URL,
+    siteName: "Ecomm Wizards",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    images: [{ url: OG_IMAGE, alt: "Ecomm Wizards Shopify case studies" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    images: [OG_IMAGE],
+  },
 };
 
 const GRADIENT =
@@ -80,7 +101,7 @@ const SHOPIFY_APP_CARDS = [
     tags: ["Shopify App Build", "Magento Migration"],
     stat: "3-in-1",
     statLabel: "Services",
-    description: "Magento to Shopify migration, a fully bespoke OS 2.0 theme with custom account portal, and a private registration app. One brief, one team, one delivery.",
+    description: "Magento to Shopify migration, a fully custom OS 2.0 theme with a dedicated account portal, and a private registration app. One brief, one team, one delivery.",
     logo: "/images/Case%20studies/Vytronix_Logo.webp",
     bg: "#0A0A14",
     image: "/images/Case%20studies/Vytronix.jpg",
@@ -119,7 +140,7 @@ const SHOPIFY_APP_CARDS = [
     tags: ["Shopify App Build", "Bundles & Upsell"],
     stat: "+61%",
     statLabel: "AOV Increase",
-    description: "A custom Mix & Match bundle app for a sustainable baby brand. Tiered discount thresholds, FOMO-driven progress tracking, and a no-code admin — delivered a 61% lift in average order value from launch.",
+    description: "A custom Mix & Match bundle app for a sustainable baby brand. Tiered discount thresholds, FOMO-driven progress tracking, and a no-code admin, delivering a 61% lift in average order value from launch.",
     logo: "/images/emma-noah%20logo.png",
     bg: "#1A1A2E",
     image: "/images/Case%20studies/emma-noah.webp",
@@ -132,7 +153,7 @@ const SHOPIFY_APP_CARDS = [
     tags: ["Shopify App Build", "Wishlist & Social"],
     stat: "165",
     statLabel: "Territories",
-    description: "Custom collaborative wishlist and mood board app for ABASK, the luxury platform founded by Tom Chapman of MatchesFashion — plus Shopify Markets across 165 territories from day one.",
+    description: "Custom collaborative wishlist and mood board app for ABASK, the luxury platform founded by Tom Chapman of MatchesFashion, plus Shopify Markets across 165 territories from day one.",
     logo: "/images/ABASK%20logo.png",
     bg: "#0D0A08",
     image: "/images/Case%20studies/ABASK-hero%20section.webp",
@@ -224,8 +245,49 @@ export default async function CaseStudiesPage({
       ? CASE_STUDIES
       : CASE_STUDIES.filter((cs) => cs.industry === activeIndustry);
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://ecommwizards.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Case Studies",
+        item: "https://ecommwizards.com/case-studies",
+      },
+    ],
+  };
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: [...CASE_STUDIES, ...APP_CASE_STUDIES, ...KLAVIYO_CASE_STUDIES].map(
+      (s, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `https://ecommwizards.com/case-studies/${s.slug}`,
+        name: `${s.brandName} Case Study`,
+      })
+    ),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+
       {/* ── Hero ── */}
       <section
         className="cs-hero-section"
@@ -319,7 +381,7 @@ export default async function CaseStudiesPage({
                   lineHeight: 1.7,
                 }}
               >
-                We design, build, and optimise Shopify stores around one goal: more revenue. Browse the work below and see exactly what that looks like.
+                We design, build, and optimize Shopify stores around one goal: more revenue. Browse the work below and see exactly what that looks like.
               </p>
 
               {/* Stats row */}
@@ -434,6 +496,7 @@ export default async function CaseStudiesPage({
                         key={i}
                         src={src}
                         alt=""
+                        loading="lazy"
                         style={{ objectFit: "contain", flexShrink: 0, filter: "invert(1)", mixBlendMode: "screen", opacity: 1, width: "180px", height: "72px", display: "block" }}
                       />
                     ))}
