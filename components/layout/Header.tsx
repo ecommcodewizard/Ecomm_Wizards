@@ -24,15 +24,12 @@ const NAV: NavItem[] = [
   {
     label: "Build",
     children: [
-      { label: "Shopify Development Agency", href: "/services/shopify-development-agency", description: "Custom builds, Shopify Plus & migrations" },
-      { label: "New Shopify Store",     href: "/services/shopify-store-development",     description: "Launch a high-converting store from scratch" },
-      { label: "Theme Development",     href: "/services/shopify-theme-development", description: "Custom Liquid themes built to your brand" },
-      { label: "Shopify 2.0",           href: "/shopify-2-0-development",       description: "Leverage the latest Shopify architecture" },
-      { label: "Shopify Plus",          href: "/services/shopify-plus-development",      description: "Enterprise-grade builds on Plus" },
-      { label: "Headless Shopify",      href: "/services/headless-shopify-agency", description: "Next.js / Hydrogen storefronts" },
-      { label: "Figma to Shopify",      href: "/services/figma-to-shopify-conversion",   description: "Pixel-perfect design → production" },
-      { label: "UX & UI Design",        href: "/services/shopify-ux-and-ui-design",      description: "Design that converts" },
-      { label: "Landing Page Design",   href: "/shopify-landing-page-design",   description: "Campaign pages that drive sales" },
+      { label: "Custom Shopify Theme Design", href: "/services/shopify-theme-development",   description: "Setup and customization for new or existing stores, including custom theme development" },
+      { label: "New Store Development",        href: "/services/shopify-store-development",    description: "Launch a high-converting Shopify store, built from scratch" },
+      { label: "Convert any Figma to Shopify", href: "/services/figma-to-shopify-conversion", description: "Submit your Figma files, get a free quote, and we build it pixel for pixel" },
+      { label: "Free Shopify Concept Design",  href: "/services/shopify-ux-and-ui-design",    description: "Interfaces and experiences designed around how your customers shop" },
+      { label: "Shopify Development Agency",   href: "/services/shopify-development-agency",   description: "Custom builds, Shopify Plus, and migrations from a senior team" },
+      { label: "ERP Integrations",             href: "/services/erp-connections-to-shopify",  description: "Connect NetSuite, Microsoft Dynamics, SAP, and more with real-time sync" },
     ],
   },
   {
@@ -144,7 +141,7 @@ function DesktopDropdown({ item }: { item: NavItem }) {
       {open && (
         <div
           className={`absolute left-1/2 top-full z-50 mt-3 -translate-x-1/2 rounded-xl border border-white/10 bg-[#111111] p-3 shadow-[0_8px_32px_rgba(0,0,0,0.6)] ${
-            cols === 2 ? "w-[520px]" : "w-60"
+            cols === 2 ? "w-[640px]" : "w-60"
           }`}
         >
           <div className="absolute -top-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rotate-45 rounded-sm border-l border-t border-white/10 bg-[#111111]" />
@@ -153,17 +150,17 @@ function DesktopDropdown({ item }: { item: NavItem }) {
               <Link
                 key={child.href}
                 href={child.href}
-                className="group flex items-center gap-3 rounded-md px-3 py-2.5 text-sm text-white/70 transition-colors hover:bg-white/5"
+                className="group flex items-start gap-3 rounded-md pt-[18px] pr-[24px] pb-[20px] pl-[24px] text-[16px] text-white/70 transition-colors hover:bg-white/5"
               >
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-white/5 text-white/50">
-                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-white/5 text-white/50 mr-[-2px]">
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                   </svg>
                 </span>
                 <span>
-                  <span className="block font-medium text-white/90 bg-clip-text group-hover:text-transparent" style={{ backgroundImage: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>{child.label}</span>
+                  <span className="block font-medium text-white/90 text-[14px] mb-[4px] bg-clip-text group-hover:text-transparent" style={{ backgroundImage: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>{child.label}</span>
                   {child.description && (
-                    <span className="block text-xs text-white/40">{child.description}</span>
+                    <span className="block text-[13px] text-white/40">{child.description}</span>
                   )}
                 </span>
               </Link>
@@ -366,15 +363,15 @@ export default function Header() {
             alt="Ecomm Wizards"
             width={140}
             height={37}
-            className="h-[75px] w-[283px] object-contain object-left ml-3"
+            className="h-[64px] w-[245px] object-cover object-[0%_58%]"
           />
           <button
             type="button"
             onClick={() => setMobileOpen(false)}
-            className="flex h-9 w-9 items-center justify-center rounded-lg text-white/60 transition-colors hover:bg-white/10 hover:text-white"
+            className="flex h-11 w-11 items-center justify-center rounded-lg text-white/60 transition-colors hover:bg-white/10 hover:text-white"
             aria-label="Close menu"
           >
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>
           </button>
