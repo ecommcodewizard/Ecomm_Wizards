@@ -78,10 +78,7 @@ const GET_STARTED = [
 ];
 
 const RESOURCES = [
-  { label: "Blog",         href: "/blog" },
   { label: "Case Studies", href: "/case-studies" },
-  { label: "Newsletter",   href: "/newsletter" },
-  { label: "CCPA Opt-Out", href: "/ccpa-opt-out" },
   { label: "Contact",      href: "/contact-shopify-agency" },
 ];
 
