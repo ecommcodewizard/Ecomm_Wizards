@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const META_DESCRIPTION =
-  "Shopify UX and UI design that turns visitors into customers. We rebuild your store, product pages, cart, and emails around how people actually buy. Data-backed, not guesswork.";
+  "Shopify UX and UI design that turns visitors into customers. We rebuild your store, product pages, cart, and emails around how people actually buy.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-ux-and-ui-design";
 
 export const metadata: Metadata = {

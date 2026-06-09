@@ -6,7 +6,7 @@ import SatFaqAccordion from "./SatFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 const META_DESCRIPTION =
-  "Shopify analytics and tracking setup for 150+ stores. We configure GA4, GTM, and conversion pixels correctly, validate every event, and give you data you can trust to make ad decisions.";
+  "Shopify analytics and tracking setup for 150+ stores. We configure GA4, GTM, and conversion pixels, validate every event, and give you data you can trust.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-analytics-and-tracking-setup";
 
 export const metadata: Metadata = {

@@ -6,7 +6,7 @@ import SaoFaqAccordion from "./SaoFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 const META_DESCRIPTION =
-  "Shopify app setup and optimization for 150+ stores. We audit your full app stack, remove dead weight, and configure everything for faster pages, accurate tracking, and better conversions.";
+  "Shopify app setup and optimization for 150+ stores. We audit your app stack, remove dead weight, and configure for faster pages and better conversions.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-app-setup-and-app-optimization";
 
 export const metadata: Metadata = {

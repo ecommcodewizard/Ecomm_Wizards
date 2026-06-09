@@ -37,7 +37,7 @@ export async function generateMetadata({
   if (!study) return {};
   const CANONICAL = `https://ecommwizards.com/case-studies/${slug}`;
   return {
-    title: { absolute: `${study.brandName} Shopify Case Study | ${study.heroMetric} ${study.heroSubMetric}` },
+    title: { absolute: `${study.brandName} Shopify Case Study | ${study.heroMetric}` },
     description: study.heroDescription,
     alternates: { canonical: CANONICAL },
     openGraph: { type: "article", url: CANONICAL, siteName: "Ecomm Wizards", title: `${study.brandName} Shopify Case Study`, description: study.heroDescription, images: [{ url: study.heroImage, alt: `${study.brandName} Shopify case study` }] },

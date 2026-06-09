@@ -6,7 +6,7 @@ import CustomizerCarousel, { type CustomizerSlide } from "@/components/sections/
 import HydrogenWhyAccordion, { type HydrogenWhyItem } from "@/components/sections/HydrogenWhyAccordion";
 
 const META_DESCRIPTION =
-  "Shopify Hydrogen migration without losing a week of trading. We move your Liquid theme to a headless Hydrogen storefront, keeping your SEO and checkout intact. Get a free test build.";
+  "Shopify Hydrogen migration without downtime. We move your Liquid theme to a headless Hydrogen storefront, keeping SEO and checkout intact. Free test build.";
 const CANONICAL_URL = "https://ecommwizards.com/services/migration/liquid-to-shopify-hydrogen";
 
 export const metadata: Metadata = {
@@ -997,7 +997,7 @@ export default function Page() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/nari_medium_215a6a4f-f640-4b4f-98aa-28f001df20dd_medium.webp"
-                    alt=""
+                    alt="Verified Ecomm Wizards client"
                     width={45}
                     height={45}
                   />

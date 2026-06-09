@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 const META_DESCRIPTION =
-  "Expert Shopify POS setup, hardware configuration, and POS migration from Square, Lightspeed, or Clover. Remote service for single stores to 50+ locations. Get a free quote.";
+  "Expert Shopify POS setup, hardware configuration, and migration from Square, Lightspeed, or Clover. Remote service for 1 to 50+ locations. Free quote.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-pos-setup";
 
 export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
-  title: { absolute: "Shopify POS Setup Service | Remote Configuration and Migration" },
+  title: { absolute: "Shopify POS Setup | Remote Configuration & Migration" },
   description: META_DESCRIPTION,
   keywords: [
     "shopify pos setup",
@@ -50,7 +50,7 @@ const GRADIENT_TEXT = {
   backgroundClip: "text",
 } as const;
 
-const CONSULT = "/book-shopify-consultation/";
+const CONSULT = "/book-shopify-consultation";
 
 const SQUARE_REASONS = [
   {

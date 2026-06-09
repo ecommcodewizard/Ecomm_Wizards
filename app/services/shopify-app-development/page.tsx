@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const META_DESCRIPTION =
-  "Hire expert Shopify app developers to build custom private apps or launch on the Shopify App Store. Shopify Plus Preferred Partner. 700+ merchants. Get a free quote.";
+  "Hire expert Shopify app developers to build custom private apps or launch on the Shopify App Store. Shopify Plus Preferred Partner. 700+ merchants.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-app-development";
 
 export const metadata: Metadata = {
@@ -135,7 +135,7 @@ export default function ShopifyAppDevelopmentPage() {
 
             <div className="mt-8 inline-flex p-[2px] rounded-full" style={{ background: GRADIENT }}>
               <a
-                href="/contact-shopify-agency/"
+                href="/contact-shopify-agency"
                 className="group inline-flex items-center justify-center gap-3 rounded-full bg-black hover:bg-white transition-all duration-300 px-[28px] py-[16px] sm:px-[40px] sm:py-[20px] text-[15px] sm:text-[16px]"
                 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}
               >
@@ -310,7 +310,7 @@ export default function ShopifyAppDevelopmentPage() {
               </p>
 
               <a
-                href="/contact-shopify-agency/"
+                href="/contact-shopify-agency"
                 className="cta-pill-solid sad-about-cta inline-flex items-center gap-3 rounded-full border px-7 py-3.5 text-[15px] sm:text-base transition"
               >
                 Schedule a Free Consultation

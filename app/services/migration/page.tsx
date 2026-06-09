@@ -3,7 +3,7 @@ import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 const META_DESCRIPTION =
-  "Shopify migration agency for brands that can't afford downtime. We move your store, products, customers, orders, and SEO to Shopify or Shopify Plus with zero data loss.";
+  "Shopify migration agency for brands that can't afford downtime. We move your store, products, customers, orders, and SEO with zero data loss.";
 const CANONICAL_URL = "https://ecommwizards.com/services/migration";
 
 export const metadata: Metadata = {

@@ -136,7 +136,7 @@ export default function AboutPage() {
           >
             <Image
               src="/images/convertionrate-box.webp"
-              alt=""
+              alt="Shopify conversion rate optimization results"
               width={600}
               height={400}
               className="w-full rounded-2xl"
@@ -226,7 +226,7 @@ export default function AboutPage() {
               >
                 <Image
                   src="/images/convertionrate-box.webp"
-                  alt=""
+                  alt="Shopify conversion rate optimization results"
                   width={600}
                   height={400}
                   className="w-full"

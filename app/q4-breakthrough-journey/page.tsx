@@ -3,7 +3,7 @@ import PageHero from "@/components/ui/PageHero";
 import CTASection from "@/components/ui/CTASection";
 
 export const metadata: Metadata = {
-  title: "Q4 Breakthrough Journey | Shopify Q4 Preparation | Ecomm Wizards",
+  title: "Q4 Breakthrough Journey | Shopify Q4 Prep | Ecomm Wizards",
   description: "Prepare your Shopify store for Q4 — Black Friday, Cyber Monday, and holiday season. Speed, CRO, and conversion optimisation to maximise revenue.",
 };
 

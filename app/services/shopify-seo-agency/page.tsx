@@ -6,7 +6,7 @@ import SseFaqAccordion from "./SseFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 const META_DESCRIPTION =
-  "Shopify SEO agency for 150+ stores. We fix technical issues, map keywords to buyer intent, and grow organic revenue that compounds month over month. 320% avg traffic lift.";
+  "Shopify SEO agency for 150+ stores. We fix technical issues, map keywords to buyer intent, and grow organic revenue that compounds. 320% avg traffic lift.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-seo-agency";
 
 export const metadata: Metadata = {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const META_DESCRIPTION =
-  "Build a unified Shopify B2B store with custom pricing, net payment terms, wholesale portals, and ERP integration. Shopify Plus Preferred Partner. 1,000+ brands built.";
+  "Build a unified Shopify B2B store with custom pricing, net payment terms, wholesale portals, and ERP integration. Shopify Plus Preferred Partner.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-b2b-store-setup";
 
 export const metadata: Metadata = {
@@ -51,7 +51,7 @@ const GRADIENT_TEXT = {
   backgroundClip: "text",
 } as const;
 
-const CONSULT = "/book-shopify-consultation/";
+const CONSULT = "/book-shopify-consultation";
 
 const TRUST_LOGOS = [
   { src: "/images/trust_logo_32.svg", alt: "Forme" },

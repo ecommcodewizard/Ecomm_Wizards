@@ -33,10 +33,11 @@ const SERVICE_TAGS = [
 
 const COMPANY = [
   { label: "About Ecomm Wizards",     href: "/about-shopify-agency" },
+  { label: "All Shopify Services",    href: "/services" },
   { label: "Partners",                href: "/partners" },
-  { label: "Partner Program",         href: "/partners" },
+  { label: "Partner Program",         href: "/partner-program" },
   { label: "FAQ's",                   href: "/faqs" },
-  { label: "Q4 Breakthrough Journey", href: "/contact-shopify-agency" },
+  { label: "Q4 Breakthrough Journey", href: "/q4-breakthrough-journey" },
 ];
 
 const AWARDS = [

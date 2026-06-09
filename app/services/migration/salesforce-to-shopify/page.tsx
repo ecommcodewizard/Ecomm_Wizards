@@ -6,7 +6,7 @@ import CustomizerCarousel, { type CustomizerSlide } from "@/components/sections/
 import HydrogenWhyAccordion, { type HydrogenWhyItem } from "@/components/sections/HydrogenWhyAccordion";
 
 const META_DESCRIPTION =
-  "Salesforce to Shopify migration without downtime. We move enterprise stores off Salesforce Commerce Cloud to Shopify Plus with lower TCO and zero data loss. Get a free test build.";
+  "Salesforce to Shopify migration without downtime. We move enterprise stores off Commerce Cloud to Shopify Plus with zero data loss. Get a free test build.";
 const CANONICAL_URL = "https://ecommwizards.com/services/migration/salesforce-to-shopify";
 
 export const metadata: Metadata = {
@@ -1002,7 +1002,7 @@ export default function Page() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/nari_medium_215a6a4f-f640-4b4f-98aa-28f001df20dd_medium.webp"
-                    alt=""
+                    alt="Verified Ecomm Wizards client"
                     width={45}
                     height={45}
                   />

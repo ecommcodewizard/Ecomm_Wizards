@@ -6,7 +6,7 @@ import SmsFaqAccordion from "./SmsFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 const META_DESCRIPTION =
-  "Shopify maintenance and support for 150+ stores. Monthly retainer covering audits, bug fixes, speed monitoring, and proactive care to keep your store healthy and converting.";
+  "Shopify maintenance and support for 150+ stores. Monthly retainers covering audits, bug fixes, speed monitoring, and proactive care for your store.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-maintenance-and-support";
 
 export const metadata: Metadata = {

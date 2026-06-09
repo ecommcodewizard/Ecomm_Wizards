@@ -341,7 +341,7 @@ export default function FigmaToShopifyConversionPage() {
 
             <div className="mt-8 inline-flex p-[2px] rounded-full" style={{ background: GRADIENT }}>
               <a
-                href="/book-shopify-consultation/"
+                href="/book-shopify-consultation"
                 className="group inline-flex items-center justify-center gap-3 rounded-full bg-black hover:bg-white transition-all duration-300 px-[28px] py-[16px] sm:px-[40px] sm:py-[20px] text-[15px] sm:text-[16px]"
                 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500 }}
               >
@@ -736,7 +736,7 @@ export default function FigmaToShopifyConversionPage() {
                   </li>
                 ))}
               </ul>
-              <a className="f2s-pair__btn" href="/book-shopify-consultation/">
+              <a className="f2s-pair__btn" href="/book-shopify-consultation">
                 Start My Custom Shopify Build
                 <span aria-hidden className="f2s-pair__btnArrow">→</span>
               </a>
@@ -770,7 +770,7 @@ export default function FigmaToShopifyConversionPage() {
                   </li>
                 ))}
               </ul>
-              <a className="f2s-pair__btn" href="/free-shopify-store-audit/">
+              <a className="f2s-pair__btn" href="/free-shopify-store-audit">
                 Tell Us What You Need
                 <span aria-hidden className="f2s-pair__btnArrow">→</span>
               </a>
@@ -980,7 +980,7 @@ export default function FigmaToShopifyConversionPage() {
               <p className="f2s-tools__ctaBody">
                 Submit your Figma file today and we&rsquo;ll convert one page to Shopify, completely free. See the quality before you commit.
               </p>
-              <a className="f2s-tools__btn" href="/book-shopify-consultation/">
+              <a className="f2s-tools__btn" href="/book-shopify-consultation">
                 Claim Your Free Page
                 <span aria-hidden className="f2s-tools__btnArrow">→</span>
               </a>
@@ -993,7 +993,7 @@ export default function FigmaToShopifyConversionPage() {
               <p className="f2s-tools__ctaBody">
                 Still have questions about our Figma to Shopify conversion process? Let&rsquo;s talk. No pressure, no pitch. Just answers.
               </p>
-              <a className="f2s-tools__btn" href="/book-shopify-consultation/">
+              <a className="f2s-tools__btn" href="/book-shopify-consultation">
                 Chat With Our Team
                 <span aria-hidden className="f2s-tools__btnArrow">→</span>
               </a>
