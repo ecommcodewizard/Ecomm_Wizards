@@ -7,7 +7,7 @@ import SiIntegrationsGrid from "./SiIntegrationsGrid";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 const META_DESCRIPTION =
-  "Shopify integration services for ERP, CRM, 3PL, and custom APIs. Connect Shopify to NetSuite, Salesforce, Klaviyo, and more. API-native builds with fixed-price delivery and 60-day post-launch support.";
+  "Shopify integration services for ERP, CRM, 3PL, and custom APIs. Connect Shopify to NetSuite, Salesforce, Klaviyo, and more with fixed-price delivery.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-integration-services";
 
 export const metadata: Metadata = {

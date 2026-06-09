@@ -6,7 +6,7 @@ import LpFaqAccordion from "./LpFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 const META_DESCRIPTION =
-  "Shopify landing page design for paid ads, product launches, and seasonal campaigns. 200+ pages built, 28.5% avg conversion lift. Fixed-price quotes within 24 hours.";
+  "Shopify landing page design for paid ads, launches, and seasonal campaigns. 200+ pages built, 28.5% avg conversion lift. Fixed-price quotes in 24 hours.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-landing-page-design";
 
 export const metadata: Metadata = {

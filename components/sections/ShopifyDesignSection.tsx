@@ -280,6 +280,7 @@ export default function ShopifyDesignSection({
             <>
               <img
                 src={bgImage}
+                alt=""
                 aria-hidden="true"
                 style={{
                   position: "absolute",

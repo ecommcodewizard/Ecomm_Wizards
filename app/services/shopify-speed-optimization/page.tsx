@@ -4,13 +4,13 @@ import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 const META_DESCRIPTION =
-  "Shopify speed optimization that fixes the root cause. We strip bloat, rebuild theme code, and ship measurable Core Web Vitals wins for Shopify Plus stores. Money back guarantee.";
+  "Shopify speed optimization that fixes the root cause. We strip bloat, rebuild theme code, and ship measurable Core Web Vitals wins. Money-back guarantee.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-speed-optimization";
 
 export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
-  title: { absolute: "Shopify Speed Optimization Services | Core Web Vitals Experts" },
+  title: { absolute: "Shopify Speed Optimization | Core Web Vitals Experts" },
   description: META_DESCRIPTION,
   keywords: [
     "shopify speed optimization",

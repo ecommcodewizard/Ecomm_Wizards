@@ -63,7 +63,7 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
 ];
 
 const META_DESCRIPTION =
-  "Connect your ERP to Shopify with real-time bi-directional sync. NetSuite, SAP, Dynamics 365, Acumatica and more. Shopify Plus Preferred Partner. Get a free quote.";
+  "Connect your ERP to Shopify with real-time two-way sync. NetSuite, SAP, Dynamics 365, Acumatica and more. Shopify Plus Preferred Partner. Free quote.";
 const CANONICAL_URL = "https://ecommwizards.com/services/erp-connections-to-shopify";
 
 export const metadata: Metadata = {
@@ -112,8 +112,8 @@ const GRADIENT_TEXT = {
   backgroundClip: "text",
 } as const;
 
-const CONSULT = "/book-shopify-consultation/";
-const CONTACT = "/contact-shopify-agency/";
+const CONSULT = "/book-shopify-consultation";
+const CONTACT = "/contact-shopify-agency";
 
 const TRUST_LOGOS = [
   { src: "/images/Olaplex-logo-new.avif", alt: "Olaplex" },

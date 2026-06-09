@@ -6,7 +6,7 @@ import SplusFaqAccordion from "./SplusFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 const META_DESCRIPTION =
-  "Shopify Plus development agency with 200+ enterprise stores built. Custom checkout extensions, B2B portals, ERP integrations, and zero-downtime migrations. $900M+ in client revenue.";
+  "Shopify Plus development agency with 200+ enterprise stores built. Custom checkout extensions, B2B portals, ERP integrations, zero-downtime migrations.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-plus-development";
 
 export const metadata: Metadata = {

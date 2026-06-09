@@ -6,7 +6,7 @@ import HlFaqAccordion from "./HlFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 const META_DESCRIPTION =
-  "Headless Shopify agency for Hydrogen and Next.js development. Headless commerce storefronts with sub-second load times and total design freedom. Book a free architecture call.";
+  "Headless Shopify agency for Hydrogen and Next.js. Commerce storefronts with sub-second load times and total design freedom. Book a free architecture call.";
 const CANONICAL_URL = "https://ecommwizards.com/services/headless-shopify-agency";
 
 export const metadata: Metadata = {

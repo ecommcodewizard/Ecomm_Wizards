@@ -5,7 +5,7 @@ import RodeoCarousel, { type RodeoSlide } from "@/components/sections/RodeoCarou
 import CustomizerCarousel, { type CustomizerSlide } from "@/components/sections/CustomizerCarousel";
 
 const META_DESCRIPTION =
-  "Magento to Shopify migration done without downtime. We move your products, customers, orders, and SEO to Shopify or Shopify Plus with zero data loss. Get a free test drive.";
+  "Magento to Shopify migration without downtime. We move your products, customers, orders, and SEO with zero data loss. Get a free test drive.";
 const CANONICAL_URL = "https://ecommwizards.com/services/migration/magento-to-shopify";
 
 export const metadata: Metadata = {
@@ -963,7 +963,7 @@ export default function Page() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/nari_medium_215a6a4f-f640-4b4f-98aa-28f001df20dd_medium.webp"
-                    alt=""
+                    alt="Verified Ecomm Wizards client"
                     width={45}
                     height={45}
                   />
@@ -1167,7 +1167,7 @@ export default function Page() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/nari_medium_215a6a4f-f640-4b4f-98aa-28f001df20dd_medium.webp"
-                    alt=""
+                    alt="Verified Ecomm Wizards client"
                     width={45}
                     height={45}
                   />

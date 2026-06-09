@@ -6,7 +6,7 @@ import CroFaqAccordion from "./CroFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 const META_DESCRIPTION =
-  "Shopify CRO agency specializing in conversion rate optimization, A/B testing, and CRO audits for Shopify and Shopify Plus. 100+ stores optimized. Book a free audit.";
+  "Shopify CRO agency specializing in conversion rate optimization, A/B testing, and CRO audits for Shopify Plus. 100+ stores optimized. Book a free audit.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-cro-agency";
 
 export const metadata: Metadata = {

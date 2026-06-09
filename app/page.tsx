@@ -14,7 +14,7 @@ import WhyPartnerSection from "@/components/sections/WhyPartnerSection";
 
 const HOME_TITLE = "Shopify Agency | Design, CRO, Development & Growth Experts";
 const HOME_DESCRIPTION =
-  "Award-winning Shopify agency helping brands scale with high-converting design, CRO, SEO, and development. 700+ stores built. $900M+ revenue generated. Get your free audit.";
+  "Award-winning Shopify agency helping brands scale with high-converting design, CRO, SEO, and development. 700+ stores built, $900M+ revenue generated.";
 
 export const metadata: Metadata = {
   title: { absolute: HOME_TITLE },

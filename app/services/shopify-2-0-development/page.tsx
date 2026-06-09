@@ -6,7 +6,7 @@ import S20FaqAccordion from "./S20FaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 const META_DESCRIPTION =
-  "Shopify 2.0 development agency with 200+ Online Store 2.0 builds. Custom theme development, 1.0 to 2.0 migrations, and native App Block integrations. $900M+ in client revenue.";
+  "Shopify 2.0 development agency with 200+ Online Store 2.0 builds. Custom themes, 1.0 to 2.0 migrations, and native App Block integrations.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-2-0-development";
 
 export const metadata: Metadata = {

@@ -5,7 +5,7 @@ import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/Case
 import ABTestingFAQ from "@/components/sections/ABTestingFAQ";
 
 const META_DESCRIPTION =
-  "Shopify A/B testing run by Shoplift Certified experts. We design, launch, and analyze high-impact tests that lift your CVR, RPV, and AOV with real statistical proof.";
+  "Shopify A/B testing by Shoplift Certified experts. We design, launch, and analyze high-impact tests that lift your CVR, RPV, and AOV with real proof.";
 const CANONICAL_URL = "https://ecommwizards.com/services/a-b-testing";
 
 export const metadata: Metadata = {

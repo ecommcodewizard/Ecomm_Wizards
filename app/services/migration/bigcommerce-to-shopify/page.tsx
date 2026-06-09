@@ -3,7 +3,7 @@ import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 
 const META_DESCRIPTION =
-  "BigCommerce to Shopify migration done without downtime. We move your products, customers, orders, and SEO to Shopify or Shopify Plus with zero data loss. Get a free quote.";
+  "BigCommerce to Shopify migration without downtime. We move your products, customers, orders, and SEO with zero data loss. Get a free quote.";
 const CANONICAL_URL = "https://ecommwizards.com/services/migration/bigcommerce-to-shopify";
 
 export const metadata: Metadata = {

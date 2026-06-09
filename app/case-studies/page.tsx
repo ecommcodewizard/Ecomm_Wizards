@@ -9,7 +9,7 @@ import ShopifyAppsSection from "./ShopifyAppsSection";
 
 const PAGE_TITLE = "Case Studies | Real Results for Real Brands | Ecomm Wizards";
 const PAGE_DESCRIPTION =
-  "See how Ecomm Wizards has helped Shopify brands across fashion, beauty, health, food, sports, jewellery, and B2B grow revenue, increase conversion rates, and scale their stores.";
+  "See how Ecomm Wizards helps Shopify brands across fashion, beauty, health, food, and B2B grow revenue, lift conversion rates, and scale their stores.";
 const PAGE_URL = "https://ecommwizards.com/case-studies";
 const OG_IMAGE = "/images/main-hero-f-desktop.webp";
 
