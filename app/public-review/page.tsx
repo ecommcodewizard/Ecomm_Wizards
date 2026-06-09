@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://ecommwizards.com/public-review" },
   title: "Leave a Review | Ecomm Wizards",
   description: "Worked with Ecomm Wizards? We'd love to hear about your experience. Leave a review and help other Shopify merchants find the right agency.",
 };

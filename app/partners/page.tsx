@@ -4,6 +4,7 @@ import CTASection from "@/components/ui/CTASection";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://ecommwizards.com/partners" },
   title: "Our Shopify Partners | Ecomm Wizards",
   description: "Ecomm Wizards works with the world's best Shopify apps and service providers. See our trusted partner network.",
 };
