@@ -977,7 +977,7 @@ export default function AboutPage() {
 
           <div className="text-center founder-note-cta" style={{ marginTop: "40px" }}>
             <Link
-              href="/contact"
+              href="/contact-shopify-agency"
               className="elementor-button elementor-button-link elementor-size-sm transition-shadow duration-200 hover:shadow-[0_0_0_2px_#3DC77A]"
               style={{
                 display: "inline-flex",
