@@ -1,0 +1,48 @@
+name: Deploy to production
+
+# Push to main = deploy. You can also trigger manually from the Actions tab.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Never let two deploys run at once; queue them instead.
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_KEY }}
+          command_timeout: 20m
+          script: |
+            set -euo pipefail
+
+            # Load the cPanel Node.js virtualenv so node/npm are on PATH.
+            source "${{ secrets.NODEVENV_ACTIVATE }}"
+
+            cd "${{ secrets.APP_ROOT }}"
+
+            echo "==> Fetching latest code"
+            git fetch --all --prune
+            git reset --hard origin/main
+
+            echo "==> Installing dependencies"
+            npm ci --no-audit --no-fund || npm install --no-audit --no-fund
+
+            echo "==> Building Next.js"
+            npm run build
+
+            echo "==> Restarting app (Passenger)"
+            mkdir -p tmp
+            touch tmp/restart.txt
+
+            echo "==> Done: deployed $(git rev-parse --short HEAD)"
