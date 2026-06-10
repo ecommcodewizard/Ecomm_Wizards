@@ -19,9 +19,11 @@ export const metadata: Metadata = {
   },
   description: ROOT_DESCRIPTION,
   openGraph: {
+    // No `url` here on purpose: subpages inherit this OpenGraph block, and a
+    // hard-coded homepage url would clash with each page's own canonical.
+    // Pages that need og:url (home, service pages) set it themselves.
     type: "website",
     siteName: SITE_NAME,
-    url: SITE_URL,
     title: ROOT_TITLE,
     description: ROOT_DESCRIPTION,
     images: [{ url: OG_IMAGE, alt: "Ecomm Wizards Shopify agency" }],

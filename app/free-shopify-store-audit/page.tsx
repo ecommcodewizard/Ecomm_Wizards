@@ -5,7 +5,7 @@ import AuditFaqAccordion from "./AuditFaqAccordion";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://ecommwizards.com/free-shopify-store-audit" },
-  title: "Free Shopify Store Audit | Find Revenue Leaks & Grow Sales",
+  title: { absolute: "Free Shopify Store Audit | Find Revenue Leaks & Grow Sales" },
   description:
     "Get a free Shopify audit to uncover CRO, SEO, speed, and UX issues. Find hidden revenue leaks and get actionable insights to grow your store fast.",
 };

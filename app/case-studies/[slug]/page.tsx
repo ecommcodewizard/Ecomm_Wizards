@@ -36,12 +36,18 @@ export async function generateMetadata({
     getKlaviyoCaseStudyBySlug(slug);
   if (!study) return {};
   const CANONICAL = `https://ecommwizards.com/case-studies/${slug}`;
+  // Keep the full heroDescription for on-page display, but cap the meta
+  // description at ~160 chars (trim at a word boundary) for SEO.
+  const metaDesc =
+    study.heroDescription.length > 160
+      ? study.heroDescription.slice(0, 157).replace(/\s+\S*$/, "") + "…"
+      : study.heroDescription;
   return {
     title: { absolute: `${study.brandName} Shopify Case Study | ${study.heroMetric}` },
-    description: study.heroDescription,
+    description: metaDesc,
     alternates: { canonical: CANONICAL },
-    openGraph: { type: "article", url: CANONICAL, siteName: "Ecomm Wizards", title: `${study.brandName} Shopify Case Study`, description: study.heroDescription, images: [{ url: study.heroImage, alt: `${study.brandName} Shopify case study` }] },
-    twitter: { card: "summary_large_image", title: `${study.brandName} Shopify Case Study`, description: study.heroDescription, images: [study.heroImage] },
+    openGraph: { type: "article", url: CANONICAL, siteName: "Ecomm Wizards", title: `${study.brandName} Shopify Case Study`, description: metaDesc, images: [{ url: study.heroImage, alt: `${study.brandName} Shopify case study` }] },
+    twitter: { card: "summary_large_image", title: `${study.brandName} Shopify Case Study`, description: metaDesc, images: [study.heroImage] },
   };
 }
 

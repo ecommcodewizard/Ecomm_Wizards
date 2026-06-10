@@ -21,7 +21,7 @@ const SERVICE_TAGS = [
   { label: "ERP Connections to Shopify",       href: "/services/erp-connections-to-shopify" },
   { label: "Shopify App Development",          href: "/services/shopify-app-development" },
   { label: "Mobile App Development",           href: "/shopify-mobile-app-development" },
-  { label: "On Demand Dev with Bulk Hours",    href: "/services/shopify-store-development" },
+  { label: "On Demand Dev with Bulk Hours",    href: "/bulk-hours" },
   { label: "Site Speed Optimizations",         href: "/services/shopify-speed-optimization" },
   { label: "Point of Sale (POS) for Business", href: "/services/shopify-pos-setup" },
   { label: "A/B Testing for CRO, AOV & CLV",  href: "/services/a-b-testing" },

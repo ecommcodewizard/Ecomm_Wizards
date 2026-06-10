@@ -5,7 +5,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://ecommwizards.com/shopify-mobile-app-development" },
-  title: "Shopify Mobile App Development | iOS & Android Shopping Apps",
+  title: { absolute: "Shopify Mobile App Development | iOS & Android Shopping Apps" },
   description: "Turn your Shopify store into a branded mobile app for iOS and Android. Push notifications, loyalty, and native shopping experience for your customers.",
 };
 
