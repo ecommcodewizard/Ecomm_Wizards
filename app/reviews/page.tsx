@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import PageHero from "@/components/ui/PageHero";
 import CTASection from "@/components/ui/CTASection";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://ecommwizards.com/reviews" },
+  openGraph: og("/reviews"),
   title: { absolute: "Ecomm Wizards Reviews | Client Testimonials & Case Studies" },
   description: "Read what 700+ Shopify merchants say about working with Ecomm Wizards. Real reviews, real results, real revenue growth.",
 };
