@@ -4,6 +4,20 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async headers() {
+    // HTML/page responses must always revalidate. Otherwise a shared cache
+    // (LiteSpeed/CDN) holds stale HTML that references hashed JS/CSS from an
+    // older build — which later deploys delete, causing 404s ("broken CSS/JS").
+    // Hashed assets under /_next/static are excluded so they stay immutable.
+    return [
+      {
+        source: "/((?!_next/).*)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       {
