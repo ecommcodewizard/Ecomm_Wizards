@@ -71,7 +71,6 @@ const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.S
 
   // Other
   { path: "/bulk-hours", priority: 0.6, changeFrequency: "monthly" },
-  { path: "/public-review", priority: 0.3, changeFrequency: "monthly" },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

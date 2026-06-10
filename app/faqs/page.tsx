@@ -5,7 +5,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://ecommwizards.com/faqs" },
-  title: "FAQs | Ecomm Wizards Shopify Agency",
+  title: { absolute: "FAQs | Ecomm Wizards Shopify Agency" },
   description: "Frequently asked questions about working with Ecomm Wizards. Shopify development, pricing, timelines, and more.",
 };
 
