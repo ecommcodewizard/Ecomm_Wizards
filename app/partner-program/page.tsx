@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import PageHero from "@/components/ui/PageHero";
 import CTASection from "@/components/ui/CTASection";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://ecommwizards.com/partner-program" },
+  openGraph: og("/partner-program"),
   title: { absolute: "Ecomm Wizards Partner Program | Refer & Earn" },
   description: "Partner with Ecomm Wizards and earn recurring commissions for every Shopify client you refer. Join our network of agencies, freelancers, and consultants.",
 };

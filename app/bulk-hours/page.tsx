@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import PageHero from "@/components/ui/PageHero";
 import CTASection from "@/components/ui/CTASection";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://ecommwizards.com/bulk-hours" },
+  openGraph: og("/bulk-hours"),
   title: { absolute: "Bulk Shopify Dev Hours | On-Demand Dev Team | Ecomm Wizards" },
   description: "Buy bulk Shopify development hours and get on-demand access to our expert team. Theme customisation, bug fixes, new features, and more — on your schedule.",
 };

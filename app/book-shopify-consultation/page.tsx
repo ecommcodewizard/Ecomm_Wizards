@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import Image from "next/image";
 import Link from "next/link";
 import CalEmbed from "./CalEmbed";
@@ -6,6 +7,7 @@ import BookFaqAccordion from "./BookFaqAccordion";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://ecommwizards.com/book-shopify-consultation" },
+  openGraph: og("/book-shopify-consultation"),
   title: "Free Shopify Strategy Consultation",
   description:
     "Book a free Shopify consultation to improve CRO, SEO, UX, and performance. Get expert insights to increase conversions and grow your ecommerce revenue.",

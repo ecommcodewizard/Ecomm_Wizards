@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import PageHero from "@/components/ui/PageHero";
 import CTASection from "@/components/ui/CTASection";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://ecommwizards.com/faqs" },
+  openGraph: og("/faqs"),
   title: { absolute: "FAQs | Ecomm Wizards Shopify Agency" },
   description: "Frequently asked questions about working with Ecomm Wizards. Shopify development, pricing, timelines, and more.",
 };
