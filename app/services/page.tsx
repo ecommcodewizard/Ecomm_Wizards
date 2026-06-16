@@ -58,7 +58,7 @@ export default function Page() {
 
       <section className="py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeader badge="What's Included" title="Our All Services Services" />
+          <SectionHeader badge="What's Included" title="Our Complete Service Lineup" />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map((f: {icon:string;title:string;desc:string}) => (
               <div key={f.title} className="rounded-2xl border border-slate-100 bg-white p-7 shadow-sm hover:shadow-md transition-shadow">

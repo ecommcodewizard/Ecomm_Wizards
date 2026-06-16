@@ -1,0 +1,26 @@
+# Ecomm Wizards
+
+> Ecomm Wizards is a Shopify Plus agency that designs, builds, migrates, and optimizes high-converting Shopify and Shopify Plus stores. 700+ stores built, $900M+ in client revenue, 8+ years of experience.
+
+## Services
+- [Shopify Store Development](https://ecommwizards.com/services/shopify-store-development)
+- [Shopify Plus Development](https://ecommwizards.com/services/shopify-plus-development)
+- [Shopify Migration](https://ecommwizards.com/services/migration)
+- [Conversion Rate Optimization](https://ecommwizards.com/services/shopify-cro-agency)
+- [Shopify SEO](https://ecommwizards.com/services/shopify-seo-agency)
+- [Shopify App Development](https://ecommwizards.com/services/shopify-app-development)
+- [Theme Development](https://ecommwizards.com/services/shopify-theme-development)
+- [B2B Store Setup](https://ecommwizards.com/services/shopify-b2b-store-setup)
+- [POS Setup](https://ecommwizards.com/services/shopify-pos-setup)
+
+## Case Studies
+- [Case Studies Overview](https://ecommwizards.com/case-studies)
+
+## Company
+- [About](https://ecommwizards.com/about-shopify-agency)
+- [Reviews](https://ecommwizards.com/reviews)
+- [Contact](https://ecommwizards.com/contact-shopify-agency)
+
+## Get Started
+- [Book a Free Consultation](https://ecommwizards.com/book-shopify-consultation)
+- [Free Shopify Store Audit](https://ecommwizards.com/free-shopify-store-audit)
