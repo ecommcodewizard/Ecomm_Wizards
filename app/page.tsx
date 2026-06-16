@@ -392,7 +392,7 @@ export default function HomePage() {
             <div key={s.label} className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#111111] w-full" style={{ minHeight: "117px", padding: "15px", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155" }}>
               <div style={{ flex: 1, minWidth: 0, padding: "10px", fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "#334155" }}>
                 <p style={{ width: "240.42px", height: "26px", fontSize: "16px", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF", fontWeight: 700, lineHeight: "26px" }}>{s.label}</p>
-                <p className="mt-2" style={{ width: "240.42px", height: "27px", fontSize: "17px", fontFamily: "'Lato', sans-serif", fontWeight: 600, lineHeight: "27px", background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                <p className="mt-2" style={{ width: "240.42px", height: "27px", fontSize: "17px", fontFamily: "'Poppins', sans-serif", fontWeight: 600, lineHeight: "27px", background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                   {s.value} <span style={{ fontWeight: 400 }}>{s.suffix}</span>
                 </p>
               </div>

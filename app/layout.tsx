@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
+// Self-hosted Poppins (replaces the render-blocking Google Fonts link). Keeps the
+// family name "Poppins", so every existing font-family reference resolves unchanged.
+import "@fontsource/poppins/300.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+import "@fontsource/poppins/700.css";
+import "@fontsource/poppins/800.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CTABar from "@/components/layout/CTABar";
@@ -73,14 +81,7 @@ const ORG_SCHEMA = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+      <head />
       <body className="flex min-h-screen flex-col" style={{ backgroundColor: "var(--color-white)", color: "var(--color-dark)" }} suppressHydrationWarning>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_SCHEMA) }} />
         <Header />
