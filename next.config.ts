@@ -17,9 +17,12 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Security headers on every route. CSP is intentionally left to the
-        // platform (upgrade-insecure-requests) — a strict CSP needs dedicated
-        // testing against inline styles, JSON-LD, and Google Fonts.
+        // Security headers on every route. The CSP intentionally carries only
+        // directives that are safe regardless of the site's inline styles,
+        // inline scripts, and Cal.com booking embed: object-src, base-uri,
+        // frame-ancestors, + upgrade-insecure-requests. Locking down
+        // script-src/style-src needs a tested Report-Only rollout (inline styles
+        // force 'unsafe-inline'; the booking embed loads app.cal.com).
         source: "/:path*",
         headers: [
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
@@ -27,6 +30,7 @@ const nextConfig: NextConfig = {
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
           { key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains" },
+          { key: "Content-Security-Policy", value: "upgrade-insecure-requests; object-src 'none'; base-uri 'self'; frame-ancestors 'self'" },
         ],
       },
     ];
