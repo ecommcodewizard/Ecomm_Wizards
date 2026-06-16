@@ -20,7 +20,6 @@ const SERVICE_TAGS = [
   { label: "Shopify Development Agency",        href: "/services/shopify-development-agency" },
   { label: "ERP Connections to Shopify",       href: "/services/erp-connections-to-shopify" },
   { label: "Shopify App Development",          href: "/services/shopify-app-development" },
-  { label: "Mobile App Development",           href: "/shopify-mobile-app-development" },
   { label: "On Demand Dev with Bulk Hours",    href: "/bulk-hours" },
   { label: "Site Speed Optimizations",         href: "/services/shopify-speed-optimization" },
   { label: "Point of Sale (POS) for Business", href: "/services/shopify-pos-setup" },
