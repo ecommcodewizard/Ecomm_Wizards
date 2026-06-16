@@ -51,7 +51,6 @@ const ROUTES: string[] = [
   // Standalone service / topic pages
   "/services/shopify-store-development",
   "/services/shopify-app-development",
-  "/shopify-mobile-app-development",
   "/services/shopify-b2b-store-setup",
   "/services/shopify-pos-setup",
   "/services/shopify-store-audit",

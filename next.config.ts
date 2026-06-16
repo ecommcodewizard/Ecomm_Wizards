@@ -139,6 +139,9 @@ const nextConfig: NextConfig = {
       { source: "/shopify-theme-development", destination: "/services/shopify-theme-development", permanent: true },
       { source: "/shopify-landing-page-design", destination: "/services/shopify-landing-page-design", permanent: true },
       { source: "/shopify-2-0-development", destination: "/services/shopify-2-0-development", permanent: true },
+      // shopify-mobile-app-development page removed; send it + its old WP URL to the closest service
+      { source: "/shopify-mobile-app-development", destination: "/services/shopify-app-development", permanent: true },
+      { source: "/services/shopify-mobile-app-development", destination: "/services/shopify-app-development", permanent: true },
     ];
   },
 };
