@@ -63,7 +63,6 @@ const JOURNEY = [
 ];
 
 const TEAM = [
-  { name: "Brook Sanderson",    role: "CEO & Founder",           photo: "/images/Brooke_06ed70b4-ed6c-424a-a067-cd3985d1d53a.webp" },
   { name: "Jake Amos",          role: "Head of Development",     photo: "/images/Jack.webp" },
   { name: "Truc Peter",         role: "Lead Designer",           photo: "/images/truc_3cf9e54f-2814-4e5c-8095-b741b24e790d.webp" },
   { name: "Giana Moretti",      role: "CRO Strategist",          photo: "/images/Giana.webp" },
