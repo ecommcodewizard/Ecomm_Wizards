@@ -267,6 +267,7 @@ export default async function CaseStudiesPage({
   const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
+    name: "Ecomm Wizards Shopify Case Studies",
     itemListElement: [...CASE_STUDIES, ...APP_CASE_STUDIES, ...KLAVIYO_CASE_STUDIES].map(
       (s, i) => ({
         "@type": "ListItem",
