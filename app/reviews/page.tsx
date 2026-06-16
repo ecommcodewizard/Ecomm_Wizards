@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" }, { "@type": "ListItem", position: 2, name: "Reviews", item: "https://ecommwizards.com/reviews" }] }) }} />
       <PageHero
         badge="Client Reviews"
         title="What Our Clients Say"

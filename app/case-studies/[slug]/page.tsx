@@ -11,7 +11,7 @@ import SpeedVideo from "../SpeedVideo";
 
 function caseStudyJsonLd(study: { slug: string; brandName: string; heroDescription: string; heroImage: string }) {
   return [
-    { "@context": "https://schema.org", "@type": "Article", headline: `${study.brandName} Shopify Case Study`, description: study.heroDescription, image: `https://ecommwizards.com${study.heroImage}`, author: { "@type": "Organization", name: "Ecomm Wizards", url: "https://ecommwizards.com" }, publisher: { "@type": "Organization", name: "Ecomm Wizards", logo: { "@type": "ImageObject", url: "https://ecommwizards.com/images/ecomm-green.png" } }, mainEntityOfPage: `https://ecommwizards.com/case-studies/${study.slug}` },
+    { "@context": "https://schema.org", "@type": "Article", headline: `${study.brandName} Shopify Case Study`, description: study.heroDescription, image: `https://ecommwizards.com${study.heroImage}`, author: { "@type": "Organization", name: "Ecomm Wizards", url: "https://ecommwizards.com" }, publisher: { "@type": "Organization", name: "Ecomm Wizards", logo: { "@type": "ImageObject", url: "https://ecommwizards.com/images/ecomm-green.png", width: 636, height: 457 } }, mainEntityOfPage: `https://ecommwizards.com/case-studies/${study.slug}` },
     { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" }, { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://ecommwizards.com/case-studies" }, { "@type": "ListItem", position: 3, name: `${study.brandName} Case Study`, item: `https://ecommwizards.com/case-studies/${study.slug}` } ] },
   ];
 }
