@@ -1,15 +1,29 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// Strip the ?c= tracking parameter so search engines index only clean URLs.
-// Any request carrying ?c=... is 308-redirected to the same path with `c`
-// removed (other params like utm_* are preserved). Once `c` is gone the next
-// request no longer matches, so there is no redirect loop.
+// Canonicalize requests before they render:
+//   1. Host: redirect www.ecommwizards.com -> apex ecommwizards.com so the site
+//      lives on ONE host (the www copy was a full crawlable duplicate).
+//   2. Strip the legacy ?c= tracking param (utm_* and others are preserved).
+// Both fold into a single 308 to the clean apex URL. Once the host is the apex
+// and `c` is gone, nothing matches again, so there is no chain or loop.
 export function middleware(req: NextRequest) {
-  if (req.nextUrl.searchParams.has("c")) {
-    const url = req.nextUrl.clone();
-    url.searchParams.delete("c");
-    return NextResponse.redirect(url, 308);
+  const url = req.nextUrl.clone();
+  let changed = false;
+
+  const host = (req.headers.get("host") ?? "").split(":")[0]; // hostname, no port
+  if (host.startsWith("www.")) {
+    url.protocol = "https:";
+    url.hostname = host.slice(4); // drop the leading "www."
+    url.port = "";
+    changed = true;
   }
+
+  if (url.searchParams.has("c")) {
+    url.searchParams.delete("c");
+    changed = true;
+  }
+
+  if (changed) return NextResponse.redirect(url, 308);
   return NextResponse.next();
 }
 
