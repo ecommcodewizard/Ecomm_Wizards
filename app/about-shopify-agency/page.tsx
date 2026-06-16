@@ -962,7 +962,7 @@ export default function AboutPage() {
               </b>
             </p>
             <p style={{ margin: "24px 0 0" }}>
-              When we started Ecom Wizards, we made a decision to specialize exclusively in Shopify and Shopify Plus development.
+              When we started Ecomm Wizards, we made a decision to specialize exclusively in Shopify and Shopify Plus development.
             </p>
             <p style={{ margin: "24px 0 0" }}>
               We saw too many ecommerce brands struggling with generic agencies that treated Shopify like &ldquo;just another CMS.&rdquo; But Shopify is an ecosystem, and mastering it requires deep platform expertise.

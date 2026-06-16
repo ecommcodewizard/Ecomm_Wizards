@@ -37,7 +37,7 @@ const FAQS = [
     "a": "Yes — we offer free store audits covering speed, UX, SEO, and conversion rate. No commitment required."
   },
   {
-    "q": "What industries do you specialise in?",
+    "q": "What industries do you specialize in?",
     "a": "We work across all ecommerce verticals — fashion, beauty, health, food, electronics, B2B wholesale, and more."
   },
   {
@@ -46,9 +46,22 @@ const FAQS = [
   }
 ];
 
+// FAQPage structured data, built from FAQS so the markup never drifts from the
+// visible questions and answers.
+const FAQ_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSONLD) }} />
       <PageHero
         badge="FAQs"
         title="Frequently Asked"
