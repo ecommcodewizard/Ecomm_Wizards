@@ -311,7 +311,7 @@ function CaseStudyHero({ cs }: { cs: CaseStudy }) {
           </div>
 
           <h1 style={{ fontFamily: "'Poppins',sans-serif", fontSize: "48px", fontWeight: 700, color: "#ffffff", lineHeight: "58px", margin: "0 0 16px" }}>
-            {cs.brandName}
+            {cs.brandName} Shopify Case Study
           </h1>
 
           <p className="cs-hero-desc" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "16px", color: "#ffffff", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "480px" }}>
