@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 // Self-hosted Poppins (replaces the render-blocking Google Fonts link). Keeps the
 // family name "Poppins", so every existing font-family reference resolves unchanged.
-import "@fontsource/poppins/300.css";
-import "@fontsource/poppins/400.css";
-import "@fontsource/poppins/500.css";
-import "@fontsource/poppins/600.css";
-import "@fontsource/poppins/700.css";
-import "@fontsource/poppins/800.css";
+import "@fontsource/poppins/latin-300.css";
+import "@fontsource/poppins/latin-400.css";
+import "@fontsource/poppins/latin-500.css";
+import "@fontsource/poppins/latin-600.css";
+import "@fontsource/poppins/latin-700.css";
+import "@fontsource/poppins/latin-800.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CTABar from "@/components/layout/CTABar";
