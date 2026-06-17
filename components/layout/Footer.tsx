@@ -250,7 +250,6 @@ export default function Footer() {
               width={218}
               height={57}
               className="h-[65px] w-[248px] object-cover object-[0%_58%]"
-              priority
             />
           </Link>
         </div>
@@ -268,7 +267,6 @@ export default function Footer() {
               width={218}
               height={57}
               className="h-[65px] w-[248px] lg:h-[57px] lg:w-[217px] object-cover object-[0%_58%]"
-              priority
             />
           </Link>
           <p className="hidden lg:block flex-1 text-center text-[15px] text-white px-[10px]">
