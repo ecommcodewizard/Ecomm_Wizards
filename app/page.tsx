@@ -207,6 +207,7 @@ export default function HomePage() {
           className="absolute inset-0 object-cover"
           style={{ opacity: 0.6 }}
           priority
+          fetchPriority="high"
         />
 
         {/* Dark overlay so text stays readable */}

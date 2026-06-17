@@ -11,9 +11,18 @@ const nextConfig: NextConfig = {
     // Hashed assets under /_next/static are excluded so they stay immutable.
     return [
       {
-        source: "/((?!_next/).*)",
+        source: "/((?!_next/|images/).*)",
         headers: [
           { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
+        ],
+      },
+      {
+        // /public/images assets change by filename, so cache them aggressively
+        // (PageSpeed flagged them as uncached). CDN purge on deploy covers any
+        // in-place overwrite.
+        source: "/images/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
         ],
       },
       {
