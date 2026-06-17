@@ -97,6 +97,14 @@
 .mobile-col-2 { animation: mobile-scroll-up 20s linear infinite; }
 .mobile-col-3 { animation: mobile-scroll-up 24s linear infinite; }
 .why-partner-logo-track { animation: mobile-scroll-up 18s linear infinite; }
+
+/* Accessibility: stop the marquee/ticker tracks for users who request reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-col-1, .mobile-col-2, .mobile-col-3, .why-partner-logo-track,
+  .logo-col-up, .logo-col-down, .ticker-strip, .logo-strip {
+    animation: none !important;
+  }
+}
 @media (min-width:1024px) and (max-width:1279px) {
   .why-partner-phone { padding: 0 6px !important; }
   .why-partner-inner { gap: 16px !important; }

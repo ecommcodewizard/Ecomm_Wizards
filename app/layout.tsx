@@ -11,6 +11,7 @@ import "@fontsource/poppins/800.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CTABar from "@/components/layout/CTABar";
+import PauseOffscreenAnimations from "@/components/PauseOffscreenAnimations";
 
 const SITE_URL = "https://ecommwizards.com";
 const SITE_NAME = "Ecomm Wizards";
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1 pt-[100px] sm:pt-[70px] md:pt-[100px] lg:pt-[86px] xl:pt-[96px]">{children}</main>
         <CTABar />
         <Footer />
+        <PauseOffscreenAnimations />
       </body>
     </html>
   );
