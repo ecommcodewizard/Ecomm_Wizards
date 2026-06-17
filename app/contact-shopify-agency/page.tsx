@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Link from "next/link";
 
 const CONTACT_TITLE = "Hire a Shopify Plus Agency | Contact Ecomm Wizards";
@@ -16,13 +17,13 @@ export const metadata: Metadata = {
     url: CONTACT_URL,
     title: CONTACT_TITLE,
     description: CONTACT_DESCRIPTION,
-    images: [{ url: "/images/main-hero-f-desktop.webp", alt: "Contact Ecomm Wizards, a certified Shopify Plus agency" }],
+    images: [{ url: ogImage("Contact Ecomm Wizards"), width: 1200, height: 630, alt: "Contact Ecomm Wizards" }],
   },
   twitter: {
     card: "summary_large_image",
     title: CONTACT_TITLE,
     description: CONTACT_DESCRIPTION,
-    images: ["/images/main-hero-f-desktop.webp"],
+    images: [ogImage("Contact Ecomm Wizards")],
   },
 };
 

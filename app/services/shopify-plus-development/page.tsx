@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Image from "next/image";
 import Link from "next/link";
 import SplusAccordion from "./SplusAccordion";
@@ -29,13 +30,13 @@ export const metadata: Metadata = {
     siteName: "Ecomm Wizards",
     title: "Shopify Plus Development Agency | Enterprise Builds",
     description: META_DESCRIPTION,
-    images: [{ url: "/images/migration-shopify-right-image.webp", alt: "shopify plus development by Ecomm Wizards" }],
+    images: [{ url: ogImage("Shopify Plus Development"), width: 1200, height: 630, alt: "Shopify Plus Development — Ecomm Wizards" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Shopify Plus Development Agency | Enterprise Builds",
     description: META_DESCRIPTION,
-    images: ["/images/migration-shopify-right-image.webp"],
+    images: [ogImage("Shopify Plus Development")],
   },
 };
 

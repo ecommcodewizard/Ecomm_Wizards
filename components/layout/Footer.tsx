@@ -245,7 +245,7 @@ export default function Footer() {
         <div className="flex justify-center mb-3">
           <Link href="/">
             <Image
-              src="/images/ecomm-green.png"
+              src="/images/ecomm-green.svg"
               alt="Ecomm Wizards"
               width={218}
               height={57}
@@ -262,7 +262,7 @@ export default function Footer() {
         <div className="mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 w-full max-w-[1320px] px-4 lg:px-6 py-5 lg:h-[97px] lg:py-0">
           <Link href="/" className="hidden md:flex shrink-0 items-center">
             <Image
-              src="/images/ecomm-green.png"
+              src="/images/ecomm-green.svg"
               alt="Ecomm Wizards"
               width={218}
               height={57}

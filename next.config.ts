@@ -3,6 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
+    // Allow the self-hosted SVG logo through next/image. Our own static asset
+    // (no scripts); served as an attachment so a direct hit can't render inline.
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "attachment",
   },
   async headers() {
     // HTML/page responses must always revalidate. Otherwise a shared cache
