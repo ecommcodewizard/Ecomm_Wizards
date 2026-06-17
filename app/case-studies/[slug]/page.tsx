@@ -664,7 +664,7 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
           ) : (
             <Image
               src={cs.challengeImage ?? cs.heroImage}
-              alt={cs.brandName}
+              alt={`${cs.brandName} Shopify store`}
               fill
               className="object-cover"
               loading="lazy"
@@ -792,7 +792,7 @@ function CaseStudyWork({ cs }: { cs: CaseStudy }) {
           {cs.workImages.map((img, i) => (
             <div key={i} style={{ borderRadius: "12px", overflow: "hidden", background: "#111111", position: "relative", border: "1px solid rgba(255,255,255,0.08)" }}>
               <div className="cs-work-img-box" style={{ position: "relative", aspectRatio: "16/10" }}>
-                <Image src={img} alt={`${cs.brandName} design ${i + 1}`} fill className="object-cover" loading="lazy" sizes="(max-width: 767px) 100vw, 50vw" />
+                <Image src={img} alt={`${cs.brandName} Shopify store design ${i + 1}`} fill className="object-cover" loading="lazy" sizes="(max-width: 767px) 100vw, 50vw" />
               </div>
             </div>
           ))}

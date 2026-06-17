@@ -5,7 +5,7 @@ import CTASection from "@/components/ui/CTASection";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://ecommwizards.com/q4-breakthrough-journey" },
-  openGraph: og("/q4-breakthrough-journey"),
+  openGraph: og("/q4-breakthrough-journey", "Q4 Breakthrough Journey"),
   title: { absolute: "Q4 Breakthrough Journey | Shopify Q4 Prep | Ecomm Wizards" },
   description: "Prepare your Shopify store for Q4 — Black Friday, Cyber Monday, and holiday season. Speed, CRO, and conversion optimisation to maximise revenue.",
 };

@@ -6,7 +6,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://ecommwizards.com/faqs" },
-  openGraph: og("/faqs"),
+  openGraph: og("/faqs", "Shopify FAQs"),
   title: { absolute: "FAQs | Ecomm Wizards Shopify Agency" },
   description: "Frequently asked questions about working with Ecomm Wizards. Shopify development, pricing, timelines, and more.",
 };
