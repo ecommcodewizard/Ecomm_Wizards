@@ -2,25 +2,48 @@
 
 > Ecomm Wizards is a Shopify Plus agency that designs, builds, migrates, and optimizes high-converting Shopify and Shopify Plus stores. 700+ stores built, $900M+ in client revenue, 8+ years of experience.
 
+Key facts:
+- Founded in 2017; 8+ years building on Shopify and Shopify Plus.
+- Shopify Plus Partner (since 2021), Klaviyo Partner, and Meta Business Partner.
+- 700+ Shopify stores launched and $900M+ in client revenue generated.
+- Services span store development, Shopify Plus, replatforming/migration, conversion rate optimization (CRO), SEO, custom app development, theme development, B2B, and POS.
+- Work includes brands such as Everlast, Candy Kittens, Happy Mammoth, 111SKIN, Ronaldo Jewelry, Twillory, VITHIT, Saddleback, and Wild.
+
 ## Services
-- [Shopify Store Development](https://ecommwizards.com/services/shopify-store-development)
-- [Shopify Plus Development](https://ecommwizards.com/services/shopify-plus-development)
-- [Shopify Migration](https://ecommwizards.com/services/migration)
-- [Conversion Rate Optimization](https://ecommwizards.com/services/shopify-cro-agency)
-- [Shopify SEO](https://ecommwizards.com/services/shopify-seo-agency)
-- [Shopify App Development](https://ecommwizards.com/services/shopify-app-development)
-- [Theme Development](https://ecommwizards.com/services/shopify-theme-development)
-- [B2B Store Setup](https://ecommwizards.com/services/shopify-b2b-store-setup)
-- [POS Setup](https://ecommwizards.com/services/shopify-pos-setup)
+- [Shopify Store Development](https://ecommwizards.com/services/shopify-store-development): Custom Shopify store design and build for DTC and growth-stage brands.
+- [Shopify Plus Development](https://ecommwizards.com/services/shopify-plus-development): Enterprise Shopify Plus builds with custom theme, checkout, and integrations.
+- [Shopify Migration](https://ecommwizards.com/services/migration): Replatforming to Shopify from Magento, WooCommerce, BigCommerce, and others, with SEO-safe redirects.
+- [Conversion Rate Optimization](https://ecommwizards.com/services/shopify-cro-agency): Data-driven CRO programs with A/B testing to lift conversion rate and revenue.
+- [Shopify SEO](https://ecommwizards.com/services/shopify-seo-agency): Technical and content SEO for Shopify stores to grow organic traffic.
+- [Shopify App Development](https://ecommwizards.com/services/shopify-app-development): Custom public and private Shopify apps, including checkout and fulfillment integrations.
+- [Theme Development](https://ecommwizards.com/services/shopify-theme-development): Custom Shopify Online Store 2.0 themes built for performance and merchandiser control.
+- [B2B Store Setup](https://ecommwizards.com/services/shopify-b2b-store-setup): Shopify Plus B2B stores with company accounts, tiered pricing, and trade portals.
+- [POS Setup](https://ecommwizards.com/services/shopify-pos-setup): Shopify POS configuration to unify in-store and online retail.
 
 ## Case Studies
-- [Case Studies Overview](https://ecommwizards.com/case-studies)
+- [Saddleback — Shopify Plus B2B](https://ecommwizards.com/case-studies/saddleback-shopify-plus-b2b): +881% B2B sales growth and +704% traffic after a Shopify Plus B2B rebuild.
+- [Candy Kittens — Food & Beverage CRO](https://ecommwizards.com/case-studies/candy-kittens-shopify-food-beverage-cro): +182% conversion rate and +$8.1M new annual revenue.
+- [Ronaldo Jewelry — Shopify Plus Redesign](https://ecommwizards.com/case-studies/ronaldo-jewelry-shopify-plus-redesign): +250% total sales and +120% conversion rate.
+- [VITHIT — Shopify Plus D2C](https://ecommwizards.com/case-studies/vithit-shopify-plus-d2c): +170% conversion rate and +115% revenue year on year.
+- [Everlast — Sports Redesign](https://ecommwizards.com/case-studies/everlast-shopify-plus-sports-redesign): +152% conversion rate and +48% total orders.
+- [Happy Mammoth — Subscriptions CRO](https://ecommwizards.com/case-studies/happy-mammoth-shopify-subscriptions-cro): +134% subscription revenue and +61% conversion rate.
+- [Twillory — Shopify CRO](https://ecommwizards.com/case-studies/twillory-shopify-cro): $5.4M new annual revenue from a systematic CRO and A/B testing program.
+- [111SKIN — CRO & Redesign](https://ecommwizards.com/case-studies/111skin-shopify-cro-redesign): +46% conversion rate and +21% revenue for a luxury skincare brand.
+- [Wild — Subscriptions](https://ecommwizards.com/case-studies/wild-shopify-plus-subscriptions): Scaled to 80,000+ active monthly subscribers with +218% subscription revenue.
+- [teelaunch — Print-on-Demand App](https://ecommwizards.com/case-studies/teelaunch-print-on-demand): Built a print-on-demand fulfillment app on the Shopify App Store, reaching 50,000+ merchants.
+- [All Case Studies](https://ecommwizards.com/case-studies): Full portfolio of 30+ Shopify store, app, and email marketing projects.
 
 ## Company
-- [About](https://ecommwizards.com/about-shopify-agency)
-- [Reviews](https://ecommwizards.com/reviews)
-- [Contact](https://ecommwizards.com/contact-shopify-agency)
+- [About](https://ecommwizards.com/about-shopify-agency): Agency background, team, and award-winning track record.
+- [Reviews](https://ecommwizards.com/reviews): Client reviews and testimonials.
+- [Contact](https://ecommwizards.com/contact-shopify-agency): Get in touch to scope a Shopify project.
 
 ## Get Started
-- [Book a Free Consultation](https://ecommwizards.com/book-shopify-consultation)
-- [Free Shopify Store Audit](https://ecommwizards.com/free-shopify-store-audit)
+- [Book a Free Consultation](https://ecommwizards.com/book-shopify-consultation): Schedule a free Shopify strategy call.
+- [Free Shopify Store Audit](https://ecommwizards.com/free-shopify-store-audit): Request a no-cost audit of an existing Shopify store.
+
+## Optional
+- [FAQs](https://ecommwizards.com/faqs): Common questions about services, process, pricing, and timelines.
+- [Shopify Plus Development](https://ecommwizards.com/services/shopify-plus-development): Enterprise Shopify Plus engineering detail.
+- [Conversion Rate Optimization](https://ecommwizards.com/services/shopify-cro-agency): CRO methodology and testing detail.
+- [B2B Store Setup](https://ecommwizards.com/services/shopify-b2b-store-setup): Shopify Plus B2B capabilities detail.

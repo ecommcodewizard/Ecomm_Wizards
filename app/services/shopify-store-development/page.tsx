@@ -851,7 +851,7 @@ export default function ShopifyStoreDevelopmentPage() {
                       const stats = [
                         { num: "700+",   label: "Stores Built" },
                         { num: "$900M+", label: "Revenue Generated" },
-                        { num: "10+",    label: "Awards For Ecomm Wizards" },
+                        { num: "9+",     label: "Awards For Ecomm Wizards" },
                         { num: "8+",     label: "Years of Experience" },
                       ];
                       // duplicate first slide at the tail so the wrap-around is seamless

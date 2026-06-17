@@ -423,7 +423,7 @@ export default function Page() {
             </p>
             <div className="std-hero-stats">
               {[
-                { number: "10+",    label: "Years Experience" },
+                { number: "8+",     label: "Years Experience" },
                 { number: "700+",   label: "Stores Built" },
                 { number: "$900M+", label: "Revenue Generated" },
                 { number: "28.5%",  label: "Avg Conversion Lift" },
