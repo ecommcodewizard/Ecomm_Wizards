@@ -120,7 +120,7 @@ const SERVICES = [
 const METRICS = [
   { value: "700+",   label: "Stores Launched",      icon: "ðŸª" },
   { value: "$900M+", label: "Revenue Generated",     icon: "ðŸ'°" },
-  { value: "12+",    label: "Years of Experience",   icon: "ðŸ†" },
+  { value: "8+",     label: "Years of Experience",   icon: "ðŸ†" },
   { value: "98%",    label: "Client Retention Rate", icon: "ðŸ¤" },
 ];
 
@@ -623,7 +623,7 @@ export default function HomePage() {
                 { icon: <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect x="1" y="8" width="10" height="19" rx="1.5" stroke="currentColor" strokeWidth="1.6"/><rect x="14" y="1" width="13" height="26" rx="1.5" stroke="currentColor" strokeWidth="1.6"/></svg>, value: "700+", label: "Shopify Stores Built" },
                 { icon: <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M3 22L9 15L15 19L23 9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M19 9h4v4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>, value: "$900M+", label: "Revenue Generated" },
                 { icon: <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="10" r="6" stroke="currentColor" strokeWidth="1.6"/><path d="M4 26c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>, value: "8+", label: "Years of Experience" },
-                { icon: <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M9 4H5a1 1 0 00-1 1v4c0 6.627 4.477 12.246 10.666 13.773M19 4h4a1 1 0 011 1v4c0 6.627-4.477 12.246-10.666 13.773" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M9 4h10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>, value: "10+", label: "Awards For Ecomm Wizards" },
+                { icon: <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M9 4H5a1 1 0 00-1 1v4c0 6.627 4.477 12.246 10.666 13.773M19 4h4a1 1 0 011 1v4c0 6.627-4.477 12.246-10.666 13.773" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M9 4h10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>, value: "9+", label: "Awards For Ecomm Wizards" },
               ].map((s, i) => (
                 <div
                   key={i}

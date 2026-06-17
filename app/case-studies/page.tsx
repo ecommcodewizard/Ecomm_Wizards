@@ -43,7 +43,7 @@ const GRADIENT_TEXT = {
 } as const;
 
 const PAGE_STATS = [
-  { value: "10+", label: "Years Experience" },
+  { value: "8+", label: "Years Experience" },
   { value: "700+", label: "Stores Built" },
   { value: "$900M+", label: "Revenue Generated" },
   { value: "28.5%", label: "Avg Conversion Lift" },

@@ -5,7 +5,7 @@ import Image from "next/image";
 const stats = [
   { value: "8+",     label: "Years of Experience" },
   { value: "$900M+", label: "Revenue Generated" },
-  { value: "10+",    label: "Awards For Ecomm Wizards" },
+  { value: "9+",     label: "Awards For Ecomm Wizards" },
   { value: "700+",   label: "Stores Built" },
 ];
 
