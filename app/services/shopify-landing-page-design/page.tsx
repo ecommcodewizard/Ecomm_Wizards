@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Image from "next/image";
 import Link from "next/link";
 import LpAccordion from "./LpAccordion";
@@ -29,13 +30,13 @@ export const metadata: Metadata = {
     siteName: "Ecomm Wizards",
     title: "Shopify Landing Page Design | High-Converting Pages",
     description: META_DESCRIPTION,
-    images: [{ url: "/images/partner-images-1-1.webp", alt: "shopify landing page design by Ecomm Wizards" }],
+    images: [{ url: ogImage("Shopify Landing Page Design"), width: 1200, height: 630, alt: "Shopify Landing Page Design — Ecomm Wizards" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Shopify Landing Page Design | High-Converting Pages",
     description: META_DESCRIPTION,
-    images: ["/images/partner-images-1-1.webp"],
+    images: [ogImage("Shopify Landing Page Design")],
   },
 };
 

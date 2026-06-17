@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Image from "next/image";
 import Link from "next/link";
 import CroAccordion from "./CroAccordion";
@@ -29,13 +30,13 @@ export const metadata: Metadata = {
     siteName: "Ecomm Wizards",
     title: "Best Shopify CRO Agency | Conversion Rate Optimization",
     description: META_DESCRIPTION,
-    images: [{ url: "/images/main-hero-f-desktop.webp", alt: "shopify cro agency by Ecomm Wizards" }],
+    images: [{ url: ogImage("Shopify CRO Agency"), width: 1200, height: 630, alt: "Shopify CRO Agency — Ecomm Wizards" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Best Shopify CRO Agency | Conversion Rate Optimization",
     description: META_DESCRIPTION,
-    images: ["/images/main-hero-f-desktop.webp"],
+    images: [ogImage("Shopify CRO Agency")],
   },
 };
 
