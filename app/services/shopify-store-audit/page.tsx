@@ -70,17 +70,16 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
 ];
 
 const META_DESCRIPTION =
-  "Get a free Shopify store audit from conversion experts. We analyze CRO, SEO, speed, and UX to uncover hidden revenue leaks. Request yours today.";
+  "Get a professional Shopify store audit from conversion experts. We analyze CRO, SEO, speed, and UX to uncover hidden revenue leaks. Request yours today.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-store-audit";
 
 export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
-  title: { absolute: "Free Shopify Store Audit | Conversion Experts" },
+  title: { absolute: "Shopify Store Audit | CRO, SEO & UX Audit Service" },
   description: META_DESCRIPTION,
   keywords: [
     "Shopify store audit",
-    "free Shopify store audit",
     "Shopify CRO audit",
     "Shopify conversion audit",
     "professional Shopify audit",
@@ -97,7 +96,7 @@ export const metadata: Metadata = {
     type: "website",
     url: CANONICAL_URL,
     siteName: "Ecomm Wizards",
-    title: "Free Shopify Store Audit | Conversion Experts",
+    title: "Shopify Store Audit | CRO, SEO & UX Audit Service",
     description: META_DESCRIPTION,
     images: [
       {
@@ -108,7 +107,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Shopify Store Audit | Conversion Experts",
+    title: "Shopify Store Audit | CRO, SEO & UX Audit Service",
     description: META_DESCRIPTION,
     images: ["/images/shopify-audit-unlock.webp"],
   },
@@ -161,7 +160,7 @@ export default function Page() {
               className="text-[34px] sm:text-[40px] lg:text-[40px] min-[1440px]:text-[42px] leading-[1.15]"
               style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}
             >
-              <span style={GRADIENT_TEXT}>Free Shopify Store Audit</span>{" "}
+              <span style={GRADIENT_TEXT}>Shopify Store Audit</span>{" "}
               <span style={{ color: "#FFFFFF" }}>That Reveals Hidden Revenue Leaks</span>
             </h1>
 
