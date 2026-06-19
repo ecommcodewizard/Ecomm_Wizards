@@ -132,6 +132,7 @@ export default function CaseStudySlider({ slides, intervalMs = 6000, showDots = 
               type="button"
               className={`ssd-results-dot${i === index ? " is-active" : ""}`}
               aria-label={`Go to slide ${i + 1}`}
+              tabIndex={-1}
               onClick={() => setIndex(i)}
             />
           ))}
