@@ -345,11 +345,15 @@ export default function Page() {
           </div>
 
           <div className="b2s-hero-visual-stack">
+            <link rel="preload" as="image" href="/images/bigcommerce-hero-bg.png" fetchPriority="high" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/bigcommerce-hero-bg.png"
               alt="BigCommerce to Shopify migration: Shopify admin and storefront after the move"
-              loading="lazy"
+              width={1920}
+              height={1493}
+              loading="eager"
+              fetchPriority="high"
             />
           </div>
         </div>
