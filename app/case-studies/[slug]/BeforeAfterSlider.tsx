@@ -52,6 +52,18 @@ export default function BeforeAfterSlider({ beforeSrc, beforeAlt, afterSrc, afte
         {/* Slider */}
         <div
           ref={containerRef}
+          role="slider"
+          tabIndex={0}
+          aria-label="Before and after image comparison"
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={Math.round(position)}
+          onKeyDown={(e) => {
+            if (e.key === "ArrowLeft") { e.preventDefault(); setPosition((p) => Math.max(2, p - 2)); }
+            else if (e.key === "ArrowRight") { e.preventDefault(); setPosition((p) => Math.min(98, p + 2)); }
+            else if (e.key === "Home") { e.preventDefault(); setPosition(2); }
+            else if (e.key === "End") { e.preventDefault(); setPosition(98); }
+          }}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}

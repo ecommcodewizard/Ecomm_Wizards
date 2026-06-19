@@ -144,6 +144,9 @@ export default function GrowthChart() {
               {yearData.map((yearEntry, yi) => (
                 <div
                   key={yearEntry.year}
+                  role="button"
+                  tabIndex={-1}
+                  aria-label={`Highlight ${yearEntry.year} on the growth chart`}
                   onClick={() => handleYearSelect(yearEntry.year)}
                   style={{
                     flex: barsPerYear,
@@ -226,7 +229,11 @@ export default function GrowthChart() {
               <div
                 key={d.year}
                 ref={(el) => { cardRefs.current[i] = el; }}
+                role="button"
+                tabIndex={0}
+                aria-label={`Show ${d.year} milestone details`}
                 onClick={() => handleYearSelect(d.year)}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleYearSelect(d.year); } }}
                 style={{
                   borderBottom: isXS ? "none" : i < yearData.length - 1 ? "1px solid rgba(255,255,255,0.1)" : "none",
                   borderRight: isXS ? "1px solid rgba(255,255,255,0.1)" : "none",
