@@ -621,6 +621,7 @@ export default function Page() {
           </div>
 
           <div className="w2s-hero-visual">
+            <link rel="preload" as="image" href="/images/prestashop-hero.webp" fetchPriority="high" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/prestashop-hero.webp"
@@ -947,7 +948,7 @@ export default function Page() {
                 />
                 <span className="w2s-compare-logo-overlay" aria-hidden="true">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/ecomm-green-logo-cropped.png" alt="" loading="lazy" />
+                  <img src="/images/ecomm-green-logo-cropped.png" alt="" width={86} height={79} loading="lazy" />
                 </span>
               </div>
               <blockquote className="w2s-compare-quote">

@@ -681,13 +681,15 @@ export default function Page() {
           </div>
 
           <div className="w2s-hero-visual">
+            <link rel="preload" as="image" href="/images/hydrogen-hero.webp" fetchPriority="high" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/hydrogen-hero.webp"
               alt="Shopify Hydrogen migration dashboard showing products, orders, and customers"
               width={1600}
               height={1124}
-              loading="lazy"
+              loading="eager"
+              fetchPriority="high"
             />
           </div>
         </div>
@@ -712,7 +714,7 @@ export default function Page() {
               />
               <div className="shy-why-badge" aria-label="Ecomm Wizards, Shopify Plus Experts">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/ecomm-green-logo-cropped.png" alt="Ecomm Wizards" loading="lazy" />
+                <img src="/images/ecomm-green-logo-cropped.png" alt="Ecomm Wizards" width={86} height={79} loading="lazy" />
                 <p className="shy-why-badge-subtitle">Shopify Plus Experts</p>
                 <div className="shy-why-badge-stars" aria-hidden="true">
                   {[0, 1, 2, 3, 4].map((i) => (
