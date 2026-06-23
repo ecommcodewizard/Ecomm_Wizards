@@ -9,7 +9,7 @@ import { useState } from "react";
  * endpoint (https://formspree.io/f/xxxx) or your own /api route here. That is
  * the only change needed to start capturing leads.
  */
-const FORM_ENDPOINT = "";
+const FORM_ENDPOINT = "/api/lead";
 
 const SITUATION_OPTIONS = [
   "I want to redo everything, and need help!",
@@ -80,7 +80,7 @@ export default function AuditForm({ formId = "audit" }: { formId?: string }) {
         const res = await fetch(FORM_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify(values),
+          body: JSON.stringify({ type: "audit", ...values }),
         });
         if (!res.ok) throw new Error("Request failed");
       } else {

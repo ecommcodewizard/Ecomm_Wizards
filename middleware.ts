@@ -7,6 +7,20 @@ import { NextRequest, NextResponse } from "next/server";
 // Both fold into a single 308 to the clean apex URL. Once the host is the apex
 // and `c` is gone, nothing matches again, so there is no chain or loop.
 export function middleware(req: NextRequest) {
+  // Protect the internal lead dashboard with HTTP Basic Auth. This runs on the
+  // Edge runtime, so it uses only headers + btoa (no Node APIs / no DB).
+  if (req.nextUrl.pathname.startsWith("/admin")) {
+    const auth = req.headers.get("authorization");
+    const expected = "Basic " + btoa(`${process.env.ADMIN_USER}:${process.env.ADMIN_PASSWORD}`);
+    if (auth !== expected) {
+      return new NextResponse("Authentication required.", {
+        status: 401,
+        headers: { "WWW-Authenticate": 'Basic realm="Ecomm Wizards Admin", charset="UTF-8"' },
+      });
+    }
+    return NextResponse.next();
+  }
+
   const url = req.nextUrl.clone();
   let changed = false;
 
