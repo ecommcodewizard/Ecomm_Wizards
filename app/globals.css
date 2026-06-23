@@ -804,3 +804,10 @@
   .ssd-results-app-chip img { width: 16px; height: 16px; }
 }
 
+/* ─── Internal admin (/admin/*) renders its own full-screen shell. When an admin
+   page is present (marked by .ew-admin), hide the public site chrome (Header /
+   CTABar / Footer) and remove the main top padding. Scoped purely to admin via
+   :has(), so the rest of the site is untouched. ─── */
+body:has(.ew-admin) > *:not(main):not(script):not(style) { display: none !important; }
+body:has(.ew-admin) > main { padding: 0 !important; }
+

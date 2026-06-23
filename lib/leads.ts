@@ -75,3 +75,76 @@ export async function getLeads(limit = 200): Promise<LeadRow[]> {
   );
   return rows as unknown as LeadRow[];
 }
+
+export interface LeadStats {
+  total: number;
+  today: number;
+  last7: number;
+  last30: number;
+  byDay: { date: string; count: number }[];
+  bySource: { label: string; count: number }[];
+  byType: { audit: number; contact: number };
+}
+
+// Aggregate counts for the admin dashboard. Read-only; reuses the same pool as
+// insertLead/getLeads. created_at is stored in UTC (pool timezone "Z"), so every
+// window uses UTC functions for consistency.
+export async function getLeadStats(): Promise<LeadStats> {
+  const pool = getPool();
+
+  const [totalsRows] = await pool.query<RowDataPacket[]>(
+    `SELECT
+       COUNT(*) AS total,
+       SUM(created_at >= UTC_DATE()) AS today,
+       SUM(created_at >= UTC_TIMESTAMP() - INTERVAL 7 DAY) AS last7,
+       SUM(created_at >= UTC_TIMESTAMP() - INTERVAL 30 DAY) AS last30
+     FROM leads`,
+  );
+  const t = totalsRows[0] ?? {};
+
+  const [dayRows] = await pool.query<RowDataPacket[]>(
+    `SELECT DATE_FORMAT(created_at, '%Y-%m-%d') AS d, COUNT(*) AS c
+       FROM leads
+      WHERE created_at >= UTC_DATE() - INTERVAL 29 DAY
+      GROUP BY d`,
+  );
+  const dayMap = new Map<string, number>();
+  for (const r of dayRows) dayMap.set(String(r.d), Number(r.c) || 0);
+
+  // Continuous 30-day series (fill gaps with 0), oldest -> newest, in UTC.
+  const byDay: { date: string; count: number }[] = [];
+  const now = new Date();
+  const todayUTC = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+  for (let i = 29; i >= 0; i--) {
+    const key = new Date(todayUTC - i * 86_400_000).toISOString().slice(0, 10);
+    byDay.push({ date: key, count: dayMap.get(key) ?? 0 });
+  }
+
+  const [sourceRows] = await pool.query<RowDataPacket[]>(
+    `SELECT COALESCE(NULLIF(source, ''), 'Unknown') AS label, COUNT(*) AS c
+       FROM leads
+      GROUP BY label
+      ORDER BY c DESC
+      LIMIT 6`,
+  );
+  const bySource = sourceRows.map((r) => ({ label: String(r.label), count: Number(r.c) || 0 }));
+
+  const [typeRows] = await pool.query<RowDataPacket[]>(
+    `SELECT type, COUNT(*) AS c FROM leads GROUP BY type`,
+  );
+  const byType = { audit: 0, contact: 0 };
+  for (const r of typeRows) {
+    if (r.type === "audit") byType.audit = Number(r.c) || 0;
+    else if (r.type === "contact") byType.contact = Number(r.c) || 0;
+  }
+
+  return {
+    total: Number(t.total) || 0,
+    today: Number(t.today) || 0,
+    last7: Number(t.last7) || 0,
+    last30: Number(t.last30) || 0,
+    byDay,
+    bySource,
+    byType,
+  };
+}
