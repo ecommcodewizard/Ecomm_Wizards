@@ -190,49 +190,6 @@ function FooterCol({ title, links, className = "" }: { title: string; links: { l
   );
 }
 
-// ─── Newsletter ───────────────────────────────────────────────────────────────
-
-function Newsletter() {
-  const [email, setEmail] = useState("");
-  const [sent, setSent] = useState(false);
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setSent(true);
-    setEmail("");
-  }
-
-  return (
-    <div>
-      <h4 className="mb-2 text-[15px] font-semibold text-white">Stay in the Loop</h4>
-      <p className="mb-5 text-sm text-white/60 leading-relaxed">
-        Get the latest Shopify insights and agency news delivered to your inbox.
-      </p>
-      {sent ? (
-        <p className="rounded-lg border border-gold/40 bg-gold/10 px-4 py-3 text-sm text-gold">
-          Thanks! You&apos;re on the list.
-        </p>
-      ) : (
-        <form onSubmit={handleSubmit} className="space-y-3">
-          <input
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Your email address"
-            className="w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-gold focus:outline-none transition-colors"
-          />
-          <button
-            type="submit"
-            className="w-full rounded-lg bg-gold px-4 py-3 text-sm font-semibold text-black transition-opacity hover:opacity-90"
-          >
-            Subscribe
-          </button>
-        </form>
-      )}
-    </div>
-  );
-}
 
 // ─── Footer ───────────────────────────────────────────────────────────────────
 

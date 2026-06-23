@@ -9,7 +9,7 @@ import { useState } from "react";
  * endpoint (https://formspree.io/f/xxxx) or your own /api route here. That is
  * the only change needed to start capturing leads.
  */
-const FORM_ENDPOINT = "";
+const FORM_ENDPOINT = "/api/lead";
 
 const SITUATION_OPTIONS = [
   "I want to redo everything, and need help!",
