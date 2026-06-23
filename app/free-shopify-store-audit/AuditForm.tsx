@@ -80,7 +80,7 @@ export default function AuditForm({ formId = "audit" }: { formId?: string }) {
         const res = await fetch(FORM_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify(values),
+          body: JSON.stringify({ type: "audit", ...values }),
         });
         if (!res.ok) throw new Error("Request failed");
       } else {
