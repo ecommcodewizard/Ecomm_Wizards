@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { redirect } from "next/navigation";
 import { isAuthed } from "@/lib/auth";
 import LogoutButton from "./LogoutButton";
@@ -15,7 +16,7 @@ const ADMIN_CSS = `
 .ew-admin *{box-sizing:border-box}
 .ewa-sidebar{width:240px;flex-shrink:0;background:#fff;border-right:1px solid #e5e7eb;display:flex;flex-direction:column;padding:22px 16px}
 .ewa-brand{display:flex;align-items:center;gap:11px;padding:4px 8px 24px}
-.ewa-brand-mark{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#2A9555,#61CE70);flex-shrink:0}
+.ewa-brand-mark{width:34px;height:34px;border-radius:9px;background:#000;flex-shrink:0;display:flex;align-items:center;justify-content:center}
 .ewa-brand-name{font-weight:700;font-size:15px;color:#0f172a;line-height:1.1}
 .ewa-brand-sub{font-size:10px;color:#94a3b8;letter-spacing:.12em;text-transform:uppercase;margin-top:2px}
 .ewa-nav{display:flex;flex-direction:column;gap:4px}
@@ -67,7 +68,9 @@ export default async function ProtectedAdminLayout({ children }: { children: Rea
       <style dangerouslySetInnerHTML={{ __html: ADMIN_CSS }} />
       <aside className="ewa-sidebar">
         <div className="ewa-brand">
-          <span className="ewa-brand-mark" />
+          <span className="ewa-brand-mark">
+            <Image src="/images/ecomm-green-logo-cropped.png" alt="" width={22} height={22} style={{ objectFit: "contain" }} />
+          </span>
           <span>
             <span className="ewa-brand-name" style={{ display: "block" }}>Ecomm Wizards</span>
             <span className="ewa-brand-sub">Admin</span>
