@@ -22,8 +22,10 @@ const AI_CRAWLERS = [
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: AI_CRAWLERS, allow: "/" },
-      { userAgent: "*", allow: "/" },
+      // /admin is the private lead dashboard + login — block all crawlers from it
+      // (the pages also carry a noindex,nofollow meta tag as a second layer).
+      { userAgent: AI_CRAWLERS, allow: "/", disallow: "/admin" },
+      { userAgent: "*", allow: "/", disallow: "/admin" },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
     host: SITE_URL,
