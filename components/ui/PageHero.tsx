@@ -12,21 +12,28 @@ interface PageHeroProps {
   backgroundImage?: string;
   background?: string;
   paddingY?: number;
+  paddingTop?: number;
+  paddingBottom?: number;
   highlightGradient?: boolean;
   secondaryGradient?: boolean;
   primaryWhite?: boolean;
+  subtitleColor?: string;
 }
 
 export default function PageHero({
   badge, title, titleHighlight, subtitle,
   primaryCta, secondaryCta, centered = true, backgroundImage,
   background = "linear-gradient(280deg, rgb(0,0,0) 0%, rgb(18,18,18) 100%)",
-  paddingY, highlightGradient, secondaryGradient, primaryWhite,
+  paddingY, paddingTop, paddingBottom, highlightGradient, secondaryGradient, primaryWhite,
+  subtitleColor = "rgba(255,255,255,0.7)",
 }: PageHeroProps) {
+  const padTop = paddingTop ?? paddingY;
+  const padBottom = paddingBottom ?? paddingY;
+  const customPad = padTop != null || padBottom != null;
   return (
     <section
-      className={`relative overflow-hidden ${paddingY == null ? "pt-24 pb-20 sm:pt-28 sm:pb-24" : ""}`}
-      style={{ background, ...(paddingY != null ? { paddingTop: paddingY, paddingBottom: paddingY } : {}) }}
+      className={`relative overflow-hidden ${customPad ? "" : "pt-24 pb-20 sm:pt-28 sm:pb-24"}`}
+      style={{ background, ...(customPad ? { paddingTop: padTop ?? 0, paddingBottom: padBottom ?? 0 } : {}) }}
     >
       {/* background photo */}
       {backgroundImage && (
@@ -72,8 +79,8 @@ export default function PageHero({
           )}
         </h1>
         <p
-          className={`mt-5 text-white/70 ${centered ? "mx-auto max-w-2xl" : "max-w-2xl"}`}
-          style={{ fontSize: "18px", lineHeight: "28px" }}
+          className={`mt-5 ${centered ? "mx-auto max-w-2xl" : "max-w-2xl"}`}
+          style={{ fontSize: "18px", lineHeight: "28px", color: subtitleColor }}
         >
           {subtitle}
         </p>
