@@ -10,16 +10,23 @@ interface PageHeroProps {
   secondaryCta?: { label: string; href: string };
   centered?: boolean;
   backgroundImage?: string;
+  background?: string;
+  paddingY?: number;
+  highlightGradient?: boolean;
+  secondaryGradient?: boolean;
+  primaryWhite?: boolean;
 }
 
 export default function PageHero({
   badge, title, titleHighlight, subtitle,
   primaryCta, secondaryCta, centered = true, backgroundImage,
+  background = "linear-gradient(280deg, rgb(0,0,0) 0%, rgb(18,18,18) 100%)",
+  paddingY, highlightGradient, secondaryGradient, primaryWhite,
 }: PageHeroProps) {
   return (
     <section
-      className="relative overflow-hidden pt-24 pb-20 sm:pt-28 sm:pb-24"
-      style={{ background: "linear-gradient(280deg, rgb(0,0,0) 0%, rgb(18,18,18) 100%)" }}
+      className={`relative overflow-hidden ${paddingY == null ? "pt-24 pb-20 sm:pt-28 sm:pb-24" : ""}`}
+      style={{ background, ...(paddingY != null ? { paddingTop: paddingY, paddingBottom: paddingY } : {}) }}
     >
       {/* background photo */}
       {backgroundImage && (
@@ -54,7 +61,14 @@ export default function PageHero({
         >
           {title}
           {titleHighlight && (
-            <> <span style={{ color: "var(--color-gold)" }}>{titleHighlight}</span></>
+            <> <span
+              style={highlightGradient ? {
+                background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              } : { color: "var(--color-gold)" }}
+            >{titleHighlight}</span></>
           )}
         </h1>
         <p
@@ -65,7 +79,14 @@ export default function PageHero({
         </p>
         {(primaryCta || secondaryCta) && (
           <div className={`mt-8 flex flex-wrap gap-3 ${centered ? "justify-center" : ""}`}>
-            {primaryCta && (
+            {primaryCta && (primaryWhite ? (
+              <Link
+                href={primaryCta.href}
+                className="group inline-flex items-center justify-center whitespace-nowrap rounded-full border-2 border-transparent bg-white px-6 py-3 text-sm font-semibold text-black transition-all hover:border-gold"
+              >
+                <span className="bg-clip-text group-hover:text-transparent" style={{ backgroundImage: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>{primaryCta.label}</span>
+              </Link>
+            ) : (
               <Link
                 href={primaryCta.href}
                 className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold transition-all"
@@ -78,8 +99,21 @@ export default function PageHero({
               >
                 {primaryCta.label}
               </Link>
-            )}
-            {secondaryCta && (
+            ))}
+            {secondaryCta && (secondaryGradient ? (
+              <span
+                className="group inline-flex p-[2px] rounded-full"
+                style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}
+              >
+                <Link
+                  href={secondaryCta.href}
+                  className="inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-semibold transition-all duration-300 group-hover:bg-white"
+                >
+                  <span className="whitespace-nowrap text-white transition-colors duration-300 group-hover:text-black">{secondaryCta.label}</span>
+                  <Image src="/images/arrow vector.png" alt="" width={16} height={16} className="transition-all duration-300 group-hover:brightness-0" />
+                </Link>
+              </span>
+            ) : (
               <Link
                 href={secondaryCta.href}
                 className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white transition-all"
@@ -90,7 +124,7 @@ export default function PageHero({
               >
                 {secondaryCta.label}
               </Link>
-            )}
+            ))}
           </div>
         )}
       </div>

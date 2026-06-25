@@ -55,8 +55,13 @@ export default function Page() {
         title="Frequently Asked"
         titleHighlight="Questions"
         subtitle="Everything you want to know about working with Ecomm Wizards: pricing, timelines, migrations, SEO, and support. Jump to a topic below."
-        primaryCta={{ label: "Get a Free Quote", href: "/free-shopify-store-audit" }}
+        primaryCta={{ label: "Get a Free Quote", href: "/contact-shopify-agency" }}
         secondaryCta={{ label: "Book a Call", href: "/book-shopify-consultation" }}
+        background="#000"
+        paddingY={60}
+        highlightGradient
+        secondaryGradient
+        primaryWhite
       />
 
       <section style={{ background: "#fff", padding: "64px 20px 72px" }}>
@@ -66,6 +71,9 @@ export default function Page() {
       <CTASection
         heading="Still Have Questions?"
         subheading="Book a free 30-minute call with one of our Shopify experts. No sales pitch, just answers."
+        background="#000"
+        primaryWhite
+        secondaryGradient
       />
     </>
   );
