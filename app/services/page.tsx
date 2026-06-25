@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { og } from "@/lib/og";
-import PageHero from "@/components/ui/PageHero";
-import SectionHeader from "@/components/ui/SectionHeader";
+import ServicesHero from "@/components/sections/ServicesHero";
 import CTASection from "@/components/ui/CTASection";
 import ServiceCategories from "@/components/ServiceCategories";
 import OurWorkSection from "@/components/sections/OurWorkSection";
 import ProcessSection from "@/components/sections/ProcessSection";
 import SocialProofSection from "@/components/sections/SocialProofSection";
 import FAQSection from "@/components/FAQSection";
-import { SERVICE_CATEGORIES, SERVICE_STATS, OUR_WORK } from "@/lib/services";
+import { SERVICE_CATEGORIES, OUR_WORK } from "@/lib/services";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://ecommwizards.com/services" },
@@ -65,50 +63,10 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_JSONLD) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ITEMLIST_JSONLD) }} />
 
-      <PageHero
-        badge="Our Services"
-        title="Shopify Services That"
-        titleHighlight="Grow Revenue"
-        subtitle="Design, build, migrate, optimize, and scale your store. One full-service team behind 700+ stores and $900M+ in revenue."
-        primaryCta={{ label: "Get a Free Quote", href: "/contact-shopify-agency" }}
-        secondaryCta={{ label: "Book a Call", href: "/book-shopify-consultation" }}
-        background="#000"
-        paddingY={64}
-        highlightGradient
-        primaryWhite
-        secondaryGradient
-      />
-
-      {/* Trust strip (continues the black hero) */}
-      <section style={{ background: "#000", padding: "0 20px 56px" }} aria-label="Trusted Shopify agency">
-        <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {SERVICE_STATS.map((s) => (
-              <div key={s.label}>
-                <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: 38, fontWeight: 700, color: "#fff", margin: 0, lineHeight: 1 }}>{s.value}</p>
-                <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: 13, color: "rgba(255,255,255,0.6)", margin: "8px 0 0" }}>{s.label}</p>
-              </div>
-            ))}
-          </div>
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "26px 40px", marginTop: 40, opacity: 0.8 }}>
-            {[1, 2, 3, 4, 5].map((n) => (
-              <Image key={n} src={`/images/main-hero-logo-${n}.webp`} alt="" width={150} height={44} style={{ height: 32, width: "auto", objectFit: "contain" }} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServicesHero />
 
       {/* Services by category */}
-      <section style={{ background: "#fff", padding: "64px 20px 16px" }}>
-        <SectionHeader
-          badge="What we do"
-          title="Everything you need to build, grow, and scale on Shopify"
-          subtitle="Pick a category to explore, or get a free quote and we will map the right services to your goals."
-        />
-        <div style={{ marginTop: 8 }}>
-          <ServiceCategories />
-        </div>
-      </section>
+      <ServiceCategories />
 
       <OurWorkSection
         caseStudies={OUR_WORK}
