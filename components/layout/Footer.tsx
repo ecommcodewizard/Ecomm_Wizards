@@ -31,23 +31,37 @@ const SERVICE_TAGS = [
 ];
 
 const COMPANY = [
-  { label: "About Ecomm Wizards",     href: "/about-shopify-agency" },
-  { label: "All Shopify Services",    href: "/services" },
-  { label: "Partners",                href: "/partners" },
-  { label: "Partner Program",         href: "/partner-program" },
-  { label: "FAQ's",                   href: "/faqs" },
-  { label: "Q4 Breakthrough Journey", href: "/q4-breakthrough-journey" },
+  { label: "About Ecomm Wizards", href: "/about-shopify-agency" },
+  { label: "Case Studies",        href: "/case-studies" },
+  { label: "Contact Us",          href: "/contact-shopify-agency" },
+  { label: "Reviews",             href: "/reviews" },
+  { label: "FAQ's",               href: "/faqs" },
+  { label: "Partners",            href: "/partners" },
+  { label: "Partner Program",     href: "/partner-program" },
 ];
 
-const AWARDS = [
-  { label: "Write a Review", href: "/reviews" },
-  { label: "Reviews",        href: "/reviews" },
-  { label: "UX & UI Audit",  href: "/services/shopify-ux-and-ui-design" },
-  { label: "Case Studies",   href: "/case-studies" },
+// Mobile-only service columns (hidden md+, where the "Select a Service" strip covers services)
+const DESIGN_BUILD = [
+  { label: "Shopify Development Agency",  href: "/services/shopify-development-agency" },
+  { label: "Convert Figma to Shopify",    href: "/services/figma-to-shopify-conversion" },
+  { label: "Shopify Theme Development",   href: "/services/shopify-theme-development" },
+  { label: "Shopify 2.0 Development",     href: "/services/shopify-2-0-development" },
+  { label: "Shopify Plus Development",    href: "/services/shopify-plus-development" },
+  { label: "Headless Shopify Agency",     href: "/services/headless-shopify-agency" },
+  { label: "Shopify Landing Page Design", href: "/services/shopify-landing-page-design" },
 ];
 
-const MIGRATION = [
-  { label: "Migrate to Shopify",              href: "/services/migration" },
+const OPTIMIZE_GROW = [
+  { label: "Shopify CRO Agency",                   href: "/services/shopify-cro-agency" },
+  { label: "Shopify SEO Agency",                   href: "/services/shopify-seo-agency" },
+  { label: "A/B Testing",                          href: "/services/a-b-testing" },
+  { label: "Site Speed Optimizations",             href: "/services/shopify-speed-optimization" },
+  { label: "Shopify Store Audit",                  href: "/services/shopify-store-audit" },
+  { label: "Shopify Analytics and Tracking Setup", href: "/services/shopify-analytics-and-tracking-setup" },
+  { label: "Shopify Maintenance and Support",      href: "/services/shopify-maintenance-and-support" },
+];
+
+const MIGRATE = [
   { label: "Migrate from Magento",            href: "/services/migration/magento-to-shopify" },
   { label: "Migrate from BigCommerce",        href: "/services/migration/bigcommerce-to-shopify" },
   { label: "Migrate from WooCommerce",        href: "/services/migration/woocommerce-to-shopify" },
@@ -58,27 +72,24 @@ const MIGRATION = [
 ];
 
 const GET_STARTED = [
-  { label: "Shopify Development Agency",            href: "/services/shopify-development-agency" },
-  { label: "Shopify UX and UI Design",             href: "/services/shopify-ux-and-ui-design" },
-  { label: "Headless Shopify Agency",              href: "/services/headless-shopify-agency" },
-  { label: "Shopify CRO Agency",                   href: "/services/shopify-cro-agency" },
-  { label: "Shopify Theme Development",            href: "/services/shopify-theme-development" },
-  { label: "Shopify Plus Development",             href: "/services/shopify-plus-development" },
-  { label: "Shopify SEO Agency",                   href: "/services/shopify-seo-agency" },
-  { label: "Shopify Landing Page Design",          href: "/services/shopify-landing-page-design" },
-  { label: "Shopify Maintenance and Support",      href: "/services/shopify-maintenance-and-support" },
-  { label: "Shopify Integrations (ERP, CRM, 3PL)",href: "/services/shopify-integration-services" },
-  { label: "Shopify App Setup & Optimisation",     href: "/services/shopify-app-setup-and-app-optimization" },
-  { label: "Shopify 2.0 Development",             href: "/services/shopify-2-0-development" },
-  { label: "Shopify Analytics and Tracking Setup", href: "/services/shopify-analytics-and-tracking-setup" },
-  { label: "Free Shopify Store Audit",             href: "/free-shopify-store-audit" },
-  { label: "Book a Consultation",                  href: "/book-shopify-consultation" },
-  { label: "Klaviyo Audit",                        href: "/services/klaviyo-audit" },
+  { label: "Build a New Shopify Store", href: "/services/shopify-store-development" },
+  { label: "Free Store Audit",          href: "/free-shopify-store-audit" },
+  { label: "Book a Consultation",       href: "/book-shopify-consultation" },
+  { label: "UX & UI Audit",             href: "/services/shopify-ux-and-ui-design" },
+  { label: "Klaviyo Audit",             href: "/services/klaviyo-audit" },
 ];
 
-const RESOURCES = [
-  { label: "Case Studies", href: "/case-studies" },
-  { label: "Contact",      href: "/contact-shopify-agency" },
+// Desktop + tablet-only columns (hidden on mobile, where the service columns take over)
+const OTHERS = [
+  { label: "On Demand Dev (Bulk Hours)", href: "/bulk-hours" },
+  { label: "Q4 Breakthrough Journey",    href: "/q4-breakthrough-journey" },
+];
+
+const SOCIALS = [
+  { label: "Facebook",    href: "https://facebook.com" },
+  { label: "X / Twitter", href: "https://twitter.com" },
+  { label: "Instagram",   href: "https://instagram.com" },
+  { label: "YouTube",     href: "https://youtube.com" },
 ];
 
 // ─── Social icons ─────────────────────────────────────────────────────────────
@@ -241,8 +252,8 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ── Select a Service — hidden mobile ── */}
-      <div className="hidden sm:block relative overflow-hidden bg-black xl:h-[351px] xl:flex xl:flex-col xl:justify-start">
+      {/* ── Select a Service — desktop + tablet only (md+), complements the mobile service columns ── */}
+      <div className="hidden md:block relative overflow-hidden bg-black xl:h-[351px] xl:flex xl:flex-col xl:justify-start">
         <div className="absolute inset-0" style={{background: "radial-gradient(ellipse 55% 45% at 50% 40%, rgba(61,199,122,0.35) 0%, rgba(61,199,122,0.15) 40%, rgba(61,199,122,0.05) 65%, transparent 80%)"}} />
         <div className="relative z-10 mx-auto w-full max-w-[1320px] p-[24px]">
           <h3 className="mb-6 text-center text-[20px] leading-[30px] font-semibold text-white">Select a Service</h3>
@@ -268,11 +279,13 @@ export default function Footer() {
 
 {/* Nav columns — always visible, accordion on mobile */}
             <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:gap-x-3 md:gap-x-4 lg:gap-x-0 border-t border-white/10 sm:border-t-0">
-              <FooterCol title="Company"             links={COMPANY}     className="md:pt-[10px]" />
-              <FooterCol title="Awards & Reviews"    links={AWARDS}      className="md:pt-[10px]" />
-              <FooterCol title="Migration Solutions" links={MIGRATION}   className="md:pt-[10px]" />
-              <FooterCol title="Get Started"         links={GET_STARTED} />
-              <FooterCol title="Resources & Connect" links={RESOURCES}   />
+              <FooterCol title="Company"            links={COMPANY}       className="md:pt-[10px]" />
+              <FooterCol title="Design & Build"     links={DESIGN_BUILD}  className="md:hidden" />
+              <FooterCol title="Optimize & Grow"    links={OPTIMIZE_GROW} className="md:hidden" />
+              <FooterCol title="Migrate to Shopify" links={MIGRATE}       className="md:pt-[10px]" />
+              <FooterCol title="Get Started"        links={GET_STARTED}   className="md:pt-[10px]" />
+              <FooterCol title="Others"             links={OTHERS}        className="hidden md:block" />
+              <FooterCol title="Socials"            links={SOCIALS}       className="hidden md:block" />
             </div>
 
 
