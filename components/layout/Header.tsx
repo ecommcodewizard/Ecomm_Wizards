@@ -54,6 +54,7 @@ const NAV: NavItem[] = [
       { label: "A/B Testing",           href: "/services/a-b-testing",                           description: "Data-driven experimentation" },
       { label: "Analytics & Tracking",  href: "/services/shopify-analytics-and-tracking-setup",  description: "GA4, GTM, pixels — done right" },
       { label: "SEO Agency",            href: "/services/shopify-seo-agency",                     description: "Organic growth for Shopify stores" },
+      { label: "Agentic Commerce",      href: "/services/shopify-agentic-commerce",               description: "Get found & bought by AI assistants" },
       { label: "Maintenance & Support", href: "/services/shopify-maintenance-and-support",                 description: "Ongoing care for your store" },
     ],
   },
