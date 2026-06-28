@@ -240,14 +240,13 @@ export default function Page() {
               className="sat-hero-img"
               style={{ width: "auto", height: "auto", maxHeight: "480px", maxWidth: "100%", borderRadius: "16px", display: "block", margin: "0 auto" }}
             />
-            <span
-              aria-hidden
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/shopify-iccon-black.webp"
+              alt="Shopify"
               className="ac-hero-shopify-icon"
-              style={{ position: "absolute", right: "2%", top: "58%", display: "flex", alignItems: "center", justifyContent: "center", width: "92px", height: "92px", borderRadius: "22px", background: "#fff", boxShadow: "0 18px 44px rgba(0,0,0,0.5)" }}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/shopify-iccon-black.webp" alt="Shopify" style={{ width: "58px", height: "58px", objectFit: "contain", filter: "brightness(0)" }} />
-            </span>
+              style={{ position: "absolute", right: "3%", top: "56%", width: "98px", height: "98px", objectFit: "contain", filter: "drop-shadow(0 0 10px rgba(255,255,255,0.12))" }}
+            />
           </div>
         </div>
       </section>
