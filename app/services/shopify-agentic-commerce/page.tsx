@@ -52,10 +52,10 @@ const GRADIENT_TEXT = {
 } as const;
 
 const HERO_STATS = [
-  { value: "$3–5T", label: "AI commerce by 2030" },
-  { value: "64%", label: "Shoppers ready to buy via AI" },
-  { value: "15×", label: "AI order growth in 2025" },
-  { value: "5", label: "AI channels we cover" },
+  { value: "$3–5T", label: "Market by 2030" },
+  { value: "64%", label: "Shoppers use AI" },
+  { value: "15×", label: "AI order growth" },
+  { value: "5", label: "AI channels" },
 ];
 
 // Reused case-study slides (agency credibility), same set used on other service pages
@@ -480,8 +480,8 @@ const CSS = `
 
 /* Hero (ported from the analytics & tracking page) */
 .std-badge{display:inline-block;padding:6px 16px;background:rgba(97,206,112,0.12);border:1px solid rgba(97,206,112,0.3);border-radius:999px;color:#61ce70;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
-.std-hero-stats{display:flex;flex-wrap:wrap;gap:0;margin-top:32px;border-top:1px solid rgba(255,255,255,0.12);padding-top:24px}
-.std-hero-stat-item{display:flex;flex-direction:column;gap:4px;padding:0 28px 0 0;margin-right:28px;border-right:1px solid rgba(255,255,255,0.12)}
+.std-hero-stats{display:flex;flex-wrap:nowrap;gap:0;margin-top:32px;border-top:1px solid rgba(255,255,255,0.12);padding-top:24px}
+.std-hero-stat-item{display:flex;flex-direction:column;gap:4px;padding:0 22px 0 0;margin-right:22px;border-right:1px solid rgba(255,255,255,0.12);white-space:nowrap}
 .std-hero-stat-item:last-child{border-right:none;padding-right:0;margin-right:0}
 .std-hero-stat-num{font-size:28px;font-weight:800;line-height:1;background:var(--brand-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .std-hero-stat-label{font-size:13px;font-weight:500;color:#fff;letter-spacing:.02em}
@@ -489,7 +489,7 @@ const CSS = `
 .sat-hero-img{width:100%;height:auto;border-radius:16px;display:block;box-shadow:0 24px 64px rgba(0,0,0,0.45)}
 @media (min-width:1025px) and (max-width:1307px){.std-hero-stats{flex-wrap:nowrap!important}.std-hero-stat-item{padding-right:18px!important;margin-right:18px!important}.std-hero-stat-num{font-size:24px!important}.std-hero-stat-label{font-size:12px!important}}
 @media (max-width:1024px){.std-hero-h1{font-size:40px!important}.std-hero-inner{padding:60px 20px!important}.std-hero-p{margin-top:16px!important}.std-hero-stats{flex-wrap:nowrap!important;margin-top:16px!important;padding-top:16px!important}.std-hero-stat-item{padding-right:16px!important;margin-right:16px!important}.sat-hero-img-wrap{margin-top:8px}}
-@media (max-width:640px){.std-hero-h1{font-size:28px!important;line-height:1.22!important}.std-hero-p{font-size:14px!important;line-height:24px!important}.std-hero-stats{gap:0;margin-top:24px;padding-top:18px}.std-hero-stat-item{padding-right:16px;margin-right:16px}.sat-hero-img{border-radius:10px}}
+@media (max-width:640px){.std-hero-h1{font-size:28px!important;line-height:1.22!important}.std-hero-p{font-size:14px!important;line-height:24px!important}.std-hero-stats{gap:8px 0;margin-top:24px;padding-top:18px;flex-wrap:wrap!important}.std-hero-stat-item{width:50%;padding-right:16px;margin-right:0}.sat-hero-img{border-radius:10px}}
 
 /* Two-col */
 .ac-two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
