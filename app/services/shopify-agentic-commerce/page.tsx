@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { ogImage } from "@/lib/og";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/ui/CTASection";
@@ -231,12 +230,13 @@ export default function Page() {
           </div>
 
           <div className="sat-hero-img-wrap">
-            <Image
-              src="/images/migration-shopify-right-image.webp"
-              alt="Shopify products surfacing inside AI assistants like ChatGPT and Gemini"
-              width={640}
-              height={480}
-              priority
+            <video
+              src="/images/Shopify%20Agentic%20Commerce.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              aria-label="Shopify products surfacing inside AI assistants like ChatGPT and Gemini"
               className="sat-hero-img"
               style={{ width: "100%", height: "auto", borderRadius: "16px", display: "block" }}
             />
