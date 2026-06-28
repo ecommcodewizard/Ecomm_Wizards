@@ -126,10 +126,11 @@ const OFFERINGS = [
 ];
 
 const PROCESS = [
-  { n: "01", title: "Audit", body: "We benchmark how your products show up across AI assistants today and pinpoint the gaps." },
-  { n: "02", title: "Optimize", body: "We enrich your product data, schema, and feeds for Generative Engine Optimization." },
-  { n: "03", title: "Enable", body: "We configure Agentic Storefronts and channel settings across ChatGPT, Gemini, Copilot, Perplexity, and Shop." },
-  { n: "04", title: "Monitor & grow", body: "We track attribution and AI visibility and keep optimizing as the protocols evolve." },
+  { step: "01.", title: "Audit", desc: "We benchmark how your products show up across AI assistants today, how competitors appear, and exactly where your data is letting you down. You get a written agent-readiness report before any work starts." },
+  { step: "02.", title: "Plan", desc: "We map the structured data, schema, feeds, and content changes your catalog needs, prioritized by impact. You sign off before work begins." },
+  { step: "03.", title: "Optimize", desc: "We enrich your product data and add product, offer, and review schema with GTIN identifiers, then clean your feeds so AI agents can read and trust every listing." },
+  { step: "04.", title: "Enable", desc: "We configure Agentic Storefronts and your per-channel settings across ChatGPT, Gemini, Copilot, Perplexity, and Shop, ready for both UCP and ACP." },
+  { step: "05.", title: "Monitor & Grow", desc: "We track channel attribution and your AI visibility, then keep refining your data so AI agents keep choosing you as the landscape shifts." },
 ];
 
 const BEST_FOR = [
@@ -191,7 +192,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_JSONLD) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSONLD) }} />
 
-      {/* 1. Hero (dark, 2-col) — ported from the analytics & tracking page */}
+      {/* 1. Hero (dark, 2-col) - ported from the analytics & tracking page */}
       <section className="std-hero" style={{ background: "#000000" }} aria-label="Shopify agentic commerce hero">
         <div
           className="std-hero-inner mx-auto grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center"
@@ -242,7 +243,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Trust strip — logo marquee (ported from the analytics page) */}
+      {/* Trust strip - logo marquee (ported from the analytics page) */}
       <section className="std-trust" style={{ background: "#fff" }} aria-label="Brands that trust Ecomm Wizards">
         <div className="mx-auto" style={{ maxWidth: "1320px", padding: "48px 20px" }}>
           <h2 className="std-trust-h2 text-center" style={{ color: "#000", fontSize: 30, fontWeight: 700, lineHeight: 1.3, margin: 0 }}>
@@ -464,19 +465,48 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 11. Process */}
-      <section className="ac-sec ac-white">
-        <div className="ac-wrap">
-          <div className="ac-head">
-            <span className="ac-eyebrow">How it works</span>
-            <h2 className="ac-h2">Our agent-readiness process</h2>
+      {/* 11. Process (ported from the analytics page, 5 steps) */}
+      <section className="std-process max-sm:!py-[40px]" style={{ background: "#fff", padding: "53px 20px" }} aria-label="Our Shopify agentic commerce process">
+        <div
+          className="py-[40px] px-[48px] max-sm:py-[20px] max-sm:px-[20px] md:max-lg:py-[20px] lg:max-xl:py-[30px] lg:max-xl:px-[40px]"
+          style={{ maxWidth: "1320px", margin: "0 auto", background: "#FBF7ED", borderRadius: "28px", boxSizing: "border-box", overflow: "hidden" }}
+        >
+          <h2
+            className="text-[28px] sm:text-[36px] md:text-[32px] lg:text-[42px] font-bold max-sm:font-semibold"
+            style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", lineHeight: 1.2, margin: 0 }}
+          >
+            How Our Shopify Agentic Commerce Process Works
+          </h2>
+          <p
+            className="text-[16px] max-sm:text-[14px]"
+            style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", marginTop: "16px", lineHeight: 1.65 }}
+          >
+            Five steps from invisible to AI to winning the recommendation.
+            <br className="hidden sm:block lg:hidden" />{" "}
+            Most projects complete in 2 to 4 weeks.
+          </p>
+
+          {/* Row 1 - 3 cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-[20px] md:max-lg:mt-[16px]">
+            {PROCESS.slice(0, 3).map(({ step, title, desc }) => (
+              <div key={step} className="p-[30px] max-sm:p-[15px] md:max-lg:p-[16px] lg:max-xl:p-[20px]" style={{ background: "#FFFFFF", borderRadius: "16px", boxSizing: "border-box" }}>
+                <p className="text-[50px] max-sm:text-[35px] md:max-lg:text-[40px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "rgba(0,0,0,0.12)", lineHeight: 1, margin: "0 0 10px" }}>{step}</p>
+                <h3 className="text-[20px] max-sm:text-[18px] md:max-lg:text-[18px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "#000000", lineHeight: 1.3, margin: "0 0 10px" }}>{title}</h3>
+                <p className="text-[15px] max-sm:text-[14px] md:max-lg:text-[14px]" style={{ fontFamily: "'Poppins', sans-serif", color: "rgba(0,0,0,0.8)", lineHeight: 1.7, margin: 0 }}>{desc}</p>
+              </div>
+            ))}
           </div>
-          <div className="ac-grid-4">
-            {PROCESS.map((p) => (
-              <div key={p.n} className="ac-step">
-                <span className="ac-step-n" style={GRADIENT_TEXT}>{p.n}</span>
-                <h3 className="ac-step-title">{p.title}</h3>
-                <p className="ac-step-body">{p.body}</p>
+
+          {/* Row 2 - 2 cards centred */}
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-[20px] max-sm:!max-w-full md:max-lg:mt-[16px] md:max-lg:!max-w-[428px]"
+            style={{ maxWidth: "calc(66.667% - 7px)", marginLeft: "auto", marginRight: "auto", width: "100%" }}
+          >
+            {PROCESS.slice(3).map(({ step, title, desc }) => (
+              <div key={step} className="p-[30px] max-sm:p-[15px] md:max-lg:p-[16px] lg:max-xl:p-[20px]" style={{ background: "#FFFFFF", borderRadius: "16px", boxSizing: "border-box" }}>
+                <p className="text-[50px] max-sm:text-[35px] md:max-lg:text-[40px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "rgba(0,0,0,0.12)", lineHeight: 1, margin: "0 0 10px" }}>{step}</p>
+                <h3 className="text-[20px] max-sm:text-[18px] md:max-lg:text-[18px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, color: "#000000", lineHeight: 1.3, margin: "0 0 10px" }}>{title}</h3>
+                <p className="text-[15px] max-sm:text-[14px] md:max-lg:text-[14px]" style={{ fontFamily: "'Poppins', sans-serif", color: "rgba(0,0,0,0.8)", lineHeight: 1.7, margin: 0 }}>{desc}</p>
               </div>
             ))}
           </div>
@@ -527,7 +557,7 @@ const CSS = `
 @media (max-width:1024px){.std-hero-h1{font-size:40px!important}.std-hero-inner{padding:60px 20px!important}.std-hero-p{margin-top:16px!important}.std-hero-stats{flex-wrap:nowrap!important;margin-top:16px!important;padding-top:16px!important}.std-hero-stat-item{padding-right:16px!important;margin-right:16px!important}.sat-hero-img-wrap{margin-top:8px}}
 @media (max-width:640px){.std-hero-h1{font-size:28px!important;line-height:1.22!important}.std-hero-p{font-size:14px!important;line-height:24px!important}.std-hero-stats{gap:8px 0;margin-top:24px;padding-top:18px;flex-wrap:wrap!important}.std-hero-stat-item{width:50%;padding-right:16px;margin-right:0}.sat-hero-img{border-radius:10px}}
 
-/* Trust strip — logo marquee (ported from analytics page) */
+/* Trust strip - logo marquee (ported from analytics page) */
 .std-trust-carousel{overflow:hidden;position:relative}
 .sat-trust-track{display:flex;align-items:center;gap:80px;width:max-content;animation:satTrustScroll 32s linear infinite}
 .std-trust-carousel:hover .sat-trust-track{animation-play-state:paused}
@@ -598,12 +628,7 @@ const CSS = `
 .ac-fit-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
 .ac-fit-list li{display:flex;gap:12px;align-items:flex-start;font-family:'Poppins',sans-serif;font-size:15px;color:rgba(255,255,255,0.82);line-height:1.5}
 
-/* Process */
-.ac-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.ac-step{border-top:2px solid #e8ecf1;padding-top:20px}
-.ac-step-n{font-family:'Poppins',sans-serif;font-weight:800;font-size:30px;line-height:1;display:block;margin-bottom:12px}
-.ac-step-title{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;color:#0f172a;margin:0 0 8px}
-.ac-step-body{font-family:'Poppins',sans-serif;font-size:14px;color:#64748b;line-height:1.55;margin:0}
+/* (process section now uses analytics-style cards: Tailwind + inline) */
 
 @media (max-width:1000px){
   .ac-grid-5{grid-template-columns:repeat(2,1fr)}
