@@ -58,6 +58,20 @@ const HERO_STATS = [
   { value: "5", label: "AI channels" },
 ];
 
+// Brand logos for the trust strip (same set as the analytics & tracking page)
+const TRUST_LOGOS = [
+  { src: "/images/schutz-logo.png-2.png", alt: "Schutz" },
+  { src: "/images/Calvin-Klein-logo.png-1.png", alt: "Calvin Klein" },
+  { src: "/images/Logo-AriZona.png-1.png", alt: "AriZona" },
+  { src: "/images/Logo-Khaite.png-1.png", alt: "Khaite" },
+  { src: "/images/Olaplex-logo-new.avif", alt: "Olaplex" },
+  { src: "/images/Lids-logo_fcb134ea-8ac4-4592-bfa1-6a366076e371.avif", alt: "Lids" },
+  { src: "/images/everlast-icon.svg", alt: "Everlast" },
+  { src: "/images/P448-logo.png-1.png", alt: "P448" },
+  { src: "/images/LVMH-logo.png-1.png", alt: "LVMH" },
+  { src: "/images/modelez-logo.png-1-768x361-1.png", alt: "Mondelez" },
+];
+
 // Reused case-study slides (agency credibility), same set used on other service pages
 const AC_SLIDES: CaseStudySlide[] = [
   {
@@ -224,6 +238,28 @@ export default function Page() {
               className="sat-hero-img"
               style={{ width: "100%", height: "auto", borderRadius: "16px", display: "block" }}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Trust strip — logo marquee (ported from the analytics page) */}
+      <section className="std-trust" style={{ background: "#fff" }} aria-label="Brands that trust Ecomm Wizards">
+        <div className="mx-auto" style={{ maxWidth: "1320px", padding: "48px 20px" }}>
+          <h2 className="std-trust-h2 text-center" style={{ color: "#000", fontSize: 30, fontWeight: 700, lineHeight: 1.3, margin: 0 }}>
+            700+ Shopify Stores Built. Here&apos;s Who Trusts Us.
+          </h2>
+          <p className="text-center" style={{ color: "#334155", fontSize: 16, lineHeight: "26px", margin: "10px 0 0" }}>
+            From DTC startups to global brands. The same team that ships award-winning Shopify stores gets your products ready to win in AI search.
+          </p>
+          <div className="std-trust-carousel" style={{ marginTop: 20, width: "100%", overflow: "hidden" }}>
+            <div className="sat-trust-track">
+              {[...TRUST_LOGOS, ...TRUST_LOGOS].map((l, i) => (
+                <div key={i} className="std-trust-slide">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={l.src} alt={i < TRUST_LOGOS.length ? l.alt : ""} className="std-trust-logo" width={200} height={80} loading="lazy" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -490,6 +526,15 @@ const CSS = `
 @media (min-width:1025px) and (max-width:1307px){.std-hero-stats{flex-wrap:nowrap!important}.std-hero-stat-item{padding-right:18px!important;margin-right:18px!important}.std-hero-stat-num{font-size:24px!important}.std-hero-stat-label{font-size:12px!important}}
 @media (max-width:1024px){.std-hero-h1{font-size:40px!important}.std-hero-inner{padding:60px 20px!important}.std-hero-p{margin-top:16px!important}.std-hero-stats{flex-wrap:nowrap!important;margin-top:16px!important;padding-top:16px!important}.std-hero-stat-item{padding-right:16px!important;margin-right:16px!important}.sat-hero-img-wrap{margin-top:8px}}
 @media (max-width:640px){.std-hero-h1{font-size:28px!important;line-height:1.22!important}.std-hero-p{font-size:14px!important;line-height:24px!important}.std-hero-stats{gap:8px 0;margin-top:24px;padding-top:18px;flex-wrap:wrap!important}.std-hero-stat-item{width:50%;padding-right:16px;margin-right:0}.sat-hero-img{border-radius:10px}}
+
+/* Trust strip — logo marquee (ported from analytics page) */
+.std-trust-carousel{overflow:hidden;position:relative}
+.sat-trust-track{display:flex;align-items:center;gap:80px;width:max-content;animation:satTrustScroll 32s linear infinite}
+.std-trust-carousel:hover .sat-trust-track{animation-play-state:paused}
+@keyframes satTrustScroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+.std-trust-slide{flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.std-trust-logo{height:46px;width:auto;max-width:170px;object-fit:contain;opacity:.85}
+@media (max-width:640px){.sat-trust-track{gap:48px!important}.std-trust-logo{height:38px}.std-trust-h2{font-size:22px!important}}
 
 /* Two-col */
 .ac-two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
