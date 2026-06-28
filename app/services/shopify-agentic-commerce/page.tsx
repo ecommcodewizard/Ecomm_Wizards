@@ -107,11 +107,11 @@ const AC_SLIDES: CaseStudySlide[] = [
 ];
 
 const CHANNELS = [
-  { name: "ChatGPT", note: "Product discovery + Instant Checkout via the Agentic Commerce Protocol." },
-  { name: "Google Gemini & AI Mode", note: "Native checkout in Google Search AI Mode and the Gemini app via UCP." },
-  { name: "Microsoft Copilot", note: "Copilot Checkout, where shoppers are far more likely to complete a purchase." },
-  { name: "Perplexity", note: "AI answer engine with shopping built in, surfacing products in responses." },
-  { name: "Shop app", note: "Shopify's own AI-assisted shopping surface for millions of buyers." },
+  { name: "ChatGPT", icon: "/images/chatgpt%20logo%20icon.svg", note: "Product discovery + Instant Checkout via the Agentic Commerce Protocol." },
+  { name: "Google Gemini & AI Mode", icon: "/images/Google-gemini-icon.png", note: "Native checkout in Google Search AI Mode and the Gemini app via UCP." },
+  { name: "Microsoft Copilot", icon: "/images/microsoft-365-copilot.png", note: "Copilot Checkout, where shoppers are far more likely to complete a purchase." },
+  { name: "Perplexity", icon: "/images/perplexity-ai-icon.png", note: "AI answer engine with shopping built in, surfacing products in responses." },
+  { name: "Shop app", icon: "/images/shop-app.png", note: "Shopify's own AI-assisted shopping surface for millions of buyers." },
 ];
 
 const OFFERINGS = [
@@ -177,9 +177,6 @@ function Check() {
 }
 function Cross() {
   return (<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="11" fill="rgba(255,255,255,0.08)" /><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="rgba(255,255,255,0.55)" strokeWidth="2.2" strokeLinecap="round" /></svg>);
-}
-function Spark() {
-  return (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z" stroke="#2A9555" strokeWidth="1.6" strokeLinejoin="round" /></svg>);
 }
 function Arrow() {
   return (<svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden><path d="M1 7h15M10 1l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>);
@@ -336,7 +333,10 @@ export default function Page() {
           <div className="ac-grid-5">
             {CHANNELS.map((c) => (
               <div key={c.name} className="ac-channel">
-                <span className="ac-channel-ic"><Spark /></span>
+                <span className="ac-channel-ic">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={c.icon} alt={c.name} width={30} height={30} style={{ objectFit: "contain" }} />
+                </span>
                 <h3 className="ac-channel-name">{c.name}</h3>
                 <p className="ac-channel-note">{c.note}</p>
               </div>
@@ -639,7 +639,7 @@ const CSS = `
 /* Channels */
 .ac-grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .ac-channel{background:#fff;border:1px solid #ece3d0;border-radius:14px;padding:22px}
-.ac-channel-ic{display:inline-flex;width:42px;height:42px;border-radius:11px;background:#E8F5EC;align-items:center;justify-content:center;margin-bottom:14px}
+.ac-channel-ic{display:inline-flex;width:46px;height:46px;border-radius:11px;background:#fff;border:1px solid #ece3d0;box-shadow:0 1px 2px rgba(0,0,0,.04);align-items:center;justify-content:center;margin-bottom:14px}
 .ac-channel-name{font-family:'Poppins',sans-serif;font-size:16px;font-weight:600;color:#0f172a;margin:0 0 8px;line-height:1.3}
 .ac-channel-note{font-family:'Poppins',sans-serif;font-size:13px;color:#64748b;line-height:1.55;margin:0}
 
