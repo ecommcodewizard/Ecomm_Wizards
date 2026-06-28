@@ -5,6 +5,7 @@ import { ogImage } from "@/lib/og";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/ui/CTASection";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import AgenticAccordion from "./AgenticAccordion";
 
 const META_DESCRIPTION =
   "Shopify agentic commerce agency. We make your store agent-ready so AI assistants like ChatGPT, Gemini, Copilot, and Perplexity discover and buy your products. GEO + Agentic Storefronts.";
@@ -402,23 +403,29 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 8. What we do */}
-      <section className="ac-sec ac-white">
-        <div className="ac-wrap">
-          <div className="ac-head">
-            <span className="ac-eyebrow">What we do</span>
-            <h2 className="ac-h2">How we make your store agent-ready</h2>
-            <p className="ac-lead">End to end, from audit to ongoing optimization, so AI agents find, trust, and recommend you.</p>
+      {/* 8. What we do (services accordion ported from the analytics page) */}
+      <section className="std-solutions" style={{ background: "#fff" }} aria-label="Shopify agentic commerce services">
+        <div
+          className="std-solutions-grid mx-auto grid gap-14 lg:grid-cols-[1.2fr_1fr] lg:items-start"
+          style={{ maxWidth: "1320px", padding: "60px 20px" }}
+        >
+          <div className="std-solutions-left" style={{ position: "sticky", top: "120px", alignSelf: "start" }}>
+            <span className="std-label">What&apos;s Included</span>
+            <h2 style={{ color: "#000", fontSize: 42, fontWeight: 700, lineHeight: 1.2, margin: "12px 0 0" }}>
+              Everything We Do to Make You Agent-Ready
+            </h2>
+            <p className="mt-5" style={{ color: "#334155", fontSize: 16, lineHeight: "28px" }}>
+              Every engagement covers an agent-readiness audit, structured data and schema, feed and catalog cleanup, channel setup, and ongoing monitoring. We do not hand over work we haven&apos;t validated against the AI assistants.
+            </p>
+            <Link href="/free-shopify-store-audit" className="std-cta-sol mt-8">
+              Get an Agent-Readiness Audit
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden>
+                <path d="M0 5H14M14 5L9 0M14 5L9 10" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
           </div>
-          <div className="ac-grid-offer">
-            {OFFERINGS.map((o) => (
-              <div key={o.title} className="ac-offer">
-                <span className="ac-offer-ic"><Spark /></span>
-                <h3 className="ac-offer-title">{o.title}</h3>
-                <p className="ac-offer-body">{o.body}</p>
-              </div>
-            ))}
-          </div>
+
+          <AgenticAccordion items={OFFERINGS} />
         </div>
       </section>
 
@@ -565,6 +572,20 @@ const CSS = `
 .std-trust-slide{flex-shrink:0;display:flex;align-items:center;justify-content:center}
 .std-trust-logo{height:46px;width:auto;max-width:170px;object-fit:contain;opacity:.85}
 @media (max-width:640px){.sat-trust-track{gap:48px!important}.std-trust-logo{height:38px}.std-trust-h2{font-size:22px!important}}
+
+/* Services / solutions section (ported from analytics page) */
+.std-label{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#334155}
+.std-cta-sol{position:relative;display:inline-flex;align-items:center;gap:12px;background:#000;color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;border-radius:50px;padding:20px 45px;text-decoration:none;line-height:1;transition:color .25s ease}
+.std-cta-sol::before{content:'';position:absolute;inset:0;border-radius:50px;padding:2px;background:linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);-webkit-mask-composite:destination-out;mask-composite:exclude;opacity:0;transition:opacity .25s ease;pointer-events:none}
+.std-cta-sol:hover::before{opacity:1}
+.std-cta-sol:visited,.std-cta-sol:focus,.std-cta-sol:active{color:#fff;text-decoration:none}
+.std-acc-item{border-top:1px solid rgba(17,17,17,.14)}
+.std-acc-item:last-child{border-bottom:1px solid rgba(17,17,17,.14)}
+.std-acc-icon{flex:0 0 18px;color:#000;transition:transform .3s ease}
+.std-acc-icon--open{transform:rotate(180deg)}
+@media (max-width:1024px){.std-solutions h2{font-size:38px!important}.std-solutions-grid{grid-template-columns:1fr 1.1fr!important;gap:40px!important}}
+@media (max-width:768px){.std-solutions h2{font-size:36px!important}.std-solutions-grid{gap:24px!important}}
+@media (max-width:640px){.std-solutions>div{padding:40px 18px!important}.std-solutions-grid{grid-template-columns:1fr!important}.std-solutions-left{position:static!important}.std-solutions h2{font-size:26px!important;line-height:1.28!important}.std-cta-sol{margin-top:16px!important}}
 
 /* Two-col */
 .ac-two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
