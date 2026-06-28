@@ -437,11 +437,11 @@ export default function Page() {
             <h2 className="ac-h2">Products winning inside AI assistants</h2>
             <p className="ac-lead">Real examples of optimized products surfacing and selling across AI shopping channels.</p>
           </div>
-          <div className="ac-grid-3">
-            {["ChatGPT result", "Gemini AI Mode", "Copilot Checkout"].map((cap) => (
-              <div key={cap} className="ac-shot">
-                <div className="ac-shot-ph"><Spark /><span>Screenshot coming soon</span></div>
-                <p className="ac-shot-cap">{cap}</p>
+          <div className="ac-shots">
+            {["/images/results%20image%201.png", "/images/results%20image%202.png"].map((src, i) => (
+              <div key={src} className="ac-shot">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={src} alt={`Shopify product result inside an AI assistant, example ${i + 1}`} className="ac-shot-img" loading="lazy" />
               </div>
             ))}
           </div>
@@ -637,9 +637,10 @@ const CSS = `
 .ac-offer-body{font-family:'Poppins',sans-serif;font-size:14px;color:#64748b;line-height:1.55;margin:0}
 
 /* Proof */
-.ac-shot{background:#fff;border:1px solid #ece3d0;border-radius:16px;overflow:hidden}
-.ac-shot-ph{aspect-ratio:16/11;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#f4f7f5,#eef5ef);color:#94a3b8;font-family:'Poppins',sans-serif;font-size:13px}
-.ac-shot-cap{font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;color:#0f172a;text-align:center;padding:14px;margin:0}
+.ac-shots{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:1000px;margin:0 auto}
+.ac-shot{background:#fff;border:1px solid #ece3d0;border-radius:16px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,0.08)}
+.ac-shot-img{width:100%;height:auto;display:block}
+@media (max-width:760px){.ac-shots{grid-template-columns:1fr}}
 
 /* Fit */
 .ac-fit{border-radius:16px;padding:28px}
