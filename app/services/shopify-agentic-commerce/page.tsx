@@ -240,6 +240,14 @@ export default function Page() {
               className="sat-hero-img"
               style={{ width: "auto", height: "auto", maxHeight: "480px", maxWidth: "100%", borderRadius: "16px", display: "block", margin: "0 auto" }}
             />
+            <span
+              aria-hidden
+              className="ac-hero-shopify-icon"
+              style={{ position: "absolute", right: "2%", top: "48%", display: "flex", alignItems: "center", justifyContent: "center", width: "92px", height: "92px", borderRadius: "22px", background: "#fff", boxShadow: "0 18px 44px rgba(0,0,0,0.5)" }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/shopify-iccon-black.webp" alt="Shopify" style={{ width: "56px", height: "56px", objectFit: "contain" }} />
+            </span>
           </div>
         </div>
       </section>
@@ -558,7 +566,7 @@ const CSS = `
 .std-hero-stat-item:last-child{border-right:none;padding-right:0;margin-right:0}
 .std-hero-stat-num{font-size:28px;font-weight:800;line-height:1;background:var(--brand-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .std-hero-stat-label{font-size:13px;font-weight:500;color:#fff;letter-spacing:.02em}
-.sat-hero-img-wrap{display:flex;align-items:center;justify-content:center}
+.sat-hero-img-wrap{display:flex;align-items:center;justify-content:center;position:relative}
 .sat-hero-img{width:100%;height:auto;border-radius:16px;display:block;box-shadow:0 24px 64px rgba(0,0,0,0.45)}
 @media (min-width:1025px) and (max-width:1307px){.std-hero-stats{flex-wrap:nowrap!important}.std-hero-stat-item{padding-right:18px!important;margin-right:18px!important}.std-hero-stat-num{font-size:24px!important}.std-hero-stat-label{font-size:12px!important}}
 @media (max-width:1024px){.std-hero-h1{font-size:40px!important}.std-hero-inner{padding:60px 20px!important}.std-hero-p{margin-top:16px!important}.std-hero-stats{flex-wrap:nowrap!important;margin-top:16px!important;padding-top:16px!important}.std-hero-stat-item{padding-right:16px!important;margin-right:16px!important}.sat-hero-img-wrap{margin-top:8px}}
