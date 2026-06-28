@@ -266,15 +266,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 2. Proven results (reused CaseStudySlider) */}
-      <section className="ssd-results-section" style={{ background: "#FBF7ED", fontFamily: "'Poppins', sans-serif", padding: "60px 20px" }}>
-        <div className="ssd-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
-          <h2 className="ssd-results-heading">A proven team behind the results</h2>
-          <p className="ssd-results-desc">We have built 700+ Shopify stores and generated $900M+ in revenue across 8+ years and 9+ industry awards. The same team gets your products agent-ready for the AI shopping era.</p>
-          <CaseStudySlider slides={AC_SLIDES} intervalMs={6000} showDots />
-        </div>
-      </section>
-
       {/* 3. What is agentic commerce */}
       <section className="ac-sec ac-white">
         <div className="ac-wrap ac-two">
@@ -517,6 +508,15 @@ export default function Page() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Proven results (CaseStudySlider), moved below the process section */}
+      <section className="ssd-results-section" style={{ background: "#FBF7ED", fontFamily: "'Poppins', sans-serif", padding: "60px 20px" }}>
+        <div className="ssd-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
+          <h2 className="ssd-results-heading">A proven team behind the results</h2>
+          <p className="ssd-results-desc">We have built 700+ Shopify stores and generated $900M+ in revenue across 8+ years and 9+ industry awards. The same team gets your products agent-ready for the AI shopping era.</p>
+          <CaseStudySlider slides={AC_SLIDES} intervalMs={6000} showDots />
         </div>
       </section>
 
