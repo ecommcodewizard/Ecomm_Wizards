@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ogImage } from "@/lib/og";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/ui/CTASection";
@@ -165,6 +166,9 @@ function Cross() {
 function Spark() {
   return (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z" stroke="#2A9555" strokeWidth="1.6" strokeLinejoin="round" /></svg>);
 }
+function Arrow() {
+  return (<svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden><path d="M1 7h15M10 1l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>);
+}
 
 export default function Page() {
   return (
@@ -173,31 +177,53 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_JSONLD) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSONLD) }} />
 
-      {/* 1. Hero */}
-      <section className="ac-hero">
-        <div aria-hidden className="ac-glow" />
-        <div aria-hidden className="ac-dots" />
-        <div className="ac-wrap ac-hero-inner">
-          <span className="ac-badge">Shopify Agentic Commerce</span>
-          <h1 className="ac-h1">
-            Get Your Products Found and <span style={GRADIENT_TEXT}>Bought by AI</span>
-          </h1>
-          <p className="ac-hero-sub">
-            AI assistants like ChatGPT, Gemini, and Copilot now discover, compare, and buy products for shoppers. Most Shopify stores are already in the catalog, but almost none are optimized to win. We make yours agent-ready.
-          </p>
-          <div className="ac-hero-cta">
-            <Link href="/free-shopify-store-audit" className="ac-btn-white">Get an Agent-Readiness Audit</Link>
-            <span className="ac-btn-ring-wrap">
-              <Link href="/book-shopify-consultation" className="ac-btn-ring">Book a Call</Link>
+      {/* 1. Hero (dark, 2-col) — ported from the analytics & tracking page */}
+      <section className="std-hero" style={{ background: "#000000" }} aria-label="Shopify agentic commerce hero">
+        <div
+          className="std-hero-inner mx-auto grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center"
+          style={{ maxWidth: "1320px", padding: "60px 20px" }}
+        >
+          <div>
+            <span className="std-badge">Shopify Agentic Commerce Agency</span>
+            <h1 className="std-hero-h1 font-bold mt-5" style={{ color: "#fff", fontSize: "48px", lineHeight: 1.15, margin: "20px 0 0" }}>
+              Get Your Products Found and{" "}
+              <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                Bought by AI
+              </span>
+            </h1>
+            <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
+              AI assistants like ChatGPT, Gemini, and Copilot now discover, compare, and buy products for shoppers. Most Shopify stores are already in the catalog, but almost none are optimized to win. We make yours agent-ready so AI agents find, trust, and recommend you.
+            </p>
+            <div className="std-hero-stats">
+              {HERO_STATS.map((s) => (
+                <div key={s.label} className="std-hero-stat-item">
+                  <span className="std-hero-stat-num">{s.value}</span>
+                  <span className="std-hero-stat-label">{s.label}</span>
+                </div>
+              ))}
+            </div>
+            <span className="group inline-flex p-[2px] rounded-full mt-8" style={{ background: GRADIENT }}>
+              <Link
+                href="/free-shopify-store-audit"
+                className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px]"
+                style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600 }}
+              >
+                <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Get an Agent-Readiness Audit</span>
+                <span className="text-white group-hover:text-black transition-colors duration-300"><Arrow /></span>
+              </Link>
             </span>
           </div>
-          <div className="ac-hero-stats">
-            {HERO_STATS.map((s) => (
-              <div key={s.label} className="ac-hero-stat">
-                <span className="ac-hero-stat-val" style={GRADIENT_TEXT}>{s.value}</span>
-                <span className="ac-hero-stat-label">{s.label}</span>
-              </div>
-            ))}
+
+          <div className="sat-hero-img-wrap">
+            <Image
+              src="/images/migration-shopify-right-image.webp"
+              alt="Shopify products surfacing inside AI assistants like ChatGPT and Gemini"
+              width={640}
+              height={480}
+              priority
+              className="sat-hero-img"
+              style={{ width: "100%", height: "auto", borderRadius: "16px", display: "block" }}
+            />
           </div>
         </div>
       </section>
@@ -452,23 +478,18 @@ const CSS = `
 .ac-dark{background:#000}
 .ac-head{margin-bottom:40px;max-width:760px}
 
-/* Hero */
-.ac-hero{position:relative;overflow:hidden;background:#000;padding:0 20px}
-.ac-glow{pointer-events:none;position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 60% 35%, rgba(61,199,122,0.32) 0%, rgba(61,199,122,0.12) 42%, transparent 78%)}
-.ac-dots{pointer-events:none;position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle, #61ce70 1px, transparent 1px);background-size:32px 32px}
-.ac-hero-inner{position:relative;z-index:1;text-align:center;padding:72px 0 64px}
-.ac-badge{display:inline-block;padding:5px 16px;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;color:#61ce70;background:rgba(97,206,112,0.16);border:1px solid rgba(97,206,112,0.5);border-radius:9999px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:22px}
-.ac-hero-sub{font-family:'Poppins',sans-serif;font-size:18px;line-height:1.65;color:#fff;max-width:680px;margin:0 auto 32px}
-.ac-hero-cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:48px}
-.ac-btn-white{display:inline-flex;align-items:center;border:2px solid transparent;background:#fff;color:#000;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;padding:13px 26px;border-radius:9999px;text-decoration:none;transition:border-color .2s ease}
-.ac-btn-white:hover{border-color:var(--color-gold,#d4af37)}
-.ac-btn-ring-wrap{display:inline-flex;padding:2px;border-radius:9999px;background:${GRADIENT}}
-.ac-btn-ring{display:inline-flex;align-items:center;background:#000;color:#fff;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;padding:11px 26px;border-radius:9999px;text-decoration:none;transition:background .25s ease,color .25s ease}
-.ac-btn-ring:hover{background:#fff;color:#000}
-.ac-hero-stats{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:center}
-.ac-hero-stat{text-align:center}
-.ac-hero-stat-val{display:block;font-family:'Poppins',sans-serif;font-weight:800;font-size:34px;line-height:1}
-.ac-hero-stat-label{display:block;font-family:'Poppins',sans-serif;font-size:13px;color:rgba(255,255,255,0.65);margin-top:8px;max-width:160px}
+/* Hero (ported from the analytics & tracking page) */
+.std-badge{display:inline-block;padding:6px 16px;background:rgba(97,206,112,0.12);border:1px solid rgba(97,206,112,0.3);border-radius:999px;color:#61ce70;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.std-hero-stats{display:flex;flex-wrap:wrap;gap:0;margin-top:32px;border-top:1px solid rgba(255,255,255,0.12);padding-top:24px}
+.std-hero-stat-item{display:flex;flex-direction:column;gap:4px;padding:0 28px 0 0;margin-right:28px;border-right:1px solid rgba(255,255,255,0.12)}
+.std-hero-stat-item:last-child{border-right:none;padding-right:0;margin-right:0}
+.std-hero-stat-num{font-size:28px;font-weight:800;line-height:1;background:var(--brand-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.std-hero-stat-label{font-size:13px;font-weight:500;color:#fff;letter-spacing:.02em}
+.sat-hero-img-wrap{display:flex;align-items:center;justify-content:center}
+.sat-hero-img{width:100%;height:auto;border-radius:16px;display:block;box-shadow:0 24px 64px rgba(0,0,0,0.45)}
+@media (min-width:1025px) and (max-width:1307px){.std-hero-stats{flex-wrap:nowrap!important}.std-hero-stat-item{padding-right:18px!important;margin-right:18px!important}.std-hero-stat-num{font-size:24px!important}.std-hero-stat-label{font-size:12px!important}}
+@media (max-width:1024px){.std-hero-h1{font-size:40px!important}.std-hero-inner{padding:60px 20px!important}.std-hero-p{margin-top:16px!important}.std-hero-stats{flex-wrap:nowrap!important;margin-top:16px!important;padding-top:16px!important}.std-hero-stat-item{padding-right:16px!important;margin-right:16px!important}.sat-hero-img-wrap{margin-top:8px}}
+@media (max-width:640px){.std-hero-h1{font-size:28px!important;line-height:1.22!important}.std-hero-p{font-size:14px!important;line-height:24px!important}.std-hero-stats{gap:0;margin-top:24px;padding-top:18px}.std-hero-stat-item{padding-right:16px;margin-right:16px}.sat-hero-img{border-radius:10px}}
 
 /* Two-col */
 .ac-two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
