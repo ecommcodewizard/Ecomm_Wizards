@@ -238,7 +238,7 @@ export default function Page() {
               playsInline
               aria-label="Shopify products surfacing inside AI assistants like ChatGPT and Gemini"
               className="sat-hero-img"
-              style={{ width: "100%", height: "auto", borderRadius: "16px", display: "block" }}
+              style={{ width: "auto", height: "auto", maxHeight: "480px", maxWidth: "100%", borderRadius: "16px", display: "block", margin: "0 auto" }}
             />
           </div>
         </div>
