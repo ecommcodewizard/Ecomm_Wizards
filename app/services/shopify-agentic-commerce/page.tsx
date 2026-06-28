@@ -247,6 +247,37 @@ export default function Page() {
               className="ac-hero-shopify-icon"
               style={{ position: "absolute", right: "3%", top: "56%", width: "98px", height: "98px", objectFit: "contain", filter: "drop-shadow(0 0 10px rgba(255,255,255,0.12))" }}
             />
+            {/* Floating AI badge (decorative) - same dark-badge style as the Shopify one */}
+            <span
+              aria-hidden
+              className="ac-hero-ai-icon"
+              style={{
+                position: "absolute",
+                left: "1%",
+                top: "8%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "98px",
+                height: "98px",
+                borderRadius: "22px",
+                background: "linear-gradient(150deg, #1c1c1c 0%, #050505 100%)",
+                border: "1px solid rgba(255,255,255,0.10)",
+                boxShadow: "0 14px 40px rgba(0,0,0,0.5), 0 0 12px rgba(255,255,255,0.10)",
+              }}
+            >
+              <svg width="50" height="50" viewBox="0 0 24 24" aria-hidden>
+                <defs>
+                  <linearGradient id="aiSparkleGrad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stopColor="#A8F0B4" />
+                    <stop offset="0.5" stopColor="#3DC77A" />
+                    <stop offset="1" stopColor="#2A9555" />
+                  </linearGradient>
+                </defs>
+                <path d="M12 2.5l2.2 6.3 6.3 2.2-6.3 2.2L12 19.5l-2.2-6.3L3.5 11l6.3-2.2L12 2.5z" fill="url(#aiSparkleGrad)" />
+                <path d="M18.6 3l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2L15.6 6l2.2-.8L18.6 3z" fill="url(#aiSparkleGrad)" opacity="0.9" />
+              </svg>
+            </span>
           </div>
         </div>
       </section>
@@ -566,6 +597,10 @@ const CSS = `
 .std-hero-stat-num{font-size:28px;font-weight:800;line-height:1;background:var(--brand-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .std-hero-stat-label{font-size:13px;font-weight:500;color:#fff;letter-spacing:.02em}
 .sat-hero-img-wrap{display:flex;align-items:center;justify-content:center;position:relative}
+@keyframes acFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.ac-hero-ai-icon{animation:acFloat 4s ease-in-out infinite}
+.ac-hero-shopify-icon{animation:acFloat 4.6s ease-in-out infinite .4s}
+@media (max-width:640px){.ac-hero-ai-icon{width:64px!important;height:64px!important}.ac-hero-shopify-icon{width:72px!important;height:72px!important}}
 .sat-hero-img{width:100%;height:auto;border-radius:16px;display:block;box-shadow:0 24px 64px rgba(0,0,0,0.45)}
 @media (min-width:1025px) and (max-width:1307px){.std-hero-stats{flex-wrap:nowrap!important}.std-hero-stat-item{padding-right:18px!important;margin-right:18px!important}.std-hero-stat-num{font-size:24px!important}.std-hero-stat-label{font-size:12px!important}}
 @media (max-width:1024px){.std-hero-h1{font-size:40px!important}.std-hero-inner{padding:60px 20px!important}.std-hero-p{margin-top:16px!important}.std-hero-stats{flex-wrap:nowrap!important;margin-top:16px!important;padding-top:16px!important}.std-hero-stat-item{padding-right:16px!important;margin-right:16px!important}.sat-hero-img-wrap{margin-top:8px}}
