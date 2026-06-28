@@ -243,10 +243,10 @@ export default function Page() {
             <span
               aria-hidden
               className="ac-hero-shopify-icon"
-              style={{ position: "absolute", right: "2%", top: "48%", display: "flex", alignItems: "center", justifyContent: "center", width: "92px", height: "92px", borderRadius: "22px", background: "#fff", boxShadow: "0 18px 44px rgba(0,0,0,0.5)" }}
+              style={{ position: "absolute", right: "2%", top: "58%", display: "flex", alignItems: "center", justifyContent: "center", width: "92px", height: "92px", borderRadius: "22px", background: "#fff", boxShadow: "0 18px 44px rgba(0,0,0,0.5)" }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/shopify-iccon-black.webp" alt="Shopify" style={{ width: "56px", height: "56px", objectFit: "contain" }} />
+              <img src="/images/shopify-iccon-black.webp" alt="Shopify" style={{ width: "58px", height: "58px", objectFit: "contain", filter: "brightness(0)" }} />
             </span>
           </div>
         </div>
