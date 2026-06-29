@@ -418,18 +418,20 @@ export default function Page() {
               </ul>
             </div>
           </div>
-          <table className="sr-only">
-            <caption>SEO vs GEO (Generative Engine Optimization) for Shopify stores</caption>
-            <thead>
-              <tr><th scope="col">Dimension</th><th scope="col">Traditional SEO</th><th scope="col">Generative Engine Optimization (GEO)</th></tr>
-            </thead>
-            <tbody>
-              <tr><th scope="row">What it optimizes</th><td>Pages, to rank in Google&apos;s links</td><td>Product data, for AI agents</td></tr>
-              <tr><th scope="row">Goal</th><td>Earn the click to your site</td><td>Get the AI to pick and buy your product</td></tr>
-              <tr><th scope="row">Main levers</th><td>Keywords, backlinks, content</td><td>Structured data, schema, feeds, factual specs</td></tr>
-              <tr><th scope="row">Who decides</th><td>The shopper browses and decides on your store</td><td>The AI reads your data and decides, often with no site visit</td></tr>
-            </tbody>
-          </table>
+          <div className="sr-only">
+            <table>
+              <caption>SEO vs GEO (Generative Engine Optimization) for Shopify stores</caption>
+              <thead>
+                <tr><th scope="col">Dimension</th><th scope="col">Traditional SEO</th><th scope="col">Generative Engine Optimization (GEO)</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">What it optimizes</th><td>Pages, to rank in Google&apos;s links</td><td>Product data, for AI agents</td></tr>
+                <tr><th scope="row">Goal</th><td>Earn the click to your site</td><td>Get the AI to pick and buy your product</td></tr>
+                <tr><th scope="row">Main levers</th><td>Keywords, backlinks, content</td><td>Structured data, schema, feeds, factual specs</td></tr>
+                <tr><th scope="row">Who decides</th><td>The shopper browses and decides on your store</td><td>The AI reads your data and decides, often with no site visit</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
