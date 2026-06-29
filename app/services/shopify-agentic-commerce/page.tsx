@@ -15,14 +15,14 @@ export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: META_DESCRIPTION,
   keywords: [
-    "shopify agentic commerce agency",
-    "agentic commerce services",
-    "agentic storefronts setup",
+    "shopify agentic commerce",
+    "shopify agentic storefronts",
     "generative engine optimization",
-    "geo agency",
-    "sell on chatgpt shopify",
-    "ai product discovery",
-    "agent-ready shopify",
+    "generative engine optimization services",
+    "generative engine optimization agency",
+    "shopify chatgpt integration",
+    "what is agentic commerce",
+    "agentic commerce",
   ],
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
@@ -118,7 +118,7 @@ const OFFERINGS = [
   { title: "Generative Engine Optimization (GEO)", body: "We enrich your product titles, descriptions, and attributes with the factual detail AI agents need to read, trust, and recommend you." },
   { title: "Structured Data & Schema", body: "Product, offer, and review schema with GTIN and MPN identifiers so AI agents verify price, availability, and specs with certainty." },
   { title: "Product Feeds & Catalog Hygiene", body: "Clean, complete Google Merchant Center and Shopify Catalog feeds so your products reach every surface AI shopping draws on." },
-  { title: "Agentic Storefronts Setup", body: "We configure Agentic Storefronts and your per-channel settings so you appear where you want across ChatGPT, Gemini, Copilot, Perplexity, and Shop." },
+  { title: "Shopify Agentic Storefronts Setup", body: "We configure Shopify Agentic Storefronts and your per-channel settings so you appear where you want across ChatGPT, Gemini, Copilot, Perplexity, and Shop." },
   { title: "Knowledge Base & Brand Control", body: "We set up Shopify's Knowledge Base and Catalog Mapping so AI assistants describe your brand, policies, and FAQs the way you intend." },
   { title: "UCP & ACP Coverage", body: "We make sure you are ready for both the Universal Commerce Protocol and the Agentic Commerce Protocol, so you never lose a channel's traffic." },
   { title: "Monitoring & Optimization", body: "We track channel attribution and AI visibility, then keep refining your data so AI agents keep choosing you as the landscape shifts." },
@@ -146,7 +146,9 @@ const NOT_FOR = [
 
 const FAQS = [
   { question: "What is Shopify agentic commerce?", answer: "Agentic commerce is when AI assistants like ChatGPT, Google Gemini, Microsoft Copilot, and Perplexity discover, compare, and buy products for shoppers inside the conversation. Shopify's Agentic Storefronts connect your products to those AI platforms so customers can find and buy from you without visiting your site." },
+  { question: "How is agentic commerce different from traditional ecommerce?", answer: "In traditional ecommerce, shoppers browse your store, compare products themselves, and check out on your site. In agentic commerce, an AI assistant does the browsing and comparing, then buys on the shopper's behalf, often without visiting your site. Your product data, not your storefront, decides whether the AI picks you." },
   { question: "Is my Shopify store already in ChatGPT?", answer: "Probably yes. Shopify turned on Agentic Storefronts by default for eligible stores, so your products may already be discoverable in ChatGPT and other AI channels. But being listed is not the same as being chosen. Most stores have product data that AI agents struggle to read, so they skip those listings. That gap is what we close." },
+  { question: "How does Shopify ChatGPT integration work?", answer: "Shopify's Agentic Storefronts handle the ChatGPT integration for you. Once your store is eligible, Shopify connects your catalog to ChatGPT through the Agentic Commerce Protocol, so shoppers find and buy your products inside ChatGPT. We optimize your product data so ChatGPT recommends you, not just lists you." },
   { question: "What is GEO and how is it different from SEO?", answer: "GEO, or Generative Engine Optimization, is the practice of optimizing your product data so AI agents pick your products. Traditional SEO optimizes pages to rank in Google's links. GEO optimizes structured data, schema, and feeds so AI assistants can read, trust, and recommend you. With AI shopping, your data is the product." },
   { question: "Which AI channels can my products appear in?", answer: "Through Shopify's Agentic Storefronts and Catalog, your products can surface in ChatGPT, Google Gemini and AI Mode, Microsoft Copilot, Perplexity, and the Shop app, all managed from one place in your Shopify admin." },
   { question: "What is the difference between UCP and ACP?", answer: "They are the two open standards for AI shopping. Google, Shopify, and Walmart built UCP (Universal Commerce Protocol) to cover the full journey. OpenAI and Stripe built ACP (Agentic Commerce Protocol), which powers ChatGPT. You want to be ready for both, because supporting only one means losing the other's traffic." },
@@ -476,7 +478,7 @@ export default function Page() {
               What Our Shopify Agentic Commerce Services Include
             </h2>
             <p className="mt-5" style={{ color: "#334155", fontSize: 16, lineHeight: "28px" }}>
-              Every engagement covers an agent-readiness audit, structured data and schema, feed and catalog cleanup, channel setup, and ongoing monitoring. We do not hand over work we haven&apos;t validated against the AI assistants.
+              Our Generative Engine Optimization (GEO) services cover an agent-readiness audit, structured data and schema, feed and catalog cleanup, channel setup, and ongoing monitoring. We do not hand over work we haven&apos;t validated against the AI assistants.
             </p>
             <Link href="/free-shopify-store-audit" className="std-cta-sol mt-8">
               Get an Agent-Readiness Audit
