@@ -66,6 +66,8 @@ const ORG_SCHEMA = {
         "Shopify CRO agency",
         "Shopify SEO agency",
         "Shopify AI agency",
+        "Shopify agentic commerce",
+        "Generative Engine Optimization",
         "Shopify automation agency",
       ],
     },

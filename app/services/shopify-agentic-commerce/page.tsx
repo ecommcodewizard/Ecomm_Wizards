@@ -7,23 +7,22 @@ import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/Case
 import AgenticAccordion from "./AgenticAccordion";
 
 const META_DESCRIPTION =
-  "Shopify agentic commerce agency. We make your store agent-ready so AI assistants like ChatGPT, Gemini, Copilot, and Perplexity discover and buy your products. GEO + Agentic Storefronts.";
+  "Shopify agentic commerce agency. We make your store agent-ready so AI assistants like ChatGPT and Gemini buy your products. GEO done right. Get a free audit.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-agentic-commerce";
-const TITLE = "Shopify Agentic Commerce Agency: Get Found & Bought by AI | Ecomm Wizards";
+const TITLE = "Shopify Agentic Commerce Agency | Get Bought by AI";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: META_DESCRIPTION,
   keywords: [
-    "shopify agentic commerce",
-    "agentic commerce agency",
+    "shopify agentic commerce agency",
     "agentic commerce services",
     "agentic storefronts setup",
     "generative engine optimization",
-    "geo agency shopify",
+    "geo agency",
     "sell on chatgpt shopify",
-    "shopify agent-ready",
-    "universal commerce protocol",
+    "ai product discovery",
+    "agent-ready shopify",
   ],
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
@@ -107,18 +106,18 @@ const AC_SLIDES: CaseStudySlide[] = [
 ];
 
 const CHANNELS = [
-  { name: "ChatGPT", icon: "/images/chatgpt%20logo%20icon.svg", note: "Product discovery + Instant Checkout via the Agentic Commerce Protocol." },
-  { name: "Google Gemini & AI Mode", icon: "/images/Google-gemini-icon.png", note: "Native checkout in Google Search AI Mode and the Gemini app via UCP." },
-  { name: "Microsoft Copilot", icon: "/images/microsoft-365-copilot.png", note: "Copilot Checkout, where shoppers are far more likely to complete a purchase." },
-  { name: "Perplexity", icon: "/images/perplexity-ai-icon.png", note: "AI answer engine with shopping built in, surfacing products in responses." },
-  { name: "Shop app", icon: "/images/shop-app.png", note: "Shopify's own AI-assisted shopping surface for millions of buyers." },
+  { name: "ChatGPT", icon: "/images/chatgpt%20logo%20icon.svg", alt: "ChatGPT agentic commerce shopping channel", note: "Product discovery + Instant Checkout via the Agentic Commerce Protocol." },
+  { name: "Google Gemini & AI Mode", icon: "/images/Google-gemini-icon.png", alt: "Google Gemini AI shopping channel", note: "Native checkout in Google Search AI Mode and the Gemini app via UCP." },
+  { name: "Microsoft Copilot", icon: "/images/microsoft-365-copilot.png", alt: "Microsoft Copilot Checkout channel", note: "Copilot Checkout, where shoppers are far more likely to complete a purchase." },
+  { name: "Perplexity", icon: "/images/perplexity-ai-icon.png", alt: "Perplexity AI shopping channel", note: "AI answer engine with shopping built in, surfacing products in responses." },
+  { name: "Shop app", icon: "/images/shop-app.png", alt: "Shopify Shop app AI shopping surface", note: "Shopify's own AI-assisted shopping surface for millions of buyers." },
 ];
 
 const OFFERINGS = [
   { title: "Agent-Readiness Audit", body: "We assess how your products show up across AI assistants today, benchmark against competitors, and map the gaps holding you back." },
   { title: "Generative Engine Optimization (GEO)", body: "We enrich your product titles, descriptions, and attributes with the factual detail AI agents need to read, trust, and recommend you." },
   { title: "Structured Data & Schema", body: "Product, offer, and review schema with GTIN and MPN identifiers so AI agents verify price, availability, and specs with certainty." },
-  { title: "Product Feeds & Catalog Hygiene", body: "Clean, complete Google Merchant Center and Shopify Catalog feeds so nothing keeps your products out of the surfaces AI shopping pulls from." },
+  { title: "Product Feeds & Catalog Hygiene", body: "Clean, complete Google Merchant Center and Shopify Catalog feeds so your products reach every surface AI shopping draws on." },
   { title: "Agentic Storefronts Setup", body: "We configure Agentic Storefronts and your per-channel settings so you appear where you want across ChatGPT, Gemini, Copilot, Perplexity, and Shop." },
   { title: "Knowledge Base & Brand Control", body: "We set up Shopify's Knowledge Base and Catalog Mapping so AI assistants describe your brand, policies, and FAQs the way you intend." },
   { title: "UCP & ACP Coverage", body: "We make sure you are ready for both the Universal Commerce Protocol and the Agentic Commerce Protocol, so you never lose a channel's traffic." },
@@ -140,17 +139,17 @@ const BEST_FOR = [
   "You take SEO and organic growth seriously",
 ];
 const NOT_FOR = [
-  "You have no products live yet (start with a store build first)",
-  "You are not selling to US shoppers (the agentic rollout is US-first for now)",
-  "You want guaranteed AI checkout volume today (discovery is the near-term win)",
+  { k: "build", t: (<>You have no products live yet (<Link href="/services/shopify-development-agency">start with a store build</Link> first)</>) },
+  { k: "us", t: "You are not selling to US shoppers (the agentic rollout is US-first for now)" },
+  { k: "checkout", t: "You want guaranteed AI checkout volume today (discovery is the near-term win)" },
 ];
 
 const FAQS = [
   { question: "What is Shopify agentic commerce?", answer: "Agentic commerce is when AI assistants like ChatGPT, Google Gemini, Microsoft Copilot, and Perplexity discover, compare, and buy products for shoppers inside the conversation. Shopify's Agentic Storefronts connect your products to those AI platforms so customers can find and buy from you without visiting your site." },
-  { question: "Is my Shopify store already in ChatGPT?", answer: "Probably yes. Shopify turned on Agentic Storefronts by default for eligible stores, so your products may already be discoverable in ChatGPT and other AI channels. But being listed is not the same as being chosen. Most stores have product data that AI agents struggle to read, so they get passed over. That gap is what we close." },
+  { question: "Is my Shopify store already in ChatGPT?", answer: "Probably yes. Shopify turned on Agentic Storefronts by default for eligible stores, so your products may already be discoverable in ChatGPT and other AI channels. But being listed is not the same as being chosen. Most stores have product data that AI agents struggle to read, so they skip those listings. That gap is what we close." },
   { question: "What is GEO and how is it different from SEO?", answer: "GEO, or Generative Engine Optimization, is the practice of optimizing your product data so AI agents pick your products. Traditional SEO optimizes pages to rank in Google's links. GEO optimizes structured data, schema, and feeds so AI assistants can read, trust, and recommend you. With AI shopping, your data is the product." },
   { question: "Which AI channels can my products appear in?", answer: "Through Shopify's Agentic Storefronts and Catalog, your products can surface in ChatGPT, Google Gemini and AI Mode, Microsoft Copilot, Perplexity, and the Shop app, all managed from one place in your Shopify admin." },
-  { question: "What is the difference between UCP and ACP?", answer: "They are the two open standards for AI shopping. UCP (Universal Commerce Protocol) was built by Google, Shopify, and Walmart and covers the full journey. ACP (Agentic Commerce Protocol) was built by OpenAI and Stripe and powers ChatGPT. You want to be ready for both, because supporting only one means losing the other's traffic." },
+  { question: "What is the difference between UCP and ACP?", answer: "They are the two open standards for AI shopping. Google, Shopify, and Walmart built UCP (Universal Commerce Protocol) to cover the full journey. OpenAI and Stripe built ACP (Agentic Commerce Protocol), which powers ChatGPT. You want to be ready for both, because supporting only one means losing the other's traffic." },
   { question: "Do I need Shopify Plus for agentic commerce?", answer: "No. Agentic Storefronts work across Shopify plans for eligible stores. If you sell on another platform, Shopify's Agentic Plan lets you list in the Shopify Catalog and sell through AI channels without a full Shopify store." },
   { question: "What does agentic commerce cost?", answer: "Getting discovered through Agentic Storefronts has no added Shopify fee beyond standard payment processing. AI checkout fees vary by channel. Our work is the optimization that makes AI agents choose you, scoped per project after an audit." },
   { question: "How long does it take to get agent-ready?", answer: "Most stores see a meaningful data and catalog cleanup in two to four weeks, with ongoing optimization after that. We start with an agent-readiness audit so you know exactly where you stand before any work begins." },
@@ -171,6 +170,19 @@ const FAQ_JSONLD = {
   "@type": "FAQPage",
   mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })),
 };
+const SERVICE_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${CANONICAL_URL}#service`,
+  name: "Shopify Agentic Commerce Agency",
+  serviceType: "Agentic commerce optimization and Generative Engine Optimization (GEO)",
+  provider: { "@id": "https://ecommwizards.com/#organization" },
+  areaServed: { "@type": "Country", name: "United States" },
+  url: CANONICAL_URL,
+  description:
+    "We make Shopify stores agent-ready so AI assistants like ChatGPT, Gemini, Copilot and Perplexity discover, trust, and recommend their products. Includes agent-readiness audits, GEO, structured data and schema, feed hygiene, and Agentic Storefronts setup.",
+  offers: { "@type": "Offer", availability: "https://schema.org/InStock" },
+};
 
 function Check() {
   return (<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="11" fill="rgba(61,199,122,0.15)" /><path d="M7 12.5l3.2 3.2L17 9" stroke="#2A9555" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>);
@@ -188,6 +200,7 @@ export default function Page() {
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_JSONLD) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSONLD) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICE_JSONLD) }} />
 
       {/* 1. Hero (dark, 2-col) - ported from the analytics & tracking page */}
       <section className="std-hero" style={{ background: "#000000" }} aria-label="Shopify agentic commerce hero">
@@ -198,13 +211,13 @@ export default function Page() {
           <div>
             <span className="std-badge">Shopify Agentic Commerce Agency</span>
             <h1 className="std-hero-h1 font-bold mt-5" style={{ color: "#fff", fontSize: "48px", lineHeight: 1.15, margin: "20px 0 0" }}>
-              Get Your Products Found and{" "}
+              Shopify Agentic Commerce: Get Found and{" "}
               <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                 Bought by AI
               </span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
-              AI assistants like ChatGPT, Gemini, and Copilot now discover, compare, and buy products for shoppers. Most Shopify stores are already in the catalog, but almost none are optimized to win. We make yours agent-ready so AI agents find, trust, and recommend you.
+              Agentic commerce has arrived: AI assistants like ChatGPT, Gemini, and Copilot now discover, compare, and buy products for shoppers. Most Shopify stores are already in the catalog, but almost none are optimized to win. We make yours agent-ready so AI agents find, trust, and recommend you.
             </p>
             <div className="std-hero-stats">
               {HERO_STATS.map((s) => (
@@ -233,6 +246,9 @@ export default function Page() {
               loop
               muted
               playsInline
+              preload="metadata"
+              width={346}
+              height={720}
               aria-label="Shopify products surfacing inside AI assistants like ChatGPT and Gemini"
               className="sat-hero-img"
               style={{ width: "auto", height: "auto", maxHeight: "480px", maxWidth: "100%", borderRadius: "16px", display: "block", margin: "0 auto" }}
@@ -240,7 +256,10 @@ export default function Page() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/shopify-iccon-black.webp"
-              alt="Shopify"
+              alt="Shopify store optimized for AI agentic commerce"
+              loading="eager"
+              decoding="async"
+              fetchPriority="low"
               className="ac-hero-shopify-icon"
               style={{ position: "absolute", right: "3%", top: "56%", width: "98px", height: "98px", objectFit: "contain", filter: "drop-shadow(0 0 10px rgba(255,255,255,0.12))" }}
             />
@@ -293,7 +312,7 @@ export default function Page() {
               {[...TRUST_LOGOS, ...TRUST_LOGOS].map((l, i) => (
                 <div key={i} className="std-trust-slide">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={l.src} alt={i < TRUST_LOGOS.length ? l.alt : ""} className="std-trust-logo" width={200} height={80} loading="lazy" />
+                  <img src={l.src} alt={i < TRUST_LOGOS.length ? l.alt : ""} className="std-trust-logo" width={200} height={80} loading="lazy" decoding="async" />
                 </div>
               ))}
             </div>
@@ -307,7 +326,8 @@ export default function Page() {
           <div>
             <span className="ac-eyebrow">What it is</span>
             <h2 className="ac-h2">What is agentic commerce?</h2>
-            <p className="ac-p">Agentic commerce is a new way to shop where AI agents handle the whole journey, from discovery to checkout, inside a conversation. A chatbot that recommends a moisturizer is conversational commerce. An AI that queries multiple brands, compares ingredients and prices, and buys the best option for you is agentic commerce.</p>
+            <p className="ac-p"><strong>Agentic commerce is when AI assistants like ChatGPT, Gemini, and Perplexity discover, compare, and buy products for shoppers inside a conversation. For Shopify merchants, it means optimizing product data so AI agents can read, trust, and recommend your products without a site visit.</strong></p>
+            <p className="ac-p">It is a new way to shop where AI agents handle the whole journey, from discovery to checkout, inside a conversation. A chatbot that recommends a moisturizer is conversational commerce. An AI that queries multiple brands, compares ingredients and prices, and buys the best option for you is agentic commerce.</p>
             <p className="ac-p">The shopper asks an AI assistant, the agent searches connected product catalogs, presents a short list, and the shopper buys right there in the chat. The order flows into your Shopify admin with attribution showing which AI channel drove the sale. Your storefront is no longer the front door, your product data is.</p>
           </div>
           <div className="ac-card-box">
@@ -327,7 +347,7 @@ export default function Page() {
         <div className="ac-wrap">
           <div className="ac-head">
             <span className="ac-eyebrow">Reach</span>
-            <h2 className="ac-h2">Where your products show up</h2>
+            <h2 className="ac-h2">Where Your Products Appear Across AI Shopping Channels</h2>
             <p className="ac-lead">One setup in Shopify, syndicated to every major AI shopping surface.</p>
           </div>
           <div className="ac-grid-5">
@@ -335,7 +355,7 @@ export default function Page() {
               <div key={c.name} className="ac-channel">
                 <span className="ac-channel-ic">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={c.icon} alt={c.name} width={30} height={30} style={{ objectFit: "contain" }} />
+                  <img src={c.icon} alt={c.alt} width={30} height={30} loading="lazy" decoding="async" style={{ objectFit: "contain" }} />
                 </span>
                 <h3 className="ac-channel-name">{c.name}</h3>
                 <p className="ac-channel-note">{c.note}</p>
@@ -350,7 +370,7 @@ export default function Page() {
         <div className="ac-wrap">
           <div className="ac-head">
             <span className="ac-eyebrow ac-eyebrow-dark">Why now</span>
-            <h2 className="ac-h2 ac-h2-dark">The window is open, and most stores are unprepared</h2>
+            <h2 className="ac-h2 ac-h2-dark">Why Agentic Commerce Matters Now for Shopify Stores</h2>
             <p className="ac-lead ac-lead-dark">Agentic Storefronts are on by default, so your products are likely already discoverable. The brands that optimize their data first will win the recommendation before the rest catch up.</p>
           </div>
           <div className="ac-grid-3">
@@ -373,8 +393,8 @@ export default function Page() {
         <div className="ac-wrap">
           <div className="ac-head">
             <span className="ac-eyebrow">The new playbook</span>
-            <h2 className="ac-h2">SEO vs GEO</h2>
-            <p className="ac-lead">Traditional SEO gets you the click. Generative Engine Optimization gets the AI to pick you.</p>
+            <h2 className="ac-h2">SEO vs GEO: What Is Generative Engine Optimization?</h2>
+            <p className="ac-lead">Traditional <Link href="/services/shopify-seo-agency">Shopify SEO</Link> gets you the click. Generative Engine Optimization gets the AI to pick you.</p>
           </div>
           <div className="ac-two ac-compare">
             <div className="ac-compare-col">
@@ -396,6 +416,18 @@ export default function Page() {
               </ul>
             </div>
           </div>
+          <table className="sr-only">
+            <caption>SEO vs GEO (Generative Engine Optimization) for Shopify stores</caption>
+            <thead>
+              <tr><th scope="col">Dimension</th><th scope="col">Traditional SEO</th><th scope="col">Generative Engine Optimization (GEO)</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">What it optimizes</th><td>Pages, to rank in Google&apos;s links</td><td>Product data, for AI agents</td></tr>
+              <tr><th scope="row">Goal</th><td>Earn the click to your site</td><td>Get the AI to pick and buy your product</td></tr>
+              <tr><th scope="row">Main levers</th><td>Keywords, backlinks, content</td><td>Structured data, schema, feeds, factual specs</td></tr>
+              <tr><th scope="row">Who decides</th><td>The shopper browses and decides on your store</td><td>The AI reads your data and decides, often with no site visit</td></tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -404,7 +436,7 @@ export default function Page() {
         <div className="ac-wrap">
           <div className="ac-head">
             <span className="ac-eyebrow">The difference</span>
-            <h2 className="ac-h2">What good looks like</h2>
+            <h2 className="ac-h2">What an Agent-Ready Product Listing Looks Like</h2>
             <p className="ac-lead">Same product, two listings. AI agents skip the first and recommend the second.</p>
           </div>
           <div className="ac-two">
@@ -441,7 +473,7 @@ export default function Page() {
           <div className="std-solutions-left" style={{ position: "sticky", top: "120px", alignSelf: "start" }}>
             <span className="std-label">What&apos;s Included</span>
             <h2 style={{ color: "#000", fontSize: 42, fontWeight: 700, lineHeight: 1.2, margin: "12px 0 0" }}>
-              Everything We Do to Make You Agent-Ready
+              What Our Shopify Agentic Commerce Services Include
             </h2>
             <p className="mt-5" style={{ color: "#334155", fontSize: 16, lineHeight: "28px" }}>
               Every engagement covers an agent-readiness audit, structured data and schema, feed and catalog cleanup, channel setup, and ongoing monitoring. We do not hand over work we haven&apos;t validated against the AI assistants.
@@ -463,14 +495,17 @@ export default function Page() {
         <div className="ac-wrap">
           <div className="ac-head">
             <span className="ac-eyebrow">See it in action</span>
-            <h2 className="ac-h2">Products winning inside AI assistants</h2>
+            <h2 className="ac-h2">Shopify Products Winning Inside AI Assistants</h2>
             <p className="ac-lead">Real examples of optimized products surfacing and selling across AI shopping channels.</p>
           </div>
           <div className="ac-shots">
-            {["/images/results%20image%201.png", "/images/results%20image%202.png"].map((src, i) => (
-              <div key={src} className="ac-shot">
+            {[
+              { src: "/images/results%20image%201.png", w: 1185, h: 621, alt: "Agent-ready Shopify product surfacing inside ChatGPT search results" },
+              { src: "/images/results%20image%202.png", w: 1105, h: 631, alt: "Optimized Shopify product recommended inside an AI shopping assistant" },
+            ].map((img) => (
+              <div key={img.src} className="ac-shot">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={src} alt={`Shopify product result inside an AI assistant, example ${i + 1}`} className="ac-shot-img" loading="lazy" />
+                <img src={img.src} alt={img.alt} width={img.w} height={img.h} className="ac-shot-img" loading="lazy" decoding="async" />
               </div>
             ))}
           </div>
@@ -494,7 +529,7 @@ export default function Page() {
             <div className="ac-fit ac-fit-no">
               <p className="ac-fit-h">Not yet if</p>
               <ul className="ac-fit-list">
-                {NOT_FOR.map((b) => (<li key={b}><Cross /><span>{b}</span></li>))}
+                {NOT_FOR.map((b) => (<li key={b.k}><Cross /><span>{b.t}</span></li>))}
               </ul>
             </div>
           </div>
@@ -553,7 +588,7 @@ export default function Page() {
       <section className="ssd-results-section" style={{ background: "#FBF7ED", fontFamily: "'Poppins', sans-serif", padding: "60px 20px" }}>
         <div className="ssd-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
           <h2 className="ssd-results-heading">A proven team behind the results</h2>
-          <p className="ssd-results-desc">We have built 700+ Shopify stores and generated $900M+ in revenue across 8+ years and 9+ industry awards. The same team gets your products agent-ready for the AI shopping era.</p>
+          <p className="ssd-results-desc">We have built <Link href="/case-studies">700+ Shopify stores</Link> and generated $900M+ in revenue across 8+ years and 9+ industry awards. The same team gets your products agent-ready for the AI shopping era.</p>
           <CaseStudySlider slides={AC_SLIDES} intervalMs={6000} showDots />
         </div>
       </section>
