@@ -151,7 +151,6 @@ const FAQS = [
   { question: "How does Shopify ChatGPT integration work?", answer: "Shopify's Agentic Storefronts handle the ChatGPT integration for you. Once your store is eligible, Shopify connects your catalog to ChatGPT through the Agentic Commerce Protocol, so shoppers find and buy your products inside ChatGPT. We optimize your product data so ChatGPT recommends you, not just lists you." },
   { question: "What is GEO and how is it different from SEO?", answer: "GEO, or Generative Engine Optimization, is the practice of optimizing your product data so AI agents pick your products. Traditional SEO optimizes pages to rank in Google's links. GEO optimizes structured data, schema, and feeds so AI assistants can read, trust, and recommend you. With AI shopping, your data is the product." },
   { question: "Which AI channels can my products appear in?", answer: "Through Shopify's Agentic Storefronts and Catalog, your products can surface in ChatGPT, Google Gemini and AI Mode, Microsoft Copilot, Perplexity, and the Shop app, all managed from one place in your Shopify admin." },
-  { question: "What is the difference between UCP and ACP?", answer: "They are the two open standards for AI shopping. Google, Shopify, and Walmart built UCP (Universal Commerce Protocol) to cover the full journey. OpenAI and Stripe built ACP (Agentic Commerce Protocol), which powers ChatGPT. You want to be ready for both, because supporting only one means losing the other's traffic." },
   { question: "Do I need Shopify Plus for agentic commerce?", answer: "No. Agentic Storefronts work across Shopify plans for eligible stores. If you sell on another platform, Shopify's Agentic Plan lets you list in the Shopify Catalog and sell through AI channels without a full Shopify store." },
   { question: "What does agentic commerce cost?", answer: "Getting discovered through Agentic Storefronts has no added Shopify fee beyond standard payment processing. AI checkout fees vary by channel. Our work is the optimization that makes AI agents choose you, scoped per project after an audit." },
   { question: "How long does it take to get agent-ready?", answer: "Most stores see a meaningful data and catalog cleanup in two to four weeks, with ongoing optimization after that. We start with an agent-readiness audit so you know exactly where you stand before any work begins." },
@@ -255,23 +254,45 @@ export default function Page() {
               className="sat-hero-img"
               style={{ width: "auto", height: "auto", maxHeight: "480px", maxWidth: "100%", borderRadius: "16px", display: "block", margin: "0 auto" }}
             />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/shopify-iccon-black.webp"
-              alt="Shopify store optimized for AI agentic commerce"
-              loading="eager"
-              decoding="async"
-              fetchPriority="low"
+            {/* Floating Shopify badge - identical dark-tile container to the AI badge */}
+            <span
+              aria-hidden
               className="ac-hero-shopify-icon"
-              style={{ position: "absolute", right: "3%", top: "56%", width: "98px", height: "98px", objectFit: "contain", filter: "drop-shadow(0 0 10px rgba(255,255,255,0.12))" }}
-            />
+              style={{
+                position: "absolute",
+                right: "3%",
+                top: "56%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "98px",
+                height: "98px",
+                borderRadius: "22px",
+                background: "linear-gradient(150deg, #1c1c1c 0%, #050505 100%)",
+                border: "1px solid rgba(255,255,255,0.10)",
+                boxShadow: "0 14px 40px rgba(0,0,0,0.5), 0 0 12px rgba(255,255,255,0.10)",
+              }}
+            >
+              <svg width="44" height="50" viewBox="0 0 41 46" fill="none" aria-hidden>
+                <defs>
+                  <linearGradient id="shopBagGrad" x1="0" y1="0" x2="41" y2="46" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stopColor="#A8F0B4" />
+                    <stop offset="0.5" stopColor="#3DC77A" />
+                    <stop offset="1" stopColor="#2A9555" />
+                  </linearGradient>
+                </defs>
+                <path fill="url(#shopBagGrad)" d="M35.5531 8.85714C35.5375 8.75855 35.4893 8.66803 35.4162 8.60007C35.3431 8.5321 35.2493 8.49061 35.1499 8.48224C34.9827 8.46844 31.7075 8.4186 31.7075 8.4186C31.7075 8.4186 28.969 5.75826 28.6983 5.48839C28.4277 5.21775 27.8995 5.29902 27.694 5.36036C27.6917 5.36189 27.1803 5.51982 26.3186 5.78662C26.1482 5.22857 25.9275 4.68712 25.6593 4.16895C24.6856 2.30824 23.2565 1.3246 21.5315 1.32154H21.5246C21.405 1.32154 21.2869 1.33304 21.1666 1.343C21.1161 1.28204 21.0642 1.22223 21.0109 1.1636C20.2596 0.3586 19.2951 -0.0324014 18.1405 0.00209875C15.9126 0.0657324 13.6931 1.67497 11.8937 4.53312C10.6272 6.54486 9.66422 9.07181 9.39052 11.0283L5.0044 12.3877C3.71256 12.7932 3.67193 12.8323 3.50326 14.0506C3.37753 14.9706 -0.00195312 41.101 -0.00195312 41.101L28.3188 46L40.5932 42.9487C40.5932 42.9487 35.5846 9.08944 35.5531 8.85714ZM24.8995 6.22593L22.7022 6.90596C22.6853 5.77819 22.5519 4.20805 22.026 2.85181C23.7165 3.17228 24.5484 5.08512 24.8995 6.22593ZM21.2202 7.3652L16.4922 8.82954C16.9491 7.08 17.8155 5.33736 18.8804 4.19578C19.276 3.77028 19.8295 3.29725 20.4858 3.02661C21.1022 4.31308 21.2356 6.13393 21.2202 7.36596V7.3652ZM18.1842 1.48484C18.7079 1.47334 19.1479 1.58834 19.5244 1.83597C18.9218 2.14877 18.3399 2.59804 17.794 3.18378C16.3787 4.70179 15.2939 7.0593 14.8615 9.33324C13.5121 9.75107 12.1927 10.1605 10.9775 10.5354C11.7442 6.9558 14.7449 1.58451 18.1842 1.48484Z" />
+                <path fill="url(#shopBagGrad)" d="M35.1504 8.48115C34.9832 8.46658 31.7088 8.41675 31.7088 8.41675C31.7088 8.41675 28.9702 5.75717 28.6996 5.4873C28.5948 5.38988 28.4615 5.32862 28.3193 5.3125L28.3201 45.9958L40.5937 42.946C40.5937 42.946 35.5858 9.08835 35.5536 8.85605C35.5381 8.75737 35.4899 8.66675 35.4168 8.59866C35.3437 8.53057 35.2499 8.48893 35.1504 8.48038V8.48115Z" />
+                <path fill="#ffffff" d="M21.5187 14.7953L20.0927 20.1283C20.0927 20.1283 18.5027 19.4053 16.6182 19.5234C13.8536 19.6989 13.8244 21.4416 13.8528 21.8793C14.0031 24.2644 20.2775 24.785 20.6302 30.3725C20.9069 34.7678 18.2987 37.7747 14.5405 38.0124C10.0287 38.296 7.54541 35.6357 7.54541 35.6357L8.50145 31.57C8.50145 31.57 11.0008 33.456 13.0018 33.3295C14.309 33.2467 14.7766 32.1834 14.7291 31.432C14.5328 28.3209 9.42299 28.5041 9.10022 23.392C8.82805 19.0902 11.6532 14.7301 17.8878 14.3376C20.2898 14.1827 21.5187 14.7953 21.5187 14.7953Z" />
+              </svg>
+            </span>
             {/* Floating AI badge (decorative) - same dark-badge style as the Shopify one */}
             <span
               aria-hidden
               className="ac-hero-ai-icon"
               style={{
                 position: "absolute",
-                left: "1%",
+                left: "3%",
                 top: "8%",
                 display: "flex",
                 alignItems: "center",
@@ -332,14 +353,29 @@ export default function Page() {
             <p className="ac-p">It is a new way to shop where AI agents handle the whole journey, from discovery to checkout, inside a conversation. A chatbot that recommends a moisturizer is conversational commerce. An AI that queries multiple brands, compares ingredients and prices, and buys the best option for you is agentic commerce.</p>
             <p className="ac-p">The shopper asks an AI assistant, the agent searches connected product catalogs, presents a short list, and the shopper buys right there in the chat. The order flows into your Shopify admin with attribution showing which AI channel drove the sale. Your storefront is no longer the front door, your product data is.</p>
           </div>
-          <div className="ac-card-box">
-            <p className="ac-box-title">The shift in one line</p>
-            <ul className="ac-checklist">
-              <li><Check /><span>Shoppers describe what they want in plain language</span></li>
-              <li><Check /><span>AI agents compare products across many stores</span></li>
-              <li><Check /><span>The agent picks and buys, often without a site visit</span></li>
-              <li><Check /><span>You win only if the AI can read and trust your data</span></li>
-            </ul>
+          <div className="ac-card-col">
+            <div className="ac-card-box">
+              <p className="ac-box-title">The shift in one line</p>
+              <ul className="ac-checklist">
+                <li><Check /><span>Shoppers describe what they want in plain language</span></li>
+                <li><Check /><span>AI agents compare products across many stores</span></li>
+                <li><Check /><span>The agent picks and buys, often without a site visit</span></li>
+                <li><Check /><span>You win only if the AI can read and trust your data</span></li>
+              </ul>
+            </div>
+            <div className="ac-card-box">
+              <p className="ac-box-title">Conversational vs agentic</p>
+              <div className="ac-vs">
+                <div className="ac-vs-item">
+                  <span className="ac-list-tag ac-tag-bad">Conversational</span>
+                  <p className="ac-vs-text">A chatbot suggests a product. You still browse and check out yourself.</p>
+                </div>
+                <div className="ac-vs-item">
+                  <span className="ac-list-tag ac-tag-good">Agentic</span>
+                  <p className="ac-vs-text">An AI compares brands and buys for you, often without a site visit.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -347,7 +383,7 @@ export default function Page() {
       {/* 4. Where your products show up */}
       <section className="ac-sec ac-cream">
         <div className="ac-wrap">
-          <div className="ac-head">
+          <div className="ac-head ac-head-wide">
             <span className="ac-eyebrow">Reach</span>
             <h2 className="ac-h2">Where Your Products Appear Across AI Shopping Channels</h2>
             <p className="ac-lead">One setup in Shopify, syndicated to every major AI shopping surface.</p>
@@ -370,7 +406,7 @@ export default function Page() {
       {/* 5. Why now / opportunity */}
       <section className="ac-sec ac-dark">
         <div className="ac-wrap">
-          <div className="ac-head">
+          <div className="ac-head ac-head-wide">
             <span className="ac-eyebrow ac-eyebrow-dark">Why now</span>
             <h2 className="ac-h2 ac-h2-dark">Why Agentic Commerce Matters Now for Shopify Stores</h2>
             <p className="ac-lead ac-lead-dark">Agentic Storefronts are on by default, so your products are likely already discoverable. The brands that optimize their data first will win the recommendation before the rest catch up.</p>
@@ -393,7 +429,7 @@ export default function Page() {
       {/* 6. SEO vs GEO */}
       <section className="ac-sec ac-white">
         <div className="ac-wrap">
-          <div className="ac-head">
+          <div className="ac-head ac-head-wide">
             <span className="ac-eyebrow">The new playbook</span>
             <h2 className="ac-h2">SEO vs GEO: What Is Generative Engine Optimization?</h2>
             <p className="ac-lead">Traditional <Link href="/services/shopify-seo-agency">Shopify SEO</Link> gets you the click. Generative Engine Optimization gets the AI to pick you.</p>
@@ -438,7 +474,7 @@ export default function Page() {
       {/* 7. What good looks like */}
       <section className="ac-sec ac-cream">
         <div className="ac-wrap">
-          <div className="ac-head">
+          <div className="ac-head ac-head-wide">
             <span className="ac-eyebrow">The difference</span>
             <h2 className="ac-h2">What an Agent-Ready Product Listing Looks Like</h2>
             <p className="ac-lead">Same product, two listings. AI agents skip the first and recommend the second.</p>
@@ -497,7 +533,7 @@ export default function Page() {
       {/* 9. Proof / See it in action */}
       <section className="ac-sec ac-cream">
         <div className="ac-wrap">
-          <div className="ac-head">
+          <div className="ac-head ac-head-wide">
             <span className="ac-eyebrow">See it in action</span>
             <h2 className="ac-h2">Shopify Products Winning Inside AI Assistants</h2>
             <p className="ac-lead">Real examples of optimized products surfacing and selling across AI shopping channels.</p>
@@ -622,11 +658,12 @@ const CSS = `
 .ac-eyebrow-dark{color:#61ce70}
 .ac-lead{font-family:'Poppins',sans-serif;font-size:17px;line-height:1.6;color:#64748b;margin:0;max-width:680px}
 .ac-lead-dark{color:rgba(255,255,255,0.7)}
-.ac-sec{padding:72px 0}
+.ac-sec{padding:60px 0}
 .ac-white{background:#fff}
 .ac-cream{background:#FBF7ED}
 .ac-dark{background:#000}
 .ac-head{margin-bottom:40px;max-width:760px}
+.ac-head.ac-head-wide{max-width:none}
 
 /* Hero (ported from the analytics & tracking page) */
 .std-badge{display:inline-block;padding:6px 16px;background:rgba(97,206,112,0.12);border:1px solid rgba(97,206,112,0.3);border-radius:999px;color:#61ce70;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
@@ -639,11 +676,13 @@ const CSS = `
 @keyframes acFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 .ac-hero-ai-icon{animation:acFloat 4s ease-in-out infinite}
 .ac-hero-shopify-icon{animation:acFloat 4.6s ease-in-out infinite .4s}
-@media (max-width:640px){.ac-hero-ai-icon{width:64px!important;height:64px!important}.ac-hero-shopify-icon{width:72px!important;height:72px!important}}
+@media (max-width:640px){.ac-hero-ai-icon{width:64px!important;height:64px!important}.ac-hero-shopify-icon{width:64px!important;height:64px!important}}
+@media (min-width:1024px) and (max-width:1100px){.ac-hero-ai-icon,.ac-hero-shopify-icon{width:80px!important;height:80px!important}}
+@media (min-width:641px) and (max-width:1023px){.ac-hero-ai-icon{left:calc(50% - 264px)!important}.ac-hero-shopify-icon{right:calc(50% - 264px)!important}}
 .sat-hero-img{width:100%;height:auto;border-radius:16px;display:block;box-shadow:0 24px 64px rgba(0,0,0,0.45)}
 @media (min-width:1025px) and (max-width:1307px){.std-hero-stats{flex-wrap:nowrap!important}.std-hero-stat-item{padding-right:18px!important;margin-right:18px!important}.std-hero-stat-num{font-size:24px!important}.std-hero-stat-label{font-size:12px!important}}
 @media (max-width:1024px){.std-hero-h1{font-size:40px!important}.std-hero-inner{padding:60px 20px!important}.std-hero-p{margin-top:16px!important}.std-hero-stats{flex-wrap:nowrap!important;margin-top:16px!important;padding-top:16px!important}.std-hero-stat-item{padding-right:16px!important;margin-right:16px!important}.sat-hero-img-wrap{margin-top:8px}}
-@media (max-width:640px){.std-hero-h1{font-size:28px!important;line-height:1.22!important}.std-hero-p{font-size:14px!important;line-height:24px!important}.std-hero-stats{gap:8px 0;margin-top:24px;padding-top:18px;flex-wrap:wrap!important}.std-hero-stat-item{width:50%;padding-right:16px;margin-right:0}.sat-hero-img{border-radius:10px}}
+@media (max-width:640px){.std-hero-h1{font-size:28px!important;line-height:1.22!important}.std-hero-p{font-size:14px!important;line-height:24px!important}.std-hero-stats{display:grid!important;grid-template-columns:1fr 1fr;gap:18px 0!important;margin-top:24px;padding-top:18px}.std-hero-stat-item{width:auto!important;padding:0 16px 0 0!important;margin:0!important;border-right:1px solid rgba(255,255,255,0.12)}.std-hero-stat-item:nth-child(even){border-right:none;padding:0 0 0 16px!important}.sat-hero-img{border-radius:10px}}
 
 /* Trust strip - logo marquee (ported from analytics page) */
 .std-trust-carousel{overflow:hidden;position:relative}
@@ -672,6 +711,9 @@ const CSS = `
 .ac-two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 .ac-card-box{background:#fff;border:1px solid #e8ecf1;border-radius:18px;padding:28px;box-shadow:0 10px 40px rgba(0,0,0,0.05)}
 .ac-box-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#0f172a;margin:0 0 16px}
+.ac-card-col{display:flex;flex-direction:column;gap:20px}
+.ac-vs{display:flex;flex-direction:column;gap:16px}
+.ac-vs-text{font-family:'Poppins',sans-serif;font-size:14px;color:#475569;line-height:1.5;margin:0}
 .ac-checklist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
 .ac-checklist li{display:flex;gap:12px;align-items:flex-start;font-family:'Poppins',sans-serif;font-size:15px;color:#334155;line-height:1.5}
 
@@ -718,9 +760,9 @@ const CSS = `
 .ac-offer-body{font-family:'Poppins',sans-serif;font-size:14px;color:#64748b;line-height:1.55;margin:0}
 
 /* Proof */
-.ac-shots{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:1000px;margin:0 auto}
+.ac-shots{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:start}
 .ac-shot{background:#fff;border:1px solid #ece3d0;border-radius:16px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,0.08)}
-.ac-shot-img{width:100%;height:auto;display:block}
+.ac-shot-img{width:100%;aspect-ratio:1105/631;object-fit:cover;object-position:center;display:block}
 @media (max-width:760px){.ac-shots{grid-template-columns:1fr}}
 
 /* Fit */
@@ -741,7 +783,6 @@ const CSS = `
 @media (max-width:760px){
   .ac-two{grid-template-columns:1fr}
   .ac-grid-3{grid-template-columns:1fr}
-  .ac-sec{padding:52px 0}
   .ac-head{margin-bottom:30px}
 }
 @media (max-width:540px){
@@ -750,4 +791,8 @@ const CSS = `
   .ac-grid-4{grid-template-columns:1fr}
   .ac-hero-stat-label{max-width:130px}
 }
+/* responsive section padding: 60 (base) -> 55 @1024 -> 50 @768 -> 45 <450 */
+@media (max-width:1024px){.ac-sec{padding:55px 0}}
+@media (max-width:768px){.ac-sec{padding:50px 0}}
+@media (max-width:449px){.ac-sec{padding:45px 0}}
 `;
