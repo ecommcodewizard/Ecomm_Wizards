@@ -4,6 +4,7 @@ import Link from "next/link";
 import SmsAccordion from "./SmsAccordion";
 import SmsFaqAccordion from "./SmsFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Shopify maintenance and support for 150+ stores. Monthly retainers covering audits, bug fixes, speed monitoring, and proactive care for your store.";
@@ -850,6 +851,7 @@ export default function Page() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
+        <ServiceSchema url={CANONICAL_URL} name="Shopify Maintenance and Support" serviceType="Shopify maintenance and support" description={META_DESCRIPTION} />
 
         <style dangerouslySetInnerHTML={{ __html: `
           .sms-faq__inner { padding: 40px 15px; }

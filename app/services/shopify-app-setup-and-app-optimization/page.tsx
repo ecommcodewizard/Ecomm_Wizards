@@ -4,6 +4,7 @@ import Link from "next/link";
 import SaoAccordion from "./SaoAccordion";
 import SaoFaqAccordion from "./SaoFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Shopify app setup and optimization for 150+ stores. We audit your app stack, remove dead weight, and configure for faster pages and better conversions.";
@@ -811,6 +812,7 @@ export default function Page() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
+        <ServiceSchema url={CANONICAL_URL} name="Shopify App Setup and Optimization" serviceType="Shopify app setup and optimization" description={META_DESCRIPTION} />
 
         <style dangerouslySetInnerHTML={{ __html: `
           .sao-faq__inner { padding: 40px 15px; }

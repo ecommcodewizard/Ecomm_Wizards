@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Expert Shopify POS setup, hardware configuration, and migration from Square, Lightspeed, or Clover. Remote service for 1 to 50+ locations. Free quote.";
@@ -656,6 +657,7 @@ export default function ShopifyPOSSetupPage() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
         />
+        <ServiceSchema url={CANONICAL_URL} name="Shopify POS and Omnichannel Setup" serviceType="Shopify POS setup" description={META_DESCRIPTION} />
         <div className="pos-faq-inner mx-auto py-[40px] px-[15px] lg:py-[60px] lg:px-[20px]" style={{ maxWidth: "1320px" }}>
           <h2 className="pos-faq-title">Frequently Asked Questions</h2>
 

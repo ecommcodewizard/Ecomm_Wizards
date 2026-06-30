@@ -3,6 +3,7 @@ import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import RodeoCarousel, { type RodeoSlide } from "@/components/sections/RodeoCarousel";
 import CustomizerCarousel, { type CustomizerSlide } from "@/components/sections/CustomizerCarousel";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "PrestaShop to Shopify migration without downtime. We move your products, customers, orders, and SEO with zero data loss. Get a free test drive.";
@@ -595,6 +596,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
       />
+      <ServiceSchema url={CANONICAL_URL} name="PrestaShop to Shopify Migration" serviceType="PrestaShop to Shopify migration" description={META_DESCRIPTION} />
       {/* 1 — Hero (WP source: "Seamless Migration to Shopify / Your WooCommerce Store's Next Destination") */}
       <section className="w2s-hero">
         <div className="w2s-hero-inner">

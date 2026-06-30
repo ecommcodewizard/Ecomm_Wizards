@@ -5,6 +5,7 @@ import Link from "next/link";
 import SplusAccordion from "./SplusAccordion";
 import SplusFaqAccordion from "./SplusFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Shopify Plus development agency with 200+ enterprise stores built. Custom checkout extensions, B2B portals, ERP integrations, zero-downtime migrations.";
@@ -746,6 +747,7 @@ export default function Page() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
+        <ServiceSchema url={CANONICAL_URL} name="Shopify Plus Development Agency" serviceType="Shopify Plus development" description={META_DESCRIPTION} />
 
         <style dangerouslySetInnerHTML={{ __html: `
           .spd-faq__inner { padding: 40px 15px; }

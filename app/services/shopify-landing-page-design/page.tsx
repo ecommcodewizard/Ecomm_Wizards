@@ -5,6 +5,7 @@ import Link from "next/link";
 import LpAccordion from "./LpAccordion";
 import LpFaqAccordion from "./LpFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Shopify landing page design for paid ads, launches, and seasonal campaigns. 200+ pages built, 28.5% avg conversion lift. Fixed-price quotes in 24 hours.";
@@ -850,6 +851,7 @@ export default function Page() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
+        <ServiceSchema url={CANONICAL_URL} name="Shopify Landing Page Design" serviceType="Shopify landing page design" description={META_DESCRIPTION} />
 
         <style dangerouslySetInnerHTML={{ __html: `
           .lp-faq__inner { padding: 40px 15px; }

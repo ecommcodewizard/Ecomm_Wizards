@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Shopify migration agency for brands that can't afford downtime. We move your store, products, customers, orders, and SEO with zero data loss.";
@@ -376,6 +377,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
       />
+      <ServiceSchema url={CANONICAL_URL} name="Shopify Migration Agency" serviceType="Shopify migration" description={META_DESCRIPTION} />
       {/* 1 — Hero */}
       <section className="mig-hero">
         <div className="mig-hero-inner">

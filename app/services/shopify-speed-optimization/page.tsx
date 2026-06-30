@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Shopify speed optimization that fixes the root cause. We strip bloat, rebuild theme code, and ship measurable Core Web Vitals wins. Money-back guarantee.";
@@ -450,6 +451,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
       />
+      <ServiceSchema url={CANONICAL_URL} name="Shopify Speed Optimization" serviceType="Shopify speed optimization" description={META_DESCRIPTION} />
       {/* ── Mobile (<= 768px) overrides — single source of truth for the whole page ── */}
       <style dangerouslySetInnerHTML={{ __html: `
         /* Tablet / small laptop (769–1024px): cap the hero H1 */

@@ -4,6 +4,7 @@ import Link from "next/link";
 import SseAccordion from "./SseAccordion";
 import SseFaqAccordion from "./SseFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Shopify SEO agency for 150+ stores. We fix technical issues, map keywords to buyer intent, and grow organic revenue that compounds. 320% avg traffic lift.";
@@ -860,6 +861,7 @@ export default function Page() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
+        <ServiceSchema url={CANONICAL_URL} name="Shopify SEO Agency" serviceType="Shopify SEO" description={META_DESCRIPTION} />
 
         <style dangerouslySetInnerHTML={{ __html: `
           .sse-faq__inner { padding: 40px 15px; }

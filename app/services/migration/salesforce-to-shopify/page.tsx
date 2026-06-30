@@ -4,6 +4,7 @@ import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/Case
 import RodeoCarousel, { type RodeoSlide } from "@/components/sections/RodeoCarousel";
 import CustomizerCarousel, { type CustomizerSlide } from "@/components/sections/CustomizerCarousel";
 import HydrogenWhyAccordion, { type HydrogenWhyItem } from "@/components/sections/HydrogenWhyAccordion";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Salesforce to Shopify migration without downtime. We move enterprise stores off Commerce Cloud to Shopify Plus with zero data loss. Get a free test build.";
@@ -655,6 +656,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
       />
+      <ServiceSchema url={CANONICAL_URL} name="Salesforce to Shopify Migration" serviceType="Salesforce Commerce Cloud to Shopify migration" description={META_DESCRIPTION} />
       {/* 1 — Hero (WP source: "Seamless Migration to Shopify / Your WooCommerce Store's Next Destination") */}
       <section className="w2s-hero">
         <div className="w2s-hero-inner">

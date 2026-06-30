@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Hire expert Shopify app developers to build custom private apps or launch on the Shopify App Store. Shopify Plus Preferred Partner. 700+ merchants.";
@@ -1581,6 +1582,7 @@ export default function ShopifyAppDevelopmentPage() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
         />
+        <ServiceSchema url={CANONICAL_URL} name="Shopify App Development Company" serviceType="Shopify app development" description={META_DESCRIPTION} />
 
         <div
           className="sad-faq-inner mx-auto"

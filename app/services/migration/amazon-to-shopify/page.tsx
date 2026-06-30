@@ -3,6 +3,7 @@ import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import RodeoCarousel, { type RodeoSlide } from "@/components/sections/RodeoCarousel";
 import CustomizerCarousel, { type CustomizerSlide } from "@/components/sections/CustomizerCarousel";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Amazon to Shopify migration without losing sales. We connect Amazon to Shopify, sync your catalog and orders, and build a DTC store you own. Free test drive.";
@@ -595,6 +596,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
       />
+      <ServiceSchema url={CANONICAL_URL} name="Amazon to Shopify Migration" serviceType="Amazon to Shopify migration" description={META_DESCRIPTION} />
       {/* 1 — Hero */}
       <section className="w2s-hero">
         <div className="w2s-hero-inner">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const CASE_STUDY_SLIDES: CaseStudySlide[] = [
   {
@@ -2296,6 +2297,8 @@ export default function ShopifyStoreDevelopmentPage() {
           }),
         }}
       />
+
+      <ServiceSchema url={CANONICAL_URL} name="Custom Shopify Store Development" serviceType="Shopify store development" description={META_DESCRIPTION} />
 
       {/* Frequently Asked Questions */}
       <section

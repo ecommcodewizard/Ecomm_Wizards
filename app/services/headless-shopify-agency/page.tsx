@@ -4,6 +4,7 @@ import Link from "next/link";
 import HlAccordion from "./HlAccordion";
 import HlFaqAccordion from "./HlFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Headless Shopify agency for Hydrogen and Next.js. Commerce storefronts with sub-second load times and total design freedom. Book a free architecture call.";
@@ -458,6 +459,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA_SHL) }}
       />
+      <ServiceSchema url={CANONICAL_URL} name="Headless Shopify Agency" serviceType="Headless Shopify development" description={META_DESCRIPTION} />
 
       {/* ── §1 Hero (DARK) ── */}
       <section className="std-hero" style={{ background: C_DARK }} aria-label="Headless Shopify agency hero">
