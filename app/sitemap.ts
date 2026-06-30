@@ -39,6 +39,7 @@ const ROUTES: string[] = [
   "/services/shopify-cro-agency",
   "/services/headless-shopify-agency",
   "/services/shopify-seo-agency",
+  "/services/shopify-agentic-commerce",
   "/services/shopify-plus-development",
   "/services/shopify-theme-development",
   "/services/shopify-2-0-development",

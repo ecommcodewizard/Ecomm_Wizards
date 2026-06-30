@@ -26,6 +26,7 @@ const SERVICE_TAGS = [
   { label: "A/B Testing for CRO, AOV & CLV",  href: "/services/a-b-testing" },
   { label: "B2B Solutions",                    href: "/services/shopify-b2b-store-setup" },
   { label: "Shopify SEO Agency",               href: "/services/shopify-seo-agency" },
+  { label: "Shopify Agentic Commerce",         href: "/services/shopify-agentic-commerce" },
   { label: "Book a Demo",                      href: "/book-shopify-consultation" },
   { label: "Shopify Landing Page Design",      href: "/services/shopify-landing-page-design" },
 ];
@@ -54,6 +55,7 @@ const DESIGN_BUILD = [
 const OPTIMIZE_GROW = [
   { label: "Shopify CRO Agency",                   href: "/services/shopify-cro-agency" },
   { label: "Shopify SEO Agency",                   href: "/services/shopify-seo-agency" },
+  { label: "Agentic Commerce",                     href: "/services/shopify-agentic-commerce" },
   { label: "A/B Testing",                          href: "/services/a-b-testing" },
   { label: "Site Speed Optimizations",             href: "/services/shopify-speed-optimization" },
   { label: "Shopify Store Audit",                  href: "/services/shopify-store-audit" },

@@ -46,6 +46,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       { name: "A/B Testing", blurb: "Structured experiments that prove what actually moves your numbers.", href: "/services/a-b-testing" },
       { name: "Speed Optimization", blurb: "Faster load times and better Core Web Vitals for rankings and conversion.", href: "/services/shopify-speed-optimization" },
       { name: "Shopify SEO", blurb: "Technical and content SEO that grows organic traffic and rankings.", href: "/services/shopify-seo-agency" },
+      { name: "Agentic Commerce", blurb: "Get your products found and bought by AI assistants like ChatGPT and Gemini.", href: "/services/shopify-agentic-commerce" },
       { name: "Analytics & Tracking", blurb: "Clean GA4, GTM, and pixel setup so you can trust your data.", href: "/services/shopify-analytics-and-tracking-setup" },
       { name: "Maintenance & Support", blurb: "Ongoing care, updates, and on-demand development after launch.", href: "/services/shopify-maintenance-and-support" },
     ],
