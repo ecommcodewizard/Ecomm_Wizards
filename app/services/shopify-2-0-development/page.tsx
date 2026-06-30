@@ -5,6 +5,7 @@ import Link from "next/link";
 import S20Accordion from "./S20Accordion";
 import S20FaqAccordion from "./S20FaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Shopify 2.0 development agency with 200+ Online Store 2.0 builds. Custom themes, 1.0 to 2.0 migrations, and native App Block integrations.";
@@ -783,6 +784,7 @@ export default function Page() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
+        <ServiceSchema url={CANONICAL_URL} name="Shopify 2.0 Development Agency" serviceType="Shopify 2.0 development" description={META_DESCRIPTION} />
 
         <style dangerouslySetInnerHTML={{ __html: `
           .s20-faq__inner { padding: 40px 15px; }

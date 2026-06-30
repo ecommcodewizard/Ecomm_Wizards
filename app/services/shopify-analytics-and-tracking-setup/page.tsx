@@ -5,6 +5,7 @@ import Link from "next/link";
 import SatAccordion from "./SatAccordion";
 import SatFaqAccordion from "./SatFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Shopify analytics and tracking setup for 150+ stores. We configure GA4, GTM, and conversion pixels, validate every event, and give you data you can trust.";
@@ -856,6 +857,7 @@ export default function Page() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
+        <ServiceSchema url={CANONICAL_URL} name="Shopify Analytics and Tracking Setup" serviceType="Shopify analytics and tracking setup" description={META_DESCRIPTION} />
 
         <style dangerouslySetInnerHTML={{ __html: `
           .sat-faq__inner { padding: 40px 15px; }

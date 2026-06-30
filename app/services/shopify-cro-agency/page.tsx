@@ -5,6 +5,7 @@ import Link from "next/link";
 import CroAccordion from "./CroAccordion";
 import CroFaqAccordion from "./CroFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Shopify CRO agency specializing in conversion rate optimization, A/B testing, and CRO audits for Shopify Plus. 100+ stores optimized. Book a free audit.";
@@ -471,6 +472,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA_SCRO) }}
       />
+      <ServiceSchema url={CANONICAL_URL} name="Shopify CRO Agency" serviceType="Conversion rate optimization" description={META_DESCRIPTION} />
 
       {/* ── §1 Hero (DARK) ── */}
       <section className="std-hero" style={{ background: C_DARK }} aria-label="Shopify CRO agency hero">

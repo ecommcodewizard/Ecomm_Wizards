@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Build a unified Shopify B2B store with custom pricing, net payment terms, wholesale portals, and ERP integration. Shopify Plus Preferred Partner.";
@@ -652,6 +653,7 @@ export default function ShopifyB2BPage() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
+        <ServiceSchema url={CANONICAL_URL} name="Shopify B2B Store Setup" serviceType="Shopify B2B store setup" description={META_DESCRIPTION} />
         <div className="b2b-faq-inner mx-auto py-[40px] px-[15px] lg:py-[60px] lg:px-[20px]" style={{ maxWidth: "1320px" }}>
           <h2 className="b2b-faq-title">Frequently Asked Questions</h2>
 

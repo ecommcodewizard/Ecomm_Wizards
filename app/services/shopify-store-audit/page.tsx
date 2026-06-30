@@ -7,6 +7,7 @@ import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/Case
 import AuditUrgencySection from "@/components/sections/AuditUrgencySection";
 import WhyPartnerSection from "@/components/sections/WhyPartnerSection";
 import KnifeAccordion from "@/components/sections/KnifeAccordion";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const CASE_STUDY_SLIDES: CaseStudySlide[] = [
   {
@@ -747,6 +748,7 @@ export default function Page() {
           }),
         }}
       />
+      <ServiceSchema url={CANONICAL_URL} name="Shopify Store Audit" serviceType="Shopify store audit" description={META_DESCRIPTION} />
 
       {/* ── Questions About Our Shopify Store Audit + Final CTA ──── */}
       <section

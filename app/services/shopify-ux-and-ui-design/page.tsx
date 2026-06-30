@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Shopify UX and UI design that turns visitors into customers. We rebuild your store, product pages, cart, and emails around how people actually buy.";
@@ -239,6 +240,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
       />
+      <ServiceSchema url={CANONICAL_URL} name="Shopify UX and UI Design Agency" serviceType="Shopify UX and UI design" description={META_DESCRIPTION} />
       {/* 1 — Hero (dark) */}
       <section className="uxui-hero" style={{ background: "#000000" }} aria-label="Shopify UI UX Design hero">
         <div

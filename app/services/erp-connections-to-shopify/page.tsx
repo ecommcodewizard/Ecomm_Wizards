@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const CASE_STUDY_SLIDES: CaseStudySlide[] = [
   {
@@ -838,6 +839,7 @@ export default function ERPPage() {
       <section className="erp-faq-section" style={{ background: "#FFFFFF", fontFamily: "'Poppins', sans-serif" }}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }} />
+        <ServiceSchema url={CANONICAL_URL} name="ERP to Shopify Integration" serviceType="ERP integration for Shopify" description={META_DESCRIPTION} />
         <div
           className="erp-faq-inner mx-auto py-[40px] px-[15px] lg:py-[60px] lg:px-[20px]"
           style={{ maxWidth: "1320px" }}

@@ -5,6 +5,7 @@ import SolutionsAccordion from "./SolutionsAccordion";
 import SsdFaqAccordion from "./SsdFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ShopifyDesignSection from "@/components/sections/ShopifyDesignSection";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Shopify theme development agency building custom Liquid themes on Shopify 2.0. Fast, mobile-first, and built to convert. 500+ themes built.";
@@ -1140,6 +1141,7 @@ export default function Page() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
+        <ServiceSchema url={CANONICAL_URL} name="Shopify Theme Development Agency" serviceType="Shopify theme development" description={META_DESCRIPTION} />
 
         <style dangerouslySetInnerHTML={{ __html: `
           .ssd-faq__inner { padding: 40px 15px; }

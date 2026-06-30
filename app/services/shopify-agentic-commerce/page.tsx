@@ -4,6 +4,7 @@ import { ogImage } from "@/lib/og";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/ui/CTASection";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 import AgenticAccordion from "./AgenticAccordion";
 
 const META_DESCRIPTION =
@@ -171,19 +172,6 @@ const FAQ_JSONLD = {
   "@type": "FAQPage",
   mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })),
 };
-const SERVICE_JSONLD = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": `${CANONICAL_URL}#service`,
-  name: "Shopify Agentic Commerce Agency",
-  serviceType: "Agentic commerce optimization and Generative Engine Optimization (GEO)",
-  provider: { "@id": "https://ecommwizards.com/#organization" },
-  areaServed: { "@type": "Country", name: "United States" },
-  url: CANONICAL_URL,
-  description:
-    "We make Shopify stores agent-ready so AI assistants like ChatGPT, Gemini, Copilot and Perplexity discover, trust, and recommend their products. Includes agent-readiness audits, GEO, structured data and schema, feed hygiene, and Agentic Storefronts setup.",
-  offers: { "@type": "Offer", availability: "https://schema.org/InStock" },
-};
 
 function Check() {
   return (<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden style={{ flexShrink: 0 }}><circle cx="12" cy="12" r="11" fill="rgba(61,199,122,0.15)" /><path d="M7 12.5l3.2 3.2L17 9" stroke="#2A9555" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>);
@@ -201,7 +189,7 @@ export default function Page() {
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_JSONLD) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSONLD) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICE_JSONLD) }} />
+      <ServiceSchema url={CANONICAL_URL} name="Shopify Agentic Commerce Agency" serviceType="Agentic commerce optimization and Generative Engine Optimization (GEO)" description={META_DESCRIPTION} areaServed="United States" />
 
       {/* 1. Hero (dark, 2-col) - ported from the analytics & tracking page */}
       <section className="std-hero" style={{ background: "#000000" }} aria-label="Shopify agentic commerce hero">

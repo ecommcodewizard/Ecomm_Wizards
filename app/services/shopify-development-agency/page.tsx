@@ -4,6 +4,7 @@ import Link from "next/link";
 import SdaAccordion from "./SdaAccordion";
 import SdaFaqAccordion from "./SdaFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Shopify development agency specializing in custom builds, theme development, Shopify Plus, and migrations. 100+ stores built. Fixed price. 6-week delivery.";
@@ -1117,6 +1118,7 @@ export default function Page() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA_SDA) }}
         />
+        <ServiceSchema url={CANONICAL_URL} name="Shopify Development Agency" serviceType="Shopify development" description={META_DESCRIPTION} />
 
         <style dangerouslySetInnerHTML={{ __html: `
           .sda-faq__inner { padding: 40px 15px; }

@@ -5,6 +5,7 @@ import SiAccordion from "./SiAccordion";
 import SiFaqAccordion from "./SiFaqAccordion";
 import SiIntegrationsGrid from "./SiIntegrationsGrid";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
+import ServiceSchema from "@/components/seo/ServiceSchema";
 
 const META_DESCRIPTION =
   "Shopify integration services for ERP, CRM, 3PL, and custom APIs. Connect Shopify to NetSuite, Salesforce, Klaviyo, and more with fixed-price delivery.";
@@ -861,6 +862,7 @@ export default function Page() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
         />
+        <ServiceSchema url={CANONICAL_URL} name="Shopify Integration Services" serviceType="Shopify integration services" description={META_DESCRIPTION} />
 
         <style dangerouslySetInnerHTML={{ __html: `
           .si-faq__inner { padding: 40px 15px; }
