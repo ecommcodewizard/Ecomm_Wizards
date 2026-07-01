@@ -6,7 +6,7 @@ import StatsCard from "@/components/sections/StatsCard";
 import GrowthChart from "@/components/sections/GrowthChart";
 import SocialProofSection from "@/components/sections/SocialProofSection";
 import ProcessSection from "@/components/sections/ProcessSection";
-import ShopifyDesignSection, { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES, BRAND_SERVICES, B2B_SERVICES, COPYWRITING_SERVICES, PERSONALIZATION_SERVICES, SEO_AI_SERVICES, RETENTION_SERVICES, WHY_B2B_SERVICES, POS_SERVICES, AI_AUTOMATION_SERVICES } from "@/components/sections/ShopifyDesignSection";
+import ShopifyDesignSection, { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES, BRAND_SERVICES, B2B_SERVICES, COPYWRITING_SERVICES, PERSONALIZATION_SERVICES, SEO_AI_SERVICES, RETENTION_SERVICES, WHY_B2B_SERVICES, POS_SERVICES, AI_AUTOMATION_SERVICES, AGENTIC_SERVICES } from "@/components/sections/ShopifyDesignSection";
 import AiAppsSlider from "@/components/sections/AiAppsSlider";
 import MobileAppSection from "@/components/sections/MobileAppSection";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
@@ -561,8 +561,37 @@ export default function HomePage() {
       {/* ── Process ── */}
       <ProcessSection />
 
+      {/* ── Shopify Agentic Commerce (lead service) ── */}
+      <ShopifyDesignSection
+        h3Content={<>Shopify <strong style={{ fontWeight: 600, ...GRADIENT_TEXT }}>Agentic Commerce</strong></>}
+        description="AI assistants like ChatGPT, Gemini, and Copilot now find, compare, and buy products for shoppers. We make your store agent-ready with Generative Engine Optimization and Agentic Storefronts, so AI recommends you, not your competitors."
+        services={AGENTIC_SERVICES}
+        buttonText="Explore Agentic Commerce"
+        buttonHref="/services/shopify-agentic-commerce"
+        dark
+        reverseLayout
+        wrapHeading
+        mobileYPadding="max-sm:!pt-[40px] max-sm:!pb-[10px]"
+        imagePanel={
+          <video
+            src="/images/Shopify%20Agentic%20Commerce.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-label="Shopify products surfacing inside AI assistants like ChatGPT and Gemini"
+            style={{ width: "auto", height: "auto", maxHeight: "460px", maxWidth: "100%", borderRadius: "16px", display: "block", margin: "0 auto" }}
+          />
+        }
+      />
+
       {/* ── Shopify Design & Development ── */}
-      <ShopifyDesignSection imageAlt="Shopify design agency building a custom high-converting Shopify store" mobileYPadding="max-sm:!pt-[40px] max-sm:!pb-[10px]" />
+      <ShopifyDesignSection
+        showHeading={false}
+        imageAlt="Shopify design agency building a custom high-converting Shopify store"
+        paddingTop="5px"
+        mobileYPadding="max-sm:!py-[10px]"
+      />
       <ShopifyDesignSection
         showHeading={false}
         h3Content={<>Shopify <strong style={{ fontWeight: 600 }}>Migration</strong> Services</>}
