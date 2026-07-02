@@ -244,7 +244,7 @@ export default function ShopifyDesignSection({
             style={{
               textAlign: "center",
               fontFamily: "'Poppins', sans-serif",
-              color: headingColor,
+              color: "#000000",
               lineHeight: 1.2,
               margin: 0,
             }}
@@ -866,4 +866,12 @@ const POS_SERVICES: ServiceItem[] = [
   },
 ];
 
-export { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES, BRAND_SERVICES, B2B_SERVICES, COPYWRITING_SERVICES, PERSONALIZATION_SERVICES, SEO_AI_SERVICES, RETENTION_SERVICES, WHY_B2B_SERVICES, POS_SERVICES, AI_AUTOMATION_SERVICES };
+const AGENTIC_SERVICES: ServiceItem[] = [
+  { title: "Agent-Readiness Audit", icon: (<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="13" cy="13" r="8" stroke="currentColor" strokeWidth="1.6"/><path d="m19 19 6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/><path d="m10 13 2 2 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>) },
+  { title: "Generative Engine Optimization (GEO)", icon: (<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 3l2.4 6.6L24 12l-6.6 2.4L15 21l-2.4-6.6L6 12l6.6-2.4L15 3z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/></svg>) },
+  { title: "Agentic Storefronts Setup", icon: (<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12l1.6-6h18.8L26 12M5 12v12a1 1 0 001 1h18a1 1 0 001-1V12M5 12h20" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/><path d="M5 12a3 3 0 006 0 3 3 0 006 0 3 3 0 006 0" stroke="currentColor" strokeWidth="1.5"/></svg>) },
+  { title: "Structured Data & Product Schema", icon: (<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 8L5 15l6 7M19 8l6 7-6 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>) },
+  { title: "AI Visibility Monitoring", icon: (<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 15s4.5-8 13-8 13 8 13 8-4.5 8-13 8S2 15 2 15z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/><circle cx="15" cy="15" r="3.4" stroke="currentColor" strokeWidth="1.6"/></svg>) },
+];
+
+export { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES, BRAND_SERVICES, B2B_SERVICES, COPYWRITING_SERVICES, PERSONALIZATION_SERVICES, SEO_AI_SERVICES, RETENTION_SERVICES, WHY_B2B_SERVICES, POS_SERVICES, AI_AUTOMATION_SERVICES, AGENTIC_SERVICES };
