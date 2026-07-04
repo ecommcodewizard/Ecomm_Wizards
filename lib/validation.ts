@@ -32,5 +32,22 @@ export const contactSchema = z.object({
   _gotcha: z.string().optional(),
 });
 
-export const leadSchema = z.discriminatedUnion("type", [auditSchema, contactSchema]);
+// Free creative audit (Creative Strategy lander). Maps onto existing lead columns:
+// company<-brand, url<-store/product URL, budget<-monthly ad spend,
+// services<-primary platform, situation<-creative challenges. No DB migration.
+export const creativeAuditSchema = z.object({
+  type: z.literal("creative-audit"),
+  name,
+  email,
+  phone: opt(64),
+  company: opt(255), // brand
+  url: opt(512), // store or product URL
+  budget: opt(64), // monthly ad spend
+  services: opt(255), // primary platform
+  situation: z.array(z.string().max(255)).max(20).optional().default([]), // creative challenges
+  source: opt(128),
+  _gotcha: z.string().optional(),
+});
+
+export const leadSchema = z.discriminatedUnion("type", [auditSchema, contactSchema, creativeAuditSchema]);
 export type LeadPayload = z.infer<typeof leadSchema>;

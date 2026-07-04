@@ -36,6 +36,23 @@ function toLead(p: LeadPayload, ip: string, ua: string): LeadInput {
       userAgent: ua,
     };
   }
+  if (p.type === "creative-audit") {
+    return {
+      type: "creative-audit",
+      name: p.name,
+      email: p.email,
+      phone: p.phone || null,
+      company: p.company || null, // brand
+      url: p.url || null, // store/product URL
+      budget: p.budget || null, // monthly ad spend
+      services: p.services || null, // primary platform
+      situation: p.situation && p.situation.length ? p.situation : null, // creative challenges
+      source: p.source || "Creative Strategy Lander",
+      raw,
+      ip,
+      userAgent: ua,
+    };
+  }
   return {
     type: "contact",
     name: p.name,

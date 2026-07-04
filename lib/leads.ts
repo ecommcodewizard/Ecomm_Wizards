@@ -1,7 +1,7 @@
 import type { RowDataPacket, ResultSetHeader } from "mysql2";
 import { getPool } from "./db";
 
-export type LeadType = "audit" | "contact";
+export type LeadType = "audit" | "contact" | "creative-audit";
 
 export interface LeadInput {
   type: LeadType;
