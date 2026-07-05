@@ -71,12 +71,16 @@ const TRUST_LOGOS = [
   { src: "/images/modelez-logo.png-1-768x361-1.png", alt: "Mondelez" },
 ];
 
-// Hero creative-board tiles (placeholder previews; swap in real ad creative later)
+// Real ad creative lives in public/images/Creative strategy services (spaces URL-encoded)
+const CS_MEDIA = "/images/Creative%20strategy%20services";
+
+// Hero creative-board tiles. Static and carousel are stills; the video and UGC
+// tiles run the same live autoplay creative as the "See the work" gallery below.
 const BOARD_TILES = [
-  { label: "Static ad", video: false },
-  { label: "Video ad", video: true },
-  { label: "UGC", video: false },
-  { label: "Carousel", video: false },
+  { label: "Static ad", src: `${CS_MEDIA}/Static%20ad.webp`, video: false },
+  { label: "Video ad", src: `${CS_MEDIA}/Video%20ad.mp4`, video: true },
+  { label: "UGC", src: `${CS_MEDIA}/UGC%20ad.mp4`, video: true },
+  { label: "Carousel", src: `${CS_MEDIA}/carousel%20ad.webp`, video: false },
 ];
 
 const FUNNEL = [
@@ -85,14 +89,15 @@ const FUNNEL = [
   { step: "Conversion", title: "Drive the purchase", body: "Offer-led statics, urgency, and retargeting creative built to close the sale and lift return on ad spend." },
 ];
 
-// "Show the creative" gallery (placeholder format previews; swap for real ads)
+// "Show the creative" gallery. Live video autoplays for the video/UGC formats; the
+// motion tile is an animated webp; the rest are still ad creative.
 const GALLERY = [
-  { label: "Static ad", tag: "Sample", video: false },
-  { label: "Video ad", tag: "Sample", video: true },
-  { label: "UGC", tag: "Sample", video: false },
-  { label: "Carousel", tag: "Sample", video: false },
-  { label: "Motion / GIF", tag: "Sample", video: true },
-  { label: "Story / Reel", tag: "Sample", video: false },
+  { label: "Static ad", tag: "Sample", src: `${CS_MEDIA}/Static%20ad.webp`, video: false },
+  { label: "Video ad", tag: "Sample", src: `${CS_MEDIA}/Video%20ad.mp4`, video: true },
+  { label: "UGC", tag: "Sample", src: `${CS_MEDIA}/UGC%20ad.mp4`, video: true },
+  { label: "Carousel", tag: "Sample", src: `${CS_MEDIA}/carousel%20ad-1.webp`, video: false },
+  { label: "Motion / GIF", tag: "Sample", src: `${CS_MEDIA}/let-love-bloom.gif.webp`, video: false },
+  { label: "Image ad", tag: "Sample", src: `${CS_MEDIA}/Image%20Ad.png`, video: false },
 ];
 
 function IconStatic() { return (<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden><rect x="3" y="4" width="18" height="16" rx="2" stroke="#2A9555" strokeWidth="1.8" /><path d="M3 16l5-4 4 3 3-2 6 5" stroke="#2A9555" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /><circle cx="8.5" cy="9" r="1.5" fill="#2A9555" /></svg>); }
@@ -201,9 +206,6 @@ function Cross() {
 function Arrow() {
   return (<svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden><path d="M1 7h15M10 1l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>);
 }
-function Play() {
-  return (<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M8 6l11 6-11 6V6z" fill="#062012" /></svg>);
-}
 
 export default function Page() {
   return (
@@ -252,7 +254,12 @@ export default function Page() {
               <div className="cs-board-grid">
                 {BOARD_TILES.map((t) => (
                   <div key={t.label} className="cs-board-tile">
-                    {t.video && <span className="cs-tile-play"><Play /></span>}
+                    {t.video ? (
+                      <video className="cs-tile-media" src={t.src} autoPlay muted loop playsInline preload="metadata" aria-label={`${t.label} creative`} />
+                    ) : (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img className="cs-tile-media" src={t.src} alt={`${t.label} creative`} loading="lazy" decoding="async" />
+                    )}
                     <span className="cs-tile-label">{t.label}</span>
                   </div>
                 ))}
@@ -342,8 +349,13 @@ export default function Page() {
           <div className="cs-gallery">
             {GALLERY.map((g) => (
               <div key={g.label} className="cs-gallery-tile">
+                {g.video ? (
+                  <video className="cs-gallery-media" src={g.src} autoPlay muted loop playsInline preload="metadata" aria-label={`${g.label} example creative`} />
+                ) : (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img className="cs-gallery-media" src={g.src} alt={`${g.label} example creative`} loading="lazy" decoding="async" />
+                )}
                 <span className="cs-gallery-tag">{g.tag}</span>
-                {g.video && <span className="cs-gallery-play"><Play /></span>}
                 <span className="cs-gallery-label">{g.label}</span>
               </div>
             ))}
@@ -549,8 +561,9 @@ const CSS = `
 .cs-board-tag{font-family:'Poppins',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-left:auto}
 .cs-board-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .cs-board-tile{position:relative;aspect-ratio:1/1;border-radius:14px;background:linear-gradient(150deg,rgba(61,199,122,0.16),rgba(255,255,255,0.03));border:1px solid rgba(255,255,255,0.09);overflow:hidden}
+.cs-tile-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.cs-board-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.5),transparent 55%);z-index:1;pointer-events:none}
 .cs-tile-label{position:absolute;left:12px;bottom:11px;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;color:#fff;z-index:2}
-.cs-tile-play{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:var(--brand-gradient);display:flex;align-items:center;justify-content:center;z-index:2}
 
 /* Trust strip */
 .std-trust-carousel{overflow:hidden;position:relative}
@@ -579,10 +592,10 @@ const CSS = `
 /* Gallery (placeholder ad previews) */
 .cs-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .cs-gallery-tile{position:relative;aspect-ratio:4/5;border-radius:16px;background:linear-gradient(160deg,#1c1c1c,#0a0a0a);overflow:hidden;box-shadow:0 14px 44px rgba(0,0,0,0.14)}
-.cs-gallery-tile::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 78% 12%,rgba(61,199,122,0.24),transparent 55%);pointer-events:none}
+.cs-gallery-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.cs-gallery-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.6),transparent 42%);z-index:1;pointer-events:none}
 .cs-gallery-label{position:absolute;left:15px;bottom:15px;z-index:2;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;color:#fff}
 .cs-gallery-tag{position:absolute;right:12px;top:12px;z-index:2;font-family:'Poppins',sans-serif;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,0.65);background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);padding:3px 8px;border-radius:999px}
-.cs-gallery-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:52px;height:52px;border-radius:50%;background:var(--brand-gradient);display:flex;align-items:center;justify-content:center}
 .cs-note{font-family:'Poppins',sans-serif;font-size:13px;color:#94a3b8;text-align:center;margin:26px 0 0}
 
 /* Before / after (phone mockups) */
