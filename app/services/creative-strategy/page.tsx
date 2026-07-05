@@ -7,21 +7,21 @@ import ServiceSchema from "@/components/seo/ServiceSchema";
 import CreativeAuditForm from "./CreativeAuditForm";
 
 const META_DESCRIPTION =
-  "Performance ad creative for Shopify brands: static, video, and UGC ads for Meta and Google that cut CPA and scale ROAS. Get your free creative audit.";
+  "Performance creative and creative strategy agency for Shopify brands. Static, video, and UGC ads that cut CPA and scale ROAS. Get your free creative audit.";
 const CANONICAL_URL = "https://ecommwizards.com/services/creative-strategy";
-const TITLE = "Shopify Ad Creative Agency | Performance Creative";
+const TITLE = "Performance Creative & Creative Strategy Agency";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: META_DESCRIPTION,
   keywords: [
-    "shopify ad creative",
     "performance creative agency",
-    "ecommerce ad creative",
-    "meta ad creative agency",
-    "ugc ad agency",
     "creative strategy agency",
-    "shopify video ads",
+    "ugc agency",
+    "ad creative agency",
+    "performance creative",
+    "ad creative services",
+    "ugc ad agency",
     "facebook ad creative agency",
   ],
   alternates: { canonical: CANONICAL_URL },
@@ -171,6 +171,7 @@ const AC_SLIDES: CaseStudySlide[] = [
 
 const FAQS = [
   { question: "What is performance creative?", answer: "Performance creative is ad creative built, tested, and optimized on real data to move a business number. Not creative that looks good in a deck, creative that lowers your cost per acquisition and scales your return on ad spend. We tie every concept to a metric and map it to a stage of the funnel." },
+  { question: "What is creative strategy?", answer: "Creative strategy is the plan behind your ads: the angles, hooks, and formats you test, mapped to your customer and each stage of the funnel. It turns creative from guesswork into a system, so you ship ads built to move a metric, not just to look good in a deck." },
   { question: "Why does ad creative matter so much?", answer: "Targeting is mostly automated now, so the algorithm decides who sees your ads. The one input you still control, and the one that moves CPA and ROAS the most, is the creative. Industry estimates put creative at roughly half of paid ad performance, and when a campaign stops scaling it is almost always the creative that fatigued, not the audience." },
   { question: "What ad formats do you produce?", answer: "Static image ads, hook-led video, UGC and creator content, motion and GIF, and the post-production behind them, editing, captions, sound, and localization. We build to the spec of each platform and placement, and to the job each format needs to do in the funnel." },
   { question: "Do you make UGC and video ads?", answer: "Yes. UGC, creator-style content, and hook-led video are core to what we do. We handle concept, scripting, sourcing, and edit, and we cut multiple variations of each winner so you always have fresh angles to test." },
@@ -223,7 +224,7 @@ export default function Page() {
           <div>
             <span className="std-badge">Shopify Performance Creative Agency</span>
             <h1 className="std-hero-h1 font-bold mt-5" style={{ color: "#fff", fontSize: "48px", lineHeight: 1.15, margin: "20px 0 0" }}>
-              Shopify Ad Creative That Lowers CPA and{" "}
+              Performance Creative That Lowers CPA and{" "}
               <span style={GRADIENT_TEXT}>Scales ROAS</span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
@@ -410,10 +411,10 @@ export default function Page() {
       <section className="std-process max-sm:!py-[40px]" style={{ background: "#fff", padding: "53px 20px" }} aria-label="Our creative process">
         <div className="py-[40px] px-[48px] max-sm:py-[20px] max-sm:px-[20px] md:max-lg:py-[20px] lg:max-xl:py-[30px] lg:max-xl:px-[40px]" style={{ maxWidth: "1320px", margin: "0 auto", background: "#FBF7ED", borderRadius: "28px", boxSizing: "border-box", overflow: "hidden" }}>
           <h2 className="text-[28px] sm:text-[36px] md:text-[32px] lg:text-[42px] font-bold max-sm:font-semibold" style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", lineHeight: 1.2, margin: 0 }}>
-            How Our Creative Process Works
+            How Our Creative Strategy Process Works
           </h2>
           <p className="text-[16px] max-sm:text-[14px]" style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", marginTop: "16px", lineHeight: 1.65 }}>
-            Five steps from a blank brief to winning ads you can scale.
+            Our creative strategy runs in five steps, from a blank brief to winning ads you can scale.
             <br className="hidden sm:block lg:hidden" />{" "}
             New concepts land in days, not weeks.
           </p>
