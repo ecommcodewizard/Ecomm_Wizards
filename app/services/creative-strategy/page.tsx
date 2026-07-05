@@ -360,28 +360,35 @@ export default function Page() {
             <h2 className="ac-h2 ac-h2-dark">What Performance Creative Does to the Numbers</h2>
             <p className="ac-lead ac-lead-dark">Same product, same budget. The difference is the creative and the testing behind it.</p>
           </div>
-          <div className="cs-ba">
-            <div className="cs-ba-panel">
-              <span className="cs-ba-tag cs-ba-tag--before">Before: generic product shot</span>
-              <div className="cs-ba-thumb" />
-              <div className="cs-ba-metrics">
-                <div className="cs-ba-metric"><span className="cs-ba-mlabel">CTR</span><span className="cs-ba-mval">0.8%</span></div>
-                <div className="cs-ba-metric"><span className="cs-ba-mlabel">CPA</span><span className="cs-ba-mval">$42</span></div>
-                <div className="cs-ba-metric"><span className="cs-ba-mlabel">ROAS</span><span className="cs-ba-mval">1.4x</span></div>
+          <div className="csp-ba">
+            <figure className="csp-col">
+              <figcaption className="csp-cap">Before</figcaption>
+              <div className="csp-phone">
+                <div className="csp-head"><span className="csp-av" /><span className="csp-head-bars"><i /><i /></span><span className="csp-menu">&middot;&middot;&middot;</span></div>
+                <div className="csp-creative csp-creative--before">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/chillys-before.webp" alt="Chilly's Series 2 reusable bottles product ad" loading="lazy" decoding="async" />
+                </div>
+                <div className="csp-foot"><span className="csp-fbar w1" /><span className="csp-eng"><i /><i /><i /></span><span className="csp-fbar w2" /></div>
               </div>
-            </div>
-            <div className="cs-ba-arrow" aria-hidden><Arrow /></div>
-            <div className="cs-ba-panel cs-ba-panel--after">
-              <span className="cs-ba-tag cs-ba-tag--after">After: tested performance creative</span>
-              <div className="cs-ba-thumb cs-ba-thumb--after" />
-              <div className="cs-ba-metrics">
-                <div className="cs-ba-metric"><span className="cs-ba-mlabel">CTR</span><span className="cs-ba-mval" style={GRADIENT_TEXT}>3.1%</span></div>
-                <div className="cs-ba-metric"><span className="cs-ba-mlabel">CPA</span><span className="cs-ba-mval" style={GRADIENT_TEXT}>$19</span></div>
-                <div className="cs-ba-metric"><span className="cs-ba-mlabel">ROAS</span><span className="cs-ba-mval" style={GRADIENT_TEXT}>3.6x</span></div>
+            </figure>
+            <figure className="csp-col">
+              <figcaption className="csp-cap">After</figcaption>
+              <div className="csp-phone">
+                <div className="csp-head"><span className="csp-av" /><span className="csp-head-bars"><i /><i /></span><span className="csp-menu">&middot;&middot;&middot;</span></div>
+                <div className="csp-creative csp-creative--after">
+                  <video src="/images/chillys-after.mp4" autoPlay muted loop playsInline preload="metadata" aria-label="Chilly's Series 2 Flip performance creative" />
+                </div>
+                <div className="csp-foot"><span className="csp-fbar w1" /><span className="csp-eng"><i /><i /><i /></span><span className="csp-fbar w2" /></div>
               </div>
-            </div>
+            </figure>
           </div>
-          <p className="cs-ba-note">Illustrative of the kind of shift structured creative testing drives.</p>
+          <div className="csp-results">
+            {[{ v: "+4.2%", l: "CTR" }, { v: "+35%", l: "Revenue" }, { v: "+57%", l: "ROAS" }, { v: "-14%", l: "Ad spend" }].map((r) => (
+              <div key={r.l} className="csp-result"><b style={GRADIENT_TEXT}>{r.v}</b><span>{r.l}</span></div>
+            ))}
+          </div>
+          <p className="cs-ba-note">Real creative and results from a Chilly&apos;s paid social campaign.</p>
         </div>
       </section>
 
@@ -578,20 +585,44 @@ const CSS = `
 .cs-gallery-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:52px;height:52px;border-radius:50%;background:var(--brand-gradient);display:flex;align-items:center;justify-content:center}
 .cs-note{font-family:'Poppins',sans-serif;font-size:13px;color:#94a3b8;text-align:center;margin:26px 0 0}
 
-/* Before / after */
-.cs-ba{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center}
-.cs-ba-panel{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:22px}
-.cs-ba-panel--after{border-color:rgba(61,199,122,0.4);background:rgba(61,199,122,0.06)}
-.cs-ba-tag{display:inline-block;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;color:rgba(255,255,255,0.7)}
-.cs-ba-tag--after{color:#61ce70}
-.cs-ba-thumb{aspect-ratio:16/10;border-radius:12px;background:linear-gradient(160deg,#2a2a2a,#0d0d0d);margin:12px 0;position:relative;overflow:hidden}
-.cs-ba-thumb--after::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 100% at 75% 15%,rgba(61,199,122,0.28),transparent 60%)}
-.cs-ba-metrics{display:flex;gap:10px;flex-wrap:wrap}
-.cs-ba-metric{display:flex;flex-direction:column;gap:3px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:9px 13px;min-width:64px}
-.cs-ba-mlabel{font-family:'Poppins',sans-serif;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,0.5)}
-.cs-ba-mval{font-family:'Poppins',sans-serif;font-size:19px;font-weight:800;color:#fff;line-height:1}
-.cs-ba-arrow{width:44px;height:44px;border-radius:50%;background:var(--brand-gradient);color:#062012;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.cs-ba-note{font-family:'Poppins',sans-serif;font-size:13px;color:rgba(255,255,255,0.45);text-align:center;margin:22px 0 0}
+/* Before / after (phone mockups) */
+.csp-ba{display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap}
+.csp-col{display:flex;flex-direction:column;align-items:center;gap:14px;margin:0}
+.csp-cap{font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;color:#fff;letter-spacing:.02em}
+.csp-results{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:38px}
+.csp-result{display:flex;flex-direction:column;align-items:center;min-width:112px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:16px 20px}
+.csp-result b{font-family:'Poppins',sans-serif;font-size:32px;font-weight:800;line-height:1}
+.csp-result span{font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;color:rgba(255,255,255,0.6);letter-spacing:.04em;margin-top:7px}
+.csp-phone{width:230px;max-width:230px;background:#fff;border-radius:26px;padding:14px 13px;box-shadow:0 24px 60px rgba(0,0,0,0.45)}
+.csp-head{display:flex;align-items:center;gap:8px;margin-bottom:11px}
+.csp-av{width:30px;height:30px;border-radius:50%;background:#e5e7eb;flex-shrink:0}
+.csp-head-bars{display:flex;flex-direction:column;gap:5px;flex:1}
+.csp-head-bars i{height:6px;border-radius:3px;background:#e5e7eb;display:block}
+.csp-head-bars i:first-child{width:62%}
+.csp-head-bars i:last-child{width:40%}
+.csp-menu{color:#cbd5e1;font-size:16px;line-height:1;letter-spacing:1px}
+.csp-creative{aspect-ratio:1/1;border-radius:8px;overflow:hidden;position:relative}
+.csp-creative img{width:100%;height:100%;object-fit:cover;display:block}
+.csp-creative--before{background:#f1f3f5}
+.csp-creative--after{background:#0a0a0a}
+.csp-creative video{width:100%;height:100%;object-fit:cover;display:block}
+.csp-foot{margin-top:11px;display:flex;flex-direction:column;gap:7px}
+.csp-fbar{height:7px;border-radius:4px;background:#e5e7eb}
+.csp-fbar.w1{width:88%}
+.csp-fbar.w2{width:66%}
+.csp-eng{display:flex;gap:6px;margin:1px 0}
+.csp-eng i{width:12px;height:12px;border-radius:50%}
+.csp-eng i:nth-child(1){background:#bfdbfe}
+.csp-eng i:nth-child(2){background:#fecaca}
+.csp-eng i:nth-child(3){background:#fde68a}
+@media (max-width:760px){
+  .csp-ba{gap:16px}
+  .csp-phone{width:170px;max-width:170px;padding:11px 10px}
+  .csp-results{gap:10px}
+  .csp-result{min-width:calc(50% - 5px);padding:14px}
+  .csp-result b{font-size:26px}
+}
+.cs-ba-note{font-family:'Poppins',sans-serif;font-size:13px;color:rgba(255,255,255,0.45);text-align:center;margin:26px 0 0}
 
 /* Offer grid (formats) */
 .ac-grid-offer{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -657,8 +688,6 @@ const CSS = `
   .cs-trust-row{grid-template-columns:1fr}
   .cs-final-grid{grid-template-columns:1fr;gap:32px}
   .ac-head{margin-bottom:30px}
-  .cs-ba{grid-template-columns:1fr;gap:14px}
-  .cs-ba-arrow{transform:rotate(90deg);margin:0 auto}
 }
 @media (max-width:540px){
   .ac-grid-offer{grid-template-columns:1fr}
