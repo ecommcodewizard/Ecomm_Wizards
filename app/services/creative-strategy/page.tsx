@@ -76,10 +76,10 @@ const CS_MEDIA = "/images/Creative%20strategy%20services";
 
 // Hero creative-board tiles. Static and carousel are stills; the video and UGC
 // tiles run the same live autoplay creative as the "See the work" gallery below.
-const BOARD_TILES = [
+const BOARD_TILES: { label: string; src: string; poster?: string; video: boolean }[] = [
   { label: "Static ad", src: `${CS_MEDIA}/Static%20ad.webp`, video: false },
-  { label: "Video ad", src: `${CS_MEDIA}/Video%20ad.mp4`, video: true },
-  { label: "UGC", src: `${CS_MEDIA}/UGC%20ad.mp4`, video: true },
+  { label: "Video ad", src: `${CS_MEDIA}/Video%20ad.mp4`, poster: `${CS_MEDIA}/Video%20ad-poster.webp`, video: true },
+  { label: "UGC", src: `${CS_MEDIA}/UGC%20ad.mp4`, poster: `${CS_MEDIA}/UGC%20ad-poster.webp`, video: true },
   { label: "Carousel", src: `${CS_MEDIA}/carousel%20ad.webp`, video: false },
 ];
 
@@ -91,10 +91,10 @@ const FUNNEL = [
 
 // "Show the creative" gallery. Live video autoplays for the video/UGC formats; the
 // motion tile is an animated webp; the rest are still ad creative.
-const GALLERY = [
+const GALLERY: { label: string; tag: string; src: string; poster?: string; video: boolean }[] = [
   { label: "Static ad", tag: "Sample", src: `${CS_MEDIA}/Static%20ad.webp`, video: false },
-  { label: "Video ad", tag: "Sample", src: `${CS_MEDIA}/Video%20ad.mp4`, video: true },
-  { label: "UGC", tag: "Sample", src: `${CS_MEDIA}/UGC%20ad.mp4`, video: true },
+  { label: "Video ad", tag: "Sample", src: `${CS_MEDIA}/Video%20ad.mp4`, poster: `${CS_MEDIA}/Video%20ad-poster.webp`, video: true },
+  { label: "UGC", tag: "Sample", src: `${CS_MEDIA}/UGC%20ad.mp4`, poster: `${CS_MEDIA}/UGC%20ad-poster.webp`, video: true },
   { label: "Carousel", tag: "Sample", src: `${CS_MEDIA}/carousel%20ad-1.webp`, video: false },
   { label: "Motion / GIF", tag: "Sample", src: `${CS_MEDIA}/let-love-bloom.gif.webp`, video: false },
   { label: "Image ad", tag: "Sample", src: `${CS_MEDIA}/Image%20Ad.png`, video: false },
@@ -255,7 +255,7 @@ export default function Page() {
                 {BOARD_TILES.map((t) => (
                   <div key={t.label} className="cs-board-tile">
                     {t.video ? (
-                      <video className="cs-tile-media" src={t.src} autoPlay muted loop playsInline preload="metadata" aria-label={`${t.label} creative`} />
+                      <video className="cs-tile-media" src={t.src} poster={t.poster} autoPlay muted loop playsInline preload="auto" aria-label={`${t.label} creative`} />
                     ) : (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img className="cs-tile-media" src={t.src} alt={`${t.label} creative`} loading="lazy" decoding="async" />
@@ -350,7 +350,7 @@ export default function Page() {
             {GALLERY.map((g) => (
               <div key={g.label} className="cs-gallery-tile">
                 {g.video ? (
-                  <video className="cs-gallery-media" src={g.src} autoPlay muted loop playsInline preload="metadata" aria-label={`${g.label} example creative`} />
+                  <video className="cs-gallery-media" src={g.src} poster={g.poster} autoPlay muted loop playsInline preload="metadata" aria-label={`${g.label} example creative`} />
                 ) : (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img className="cs-gallery-media" src={g.src} alt={`${g.label} example creative`} loading="lazy" decoding="async" />
@@ -389,7 +389,7 @@ export default function Page() {
               <div className="csp-phone">
                 <div className="csp-head"><span className="csp-av" /><span className="csp-head-bars"><i /><i /></span><span className="csp-menu">&middot;&middot;&middot;</span></div>
                 <div className="csp-creative csp-creative--after">
-                  <video src="/images/chillys-after.mp4" autoPlay muted loop playsInline preload="metadata" aria-label="Chilly's Series 2 Flip performance creative" />
+                  <video src="/images/chillys-after.mp4" poster="/images/chillys-after-poster.webp" autoPlay muted loop playsInline preload="metadata" aria-label="Chilly's Series 2 Flip performance creative" />
                 </div>
                 <div className="csp-foot"><span className="csp-fbar w1" /><span className="csp-eng"><i /><i /><i /></span><span className="csp-fbar w2" /></div>
               </div>
