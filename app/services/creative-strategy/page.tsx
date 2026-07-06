@@ -7,21 +7,21 @@ import ServiceSchema from "@/components/seo/ServiceSchema";
 import CreativeAuditForm from "./CreativeAuditForm";
 
 const META_DESCRIPTION =
-  "Performance ad creative for Shopify brands. We concept, produce, and test scroll-stopping static, video, and UGC ads for Meta and Google that lower CPA and scale ROAS. Get a free creative audit.";
+  "Performance creative and creative strategy agency for Shopify brands. Static, video, and UGC ads that cut CPA and scale ROAS. Get your free creative audit.";
 const CANONICAL_URL = "https://ecommwizards.com/services/creative-strategy";
-const TITLE = "Shopify Ad Creative Agency | Performance Creative That Converts";
+const TITLE = "Performance Creative & Creative Strategy Agency";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: META_DESCRIPTION,
   keywords: [
-    "shopify ad creative",
     "performance creative agency",
-    "ecommerce ad creative",
-    "meta ad creative agency",
-    "ugc ad agency",
     "creative strategy agency",
-    "shopify video ads",
+    "ugc agency",
+    "ad creative agency",
+    "performance creative",
+    "ad creative services",
+    "ugc ad agency",
     "facebook ad creative agency",
   ],
   alternates: { canonical: CANONICAL_URL },
@@ -170,16 +170,19 @@ const AC_SLIDES: CaseStudySlide[] = [
 ];
 
 const FAQS = [
-  { question: "What is performance creative?", answer: "Performance creative is ad creative built, tested, and optimized on real data to move a business number. Not creative that looks good in a deck, creative that lowers your cost per acquisition and scales your return on ad spend. Every concept is tied to a metric and mapped to a stage of the funnel." },
+  { question: "What is performance creative?", answer: "Performance creative is ad creative built, tested, and optimized on real data to move a business number. Not creative that looks good in a deck, creative that lowers your cost per acquisition and scales your return on ad spend. We tie every concept to a metric and map it to a stage of the funnel." },
+  { question: "What is creative strategy?", answer: "Creative strategy is the plan behind your ads: the angles, hooks, and formats you test, mapped to your customer and each stage of the funnel. It turns creative from guesswork into a system, so you ship ads built to move a metric, not just to look good in a deck." },
   { question: "Why does ad creative matter so much?", answer: "Targeting is mostly automated now, so the algorithm decides who sees your ads. The one input you still control, and the one that moves CPA and ROAS the most, is the creative. Industry estimates put creative at roughly half of paid ad performance, and when a campaign stops scaling it is almost always the creative that fatigued, not the audience." },
   { question: "What ad formats do you produce?", answer: "Static image ads, hook-led video, UGC and creator content, motion and GIF, and the post-production behind them, editing, captions, sound, and localization. We build to the spec of each platform and placement, and to the job each format needs to do in the funnel." },
   { question: "Do you make UGC and video ads?", answer: "Yes. UGC, creator-style content, and hook-led video are core to what we do. We handle concept, scripting, sourcing, and edit, and we cut multiple variations of each winner so you always have fresh angles to test." },
+  { question: "Is UGC better than studio ads?", answer: "Neither wins every time. UGC and creator-style content usually converts cold, top-of-funnel traffic because it feels native and trustworthy. Polished studio and static ads often perform better further down the funnel. The right mix depends on your product and audience, so we test both and let the numbers decide." },
   { question: "How does creative testing work?", answer: "We launch each concept as a structured test, read hook rate, hold rate, click-through rate, and CPA, then kill the losers quickly and scale the winners. When a winner starts to fatigue, we refresh it before performance drops, so your account never runs dry." },
-  { question: "Which platforms do you create for?", answer: "Meta (Facebook and Instagram) and Google are our primary focus, and we also produce for TikTok and YouTube. Creative is built and sized for each platform and placement rather than reused across all of them." },
+  { question: "How many ad creatives should you test?", answer: "Test in small batches of three to five concepts at a time, not one at a time and not fifty. That gives the algorithm enough signal to find a winner without spreading your budget too thin. Once a winner emerges, we scale it and feed in the next batch of fresh angles." },
+  { question: "Which platforms do you create for?", answer: "Meta (Facebook and Instagram) and Google are our primary focus, and we also produce for TikTok and YouTube. We build and size the creative for each platform and placement rather than reuse it across all of them." },
   { question: "How fast do I get new creative?", answer: "New concepts typically land within days, not weeks, and iterations on a proven winner come faster. We set a cadence with you up front so there is always a steady flow of fresh creative feeding your tests." },
-  { question: "Do you manage my ad accounts, or just the creative?", answer: "Our focus is the creative and the creative strategy, the part that moves performance most. We work alongside your media buyer or in-house team, and we read the same performance data they do so every concept is tied to a real result." },
+  { question: "Do you manage my ad accounts, or just the creative?", answer: "Our focus is the creative and the creative strategy, the part that moves performance most. We work alongside your media buyer or in-house team, and we read the same performance data they do so every concept ties back to a real result." },
   { question: "What do I need to provide?", answer: "Access to your ad account or its performance data, your product or brand assets, and a short brief on your offer and customer. From there we handle strategy, concept, production, and testing. The free creative audit shows you exactly where to start." },
-  { question: "How do we start, and what does it cost?", answer: "Start with a free creative audit. A senior strategist reviews your ads and account by hand and sends a teardown with a prioritized action plan within 48 hours. Scope and pricing are set per engagement after that, based on your volume and goals." },
+  { question: "How do we start, and what does it cost?", answer: "Start with a free creative audit. A senior strategist reviews your ads and account by hand and sends a teardown with a prioritized action plan within 48 hours. We set scope and pricing per engagement after that, based on your volume and goals." },
 ];
 
 const BREADCRUMB_JSONLD = {
@@ -221,7 +224,7 @@ export default function Page() {
           <div>
             <span className="std-badge">Shopify Performance Creative Agency</span>
             <h1 className="std-hero-h1 font-bold mt-5" style={{ color: "#fff", fontSize: "48px", lineHeight: 1.15, margin: "20px 0 0" }}>
-              Shopify Ad Creative That Lowers CPA and{" "}
+              Performance Creative That Lowers CPA and{" "}
               <span style={GRADIENT_TEXT}>Scales ROAS</span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
@@ -255,7 +258,7 @@ export default function Page() {
                 {BOARD_TILES.map((t) => (
                   <div key={t.label} className="cs-board-tile">
                     {t.video ? (
-                      <video className="cs-tile-media" src={t.src} poster={t.poster} autoPlay muted loop playsInline preload="auto" aria-label={`${t.label} creative`} />
+                      <video className="cs-tile-media" src={t.src} poster={t.poster} autoPlay muted loop playsInline preload="metadata" aria-label={`${t.label} ad creative`} />
                     ) : (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img className="cs-tile-media" src={t.src} alt={`${t.label} creative`} loading="lazy" decoding="async" />
@@ -298,7 +301,7 @@ export default function Page() {
             <span className="ac-eyebrow">The real lever</span>
             <h2 className="ac-h2">Creative Is the Biggest Lever You Still Control</h2>
             <p className="ac-p">Targeting is mostly automated now. The algorithm decides who sees your ads, and it is very good at it. The one input you still own, and the one that moves cost per acquisition and return the most, is the creative itself.</p>
-            <p className="ac-p">When a winning campaign stops scaling, it is almost always the creative that fatigued, not the audience. Fresh, tested creative is how you break the plateau and keep spending profitably.</p>
+            <p className="ac-p">When a winning campaign stops scaling, it is almost always the creative that fatigued, not the audience. Fresh, tested creative, paired with sharp <Link href="/services/shopify-cro-agency">conversion rate optimization</Link>, is how you break the plateau and keep spending profitably.</p>
           </div>
           <div className="ac-card-col">
             <div className="ac-card-box" style={{ textAlign: "center" }}>
@@ -324,7 +327,7 @@ export default function Page() {
           <div className="ac-head ac-head-wide">
             <span className="ac-eyebrow">The definition</span>
             <h2 className="ac-h2">What Is Performance Creative?</h2>
-            <p className="ac-lead">Performance creative is ad creative built, tested, and optimized on real data to move a business number. Not creative that looks good in a deck, creative that lowers your CPA and scales your ROAS. Every concept is tied to a metric and mapped to a stage of the funnel.</p>
+            <p className="ac-lead">Performance creative is ad creative built, tested, and optimized on real data to move a business number. It is creative strategy in practice: not creative that looks good in a deck, creative that lowers your CPA and scales your ROAS. We tie every concept to a metric and map it to a stage of the funnel.</p>
           </div>
           <div className="cs-funnel">
             {FUNNEL.map((f) => (
@@ -350,10 +353,10 @@ export default function Page() {
             {GALLERY.map((g) => (
               <div key={g.label} className="cs-gallery-tile">
                 {g.video ? (
-                  <video className="cs-gallery-media" src={g.src} poster={g.poster} autoPlay muted loop playsInline preload="metadata" aria-label={`${g.label} example creative`} />
+                  <video className="cs-gallery-media" src={g.src} poster={g.poster} autoPlay muted loop playsInline preload="metadata" aria-label={`${g.label} creative example for ecommerce ads`} />
                 ) : (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img className="cs-gallery-media" src={g.src} alt={`${g.label} example creative`} loading="lazy" decoding="async" />
+                  <img className="cs-gallery-media" src={g.src} alt={`${g.label} creative example for ecommerce ads`} loading="lazy" decoding="async" />
                 )}
                 <span className="cs-gallery-tag">{g.tag}</span>
                 <span className="cs-gallery-label">{g.label}</span>
@@ -408,10 +411,10 @@ export default function Page() {
       <section className="std-process max-sm:!py-[40px]" style={{ background: "#fff", padding: "53px 20px" }} aria-label="Our creative process">
         <div className="py-[40px] px-[48px] max-sm:py-[20px] max-sm:px-[20px] md:max-lg:py-[20px] lg:max-xl:py-[30px] lg:max-xl:px-[40px]" style={{ maxWidth: "1320px", margin: "0 auto", background: "#FBF7ED", borderRadius: "28px", boxSizing: "border-box", overflow: "hidden" }}>
           <h2 className="text-[28px] sm:text-[36px] md:text-[32px] lg:text-[42px] font-bold max-sm:font-semibold" style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", lineHeight: 1.2, margin: 0 }}>
-            How Our Creative Process Works
+            How Our Creative Strategy Process Works
           </h2>
           <p className="text-[16px] max-sm:text-[14px]" style={{ textAlign: "center", fontFamily: "'Poppins', sans-serif", color: "#000000", marginTop: "16px", lineHeight: 1.65 }}>
-            Five steps from a blank brief to winning ads you can scale.
+            Our creative strategy runs in five steps, from a blank brief to winning ads you can scale.
             <br className="hidden sm:block lg:hidden" />{" "}
             New concepts land in days, not weeks.
           </p>
@@ -442,7 +445,7 @@ export default function Page() {
         <div className="ac-wrap">
           <div className="ac-head ac-head-wide">
             <span className="ac-eyebrow">What&apos;s included</span>
-            <h2 className="ac-h2">Everything Your Ad Account Needs</h2>
+            <h2 className="ac-h2">Every Ad Creative Format Your Shopify Store Needs</h2>
             <p className="ac-lead">One team for concept, production, and testing across every format that performs.</p>
           </div>
           <div className="ac-grid-offer">
@@ -515,7 +518,7 @@ export default function Page() {
                 <span key={c} className="cs-chip">{c}</span>
               ))}
             </div>
-            <p className="cs-final-alt">Prefer to talk? <Link href="/book-shopify-consultation">Book a call</Link>.</p>
+            <p className="cs-final-alt">Prefer to talk? <Link href="/book-shopify-consultation">Book a call</Link>, or see all our <Link href="/services">Shopify services</Link>.</p>
           </div>
           <div>
             <CreativeAuditForm />
@@ -535,6 +538,7 @@ const CSS = `
 .ac-eyebrow-dark{color:#61ce70}
 .ac-lead{font-family:'Poppins',sans-serif;font-size:17px;line-height:1.6;color:#64748b;margin:0;max-width:680px}
 .ac-lead-dark{color:rgba(255,255,255,0.7)}
+.ac-p a,.ac-lead a{color:#2A9555;text-decoration:underline;text-underline-offset:2px;font-weight:600}
 .ac-sec{padding:60px 0}
 .ac-white{background:#fff}
 .ac-cream{background:#FBF7ED}
