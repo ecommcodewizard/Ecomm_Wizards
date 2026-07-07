@@ -45,7 +45,6 @@ function TierIcon({ name }: { name: Tier["icon"] }) {
 export default function CartDemo() {
   const [total, setTotal] = useState(0);
   const [inView, setInView] = useState(false);
-  const raf = useRef<number | null>(null);
   const rootRef = useRef<HTMLDivElement | null>(null);
 
   // Only animate while the demo is on screen (saves renders/battery off-screen).
@@ -70,27 +69,34 @@ export default function CartDemo() {
       return;
     }
     if (!inView) return;
+
+    // Single self-cancelling loop. The cancelled flag + local frame id keep a
+    // stale loop (StrictMode double-mount, inView toggling) from running in
+    // parallel and fighting over `total`, which left the bar stuck or desynced
+    // from the subtotal. Schedule the next frame from exactly one place.
+    let cancelled = false;
+    let frame = 0;
     let start: number | null = null;
     const loop = (t: number) => {
+      if (cancelled) return;
       if (start === null) start = t;
       const elapsed = t - start;
       if (elapsed <= FILL_MS) {
         const p = elapsed / FILL_MS;
         const eased = 1 - Math.pow(1 - p, 2); // ease-out
         setTotal(Math.min(MAX, eased * MAX));
-        raf.current = requestAnimationFrame(loop);
       } else if (elapsed <= FILL_MS + HOLD_MS) {
         setTotal(MAX);
-        raf.current = requestAnimationFrame(loop);
       } else {
         start = t;
         setTotal(0);
-        raf.current = requestAnimationFrame(loop);
       }
+      frame = requestAnimationFrame(loop);
     };
-    raf.current = requestAnimationFrame(loop);
+    frame = requestAnimationFrame(loop);
     return () => {
-      if (raf.current !== null) cancelAnimationFrame(raf.current);
+      cancelled = true;
+      cancelAnimationFrame(frame);
     };
   }, [inView]);
 
@@ -137,7 +143,7 @@ export default function CartDemo() {
             width: `${pct}%`,
             borderRadius: 999,
             background: "linear-gradient(110deg, #A8F0B4 0%, #3DC77A 50%, #2A9555 100%)",
-            transition: "width 0.08s linear",
+            transition: "none",
           }}
         />
       </div>
