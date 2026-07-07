@@ -8,6 +8,7 @@ import ServiceSchema from "@/components/seo/ServiceSchema";
 import CartGamificationAccordion from "./CartGamificationAccordion";
 import CartDemo from "./CartDemo";
 import AOVCalculator from "./AOVCalculator";
+import GamifiedCartDemo from "./GamifiedCartDemo";
 
 const META_DESCRIPTION =
   "Shopify cart gamification that lifts average order value: free-shipping progress bars, tiered rewards, and gift-with-purchase. Book a free AOV audit.";
@@ -384,6 +385,30 @@ export default function Page() {
           </div>
 
           <CartGamificationAccordion items={MECHANICS} />
+        </div>
+      </section>
+
+      {/* 5b. See a gamified cart in action */}
+      <section className="ac-sec ac-cream">
+        <div className="ac-wrap">
+          <div className="mx-auto grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center">
+            <div>
+              <span className="ac-eyebrow">See it in action</span>
+              <h2 className="ac-h2">See a Gamified Cart in Action</h2>
+              <p className="ac-lead">Every mechanic above, working together in one cart: free-shipping and reward tiers, gift-with-purchase, and in-cart upsells.</p>
+              <div style={{ marginTop: 28 }}>
+                <span className="group inline-flex p-[2px] rounded-full" style={{ background: GRADIENT }}>
+                  <Link href="/free-shopify-store-audit" className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px]" style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600 }}>
+                    <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Get a Free Cart Audit</span>
+                    <span className="text-white group-hover:text-black transition-colors duration-300"><Arrow /></span>
+                  </Link>
+                </span>
+              </div>
+            </div>
+            <div>
+              <GamifiedCartDemo />
+            </div>
+          </div>
         </div>
       </section>
 
