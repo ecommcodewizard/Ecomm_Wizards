@@ -8,9 +8,9 @@ import { useEffect, useRef, useState } from "react";
 type Tier = { at: number; label: string; icon: "ship" | "gift" | "tag" };
 
 const TIERS: Tier[] = [
-  { at: 50, label: "Free shipping", icon: "ship" },
+  { at: 70, label: "Free shipping", icon: "ship" },
   { at: 90, label: "Free gift", icon: "gift" },
-  { at: 130, label: "10% off", icon: "tag" },
+  { at: 120, label: "10% off", icon: "tag" },
 ];
 const MAX = TIERS[TIERS.length - 1].at;
 
@@ -44,7 +44,24 @@ function TierIcon({ name }: { name: Tier["icon"] }) {
 
 export default function CartDemo() {
   const [total, setTotal] = useState(0);
+  const [inView, setInView] = useState(false);
   const raf = useRef<number | null>(null);
+  const rootRef = useRef<HTMLDivElement | null>(null);
+
+  // Only animate while the demo is on screen (saves renders/battery off-screen).
+  useEffect(() => {
+    const el = rootRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setInView(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => setInView(entries[0]?.isIntersecting ?? false),
+      { threshold: 0.2 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   useEffect(() => {
     const reduce = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -52,6 +69,7 @@ export default function CartDemo() {
       setTotal(MAX);
       return;
     }
+    if (!inView) return;
     let start: number | null = null;
     const loop = (t: number) => {
       if (start === null) start = t;
@@ -74,7 +92,7 @@ export default function CartDemo() {
     return () => {
       if (raf.current !== null) cancelAnimationFrame(raf.current);
     };
-  }, []);
+  }, [inView]);
 
   const pct = Math.min(100, (total / MAX) * 100);
   const next = TIERS.find((tp) => tp.at > total + 0.5);
@@ -82,6 +100,7 @@ export default function CartDemo() {
 
   return (
     <div
+      ref={rootRef}
       role="img"
       aria-label="A gamified Shopify cart drawer. As the total rises, a progress bar fills and rewards for free shipping, a free gift, and a discount are earned in turn."
       style={{

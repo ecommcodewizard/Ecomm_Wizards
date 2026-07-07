@@ -12,7 +12,7 @@ import AOVCalculator from "./AOVCalculator";
 const META_DESCRIPTION =
   "Shopify cart gamification that lifts average order value: free-shipping progress bars, tiered rewards, and gift-with-purchase. Book a free AOV audit.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-cart-gamification";
-const TITLE = "Shopify Cart Gamification: Lift AOV Without Discounts";
+const TITLE = "Shopify Cart Gamification: Lift AOV Without Deep Discounts";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -80,6 +80,8 @@ const AC_SLIDES: CaseStudySlide[] = [
   {
     key: "bark",
     image: "/images/ai-bark-casestudy.webp",
+    alt: "A Shopify Plus store built for scale for BARK",
+    href: "/case-studies",
     apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/Subtract.svg", "/images/64f098c0e38dec3a384cb182_rebuy.svg"],
     headline: (<>A Shopify Plus store <strong>built for scale</strong> for <strong>BARK</strong></>),
     quote: (<>&ldquo;Their immense knowledge of Shopify Plus and exceptional communication skills, accompanied by a <strong>can-do attitude</strong>, made Ecomm Wizards a fantastic partner.&rdquo;</>),
@@ -90,6 +92,8 @@ const AC_SLIDES: CaseStudySlide[] = [
   {
     key: "everlast",
     image: "/images/Case%20studies/Everlast-banner.webp",
+    alt: "A Shopify Plus rebuild that delivered a 152 percent conversion rate for Everlast",
+    href: "/case-studies/everlast-shopify-plus-sports-redesign",
     apps: ["/images/shopify-icon.svg", "/images/klaviyo.svg", "/images/yotpo.svg", "/images/64f098c0e38dec3a384cb182_rebuy.svg"],
     headline: (<>A Shopify Plus rebuild that delivered <strong>+152% conversion rate</strong> for <strong>Everlast</strong></>),
     quote: (<>&ldquo;We needed a store that could handle serious athletes, casual fitness buyers, and trade accounts in one place. Ecomm Wizards built exactly that. The <strong>conversion numbers and trade portal revenue</strong> both exceeded what we projected.&rdquo;</>),
@@ -100,6 +104,8 @@ const AC_SLIDES: CaseStudySlide[] = [
   {
     key: "dryrobe",
     image: "/images/Case%20studies/Dryrobe%20hero%20section.webp",
+    alt: "A redesign that delivered 89 percent online revenue growth for Dryrobe",
+    href: "/case-studies/dryrobe-shopify-plus-redesign",
     apps: ["/images/shopify-icon.svg", "/images/klaviyo.svg", "/images/yotpo.svg", "/images/65739f17195baa7e77a72d2f_5efb82474d9adf8a3ca19488_logo-gorgias.svg"],
     headline: (<>A redesign that delivered <strong>+89% online revenue</strong> for <strong>Dryrobe</strong></>),
     quote: (<>&ldquo;The new store finally communicates who we are. <strong>Revenue growth followed</strong> from getting those fundamentals right.&rdquo;</>),
@@ -120,9 +126,9 @@ const MECHANICS = [
   { title: "Free-shipping progress bar", body: "A live bar shows how close the shopper is to free shipping and fills as they add items. It turns the top reason for cart abandonment, surprise shipping costs, into a goal worth reaching, and it costs you nothing extra on orders that were already over the threshold." },
   { title: "Tiered reward ladder", body: "Two to four thresholds stack rewards, for example free shipping at $70, a free gift at $90, and a discount at $120. Each tier gives the shopper a fresh reason to keep adding, so the cart does not stop at the first reward." },
   { title: "Gift with purchase", body: "A free gift earned at a set spend level feels more generous than the same value in money off, and it protects your margin. It gives shoppers a concrete reason to add one more item, and it moves slow stock when you choose the gift well." },
-  { title: "Spend-more incentive bar", body: "A dynamic 'spend $12 more to save 10%' message meets the shopper at the moment intent is highest, inside the cart. The number updates as they shop, so the nudge always reflects what they have in the basket right now." },
+  { title: "Spend-more incentive bar", body: "A dynamic 'spend $12 more to save 10%' message meets the shopper at the moment intent is highest, inside the cart. The number updates as they shop, so the nudge always reflects what they have in the cart right now." },
   { title: "Build-a-bundle and Buy X Get Y", body: "You choose which products pair, then reward shoppers for buying the set. Bundles raise units per order and guide people toward larger, curated carts, while you keep control of the margin on every combination." },
-  { title: "In-cart upsells and cross-sells", body: "Relevant add-ons appear in the cart at the point of purchase, when the shopper has already decided to buy. Matched to what is in the basket, these recommendations capture extra units without feeling pushy." },
+  { title: "In-cart upsells and cross-sells", body: "Relevant add-ons appear in the cart at the point of purchase, when the shopper has already decided to buy. Matched to what is in the cart, these recommendations capture extra units without feeling pushy." },
   { title: "Spin-to-win and scratch-to-reveal", body: "A quick game trades a small reward for an email or SMS opt-in, and it converts far better than a static discount popup. You grow your list and seed an in-cart incentive at the same time, then retarget the shoppers who do not buy today." },
   { title: "Cart urgency and stock cues", body: "A reserved-cart timer or a low-stock note gives shoppers a clear reason to decide now rather than later. Used honestly, it shortens the gap between adding to cart and checking out, so fewer sessions drift away." },
   { title: "Loyalty and points progress", body: "Points earned on each order, shown as progress toward the next tier, bring shoppers back and lift order size as they buy to reach the next level. It turns a single purchase into a reason to return." },
@@ -132,7 +138,7 @@ const MECHANICS = [
 const TIERS = [
   { tier: "Tier 1", spend: "$70", reward: "Free shipping", why: "Just above your average order" },
   { tier: "Tier 2", spend: "$90", reward: "Free gift", why: "Within easy reach" },
-  { tier: "Tier 3", spend: "$120", reward: "10% off", why: "Aspirational, for bigger baskets" },
+  { tier: "Tier 3", spend: "$120", reward: "10% off", why: "Aspirational, for bigger carts" },
 ];
 
 const STATS = [
@@ -178,14 +184,14 @@ const FIT_NOT = [
 
 const FAQS = [
   { question: "What is Shopify cart gamification?", answer: "Cart gamification adds game mechanics to your Shopify cart, such as free-shipping progress bars, tiered rewards, and gift-with-purchase. Shoppers see a clear goal and add one more item to reach the next reward. It lifts average order value from the traffic you already have, without cutting your prices." },
-  { question: "How does cart gamification increase average order value?", answer: "It gives shoppers a reason to spend a little more. A bar that reads 'you're $15 away from free shipping' turns a threshold into a goal, and most shoppers would rather add a product than pay for shipping. Tiered rewards keep that momentum going past the first threshold, so baskets grow." },
+  { question: "How does cart gamification increase average order value?", answer: "It gives shoppers a reason to spend a little more. A bar that reads 'you're $15 away from free shipping' turns a threshold into a goal, and most shoppers would rather add a product than pay for shipping. Tiered rewards keep that momentum going past the first threshold, so carts grow." },
   { question: "What is a free shipping progress bar?", answer: "A free shipping progress bar shows how close a shopper is to earning free shipping, and it fills as they add items. Since surprise shipping costs are the top reason people abandon carts, the bar reframes shipping as a reward to earn. It is the highest-impact cart mechanic for most stores." },
   { question: "What reward thresholds should I set?", answer: "Set your first reward just above your current average order value, usually 10 to 20 percent higher, so most shoppers can reach it with one more item. Keep the second tier within easy reach and make the third aspirational. We model your thresholds against your real order data before we launch." },
   { question: "Will cart gamification cheapen my brand?", answer: "Done well, it reads as a helpful nudge, not a carnival. We match the design to your brand and use restrained rewards like free shipping or a gift, rather than flashing discounts everywhere. Premium brands use progress bars and gift-with-purchase every day because the mechanic feels generous, not gimmicky." },
   { question: "Do I need custom development or Shopify Plus?", answer: "No. We add cart gamification to your existing Shopify cart or cart drawer on standard plans, using a mix of trusted apps and custom code where it earns its place. Shopify Plus gives you more checkout control, but it is not required to lift AOV with these mechanics." },
   { question: "Which cart gamification mechanics lift AOV the most?", answer: "The free-shipping progress bar and tiered reward ladder move average order value the most for the widest range of stores. Gift-with-purchase and in-cart upsells add more where your margins and catalog allow. We pick the mix that fits your store, then test it against your current cart." },
   { question: "How do you measure the AOV lift?", answer: "We compare average order value, conversion rate, and reward redemption before and after launch, and we A/B test each mechanic against your current cart. That way every change is backed by your own numbers, not an industry average, so you know exactly what the gamified cart added." },
-  { question: "Do rewards and discounts hurt my margins?", answer: "They should not, as long as each reward is funded by the larger order it creates. A free gift at $90 only triggers once a shopper spends $90, so the bigger basket pays for the gift. We set every threshold and reward against your margins so the math stays positive." },
+  { question: "Do rewards and discounts hurt my margins?", answer: "They should not, as long as each reward is funded by the larger order it creates. A free gift at $90 only triggers once a shopper spends $90, so the bigger order pays for the gift. We set every threshold and reward against your margins so the math stays positive." },
   { question: "How long does it take to launch?", answer: "Most builds go live in two to four weeks. We start with an audit of your cart and order data, agree on the mechanics and thresholds, build and configure them on your store, then A/B test before rollout. Ongoing optimization continues after launch as your catalog changes." },
 ];
 
@@ -293,8 +299,8 @@ export default function Page() {
           <div>
             <span className="ac-eyebrow">What it is</span>
             <h2 className="ac-h2">What is Shopify cart gamification?</h2>
-            <p className="ac-p"><strong>Cart gamification adds game mechanics to your Shopify cart, such as free-shipping progress bars, tiered rewards, and gift-with-purchase, so shoppers add one more item to reach the next reward. It turns the cart into a game with a clear goal, live feedback, and a reason to spend a little more.</strong></p>
-            <p className="ac-p">Picture a shopper with $35 in the cart. A bar reads &ldquo;you&apos;re $15 away from free shipping.&rdquo; Adding one more product costs less than the shipping would, so they do it. That single nudge is cart gamification at work, and it repeats on every order.</p>
+            <p className="ac-p"><strong>Cart gamification adds game mechanics to your Shopify cart, such as free-shipping progress bars, tiered rewards, and gift-with-purchase, so shoppers add one more item to reach the next reward.</strong> It turns the cart into a game with a clear goal, live feedback, and a reason to spend a little more.</p>
+            <p className="ac-p">Picture a shopper with $55 in the cart. A bar reads &ldquo;you&apos;re $15 away from free shipping.&rdquo; Adding one more product costs less than the shipping would, so they do it. That single nudge is cart gamification at work, and it repeats on every order.</p>
             <p className="ac-p">It is one of the highest-return conversion tactics on Shopify, because it lifts revenue from visitors you have already paid to acquire. Pair it with <Link href="/services/shopify-cro-agency">CRO</Link> and <Link href="/services/a-b-testing">A/B testing</Link> and every gain is measured, not assumed.</p>
           </div>
           <div className="ac-card-col">
@@ -313,7 +319,7 @@ export default function Page() {
                 </div>
                 <div className="ac-vs-item">
                   <span className="ac-list-tag ac-tag-good">Earned reward</span>
-                  <p className="ac-vs-text">The shopper spends more to reach it, so the bigger basket pays for the reward.</p>
+                  <p className="ac-vs-text">The shopper spends more to reach it, so the bigger order pays for the reward.</p>
                 </div>
               </div>
             </div>
@@ -327,16 +333,16 @@ export default function Page() {
           <div className="ac-head ac-head-wide">
             <span className="ac-eyebrow">The math</span>
             <h2 className="ac-h2">How Cart Gamification Increases Average Order Value</h2>
-            <p className="ac-lead">Shoppers spend more when the next reward feels close and worth reaching. Here is the same moment from both sides of the cart.</p>
+            <p className="ac-lead">Shoppers spend more when the next reward feels close and worth reaching. Here is what that looks like for one shopper, and what it adds up to across your store.</p>
           </div>
           <div className="ac-two">
             <div className="ac-card-box">
               <p className="ac-box-title">What the shopper sees</p>
-              <p className="ac-vs-text" style={{ fontSize: 15 }}>There is $35 in the cart. The bar reads &ldquo;you&apos;re $15 from free shipping.&rdquo; Adding a $19 item beats paying $8 for shipping, so the shopper adds it. The order grows from $35 to $54, and they feel like they won.</p>
+              <p className="ac-vs-text" style={{ fontSize: 15 }}>There is $55 in the cart. The bar reads &ldquo;you&apos;re $15 from free shipping.&rdquo; Adding a $22 item beats paying $8 for shipping, so the shopper adds it. The order grows from $55 to $77, and they feel like they won.</p>
             </div>
             <div className="ac-card-box">
               <p className="ac-box-title">What it means for you</p>
-              <p className="ac-vs-text" style={{ fontSize: 15 }}>Say your average order is $60 and free shipping starts at $75. Move one in five shoppers to close that gap and your average order value climbs. A 15 percent lift on 1,000 orders a month is about $9,000 in extra revenue, with no added ad spend.</p>
+              <p className="ac-vs-text" style={{ fontSize: 15 }}>Say your average order is $60 and free shipping starts at $70. If a gamified cart lifts your average order value by 15 percent, that is $9 more on every order. On 1,000 orders a month, that is about $9,000 in extra revenue, with no added ad spend.</p>
             </div>
           </div>
           <div className="cg-table-wrap">
@@ -370,7 +376,7 @@ export default function Page() {
               We add the mechanics that fit your store and your margins, from free-shipping bars to tiered rewards, gift-with-purchase, and in-cart upsells. We test each one against your current cart, so you ship changes that pay for themselves.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
-              Book a Free Cart Audit
+              Book a Free Consultation
               <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden>
                 <path d="M0 5H14M14 5L9 0M14 5L9 10" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -537,6 +543,7 @@ export default function Page() {
       <CTASection
         heading="See how much more each cart could be worth"
         subheading="Get a free cart and AOV audit. We'll show you which mechanics fit your store and the revenue they could add, with no obligation."
+        primaryLabel="Get a Free Cart Audit"
         background="#000"
         primaryWhite
         secondaryGradient
@@ -551,8 +558,8 @@ const CSS = `
 .ac-h2{font-family:'Poppins',sans-serif;font-weight:700;color:#0f172a;line-height:1.18;font-size:clamp(26px,3.4vw,38px);margin:0 0 14px}
 .ac-h2-dark{color:#fff}
 .ac-p{font-family:'Poppins',sans-serif;font-size:16px;line-height:1.7;color:#475569;margin:0 0 16px;max-width:620px}
-.ac-p a,.ac-lead a{color:#2A9555;text-decoration:underline;text-underline-offset:2px;font-weight:600}
-.ac-eyebrow{display:inline-block;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#2A9555;margin-bottom:12px}
+.ac-p a,.ac-lead a{color:#1F7A45;text-decoration:underline;text-underline-offset:2px;font-weight:600}
+.ac-eyebrow{display:inline-block;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#1F7A45;margin-bottom:12px}
 .ac-eyebrow-dark{color:#61ce70}
 .ac-lead{font-family:'Poppins',sans-serif;font-size:17px;line-height:1.6;color:#64748b;margin:0;max-width:680px}
 .ac-lead-dark{color:rgba(255,255,255,0.7)}
@@ -618,7 +625,7 @@ const CSS = `
 .ac-compare-col{border:1px solid #e8ecf1;border-radius:16px;padding:28px;background:#fff}
 .ac-compare-col-geo{border-color:#2A9555;box-shadow:0 10px 40px rgba(42,149,85,0.08)}
 .ac-compare-h{font-family:'Poppins',sans-serif;font-weight:700;font-size:18px;color:#0f172a;margin:0 0 16px}
-.ac-compare-h-geo{color:#2A9555}
+.ac-compare-h-geo{color:#1F7A45}
 .ac-compare-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
 .ac-compare-list li{font-family:'Poppins',sans-serif;font-size:15px;color:#475569;line-height:1.55;padding-left:18px;position:relative}
 .ac-compare-list li:before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:#cbd5e1}
@@ -627,7 +634,7 @@ const CSS = `
 /* Tag pills (reused in card 2) */
 .ac-list-tag{display:inline-block;font-family:'Poppins',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:4px 12px;border-radius:9999px;margin-bottom:14px}
 .ac-tag-bad{background:#f1f0ec;color:#94a3b8}
-.ac-tag-good{background:#E8F5EC;color:#2A9555}
+.ac-tag-good{background:#E8F5EC;color:#1F7A45}
 
 /* Tables (tier ladder) */
 .cg-table-wrap{overflow-x:auto;margin-top:28px;border:1px solid #e8ecf1;border-radius:14px;background:#fff}
@@ -657,4 +664,5 @@ const CSS = `
 @media (max-width:1024px){.ac-sec{padding:55px 0}}
 @media (max-width:768px){.ac-sec{padding:50px 0}}
 @media (max-width:449px){.ac-sec{padding:45px 0}}
+@media (prefers-reduced-motion: reduce){.sat-trust-track{animation:none!important}}
 `;

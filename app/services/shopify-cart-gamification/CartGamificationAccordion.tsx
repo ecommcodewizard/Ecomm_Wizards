@@ -10,40 +10,52 @@ export default function CartGamificationAccordion({ items }: { items: AccItem[] 
     <div className="std-acc">
       {items.map((s, i) => {
         const isOpen = openIndex === i;
+        const panelId = `cg-acc-panel-${i}`;
+        const triggerId = `cg-acc-trigger-${i}`;
         return (
           <div
             key={s.title}
             className="std-acc-item"
             style={{ borderTop: i === 0 ? "1px solid rgba(17,17,17,.14)" : undefined }}
           >
-            <button
-              onClick={() => setOpenIndex(isOpen ? -1 : i)}
-              style={{
-                width: "100%",
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                padding: "20px 0",
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                textAlign: "left",
-              }}
-            >
-              <span style={{ flex: 1, fontFamily: "'Poppins', sans-serif", fontSize: 18, fontWeight: 600, color: "#000000", lineHeight: 1.4 }}>
-                {s.title}
-              </span>
-              <span
-                className={`std-acc-icon${isOpen ? " std-acc-icon--open" : ""}`}
-                style={{ flexShrink: 0, color: "#000000", transition: "transform .3s ease", display: "block" }}
+            <h3 style={{ margin: 0 }}>
+              <button
+                type="button"
+                id={triggerId}
+                aria-expanded={isOpen}
+                aria-controls={panelId}
+                onClick={() => setOpenIndex(isOpen ? -1 : i)}
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  padding: "20px 0",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  textAlign: "left",
+                }}
               >
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
-                  <path d="M4 6L9 12L14 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-            </button>
+                <span style={{ flex: 1, fontFamily: "'Poppins', sans-serif", fontSize: 18, fontWeight: 600, color: "#000000", lineHeight: 1.4 }}>
+                  {s.title}
+                </span>
+                <span
+                  className={`std-acc-icon${isOpen ? " std-acc-icon--open" : ""}`}
+                  style={{ flexShrink: 0, color: "#000000", transition: "transform .3s ease", display: "block" }}
+                >
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
+                    <path d="M4 6L9 12L14 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </button>
+            </h3>
 
             <div
+              id={panelId}
+              role="region"
+              aria-labelledby={triggerId}
+              aria-hidden={!isOpen}
               style={{
                 display: "grid",
                 gridTemplateRows: isOpen ? "1fr" : "0fr",

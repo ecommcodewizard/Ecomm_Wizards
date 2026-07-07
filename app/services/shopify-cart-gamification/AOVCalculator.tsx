@@ -67,7 +67,7 @@ export default function AOVCalculator() {
         <div>
           <label style={labelStyle} htmlFor="aov-input">Your average order value</label>
           <div style={{ position: "relative" }}>
-            <span style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", color: "#94a3b8", fontSize: 16 }}>$</span>
+            <span style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", color: "#64748b", fontSize: 16 }}>$</span>
             <input
               id="aov-input"
               inputMode="decimal"
@@ -109,10 +109,10 @@ export default function AOVCalculator() {
                 boxShadow: featured ? "0 10px 40px rgba(42,149,85,0.08)" : "none",
               }}
             >
-              <p style={{ margin: 0, fontFamily: "'Poppins', sans-serif", fontSize: 13, fontWeight: 600, color: featured ? "#2A9555" : "#64748b" }}>
+              <p style={{ margin: 0, fontFamily: "'Poppins', sans-serif", fontSize: 13, fontWeight: 600, color: featured ? "#1F7A45" : "#64748b" }}>
                 {s.label}
               </p>
-              <p style={{ margin: "2px 0 14px", fontFamily: "'Poppins', sans-serif", fontSize: 12, color: "#94a3b8" }}>{s.sub}</p>
+              <p style={{ margin: "2px 0 14px", fontFamily: "'Poppins', sans-serif", fontSize: 12, color: "#64748b" }}>{s.sub}</p>
               <p
                 style={{
                   margin: 0,
@@ -129,14 +129,14 @@ export default function AOVCalculator() {
                 {money(yearly)}
               </p>
               <p style={{ margin: "4px 0 0", fontFamily: "'Poppins', sans-serif", fontSize: 13, color: "#475569" }}>extra a year</p>
-              <p style={{ margin: "6px 0 0", fontFamily: "'Poppins', sans-serif", fontSize: 13, color: "#94a3b8" }}>{money(monthly)} a month</p>
+              <p style={{ margin: "6px 0 0", fontFamily: "'Poppins', sans-serif", fontSize: 13, color: "#64748b" }}>{money(monthly)} a month</p>
             </div>
           );
         })}
       </div>
 
       <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
-        <p style={{ margin: 0, fontFamily: "'Poppins', sans-serif", fontSize: 13, color: "#94a3b8", maxWidth: 520, lineHeight: 1.5 }}>
+        <p style={{ margin: 0, fontFamily: "'Poppins', sans-serif", fontSize: 13, color: "#64748b", maxWidth: 520, lineHeight: 1.5 }}>
           A rough estimate that applies the AOV lift to your current orders. Real results depend on your traffic, offer, and margins.
         </p>
         <span className="group inline-flex p-[2px] rounded-full" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #3DC77A 50%, #2A9555 100%)", flexShrink: 0 }}>
