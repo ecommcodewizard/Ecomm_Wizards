@@ -104,7 +104,7 @@ export default function GamifiedCartDemo() {
     <div
       role="group"
       aria-label="Example of a gamified Shopify cart: a tiered rewards progress bar showing free shipping and a free gift unlocked, two cart items, a scrolling row of free rewards to claim, a scrolling row of suggested products, and a discounted subtotal."
-      style={{ width: "100%", maxWidth: 460, margin: "0 auto", background: "#fff", border: "1px solid #e8ecf1", borderRadius: 20, boxShadow: "0 24px 60px rgba(15,23,42,0.10)", padding: 16, fontFamily: "'Poppins', sans-serif", boxSizing: "border-box" }}
+      style={{ width: "100%", maxWidth: 460, margin: "0 auto", background: "#FBF7ED", border: "1px solid #ece3d0", borderRadius: 20, boxShadow: "0 24px 60px rgba(15,23,42,0.10)", padding: 16, fontFamily: "'Poppins', sans-serif", boxSizing: "border-box" }}
     >
       {/* Header */}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
