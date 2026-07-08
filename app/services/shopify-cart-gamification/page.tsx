@@ -9,6 +9,7 @@ import CartGamificationAccordion from "./CartGamificationAccordion";
 import CartDemo from "./CartDemo";
 import AOVCalculator from "./AOVCalculator";
 import GamifiedCartDemo from "./GamifiedCartDemo";
+import AutoScrollRow from "@/components/ui/AutoScrollRow";
 
 const META_DESCRIPTION =
   "Shopify cart gamification that lifts average order value: free-shipping progress bars, tiered rewards, and gift-with-purchase. Book a free AOV audit.";
@@ -189,6 +190,20 @@ const FAQS = [
   { question: "How long does it take to launch?", answer: "Most builds go live in two to four weeks. We start with an audit of your cart and order data, agree on the mechanics and thresholds, build and configure them on your store, then A/B test before rollout. Ongoing optimization continues after launch as your catalog changes." },
 ];
 
+// Real client cart drawers (WebP, 680px tall; widths for CLS-safe layout).
+const CLIENT_CARTS = [
+  { src: "/images/gamify-cart/client-cart-1.webp", w: 382 },
+  { src: "/images/gamify-cart/client-cart-2.webp", w: 382 },
+  { src: "/images/gamify-cart/client-cart-3.webp", w: 341 },
+  { src: "/images/gamify-cart/client-cart-4.webp", w: 379 },
+  { src: "/images/gamify-cart/client-cart-5.webp", w: 333 },
+  { src: "/images/gamify-cart/client-cart-6.webp", w: 390 },
+  { src: "/images/gamify-cart/client-cart-7.webp", w: 381 },
+  { src: "/images/gamify-cart/client-cart-8.webp", w: 617 },
+  { src: "/images/gamify-cart/client-cart-9.webp", w: 331 },
+  { src: "/images/gamify-cart/client-cart-10.webp", w: 287 },
+];
+
 const BREADCRUMB_JSONLD = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -366,10 +381,41 @@ export default function Page() {
                 <path d="M0 5H14M14 5L9 0M14 5L9 10" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </Link>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/gamify-cart/services-composite.webp"
+              alt="Real gamified Shopify cart drawers built by Ecomm Wizards: free-shipping progress bars, tiered gift rewards, subscription upsells, and product recommendations"
+              width={1100}
+              height={1099}
+              loading="lazy"
+              decoding="async"
+              style={{ width: "100%", height: "auto", display: "block", marginTop: 32 }}
+            />
           </div>
 
           <CartGamificationAccordion items={MECHANICS} />
         </div>
+      </section>
+
+      {/* 5c. Gamified carts we've built (gallery) */}
+      <section className="ac-sec ac-cream">
+        <div className="ac-wrap" style={{ textAlign: "center", marginBottom: 28 }}>
+          <span className="ac-eyebrow">Our work</span>
+          <h2 className="ac-h2">Gamified Carts We&apos;ve Built</h2>
+          <p className="ac-lead" style={{ marginLeft: "auto", marginRight: "auto" }}>Real cart drawers we&apos;ve shipped for Shopify brands.</p>
+        </div>
+        <AutoScrollRow
+          items={CLIENT_CARTS.map((c, i) => (
+            <div key={i} style={{ height: 320, borderRadius: 14, overflow: "hidden", border: "1px solid #ece3d0", background: "#fff", boxShadow: "0 10px 30px rgba(15,23,42,0.08)" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={c.src} alt="A gamified Shopify cart drawer built by Ecomm Wizards" width={c.w} height={680} loading="lazy" decoding="async" style={{ height: "100%", width: "auto", display: "block" }} />
+            </div>
+          ))}
+          direction="left"
+          speedSec={45}
+          gap={16}
+          ariaLabel="Gamified cart drawers we have built for clients"
+        />
       </section>
 
       {/* 6. The data (sourced stats) */}

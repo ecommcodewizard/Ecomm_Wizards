@@ -31,25 +31,33 @@ const UPSELLS = [{ price: "$22" }, { price: "$26" }, { price: "$34" }, { price: 
 
 const clamp2: CSSProperties = { display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" };
 
-// Placeholder product thumbnail (gray panel + simple landscape), swappable later.
-function Thumb({ size = 44 }: { size?: number }) {
+// Generic product illustrations (bottle / jar / tube / pump / box) so the demo
+// reads like a real product cart without needing real photos. Muted two-tone.
+const PROD_BODY = "#c2ccd8";
+const PROD_CAP = "#a7b2c0";
+function ProductGlyph({ i }: { i: number }) {
+  const shapes = [
+    <g key="0"><rect x="13" y="4" width="6" height="4" rx="1" fill={PROD_CAP} /><rect x="14.5" y="7" width="3" height="3" fill={PROD_CAP} /><rect x="9" y="9" width="14" height="19" rx="4" fill={PROD_BODY} /></g>,
+    <g key="1"><rect x="8" y="8" width="16" height="5" rx="2" fill={PROD_CAP} /><rect x="9" y="12" width="14" height="15" rx="3" fill={PROD_BODY} /></g>,
+    <g key="2"><rect x="13" y="4" width="6" height="4" rx="1" fill={PROD_CAP} /><path d="M11 9h10l-1 17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z" fill={PROD_BODY} /></g>,
+    <g key="3"><rect x="10" y="4" width="8" height="3" rx="1" fill={PROD_CAP} /><rect x="14" y="6" width="3" height="4" fill={PROD_CAP} /><rect x="9" y="10" width="14" height="18" rx="4" fill={PROD_BODY} /></g>,
+    <g key="4"><rect x="7" y="9" width="18" height="18" rx="2" fill={PROD_BODY} /><rect x="7" y="9" width="18" height="5" rx="2" fill={PROD_CAP} /></g>,
+  ];
+  return shapes[((i % shapes.length) + shapes.length) % shapes.length];
+}
+
+function Thumb({ i = 0, size = 44 }: { i?: number; size?: number }) {
   return (
     <span aria-hidden style={{ display: "inline-flex", width: size, height: size, flexShrink: 0, borderRadius: 9, background: "#eef1f5", border: "1px solid #e6eaef", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-      <svg width={size * 0.6} height={size * 0.6} viewBox="0 0 24 24" fill="none">
-        <circle cx="8.5" cy="8" r="2.3" fill="#cbd5e1" />
-        <path d="M3 19l5-5.5 3.2 3.6L15 12l6 7z" fill="#cbd5e1" />
-      </svg>
+      <svg width={size * 0.66} height={size * 0.66} viewBox="0 0 32 32" fill="none"><ProductGlyph i={i} /></svg>
     </span>
   );
 }
 
-function ThumbBox({ height }: { height: number }) {
+function ThumbBox({ i = 0, height }: { i?: number; height: number }) {
   return (
     <span aria-hidden style={{ display: "flex", width: "100%", height, borderRadius: 9, background: "#eef1f5", border: "1px solid #e6eaef", alignItems: "center", justifyContent: "center" }}>
-      <svg width={30} height={30} viewBox="0 0 24 24" fill="none">
-        <circle cx="8.5" cy="8" r="2.3" fill="#cbd5e1" />
-        <path d="M3 19l5-5.5 3.2 3.6L15 12l6 7z" fill="#cbd5e1" />
-      </svg>
+      <svg width={Math.round(height * 0.72)} height={Math.round(height * 0.72)} viewBox="0 0 32 32" fill="none"><ProductGlyph i={i} /></svg>
     </span>
   );
 }
@@ -64,11 +72,11 @@ function QtyStepper() {
   );
 }
 
-function RewardCard({ was }: { was: string }) {
+function RewardCard({ i, was }: { i: number; was: string }) {
   return (
     <div style={{ width: 130, background: "#fff", border: "1px solid #eceff3", borderRadius: 11, padding: 7 }}>
       <div style={{ display: "flex", justifyContent: "center", marginBottom: 6 }}>
-        <Thumb size={46} />
+        <Thumb i={i} size={46} />
       </div>
       <p style={{ ...clamp2, margin: "0 0 4px", fontFamily: "'Poppins', sans-serif", fontSize: 11.5, fontWeight: 600, color: "#0f172a", lineHeight: 1.3, minHeight: 28 }}>{NAME}</p>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 4 }}>
@@ -82,11 +90,11 @@ function RewardCard({ was }: { was: string }) {
   );
 }
 
-function UpsellCard({ price }: { price: string }) {
+function UpsellCard({ i, price }: { i: number; price: string }) {
   return (
     <div style={{ width: 136, background: "#fff", border: "1px solid #eceff3", borderRadius: 11, padding: 7 }}>
       <div style={{ marginBottom: 6 }}>
-        <ThumbBox height={44} />
+        <ThumbBox i={i} height={44} />
       </div>
       <p style={{ ...clamp2, margin: "0 0 3px", fontFamily: "'Poppins', sans-serif", fontSize: 11.5, fontWeight: 600, color: "#0f172a", lineHeight: 1.3, minHeight: 28 }}>{NAME}</p>
       <p style={{ margin: "0 0 6px", fontFamily: "'Poppins', sans-serif", fontSize: 12.5, fontWeight: 700, color: "#0f172a" }}>{price}</p>
@@ -138,7 +146,7 @@ export default function GamifiedCartDemo() {
       <div style={{ margin: "10px 0 0", borderTop: "1px solid #eef1f5" }}>
         {LINE_ITEMS.map((it, i) => (
           <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "9px 0", borderBottom: "1px solid #eef1f5" }}>
-            <Thumb size={42} />
+            <Thumb i={i} size={42} />
             <div style={{ flex: 1, minWidth: 0 }}>
               <p style={{ margin: "0 0 2px", fontSize: 13.5, fontWeight: 600, color: "#0f172a", lineHeight: 1.3, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{NAME}</p>
               <span style={{ fontSize: 13.5, fontWeight: 700, color: "#0f172a" }}>{it.price}</span>{" "}
@@ -152,13 +160,13 @@ export default function GamifiedCartDemo() {
       {/* Claim your free rewards */}
       <div style={{ margin: "12px 0 0" }}>
         <SectionLabel>Claim your free rewards</SectionLabel>
-        <AutoScrollRow items={REWARDS.map((r, i) => <RewardCard key={i} was={r.was} />)} direction="left" speedSec={26} gap={10} ariaLabel="Free rewards you can add to the cart" />
+        <AutoScrollRow items={REWARDS.map((r, i) => <RewardCard key={i} i={i} was={r.was} />)} direction="left" speedSec={26} gap={10} ariaLabel="Free rewards you can add to the cart" />
       </div>
 
       {/* You may also like */}
       <div style={{ margin: "12px 0 0" }}>
         <SectionLabel>You may also like</SectionLabel>
-        <AutoScrollRow items={UPSELLS.map((u, i) => <UpsellCard key={i} price={u.price} />)} direction="right" speedSec={30} gap={10} ariaLabel="Suggested products" />
+        <AutoScrollRow items={UPSELLS.map((u, i) => <UpsellCard key={i} i={i} price={u.price} />)} direction="right" speedSec={30} gap={10} ariaLabel="Suggested products" />
       </div>
 
       {/* Subtotal */}
