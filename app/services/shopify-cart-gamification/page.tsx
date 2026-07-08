@@ -116,13 +116,6 @@ const AC_SLIDES: CaseStudySlide[] = [
   },
 ];
 
-const DEFINITION_POINTS = [
-  "A visible goal: you're $15 away from free shipping",
-  "Live feedback as the cart fills toward each reward",
-  "A reward worth reaching: free shipping, a gift, or a discount",
-  "A reason to add one more item, on every order",
-];
-
 const MECHANICS = [
   { title: "Free-shipping progress bar", body: "A live bar shows how close the shopper is to free shipping and fills as they add items. It turns the top reason for cart abandonment, surprise shipping costs, into a goal worth reaching, and it costs you nothing extra on orders that were already over the threshold." },
   { title: "Tiered reward ladder", body: "Two to four thresholds stack rewards, for example free shipping at $70, a free gift at $90, and a discount at $120. Each tier gives the shopper a fresh reason to keep adding, so the cart does not stop at the first reward." },
@@ -302,28 +295,19 @@ export default function Page() {
             <h2 className="ac-h2">What is Shopify cart gamification?</h2>
             <p className="ac-p"><strong>Cart gamification adds game mechanics to your Shopify cart, such as free-shipping progress bars, tiered rewards, and gift-with-purchase, so shoppers add one more item to reach the next reward.</strong> It turns the cart into a game with a clear goal, live feedback, and a reason to spend a little more.</p>
             <p className="ac-p">Picture a shopper with $55 in the cart. A bar reads &ldquo;you&apos;re $15 away from free shipping.&rdquo; Adding one more product costs less than the shipping would, so they do it. That single nudge is cart gamification at work, and it repeats on every order.</p>
+            <p className="ac-p">Unlike a blanket discount, shoppers earn each reward by spending more, so the bigger order pays for it, not your margin.</p>
             <p className="ac-p">It is one of the highest-return conversion tactics on Shopify, because it lifts revenue from visitors you have already paid to acquire. Pair it with <Link href="/services/shopify-cro-agency">CRO</Link> and <Link href="/services/a-b-testing">A/B testing</Link> and every gain is measured, not assumed.</p>
+            <div style={{ marginTop: 28 }}>
+              <span className="group inline-flex p-[2px] rounded-full" style={{ background: GRADIENT }}>
+                <Link href="/free-shopify-store-audit" className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px]" style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600 }}>
+                  <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Get a Free Cart Audit</span>
+                  <span className="text-white group-hover:text-black transition-colors duration-300"><Arrow /></span>
+                </Link>
+              </span>
+            </div>
           </div>
-          <div className="ac-card-col">
-            <div className="ac-card-box">
-              <p className="ac-box-title">In plain terms</p>
-              <ul className="ac-checklist">
-                {DEFINITION_POINTS.map((p) => (<li key={p}><Check /><span>{p}</span></li>))}
-              </ul>
-            </div>
-            <div className="ac-card-box">
-              <p className="ac-box-title">Discount vs reward</p>
-              <div className="ac-vs">
-                <div className="ac-vs-item">
-                  <span className="ac-list-tag ac-tag-bad">Blanket discount</span>
-                  <p className="ac-vs-text">You cut margin on every order, even the ones that would have converted at full price.</p>
-                </div>
-                <div className="ac-vs-item">
-                  <span className="ac-list-tag ac-tag-good">Earned reward</span>
-                  <p className="ac-vs-text">The shopper spends more to reach it, so the bigger order pays for the reward.</p>
-                </div>
-              </div>
-            </div>
+          <div>
+            <GamifiedCartDemo />
           </div>
         </div>
       </section>
@@ -385,30 +369,6 @@ export default function Page() {
           </div>
 
           <CartGamificationAccordion items={MECHANICS} />
-        </div>
-      </section>
-
-      {/* 5b. See a gamified cart in action */}
-      <section className="ac-sec ac-cream">
-        <div className="ac-wrap">
-          <div className="mx-auto grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center">
-            <div>
-              <span className="ac-eyebrow">See it in action</span>
-              <h2 className="ac-h2">See a Gamified Cart in Action</h2>
-              <p className="ac-lead">Every mechanic above, working together in one cart: free-shipping and reward tiers, gift-with-purchase, and in-cart upsells.</p>
-              <div style={{ marginTop: 28 }}>
-                <span className="group inline-flex p-[2px] rounded-full" style={{ background: GRADIENT }}>
-                  <Link href="/free-shopify-store-audit" className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px]" style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600 }}>
-                    <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Get a Free Cart Audit</span>
-                    <span className="text-white group-hover:text-black transition-colors duration-300"><Arrow /></span>
-                  </Link>
-                </span>
-              </div>
-            </div>
-            <div>
-              <GamifiedCartDemo />
-            </div>
-          </div>
         </div>
       </section>
 
@@ -631,7 +591,7 @@ const CSS = `
 @media (max-width:640px){.std-solutions>div{padding:40px 18px!important}.std-solutions-grid{grid-template-columns:1fr!important}.std-solutions-left{position:static!important}.std-solutions h2{font-size:26px!important;line-height:1.28!important}.std-cta-sol{margin-top:16px!important}}
 
 /* Two-col */
-.ac-two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.ac-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
 .ac-card-box{background:#fff;border:1px solid #e8ecf1;border-radius:18px;padding:28px;box-shadow:0 10px 40px rgba(0,0,0,0.05)}
 .ac-box-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;color:#0f172a;margin:0 0 16px}
 .ac-card-col{display:flex;flex-direction:column;gap:20px}
@@ -681,7 +641,7 @@ const CSS = `
 .ac-fit-list li a{color:#61ce70;text-decoration:underline;text-underline-offset:2px}
 
 @media (max-width:760px){
-  .ac-two{grid-template-columns:1fr}
+  .ac-two{grid-template-columns:minmax(0,1fr)}
   .ac-grid-3{grid-template-columns:1fr}
   .ac-head{margin-bottom:30px}
 }
