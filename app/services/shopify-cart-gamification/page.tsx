@@ -12,23 +12,24 @@ import GamifiedCartDemo from "./GamifiedCartDemo";
 import AutoScrollRow from "@/components/ui/AutoScrollRow";
 
 const META_DESCRIPTION =
-  "Shopify cart gamification that lifts average order value: free-shipping progress bars, tiered rewards, and gift-with-purchase. Book a free AOV audit.";
+  "Increase your Shopify average order value with cart gamification: free-shipping bars, tiered rewards, and gift-with-purchase. Book a free AOV audit.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-cart-gamification";
-const TITLE = "Shopify Cart Gamification: Lift AOV Without Deep Discounts";
+const TITLE = "Shopify Cart Gamification: Increase Average Order Value";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: META_DESCRIPTION,
   keywords: [
+    "increase average order value shopify",
+    "increase aov shopify",
+    "ecommerce gamification",
     "shopify cart gamification",
     "cart gamification",
-    "increase average order value shopify",
-    "shopify aov",
+    "shopify average order value",
     "free shipping bar shopify",
-    "shopify cart drawer",
     "tiered rewards shopify",
     "gift with purchase shopify",
-    "cart upsell shopify",
+    "gamify cart drawer",
   ],
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
@@ -179,7 +180,9 @@ const FIT_NOT = [
 
 const FAQS = [
   { question: "What is Shopify cart gamification?", answer: "Cart gamification adds game mechanics to your Shopify cart, such as free-shipping progress bars, tiered rewards, and gift-with-purchase. Shoppers see a clear goal and add one more item to reach the next reward. It lifts average order value from the traffic you already have, without cutting your prices." },
+  { question: "What is ecommerce gamification?", answer: "Ecommerce gamification adds game mechanics like progress bars, tiered rewards, points, and spin-to-win to an online store to lift engagement and sales. Cart gamification is the highest-return type because it works at the moment of purchase, turning the cart into a goal shoppers want to reach." },
   { question: "How does cart gamification increase average order value?", answer: "It gives shoppers a reason to spend a little more. A bar that reads 'you're $15 away from free shipping' turns a threshold into a goal, and most shoppers would rather add a product than pay for shipping. Tiered rewards keep that momentum going past the first threshold, so carts grow." },
+  { question: "How do I increase average order value on Shopify?", answer: "The fastest levers live in the cart: a free-shipping progress bar, tiered rewards, gift-with-purchase, and relevant in-cart upsells. Together they give shoppers a reason to add one more item on every order. We build these into your Shopify cart and A/B test each one, so the lift is proven, not assumed." },
   { question: "What is a free shipping progress bar?", answer: "A free shipping progress bar shows how close a shopper is to earning free shipping, and it fills as they add items. Since surprise shipping costs are the top reason people abandon carts, the bar reframes shipping as a reward to earn. It is the highest-impact cart mechanic for most stores." },
   { question: "What reward thresholds should I set?", answer: "Set your first reward just above your current average order value, usually 10 to 20 percent higher, so most shoppers can reach it with one more item. Keep the second tier within easy reach and make the third aspirational. We model your thresholds against your real order data before we launch." },
   { question: "Will cart gamification cheapen my brand?", answer: "Done well, it reads as a helpful nudge, not a carnival. We match the design to your brand and use restrained rewards like free shipping or a gift, rather than flashing discounts everywhere. Premium brands use progress bars and gift-with-purchase every day because the mechanic feels generous, not gimmicky." },
@@ -192,16 +195,16 @@ const FAQS = [
 
 // Real client cart drawers (WebP, 680px tall; widths for CLS-safe layout).
 const CLIENT_CARTS = [
-  { src: "/images/gamify-cart/client-cart-1.webp", w: 382 },
-  { src: "/images/gamify-cart/client-cart-2.webp", w: 382 },
-  { src: "/images/gamify-cart/client-cart-3.webp", w: 341 },
-  { src: "/images/gamify-cart/client-cart-4.webp", w: 379 },
-  { src: "/images/gamify-cart/client-cart-5.webp", w: 333 },
-  { src: "/images/gamify-cart/client-cart-6.webp", w: 390 },
-  { src: "/images/gamify-cart/client-cart-7.webp", w: 381 },
-  { src: "/images/gamify-cart/client-cart-8.webp", w: 617 },
-  { src: "/images/gamify-cart/client-cart-9.webp", w: 331 },
-  { src: "/images/gamify-cart/client-cart-10.webp", w: 287 },
+  { src: "/images/gamify-cart/client-cart-1.webp", w: 382, alt: "Free-shipping progress bar filling inside a Shopify cart drawer as items are added" },
+  { src: "/images/gamify-cart/client-cart-2.webp", w: 382, alt: "Tiered reward ladder in a cart drawer: free shipping, then a free gift, then a discount" },
+  { src: "/images/gamify-cart/client-cart-3.webp", w: 341, alt: "Gift-with-purchase earned at a spend threshold in a Shopify cart" },
+  { src: "/images/gamify-cart/client-cart-4.webp", w: 379, alt: "Spend-more incentive bar nudging a shopper toward the next reward in the cart" },
+  { src: "/images/gamify-cart/client-cart-5.webp", w: 333, alt: "In-cart upsell recommending a matching add-on before checkout" },
+  { src: "/images/gamify-cart/client-cart-6.webp", w: 390, alt: "Loyalty points progress toward the next tier shown in a Shopify cart drawer" },
+  { src: "/images/gamify-cart/client-cart-7.webp", w: 381, alt: "Build-a-bundle offer pairing products for a reward inside the cart" },
+  { src: "/images/gamify-cart/client-cart-8.webp", w: 617, alt: "Cross-sell recommendations shown in the cart at the point of purchase" },
+  { src: "/images/gamify-cart/client-cart-9.webp", w: 331, alt: "Low-stock and reserved-cart urgency cues in a gamified Shopify cart" },
+  { src: "/images/gamify-cart/client-cart-10.webp", w: 287, alt: "Reward-reveal animation celebrating a shopper reaching the free-shipping goal" },
 ];
 
 const BREADCRUMB_JSONLD = {
@@ -248,11 +251,11 @@ export default function Page() {
             <h1 className="std-hero-h1 font-bold mt-5" style={{ color: "#fff", fontSize: "48px", lineHeight: 1.15, margin: "20px 0 0" }}>
               Gamify Your Shopify Cart to{" "}
               <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                Lift Average Order Value
+                Increase Average Order Value
               </span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
-              Most shoppers stop at the item they came for. Cart gamification gives them a reason to add one more, with free-shipping bars, tiered rewards, and gift-with-purchase built into your Shopify cart. You lift average order value from traffic you already have, without cutting prices.
+              Most shoppers stop at the item they came for. Cart gamification gives them a reason to add one more, with free-shipping bars, tiered rewards, and gift-with-purchase built into your Shopify cart. You increase average order value from traffic you already have, without cutting prices.
             </p>
             <div className="std-hero-stats">
               {HERO_STATS.map((s) => (
@@ -308,8 +311,8 @@ export default function Page() {
           <div>
             <span className="ac-eyebrow">What it is</span>
             <h2 className="ac-h2">What is Shopify cart gamification?</h2>
-            <p className="ac-p"><strong>Cart gamification adds game mechanics to your Shopify cart, such as free-shipping progress bars, tiered rewards, and gift-with-purchase, so shoppers add one more item to reach the next reward.</strong> It turns the cart into a game with a clear goal, live feedback, and a reason to spend a little more.</p>
-            <p className="ac-p">Picture a shopper with $55 in the cart. A bar reads &ldquo;you&apos;re $15 away from free shipping.&rdquo; Adding one more product costs less than the shipping would, so they do it. That single nudge is cart gamification at work, and it repeats on every order.</p>
+            <p className="ac-p"><strong>Cart gamification adds game mechanics to your Shopify cart, such as free-shipping progress bars, tiered rewards, and gift-with-purchase, so shoppers add one more item to reach the next reward.</strong> It turns the cart into a game with a clear goal, live feedback, and a reason to spend a little more. It is a focused form of ecommerce gamification, applied where it converts hardest: the cart.</p>
+            <p className="ac-p">Picture a shopper with $55 in the cart. A bar reads &ldquo;you&apos;re $15 away from free shipping.&rdquo; Adding one more product costs less than the shipping would, so they do it. That single nudge is a gamified cart at work, and it repeats on every order.</p>
             <p className="ac-p">Unlike a blanket discount, shoppers earn each reward by spending more, so the bigger order pays for it, not your margin.</p>
             <p className="ac-p">It is one of the highest-return conversion tactics on Shopify, because it lifts revenue from visitors you have already paid to acquire. Pair it with <Link href="/services/shopify-cro-agency">CRO</Link> and <Link href="/services/a-b-testing">A/B testing</Link> and every gain is measured, not assumed.</p>
             <div style={{ marginTop: 28 }}>
@@ -408,7 +411,7 @@ export default function Page() {
           items={CLIENT_CARTS.map((c, i) => (
             <div key={i} style={{ height: 320, borderRadius: 14, overflow: "hidden", border: "1px solid #ece3d0", background: "#fff", boxShadow: "0 10px 30px rgba(15,23,42,0.08)" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={c.src} alt="A gamified Shopify cart drawer built by Ecomm Wizards" width={c.w} height={680} loading="lazy" decoding="async" style={{ height: "100%", width: "auto", display: "block" }} />
+              <img src={c.src} alt={c.alt} width={c.w} height={680} loading="lazy" decoding="async" style={{ height: "100%", width: "auto", display: "block" }} />
             </div>
           ))}
           direction="left"
@@ -458,7 +461,7 @@ export default function Page() {
         <div className="ac-wrap">
           <div className="ac-head ac-head-wide">
             <span className="ac-eyebrow">Your numbers</span>
-            <h2 className="ac-h2">Estimate Your AOV Lift</h2>
+            <h2 className="ac-h2">Estimate Your Average Order Value Lift</h2>
             <p className="ac-lead">Enter your average order value and monthly orders to see what a modest AOV lift could add to your revenue.</p>
           </div>
           <AOVCalculator />

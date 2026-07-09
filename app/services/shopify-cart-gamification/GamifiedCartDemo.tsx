@@ -18,7 +18,7 @@ const MILESTONES = [
   { amount: "$90", label: "Free gift" },
   { amount: "$120", label: "10% off" },
 ];
-const REACHED = 2; // free shipping + free gift unlocked; working toward 10% off
+const REACHED = 2; // free shipping + free gift earned; working toward 10% off
 const FILL_PCT = 60; // progress line fill toward the third milestone
 
 const LINE_ITEMS = [
@@ -111,7 +111,7 @@ export default function GamifiedCartDemo() {
   return (
     <div
       role="group"
-      aria-label="Example of a gamified Shopify cart: a tiered rewards progress bar showing free shipping and a free gift unlocked, two cart items, a scrolling row of free rewards to claim, a scrolling row of suggested products, and a discounted subtotal."
+      aria-label="Example of a gamified Shopify cart: a tiered rewards progress bar showing free shipping and a free gift earned, two cart items, a scrolling row of free rewards to claim, a scrolling row of suggested products, and a discounted subtotal."
       style={{ width: "100%", maxWidth: 460, margin: "0 auto", background: "#FBF7ED", border: "1px solid #ece3d0", borderRadius: 20, boxShadow: "0 24px 60px rgba(15,23,42,0.10)", padding: 16, fontFamily: "'Poppins', sans-serif", boxSizing: "border-box" }}
     >
       {/* Header */}
@@ -140,7 +140,7 @@ export default function GamifiedCartDemo() {
           );
         })}
       </div>
-      <p style={{ margin: "8px 0 0", fontSize: 12.5, fontWeight: 600, color: "#1F7A45", lineHeight: 1.4 }}>🎉 You unlocked the free gift. Add $24 more for 10% off.</p>
+      <p style={{ margin: "8px 0 0", fontSize: 12.5, fontWeight: 600, color: "#1F7A45", lineHeight: 1.4 }}>🎉 You earned the free gift. Add $24 more for 10% off.</p>
 
       {/* Line items */}
       <div style={{ margin: "10px 0 0", borderTop: "1px solid #eef1f5" }}>
