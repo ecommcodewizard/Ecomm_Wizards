@@ -14,6 +14,7 @@ Key facts:
 - [Shopify Plus Development](https://ecommwizards.com/services/shopify-plus-development): Enterprise Shopify Plus builds with custom theme, checkout, and integrations.
 - [Shopify Migration](https://ecommwizards.com/services/migration): Replatforming to Shopify from Magento, WooCommerce, BigCommerce, and others, with SEO-safe redirects.
 - [Conversion Rate Optimization](https://ecommwizards.com/services/shopify-cro-agency): Data-driven CRO programs with A/B testing to lift conversion rate and revenue.
+- [Cart Gamification](https://ecommwizards.com/services/shopify-cart-gamification): Increase average order value with free-shipping progress bars, tiered rewards, and gift-with-purchase built into the Shopify cart.
 - [Shopify SEO](https://ecommwizards.com/services/shopify-seo-agency): Technical and content SEO for Shopify stores to grow organic traffic.
 - [Shopify App Development](https://ecommwizards.com/services/shopify-app-development): Custom public and private Shopify apps, including checkout and fulfillment integrations.
 - [Theme Development](https://ecommwizards.com/services/shopify-theme-development): Custom Shopify Online Store 2.0 themes built for performance and merchandiser control.
