@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import KnifeAccordion from "@/components/sections/KnifeAccordion";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
   "Convert your Figma files into a pixel-perfect custom Shopify store. Expert Shopify developers, Shopify 2.0 builds, free blueprint & quote. 700+ brands launched.";
@@ -316,6 +318,8 @@ const FAQS = [
 export default function FigmaToShopifyConversionPage() {
   return (
     <>
+      <Breadcrumbs current="/services/figma-to-shopify-conversion" />
+
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section
         className="relative w-full bg-black"
@@ -1244,6 +1248,7 @@ export default function FigmaToShopifyConversionPage() {
         ` }} />
       </section>
 
+      <RelatedServices current="/services/figma-to-shopify-conversion" />
     </>
   );
 }

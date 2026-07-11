@@ -50,6 +50,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       { name: "Creative Strategy", blurb: "Performance ad creative for Meta and Google that lowers CPA and scales ROAS.", href: "/services/creative-strategy" },
       { name: "Cart Gamification", blurb: "Free-shipping bars, tiered rewards, and gift-with-purchase that lift average order value.", href: "/services/shopify-cart-gamification" },
       { name: "Analytics & Tracking", blurb: "Clean GA4, GTM, and pixel setup so you can trust your data.", href: "/services/shopify-analytics-and-tracking-setup" },
+      { name: "Klaviyo Audit", blurb: "A deep review of your Klaviyo flows, list health, and deliverability with a prioritized fix list.", href: "/services/klaviyo-audit" },
       { name: "Maintenance & Support", blurb: "Ongoing care, updates, and on-demand development after launch.", href: "/services/shopify-maintenance-and-support" },
     ],
   },

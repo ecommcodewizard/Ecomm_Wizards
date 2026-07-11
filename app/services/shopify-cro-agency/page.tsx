@@ -6,6 +6,8 @@ import CroAccordion from "./CroAccordion";
 import CroFaqAccordion from "./CroFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
   "Shopify CRO agency specializing in conversion rate optimization, A/B testing, and CRO audits for Shopify Plus. 100+ stores optimized. Book a free audit.";
@@ -473,6 +475,7 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA_SCRO) }}
       />
       <ServiceSchema url={CANONICAL_URL} name="Shopify CRO Agency" serviceType="Conversion rate optimization" description={META_DESCRIPTION} />
+      <Breadcrumbs current="/services/shopify-cro-agency" />
 
       {/* ── §1 Hero (DARK) ── */}
       <section className="std-hero" style={{ background: C_DARK }} aria-label="Shopify CRO agency hero">
@@ -1338,6 +1341,8 @@ Most brands try to run CRO themselves with a cheap tool and no strategy. A Shopi
           .std-hero-stat-label { font-size: 11px !important; }
         }
       `}} />
+
+      <RelatedServices current="/services/shopify-cro-agency" />
     </>
   );
 }

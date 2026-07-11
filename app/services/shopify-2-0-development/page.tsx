@@ -6,6 +6,8 @@ import S20Accordion from "./S20Accordion";
 import S20FaqAccordion from "./S20FaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
   "Shopify 2.0 development agency with 200+ Online Store 2.0 builds. Custom themes, 1.0 to 2.0 migrations, and native App Block integrations.";
@@ -310,6 +312,7 @@ const CheckIcon = () => (
 export default function Page() {
   return (
     <>
+      <Breadcrumbs current="/services/shopify-2-0-development" />
       {/* ── 1. Hero ── */}
       <section className="std-hero" style={{ background: C_DARK }} aria-label="Shopify 2.0 Development hero">
         <div
@@ -977,6 +980,8 @@ export default function Page() {
           .std-solutions h2 { font-size: 26px !important; line-height: 1.28 !important; }
         }
       `}} />
+
+      <RelatedServices current="/services/shopify-2-0-development" />
     </>
   );
 }

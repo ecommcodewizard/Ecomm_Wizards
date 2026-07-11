@@ -5,6 +5,8 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/ui/CTASection";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 import AgenticAccordion from "./AgenticAccordion";
 
 const META_DESCRIPTION =
@@ -190,6 +192,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_JSONLD) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSONLD) }} />
       <ServiceSchema url={CANONICAL_URL} name="Shopify Agentic Commerce Agency" serviceType="Agentic commerce optimization and Generative Engine Optimization (GEO)" description={META_DESCRIPTION} areaServed="United States" />
+      <Breadcrumbs current="/services/shopify-agentic-commerce" />
 
       {/* 1. Hero (dark, 2-col) - ported from the analytics & tracking page */}
       <section className="std-hero" style={{ background: "#000000" }} aria-label="Shopify agentic commerce hero">
@@ -632,6 +635,8 @@ export default function Page() {
         primaryWhite
         secondaryGradient
       />
+
+      <RelatedServices current="/services/shopify-agentic-commerce" />
     </>
   );
 }

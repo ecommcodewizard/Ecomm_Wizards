@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const CASE_STUDY_SLIDES: CaseStudySlide[] = [
   {
@@ -401,6 +403,7 @@ export default function ERPPage() {
   return (
     <>
       {/* ── 1. Hero ──────────────────────────────────────────────────── */}
+      <Breadcrumbs current="/services/erp-connections-to-shopify" />
       <section className="relative w-full bg-black" style={{ fontFamily: "'Poppins', sans-serif" }}>
         <div
           className="mx-auto grid items-center gap-y-10 gap-x-[30px] py-[40px] px-[15px] lg:py-[60px] lg:px-[20px] lg:grid-cols-2"
@@ -1249,6 +1252,8 @@ export default function ERPPage() {
           .erp-trust-logo  { width: 174.99px; height: 84.44px; }
         }
       ` }} />
+
+      <RelatedServices current="/services/erp-connections-to-shopify" />
     </>
   );
 }

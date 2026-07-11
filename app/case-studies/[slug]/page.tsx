@@ -24,6 +24,35 @@ export async function generateStaticParams() {
   ];
 }
 
+// Map a serviceType segment (e.g. "Shopify CRO", "Theme Development") to the
+// matching service page so each case study links back into the relevant service.
+// Order matters — more specific patterns first (e.g. "Theme Development" must beat
+// the generic "Development" rule). Segments with no match render as plain text.
+const SERVICE_LINK_MAP: { test: RegExp; href: string }[] = [
+  { test: /migrat|replatform/i, href: "/services/migration" },
+  { test: /b2b|wholesale/i, href: "/services/shopify-b2b-store-setup" },
+  { test: /\bpos\b/i, href: "/services/shopify-pos-setup" },
+  { test: /a\/b|a-b test/i, href: "/services/a-b-testing" },
+  { test: /cro|conversion/i, href: "/services/shopify-cro-agency" },
+  { test: /theme/i, href: "/services/shopify-theme-development" },
+  { test: /headless|hydrogen/i, href: "/services/headless-shopify-agency" },
+  { test: /2\.0|upgrade/i, href: "/services/shopify-2-0-development" },
+  { test: /landing/i, href: "/services/shopify-landing-page-design" },
+  { test: /speed|performance/i, href: "/services/shopify-speed-optimization" },
+  { test: /\bseo\b/i, href: "/services/shopify-seo-agency" },
+  { test: /klaviyo|email|sms/i, href: "/services/klaviyo-audit" },
+  { test: /integration|erp/i, href: "/services/shopify-integration-services" },
+  { test: /app/i, href: "/services/shopify-app-development" },
+  { test: /plus/i, href: "/services/shopify-plus-development" },
+  { test: /redesign|ux|ui|design/i, href: "/services/shopify-ux-and-ui-design" },
+  { test: /develop|build/i, href: "/services/shopify-store-development" },
+];
+
+function serviceHrefForSegment(segment: string): string | null {
+  for (const m of SERVICE_LINK_MAP) if (m.test.test(segment)) return m.href;
+  return null;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -290,6 +319,13 @@ function CaseStudyHero({ cs }: { cs: CaseStudy }) {
         <div className="cs-hero-text">
           <div className="cs-hero-breadcrumb" style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "24px" }}>
             <Link
+              href="/"
+              style={{ color: "rgba(255,255,255,0.5)", fontFamily: "'Poppins',sans-serif", fontSize: "13px", textDecoration: "none" }}
+            >
+              Home
+            </Link>
+            <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "13px" }}>/</span>
+            <Link
               href="/case-studies"
               style={{ color: "rgba(255,255,255,0.5)", fontFamily: "'Poppins',sans-serif", fontSize: "13px", textDecoration: "none" }}
             >
@@ -305,10 +341,21 @@ function CaseStudyHero({ cs }: { cs: CaseStudy }) {
             <span style={{ display: "inline-flex", alignItems: "center", padding: "4px 14px", fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#61ce70", background: "rgba(97,206,112,0.12)", border: "1px solid rgba(97,206,112,0.25)", borderRadius: "9999px", letterSpacing: "0.04em", textTransform: "uppercase" }}>
               {cs.industry}
             </span>
-            <span style={{ display: "inline-flex", alignItems: "center", padding: "4px 14px", fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#ffffff", background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "9999px", letterSpacing: "0.04em" }}>
-              {cs.serviceType}
-            </span>
+            {/* Each service the project used links back to its service page (crawlable
+                detail -> service internal links). Unmapped segments render as plain text. */}
+            {cs.serviceType.split("|").map((seg) => {
+              const label = seg.trim();
+              if (!label) return null;
+              const href = serviceHrefForSegment(label);
+              const pill: React.CSSProperties = { display: "inline-flex", alignItems: "center", padding: "4px 14px", fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#ffffff", background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "9999px", letterSpacing: "0.04em", textDecoration: "none" };
+              return href ? (
+                <Link key={label} href={href} className="cs-hero-service-link" style={pill}>{label}</Link>
+              ) : (
+                <span key={label} style={pill}>{label}</span>
+              );
+            })}
           </div>
+          <style dangerouslySetInnerHTML={{ __html: ".cs-hero-service-link:hover{border-color:rgba(97,206,112,0.5)!important;color:#61ce70!important}" }} />
 
           <h1 style={{ fontFamily: "'Poppins',sans-serif", fontSize: "48px", fontWeight: 700, color: "#ffffff", lineHeight: "58px", margin: "0 0 16px" }}>
             {cs.brandName} Shopify Case Study
@@ -958,8 +1005,18 @@ function CaseStudyQuote({ cs }: { cs: CaseStudy }) {
 
 function CaseStudyExploreMore({ current, mode }: { current: string; mode?: "app" | "klaviyo" }) {
   const source = mode === "klaviyo" ? KLAVIYO_CASE_STUDIES : mode === "app" ? APP_CASE_STUDIES : CASE_STUDIES;
+  const currentIdx = source.findIndex((cs) => cs.slug === current);
   const cards = source.filter((cs) => cs.slug !== current);
-  const all = cards.length > 0 ? cards : source;
+  const base = cards.length > 0 ? cards : source;
+  // Render EVERY other study (rotated to start just after the current one) so each
+  // detail page links the full set — tail studies are no longer cut off at 13, and
+  // every study earns an inbound link from every sibling page.
+  const startInBase = currentIdx < 0 ? 0 : currentIdx % base.length;
+  const all = base.map((_, i) => base[(startInBase + i) % base.length]);
+  // Sequential prev/next over the full source (wrapping) — always present regardless
+  // of the sparse prevSlug/nextSlug data fields, so no detail page is a dead end.
+  const prev = currentIdx < 0 ? null : source[(currentIdx - 1 + source.length) % source.length];
+  const next = currentIdx < 0 ? null : source[(currentIdx + 1) % source.length];
   return (
     <section style={{ background: "#ffffff", padding: "40px 0 40px" }}>
       {/* Header row */}
@@ -987,11 +1044,11 @@ function CaseStudyExploreMore({ current, mode }: { current: string; mode?: "app"
       <div className="cs-explore-scroll" style={{ overflowX: "auto", paddingBottom: "16px" }}>
 
         <div className="cs-explore-track" style={{ display: "flex", gap: "16px", paddingRight: "40px", width: "max-content" }}>
-          {Array.from({ length: 12 }, (_, i) => all[i % all.length]).map((cs, i) => {
+          {all.map((cs) => {
             const tags = cs.serviceType.split("|").map((t) => t.trim());
             const stat = cs.stats[0];
             return (
-              <Link key={i} href={`/case-studies/${cs.slug}`} className="cs-explore-card" draggable={false} style={{ display: "block", width: "356px", height: "494px", flexShrink: 0, background: "#FBF7ED", borderRadius: "20px", overflow: "hidden", textDecoration: "none" }}>
+              <Link key={cs.slug} href={`/case-studies/${cs.slug}`} className="cs-explore-card" draggable={false} style={{ display: "block", width: "356px", height: "494px", flexShrink: 0, background: "#FBF7ED", borderRadius: "20px", overflow: "hidden", textDecoration: "none" }}>
                 {/* Image */}
                 <div className="cs-explore-card-img" style={{ position: "relative", width: "340px", height: "372px", background: "#e8e8e8", margin: "8px", borderRadius: "14px", overflow: "hidden", flexShrink: 0 }}>
                   {mode === "klaviyo" && cs.slug === "andrea-maack-klaviyo-email" ? (
@@ -1092,6 +1149,25 @@ function CaseStudyExploreMore({ current, mode }: { current: string; mode?: "app"
           View All Work
         </Link>
       </div>
+
+      {/* Sequential prev / next — crawlable links that chain every detail page into
+          one path (wrapping over the full set), so no case study is a dead end. */}
+      {(prev || next) && (
+        <nav aria-label="Case study navigation" className="cs-explore-prevnext" style={{ maxWidth: "1320px", margin: "48px auto 0", padding: "0 24px", display: "flex", justifyContent: "space-between", gap: "16px", borderTop: "1px solid rgba(0,0,0,0.08)", paddingTop: "28px" }}>
+          {prev ? (
+            <Link href={`/case-studies/${prev.slug}`} className="cs-prevnext-link" style={{ display: "flex", flexDirection: "column", gap: "4px", textDecoration: "none", maxWidth: "48%" }}>
+              <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#4a7c59", letterSpacing: "0.06em", textTransform: "uppercase" }}>← Previous case study</span>
+              <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "18px", fontWeight: 700, color: "#000000", lineHeight: 1.3 }}>{prev.brandName}</span>
+            </Link>
+          ) : <span />}
+          {next ? (
+            <Link href={`/case-studies/${next.slug}`} className="cs-prevnext-link" style={{ display: "flex", flexDirection: "column", gap: "4px", textDecoration: "none", maxWidth: "48%", textAlign: "right", alignItems: "flex-end" }}>
+              <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#4a7c59", letterSpacing: "0.06em", textTransform: "uppercase" }}>Next case study →</span>
+              <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "18px", fontWeight: 700, color: "#000000", lineHeight: 1.3 }}>{next.brandName}</span>
+            </Link>
+          ) : <span />}
+        </nav>
+      )}
 
       <style dangerouslySetInnerHTML={{ __html: `
         .cs-explore-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }

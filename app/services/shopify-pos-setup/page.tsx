@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
   "Expert Shopify POS setup, hardware configuration, and migration from Square, Lightspeed, or Clover. Remote service for 1 to 50+ locations. Free quote.";
@@ -303,6 +305,7 @@ export default function ShopifyPOSSetupPage() {
   return (
     <>
       {/* ── 1. Hero ──────────────────────────────────────────────────── */}
+      <Breadcrumbs current="/services/shopify-pos-setup" />
       <section className="relative w-full bg-black" style={{ fontFamily: "'Poppins', sans-serif" }}>
         <div
           className="mx-auto grid items-center gap-y-10 gap-x-[30px] py-[40px] px-[15px] lg:py-[60px] lg:px-[20px] lg:grid-cols-2"
@@ -766,6 +769,8 @@ export default function ShopifyPOSSetupPage() {
           display: block;
         }
       ` }} />
+
+      <RelatedServices current="/services/shopify-pos-setup" />
     </>
   );
 }

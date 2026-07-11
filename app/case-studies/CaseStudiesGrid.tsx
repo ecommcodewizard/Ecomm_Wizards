@@ -74,22 +74,28 @@ export default function CaseStudiesGrid({ studies }: { studies: CaseStudy[] }) {
     setVisibleCount(INITIAL_COUNT);
   }, [studies.length]);
 
-  const visible = studies.slice(0, visibleCount);
   const hasMore = visibleCount < studies.length;
 
   return (
     <>
+      {/* Render every study as a crawlable <a href> in the SSR DOM. Cards beyond
+          `visibleCount` are CSS-hidden (display:none) rather than sliced out, so
+          Googlebot discovers all 21 store studies while the "Show more" UX is
+          unchanged. Initial visibleCount is deterministic (INITIAL_COUNT on both
+          server and first client render) so there is no hydration mismatch and no
+          flash of all cards; hidden lazy images/videos don't load until revealed. */}
       <div className="cs-landing-grid">
-        {visible.map((cs, index) => {
+        {studies.map((cs, index) => {
           const tags = cs.serviceType.split("|").map((t) => t.trim());
           const stat = cs.stats[0];
+          const hidden = index >= visibleCount;
           return (
             <Link
               key={cs.slug}
               href={`/case-studies/${cs.slug}`}
               className="cs-landing-card"
               style={{
-                display: "flex",
+                display: hidden ? "none" : "flex",
                 flexDirection: "column",
                 background: "#FBF7ED",
                 borderRadius: "20px",

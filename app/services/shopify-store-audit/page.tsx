@@ -8,6 +8,8 @@ import AuditUrgencySection from "@/components/sections/AuditUrgencySection";
 import WhyPartnerSection from "@/components/sections/WhyPartnerSection";
 import KnifeAccordion from "@/components/sections/KnifeAccordion";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const CASE_STUDY_SLIDES: CaseStudySlide[] = [
   {
@@ -146,6 +148,8 @@ const GRADIENT_TEXT = {
 export default function Page() {
   return (
     <>
+      <Breadcrumbs current="/services/shopify-store-audit" />
+
       {/* ── Hero ───────────────────────────────────────────────── */}
       <section
         className="relative w-full"
@@ -851,6 +855,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <RelatedServices current="/services/shopify-store-audit" />
     </>
   );
 }

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
   "Build a unified Shopify B2B store with custom pricing, net payment terms, wholesale portals, and ERP integration. Shopify Plus Preferred Partner.";
@@ -332,6 +334,7 @@ const BREADCRUMB_SCHEMA = {
 export default function ShopifyB2BPage() {
   return (
     <>
+      <Breadcrumbs current="/services/shopify-b2b-store-setup" />
       {/* ── 1. Hero ──────────────────────────────────────────────────── */}
       <section className="relative w-full bg-black" style={{ fontFamily: "'Poppins', sans-serif" }}>
         <div
@@ -794,6 +797,8 @@ export default function ShopifyB2BPage() {
           .b2b-trust-logo  { width: 174.99px; height: 84.44px; }
         }
       ` }} />
+
+      <RelatedServices current="/services/shopify-b2b-store-setup" />
     </>
   );
 }

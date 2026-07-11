@@ -6,6 +6,8 @@ import LpAccordion from "./LpAccordion";
 import LpFaqAccordion from "./LpFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
   "Shopify landing page design for paid ads, launches, and seasonal campaigns. 200+ pages built, 28.5% avg conversion lift. Fixed-price quotes in 24 hours.";
@@ -334,6 +336,7 @@ const WarnIcon = () => (
 export default function Page() {
   return (
     <>
+      <Breadcrumbs current="/services/shopify-landing-page-design" />
       {/* ── 1. Hero (DARK) ── */}
       <section className="std-hero" style={{ background: C_DARK }} aria-label="Shopify landing page design hero">
         <div
@@ -991,6 +994,8 @@ export default function Page() {
           .std-solutions h2 { font-size: 26px !important; line-height: 1.28 !important; }
         }
       `}} />
+
+      <RelatedServices current="/services/shopify-landing-page-design" />
     </>
   );
 }

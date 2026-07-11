@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
   "Hire expert Shopify app developers to build custom private apps or launch on the Shopify App Store. Shopify Plus Preferred Partner. 700+ merchants.";
@@ -114,6 +116,7 @@ const GRADIENT_TEXT = {
 export default function ShopifyAppDevelopmentPage() {
   return (
     <>
+      <Breadcrumbs current="/services/shopify-app-development" />
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section
         className="relative w-full bg-black"
@@ -1899,6 +1902,8 @@ export default function ShopifyAppDevelopmentPage() {
           }
         ` }} />
       </section>
+
+      <RelatedServices current="/services/shopify-app-development" />
     </>
   );
 }

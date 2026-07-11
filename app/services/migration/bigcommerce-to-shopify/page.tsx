@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
   "BigCommerce to Shopify migration without downtime. We move your products, customers, orders, and SEO with zero data loss. Get a free quote.";
@@ -318,6 +320,7 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
       />
       <ServiceSchema url={CANONICAL_URL} name="BigCommerce to Shopify Migration" serviceType="BigCommerce to Shopify migration" description={META_DESCRIPTION} />
+      <Breadcrumbs current="/services/migration/bigcommerce-to-shopify" />
       {/* 1 — Hero */}
       <section className="b2s-hero">
         <div className="b2s-hero-inner">
@@ -1703,6 +1706,8 @@ export default function Page() {
           .b2s-faq-bodyc p { font-size: 14px; padding-right: 0; }
         }
       ` }} />
+
+      <RelatedServices current="/services/migration/bigcommerce-to-shopify" />
     </>
   );
 }

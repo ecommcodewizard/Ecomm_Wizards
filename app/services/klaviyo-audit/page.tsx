@@ -3,6 +3,8 @@ import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import CalEmbed from "./CalEmbed";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
   "Free Klaviyo audit for Shopify brands doing $50K+ per month. We find missed automation, underperforming flows, and revenue gaps in your email and SMS setup.";
@@ -304,6 +306,7 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
       />
       <ServiceSchema url={CANONICAL_URL} name="Klaviyo Email Audit and Setup" serviceType="Klaviyo audit and setup" description={META_DESCRIPTION} />
+      <Breadcrumbs current="/services/klaviyo-audit" />
       <GradDefs />
 
       {/* 1 — Hero */}
@@ -899,6 +902,8 @@ export default function Page() {
           .kv-result-chart { grid-column: 2; grid-row: 1 / span 2; }
         }
       ` }} />
+
+      <RelatedServices current="/services/klaviyo-audit" />
     </>
   );
 }
