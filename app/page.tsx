@@ -343,7 +343,7 @@ export default function HomePage() {
 
               <p className="mt-[10px] sm:mt-[16px] text-center text-[13px] sm:text-[15px] lg:text-[13px] lg:whitespace-nowrap" style={{ width: "258.5px", maxWidth: "100%", fontFamily: "'Poppins', sans-serif", color: "#FFFFFF", lineHeight: "25px" }}>
                 Want to see results?<br />
-                <Link href="/reviews" className="hover:opacity-80 inline-flex items-center gap-1 text-[13px] sm:text-[15px] lg:text-[13px]" style={{ fontFamily: "'Poppins', sans-serif", background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", borderBottom: "1px solid #3DC77A", paddingBottom: "0px", marginBottom: "-1px" }}>
+                <Link href="/case-studies" className="hover:opacity-80 inline-flex items-center gap-1 text-[13px] sm:text-[15px] lg:text-[13px]" style={{ fontFamily: "'Poppins', sans-serif", background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", borderBottom: "1px solid #3DC77A", paddingBottom: "0px", marginBottom: "-1px" }}>
                   See Case Studies <svg width="15" height="10.55" viewBox="0 0 15 10.55" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "inline-block", verticalAlign: "middle" }}><path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="#3DC77A" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </Link>
               </p>

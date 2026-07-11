@@ -958,8 +958,18 @@ function CaseStudyQuote({ cs }: { cs: CaseStudy }) {
 
 function CaseStudyExploreMore({ current, mode }: { current: string; mode?: "app" | "klaviyo" }) {
   const source = mode === "klaviyo" ? KLAVIYO_CASE_STUDIES : mode === "app" ? APP_CASE_STUDIES : CASE_STUDIES;
+  const currentIdx = source.findIndex((cs) => cs.slug === current);
   const cards = source.filter((cs) => cs.slug !== current);
-  const all = cards.length > 0 ? cards : source;
+  const base = cards.length > 0 ? cards : source;
+  // Render EVERY other study (rotated to start just after the current one) so each
+  // detail page links the full set — tail studies are no longer cut off at 13, and
+  // every study earns an inbound link from every sibling page.
+  const startInBase = currentIdx < 0 ? 0 : currentIdx % base.length;
+  const all = base.map((_, i) => base[(startInBase + i) % base.length]);
+  // Sequential prev/next over the full source (wrapping) — always present regardless
+  // of the sparse prevSlug/nextSlug data fields, so no detail page is a dead end.
+  const prev = currentIdx < 0 ? null : source[(currentIdx - 1 + source.length) % source.length];
+  const next = currentIdx < 0 ? null : source[(currentIdx + 1) % source.length];
   return (
     <section style={{ background: "#ffffff", padding: "40px 0 40px" }}>
       {/* Header row */}
@@ -987,11 +997,11 @@ function CaseStudyExploreMore({ current, mode }: { current: string; mode?: "app"
       <div className="cs-explore-scroll" style={{ overflowX: "auto", paddingBottom: "16px" }}>
 
         <div className="cs-explore-track" style={{ display: "flex", gap: "16px", paddingRight: "40px", width: "max-content" }}>
-          {Array.from({ length: 12 }, (_, i) => all[i % all.length]).map((cs, i) => {
+          {all.map((cs) => {
             const tags = cs.serviceType.split("|").map((t) => t.trim());
             const stat = cs.stats[0];
             return (
-              <Link key={i} href={`/case-studies/${cs.slug}`} className="cs-explore-card" draggable={false} style={{ display: "block", width: "356px", height: "494px", flexShrink: 0, background: "#FBF7ED", borderRadius: "20px", overflow: "hidden", textDecoration: "none" }}>
+              <Link key={cs.slug} href={`/case-studies/${cs.slug}`} className="cs-explore-card" draggable={false} style={{ display: "block", width: "356px", height: "494px", flexShrink: 0, background: "#FBF7ED", borderRadius: "20px", overflow: "hidden", textDecoration: "none" }}>
                 {/* Image */}
                 <div className="cs-explore-card-img" style={{ position: "relative", width: "340px", height: "372px", background: "#e8e8e8", margin: "8px", borderRadius: "14px", overflow: "hidden", flexShrink: 0 }}>
                   {mode === "klaviyo" && cs.slug === "andrea-maack-klaviyo-email" ? (
@@ -1092,6 +1102,25 @@ function CaseStudyExploreMore({ current, mode }: { current: string; mode?: "app"
           View All Work
         </Link>
       </div>
+
+      {/* Sequential prev / next — crawlable links that chain every detail page into
+          one path (wrapping over the full set), so no case study is a dead end. */}
+      {(prev || next) && (
+        <nav aria-label="Case study navigation" className="cs-explore-prevnext" style={{ maxWidth: "1320px", margin: "48px auto 0", padding: "0 24px", display: "flex", justifyContent: "space-between", gap: "16px", borderTop: "1px solid rgba(0,0,0,0.08)", paddingTop: "28px" }}>
+          {prev ? (
+            <Link href={`/case-studies/${prev.slug}`} className="cs-prevnext-link" style={{ display: "flex", flexDirection: "column", gap: "4px", textDecoration: "none", maxWidth: "48%" }}>
+              <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#4a7c59", letterSpacing: "0.06em", textTransform: "uppercase" }}>← Previous case study</span>
+              <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "18px", fontWeight: 700, color: "#000000", lineHeight: 1.3 }}>{prev.brandName}</span>
+            </Link>
+          ) : <span />}
+          {next ? (
+            <Link href={`/case-studies/${next.slug}`} className="cs-prevnext-link" style={{ display: "flex", flexDirection: "column", gap: "4px", textDecoration: "none", maxWidth: "48%", textAlign: "right", alignItems: "flex-end" }}>
+              <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#4a7c59", letterSpacing: "0.06em", textTransform: "uppercase" }}>Next case study →</span>
+              <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "18px", fontWeight: 700, color: "#000000", lineHeight: 1.3 }}>{next.brandName}</span>
+            </Link>
+          ) : <span />}
+        </nav>
+      )}
 
       <style dangerouslySetInnerHTML={{ __html: `
         .cs-explore-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }

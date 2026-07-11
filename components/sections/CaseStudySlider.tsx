@@ -12,7 +12,7 @@ export type CaseStudySlide = {
   avatar: string;
   name: string;
   role: string;
-  /** Case-study destination. Falls back to /reviews when omitted. */
+  /** Case-study destination. Falls back to /case-studies when omitted. */
   href?: string;
 };
 
@@ -81,7 +81,7 @@ export default function CaseStudySlider({ slides, intervalMs = 6000, showDots = 
 
               <h3 className="ssd-results-slide-headline">{s.headline}</h3>
 
-              <a href={s.href ?? "/reviews"} className="ssd-results-slide-link">
+              <a href={s.href ?? "/case-studies"} className="ssd-results-slide-link">
                 <span>View Case Study</span>
                 <svg width="18" height="13" viewBox="0 0 15 10.55" fill="none" aria-hidden="true">
                   <path d="M0 5.275H15M15 5.275L9.5 0M15 5.275L9.5 10.55" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
