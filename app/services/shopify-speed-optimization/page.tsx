@@ -218,7 +218,7 @@ const IGNORING_CARDS = [
     title: "Higher Conversion Rates",
     body: (
       <>
-        <strong className="font-bold" style={{ color: "#000" }}>7% increase in conversions</strong> for every single
+        <strong className="font-bold" style={{ color: "#000" }}>7% <Link href="/services/shopify-cro-agency" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>increase in conversions</Link></strong> for every single
         second you shave off your load time. That is not a projection. That is what happens when you{" "}
         <strong className="font-bold" style={{ color: "#000" }}>optimize Shopify store speed</strong> properly. One
         second faster equals thousands of dollars in recovered revenue every single month.
@@ -566,11 +566,11 @@ export default function Page() {
             <p className="speed-hero-p mt-6 max-w-[560px] text-[16px] leading-[26px]" style={{ color: "#FFFFFF" }}>
               Three seconds. That is all the patience your customers have. After that, they are gone. They did not add
               to cart. They did not browse your collection. They bounced, and they are not coming back. Worse? Google
-              saw the whole thing and pushed your rankings down because of it.
+              saw the whole thing and <Link href="/services/shopify-seo-agency" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>pushed your rankings down</Link> because of it.
             </p>
             <p className="speed-hero-p mt-5 max-w-[560px] text-[16px] leading-[26px]" style={{ color: "#FFFFFF" }}>
               Ecomm Wizards delivers <strong className="font-semibold text-white">Shopify speed optimization services</strong>{" "}
-              that actually fix the problem instead of just diagnosing it. We dig into your theme architecture, strip out
+              that actually fix the problem instead of just diagnosing it. We dig into your <Link href="/services/shopify-theme-development" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>theme architecture</Link>, strip out
               the bloated scripts, compress what needs compressing, and rebuild what needs rebuilding. No fluff reports.
               No surface level suggestions. Just engineers who{" "}
               <strong className="font-semibold text-white">optimize Shopify store speed</strong> for a living doing what

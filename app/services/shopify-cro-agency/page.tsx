@@ -492,7 +492,7 @@ export default function Page() {
               </span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
-              Most Shopify stores have a conversion problem, not a traffic problem. We find where your store leaks revenue, run structured A/B tests to fix it, and build the winning variants directly into your theme. Our Shopify CRO services cover conversion audits, A/B testing, and checkout work for Shopify and Shopify Plus.
+              Most Shopify stores have a conversion problem, not a traffic problem. We find where your store leaks revenue, run <Link href="/services/a-b-testing" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>structured A/B tests</Link> to fix it, and build the winning variants directly into your theme. Our Shopify CRO services cover conversion audits, A/B testing, and checkout work for Shopify and Shopify Plus.
             </p>
 
             <div className="std-hero-stats">
@@ -630,13 +630,13 @@ export default function Page() {
                 What Is Shopify Conversion Rate Optimization and Who Needs It?
               </h2>
               <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: "0 0 10px" }}>
-                Shopify CRO is the process of finding and fixing the specific reasons your visitors do not buy. A Shopify CRO agency specializes in improving Shopify store conversion rates using your store&apos;s own data: funnel analytics, heatmaps, session recordings, and A/B tests. We identify exactly where revenue leaks out, then test the fixes until the numbers confirm what works. Shopify CRO services replace guesswork with evidence.
+                Shopify CRO is the process of finding and fixing the specific reasons your visitors do not buy. A Shopify CRO agency specializes in improving Shopify store conversion rates using your store&apos;s own data: <Link href="/services/shopify-analytics-and-tracking-setup" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>funnel analytics</Link>, heatmaps, session recordings, and A/B tests. We identify exactly where revenue leaks out, then test the fixes until the numbers confirm what works. Shopify CRO services replace guesswork with evidence.
               </p>
               <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: "0 0 10px" }}>
                 The revenue math is straightforward. A store converting at 1.5% that improves to 2.5% grows revenue by 67% without spending a penny more on traffic. On a $300k/month store, that is an extra $200k/year from the same visitors you already pay to acquire. CRO is not a marketing channel. It multiplies every channel you already run.
               </p>
               <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: 0 }}>
-                You need a Shopify CRO agency if your store gets traffic but your revenue does not reflect it. If your paid media spend keeps climbing but your ROAS stays flat. If your mobile CVR is half your desktop rate. If you change the store on gut feel instead of data. A Shopify conversion rate optimization agency solves all of these with structured testing built for Shopify and Shopify Plus.
+                You need a Shopify CRO agency if your store gets traffic but your revenue does not reflect it. If your paid media spend keeps climbing but <Link href="/services/creative-strategy" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>your ROAS stays flat</Link>. If your mobile CVR is half your desktop rate. If you change the store on gut feel instead of data. A Shopify conversion rate optimization agency solves all of these with structured testing built for Shopify and Shopify Plus.
               </p>
             </div>
             <div className="scro-edu-right">
@@ -733,7 +733,7 @@ export default function Page() {
               Every Shopify CRO Service Your Store Needs
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              Our Shopify CRO services cover everything from CRO audits and A/B testing to checkout optimization and mobile UX. Every conversion rate optimization service your store needs, for Shopify and Shopify Plus, in-house and fixed price.
+              Our Shopify CRO services cover everything from CRO audits and A/B testing to checkout optimization and <Link href="/services/shopify-ux-and-ui-design" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>mobile UX</Link>. Every conversion rate optimization service your store needs, for Shopify and Shopify Plus, in-house and fixed price.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
               Book a Free CRO Audit

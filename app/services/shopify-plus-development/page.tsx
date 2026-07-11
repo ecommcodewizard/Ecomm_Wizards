@@ -436,7 +436,7 @@ export default function Page() {
               Shopify Plus Development Services We Offer
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              From custom Shopify Plus development and zero-downtime migrations to checkout extensions, B2B portals, Shopify Plus web development, and enterprise integrations, we cover every Shopify Plus development service your store needs at scale.
+              From custom Shopify Plus development and <Link href="/services/migration" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>zero-downtime migrations</Link> to checkout extensions, <Link href="/services/shopify-b2b-store-setup" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>B2B portals</Link>, Shopify Plus web development, and <Link href="/services/shopify-integration-services" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>enterprise integrations</Link>, we cover every Shopify Plus development service your store needs at scale.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
               Book a Free Strategy Call
@@ -509,7 +509,7 @@ export default function Page() {
               },
               {
                 title: "Enterprise Integration Depth",
-                desc: (<>We connect Shopify Plus to NetSuite, SAP, HubSpot, Salesforce, and custom 3PL systems. Real API integrations that <span className="spd-why-hl">sync reliably at scale</span>, not off-the-shelf connectors that break under volume.</>),
+                desc: (<>We <Link href="/services/erp-connections-to-shopify" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>connect Shopify Plus to NetSuite, SAP</Link>, HubSpot, Salesforce, and custom 3PL systems. Real API integrations that <span className="spd-why-hl">sync reliably at scale</span>, not off-the-shelf connectors that break under volume.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="7" cy="7" r="3" /><circle cx="25" cy="7" r="3" /><circle cx="7" cy="25" r="3" /><circle cx="25" cy="25" r="3" /><circle cx="16" cy="16" r="3" /><path d="M10 7h12M7 10v12M25 10v12M10 25h12M10 10l6 6M22 10l-6 6M10 22l6-6M22 22l-6-6" /></svg>),
               },
               {

@@ -447,7 +447,7 @@ export default function Page() {
               6 Integration Gaps We Find on Almost Every Store We Audit
             </h2>
             <p className="si-feat-desc">
-              If your tools don&apos;t talk to Shopify, your business is leaking money at every step. These are the problems we find on almost every store we audit.
+              If your tools don&apos;t talk to Shopify, your business is leaking money at every step. These are the problems we find on almost <Link href="/services/shopify-store-audit" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>every store we audit</Link>.
             </p>
           </div>
 
