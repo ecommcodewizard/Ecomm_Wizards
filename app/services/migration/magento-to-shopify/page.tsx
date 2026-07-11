@@ -4,6 +4,8 @@ import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/Case
 import RodeoCarousel, { type RodeoSlide } from "@/components/sections/RodeoCarousel";
 import CustomizerCarousel, { type CustomizerSlide } from "@/components/sections/CustomizerCarousel";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
   "Magento to Shopify migration without downtime. We move your products, customers, orders, and SEO with zero data loss. Get a free test drive.";
@@ -597,6 +599,7 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
       />
       <ServiceSchema url={CANONICAL_URL} name="Magento to Shopify Migration" serviceType="Magento to Shopify migration" description={META_DESCRIPTION} />
+      <Breadcrumbs current="/services/migration/magento-to-shopify" />
       {/* 1 — Hero (WP source: "Seamless Migration to Shopify / Your WooCommerce Store's Next Destination") */}
       <section className="w2s-hero">
         <div className="w2s-hero-inner">
@@ -3535,6 +3538,8 @@ export default function Page() {
           .w2s-faq-bodyc p { font-size: 14px; padding-right: 0; }
         }
       ` }} />
+
+      <RelatedServices current="/services/migration/magento-to-shopify" />
     </>
   );
 }

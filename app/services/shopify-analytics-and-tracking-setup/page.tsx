@@ -6,6 +6,8 @@ import SatAccordion from "./SatAccordion";
 import SatFaqAccordion from "./SatFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
   "Shopify analytics and tracking setup for 150+ stores. We configure GA4, GTM, and conversion pixels, validate every event, and give you data you can trust.";
@@ -357,6 +359,7 @@ const WarnIcon = () => (
 export default function Page() {
   return (
     <>
+      <Breadcrumbs current="/services/shopify-analytics-and-tracking-setup" />
       {/* ── 1. Hero (DARK) ── */}
       <section className="std-hero" style={{ background: C_DARK }} aria-label="Shopify analytics and tracking setup hero">
         <div
@@ -955,6 +958,8 @@ export default function Page() {
           .std-solutions h2 { font-size: 26px !important; line-height: 1.28 !important; }
         }
       `}} />
+
+      <RelatedServices current="/services/shopify-analytics-and-tracking-setup" />
     </>
   );
 }

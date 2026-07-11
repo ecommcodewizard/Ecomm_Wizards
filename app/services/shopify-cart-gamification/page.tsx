@@ -5,6 +5,8 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/ui/CTASection";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 import CartGamificationAccordion from "./CartGamificationAccordion";
 import CartDemo from "./CartDemo";
 import AOVCalculator from "./AOVCalculator";
@@ -239,6 +241,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_JSONLD) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSONLD) }} />
       <ServiceSchema url={CANONICAL_URL} name="Shopify Cart Gamification" serviceType="Cart gamification and average order value (AOV) optimization" description={META_DESCRIPTION} />
+      <Breadcrumbs current="/services/shopify-cart-gamification" />
 
       {/* 1. Hero (dark, 2-col) */}
       <section className="std-hero" style={{ background: "#000000" }} aria-label="Shopify cart gamification hero">
@@ -582,6 +585,8 @@ export default function Page() {
         primaryWhite
         secondaryGradient
       />
+
+      <RelatedServices current="/services/shopify-cart-gamification" />
     </>
   );
 }

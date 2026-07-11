@@ -290,6 +290,13 @@ function CaseStudyHero({ cs }: { cs: CaseStudy }) {
         <div className="cs-hero-text">
           <div className="cs-hero-breadcrumb" style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "24px" }}>
             <Link
+              href="/"
+              style={{ color: "rgba(255,255,255,0.5)", fontFamily: "'Poppins',sans-serif", fontSize: "13px", textDecoration: "none" }}
+            >
+              Home
+            </Link>
+            <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "13px" }}>/</span>
+            <Link
               href="/case-studies"
               style={{ color: "rgba(255,255,255,0.5)", fontFamily: "'Poppins',sans-serif", fontSize: "13px", textDecoration: "none" }}
             >

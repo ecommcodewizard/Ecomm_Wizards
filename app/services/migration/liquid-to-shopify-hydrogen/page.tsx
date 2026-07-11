@@ -5,6 +5,8 @@ import RodeoCarousel, { type RodeoSlide } from "@/components/sections/RodeoCarou
 import CustomizerCarousel, { type CustomizerSlide } from "@/components/sections/CustomizerCarousel";
 import HydrogenWhyAccordion, { type HydrogenWhyItem } from "@/components/sections/HydrogenWhyAccordion";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
   "Shopify Hydrogen migration without downtime. We move your Liquid theme to a headless Hydrogen storefront, keeping SEO and checkout intact. Free test build.";
@@ -657,6 +659,7 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
       />
       <ServiceSchema url={CANONICAL_URL} name="Liquid to Shopify Hydrogen Migration" serviceType="Liquid to Hydrogen migration" description={META_DESCRIPTION} />
+      <Breadcrumbs current="/services/migration/liquid-to-shopify-hydrogen" />
       {/* 1 — Hero (WP source: "Seamless Migration to Shopify / Your WooCommerce Store's Next Destination") */}
       <section className="w2s-hero">
         <div className="w2s-hero-inner">
@@ -3714,6 +3717,8 @@ export default function Page() {
           .w2s-faq-bodyc p { font-size: 14px; padding-right: 0; }
         }
       ` }} />
+
+      <RelatedServices current="/services/migration/liquid-to-shopify-hydrogen" />
     </>
   );
 }

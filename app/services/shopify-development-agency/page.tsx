@@ -5,6 +5,8 @@ import SdaAccordion from "./SdaAccordion";
 import SdaFaqAccordion from "./SdaFaqAccordion";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
   "Shopify development agency specializing in custom builds, theme development, Shopify Plus, and migrations. 100+ stores built. Fixed price. 6-week delivery.";
@@ -440,6 +442,7 @@ const WarnIcon = () => (
 export default function Page() {
   return (
     <>
+      <Breadcrumbs current="/services/shopify-development-agency" />
       {/* ── §1 Hero (DARK) ── */}
       <section className="std-hero" style={{ background: C_DARK }} aria-label="Shopify development agency hero">
         <div
@@ -1211,6 +1214,8 @@ export default function Page() {
           .std-hero-stat-label { font-size: 11px !important; }
         }
       `}} />
+
+      <RelatedServices current="/services/shopify-development-agency" />
     </>
   );
 }

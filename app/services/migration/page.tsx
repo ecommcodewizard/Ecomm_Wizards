@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
   "Shopify migration agency for brands that can't afford downtime. We move your store, products, customers, orders, and SEO with zero data loss.";
@@ -378,6 +380,7 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
       />
       <ServiceSchema url={CANONICAL_URL} name="Shopify Migration Agency" serviceType="Shopify migration" description={META_DESCRIPTION} />
+      <Breadcrumbs current="/services/migration" />
       {/* 1 — Hero */}
       <section className="mig-hero">
         <div className="mig-hero-inner">
@@ -1054,6 +1057,8 @@ export default function Page() {
           .mig-faq-bodyc p { font-size: 14px; padding-right: 0; }
         }
       ` }} />
+
+      <RelatedServices current="/services/migration" />
     </>
   );
 }

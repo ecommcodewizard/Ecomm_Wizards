@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
   "Shopify speed optimization that fixes the root cause. We strip bloat, rebuild theme code, and ship measurable Core Web Vitals wins. Money-back guarantee.";
@@ -550,6 +552,7 @@ export default function Page() {
         }
       ` }} />
 
+      <Breadcrumbs current="/services/shopify-speed-optimization" />
       {/* 1 — A Slow Shopify Store Is an Expensive Problem (dark hero w/ scrolling phones) */}
       <section className="speed-hero" style={{ background: "#000000", padding: "60px 20px" }} aria-label="A Slow Shopify Store">
         <div
@@ -1053,6 +1056,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <RelatedServices current="/services/shopify-speed-optimization" />
     </>
   );
 }

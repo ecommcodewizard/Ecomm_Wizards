@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
   "Shopify UX and UI design that turns visitors into customers. We rebuild your store, product pages, cart, and emails around how people actually buy.";
@@ -241,6 +243,7 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
       />
       <ServiceSchema url={CANONICAL_URL} name="Shopify UX and UI Design Agency" serviceType="Shopify UX and UI design" description={META_DESCRIPTION} />
+      <Breadcrumbs current="/services/shopify-ux-and-ui-design" />
       {/* 1 — Hero (dark) */}
       <section className="uxui-hero" style={{ background: "#000000" }} aria-label="Shopify UI UX Design hero">
         <div
@@ -886,6 +889,8 @@ export default function Page() {
           .uxui-check-list li { font-size: 15px !important; line-height: 1.4 !important; }
         }
       `}} />
+
+      <RelatedServices current="/services/shopify-ux-and-ui-design" />
     </>
   );
 }

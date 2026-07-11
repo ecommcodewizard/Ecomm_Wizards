@@ -4,6 +4,8 @@ import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ABTestingFAQ from "@/components/sections/ABTestingFAQ";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
   "Shopify A/B testing by Shoplift Certified experts. We design, launch, and analyze high-impact tests that lift your CVR, RPV, and AOV with real proof.";
@@ -411,6 +413,7 @@ export default function ABTestingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }}
       />
       <ServiceSchema url={CANONICAL_URL} name="Shopify A/B Testing Agency" serviceType="Shopify A/B testing" description={META_DESCRIPTION} />
+      <Breadcrumbs current="/services/a-b-testing" />
       {/* 1 — HERO */}
       <section className="relative overflow-hidden" style={{ background: "#000000", fontFamily: "'Poppins', sans-serif" }}>
         <div className="mx-auto grid items-center gap-8 px-[15px] pt-14 pb-10 sm:gap-10 sm:px-5 md:px-[20px] sm:pt-[60px] sm:pb-[60px] lg:grid-cols-[1.05fr_1fr] lg:gap-12 lg:px-[20px]" style={{ maxWidth: "var(--container-max)" }}>
@@ -693,6 +696,8 @@ export default function ABTestingPage() {
 
       {/* 9 — FAQ + FINAL CTA (side-by-side) */}
       <ABTestingFAQ faqs={AB_FAQS} />
+
+      <RelatedServices current="/services/a-b-testing" />
     </>
   );
 }

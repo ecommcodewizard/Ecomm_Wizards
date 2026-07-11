@@ -4,6 +4,8 @@ import { ogImage } from "@/lib/og";
 import FAQSection from "@/components/FAQSection";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 import CreativeAuditForm from "./CreativeAuditForm";
 
 const META_DESCRIPTION =
@@ -217,6 +219,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_JSONLD) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSONLD) }} />
       <ServiceSchema url={CANONICAL_URL} name="Shopify Performance Creative Agency" serviceType="Performance ad creative and creative strategy for ecommerce" description={META_DESCRIPTION} />
+      <Breadcrumbs current="/services/creative-strategy" />
 
       {/* 1. Hero (dark, 2-col) */}
       <section className="std-hero" style={{ background: HERO_GLOW }} aria-label="Shopify performance creative hero">
@@ -525,6 +528,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <RelatedServices current="/services/creative-strategy" />
     </>
   );
 }

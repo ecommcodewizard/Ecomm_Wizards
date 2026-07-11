@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ServiceSchema from "@/components/seo/ServiceSchema";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import RelatedServices from "@/components/sections/RelatedServices";
 
 const CASE_STUDY_SLIDES: CaseStudySlide[] = [
   {
@@ -233,6 +235,7 @@ const FAQS = [
 export default function ShopifyStoreDevelopmentPage() {
   return (
     <>
+      <Breadcrumbs current="/services/shopify-store-development" />
       {/* Hero */}
       <section
         className="w-full"
@@ -2582,6 +2585,8 @@ export default function ShopifyStoreDevelopmentPage() {
           }
         ` }} />
       </section>
+
+      <RelatedServices current="/services/shopify-store-development" />
     </>
   );
 }
