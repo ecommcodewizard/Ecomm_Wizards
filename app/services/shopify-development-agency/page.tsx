@@ -458,7 +458,7 @@ export default function Page() {
               </span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
-              Your store is the most important sales channel your business has. We build it right. Custom Shopify theme development, Shopify Plus builds, platform migrations, and every piece of Shopify web development your business actually needs. We have delivered 100+ stores, all on a fixed price, with a go-live date confirmed before we write a single line of code.
+              Your store is the most important sales channel your business has. We build it right. <Link href="/services/shopify-theme-development" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Custom Shopify theme development</Link>, Shopify Plus builds, <Link href="/services/migration" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>platform migrations</Link>, and every piece of Shopify web development your business actually needs. We have delivered 100+ stores, all on a fixed price, with a go-live date confirmed before we write a single line of code.
             </p>
 
             <div className="std-hero-stats">
@@ -565,7 +565,7 @@ export default function Page() {
                 Shopify development is the work of building, customising, and extending your store beyond what the platform gives you out of the box. Every Shopify store starts with a theme. The brands that consistently outperform their competitors are not running a downloaded template. They invested in custom Shopify development that makes their store work the way their business works.
               </p>
               <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: "0 0 10px" }}>
-                A Shopify development agency builds the features no app covers: custom checkout flows, product configurators, trade pricing, and integrations built to your exact spec. It creates a storefront that reflects your brand precisely, not a modified version of a theme 10,000 other stores run. As your business scales with more SKUs, more markets, and more operational complexity, your store scales with it.
+                A Shopify development agency builds the features no app covers: custom checkout flows, product configurators, <Link href="/services/shopify-b2b-store-setup" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>trade pricing</Link>, and integrations built to your exact spec. It creates a storefront that reflects your brand precisely, not a modified version of a theme 10,000 other stores run. As your business scales with more SKUs, more markets, and more operational complexity, your store scales with it.
               </p>
               <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: 0 }}>
                 Shopify development is not about using Shopify. It is about using Shopify to its full capability: the APIs, the platform architecture, and the custom code layer that separates a store that converts from one that just exists.
@@ -665,7 +665,7 @@ export default function Page() {
               Every Shopify Development Service Your Store Needs
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              From custom Shopify theme development and Shopify Plus builds to platform migrations and performance work. We cover every Shopify web development need your store has. All in-house. All fixed price.
+              From custom Shopify theme development and Shopify Plus builds to platform migrations and <Link href="/services/shopify-speed-optimization" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>performance work</Link>. We cover every Shopify web development need your store has. All in-house. All fixed price.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
               Book a Free Discovery Call

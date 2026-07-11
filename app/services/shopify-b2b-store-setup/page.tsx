@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
@@ -183,7 +184,7 @@ const PROCESS_STEPS = [
     body: (
       <>
         We build out company profiles, account-specific catalogs, and net payment terms inside Shopify Plus. Where
-        needed, our <b>B2B Shopify developer</b> configures headless options or a branded <b>B2B Shopify theme</b> that
+        needed, our <b>B2B Shopify developer</b> configures <Link href="/services/headless-shopify-agency" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>headless options</Link> or a branded <b>B2B Shopify theme</b> that
         matches your wholesale portal to your brand identity.
       </>
     ),
@@ -357,7 +358,7 @@ export default function ShopifyB2BPage() {
             <p className="mt-4 text-white text-[15px] leading-[1.7]">
               Ecomm Wizards is a dedicated Shopify B2B agency that builds unified commerce solutions where your
               wholesale and D2C operations run together on a single Shopify Plus B2B infrastructure. Whether you are
-              launching Shopify wholesale from scratch or migrating off a clunky legacy platform, we build Shopify for
+              launching Shopify wholesale from scratch or <Link href="/services/migration" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>migrating off a clunky legacy platform</Link>, we build Shopify for
               B2B to work the way your team and your buyers already do.
             </p>
             <div className="mt-7 inline-flex p-[2px] rounded-full" style={{ background: GRADIENT }}>
@@ -637,8 +638,8 @@ export default function ShopifyB2BPage() {
               <p className="mt-6 text-white/85 text-[15px] sm:text-base leading-[1.85]">
                 Ecomm Wizards is not a generalist agency that dabbles in wholesale. We are a dedicated{" "}
                 <b>Shopify B2B agency support</b> partner built specifically around the complexity that comes with
-                scaling on Shopify Plus. From <b>B2B Shopify</b> builds and ERP integrations to custom app development,
-                UX audits, Hydrogen migrations, CRO, Figma conversions, AI commerce integrations, and subscription
+                scaling on Shopify Plus. From <b>B2B Shopify</b> builds and <Link href="/services/erp-connections-to-shopify" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>ERP integrations</Link> to custom app development,
+                UX audits, Hydrogen migrations, CRO, Figma conversions, <Link href="/services/shopify-agentic-commerce" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>AI commerce integrations</Link>, and subscription
                 models, we cover every layer of the Shopify ecosystem.
               </p>
             </div>

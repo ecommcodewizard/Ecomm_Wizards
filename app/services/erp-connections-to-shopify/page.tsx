@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import Link from "next/link";
 import RelatedServices from "@/components/sections/RelatedServices";
 
 const CASE_STUDY_SLIDES: CaseStudySlide[] = [
@@ -150,7 +151,7 @@ const INTRO_ROWS = [
         data in real time. Our <b>ERP for Shopify</b> integrations give you a single unified view of every SKU across
         every warehouse and every sales channel, so your available quantities are always accurate. No more selling a
         product on Shopify that your ERP already allocated to a wholesale order an hour ago. As one of the top{" "}
-        <b>Shopify ERP CRM integration firms</b>, we build connections that keep your stock levels, reorder triggers,
+        <b>Shopify ERP <Link href="/services/shopify-integration-services" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>CRM integration</Link> firms</b>, we build connections that keep your stock levels, reorder triggers,
         and fulfillment routing running on autopilot.
       </>
     ),

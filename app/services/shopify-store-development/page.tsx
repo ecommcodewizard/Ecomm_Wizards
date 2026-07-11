@@ -310,7 +310,7 @@ export default function ShopifyStoreDevelopmentPage() {
             >
               Looking to build a Shopify store that actually performs? Our Shopify
               store development agency specializes in custom Shopify store design
-              and development, Shopify Plus builds, advanced integrations, and
+              and development, <Link href="/services/shopify-plus-development" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Shopify Plus builds</Link>, <Link href="/services/shopify-integration-services" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>advanced integrations</Link>, and
               conversion-focused built to scale with your brand.
             </p>
 
@@ -1562,7 +1562,7 @@ export default function ShopifyStoreDevelopmentPage() {
                     and guide customers toward purchase. Our Shopify website
                     development agency focuses on cross-device
                     experiences that consistently deliver{" "}
-                    <span className="ssd-why-hl">25%+ higher conversion rates</span>{" "}
+                    <span className="ssd-why-hl">25%+ <Link href="/services/shopify-cro-agency" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>higher conversion rates</Link></span>{" "}
                     compared to generic themes.
                   </>
                 ),
@@ -1585,8 +1585,8 @@ export default function ShopifyStoreDevelopmentPage() {
                 title: "Backend Systems That Actually Work",
                 desc: (
                   <>
-                    Connect your ERP, warehouse management, POS, and tools like
-                    Klaviyo or Rebuy without the headaches. Our Shopify developer
+                    Connect your ERP, warehouse management, POS, and tools like{" "}
+                    <Link href="/services/klaviyo-audit" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Klaviyo</Link> or Rebuy without the headaches. Our Shopify developer
                     agency engineers integrations that eliminate manual data entry
                     and keep operations running smoothly.
                   </>

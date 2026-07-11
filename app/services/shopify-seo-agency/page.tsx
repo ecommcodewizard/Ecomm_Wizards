@@ -692,7 +692,7 @@ export default function Page() {
               },
               {
                 title: "Revenue-Attributed Reporting",
-                desc: (<>We tie organic traffic to revenue in every report. Not rankings, not sessions. Actual revenue from Google Analytics 4. You always know the return on your SEO spend.</>),
+                desc: (<>We tie organic traffic to revenue in every report. Not rankings, not sessions. Actual revenue from <Link href="/services/shopify-analytics-and-tracking-setup" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Google Analytics 4</Link>. You always know the return on your SEO spend.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 24l6-8 6 4 8-12"/><circle cx="26" cy="6" r="3"/></svg>),
               },
               {

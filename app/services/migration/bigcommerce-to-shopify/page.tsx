@@ -331,7 +331,7 @@ export default function Page() {
             <p className="b2s-hero-lead">
               Done patching, paying, and praying your way around BigCommerce? Ecomm Wizards is one
               of the best vendors for migrating to Shopify from BigCommerce. We lift your
-              products, customers, orders, and SEO equity onto Shopify Plus without losing a single
+              products, customers, orders, and SEO equity onto <Link href="/services/shopify-plus-development" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Shopify Plus</Link> without losing a single
               day of revenue.
             </p>
             <div className="b2s-hero-ctas">
@@ -404,8 +404,8 @@ export default function Page() {
                 <li className="b2s-why-item">
                   <h4 className="b2s-why-title">Unified Selling</h4>
                   <p className="b2s-why-body">
-                    Unified selling across every sales channel: online, offline POS, and
-                    B2B, in one platform. BigCommerce relies on apps or third-party tools
+                    Unified selling across every sales channel: online, <Link href="/services/shopify-pos-setup" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>offline POS</Link>, and{" "}
+                    <Link href="/services/shopify-b2b-store-setup" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>B2B</Link>, in one platform. BigCommerce relies on apps or third-party tools
                     for POS and B2B, which fragments the user experience and quietly erodes margin
                     every quarter you stay on the platform.
                   </p>
