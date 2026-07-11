@@ -1058,7 +1058,7 @@ export default function Page() {
         }
       ` }} />
 
-      <RelatedServices current="/services/migration" />
+      <RelatedServices current="/services/migration" max={7} heading="Migrate to Shopify from any platform" />
     </>
   );
 }

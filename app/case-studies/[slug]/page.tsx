@@ -24,6 +24,35 @@ export async function generateStaticParams() {
   ];
 }
 
+// Map a serviceType segment (e.g. "Shopify CRO", "Theme Development") to the
+// matching service page so each case study links back into the relevant service.
+// Order matters — more specific patterns first (e.g. "Theme Development" must beat
+// the generic "Development" rule). Segments with no match render as plain text.
+const SERVICE_LINK_MAP: { test: RegExp; href: string }[] = [
+  { test: /migrat|replatform/i, href: "/services/migration" },
+  { test: /b2b|wholesale/i, href: "/services/shopify-b2b-store-setup" },
+  { test: /\bpos\b/i, href: "/services/shopify-pos-setup" },
+  { test: /a\/b|a-b test/i, href: "/services/a-b-testing" },
+  { test: /cro|conversion/i, href: "/services/shopify-cro-agency" },
+  { test: /theme/i, href: "/services/shopify-theme-development" },
+  { test: /headless|hydrogen/i, href: "/services/headless-shopify-agency" },
+  { test: /2\.0|upgrade/i, href: "/services/shopify-2-0-development" },
+  { test: /landing/i, href: "/services/shopify-landing-page-design" },
+  { test: /speed|performance/i, href: "/services/shopify-speed-optimization" },
+  { test: /\bseo\b/i, href: "/services/shopify-seo-agency" },
+  { test: /klaviyo|email|sms/i, href: "/services/klaviyo-audit" },
+  { test: /integration|erp/i, href: "/services/shopify-integration-services" },
+  { test: /app/i, href: "/services/shopify-app-development" },
+  { test: /plus/i, href: "/services/shopify-plus-development" },
+  { test: /redesign|ux|ui|design/i, href: "/services/shopify-ux-and-ui-design" },
+  { test: /develop|build/i, href: "/services/shopify-store-development" },
+];
+
+function serviceHrefForSegment(segment: string): string | null {
+  for (const m of SERVICE_LINK_MAP) if (m.test.test(segment)) return m.href;
+  return null;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -312,10 +341,21 @@ function CaseStudyHero({ cs }: { cs: CaseStudy }) {
             <span style={{ display: "inline-flex", alignItems: "center", padding: "4px 14px", fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#61ce70", background: "rgba(97,206,112,0.12)", border: "1px solid rgba(97,206,112,0.25)", borderRadius: "9999px", letterSpacing: "0.04em", textTransform: "uppercase" }}>
               {cs.industry}
             </span>
-            <span style={{ display: "inline-flex", alignItems: "center", padding: "4px 14px", fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#ffffff", background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "9999px", letterSpacing: "0.04em" }}>
-              {cs.serviceType}
-            </span>
+            {/* Each service the project used links back to its service page (crawlable
+                detail -> service internal links). Unmapped segments render as plain text. */}
+            {cs.serviceType.split("|").map((seg) => {
+              const label = seg.trim();
+              if (!label) return null;
+              const href = serviceHrefForSegment(label);
+              const pill: React.CSSProperties = { display: "inline-flex", alignItems: "center", padding: "4px 14px", fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#ffffff", background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "9999px", letterSpacing: "0.04em", textDecoration: "none" };
+              return href ? (
+                <Link key={label} href={href} className="cs-hero-service-link" style={pill}>{label}</Link>
+              ) : (
+                <span key={label} style={pill}>{label}</span>
+              );
+            })}
           </div>
+          <style dangerouslySetInnerHTML={{ __html: ".cs-hero-service-link:hover{border-color:rgba(97,206,112,0.5)!important;color:#61ce70!important}" }} />
 
           <h1 style={{ fontFamily: "'Poppins',sans-serif", fontSize: "48px", fontWeight: 700, color: "#ffffff", lineHeight: "58px", margin: "0 0 16px" }}>
             {cs.brandName} Shopify Case Study

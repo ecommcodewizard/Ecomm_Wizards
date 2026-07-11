@@ -686,7 +686,7 @@ export default function HomePage() {
         description="Most brands bleed profit running two separate stores. We build unified Shopify Plus storefronts that serve both B2B and D2C customers with custom catalogs, volume pricing, net payment terms, and automated workflows. One store. Two revenue streams. Zero duplication."
         services={B2B_SERVICES}
         buttonText="Explore B2B Solutions"
-        buttonHref="/book-shopify-consultation"
+        buttonHref="/services/shopify-b2b-store-setup"
         imageSrc="/images/b2b-d2c.webp"
         imageAlt="Shopify Plus agency building a unified B2B and D2C wholesale store"
         wrapHeading
@@ -750,7 +750,7 @@ export default function HomePage() {
         description="Acquiring customers is expensive. Keeping them is profitable. We build email flows, loyalty loops, and lead systems that turn one-time buyers into repeat customers."
         services={RETENTION_SERVICES}
         buttonText="Boost Your Retention"
-        buttonHref="/book-shopify-consultation"
+        buttonHref="/services/klaviyo-audit"
         imageSrc="/images/pexels-kindelmedia-7688116.jpg"
         imageAlt="Shopify retention marketing with email and loyalty flows"
         paddingTop="5px"
@@ -779,7 +779,7 @@ export default function HomePage() {
         description="Unify your online and offline sales. We set up Shopify POS so your inventory, orders, and customer data stay synced, whether you're selling in-store, at pop-ups, or on the go."
         services={POS_SERVICES}
         buttonText="Get Your POS Running"
-        buttonHref="/book-shopify-consultation"
+        buttonHref="/services/shopify-pos-setup"
         imageSrc="/images/seeamleass-right.webp"
         imageAlt="Shopify POS setup syncing online and in-store sales"
         wrapHeading
