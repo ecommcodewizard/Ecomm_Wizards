@@ -481,7 +481,7 @@ export default function Page() {
                 Shopify Apps That Feel Like They Belong
               </h2>
               <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-                Building a Shopify app is one thing. Making it feel intuitive is another problem entirely. We design app
+                <Link href="/services/shopify-app-development" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Building a Shopify app</Link> is one thing. Making it feel intuitive is another problem entirely. We design app
                 interfaces specifically for the Shopify ecosystem, so your app feels native from the first interaction. No
                 learning curve. No confusion. Just clean, functional Shopify UI UX design that merchants and their customers
                 actually enjoy using.
@@ -536,7 +536,7 @@ export default function Page() {
               See It, Click It, Approve It Before We Build It
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              We do not hand you a flat mockup and call it done. Every project starts with interactive Figma prototypes
+              We do not hand you a flat mockup and call it done. Every project starts with <Link href="/services/figma-to-shopify-conversion" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>interactive Figma prototypes</Link>{" "}
               that let you experience your store exactly the way your customers will. Click through every page. Test
               every flow. Find every friction point before a single line of code is written. This is how our Shopify UI UX
               design process eliminates costly revisions and keeps your launch on schedule.

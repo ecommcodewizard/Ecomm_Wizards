@@ -423,7 +423,7 @@ export default function Page() {
               </span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
-              We build custom Shopify themes for ecommerce brands that need more than a pre-built template. Every build runs on Shopify 2.0: clean Liquid, modular sections, and mobile-first layouts that load fast and convert. Whether you are launching new or overhauling what you have, the theme is built around your products, your customers, and how they buy.
+              We build custom Shopify themes for ecommerce brands that need more than a pre-built template. Every build runs on <Link href="/services/shopify-2-0-development" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Shopify 2.0</Link>: clean Liquid, modular sections, and mobile-first layouts that load fast and convert. Whether you are launching new or overhauling what you have, the theme is built around your products, your customers, and how they buy.
             </p>
             <div className="std-hero-stats">
               {[

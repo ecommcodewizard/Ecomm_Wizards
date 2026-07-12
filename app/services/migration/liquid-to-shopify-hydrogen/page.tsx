@@ -582,7 +582,7 @@ const HYDROGEN_WHY_ITEMS: HydrogenWhyItem[] = [
   },
   {
     title: "Future-Proof Architecture",
-    body: (<>Hydrogen&rsquo;s headless approach decouples your front-end from Shopify&rsquo;s backend, making it simple to add new integrations or overhaul design elements without starting from scratch.</>),
+    body: (<>Hydrogen&rsquo;s <Link href="/services/headless-shopify-agency" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>headless approach</Link> decouples your front-end from Shopify&rsquo;s backend, making it simple to add new integrations or overhaul design elements without starting from scratch.</>),
   },
   {
     title: "Limitless Design Flexibility",
@@ -598,7 +598,7 @@ const HYDROGEN_WHY_ITEMS: HydrogenWhyItem[] = [
   },
   {
     title: "SEO & Headless CMS Integrations",
-    body: (<>With server-rendered pages and advanced routing, you&rsquo;ll have <strong>greater control over SEO</strong> elements like meta tags, sitemaps, and structured data, letting you climb search rankings faster.</>),
+    body: (<>With server-rendered pages and advanced routing, you&rsquo;ll have <strong>greater control over SEO</strong> elements like meta tags, sitemaps, and structured data, letting you <Link href="/services/shopify-seo-agency" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>climb search rankings faster</Link>.</>),
   },
 ];
 
@@ -609,7 +609,7 @@ const HYDROGEN_BENEFITS = [
   },
   {
     title: "Higher Conversions",
-    body: (<>Faster load times and enhanced UX can yield up to a <strong>7% boost in conversions</strong> for every second shaved off page load (Aberdeen Group).</>),
+    body: (<>Faster load times and <Link href="/services/shopify-ux-and-ui-design" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>enhanced UX</Link> can yield up to a <strong>7% boost in conversions</strong> for every second shaved off page load (Aberdeen Group).</>),
   },
   {
     title: "Increased Organic Traffic",

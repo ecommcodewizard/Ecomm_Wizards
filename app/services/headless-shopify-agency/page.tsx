@@ -479,7 +479,7 @@ export default function Page() {
               </span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
-              A theme can only take your store so far. We separate your storefront from Shopify&apos;s backend so you get total design freedom and sub-second load times, while Shopify keeps running products, checkout, and orders. We handle the full headless commerce build, from architecture to launch, with headless Shopify development on Hydrogen and Next.js for brands that have outgrown what a theme can do.
+              A theme can only take your store so far. We separate your storefront from Shopify&apos;s backend so you get total design freedom and <Link href="/services/shopify-speed-optimization" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>sub-second load times</Link>, while Shopify keeps running products, checkout, and orders. We handle the full headless commerce build, from architecture to launch, with headless Shopify development on Hydrogen and Next.js for brands that have outgrown what a theme can do.
             </p>
 
             <div className="std-hero-stats">
@@ -767,7 +767,7 @@ export default function Page() {
               Every Headless Shopify Service Your Build Needs
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              Our headless Shopify development services cover the full headless commerce build: architecture, Hydrogen or Next.js development, CMS integration, migration, and ongoing support. Every service your build needs, in-house and fixed price.
+              Our headless Shopify development services cover the full headless commerce build: architecture, Hydrogen or Next.js development, CMS integration, migration, and <Link href="/services/shopify-maintenance-and-support" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>ongoing support</Link>. Every service your build needs, in-house and fixed price.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
               Book a Free Architecture Call

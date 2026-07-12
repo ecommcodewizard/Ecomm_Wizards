@@ -347,7 +347,7 @@ const PROCESS_STEPS = [
   {
     key: "develop",
     title: "Develop",
-    body: (<>Your store is your business, and <strong>bad development sinks it</strong>. Our Shopify devs handle the engine while you stay focused on customers, marketing, and the things that grow your brand.</>),
+    body: (<>Your store is your business, and <strong>bad development sinks it</strong>. Our <Link href="/services/shopify-development-agency" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Shopify devs handle the engine</Link> while you stay focused on customers, marketing, and the things that grow your brand.</>),
   },
   {
     key: "deploy",
@@ -867,7 +867,7 @@ export default function Page() {
               </div>
               <h3 className="w2s-compare-title">Customization</h3>
               <p className="w2s-compare-body">
-                Want a custom Shopify Plus store? HTML and CSS will get you there. The same
+                Want a <Link href="/services/shopify-plus-development" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>custom Shopify Plus store</Link>? HTML and CSS will get you there. The same
                 effort on WooCommerce means digging into WordPress architecture and a stack of
                 plugins before you can move a single button.
               </p>
@@ -988,7 +988,7 @@ export default function Page() {
               <h3 className="w2s-compare-title">Ecosystem</h3>
               <p className="w2s-compare-body">
                 Adding a new tool on Shopify takes minutes. Email, reviews, subscriptions,
-                loyalty, search, you install it in two clicks and get back to work. On
+                loyalty, search, you <Link href="/services/shopify-app-setup-and-app-optimization" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>install it in two clicks</Link> and get back to work. On
                 WooCommerce you&rsquo;re juggling PHP versions, plugin conflicts, and update
                 breakages every time you want to try something new.
               </p>

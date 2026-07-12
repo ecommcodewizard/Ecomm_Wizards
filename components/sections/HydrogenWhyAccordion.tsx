@@ -32,7 +32,11 @@ export default function HydrogenWhyAccordion({ items }: { items: HydrogenWhyItem
                 )}
               </span>
             </button>
-            {isOpen && <div className="shy-why-body">{item.body}</div>}
+            {/* Always render the body and CSS-hide when collapsed (owner-approved
+                exception, scoped to this component): panel copy and its internal
+                links stay in the SSR DOM for crawlers. openIndex is deterministic
+                (0) so server and first client paint match — no hydration mismatch. */}
+            <div className="shy-why-body" style={{ display: isOpen ? undefined : "none" }}>{item.body}</div>
           </li>
         );
       })}

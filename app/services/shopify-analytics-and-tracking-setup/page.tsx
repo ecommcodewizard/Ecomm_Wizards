@@ -456,7 +456,7 @@ export default function Page() {
               6 Shopify Tracking Problems That Are Costing You Money Right Now
             </h2>
             <p className="sat-feat-desc">
-              Most stores assume their Google Analytics and pixel tracking works because orders are coming in. These are the errors we find on almost every Shopify store we audit.
+              Most stores assume their Google Analytics and pixel tracking works because orders are coming in. These are the errors we find on almost <Link href="/services/shopify-store-audit" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>every Shopify store we audit</Link>.
             </p>
           </div>
 

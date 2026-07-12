@@ -4,6 +4,7 @@ import KnifeAccordion from "@/components/sections/KnifeAccordion";
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
+import Link from "next/link";
 
 const META_DESCRIPTION =
   "Convert your Figma files into a pixel-perfect custom Shopify store. Expert Shopify developers, Shopify 2.0 builds, free blueprint & quote. 700+ brands launched.";
@@ -498,7 +499,7 @@ export default function FigmaToShopifyConversionPage() {
               </h2>
               <p className="f2s-why__intro">
                 Most agencies drop a Figma file into Shopify and call it done. We&rsquo;re not that agency.
-                We build a complete Shopify design system: custom Liquid themes, advanced functionality, and integrations that hold up under real traffic. Built to perform, not just look right.
+                We build a complete Shopify design system: <Link href="/services/shopify-theme-development" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>custom Liquid themes</Link>, advanced functionality, and integrations that hold up under real traffic. Built to perform, not just look right.
               </p>
 
               <div className="f2s-why__pillars">
@@ -731,7 +732,7 @@ export default function FigmaToShopifyConversionPage() {
                 Don&rsquo;t Have a <b>Figma</b> File? We&rsquo;ll Build Your Store From Scratch.
               </h2>
               <p className="f2s-pair__intro">
-                Our in-house design team creates a custom Figma design for your brand, then our developers build it into a high-performance Shopify store. Brief to launch, under one roof.
+                Our <Link href="/services/shopify-ux-and-ui-design" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>in-house design team</Link> creates a custom Figma design for your brand, then our developers build it into a high-performance Shopify store. Brief to launch, under one roof.
               </p>
               <ul className="f2s-pair__features">
                 {NO_FIGMA_FEATURES.map((f) => (
@@ -765,7 +766,7 @@ export default function FigmaToShopifyConversionPage() {
                 Already on Shopify? We Build What You&rsquo;re Missing.
               </h2>
               <p className="f2s-pair__intro">
-                Need new functionality, a performance overhaul, or a custom feature? We work on-demand, no retainers, no lengthy onboarding. You scope it, we ship it.
+                Need new functionality, a <Link href="/services/shopify-speed-optimization" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>performance overhaul</Link>, or a custom feature? We work on-demand, no retainers, no lengthy onboarding. You scope it, we ship it.
               </p>
               <ul className="f2s-pair__features">
                 {ALREADY_SHOPIFY_FEATURES.map((f) => (

@@ -436,7 +436,7 @@ export default function Page() {
               Shopify Plus Development Services We Offer
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              From custom Shopify Plus development and <Link href="/services/migration" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>zero-downtime migrations</Link> to checkout extensions, <Link href="/services/shopify-b2b-store-setup" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>B2B portals</Link>, Shopify Plus web development, and <Link href="/services/shopify-integration-services" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>enterprise integrations</Link>, we cover every Shopify Plus development service your store needs at scale.
+              From custom Shopify Plus development and <Link href="/services/migration" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>zero-downtime migrations</Link> to checkout extensions, <Link href="/services/shopify-b2b-store-setup" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>B2B portals</Link>, Shopify Plus web development, and enterprise integrations, we cover every Shopify Plus development service your store needs at scale.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
               Book a Free Strategy Call
@@ -499,7 +499,7 @@ export default function Page() {
               },
               {
                 title: "Checkout-First Methodology",
-                desc: (<>Your Shopify Plus checkout is your highest-converting page. We define the checkout experience first, then build backwards. Clients see an average <span className="spd-why-hl">18% lift in AOV</span> from checkout work alone.</>),
+                desc: (<>Your Shopify Plus checkout is your highest-converting page. We define the checkout experience first, then build backwards. Clients see an average <span className="spd-why-hl">18% lift in AOV</span> from checkout work alone. That 18% lift assumes a human at checkout: with <Link href="/services/shopify-agentic-commerce" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>agentic commerce</Link>, AI assistants like ChatGPT now find, compare, and buy for your customers too.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="6" width="24" height="20" rx="3" /><path d="M4 12h24" /><path d="M9 18h4M9 22h6" /><rect x="18" y="16" width="6" height="6" rx="1" /></svg>),
               },
               {

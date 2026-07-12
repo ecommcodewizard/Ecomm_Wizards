@@ -551,12 +551,12 @@ export default function Page() {
               },
               {
                 title: "App Bloat Audit Included",
-                desc: (<>Every project includes an audit of your current app stack. Legacy script injections are replaced with native App Blocks wherever possible. <span className="s20-why-hl">Fewer apps, cleaner code, faster store.</span></>),
+                desc: (<>Every project includes an <Link href="/services/shopify-app-setup-and-app-optimization" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>audit of your current app stack</Link>. Legacy script injections are replaced with native App Blocks wherever possible. <span className="s20-why-hl">Fewer apps, cleaner code, faster store.</span></>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="13" cy="13" r="8"/><path d="M19 19l7 7"/><path d="M10 13h6M13 10v6"/></svg>),
               },
               {
                 title: "90-Day Post-Launch Window",
-                desc: (<>Every project includes a 90-day post-launch window. We monitor your store, fix anything that surfaces, and keep building as live traffic grows. <span className="s20-why-hl">You are not on your own after go-live.</span></>),
+                desc: (<>Every project includes a <Link href="/services/shopify-maintenance-and-support" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>90-day post-launch window</Link>. We monitor your store, fix anything that surfaces, and keep building as live traffic grows. <span className="s20-why-hl">You are not on your own after go-live.</span></>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="6" width="24" height="22" rx="3" /><line x1="4" y1="13" x2="28" y2="13" /><line x1="11" y1="3" x2="11" y2="9" /><line x1="21" y1="3" x2="21" y2="9" /><line x1="9" y1="19" x2="14" y2="19" /><line x1="9" y1="23" x2="20" y2="23" /></svg>),
               },
             ].map((card) => (

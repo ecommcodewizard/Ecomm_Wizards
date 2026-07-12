@@ -458,7 +458,7 @@ export default function Page() {
               What&apos;s Included in Every Shopify App Setup &amp; Optimization Project
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              Every engagement covers an audit, configuration, speed testing, tracking setup, and 30 days of monitoring. No add-ons, no surprises.
+              Every engagement covers an audit, configuration, speed testing, <Link href="/services/shopify-analytics-and-tracking-setup" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>tracking setup</Link>, and 30 days of monitoring. No add-ons, no surprises.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
               Book a Free Strategy Call
@@ -664,7 +664,7 @@ export default function Page() {
               },
               {
                 title: "Post-Setup Support",
-                desc: (<>Every project includes a 30-day monitoring window. We watch for bad updates, new conflicts, and performance regressions. <span className="sao-why-hl">We stay until it&apos;s stable.</span></>),
+                desc: (<>Every project includes a <Link href="/services/shopify-maintenance-and-support" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>30-day monitoring window</Link>. We watch for bad updates, new conflicts, and performance regressions. <span className="sao-why-hl">We stay until it&apos;s stable.</span></>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M5 18v-3a11 11 0 0 1 22 0v3" /><path d="M5 18h4v8H7a2 2 0 0 1-2-2v-6z" /><path d="M27 18h-4v8h2a2 2 0 0 0 2-2v-6z" /></svg>),
               },
             ].map((card) => (
