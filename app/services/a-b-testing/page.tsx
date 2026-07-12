@@ -529,7 +529,7 @@ export default function ABTestingPage() {
         <div className="ssd-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
           <h2 className="ssd-results-heading">Proven Results from Brands We&apos;ve Built</h2>
           <p className="ssd-results-desc">
-            With over 500 five-star reviews and recognition as a top Shopify Plus development agency, our clients trust us to deliver real growth, not empty promises.
+            With over 500 five-star reviews and recognition as a top <Link href="/services/shopify-plus-development" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Shopify Plus development agency</Link>, our clients trust us to deliver real growth, not empty promises.
           </p>
           <div className="ssd-results-cards">
             {TESTIMONIAL_CARDS.map((t) => (

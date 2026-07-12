@@ -342,7 +342,7 @@ const PROCESS_STEPS = [
   {
     key: "design",
     title: "Design",
-    body: (<>Steve Jobs said design is how it works, not how it looks. We design for conversion. <strong>Every screen, every flow</strong>, every detail is built to help your visitors buy and your AOV climb.</>),
+    body: (<>Steve Jobs said design is how it works, not how it looks. We <Link href="/services/shopify-ux-and-ui-design" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>design for conversion</Link>. <strong>Every screen, every flow</strong>, every detail is built to help your visitors buy and your AOV climb.</>),
   },
   {
     key: "develop",
@@ -357,7 +357,7 @@ const PROCESS_STEPS = [
   {
     key: "ab",
     title: "AB Testing",
-    body: (<>Launch day isn&rsquo;t the finish line. We run <strong>continuous AB testing</strong> on every element of your store so revenue keeps climbing months after go-live. Data over guesswork, every single time.</>),
+    body: (<>Launch day isn&rsquo;t the finish line. We run <strong><Link href="/services/a-b-testing" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>continuous AB testing</Link></strong> on every element of your store so revenue keeps climbing months after go-live. Data over guesswork, every single time.</>),
   },
 ];
 
@@ -610,7 +610,8 @@ export default function Page() {
             <p className="w2s-hero-lead">
               Look, you run an ecommerce brand, and we run magento to shopify migration projects
               for a living. Tell us where you&rsquo;re stuck and we&rsquo;ll move your products,
-              customers, orders, and content across cleanly. D2C, B2B, wholesale, point of sale,
+              customers, orders, and content across cleanly. D2C, B2B, wholesale,{" "}
+              <Link href="/services/shopify-pos-setup" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>point of sale</Link>,
               we&rsquo;ve shipped every flavor of it.
             </p>
             <div className="w2s-hero-cta-row">

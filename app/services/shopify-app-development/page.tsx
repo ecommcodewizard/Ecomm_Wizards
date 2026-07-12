@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
+import Link from "next/link";
 
 const META_DESCRIPTION =
   "Hire expert Shopify app developers to build custom private apps or launch on the Shopify App Store. Shopify Plus Preferred Partner. 700+ merchants.";
@@ -481,7 +482,7 @@ export default function ShopifyAppDevelopmentPage() {
               <div className="sad-panel-content">
                 <h3 className="sad-panel-h">Private Shopify App Development for Your Store</h3>
                 <p className="sad-panel-p">
-                  Your store has needs that off-the-shelf apps cannot meet. We build <b>private Shopify apps</b> exclusively for your business, whether that is a deep ERP integration, a custom workflow, or proprietary functionality your competitors simply do not have.
+                  Your store has needs that off-the-shelf apps cannot meet. We build <b>private Shopify apps</b> exclusively for your business, whether that is a <Link href="/services/erp-connections-to-shopify" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>deep ERP integration</Link>, a custom workflow, or proprietary functionality your competitors simply do not have.
                 </p>
 
                 <div className="sad-cards">
@@ -568,7 +569,7 @@ export default function ShopifyAppDevelopmentPage() {
                     </span>
                     <div className="sad-card-body">
                       <h4 className="sad-card-h">End-to-End Shopify App Consultation</h4>
-                      <p className="sad-card-p">From your first idea to user flow design, App Store listing copy, and post-launch marketing, we&rsquo;re with you every step.</p>
+                      <p className="sad-card-p">From your first idea to <Link href="/services/shopify-ux-and-ui-design" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>user flow design</Link>, App Store listing copy, and post-launch marketing, we&rsquo;re with you every step.</p>
                     </div>
                   </div>
 

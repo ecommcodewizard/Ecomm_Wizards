@@ -590,7 +590,7 @@ const HYDROGEN_WHY_ITEMS: HydrogenWhyItem[] = [
   },
   {
     title: "An App Ecosystem That Actually Plugs In",
-    body: (<>SFCC locks you into a small set of AppExchange partners. Shopify gives you <strong>10,000+ apps</strong> that plug in over a weekend. Klaviyo, Recharge, Yotpo, Gorgias, whatever your stack already runs, it&rsquo;s already there.</>),
+    body: (<>SFCC locks you into a small set of AppExchange partners. Shopify gives you <strong>10,000+ apps</strong> that <Link href="/services/shopify-app-setup-and-app-optimization" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>plug in over a weekend</Link>. Klaviyo, Recharge, Yotpo, Gorgias, whatever your stack already runs, it&rsquo;s already there.</>),
   },
   {
     title: "B2B and B2C on the Same Admin",
@@ -617,7 +617,7 @@ const HYDROGEN_BENEFITS = [
   },
   {
     title: "Real Experimentation",
-    body: (<>Run A/B tests on the storefront without a development sprint. Your CRO team stops waiting on engineering to test a hero image.</>),
+    body: (<>Run <Link href="/services/a-b-testing" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>A/B tests on the storefront</Link> without a development sprint. Your CRO team stops waiting on engineering to test a hero image.</>),
   },
   {
     title: "Scale Without Replatforming",
@@ -993,7 +993,7 @@ export default function Page() {
               <h3 className="w2s-compare-title">Implementation</h3>
               <p className="w2s-compare-body">
                 We move fast because we don&rsquo;t reinvent the work. B2B price lists,
-                multi store, ERP feeds, CI/CD, observability, all standardized across our
+                multi store, <Link href="/services/erp-connections-to-shopify" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>ERP feeds</Link>, CI/CD, observability, all standardized across our
                 launches. Most salesforce to shopify migration projects ship in 60 to 90 days.
                 The date holds.
               </p>

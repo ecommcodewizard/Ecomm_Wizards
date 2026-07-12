@@ -496,7 +496,7 @@ export default function Page() {
               What&apos;s Included in Our Shopify Maintenance Services
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              Every shopify maintenance service includes a monthly store audit, bug fixes within your hours, performance monitoring, security reviews, and a written report of everything done. We never close a month without showing our work.
+              Every shopify maintenance service includes a <Link href="/services/shopify-store-audit" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>monthly store audit</Link>, bug fixes within your hours, performance monitoring, security reviews, and a written report of everything done. We never close a month without showing our work.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
               Book a Free Store Audit

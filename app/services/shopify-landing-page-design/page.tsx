@@ -563,7 +563,7 @@ export default function Page() {
               What&apos;s Included in Every Shopify Landing Page
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              Every Shopify landing page build covers design, development, speed optimisation, tracking setup, and 30-day support. No add-ons, no surprises. Ready to run traffic on day one.
+              Every Shopify landing page build covers design, development, <Link href="/services/shopify-speed-optimization" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>speed optimization</Link>, <Link href="/services/shopify-analytics-and-tracking-setup" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>tracking setup</Link>, and 30-day support. No add-ons, no surprises. Ready to run traffic on day one.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
               Book a Free Strategy Call

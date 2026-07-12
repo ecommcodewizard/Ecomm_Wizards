@@ -357,7 +357,7 @@ const PROCESS_STEPS = [
   {
     key: "ab",
     title: "AB Testing",
-    body: (<>Launch day isn&rsquo;t the finish line. We run <strong>continuous AB testing</strong> on every element of your DTC store so revenue keeps climbing months after go-live. Data over guesswork, every single time.</>),
+    body: (<>Launch day isn&rsquo;t the finish line. We run <strong><Link href="/services/a-b-testing" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>continuous AB testing</Link></strong> on every element of your DTC store so revenue keeps climbing months after go-live. Data over guesswork, every single time.</>),
   },
 ];
 
@@ -883,7 +883,7 @@ export default function Page() {
                   <p className="w2s-compare-feat-body">
                     You own every piece of your business. Shopify gives you the tools to
                     customize and extend without fighting Amazon&rsquo;s rules every time you
-                    want to launch a bundle, a quiz, or a new landing page.
+                    want to launch a bundle, a quiz, or <Link href="/services/shopify-landing-page-design" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>a new landing page</Link>.
                   </p>
                 </li>
                 <li>
@@ -1213,7 +1213,7 @@ export default function Page() {
               <p className="w2s-compare-body">
                 Shopify lets you sell wherever your customers hang out. Shopify Plus brands
                 run 20+ sales channels at once. Amazon, TikTok Shop, Meta, Pinterest,
-                Instagram, eBay, Google, retail POS, all of it managed from one dashboard.
+                Instagram, eBay, Google, <Link href="/services/shopify-pos-setup" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>retail POS</Link>, all of it managed from one dashboard.
                 Once we connect shopify to amazon for you, Seller Central stops being a
                 separate tab in your day and starts feeding the same inventory, the same
                 orders, and the same customer view as the rest of your business.

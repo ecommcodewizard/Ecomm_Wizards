@@ -733,7 +733,7 @@ export default function Page() {
               Every Shopify CRO Service Your Store Needs
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
-              Our Shopify CRO services cover everything from CRO audits and A/B testing to checkout optimization and <Link href="/services/shopify-ux-and-ui-design" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>mobile UX</Link>. Every conversion rate optimization service your store needs, for Shopify and Shopify Plus, in-house and fixed price.
+              Our Shopify CRO services cover everything from CRO audits and A/B testing to checkout optimization and <Link href="/services/shopify-ux-and-ui-design" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>mobile UX</Link>. We also lift average order value with <Link href="/services/shopify-cart-gamification" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>cart gamification</Link>: free shipping bars, tiered rewards, and gift with purchase built into your cart. Every conversion rate optimization service your store needs, for Shopify and Shopify Plus, in-house and fixed price.
             </p>
             <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
               Book a Free CRO Audit

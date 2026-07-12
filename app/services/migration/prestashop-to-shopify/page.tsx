@@ -347,7 +347,7 @@ const PROCESS_STEPS = [
   {
     key: "develop",
     title: "Develop",
-    body: (<>Your store is your business, and <strong>bad development sinks it</strong>. Our Shopify devs handle the engine while you stay focused on customers, marketing, and the things that grow your brand.</>),
+    body: (<>Your store is your business, and <strong>bad development sinks it</strong>. <Link href="/services/shopify-development-agency" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Our Shopify devs</Link> handle the engine while you stay focused on customers, marketing, and the things that grow your brand.</>),
   },
   {
     key: "deploy",
@@ -610,8 +610,8 @@ export default function Page() {
             <p className="w2s-hero-lead">
               You run an ecommerce brand. We run prestashop to shopify migration projects for a
               living. Tell us where you&rsquo;re stuck and we&rsquo;ll move your products,
-              customers, orders, and content across without a scratch. D2C, B2B, wholesale,
-              point of sale, we&rsquo;ve shipped every flavor of it.
+              customers, orders, and content across without a scratch. D2C, B2B, wholesale,{" "}
+              <Link href="/services/shopify-pos-setup" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>point of sale</Link>, we&rsquo;ve shipped every flavor of it.
             </p>
             <div className="w2s-hero-cta-row">
               <Link href={TEST_DRIVE_URL} className="w2s-hero-cta">
@@ -1005,7 +1005,7 @@ export default function Page() {
                 <li>
                   <h5 className="w2s-compare-feat-title">One-click installs</h5>
                   <p className="w2s-compare-feat-body">
-                    Hook up Klaviyo, Recharge, Gorgias, Yotpo, you name it. No FTP, no SQL,
+                    <Link href="/services/klaviyo-audit" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Hook up Klaviyo</Link>, Recharge, Gorgias, Yotpo, you name it. No FTP, no SQL,
                     no debugging someone else&rsquo;s code.
                   </p>
                 </li>
