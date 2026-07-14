@@ -65,6 +65,15 @@ export async function insertLead(lead: LeadInput): Promise<number> {
   return res.insertId;
 }
 
+export async function deleteLead(id: number): Promise<boolean> {
+  const pool = getPool();
+  const [res] = await pool.execute<ResultSetHeader>(
+    `DELETE FROM leads WHERE id = ?`,
+    [id],
+  );
+  return res.affectedRows > 0;
+}
+
 export async function getLeads(limit = 200): Promise<LeadRow[]> {
   // LIMIT can't be a bound parameter in a prepared statement on all MySQL
   // versions, so clamp to a safe integer and inline it.
