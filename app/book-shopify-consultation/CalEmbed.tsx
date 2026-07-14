@@ -19,6 +19,7 @@ const CAL_BRAND = "#2A9555";
 declare global {
   interface Window {
     Cal?: CalApi;
+    dataLayer?: Record<string, unknown>[];
   }
 }
 
@@ -85,9 +86,8 @@ export default function CalEmbed() {
 
     // Capture successful bookings into our own DB. The free Cal.com plan has no
     // server API/webhooks, so we read the booking from the browser event and
-    // fire-and-forget it to /api/bookings. NOTE for conversion tracking: this is
-    // the same bookingSuccessfulV2 event the Google Ads conversion should hook —
-    // add the gtag call inside this callback (or register a second Cal "on").
+    // fire-and-forget it to /api/bookings, which stores it for the admin
+    // Call Bookings page.
     Cal.ns![CAL_NAMESPACE]("on", {
       action: "bookingSuccessfulV2",
       callback: (e: unknown) => {
@@ -102,6 +102,17 @@ export default function CalEmbed() {
         } catch {
           // never let capture break the booking experience
         }
+      },
+    });
+
+    // Bridge the booking out of cal.com's iframe: when a booking succeeds, push a
+    // dataLayer event so GTM can fire the Google Ads "Book a Call" conversion.
+    // (A standard form-submit trigger can't see inside the cross-origin iframe.)
+    Cal.ns![CAL_NAMESPACE]("on", {
+      action: "bookingSuccessful",
+      callback: () => {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "cal_booking_success" });
       },
     });
   }, []);
