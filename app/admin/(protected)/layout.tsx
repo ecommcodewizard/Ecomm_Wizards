@@ -2,6 +2,7 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import { isAuthed } from "@/lib/auth";
 import LogoutButton from "./LogoutButton";
+import AdminNav from "./AdminNav";
 
 // Node-runtime auth gate for everything under /admin (except /admin/login).
 // Reading the session cookie here keeps the password check in the Node runtime.
@@ -58,6 +59,7 @@ const ADMIN_CSS = `
 .ewa-summary::-webkit-details-marker{display:none}
 .ewa-empty{color:#64748b;font-size:14px;padding:8px 2px}
 .ewa-err{background:#fef2f2;border:1px solid #fecaca;color:#991b1b;padding:16px 18px;border-radius:12px;font-size:14px}
+.ewa-note{background:#f8fafc;border:1px solid #eef1f4;border-radius:12px;padding:12px 16px;font-size:13px;color:#64748b;margin-bottom:18px}
 .ewa-del{display:inline-flex;align-items:center;gap:6px;font-family:inherit;font-size:12px;font-weight:600;color:#b91c1c;background:#fff;border:1px solid #fecaca;border-radius:8px;padding:6px 11px;cursor:pointer;white-space:nowrap}
 .ewa-del:hover{background:#fef2f2;border-color:#f87171}
 .ewa-del:disabled{opacity:.6;cursor:default}
@@ -79,14 +81,7 @@ export default async function ProtectedAdminLayout({ children }: { children: Rea
             <span className="ewa-brand-sub">Admin</span>
           </span>
         </div>
-        <nav className="ewa-nav">
-          <a href="/admin/leads" className="ewa-navitem ewa-navitem--active">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <path d="M3 7l9 6 9-6M4 5h16a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            Leads
-          </a>
-        </nav>
+        <AdminNav />
         <LogoutButton />
       </aside>
       <main className="ewa-main">{children}</main>

@@ -82,6 +82,28 @@ export default function CalEmbed() {
       layout: "month_view",
       cssVarsPerTheme: { light: { "cal-brand": CAL_BRAND } },
     });
+
+    // Capture successful bookings into our own DB. The free Cal.com plan has no
+    // server API/webhooks, so we read the booking from the browser event and
+    // fire-and-forget it to /api/bookings. NOTE for conversion tracking: this is
+    // the same bookingSuccessfulV2 event the Google Ads conversion should hook —
+    // add the gtag call inside this callback (or register a second Cal "on").
+    Cal.ns![CAL_NAMESPACE]("on", {
+      action: "bookingSuccessfulV2",
+      callback: (e: unknown) => {
+        try {
+          const data = (e as { detail?: { data?: unknown } })?.detail?.data ?? {};
+          fetch("/api/bookings", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+            keepalive: true,
+          }).catch(() => {});
+        } catch {
+          // never let capture break the booking experience
+        }
+      },
+    });
   }, []);
 
   return (
