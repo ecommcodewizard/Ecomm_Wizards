@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 // Self-hosted Poppins (replaces the render-blocking Google Fonts link). Keeps the
 // family name "Poppins", so every existing font-family reference resolves unchanged.
@@ -19,6 +20,9 @@ const ROOT_TITLE = "Ecomm Wizards — Shopify Integration & Automation Experts";
 const ROOT_DESCRIPTION =
   "Shopify experts specializing in store builds, migrations, optimization, custom apps, B2B, POS, and marketing. Let's grow your ecommerce together.";
 const OG_IMAGE = "/images/main-hero-f-desktop.webp";
+
+// Google Tag Manager container (holds Google Ads + GA4 conversion tags).
+const GTM_ID = "GTM-PZV8S2C2";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -86,6 +90,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head />
       <body className="flex min-h-screen flex-col" style={{ backgroundColor: "var(--color-white)", color: "var(--color-dark)" }} suppressHydrationWarning>
+        {/* Google Tag Manager — loads after the page is interactive so it never blocks rendering */}
+        <Script id="gtm-base" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}
+        </Script>
+        {/* Google Tag Manager (noscript fallback) */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_SCHEMA) }} />
         <Header />
         <main className="flex-1 pt-[100px] sm:pt-[70px] md:pt-[100px] lg:pt-[86px] xl:pt-[96px]">{children}</main>
