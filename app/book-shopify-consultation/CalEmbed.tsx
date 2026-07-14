@@ -19,6 +19,7 @@ const CAL_BRAND = "#2A9555";
 declare global {
   interface Window {
     Cal?: CalApi;
+    dataLayer?: Record<string, unknown>[];
   }
 }
 
@@ -81,6 +82,17 @@ export default function CalEmbed() {
       hideEventTypeDetails: false,
       layout: "month_view",
       cssVarsPerTheme: { light: { "cal-brand": CAL_BRAND } },
+    });
+
+    // Bridge the booking out of cal.com's iframe: when a booking succeeds, push a
+    // dataLayer event so GTM can fire the Google Ads "Book a Call" conversion.
+    // (A standard form-submit trigger can't see inside the cross-origin iframe.)
+    Cal.ns![CAL_NAMESPACE]("on", {
+      action: "bookingSuccessful",
+      callback: () => {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "cal_booking_success" });
+      },
     });
   }, []);
 
