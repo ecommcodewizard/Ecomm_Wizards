@@ -58,6 +58,9 @@ const ADMIN_CSS = `
 .ewa-summary::-webkit-details-marker{display:none}
 .ewa-empty{color:#64748b;font-size:14px;padding:8px 2px}
 .ewa-err{background:#fef2f2;border:1px solid #fecaca;color:#991b1b;padding:16px 18px;border-radius:12px;font-size:14px}
+.ewa-del{display:inline-flex;align-items:center;gap:6px;font-family:inherit;font-size:12px;font-weight:600;color:#b91c1c;background:#fff;border:1px solid #fecaca;border-radius:8px;padding:6px 11px;cursor:pointer;white-space:nowrap}
+.ewa-del:hover{background:#fef2f2;border-color:#f87171}
+.ewa-del:disabled{opacity:.6;cursor:default}
 @media (max-width:900px){.ewa-sidebar{display:none}.ewa-main{padding:20px}.ewa-stats{grid-template-columns:repeat(2,1fr)}.ewa-row2{grid-template-columns:1fr}}
 `;
 

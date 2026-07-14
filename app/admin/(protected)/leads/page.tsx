@@ -1,4 +1,5 @@
 import { getLeads, getLeadStats, type LeadRow, type LeadStats } from "@/lib/leads";
+import DeleteLeadButton from "./DeleteLeadButton";
 
 // Internal lead dashboard. Auth is enforced by the (protected) layout. Never
 // cache (PII) and never index.
@@ -169,6 +170,7 @@ export default async function LeadsDashboard() {
                       <th>Company</th>
                       <th>Phone</th>
                       <th>Details</th>
+                      <th aria-label="Row actions"></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -181,6 +183,7 @@ export default async function LeadsDashboard() {
                         <td>{l.company || <span className="ewa-muted">—</span>}</td>
                         <td>{l.phone || <span className="ewa-muted">—</span>}</td>
                         <td><Detail lead={l} /></td>
+                        <td><DeleteLeadButton id={l.id} name={l.name} /></td>
                       </tr>
                     ))}
                   </tbody>
