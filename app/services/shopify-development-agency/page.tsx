@@ -9,7 +9,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
-  "Shopify development agency specializing in custom builds, theme development, Shopify Plus, and migrations. 100+ stores built. Fixed price. 6-week delivery.";
+  "Shopify development agency specializing in custom builds, theme development, Shopify Plus, and migrations. 700+ stores built. Fixed price. Most projects live in 6 weeks.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-development-agency";
 
 export const metadata: Metadata = {
@@ -109,12 +109,12 @@ const CASE_STUDIES = [
     brand: "Dryrobe",
     metric: "+89%",
     metricLabel: "Online Revenue",
-    tags: ["Shopify Plus", "Custom Theme", "Internationalisation"],
+    tags: ["Shopify Plus", "Custom Theme", "Internationalization"],
     industry: "Outdoor & Sports",
     image: "/images/Case%20studies/Dryrobe%20hero%20section.webp",
     video: "/images/Case%20studies/dryrobe%20video.mp4",
     href: "/case-studies/dryrobe-shopify-plus-redesign",
-    description: "The outdoor apparel brand consolidated three separate Shopify stores into a single Shopify Plus build with full internationalisation, a custom product finder, and brand storytelling woven into the store architecture. Online revenue grew 89% in the first year.",
+    description: "The outdoor apparel brand consolidated three separate Shopify stores into a single Shopify Plus build with full internationalization, a custom product finder, and brand storytelling woven into the store architecture. Online revenue grew 89% in the first year.",
   },
   {
     brand: "Capelli Sports",
@@ -147,7 +147,7 @@ const TRUST_LOGOS = [
 const SDA_PAINS = [
   {
     name: "Slow Theme Dragging Down Your Conversion Rate",
-    desc: "Your theme carries unused app scripts and unoptimised assets that slow every page load. Every extra second costs you conversion. An LCP above 2.5 seconds means buyers leave before they see your first product image.",
+    desc: "Your theme carries unused app scripts and unoptimized assets that slow every page load. Every extra second costs you conversion. An LCP above 2.5 seconds means buyers leave before they see your first product image.",
     cost: "At $2M GMV, a 0.5% conversion lift from speed work alone is worth $50,000 in annual revenue. Most stores leave it on the table.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
@@ -206,7 +206,7 @@ const SDA_PAINS = [
   {
     name: "No Reliable Development Partner for Post-Launch Work",
     desc: "Your store launched, the agency moved on, and now every change requires finding a freelancer, briefing them from scratch, and hoping they understand your Shopify setup. The cost accumulates quietly.",
-    cost: "Merchants without a retained development partner spend an average of 3x more on ad hoc fixes than those with an ongoing Shopify development agency relationship, and see less improvement per pound spent.",
+    cost: "Merchants without a retained development partner spend an average of 3x more on ad hoc fixes than those with an ongoing Shopify development agency relationship, and see less improvement per dollar spent.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
         <circle cx="14" cy="10" r="5" stroke="currentColor" strokeWidth="1.5"/>
@@ -225,7 +225,7 @@ const SDA_ITEMS = [
   },
   {
     title: "Shopify Plus Development",
-    body: "Shopify Plus gives you checkout extensibility, Shopify Functions, multi-store management via the Organisation Admin, and automation through Shopify Flow. As a Shopify Plus development agency, we build on every Plus-exclusive feature: custom checkout UI extensions, B2B wholesale channels, Markets for multi-currency and multi-region, and Launchpad for campaign automation. The right build for stores doing serious volume.",
+    body: "Shopify Plus gives you checkout extensibility, Shopify Functions, multi-store management via the Organization Admin, and automation through Shopify Flow. As a Shopify Plus development agency, we build on every Plus-exclusive feature: custom checkout UI extensions, B2B wholesale channels, Markets for multi-currency and multi-region, and Launchpad for campaign automation. The right build for stores doing serious volume.",
   },
   {
     title: "Shopify Store Migration & Replatforming",
@@ -236,20 +236,20 @@ const SDA_ITEMS = [
     body: "Custom Shopify apps, private apps, and Shopify Functions-powered features built to your exact specification. Product configurators, bundle builders, loyalty mechanics, subscription flows, B2B quote tools, and custom admin panels. If it can be built on Shopify, we can build it. If it cannot, we use Shopify's API and webhooks to make it happen.",
   },
   {
-    title: "Shopify 2.0 Upgrade & Modernisation",
-    body: "Upgrade from legacy Shopify themes to Online Store 2.0 architecture. Sections everywhere, app blocks, metafield-driven content, and JSON templates that give your team full editorial control without developer involvement. We migrate existing content, rebuild custom sections as native 2.0 blocks, and preserve every customisation during the transition.",
+    title: "Shopify 2.0 Upgrade & Modernization",
+    body: "Upgrade from legacy Shopify themes to Online Store 2.0 architecture. Sections everywhere, app blocks, metafield-driven content, and JSON templates that give your team full editorial control without developer involvement. We migrate existing content, rebuild custom sections as native 2.0 blocks, and preserve every customization during the transition.",
   },
   {
     title: "B2B & Wholesale Store Development",
-    body: "Dedicated B2B storefronts on Shopify Plus with trade-only pricing, company account management, net payment terms, purchase order checkout, and rep portal access. Custom wholesale catalogues, tiered pricing by account tier, and quantity break pricing. Built on Shopify's native B2B features or custom middleware depending on your complexity.",
+    body: "Dedicated B2B storefronts on Shopify Plus with trade-only pricing, company account management, net payment terms, purchase order checkout, and rep portal access. Custom wholesale catalogs, tiered pricing by account tier, and quantity break pricing. Built on Shopify's native B2B features or custom middleware depending on your complexity.",
   },
   {
     title: "Headless Shopify Development",
     body: "Decouple your Shopify storefront from the Liquid layer using Next.js or Shopify Hydrogen. Full creative freedom over the frontend while keeping Shopify as your commerce engine. Server-side rendering, sub-100ms TTFB, and complete control over the user experience. This is advanced Shopify web development for brands where performance and design precision are non-negotiable.",
   },
   {
-    title: "Performance & Speed Optimisation",
-    body: "LCP under 2.5 seconds, CLS zero, FID under 100ms. We audit, diagnose, and fix Core Web Vitals failures: image optimisation, lazy loading, script deferral, app script consolidation, CDN configuration, and Liquid render performance. Speed audits delivered as a written report with prioritised fixes. Most stores see measurable Core Web Vitals improvement within two weeks.",
+    title: "Performance & Speed Optimization",
+    body: "LCP under 2.5 seconds, CLS zero, INP under 200ms. We audit, diagnose, and fix Core Web Vitals failures: image optimization, lazy loading, script deferral, app script consolidation, CDN configuration, and Liquid render performance. Speed audits delivered as a written report with prioritized fixes. Most stores see measurable Core Web Vitals improvement within two weeks.",
   },
 ];
 
@@ -267,7 +267,7 @@ const SDA_INDUSTRIES = [
   },
   {
     name: "Beauty & Skincare",
-    desc: "Shade finders, product bundling, subscriptions, and loyalty programme builds.",
+    desc: "Shade finders, product bundling, subscriptions, and loyalty program builds.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
         <path d="M14 4l2 5h5l-4 3 1.5 5L14 14l-4.5 3 1.5-5-4-3h5z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
@@ -341,7 +341,7 @@ const SDA_INDUSTRIES = [
 /* ── Compare section ── */
 const SDA_PROS = [
   "Pixel-perfect brand execution. Built to your design, not a template's constraints.",
-  "You own 100% of the code. No vendor lock-in. No recurring licence fees.",
+  "You own 100% of the code. No vendor lock-in. No recurring license fees.",
   "Built directly on Shopify APIs. No fragile app dependencies.",
   "Architecture designed to scale with your GMV, not against it.",
   "Full documentation and code handover at project completion.",
@@ -350,7 +350,7 @@ const SDA_PROS = [
 
 const SDA_CONS = [
   { text: "Template themes run on thousands of other stores. Your brand looks like everyone else.", warn: true },
-  { text: "Every customisation is a CSS patch on top of a CSS patch. Technical debt compounds.", warn: true },
+  { text: "Every customization is a CSS patch on top of a CSS patch. Technical debt compounds.", warn: true },
   { text: "No code ownership. If the theme vendor drops support, you start from scratch.", warn: true },
   { text: "Breaks on every major Shopify update. Someone has to fix it every time.", warn: false },
   { text: "Most freelancers go live without cross-device testing or QA process.", warn: false },
@@ -361,11 +361,11 @@ const SDA_CONS = [
 const SDA_FAQS = [
   {
     q: "How much does Shopify development cost?",
-    a: "Custom Shopify development cost depends on what you need built. A custom theme build typically starts from £8,000 to £15,000. Shopify Plus builds with custom features, B2B functionality, or complex integrations typically run £15,000 to £40,000. Platform migrations from WooCommerce or Magento with full data migration and SEO preservation start from £12,000. Every project is fixed price before development begins. No hourly billing. No invoices you did not see coming.",
+    a: "Custom Shopify development cost depends on what you need built. A custom theme build typically starts from $10,000 to $20,000. Shopify Plus builds with custom features, B2B functionality, or complex integrations typically run $20,000 to $50,000. Platform migrations from WooCommerce or Magento with full data migration and SEO preservation start from $15,000. Every project is fixed price before development begins. No hourly billing. No invoices you did not see coming.",
   },
   {
     q: "How long does a Shopify development project take?",
-    a: "Most Shopify store development projects are live within six weeks of kickoff. A custom theme build typically takes four to six weeks. Shopify Plus projects with custom app development or complex integrations run six to ten weeks. Platform migrations with large product catalogues typically take six to eight weeks. We agree the exact go-live date before development starts. You know the launch date on Day 1. There are no timeline surprises.",
+    a: "Most Shopify store development projects are live within six weeks of kickoff. A custom theme build typically takes four to six weeks. Shopify Plus projects with custom app development or complex integrations run six to ten weeks. Platform migrations with large product catalogs typically take six to eight weeks. We set the exact go-live date before development starts. You know the launch date on Day 1. There are no timeline surprises.",
   },
   {
     q: "Do you build on Shopify Plus?",
@@ -458,13 +458,13 @@ export default function Page() {
               </span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
-              Your store is the most important sales channel your business has. We build it right. <Link href="/services/shopify-theme-development" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Custom Shopify theme development</Link>, Shopify Plus builds, <Link href="/services/migration" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>platform migrations</Link>, and every piece of Shopify web development your business actually needs. We have delivered 100+ stores, all on a fixed price, with a go-live date confirmed before we write a single line of code.
+              Your store is the most important sales channel your business has. We build it right. <Link href="/services/shopify-theme-development" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Custom Shopify theme development</Link>, Shopify Plus builds, <Link href="/services/migration" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>platform migrations</Link>, and every piece of Shopify web development your business actually needs. We have delivered 700+ stores, all on a fixed price, with a go-live date confirmed before we write a single line of code.
             </p>
 
             <div className="std-hero-stats">
               {[
-                { number: "100+",    label: "Stores Built" },
-                { number: "$150M+",  label: "Client GMV" },
+                { number: "700+",    label: "Stores Built" },
+                { number: "$900M+",  label: "Client Revenue" },
                 { number: "95%+",    label: "Rankings Retained" },
                 { number: "60 Days", label: "Support Included" },
               ].map((s) => (
@@ -501,8 +501,8 @@ export default function Page() {
 
             {/* Partner badge */}
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginTop: "24px" }}>
-              <Image src="/images/shopify-icon.svg" alt="Shopify Partner" width={22} height={22} style={{ opacity: 0.8 }} />
-              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 500 }}>Shopify Partner. 100+ stores built exclusively on Shopify.</span>
+              <Image src="/images/shopify-icon.svg" alt="Shopify Plus Partner" width={22} height={22} style={{ opacity: 0.8 }} />
+              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 500 }}>Shopify Plus Partner. 700+ stores built exclusively on Shopify.</span>
             </div>
           </div>
 
@@ -524,7 +524,7 @@ export default function Page() {
       <section className="std-trust" style={{ background: C_WHITE }} aria-label="Brands that trust Ecomm Wizards for Shopify development">
         <div className="mx-auto" style={{ maxWidth: "1320px", padding: "48px 20px" }}>
           <h2 className="std-trust-h2 text-center" style={{ color: C_DARK, fontSize: 30, fontWeight: 700, lineHeight: 1.3, margin: 0 }}>
-            100+ Shopify Stores Built. Here&apos;s Who Trusts Us.
+            700+ Shopify Stores Built. Here&apos;s Who Trusts Us.
           </h2>
           <p className="text-center" style={{ color: C_TEXT, fontSize: 16, lineHeight: "26px", margin: "10px 0 0", textAlign: "center" }}>
             We build exclusively on Shopify. Every project is built and launched in-house by developers who work on Shopify full-time and nothing else.
@@ -550,7 +550,7 @@ export default function Page() {
       </section>
 
       {/* ── §3 What Is Shopify Development (WHITE) ── */}
-      <section style={{ background: C_WHITE, padding: "60px 20px" }} aria-label="What is Shopify development">
+      <section className="sda-what" style={{ background: C_WHITE, padding: "60px 20px" }} aria-label="What is Shopify development">
         <div className="mx-auto" style={{ maxWidth: "1320px" }}>
           <div className="sda-edu-grid">
             <div className="sda-edu-left">
@@ -562,7 +562,7 @@ export default function Page() {
                 What Is Shopify Development and Who Needs It?
               </h2>
               <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: "0 0 10px" }}>
-                Shopify development is the work of building, customising, and extending your store beyond what the platform gives you out of the box. Every Shopify store starts with a theme. The brands that consistently outperform their competitors are not running a downloaded template. They invested in custom Shopify development that makes their store work the way their business works.
+                Shopify development is the work of building, customizing, and extending your store beyond what the platform gives you out of the box. Every Shopify store starts with a theme. The brands that consistently outperform their competitors are not running a downloaded template. They invested in custom Shopify development that makes their store work the way their business works.
               </p>
               <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: "0 0 10px" }}>
                 A Shopify development agency builds the features no app covers: custom checkout flows, product configurators, <Link href="/services/shopify-b2b-store-setup" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>trade pricing</Link>, and integrations built to your exact spec. It creates a storefront that reflects your brand precisely, not a modified version of a theme 10,000 other stores run. As your business scales with more SKUs, more markets, and more operational complexity, your store scales with it.
@@ -681,7 +681,7 @@ export default function Page() {
       {/* ── §12 Case Studies (CREAM) ── */}
       <section style={{ background: C_CREAM, padding: "40px 20px" }} aria-label="Shopify development case studies">
         <div className="mx-auto" style={{ maxWidth: "1320px" }}>
-          <h2 className="text-center" style={{ color: C_DARK, fontSize: 40, fontWeight: 700, lineHeight: 1.2, margin: "0 0 24px" }}>
+          <h2 className="text-center sda-cs-heading" style={{ color: C_DARK, fontSize: 40, fontWeight: 700, lineHeight: 1.2, margin: "0 0 24px" }}>
             Shopify Development Projects We Have Delivered
           </h2>
           <div className="sda-cs-grid">
@@ -729,6 +729,7 @@ export default function Page() {
           .sda-cs-card-img { transition: transform 0.4s ease; }
           .sda-cs-card:hover .sda-cs-card-img { transform: scale(1.03); }
           .sda-cs-card-4th { display: none !important; }
+          @media (max-width: 640px) { .sda-cs-heading { font-size: 26px !important; } }
           @media (max-width: 768px) { .sda-cs-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } .sda-cs-card-4th { display: flex !important; } }
           @media (max-width: 540px) { .sda-cs-grid { grid-template-columns: 1fr; } .sda-cs-card-4th { display: none !important; } }
         ` }} />
@@ -844,18 +845,18 @@ export default function Page() {
         <style dangerouslySetInnerHTML={{ __html: `
           @media (max-width: 1024px) { .sda-compare-pill { font-size: 17px !important; } }
           @media (max-width: 768px) { .sda-compare-grid { gap: 12px !important; } .sda-compare-card { padding: 20px !important; } .sda-compare-pill { font-size: 15px !important; } .sda-compare-list li { font-size: 13px !important; } }
-          @media (max-width: 640px) { .sda-compare-h2 { line-height: 1.25 !important; } }
+          @media (max-width: 640px) { .sda-compare-h2 { line-height: 1.25 !important; font-size: 26px !important; } .sda-compare > div { padding: 46px 0 !important; } }
         ` }} />
       </section>
 
       {/* ── §6 Industries We Serve (CREAM) ── */}
-      <section style={{ background: C_CREAM, padding: "60px 20px" }} aria-label="Industries Ecomm Wizards builds Shopify stores for">
+      <section className="sda-industries" style={{ background: C_CREAM, padding: "60px 20px" }} aria-label="Industries Ecomm Wizards builds Shopify stores for">
         <div className="mx-auto" style={{ maxWidth: "1320px" }}>
           <h2 style={{ color: C_DARK, fontFamily: "'Poppins', sans-serif", fontSize: "clamp(28px, 3.5vw, 42px)", fontWeight: 700, lineHeight: 1.2, textAlign: "center", margin: "0 0 12px" }}>
             Industries We Build Shopify Stores For
           </h2>
           <p style={{ color: "#000000", fontFamily: "'Poppins', sans-serif", fontSize: 16, lineHeight: "26px", textAlign: "center", margin: "0 auto 40px", maxWidth: "620px" }}>
-            Every sector has different development requirements. Here are the industries we build for most, and what we specialise in for each.
+            Every sector has different development requirements. Here are the industries we build for most, and what we specialize in for each.
           </p>
           <div className="sda-ind-grid">
             {SDA_INDUSTRIES.map((ind) => (
@@ -883,7 +884,7 @@ export default function Page() {
       </section>
 
       {/* ── §8 Platform Comparison (WHITE) ── */}
-      <section style={{ background: C_WHITE, padding: "60px 20px" }} aria-label="Shopify vs WooCommerce vs BigCommerce comparison">
+      <section className="sda-platforms" style={{ background: C_WHITE, padding: "60px 20px" }} aria-label="Shopify vs WooCommerce vs BigCommerce comparison">
         <div className="mx-auto" style={{ maxWidth: "1320px" }}>
           <h2 style={{ color: C_DARK, fontFamily: "'Poppins', sans-serif", fontSize: "clamp(28px, 3.5vw, 42px)", fontWeight: 700, lineHeight: 1.2, textAlign: "center", margin: "0 0 12px" }}>
             Shopify vs WooCommerce vs BigCommerce
@@ -903,7 +904,7 @@ export default function Page() {
               {[
                 { label: "Hosting & Security", verdict: "Fully managed. Shopify handles uptime, SSL, and PCI compliance." },
                 { label: "Checkout Flexibility", verdict: "Full checkout extensibility via Shopify Functions on Plus." },
-                { label: "App Ecosystem", verdict: "8,000+ vetted apps. Quality controlled by Shopify review process." },
+                { label: "App Ecosystem", verdict: "13,000+ vetted apps. Quality controlled by Shopify review process." },
                 { label: "Cost of Ownership", verdict: "Predictable monthly fee. Transaction fees waived on Shopify Payments." },
                 { label: "Scalability", verdict: "Black Friday-tested infrastructure. No server management required." },
                 { label: "Support", verdict: "24/7 Shopify support plus a global developer community." },
@@ -924,7 +925,7 @@ export default function Page() {
               <span style={{ display: "inline-block", background: "rgba(239,68,68,0.08)", color: "#ef4444", fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 600, borderRadius: "999px", padding: "3px 12px", marginBottom: "20px", border: "1px solid rgba(239,68,68,0.2)" }}>Self-Hosted</span>
               {[
                 { label: "Hosting & Security", verdict: "Self-hosted. You manage servers, security patches, and SSL renewals." },
-                { label: "Checkout Flexibility", verdict: "Plugin-dependent. Every customisation adds technical debt and risk." },
+                { label: "Checkout Flexibility", verdict: "Plugin-dependent. Every customization adds technical debt and risk." },
                 { label: "App Ecosystem", verdict: "59,000+ plugins. Quality varies wildly. Many are abandoned or unmaintained." },
                 { label: "Cost of Ownership", verdict: "Free platform. Hosting, plugins, security, and dev time accumulate fast." },
                 { label: "Scalability", verdict: "Requires expensive server upgrades as traffic grows. Frequent downtime." },
@@ -946,7 +947,7 @@ export default function Page() {
               <span style={{ display: "inline-block", background: "rgba(245,158,11,0.1)", color: "#b45309", fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 600, borderRadius: "999px", padding: "3px 12px", marginBottom: "20px", border: "1px solid rgba(245,158,11,0.25)" }}>Hosted</span>
               {[
                 { label: "Hosting & Security", verdict: "Hosted with SSL included. Less mature than Shopify infrastructure." },
-                { label: "Checkout Flexibility", verdict: "Limited customisation. No equivalent to Shopify Functions." },
+                { label: "Checkout Flexibility", verdict: "Limited customization. No equivalent to Shopify Functions." },
                 { label: "App Ecosystem", verdict: "Smaller marketplace. Fewer specialist tools for DTC and Plus brands." },
                 { label: "Cost of Ownership", verdict: "Similar to Shopify but transaction fees apply with most payment providers." },
                 { label: "Scalability", verdict: "Handles growth but lacks Shopify Plus enterprise features at scale." },
@@ -991,7 +992,7 @@ export default function Page() {
             </span>
           </h2>
           <p className="sda-why-desc">
-            We have built 100+ live Shopify stores. Here is what separates a properly built Shopify store from one that was pieced together with themes and workarounds:
+            We have built 700+ live Shopify stores. Here is what separates a properly built Shopify store from one that was pieced together with themes and workarounds:
           </p>
 
           <div className="sda-why-grid">
@@ -1008,12 +1009,12 @@ export default function Page() {
               },
               {
                 title: "You Own Every Line of Code",
-                desc: (<>Full code transfer and documentation at project completion. Every component, every metafield schema, and every integration lives in your repositories and accounts. No proprietary systems. No recurring licence fees. If you stop working with us, your store keeps running exactly as we built it.</>),
+                desc: (<>Full code transfer and documentation at project completion. Every component, every metafield schema, and every integration lives in your repositories and accounts. No proprietary systems. No recurring license fees. If you stop working with us, your store keeps running exactly as we built it.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M6 10l-4 6 4 6"/><path d="M26 10l4 6-4 6"/><path d="M19 6l-6 20"/></svg>),
               },
               {
-                title: "100+ Live Shopify Stores Built",
-                desc: (<>We have built, migrated, and launched over 100 Shopify stores. DTC brands, Shopify Plus merchants, B2B distributors, and global retailers. Every project adds to a body of pattern knowledge most developers never build up. The edge cases that catch other agencies are ones we solved years ago.</>),
+                title: "700+ Live Shopify Stores Built",
+                desc: (<>We have built, migrated, and launched over 700 Shopify stores. DTC brands, Shopify Plus merchants, B2B distributors, and global retailers. Every project adds to a body of pattern knowledge most developers never build up. The edge cases that catch other agencies are ones we solved years ago.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 22L10 12l5 6 4-8 5 8"/><circle cx="23" cy="6" r="3"/><path d="M20.5 6H6" strokeDasharray="2 2"/></svg>),
               },
               {
@@ -1022,8 +1023,8 @@ export default function Page() {
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M16 3L5 8v9c0 6.1 4.7 11.8 11 13 6.3-1.2 11-6.9 11-13V8L16 3z"/><path d="M11 16l3 3 7-7"/></svg>),
               },
               {
-                title: "Shopify Plus Certified Partners",
-                desc: (<>We are Shopify Partners with hands-on experience on Shopify Plus, Shopify Functions, Shopify Flow, and the full enterprise feature set. Every Shopify platform update that could affect your store, we test it and document it before your next project goes live. Your store is never caught off guard.</>),
+                title: "Shopify Plus Partners Since 2021",
+                desc: (<>We are Shopify Plus Partners (since 2021) with hands-on experience across Shopify Functions, Shopify Flow, and the full enterprise feature set. Every Shopify platform update that could affect your store, we test it and document it before your next project goes live. Your store is never caught off guard.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4 l3 2.4 l3.7 -0.6 l1.6 3.4 l3.4 1.6 l-0.6 3.7 l2.4 3 l-2.4 3 l0.6 3.7 l-3.4 1.6 l-1.6 3.4 l-3.7 -0.6 l-3 2.4 l-3 -2.4 l-3.7 0.6 l-1.6 -3.4 l-3.4 -1.6 l0.6 -3.7 l-2.4 -3 l2.4 -3 l-0.6 -3.7 l3.4 -1.6 l1.6 -3.4 l3.7 0.6 z" /><polyline points="11,16.5 14.5,20 21,12.5" /></svg>),
               },
             ].map((card) => (
@@ -1066,7 +1067,7 @@ export default function Page() {
           .sda-why-hl { font-weight: 700; background-image: linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
           .sda-why-closing { color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 18px; line-height: 28px; text-align: center; margin: 20px auto 20px; max-width: 1100px; }
           @media (max-width: 1024px) { .std-why.sda-why-section { padding: 53px 20px !important; } .sda-why-heading { font-size: 30px !important; line-height: 40px !important; margin-bottom: 16px !important; } .sda-why-br-lg { display: none !important; } .sda-why-desc { font-size: 16px !important; margin-bottom: 16px !important; } .sda-why-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; margin-bottom: 20px !important; } .sda-why-card { padding: 24px !important; } .sda-why-card-title { font-size: 19px !important; } .sda-why-card-desc { font-size: 14px !important; } .sda-why-closing { font-size: 16px !important; margin-bottom: 24px !important; } }
-          @media (max-width: 640px) { .std-why.sda-why-section { padding: 20px 18px !important; } .sda-why-grid { grid-template-columns: 1fr !important; margin-bottom: 10px !important; } .sda-why-heading { font-size: 26px !important; line-height: 34px !important; margin-bottom: 10px !important; } .sda-why-card { padding: 22px 20px !important; } .sda-why-closing { margin-bottom: 10px !important; } }
+          @media (max-width: 640px) { .std-why.sda-why-section { padding: 40px 18px !important; } .sda-why-grid { grid-template-columns: 1fr !important; margin-bottom: 10px !important; } .sda-why-heading { font-size: 26px !important; line-height: 34px !important; margin-bottom: 10px !important; } .sda-why-card { padding: 22px 20px !important; } .sda-why-closing { margin-bottom: 10px !important; } }
         ` }} />
       </section>
 
@@ -1147,10 +1148,10 @@ export default function Page() {
         .sda-hero-secondary-cta:hover { color: rgba(255,255,255,1) !important; }
 
         /* Trust carousel */
-        .sda-trust-track { display: flex; align-items: center; gap: 80px; width: max-content; animation: sdaTrustScroll 32s linear infinite; }
+        .sda-trust-track { display: flex; align-items: center; gap: 40px; width: max-content; animation: sdaTrustScroll 32s linear infinite; }
         .std-trust-carousel:hover .sda-trust-track { animation-play-state: paused; }
         @keyframes sdaTrustScroll { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
-        @media (max-width: 640px) { .sda-trust-track { gap: 48px !important; } }
+        @media (max-width: 640px) { .sda-trust-track { gap: 24px !important; } }
 
         /* Shared badge + label */
         .std-badge { display: inline-block; padding: 6px 16px; background: rgba(97,206,112,0.12); border: 1px solid rgba(97,206,112,0.3); border-radius: 999px; color: #61ce70; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
@@ -1201,7 +1202,12 @@ export default function Page() {
           .std-solutions-grid { gap: 24px !important; }
         }
         @media (max-width: 640px) {
-          .std-hero > div { padding: 56px 18px !important; }
+          .std-hero > div { padding: 46px 18px !important; }
+          .std-trust > div { padding: 40px 20px !important; }
+          .sda-what { padding: 46px 20px !important; }
+          .si-feat-card { padding: 24px !important; }
+          .sda-industries { padding: 46px 20px !important; }
+          .sda-platforms { padding: 46px 20px !important; }
           .std-solutions > div { padding: 40px 18px !important; gap: 36px !important; }
           .std-solutions-grid { grid-template-columns: 1fr !important; }
           .std-solutions-left { position: static !important; }
