@@ -84,6 +84,27 @@ export default function CalEmbed() {
       cssVarsPerTheme: { light: { "cal-brand": CAL_BRAND } },
     });
 
+    // Capture successful bookings into our own DB. The free Cal.com plan has no
+    // server API/webhooks, so we read the booking from the browser event and
+    // fire-and-forget it to /api/bookings, which stores it for the admin
+    // Call Bookings page.
+    Cal.ns![CAL_NAMESPACE]("on", {
+      action: "bookingSuccessfulV2",
+      callback: (e: unknown) => {
+        try {
+          const data = (e as { detail?: { data?: unknown } })?.detail?.data ?? {};
+          fetch("/api/bookings", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+            keepalive: true,
+          }).catch(() => {});
+        } catch {
+          // never let capture break the booking experience
+        }
+      },
+    });
+
     // Bridge the booking out of cal.com's iframe: when a booking succeeds, push a
     // dataLayer event so GTM can fire the Google Ads "Book a Call" conversion.
     // (A standard form-submit trigger can't see inside the cross-origin iframe.)
