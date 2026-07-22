@@ -6,8 +6,11 @@ export interface CaseStudyStat {
 
 export interface CaseStudyResult {
   label: string;
-  before: string;
-  after: string;
+  /** Optional: only supply when the real before/after figures are known.
+   *  The "before → after" line is hidden when either is missing, so a study
+   *  can show a verified improvement without inventing absolute numbers. */
+  before?: string;
+  after?: string;
   improvement: string;
 }
 
@@ -27,6 +30,11 @@ export interface TechStackItem {
 export interface CaseStudy {
   slug: string;
   type?: "store" | "app" | "klaviyo";
+  /** Kind label used in the page title, H1, OG, and JSON-LD as
+   *  "{brandName} {studyKind} Case Study". Defaults to "Shopify" when omitted
+   *  (so store/app/klaviyo studies read "… Shopify Case Study" unchanged).
+   *  Non-Shopify studies (e.g. creative strategy) override it. */
+  studyKind?: string;
   brandName: string;
   brandLogo?: string;
   industry: string;
@@ -48,9 +56,11 @@ export interface CaseStudy {
   resultsDescription?: string;
   techStack: TechStackItem[];
   sliderStats?: string[];
-  quote: string;
-  quotePerson: string;
-  quoteRole: string;
+  /** Optional: the quote section is hidden entirely when `quote` is absent,
+   *  so a study can publish before the client testimonial is signed off. */
+  quote?: string;
+  quotePerson?: string;
+  quoteRole?: string;
   quoteAvatar?: string;
   quoteAvatarIsLogo?: boolean;
   prevSlug?: string;
