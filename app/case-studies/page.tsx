@@ -207,6 +207,27 @@ const KLAVIYO_EMAIL_CARDS = [
   },
 ];
 
+const CREATIVE_FILTERS = ["All"];
+
+// Creative Strategy work (paid social / performance creative). Mirrors the
+// Shopify Apps and Klaviyo card sections. Detail pages live in
+// lib/creative-studies.ts (kept out of the store grid on purpose).
+const CREATIVE_CARDS = [
+  {
+    slug: "chillys-creative-strategy",
+    name: "Chilly's",
+    category: "Paid Social",
+    tags: ["Creative Strategy", "Paid Social", "UGC"],
+    stat: "+60%",
+    statLabel: "ROAS",
+    description:
+      "Hook-led video, UGC, and a repeatable series format rebuilt for paid social. Revenue grew 33% while ad spend came down 22%.",
+    bg: "#1E2A38",
+    video: "/images/Creative%20strategy%20services/Case%20studies/chillys-ugc-video.mp4",
+    href: "/case-studies/chillys-creative-strategy",
+  },
+];
+
 const FEATURED_CASE_STUDIES = [
   {
     slug: "candy-kittens-shopify-food-beverage-cro",
@@ -688,6 +709,13 @@ export default async function CaseStudiesPage({
         badge="Klaviyo Email & SMS"
         heading="Retention-first email, built to convert."
         filters={KLAVIYO_FILTERS}
+      />
+
+      <ShopifyAppsSection
+        cards={CREATIVE_CARDS}
+        badge="Creative Strategy"
+        heading="Performance creative that earns its spend."
+        filters={CREATIVE_FILTERS}
       />
 
       <style dangerouslySetInnerHTML={{

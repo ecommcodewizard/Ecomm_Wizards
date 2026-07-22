@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { CASE_STUDIES } from "@/lib/case-studies";
 import { APP_CASE_STUDIES } from "@/lib/shopify-app-studies";
 import { KLAVIYO_CASE_STUDIES } from "@/lib/klaviyo-studies";
+import { CREATIVE_CASE_STUDIES } from "@/lib/creative-studies";
 
 const SITE_URL = "https://ecommwizards.com";
 
@@ -89,6 +90,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...CASE_STUDIES.map((c) => c.slug),
     ...APP_CASE_STUDIES.map((c) => c.slug),
     ...KLAVIYO_CASE_STUDIES.map((c) => c.slug),
+    ...CREATIVE_CASE_STUDIES.map((c) => c.slug),
   ];
 
   const caseStudyEntries: MetadataRoute.Sitemap = caseStudySlugs.map((slug) => ({

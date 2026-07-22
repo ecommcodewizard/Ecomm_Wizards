@@ -32,7 +32,8 @@ Key facts:
 - [111SKIN — CRO & Redesign](https://ecommwizards.com/case-studies/111skin-shopify-cro-redesign): +46% conversion rate and +21% revenue for a luxury skincare brand.
 - [Wild — Subscriptions](https://ecommwizards.com/case-studies/wild-shopify-plus-subscriptions): Scaled to 80,000+ active monthly subscribers with +218% subscription revenue.
 - [teelaunch — Print-on-Demand App](https://ecommwizards.com/case-studies/teelaunch-print-on-demand): Built a print-on-demand fulfillment app on the Shopify App Store, reaching 50,000+ merchants.
-- [All Case Studies](https://ecommwizards.com/case-studies): Full portfolio of 30+ Shopify store, app, and email marketing projects.
+- [Chilly's — Creative Strategy](https://ecommwizards.com/case-studies/chillys-creative-strategy): Performance creative for paid social lifted revenue 33% and ROAS 60% while cutting ad spend 22%.
+- [All Case Studies](https://ecommwizards.com/case-studies): Full portfolio of 30+ Shopify store, app, email marketing, and creative strategy projects.
 
 ## Company
 - [About](https://ecommwizards.com/about-shopify-agency): Agency background, team, and award-winning track record.

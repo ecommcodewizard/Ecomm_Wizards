@@ -11,7 +11,8 @@ type AppCard = {
   stat: string;
   statLabel: string;
   description: string;
-  logo: string;
+  /** Optional: falls back to the brand name when no logo asset exists. */
+  logo?: string;
   bg: string;
   image?: string;
   video?: string;
@@ -160,21 +161,28 @@ export default function ShopifyAppsSection({ cards, badge = "Shopify Apps", head
                           backgroundSize: "28px 28px",
                         }}
                       />
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={app.logo}
-                        alt={app.name}
-                        loading="lazy"
-                        style={{
-                          height: "38px",
-                          width: "auto",
-                          maxWidth: "150px",
-                          objectFit: "contain",
-                          filter: "brightness(0) invert(1)",
-                          position: "relative",
-                          zIndex: 1,
-                        }}
-                      />
+                      {app.logo ? (
+                        /* eslint-disable-next-line @next/next/no-img-element */
+                        <img
+                          src={app.logo}
+                          alt={app.name}
+                          loading="lazy"
+                          style={{
+                            height: "38px",
+                            width: "auto",
+                            maxWidth: "150px",
+                            objectFit: "contain",
+                            filter: "brightness(0) invert(1)",
+                            position: "relative",
+                            zIndex: 1,
+                          }}
+                        />
+                      ) : (
+                        /* No logo asset supplied: fall back to the brand name. */
+                        <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "22px", fontWeight: 700, color: "#ffffff", letterSpacing: "0.02em", position: "relative", zIndex: 1 }}>
+                          {app.name}
+                        </span>
+                      )}
                     </>
                   )}
 

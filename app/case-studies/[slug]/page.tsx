@@ -5,13 +5,14 @@ import { notFound } from "next/navigation";
 import { getCaseStudyBySlug, CASE_STUDIES, type CaseStudy } from "@/lib/case-studies";
 import { getAppCaseStudyBySlug, APP_CASE_STUDIES, type AppCaseStudy } from "@/lib/shopify-app-studies";
 import { getKlaviyoCaseStudyBySlug, KLAVIYO_CASE_STUDIES, type KlaviyoCaseStudy } from "@/lib/klaviyo-studies";
+import { getCreativeCaseStudyBySlug, CREATIVE_CASE_STUDIES } from "@/lib/creative-studies";
 import CTASection from "@/components/ui/CTASection";
 import BeforeAfterSlider from "./BeforeAfterSlider";
 import SpeedVideo from "../SpeedVideo";
 
-function caseStudyJsonLd(study: { slug: string; brandName: string; heroDescription: string; heroImage: string }) {
+function caseStudyJsonLd(study: { slug: string; brandName: string; heroDescription: string; heroImage: string; studyKind?: string }) {
   return [
-    { "@context": "https://schema.org", "@type": "Article", headline: `${study.brandName} Shopify Case Study`, description: study.heroDescription, image: `https://ecommwizards.com${study.heroImage}`, author: { "@type": "Organization", name: "Ecomm Wizards", url: "https://ecommwizards.com" }, publisher: { "@type": "Organization", name: "Ecomm Wizards", logo: { "@type": "ImageObject", url: "https://ecommwizards.com/images/ecomm-green.png", width: 636, height: 457 } }, mainEntityOfPage: `https://ecommwizards.com/case-studies/${study.slug}` },
+    { "@context": "https://schema.org", "@type": "Article", headline: `${study.brandName} ${study.studyKind ?? "Shopify"} Case Study`, description: study.heroDescription, image: `https://ecommwizards.com${study.heroImage}`, author: { "@type": "Organization", name: "Ecomm Wizards", url: "https://ecommwizards.com" }, publisher: { "@type": "Organization", name: "Ecomm Wizards", logo: { "@type": "ImageObject", url: "https://ecommwizards.com/images/ecomm-green.png", width: 636, height: 457 } }, mainEntityOfPage: `https://ecommwizards.com/case-studies/${study.slug}` },
     { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [ { "@type": "ListItem", position: 1, name: "Home", item: "https://ecommwizards.com" }, { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://ecommwizards.com/case-studies" }, { "@type": "ListItem", position: 3, name: `${study.brandName} Case Study`, item: `https://ecommwizards.com/case-studies/${study.slug}` } ] },
   ];
 }
@@ -21,6 +22,7 @@ export async function generateStaticParams() {
     ...CASE_STUDIES.map((cs) => ({ slug: cs.slug })),
     ...APP_CASE_STUDIES.map((app) => ({ slug: app.slug })),
     ...KLAVIYO_CASE_STUDIES.map((k) => ({ slug: k.slug })),
+    ...CREATIVE_CASE_STUDIES.map((c) => ({ slug: c.slug })),
   ];
 }
 
@@ -29,6 +31,7 @@ export async function generateStaticParams() {
 // Order matters — more specific patterns first (e.g. "Theme Development" must beat
 // the generic "Development" rule). Segments with no match render as plain text.
 const SERVICE_LINK_MAP: { test: RegExp; href: string }[] = [
+  { test: /creative|paid social|performance creative|ad creative/i, href: "/services/creative-strategy" },
   { test: /migrat|replatform/i, href: "/services/migration" },
   { test: /b2b|wholesale/i, href: "/services/shopify-b2b-store-setup" },
   { test: /\bpos\b/i, href: "/services/shopify-pos-setup" },
@@ -62,7 +65,8 @@ export async function generateMetadata({
   const study =
     getCaseStudyBySlug(slug) ??
     getAppCaseStudyBySlug(slug) ??
-    getKlaviyoCaseStudyBySlug(slug);
+    getKlaviyoCaseStudyBySlug(slug) ??
+    getCreativeCaseStudyBySlug(slug);
   if (!study) return {};
   const CANONICAL = `https://ecommwizards.com/case-studies/${slug}`;
   // Keep the full heroDescription for on-page display, but cap the meta
@@ -72,11 +76,11 @@ export async function generateMetadata({
       ? study.heroDescription.slice(0, 157).replace(/\s+\S*$/, "") + "…"
       : study.heroDescription;
   return {
-    title: { absolute: `${study.brandName} Shopify Case Study | ${study.heroMetric}` },
+    title: { absolute: `${study.brandName} ${study.studyKind ?? "Shopify"} Case Study | ${study.heroMetric}` },
     description: metaDesc,
     alternates: { canonical: CANONICAL },
-    openGraph: { type: "article", url: CANONICAL, siteName: "Ecomm Wizards", title: `${study.brandName} Shopify Case Study`, description: metaDesc, images: [{ url: study.heroImage, alt: `${study.brandName} Shopify case study` }] },
-    twitter: { card: "summary_large_image", title: `${study.brandName} Shopify Case Study`, description: metaDesc, images: [study.heroImage] },
+    openGraph: { type: "article", url: CANONICAL, siteName: "Ecomm Wizards", title: `${study.brandName} ${study.studyKind ?? "Shopify"} Case Study`, description: metaDesc, images: [{ url: study.heroImage, alt: `${study.brandName} ${study.studyKind ?? "Shopify"} case study` }] },
+    twitter: { card: "summary_large_image", title: `${study.brandName} ${study.studyKind ?? "Shopify"} Case Study`, description: metaDesc, images: [study.heroImage] },
   };
 }
 
@@ -92,7 +96,9 @@ export default async function CaseStudyPage({
   const klaviyo = getKlaviyoCaseStudyBySlug(slug);
   if (klaviyo) return <KlaviyoCaseStudyPage study={klaviyo} />;
 
-  const cs = getCaseStudyBySlug(slug);
+  // Creative-strategy studies render through this same store template; they
+  // live in their own array only so they stay out of the store grid/rail.
+  const cs = getCaseStudyBySlug(slug) ?? getCreativeCaseStudyBySlug(slug);
   if (!cs) notFound();
 
   return (
@@ -358,7 +364,7 @@ function CaseStudyHero({ cs }: { cs: CaseStudy }) {
           <style dangerouslySetInnerHTML={{ __html: ".cs-hero-service-link:hover{border-color:rgba(97,206,112,0.5)!important;color:#61ce70!important}" }} />
 
           <h1 style={{ fontFamily: "'Poppins',sans-serif", fontSize: "48px", fontWeight: 700, color: "#ffffff", lineHeight: "58px", margin: "0 0 16px" }}>
-            {cs.brandName} Shopify Case Study
+            {cs.brandName} {cs.studyKind ?? "Shopify"} Case Study
           </h1>
 
           <p className="cs-hero-desc" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "16px", color: "#ffffff", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "480px" }}>
@@ -406,8 +412,15 @@ function CaseStudyHero({ cs }: { cs: CaseStudy }) {
             </h5>
             {cs.stats.map((stat, i) => (
               <div key={stat.label} className="block_cashmere-banner-sale" style={{ padding: "14px 0", borderTop: i > 0 ? "1px solid rgba(0,0,0,0.07)" : "none", display: "flex", alignItems: "center", gap: "12px" }}>
+                {/* Arrow follows the direction of the number, not the sentiment:
+                    a reduction (e.g. "-22%" ad spend) is still a win, so it stays
+                    green but points down instead of contradicting the value. */}
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-                  <path d="M12 19V5M12 5L6 11M12 5L18 11" stroke="#4a7c59" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                  {stat.value.trim().startsWith("-") ? (
+                    <path d="M12 5V19M12 19L6 13M12 19L18 13" stroke="#4a7c59" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                  ) : (
+                    <path d="M12 19V5M12 5L6 11M12 5L18 11" stroke="#4a7c59" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                  )}
                 </svg>
                 <div>
                   <span className="stat-value" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "24px", fontWeight: 600, lineHeight: 1.1, display: "block", color: "#4a7c59" }}>
@@ -503,7 +516,12 @@ function CaseStudyStats({ cs }: { cs: CaseStudy }) {
                       {item}
                     </span>
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style={{ flexShrink: 0 }}>
-                      <path d="M9 14V4M9 4L4 9M9 4L14 9" stroke="#61ce70" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                      {/* Point down for reductions ("down 22%", "-22%") — still a win, still green. */}
+                      {/(^|\s)-|\bdown\b|\breduc/i.test(item) ? (
+                        <path d="M9 4V14M9 14L4 9M9 14L14 9" stroke="#61ce70" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                      ) : (
+                        <path d="M9 14V4M9 4L4 9M9 4L14 9" stroke="#61ce70" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                      )}
                     </svg>
                   </div>
                 ))}
@@ -708,10 +726,16 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
               autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
+          ) : cs.slug === "chillys-creative-strategy" ? (
+            <SpeedVideo
+              src="/images/Creative%20strategy%20services/Case%20studies/chillys-series.mp4"
+              autoPlay loop muted playsInline preload="none"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
           ) : (
             <Image
               src={cs.challengeImage ?? cs.heroImage}
-              alt={`${cs.brandName} Shopify store`}
+              alt={`${cs.brandName} ${cs.studyKind ?? "Shopify"} case study`}
               fill
               className="object-cover"
               loading="lazy"
@@ -839,7 +863,16 @@ function CaseStudyWork({ cs }: { cs: CaseStudy }) {
           {cs.workImages.map((img, i) => (
             <div key={i} style={{ borderRadius: "12px", overflow: "hidden", background: "#111111", position: "relative", border: "1px solid rgba(255,255,255,0.08)" }}>
               <div className="cs-work-img-box" style={{ position: "relative", aspectRatio: "16/10" }}>
-                <Image src={img} alt={`${cs.brandName} Shopify store design ${i + 1}`} fill className="object-cover" loading="lazy" sizes="(max-width: 767px) 100vw, 50vw" />
+                {/* Gallery entries may be video (creative studies show ad cuts here). */}
+                {/\.(mp4|webm)$/i.test(img) ? (
+                  <video
+                    src={img}
+                    autoPlay loop muted playsInline preload="none"
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  />
+                ) : (
+                  <Image src={img} alt={`${cs.brandName} ${cs.studyKind ?? "Shopify"} case study, image ${i + 1}`} fill className="object-cover" loading="lazy" sizes="(max-width: 767px) 100vw, 50vw" />
+                )}
               </div>
             </div>
           ))}
@@ -888,9 +921,11 @@ function CaseStudyResults({ cs }: { cs: CaseStudy }) {
               <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#ffffff", textTransform: "uppercase", letterSpacing: "0.08em", margin: "0 0 6px" }}>
                 {result.label}
               </p>
-              <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "13px", color: "#ffffff", margin: 0 }}>
-                {result.before} → {result.after}
-              </p>
+              {result.before && result.after && (
+                <p style={{ fontFamily: "'Poppins',sans-serif", fontSize: "13px", color: "#ffffff", margin: 0 }}>
+                  {result.before} → {result.after}
+                </p>
+              )}
             </div>
           ))}
         </div>
@@ -969,6 +1004,8 @@ function CaseStudyTechStack({ cs }: { cs: CaseStudy }) {
 }
 
 function CaseStudyQuote({ cs }: { cs: CaseStudy }) {
+  // Hidden entirely until a signed-off client testimonial exists.
+  if (!cs.quote) return null;
   return (
     <section style={{ background: "#FBF7ED", padding: "0 20px" }}>
       <div style={{ maxWidth: "900px", margin: "0 auto", padding: "40px 0", textAlign: "center" }}>
@@ -982,10 +1019,10 @@ function CaseStudyQuote({ cs }: { cs: CaseStudy }) {
           <div style={{ width: "64px", height: "64px", borderRadius: "50%", overflow: "hidden", flexShrink: 0, position: "relative", background: cs.quoteAvatarIsLogo ? "#0A0A0A" : "transparent" }}>
             {cs.quoteAvatar ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={cs.quoteAvatar} alt={cs.quotePerson} loading="lazy" style={{ width: "100%", height: "100%", objectFit: cs.quoteAvatarIsLogo ? "contain" : "cover", objectPosition: "top", padding: cs.quoteAvatarIsLogo ? "4px" : undefined }} />
+              <img src={cs.quoteAvatar} alt={cs.quotePerson ?? ""} loading="lazy" style={{ width: "100%", height: "100%", objectFit: cs.quoteAvatarIsLogo ? "contain" : "cover", objectPosition: "top", padding: cs.quoteAvatarIsLogo ? "4px" : undefined }} />
             ) : (
               <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg,#61ce70 0%,#4ab85a 100%)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Poppins',sans-serif", fontSize: "20px", fontWeight: 700, color: "#fff" }}>
-                {cs.quotePerson.charAt(0)}
+                {cs.quotePerson?.charAt(0)}
               </div>
             )}
           </div>
