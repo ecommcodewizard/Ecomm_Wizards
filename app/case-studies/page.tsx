@@ -236,7 +236,7 @@ const CREATIVE_CARDS = [
     description:
       "A micro-influencer creative engine: creator video produced, tested, and scaled. Return on ad spend rose 53% while cost to acquire a customer fell 28%.",
     bg: "#2B2622",
-    video: "/images/Creative%20strategy%20services/Case%20studies/prose-creators.mp4",
+    video: "/images/Creative%20strategy%20services/Case%20studies/prose-cover.mp4",
     href: "/case-studies/prose-creative-strategy",
   },
 ];

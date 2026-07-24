@@ -734,7 +734,7 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
             />
           ) : cs.slug === "prose-creative-strategy" ? (
             <SpeedVideo
-              src="/images/Creative%20strategy%20services/Case%20studies/prose-creators.mp4"
+              src="/images/Creative%20strategy%20services/Case%20studies/prose-cover.mp4"
               autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
