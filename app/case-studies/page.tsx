@@ -226,6 +226,19 @@ const CREATIVE_CARDS = [
     video: "/images/Creative%20strategy%20services/Case%20studies/chillys-ugc-video.mp4",
     href: "/case-studies/chillys-creative-strategy",
   },
+  {
+    slug: "prose-creative-strategy",
+    name: "Prose",
+    category: "Paid Social",
+    tags: ["Creative Strategy", "Influencer UGC", "Paid Social"],
+    stat: "+53%",
+    statLabel: "ROAS",
+    description:
+      "A micro-influencer creative engine: creator video produced, tested, and scaled. Return on ad spend rose 53% while cost to acquire a customer fell 28%.",
+    bg: "#2B2622",
+    video: "/images/Creative%20strategy%20services/Case%20studies/prose-cover.mp4",
+    href: "/case-studies/prose-creative-strategy",
+  },
 ];
 
 const FEATURED_CASE_STUDIES = [
