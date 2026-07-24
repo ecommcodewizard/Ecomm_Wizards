@@ -82,6 +82,74 @@ export const CREATIVE_CASE_STUDIES: CaseStudy[] = [
     // quote / quotePerson / quoteRole intentionally omitted until the client
     // testimonial is supplied and approved. The quote section stays hidden.
   },
+  {
+    slug: "prose-creative-strategy",
+    studyKind: "Creative Strategy",
+    brandName: "Prose",
+    industry: "Custom Haircare & Skincare",
+    serviceType: "Creative Strategy | Paid Social | Influencer UGC",
+    heroMetric: "+53%",
+    heroSubMetric: "Return on Ad Spend",
+    heroImage: `${MEDIA}/prose-hero.jpg`,
+    heroDescription:
+      "Prose sells personalized haircare and skincare, so every customer buys a different formula. To scale paid social profitably, we built a micro-influencer creative engine: a steady supply of creator video, produced, tested, and refreshed on a schedule. Return on ad spend rose 53% while cost to acquire a customer came down 28%.",
+    stats: [
+      { label: "Increase in ROAS", value: "+53%", shortLabel: "ROAS" },
+      { label: "Reduction in CAC", value: "-28%", shortLabel: "CAC" },
+    ],
+    challengeTitle: "Scale Paid Social Without Raising CAC",
+    challengeBody:
+      "Prose is built on personalization. Every customer answers a quiz and receives a formula made for their hair and skin, so the proof of the product lives in real people showing real routines and results, not in a single polished hero ad. Paid social also burns through creative quickly, and refreshing it by hand does not scale.\n\nThat makes creator content the right raw material and the bottleneck at the same time. One-off influencer posts look authentic but do not compound. To move return on ad spend and cost per acquisition together, the creative had to run as a system: a clear brief, a steady roster of micro-influencers, and a testing loop that turned the strongest creator angles into ads we could put real budget behind.",
+    approachTitle: "How We Built the Creative Engine",
+    approachItems: [
+      {
+        step: 1,
+        title: "Source",
+        desc: "We briefed and sourced micro-influencers who matched Prose's audience, and gave each one a clear angle to shoot against instead of a loose ask.",
+      },
+      {
+        step: 2,
+        title: "Produce",
+        desc: "We turned creator footage into paid-ready ads: sharp hooks, captions, and edits cut to each platform, in a repeatable format the roster could feed on a schedule.",
+      },
+      {
+        step: 3,
+        title: "Test",
+        desc: "We ran structured tests on hook rate, hold rate, and cost per acquisition, so spend decided the winners, not opinion.",
+      },
+      {
+        step: 4,
+        title: "Scale",
+        desc: "We put budget behind the proven angles, refreshed them before they fatigued, and fed every result back into the next brief.",
+      },
+    ],
+    workTitle: "The Creative",
+    workSubtitle: "A look at the creator content and product work we produced and tested for Prose.",
+    // Slots 2 and 4 are video: the gallery renders .mp4/.webm entries as video.
+    workImages: [
+      `${MEDIA}/prose-products.webp`,
+      `${MEDIA}/prose-ugc-1.mp4`,
+      `${MEDIA}/prose-formulation.jpg`,
+      `${MEDIA}/prose-ugc-2.mp4`,
+    ],
+    results: [
+      { label: "Return on Ad Spend", improvement: "+53%" },
+      { label: "Cost per Acquisition", improvement: "-28%" },
+    ],
+    resultsDescription:
+      "The creative carried the result. A steady supply of tested creator content lifted return on ad spend 53% and brought cost to acquire a customer down 28%, without a bigger budget behind it.",
+    techStack: [],
+    sliderStats: [
+      "Return on ad spend up 53%",
+      "Cost per acquisition down 28%",
+      "A scalable micro-influencer creative engine",
+      "Creator video produced and tested on a schedule",
+      "Winning angles scaled and refreshed before fatigue",
+      "Hook rate, hold rate, and CAC as the test metrics",
+    ],
+    // quote / quotePerson / quoteRole intentionally omitted until the client
+    // testimonial is supplied and approved. The quote section stays hidden.
+  },
 ];
 
 export function getCreativeCaseStudyBySlug(slug: string): CaseStudy | undefined {
