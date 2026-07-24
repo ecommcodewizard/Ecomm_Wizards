@@ -125,9 +125,9 @@ export const CREATIVE_CASE_STUDIES: CaseStudy[] = [
     ],
     workTitle: "The Creative",
     workSubtitle: "A look at the creator content and product work we produced and tested for Prose.",
-    // Slots 2 and 4 are video: the gallery renders .mp4/.webm entries as video.
+    // Slots 1, 2, and 4 are video: the gallery renders .mp4/.webm entries as video.
     workImages: [
-      `${MEDIA}/prose-products.webp`,
+      `${MEDIA}/prose-creators.mp4`,
       `${MEDIA}/prose-ugc-1.mp4`,
       `${MEDIA}/prose-formulation.jpg`,
       `${MEDIA}/prose-ugc-2.mp4`,
