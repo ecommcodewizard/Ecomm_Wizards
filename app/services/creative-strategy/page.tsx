@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ogImage } from "@/lib/og";
 import FAQSection from "@/components/FAQSection";
-import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
@@ -138,36 +137,39 @@ const NOT_FOR = [
   { k: "test", t: "You expect winning ads with no testing budget behind them" },
 ];
 
-const AC_SLIDES: CaseStudySlide[] = [
+/* Creative Strategy case studies (Our Work grid). Ordered oldest first:
+   Chilly's, Prose, Nurture Life. Each card autoplays its cover clip and
+   links its case-study detail page. */
+const CREATIVE_WORK = [
   {
-    key: "bark",
-    image: "/images/ai-bark-casestudy.webp",
-    apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/Subtract.svg", "/images/64f098c0e38dec3a384cb182_rebuy.svg"],
-    headline: (<>A Shopify Plus store <strong>built for scale</strong> for <strong>BARK</strong></>),
-    quote: (<>&ldquo;Their immense knowledge of Shopify Plus and exceptional communication skills, accompanied by a <strong>can-do attitude</strong>, made Ecomm Wizards a fantastic partner.&rdquo;</>),
-    avatar: "/images/nari_medium_215a6a4f-f640-4b4f-98aa-28f001df20dd_medium.webp",
-    name: "Nari Sitaraman",
-    role: "Chief Technology Officer",
+    brand: "Chilly's",
+    metric: "+60%",
+    metricLabel: "Return on Ad Spend",
+    tags: ["Creative Strategy", "Paid Social", "UGC"],
+    industry: "Drinkware & Lifestyle",
+    video: "/images/Creative%20strategy%20services/Case%20studies/chillys-ugc-video.mp4",
+    href: "/case-studies/chillys-creative-strategy",
+    description: "Hook-led video, UGC, and a repeatable series format rebuilt for paid social. Return on ad spend rose 60% and revenue 33% while ad spend came down 22%.",
   },
   {
-    key: "everlast",
-    image: "/images/Case%20studies/Everlast-banner.webp",
-    apps: ["/images/shopify-icon.svg", "/images/klaviyo.svg", "/images/yotpo.svg", "/images/64f098c0e38dec3a384cb182_rebuy.svg"],
-    headline: (<>A Shopify Plus rebuild that delivered <strong>+152% conversion rate</strong> for <strong>Everlast</strong></>),
-    quote: (<>&ldquo;We needed a store that could handle serious athletes, casual fitness buyers, and trade accounts in one place. Ecomm Wizards built exactly that. The <strong>conversion numbers and trade portal revenue</strong> both exceeded what we projected.&rdquo;</>),
-    avatar: "/images/Case%20studies/Daniel%20Summerson.jpg",
-    name: "Daniel Summerson",
-    role: "Managing Director, Everlast Gyms",
+    brand: "Prose",
+    metric: "+53%",
+    metricLabel: "Return on Ad Spend",
+    tags: ["Creative Strategy", "Influencer UGC", "Paid Social"],
+    industry: "Haircare & Skincare",
+    video: "/images/Creative%20strategy%20services/Case%20studies/prose-cover.mp4",
+    href: "/case-studies/prose-creative-strategy",
+    description: "A micro-influencer creative engine produced, tested, and scaled creator video. Return on ad spend rose 53% while cost to acquire a customer came down 28%.",
   },
   {
-    key: "dryrobe",
-    image: "/images/Case%20studies/Dryrobe%20hero%20section.webp",
-    apps: ["/images/shopify-icon.svg", "/images/klaviyo.svg", "/images/yotpo.svg", "/images/65739f17195baa7e77a72d2f_5efb82474d9adf8a3ca19488_logo-gorgias.svg"],
-    headline: (<>A redesign that delivered <strong>+89% online revenue</strong> for <strong>Dryrobe</strong></>),
-    quote: (<>&ldquo;The new store finally communicates who we are. <strong>Revenue growth followed</strong> from getting those fundamentals right.&rdquo;</>),
-    avatar: "/images/Case%20studies/gideon%20bright.jfif",
-    name: "Gideon Bright",
-    role: "Head of Ecommerce, Dryrobe",
+    brand: "Nurture Life",
+    metric: "+232%",
+    metricLabel: "Conversion Rate",
+    tags: ["Creative Strategy", "Paid Social", "UGC"],
+    industry: "Kids Meal Delivery",
+    video: "/images/Creative%20strategy%20services/Case%20studies/nurture-cover.mp4",
+    href: "/case-studies/nurture-life-creative-strategy",
+    description: "Parent and kid UGC produced and tested for paid social. Conversions rose 130% and conversion rate 232% while cost per acquisition came down 14%.",
   },
 ];
 
@@ -495,9 +497,49 @@ export default function Page() {
       {/* 10. Proven results */}
       <section className="ssd-results-section" style={{ background: "#FBF7ED", fontFamily: "'Poppins', sans-serif", padding: "60px 20px" }}>
         <div className="ssd-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
-          <h2 className="ssd-results-heading">A proven team behind the results</h2>
-          <p className="ssd-results-desc">We have built <Link href="/case-studies">700+ Shopify stores</Link> and generated $900M+ in revenue across 8+ years and 9+ industry awards. The same team builds the creative that scales your paid channels.</p>
-          <CaseStudySlider slides={AC_SLIDES} intervalMs={6000} showDots />
+          <h2 className="ssd-results-heading">Performance creative that scaled</h2>
+          <p className="ssd-results-desc">The same team builds the creative that scales your paid channels. Here is a look at recent work and the numbers it moved.</p>
+
+          <div className="cw-grid">
+            {CREATIVE_WORK.map((cs) => (
+              <Link key={cs.brand} href={cs.href} className="cw-card" style={{ display: "flex", flexDirection: "column", background: "#FFFFFF", borderRadius: "20px", overflow: "hidden", textDecoration: "none", border: "1px solid rgba(0,0,0,0.06)" }}>
+                <div style={{ position: "relative", width: "calc(100% - 16px)", margin: "8px 8px 0", borderRadius: "14px", overflow: "hidden", flexShrink: 0, aspectRatio: "16/10", background: "#e0ddd5" }}>
+                  <video src={cs.video} autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  <div style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.97)", borderRadius: "9999px", padding: "5px 14px", display: "flex", alignItems: "center", gap: "8px" }}>
+                    <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#000", display: "inline-block", flexShrink: 0 }} />
+                    <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", fontWeight: 400, color: "#000", whiteSpace: "nowrap" }}>{cs.metricLabel}</span>
+                    <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "13px", fontWeight: 700, color: "#000", whiteSpace: "nowrap" }}>{cs.metric}</span>
+                  </div>
+                  <div style={{ position: "absolute", top: "12px", right: "12px", background: "rgba(0,0,0,0.72)", borderRadius: "9999px", padding: "4px 12px" }}>
+                    <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "#fff", whiteSpace: "nowrap" }}>{cs.industry}</span>
+                  </div>
+                </div>
+                <div style={{ padding: "20px 20px 24px", display: "flex", flexDirection: "column", flexGrow: 1, gap: "12px" }}>
+                  <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "22px", fontWeight: 700, color: "#000", margin: 0, lineHeight: 1.2 }}>{cs.brand}</p>
+                  <div style={{ height: "1px", background: "rgba(0,0,0,0.08)" }} />
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                    {cs.tags.map((tag) => (
+                      <span key={tag} style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "#444", border: "1px solid rgba(0,0,0,0.22)", borderRadius: "9999px", padding: "3px 10px", whiteSpace: "nowrap" }}>{tag}</span>
+                    ))}
+                  </div>
+                  <p style={{ fontFamily: "'Nunito', sans-serif", fontSize: "14px", color: "rgba(0,0,0,0.55)", margin: 0, lineHeight: 1.6, flexGrow: 1 }}>{cs.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center" style={{ marginTop: 28 }}>
+            <Link href="/case-studies" style={{ display: "inline-flex", alignItems: "center", gap: "8px", fontFamily: "'Poppins', sans-serif", fontSize: "15px", fontWeight: 600, color: "#ffffff", background: "#000000", borderRadius: "9999px", padding: "14px 32px", textDecoration: "none" }}>
+              See All Case Studies
+            </Link>
+          </div>
+
+          <style dangerouslySetInnerHTML={{ __html: `
+            .cw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+            .cw-card { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+            .cw-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.10); }
+            @media (max-width: 900px) { .cw-grid { grid-template-columns: 1fr; gap: 16px; max-width: 460px; margin-left: auto; margin-right: auto; } }
+          ` }} />
         </div>
       </section>
 

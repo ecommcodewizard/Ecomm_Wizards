@@ -239,6 +239,19 @@ const CREATIVE_CARDS = [
     video: "/images/Creative%20strategy%20services/Case%20studies/prose-cover.mp4",
     href: "/case-studies/prose-creative-strategy",
   },
+  {
+    slug: "nurture-life-creative-strategy",
+    name: "Nurture Life",
+    category: "Paid Social",
+    tags: ["Creative Strategy", "UGC", "Paid Social"],
+    stat: "+232%",
+    statLabel: "Conv. Rate",
+    description:
+      "Parent and kid UGC produced for paid social. Conversions rose 130% and conversion rate 232% while cost per acquisition fell 14%.",
+    bg: "#26301F",
+    video: "/images/Creative%20strategy%20services/Case%20studies/nurture-cover.mp4",
+    href: "/case-studies/nurture-life-creative-strategy",
+  },
 ];
 
 const FEATURED_CASE_STUDIES = [

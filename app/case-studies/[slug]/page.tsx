@@ -738,6 +738,12 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
               autoPlay loop muted playsInline preload="none"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
+          ) : cs.slug === "nurture-life-creative-strategy" ? (
+            <SpeedVideo
+              src="/images/Creative%20strategy%20services/Case%20studies/nurture-cover.mp4"
+              autoPlay loop muted playsInline preload="none"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
+            />
           ) : (
             <Image
               src={cs.challengeImage ?? cs.heroImage}

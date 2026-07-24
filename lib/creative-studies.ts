@@ -150,6 +150,79 @@ export const CREATIVE_CASE_STUDIES: CaseStudy[] = [
     // quote / quotePerson / quoteRole intentionally omitted until the client
     // testimonial is supplied and approved. The quote section stays hidden.
   },
+  {
+    slug: "nurture-life-creative-strategy",
+    studyKind: "Creative Strategy",
+    brandName: "Nurture Life",
+    industry: "Kids & Baby Meal Delivery",
+    serviceType: "Creative Strategy | Paid Social | UGC",
+    heroMetric: "+232%",
+    heroSubMetric: "Increase in Conversion Rate",
+    heroImage: `${MEDIA}/nurture-hero.jpg`,
+    heroDescription:
+      "Nurture Life delivers fresh, ready-to-eat meals for babies, toddlers, and kids, so the buyer is a parent making a careful decision about food. We built the paid social creative around real parents and real mealtimes, then tested it hard. Conversions rose 130% and conversion rate rose 232%, while cost to acquire a customer came down 14%.",
+    stats: [
+      { label: "Increase in Conversions", value: "+130%", shortLabel: "Conversions" },
+      { label: "Increase in Conversion Rate", value: "+232%", shortLabel: "Conv. Rate" },
+      { label: "Decrease in Cost per Acquisition", value: "-14%", shortLabel: "CAC" },
+    ],
+    challengeTitle: "Earn a Parent's Trust in the Feed",
+    challengeBody:
+      "Nurture Life sells fresh meals for babies, toddlers, and kids, so the buyer is a parent making a careful decision about what their child eats. That is a high-trust purchase, and a polished studio ad does not carry it. Parents want to see other parents, real kitchens, and real kids actually eating the food.\n\nPaid social also rewards fresh creative and punishes repetition, so the account needed a steady stream of new angles, not one hero video. To grow conversions while holding cost per acquisition down, the creative had to look like the feed it ran in: honest, specific, and made by parents, then tested until the strongest angles rose to the top.",
+    approachTitle: "How We Built the Creative",
+    approachItems: [
+      {
+        step: 1,
+        title: "Source",
+        desc: "We sourced parent creators who actually feed their kids this way and briefed each on a specific angle: picky eaters, busy weeknights, or the first-bite reaction.",
+      },
+      {
+        step: 2,
+        title: "Produce",
+        desc: "We turned their mealtime footage into paid-ready ads: hooks that name the parent's problem, captions, and edits cut to each platform.",
+      },
+      {
+        step: 3,
+        title: "Test",
+        desc: "We ran structured tests on hook rate, hold rate, and cost per acquisition, so the numbers picked the winners, not taste.",
+      },
+      {
+        step: 4,
+        title: "Scale",
+        desc: "We put budget behind the angles that converted, refreshed them before they wore out, and fed what we learned into the next round of briefs.",
+      },
+    ],
+    workTitle: "The Creative",
+    workSubtitle: "A look at the parent and kid UGC we produced and tested for Nurture Life.",
+    // Every slot here is video: the gallery renders .mp4/.webm entries as video.
+    // Six clips lay out as a 3x2 grid in the two-column work section.
+    workImages: [
+      `${MEDIA}/nurture-ugc-a.mp4`,
+      `${MEDIA}/nurture-ugc-b.mp4`,
+      `${MEDIA}/nurture-ugc-c.mp4`,
+      `${MEDIA}/nurture-ugc-g.mp4`,
+      `${MEDIA}/nurture-ugc-e.mp4`,
+      `${MEDIA}/nurture-ugc-h.mp4`,
+    ],
+    results: [
+      { label: "Conversions", improvement: "+130%" },
+      { label: "Conversion Rate", improvement: "+232%" },
+      { label: "Cost per Acquisition", improvement: "-14%" },
+    ],
+    resultsDescription:
+      "The creative did the convincing. A steady run of honest parent UGC lifted conversions 130% and conversion rate 232%, while cost to acquire a customer came down 14%.",
+    techStack: [],
+    sliderStats: [
+      "Conversions up 130%",
+      "Conversion rate up 232%",
+      "Cost per acquisition down 14%",
+      "Parent and kid UGC produced at volume",
+      "Real mealtimes, real reactions, cut for paid social",
+      "Structured testing on hook and hold rate",
+    ],
+    // quote / quotePerson / quoteRole intentionally omitted until the client
+    // testimonial is supplied and approved. The quote section stays hidden.
+  },
 ];
 
 export function getCreativeCaseStudyBySlug(slug: string): CaseStudy | undefined {
