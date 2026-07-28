@@ -16,7 +16,7 @@ import PauseOffscreenAnimations from "@/components/PauseOffscreenAnimations";
 
 const SITE_URL = "https://ecommwizards.com";
 const SITE_NAME = "Ecomm Wizards";
-const ROOT_TITLE = "Ecomm Wizards — Shopify Integration & Automation Experts";
+const ROOT_TITLE = "Ecomm Wizards: Shopify Integration & Automation Experts";
 const ROOT_DESCRIPTION =
   "Shopify experts specializing in store builds, migrations, optimization, custom apps, B2B, POS, and marketing. Let's grow your ecommerce together.";
 const OG_IMAGE = "/images/main-hero-f-desktop.webp";
@@ -41,10 +41,11 @@ export const metadata: Metadata = {
     description: ROOT_DESCRIPTION,
     images: [{ url: OG_IMAGE, alt: "Ecomm Wizards Shopify agency" }],
   },
+  // No title/description here on purpose: every page auto-derives its own
+  // twitter:title/description from its resolved title/description. Pages that
+  // set neither fall back to the root title/description above.
   twitter: {
     card: "summary_large_image",
-    title: ROOT_TITLE,
-    description: ROOT_DESCRIPTION,
     images: [OG_IMAGE],
   },
 };

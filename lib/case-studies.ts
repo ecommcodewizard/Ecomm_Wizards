@@ -43,6 +43,9 @@ export interface CaseStudy {
   heroSubMetric: string;
   heroImage: string;
   heroDescription: string;
+  /** Written ~150-char SEO meta description. Falls back to a truncated
+   *  heroDescription when absent (see app/case-studies/[slug]/page.tsx). */
+  metaDescription?: string;
   stats: CaseStudyStat[];
   challengeTitle: string;
   challengeBody: string;
@@ -83,6 +86,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/111skin-hero.jpg",
     heroDescription:
       "How a dermatologist-founded luxury skincare brand transformed their Shopify Plus store with a data-driven CRO roadmap, custom theme, and intelligent skin quiz, increasing conversions by 46% and revenue by 21%.",
+    metaDescription: "111SKIN, a dermatologist-founded skincare brand, rebuilt its Shopify Plus store with a CRO roadmap and skin quiz, lifting conversions 46% and revenue 21%.",
     stats: [
       { label: "Higher Conversion Rate", value: "+46%", shortLabel: "Conversion Rate" },
       { label: "Increase in Revenue", value: "+21%", shortLabel: "Revenue" },
@@ -167,6 +171,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/Evie-Lou.jpg",
     heroDescription:
       "How a women's contemporary fashion brand rebuilt their Shopify Plus store around a mobile-first UX, smarter product discovery, and a retention program that nearly doubled their conversion rate and added 47% organic revenue growth within a year.",
+    metaDescription: "Evie Lou rebuilt its Shopify Plus store with mobile-first UX, smarter product discovery, and a retention program, growing conversions 82% in a year.",
     stats: [
       { label: "Higher Conversion Rate", value: "+82%", shortLabel: "Conversion Rate" },
       { label: "Increase in AOV", value: "+31%", shortLabel: "AOV" },
@@ -253,6 +258,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/happy-mammoth-1.webp",
     heroDescription:
       "How a gut health and hormone balance supplement brand transformed their Shopify Plus store into a subscription engine: rebuilding their product quiz, launching Recharge-powered recurring orders, and adding $28M in annualised subscription revenue.",
+    metaDescription: "Happy Mammoth turned its Shopify Plus store into a subscription engine with a rebuilt quiz and recurring orders, adding $28M in subscription revenue.",
     stats: [
       { label: "Subscription Revenue Growth", value: "+134%", shortLabel: "Sub Revenue" },
       { label: "Increase in Conversion Rate", value: "+61%", shortLabel: "Conversion Rate" },
@@ -339,6 +345,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/Candy%20Kittens.jpg",
     heroDescription:
       "How a premium vegan confectionery brand rebuilt their Shopify Plus store around editorial storytelling, a gifting-first UX, and a flexible seasonal campaign infrastructure that nearly tripled their conversion rate and added $8.1M in new annual revenue.",
+    metaDescription: "Candy Kittens rebuilt their Shopify Plus store with editorial storytelling and gifting-first UX, lifting conversion 182% and adding $8.1M in new revenue.",
     stats: [
       { label: "Higher Conversion Rate", value: "+182%", shortLabel: "Conversion Rate" },
       { label: "New Annual Revenue", value: "+$8.1M", shortLabel: "Revenue" },
@@ -425,6 +432,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/Everlast-banner.webp",
     heroDescription:
       "How the world's most iconic boxing brand rebuilt their Shopify Plus store with a performance-first theme, product comparison tooling, and a dual B2C and trade checkout architecture that delivered a 152% conversion rate lift and 48% order growth.",
+    metaDescription: "Everlast, the iconic boxing brand, rebuilt its Shopify Plus store with a performance-first theme and dual B2C and trade checkout, lifting conversion 152%.",
     stats: [
       { label: "Higher Conversion Rate", value: "+152%", shortLabel: "Conversion Rate" },
       { label: "Increase in AOV", value: "+21%", shortLabel: "AOV" },
@@ -511,6 +519,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/Ronaldo%20Jewelry%20hero%20section%20img.webp",
     heroDescription:
       "How a handcrafted wire-wrapped jewelry brand rebuilt their Shopify Plus store with high-fidelity product visualisation, a custom piece configurator, and a trust framework built for high-AOV transactions, driving a 250% increase in total sales.",
+    metaDescription: "Ronaldo Jewelry rebuilt its Shopify Plus store with high-fidelity visuals, a custom configurator, and a high-AOV trust framework, growing sales 250%.",
     stats: [
       { label: "Increase in Total Sales", value: "+250%", shortLabel: "Total Sales" },
       { label: "Higher Conversion Rate", value: "+120%", shortLabel: "Conversion Rate" },
@@ -597,6 +606,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/Mouldings%20One%20hero.webp",
     heroDescription:
       "How a leading architectural mouldings supplier replaced a legacy trade portal with a custom Shopify Plus B2B store, automating wholesale ordering, cutting processing time by 74%, and growing B2B revenue by 50%.",
+    metaDescription: "Mouldings One replaced a legacy trade portal with a custom Shopify Plus B2B store, cutting processing time 74% and growing B2B revenue by 50%.",
     stats: [
       { label: "B2B Revenue Growth", value: "+50%", shortLabel: "B2B Revenue" },
       { label: "Order Processing Time", value: "-74%", shortLabel: "Processing Time" },
@@ -681,6 +691,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/WeareWild.webp",
     heroDescription:
       "How one of Europe's fastest-growing sustainable personal care brands launched their first Shopify store, built a ReCharge subscription engine from zero, and scaled to over 80,000 active monthly subscribers within twelve months, then expanded into Germany with a localized storefront.",
+    metaDescription: "Wild launched its first Shopify store, built a ReCharge subscription engine from zero, and scaled to over 80,000 active monthly subscribers in a year.",
     stats: [
       { label: "Monthly Subscribers at 12 Months", value: "80K+", shortLabel: "Subscribers" },
       { label: "Subscription Revenue Growth", value: "+218%", shortLabel: "Sub Revenue" },
@@ -767,6 +778,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/Dryrobe%20hero%20section.webp",
     heroDescription:
       "How a B Corp-certified outdoor brand with three fragmented Shopify stores rebuilt into a unified international architecture, launched a custom Activity and Size Finder that reduced returns by 31%, and grew online revenue 89% through a Shopify Plus redesign that finally matched the brand.",
+    metaDescription: "Dryrobe unified three fragmented Shopify stores, launched an Activity and Size Finder that cut returns 31%, and grew online revenue 89% on Shopify Plus.",
     stats: [
       { label: "Online Revenue Growth", value: "+89%", shortLabel: "Revenue" },
       { label: "Higher Checkout Completion", value: "+23%", shortLabel: "Checkout" },
@@ -848,6 +860,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/Loop%20Earplugs-1.webp",
     heroDescription:
       "How a Belgian earplug brand selling in 100+ countries identified a €1M+ annual growth opportunity through structured CRO, rebuilt their Shopify landing pages to generate a 6.4% revenue uplift, and launched a product recommendation quiz that lifted new user conversion by 5.9%.",
+    metaDescription: "Loop Earplugs found a €1M+ growth opportunity through CRO, rebuilding Shopify landing pages for a 6.4% revenue uplift and a quiz lifting conversion 5.9%.",
     stats: [
       { label: "Revenue Uplift (Test 1)", value: "+6.4%", shortLabel: "Revenue Uplift" },
       { label: "New User CVR (Test 2)", value: "+5.9%", shortLabel: "New User CVR" },
@@ -934,6 +947,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/sneak-header-final.jpg",
     heroDescription:
       "How a low-calorie energy powder brand with 80% mobile traffic rebuilt their Shopify store around mobile-first UX, a custom bundle builder, and performance optimization to grow mobile conversion rate 68%, add-to-cart rate 52%, and hit a sub-3-second load time.",
+    metaDescription: "Sneak Energy rebuilt their Shopify store around mobile-first UX and a custom bundle builder, growing mobile conversion 68% and add-to-cart rate 52%.",
     stats: [
       { label: "Mobile Conversion Rate", value: "+68%", shortLabel: "Mobile CVR" },
       { label: "Add-to-Cart Rate Growth", value: "+52%", shortLabel: "Add-to-Cart" },
@@ -1020,6 +1034,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/Capelli%20Sports%20hero%20image.webp",
     heroDescription:
       "How a global sportswear and soccer brand migrated from WordPress to Shopify with zero downtime, a performance-first UX redesign, and a 10-app integration stack, growing conversion rate 24%, site speed 38%, and retaining 95% of SEO equity through the migration.",
+    metaDescription: "Capelli Sports migrated from WordPress to Shopify with zero downtime and UX redesign, growing conversion 24%, site speed 38%, and retaining 95% SEO equity.",
     stats: [
       { label: "Higher Conversion Rate", value: "+24%", shortLabel: "Conversion Rate" },
       { label: "Site Speed Improvement", value: "+38%", shortLabel: "Site Speed" },
@@ -1106,6 +1121,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/John%20Hardy-hero-update.jpg",
     heroDescription:
       "How a luxury handcrafted jewelry brand replatformed from Salesforce Commerce Cloud to Shopify Plus in under three months, delivering a custom high-AOV theme, Shopify Markets Pro, and a full tech stack integration in time for Black Friday, and grew conversion rate by 71%.",
+    metaDescription: "John Hardy replatformed from Salesforce Commerce Cloud to Shopify Plus in under three months, growing conversion rate 71% ahead of Black Friday.",
     stats: [
       { label: "Higher Conversion Rate", value: "+71%", shortLabel: "Conversion Rate" },
       { label: "Replatform Timeline", value: "<3 Months", shortLabel: "Timeline" },
@@ -1192,6 +1208,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/Saddleback-hero%20image.webp",
     heroDescription:
       "How a premium European cycling distributor replaced a clunky wholesale portal with a Shopify Plus B2B store, built a custom credit app, and launched CSV bulk ordering, growing B2B sales 881% in month one, driving +704% traffic, and winning B2B Website of the Year at the UK Digital Growth Awards.",
+    metaDescription: "Saddleback replaced a clunky wholesale portal with a Shopify Plus B2B store and custom credit app, growing B2B sales 881% in the first month.",
     stats: [
       { label: "B2B Sales Growth", value: "+881%", shortLabel: "B2B Sales" },
       { label: "Traffic Growth", value: "+704%", shortLabel: "Traffic" },
@@ -1272,6 +1289,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/This%20Works-hero%20section.png",
     heroDescription:
       "How a premium skincare and sleep brand exited Magento 1, rebuilt on Shopify Plus across UK, US, and EU storefronts, and grew conversion rate 38% and mobile conversion rate 45% while bringing a separate CBD microsite back into a single compliant store.",
+    metaDescription: "This Works exited Magento 1 and rebuilt on Shopify Plus across UK, US, and EU storefronts, growing conversion rate 38% and mobile conversion 45%.",
     stats: [
       { label: "Higher Conversion Rate", value: "+38%", shortLabel: "Conversion Rate" },
       { label: "Mobile Conversion Lift", value: "+45%", shortLabel: "Mobile CVR" },
@@ -1353,6 +1371,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/Twillory%20hero%20section.png",
     heroDescription:
       "How a men's premium performance shirt brand added $5.4 million in new annual revenue and $455k in the first 90 days through a systematic CRO program, A/B testing every interface component, and building an education-first approach for first-time visitors.",
+    metaDescription: "Twillory added $5.4M in new annual revenue and $455k in the first 90 days through a systematic CRO program that A/B tested every interface component.",
     stats: [
       { label: "New Annual Revenue Added", value: "$5.4M", shortLabel: "Annual Revenue" },
       { label: "Revenue in First 90 Days", value: "$455k", shortLabel: "90-Day Revenue" },
@@ -1433,6 +1452,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroSubMetric: "Checkout Conversion",
     heroDescription:
       "How a multi-award-winning luxury wellbeing brand upgraded from a legacy Shopify setup to Shopify 2.0, unified their physical Wellbeing Hub retail locations under Shopify POS, expanded to UK, EU, and US via Shopify Markets, and grew checkout conversion 34% and order volume 10%.",
+    metaDescription: "NEOM Wellbeing upgraded to Shopify 2.0, unified its retail locations under Shopify POS, expanded to the UK, EU, and US, and grew checkout conversion 34%.",
     heroImage: "/images/Case%20studies/NEOM%20Wellbeing-2.webp",
     stats: [
       { label: "Checkout Conversion Lift", value: "+34%", shortLabel: "Checkout CVR" },
@@ -1515,6 +1535,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/VITHIT.webp",
     heroDescription:
       "How a global functional drinks brand operating in 15 countries grew D2C revenue 115% year on year, lifted conversion rate 170%, and raised average order value 31% by building a Shopify Plus D2C store, automating bundling and discounting, and running a full-funnel paid media and email program.",
+    metaDescription: "VITHIT grew D2C revenue 115% year on year and lifted conversion 170% with a Shopify Plus store, automated bundling, and a full-funnel paid media program.",
     stats: [
       { label: "Revenue Growth YoY", value: "+115%", shortLabel: "Revenue" },
       { label: "Conversion Rate Lift", value: "+170%", shortLabel: "CVR" },
@@ -1601,6 +1622,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/Feetures.jpg",
     heroDescription:
       "How America's top-rated performance sock brand outgrew their existing Shopify theme and rebuilt it from scratch with custom PLPs, a free shipping progress bar, dynamic PDPs with men's and women's variant toggles, and metafield-driven automation that removed significant manual overhead.",
+    metaDescription: "Feetures, America's top-rated performance sock brand, rebuilt its Shopify theme from scratch with custom PLPs, dynamic PDPs, and metafield automation.",
     stats: [
       { label: "Add-to-Cart Rate Growth", value: "+32%", shortLabel: "Add-to-Cart" },
       { label: "Average Order Value", value: "+19%", shortLabel: "AOV" },
@@ -1682,6 +1704,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/ChloBo%20hero%20image.webp",
     heroDescription:
       "How a British luxury jewelry brand exited Magento, rebuilt on Shopify Plus with a UX research-led redesign, launched a custom engraving preview tool for personalized orders, and grew conversion rate 48% and mobile revenue 39% while cutting platform operating costs.",
+    metaDescription: "ChloBo, a British luxury jewelry brand, left Magento for Shopify Plus with a UX-led redesign and custom engraving tool, growing conversion rate 48%.",
     stats: [
       { label: "Higher Conversion Rate", value: "+48%", shortLabel: "Conversion Rate" },
       { label: "Mobile Revenue Growth", value: "+39%", shortLabel: "Mobile Revenue" },
@@ -1763,6 +1786,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     heroImage: "/images/Case%20studies/Henchman.webp",
     heroDescription:
       "How a British ladder and access equipment specialist exited Magento, built a Shopify Plus B2B store with self-service wholesale ordering and tiered price books, integrated Brightpearl ERP for automated order management, and grew online revenue 58% while cutting platform operating costs.",
+    metaDescription: "Henchman, a British ladder and access equipment specialist, left Magento for a Shopify Plus B2B store with tiered price books, growing online revenue 58%.",
     stats: [
       { label: "Online Revenue Growth", value: "+58%", shortLabel: "Revenue" },
       { label: "Wholesale Order Processing", value: "-70%", shortLabel: "Order Time" },

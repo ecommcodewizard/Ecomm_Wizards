@@ -52,6 +52,7 @@ export const KLAVIYO_CASE_STUDIES: KlaviyoCaseStudy[] = [
     heroImage: "/images/Case%20studies/Andrea%20Maack%20Klaviyo%20hero.webp",
     heroDescription:
       "Andrea Maack is an Icelandic luxury fragrance house. We rebuilt their entire Klaviyo setup: 5 core flows, a full seasonal campaign calendar, and SMS from scratch. 279,832 recipients reached. Flows revenue up 144.3%. Open rate at 40.1%.",
+    metaDescription: "Ecomm Wizards rebuilt Andrea Maack's Klaviyo setup with 5 core flows, a seasonal calendar, and SMS, lifting flows revenue 144.3% with a 40.1% open rate.",
     stats: [
       { label: "Flows Revenue Growth", value: "+144.3%", shortLabel: "Flows Revenue" },
       { label: "Total Recipients Growth", value: "+165.7%", shortLabel: "Recipients" },
@@ -181,6 +182,7 @@ export const KLAVIYO_CASE_STUDIES: KlaviyoCaseStudy[] = [
     heroImage: "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo%20hero%20section.webp",
     heroDescription:
       "Living in Sunshine makes patented surf storage for a 50,000+ customer community. We built the full Klaviyo infrastructure from scratch: 9 flows, a BFCM campaign stack, and seasonal sends. Flows revenue up 219.8%. Attributed revenue up 461.2%. 112,705 recipients reached.",
+    metaDescription: "Ecomm Wizards built Living in Sunshine's Klaviyo from scratch with 9 flows and a BFCM stack, lifting attributed revenue 461.2% and flows revenue 219.8%.",
     stats: [
       { label: "Flows Revenue Growth", value: "+219.8%", shortLabel: "Flows Revenue" },
       { label: "Attributed Revenue Growth", value: "+461.2%", shortLabel: "Revenue" },
@@ -311,6 +313,7 @@ export const KLAVIYO_CASE_STUDIES: KlaviyoCaseStudy[] = [
     heroImage: "/images/Case%20studies/Cande%20Klaviyo%20hero%20image.webp",
     heroDescription:
       "C&E Craft Co makes hand-poured soy candles with a voice. We built their full Klaviyo setup: 3 core flows, a seasonal campaign stack, and a restock campaign. Attributed revenue up 195.9%. Bounce rate down 49.3%. 46,857 recipients reached.",
+    metaDescription: "Ecomm Wizards built C&E Craft Co's full Klaviyo setup with 3 core flows, a seasonal stack, and a restock campaign, lifting attributed revenue 195.9%.",
     stats: [
       { label: "Attributed Revenue Growth", value: "+195.9%", shortLabel: "Revenue" },
       { label: "Total Recipients Growth", value: "+143.3%", shortLabel: "Recipients" },

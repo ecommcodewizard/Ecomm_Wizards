@@ -71,10 +71,12 @@ export async function generateMetadata({
   const CANONICAL = `https://ecommwizards.com/case-studies/${slug}`;
   // Keep the full heroDescription for on-page display, but cap the meta
   // description at ~160 chars (trim at a word boundary) for SEO.
+  // Prefer a written meta description; fall back to a truncated heroDescription.
   const metaDesc =
-    study.heroDescription.length > 160
+    study.metaDescription ??
+    (study.heroDescription.length > 160
       ? study.heroDescription.slice(0, 157).replace(/\s+\S*$/, "") + "…"
-      : study.heroDescription;
+      : study.heroDescription);
   return {
     title: { absolute: `${study.brandName} ${study.studyKind ?? "Shopify"} Case Study | ${study.heroMetric}` },
     description: metaDesc,

@@ -23,6 +23,7 @@ export const CREATIVE_CASE_STUDIES: CaseStudy[] = [
     heroImage: `${MEDIA}/chillys-hero.webp`,
     heroDescription:
       "Chilly's needed paid social to produce more revenue without more budget. We rebuilt the creative around hook-led video, UGC, and a repeatable series format, then tested it on hook and hold rate. Revenue grew 33% while ad spend came down 22%.",
+    metaDescription: "Ecomm Wizards rebuilt Chilly's paid social around hook-led video and UGC in a repeatable series format, growing revenue 33% while ad spend fell 22%.",
     stats: [
       { label: "Increase in Revenue", value: "+33%", shortLabel: "Revenue" },
       { label: "Increase in ROAS", value: "+60%", shortLabel: "ROAS" },
@@ -93,6 +94,7 @@ export const CREATIVE_CASE_STUDIES: CaseStudy[] = [
     heroImage: `${MEDIA}/prose-hero.jpg`,
     heroDescription:
       "Prose sells personalized haircare and skincare, so every customer buys a different formula. To scale paid social profitably, we built a micro-influencer creative engine: a steady supply of creator video, produced, tested, and refreshed on a schedule. Return on ad spend rose 53% while cost to acquire a customer came down 28%.",
+    metaDescription: "Ecomm Wizards built Prose a micro-influencer creative engine of creator video, produced and tested on a schedule, raising return on ad spend 53%.",
     stats: [
       { label: "Increase in ROAS", value: "+53%", shortLabel: "ROAS" },
       { label: "Reduction in CAC", value: "-28%", shortLabel: "CAC" },
@@ -161,6 +163,7 @@ export const CREATIVE_CASE_STUDIES: CaseStudy[] = [
     heroImage: `${MEDIA}/nurture-hero.jpg`,
     heroDescription:
       "Nurture Life delivers fresh, ready-to-eat meals for babies, toddlers, and kids, so the buyer is a parent making a careful decision about food. We built the paid social creative around real parents and real mealtimes, then tested it hard. Conversions rose 130% and conversion rate rose 232%, while cost to acquire a customer came down 14%.",
+    metaDescription: "Ecomm Wizards built Nurture Life's paid social creative around real parents and real mealtimes, lifting conversions 130% and conversion rate 232%.",
     stats: [
       { label: "Increase in Conversions", value: "+130%", shortLabel: "Conversions" },
       { label: "Increase in Conversion Rate", value: "+232%", shortLabel: "Conv. Rate" },
