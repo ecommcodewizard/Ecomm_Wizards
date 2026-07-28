@@ -13,7 +13,7 @@ const PHONE_LOGOS = [
   "/images/Case%20studies/logos/ChloBo.svg",
   "/images/Case%20studies/logos/evielou_logo.svg",
   "/images/Case%20studies/logos/feetures.svg",
-  "/images/everlast-icon.svg",
+  "/images/Case%20studies/logos/Everlast.png",
 ];
 
 const DEFAULT_HEADING = (

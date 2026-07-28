@@ -95,7 +95,7 @@ const TRUST_LOGOS = [
   { src: "/images/Case%20studies/logos/NEOM%20Wellbeing.png",   alt: "NEOM Wellbeing" },
   { src: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif", alt: "Ronaldo Jewelry" },
   { src: "/images/Case%20studies/logos/Wild.svg",               alt: "Wild" },
-  { src: "/images/everlast-icon.svg",                           alt: "Everlast" },
+  { src: "/images/Case%20studies/logos/Everlast.png",                           alt: "Everlast" },
   { src: "/images/Case%20studies/logos/Saddleback.svg",         alt: "Saddleback" },
   { src: "/images/Case%20studies/logos/Twillory.png",           alt: "Twillory" },
 ];

@@ -36,7 +36,7 @@ const HERO_LOGOS = [
   "/images/Case%20studies/logos/this-works-logo.png",
   "/images/Case%20studies/logos/Capelli-Sport-Plus-Logo.webp",
   "/images/Case%20studies/logos/evielou_logo.svg",
-  "/images/everlast-icon.svg",
+  "/images/Case%20studies/logos/Everlast.png",
 ];
 
 export default function ServicesHero() {

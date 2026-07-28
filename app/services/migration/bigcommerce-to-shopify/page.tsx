@@ -129,7 +129,7 @@ const INNOVATIVE_ROWS = [
     duration: 42,
     logos: [
       { src: "/images/Case%20studies/logos/John_Hardy.svg", alt: "John Hardy" },
-      { src: "/images/everlast-icon.svg", alt: "Everlast" },
+      { src: "/images/Case%20studies/logos/Everlast.png", alt: "Everlast" },
       { src: "/images/Case%20studies/logos/Saddleback.svg", alt: "Saddleback" },
       { src: "/images/Case%20studies/logos/Twillory.png", alt: "Twillory" },
       { src: "/images/Case%20studies/logos/Dryrobe.svg", alt: "Dryrobe" },
@@ -184,7 +184,7 @@ const WHY_WORK_ITEMS = [
 const MIGRATED_LOGOS = [
   { src: "/images/Case%20studies/logos/John_Hardy.svg", alt: "John Hardy" },
   { src: "/images/Case%20studies/logos/evielou_logo.svg", alt: "Evie Lou" },
-  { src: "/images/everlast-icon.svg", alt: "Everlast" },
+  { src: "/images/Case%20studies/logos/Everlast.png", alt: "Everlast" },
   { src: "/images/Case%20studies/logos/111skin%20logo.png", alt: "111SKIN" },
   { src: "/images/Case%20studies/logos/Candy%20Kittens.webp", alt: "Candy Kittens" },
 ];

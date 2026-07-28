@@ -169,7 +169,7 @@ const INNOVATIVE_ROWS = [
     duration: 42,
     logos: [
       { src: "/images/Case%20studies/logos/Wild.svg", alt: "Wild" },
-      { src: "/images/everlast-icon.svg", alt: "Everlast" },
+      { src: "/images/Case%20studies/logos/Everlast.png", alt: "Everlast" },
       { src: "/images/Case%20studies/logos/Saddleback.svg", alt: "Saddleback" },
       { src: "/images/Case%20studies/logos/Twillory.png", alt: "Twillory" },
       { src: "/images/Case%20studies/logos/Dryrobe.svg", alt: "Dryrobe" },

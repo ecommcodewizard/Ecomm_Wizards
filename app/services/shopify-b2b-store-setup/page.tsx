@@ -62,7 +62,7 @@ const TRUST_LOGOS = [
   { src: "/images/Case%20studies/logos/Candy%20Kittens.webp", alt: "Candy Kittens" },
   { src: "/images/Case%20studies/logos/NEOM%20Wellbeing.png", alt: "NEOM Wellbeing" },
   { src: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif", alt: "Ronaldo Jewelry" },
-  { src: "/images/everlast-icon.svg", alt: "Everlast" },
+  { src: "/images/Case%20studies/logos/Everlast.png", alt: "Everlast" },
 ];
 
 const AUDIENCE = [

@@ -1119,7 +1119,7 @@ export default function AboutPage() {
               },
               {
                 logos: [
-                  { src: "/images/everlast-icon.svg", alt: "Everlast" },
+                  { src: "/images/Case%20studies/logos/Everlast.png", alt: "Everlast" },
                   { src: "/images/biopure.svg", alt: "BioPure" },
                   { src: "/images/chalet.svg", alt: "Chalet" },
                   { src: "/images/kaval-new.webp", alt: "Kaval" },
