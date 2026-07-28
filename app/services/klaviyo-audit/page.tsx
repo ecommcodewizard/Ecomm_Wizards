@@ -232,16 +232,6 @@ const FOUNDER_CARDS = [
 
 const CASE_STUDY_SLIDES: CaseStudySlide[] = [
   {
-    key: "harvard",
-    image: "/images/harvard-2_b0d9924a-412f-449b-94c3-0806b1d672ba.webp",
-    apps: ["/images/shopify-icon.svg", "/images/klaviyo.svg", "/images/yotpo.svg", "/images/gorgias.svg"],
-    headline: (<>A sophisticated <strong>Shopify Store</strong> designed and built for a <strong>Harvard University</strong></>),
-    quote: (<>&ldquo;Our experience with EW was excellent, characterized by an <strong>efficient workflow</strong> and <strong>professional execution</strong>; we couldn&apos;t be more delighted&rdquo;</>),
-    avatar: "/images/harvardperson_medium.webp",
-    name: "Daniyal S.",
-    role: "Harvard University",
-  },
-  {
     key: "eby",
     image: "/images/Frame_1000004320.webp",
     apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/klaviyo.svg", "/images/yotpo.svg"],
@@ -249,7 +239,7 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
     quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally. We couldn&apos;t be happier!&rdquo;</>),
     avatar: "/images/eby_dce31a54-eb36-409c-a8d7-e22fd8297de3_medium.webp",
     name: "EBY by Sofia Vergara",
-    role: "Marketing Manager",
+    role: "Shapewear Brand",
   },
   {
     key: "bark",

@@ -259,13 +259,7 @@ const RESULTS_CARDS = [
     text: "We came in with a store that was painfully slow on mobile and desktop. Ecomm Wizards rebuilt our entire front end performance from the ground up. The difference was night and day.",
     logo: "/images/Frame_1000007615.webp",
     logoAlt: "EBY",
-    person: "Sofia Vergara, Marketing Manager",
-  },
-  {
-    text: "They did not just run a speed audit and send us a report. They got into our codebase, cleaned out years of accumulated bloat, and delivered a store that loads the way it should have from day one.",
-    logo: "/images/Frame_1000007615-1.avif",
-    logoAlt: "The Cashmere Sale",
-    person: "Daniyal S.",
+    person: "EBY by Sofia Vergara",
   },
   {
     text: "What impressed us most was how deeply they understood Shopify Plus at a technical level. Their Shopify speed optimization service was methodical, transparent, and the results spoke for themselves.",
@@ -284,17 +278,7 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
     quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally. We couldn&apos;t be happier!&rdquo;</>),
     avatar: "/images/eby_dce31a54-eb36-409c-a8d7-e22fd8297de3_medium.webp",
     name: "EBY by Sofia Vergara",
-    role: "Marketing Manager",
-  },
-  {
-    key: "harvard",
-    image: "/images/harvard-2_b0d9924a-412f-449b-94c3-0806b1d672ba.webp",
-    apps: ["/images/shopify-icon.svg", "/images/klaviyo.svg", "/images/yotpo.svg", "/images/gorgias.svg"],
-    headline: (<>A sophisticated <strong>Shopify Store</strong> designed and built for a <strong>Harvard University</strong></>),
-    quote: (<>&ldquo;Our experience with EW was excellent, characterized by an <strong>efficient workflow</strong> and <strong>professional execution</strong>; we couldn&apos;t be more delighted&rdquo;</>),
-    avatar: "/images/harvardperson_medium.webp",
-    name: "Daniyal S.",
-    role: "Harvard University",
+    role: "Shapewear Brand",
   },
   {
     key: "bark",

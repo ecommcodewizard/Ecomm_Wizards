@@ -24,27 +24,7 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
     ),
     avatar: "/images/Sofia_Jimenez.webp",
     name: "EBY by Sofia Vergara",
-    role: "Marketing Manager",
-  },
-  {
-    key: "harvard",
-    image: "/images/all-case-study-harvard.webp",
-    apps: ["/images/shopify-icon.svg", "/images/klaviyo.svg", "/images/yotpo.svg", "/images/gorgias.svg"],
-    headline: (
-      <>
-        A sophisticated <strong>Shopify Store</strong> designed and built for a{" "}
-        <strong>Harvard University</strong>
-      </>
-    ),
-    quote: (
-      <>
-        &ldquo;Our experience with EW was excellent, characterized by an{" "}
-        <strong>efficient workflow</strong> and <strong>professional execution</strong>; we couldn&apos;t be more delighted&rdquo;
-      </>
-    ),
-    avatar: "/images/harvardperson_medium.webp",
-    name: "Daniyal S.",
-    role: "Harvard University",
+    role: "Shapewear Brand",
   },
   {
     key: "bark",
@@ -1923,13 +1903,7 @@ export default function ShopifyStoreDevelopmentPage() {
                 quote: "Elegant custom store with Recharge and Klaviyo. “Top-notch experience from start to finish!”",
                 logo: "/images/Frame_1000007615.webp",
                 logoAlt: "EBY",
-                person: "Sofia Vergara, Marketing Manager",
-              },
-              {
-                quote: "Sophisticated site with AI and Swatch King. “Efficient workflow and professional execution.”",
-                logo: "/images/Frame_1000007615-1.avif",
-                logoAlt: "The Harvard Shop",
-                person: "Daniyal S.",
+                person: "EBY by Sofia Vergara",
               },
               {
                 quote: "Dynamic, personalized build with Rebuy and Subtract, resulting in exceptional communication and results.",

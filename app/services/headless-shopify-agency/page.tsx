@@ -69,16 +69,6 @@ const SHL_SLIDES: CaseStudySlide[] = [
     name: "Daniel Summerson",
     role: "Managing Director, Everlast Gyms",
   },
-  {
-    key: "dryrobe",
-    image: "/images/Case%20studies/Dryrobe%20hero%20section.webp",
-    apps: ["/images/shopify-icon.svg", "/images/klaviyo.svg", "/images/yotpo.svg", "/images/65739f17195baa7e77a72d2f_5efb82474d9adf8a3ca19488_logo-gorgias.svg"],
-    headline: (<>A custom storefront rebuild that delivered <strong>+89% online revenue</strong> for <strong>Dryrobe</strong></>),
-    quote: (<>&ldquo;The new store finally communicates who we are. The Size Finder fixed the returns problem we had been struggling with for years. <strong>Revenue growth followed</strong> from getting those fundamentals right.&rdquo;</>),
-    avatar: "/images/Case%20studies/gideon%20bright.jfif",
-    name: "Gideon Bright",
-    role: "Head of Ecommerce, Dryrobe",
-  },
 ];
 
 /* ── Case study cards ── */

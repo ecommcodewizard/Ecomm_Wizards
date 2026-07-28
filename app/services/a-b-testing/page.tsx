@@ -137,13 +137,7 @@ const TESTIMONIAL_CARDS = [
     text: "Elegant custom store with Recharge and Klaviyo. “Top-notch experience from start to finish!”",
     logo: "/images/Frame_1000007615.webp",
     logoAlt: "EBY",
-    name: "Sofia Vergara, Marketing Manager",
-  },
-  {
-    text: "Sophisticated site with AI and Swatch King. “Efficient workflow and professional execution.”",
-    logo: "/images/Frame_1000007615-1.avif",
-    logoAlt: "The Harvard Shop",
-    name: "Daniyal S.",
+    name: "EBY by Sofia Vergara",
   },
   {
     text: "Dynamic, personalized build with Rebuy and Subtract, resulting in exceptional communication and results.",
@@ -377,17 +371,7 @@ const CASE_STUDIES: CaseStudySlide[] = [
     quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally. We couldn&apos;t be happier!&rdquo;</>),
     avatar: "/images/eby_dce31a54-eb36-409c-a8d7-e22fd8297de3_medium.webp",
     name: "EBY by Sofia Vergara",
-    role: "Marketing Manager",
-  },
-  {
-    key: "harvard",
-    image: "/images/all-case-study-harvard.webp",
-    apps: ["/images/shopify-icon.svg", "/images/klaviyo.svg", "/images/yotpo.svg", "/images/gorgias.svg"],
-    headline: (<>A sophisticated <strong>Shopify Store</strong> designed and built for a <strong>Harvard University</strong></>),
-    quote: (<>&ldquo;Our experience with EW was excellent, characterized by an <strong>efficient workflow</strong> and <strong>professional execution</strong>; we couldn&apos;t be more delighted&rdquo;</>),
-    avatar: "/images/harvardperson_medium.webp",
-    name: "Daniyal S.",
-    role: "Harvard University",
+    role: "Shapewear Brand",
   },
   {
     key: "bark",

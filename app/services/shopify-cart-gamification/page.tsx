@@ -106,18 +106,6 @@ const AC_SLIDES: CaseStudySlide[] = [
     name: "Daniel Summerson",
     role: "Managing Director, Everlast Gyms",
   },
-  {
-    key: "dryrobe",
-    image: "/images/Case%20studies/Dryrobe%20hero%20section.webp",
-    alt: "A redesign that delivered 89 percent online revenue growth for Dryrobe",
-    href: "/case-studies/dryrobe-shopify-plus-redesign",
-    apps: ["/images/shopify-icon.svg", "/images/klaviyo.svg", "/images/yotpo.svg", "/images/65739f17195baa7e77a72d2f_5efb82474d9adf8a3ca19488_logo-gorgias.svg"],
-    headline: (<>A redesign that delivered <strong>+89% online revenue</strong> for <strong>Dryrobe</strong></>),
-    quote: (<>&ldquo;The new store finally communicates who we are. <strong>Revenue growth followed</strong> from getting those fundamentals right.&rdquo;</>),
-    avatar: "/images/Case%20studies/gideon%20bright.jfif",
-    name: "Gideon Bright",
-    role: "Head of Ecommerce, Dryrobe",
-  },
 ];
 
 const MECHANICS = [
