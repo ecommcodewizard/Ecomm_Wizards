@@ -1,22 +1,18 @@
 import type { ReactNode } from "react";
 import KnifeAccordion, { type KnifeAccordionItem } from "@/components/sections/KnifeAccordion";
 
+// This phone slider uses the SVG logos only (black wordmarks), each shown on a
+// white card so they read consistently over the dark background.
 const PHONE_LOGOS = [
-  "/images/Case%20studies/logos/111skin%20logo.png",
-  "/images/Case%20studies/logos/Candy%20Kittens.webp",
-  "/images/Case%20studies/logos/NEOM%20Wellbeing.png",
-  "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif",
   "/images/Case%20studies/logos/Wild.svg",
-  "/images/Case%20studies/logos/Saddleback.svg",
-  "/images/Case%20studies/logos/Twillory.png",
   "/images/Case%20studies/logos/Dryrobe.svg",
   "/images/Case%20studies/logos/John_Hardy.svg",
   "/images/Case%20studies/logos/Loop_Earplugs.svg",
-  "/images/Case%20studies/logos/ChloBo.svg",
   "/images/Case%20studies/logos/SNEAK%20Energy.svg",
-  "/images/Case%20studies/logos/this-works-logo.png",
-  "/images/Case%20studies/logos/Capelli-Sport-Plus-Logo.webp",
+  "/images/Case%20studies/logos/Saddleback.svg",
+  "/images/Case%20studies/logos/ChloBo.svg",
   "/images/Case%20studies/logos/evielou_logo.svg",
+  "/images/Case%20studies/logos/feetures.svg",
   "/images/everlast-icon.svg",
 ];
 
@@ -105,8 +101,13 @@ export default function WhyPartnerSection({
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  height: 78,
-                  marginBottom: 10,
+                  height: 64,
+                  width: "calc(100% - 32px)",
+                  margin: "0 auto 14px",
+                  background: "#ffffff",
+                  borderRadius: 12,
+                  padding: "10px 22px",
+                  boxShadow: "0 4px 14px rgba(0,0,0,0.12)",
                 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -115,7 +116,7 @@ export default function WhyPartnerSection({
                   alt=""
                   loading="lazy"
                   decoding="async"
-                  style={{ width: 148, height: 78, objectFit: "contain", display: "block" }}
+                  style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", display: "block" }}
                 />
               </div>
             ))}
