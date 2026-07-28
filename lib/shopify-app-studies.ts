@@ -31,6 +31,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
     challengeImage: "/images/Case%20studies/teelaunch-shopify-app-1.webp",
     heroDescription:
       "How we built the first print-on-demand fulfillment app on the Shopify App Store for teelaunch, reaching 50,000+ merchants, 20,000 daily downloads at peak, and earning a mention in Shopify's own keynote at Unite 2017.",
+    metaDescription: "Ecomm Wizards built teelaunch the first print-on-demand app on the Shopify App Store, reaching 50,000+ merchants and 20,000 daily downloads at peak.",
     stats: [
       { label: "Merchants Onboarded", value: "50k+", shortLabel: "Merchants" },
       { label: "Daily Downloads (peak)", value: "20k", shortLabel: "Downloads/Day" },
@@ -117,6 +118,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
     challengeImage: "/images/Case%20studies/what3words-3.jpg",
     heroDescription:
       "How we built and maintained the official what3words Shopify checkout app: free on the App Store, rated 4.5 stars, integrated with DHL, DPD, and Evri, and actively developed for over five years so merchants can collect precise 3-word delivery addresses at checkout and eliminate lost parcels for good.",
+    metaDescription: "Ecomm Wizards built and maintained the official what3words Shopify checkout app, free and rated 4.5 stars, actively developed for over five years.",
     stats: [
       { label: "Years of Active Development", value: "5+", shortLabel: "Years Active" },
       { label: "Delivery Precision", value: "3m²", shortLabel: "3m² Precision" },
@@ -204,6 +206,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
     challengeImage: "/images/Case%20studies/vytronix-1.jpg",
     heroDescription:
       "How we migrated Vytronix from Magento to Shopify, built a fully custom OS 2.0 theme with a custom account portal, and developed a private Shopify app for product registration so their service team could see everything in one place. One brief, one team, one delivery.",
+    metaDescription: "Ecomm Wizards migrated Vytronix from Magento to Shopify, built a custom OS 2.0 theme with an account portal, and a private product registration app.",
     stats: [
       { label: "Platform Migrated", value: "Magento", shortLabel: "From Magento" },
       { label: "Theme Build", value: "Custom", shortLabel: "Custom Theme" },
@@ -290,6 +293,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
     challengeImage: "/images/Case%20studies/untuckit-1.webp",
     heroDescription:
       "How we built Gift Card Pro for UntuckIt: a custom Shopify app and API that let customers send digital gift cards directly to any recipient, with occasion-matched landing pages and AWS infrastructure that held up when holiday traffic nearly tripled.",
+    metaDescription: "Ecomm Wizards built UntuckIt's Gift Card Pro, a Shopify app and API for digital gift cards, with AWS that held up when holiday traffic nearly tripled.",
     stats: [
       { label: "Peak Traffic Handled", value: "3x", shortLabel: "Peak Traffic" },
       { label: "Retail Locations", value: "74", shortLabel: "US Stores" },
@@ -374,6 +378,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
     challengeImage: "/images/Case%20studies/emma-noah-1.png",
     heroDescription:
       "How we built a custom Mix & Match bundle app for emma&noah, a sustainable baby brand: a fully configurable bundler with tiered discount thresholds, real-time progress tracking, and FOMO-driven UI that lifted average order value by 61% from launch.",
+    metaDescription: "Ecomm Wizards built a Mix & Match bundle app for emma&noah with tiered discounts and progress tracking that lifted average order value by 61% from launch.",
     stats: [
       { label: "Average Order Value", value: "+61%", shortLabel: "AOV Increase" },
       { label: "Collections in Drawer", value: "18", shortLabel: "18 Collections" },
@@ -458,6 +463,7 @@ export const APP_CASE_STUDIES: AppCaseStudy[] = [
     challengeImage: "/images/Case%20studies/ABASK.jpg",
     heroDescription:
       "How we built a custom collaborative wishlist and mood board app for ABASK, the luxury curated goods platform founded by Tom Chapman of MatchesFashion, alongside a Shopify Markets rollout covering 165 territories from day one.",
+    metaDescription: "Ecomm Wizards built ABASK a custom collaborative wishlist and mood board app, plus a Shopify Markets rollout covering 165 territories from day one.",
     stats: [
       { label: "Territories on Shopify Markets", value: "165", shortLabel: "Territories" },
       { label: "Global from Day One", value: "Day 1", shortLabel: "Day 1 Global" },
