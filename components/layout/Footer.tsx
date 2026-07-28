@@ -20,7 +20,6 @@ const SERVICE_TAGS = [
   { label: "Shopify Development Agency",        href: "/services/shopify-development-agency" },
   { label: "ERP Connections to Shopify",       href: "/services/erp-connections-to-shopify" },
   { label: "Shopify App Development",          href: "/services/shopify-app-development" },
-  { label: "On Demand Dev with Bulk Hours",    href: "/bulk-hours" },
   { label: "Site Speed Optimizations",         href: "/services/shopify-speed-optimization" },
   { label: "Point of Sale (POS) for Business", href: "/services/shopify-pos-setup" },
   { label: "A/B Testing for CRO, AOV & CLV",  href: "/services/a-b-testing" },
@@ -28,8 +27,12 @@ const SERVICE_TAGS = [
   { label: "B2B Solutions",                    href: "/services/shopify-b2b-store-setup" },
   { label: "Shopify SEO Agency",               href: "/services/shopify-seo-agency" },
   { label: "Shopify Agentic Commerce",         href: "/services/shopify-agentic-commerce" },
-  { label: "Book a Demo",                      href: "/book-shopify-consultation" },
   { label: "Shopify Landing Page Design",      href: "/services/shopify-landing-page-design" },
+  { label: "Shopify 2.0 Development",          href: "/services/shopify-2-0-development" },
+  { label: "Shopify Plus Development",         href: "/services/shopify-plus-development" },
+  { label: "Headless Shopify Agency",          href: "/services/headless-shopify-agency" },
+  { label: "Creative Strategy",                href: "/services/creative-strategy" },
+  { label: "Klaviyo Email Audit",              href: "/services/klaviyo-audit" },
 ];
 
 const COMPANY = [
@@ -63,6 +66,7 @@ const OPTIMIZE_GROW = [
   { label: "Shopify Store Audit",                  href: "/services/shopify-store-audit" },
   { label: "Shopify Analytics and Tracking Setup", href: "/services/shopify-analytics-and-tracking-setup" },
   { label: "Shopify Maintenance and Support",      href: "/services/shopify-maintenance-and-support" },
+  { label: "Creative Strategy",                    href: "/services/creative-strategy" },
 ];
 
 const MIGRATE = [
@@ -260,7 +264,9 @@ export default function Footer() {
       <div className="hidden md:block relative overflow-hidden bg-black xl:h-[351px] xl:flex xl:flex-col xl:justify-start">
         <div className="absolute inset-0" style={{background: "radial-gradient(ellipse 55% 45% at 50% 40%, rgba(61,199,122,0.35) 0%, rgba(61,199,122,0.15) 40%, rgba(61,199,122,0.05) 65%, transparent 80%)"}} />
         <div className="relative z-10 mx-auto w-full max-w-[1320px] p-[24px]">
-          <h3 className="mb-6 text-center text-[20px] leading-[30px] font-semibold text-white">Select a Service</h3>
+          <h3 className="mb-6 text-center text-[20px] leading-[30px] font-semibold text-white">
+            <Link href="/services" className="text-white transition-opacity hover:opacity-80">Select a Service</Link>
+          </h3>
           <div className="flex flex-wrap justify-center text-[16px]">
             {SERVICE_TAGS.map((tag) => (
               <Link
