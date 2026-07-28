@@ -49,9 +49,9 @@ export const metadata: Metadata = {
   },
 };
 
-// Site-wide structured data (Organization + WebSite). Note: `sameAs` is omitted
-// because the footer social links are generic network homepages, not real
-// profile URLs. Add the real profile URLs here to enable sameAs.
+// Site-wide structured data (Organization + WebSite). `sameAs` lists the brand's
+// real social profiles so Google can resolve the Organization entity across the
+// web; keep these in sync with the footer social links (components/layout/Footer.tsx).
 const ORG_SCHEMA = {
   "@context": "https://schema.org",
   "@graph": [
@@ -73,6 +73,12 @@ const ORG_SCHEMA = {
         "Shopify agentic commerce",
         "Generative Engine Optimization",
         "Shopify automation agency",
+      ],
+      sameAs: [
+        "https://www.facebook.com/profile.php?id=61591725146049",
+        "https://x.com/theecommwizards",
+        "https://www.instagram.com/theecommwizards/",
+        "https://www.linkedin.com/company/ecomm-wizards",
       ],
     },
     {
