@@ -67,37 +67,25 @@ type GridRow = { left: Logo; center: Logo; right: Logo };
 // (Harvard, Smurfs, Peanuts, Sesame Street, Nike, Puma, Calvin Klein, LVMH…)
 // were removed.
 const L = "/images/Case%20studies/logos";
-const GRID_ROWS: GridRow[] = [
-  {
-    left:   { src: `${L}/111skin%20logo.png`,           alt: "111SKIN"        },
-    center: { src: `${L}/Candy%20Kittens.webp`,          alt: "Candy Kittens"  },
-    right:  { src: `${L}/VITHIT.webp`,                    alt: "VITHIT"         },
-  },
-  {
-    left:   { src: `${L}/NEOM%20Wellbeing.png`,          alt: "NEOM Wellbeing" },
-    center: { src: `${L}/Ronaldo%20Jewelry.avif`,        alt: "Ronaldo Jewelry"},
-    right:  { src: `${L}/Wild.svg`,                       alt: "Wild"           },
-  },
-  {
-    left:   { src: `${L}/Happy-Mammoth.png`,             alt: "Happy Mammoth"  },
-    center: { src: `${L}/Saddleback.svg`,                alt: "Saddleback"     },
-    right:  { src: `${L}/Twillory.png`,                  alt: "Twillory"       },
-  },
-  {
-    left:   { src: `${L}/Dryrobe.svg`,                   alt: "Dryrobe"        },
-    center: { src: `${L}/John_Hardy.svg`,               alt: "John Hardy"     },
-    right:  { src: `${L}/Loop_Earplugs.svg`,            alt: "Loop Earplugs"  },
-  },
-  {
-    left:   { src: `${L}/ChloBo.svg`,                    alt: "ChloBo"         },
-    center: { src: `${L}/SNEAK%20Energy.svg`,           alt: "Sneak Energy"   },
-    right:  { src: `${L}/this-works-logo.png`,          alt: "This Works"     },
-  },
-  {
-    left:   { src: `${L}/Capelli-Sport-Plus-Logo.webp`, alt: "Capelli Sports" },
-    center: { src: `${L}/feetures.svg`,                 alt: "Feetures"       },
-    right:  { src: `${L}/evielou_logo.svg`,             alt: "Evie Lou"       },
-  },
+// Round badge logos (VITHIT, Happy Mammoth) removed to keep the wall visually
+// consistent (wordmarks only). They remain real clients with case studies.
+const LOGOS: Logo[] = [
+  { src: `${L}/111skin%20logo.png`,           alt: "111SKIN"        },
+  { src: `${L}/Candy%20Kittens.webp`,          alt: "Candy Kittens"  },
+  { src: `${L}/NEOM%20Wellbeing.png`,          alt: "NEOM Wellbeing" },
+  { src: `${L}/Ronaldo%20Jewelry.avif`,        alt: "Ronaldo Jewelry"},
+  { src: `${L}/Wild.svg`,                       alt: "Wild"           },
+  { src: `${L}/Saddleback.svg`,                alt: "Saddleback"     },
+  { src: `${L}/Twillory.png`,                  alt: "Twillory"       },
+  { src: `${L}/Dryrobe.svg`,                   alt: "Dryrobe"        },
+  { src: `${L}/John_Hardy.svg`,               alt: "John Hardy"     },
+  { src: `${L}/Loop_Earplugs.svg`,            alt: "Loop Earplugs"  },
+  { src: `${L}/ChloBo.svg`,                    alt: "ChloBo"         },
+  { src: `${L}/SNEAK%20Energy.svg`,           alt: "Sneak Energy"   },
+  { src: `${L}/this-works-logo.png`,          alt: "This Works"     },
+  { src: `${L}/Capelli-Sport-Plus-Logo.webp`, alt: "Capelli Sports" },
+  { src: `${L}/feetures.svg`,                 alt: "Feetures"       },
+  { src: `${L}/evielou_logo.svg`,             alt: "Evie Lou"       },
 ];
 
 const BORDER = "1px solid rgba(0,0,0,0.09)";
@@ -128,9 +116,9 @@ function LogoCell({ logo, borderRight }: { logo: Logo; borderRight?: boolean }) 
 }
 
 const COL_LOGOS = [
-  GRID_ROWS.map(r => r.left),
-  GRID_ROWS.map(r => r.center),
-  GRID_ROWS.map(r => r.right),
+  LOGOS.filter((_, i) => i % 3 === 0),
+  LOGOS.filter((_, i) => i % 3 === 1),
+  LOGOS.filter((_, i) => i % 3 === 2),
 ];
 
 export default function SocialProofSection() {

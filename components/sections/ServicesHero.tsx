@@ -26,7 +26,6 @@ const HERO_LOGOS = [
   "/images/Case%20studies/logos/NEOM%20Wellbeing.png",
   "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif",
   "/images/Case%20studies/logos/Wild.svg",
-  "/images/Case%20studies/logos/Happy-Mammoth.png",
   "/images/Case%20studies/logos/Saddleback.svg",
   "/images/Case%20studies/logos/Twillory.png",
   "/images/Case%20studies/logos/Dryrobe.svg",

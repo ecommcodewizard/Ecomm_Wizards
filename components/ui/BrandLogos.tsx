@@ -7,11 +7,9 @@ const L = "/images/Case%20studies/logos";
 const BRANDS = [
   { src: `${L}/111skin%20logo.png`,           alt: "111SKIN",        w: 120 },
   { src: `${L}/Candy%20Kittens.webp`,          alt: "Candy Kittens",  w: 130 },
-  { src: `${L}/VITHIT.webp`,                   alt: "VITHIT",         w: 90  },
   { src: `${L}/NEOM%20Wellbeing.png`,          alt: "NEOM Wellbeing", w: 130 },
   { src: `${L}/Ronaldo%20Jewelry.avif`,        alt: "Ronaldo Jewelry",w: 120 },
   { src: `${L}/Wild.svg`,                      alt: "Wild",           w: 90  },
-  { src: `${L}/Happy-Mammoth.png`,             alt: "Happy Mammoth",  w: 110 },
   { src: `${L}/Saddleback.svg`,                alt: "Saddleback",     w: 120 },
   { src: `${L}/Twillory.png`,                  alt: "Twillory",       w: 110 },
   { src: `${L}/Dryrobe.svg`,                   alt: "Dryrobe",        w: 120 },

@@ -159,11 +159,9 @@ const INNOVATIVE_ROWS = [
     logos: [
       { src: "/images/Case%20studies/logos/111skin%20logo.png", alt: "111SKIN" },
       { src: "/images/Case%20studies/logos/Candy%20Kittens.webp", alt: "Candy Kittens" },
-      { src: "/images/Case%20studies/logos/VITHIT.webp", alt: "VITHIT" },
       { src: "/images/Case%20studies/logos/NEOM%20Wellbeing.png", alt: "NEOM Wellbeing" },
       { src: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif", alt: "Ronaldo Jewelry" },
       { src: "/images/Case%20studies/logos/Wild.svg", alt: "Wild" },
-      { src: "/images/Case%20studies/logos/Happy-Mammoth.png", alt: "Happy Mammoth" },
     ],
   },
   {

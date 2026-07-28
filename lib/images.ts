@@ -30,11 +30,9 @@ export const images = {
   securityImage: "/images/security-image.webp", // ✓
   logoCalvinKlein: "/images/Case%20studies/logos/111skin%20logo.png", // ✓
   logoLVMH: "/images/Case%20studies/logos/Candy%20Kittens.webp", // ✓
-  logoAriZona: "/images/Case%20studies/logos/VITHIT.webp", // ✓
   logoKhaite: "/images/Case%20studies/logos/NEOM%20Wellbeing.png", // ✓
   logoOlaplex: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif", // ✓
   logoP448: "/images/Case%20studies/logos/Wild.svg", // ✓
-  logoLids: "/images/Case%20studies/logos/Happy-Mammoth.png", // ✓
   logoSchutz: "/images/Case%20studies/logos/Saddleback.svg", // ✓
   logoKlaviyo: "/images/64f0a5e309c841126c840791_klaviyo-300x89-1.png", // ✓
   logoRebuy: "/images/64f098c0e38dec3a384cb182_rebuy.svg", // ✓
