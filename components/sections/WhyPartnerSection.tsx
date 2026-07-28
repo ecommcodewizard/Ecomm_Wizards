@@ -1,24 +1,19 @@
 import type { ReactNode } from "react";
 import KnifeAccordion, { type KnifeAccordionItem } from "@/components/sections/KnifeAccordion";
 
+// This phone slider uses the SVG logos only (black wordmarks), each shown on a
+// white card so they read consistently over the dark background.
 const PHONE_LOGOS = [
-  "/images/trust_logo_hover_1.svg",
-  "/images/trust_logo_hover_2.svg",
-  "/images/trust_logo_hover_10.svg",
-  "/images/trust_logo_hover_11.svg",
-  "/images/trust_logo_hover_12.svg",
-  "/images/trust_logo_hover_13.svg",
-  "/images/trust_logo_hover_14.svg",
-  "/images/trust_logo_2.svg",
-  "/images/trust_logo_6.svg",
-  "/images/trust_logo_7.svg",
-  "/images/trust_logo_20.svg",
-  "/images/trust_logo_26.svg",
-  "/images/trust_logo_27.svg",
-  "/images/trust_logo_31.svg",
-  "/images/trust_logo_32.svg",
-  "/images/ipsy-logo.svg",
-  "/images/everlast-icon.svg",
+  "/images/Case%20studies/logos/Wild.svg",
+  "/images/Case%20studies/logos/Dryrobe.svg",
+  "/images/Case%20studies/logos/John_Hardy.svg",
+  "/images/Case%20studies/logos/Loop_Earplugs.svg",
+  "/images/Case%20studies/logos/SNEAK%20Energy.svg",
+  "/images/Case%20studies/logos/Saddleback.svg",
+  "/images/Case%20studies/logos/ChloBo.svg",
+  "/images/Case%20studies/logos/evielou_logo.svg",
+  "/images/Case%20studies/logos/feetures.svg",
+  "/images/Case%20studies/logos/Everlast.png",
 ];
 
 const DEFAULT_HEADING = (
@@ -106,8 +101,13 @@ export default function WhyPartnerSection({
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  height: 78,
-                  marginBottom: 10,
+                  height: 64,
+                  width: "calc(100% - 32px)",
+                  margin: "0 auto 14px",
+                  background: "#ffffff",
+                  borderRadius: 12,
+                  padding: "10px 22px",
+                  boxShadow: "0 4px 14px rgba(0,0,0,0.12)",
                 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -116,7 +116,7 @@ export default function WhyPartnerSection({
                   alt=""
                   loading="lazy"
                   decoding="async"
-                  style={{ width: 148, height: 78, objectFit: "contain", display: "block" }}
+                  style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", display: "block" }}
                 />
               </div>
             ))}

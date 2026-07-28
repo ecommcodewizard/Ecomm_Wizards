@@ -774,7 +774,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "Three Stores, One Brand, Zero Consistency",
     challengeBody:
-      "Dryrobe pioneered the changing robe category when founder Gideon Bright designed the first version in 2010. Today the brand is worn by open-water swimmers, triathletes, and surfers worldwide, and their B Corp certification and partnerships with ocean and environment charities define who they are.\n\nWhen they came to WeMakeWebsites, Dryrobe was running three separate Shopify stores: UK and ROW, US and Canada, and EU, each managed independently. The operational overhead was significant and the customer experience inconsistent across markets. None of the stores communicated the brand's sustainability credentials or expedition partnerships in a way that resonated with the community behind the product. A missing size and activity finder was also driving a high return rate as customers bought the wrong product for their sport.",
+      "Dryrobe pioneered the changing robe category when founder Gideon Bright designed the first version in 2010. Today the brand is worn by open-water swimmers, triathletes, and surfers worldwide, and their B Corp certification and partnerships with ocean and environment charities define who they are.\n\nWhen they came to us, Dryrobe was running three separate Shopify stores: UK and ROW, US and Canada, and EU, each managed independently. The operational overhead was significant and the customer experience inconsistent across markets. None of the stores communicated the brand's sustainability credentials or expedition partnerships in a way that resonated with the community behind the product. A missing size and activity finder was also driving a high return rate as customers bought the wrong product for their sport.",
     approachTitle: "One Unified Store. Built for the Brand and the Buyer.",
     approachItems: [
       {
@@ -828,11 +828,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       "B Corp credentials and sustainability story woven into store",
       "International checkout: Klarna, Avalara, Loqate, OneTrust",
     ],
-    quote:
-      "The new store finally communicates who we are: the B Corp credentials, the ocean partnerships, the expedition heritage. The Size Finder fixed the returns problem we had been struggling with for years. Revenue growth followed from getting those fundamentals right.",
-    quotePerson: "Gideon Bright",
-    quoteRole: "Head of Ecommerce, Dryrobe",
-    quoteAvatar: "/images/Case%20studies/gideon%20bright.jfif",
     prevSlug: "evie-lou-shopify-fashion-cro",
     prevBrand: "Evie Lou",
     nextSlug: "happy-mammoth-shopify-subscriptions-cro",
@@ -860,13 +855,13 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "High-Intent Traffic Landing on the Wrong Experience",
     challengeBody:
-      "Loop Earplugs makes precision-engineered, design-led hearing protection worn at concerts, during sleep, at work, and by people with sensory sensitivities. With over 8 million earplugs sold and a presence in more than 100 countries, they had built real category leadership.\n\nWhen they came to Swanky, paid traffic was performing well in acquisition, but the landing pages weren't built for conversion. Situational pages for use cases like earplugs for DIY were underperforming against site averages. High-intent customers were landing on generic product pages. The growth opportunity was visible in the data but the infrastructure to capture it wasn't there yet.",
+      "Loop Earplugs makes precision-engineered, design-led hearing protection worn at concerts, during sleep, at work, and by people with sensory sensitivities. With over 8 million earplugs sold and a presence in more than 100 countries, they had built real category leadership.\n\nWhen they came to us, paid traffic was performing well in acquisition, but the landing pages weren't built for conversion. Situational pages for use cases like earplugs for DIY were underperforming against site averages. High-intent customers were landing on generic product pages. The growth opportunity was visible in the data but the infrastructure to capture it wasn't there yet.",
     approachTitle: "Two Tests. One Million Euro Opportunity.",
     approachItems: [
       {
         step: 1,
         title: "CRO Audit and Growth Opportunity Mapping",
-        desc: "Swanky's Growth Accelerator program began with a full CRO audit: heatmaps, session recordings, funnel analysis, and customer exit surveys. The audit quantified a €1M+ annual growth opportunity through landing page optimization and product discovery improvements. Every subsequent test was built on that analysis, not guesswork.",
+        desc: "Our growth program began with a full CRO audit: heatmaps, session recordings, funnel analysis, and customer exit surveys. The audit quantified a €1M+ annual growth opportunity through landing page optimization and product discovery improvements. Every subsequent test was built on that analysis, not guesswork.",
       },
       {
         step: 2,
@@ -915,7 +910,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "8M+ earplugs sold across 100+ countries",
     ],
     quote:
-      "The Swanky team identified the opportunity clearly and then proved it with real data. Two tests, two wins, and a roadmap for growth we can actually act on. The quiz in particular has changed how we think about new customer acquisition.",
+      "Ecomm Wizards identified the opportunity clearly and then proved it with real data. Two tests, two wins, and a growth roadmap we can actually act on. The quiz in particular has reshaped how we think about new customer acquisition.",
     quotePerson: "Maarten Bodewes",
     quoteRole: "Co-Founder, Loop Earplugs",
     quoteAvatar: "/images/Case%20studies/Maarten%20Bodewes.jfif",
@@ -946,7 +941,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "A Mobile Brand Selling on a Desktop-First Store",
     challengeBody:
-      "Sneak Energy makes low-calorie, sugar-free energy powder and cans in bold flavours aimed at gamers and active consumers. Eight in ten of their visitors arrive on mobile.\n\nWhen they came to Eastside Co, the store was built for desktop. Products weren't above the fold on mobile. The navigation asked too much of users who wouldn't stick around. There was no bundle builder for higher-value orders. Load times were consistently over three seconds on mobile, and at Sneak's traffic volume that kind of friction shows up directly in revenue.",
+      "Sneak Energy makes low-calorie, sugar-free energy powder and cans in bold flavours aimed at gamers and active consumers. Eight in ten of their visitors arrive on mobile.\n\nWhen they came to us, the store was built for desktop. Products weren't above the fold on mobile. The navigation asked too much of users who wouldn't stick around. There was no bundle builder for higher-value orders. Load times were consistently over three seconds on mobile, and at Sneak's traffic volume that kind of friction shows up directly in revenue.",
     approachTitle: "Mobile First. Built to Convert.",
     approachItems: [
       {
@@ -1001,7 +996,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "80% of traffic on mobile: store rebuilt from scratch",
     ],
     quote:
-      "A big shout out to the guys at Eastside Co who did a fabulous job of making our vision come to life through the design. The mobile numbers spoke for themselves within the first few weeks of launch.",
+      "We are grateful to the team at Ecomm Wizards, who translated our vision into an outstanding design. Mobile performance in the first weeks post-launch spoke for itself.",
     quotePerson: "Jodie Beevers",
     quoteRole: "Ecommerce Manager, Sneak Energy",
     quoteAvatar: "/images/Case%20studies/Jodie%20Beevers.jfif",
@@ -1032,7 +1027,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "A Global Brand on a Platform That Couldn't Keep Up",
     challengeBody:
-      "Capelli Sports is a global sportswear and soccer brand headquartered in New York, founded in 2011 and selling across the Americas, Europe, and MENA. Their product range spans performance kits, training apparel, and accessories used at every level of the game.\n\nWhen they came to IT Geeks, the WordPress platform had become a limitation on every front. Performance was slow and unpredictable at scale. Customer data was fragmented across multiple systems with no unified view. Any meaningful UI change required significant developer time. The brand had outgrown the infrastructure and the cost of staying on it, in developer hours, slow launches, and lost conversion, was growing every quarter.",
+      "Capelli Sports is a global sportswear and soccer brand headquartered in New York, founded in 2011 and selling across the Americas, Europe, and MENA. Their product range spans performance kits, training apparel, and accessories used at every level of the game.\n\nWhen they came to us, the WordPress platform had become a limitation on every front. Performance was slow and unpredictable at scale. Customer data was fragmented across multiple systems with no unified view. Any meaningful UI change required significant developer time. The brand had outgrown the infrastructure and the cost of staying on it, in developer hours, slow launches, and lost conversion, was growing every quarter.",
     approachTitle: "A Migration Built for Scale, Speed, and Zero Disruption",
     approachItems: [
       {
@@ -1087,7 +1082,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Americas, Europe, and MENA: all regions on one Shopify store",
     ],
     quote:
-      "The migration was smooth. Our customers didn't notice a thing, and neither did Google. The new store architecture matched how our buyers actually shop and the conversion numbers followed. IT Geeks delivered exactly what they promised.",
+      "The migration was seamless. Our customers noticed nothing, and neither did Google. The new store architecture reflects how our buyers actually shop, and the conversion numbers followed. Ecomm Wizards delivered exactly what they promised.",
     quotePerson: "George Altirs",
     quoteRole: "Founder & CEO, Capelli Sports",
     quoteAvatar: "/images/Case%20studies/George%20Altirs.jfif",
@@ -1118,13 +1113,13 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "A Hard Deadline, a Complex Platform, and No Room for Slip",
     challengeBody:
-      "John Hardy has been making handcrafted jewelry in Bali since 1975. Their artisan collections are defined by traditional silversmithing techniques and a provenance story that runs deep: the Bamboo collection, the Naga collection, the Legends of Bali. Each carries real cultural weight. The brand is sold globally through premium retail partnerships and a direct-to-consumer channel that needed to do justice to the craft.\n\nWhen they came to WeMakeWebsites, Salesforce Commerce Cloud was the problem. Rigid, expensive to run, and slow to update, the platform was consuming budget and developer time that should have been focused on growth. The team had a hard deadline: a full replatform to Shopify Plus had to be delivered before Black Friday. That meant designing, building, migrating, and launching a luxury Shopify Plus store in under three months.",
+      "John Hardy has been making handcrafted jewelry in Bali since 1975. Their artisan collections are defined by traditional silversmithing techniques and a provenance story that runs deep: the Bamboo collection, the Naga collection, the Legends of Bali. Each carries real cultural weight. The brand is sold globally through premium retail partnerships and a direct-to-consumer channel that needed to do justice to the craft.\n\nWhen they came to us, Salesforce Commerce Cloud was the problem. Rigid, expensive to run, and slow to update, the platform was consuming budget and developer time that should have been focused on growth. The team had a hard deadline: a full replatform to Shopify Plus had to be delivered before Black Friday. That meant designing, building, migrating, and launching a luxury Shopify Plus store in under three months.",
     approachTitle: "Luxury Shopify Plus. Delivered in 90 Days.",
     approachItems: [
       {
         step: 1,
         title: "Replatform in Under Three Months",
-        desc: "WeMakeWebsites ran the Salesforce Commerce Cloud to Shopify Plus migration across parallel workstreams: design, development, data migration, and integrations. All were managed against a milestone tracker built around the Black Friday go-live. Full customer account history, order records, and product data were migrated without disruption. The store went live on schedule.",
+        desc: "We ran the Salesforce Commerce Cloud to Shopify Plus migration across parallel workstreams: design, development, data migration, and integrations. All were managed against a milestone tracker built around the Black Friday go-live. Full customer account history, order records, and product data were migrated without disruption. The store went live on schedule.",
       },
       {
         step: 2,
@@ -1157,7 +1152,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: "Platform Cost", before: "Salesforce CC overhead", after: "Shopify Plus", improvement: "10 Apps" },
     ],
     resultsDescription:
-      "Conversion rate grew 71% following the Shopify Plus launch. The replatform was delivered in under three months, ahead of schedule and in time for Black Friday. Full customer history, order records, and a complete production-ready tech stack were live on go-live day. The partnership with WeMakeWebsites has continued beyond the initial build, with ongoing development and CRO work running on the new foundation.",
+      "Conversion rate grew 71% following the Shopify Plus launch. The replatform was delivered in under three months, ahead of schedule and in time for Black Friday. Full customer history, order records, and a complete production-ready tech stack were live on go-live day. The partnership has continued beyond the initial build, with ongoing development and CRO work running on the new foundation.",
     techStack: [
       { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
       { name: "Klaviyo", logo: "/images/partner_logo_5.svg" },
@@ -1173,7 +1168,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Complete tech stack: Attentive, Zendesk, Affirm, Storemapper",
     ],
     quote:
-      "We had a great experience with the WMW team. They executed our website redesign vision in record time, within 3 months. The quality of the build and the way they managed the Black Friday deadline gave us complete confidence in the platform from day one.",
+      "Our experience with the Ecomm Wizards was excellent. They executed our website redesign within a three-month timeline, and the quality of the build, together with their management of the Black Friday deadline, gave us complete confidence in the platform from launch.",
     quotePerson: "Matthew Tepper",
     quoteRole: "President, John Hardy",
     quoteAvatar: "/images/Case%20studies/Matthew%20Tepper.jfif",
@@ -1204,7 +1199,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "A Wholesale Business Held Back by a Portal That Couldn't Perform",
     challengeBody:
-      "Saddleback is a premium cycling distributor established in 2004, supplying road cycling and mountain bike products to an extensive network of UK and European stockists. Their brand portfolio is strong and their relationships with independent bike dealers are central to the business.\n\nWhen they came to Swanky, the wholesale ordering portal was the biggest bottleneck in the business. High-volume orders required manual line-item entry, a process that could take 30 to 90 minutes per order. Tiered pricing for gold, silver, and bronze stockists was managed in spreadsheets outside the store. Trade buyers had no visibility of their credit balance at checkout. The portal was not built for the way professional buyers work, and every unnecessary minute spent on order admin was time the Saddleback team and their stockists were not spending on selling.",
+      "Saddleback is a premium cycling distributor established in 2004, supplying road cycling and mountain bike products to an extensive network of UK and European stockists. Their brand portfolio is strong and their relationships with independent bike dealers are central to the business.\n\nWhen they came to us, the wholesale ordering portal was the biggest bottleneck in the business. High-volume orders required manual line-item entry, a process that could take 30 to 90 minutes per order. Tiered pricing for gold, silver, and bronze stockists was managed in spreadsheets outside the store. Trade buyers had no visibility of their credit balance at checkout. The portal was not built for the way professional buyers work, and every unnecessary minute spent on order admin was time the Saddleback team and their stockists were not spending on selling.",
     approachTitle: "A B2B Portal Built for Professional Buyers",
     approachItems: [
       {
@@ -1257,11 +1252,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Gold, silver, bronze tiered pricing: fully automated",
       "B2B Website of the Year, UK Digital Growth Awards 2021",
     ],
-    quote:
-      "The new portal changed how our stockists experience ordering from us. What used to take an hour now takes minutes. The credit visibility and tiered pricing just work. The sales numbers in month one told us everything we needed to know.",
-    quotePerson: "Andy Wigmore",
-    quoteRole: "Founder & Managing Director, Saddleback",
-    quoteAvatar: "/images/Case%20studies/Andy%20Wigmore.jfif",
     prevSlug: "mouldings-one-shopify-b2b-portal",
     prevBrand: "Mouldings One",
     nextSlug: "this-works-shopify-plus-migration",
@@ -1289,7 +1279,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "A Premium Brand on a Platform That Was Falling Behind",
     challengeBody:
-      "This Works has been making evidence-based skincare and sleep products since 2003. The Deep Sleep Pillow Spray became a category-defining product with millions sold and a loyal, health-conscious customer base.\n\nWhen they came to WeMakeWebsites, Magento 1 was limiting the business across the board. Mobile performance was poor at a point when mobile accounted for most of their traffic. CBD product lines added real compliance complexity the platform couldn't handle cleanly. The business had ambitions to sell across the UK, US, and EU but the infrastructure couldn't support it without significant workarounds. A separate CBD microsite had to be maintained outside the main store, creating operational fragmentation the team couldn't sustain as the brand grew.",
+      "This Works has been making evidence-based skincare and sleep products since 2003. The Deep Sleep Pillow Spray became a category-defining product with millions sold and a loyal, health-conscious customer base.\n\nWhen they came to us, Magento 1 was limiting the business across the board. Mobile performance was poor at a point when mobile accounted for most of their traffic. CBD product lines added real compliance complexity the platform couldn't handle cleanly. The business had ambitions to sell across the UK, US, and EU but the infrastructure couldn't support it without significant workarounds. A separate CBD microsite had to be maintained outside the main store, creating operational fragmentation the team couldn't sustain as the brand grew.",
     approachTitle: "One Platform. Multiple Markets. Built for Scale.",
     approachItems: [
       {
@@ -1343,11 +1333,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       "CBD microsite consolidated into the main store",
       "Zero trading disruption during migration",
     ],
-    quote:
-      "Moving off Magento was the right decision for the business. We now have a platform built for where This Works is going: internationalisation, subscriptions, and a customer experience that does justice to our products.",
-    quotePerson: "Dr. Anna Persaud",
-    quoteRole: "CEO, This Works",
-    quoteAvatar: "/images/Case%20studies/Dr.%20Anna%20Persaud.jfif",
     prevSlug: "saddleback-shopify-plus-b2b",
     prevBrand: "Saddleback",
     nextSlug: "twillory-shopify-cro",
@@ -1375,7 +1360,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "Strong Products, Strong Traffic, No CRO Engine",
     challengeBody:
-      "Twillory makes premium dress shirts and performance workwear for men. The shirts are genuinely good: non-iron fabrics, modern cuts, and performance features built for long days. The brand had loyal customers, solid traffic, and an experienced marketing team.\n\nWhen they came to DTC Pages, the gap was conversion. The site had not been systematically tested in years. Interface patterns that had never been validated were just assumed to work. First-time visitors were landing with no clear understanding of what made Twillory different from any other dress shirt brand. Decision fatigue was visible in the data but nothing had been built to address it. The product deserved better than the store it was living in.",
+      "Twillory makes premium dress shirts and performance workwear for men. The shirts are genuinely good: non-iron fabrics, modern cuts, and performance features built for long days. The brand had loyal customers, solid traffic, and an experienced marketing team.\n\nWhen they came to us, the gap was conversion. The site had not been systematically tested in years. Interface patterns that had never been validated were just assumed to work. First-time visitors were landing with no clear understanding of what made Twillory different from any other dress shirt brand. Decision fatigue was visible in the data but nothing had been built to address it. The product deserved better than the store it was living in.",
     approachTitle: "Test Everything. Keep What Wins.",
     approachItems: [
       {
@@ -1429,11 +1414,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Every interface component audited and tested",
       "Upsells and cross-sells individually validated before going live",
     ],
-    quote:
-      "Top tier tech stack and nice guys to boot. 70% of the A/B tests we run are adding noticeable revenue.",
-    quotePerson: "Harry C.",
-    quoteRole: "Founder, Twillory",
-    quoteAvatar: "/images/Case%20studies/Harry%20C..webp",
     prevSlug: "this-works-shopify-plus-migration",
     prevBrand: "This Works",
     nextSlug: "neom-wellbeing-shopify-upgrade",
@@ -1461,7 +1441,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "A Growing Brand Held Back by Its Own Shopify Setup",
     challengeBody:
-      "NEOM Wellbeing makes luxury candles, diffusers, essential oils, and bath products built around the science of natural wellbeing. Founded in 2005, the brand sells through its own D2C stores and a growing number of Wellbeing Hub retail locations across the UK.\n\nWhen they came to Velstar, the problem was the platform they were already on. NEOM had moved from Magento to Shopify in 2018, but by 2023 that setup had become a bottleneck. The existing combination of off-the-shelf Shopify and custom code could not access Shopify 2.0 features. Any content change required developer time because the theme didn't support native editing. The Wellbeing Hub retail locations ran on a separate POS system, creating disconnected inventory, pricing, and promotion data. Subscription discounting was managed through fragmented third-party tools that added friction for both the team and customers.",
+      "NEOM Wellbeing makes luxury candles, diffusers, essential oils, and bath products built around the science of natural wellbeing. Founded in 2005, the brand sells through its own D2C stores and a growing number of Wellbeing Hub retail locations across the UK.\n\nWhen they came to us, the problem was the platform they were already on. NEOM had moved from Magento to Shopify in 2018, but by 2023 that setup had become a bottleneck. The existing combination of off-the-shelf Shopify and custom code could not access Shopify 2.0 features. Any content change required developer time because the theme didn't support native editing. The Wellbeing Hub retail locations ran on a separate POS system, creating disconnected inventory, pricing, and promotion data. Subscription discounting was managed through fragmented third-party tools that added friction for both the team and customers.",
     approachTitle: "Shopify 2.0, Unified Retail, and Three International Markets.",
     approachItems: [
       {
@@ -1515,11 +1495,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Shopify 2.0: internal team can update without developer support",
       "Native subscriptions replaced fragmented third-party tools",
     ],
-    quote:
-      "The ability to open new stores with Shopify POS fully integrated, providing a unified hub where we can monitor everything, represents a significant advancement for the business.",
-    quotePerson: "Nicola Elliott",
-    quoteRole: "Founder, NEOM Wellbeing",
-    quoteAvatar: "/images/Case%20studies/Nicola%20Elliott.jpg",
     prevSlug: "twillory-shopify-cro",
     prevBrand: "Twillory",
     nextSlug: "vithit-shopify-plus-d2c",
@@ -1547,7 +1522,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "Retail Success. D2C Left Behind.",
     challengeBody:
-      "VITHIT makes low-sugar, vitamin-enriched drinks containing 100% of the recommended daily allowance of essential vitamins. The brand has meaningful retail distribution across 15 countries and genuine shelf presence in major grocery chains.\n\nWhen they came to Velstar, the D2C channel wasn't keeping pace with the retail business. The infrastructure for bundling and discounting was complex and mostly manual, requiring team intervention for operations that should have been running automatically. The brand needed to grow across multiple international markets without the site failing under the traffic spikes that seasonal campaigns and retail partnerships were generating. The gap between where D2C was and where it needed to be was significant.",
+      "VITHIT makes low-sugar, vitamin-enriched drinks containing 100% of the recommended daily allowance of essential vitamins. The brand has meaningful retail distribution across 15 countries and genuine shelf presence in major grocery chains.\n\nWhen they came to us, the D2C channel wasn't keeping pace with the retail business. The infrastructure for bundling and discounting was complex and mostly manual, requiring team intervention for operations that should have been running automatically. The brand needed to grow across multiple international markets without the site failing under the traffic spikes that seasonal campaigns and retail partnerships were generating. The gap between where D2C was and where it needed to be was significant.",
     approachTitle: "Automated D2C Infrastructure Built to Handle Scale.",
     approachItems: [
       {
@@ -1602,7 +1577,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Operating across 15 countries from one Shopify Plus store",
     ],
     quote:
-      "Velstar turned what used to be a complex, manual process into an efficient, automated workflow that allowed us to handle record-breaking traffic across multiple regions without a single stability issue.",
+      "Ecomm Wizards replaced a complex, manual process with an efficient automated workflow, one that carried record-breaking traffic across multiple regions without a single stability issue.",
     quotePerson: "Gary Lavin",
     quoteRole: "Founder, VITHIT",
     quoteAvatar: "/images/Case%20studies/GARY%20LAVIN.jpg",
@@ -1633,7 +1608,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "A Best-in-Class Product. A Theme That Couldn't Keep Up.",
     challengeBody:
-      "Feetures makes high-performance athletic socks built around anatomical construction, targeted compression, and an itch-free guarantee. They're the number one rated running sock brand in America and hold a loyal following among serious athletes and everyday runners alike.\n\nWhen they came to Netalico, the store had outgrown its existing Shopify theme. Product listing pages were constrained by Shopify's default product-per-page limits, making it hard to show the full depth of a technically differentiated range. The product detail pages couldn't handle the complexity of men's and women's variants, activity-specific filtering, or the kind of upsell logic a high-consideration sock purchase warrants. Manual processes around content and merchandising were creating overhead that scaled badly as the product range grew.",
+      "Feetures makes high-performance athletic socks built around anatomical construction, targeted compression, and an itch-free guarantee. They're the number one rated running sock brand in America and hold a loyal following among serious athletes and everyday runners alike.\n\nWhen they came to us, the store had outgrown its existing Shopify theme. Product listing pages were constrained by Shopify's default product-per-page limits, making it hard to show the full depth of a technically differentiated range. The product detail pages couldn't handle the complexity of men's and women's variants, activity-specific filtering, or the kind of upsell logic a high-consideration sock purchase warrants. Manual processes around content and merchandising were creating overhead that scaled badly as the product range grew.",
     approachTitle: "Custom PLPs, Dynamic PDPs, and a Cart Built to Lift AOV.",
     approachItems: [
       {
@@ -1687,11 +1662,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Men's and women's PDPs with dynamic variant toggles",
       "Below-the-fold content fully automated via metafields",
     ],
-    quote:
-      "The biggest thing is they listen to us, and that's really hard to find in a developer.",
-    quotePerson: "Hugh Gaither",
-    quoteRole: "Founder, Feetures",
-    quoteAvatar: "/images/Case%20studies/Hugh%20Gaither.jfif",
     prevSlug: "vithit-shopify-plus-d2c",
     prevBrand: "VITHIT",
     nextSlug: "chlobo-shopify-plus-migration",
@@ -1719,7 +1689,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "A Luxury Brand Trapped on an Expensive, Inflexible Platform",
     challengeBody:
-      "ChloBo makes handcrafted jewelry with a loyal following and a product range that customers genuinely build collections from. The stacking philosophy behind the brand creates high repeat purchase rates and a community of buyers who know exactly what they want.\n\nWhen they came to Underwaterpistol, Magento was the problem. Maintenance costs required constant external agency support for changes that should have been straightforward. The platform lacked the flexibility to build the kind of editorial, story-led shopping experience the brand needed to communicate the handcrafted nature of its products. The site design had fallen behind the quality of the jewelry it was selling. Growth was being actively constrained by a platform the business had outgrown.",
+      "ChloBo makes handcrafted jewelry with a loyal following and a product range that customers genuinely build collections from. The stacking philosophy behind the brand creates high repeat purchase rates and a community of buyers who know exactly what they want.\n\nWhen they came to us, Magento was the problem. Maintenance costs required constant external agency support for changes that should have been straightforward. The platform lacked the flexibility to build the kind of editorial, story-led shopping experience the brand needed to communicate the handcrafted nature of its products. The site design had fallen behind the quality of the jewelry it was selling. Growth was being actively constrained by a platform the business had outgrown.",
     approachTitle: "Premium Experience. Full Team Control. Personalization Built In.",
     approachItems: [
       {
@@ -1773,11 +1743,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Magento replaced: full team control with no agency dependency",
       "UX research-led redesign built for collection and gifting journeys",
     ],
-    quote:
-      "Moving from Magento to Shopify Plus gave us the flexibility we'd been missing. The engraving tool alone opened up a gifting market we couldn't tap before. The team can now move at the speed the brand needs.",
-    quotePerson: "Chloe Moss",
-    quoteRole: "Founder, ChloBo",
-    quoteAvatar: "/images/Case%20studies/Chloe%20Moss.jpg",
     prevSlug: "feetures-shopify-theme-development",
     prevBrand: "Feetures",
     nextSlug: "henchman-shopify-plus-b2b",
@@ -1805,7 +1770,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     challengeTitle: "A B2B Business Constrained by a Platform Built for Someone Else",
     challengeBody:
-      "Henchman has been making specialist ladders and platforms for working at height since 1994. The product range serves both trade buyers ordering wholesale and direct consumers. The brand has a strong reputation in the professional trades market and a product line that genuinely solves the problems working-at-height jobs create.\n\nWhen they came to Underwaterpistol, Magento was actively holding the business back. Content management was slow and cumbersome, requiring development support for changes that should have taken minutes. The B2B wholesale ordering process was largely manual: trade buyers had no self-service route and the team had to handle order admin that the platform should have automated. Maintenance costs were high and the total cost of ownership had become difficult to justify given what the platform was delivering.",
+      "Henchman has been making specialist ladders and platforms for working at height since 1994. The product range serves both trade buyers ordering wholesale and direct consumers. The brand has a strong reputation in the professional trades market and a product line that genuinely solves the problems working-at-height jobs create.\n\nWhen they came to us, Magento was actively holding the business back. Content management was slow and cumbersome, requiring development support for changes that should have taken minutes. The B2B wholesale ordering process was largely manual: trade buyers had no self-service route and the team had to handle order admin that the platform should have automated. Maintenance costs were high and the total cost of ownership had become difficult to justify given what the platform was delivering.",
     approachTitle: "Self-Service B2B, ERP Integration, and a Platform Built to Last.",
     approachItems: [
       {
@@ -1859,11 +1824,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       "B2B price books: trade buyers see correct pricing on login",
       "Magento replaced: full internal content control restored",
     ],
-    quote:
-      "Moving off Magento was the best commercial decision we made that year. The B2B store gave our trade customers a self-service route they actually want to use, and the Brightpearl integration removed a layer of manual work we'd been carrying for years.",
-    quotePerson: "Richard Carey",
-    quoteRole: "Managing Director, Henchman",
-    quoteAvatar: "/images/Case%20studies/Richard%20Carey.jfif",
     prevSlug: "chlobo-shopify-plus-migration",
     prevBrand: "ChloBo",
   },

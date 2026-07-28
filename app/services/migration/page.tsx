@@ -177,17 +177,7 @@ const MIGRATION_SLIDES: CaseStudySlide[] = [
     quote: (<>&ldquo;Working with EW was a truly <strong>top-notch experience</strong>. From start to finish, they made sure everything ran smoothly and professionally. We couldn&rsquo;t be happier!&rdquo;</>),
     avatar: "/images/eby_dce31a54-eb36-409c-a8d7-e22fd8297de3_medium.webp",
     name: "EBY by Sofia Vergara",
-    role: "Marketing Manager",
-  },
-  {
-    key: "harvard",
-    image: "/images/all-case-study-harvard.webp",
-    apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/Subtract.svg", "/images/64f098c0e38dec3a384cb182_rebuy.svg"],
-    headline: (<>A sophisticated <strong>Shopify Store</strong> designed and built for a <strong>Harvard University</strong></>),
-    quote: (<>&ldquo;Our experience with EW was excellent, characterized by an <strong>efficient workflow</strong> and <strong>professional execution</strong>; we couldn&rsquo;t be more delighted&rdquo;</>),
-    avatar: "/images/harvardperson_medium.webp",
-    name: "Daniyal S.",
-    role: "Harvard University",
+    role: "Shapewear Brand",
   },
 ];
 
@@ -268,15 +258,13 @@ const FIX_CARDS = [
 ];
 
 const TRUST_LOGOS = [
-  { src: "/images/Lids-logo_fcb134ea-8ac4-4592-bfa1-6a366076e371.avif", alt: "Lids" },
-  { src: "/images/Olaplex-logo-new.avif", alt: "Olaplex" },
-  { src: "/images/everlast-icon.svg", alt: "Everlast" },
-  { src: "/images/ipsy-logo.svg", alt: "Ipsy" },
-  { src: "/images/trust_logo_2.svg", alt: "Peanuts" },
-  { src: "/images/trust_logo_31.svg", alt: "Trust logo" },
-  { src: "/images/trust_logo_32.svg", alt: "Trust logo" },
-  { src: "/images/trust_logo_20.svg", alt: "Trust logo" },
-  { src: "/images/trust_logo_27.svg", alt: "Forme" },
+  { src: "/images/Case%20studies/logos/111skin%20logo.png", alt: "111SKIN" },
+  { src: "/images/Case%20studies/logos/Candy%20Kittens.webp", alt: "Candy Kittens" },
+  { src: "/images/Case%20studies/logos/Everlast.png", alt: "Everlast" },
+  { src: "/images/Case%20studies/logos/NEOM%20Wellbeing.png", alt: "NEOM Wellbeing" },
+  { src: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif", alt: "Ronaldo Jewelry" },
+  { src: "/images/Case%20studies/logos/Wild.svg", alt: "Wild" },
+  { src: "/images/Case%20studies/logos/Saddleback.svg", alt: "Saddleback" },
 ];
 
 const WHAT_YOU_GET = [

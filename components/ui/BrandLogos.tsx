@@ -1,14 +1,26 @@
 import Image from "next/image";
 
+// Real client logos (owner-supplied, /images/Case studies/logos). Replaced the
+// famous-brand logos (Calvin Klein, LVMH, Olaplex, AriZona, Khaite, P448, Lids,
+// Schutz) that were presented as clients but are not case-study clients.
+const L = "/images/Case%20studies/logos";
 const BRANDS = [
-  { src: "/images/Calvin-Klein-logo.png-1.png",  alt: "Calvin Klein",  w: 120 },
-  { src: "/images/LVMH-logo.png-1.png",           alt: "LVMH",          w: 80  },
-  { src: "/images/Logo-AriZona.png-1.png",        alt: "AriZona",       w: 100 },
-  { src: "/images/Logo-Khaite.png-1.png",         alt: "Khaite",        w: 100 },
-  { src: "/images/Olaplex-logo-new.avif",         alt: "Olaplex",       w: 110 },
-  { src: "/images/P448-logo.png-1.png",           alt: "P448",          w: 80  },
-  { src: "/images/Lids-logo_fcb134ea-8ac4-4592-bfa1-6a366076e371.avif", alt: "Lids", w: 80 },
-  { src: "/images/schutz-logo.png-2.png",         alt: "Schutz",        w: 100 },
+  { src: `${L}/111skin%20logo.png`,           alt: "111SKIN",        w: 120 },
+  { src: `${L}/Candy%20Kittens.webp`,          alt: "Candy Kittens",  w: 130 },
+  { src: `${L}/NEOM%20Wellbeing.png`,          alt: "NEOM Wellbeing", w: 130 },
+  { src: `${L}/Ronaldo%20Jewelry.avif`,        alt: "Ronaldo Jewelry",w: 120 },
+  { src: `${L}/Wild.svg`,                      alt: "Wild",           w: 90  },
+  { src: `${L}/Saddleback.svg`,                alt: "Saddleback",     w: 120 },
+  { src: `${L}/Twillory.png`,                  alt: "Twillory",       w: 110 },
+  { src: `${L}/Dryrobe.svg`,                   alt: "Dryrobe",        w: 120 },
+  { src: `${L}/John_Hardy.svg`,               alt: "John Hardy",     w: 120 },
+  { src: `${L}/Loop_Earplugs.svg`,            alt: "Loop Earplugs",  w: 120 },
+  { src: `${L}/ChloBo.svg`,                    alt: "ChloBo",         w: 100 },
+  { src: `${L}/SNEAK%20Energy.svg`,           alt: "Sneak Energy",   w: 110 },
+  { src: `${L}/this-works-logo.png`,          alt: "This Works",     w: 120 },
+  { src: `${L}/Capelli-Sport-Plus-Logo.webp`, alt: "Capelli Sports", w: 120 },
+  { src: `${L}/feetures.svg`,                 alt: "Feetures",       w: 110 },
+  { src: `${L}/evielou_logo.svg`,             alt: "Evie Lou",       w: 110 },
 ];
 
 interface BrandLogosProps {

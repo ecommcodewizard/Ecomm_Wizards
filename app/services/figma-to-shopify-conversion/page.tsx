@@ -214,25 +214,7 @@ const CASE_STUDIES: CaseStudySlide[] = [
     ),
     avatar: "/images/eby_dce31a54-eb36-409c-a8d7-e22fd8297de3_medium.webp",
     name: "EBY by Sofia Vergara",
-    role: "Marketing Manager",
-  },
-  {
-    key: "harvard",
-    image: "/images/all-case-study-harvard.webp",
-    apps: CASE_STUDY_APPS,
-    headline: (
-      <>
-        A sophisticated <strong>Shopify Store</strong> designed and built for <strong>Harvard University</strong>
-      </>
-    ),
-    quote: (
-      <>
-        &ldquo;Our experience with EW was excellent, characterized by an <strong>efficient workflow</strong> and <strong>professional execution</strong>; we couldn&rsquo;t be more delighted&rdquo;
-      </>
-    ),
-    avatar: "/images/harvardperson_medium.webp",
-    name: "Daniyal S.",
-    role: "Harvard University",
+    role: "Shapewear Brand",
   },
 ];
 
@@ -409,19 +391,17 @@ export default function FigmaToShopifyConversionPage() {
           >
             <div className="f2s-trust-track">
               {[
-                { src: "/images/ipsy-logo.svg",     alt: "IPSY" },
-                { src: "/images/trust_logo_2.svg",  alt: "Peanuts" },
-                { src: "/images/trust_logo_31.svg", alt: "Olaplex" },
-                { src: "/images/trust_logo_32.svg", alt: "Forme" },
-                { src: "/images/trust_logo_20.svg", alt: "SarahChloe" },
-                { src: "/images/trust_logo_27.svg", alt: "Cellar.com" },
+                { src: "/images/Case%20studies/logos/111skin%20logo.png",     alt: "111SKIN" },
+                { src: "/images/Case%20studies/logos/Candy%20Kittens.webp",    alt: "Candy Kittens" },
+                { src: "/images/Case%20studies/logos/NEOM%20Wellbeing.png",    alt: "NEOM Wellbeing" },
+                { src: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif",  alt: "Ronaldo Jewelry" },
+                { src: "/images/Case%20studies/logos/Wild.svg",                alt: "Wild" },
                 // duplicate set for seamless marquee loop
-                { src: "/images/ipsy-logo.svg",     alt: "" },
-                { src: "/images/trust_logo_2.svg",  alt: "" },
-                { src: "/images/trust_logo_31.svg", alt: "" },
-                { src: "/images/trust_logo_32.svg", alt: "" },
-                { src: "/images/trust_logo_20.svg", alt: "" },
-                { src: "/images/trust_logo_27.svg", alt: "" },
+                { src: "/images/Case%20studies/logos/111skin%20logo.png",     alt: "" },
+                { src: "/images/Case%20studies/logos/Candy%20Kittens.webp",    alt: "" },
+                { src: "/images/Case%20studies/logos/NEOM%20Wellbeing.png",    alt: "" },
+                { src: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif",  alt: "" },
+                { src: "/images/Case%20studies/logos/Wild.svg",                alt: "" },
               ].map((logo, i) => (
                 <div key={i} className="f2s-trust-slide">
                   {/* eslint-disable-next-line @next/next/no-img-element */}

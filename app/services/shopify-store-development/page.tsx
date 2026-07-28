@@ -24,27 +24,7 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
     ),
     avatar: "/images/Sofia_Jimenez.webp",
     name: "EBY by Sofia Vergara",
-    role: "Marketing Manager",
-  },
-  {
-    key: "harvard",
-    image: "/images/all-case-study-harvard.webp",
-    apps: ["/images/shopify-icon.svg", "/images/klaviyo.svg", "/images/yotpo.svg", "/images/gorgias.svg"],
-    headline: (
-      <>
-        A sophisticated <strong>Shopify Store</strong> designed and built for a{" "}
-        <strong>Harvard University</strong>
-      </>
-    ),
-    quote: (
-      <>
-        &ldquo;Our experience with EW was excellent, characterized by an{" "}
-        <strong>efficient workflow</strong> and <strong>professional execution</strong>; we couldn&apos;t be more delighted&rdquo;
-      </>
-    ),
-    avatar: "/images/harvardperson_medium.webp",
-    name: "Daniyal S.",
-    role: "Harvard University",
+    role: "Shapewear Brand",
   },
   {
     key: "bark",
@@ -624,19 +604,17 @@ export default function ShopifyStoreDevelopmentPage() {
           >
             <div className="ssd-trust-track">
               {[
-                { src: "/images/trust_logo_2.svg",  alt: "Peanuts" },
-                { src: "/images/trust_logo_31.svg", alt: "Olaplex" },
-                { src: "/images/trust_logo_32.svg", alt: "Forme" },
-                { src: "/images/trust_logo_20.svg", alt: "SarahChloe" },
-                { src: "/images/trust_logo_27.svg", alt: "Cellar.com" },
-                { src: "/images/Lids-logo_fcb134ea-8ac4-4592-bfa1-6a366076e371.avif", alt: "Lids HD" },
+                { src: "/images/Case%20studies/logos/111skin%20logo.png", alt: "111SKIN" },
+                { src: "/images/Case%20studies/logos/Candy%20Kittens.webp", alt: "Candy Kittens" },
+                { src: "/images/Case%20studies/logos/NEOM%20Wellbeing.png", alt: "NEOM Wellbeing" },
+                { src: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif", alt: "Ronaldo Jewelry" },
+                { src: "/images/Case%20studies/logos/Wild.svg", alt: "Wild" },
                 // duplicate set for seamless marquee
-                { src: "/images/trust_logo_2.svg",  alt: "" },
-                { src: "/images/trust_logo_31.svg", alt: "" },
-                { src: "/images/trust_logo_32.svg", alt: "" },
-                { src: "/images/trust_logo_20.svg", alt: "" },
-                { src: "/images/trust_logo_27.svg", alt: "" },
-                { src: "/images/Lids-logo_fcb134ea-8ac4-4592-bfa1-6a366076e371.avif", alt: "" },
+                { src: "/images/Case%20studies/logos/111skin%20logo.png", alt: "" },
+                { src: "/images/Case%20studies/logos/Candy%20Kittens.webp", alt: "" },
+                { src: "/images/Case%20studies/logos/NEOM%20Wellbeing.png", alt: "" },
+                { src: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif", alt: "" },
+                { src: "/images/Case%20studies/logos/Wild.svg", alt: "" },
               ].map((logo, i) => (
                 <div key={i} className="ssd-trust-slide">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -1923,13 +1901,7 @@ export default function ShopifyStoreDevelopmentPage() {
                 quote: "Elegant custom store with Recharge and Klaviyo. “Top-notch experience from start to finish!”",
                 logo: "/images/Frame_1000007615.webp",
                 logoAlt: "EBY",
-                person: "Sofia Vergara, Marketing Manager",
-              },
-              {
-                quote: "Sophisticated site with AI and Swatch King. “Efficient workflow and professional execution.”",
-                logo: "/images/Frame_1000007615-1.avif",
-                logoAlt: "The Harvard Shop",
-                person: "Daniyal S.",
+                person: "EBY by Sofia Vergara",
               },
               {
                 quote: "Dynamic, personalized build with Rebuy and Subtract, resulting in exceptional communication and results.",

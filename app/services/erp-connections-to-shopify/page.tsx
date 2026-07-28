@@ -23,27 +23,7 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
     ),
     avatar: "/images/Sofia_Jimenez.webp",
     name: "EBY by Sofia Vergara",
-    role: "Marketing Manager",
-  },
-  {
-    key: "harvard",
-    image: "/images/all-case-study-harvard.webp",
-    apps: ["/images/shopify-icon.svg", "/images/klaviyo.svg", "/images/yotpo.svg", "/images/gorgias.svg"],
-    headline: (
-      <>
-        A sophisticated <strong>Shopify Store</strong> designed and built for a{" "}
-        <strong>Harvard University</strong>
-      </>
-    ),
-    quote: (
-      <>
-        &ldquo;Our experience with EW was excellent, characterized by an{" "}
-        <strong>efficient workflow</strong> and <strong>professional execution</strong>; we couldn&apos;t be more delighted&rdquo;
-      </>
-    ),
-    avatar: "/images/harvardperson_medium.webp",
-    name: "Daniyal S.",
-    role: "Harvard University",
+    role: "Shapewear Brand",
   },
   {
     key: "bark",
@@ -120,12 +100,11 @@ const CONSULT = "/book-shopify-consultation";
 const CONTACT = "/contact-shopify-agency";
 
 const TRUST_LOGOS = [
-  { src: "/images/Olaplex-logo-new.avif", alt: "Olaplex" },
-  { src: "/images/everlast-icon.svg", alt: "Everlast" },
-  { src: "/images/ipsy-logo.svg", alt: "Ipsy" },
-  { src: "/images/trust_logo_2.svg", alt: "Peanuts" },
-  { src: "/images/trust_logo_31.svg", alt: "Olaplex" },
-  { src: "/images/trust_logo_32.svg", alt: "Forme" },
+  { src: "/images/Case%20studies/logos/111skin%20logo.png", alt: "111SKIN" },
+  { src: "/images/Case%20studies/logos/Everlast.png", alt: "Everlast" },
+  { src: "/images/Case%20studies/logos/Candy%20Kittens.webp", alt: "Candy Kittens" },
+  { src: "/images/Case%20studies/logos/NEOM%20Wellbeing.png", alt: "NEOM Wellbeing" },
+  { src: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif", alt: "Ronaldo Jewelry" },
 ];
 
 const INTRO_ROWS = [
