@@ -58,11 +58,11 @@ const GRADIENT_TEXT = {
 const CONSULT = "/book-shopify-consultation";
 
 const TRUST_LOGOS = [
-  { src: "/images/trust_logo_32.svg", alt: "Forme" },
-  { src: "/images/trust_logo_20.svg", alt: "SarahChloe" },
-  { src: "/images/trust_logo_27.svg", alt: "Cellar.com" },
-  { src: "/images/Lids-logo_fcb134ea-8ac4-4592-bfa1-6a366076e371.avif", alt: "Lids HD" },
-  { src: "/images/Olaplex-logo-new.avif", alt: "Olaplex" },
+  { src: "/images/Case%20studies/logos/111skin%20logo.png", alt: "111SKIN" },
+  { src: "/images/Case%20studies/logos/Candy%20Kittens.webp", alt: "Candy Kittens" },
+  { src: "/images/Case%20studies/logos/VITHIT.webp", alt: "VITHIT" },
+  { src: "/images/Case%20studies/logos/NEOM%20Wellbeing.png", alt: "NEOM Wellbeing" },
+  { src: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif", alt: "Ronaldo Jewelry" },
   { src: "/images/everlast-icon.svg", alt: "Everlast" },
 ];
 

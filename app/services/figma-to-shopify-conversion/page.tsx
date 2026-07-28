@@ -391,19 +391,19 @@ export default function FigmaToShopifyConversionPage() {
           >
             <div className="f2s-trust-track">
               {[
-                { src: "/images/ipsy-logo.svg",     alt: "IPSY" },
-                { src: "/images/trust_logo_2.svg",  alt: "Peanuts" },
-                { src: "/images/trust_logo_31.svg", alt: "Olaplex" },
-                { src: "/images/trust_logo_32.svg", alt: "Forme" },
-                { src: "/images/trust_logo_20.svg", alt: "SarahChloe" },
-                { src: "/images/trust_logo_27.svg", alt: "Cellar.com" },
+                { src: "/images/Case%20studies/logos/111skin%20logo.png",     alt: "111SKIN" },
+                { src: "/images/Case%20studies/logos/Candy%20Kittens.webp",    alt: "Candy Kittens" },
+                { src: "/images/Case%20studies/logos/VITHIT.webp",             alt: "VITHIT" },
+                { src: "/images/Case%20studies/logos/NEOM%20Wellbeing.png",    alt: "NEOM Wellbeing" },
+                { src: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif",  alt: "Ronaldo Jewelry" },
+                { src: "/images/Case%20studies/logos/Wild.svg",                alt: "Wild" },
                 // duplicate set for seamless marquee loop
-                { src: "/images/ipsy-logo.svg",     alt: "" },
-                { src: "/images/trust_logo_2.svg",  alt: "" },
-                { src: "/images/trust_logo_31.svg", alt: "" },
-                { src: "/images/trust_logo_32.svg", alt: "" },
-                { src: "/images/trust_logo_20.svg", alt: "" },
-                { src: "/images/trust_logo_27.svg", alt: "" },
+                { src: "/images/Case%20studies/logos/111skin%20logo.png",     alt: "" },
+                { src: "/images/Case%20studies/logos/Candy%20Kittens.webp",    alt: "" },
+                { src: "/images/Case%20studies/logos/VITHIT.webp",             alt: "" },
+                { src: "/images/Case%20studies/logos/NEOM%20Wellbeing.png",    alt: "" },
+                { src: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif",  alt: "" },
+                { src: "/images/Case%20studies/logos/Wild.svg",                alt: "" },
               ].map((logo, i) => (
                 <div key={i} className="f2s-trust-slide">
                   {/* eslint-disable-next-line @next/next/no-img-element */}

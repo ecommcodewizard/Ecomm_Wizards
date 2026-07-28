@@ -28,14 +28,14 @@ export const images = {
   reviewBg: "/images/testimonial-bg-scaled.png", // ✓
   results: "/images/results.webp", // ✓
   securityImage: "/images/security-image.webp", // ✓
-  logoCalvinKlein: "/images/Calvin-Klein-logo.png-1.png", // ✓
-  logoLVMH: "/images/LVMH-logo.png-1.png", // ✓
-  logoAriZona: "/images/Logo-AriZona.png-1.png", // ✓
-  logoKhaite: "/images/Logo-Khaite.png-1.png", // ✓
-  logoOlaplex: "/images/Olaplex-logo-new.avif", // ✓
-  logoP448: "/images/P448-logo.png-1.png", // ✓
-  logoLids: "/images/Lids-logo_fcb134ea-8ac4-4592-bfa1-6a366076e371.avif", // ✓
-  logoSchutz: "/images/schutz-logo.png-2.png", // ✓
+  logoCalvinKlein: "/images/Case%20studies/logos/111skin%20logo.png", // ✓
+  logoLVMH: "/images/Case%20studies/logos/Candy%20Kittens.webp", // ✓
+  logoAriZona: "/images/Case%20studies/logos/VITHIT.webp", // ✓
+  logoKhaite: "/images/Case%20studies/logos/NEOM%20Wellbeing.png", // ✓
+  logoOlaplex: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif", // ✓
+  logoP448: "/images/Case%20studies/logos/Wild.svg", // ✓
+  logoLids: "/images/Case%20studies/logos/Happy-Mammoth.png", // ✓
+  logoSchutz: "/images/Case%20studies/logos/Saddleback.svg", // ✓
   logoKlaviyo: "/images/64f0a5e309c841126c840791_klaviyo-300x89-1.png", // ✓
   logoRebuy: "/images/64f098c0e38dec3a384cb182_rebuy.svg", // ✓
   logoRecharge: "/images/64f098d045e1c6882b3f1871_recharge-300x59-1.png", // ✓

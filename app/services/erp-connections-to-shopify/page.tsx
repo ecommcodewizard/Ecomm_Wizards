@@ -100,12 +100,12 @@ const CONSULT = "/book-shopify-consultation";
 const CONTACT = "/contact-shopify-agency";
 
 const TRUST_LOGOS = [
-  { src: "/images/Olaplex-logo-new.avif", alt: "Olaplex" },
+  { src: "/images/Case%20studies/logos/111skin%20logo.png", alt: "111SKIN" },
   { src: "/images/everlast-icon.svg", alt: "Everlast" },
-  { src: "/images/ipsy-logo.svg", alt: "Ipsy" },
-  { src: "/images/trust_logo_2.svg", alt: "Peanuts" },
-  { src: "/images/trust_logo_31.svg", alt: "Olaplex" },
-  { src: "/images/trust_logo_32.svg", alt: "Forme" },
+  { src: "/images/Case%20studies/logos/Candy%20Kittens.webp", alt: "Candy Kittens" },
+  { src: "/images/Case%20studies/logos/VITHIT.webp", alt: "VITHIT" },
+  { src: "/images/Case%20studies/logos/NEOM%20Wellbeing.png", alt: "NEOM Wellbeing" },
+  { src: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif", alt: "Ronaldo Jewelry" },
 ];
 
 const INTRO_ROWS = [

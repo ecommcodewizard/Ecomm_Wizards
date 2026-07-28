@@ -74,15 +74,15 @@ const PHONE_IMAGES = [
 ];
 
 const TRUST_LOGOS = [
-  { src: "/images/Lids-logo_fcb134ea-8ac4-4592-bfa1-6a366076e371.avif", alt: "Lids" },
-  { src: "/images/Olaplex-logo-new.avif", alt: "Olaplex" },
+  { src: "/images/Case%20studies/logos/111skin%20logo.png", alt: "111SKIN" },
+  { src: "/images/Case%20studies/logos/Candy%20Kittens.webp", alt: "Candy Kittens" },
   { src: "/images/everlast-icon.svg", alt: "Everlast" },
-  { src: "/images/ipsy-logo.svg", alt: "IPSY" },
-  { src: "/images/trust_logo_2.svg", alt: "Peanuts" },
-  { src: "/images/trust_logo_31.svg", alt: "Peanuts" },
-  { src: "/images/trust_logo_32.svg", alt: "Forme" },
-  { src: "/images/trust_logo_20.svg", alt: "SarahChloe" },
-  { src: "/images/trust_logo_27.svg", alt: "Cellar.com" },
+  { src: "/images/Case%20studies/logos/VITHIT.webp", alt: "VITHIT" },
+  { src: "/images/Case%20studies/logos/NEOM%20Wellbeing.png", alt: "NEOM Wellbeing" },
+  { src: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif", alt: "Ronaldo Jewelry" },
+  { src: "/images/Case%20studies/logos/Wild.svg", alt: "Wild" },
+  { src: "/images/Case%20studies/logos/Happy-Mammoth.png", alt: "Happy Mammoth" },
+  { src: "/images/Case%20studies/logos/Loop_Earplugs.svg", alt: "Loop Earplugs" },
 ];
 
 const MONTHLY_SERVICES = [
@@ -297,33 +297,33 @@ const INNOVATIVE_BRAND_ROWS = [
     direction: "left" as const,
     duration: 40,
     logos: [
-      { src: "/images/trust_logo_hover_10.svg", alt: "Sofia Vergara" },
-      { src: "/images/trust_logo_7.svg", alt: "Bark Box" },
-      { src: "/images/ai-harward.svg", alt: "Harvard" },
-      { src: "/images/ai-smurfs.svg", alt: "Smurfs" },
-      { src: "/images/trust_logo_31.svg", alt: "Peanuts" },
+      { src: "/images/Case%20studies/logos/Saddleback.svg", alt: "Saddleback" },
+      { src: "/images/Case%20studies/logos/Twillory.png", alt: "Twillory" },
+      { src: "/images/Case%20studies/logos/Dryrobe.svg", alt: "Dryrobe" },
+      { src: "/images/Case%20studies/logos/John_Hardy.svg", alt: "John Hardy" },
+      { src: "/images/Case%20studies/logos/Loop_Earplugs.svg", alt: "Loop Earplugs" },
     ],
   },
   {
     direction: "right" as const,
     duration: 42,
     logos: [
-      { src: "/images/trust_logo_20.svg", alt: "SarahChloe" },
-      { src: "/images/Olaplex-logo-new.avif", alt: "Olaplex" },
-      { src: "/images/trust_logo_32.svg", alt: "Forme" },
-      { src: "/images/ai-everlast.svg", alt: "Everlast" },
-      { src: "/images/trust_logo_2.svg", alt: "Oshen" },
+      { src: "/images/Case%20studies/logos/ChloBo.svg", alt: "ChloBo" },
+      { src: "/images/Case%20studies/logos/SNEAK%20Energy.svg", alt: "Sneak Energy" },
+      { src: "/images/Case%20studies/logos/this-works-logo.png", alt: "This Works" },
+      { src: "/images/Case%20studies/logos/Capelli-Sport-Plus-Logo.webp", alt: "Capelli Sports" },
+      { src: "/images/Case%20studies/logos/feetures.svg", alt: "Feetures" },
     ],
   },
   {
     direction: "left" as const,
     duration: 44,
     logos: [
-      { src: "/images/trust_logo_27.svg", alt: "Lucky You" },
-      { src: "/images/trust_logo_hover_14.svg", alt: "Ulta Beauty" },
-      { src: "/images/trust_logo_6.svg", alt: "Blippi" },
-      { src: "/images/trust_logo_hover_13.svg", alt: "Sesame Street" },
-      { src: "/images/Lids-logo_fcb134ea-8ac4-4592-bfa1-6a366076e371.avif", alt: "Lids" },
+      { src: "/images/Case%20studies/logos/evielou_logo.svg", alt: "Evie Lou" },
+      { src: "/images/Case%20studies/logos/111skin%20logo.png", alt: "111SKIN" },
+      { src: "/images/Case%20studies/logos/Candy%20Kittens.webp", alt: "Candy Kittens" },
+      { src: "/images/Case%20studies/logos/VITHIT.webp", alt: "VITHIT" },
+      { src: "/images/Case%20studies/logos/NEOM%20Wellbeing.png", alt: "NEOM Wellbeing" },
     ],
   },
   {
@@ -333,8 +333,8 @@ const INNOVATIVE_BRAND_ROWS = [
       { src: "/images/chalet.svg", alt: "Chalet" },
       { src: "/images/kaval-new.webp", alt: "Kaval" },
       { src: "/images/biopure.svg", alt: "BioPure" },
-      { src: "/images/trust_logo_hover_11.svg", alt: "Create Room" },
-      { src: "/images/trust_logo_hover_12.svg", alt: "Ebbets Field Flannels" },
+      { src: "/images/Case%20studies/logos/ChloBo.svg", alt: "ChloBo" },
+      { src: "/images/Case%20studies/logos/this-works-logo.png", alt: "This Works" },
     ],
   },
 ];

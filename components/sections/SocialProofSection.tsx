@@ -63,7 +63,7 @@ type GridRow = { left: Logo; center: Logo; right: Logo };
 
 // Real client logos — the actual case-study brands, using the logo files the
 // owner supplied in /images/Case studies/logos. The fabricated AI logos
-// (ai-harward.svg etc.) and famous-brand/IP logos presented as clients
+// (the AI-generated set) and famous-brand/IP logos presented as clients
 // (Harvard, Smurfs, Peanuts, Sesame Street, Nike, Puma, Calvin Klein, LVMH…)
 // were removed.
 const L = "/images/Case%20studies/logos";

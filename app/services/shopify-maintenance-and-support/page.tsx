@@ -110,16 +110,16 @@ const CASE_STUDIES = [
 
 /* ── Trust logos ── */
 const TRUST_LOGOS = [
-  { src: "/images/schutz-logo.png-2.png",               alt: "Schutz" },
-  { src: "/images/Calvin-Klein-logo.png-1.png",          alt: "Calvin Klein" },
-  { src: "/images/Logo-AriZona.png-1.png",               alt: "AriZona" },
-  { src: "/images/Logo-Khaite.png-1.png",                alt: "Khaite" },
-  { src: "/images/Olaplex-logo-new.avif",                alt: "Olaplex" },
-  { src: "/images/Lids-logo_fcb134ea-8ac4-4592-bfa1-6a366076e371.avif", alt: "Lids" },
+  { src: "/images/Case%20studies/logos/111skin%20logo.png",       alt: "111SKIN" },
+  { src: "/images/Case%20studies/logos/Candy%20Kittens.webp",     alt: "Candy Kittens" },
+  { src: "/images/Case%20studies/logos/VITHIT.webp",              alt: "VITHIT" },
+  { src: "/images/Case%20studies/logos/NEOM%20Wellbeing.png",     alt: "NEOM Wellbeing" },
+  { src: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif",   alt: "Ronaldo Jewelry" },
+  { src: "/images/Case%20studies/logos/Wild.svg",                 alt: "Wild" },
   { src: "/images/everlast-icon.svg",                    alt: "Everlast" },
-  { src: "/images/P448-logo.png-1.png",                  alt: "P448" },
-  { src: "/images/LVMH-logo.png-1.png",                  alt: "LVMH" },
-  { src: "/images/modelez-logo.png-1-768x361-1.png",     alt: "Mondelez" },
+  { src: "/images/Case%20studies/logos/Happy-Mammoth.png",        alt: "Happy Mammoth" },
+  { src: "/images/Case%20studies/logos/Saddleback.svg",           alt: "Saddleback" },
+  { src: "/images/Case%20studies/logos/Twillory.png",             alt: "Twillory" },
 ];
 
 /* ── Pain point cards ── */
