@@ -8,82 +8,95 @@ const FOREST = "#0E2318";
 const FOREST_MID = "#163020";
 const SITE_GRADIENT = "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)";
 
+// Real client testimonials, taken verbatim from the case studies (all name
+// Ecomm Wizards). No invented endorsements.
 const TESTIMONIALS = [
   {
-    company: "Puma",
-    stat: "61%",
-    statLabel: "Customer Engagement",
-    quote: "Their fresh approach to Shopify development completely reshaped our customer journey. The technical expertise combined with creative, data-driven solutions delivered exceptional ROI and measurably improved every stage of our conversion funnel.",
-    initials: "MH",
-    name: "Michael Harris",
-    title: "VP of Digital, Puma",
+    company: "Candy Kittens",
+    stat: "182%",
+    statLabel: "Increase in Conversion Rate",
+    quote: "The brand we'd built deserved a store to match it. Ecomm Wizards rebuilt the gifting experience from scratch and gave us the infrastructure to execute seasonal campaigns properly. The Christmas numbers spoke for themselves.",
+    initials: "JL",
+    name: "Jamie Laing",
+    title: "Co-Founder, Candy Kittens",
   },
   {
-    company: "Lids",
-    stat: "34%",
-    statLabel: "Sales Increase in 6 Months",
-    quote: "Ecomm Wizards has been absolutely instrumental in enhancing our user experience and increasing conversion rates. Their essential backend development support, strategic thinking, and relentless attention to detail have truly propelled our business growth beyond expectations.",
-    initials: "JM",
-    name: "Jennifer Martinez",
-    title: "Marketing Director, Lids",
+    company: "Wild",
+    stat: "218%",
+    statLabel: "Subscription Revenue Growth",
+    quote: "We had the brand and the product. We just didn't have a store. Ecomm Wizards built the whole subscription infrastructure from scratch and 80,000 subscribers in year one was beyond anything we had projected. The scent-swap portal changed our churn numbers entirely.",
+    initials: "CB",
+    name: "Charlie Bowes-Lyon",
+    title: "Co-Founder, Wild",
   },
   {
-    company: "Nike",
-    stat: "52%",
-    statLabel: "Revenue Growth in 8 Months",
-    quote: "The team's deep expertise in Shopify optimization completely transformed our online presence. Their strategic, data-backed approach to conversion rate optimization and smooth user experience design exceeded every expectation we had set going into the engagement.",
-    initials: "RK",
-    name: "Robert Kim",
-    title: "E-Commerce Manager, Nike",
+    company: "Ronaldo Jewelry",
+    stat: "250%",
+    statLabel: "Total Sales Growth",
+    quote: "Our pieces had always been special. The store just was not showing that. Ecomm Wizards gave us a digital experience that finally reflects the craft behind every piece. The configurator changed how customers engage with us entirely.",
+    initials: "RN",
+    name: "Ronnie E. Needham",
+    title: "Founder, Ronaldo Designer Jewelry",
   },
   {
-    company: "Adidas",
-    stat: "47%",
-    statLabel: "Conversion Rate Boost",
-    quote: "Outstanding results delivered in record time. The development team's exceptional attention to detail, proactive communication, and unwavering commitment to excellence helped us achieve remarkable and sustained growth across our entire digital storefront.",
-    initials: "SP",
-    name: "Sarah Peterson",
-    title: "Digital Director, Adidas",
+    company: "111SKIN",
+    stat: "46%",
+    statLabel: "Increase in Conversion Rate",
+    quote: "Working with Ecomm Wizards gave us a clear roadmap for growth. The skin finder quiz alone transformed how our customers discover the right products, and the results across conversion rate and revenue speak for themselves.",
+    initials: "EA",
+    name: "Eva Alexandridis",
+    title: "Co-Founder, 111SKIN",
   },
   {
-    company: "Reebok",
-    stat: "43%",
-    statLabel: "Mobile Sales Growth",
-    quote: "Truly standout results for our ecommerce platform. The smooth integrations, powerful backend improvements, and strategic UX refinements have significantly improved both our operational efficiency and long-term customer satisfaction scores.",
-    initials: "LC",
-    name: "Lisa Chen",
-    title: "Head of E-Commerce, Reebok",
+    company: "Happy Mammoth",
+    stat: "134%",
+    statLabel: "Subscription Revenue Growth",
+    quote: "We had the traffic and we had the product. What we didn't have was a store engineered for retention. Ecomm Wizards rebuilt the quiz, launched subscriptions properly, and the LTV numbers tell the rest of the story.",
+    initials: "MM",
+    name: "Matthew Murphy",
+    title: "CEO & Founder, Happy Mammoth",
   },
 ];
 
 type Logo = { src: string; alt: string };
 type GridRow = { left: Logo; center: Logo; right: Logo };
 
+// Real client logos — the actual case-study brands, using the logo files the
+// owner supplied in /images/Case studies/logos. The fabricated AI logos
+// (ai-harward.svg etc.) and famous-brand/IP logos presented as clients
+// (Harvard, Smurfs, Peanuts, Sesame Street, Nike, Puma, Calvin Klein, LVMH…)
+// were removed.
+const L = "/images/Case%20studies/logos";
 const GRID_ROWS: GridRow[] = [
   {
-    left:   { src: "/images/ai-everlast.svg",        alt: "Everlast"          },
-    center: { src: "/images/trust_logo_31.svg",      alt: "Peanuts"           },
-    right:  { src: "/images/trust_logo_27.svg",      alt: "Shark Tank"        },
+    left:   { src: `${L}/111skin%20logo.png`,           alt: "111SKIN"        },
+    center: { src: `${L}/Candy%20Kittens.webp`,          alt: "Candy Kittens"  },
+    right:  { src: `${L}/VITHIT.webp`,                    alt: "VITHIT"         },
   },
   {
-    left:   { src: "/images/ai-harward.svg",         alt: "Harvard"           },
-    center: { src: "/images/trust_logo_hover_10.svg",alt: "Sofía Vergara"     },
-    right:  { src: "/images/trust_logo_32.svg",      alt: "Forme"             },
+    left:   { src: `${L}/NEOM%20Wellbeing.png`,          alt: "NEOM Wellbeing" },
+    center: { src: `${L}/Ronaldo%20Jewelry.avif`,        alt: "Ronaldo Jewelry"},
+    right:  { src: `${L}/Wild.svg`,                       alt: "Wild"           },
   },
   {
-    left:   { src: "/images/ai-ipsy.svg",            alt: "IPSY"              },
-    center: { src: "/images/trust_logo_20.svg",      alt: "Sesame Street"     },
-    right:  { src: "/images/trust_logo_6.svg",       alt: "State & Liberty"   },
+    left:   { src: `${L}/Happy-Mammoth.png`,             alt: "Happy Mammoth"  },
+    center: { src: `${L}/Saddleback.svg`,                alt: "Saddleback"     },
+    right:  { src: `${L}/Twillory.png`,                  alt: "Twillory"       },
   },
   {
-    left:   { src: "/images/ai-cashmere.svg",        alt: "The Cashmere Sale" },
-    center: { src: "/images/Lids-logo_fcb134ea-8ac4-4592-bfa1-6a366076e371.avif", alt: "Lids" },
-    right:  { src: "/images/trust_logo_7.svg",       alt: "Bark Box"          },
+    left:   { src: `${L}/Dryrobe.svg`,                   alt: "Dryrobe"        },
+    center: { src: `${L}/John_Hardy.svg`,               alt: "John Hardy"     },
+    right:  { src: `${L}/Loop_Earplugs.svg`,            alt: "Loop Earplugs"  },
   },
   {
-    left:   { src: "/images/Olaplex-logo-new.avif",  alt: "Olaplex"           },
-    center: { src: "/images/ai-smurfs.svg",          alt: "Smurfs"            },
-    right:  { src: "/images/trust_logo_hover_14.svg",alt: "hiya"              },
+    left:   { src: `${L}/ChloBo.svg`,                    alt: "ChloBo"         },
+    center: { src: `${L}/SNEAK%20Energy.svg`,           alt: "Sneak Energy"   },
+    right:  { src: `${L}/this-works-logo.png`,          alt: "This Works"     },
+  },
+  {
+    left:   { src: `${L}/Capelli-Sport-Plus-Logo.webp`, alt: "Capelli Sports" },
+    center: { src: `${L}/feetures.svg`,                 alt: "Feetures"       },
+    right:  { src: `${L}/evielou_logo.svg`,             alt: "Evie Lou"       },
   },
 ];
 
