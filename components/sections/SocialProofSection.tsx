@@ -17,6 +17,7 @@ const TESTIMONIALS = [
     statLabel: "Increase in Conversion Rate",
     quote: "The brand we'd built deserved a store to match it. Ecomm Wizards rebuilt the gifting experience from scratch and gave us the infrastructure to execute seasonal campaigns properly. The Christmas numbers spoke for themselves.",
     initials: "JL",
+    avatar: "/images/Case%20studies/Jamie%20Laing.jpg",
     name: "Jamie Laing",
     title: "Co-Founder, Candy Kittens",
   },
@@ -26,6 +27,7 @@ const TESTIMONIALS = [
     statLabel: "Subscription Revenue Growth",
     quote: "We had the brand and the product. We just didn't have a store. Ecomm Wizards built the whole subscription infrastructure from scratch and 80,000 subscribers in year one was beyond anything we had projected. The scent-swap portal changed our churn numbers entirely.",
     initials: "CB",
+    avatar: "/images/Case%20studies/Charlie%20Bowes%20Lyon.jpg",
     name: "Charlie Bowes-Lyon",
     title: "Co-Founder, Wild",
   },
@@ -35,6 +37,7 @@ const TESTIMONIALS = [
     statLabel: "Total Sales Growth",
     quote: "Our pieces had always been special. The store just was not showing that. Ecomm Wizards gave us a digital experience that finally reflects the craft behind every piece. The configurator changed how customers engage with us entirely.",
     initials: "RN",
+    avatar: "/images/Case%20studies/Ronnie%20E.%20Needham.webp",
     name: "Ronnie E. Needham",
     title: "Founder, Ronaldo Designer Jewelry",
   },
@@ -44,6 +47,7 @@ const TESTIMONIALS = [
     statLabel: "Increase in Conversion Rate",
     quote: "Working with Ecomm Wizards gave us a clear roadmap for growth. The skin finder quiz alone transformed how our customers discover the right products, and the results across conversion rate and revenue speak for themselves.",
     initials: "EA",
+    avatar: "/images/Case%20studies/eva-alexandridis.jpg",
     name: "Eva Alexandridis",
     title: "Co-Founder, 111SKIN",
   },
@@ -53,6 +57,7 @@ const TESTIMONIALS = [
     statLabel: "Subscription Revenue Growth",
     quote: "We had the traffic and we had the product. What we didn't have was a store engineered for retention. Ecomm Wizards rebuilt the quiz, launched subscriptions properly, and the LTV numbers tell the rest of the story.",
     initials: "MM",
+    avatar: "/images/Case%20studies/Matthew%20Murphy.avif",
     name: "Matthew Murphy",
     title: "CEO & Founder, Happy Mammoth",
   },
@@ -339,12 +344,17 @@ export default function SocialProofSection() {
                     {/* Avatar */}
                     <div style={{
                       width: "42px", height: "42px", borderRadius: "50%",
+                      overflow: "hidden",
                       background: `linear-gradient(135deg, ${GOLD} 0%, #E8D08A 100%)`,
                       display: "flex", alignItems: "center", justifyContent: "center",
                       flexShrink: 0,
                       boxShadow: `0 3px 10px ${GOLD}44`,
                     }}>
-                      <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "13px", color: "#fff" }}>{t.initials}</span>
+                      {t.avatar ? (
+                        <Image src={t.avatar} alt={t.name} width={42} height={42} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                      ) : (
+                        <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "13px", color: "#fff" }}>{t.initials}</span>
+                      )}
                     </div>
                     <div style={{ minWidth: 0 }}>
                       <p style={{
