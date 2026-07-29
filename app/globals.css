@@ -264,6 +264,19 @@
 /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    CSS Custom Properties â€” ecommwizards.com
    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Size-matched fallback for Poppins — eliminates font-swap layout shift (CLS).
+   Before the Poppins web font loads, text renders in Arial scaled to Poppins'
+   metrics, so it occupies the same space and the hero doesn't reflow on swap.
+   Purely a pre-load fallback: once Poppins loads, rendering is identical. */
+@font-face {
+  font-family: "Poppins Fallback";
+  src: local("Arial");
+  ascent-override: 92.36%;
+  descent-override: 30.79%;
+  line-gap-override: 8.80%;
+  size-adjust: 112.05%;
+}
+
 :root {
   /* Colors */
   --color-primary:       #61ce70;
@@ -286,7 +299,7 @@
   --color-white:         #ffffff;
 
   /* Typography */
-  --font-sans:           "Poppins", sans-serif;
+  --font-sans:           "Poppins", "Poppins Fallback", sans-serif;
   --font-size-base:      16px;
   --line-height-base:    1.6;
 
