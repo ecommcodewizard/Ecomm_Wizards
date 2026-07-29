@@ -14,17 +14,7 @@ const CANONICAL_URL = "https://ecommwizards.com/services/shopify-app-setup-and-a
 
 export const metadata: Metadata = {
   title: { absolute: "Shopify App Setup and Optimization | App Stack Experts" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify app setup and optimization",
-    "shopify app stack audit",
-    "shopify app configuration",
-    "shopify app performance",
-    "shopify app speed optimization",
-    "shopify tracking setup",
-    "shopify app management",
-    "shopify app installation service",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

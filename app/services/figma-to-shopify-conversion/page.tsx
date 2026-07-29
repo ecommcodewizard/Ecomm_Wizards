@@ -14,18 +14,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Figma to Shopify Conversion | Pixel-Perfect Builds" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "figma to shopify conversion",
-    "convert figma to shopify",
-    "figma to shopify development service",
-    "figma to shopify agency",
-    "hire figma to shopify developer",
-    "figma to shopify expert",
-    "shopify liquid development from figma",
-    "shopify 2.0 figma conversion",
-    "figma to shopify responsive design",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

@@ -58,21 +58,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly as written; the root layout applies a
   // "%s | Ecomm Wizards" template that would otherwise double the brand.
   title: { absolute: "Custom Shopify Store Development | Ecomm Wizards" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "Shopify store development",
-    "custom Shopify store",
-    "Shopify development agency",
-    "Shopify website development",
-    "Shopify ecommerce development",
-    "build a Shopify store",
-    "Shopify store design and development",
-    "Shopify store setup",
-    "professional Shopify store",
-    "Shopify store developers",
-    "hire Shopify developers",
-    "Shopify Plus store development",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

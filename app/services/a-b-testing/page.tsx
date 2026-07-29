@@ -15,18 +15,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Shopify A/B Testing Agency | Shoplift Certified Experts" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify a/b testing",
-    "shopify a/b testing agency",
-    "shopify ab testing",
-    "shopify cro",
-    "shoplift a/b testing",
-    "shopify conversion rate optimization",
-    "a/b testing for ecommerce",
-    "shopify split testing",
-    "shopify experimentation",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

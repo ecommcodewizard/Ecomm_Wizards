@@ -14,17 +14,7 @@ const CANONICAL_URL = "https://ecommwizards.com/services/shopify-development-age
 
 export const metadata: Metadata = {
   title: { absolute: "Shopify Development Agency | Custom Builds and Shopify Plus" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify development agency",
-    "custom shopify development",
-    "shopify plus development",
-    "shopify theme development",
-    "shopify store development",
-    "shopify migration agency",
-    "shopify web development",
-    "shopify development company",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

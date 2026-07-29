@@ -14,17 +14,7 @@ const TITLE = "Performance Creative & Creative Strategy Agency";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
-  description: META_DESCRIPTION,
-  keywords: [
-    "performance creative agency",
-    "creative strategy agency",
-    "ugc agency",
-    "ad creative agency",
-    "performance creative",
-    "ad creative services",
-    "ugc ad agency",
-    "facebook ad creative agency",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

@@ -15,17 +15,7 @@ const CANONICAL_URL = "https://ecommwizards.com/services/shopify-theme-developme
 
 export const metadata: Metadata = {
   title: { absolute: "Shopify Theme Development Agency | Custom Liquid Themes" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify theme development",
-    "custom shopify theme",
-    "shopify theme development agency",
-    "shopify liquid theme",
-    "shopify 2.0 theme development",
-    "custom shopify theme development",
-    "shopify theme developer",
-    "shopify theme redesign",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

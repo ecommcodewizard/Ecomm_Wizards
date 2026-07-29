@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import SpeedVideo from "./SpeedVideo";
+import { CASE_STUDY_VIDEOS, SPEED_VIDEO_SLUGS, posterFor } from "@/lib/case-study-videos";
 import type { CaseStudy } from "@/lib/case-studies";
 
 const INITIAL_COUNT = 6;
@@ -11,48 +12,20 @@ const INITIAL_COUNT = 6;
 function CardMedia({ cs, index }: { cs: CaseStudy; index: number }) {
   const videoStyle: React.CSSProperties = { width: "100%", height: "100%", objectFit: "cover", display: "block" };
 
-  if (cs.slug === "111skin-shopify-cro-redesign")
-    return <video src="/images/Case%20studies/111skin%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "evie-lou-shopify-fashion-cro")
-    return <video src="/images/Case%20studies/evie-lou%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "happy-mammoth-shopify-subscriptions-cro")
-    return <video src="/images/Case%20studies/happy-mammoth-video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "candy-kittens-shopify-food-beverage-cro")
-    return <video src="/images/Case%20studies/Candy%20Kittens%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "everlast-shopify-plus-sports-redesign")
-    return <video src="/images/Case%20studies/Everlast%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "ronaldo-jewelry-shopify-plus-redesign")
-    return <SpeedVideo src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "mouldings-one-shopify-b2b-portal")
-    return <SpeedVideo src="/images/Case%20studies/Mouldings%20One%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "wild-shopify-plus-subscriptions")
-    return <video src="/images/Case%20studies/WeareWild%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "dryrobe-shopify-plus-redesign")
-    return <video src="/images/Case%20studies/dryrobe%20video%20test.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "loop-earplugs-shopify-landing-page-cro")
-    return <video src="/images/Case%20studies/Loop%20Earplugs%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "sneak-energy-shopify-redesign")
-    return <video src="/images/Case%20studies/Sneak%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "capelli-sports-shopify-migration")
-    return <video src="/images/Case%20studies/Capelli%20Sports%20test%20video-2.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "john-hardy-shopify-plus-migration")
-    return <video src="/images/Case%20studies/John%20Hardy%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "saddleback-shopify-plus-b2b")
-    return <video src="/images/Case%20studies/Saddleback%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "this-works-shopify-plus-migration")
-    return <video src="/images/Case%20studies/This%20Works%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "twillory-shopify-cro")
-    return <video src="/images/Case%20studies/Twillory%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "neom-wellbeing-shopify-upgrade")
-    return <video src="/images/Case%20studies/NEOM%20Wellbeing%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "vithit-shopify-plus-d2c")
-    return <video src="/images/Case%20studies/VITHIT%20video%202.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "feetures-shopify-theme-development")
-    return <video src="/images/Case%20studies/Feetures%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "chlobo-shopify-plus-migration")
-    return <video src="/images/Case%20studies/ChloBo%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
-  if (cs.slug === "henchman-shopify-plus-b2b")
-    return <video src="/images/Case%20studies/Henchman%20video.mp4" autoPlay loop muted playsInline preload="metadata" style={videoStyle} />;
+  const videoSrc = CASE_STUDY_VIDEOS[cs.slug];
+  if (videoSrc) {
+    const videoProps = {
+      src: videoSrc,
+      poster: posterFor(videoSrc),
+      autoPlay: true,
+      loop: true,
+      muted: true,
+      playsInline: true,
+      preload: "none" as const,
+      style: videoStyle,
+    };
+    return SPEED_VIDEO_SLUGS.has(cs.slug) ? <SpeedVideo {...videoProps} /> : <video {...videoProps} />;
+  }
 
   return (
     <Image

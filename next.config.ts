@@ -3,6 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
+    // Cap generated widths at 2048. The site has no 4K-critical imagery, so the
+    // default 3840 candidate only wasted bandwidth on full-bleed hero images.
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     // Allow the self-hosted SVG logo through next/image. Our own static asset
     // (no scripts); served as an attachment so a direct hit can't render inline.
     dangerouslyAllowSVG: true,

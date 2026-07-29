@@ -318,28 +318,32 @@ export default function ShopifyDesignSection({
                 {activeH3}
               </h3>
 
-              <p
-                className="text-[16px] max-xl:hidden max-sm:!mb-[12px] md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px]"
-                style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  color: descColor,
-                  lineHeight: 1.7,
-                  margin: "0 0 16px",
-                }}
-              >
-                {activeDescription}
-              </p>
-              <p
-                className="text-[14px] xl:hidden max-sm:!mb-[12px] md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px]"
-                style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  color: descColor,
-                  lineHeight: 1.7,
-                  margin: "0 0 16px",
-                }}
-              >
-                {shortDescription ?? activeDescription}
-              </p>
+              {/* Render the description once and scale by breakpoint. Only emit a
+                  second paragraph when a genuinely different mobile-short copy is
+                  supplied, to avoid duplicating the same text in the DOM. */}
+              {shortDescription && shortDescription !== activeDescription ? (
+                <>
+                  <p
+                    className="text-[16px] max-xl:hidden max-sm:!mb-[12px] md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px]"
+                    style={{ fontFamily: "'Poppins', sans-serif", color: descColor, lineHeight: 1.7, margin: "0 0 16px" }}
+                  >
+                    {activeDescription}
+                  </p>
+                  <p
+                    className="text-[14px] xl:hidden max-sm:!mb-[12px] md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px]"
+                    style={{ fontFamily: "'Poppins', sans-serif", color: descColor, lineHeight: 1.7, margin: "0 0 16px" }}
+                  >
+                    {shortDescription}
+                  </p>
+                </>
+              ) : (
+                <p
+                  className="text-[14px] xl:text-[16px] max-sm:!mb-[12px] md:max-lg:!mb-[12px] lg:max-xl:!mb-[16px]"
+                  style={{ fontFamily: "'Poppins', sans-serif", color: descColor, lineHeight: 1.7, margin: "0 0 16px" }}
+                >
+                  {activeDescription}
+                </p>
+              )}
 
               {/* Service items */}
               <div

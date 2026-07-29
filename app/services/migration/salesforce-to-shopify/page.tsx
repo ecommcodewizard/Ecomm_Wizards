@@ -16,17 +16,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Salesforce to Shopify Migration Agency | Lower Your TCO" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "salesforce to shopify migration",
-    "salesforce commerce cloud to shopify",
-    "migrate from salesforce to shopify",
-    "salesforce to shopify migration services",
-    "salesforce commerce cloud migration",
-    "salesforce to shopify plus migration",
-    "sfcc to shopify migration",
-    "switch from salesforce commerce cloud to shopify",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

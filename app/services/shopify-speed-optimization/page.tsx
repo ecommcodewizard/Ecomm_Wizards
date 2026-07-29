@@ -14,18 +14,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Shopify Speed Optimization | Core Web Vitals Experts" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify speed optimization",
-    "shopify speed optimization services",
-    "shopify page speed",
-    "shopify core web vitals",
-    "shopify performance optimization",
-    "optimize shopify store speed",
-    "shopify plus speed optimization",
-    "shopify site speed",
-    "speed up shopify store",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

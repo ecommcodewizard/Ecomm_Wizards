@@ -15,17 +15,7 @@ const CANONICAL_URL = "https://ecommwizards.com/services/shopify-2-0-development
 
 export const metadata: Metadata = {
   title: { absolute: "Shopify 2.0 Development | Online Store 2.0 Experts" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify 2.0 development",
-    "online store 2.0",
-    "shopify 2.0 theme development",
-    "shopify 2.0 migration",
-    "shopify 2.0 developer",
-    "shopify 1.0 to 2.0 migration",
-    "shopify online store 2.0",
-    "shopify 2.0 agency",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

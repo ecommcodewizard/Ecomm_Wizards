@@ -13,17 +13,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "BigCommerce to Shopify Migration Agency | Zero Downtime" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "bigcommerce to shopify migration",
-    "migrate from bigcommerce to shopify",
-    "bigcommerce to shopify plus migration",
-    "bigcommerce to shopify",
-    "bigcommerce migration agency",
-    "bigcommerce to shopify migration services",
-    "switch from bigcommerce to shopify",
-    "bigcommerce shopify migration company",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

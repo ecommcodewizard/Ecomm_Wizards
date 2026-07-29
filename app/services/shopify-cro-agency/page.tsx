@@ -15,17 +15,7 @@ const CANONICAL_URL = "https://ecommwizards.com/services/shopify-cro-agency";
 
 export const metadata: Metadata = {
   title: { absolute: "Best Shopify CRO Agency | Conversion Rate Optimization" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify cro agency",
-    "shopify conversion rate optimization",
-    "shopify a/b testing",
-    "shopify cro audit",
-    "shopify plus cro",
-    "ecommerce conversion optimization",
-    "shopify cro services",
-    "conversion rate optimization shopify",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

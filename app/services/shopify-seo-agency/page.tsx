@@ -14,17 +14,7 @@ const CANONICAL_URL = "https://ecommwizards.com/services/shopify-seo-agency";
 
 export const metadata: Metadata = {
   title: { absolute: "Shopify SEO Agency | Organic Growth for Shopify Stores" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify seo agency",
-    "shopify seo services",
-    "shopify seo expert",
-    "shopify seo consultant",
-    "shopify organic traffic",
-    "shopify technical seo",
-    "shopify keyword research",
-    "ecommerce seo shopify",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
