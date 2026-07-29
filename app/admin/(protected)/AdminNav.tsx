@@ -23,6 +23,15 @@ const ITEMS = [
       </svg>
     ),
   },
+  {
+    href: "/admin/tasks",
+    label: "Tasks",
+    icon: (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden>
+        <path d="M4 5h5v14H4zM10.5 5h5v9h-5zM17 5h3v11h-3z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
 ];
 
 export default function AdminNav() {

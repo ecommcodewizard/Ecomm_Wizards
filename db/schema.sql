@@ -47,3 +47,23 @@ CREATE TABLE IF NOT EXISTS bookings (
   UNIQUE KEY uq_uid (uid),
   KEY idx_start_time (start_time)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Internal task board (website/dev work) shown at /admin/tasks. A simple Kanban:
+-- each task has a status column (backlog / todo / in_progress / done), a
+-- free-text assignee, a priority, and a `position` for manual ordering within
+-- its column. Like `bookings`, the app AUTO-CREATES this on first use
+-- (ensureTasksTable in lib/tasks.ts), so running it by hand is optional -- kept
+-- here as documentation and a manual fallback.
+CREATE TABLE IF NOT EXISTS tasks (
+  id          BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  title       VARCHAR(512)  NOT NULL,
+  description TEXT          NULL,
+  status      VARCHAR(32)   NOT NULL DEFAULT 'backlog',  -- backlog | todo | in_progress | done
+  assignee    VARCHAR(255)  NULL,                         -- free-text name
+  priority    VARCHAR(16)   NOT NULL DEFAULT 'medium',    -- low | medium | high
+  position    INT           NOT NULL DEFAULT 0,           -- order within the column
+  created_at  TIMESTAMP     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at  TIMESTAMP     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  KEY idx_status_position (status, position)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
