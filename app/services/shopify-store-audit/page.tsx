@@ -60,20 +60,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Shopify Store Audit | CRO, SEO & UX Audit Service" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "Shopify store audit",
-    "Shopify CRO audit",
-    "Shopify conversion audit",
-    "professional Shopify audit",
-    "Shopify website audit",
-    "Shopify store analysis",
-    "Shopify UX audit",
-    "Shopify SEO audit",
-    "Shopify store improvement plan",
-    "Shopify store developers",
-    "hire Shopify developers",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

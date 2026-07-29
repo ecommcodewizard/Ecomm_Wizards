@@ -11,17 +11,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Shopify POS Setup | Remote Configuration & Migration" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify pos setup",
-    "shopify pos setup service",
-    "shopify point of sale setup",
-    "shopify pos hardware setup",
-    "migrate square to shopify pos",
-    "migrate lightspeed to shopify pos",
-    "shopify pos migration service",
-    "shopify pos configuration",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

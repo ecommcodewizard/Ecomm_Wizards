@@ -54,17 +54,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Shopify ERP Integration Service | NetSuite, SAP and More" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify erp integration",
-    "connect erp to shopify",
-    "erp for shopify",
-    "shopify netsuite integration",
-    "shopify sap integration",
-    "shopify erp crm integration",
-    "erp to shopify connector",
-    "shopify plus erp integration",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

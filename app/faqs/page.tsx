@@ -10,17 +10,7 @@ export const metadata: Metadata = {
   openGraph: og("/faqs", "Shopify Agency FAQs"),
   title: { absolute: "Shopify Agency FAQs: Pricing, Migrations, SEO & Support | Ecomm Wizards" },
   description:
-    "Answers to common Shopify questions: how much a store costs, how long a build takes, migrations, Shopify Plus, SEO, B2B, and ongoing support from Ecomm Wizards.",
-  keywords: [
-    "shopify agency faq",
-    "how much does a shopify store cost",
-    "how long does it take to build a shopify store",
-    "shopify migration cost",
-    "shopify development agency",
-    "how much does shopify plus cost",
-    "shopify seo",
-    "is shopify good for b2b",
-  ],
+    "Answers to common Shopify questions: how much a store costs, how long a build takes, migrations, Shopify Plus, SEO, B2B, and ongoing support from Ecomm Wizards.",
 };
 
 // FAQPage structured data, built from the same data the page renders, so the

@@ -14,17 +14,7 @@ const CANONICAL_URL = "https://ecommwizards.com/services/headless-shopify-agency
 
 export const metadata: Metadata = {
   title: { absolute: "Headless Shopify Agency | Hydrogen and Custom Storefronts" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "headless shopify agency",
-    "headless shopify development",
-    "shopify hydrogen development",
-    "next.js shopify storefront",
-    "headless commerce shopify",
-    "shopify storefront api",
-    "headless shopify store",
-    "custom shopify storefront",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

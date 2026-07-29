@@ -21,18 +21,6 @@ const TITLE = "Shopify Cart Gamification: Increase Average Order Value";
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: META_DESCRIPTION,
-  keywords: [
-    "increase average order value shopify",
-    "increase aov shopify",
-    "ecommerce gamification",
-    "shopify cart gamification",
-    "cart gamification",
-    "shopify average order value",
-    "free shipping bar shopify",
-    "tiered rewards shopify",
-    "gift with purchase shopify",
-    "gamify cart drawer",
-  ],
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

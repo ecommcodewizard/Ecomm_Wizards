@@ -13,18 +13,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Shopify UX and UI Design Agency | Stores That Convert" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify ux and ui design",
-    "shopify ui ux design",
-    "shopify ux design",
-    "shopify ui design",
-    "shopify ux design agency",
-    "shopify store design",
-    "shopify ux ui design services",
-    "ecommerce ux design",
-    "shopify conversion design",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

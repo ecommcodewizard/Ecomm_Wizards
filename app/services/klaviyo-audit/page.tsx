@@ -14,18 +14,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Klaviyo Audit for Shopify Brands | Free Email Revenue Review" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "klaviyo audit",
-    "free klaviyo audit",
-    "klaviyo email audit",
-    "klaviyo audit for shopify",
-    "klaviyo flow audit",
-    "klaviyo deliverability audit",
-    "shopify email marketing audit",
-    "klaviyo account review",
-    "klaviyo audit service",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

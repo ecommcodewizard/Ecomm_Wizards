@@ -15,17 +15,7 @@ const CANONICAL_URL = "https://ecommwizards.com/services/shopify-integration-ser
 
 export const metadata: Metadata = {
   title: { absolute: "Shopify Integration Services | ERP, CRM, 3PL and More" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify integration services",
-    "shopify erp integration",
-    "shopify crm integration",
-    "shopify 3pl integration",
-    "shopify api integration",
-    "shopify netsuite integration",
-    "shopify salesforce integration",
-    "shopify custom api",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

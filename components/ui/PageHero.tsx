@@ -37,7 +37,7 @@ export default function PageHero({
     >
       {/* background photo */}
       {backgroundImage && (
-        <Image src={backgroundImage} alt="" fill className="object-cover opacity-20" priority />
+        <Image src={backgroundImage} alt="" fill className="object-cover opacity-20" priority quality={55} />
       )}
       {/* dot-grid overlay */}
       <div

@@ -15,17 +15,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Amazon to Shopify Migration Agency | Build Your DTC Channel" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "amazon to shopify migration",
-    "connect amazon to shopify",
-    "connect shopify to amazon",
-    "amazon to shopify",
-    "amazon to shopify migration services",
-    "scale amazon brand to shopify dtc",
-    "migrate from amazon to shopify",
-    "amazon shopify integration",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

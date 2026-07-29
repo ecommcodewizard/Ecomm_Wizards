@@ -15,17 +15,7 @@ const CANONICAL_URL = "https://ecommwizards.com/services/shopify-landing-page-de
 
 export const metadata: Metadata = {
   title: { absolute: "Shopify Landing Page Design | High-Converting Pages" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify landing page design",
-    "shopify landing page agency",
-    "custom shopify landing pages",
-    "shopify paid ad landing page",
-    "shopify product launch page",
-    "shopify campaign page design",
-    "shopify 2.0 landing page",
-    "high converting shopify pages",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

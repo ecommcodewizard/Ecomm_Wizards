@@ -12,18 +12,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Shopify B2B Agency | Wholesale and D2C on Shopify Plus" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify b2b",
-    "shopify b2b ecommerce",
-    "shopify plus b2b",
-    "shopify wholesale",
-    "shopify b2b agency",
-    "shopify b2b setup",
-    "wholesale shopify store",
-    "shopify b2b developer",
-    "shopify wholesale portal",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

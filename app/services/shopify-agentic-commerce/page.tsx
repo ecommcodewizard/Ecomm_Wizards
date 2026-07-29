@@ -16,17 +16,7 @@ const TITLE = "Shopify Agentic Commerce Agency | Get Bought by AI";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify agentic commerce",
-    "shopify agentic storefronts",
-    "generative engine optimization",
-    "generative engine optimization services",
-    "generative engine optimization agency",
-    "shopify chatgpt integration",
-    "what is agentic commerce",
-    "agentic commerce",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

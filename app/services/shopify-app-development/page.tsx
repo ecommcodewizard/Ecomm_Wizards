@@ -12,17 +12,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Shopify App Development Company | Private and Public Apps" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify app development",
-    "hire shopify app developer",
-    "custom shopify app development",
-    "shopify app development company",
-    "shopify app development services",
-    "private shopify app",
-    "shopify app store development",
-    "shopify plus app development",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

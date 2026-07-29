@@ -15,17 +15,7 @@ const CANONICAL_URL = "https://ecommwizards.com/services/shopify-analytics-and-t
 
 export const metadata: Metadata = {
   title: { absolute: "Shopify Analytics and Tracking Setup | GA4, GTM, Pixels" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify analytics and tracking setup",
-    "shopify ga4 setup",
-    "shopify google analytics setup",
-    "shopify gtm setup",
-    "shopify conversion tracking",
-    "shopify pixel setup",
-    "server-side tracking shopify",
-    "shopify tracking audit",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

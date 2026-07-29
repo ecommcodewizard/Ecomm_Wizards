@@ -16,17 +16,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Shopify Hydrogen Migration Agency | Headless Storefronts" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify hydrogen migration",
-    "migrate to shopify hydrogen",
-    "liquid to hydrogen migration",
-    "liquid to shopify hydrogen",
-    "shopify headless migration",
-    "shopify hydrogen agency",
-    "shopify hydrogen development",
-    "headless shopify storefront",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",

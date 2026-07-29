@@ -21,22 +21,22 @@ const HERO_STATS = [
 ];
 
 const HERO_LOGOS = [
-  "/images/Case%20studies/logos/111skin%20logo.png",
-  "/images/Case%20studies/logos/Candy%20Kittens.webp",
-  "/images/Case%20studies/logos/NEOM%20Wellbeing.png",
-  "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif",
-  "/images/Case%20studies/logos/Wild.svg",
-  "/images/Case%20studies/logos/Saddleback.svg",
-  "/images/Case%20studies/logos/Twillory.png",
-  "/images/Case%20studies/logos/Dryrobe.svg",
-  "/images/Case%20studies/logos/John_Hardy.svg",
-  "/images/Case%20studies/logos/Loop_Earplugs.svg",
-  "/images/Case%20studies/logos/ChloBo.svg",
-  "/images/Case%20studies/logos/SNEAK%20Energy.svg",
-  "/images/Case%20studies/logos/this-works-logo.png",
-  "/images/Case%20studies/logos/Capelli-Sport-Plus-Logo.webp",
-  "/images/Case%20studies/logos/evielou_logo.svg",
-  "/images/Case%20studies/logos/Everlast.png",
+  { src: "/images/Case%20studies/logos/111skin%20logo.png", alt: "111SKIN" },
+  { src: "/images/Case%20studies/logos/Candy%20Kittens.webp", alt: "Candy Kittens" },
+  { src: "/images/Case%20studies/logos/NEOM%20Wellbeing.png", alt: "NEOM Wellbeing" },
+  { src: "/images/Case%20studies/logos/Ronaldo%20Jewelry.avif", alt: "Ronaldo Jewelry" },
+  { src: "/images/Case%20studies/logos/Wild.svg", alt: "Wild" },
+  { src: "/images/Case%20studies/logos/Saddleback.svg", alt: "Saddleback" },
+  { src: "/images/Case%20studies/logos/Twillory.png", alt: "Twillory" },
+  { src: "/images/Case%20studies/logos/Dryrobe.svg", alt: "Dryrobe" },
+  { src: "/images/Case%20studies/logos/John_Hardy.svg", alt: "John Hardy" },
+  { src: "/images/Case%20studies/logos/Loop_Earplugs.svg", alt: "Loop Earplugs" },
+  { src: "/images/Case%20studies/logos/ChloBo.svg", alt: "ChloBo" },
+  { src: "/images/Case%20studies/logos/SNEAK%20Energy.svg", alt: "SNEAK Energy" },
+  { src: "/images/Case%20studies/logos/this-works-logo.png", alt: "This Works" },
+  { src: "/images/Case%20studies/logos/Capelli-Sport-Plus-Logo.webp", alt: "Capelli Sport" },
+  { src: "/images/Case%20studies/logos/evielou_logo.svg", alt: "Evie Lou" },
+  { src: "/images/Case%20studies/logos/Everlast.png", alt: "Everlast" },
 ];
 
 export default function ServicesHero() {
@@ -204,12 +204,12 @@ export default function ServicesHero() {
                 <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: "48px", background: "linear-gradient(to right, #000000, transparent)", zIndex: 2, pointerEvents: "none" }} />
                 <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: "48px", background: "linear-gradient(to left, #000000, transparent)", zIndex: 2, pointerEvents: "none" }} />
                 <div className="svh-marquee">
-                  {[...HERO_LOGOS, ...HERO_LOGOS].map((src, i) => (
+                  {[...HERO_LOGOS, ...HERO_LOGOS].map((logo, i) => (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       key={i}
-                      src={src}
-                      alt=""
+                      src={logo.src}
+                      alt={i < HERO_LOGOS.length ? logo.alt : ""}
                       loading="lazy"
                       style={{ objectFit: "contain", flexShrink: 0, filter: "invert(1)", mixBlendMode: "screen", opacity: 1, width: "180px", height: "72px", display: "block" }}
                     />

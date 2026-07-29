@@ -14,17 +14,7 @@ const CANONICAL_URL = "https://ecommwizards.com/services/shopify-maintenance-and
 
 export const metadata: Metadata = {
   title: { absolute: "Shopify Maintenance and Support | Ongoing Store Care" },
-  description: META_DESCRIPTION,
-  keywords: [
-    "shopify maintenance and support",
-    "shopify maintenance services",
-    "shopify support and maintenance",
-    "shopify website maintenance",
-    "shopify store maintenance",
-    "shopify maintenance packages",
-    "monthly shopify retainer",
-    "shopify bug fixes",
-  ],
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
