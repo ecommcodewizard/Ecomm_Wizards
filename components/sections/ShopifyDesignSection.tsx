@@ -878,4 +878,35 @@ const AGENTIC_SERVICES: ServiceItem[] = [
   { title: "AI Visibility Monitoring", icon: (<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 15s4.5-8 13-8 13 8 13 8-4.5 8-13 8S2 15 2 15z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/><circle cx="15" cy="15" r="3.4" stroke="currentColor" strokeWidth="1.6"/></svg>) },
 ];
 
-export { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES, BRAND_SERVICES, B2B_SERVICES, COPYWRITING_SERVICES, PERSONALIZATION_SERVICES, SEO_AI_SERVICES, RETENTION_SERVICES, WHY_B2B_SERVICES, POS_SERVICES, AI_AUTOMATION_SERVICES, AGENTIC_SERVICES };
+const CREATIVE_SERVICES: ServiceItem[] = [
+  {
+    title: "Static, Video & UGC Ad Creative",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="5" width="24" height="18" rx="2" stroke="currentColor" strokeWidth="1.6"/>
+        <path d="M13 11.5v6l5-3-5-3Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Hook-Led Concepting & Scripting",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 3a8 8 0 00-5 14.3c.8.7 1.3 1.6 1.4 2.7h7.2c.1-1.1.6-2 1.4-2.7A8 8 0 0015 3Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/>
+        <path d="M12 24h6M13 27h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Data-Backed Creative Testing",
+    icon: (
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="14" width="6" height="12" rx="1" stroke="currentColor" strokeWidth="1.6"/>
+        <rect x="20" y="8" width="6" height="18" rx="1" stroke="currentColor" strokeWidth="1.6"/>
+        <path d="M7 11V4M4.5 6.5 7 4l2.5 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
+];
+
+export { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES, BRAND_SERVICES, B2B_SERVICES, COPYWRITING_SERVICES, PERSONALIZATION_SERVICES, SEO_AI_SERVICES, RETENTION_SERVICES, WHY_B2B_SERVICES, POS_SERVICES, AI_AUTOMATION_SERVICES, AGENTIC_SERVICES, CREATIVE_SERVICES };
