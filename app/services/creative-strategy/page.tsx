@@ -6,6 +6,7 @@ import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
 import CreativeAuditForm from "./CreativeAuditForm";
+import CreativeBoard from "@/components/sections/CreativeBoard";
 
 const META_DESCRIPTION =
   "Performance creative and creative strategy agency for Shopify brands. Static, video, and UGC ads that cut CPA and scale ROAS. Get your free creative audit.";
@@ -14,7 +15,7 @@ const TITLE = "Performance Creative & Creative Strategy Agency";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
-  description: META_DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
@@ -62,15 +63,6 @@ const TRUST_LOGOS = [
 
 // Real ad creative lives in public/images/Creative strategy services (spaces URL-encoded)
 const CS_MEDIA = "/images/Creative%20strategy%20services";
-
-// Hero creative-board tiles. Static and carousel are stills; the video and UGC
-// tiles run the same live autoplay creative as the "See the work" gallery below.
-const BOARD_TILES: { label: string; src: string; poster?: string; video: boolean }[] = [
-  { label: "Static ad", src: `${CS_MEDIA}/Static%20ad.webp`, video: false },
-  { label: "Video ad", src: `${CS_MEDIA}/Video%20ad.mp4`, poster: `${CS_MEDIA}/Video%20ad-poster.webp`, video: true },
-  { label: "UGC", src: `${CS_MEDIA}/UGC%20ad.mp4`, poster: `${CS_MEDIA}/UGC%20ad-poster.webp`, video: true },
-  { label: "Carousel", src: `${CS_MEDIA}/carousel%20ad.webp`, video: false },
-];
 
 const FUNNEL = [
   { step: "Awareness", title: "Stop the scroll", body: "Bold hooks, pattern interrupts, and thumb-stopping opens that win the first two seconds and earn the view." },
@@ -240,27 +232,7 @@ export default function Page() {
           </div>
 
           <div className="sat-hero-img-wrap">
-            <div className="cs-board" aria-hidden>
-              <div className="cs-board-head">
-                <span className="cs-board-dot" />
-                <span className="cs-board-dot" style={{ background: "#C8F57A" }} />
-                <span className="cs-board-dot" style={{ background: "#4EB771" }} />
-                <span className="cs-board-tag">Creative board</span>
-              </div>
-              <div className="cs-board-grid">
-                {BOARD_TILES.map((t) => (
-                  <div key={t.label} className="cs-board-tile">
-                    {t.video ? (
-                      <video className="cs-tile-media" src={t.src} poster={t.poster} autoPlay muted loop playsInline preload="metadata" aria-label={`${t.label} ad creative`} />
-                    ) : (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img className="cs-tile-media" src={t.src} alt={`${t.label} creative`} loading="lazy" decoding="async" />
-                    )}
-                    <span className="cs-tile-label">{t.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <CreativeBoard />
           </div>
         </div>
       </section>
@@ -593,16 +565,7 @@ const CSS = `
 @media (max-width:1024px){.std-hero-h1{font-size:40px!important}.std-hero-inner{padding:60px 20px!important}.std-hero-p{margin-top:16px!important}.std-hero-stats{flex-wrap:nowrap!important;margin-top:16px!important;padding-top:16px!important}.std-hero-stat-item{padding-right:16px!important;margin-right:16px!important}.sat-hero-img-wrap{margin-top:8px}}
 @media (max-width:640px){.std-hero-h1{font-size:28px!important;line-height:1.22!important}.std-hero-p{font-size:14px!important;line-height:24px!important}.std-hero-stats{display:grid!important;grid-template-columns:1fr 1fr;gap:18px 0!important;margin-top:24px;padding-top:18px}.std-hero-stat-item{width:auto!important;padding:0 16px 0 0!important;margin:0!important;border-right:1px solid rgba(255,255,255,0.12)}.std-hero-stat-item:nth-child(even){border-right:none;padding:0 0 0 16px!important}}
 
-/* Hero creative board (placeholder visual) */
-.cs-board{width:100%;max-width:440px;margin:0 auto;background:linear-gradient(160deg,#161616,#0a0a0a);border:1px solid rgba(255,255,255,0.1);border-radius:22px;padding:18px;box-shadow:0 24px 64px rgba(0,0,0,0.5)}
-.cs-board-head{display:flex;align-items:center;gap:7px;margin-bottom:14px}
-.cs-board-dot{width:9px;height:9px;border-radius:50%;background:#2A9555}
-.cs-board-tag{font-family:'Poppins',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-left:auto}
-.cs-board-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.cs-board-tile{position:relative;aspect-ratio:1/1;border-radius:14px;background:linear-gradient(150deg,rgba(61,199,122,0.16),rgba(255,255,255,0.03));border:1px solid rgba(255,255,255,0.09);overflow:hidden}
-.cs-tile-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.cs-board-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.5),transparent 55%);z-index:1;pointer-events:none}
-.cs-tile-label{position:absolute;left:12px;bottom:11px;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;color:#fff;z-index:2}
+/* Hero creative board (.cs-board*) moved to app/globals.css (shared with the homepage) */
 
 /* Trust strip */
 .std-trust-carousel{overflow:hidden;position:relative}

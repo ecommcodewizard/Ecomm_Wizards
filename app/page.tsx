@@ -6,7 +6,8 @@ import StatsCard from "@/components/sections/StatsCard";
 import GrowthChart from "@/components/sections/GrowthChart";
 import SocialProofSection from "@/components/sections/SocialProofSection";
 import ProcessSection from "@/components/sections/ProcessSection";
-import ShopifyDesignSection, { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES, BRAND_SERVICES, B2B_SERVICES, COPYWRITING_SERVICES, PERSONALIZATION_SERVICES, SEO_AI_SERVICES, RETENTION_SERVICES, WHY_B2B_SERVICES, POS_SERVICES, AI_AUTOMATION_SERVICES, AGENTIC_SERVICES } from "@/components/sections/ShopifyDesignSection";
+import ShopifyDesignSection, { MIGRATION_SERVICES, CUSTOM_DEV_SERVICES, UX_SERVICES, CRO_SERVICES, SEO_SERVICES, BRAND_SERVICES, B2B_SERVICES, COPYWRITING_SERVICES, PERSONALIZATION_SERVICES, SEO_AI_SERVICES, RETENTION_SERVICES, WHY_B2B_SERVICES, POS_SERVICES, AI_AUTOMATION_SERVICES, AGENTIC_SERVICES, CREATIVE_SERVICES } from "@/components/sections/ShopifyDesignSection";
+import CreativeBoard from "@/components/sections/CreativeBoard";
 import AiAppsSlider from "@/components/sections/AiAppsSlider";
 import MobileAppSection from "@/components/sections/MobileAppSection";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
@@ -806,7 +807,20 @@ export default function HomePage() {
         mdAutoHeight
         imageFit="contain"
         imageAspectRatio="4/3"
+        mobileYPadding="max-sm:!py-[10px]"
+      />
+      <ShopifyDesignSection
+        showHeading={false}
+        h3Content={<>Performance <strong style={{ fontWeight: 600 }}>Creative Strategy</strong></>}
+        description="Creative is half of your ad performance and the one lever the algorithm hasn't taken. We concept, produce, and test scroll-stopping static, video, and UGC ads for Meta and Google, then kill the losers and scale the winners."
+        services={CREATIVE_SERVICES}
+        buttonText="Get a Free Creative Audit"
+        buttonHref="/services/creative-strategy"
+        imagePanel={<CreativeBoard />}
+        paddingTop="5px"
         paddingBottom="30px"
+        reverseLayout
+        mdAutoHeight
         mobileYPadding="max-sm:!py-[10px]"
       />
       <AiAppsSlider />
