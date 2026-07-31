@@ -31,8 +31,8 @@ export const metadata: Metadata = {
 const HERO_STATS = [
   "Full-Stack Ecommerce Partner",
   "8+ Years of Experience",
-  "$900M+ Revenue Generated",
-  "700+ Stores Built",
+  "$400M+ Revenue Generated",
+  "150+ Stores Built",
 ];
 
 

@@ -24,7 +24,7 @@ export default function CTABar() {
             lineHeight: 1.2,
           }}
         >
-          We&apos;ve scaled 700+ stores. Let&apos;s see what&apos;s holding yours back.
+          We&apos;ve scaled 150+ stores. Let&apos;s see what&apos;s holding yours back.
         </p>
 
         <a

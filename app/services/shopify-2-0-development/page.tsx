@@ -10,7 +10,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
-  "Shopify 2.0 development agency with 200+ Online Store 2.0 builds. Custom themes, 1.0 to 2.0 migrations, and native App Block integrations.";
+  "Shopify 2.0 development agency with 150+ Online Store 2.0 builds. Custom themes, 1.0 to 2.0 migrations, and native App Block integrations.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-2-0-development";
 
 export const metadata: Metadata = {
@@ -310,8 +310,8 @@ export default function Page() {
             </p>
             <div className="std-hero-stats">
               {[
-                { number: "200+",   label: "Stores Built" },
-                { number: "$900M+", label: "Revenue Generated" },
+                { number: "150+",   label: "Stores Built" },
+                { number: "$400M+", label: "Revenue Generated" },
                 { number: "28.5%",  label: "Avg Conversion Lift" },
                 { number: "4.9★",   label: "Client Rating" },
               ].map((s) => (
@@ -376,7 +376,7 @@ export default function Page() {
             The World&apos;s Fastest-Growing Brands Trust Ecomm Wizards
           </h2>
           <p className="text-center" style={{ color: C_TEXT, fontSize: 16, lineHeight: "26px", margin: "10px 0 0", textAlign: "center" }}>
-            200+ Shopify 2.0 development projects completed. $900M+ in client revenue generated. From DTC challengers to global enterprise brands.
+            150+ Shopify 2.0 development projects completed. $400M+ in client revenue generated. From DTC challengers to global enterprise brands.
           </p>
 
           <div className="std-trust-carousel" style={{ marginTop: 20, width: "100%", overflow: "hidden" }}>
@@ -502,7 +502,7 @@ export default function Page() {
           </h2>
 
           <p className="s20-why-desc">
-            We have built 200+ Shopify stores and helped clients generate over $900M in revenue. Here is what makes us<br className="std-why-desc-br" /> the right Shopify 2.0 development agency for brands that need the upgrade done right:
+            We have built 150+ Shopify stores and helped clients generate over $400M in revenue. Here is what makes us<br className="std-why-desc-br" /> the right Shopify 2.0 development agency for brands that need the upgrade done right:
           </p>
 
           <div className="s20-why-grid">

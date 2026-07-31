@@ -494,7 +494,7 @@ export default function ShopifyB2BPage() {
           </div>
 
           <p className="mx-auto mt-10 max-w-[1100px] text-center text-white/85 text-[15px] sm:text-base leading-[1.85]">
-            These are not theoretical benefits. They are outcomes delivered across 1,000+ brands, from apparel to luxury
+            These are not theoretical benefits. They are outcomes delivered across 150+ brands, from apparel to luxury
             goods. When Shopify B2B is set up right, your wholesale operation stops being a cost center and starts being
             a growth engine.
           </p>

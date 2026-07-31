@@ -51,7 +51,7 @@ const HERO_STATS = [
   { value: "70%", label: "Carts abandoned" },
   { value: "81%", label: "Chase free shipping" },
   { value: "+15-20%", label: "AOV from free shipping" },
-  { value: "700+", label: "Shopify stores built" },
+  { value: "150+", label: "Shopify stores built" },
 ];
 
 // Brand logos for the trust strip (same set used across the service pages)
@@ -264,7 +264,7 @@ export default function Page() {
       <section className="std-trust" style={{ background: "#fff" }} aria-label="Brands that trust Ecomm Wizards">
         <div className="mx-auto" style={{ maxWidth: "1320px", padding: "48px 20px" }}>
           <h2 className="std-trust-h2 text-center" style={{ color: "#000", fontSize: 30, fontWeight: 700, lineHeight: 1.3, margin: 0 }}>
-            700+ Shopify Stores Built. Here&apos;s Who Trusts Us.
+            150+ Shopify Stores Built. Here&apos;s Who Trusts Us.
           </h2>
           <p className="text-center" style={{ color: "#334155", fontSize: 16, lineHeight: "26px", margin: "10px 0 0" }}>
             From DTC startups to global brands. The same team that ships award-winning Shopify stores builds carts that lift average order value.
@@ -487,7 +487,7 @@ export default function Page() {
       <section className="ssd-results-section" style={{ background: "#FBF7ED", fontFamily: "'Poppins', sans-serif", padding: "60px 20px" }}>
         <div className="ssd-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
           <h2 className="ssd-results-heading">Proven Shopify results from our team</h2>
-          <p className="ssd-results-desc">We have built <Link href="/case-studies">700+ Shopify stores</Link> and generated $900M+ in revenue across 8+ years and 9+ industry awards. The same team builds carts that lift average order value.</p>
+          <p className="ssd-results-desc">We have built <Link href="/case-studies">150+ Shopify stores</Link> and generated $400M+ in revenue across 8+ years and 9+ industry awards. The same team builds carts that lift average order value.</p>
           <CaseStudySlider slides={AC_SLIDES} intervalMs={6000} showDots />
         </div>
       </section>

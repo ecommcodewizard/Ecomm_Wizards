@@ -2,8 +2,8 @@
 // builds the FAQPage JSON-LD from the same data, so the schema never drifts from
 // the visible text. Answers are concise (a direct lead answer plus a little
 // detail) and link to the relevant service page. Copy rules: US spelling, no em
-// dashes, no filler. Stats follow the canonical set (8+ yrs, 9+ awards, 700+
-// stores, $900M+).
+// dashes, no filler. Stats follow the canonical set (8+ yrs, 9+ awards, 150+
+// stores, $400M+).
 
 export type FaqIcon = "info" | "tag" | "code" | "migrate" | "chart" | "search" | "store" | "support";
 
@@ -29,7 +29,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       {
         question: "What is Ecomm Wizards and what do you specialize in?",
         answer:
-          "Ecomm Wizards is a full-service Shopify agency. We design, build, migrate, optimize, and support Shopify and Shopify Plus stores, plus custom apps, B2B, POS, and SEO. Over 8+ years we have built 700+ stores and helped brands generate $900M+ in revenue.",
+          "Ecomm Wizards is a full-service Shopify agency. We design, build, migrate, optimize, and support Shopify and Shopify Plus stores, plus custom apps, B2B, POS, and SEO. Over 8+ years we have built 150+ stores and helped brands generate $400M+ in revenue.",
         link: { label: "See all services", href: "/services" },
       },
       {
@@ -40,7 +40,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       {
         question: "Are you a certified Shopify Plus Partner?",
         answer:
-          "Yes. We are a certified Shopify Plus Partner with 8+ years of experience and 700+ stores built across every Shopify plan, from brand new stores to enterprise Plus builds.",
+          "Yes. We are a certified Shopify Plus Partner with 8+ years of experience and 150+ stores built across every Shopify plan, from brand new stores to enterprise Plus builds.",
       },
       {
         question: "What store sizes and industries do you work with?",

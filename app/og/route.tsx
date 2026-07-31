@@ -64,7 +64,7 @@ export async function GET(request: Request) {
             ecommwizards.com
           </div>
           <div style={{ display: "flex", fontSize: "26px", color: "#9CA3AF" }}>
-            700+ stores  ·  $900M+ revenue  ·  8+ years
+            150+ stores  ·  $400M+ revenue  ·  8+ years
           </div>
         </div>
       </div>

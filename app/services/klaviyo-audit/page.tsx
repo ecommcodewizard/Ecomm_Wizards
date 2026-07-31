@@ -350,7 +350,7 @@ export default function Page() {
             </li>
             <li className="kv-metric">
               <IconUsers />
-              <span className="kv-metric-value">900+</span>
+              <span className="kv-metric-value">150+</span>
               <span className="kv-metric-label">Brands Helped</span>
             </li>
             <li className="kv-metric">

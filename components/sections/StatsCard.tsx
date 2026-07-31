@@ -4,9 +4,9 @@ import Image from "next/image";
 
 const stats = [
   { value: "8+",     label: "Years of Experience" },
-  { value: "$900M+", label: "Revenue Generated" },
+  { value: "$400M+", label: "Revenue Generated" },
   { value: "9+",     label: "Awards For Ecomm Wizards" },
-  { value: "700+",   label: "Stores Built" },
+  { value: "150+",   label: "Stores Built" },
 ];
 
 // Decorative partner-logo marquee: meaningful alt on the Shopify mark, empty alt

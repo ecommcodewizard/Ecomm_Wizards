@@ -258,7 +258,7 @@ const TRUST_LOGOS = [
 
 const WHAT_YOU_GET = [
   {
-    highlight: "300+",
+    highlight: "150+",
     title: "Migrations Delivered",
     body: "Every single one completed with zero data loss. Products, customers, orders, SEO, content, all accounted for, all verified, all intact.",
   },
@@ -335,7 +335,7 @@ const WHY_REASONS = [
     Icon: IconCode,
     title: "Industry-Leading Expertise",
     body:
-      "300+ Migrations. Zero Data Lost. We have migrated stores for Harvard University, BarkBox, Olaplex, and hundreds more. That kind of track record does not happen by accident. It happens because the best Shopify migration agency treats every product, every customer record, and every redirect like it matters, because it does.",
+      "150+ Migrations. Zero Data Lost. We have migrated stores for Harvard University, BarkBox, Olaplex, and hundreds more. That kind of track record does not happen by accident. It happens because the best Shopify migration agency treats every product, every customer record, and every redirect like it matters, because it does.",
   },
   {
     Icon: IconUser,
@@ -373,7 +373,7 @@ export default function Page() {
               Ecomm Wizards delivers end to end <strong>Shopify migration services</strong> that
               move your entire store, products, customers, order history, SEO equity, and
               integrations, to Shopify or Shopify Plus without losing a single day of revenue. As
-              a <strong>top Shopify migration agency</strong> trusted by 1,000+ brands, we handle
+              a <strong>top Shopify migration agency</strong> trusted by 150+ brands, we handle
               the complexity so you never have to choose between upgrading your platform and
               running your business.
             </p>
@@ -429,12 +429,12 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 3 — Why 300+ Brands Chose Ecomm Wizards */}
+      {/* 3 — Why 150+ Brands Chose Ecomm Wizards */}
       <section className="mig-why">
         <div className="mig-why-inner">
           <div className="mig-why-copy">
             <h2 className="mig-why-h2">
-              Why 300+ Brands Chose Ecomm Wizards for Their Migration
+              Why 150+ Brands Chose Ecomm Wizards for Their Migration
             </h2>
             <ul className="mig-why-list">
               {WHY_REASONS.map(({ Icon, title, body }) => (
@@ -718,7 +718,7 @@ export default function Page() {
           .mig-hero-visual img { max-width: 100%; }
         }
 
-        /* 2 — Why 300+ Brands */
+        /* 2 — Why 150+ Brands */
         .mig-why { background: #FFFFFF; padding: 60px 40px; }
         .mig-why-inner { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
         .mig-why-h2 { color: #111111; font-size: 42px; font-weight: 700; line-height: 1.18; margin: 0 0 24px; letter-spacing: -0.4px; }

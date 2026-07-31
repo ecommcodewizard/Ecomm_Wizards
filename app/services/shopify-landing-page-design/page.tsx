@@ -592,7 +592,7 @@ export default function Page() {
           </h2>
 
           <p className="slp-why-desc">
-            We have built 200+ Shopify landing pages and helped clients generate over $900M in revenue. Here is what separates our Shopify landing page design services from every other agency:
+            We have built 200+ Shopify landing pages and helped clients generate over $400M in revenue. Here is what separates our Shopify landing page design services from every other agency:
           </p>
 
           <div className="slp-why-grid">

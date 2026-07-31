@@ -1335,7 +1335,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 13 — Team grid ($900M+ in Client Revenue) — to be built */}
+      {/* 13 — Team grid ($400M+ in Client Revenue) — to be built */}
 
       {/* 14 — Why Work with Ecomm Wizards (kept — shared) */}
       <section className="mig-whywork" aria-label="Why Work with Ecomm Wizards">

@@ -119,7 +119,7 @@ export default function AuditUrgencySection() {
             className="mt-6 text-[14px] sm:text-[15px] text-center lg:text-left"
             style={{ color: "rgba(255,255,255,0.85)" }}
           >
-            Trusted by 700+ brands, including Andrea Maack, RevGum, and Sunshine
+            Trusted by 150+ brands, including Andrea Maack, RevGum, and Sunshine
           </p>
         </div>
 

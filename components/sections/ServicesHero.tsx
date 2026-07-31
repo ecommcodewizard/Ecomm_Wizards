@@ -14,10 +14,10 @@ const GRADIENT_TEXT = {
 } as const;
 
 const HERO_STATS = [
-  { value: "8+", label: "Years Experience" },
-  { value: "700+", label: "Stores Built" },
-  { value: "$900M+", label: "Revenue Generated" },
-  { value: "28.5%", label: "Avg Conversion Lift" },
+  { value: "8+", label: "Years of Experience" },
+  { value: "150+", label: "Stores Built" },
+  { value: "$400M+", label: "Revenue Generated" },
+  { value: "9+", label: "Awards For Ecomm Wizards" },
 ];
 
 const HERO_LOGOS = [

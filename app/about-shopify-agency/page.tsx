@@ -11,7 +11,7 @@ import AboutContactSection from "@/components/AboutContactSection";
 
 const ABOUT_TITLE = "About Ecomm Wizards | Leading Shopify Plus Agency";
 const ABOUT_DESCRIPTION =
-  "Ecomm Wizards is a leading Shopify Plus agency with 8+ years of experience and $900M+ in client revenue. Meet the team behind 700+ successful Shopify stores.";
+  "Ecomm Wizards is a leading Shopify Plus agency with 8+ years of experience and $400M+ in client revenue. Meet the team behind 150+ successful Shopify stores.";
 const ABOUT_URL = "https://ecommwizards.com/about-shopify-agency";
 const ABOUT_OG_IMAGE = "/images/new_image_grande.webp";
 
@@ -54,13 +54,6 @@ const VALUES = [
   },
 ];
 
-const JOURNEY = [
-  { year: "2018", title: "Founded",          desc: "Started as a boutique Shopify development shop focused on high-converting custom themes." },
-  { year: "2019", title: "First 50 Stores",  desc: "Grew rapidly through referrals, building a reputation for speed and quality." },
-  { year: "2021", title: "Shopify Plus Partner", desc: "Became an official Shopify Plus Partner, gaining enterprise-grade capabilities." },
-  { year: "2023", title: "500+ Stores",      desc: "Passed 500 successful store launches with $500M+ in client revenue tracked." },
-  { year: "2026", title: "700+ Stores",      desc: "Now a multi-award-winning agency with $900M+ in client revenue and a global team." },
-];
 
 const TEAM = [
   { name: "Jake Amos",          role: "Head of Development",     photo: "/images/Jack.webp" },
@@ -114,9 +107,9 @@ export default function AboutPage() {
             }}
           >
             The Shopify Agency Behind{" "}
-            <strong>$900M+ in Client Revenue.</strong>{" "}
+            <strong>$400M+ in Client Revenue.</strong>{" "}
             From startup founders launching their first Shopify store to enterprise
-            brands upgrading to Shopify Plus, we&apos;ve helped over 700+&nbsp;ecommerce
+            brands upgrading to Shopify Plus, we&apos;ve helped 150+&nbsp;ecommerce
             businesses scale profitably.
           </p>
         </div>
@@ -1504,7 +1497,7 @@ export default function AboutPage() {
               textAlign: "center",
             }}
           >
-            At Ecomm Wizards, we have spent the last decade <strong style={{ fontWeight: 700, color: "#000000CC" }}>cultivating enduring partnerships</strong> with some of the most remarkable companies in the industry. We take pride in working closely with these esteemed brands on a daily basis, to craft truly exceptional technical solutions for Shopify merchants.
+            At Ecomm Wizards, we have spent 8+ years <strong style={{ fontWeight: 700, color: "#000000CC" }}>cultivating enduring partnerships</strong> with some of the most remarkable companies in the industry. We take pride in working closely with these esteemed brands on a daily basis, to craft truly exceptional technical solutions for Shopify merchants.
           </div>
 
           <ul

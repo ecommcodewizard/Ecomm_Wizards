@@ -149,7 +149,7 @@ export default function Page() {
               className="mt-[18px] md:mt-[16px] lg:mt-[20px] text-[15px] sm:text-[16px] lg:text-[14px] leading-[1.7]"
               style={{ color: "#FFFFFF", fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}
             >
-              Trusted by 700+ brands like Andrea Maack and RevGum, our Shopify
+              Trusted by 150+ brands like Andrea Maack and RevGum, our Shopify
               conversion audit uses heat maps, session recordings, and real customer
               behavior data to uncover exactly what&rsquo;s killing your conversions.
               We deliver a comprehensive Shopify growth audit with fully functional
@@ -614,10 +614,10 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ── Join 700+ Brands Seeing Real Results ─────────────────── */}
+      {/* ── Join 150+ Brands Seeing Real Results ─────────────────── */}
       <section className="ssd-results-section">
         <div className="ssd-results-inner">
-          <h2 className="ssd-results-heading">Join 700+ Brands Seeing Real Results</h2>
+          <h2 className="ssd-results-heading">Join 150+ Brands Seeing Real Results</h2>
 
           <div className="ssd-results-cards">
             {[

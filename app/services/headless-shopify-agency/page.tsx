@@ -462,10 +462,10 @@ export default function Page() {
 
             <div className="std-hero-stats">
               {[
-                { number: "100+",   label: "Stores Built" },
+                { number: "150+",   label: "Stores Built" },
                 { number: "0.8s",   label: "Avg. Load Time" },
                 { number: "90+",    label: "Lighthouse Score" },
-                { number: "$150M+", label: "Client GMV" },
+                { number: "$400M+", label: "Revenue Generated" },
               ].map((s) => (
                 <div key={s.label} className="std-hero-stat-item">
                   <span className="std-hero-stat-num">{s.number}</span>
@@ -520,7 +520,7 @@ export default function Page() {
       <section className="std-trust" style={{ background: C_WHITE }} aria-label="Brands that trust Ecomm Wizards for headless Shopify">
         <div className="mx-auto" style={{ maxWidth: "1320px", padding: "48px 20px" }}>
           <h2 className="std-trust-h2 text-center" style={{ color: C_DARK, fontSize: 30, fontWeight: 700, lineHeight: 1.3, margin: 0 }}>
-            100+ Shopify Stores Built. Here&apos;s Who Trusts Us.
+            150+ Shopify Stores Built. Here&apos;s Who Trusts Us.
           </h2>
           <p className="text-center" style={{ color: C_TEXT, fontSize: 16, lineHeight: "26px", margin: "10px 0 0", textAlign: "center" }}>
             We build exclusively on Shopify. Every headless commerce build is engineered in-house by Shopify headless developers who work on the platform and modern frontend frameworks full-time.
@@ -1063,7 +1063,7 @@ export default function Page() {
             </span>
           </h2>
           <p className="shl-why-desc">
-            We are a headless commerce agency that works only on Shopify, with 100+ live stores built. Here is what separates a headless build that pays off from one that becomes an expensive maintenance problem:
+            We are a headless commerce agency that works only on Shopify, with 150+ live stores built. Here is what separates a headless build that pays off from one that becomes an expensive maintenance problem:
           </p>
 
           <div className="shl-why-grid">
@@ -1084,7 +1084,7 @@ export default function Page() {
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M6 10l-4 6 4 6"/><path d="M26 10l4 6-4 6"/><path d="M19 6l-6 20"/></svg>),
               },
               {
-                title: "100+ Shopify Stores Built",
+                title: "150+ Shopify Stores Built",
                 desc: "DTC brands, Shopify Plus merchants, B2B distributors, and global retailers. Every build adds to a pattern library of what works in production, so the edge cases that catch other teams are ones we solved years ago.",
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 22L10 12l5 6 4-8 5 8"/><circle cx="23" cy="6" r="3"/><path d="M20.5 6H6" strokeDasharray="2 2"/></svg>),
               },

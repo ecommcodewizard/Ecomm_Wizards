@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import KnifeAccordion from "@/components/sections/KnifeAccordion";
@@ -15,7 +15,7 @@ import WhyPartnerSection from "@/components/sections/WhyPartnerSection";
 
 const HOME_TITLE = "Shopify Agency | Design, CRO, Development & Growth Experts";
 const HOME_DESCRIPTION =
-  "Award-winning Shopify agency helping brands scale with high-converting design, CRO, SEO, and development. 700+ stores built, $900M+ revenue generated.";
+  "Award-winning Shopify agency helping brands scale with high-converting design, CRO, SEO, and development. 150+ stores built, $400M+ revenue generated.";
 
 export const metadata: Metadata = {
   title: { absolute: HOME_TITLE },
@@ -78,12 +78,6 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
 const GRADIENT = "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)";
 const GRADIENT_TEXT = { background: GRADIENT, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" } as const;
 
-const STATS = [
-  { value: "700+",   label: "Stores Built" },
-  { value: "$900M+", label: "Client Revenue" },
-  { value: "28.5%",  label: "Avg Conversion Lift" },
-  { value: "9.8/10", label: "Client Satisfaction" },
-];
 
 const SERVICES = [
   {
@@ -118,21 +112,7 @@ const SERVICES = [
   },
 ];
 
-const METRICS = [
-  { value: "700+",   label: "Stores Launched",      icon: "ðŸª" },
-  { value: "$900M+", label: "Revenue Generated",     icon: "ðŸ'°" },
-  { value: "8+",     label: "Years of Experience",   icon: "ðŸ†" },
-  { value: "98%",    label: "Client Retention Rate", icon: "ðŸ¤" },
-];
 
-const BAR_DATA = [
-  { year: "2021", stores: 80 },
-  { year: "2022", stores: 130 },
-  { year: "2023", stores: 190 },
-  { year: "2024", stores: 280 },
-  { year: "2025", stores: 400 },
-  { year: "2026", stores: 700 },
-];
 
 const PROCESS = [
   { step: "01", title: "Discovery & Strategy",  desc: "We audit your brand, market, and goals to define the perfect Shopify roadmap." },
@@ -193,7 +173,6 @@ function Badge({ text }: { text: string }) {
 // â"€â"€â"€ Page â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
 
 export default function HomePage() {
-  const maxStores = Math.max(...BAR_DATA.map((d) => d.stores));
 
   return (
     <>
@@ -361,9 +340,9 @@ export default function HomePage() {
         >
           {[...Array(3)].map((_, i) => (
             <div key={i} className="flex shrink-0 items-center gap-8 px-4 font-medium text-white" style={{ fontSize: "16px", fontFamily: "'Poppins', sans-serif" }}>
-              <span>700+ Stores Built</span>
+              <span>150+ Stores Built</span>
               <span className="shrink-0 rounded-full" style={{ width: "7px", height: "7px", display: "inline-block", background: GRADIENT }} />
-              <span>$900M+ Revenue Generated</span>
+              <span>$400M+ Revenue Generated</span>
               <span className="shrink-0 rounded-full" style={{ width: "7px", height: "7px", display: "inline-block", background: GRADIENT }} />
               <span>8+ Years of Experience</span>
               <span className="shrink-0 rounded-full" style={{ width: "7px", height: "7px", display: "inline-block", background: GRADIENT }} />
@@ -371,7 +350,7 @@ export default function HomePage() {
               <span className="shrink-0 rounded-full" style={{ width: "7px", height: "7px", display: "inline-block", background: GRADIENT }} />
               <span>Shopify Plus Certified</span>
               <span className="shrink-0 rounded-full" style={{ width: "7px", height: "7px", display: "inline-block", background: GRADIENT }} />
-              <span>28.5% Avg Conversion Lift</span>
+              <span>9+ Industry Awards</span>
               <span className="shrink-0 rounded-full" style={{ width: "7px", height: "7px", display: "inline-block", background: GRADIENT }} />
             </div>
           ))}
@@ -650,8 +629,8 @@ export default function HomePage() {
             <div className="grid grid-cols-2 relative overflow-hidden" style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
               <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 55% 80% at 50% 50%, rgba(61,199,122,0.20) 0%, rgba(61,199,122,0.08) 40%, rgba(61,199,122,0.03) 65%, transparent 80%)" }} />
               {[
-                { icon: <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect x="1" y="8" width="10" height="19" rx="1.5" stroke="currentColor" strokeWidth="1.6"/><rect x="14" y="1" width="13" height="26" rx="1.5" stroke="currentColor" strokeWidth="1.6"/></svg>, value: "700+", label: "Shopify Stores Built" },
-                { icon: <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M3 22L9 15L15 19L23 9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M19 9h4v4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>, value: "$900M+", label: "Revenue Generated" },
+                { icon: <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect x="1" y="8" width="10" height="19" rx="1.5" stroke="currentColor" strokeWidth="1.6"/><rect x="14" y="1" width="13" height="26" rx="1.5" stroke="currentColor" strokeWidth="1.6"/></svg>, value: "150+", label: "Shopify Stores Built" },
+                { icon: <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M3 22L9 15L15 19L23 9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M19 9h4v4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>, value: "$400M+", label: "Revenue Generated" },
                 { icon: <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="10" r="6" stroke="currentColor" strokeWidth="1.6"/><path d="M4 26c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>, value: "8+", label: "Years of Experience" },
                 { icon: <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M9 4H5a1 1 0 00-1 1v4c0 6.627 4.477 12.246 10.666 13.773M19 4h4a1 1 0 011 1v4c0 6.627-4.477 12.246-10.666 13.773" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/><path d="M9 4h10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>, value: "9+", label: "Awards For Ecomm Wizards" },
               ].map((s, i) => (
