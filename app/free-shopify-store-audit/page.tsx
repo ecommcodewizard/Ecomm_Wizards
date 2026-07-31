@@ -82,9 +82,9 @@ export default function FreeAuditPage() {
         <div className="ticker-strip flex whitespace-nowrap h-full items-center" style={{ willChange: "transform" }}>
           {[...Array(3)].map((_, i) => (
             <div key={i} className="flex shrink-0 items-center gap-8 px-4 font-medium text-white" style={{ fontSize: "16px", fontFamily: "'Poppins', sans-serif" }}>
-              <span>700+ Stores Built</span>
+              <span>150+ Stores Built</span>
               <span className="shrink-0 rounded-full" style={{ width: "7px", height: "7px", display: "inline-block", background: GRADIENT }} />
-              <span>$900M+ Revenue Generated</span>
+              <span>$400M+ Revenue Generated</span>
               <span className="shrink-0 rounded-full" style={{ width: "7px", height: "7px", display: "inline-block", background: GRADIENT }} />
               <span>8+ Years of Experience</span>
               <span className="shrink-0 rounded-full" style={{ width: "7px", height: "7px", display: "inline-block", background: GRADIENT }} />

@@ -967,7 +967,7 @@ export default function Page() {
             style={{ color: "#334155", maxWidth: "1100px" }}
           >
             You do not need another agency that runs PageSpeed Insights and calls it a day. You need a team that has
-            done Shopify page speed optimization across 500+ stores and knows exactly where the problems live. That is
+            done Shopify page speed optimization across 150+ stores and knows exactly where the problems live. That is
             what makes us the go-to Shopify speed optimization service for Shopify Plus brands that are serious about
             performance.
           </p>

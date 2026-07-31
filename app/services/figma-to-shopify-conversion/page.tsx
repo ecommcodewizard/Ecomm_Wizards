@@ -7,7 +7,7 @@ import RelatedServices from "@/components/sections/RelatedServices";
 import Link from "next/link";
 
 const META_DESCRIPTION =
-  "Convert your Figma files into a pixel-perfect custom Shopify store. Expert Shopify developers, Shopify 2.0 builds, free blueprint & quote. 700+ brands launched.";
+  "Convert your Figma files into a pixel-perfect custom Shopify store. Expert Shopify developers, Shopify 2.0 builds, free blueprint & quote. 150+ brands launched.";
 const CANONICAL_URL = "https://ecommwizards.com/services/figma-to-shopify-conversion";
 
 export const metadata: Metadata = {
@@ -56,7 +56,7 @@ const PILLARS = [
     body: "We don't approximate your design, we replicate, then optimize it. Every element is built in Shopify Liquid and stress-tested for Core Web Vitals, mobile, and conversion performance.",
   },
   {
-    title: "Pillar 3: 700+ Stores. $900M+ in Revenue. 8 Years Deep.",
+    title: "Pillar 3: 150+ Stores. $400M+ in Revenue. 8 Years Deep.",
     body: "We've partnered with DTC brands, Shark Tank alumni, and high-growth startups to turn Figma designs into Shopify stores that sell. This isn't our first rodeo, it's our seven-hundredth.",
   },
   {
@@ -900,10 +900,10 @@ export default function FigmaToShopifyConversionPage() {
         ` }} />
       </section>
 
-      {/* ── 700+ Brands / Case Studies ───────────────────────────────── */}
+      {/* ── 150+ Brands / Case Studies ───────────────────────────────── */}
       <section className="ssd-results-section">
         <div className="ssd-results-inner">
-          <h2 className="ssd-results-heading">Join 700+ Brands Seeing Real Results</h2>
+          <h2 className="ssd-results-heading">Join 150+ Brands Seeing Real Results</h2>
 
           <div className="ssd-results-cards">
             {QUOTE_STRIP.map((q) => (

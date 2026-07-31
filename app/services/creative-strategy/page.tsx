@@ -44,8 +44,8 @@ const GRADIENT_TEXT = {
 const HERO_GLOW = "radial-gradient(60% 55% at 82% 22%, rgba(61,199,122,0.20) 0%, rgba(61,199,122,0.06) 45%, transparent 70%), #000000";
 
 const HERO_STATS = [
-  { value: "700+", label: "Stores Built" },
-  { value: "$900M+", label: "Revenue Generated" },
+  { value: "150+", label: "Stores Built" },
+  { value: "$400M+", label: "Revenue Generated" },
   { value: "8+", label: "Years" },
   { value: "9+", label: "Awards" },
 ];
@@ -241,7 +241,7 @@ export default function Page() {
       <section className="std-trust" style={{ background: "#fff" }} aria-label="Brands that trust Ecomm Wizards">
         <div className="mx-auto" style={{ maxWidth: "1320px", padding: "48px 20px" }}>
           <h2 className="std-trust-h2 text-center" style={{ color: "#000", fontSize: 30, fontWeight: 700, lineHeight: 1.3, margin: 0 }}>
-            700+ Shopify Stores Built. Trusted by Brands That Scale.
+            150+ Shopify Stores Built. Trusted by Brands That Scale.
           </h2>
           <p className="text-center" style={{ color: "#334155", fontSize: 16, lineHeight: "26px", margin: "10px 0 0" }}>
             From DTC startups to global names. The same team that ships award-winning Shopify stores builds the creative that sells them.

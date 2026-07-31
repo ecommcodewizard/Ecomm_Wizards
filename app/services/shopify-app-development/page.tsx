@@ -5,7 +5,7 @@ import RelatedServices from "@/components/sections/RelatedServices";
 import Link from "next/link";
 
 const META_DESCRIPTION =
-  "Hire expert Shopify app developers to build custom private apps or launch on the Shopify App Store. Shopify Plus Preferred Partner. 700+ merchants.";
+  "Hire expert Shopify app developers to build custom private apps or launch on the Shopify App Store. Shopify Plus Preferred Partner. 150+ merchants.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-app-development";
 
 export const metadata: Metadata = {
@@ -325,7 +325,7 @@ export default function ShopifyAppDevelopmentPage() {
                     </svg>
                   </span>
                   <span className="sad-about-text">
-                    <b>Over 1,000 Shopify stores served</b> through our sister company.
+                    <b>Over 200 Shopify stores served</b> through our sister company.
                   </span>
                 </li>
 
@@ -340,7 +340,7 @@ export default function ShopifyAppDevelopmentPage() {
                     </svg>
                   </span>
                   <span className="sad-about-text">
-                    <b>$1.5B+ revenue generated</b> collectively for our clients.
+                    <b>$600M+ revenue generated</b> collectively for our clients.
                   </span>
                 </li>
 
@@ -353,7 +353,7 @@ export default function ShopifyAppDevelopmentPage() {
                     </svg>
                   </span>
                   <span className="sad-about-text">
-                    <b>28+ commerce awards</b> and more than <b>550 five star reviews.</b>
+                    <b>9+ industry awards</b> and more than <b>550 five star reviews.</b>
                   </span>
                 </li>
 
@@ -1389,7 +1389,7 @@ export default function ShopifyAppDevelopmentPage() {
                       </span>
                     </label>
                     <div className="sad-why-bodyc">
-                      <p>28+ commerce awards. 550+ five-star reviews. When you hire Shopify app developers from Ecomm Wizards, you are hiring a team the industry keeps recognizing for results.</p>
+                      <p>9+ industry awards. 550+ five-star reviews. When you hire Shopify app developers from Ecomm Wizards, you are hiring a team the industry keeps recognizing for results.</p>
                     </div>
                   </div>
 

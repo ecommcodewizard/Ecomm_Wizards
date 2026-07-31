@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: og("/services", "Shopify Services"),
   title: { absolute: "Shopify Services: Development, Migration, CRO, SEO, Apps & B2B | Ecomm Wizards" },
   description:
-    "Full-service Shopify agency: store builds, migrations, CRO, SEO, apps, B2B, and POS. One team behind 700+ stores and $900M+ in revenue. Get a free quote.",
+    "Full-service Shopify agency: store builds, migrations, CRO, SEO, apps, B2B, and POS. One team behind 150+ stores and $400M+ in revenue. Get a free quote.",
 };
 
 const SERVICE_FAQS = [

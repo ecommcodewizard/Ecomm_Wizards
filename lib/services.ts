@@ -98,8 +98,8 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
 ];
 
 export const SERVICE_STATS = [
-  { value: "700+", label: "Stores Built" },
-  { value: "$900M+", label: "Revenue Generated" },
+  { value: "150+", label: "Stores Built" },
+  { value: "$400M+", label: "Revenue Generated" },
   { value: "8+", label: "Years of Experience" },
   { value: "9+", label: "Industry Awards" },
 ];

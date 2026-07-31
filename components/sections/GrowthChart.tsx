@@ -110,10 +110,10 @@ export default function GrowthChart() {
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "30px" }}>
           <h2 className="growth-chart-h2" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "42px", fontWeight: 700, color: "#FFFFFF", lineHeight: "1.2", marginBottom: "16px" }}>
-            8 Years of Compounding Impact As A <span className="stat-gradient-text">Shopify Plus Agency</span>
+            8+ Years of Compounding Impact As A <span className="stat-gradient-text">Shopify Plus Agency</span>
           </h2>
           <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "16px", color: "rgba(255,255,255,0.8)", maxWidth: "940px", margin: "0 auto" }}>
-            From our first Shopify builds to $900M+ in client revenue and now entering in the era of AI-driven ecommerce personalization.
+            From our first Shopify builds to $400M+ in client revenue and now entering in the era of AI-driven ecommerce personalization.
           </p>
         </div>
 

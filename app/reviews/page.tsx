@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://ecommwizards.com/reviews" },
   openGraph: og("/reviews", "Client Reviews"),
   title: { absolute: "Ecomm Wizards Reviews | Client Testimonials & Case Studies" },
-  description: "Read what 700+ Shopify merchants say about working with Ecomm Wizards. Real reviews, real results, real revenue growth.",
+  description: "Read what 150+ Shopify merchants say about working with Ecomm Wizards. Real reviews, real results, real revenue growth.",
 };
 
 export default function Page() {
@@ -19,7 +19,7 @@ export default function Page() {
         badge="Client Reviews"
         title="What Our Clients Say"
         titleHighlight="About Ecomm Wizards"
-        subtitle="700+ Shopify stores built. $900M+ in client revenue generated. 8+ years of compounding results — read what our clients say."
+        subtitle="150+ Shopify stores built. $400M+ in client revenue generated. 8+ years of compounding results — read what our clients say."
         primaryCta={{ label: "Get a Free Quote", href: "/free-shopify-store-audit" }}
         secondaryCta={{ label: "Book a Call", href: "/book-shopify-consultation" }}
       />

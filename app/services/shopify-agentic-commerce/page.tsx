@@ -294,7 +294,7 @@ export default function Page() {
       <section className="std-trust" style={{ background: "#fff" }} aria-label="Brands that trust Ecomm Wizards">
         <div className="mx-auto" style={{ maxWidth: "1320px", padding: "48px 20px" }}>
           <h2 className="std-trust-h2 text-center" style={{ color: "#000", fontSize: 30, fontWeight: 700, lineHeight: 1.3, margin: 0 }}>
-            700+ Shopify Stores Built. Here&apos;s Who Trusts Us.
+            150+ Shopify Stores Built. Here&apos;s Who Trusts Us.
           </h2>
           <p className="text-center" style={{ color: "#334155", fontSize: 16, lineHeight: "26px", margin: "10px 0 0" }}>
             From DTC startups to global brands. The same team that ships award-winning Shopify stores gets your products ready to win in AI search.
@@ -597,7 +597,7 @@ export default function Page() {
       <section className="ssd-results-section" style={{ background: "#FBF7ED", fontFamily: "'Poppins', sans-serif", padding: "60px 20px" }}>
         <div className="ssd-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
           <h2 className="ssd-results-heading">A proven team behind the results</h2>
-          <p className="ssd-results-desc">We have built <Link href="/case-studies">700+ Shopify stores</Link> and generated $900M+ in revenue across 8+ years and 9+ industry awards. The same team gets your products agent-ready for the AI shopping era.</p>
+          <p className="ssd-results-desc">We have built <Link href="/case-studies">150+ Shopify stores</Link> and generated $400M+ in revenue across 8+ years and 9+ industry awards. The same team gets your products agent-ready for the AI shopping era.</p>
           <CaseStudySlider slides={AC_SLIDES} intervalMs={6000} showDots />
         </div>
       </section>

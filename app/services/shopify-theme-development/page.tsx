@@ -10,7 +10,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
-  "Shopify theme development agency building custom Liquid themes on Shopify 2.0. Fast, mobile-first, and built to convert. 500+ themes built.";
+  "Shopify theme development agency building custom Liquid themes on Shopify 2.0. Fast, mobile-first, and built to convert. 100+ themes built.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-theme-development";
 
 export const metadata: Metadata = {
@@ -65,7 +65,7 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
 
 /* ── Stats ── */
 const STATS = [
-  { number: "500+",  label: "Themes Built" },
+  { number: "100+",  label: "Themes Built" },
   { number: "90+",   label: "Lighthouse Score" },
   { number: "35%",   label: "Avg. Conv. Lift" },
   { number: "4.9★",  label: "Client Rating" },
@@ -406,8 +406,8 @@ export default function Page() {
             <div className="std-hero-stats">
               {[
                 { number: "8+",     label: "Years Experience" },
-                { number: "700+",   label: "Stores Built" },
-                { number: "$900M+", label: "Revenue Generated" },
+                { number: "150+",   label: "Stores Built" },
+                { number: "$400M+", label: "Revenue Generated" },
                 { number: "28.5%",  label: "Avg Conversion Lift" },
               ].map((s) => (
                 <div key={s.label} className="std-hero-stat-item">
@@ -624,7 +624,7 @@ export default function Page() {
           </h2>
 
           <p className="ssd-why-desc">
-            We have built 500+ custom Shopify themes and helped clients generate over $900M in revenue. Here&apos;s what makes us<br className="std-why-desc-br" /> different from every other Shopify theme development company you will talk to:
+            We have built 100+ custom Shopify themes and helped clients generate over $400M in revenue. Here&apos;s what makes us<br className="std-why-desc-br" /> different from every other Shopify theme development company you will talk to:
           </p>
 
           <div className="ssd-why-grid">
@@ -655,8 +655,8 @@ export default function Page() {
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M5 18v-3a11 11 0 0 1 22 0v3" /><path d="M5 18h4v8H7a2 2 0 0 1-2-2v-6z" /><path d="M27 18h-4v8h2a2 2 0 0 0 2-2v-6z" /><path d="M23 26v1a2 2 0 0 1-2 2h-4" /><circle cx="15" cy="29" r="1.4" /></svg>),
               },
               {
-                title: "Proven Across 500+ Builds",
-                desc: (<>$900M+ in client revenue. 500+ Shopify themes. From funded DTC startups to enterprise brands. Real results you can verify, not claims you have to take on faith.</>),
+                title: "Proven Across 100+ Builds",
+                desc: (<>$400M+ in client revenue. 100+ Shopify themes. From funded DTC startups to enterprise brands. Real results you can verify, not claims you have to take on faith.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4 l3 2.4 l3.7 -0.6 l1.6 3.4 l3.4 1.6 l-0.6 3.7 l2.4 3 l-2.4 3 l0.6 3.7 l-3.4 1.6 l-1.6 3.4 l-3.7 -0.6 l-3 2.4 l-3 -2.4 l-3.7 0.6 l-1.6 -3.4 l-3.4 -1.6 l0.6 -3.7 l-2.4 -3 l2.4 -3 l-0.6 -3.7 l3.4 -1.6 l1.6 -3.4 l3.7 0.6 z" /><polyline points="11,16.5 14.5,20 21,12.5" /></svg>),
               },
             ].map((card) => (
@@ -735,7 +735,7 @@ export default function Page() {
         <div className="ssd-results-inner mx-auto" style={{ maxWidth: "1320px" }}>
           <h2 className="ssd-results-heading">Real Results from Our Shopify Theme Development Work</h2>
           <p className="ssd-results-desc">
-            Our custom Shopify theme development has driven up to 35% higher conversion rates and 52% faster load times, across 500+ builds for brands that needed more than a template could give them.
+            Our custom Shopify theme development has driven up to 35% higher conversion rates and 52% faster load times, across 100+ builds for brands that needed more than a template could give them.
           </p>
           <CaseStudySlider slides={CASE_STUDY_SLIDES} intervalMs={6000} showDots={false} />
         </div>

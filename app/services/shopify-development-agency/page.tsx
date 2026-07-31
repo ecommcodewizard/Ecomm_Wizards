@@ -9,7 +9,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
-  "Shopify development agency specializing in custom builds, theme development, Shopify Plus, and migrations. 700+ stores built. Fixed price. Most projects live in 6 weeks.";
+  "Shopify development agency specializing in custom builds, theme development, Shopify Plus, and migrations. 150+ stores built. Fixed price. Most projects live in 6 weeks.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-development-agency";
 
 export const metadata: Metadata = {
@@ -436,13 +436,13 @@ export default function Page() {
               </span>
             </h1>
             <p className="std-hero-p mt-6" style={{ color: "#ffffff", fontSize: 16, lineHeight: "28px", maxWidth: 580, marginTop: 24 }}>
-              Your store is the most important sales channel your business has. We build it right. <Link href="/services/shopify-theme-development" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Custom Shopify theme development</Link>, Shopify Plus builds, <Link href="/services/migration" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>platform migrations</Link>, and every piece of Shopify web development your business actually needs. We have delivered 700+ stores, all on a fixed price, with a go-live date confirmed before we write a single line of code.
+              Your store is the most important sales channel your business has. We build it right. <Link href="/services/shopify-theme-development" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Custom Shopify theme development</Link>, Shopify Plus builds, <Link href="/services/migration" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>platform migrations</Link>, and every piece of Shopify web development your business actually needs. We have delivered 150+ stores, all on a fixed price, with a go-live date confirmed before we write a single line of code.
             </p>
 
             <div className="std-hero-stats">
               {[
-                { number: "700+",    label: "Stores Built" },
-                { number: "$900M+",  label: "Client Revenue" },
+                { number: "150+",    label: "Stores Built" },
+                { number: "$400M+",  label: "Client Revenue" },
                 { number: "95%+",    label: "Rankings Retained" },
                 { number: "60 Days", label: "Support Included" },
               ].map((s) => (
@@ -480,7 +480,7 @@ export default function Page() {
             {/* Partner badge */}
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginTop: "24px" }}>
               <Image src="/images/shopify-icon.svg" alt="Shopify Plus Partner" width={22} height={22} style={{ opacity: 0.8 }} />
-              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 500 }}>Shopify Plus Partner. 700+ stores built exclusively on Shopify.</span>
+              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 500 }}>Shopify Plus Partner. 150+ stores built exclusively on Shopify.</span>
             </div>
           </div>
 
@@ -502,7 +502,7 @@ export default function Page() {
       <section className="std-trust" style={{ background: C_WHITE }} aria-label="Brands that trust Ecomm Wizards for Shopify development">
         <div className="mx-auto" style={{ maxWidth: "1320px", padding: "48px 20px" }}>
           <h2 className="std-trust-h2 text-center" style={{ color: C_DARK, fontSize: 30, fontWeight: 700, lineHeight: 1.3, margin: 0 }}>
-            700+ Shopify Stores Built. Here&apos;s Who Trusts Us.
+            150+ Shopify Stores Built. Here&apos;s Who Trusts Us.
           </h2>
           <p className="text-center" style={{ color: C_TEXT, fontSize: 16, lineHeight: "26px", margin: "10px 0 0", textAlign: "center" }}>
             We build exclusively on Shopify. Every project is built and launched in-house by developers who work on Shopify full-time and nothing else.
@@ -970,7 +970,7 @@ export default function Page() {
             </span>
           </h2>
           <p className="sda-why-desc">
-            We have built 700+ live Shopify stores. Here is what separates a properly built Shopify store from one that was pieced together with themes and workarounds:
+            We have built 150+ live Shopify stores. Here is what separates a properly built Shopify store from one that was pieced together with themes and workarounds:
           </p>
 
           <div className="sda-why-grid">
@@ -991,7 +991,7 @@ export default function Page() {
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M6 10l-4 6 4 6"/><path d="M26 10l4 6-4 6"/><path d="M19 6l-6 20"/></svg>),
               },
               {
-                title: "700+ Live Shopify Stores Built",
+                title: "150+ Live Shopify Stores Built",
                 desc: (<>We have built, migrated, and launched over 700 Shopify stores. DTC brands, Shopify Plus merchants, B2B distributors, and global retailers. Every project adds to a body of pattern knowledge most developers never build up. The edge cases that catch other agencies are ones we solved years ago.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 22L10 12l5 6 4-8 5 8"/><circle cx="23" cy="6" r="3"/><path d="M20.5 6H6" strokeDasharray="2 2"/></svg>),
               },

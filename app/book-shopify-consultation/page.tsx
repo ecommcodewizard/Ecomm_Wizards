@@ -137,7 +137,7 @@ export default function BookCallPage() {
             </div>
             <div className="bkc-who">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden><circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="1.6" /><path d="M4.5 20c0-3.6 3.4-6 7.5-6s7.5 2.4 7.5 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
-              <p>You talk to Shopify experts who have worked across 700+ stores, not a sales rep.</p>
+              <p>You talk to Shopify experts who have worked across 150+ stores, not a sales rep.</p>
             </div>
             <div className="bkc-book-chips">
               <span className="bkc-chip2"><TickIcon /> Free</span>

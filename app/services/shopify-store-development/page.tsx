@@ -51,7 +51,7 @@ const OLIVE_GRADIENT =
   "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)";
 
 const META_DESCRIPTION =
-  "Custom Shopify store development built for speed, scalability, and conversions. 700+ stores launched. Speak with our Shopify experts today.";
+  "Custom Shopify store development built for speed, scalability, and conversions. 150+ stores launched. Speak with our Shopify experts today.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-store-development";
 
 export const metadata: Metadata = {
@@ -817,8 +817,8 @@ export default function ShopifyStoreDevelopmentPage() {
                   <div className="ssd-who-stat-track">
                     {(() => {
                       const stats = [
-                        { num: "700+",   label: "Stores Built" },
-                        { num: "$900M+", label: "Revenue Generated" },
+                        { num: "150+",   label: "Stores Built" },
+                        { num: "$400M+", label: "Revenue Generated" },
                         { num: "9+",     label: "Awards For Ecomm Wizards" },
                         { num: "8+",     label: "Years of Experience" },
                       ];
@@ -1648,7 +1648,7 @@ export default function ShopifyStoreDevelopmentPage() {
                 title: "Results Brands Actually Trust",
                 desc: (
                   <>
-                    Over 700 stores launched, $900M+ in client revenue generated
+                    Over 700 stores launched, $400M+ in client revenue generated
                     for brands ranging from startups to Shark Tank Features. As
                     one of the best ecommerce development agencies for Shopify
                     and WooCommerce, we deliver proven results across platforms.
