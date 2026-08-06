@@ -9,7 +9,7 @@ import { SERVICE_CATEGORIES, type ServiceItem } from "@/lib/services";
 
 export default function RelatedServices({
   current,
-  max = 4,
+  max = 6,
   heading,
 }: {
   current?: string;
@@ -19,25 +19,40 @@ export default function RelatedServices({
   const path = current ?? "";
   if (!path || path === "/services") return null;
 
+  const flat = SERVICE_CATEGORIES.flatMap((c) => c.items);
   const cat = SERVICE_CATEGORIES.find((c) => c.items.some((i) => i.href === path));
-  const siblings: ServiceItem[] = cat ? cat.items.filter((i) => i.href !== path) : [];
 
-  // Top up from the rest of the catalog so small categories (e.g. B2B & POS) and
-  // pages not yet in SERVICE_CATEGORIES still show a full set.
-  if (siblings.length < max) {
-    const seen = new Set<string>([path, ...siblings.map((s) => s.href)]);
-    for (const c of SERVICE_CATEGORIES) {
-      for (const item of c.items) {
-        if (siblings.length >= max) break;
-        if (!seen.has(item.href)) {
-          siblings.push(item);
-          seen.add(item.href);
-        }
-      }
+  // Rotate the selection by the current page's position so internal-link coverage
+  // spreads EVENLY across the catalog instead of always surfacing the first few
+  // items (which starved later service pages of contextual inbound links). For
+  // non-service pages (e.g. case studies) seed the rotation from the path so
+  // different pages surface different — but still deterministic — service sets.
+  const seedIndex = (() => {
+    const i = flat.findIndex((it) => it.href === path);
+    if (i >= 0) return i;
+    let h = 0;
+    for (let k = 0; k < path.length; k++) h = (h * 31 + path.charCodeAt(k)) >>> 0;
+    return flat.length ? h % flat.length : 0;
+  })();
+
+  const items: ServiceItem[] = [];
+  const seen = new Set<string>([path]);
+
+  // 1) Same-category siblings first (most relevant), rotated within the category.
+  if (cat) {
+    const ci = Math.max(0, cat.items.findIndex((i) => i.href === path));
+    for (let k = 1; k <= cat.items.length && items.length < max; k++) {
+      const item = cat.items[(ci + k) % cat.items.length];
+      if (!seen.has(item.href)) { items.push(item); seen.add(item.href); }
     }
   }
 
-  const items = siblings.slice(0, max);
+  // 2) Top up from the rest of the catalog, rotated by seedIndex for even spread.
+  for (let k = 1; k <= flat.length && items.length < max; k++) {
+    const item = flat[(seedIndex + k) % flat.length];
+    if (!seen.has(item.href)) { items.push(item); seen.add(item.href); }
+  }
+
   if (items.length === 0) return null;
 
   return (
@@ -63,7 +78,7 @@ export default function RelatedServices({
         .ew-related { background: #FBF7ED; border-top: 1px solid rgba(0,0,0,0.06); font-family: 'Poppins', sans-serif; }
         .ew-related-inner { max-width: 1320px; margin: 0 auto; padding: 56px 20px; }
         .ew-related-title { font-size: clamp(24px, 3vw, 34px); font-weight: 700; color: #0f172a; letter-spacing: -0.02em; margin: 0 0 28px; }
-        .ew-related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .ew-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
         .ew-related-card { display: flex; flex-direction: column; gap: 10px; padding: 22px; background: #ffffff; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; text-decoration: none; transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
         .ew-related-card:hover { border-color: #2A9555; box-shadow: 0 8px 28px rgba(0,0,0,0.07); transform: translateY(-3px); }
         .ew-related-name { font-size: 17px; font-weight: 600; color: #0f172a; line-height: 1.3; }

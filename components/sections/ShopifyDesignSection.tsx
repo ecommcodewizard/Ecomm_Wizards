@@ -39,6 +39,8 @@ interface Props {
   imageAspectRatio?: string;
   showCta?: boolean;
   shortDescription?: string;
+  secondaryHref?: string;
+  secondaryText?: string;
 }
 
 const DEFAULT_SERVICES: ServiceItem[] = [
@@ -214,6 +216,8 @@ export default function ShopifyDesignSection({
   imageAspectRatio,
   showCta = true,
   shortDescription,
+  secondaryHref,
+  secondaryText,
 }: Props) {
   const [btnHovered, setBtnHovered] = useState(false);
 
@@ -445,6 +449,20 @@ export default function ShopifyDesignSection({
                   </svg>
                 </Link>
               ))}
+              {secondaryHref && secondaryText && (
+                <div className="mt-5 max-sm:mt-4">
+                  <Link
+                    href={secondaryHref}
+                    className="inline-flex items-center gap-1.5 text-[15px] max-sm:text-[14px] font-semibold transition-opacity hover:opacity-70"
+                    style={{ fontFamily: "'Poppins', sans-serif", color: dark ? "#A8F0B4" : "#2A9555", textDecoration: "none" }}
+                  >
+                    {secondaryText}
+                    <svg width="13" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 5H14M14 5L9 0M14 5L9 10" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </Link>
+                </div>
+              )}
             </div>
 
             {/* Right: video / image / custom panel */}

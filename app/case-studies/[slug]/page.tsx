@@ -7,6 +7,7 @@ import { getAppCaseStudyBySlug, APP_CASE_STUDIES, type AppCaseStudy } from "@/li
 import { getKlaviyoCaseStudyBySlug, KLAVIYO_CASE_STUDIES, type KlaviyoCaseStudy } from "@/lib/klaviyo-studies";
 import { getCreativeCaseStudyBySlug, CREATIVE_CASE_STUDIES } from "@/lib/creative-studies";
 import CTASection from "@/components/ui/CTASection";
+import RelatedServices from "@/components/sections/RelatedServices";
 import BeforeAfterSlider from "./BeforeAfterSlider";
 import SpeedVideo from "../SpeedVideo";
 
@@ -36,6 +37,7 @@ const SERVICE_LINK_MAP: { test: RegExp; href: string }[] = [
   { test: /b2b|wholesale/i, href: "/services/shopify-b2b-store-setup" },
   { test: /\bpos\b/i, href: "/services/shopify-pos-setup" },
   { test: /a\/b|a-b test/i, href: "/services/a-b-testing" },
+  { test: /cart/i, href: "/services/shopify-cart-gamification" },
   { test: /cro|conversion/i, href: "/services/shopify-cro-agency" },
   { test: /theme/i, href: "/services/shopify-theme-development" },
   { test: /headless|hydrogen/i, href: "/services/headless-shopify-agency" },
@@ -45,6 +47,7 @@ const SERVICE_LINK_MAP: { test: RegExp; href: string }[] = [
   { test: /\bseo\b/i, href: "/services/shopify-seo-agency" },
   { test: /klaviyo|email|sms/i, href: "/services/klaviyo-audit" },
   { test: /integration|erp/i, href: "/services/shopify-integration-services" },
+  { test: /app[\s-]*(setup|optim)/i, href: "/services/shopify-app-setup-and-app-optimization" },
   { test: /app/i, href: "/services/shopify-app-development" },
   { test: /plus/i, href: "/services/shopify-plus-development" },
   { test: /redesign|ux|ui|design/i, href: "/services/shopify-ux-and-ui-design" },
@@ -131,6 +134,7 @@ export default async function CaseStudyPage({
       {cs.techStack.length > 0 && <CaseStudyTechStack cs={cs} />}
       <CaseStudyQuote cs={cs} />
       <CaseStudyExploreMore current={cs.slug} />
+      <RelatedServices current={`/case-studies/${cs.slug}`} heading="The Shopify services behind results like this" />
     </>
   );
 }
@@ -149,6 +153,7 @@ function AppCaseStudyPage({ app }: { app: AppCaseStudy }) {
       {app.techStack.length > 0 && <CaseStudyTechStack cs={app} />}
       <CaseStudyQuote cs={app} />
       <CaseStudyExploreMore current={app.slug} mode="app" />
+      <RelatedServices current={`/case-studies/${app.slug}`} heading="The Shopify services behind results like this" />
     </>
   );
 }
@@ -167,6 +172,7 @@ function KlaviyoCaseStudyPage({ study }: { study: KlaviyoCaseStudy }) {
       <CaseStudyResults cs={study} />
       <CaseStudyQuote cs={study} />
       <CaseStudyExploreMore current={study.slug} mode="klaviyo" />
+      <RelatedServices current={`/case-studies/${study.slug}`} heading="The Shopify services behind results like this" />
     </>
   );
 }
