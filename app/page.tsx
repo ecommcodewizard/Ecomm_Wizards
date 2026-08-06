@@ -592,6 +592,8 @@ export default function HomePage() {
         services={CUSTOM_DEV_SERVICES}
         buttonText="Request a Custom Quote"
         buttonHref="/book-shopify-consultation"
+        secondaryHref="/services/shopify-development-agency"
+        secondaryText="Explore our Shopify Development Agency"
         imageSrc="/images/ecommwizards_1.jpg"
         imageAlt="Shopify development agency building custom Shopify themes and apps"
         paddingTop="5px"
@@ -745,6 +747,8 @@ export default function HomePage() {
         services={WHY_B2B_SERVICES}
         buttonText="Build Your B2B Store"
         buttonHref="/book-shopify-consultation"
+        secondaryHref="/services/shopify-plus-development"
+        secondaryText="Explore Shopify Plus Development"
         imageSrc="/images/Image_7c2e1efa-3310-4bd5-815f-a21c1097455a-scaled.webp"
         imageAlt="Shopify Plus B2B commerce store with a dedicated wholesale portal"
         paddingTop="5px"
