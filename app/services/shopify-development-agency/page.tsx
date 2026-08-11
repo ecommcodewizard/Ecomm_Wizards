@@ -7,6 +7,7 @@ import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/Case
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
+import CalEmbed from "@/app/book-shopify-consultation/CalEmbed";
 
 const META_DESCRIPTION =
   "Shopify development agency specializing in custom builds, theme development, Shopify Plus, and migrations. 150+ stores built. Fixed price. Most projects live in 6 weeks.";
@@ -14,7 +15,7 @@ const CANONICAL_URL = "https://ecommwizards.com/services/shopify-development-age
 
 export const metadata: Metadata = {
   title: { absolute: "Shopify Development Agency | Custom Builds and Shopify Plus" },
-  description: META_DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
@@ -327,11 +328,11 @@ const SDA_PROS = [
 ];
 
 const SDA_CONS = [
-  { text: "Template themes run on thousands of other stores. Your brand looks like everyone else.", warn: true },
-  { text: "Every customization is a CSS patch on top of a CSS patch. Technical debt compounds.", warn: true },
-  { text: "No code ownership. If the theme vendor drops support, you start from scratch.", warn: true },
-  { text: "Breaks on every major Shopify update. Someone has to fix it every time.", warn: false },
-  { text: "Most freelancers go live without cross-device testing or QA process.", warn: false },
+  { text: "Hourly billing that balloons mid-project. The quote you signed is not the invoice you get.", warn: true },
+  { text: "A senior developer runs the sales call. The build is handed to outsourced juniors you never meet.", warn: true },
+  { text: "Your code lives in the agency's accounts. Leaving them means starting from scratch.", warn: true },
+  { text: "No confirmed go-live date. Timelines drift and nobody is accountable.", warn: false },
+  { text: "Builds go live without cross-device testing or a QA process.", warn: false },
   { text: "Support ends at handover. No monitoring, no post-launch incident response.", warn: false },
 ];
 
@@ -457,7 +458,7 @@ export default function Page() {
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "12px", marginTop: "32px" }}>
               <span className="group inline-flex p-[2px] rounded-full" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
                 <Link
-                  href="/book-shopify-consultation"
+                  href="#book-a-call"
                   className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px]"
                   style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600 }}
                 >
@@ -466,7 +467,7 @@ export default function Page() {
                 </Link>
               </span>
               <Link
-                href="/case-studies"
+                href="#case-studies"
                 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600, color: "rgba(255,255,255,0.7)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px", padding: "14px 0", transition: "color 0.2s ease" }}
                 className="sda-hero-secondary-cta"
               >
@@ -527,70 +528,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ── §3 What Is Shopify Development (WHITE) ── */}
-      <section className="sda-what" style={{ background: C_WHITE, padding: "60px 20px" }} aria-label="What is Shopify development">
-        <div className="mx-auto" style={{ maxWidth: "1320px" }}>
-          <div className="sda-edu-grid">
-            <div className="sda-edu-left">
-              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px" }}>
-                <span style={{ display: "block", width: "28px", height: "3px", background: "linear-gradient(90deg, #3DC77A, #A8F0B4)", borderRadius: "2px", flexShrink: 0 }} />
-                <span className="std-label" style={{ color: C_TEXT }}>Understanding the Service</span>
-              </div>
-              <h2 style={{ color: C_DARK, fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 700, lineHeight: 1.2, margin: "0 0 16px" }}>
-                What Is Shopify Development and Who Needs It?
-              </h2>
-              <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: "0 0 10px" }}>
-                Shopify development is the work of building, customizing, and extending your store beyond what the platform gives you out of the box. Every Shopify store starts with a theme. The brands that consistently outperform their competitors are not running a downloaded template. They invested in custom Shopify development that makes their store work the way their business works.
-              </p>
-              <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: "0 0 10px" }}>
-                A Shopify development agency builds the features no app covers: custom checkout flows, product configurators, <Link href="/services/shopify-b2b-store-setup" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>trade pricing</Link>, and integrations built to your exact spec. It creates a storefront that reflects your brand precisely, not a modified version of a theme 10,000 other stores run. As your business scales with more SKUs, more markets, and more operational complexity, your store scales with it.
-              </p>
-              <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: 0 }}>
-                Shopify development is not about using Shopify. It is about using Shopify to its full capability: the APIs, the platform architecture, and the custom code layer that separates a store that converts from one that just exists.
-              </p>
-            </div>
-            <div className="sda-edu-right">
-              <div style={{
-                background: C_WHITE,
-                borderRadius: "20px",
-                padding: "0",
-                height: "100%",
-                border: "1px solid rgba(61,199,122,0.22)",
-                boxShadow: "0 8px 40px rgba(0,0,0,0.07)",
-                overflow: "hidden",
-                boxSizing: "border-box",
-              }}>
-                {/* Green accent bar */}
-                <div style={{ height: "4px", background: "linear-gradient(90deg, #3DC77A 0%, #A8F0B4 50%, #2A9555 100%)" }} />
-                <div style={{ padding: "28px 32px 32px" }}>
-                  <p className="sda-edu-right-heading" style={{ fontFamily: "'Poppins', sans-serif", fontSize: 17, fontWeight: 700, color: C_DARK, margin: "0 0 22px", lineHeight: 1.3 }}>
-                    You need a Shopify development agency if:
-                  </p>
-                  {[
-                    "Your store has traffic but your conversion rate does not reflect it",
-                    "You need custom Shopify development work that apps cannot deliver: configurators, trade pricing, custom checkout flows",
-                    "You are on WooCommerce, Magento, or BigCommerce and want to migrate to Shopify without losing SEO rankings or order data",
-                    "You are already on Shopify but your current theme is limiting your brand and your conversion rate",
-                    "You need a Shopify development company that works exclusively on Shopify, not one juggling ten platforms at once",
-                  ].map((item, i, arr) => (
-                    <div key={item} style={{ display: "flex", alignItems: "flex-start", gap: "12px", paddingBottom: "14px", marginBottom: i < arr.length - 1 ? "14px" : 0, borderBottom: i < arr.length - 1 ? "1px solid rgba(0,0,0,0.06)" : "none" }}>
-                      <span style={{ flexShrink: 0, marginTop: "2px" }}><CheckIcon /></span>
-                      <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, color: C_TEXT, lineHeight: "24px", margin: 0 }}>{item}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <style dangerouslySetInnerHTML={{ __html: `
-          .sda-edu-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: start; }
-          @media (max-width: 1024px) { .sda-edu-grid { gap: 40px; } }
-          @media (max-width: 768px) { .sda-edu-grid { grid-template-columns: 1fr; gap: 32px; } }
-          @media (max-width: 640px) { .sda-edu-left p { font-size: 14px !important; line-height: 24px !important; } .sda-edu-right p { font-size: 14px !important; line-height: 22px !important; } .sda-edu-right p.sda-edu-right-heading { font-size: 16px !important; margin-bottom: 16px !important; } }
-        ` }} />
-      </section>
-
       {/* ── §4 Pain Points (CREAM) ── */}
       <section className="sda-feat" style={{ background: C_CREAM, padding: "60px 20px" }} aria-label="Shopify development pain points">
         <div className="mx-auto" style={{ maxWidth: "1320px" }}>
@@ -645,7 +582,7 @@ export default function Page() {
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
               From custom Shopify theme development and Shopify Plus builds to platform migrations and <Link href="/services/shopify-speed-optimization" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>performance work</Link>. We cover every Shopify web development need your store has. All in-house. All fixed price.
             </p>
-            <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
+            <Link href="#book-a-call" className="std-cta-sol mt-8">
               Book a Free Discovery Call
               <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden>
                 <path d="M0 5H14M14 5L9 0M14 5L9 10" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
@@ -657,7 +594,7 @@ export default function Page() {
       </section>
 
       {/* ── §12 Case Studies (CREAM) ── */}
-      <section style={{ background: C_CREAM, padding: "40px 20px" }} aria-label="Shopify development case studies">
+      <section id="case-studies" style={{ background: C_CREAM, padding: "40px 20px", scrollMarginTop: "90px" }} aria-label="Shopify development case studies">
         <div className="mx-auto" style={{ maxWidth: "1320px" }}>
           <h2 className="text-center sda-cs-heading" style={{ color: C_DARK, fontSize: 40, fontWeight: 700, lineHeight: 1.2, margin: "0 0 24px" }}>
             Shopify Development Projects We Have Delivered
@@ -761,17 +698,17 @@ export default function Page() {
       </section>
 
       {/* ── §9 Compare (DARK) ── */}
-      <section className="sda-compare" style={{ background: C_DARK, padding: "0 20px" }} aria-label="Why a Shopify development agency outperforms templates and freelancers">
+      <section className="sda-compare" style={{ background: C_DARK, padding: "0 20px" }} aria-label="What sets our Shopify development agency apart from typical agencies">
         <div className="mx-auto" style={{ maxWidth: 1320, padding: "60px 0" }}>
           <h2 className="sda-compare-h2" style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(28px, 4.1vw, 42px)", fontWeight: 700, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
-            Why a{" "}
+            What Sets Our{" "}
             <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Shopify Development Agency
             </span>{" "}
-            Outperforms Templates and Freelancers
+            Apart
           </h2>
           <p style={{ fontFamily: "Poppins, sans-serif", fontSize: 16, lineHeight: 1.75, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
-            Most brands try to save money with a theme or a cheap freelancer. Here is what that decision costs over time.
+            The proposals from most agencies look the same. The contracts are where they differ. Here is what to compare before you sign.
           </p>
 
           <div className="sda-compare-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: 20, marginTop: 10 }}>
@@ -792,7 +729,7 @@ export default function Page() {
 
             <div className="sda-compare-card" style={{ background: "#121212", borderRadius: 16, padding: 30, marginTop: 10 }}>
               <span className="sda-compare-pill" style={{ display: "inline-block", background: "rgba(239,68,68,0.12)", color: "#f87171", fontFamily: "Poppins, sans-serif", fontSize: 18, fontWeight: 600, borderRadius: 999, padding: "6px 16px", marginBottom: 20, border: "1px solid rgba(239,68,68,0.25)" }}>
-                ✕ Template Themes &amp; Generic Freelancers
+                ✕ Typical Dev Agencies
               </span>
               <ul className="sda-compare-list" style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
                 {SDA_CONS.map((item) => (
@@ -810,7 +747,7 @@ export default function Page() {
           <div style={{ display: "flex", justifyContent: "center", marginTop: 32 }}>
             <span className="group inline-flex p-[2px] rounded-full" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
               <Link
-                href="/book-shopify-consultation"
+                href="#book-a-call"
                 className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px]"
                 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600 }}
               >
@@ -992,7 +929,7 @@ export default function Page() {
               },
               {
                 title: "150+ Live Shopify Stores Built",
-                desc: (<>We have built, migrated, and launched over 700 Shopify stores. DTC brands, Shopify Plus merchants, B2B distributors, and global retailers. Every project adds to a body of pattern knowledge most developers never build up. The edge cases that catch other agencies are ones we solved years ago.</>),
+                desc: (<>We have built, migrated, and launched 150+ Shopify stores. DTC brands, Shopify Plus merchants, B2B distributors, and global retailers. Every project adds to a body of pattern knowledge most developers never build up. The edge cases that catch other agencies are ones we solved years ago.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 22L10 12l5 6 4-8 5 8"/><circle cx="23" cy="6" r="3"/><path d="M20.5 6H6" strokeDasharray="2 2"/></svg>),
               },
               {
@@ -1021,7 +958,7 @@ export default function Page() {
           <div style={{ display: "flex", justifyContent: "center" }}>
             <span className="group inline-flex p-[2px] rounded-full" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
               <Link
-                href="/book-shopify-consultation"
+                href="#book-a-call"
                 className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px]"
                 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600 }}
               >
@@ -1114,6 +1051,65 @@ export default function Page() {
         ` }} />
       </section>
 
+      {/* ── §14 Book a Call (CREAM) — on-page conversion, every LP CTA lands here ── */}
+      <section id="book-a-call" style={{ background: C_CREAM, padding: "60px 20px 64px", scrollMarginTop: "90px" }} aria-label="Book your free Shopify development discovery call">
+        <div className="mx-auto sda-book-grid" style={{ maxWidth: "1220px" }}>
+          <div>
+            <p className="sda-book-label">Free Discovery Call</p>
+            <h2 className="sda-book-h2" style={{ color: C_DARK }}>Book Your Free Shopify Development Discovery Call</h2>
+            <p className="sda-book-sub" style={{ color: "rgba(0,0,0,0.72)", maxWidth: 500 }}>
+              Pick a time below and talk through your build with a senior Shopify developer. On the call we scope your project, then send a fixed price and timeline in writing within 48 hours.
+            </p>
+            <div className="sda-book-wyg">
+              {[
+                "Walk through your build: custom theme, features, Shopify Plus, or migration",
+                "Get a fixed-price quote and a confirmed go-live date within 48 hours",
+                "Find out what needs custom code and what Shopify handles natively",
+                "Leave with a clear scope you can compare against any other agency",
+              ].map((w) => (
+                <div key={w} className="sda-book-wyg-row"><CheckIcon /><span>{w}</span></div>
+              ))}
+            </div>
+            <div className="sda-book-who">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden><circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="1.6" /><path d="M4.5 20c0-3.6 3.4-6 7.5-6s7.5 2.4 7.5 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
+              <p>You talk to Shopify developers who have shipped 150+ stores, not a sales rep.</p>
+            </div>
+            <div className="sda-book-chips">
+              {["Free", "No obligation", "Fixed quote in 48 hours"].map((chip) => (
+                <span key={chip} className="sda-book-chip">
+                  <svg width="13" height="11" viewBox="0 0 18 14" fill="none" aria-hidden><path d="M1 7l5 5L17 1" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  {chip}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="sda-book-cal">
+            <CalEmbed />
+          </div>
+        </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          .sda-book-grid { display:grid; grid-template-columns:0.9fr 1.1fr; gap:44px; align-items:start; }
+          .sda-book-label { font-family:'Poppins',sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#2A9555; margin:0 0 12px; }
+          .sda-book-h2 { font-family:'Poppins',sans-serif; font-size:clamp(26px,3.2vw,38px); font-weight:700; line-height:1.2; margin:0; }
+          .sda-book-sub { font-family:'Poppins',sans-serif; font-size:16px; line-height:26px; margin:12px 0 0; }
+          .sda-book-wyg { display:flex; flex-direction:column; gap:13px; margin:22px 0 0; }
+          .sda-book-wyg-row { display:flex; align-items:flex-start; gap:11px; font-family:'Poppins',sans-serif; font-size:15px; font-weight:500; color:#1f3d2b; line-height:1.5; }
+          .sda-book-wyg-row svg { flex-shrink:0; margin-top:2px; }
+          .sda-book-who { display:flex; gap:12px; align-items:flex-start; margin:24px 0 0; padding:16px 18px; background:#fff; border:1px solid rgba(0,0,0,0.07); border-radius:14px; }
+          .sda-book-who svg { flex-shrink:0; color:#2A9555; margin-top:1px; }
+          .sda-book-who p { font-family:'Poppins',sans-serif; font-size:13.5px; color:#334155; line-height:1.55; margin:0; }
+          .sda-book-chips { display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 0; }
+          .sda-book-chip { display:inline-flex; align-items:center; gap:6px; font-family:'Poppins',sans-serif; font-size:12.5px; font-weight:500; color:#1f3d2b; background:#fff; border:1px solid rgba(61,199,122,0.30); border-radius:999px; padding:6px 12px; }
+          .sda-book-chip svg { color:#2A9555; flex-shrink:0; }
+          .sda-book-cal { background:#fff; border-radius:20px; padding:14px; box-shadow:0 24px 70px rgba(0,0,0,.14); border:1px solid rgba(0,0,0,.06); }
+          .bkc-cal-wrap { position:relative; min-height:600px; border-radius:12px; overflow:hidden; }
+          .bkc-cal-loading { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#94a3b8; font-family:'Poppins',sans-serif; font-size:14px; }
+          .bkc-cal-inline { position:relative; width:100%; min-height:600px; }
+          .bkc-cal-inline iframe { width:100% !important; }
+          @media (max-width:900px){ .sda-book-grid { grid-template-columns:1fr; gap:30px; } }
+        ` }} />
+      </section>
+
       {/* ── Page-level CSS ── */}
       <style dangerouslySetInnerHTML={{ __html: `
         /* Hero image */
@@ -1182,7 +1178,6 @@ export default function Page() {
         @media (max-width: 640px) {
           .std-hero > div { padding: 46px 18px !important; }
           .std-trust > div { padding: 40px 20px !important; }
-          .sda-what { padding: 46px 20px !important; }
           .si-feat-card { padding: 24px !important; }
           .sda-industries { padding: 46px 20px !important; }
           .sda-platforms { padding: 46px 20px !important; }
@@ -1200,6 +1195,36 @@ export default function Page() {
       `}} />
 
       <RelatedServices current="/services/shopify-development-agency" />
+
+      {/* ── Mobile sticky rotating CTA (Charle-style badge, <768px only) ──
+          Black disc + brand-gradient ring reads on all three section
+          backgrounds (dark, white, cream). Links to the on-page booking
+          section; rotation pauses for prefers-reduced-motion. */}
+      <a href="#book-a-call" className="sda-spin-cta" aria-label="Book a free discovery call">
+        <span className="sda-spin-cta-disc">
+          <svg className="sda-spin-cta-text" viewBox="0 0 100 100" aria-hidden>
+            <defs>
+              <path id="sdaSpinPath" d="M 50,50 m -36,0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" />
+            </defs>
+            <text textLength="225" lengthAdjust="spacingAndGlyphs">
+              <textPath href="#sdaSpinPath" startOffset="0%">BOOK A CALL &#8226; BOOK A CALL &#8226;&#160;</textPath>
+            </text>
+          </svg>
+          <svg className="sda-spin-cta-arrow" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <path d="M7 17L17 7M17 7H9M17 7v8" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
+        <style dangerouslySetInnerHTML={{ __html: `
+          .sda-spin-cta { position: fixed; right: 16px; bottom: 18px; z-index: 60; width: 92px; height: 92px; display: none; }
+          @media (max-width: 767px) { .sda-spin-cta { display: block; } }
+          .sda-spin-cta-disc { position: relative; display: block; width: 100%; height: 100%; border-radius: 50%; border: 2px solid transparent; background: linear-gradient(#000000, #000000) padding-box, linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%) border-box; box-shadow: 0 10px 28px rgba(0,0,0,0.35); }
+          .sda-spin-cta-text { position: absolute; inset: 4px; width: calc(100% - 8px); height: calc(100% - 8px); animation: sdaSpin 12s linear infinite; transform-origin: 50% 50%; }
+          .sda-spin-cta-text text { fill: #ffffff; font-family: 'Poppins', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 1.5px; }
+          .sda-spin-cta-arrow { position: absolute; top: 50%; left: 50%; width: 24px; height: 24px; transform: translate(-50%, -50%); }
+          @keyframes sdaSpin { to { transform: rotate(360deg); } }
+          @media (prefers-reduced-motion: reduce) { .sda-spin-cta-text { animation: none; } }
+        ` }} />
+      </a>
     </>
   );
 }

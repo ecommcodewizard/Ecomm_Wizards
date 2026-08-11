@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Figma to Shopify Conversion | Pixel-Perfect Builds" },
-  description: META_DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
@@ -57,7 +57,7 @@ const PILLARS = [
   },
   {
     title: "Pillar 3: 150+ Stores. $400M+ in Revenue. 8 Years Deep.",
-    body: "We've partnered with DTC brands, Shark Tank alumni, and high-growth startups to turn Figma designs into Shopify stores that sell. This isn't our first rodeo, it's our seven-hundredth.",
+    body: "We've partnered with DTC brands, Shark Tank alumni, and high-growth startups to turn Figma designs into Shopify stores that sell. This isn't our first rodeo, it's our 150th.",
   },
   {
     title: "Pillar 4: Fast Turnaround, Zero Chaos",

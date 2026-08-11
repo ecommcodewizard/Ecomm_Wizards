@@ -72,14 +72,17 @@ export default function CalEmbed() {
     })(window, "https://app.cal.com/embed/embed.js", "init");
 
     const Cal = window.Cal as CalApi;
-    Cal("init", CAL_NAMESPACE, { origin: "https://cal.com" });
+    Cal("init", CAL_NAMESPACE, { origin: "https://app.cal.com" });
     Cal.ns![CAL_NAMESPACE]("inline", {
       elementOrSelector: "#bkc-cal-inline",
       config: { layout: "month_view", theme: "light" },
       calLink: CAL_LINK,
     });
     Cal.ns![CAL_NAMESPACE]("ui", {
-      hideEventTypeDetails: false,
+      // Hide Cal's event-details panel (avatar, title, Meet icon, timezone).
+      // Its avatar/icon images break inside the embedded iframe on some
+      // browsers, and the page's own left column already carries this info.
+      hideEventTypeDetails: true,
       layout: "month_view",
       cssVarsPerTheme: { light: { "cal-brand": CAL_BRAND } },
     });

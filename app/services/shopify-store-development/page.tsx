@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly as written; the root layout applies a
   // "%s | Ecomm Wizards" template that would otherwise double the brand.
   title: { absolute: "Custom Shopify Store Development | Ecomm Wizards" },
-  description: META_DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
@@ -1648,7 +1648,7 @@ export default function ShopifyStoreDevelopmentPage() {
                 title: "Results Brands Actually Trust",
                 desc: (
                   <>
-                    Over 700 stores launched, $400M+ in client revenue generated
+                    150+ stores launched, $400M+ in client revenue generated
                     for brands ranging from startups to Shark Tank Features. As
                     one of the best ecommerce development agencies for Shopify
                     and WooCommerce, we deliver proven results across platforms.

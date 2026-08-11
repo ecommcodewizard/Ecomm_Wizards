@@ -221,13 +221,6 @@ export default function HomePage() {
                   <Image src="/images/arrow vector.png" alt="" width={16} height={16} className="transition-all duration-300 group-hover:brightness-0" />
                 </Link>
               </span>
-              <Image
-                src="/images/shopifypartners-1.png"
-                alt="Shopify Platinum Partner"
-                width={170}
-                height={58}
-                className="object-contain w-[151px] h-[52px] sm:w-[170px] sm:h-[58px]"
-              />
             </div>
           </div>
 
