@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -228,6 +229,10 @@ function MobileNavItem({ item, onClose }: { item: NavItem; onClose: () => void }
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  // On the ads landing page, Book a Call scrolls to the on-page booking
+  // section instead of navigating away (the anchor only exists there).
+  const pathname = usePathname();
+  const bookCallHref = pathname === "/services/shopify-development-agency" ? "#book-a-call" : "/book-shopify-consultation";
   const [scrolled,   setScrolled]   = useState(false);
 
   useEffect(() => {
@@ -288,7 +293,7 @@ export default function Header() {
               </Link>
             </span>
             <Link
-              href="/book-shopify-consultation"
+              href={bookCallHref}
               className="group inline-flex items-center justify-center rounded-full border-2 border-transparent bg-white text-black transition-all hover:border-gold whitespace-nowrap text-sm xl:text-sm2 px-4 xl:px-6 h-[44px] xl:h-[50px]"
             >
               <span className="bg-clip-text group-hover:text-transparent" style={{ backgroundImage: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>Book a Call</span>
@@ -308,7 +313,7 @@ export default function Header() {
               </Link>
             </span>
             <Link
-              href="/book-shopify-consultation"
+              href={bookCallHref}
               className="group hidden md:inline-flex items-center justify-center rounded-full bg-white text-black border-2 border-transparent whitespace-nowrap transition-all hover:border-gold font-semibold text-sm px-4 h-[42px]"
             >
               <span className="bg-clip-text group-hover:text-transparent" style={{ backgroundImage: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>Book a Call</span>
@@ -404,7 +409,7 @@ export default function Header() {
             Get Started
           </Link>
           <Link
-            href="/book-shopify-consultation"
+            href={bookCallHref}
             onClick={() => setMobileOpen(false)}
             className="flex w-full items-center justify-center rounded-full bg-gold text-black font-semibold transition-all hover:opacity-90 text-sm2 h-[48px]"
           >

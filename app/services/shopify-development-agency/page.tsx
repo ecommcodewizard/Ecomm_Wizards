@@ -7,6 +7,7 @@ import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/Case
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
+import CalEmbed from "@/app/book-shopify-consultation/CalEmbed";
 
 const META_DESCRIPTION =
   "Shopify development agency specializing in custom builds, theme development, Shopify Plus, and migrations. 150+ stores built. Fixed price. Most projects live in 6 weeks.";
@@ -457,7 +458,7 @@ export default function Page() {
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "12px", marginTop: "32px" }}>
               <span className="group inline-flex p-[2px] rounded-full" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
                 <Link
-                  href="/book-shopify-consultation"
+                  href="#book-a-call"
                   className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px]"
                   style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600 }}
                 >
@@ -581,7 +582,7 @@ export default function Page() {
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
               From custom Shopify theme development and Shopify Plus builds to platform migrations and <Link href="/services/shopify-speed-optimization" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>performance work</Link>. We cover every Shopify web development need your store has. All in-house. All fixed price.
             </p>
-            <Link href="/book-shopify-consultation" className="std-cta-sol mt-8">
+            <Link href="#book-a-call" className="std-cta-sol mt-8">
               Book a Free Discovery Call
               <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden>
                 <path d="M0 5H14M14 5L9 0M14 5L9 10" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
@@ -746,7 +747,7 @@ export default function Page() {
           <div style={{ display: "flex", justifyContent: "center", marginTop: 32 }}>
             <span className="group inline-flex p-[2px] rounded-full" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
               <Link
-                href="/book-shopify-consultation"
+                href="#book-a-call"
                 className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px]"
                 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600 }}
               >
@@ -957,7 +958,7 @@ export default function Page() {
           <div style={{ display: "flex", justifyContent: "center" }}>
             <span className="group inline-flex p-[2px] rounded-full" style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}>
               <Link
-                href="/book-shopify-consultation"
+                href="#book-a-call"
                 className="inline-flex items-center gap-2 rounded-full bg-black group-hover:bg-white transition-all duration-300 px-[32px] py-[14px]"
                 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600 }}
               >
@@ -1047,6 +1048,65 @@ export default function Page() {
           .sda-faq__chev { display: inline-flex; align-items: center; justify-content: center; color: #000000; flex-shrink: 0; }
           .sda-faq__a-text { margin: 0 0 22px; color: #334155; font-family: 'Poppins', sans-serif; font-size: 15px; line-height: 1.7; }
           @media (min-width: 1024px) { .sda-faq__inner { padding: 72px 20px; } .sda-faq__title { font-size: 44px; margin-bottom: 40px; } .sda-faq__q { font-size: 17px; } .sda-faq__a-text { font-size: 16px; } }
+        ` }} />
+      </section>
+
+      {/* ── §14 Book a Call (CREAM) — on-page conversion, every LP CTA lands here ── */}
+      <section id="book-a-call" style={{ background: C_CREAM, padding: "60px 20px 64px", scrollMarginTop: "90px" }} aria-label="Book your free Shopify development discovery call">
+        <div className="mx-auto sda-book-grid" style={{ maxWidth: "1220px" }}>
+          <div>
+            <p className="sda-book-label">Free Discovery Call</p>
+            <h2 className="sda-book-h2" style={{ color: C_DARK }}>Book Your Free Shopify Development Discovery Call</h2>
+            <p className="sda-book-sub" style={{ color: "rgba(0,0,0,0.72)", maxWidth: 500 }}>
+              Pick a time below and talk through your build with a senior Shopify developer. On the call we scope your project, then send a fixed price and timeline in writing within 48 hours.
+            </p>
+            <div className="sda-book-wyg">
+              {[
+                "Walk through your build: custom theme, features, Shopify Plus, or migration",
+                "Get a fixed-price quote and a confirmed go-live date within 48 hours",
+                "Find out what needs custom code and what Shopify handles natively",
+                "Leave with a clear scope you can compare against any other agency",
+              ].map((w) => (
+                <div key={w} className="sda-book-wyg-row"><CheckIcon /><span>{w}</span></div>
+              ))}
+            </div>
+            <div className="sda-book-who">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden><circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="1.6" /><path d="M4.5 20c0-3.6 3.4-6 7.5-6s7.5 2.4 7.5 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
+              <p>You talk to Shopify developers who have shipped 150+ stores, not a sales rep.</p>
+            </div>
+            <div className="sda-book-chips">
+              {["Free", "No obligation", "Fixed quote in 48 hours"].map((chip) => (
+                <span key={chip} className="sda-book-chip">
+                  <svg width="13" height="11" viewBox="0 0 18 14" fill="none" aria-hidden><path d="M1 7l5 5L17 1" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  {chip}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="sda-book-cal">
+            <CalEmbed />
+          </div>
+        </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          .sda-book-grid { display:grid; grid-template-columns:0.9fr 1.1fr; gap:44px; align-items:start; }
+          .sda-book-label { font-family:'Poppins',sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#2A9555; margin:0 0 12px; }
+          .sda-book-h2 { font-family:'Poppins',sans-serif; font-size:clamp(26px,3.2vw,38px); font-weight:700; line-height:1.2; margin:0; }
+          .sda-book-sub { font-family:'Poppins',sans-serif; font-size:16px; line-height:26px; margin:12px 0 0; }
+          .sda-book-wyg { display:flex; flex-direction:column; gap:13px; margin:22px 0 0; }
+          .sda-book-wyg-row { display:flex; align-items:flex-start; gap:11px; font-family:'Poppins',sans-serif; font-size:15px; font-weight:500; color:#1f3d2b; line-height:1.5; }
+          .sda-book-wyg-row svg { flex-shrink:0; margin-top:2px; }
+          .sda-book-who { display:flex; gap:12px; align-items:flex-start; margin:24px 0 0; padding:16px 18px; background:#fff; border:1px solid rgba(0,0,0,0.07); border-radius:14px; }
+          .sda-book-who svg { flex-shrink:0; color:#2A9555; margin-top:1px; }
+          .sda-book-who p { font-family:'Poppins',sans-serif; font-size:13.5px; color:#334155; line-height:1.55; margin:0; }
+          .sda-book-chips { display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 0; }
+          .sda-book-chip { display:inline-flex; align-items:center; gap:6px; font-family:'Poppins',sans-serif; font-size:12.5px; font-weight:500; color:#1f3d2b; background:#fff; border:1px solid rgba(61,199,122,0.30); border-radius:999px; padding:6px 12px; }
+          .sda-book-chip svg { color:#2A9555; flex-shrink:0; }
+          .sda-book-cal { background:#fff; border-radius:20px; padding:14px; box-shadow:0 24px 70px rgba(0,0,0,.14); border:1px solid rgba(0,0,0,.06); }
+          .bkc-cal-wrap { position:relative; min-height:600px; border-radius:12px; overflow:hidden; }
+          .bkc-cal-loading { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#94a3b8; font-family:'Poppins',sans-serif; font-size:14px; }
+          .bkc-cal-inline { position:relative; width:100%; min-height:600px; }
+          .bkc-cal-inline iframe { width:100% !important; }
+          @media (max-width:900px){ .sda-book-grid { grid-template-columns:1fr; gap:30px; } }
         ` }} />
       </section>
 

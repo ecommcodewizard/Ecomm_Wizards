@@ -1,4 +1,13 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+
 export default function CTABar() {
+  // On the ads landing page, the CTA scrolls to the on-page booking section
+  // instead of navigating away (the anchor only exists there).
+  const pathname = usePathname();
+  const bookHref = pathname === "/services/shopify-development-agency" ? "#book-a-call" : "/book-shopify-consultation";
+
   return (
     <section style={{ background: "#FBF7ED", padding: "0 20px" }}>
       <div
@@ -28,7 +37,7 @@ export default function CTABar() {
         </p>
 
         <a
-          href="/book-shopify-consultation"
+          href={bookHref}
           className="cta-bar-btn"
           style={{
             flexShrink: 0,
