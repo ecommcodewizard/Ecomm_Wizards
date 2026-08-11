@@ -1107,6 +1107,7 @@ export default function Page() {
           .bkc-cal-inline { position:relative; width:100%; min-height:600px; }
           .bkc-cal-inline iframe { width:100% !important; }
           @media (max-width:900px){ .sda-book-grid { grid-template-columns:1fr; gap:30px; } }
+          @media (max-width:640px){ #book-a-call { padding-top:40px !important; padding-bottom:40px !important; } }
         ` }} />
       </section>
 
