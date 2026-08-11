@@ -68,7 +68,7 @@ export default function CalEmbed() {
     })(window, "https://app.cal.com/embed/embed.js", "init");
 
     const Cal = window.Cal as CalApi;
-    Cal("init", CAL_NAMESPACE, { origin: "https://cal.com" });
+    Cal("init", CAL_NAMESPACE, { origin: "https://app.cal.com" });
     Cal.ns![CAL_NAMESPACE]("inline", {
       elementOrSelector: "#kvcal-inline",
       config: { layout: "month_view", theme: "light" },
