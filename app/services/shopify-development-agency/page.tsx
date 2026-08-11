@@ -1195,6 +1195,36 @@ export default function Page() {
       `}} />
 
       <RelatedServices current="/services/shopify-development-agency" />
+
+      {/* ── Mobile sticky rotating CTA (Charle-style badge, <768px only) ──
+          Black disc + brand-gradient ring reads on all three section
+          backgrounds (dark, white, cream). Links to the on-page booking
+          section; rotation pauses for prefers-reduced-motion. */}
+      <a href="#book-a-call" className="sda-spin-cta" aria-label="Book a free discovery call">
+        <span className="sda-spin-cta-disc">
+          <svg className="sda-spin-cta-text" viewBox="0 0 100 100" aria-hidden>
+            <defs>
+              <path id="sdaSpinPath" d="M 50,50 m -36,0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" />
+            </defs>
+            <text textLength="225" lengthAdjust="spacingAndGlyphs">
+              <textPath href="#sdaSpinPath" startOffset="0%">BOOK A CALL &#8226; BOOK A CALL &#8226;&#160;</textPath>
+            </text>
+          </svg>
+          <svg className="sda-spin-cta-arrow" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <path d="M7 17L17 7M17 7H9M17 7v8" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
+        <style dangerouslySetInnerHTML={{ __html: `
+          .sda-spin-cta { position: fixed; right: 16px; bottom: 18px; z-index: 60; width: 92px; height: 92px; display: none; }
+          @media (max-width: 767px) { .sda-spin-cta { display: block; } }
+          .sda-spin-cta-disc { position: relative; display: block; width: 100%; height: 100%; border-radius: 50%; border: 2px solid transparent; background: linear-gradient(#000000, #000000) padding-box, linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%) border-box; box-shadow: 0 10px 28px rgba(0,0,0,0.35); }
+          .sda-spin-cta-text { position: absolute; inset: 4px; width: calc(100% - 8px); height: calc(100% - 8px); animation: sdaSpin 12s linear infinite; transform-origin: 50% 50%; }
+          .sda-spin-cta-text text { fill: #ffffff; font-family: 'Poppins', sans-serif; font-size: 10.5px; font-weight: 600; letter-spacing: 1.5px; }
+          .sda-spin-cta-arrow { position: absolute; top: 50%; left: 50%; width: 24px; height: 24px; transform: translate(-50%, -50%); }
+          @keyframes sdaSpin { to { transform: rotate(360deg); } }
+          @media (prefers-reduced-motion: reduce) { .sda-spin-cta-text { animation: none; } }
+        ` }} />
+      </a>
     </>
   );
 }
