@@ -79,7 +79,10 @@ export default function CalEmbed() {
       calLink: CAL_LINK,
     });
     Cal.ns![CAL_NAMESPACE]("ui", {
-      hideEventTypeDetails: false,
+      // Hide Cal's event-details panel (avatar, title, Meet icon, timezone).
+      // Its avatar/icon images break inside the embedded iframe on some
+      // browsers, and the page's own left column already carries this info.
+      hideEventTypeDetails: true,
       layout: "month_view",
       cssVarsPerTheme: { light: { "cal-brand": CAL_BRAND } },
     });
