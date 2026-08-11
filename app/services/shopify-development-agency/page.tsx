@@ -1125,7 +1125,10 @@ export default function Page() {
         .sda-trust-track { display: flex; align-items: center; gap: 40px; width: max-content; animation: sdaTrustScroll 32s linear infinite; }
         .std-trust-carousel:hover .sda-trust-track { animation-play-state: paused; }
         @keyframes sdaTrustScroll { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
-        @media (max-width: 640px) { .sda-trust-track { gap: 24px !important; } }
+        @media (max-width: 640px) {
+          .sda-trust-track { gap: 16px !important; }
+          .std-trust-logo { height: 36px; width: auto; max-width: 120px; object-fit: contain; }
+        }
 
         /* Shared badge + label */
         .std-badge { display: inline-block; padding: 6px 16px; background: rgba(97,206,112,0.12); border: 1px solid rgba(97,206,112,0.3); border-radius: 999px; color: #61ce70; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
