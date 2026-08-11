@@ -564,7 +564,7 @@ export default function Page() {
           .si-feat-roi-label { font-weight: 700; }
           @media (max-width: 1024px) { .si-feat-heading { font-size: 32px !important; } .si-feat-desc { font-size: 16px !important; margin-bottom: 24px !important; } .si-feat-grid { grid-template-columns: repeat(2, 1fr) !important; } }
           @media (max-width: 768px) { .si-feat-desc { margin-bottom: 16px !important; } }
-          @media (max-width: 640px) { .sda-feat { padding: 40px 16px !important; } .si-feat-heading { font-size: 26px !important; } .si-feat-desc { font-size: 15px !important; } .si-feat-grid { grid-template-columns: 1fr !important; } }
+          @media (max-width: 640px) { .sda-feat { padding: 40px 16px !important; } .si-feat-heading { font-size: 26px !important; margin-bottom: 12px !important; } .si-feat-desc { font-size: 15px !important; margin-bottom: 12px !important; } .si-feat-grid { grid-template-columns: 1fr !important; } }
         ` }} />
       </section>
 
