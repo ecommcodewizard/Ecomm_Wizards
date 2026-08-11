@@ -14,7 +14,7 @@ const CANONICAL_URL = "https://ecommwizards.com/services/shopify-development-age
 
 export const metadata: Metadata = {
   title: { absolute: "Shopify Development Agency | Custom Builds and Shopify Plus" },
-  description: META_DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
@@ -327,11 +327,11 @@ const SDA_PROS = [
 ];
 
 const SDA_CONS = [
-  { text: "Template themes run on thousands of other stores. Your brand looks like everyone else.", warn: true },
-  { text: "Every customization is a CSS patch on top of a CSS patch. Technical debt compounds.", warn: true },
-  { text: "No code ownership. If the theme vendor drops support, you start from scratch.", warn: true },
-  { text: "Breaks on every major Shopify update. Someone has to fix it every time.", warn: false },
-  { text: "Most freelancers go live without cross-device testing or QA process.", warn: false },
+  { text: "Hourly billing that balloons mid-project. The quote you signed is not the invoice you get.", warn: true },
+  { text: "A senior developer runs the sales call. The build is handed to outsourced juniors you never meet.", warn: true },
+  { text: "Your code lives in the agency's accounts. Leaving them means starting from scratch.", warn: true },
+  { text: "No confirmed go-live date. Timelines drift and nobody is accountable.", warn: false },
+  { text: "Builds go live without cross-device testing or a QA process.", warn: false },
   { text: "Support ends at handover. No monitoring, no post-launch incident response.", warn: false },
 ];
 
@@ -466,7 +466,7 @@ export default function Page() {
                 </Link>
               </span>
               <Link
-                href="/case-studies"
+                href="#case-studies"
                 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 600, color: "rgba(255,255,255,0.7)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px", padding: "14px 0", transition: "color 0.2s ease" }}
                 className="sda-hero-secondary-cta"
               >
@@ -525,70 +525,6 @@ export default function Page() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* ── §3 What Is Shopify Development (WHITE) ── */}
-      <section className="sda-what" style={{ background: C_WHITE, padding: "60px 20px" }} aria-label="What is Shopify development">
-        <div className="mx-auto" style={{ maxWidth: "1320px" }}>
-          <div className="sda-edu-grid">
-            <div className="sda-edu-left">
-              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px" }}>
-                <span style={{ display: "block", width: "28px", height: "3px", background: "linear-gradient(90deg, #3DC77A, #A8F0B4)", borderRadius: "2px", flexShrink: 0 }} />
-                <span className="std-label" style={{ color: C_TEXT }}>Understanding the Service</span>
-              </div>
-              <h2 style={{ color: C_DARK, fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 700, lineHeight: 1.2, margin: "0 0 16px" }}>
-                What Is Shopify Development and Who Needs It?
-              </h2>
-              <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: "0 0 10px" }}>
-                Shopify development is the work of building, customizing, and extending your store beyond what the platform gives you out of the box. Every Shopify store starts with a theme. The brands that consistently outperform their competitors are not running a downloaded template. They invested in custom Shopify development that makes their store work the way their business works.
-              </p>
-              <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: "0 0 10px" }}>
-                A Shopify development agency builds the features no app covers: custom checkout flows, product configurators, <Link href="/services/shopify-b2b-store-setup" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>trade pricing</Link>, and integrations built to your exact spec. It creates a storefront that reflects your brand precisely, not a modified version of a theme 10,000 other stores run. As your business scales with more SKUs, more markets, and more operational complexity, your store scales with it.
-              </p>
-              <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: 0 }}>
-                Shopify development is not about using Shopify. It is about using Shopify to its full capability: the APIs, the platform architecture, and the custom code layer that separates a store that converts from one that just exists.
-              </p>
-            </div>
-            <div className="sda-edu-right">
-              <div style={{
-                background: C_WHITE,
-                borderRadius: "20px",
-                padding: "0",
-                height: "100%",
-                border: "1px solid rgba(61,199,122,0.22)",
-                boxShadow: "0 8px 40px rgba(0,0,0,0.07)",
-                overflow: "hidden",
-                boxSizing: "border-box",
-              }}>
-                {/* Green accent bar */}
-                <div style={{ height: "4px", background: "linear-gradient(90deg, #3DC77A 0%, #A8F0B4 50%, #2A9555 100%)" }} />
-                <div style={{ padding: "28px 32px 32px" }}>
-                  <p className="sda-edu-right-heading" style={{ fontFamily: "'Poppins', sans-serif", fontSize: 17, fontWeight: 700, color: C_DARK, margin: "0 0 22px", lineHeight: 1.3 }}>
-                    You need a Shopify development agency if:
-                  </p>
-                  {[
-                    "Your store has traffic but your conversion rate does not reflect it",
-                    "You need custom Shopify development work that apps cannot deliver: configurators, trade pricing, custom checkout flows",
-                    "You are on WooCommerce, Magento, or BigCommerce and want to migrate to Shopify without losing SEO rankings or order data",
-                    "You are already on Shopify but your current theme is limiting your brand and your conversion rate",
-                    "You need a Shopify development company that works exclusively on Shopify, not one juggling ten platforms at once",
-                  ].map((item, i, arr) => (
-                    <div key={item} style={{ display: "flex", alignItems: "flex-start", gap: "12px", paddingBottom: "14px", marginBottom: i < arr.length - 1 ? "14px" : 0, borderBottom: i < arr.length - 1 ? "1px solid rgba(0,0,0,0.06)" : "none" }}>
-                      <span style={{ flexShrink: 0, marginTop: "2px" }}><CheckIcon /></span>
-                      <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, color: C_TEXT, lineHeight: "24px", margin: 0 }}>{item}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <style dangerouslySetInnerHTML={{ __html: `
-          .sda-edu-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: start; }
-          @media (max-width: 1024px) { .sda-edu-grid { gap: 40px; } }
-          @media (max-width: 768px) { .sda-edu-grid { grid-template-columns: 1fr; gap: 32px; } }
-          @media (max-width: 640px) { .sda-edu-left p { font-size: 14px !important; line-height: 24px !important; } .sda-edu-right p { font-size: 14px !important; line-height: 22px !important; } .sda-edu-right p.sda-edu-right-heading { font-size: 16px !important; margin-bottom: 16px !important; } }
-        ` }} />
       </section>
 
       {/* ── §4 Pain Points (CREAM) ── */}
@@ -657,7 +593,7 @@ export default function Page() {
       </section>
 
       {/* ── §12 Case Studies (CREAM) ── */}
-      <section style={{ background: C_CREAM, padding: "40px 20px" }} aria-label="Shopify development case studies">
+      <section id="case-studies" style={{ background: C_CREAM, padding: "40px 20px", scrollMarginTop: "90px" }} aria-label="Shopify development case studies">
         <div className="mx-auto" style={{ maxWidth: "1320px" }}>
           <h2 className="text-center sda-cs-heading" style={{ color: C_DARK, fontSize: 40, fontWeight: 700, lineHeight: 1.2, margin: "0 0 24px" }}>
             Shopify Development Projects We Have Delivered
@@ -761,17 +697,17 @@ export default function Page() {
       </section>
 
       {/* ── §9 Compare (DARK) ── */}
-      <section className="sda-compare" style={{ background: C_DARK, padding: "0 20px" }} aria-label="Why a Shopify development agency outperforms templates and freelancers">
+      <section className="sda-compare" style={{ background: C_DARK, padding: "0 20px" }} aria-label="What sets our Shopify development agency apart from typical agencies">
         <div className="mx-auto" style={{ maxWidth: 1320, padding: "60px 0" }}>
           <h2 className="sda-compare-h2" style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(28px, 4.1vw, 42px)", fontWeight: 700, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
-            Why a{" "}
+            What Sets Our{" "}
             <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Shopify Development Agency
             </span>{" "}
-            Outperforms Templates and Freelancers
+            Apart
           </h2>
           <p style={{ fontFamily: "Poppins, sans-serif", fontSize: 16, lineHeight: 1.75, color: "#ffffff", textAlign: "center", margin: "0 0 10px" }}>
-            Most brands try to save money with a theme or a cheap freelancer. Here is what that decision costs over time.
+            The proposals from most agencies look the same. The contracts are where they differ. Here is what to compare before you sign.
           </p>
 
           <div className="sda-compare-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: 20, marginTop: 10 }}>
@@ -792,7 +728,7 @@ export default function Page() {
 
             <div className="sda-compare-card" style={{ background: "#121212", borderRadius: 16, padding: 30, marginTop: 10 }}>
               <span className="sda-compare-pill" style={{ display: "inline-block", background: "rgba(239,68,68,0.12)", color: "#f87171", fontFamily: "Poppins, sans-serif", fontSize: 18, fontWeight: 600, borderRadius: 999, padding: "6px 16px", marginBottom: 20, border: "1px solid rgba(239,68,68,0.25)" }}>
-                ✕ Template Themes &amp; Generic Freelancers
+                ✕ Typical Dev Agencies
               </span>
               <ul className="sda-compare-list" style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
                 {SDA_CONS.map((item) => (
@@ -992,7 +928,7 @@ export default function Page() {
               },
               {
                 title: "150+ Live Shopify Stores Built",
-                desc: (<>We have built, migrated, and launched over 700 Shopify stores. DTC brands, Shopify Plus merchants, B2B distributors, and global retailers. Every project adds to a body of pattern knowledge most developers never build up. The edge cases that catch other agencies are ones we solved years ago.</>),
+                desc: (<>We have built, migrated, and launched 150+ Shopify stores. DTC brands, Shopify Plus merchants, B2B distributors, and global retailers. Every project adds to a body of pattern knowledge most developers never build up. The edge cases that catch other agencies are ones we solved years ago.</>),
                 icon: (<svg viewBox="0 0 32 32" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M4 22L10 12l5 6 4-8 5 8"/><circle cx="23" cy="6" r="3"/><path d="M20.5 6H6" strokeDasharray="2 2"/></svg>),
               },
               {
@@ -1182,7 +1118,6 @@ export default function Page() {
         @media (max-width: 640px) {
           .std-hero > div { padding: 46px 18px !important; }
           .std-trust > div { padding: 40px 20px !important; }
-          .sda-what { padding: 46px 20px !important; }
           .si-feat-card { padding: 24px !important; }
           .sda-industries { padding: 46px 20px !important; }
           .sda-platforms { padding: 46px 20px !important; }
