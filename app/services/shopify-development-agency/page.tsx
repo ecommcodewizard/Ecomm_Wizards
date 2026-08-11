@@ -564,7 +564,7 @@ export default function Page() {
           .si-feat-roi-label { font-weight: 700; }
           @media (max-width: 1024px) { .si-feat-heading { font-size: 32px !important; } .si-feat-desc { font-size: 16px !important; margin-bottom: 24px !important; } .si-feat-grid { grid-template-columns: repeat(2, 1fr) !important; } }
           @media (max-width: 768px) { .si-feat-desc { margin-bottom: 16px !important; } }
-          @media (max-width: 640px) { .sda-feat { padding: 40px 16px !important; } .si-feat-heading { font-size: 26px !important; } .si-feat-desc { font-size: 15px !important; } .si-feat-grid { grid-template-columns: 1fr !important; } }
+          @media (max-width: 640px) { .sda-feat { padding: 40px 16px !important; } .si-feat-heading { font-size: 26px !important; margin-bottom: 12px !important; } .si-feat-desc { font-size: 15px !important; margin-bottom: 12px !important; } .si-feat-grid { grid-template-columns: 1fr !important; } }
         ` }} />
       </section>
 
@@ -1107,6 +1107,7 @@ export default function Page() {
           .bkc-cal-inline { position:relative; width:100%; min-height:600px; }
           .bkc-cal-inline iframe { width:100% !important; }
           @media (max-width:900px){ .sda-book-grid { grid-template-columns:1fr; gap:30px; } }
+          @media (max-width:640px){ #book-a-call { padding-top:40px !important; padding-bottom:40px !important; } .sda-book-chips { display:none; } }
         ` }} />
       </section>
 
@@ -1125,7 +1126,10 @@ export default function Page() {
         .sda-trust-track { display: flex; align-items: center; gap: 40px; width: max-content; animation: sdaTrustScroll 32s linear infinite; }
         .std-trust-carousel:hover .sda-trust-track { animation-play-state: paused; }
         @keyframes sdaTrustScroll { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
-        @media (max-width: 640px) { .sda-trust-track { gap: 24px !important; } }
+        @media (max-width: 640px) {
+          .sda-trust-track { gap: 16px !important; }
+          .std-trust-logo { height: 36px; width: auto; max-width: 120px; object-fit: contain; }
+        }
 
         /* Shared badge + label */
         .std-badge { display: inline-block; padding: 6px 16px; background: rgba(97,206,112,0.12); border: 1px solid rgba(97,206,112,0.3); border-radius: 999px; color: #61ce70; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
