@@ -20,7 +20,7 @@
     "@fontsource/poppins": "^5.2.7",
     "framer-motion": "^12.38.0",
     "mysql2": "^3.22.5",
-    "next": "^15.5.15",
+    "next": "^15.5.23",
     "nodemailer": "^9.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
