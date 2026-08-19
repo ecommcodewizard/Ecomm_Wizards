@@ -24,7 +24,7 @@ export default function ServiceBlock({ heading, text, eyebrow, variant = "hub", 
   const map = variant === "map" && mapItems && mapItems.length > 0 ? mapItems : undefined;
 
   return (
-    <section className="gp-section gp-section--cream gps" aria-labelledby="gps-heading">
+    <section className="gp-section gp-section--white gps" aria-labelledby="gps-heading">
       <div className="gp-inner">
         <div className="gps-grid">
           <div className="gps-left">

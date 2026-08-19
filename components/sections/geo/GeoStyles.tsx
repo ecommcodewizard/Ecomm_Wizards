@@ -34,7 +34,11 @@ export default function GeoStyles() {
 
         .gp-eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: ${GP.green}; margin: 0 0 12px; }
         .gp-section--dark .gp-eyebrow { color: ${GP.greenSoft}; }
-        .gp-h2 { font-size: clamp(26px, 3.4vw, 40px); font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 16px; text-wrap: balance; }
+        /* Headings are true black on light grounds, matching the sections that
+           carry their own styles (engagement, categories). Body copy keeps the
+           softer ink, so the heading still leads. Dark bands invert. */
+        .gp-h2 { font-size: clamp(26px, 3.4vw, 40px); font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 16px; text-wrap: balance; color: ${GP.dark}; }
+        .gp-section--dark .gp-h2 { color: ${GP.white}; }
         .gp-h3 { font-size: 20px; font-weight: 700; line-height: 1.3; margin: 0 0 10px; }
         .gp-lead { font-size: 18px; line-height: 1.6; margin: 0 0 20px; color: ${GP.text}; }
         .gp-section--dark .gp-lead { color: rgba(255,255,255,0.82); }

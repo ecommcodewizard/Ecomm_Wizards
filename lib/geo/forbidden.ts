@@ -56,7 +56,9 @@ export const UK_SPELLINGS: { pattern: RegExp; label: string; us: string }[] = [
   { pattern: /\bprioritis(?:e|es|ed|ing|ation)\b/i, label: "prioritise", us: "prioritize" },
   { pattern: /\brecognis(?:e|es|ed|ing)\b/i, label: "recognise", us: "recognize" },
   { pattern: /\brealis(?:e|es|ed|ing)\b/i, label: "realise", us: "realize" },
-  { pattern: /\bcancell(?:ed|ing|ation)\b/i, label: "cancelled", us: "canceled" },
+  // "cancellation" keeps its double L in US English, so only the verb forms
+  // are UK-only. Matching the noun flagged correct copy.
+  { pattern: /\bcancell(?:ed|ing)\b/i, label: "cancelled", us: "canceled" },
   { pattern: /£/, label: "pound sign", us: "USD ($)" },
 ];
 

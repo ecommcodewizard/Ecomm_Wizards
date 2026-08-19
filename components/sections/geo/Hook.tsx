@@ -11,7 +11,7 @@ export default function Hook({ text }: { text: string }) {
   if (paragraphs.length === 0) return null;
 
   return (
-    <section className="gp-section gp-section--white gpk" aria-label="Introduction">
+    <section className="gp-section gp-section--cream gpk" aria-label="Introduction">
       <div className="gp-inner--prose">
         {paragraphs.map((p, i) => (
           <p key={i} className={i === 0 ? "gp-lead" : "gp-p"}>

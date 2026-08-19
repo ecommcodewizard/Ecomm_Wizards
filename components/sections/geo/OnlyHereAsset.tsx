@@ -83,12 +83,15 @@ export default function OnlyHereAsset({ asset, id = "asset" }: { asset: OnlyHere
         ) : null}
 
         {/* (g) review flag */}
-        <p className="oha-review">Review after {asset.reviewAfterDays} days</p>
       </div>
 
       <style
         dangerouslySetInnerHTML={{
           __html: `
+        /* Bottom padding is tightened because the mid-page CTA sits directly
+           below and should read as attached to this table, not as a separate
+           band. Specificity beats .gp-section at every breakpoint. */
+        .gp-section.oha { padding-bottom: 20px; }
           .oha-method { background: #FBF7ED; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 16px 20px; margin: 8px 0 20px; }
           .oha-method-title { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #2A9555; margin: 0 0 10px; }
           .oha-dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 24px; margin: 0; }
@@ -106,7 +109,6 @@ export default function OnlyHereAsset({ asset, id = "asset" }: { asset: OnlyHere
           .oha-ul a { color: #2A9555; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
           .oha-blocks { margin: 32px 0 0; }
           .oha-block { min-width: 0; }
-          .oha-review { margin: 28px 0 0; font-size: 13px; color: #64748b; }
           @media (max-width: 640px) {
             .oha-dl { grid-template-columns: 1fr; }
             .oha-derived .gp-p { font-size: 16px; }

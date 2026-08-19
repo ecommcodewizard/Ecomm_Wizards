@@ -22,6 +22,12 @@ function findStudy(slug: string): CaseStudy | undefined {
   return undefined;
 }
 
+/** Lowercase only the first character, so the phrase reads as a clause without
+ *  destroying brand names like "Salesforce Commerce Cloud". */
+function lowerFirst(s: string): string {
+  return s.charAt(0).toLowerCase() + s.slice(1);
+}
+
 export default function CaseStudyCard({ study }: { study: CaseStudyRef }) {
   const data = findStudy(study.slug);
   const href = `/case-studies/${study.slug}`;
@@ -30,7 +36,17 @@ export default function CaseStudyCard({ study }: { study: CaseStudyRef }) {
     <Link href={href} className="gcs-card" data-proof-card="">
       {data?.heroImage ? (
         <div className="gcs-media">
-          <Image src={data.heroImage} alt={`${data.brandName} case study`} fill className="gcs-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" />
+          {/* Alt names the brand and what the engagement was, so the image is
+              described rather than labelled. No location, ever. */}
+          <Image
+            src={data.heroImage}
+            alt={`${data.brandName} ecommerce store, ${lowerFirst(study.whatWasBuilt)}`}
+            fill
+            className="gcs-img"
+            style={{ objectFit: "cover" }}
+            sizes="(max-width: 1024px) 50vw, 33vw"
+            loading="lazy"
+          />
         </div>
       ) : null}
       <div className="gcs-body">
@@ -49,12 +65,6 @@ export default function CaseStudyCard({ study }: { study: CaseStudyRef }) {
             <dd className="gcs-outcome">{inline(study.outcome)}</dd>
           </div>
         </dl>
-        <span className="gcs-more" aria-hidden="true">
-          Read the case study
-          <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
-            <path d="M0 5H14M14 5L9 0M14 5L9 10" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </span>
       </div>
       <style
         dangerouslySetInnerHTML={{
@@ -67,12 +77,11 @@ export default function CaseStudyCard({ study }: { study: CaseStudyRef }) {
           .gcs-card:hover .gcs-img { transform: scale(1.03); }
           .gcs-body { padding: 20px 20px 22px; display: flex; flex-direction: column; gap: 14px; flex-grow: 1; }
           .gcs-brand { font-size: 22px; font-weight: 700; line-height: 1.2; margin: 0; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.08); }
-          .gcs-rows { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+          .gcs-rows { margin: 0 0 auto; display: flex; flex-direction: column; gap: 10px; }
           .gcs-row { display: flex; flex-direction: column; gap: 2px; }
-          .gcs-row dt { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: #64748b; }
+          .gcs-row dt { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #000000; }
           .gcs-row dd { margin: 0; font-size: 14.5px; line-height: 1.55; color: #334155; }
           .gcs-outcome { font-weight: 700; color: #0f172a !important; }
-          .gcs-more { margin-top: auto; padding-top: 6px; display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #2A9555; }
           @media (prefers-reduced-motion: reduce) { .gcs-card, .gcs-img { transition: none; } .gcs-card:hover { transform: none; } .gcs-card:hover .gcs-img { transform: none; } }
         `,
         }}

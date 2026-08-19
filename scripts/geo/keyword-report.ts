@@ -28,7 +28,10 @@ function blocksOf(p: GeoProgrammePage): [string, string][] {
   ];
   if (p.type === "hub") {
     out.push(["whatWeDo", p.whatWeDo]);
-    out.push(["engagement", p.howEngagementRuns.map((w) => w.what).join(" ")]);
+    out.push([
+      "engagement",
+      [p.engagement.heading, p.engagement.intro, ...p.engagement.steps.map((s) => `${s.title} ${s.what}`)].join(" "),
+    ]);
     out.push(["scopeBoundary", p.whatWeDontDo.join(" ")]);
   } else {
     out.push(["placeLayer", p.placeLayer]);

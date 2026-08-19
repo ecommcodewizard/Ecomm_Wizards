@@ -57,7 +57,10 @@ function preview(p: GeoProgrammePage): void {
 
   if (p.type === "hub") {
     console.log(rule("HOW THE ENGAGEMENT RUNS"));
-    for (const w of p.howEngagementRuns) console.log(render(w.week) + ": " + render(w.what));
+    console.log(render(p.engagement.heading) + "\n" + render(p.engagement.intro) + "\n");
+    p.engagement.steps.forEach((s, i) =>
+      console.log(String(i + 1).padStart(2, "0") + ". [" + render(s.week) + "] " + render(s.title) + "\n    " + render(s.what)),
+    );
     console.log(rule("WHAT WE DON'T DO"));
     for (const i of p.whatWeDontDo) console.log("- " + render(i));
   } else {

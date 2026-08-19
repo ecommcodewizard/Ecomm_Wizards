@@ -7,9 +7,13 @@ import { assertPublishable, canonicalUrl, publishedChildren } from "@/lib/geo/re
 import { breadcrumbListJsonLd, breadcrumbTrail } from "@/lib/geo/schema";
 import GeoStyles from "./GeoStyles";
 import GeoPageHero from "./GeoPageHero";
+import TrustBar from "./TrustBar";
 import Hook from "./Hook";
+import QuickAnswer from "./QuickAnswer";
 import ServiceBlock from "./ServiceBlock";
+import SegmentsBlock from "./SegmentsBlock";
 import OnlyHereAsset from "./OnlyHereAsset";
+import InlineCta from "./InlineCta";
 import EngagementBlock from "./EngagementBlock";
 import ScopeBoundary from "./ScopeBoundary";
 import ProofBlock from "./ProofBlock";
@@ -49,9 +53,19 @@ export default function HubPageTemplate({ page }: { page: HubPage }) {
       <GeoStyles />
       <Breadcrumbs items={trail} />
 
-      <GeoPageHero eyebrow={page.shortTitle} h1={page.h1} qualifier={page.qualifier} />
+      <GeoPageHero
+        eyebrow={page.shortTitle}
+        h1={page.h1}
+        qualifier={page.qualifier}
+        image={page.heroImage}
+        secondaryCta={{ label: "See what each platform costs", href: "#asset" }}
+      />
+
+      {page.trust && <TrustBar trust={page.trust} />}
 
       <Hook text={page.hook} />
+
+      {page.quickAnswer && <QuickAnswer text={page.quickAnswer} />}
 
       <ServiceBlock
         heading="What we actually do"
@@ -60,19 +74,23 @@ export default function HubPageTemplate({ page }: { page: HubPage }) {
         mapItems={page.serviceMap}
       />
 
+      {page.segments && <SegmentsBlock segments={page.segments} />}
+
       <OnlyHereAsset asset={page.asset} />
 
-      <EngagementBlock heading="How the engagement runs" weeks={page.howEngagementRuns} />
+      {page.midCta && <InlineCta text={page.midCta.text} label={page.midCta.label} />}
+
+      <EngagementBlock engagement={page.engagement} />
 
       <ScopeBoundary heading="What we don't do" items={page.whatWeDontDo} />
 
       {page.proof.length > 0 ? (
-        <ProofBlock heading="Proof" proof={page.proof} />
+        <ProofBlock heading={page.proofHeading} proof={page.proof} />
       ) : (
         <DevSlotNote block="7 · Proof" note="proof[] is empty. 2-3 vertically matched case studies with verified: true are required before publishing." />
       )}
 
-      <ObjectionBlock heading="Objections" objections={page.objections} />
+      <ObjectionBlock heading={page.objectionsHeading} objections={page.objections} />
 
       <FAQBlock heading={`${page.shortTitle} FAQs`} faqs={page.faqs} />
 

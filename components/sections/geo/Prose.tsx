@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { BRAND_STATS } from "@/lib/brand-stats";
 import { NEEDS_INPUT } from "@/lib/geo/types";
 
 // Renders a human-authored prose slot. Paragraphs split on blank lines. One
@@ -15,8 +16,18 @@ import { NEEDS_INPUT } from "@/lib/geo/types";
 
 const MARKER_RE = /(\[NEEDS INPUT[^\]]*\]|\[link:[^\]|]+\|[^\]]+\])/gi;
 
+// Brand-stat tokens. Writing {storesBuilt} instead of "150+" means a revised
+// figure is one edit in lib/brand-stats.ts rather than a hunt through copy,
+// which is how the previous revision left 37 files disagreeing. An unknown
+// token is left visible rather than blanked, so the mistake is obvious.
+const STAT_TOKEN_RE = /\{(storesBuilt|revenue|years|awards|rating)\}/g;
+
+function substituteStats(text: string): string {
+  return text.replace(STAT_TOKEN_RE, (_m, key: keyof typeof BRAND_STATS) => BRAND_STATS[key]);
+}
+
 export function inline(text: string): ReactNode[] {
-  const parts = text.split(MARKER_RE).filter((p) => p !== "");
+  const parts = substituteStats(text).split(MARKER_RE).filter((p) => p !== "");
   return parts.map((part, i) => {
     if (part.startsWith(NEEDS_INPUT)) {
       return (
@@ -38,7 +49,7 @@ export function inline(text: string): ReactNode[] {
 }
 
 export default function Prose({ text, className = "gp-p" }: { text: string; className?: string }) {
-  const paragraphs = text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+  const paragraphs = substituteStats(text).split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
   return (
     <>
       {paragraphs.map((p, i) => (

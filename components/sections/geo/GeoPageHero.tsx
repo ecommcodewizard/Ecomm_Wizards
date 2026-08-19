@@ -1,10 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
 import Prose from "./Prose";
 
 // Block 1: hero for hub and geo pages. Dark band, eyebrow chip, balanced H1
 // with the brand gradient on its last two words, the qualifier line, and two
-// CTAs. Deliberately no stat ticker, no logo wall, no carousel and no image:
-// the geo pages open on the claim, not on decoration.
+// CTAs. Deliberately no stat ticker, no logo wall and no carousel: the page
+// opens on the claim, not on decoration.
+//
+// An optional image splits the band into the two columns the Shopify
+// development landing page uses (copy on the left, image on the right). With no
+// image the copy runs full width, which is what the geo pages will do.
 
 type Cta = { label: string; href: string };
 
@@ -14,6 +19,7 @@ type Props = {
   qualifier: string;
   primaryCta?: Cta;
   secondaryCta?: Cta;
+  image?: { src: string; alt: string };
 };
 
 const DEFAULT_PRIMARY: Cta = { label: "Get in touch", href: "#contact" };
@@ -26,12 +32,13 @@ function splitHeading(h1: string): { plain: string; accent: string } {
   return { plain: words.slice(0, -2).join(" "), accent: words.slice(-2).join(" ") };
 }
 
-export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAULT_PRIMARY, secondaryCta }: Props) {
+export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAULT_PRIMARY, secondaryCta, image }: Props) {
   const { plain, accent } = splitHeading(h1);
 
   return (
     <section className="gp-section gp-section--dark gph" aria-labelledby="gph-h1">
-      <div className="gp-inner">
+      <div className={`gp-inner gph-grid${image ? " gph-grid--split" : ""}`}>
+        <div className="gph-copy">
         <span className="gph-badge">{eyebrow}</span>
         <h1 id="gph-h1" className="gph-h1">
           {plain ? <>{plain} </> : null}
@@ -58,10 +65,32 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
             </Link>
           ) : null}
         </div>
+        </div>
+
+        {image ? (
+          <div className="gph-media">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={640}
+              height={480}
+              priority
+              className="gph-img"
+            />
+          </div>
+        ) : null}
       </div>
       <style
         dangerouslySetInnerHTML={{
           __html: `
+          .gph-grid--split { display: grid; gap: 40px; align-items: center; }
+          @media (min-width: 1024px) { .gph-grid--split { grid-template-columns: 1.1fr 1fr; } }
+          .gph-media { display: flex; align-items: center; justify-content: center; }
+          .gph-img { width: 100%; height: auto; border-radius: 16px; display: block; box-shadow: 0 24px 64px rgba(0,0,0,0.45); }
+          .gph-grid--split .gph-h1 { max-width: none; }
+          .gph-grid--split .gph-qualifier { max-width: none; }
+          @media (max-width: 1023px) { .gph-media { margin-top: 8px; } }
+          @media (max-width: 640px) { .gph-img { border-radius: 10px; } }
           .gph-badge { display: inline-block; padding: 6px 16px; background: rgba(97,206,112,0.12); border: 1px solid rgba(97,206,112,0.3); border-radius: 999px; color: #61ce70; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
           .gph-h1 { color: #ffffff; font-size: 48px; font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; margin: 20px 0 0; max-width: 900px; text-wrap: balance; }
           .gph-qualifier { max-width: 640px; margin-top: 20px; }
