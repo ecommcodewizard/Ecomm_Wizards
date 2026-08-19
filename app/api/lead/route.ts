@@ -61,8 +61,10 @@ function toLead(p: LeadPayload, ip: string, ua: string): LeadInput {
     phone: p.phone || null,
     budget: p.budget || null,
     services: p.services || null,
+    url: p.url || null, // geo landing form: qualifying website URL
     source: p.referral || null, // contact "referral" -> source
     message: p.project_details || null, // contact "project_details" -> message
+    landingPage: p.landing_page || null, // geo landing form: page path for attribution
     raw,
     ip,
     userAgent: ua,
@@ -80,6 +82,20 @@ export async function POST(req: Request) {
   // Honeypot: a bot filled the hidden field. Pretend success, store nothing.
   const gotcha = (body as Record<string, unknown> | null)?._gotcha;
   if (typeof gotcha === "string" && gotcha.trim()) {
+    return NextResponse.json({ ok: true });
+  }
+
+  // Timestamp gate (geo landing forms send `ts` = mount time). A submission
+  // under 3s after mount is a bot; a landing-page submission with no numeric
+  // ts means a bot stripped the field. Same fake success, store nothing.
+  const b = body as Record<string, unknown> | null;
+  const ts = b?.ts;
+  const landingPage = b?.landing_page;
+  const hasLandingPage = typeof landingPage === "string" && landingPage.trim() !== "";
+  if (typeof ts === "number" && Date.now() - ts < 3000) {
+    return NextResponse.json({ ok: true });
+  }
+  if (hasLandingPage && typeof ts !== "number") {
     return NextResponse.json({ ok: true });
   }
 

@@ -29,6 +29,11 @@ export const contactSchema = z.object({
   services: opt(255),
   referral: opt(128), // -> stored as `source`
   project_details: opt(5000), // -> stored as `message`
+  // Geo programme embedded form (components/ui/LeadForm.tsx). All optional so
+  // the original contact page keeps working unchanged.
+  url: opt(512), // qualifying website URL
+  landing_page: opt(512), // path of the page the form was on (attribution)
+  ts: z.number().int().optional(), // client mount timestamp (bot gate in the API)
   _gotcha: z.string().optional(),
 });
 

@@ -14,7 +14,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "geo:check": "tsx scripts/geo/run-all.ts",
+    "geo:validate": "tsx scripts/geo/validate-content.ts",
+    "geo:forbidden": "tsx scripts/geo/check-forbidden.ts",
+    "geo:schema": "tsx scripts/geo/check-schema.ts",
+    "geo:links": "tsx scripts/geo/check-links.ts",
+    "geo:shingles": "tsx scripts/geo/check-shingles.ts",
+    "geo:velocity": "tsx scripts/geo/velocity.ts"
   },
   "dependencies": {
     "@fontsource/poppins": "^5.2.7",
@@ -36,6 +44,7 @@
     "eslint-config-next": "15.2.4",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.1",
+    "tsx": "^4.23.12",
     "typescript": "^5"
   }
 }

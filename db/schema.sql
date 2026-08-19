@@ -1,6 +1,15 @@
 -- Lead capture table. Run ONCE by hand in Hostinger hPanel -> Databases ->
 -- phpMyAdmin -> SQL tab (after creating the database + user and granting it
 -- access). The app does NOT create this on boot.
+--
+-- Migration for existing installs (run once in phpMyAdmin):
+--   ALTER TABLE leads ADD COLUMN landing_page VARCHAR(512) NULL AFTER message, ADD KEY idx_landing_page (landing_page(191));
+-- The app only includes landing_page in an INSERT when a lead carries one, so
+-- the existing forms keep working until this migration has been run.
+--
+-- Check: SHOW COLUMNS FROM leads LIKE 'type';
+-- The live ENUM may still lack 'creative-audit'. If it is missing:
+--   ALTER TABLE leads MODIFY type ENUM('audit','contact','creative-audit') NOT NULL;
 CREATE TABLE IF NOT EXISTS leads (
   id          BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   type        ENUM('audit','contact') NOT NULL,
@@ -14,6 +23,7 @@ CREATE TABLE IF NOT EXISTS leads (
   budget      VARCHAR(64)  NULL,   -- contact only
   services    VARCHAR(255) NULL,   -- contact only
   message     TEXT         NULL,   -- contact.project_details
+  landing_page VARCHAR(512) NULL, -- path of the page the form was on (geo programme attribution)
   raw         JSON         NOT NULL, -- full submitted payload (safety net)
   ip          VARCHAR(45)  NULL,
   user_agent  VARCHAR(512) NULL,
@@ -21,7 +31,8 @@ CREATE TABLE IF NOT EXISTS leads (
   PRIMARY KEY (id),
   KEY idx_created_at (created_at),
   KEY idx_type (type),
-  KEY idx_email (email)
+  KEY idx_email (email),
+  KEY idx_landing_page (landing_page(191))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Call bookings captured from the Cal.com embed (bookingSuccessfulV2 event) on

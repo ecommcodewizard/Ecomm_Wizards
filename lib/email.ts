@@ -49,6 +49,7 @@ export function teamNotificationEmail(lead: LeadInput): { subject: string; html:
     ["Phone", lead.phone ?? ""],
     ["Company", lead.company ?? ""],
     ["Store URL", lead.url ?? ""],
+    ["Landing page", lead.landingPage ?? ""],
     ["Situation", (lead.situation ?? []).join(", ")],
     ["Budget", lead.budget ?? ""],
     ["Services", lead.services ?? ""],

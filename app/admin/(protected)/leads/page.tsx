@@ -81,6 +81,7 @@ function Detail({ lead }: { lead: LeadRow }) {
   const situation = Array.isArray(lead.situation) ? lead.situation.join(", ") : "";
   const items = ([
     ["Store URL", lead.url ?? ""],
+    ["Landing page", lead.landing_page ?? ""],
     ["Situation", situation],
     ["Budget", lead.budget ?? ""],
     ["Services", lead.services ?? ""],
