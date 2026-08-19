@@ -64,12 +64,23 @@ export function publishedGeoRoutes(): string[] {
   return GEO_PAGES.filter((p) => p.status === "published").map((p) => p.path);
 }
 
-/** Should this page render for a request? Published pages always. Draft/review
- *  pages render in development (with markers highlighted) and when GEO_PREVIEW=1
- *  is set on a preview host; on production they 404. */
+/** Should this page render for a request?
+ *
+ *  Published pages always render. An unpublished page renders anywhere it can
+ *  only be seen by the team, and 404s on the live site:
+ *    - local `next dev`
+ *    - Vercel PR preview deployments (VERCEL_ENV is "preview" there; the
+ *      Hostinger production build never sets it, so live traffic still 404s)
+ *    - any host where GEO_PREVIEW=1 is set deliberately
+ *
+ *  Note this is evaluated at build time for these statically prerendered
+ *  routes, so the decision is baked into each deployment rather than read per
+ *  request. Unpublished pages also carry robots noindex from the route's
+ *  metadata, so a preview URL cannot be indexed even while it renders. */
 export function isRenderable(page: GeoProgrammePage): boolean {
   if (page.status === "published") return true;
   if (process.env.NODE_ENV !== "production") return true;
+  if (process.env.VERCEL_ENV === "preview") return true;
   return process.env.GEO_PREVIEW === "1";
 }
 
