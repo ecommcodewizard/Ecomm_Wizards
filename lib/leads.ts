@@ -15,6 +15,7 @@ export interface LeadInput {
   budget?: string | null; // contact only
   services?: string | null; // contact only
   message?: string | null; // contact.project_details
+  landingPage?: string | null; // path of the page the form was on (geo programme attribution)
   raw: Record<string, unknown>; // full payload, safety net
   ip?: string | null;
   userAgent?: string | null;
@@ -33,6 +34,7 @@ export interface LeadRow {
   budget: string | null;
   services: string | null;
   message: string | null;
+  landing_page: string | null;
   raw: Record<string, unknown> | null;
   ip: string | null;
   user_agent: string | null;
@@ -41,26 +43,34 @@ export interface LeadRow {
 
 export async function insertLead(lead: LeadInput): Promise<number> {
   const pool = getPool();
+  // Column list is built dynamically: landing_page is only included when the
+  // lead carries one, so the existing forms keep working on installs where the
+  // column has not been added yet (see db/schema.sql migration note).
+  const cols: [string, string | null][] = [
+    ["type", lead.type],
+    ["name", lead.name],
+    ["email", lead.email],
+    ["phone", lead.phone ?? null],
+    ["company", lead.company ?? null],
+    ["url", lead.url ?? null],
+    ["situation", lead.situation && lead.situation.length ? JSON.stringify(lead.situation) : null],
+    ["source", lead.source ?? null],
+    ["budget", lead.budget ?? null],
+    ["services", lead.services ?? null],
+    ["message", lead.message ?? null],
+  ];
+  if (typeof lead.landingPage === "string" && lead.landingPage.trim() !== "") {
+    cols.push(["landing_page", lead.landingPage]);
+  }
+  cols.push(
+    ["raw", JSON.stringify(lead.raw ?? {})],
+    ["ip", lead.ip ?? null],
+    ["user_agent", lead.userAgent ?? null],
+  );
   const [res] = await pool.execute<ResultSetHeader>(
-    `INSERT INTO leads
-       (type, name, email, phone, company, url, situation, source, budget, services, message, raw, ip, user_agent)
-     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
-    [
-      lead.type,
-      lead.name,
-      lead.email,
-      lead.phone ?? null,
-      lead.company ?? null,
-      lead.url ?? null,
-      lead.situation && lead.situation.length ? JSON.stringify(lead.situation) : null,
-      lead.source ?? null,
-      lead.budget ?? null,
-      lead.services ?? null,
-      lead.message ?? null,
-      JSON.stringify(lead.raw ?? {}),
-      lead.ip ?? null,
-      lead.userAgent ?? null,
-    ],
+    `INSERT INTO leads (${cols.map(([c]) => c).join(", ")})
+     VALUES (${cols.map(() => "?").join(",")})`,
+    cols.map(([, v]) => v),
   );
   return res.insertId;
 }
