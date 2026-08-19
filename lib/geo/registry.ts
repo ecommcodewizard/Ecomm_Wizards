@@ -131,12 +131,11 @@ export function validatePage(page: GeoProgrammePage, today: Date = new Date()): 
     }
   }
 
-  // Sources referenced inline must exist
-  const ids = new Set(page.sources.map((s) => s.id));
-  const refs = proseStrings(page).join(" ").match(/\[src:([a-z0-9-]+)\]/gi) ?? [];
-  for (const r of refs) {
-    const id = r.slice(5, -1);
-    if (!ids.has(id)) err(`inline source reference ${r} has no matching sources[] entry`);
+  // On-page citations are retired: the pages carry no visible Sources section
+  // and no inline markers, so a leftover [src:...] would render as literal text.
+  const refs = proseStrings(page).join(" ").match(/\[src:[a-z0-9-]+\]/gi) ?? [];
+  if (refs.length > 0) {
+    err(`${refs.length} inline [src:...] marker(s) remain (${refs.slice(0, 3).join(", ")}); on-page citations are retired, remove them`);
   }
 
   // Word count

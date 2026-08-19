@@ -8,8 +8,9 @@
 // "ecommerce strategy agency".
 //
 // Every platform figure in the Only-Here Asset came from the vendor's own
-// pricing page or developer documentation on 2026-08-19 and carries an inline
-// [src:id] marker resolving to the sources array at the foot of this file.
+// pricing page or developer documentation on 2026-08-19. Per the owner's call,
+// the page carries no visible citations and no Sources section; the capture
+// date and method stay disclosed in asset.method.
 // Cells still marked [NEEDS INPUT] are gaps nobody has verified yet. Leave them
 // as gaps. A wrong number on this table costs more than a missing one.
 //
@@ -84,11 +85,11 @@ export const ECOMMERCE_AGENCY: HubPage = {
       {
         label: "Published license cost at $1M GMV",
         cells: [
-          "Advanced at $299/mo billed annually, so $3,588/yr [src:shopify-pricing]",
-          "From $2,300/mo, so $27,600/yr [src:shopify-pricing]",
-          "Scale at $299/mo, plus 0.9% of GMV above $33,333/mo [src:bigcommerce-pricing]",
+          "Advanced at $299/mo billed annually, so $3,588/yr",
+          "From $2,300/mo, so $27,600/yr",
+          "Scale at $299/mo, plus 0.9% of GMV above $33,333/mo",
           "$0 license. Hosting and extensions are the real cost",
-          "No published price. Quote only [src:adobe-pricing]",
+          "No published price. Quote only",
         ],
         note: "Apps, hosting, and card processing excluded.",
       },
@@ -96,10 +97,10 @@ export const ECOMMERCE_AGENCY: HubPage = {
         label: "Published license cost at $10M GMV",
         cells: [
           "Still $299/mo, though most stores this size move to Plus",
-          "Published entry stays $2,300/mo [src:shopify-pricing]",
-          "Past $2M GMV you move to the enterprise tier, from $1,499/mo [src:bigcommerce-pricing]",
+          "Published entry stays $2,300/mo",
+          "Past $2M GMV you move to the enterprise tier, from $1,499/mo",
           "$0 license. Infrastructure becomes the line item that matters",
-          "Quote only [src:adobe-pricing]",
+          "Quote only",
         ],
       },
       {
@@ -109,17 +110,17 @@ export const ECOMMERCE_AGENCY: HubPage = {
           "Negotiated. No public number applies here",
           "Negotiated. No public number applies here",
           "$0 license. Engineering and hosting are the whole cost",
-          "Quote only [src:adobe-pricing]",
+          "Quote only",
         ],
         note: "Three of five platforms stop publishing a price before this row.",
       },
       {
         label: "Penalty for not using the native processor",
         cells: [
-          "2% on Basic, 1% on Grow, 0.6% on Advanced [src:shopify-pricing]",
-          "0.2% [src:shopify-pricing]",
-          "2% on Core, 1% on Growth, 0.6% on Scale, 0% on contract [src:bigcommerce-pricing]",
-          "None. WooPayments charges 2.9% plus $0.30 [src:woo-fees]",
+          "2% on Basic, 1% on Grow, 0.6% on Advanced",
+          "0.2%",
+          "2% on Core, 1% on Growth, 0.6% on Scale, 0% on contract",
+          "None. WooPayments charges 2.9% plus $0.30",
           "None. Adobe does not process payments",
         ],
         note: "At $10M GMV, 0.6% is $60,000 a year. The license is the smaller number.",
@@ -127,18 +128,18 @@ export const ECOMMERCE_AGENCY: HubPage = {
       {
         label: "Variant and option ceiling",
         cells: [
-          "2,048 variants and 3 options per product [src:shopify-variants]",
-          "2,048 variants and 3 options per product [src:shopify-variants]",
+          "2,048 variants and 3 options per product",
+          "2,048 variants and 3 options per product",
           NI("confirm the current per-product variant cap from support.bigcommerce.com; their support forum repeatedly cites 600 but the docs page would not load on 2026-08-19"),
-          "No hard cap. Dropdowns go static past 30 variations by default [src:woo-variations]",
+          "No hard cap. Dropdowns go static past 30 variations by default",
           "No published ceiling. Catalog size is an infrastructure question",
         ],
       },
       {
         label: "Checkout customization",
         cells: [
-          "Extensions only. checkout.liquid was never available on this tier [src:checkout-liquid]",
-          "Shopify retired checkout.liquid. Extensions and Functions now [src:checkout-liquid]",
+          "Extensions only. checkout.liquid was never available on this tier",
+          "Shopify retired checkout.liquid. Extensions and Functions now",
           NI("confirm which checkout customization options are plan-gated from developer.bigcommerce.com"),
           "Fully open. The checkout is your own PHP",
           "Fully open source. Anything is buildable, and everything is billable",
@@ -161,8 +162,8 @@ export const ECOMMERCE_AGENCY: HubPage = {
     derivedList: {
       title: "When we tell brands not to move to Shopify",
       items: [
-        "Your catalog needs more than three option dimensions on a single product. Shopify caps options at three, and the workarounds get expensive quickly [src:shopify-variants].",
-        "You cannot express your checkout rules as an extension. Shopify retired checkout.liquid, so checkout changes run through extensions now, and some logic will not fit [src:checkout-liquid].",
+        "Your catalog needs more than three option dimensions on a single product. Shopify caps options at three, and the workarounds get expensive quickly.",
+        "You cannot express your checkout rules as an extension. Shopify retired checkout.liquid, so checkout changes run through extensions now, and some logic will not fit.",
         "You sell in a category that most payment processors restrict. The platform stops mattering when you cannot take money.",
         "Your B2B model needs quote-to-order workflows beyond what native B2B covers, and rebuilding them costs more than the platform ever saves.",
         "You run an ERP integration that works, and the rebuild costs more than the license saving returns. Keeping a system nobody enjoys is sometimes the correct call.",
@@ -339,64 +340,11 @@ export const ECOMMERCE_AGENCY: HubPage = {
   },
 
   // ── Block 11: Sources ─────────────────────────────────────────────────
-  sources: [
-    {
-      id: "shopify-pricing",
-      claim: "Shopify plan prices and the additional fee charged when a merchant does not use Shopify Payments.",
-      url: "https://www.shopify.com/pricing",
-      publisher: "Shopify",
-      captured: "2026-08-19",
-      reviewAfterDays: 180,
-    },
-    {
-      id: "shopify-variants",
-      claim: "Shopify allows up to 2,048 variants and 3 options per product.",
-      url: "https://shopify.dev/changelog/the-product-variant-limit-is-now-2048-for-all-merchants",
-      publisher: "Shopify Developer Changelog",
-      captured: "2026-08-19",
-      reviewAfterDays: 365,
-    },
-    {
-      id: "checkout-liquid",
-      claim: "checkout.liquid was a Shopify Plus feature and is retired, with checkout customization now handled through checkout extensions.",
-      url: "https://shopify.dev/docs/storefronts/themes/architecture/layouts/checkout-liquid",
-      publisher: "Shopify Developer Documentation",
-      captured: "2026-08-19",
-      reviewAfterDays: 180,
-    },
-    {
-      id: "bigcommerce-pricing",
-      claim: "BigCommerce plan prices, the GMV thresholds that force a plan upgrade, and the fees charged on open payment providers.",
-      url: "https://www.bigcommerce.com/essentials/pricing/",
-      publisher: "BigCommerce",
-      captured: "2026-08-19",
-      reviewAfterDays: 180,
-    },
-    {
-      id: "woo-fees",
-      claim: "WooPayments charges 2.9% plus $0.30 on domestic US card payments.",
-      url: "https://woocommerce.com/document/woopayments/fees-and-debits/fees/",
-      publisher: "WooCommerce",
-      captured: "2026-08-19",
-      reviewAfterDays: 180,
-    },
-    {
-      id: "woo-variations",
-      claim: "WooCommerce switches variable product dropdowns from dynamic to static past 30 variations by default, controlled by the woocommerce_ajax_variation_threshold filter.",
-      url: "https://woocommerce.com/document/change-limit-on-number-of-variations-for-dynamic-variable-product-dropdowns/",
-      publisher: "WooCommerce",
-      captured: "2026-08-19",
-      reviewAfterDays: 365,
-    },
-    {
-      id: "adobe-pricing",
-      claim: "Adobe publishes no price list for Adobe Commerce; pricing is quoted through sales.",
-      url: "https://business.adobe.com/products/commerce/pricing.html",
-      publisher: "Adobe",
-      captured: "2026-08-19",
-      reviewAfterDays: 180,
-    },
-  ],
+  // Empty by owner decision (2026-08-19): no visible Sources section and no
+  // inline citation markers on the page. The vendor URLs behind the platform
+  // table are recorded in the commit message and in asset.method.howGathered,
+  // which still states where the figures came from and when they were captured.
+  sources: [],
 
   children: [
     "/services/ecommerce-agency/los-angeles",

@@ -4,10 +4,7 @@
 import { GEO_PAGES } from "../../lib/geo/registry";
 import type { GeoProgrammePage } from "../../lib/geo/types";
 
-const render = (s: string) =>
-  s
-    .replace(/\[src:([a-z0-9-]+)\]/gi, " [$1]")
-    .replace(/\[link:[^\]|]+\|([^\]]+)\]/g, "$1");
+const render = (s: string) => s.replace(/\[link:[^\]|]+\|([^\]]+)\]/g, "$1");
 
 const rule = (label: string) => "\n" + "-".repeat(70) + "\n" + label + "\n" + "-".repeat(70);
 
@@ -82,8 +79,6 @@ function preview(p: GeoProgrammePage): void {
   console.log("What we will tell you not to do: " + render(p.conversion.whatWeWillTellYouNotToDo));
   console.log(render(p.conversion.responseExpectation));
 
-  console.log(rule("SOURCES"));
-  p.sources.forEach((s, i) => console.log(i + 1 + ". [" + s.id + "] " + s.claim + "\n   " + s.publisher + " " + s.url + " (captured " + s.captured + ", review after " + s.reviewAfterDays + "d)"));
 }
 
 const target = process.argv[2];

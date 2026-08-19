@@ -16,7 +16,6 @@ import ProofBlock from "./ProofBlock";
 import ObjectionBlock from "./ObjectionBlock";
 import FAQBlock from "./FAQBlock";
 import ConversionBlock from "./ConversionBlock";
-import SourcesBlock from "./SourcesBlock";
 import DevSlotNote from "./DevSlotNote";
 
 // The hub spine (Page Specification v2.0 section 2.1), rendered in order from a
@@ -25,7 +24,11 @@ import DevSlotNote from "./DevSlotNote";
 //
 //  1 Hero  2 Hook  3 What we actually do  4 Only-Here Asset  5 How the
 //  engagement runs  6 What we don't do  7 Proof  8 Objections  9 FAQ
-//  10 Conversion + form  11 Sources
+//  10 Conversion + form
+//
+// Block 11 (a visible Sources list) is intentionally NOT rendered: the owner
+// decided against on-page citations. Where a figure came from and when it was
+// captured still shows inside the Only-Here Asset's method disclosure.
 //
 // Schema emitted: Service (shared <ServiceSchema/>), BreadcrumbList (from the
 // same trail Breadcrumbs renders), FAQPage (inside FAQBlock, from the same
@@ -74,11 +77,6 @@ export default function HubPageTemplate({ page }: { page: HubPage }) {
       <FAQBlock heading={`${page.shortTitle} FAQs`} faqs={page.faqs} />
 
       <ConversionBlock conversion={page.conversion} landingPage={page.path} />
-
-      <SourcesBlock
-        sources={page.sources}
-        assetReview={{ captured: page.asset.method.captured, reviewAfterDays: page.asset.reviewAfterDays, title: page.asset.title }}
-      />
 
       {/* Hub -> geo children. Rendered only for published children so a hub never
           links to a 404. Contextual list, not a footer block. */}

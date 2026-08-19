@@ -2,15 +2,18 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { NEEDS_INPUT } from "@/lib/geo/types";
 
-// Renders a human-authored prose slot. Paragraphs split on blank lines. Two
-// inline conventions are supported inside the text:
-//   [src:<id>]         -> a superscript source marker linking to #source-<id>
+// Renders a human-authored prose slot. Paragraphs split on blank lines. One
+// inline convention is supported inside the text:
 //   [link:/path|Label] -> an internal link
 // Unfilled "[NEEDS INPUT: ...]" markers render as a highlighted chip in
 // development and preview builds; the route 404s in production while any
 // remain, so this never reaches a visitor.
+//
+// There is deliberately no inline citation marker. On-page sourcing was retired
+// by the owner, and validate-content fails any content file that still contains
+// a [src:...] marker so it cannot creep back in.
 
-const MARKER_RE = /(\[NEEDS INPUT[^\]]*\]|\[src:[a-z0-9-]+\]|\[link:[^\]|]+\|[^\]]+\])/gi;
+const MARKER_RE = /(\[NEEDS INPUT[^\]]*\]|\[link:[^\]|]+\|[^\]]+\])/gi;
 
 export function inline(text: string): ReactNode[] {
   const parts = text.split(MARKER_RE).filter((p) => p !== "");
@@ -20,14 +23,6 @@ export function inline(text: string): ReactNode[] {
         <mark key={i} className="gp-needs-input" data-needs-input="">
           {part}
         </mark>
-      );
-    }
-    const src = /^\[src:([a-z0-9-]+)\]$/i.exec(part);
-    if (src) {
-      return (
-        <sup key={i} className="gp-src">
-          <a href={`#source-${src[1]}`} aria-label={`Source ${src[1]}`}>[{src[1]}]</a>
-        </sup>
       );
     }
     const link = /^\[link:([^\]|]+)\|([^\]]+)\]$/.exec(part);
