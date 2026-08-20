@@ -35,6 +35,10 @@ export default function ScopeBoundary({ heading, items }: Props) {
       <style
         dangerouslySetInnerHTML={{
           __html: `
+          /* The proof block below is also cream, so a bottom pad here only
+             adds dead space between two bands of the same color. Two classes to
+             beat the .gp-section mobile override. */
+          .gp-section.gpb { padding-bottom: 0; }
           .gpb .gp-h2 { margin-bottom: 24px; }
           .gpb-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
           .gpb-item { display: flex; align-items: flex-start; gap: 12px; }

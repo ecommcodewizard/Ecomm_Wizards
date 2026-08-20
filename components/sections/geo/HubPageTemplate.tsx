@@ -12,6 +12,8 @@ import Hook from "./Hook";
 import QuickAnswer from "./QuickAnswer";
 import ServiceBlock from "./ServiceBlock";
 import SegmentsBlock from "./SegmentsBlock";
+import ServicesAccordion from "./ServicesAccordion";
+import ResultsSlider from "./ResultsSlider";
 import OnlyHereAsset from "./OnlyHereAsset";
 import InlineCta from "./InlineCta";
 import EngagementBlock from "./EngagementBlock";
@@ -58,7 +60,7 @@ export default function HubPageTemplate({ page }: { page: HubPage }) {
         h1={page.h1}
         qualifier={page.qualifier}
         image={page.heroImage}
-        secondaryCta={{ label: "See what each platform costs", href: "#asset" }}
+        secondaryCta={{ label: page.assetCtaLabel ?? "See what each platform costs", href: "#asset" }}
       />
 
       {page.trust && <TrustBar trust={page.trust} />}
@@ -73,6 +75,13 @@ export default function HubPageTemplate({ page }: { page: HubPage }) {
         variant={isMap ? "map" : "hub"}
         mapItems={page.serviceMap}
       />
+
+      {page.servicesList && <ServicesAccordion data={page.servicesList} />}
+
+      {/* Client voice sits high, directly after the service list: it answers
+          "can they actually do this" while the reader still has the list in
+          mind. The video proof cards come later, after the process section. */}
+      {page.results && <ResultsSlider results={page.results} />}
 
       {page.segments && <SegmentsBlock segments={page.segments} />}
 

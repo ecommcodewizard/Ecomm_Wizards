@@ -19,7 +19,7 @@ type Props = {
   qualifier: string;
   primaryCta?: Cta;
   secondaryCta?: Cta;
-  image?: { src: string; alt: string };
+  image?: { src: string; alt: string; aspect?: string };
 };
 
 const DEFAULT_PRIMARY: Cta = { label: "Get in touch", href: "#contact" };
@@ -76,6 +76,7 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
               height={480}
               priority
               className="gph-img"
+              style={image.aspect ? { aspectRatio: image.aspect, objectFit: "cover" } : undefined}
             />
           </div>
         ) : null}
@@ -86,7 +87,11 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
           .gph-grid--split { display: grid; gap: 40px; align-items: center; }
           @media (min-width: 1024px) { .gph-grid--split { grid-template-columns: 1.1fr 1fr; } }
           .gph-media { display: flex; align-items: center; justify-content: center; }
-          .gph-img { width: 100%; height: auto; border-radius: 16px; display: block; box-shadow: 0 24px 64px rgba(0,0,0,0.45); }
+          /* Natural proportions by default. Pages whose source file is taller
+             than the copy column needs set heroImage.aspect, which arrives as
+             an inline aspect-ratio + object-fit: cover, so the image is
+             cropped rather than squashed. */
+          .gph-img { width: 100%; height: auto; object-position: center; border-radius: 16px; display: block; box-shadow: 0 24px 64px rgba(0,0,0,0.45); }
           .gph-grid--split .gph-h1 { max-width: none; }
           .gph-grid--split .gph-qualifier { max-width: none; }
           @media (max-width: 1023px) { .gph-media { margin-top: 8px; } }

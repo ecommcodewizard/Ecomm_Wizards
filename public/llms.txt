@@ -11,6 +11,7 @@ Key facts:
 
 ## Services
 - [Ecommerce Agency](https://ecommwizards.com/services/ecommerce-agency): Full-service ecommerce agency for brands turning over $1M to $50M. Builds, replatforms and rescues on Shopify at a fixed price, with a published cost comparison of Shopify, Shopify Plus, BigCommerce, WooCommerce and Adobe Commerce.
+- [Ecommerce SEO Agency](https://ecommwizards.com/services/ecommerce-seo-agency): Ecommerce SEO for $1M to $50M catalogs. Diagnoses crawl budget, faceted navigation, duplicate variant URLs and index bloat on Shopify, WooCommerce, BigCommerce and Adobe Commerce, with a published defect matrix comparing all four.
 - [Shopify Store Development](https://ecommwizards.com/services/shopify-store-development): Custom Shopify store design and build for DTC and growth-stage brands.
 - [Shopify Plus Development](https://ecommwizards.com/services/shopify-plus-development): Enterprise Shopify Plus builds with custom theme, checkout, and integrations.
 - [Shopify Migration](https://ecommwizards.com/services/migration): Replatforming to Shopify from Magento, WooCommerce, BigCommerce, and others, with SEO-safe redirects.

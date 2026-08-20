@@ -27,16 +27,27 @@ export default function InlineCta({ text, label, href = "#contact" }: { text: st
       <style
         dangerouslySetInnerHTML={{
           __html: `
-        .gpc { background: #ffffff; font-family: 'Poppins', sans-serif; padding: 0 20px 20px; }
-        .gpc-inner { max-width: 1320px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; background: #FBF7ED; border: 1px solid rgba(0,0,0,0.07); border-radius: 16px; padding: 24px 28px; }
-        .gpc-text { font-size: 17px; font-weight: 600; color: #000000; line-height: 1.5; margin: 0; max-width: 820px; }
-        .gpc-btn { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; background: #000000; color: #ffffff; border: 1px solid transparent; border-radius: 999px; padding: 14px 28px; font-size: 15px; font-weight: 600; line-height: 1; text-decoration: none; transition: background .3s ease, transform .25s ease; }
+        /* Cream band with a white card, the inverse of the section above it.
+           That keeps this strip from being a third white block in a row while
+           the card itself stays the brightest thing on screen. */
+        .gpc { background: #FBF7ED; font-family: 'Poppins', sans-serif; padding: 20px 20px; }
+        .gpc-inner { max-width: 1320px; margin: 0 auto; display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 24px; background: #ffffff; border: 1px solid rgba(0,0,0,0.07); border-radius: 16px; padding: 24px 28px; }
+        .gpc-text { font-size: 18px; font-weight: 600; color: #000000; line-height: 1.5; margin: 0; flex: 1 1 auto; min-width: 0; }
+        .gpc-btn { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; background: #000000; color: #ffffff; border: 1px solid transparent; border-radius: 999px; padding: 14px 28px; font-size: 15px; font-weight: 600; line-height: 1; text-decoration: none; transition: background .3s ease, transform .25s ease; }
         .gpc-btn:hover { background: linear-gradient(#000, #000) padding-box, var(--brand-gradient) border-box; transform: translateY(-1px); }
         .gpc-btn:focus-visible { outline: 3px solid #3DC77A; outline-offset: 3px; }
+        /* Tablet: drop a point of type rather than break the row, so the
+           button keeps its place on the right. */
+        @media (max-width: 1024px) {
+          .gpc-text { font-size: 17px; }
+          .gpc-inner { gap: 20px; }
+        }
+        /* Phone: the row genuinely has no space, so stack and let the button
+           run full width under the text. */
         @media (max-width: 640px) {
-          .gpc { padding: 0 18px 20px; }
-          .gpc-inner { padding: 20px; }
-          .gpc-text { font-size: 15.5px; }
+          .gpc { padding: 20px 18px; }
+          .gpc-inner { flex-wrap: wrap; flex-direction: column; align-items: stretch; padding: 20px; gap: 16px; }
+          .gpc-text { font-size: 16px; }
           .gpc-btn { width: 100%; justify-content: center; }
         }
         @media (prefers-reduced-motion: reduce) { .gpc-btn { transition: none; } }
