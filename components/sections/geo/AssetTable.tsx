@@ -150,12 +150,12 @@ export default function AssetTable({ renderer, columns, rows, caption, id }: Ass
           __html: `
           .ga-wrap { font-family: 'Poppins', sans-serif; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; background: #ffffff; max-width: 100%; }
           .ga-wrap:focus-visible { outline: 3px solid #3DC77A; outline-offset: 2px; }
-          .ga-table { width: 100%; border-collapse: collapse; font-size: 14.5px; color: #0f172a; }
+          .ga-table { width: 100%; border-collapse: collapse; font-size: 15px; color: #0f172a; }
           .ga-caption { caption-side: top; text-align: left; font-size: 13px; font-weight: 600; color: #334155; padding: 12px 14px; background: #ffffff; border-bottom: 1px solid rgba(0,0,0,0.08); }
-          .ga-th { background: #FBF7ED; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #0f172a; text-align: left; padding: 12px 14px; border-bottom: 1px solid rgba(0,0,0,0.08); white-space: nowrap; min-width: 140px; vertical-align: bottom; }
+          .ga-th { background: #0f172a; font-size: 13px; font-weight: 700; letter-spacing: .04em; color: #ffffff; text-align: left; padding: 16px 18px; border-bottom: none; white-space: nowrap; min-width: 150px; vertical-align: middle; }
           .ga-th--label { min-width: 180px; }
-          .ga-rowlabel, .ga-td { padding: 12px 14px; border-bottom: 1px solid rgba(0,0,0,0.08); vertical-align: top; text-align: left; line-height: 1.55; min-width: 140px; }
-          .ga-rowlabel { font-weight: 600; min-width: 180px; }
+          .ga-rowlabel, .ga-td { padding: 16px 18px; border-bottom: 1px solid rgba(0,0,0,0.07); vertical-align: middle; text-align: left; line-height: 1.5; min-width: 150px; }
+          .ga-rowlabel { font-weight: 700; min-width: 190px; color: #000000; background: #FBF7ED; }
           .ga-rowlabel-main { display: inline-flex; align-items: flex-start; gap: 10px; }
           .ga-rownote { display: block; font-weight: 400; font-size: 13px; color: #64748b; margin-top: 4px; }
           .ga-row:last-child .ga-rowlabel, .ga-row:last-child .ga-td { border-bottom: none; }
@@ -168,7 +168,9 @@ export default function AssetTable({ renderer, columns, rows, caption, id }: Ass
           .ga-wrap[data-renderer="comparison"] .ga-table { table-layout: fixed; }
           .ga-wrap[data-renderer="comparison"] .ga-th--label { width: 22%; }
           .ga-wrap[data-renderer="comparison"] .ga-row:nth-child(even) .ga-rowlabel,
-          .ga-wrap[data-renderer="comparison"] .ga-row:nth-child(even) .ga-td { background: rgba(251,247,237,0.55); }
+          .ga-wrap[data-renderer="comparison"] .ga-row:nth-child(even) .ga-td { background: rgba(251,247,237,0.5); }
+          .ga-wrap[data-renderer="comparison"] .ga-row:hover .ga-td { background: rgba(61,199,122,0.07); }
+          .ga-wrap[data-renderer="comparison"] .ga-td { font-size: 15px; font-weight: 600; color: #0f172a; }
           .ga-wrap[data-renderer="comparison"] .ga-rowlabel { font-weight: 700; }
 
           /* matrix: status pills */

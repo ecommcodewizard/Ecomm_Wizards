@@ -5,6 +5,7 @@ import { CASE_STUDIES, type CaseStudy } from "@/lib/case-studies";
 import { APP_CASE_STUDIES } from "@/lib/shopify-app-studies";
 import { KLAVIYO_CASE_STUDIES } from "@/lib/klaviyo-studies";
 import { CREATIVE_CASE_STUDIES } from "@/lib/creative-studies";
+import { CASE_STUDY_VIDEOS, posterFor } from "@/lib/case-study-videos";
 import { inline } from "./Prose";
 
 // A proof card for a geo programme page. Resolves the study by slug across the
@@ -30,23 +31,58 @@ function lowerFirst(s: string): string {
 
 export default function CaseStudyCard({ study }: { study: CaseStudyRef }) {
   const data = findStudy(study.slug);
+  const video = CASE_STUDY_VIDEOS[study.slug];
   const href = `/case-studies/${study.slug}`;
 
   return (
     <Link href={href} className="gcs-card" data-proof-card="">
-      {data?.heroImage ? (
+      {video || data?.heroImage ? (
         <div className="gcs-media">
-          {/* Alt names the brand and what the engagement was, so the image is
-              described rather than labelled. No location, ever. */}
-          <Image
-            src={data.heroImage}
-            alt={`${data.brandName} ecommerce store, ${lowerFirst(study.whatWasBuilt)}`}
-            fill
-            className="gcs-img"
-            style={{ objectFit: "cover" }}
-            sizes="(max-width: 1024px) 50vw, 33vw"
-            loading="lazy"
-          />
+          {video ? (
+            // Same treatment as the case-studies grid: muted, looping, inline,
+            // with preload="none" so three cards do not cost three video
+            // downloads before the reader scrolls to them. The poster carries
+            // the first frame until playback starts.
+            <>
+              <video
+                src={video}
+                poster={posterFor(video)}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="none"
+                aria-label={`${data?.brandName ?? "Client"} store preview`}
+                className="gcs-video"
+              />
+              {/* A looping autoplay video has no pause control, which fails
+                  WCAG 2.2.2 for anyone who has asked for reduced motion. CSS
+                  cannot stop playback, so the still poster is rendered
+                  alongside and the two are swapped by media query. No client
+                  JS, and the video never even starts because preload is off
+                  and it is display:none. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={posterFor(video)}
+                alt={`${data?.brandName ?? "Client"} ecommerce store, ${lowerFirst(study.whatWasBuilt)}`}
+                className="gcs-still"
+                loading="lazy"
+                decoding="async"
+              />
+            </>
+          ) : data?.heroImage ? (
+            /* Alt names the brand and what the engagement was, so the image is
+               described rather than labelled. No location, ever. */
+            <Image
+              src={data.heroImage}
+              alt={`${data.brandName} ecommerce store, ${lowerFirst(study.whatWasBuilt)}`}
+              fill
+              className="gcs-img"
+              style={{ objectFit: "cover" }}
+              sizes="(max-width: 1024px) 50vw, 33vw"
+              loading="lazy"
+            />
+          ) : null}
         </div>
       ) : null}
       <div className="gcs-body">
@@ -73,6 +109,8 @@ export default function CaseStudyCard({ study }: { study: CaseStudyRef }) {
           .gcs-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.10); }
           .gcs-card:focus-visible { outline: 3px solid #3DC77A; outline-offset: 3px; }
           .gcs-media { position: relative; width: calc(100% - 16px); margin: 8px 8px 0; border-radius: 14px; overflow: hidden; aspect-ratio: 16 / 10; background: #e0ddd5; flex-shrink: 0; }
+          .gcs-video { width: 100%; height: 100%; object-fit: cover; display: block; }
+          .gcs-still { display: none; width: 100%; height: 100%; object-fit: cover; }
           .gcs-img { transition: transform .4s ease; }
           .gcs-card:hover .gcs-img { transform: scale(1.03); }
           .gcs-body { padding: 20px 20px 22px; display: flex; flex-direction: column; gap: 14px; flex-grow: 1; }
@@ -82,7 +120,14 @@ export default function CaseStudyCard({ study }: { study: CaseStudyRef }) {
           .gcs-row dt { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #000000; }
           .gcs-row dd { margin: 0; font-size: 14.5px; line-height: 1.55; color: #334155; }
           .gcs-outcome { font-weight: 700; color: #0f172a !important; }
-          @media (prefers-reduced-motion: reduce) { .gcs-card, .gcs-img { transition: none; } .gcs-card:hover { transform: none; } .gcs-card:hover .gcs-img { transform: none; } }
+          @media (prefers-reduced-motion: reduce) {
+            .gcs-card, .gcs-img { transition: none; }
+            .gcs-card:hover { transform: none; }
+            .gcs-card:hover .gcs-img { transform: none; }
+            /* Swap the looping preview for its still frame. */
+            .gcs-video { display: none; }
+            .gcs-still { display: block; }
+          }
         `,
         }}
       />

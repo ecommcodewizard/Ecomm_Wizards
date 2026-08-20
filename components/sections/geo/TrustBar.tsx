@@ -53,7 +53,9 @@ export default function TrustBar({ trust }: { trust: Trust }) {
         .gpt { background: #ffffff; font-family: 'Poppins', sans-serif; }
         .gpt-inner { max-width: 1320px; margin: 0 auto; padding: 48px 20px; }
         .gpt-h2 { font-size: clamp(22px, 2.4vw, 30px); font-weight: 700; color: #0f172a; line-height: 1.3; text-align: center; margin: 0; text-wrap: balance; }
-        .gpt-sub { font-size: 16px; color: #334155; line-height: 1.6; text-align: center; margin: 10px auto 0; max-width: 860px; }
+        /* text-wrap: pretty stops the last line falling to a single orphan word
+           when the copy lands just past a line break. */
+        .gpt-sub { font-size: 16px; color: #334155; line-height: 1.6; text-align: center; margin: 10px auto 0; max-width: 900px; text-wrap: pretty; }
 
         .gpt-marquee { margin-top: 20px; width: 100%; overflow: hidden; }
         .gpt-track { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 40px; width: max-content; animation: gptScroll 32s linear infinite; }

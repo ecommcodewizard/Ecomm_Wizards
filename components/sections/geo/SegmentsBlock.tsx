@@ -65,6 +65,31 @@ const ICONS: Record<SegmentIcon, ReactNode> = {
       <path d="M4 8l10 5 10-5M14 13v12" strokeWidth="1.5" strokeLinejoin="round" />
     </>
   ),
+  platform: (
+    <>
+      <rect x="3" y="5" width="22" height="15" rx="2" strokeWidth="1.5" />
+      <path d="M3 10h22M10 24h8" strokeWidth="1.5" strokeLinecap="round" />
+    </>
+  ),
+  search: (
+    <>
+      <circle cx="12.5" cy="12.5" r="7.5" strokeWidth="1.5" />
+      <path d="M18 18l6 6" strokeWidth="1.5" strokeLinecap="round" />
+    </>
+  ),
+  code: (
+    <>
+      <path d="M9 9l-5 5 5 5M19 9l5 5-5 5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M16 5l-4 18" strokeWidth="1.5" strokeLinecap="round" />
+    </>
+  ),
+  chart: (
+    <>
+      <path d="M4 23V5" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M4 23h20" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M8 19v-6M14 19V8M20 19v-9" strokeWidth="1.5" strokeLinecap="round" />
+    </>
+  ),
 };
 
 export default function SegmentsBlock({ segments }: { segments: Segments }) {

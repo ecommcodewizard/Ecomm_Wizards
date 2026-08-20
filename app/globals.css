@@ -782,6 +782,10 @@
 .ssd-results-apps-icons { display: flex; align-items: center; gap: 8px; }
 .ssd-results-app-chip { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: #000; }
 .ssd-results-app-chip img { width: 20px; height: 20px; object-fit: contain; filter: brightness(0) invert(1); }
+/* Text pill alternative to the app chips, for pages where the result numbers
+   matter more than the app stack. */
+.ssd-results-apps:has(.ssd-results-metric-chip) { flex-wrap: wrap; gap: 10px 12px; }
+.ssd-results-metric-chip { display: inline-flex; align-items: center; padding: 5px 12px; border-radius: 9999px; background: rgba(42,149,85,0.10); border: 1px solid rgba(42,149,85,0.28); color: #1E7040; font-size: 13px; font-weight: 600; line-height: 1.4; white-space: nowrap; }
 .ssd-results-slide-headline { color: #000; font-size: 30px; font-weight: 500; line-height: 40px; margin: 0 0 18px; max-width: 600px; }
 .ssd-results-slide-headline strong { font-weight: 800; }
 .ssd-results-slide-link { display: inline-flex; align-items: center; gap: 8px; color: #000; font-size: 18px; text-decoration: none; margin: 0 0 22px; transition: gap 0.25s ease; }

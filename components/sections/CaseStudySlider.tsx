@@ -6,7 +6,14 @@ export type CaseStudySlide = {
   key: string;
   image: string;
   alt?: string;
-  apps: string[];
+  /** App logo srcs shown as dark circular chips. Omit on pages where the apps
+   *  used are not the point; pass `metrics` instead. */
+  apps?: string[];
+  /** Text pills shown in place of the app chips (e.g. the result numbers).
+   *  Takes precedence over `apps` when both are given. */
+  metrics?: string[];
+  /** Label for the chip row. Defaults to "Apps we used:". */
+  metaLabel?: string;
   headline: ReactNode;
   quote: ReactNode;
   avatar: string;
@@ -67,17 +74,25 @@ export default function CaseStudySlider({ slides, intervalMs = 6000, showDots = 
 
             {/* Right: content */}
             <div className="ssd-results-slide-text">
-              <div className="ssd-results-apps">
-                <span className="ssd-results-apps-label">Apps we used:</span>
-                <span className="ssd-results-apps-icons">
-                  {s.apps.map((src, i) => (
-                    <span key={i} className="ssd-results-app-chip">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={src} alt="" loading="lazy" decoding="async" />
-                    </span>
-                  ))}
-                </span>
-              </div>
+              {s.metrics?.length || s.apps?.length ? (
+                <div className="ssd-results-apps">
+                  <span className="ssd-results-apps-label">{s.metaLabel ?? "Apps we used:"}</span>
+                  <span className="ssd-results-apps-icons">
+                    {s.metrics?.length
+                      ? s.metrics.map((m, i) => (
+                          <span key={i} className="ssd-results-metric-chip">
+                            {m}
+                          </span>
+                        ))
+                      : s.apps!.map((src, i) => (
+                          <span key={i} className="ssd-results-app-chip">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={src} alt="" loading="lazy" decoding="async" />
+                          </span>
+                        ))}
+                  </span>
+                </div>
+              ) : null}
 
               <h3 className="ssd-results-slide-headline">{s.headline}</h3>
 

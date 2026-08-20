@@ -29,6 +29,7 @@ const NAV: NavItem[] = [
       { label: "New Store Development",        href: "/services/shopify-store-development",    description: "Launch a high-converting Shopify store, built from scratch" },
       { label: "Convert any Figma to Shopify", href: "/services/figma-to-shopify-conversion", description: "Submit your Figma files, get a free quote, and we build it pixel for pixel" },
       { label: "Free Shopify Concept Design",  href: "/services/shopify-ux-and-ui-design",    description: "Interfaces and experiences designed around how your customers shop" },
+      { label: "Ecommerce Agency",             href: "/services/ecommerce-agency",            description: "One team that builds the store and brings people to it" },
       { label: "Shopify Development Agency",   href: "/services/shopify-development-agency",   description: "Custom builds, Shopify Plus, and migrations from a senior team" },
       { label: "Shopify 2.0 Development",      href: "/services/shopify-2-0-development",      description: "Modern Online Store 2.0 sections and architecture" },
       { label: "Shopify Plus Development",     href: "/services/shopify-plus-development",     description: "Enterprise Shopify Plus builds and custom features" },
@@ -59,6 +60,7 @@ const NAV: NavItem[] = [
       { label: "Cart Gamification",     href: "/services/shopify-cart-gamification",             description: "Lift average order value in the cart" },
       { label: "Analytics & Tracking",  href: "/services/shopify-analytics-and-tracking-setup",  description: "GA4, GTM, pixels — done right" },
       { label: "SEO Agency",            href: "/services/shopify-seo-agency",                     description: "Organic growth for Shopify stores" },
+      { label: "Ecommerce SEO Agency",  href: "/services/ecommerce-seo-agency",                   description: "Find what is costing you rankings, on any platform" },
       { label: "Agentic Commerce",      href: "/services/shopify-agentic-commerce",               description: "Get found & bought by AI assistants" },
       { label: "Maintenance & Support", href: "/services/shopify-maintenance-and-support",                 description: "Ongoing care for your store" },
     ],
@@ -77,6 +79,7 @@ const NAV: NavItem[] = [
     label: "Marketing",
     children: [
       { label: "Shopify SEO",          href: "/services/shopify-seo-agency",                     description: "Rank higher, earn more organic traffic" },
+      { label: "Ecommerce SEO",        href: "/services/ecommerce-seo-agency",                   description: "Catalog SEO on Shopify, Magento, Woo, or BigCommerce" },
       { label: "CRO Agency",           href: "/services/shopify-cro-agency", description: "Systematic conversion improvements" },
       { label: "Landing Page Design",  href: "/services/shopify-landing-page-design",                    description: "Campaign pages built to convert" },
       { label: "Analytics & Tracking", href: "/services/shopify-analytics-and-tracking-setup",  description: "Full-funnel measurement setup" },

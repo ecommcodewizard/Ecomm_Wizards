@@ -48,16 +48,16 @@ export const ECOMMERCE_AGENCY: HubPage = {
     "how to value an ecommerce platform design and development agency",
     "what is ecommerce development",
   ],
-  metaTitle: "Ecommerce Agency for $1M to $50M Brands",
+  metaTitle: "Ecommerce Agency That Builds and Grows Your Store",
   metaDescription:
-    "An ecommerce agency for brands doing $1M or more. Fixed price before we start, six week builds, code you own. See what each platform actually costs first.",
+    "An ecommerce agency that builds your store and then helps you sell more through it. One team for both. Fixed price and launch date in writing before we start.",
   shortTitle: "Ecommerce Agency",
   serviceType: "Ecommerce agency",
 
   // ── Block 1: Hero ─────────────────────────────────────────────────────
-  h1: "Ecommerce Agency for Brands That Outgrew Their Platform",
+  h1: "An Ecommerce Agency That Builds Your Store and Grows It",
   qualifier:
-    "An ecommerce agency for brands doing $1M to $50M a year: new builds, replatforms, and the work that follows launch. Under $250,000 in revenue we are the wrong call, and we will say so on the first one.",
+    "We build your store, move it off a platform that stopped working, or fix the one somebody else got wrong. Then we help you sell more through it. You get the full price and the launch date in writing before we start.",
 
   // Same hero image the Shopify development landing page uses.
   heroImage: {
@@ -67,28 +67,29 @@ export const ECOMMERCE_AGENCY: HubPage = {
 
   // ── Block 2: Hook ─────────────────────────────────────────────────────
   hook:
-    "You have done this before. An ecommerce agency pitched a redesign, quoted a range, and billed past it. The launch slipped twice. Six months later conversion sits where it started, and nobody can tell you which change was responsible.\n\nThe design was rarely the problem. The problem was that nobody agreed what finished meant, or what it cost, before anyone wrote code.",
+    "You have probably been here before. You hired an ecommerce agency. The designs looked great. Then the launch date moved twice, the bill grew past the quote, and months later your sales looked the same as when you started.\n\nThe design was almost never the reason. The reason was that nobody wrote down what you were getting, or what it would cost, before the work began. So there was nothing to hold anyone to.",
 
   // Answer-first definition block. This is the passage an AI Overview or an LLM
   // lifts, so it defines the entity, states the band it serves, and names the
   // deliverable, all without depending on the rest of the page.
   quickAnswer:
-    "An ecommerce agency builds and runs the store itself: design, development, data, and the integrations behind it. We do that for brands turning over $1M to $50M a year, on Shopify, at a fixed price agreed before development starts. Most stores go live within six weeks, and you own the code.",
+    "An ecommerce agency is the team that builds your online store and then helps you sell more through it. That covers design, the build itself, the tools it connects to, and the marketing that brings people in. We do all of it on Shopify, for one fixed price agreed before we start. Most stores go live in six weeks, and the code is yours.",
 
   // ── Trust bar (under the hero) ────────────────────────────────────────
   // {storesBuilt} resolves from lib/brand-stats.ts at render time so the
   // headline figure cannot drift from the canonical number.
   trust: {
-    heading: "{storesBuilt} Stores Built. Here's Who Trusts Us.",
+    heading: "We Have Built {storesBuilt} Stores. Here Are a Few.",
     subheading:
-      "Builds, replatforms, and rescues for brands doing real revenue. Every project scoped, built, and launched in-house by the developers you talk to, not the ecommerce agency model where sales writes the scope and somebody else inherits it.",
+      "Every one was built by the same people you would be talking to. No handing you over to a team you never meet, which is how most of the ecommerce agency world works.",
   },
 
   // ── Block 3: What we actually do ──────────────────────────────────────
   whatWeDo: [
-    "We do three things. We build new stores, we move existing ones off platforms that stopped fitting, and we take over builds someone else got wrong. The developers who scope your project build it, and you talk to them directly.",
-    "Most ecommerce agency projects run in one of three shapes. A new store on Shopify takes four to six weeks. A [link:/services/migration|platform migration] carrying full product, customer, and order history takes six to eight. A rescue starts with an audit, fixes what is costing you revenue now, and rebuilds only the parts that earn it. [link:/services/shopify-development-agency|Custom Shopify development] runs alongside all three.",
-    "Custom theme builds run $10,000 to $20,000. Shopify Plus builds with B2B, custom features, or complex integrations run $20,000 to $50,000. Migrations start at $15,000. You get the fixed number and the go-live date in writing before development starts, and scope changes get requoted before we build them, not invoiced after.",
+    "People hire an ecommerce agency for one of two jobs. We do both. We build the store, and we bring people to it. Most agencies pick one and hand you to someone else for the other, which is how you end up with two suppliers blaming each other.",
+    "On the building side: a new store, a [link:/services/migration|move off a platform] that stopped working, or a rescue when the last agency left you something broken. Anything no app can do, we write ourselves as [link:/services/shopify-development-agency|custom development].",
+    "On the selling side: [link:/services/shopify-seo-agency|search], [link:/services/shopify-cro-agency|turning visitors into buyers], email and SMS, and [link:/services/creative-strategy|the ads themselves]. Same team. If traffic goes up and sales do not, nobody gets to point across the room.",
+    "Builds usually land between $10,000 and $50,000. Growth work is monthly. Either way you get the number and the date in writing before we start.",
   ].join("\n\n"),
 
   // ── Who we work with ──────────────────────────────────────────────────
@@ -96,9 +97,9 @@ export const ECOMMERCE_AGENCY: HubPage = {
   // (apparel, beauty, food and drink, jewelry, sports, B2B). Do not add a
   // category here that the corpus cannot evidence.
   segments: {
-    heading: "What Kind of Brands Does an Ecommerce Agency Work With?",
+    heading: "Who Do We Work With?",
     intro:
-      "Checkout, speed, and data structure work the same in every category. Merchandising, the product data model, and the way a store fails under load do not. Category experience is what stops you paying an ecommerce agency to learn on your store.",
+      "These six are where we have built most. The plumbing is the same everywhere. What changes is how you sell and what breaks when you grow. Here is what we watch in each, so you are not paying an ecommerce agency to learn on your store.",
     items: [
       {
         icon: "apparel",
@@ -141,109 +142,68 @@ export const ECOMMERCE_AGENCY: HubPage = {
 
   // ── Block 4: Only-Here Asset (platform decision table) ────────────────
   asset: {
-    title: "What Does Each Ecommerce Platform Actually Cost?",
-    intro:
-      "List prices, processor penalties, and the ceilings you hit first. From vendor pricing pages and developer docs, not comparison blogs.",
+    title: "What Does Each Platform Really Cost You?",
     renderer: "comparison",
     method: {
       captured: "2026-08-19",
       howGathered:
         "Figures come from each vendor's own pricing page and developer documentation on the capture date. We excluded comparison articles and affiliate roundups because their numbers are sold, not reported. License figures are annual-billing list prices in USD. App and hosting costs sit outside the table because no vendor publishes a representative number.",
     },
-    columns: ["Criterion", "Shopify", "Shopify Plus", "BigCommerce", "WooCommerce", "Adobe Commerce"],
+    columns: ["Cost or limit", "Shopify", "Shopify Plus", "BigCommerce", "WooCommerce", "Adobe Commerce"],
     rows: [
       {
-        label: "License cost at $1M GMV",
-        cells: [
-          "Advanced at $299/mo billed annually, so $3,588/yr",
-          "From $2,300/mo, so $27,600/yr",
-          "Scale at $299/mo, plus 0.9% of GMV above $33,333/mo",
-          "$0 license. Hosting and extensions are the real cost",
-          "No published price. Quote only",
-        ],
-        note: "Apps, hosting, and processing excluded.",
+        label: "Yearly fee at $1M in sales",
+        cells: ["$3,588", "$27,600", "$3,588 plus 0.9% over the cap", "$0", "Quote only"],
+        note: "Just the platform fee. Apps, hosting and card processing are on top.",
       },
       {
-        label: "License cost at $10M GMV",
-        cells: [
-          "Still $299/mo, though most stores this size move to Plus",
-          "Published entry stays $2,300/mo",
-          "Past $2M GMV you move to the enterprise tier, from $1,499/mo",
-          "$0 license. Infrastructure becomes the line item that matters",
-          "Quote only",
-        ],
+        label: "Yearly fee at $10M in sales",
+        cells: ["$3,588", "From $27,600", "From $17,988", "$0", "Quote only"],
+        note: "WooCommerce stays free to license. By this size your servers are the bill.",
       },
       {
-        label: "License cost at $50M GMV",
-        cells: [
-          "Not this tier",
-          "Negotiated. No public number",
-          "Negotiated. No public number",
-          "$0 license. Engineering and hosting are the whole cost",
-          "Quote only",
-        ],
-        note: "Three of five stop publishing a price before this row.",
+        label: "Yearly fee at $50M in sales",
+        cells: ["Not this plan", "You negotiate", "You negotiate", "$0", "Quote only"],
+        note: "Three of the five stop publishing a price before you get this big.",
       },
       {
-        label: "Penalty for not using native payments",
-        cells: [
-          "2% on Basic, 1% on Grow, 0.6% on Advanced",
-          "0.2%",
-          "2% on Core, 1% on Growth, 0.6% on Scale, 0% on contract",
-          "None. WooPayments charges 2.9% plus $0.30",
-          "None. Adobe does not process payments",
-        ],
-        note: "At $10M GMV, 0.6% is $60,000 a year. The license is the smaller number.",
+        label: "Extra fee if you use your own payment provider",
+        cells: ["0.6% to 2%", "0.2%", "0% to 2%", "None", "None"],
+        note: "This is the number that bites. At $10M in sales, 0.6% is $60,000 a year, which dwarfs the platform fee above it.",
       },
       {
-        label: "Variant and option ceiling",
-        cells: [
-          "2,048 variants and 3 options per product",
-          "2,048 variants and 3 options per product",
-          "600 variants per product. No documented cap on options",
-          "No hard cap. Dropdowns go static past 30 variations by default",
-          "No published ceiling. Catalog size is an infrastructure question",
-        ],
+        label: "How many versions of one product you can list",
+        cells: ["2,048", "2,048", "600", "No limit", "No published limit"],
+        note: "Shopify also caps you at three choices per product, like size, color and material. A fourth is where people get stuck.",
       },
       {
-        label: "Checkout customization",
-        cells: [
-          "Extensions only. checkout.liquid was never available on this tier",
-          "Shopify retired checkout.liquid. Extensions and Functions now",
-          "Open Checkout is open source React. No plan gate documented",
-          "Fully open. The checkout is your own PHP",
-          "Fully open source. Anything is buildable, and everything is billable",
-        ],
+        label: "Can you change the checkout?",
+        cells: ["Apps only", "Yes, within limits", "Yes, it is open source", "Yes, it is your code", "Yes, it is your code"],
+        note: "Open does not mean free. On the last two, anything you change is yours to build and yours to maintain.",
       },
       {
-        label: "Getting your data out",
-        cells: [
-          "CSV for products, customers, orders. Card tokens need a vault migration",
-          "Same, plus PAN migration, which is Plus and Enterprise only",
-          "CSV or XML by template. Anything past that is the API",
-          "Native CSV covers products only. The database is yours",
-          "Admin export has no Orders entity. Products and customers only",
-        ],
-        note: "Card tokens never move in a CSV. Moving them takes a vault-to-vault transfer both processors agree to, and that step is what turns a migration into a re-acquisition campaign.",
+        label: "Getting your data out if you leave",
+        cells: ["Products, customers, orders", "Same, plus saved cards", "Products, customers, orders", "Products only", "No order export"],
+        note: "Saved card details never travel in a spreadsheet. Moving them is a separate deal between the two payment companies, and only Shopify Plus can do it. Skip it and every subscriber types their card in again.",
       },
     ],
     derived:
-      "Two things fall out of this table. Published pricing runs out around $2M in GMV, and above it three of these five quote privately, so your position at the table beats any list price. And the license is rarely the deciding cost: the processor penalty and the ceiling you hit first each cost more. Shopify wins most of these comparisons under $50M, not all of them, and an ecommerce agency worth hiring tells you which one you are.",
+      "Two things jump out. The monthly fee is almost never the number that matters: the payment fee and the first limit you hit will both cost you more. And published pricing runs out at about $2M in sales, so above that what you pay depends on how well you negotiate. Shopify wins most of these for stores under $50M. Not all. An ecommerce agency worth paying tells you when yours is the exception.",
     derivedList: {
-      title: "When we tell brands not to move to Shopify",
+      title: "When we would tell you not to move to Shopify",
       items: [
-        "Your catalog needs more than three option dimensions on one product. Shopify caps options at three and the workarounds get expensive.",
-        "You cannot express your checkout rules as an extension. Shopify retired checkout.liquid, so some logic simply will not fit.",
-        "You sell in a category that most payment processors restrict. The platform stops mattering when you cannot take money.",
-        "Your B2B model needs quote-to-order workflows beyond what native B2B covers, and rebuilding them costs more than the platform ever saves.",
-        "You run an ERP integration that works and costs more to rebuild than the license saving returns. Keeping a system nobody enjoys is sometimes correct.",
+        "You need more than three choices on a single product. Shopify stops at three, and working around it costs more than it saves.",
+        "Your checkout has to do something unusual. Shopify only lets you change checkout in set ways now, and some rules simply will not fit.",
+        "You sell something most payment companies refuse to handle. The platform stops mattering if you cannot take the money.",
+        "You sell wholesale in a way that needs quotes going back and forth, and rebuilding that costs more than the platform ever saves you.",
+        "You already have a system that talks to your warehouse and it works. Rebuilding it costs more than you save. Keeping something nobody loves is sometimes right.",
       ],
     },
     supportingBlocks: [
       {
         heading: "Where headless fits",
         body:
-          "Headless is not a sixth column, because it is not a platform. It is a decision to run the storefront separately from the backend, and it works on any of these five. It buys rendering control and costs you the theme editor, most of the app ecosystem, and a permanent front-end developer. Below roughly $20M it removes more than it adds.",
+          "You may have been pitched headless. It is not a sixth option because it is not a platform. It means running the shop window separately from the machinery behind it, on any of these five. It gives you total control of how the site looks. It costs you the drag-and-drop editor, most apps, and a front-end developer forever. Under about $20M in sales it usually takes more than it gives.",
       },
     ],
     reviewAfterDays: 180,
@@ -252,8 +212,8 @@ export const ECOMMERCE_AGENCY: HubPage = {
   // Mid-page conversion prompt, placed where the reader has just finished the
   // platform table and intent is highest.
   midCta: {
-    text: "Not sure which column your store belongs in? Send us the URL and we will tell you, before you pay anything.",
-    label: "Get a straight answer",
+    text: "Not sure which column you belong in? Send us your store address and we will tell you. No charge, no pitch.",
+    label: "Ask us",
   },
 
   // ── Block 5: How the engagement runs ──────────────────────────────────
@@ -261,46 +221,46 @@ export const ECOMMERCE_AGENCY: HubPage = {
   // landing page. Card numbers come from array order, so this order is the
   // sequence a client actually moves through.
   engagement: {
-    heading: "How Long Does an Ecommerce Build Take?",
-    intro: "Five phases, one fixed price, and a go-live date you hold before anyone writes code. Most ecommerce agency timelines slip because nobody agreed the scope first.",
+    heading: "What Working With Us Looks Like",
+    intro: "Five steps, one price, one date, all in writing before we start. Most ecommerce agency projects slip because nobody wrote down what was being built. We write it down first.",
     steps: [
       {
         week: "Before you pay anything",
-        title: "Store Audit",
-        what: "We go through the store you have now: analytics, funnel drop-off, theme performance, and app load. You get the findings in writing whether or not you hire us. Most brands see where they are losing money before they have spent a dollar with any ecommerce agency.",
+        title: "We Look At Your Store",
+        what: "We go through what you have now and find where people drop out, what is slow, and what it is costing you. You get that in writing whether you hire us or not, so you learn where you are losing money before you have paid us anything.",
       },
       {
         week: "Week 1",
-        title: "Scope & Fixed Price",
-        what: "We agree what gets built, what does not, and the date it goes live. You get a written scope and a fixed number by the end of the week. Nothing starts until you hold both. No hourly billing and no scope creep later.",
+        title: "We Agree the Price",
+        what: "We write down what you are getting, what you are not, and the day it goes live. You have the price and the date by Friday. We do not bill by the hour, so a slow week is our problem, not your invoice.",
       },
       {
         week: "Weeks 2 to 4",
-        title: "Design & Build",
-        what: "Templates, components, and integrations go into a staging store you can open any time. You see progress every week instead of one reveal at the end, and you sign off each milestone before we move to the next one.",
+        title: "We Build It",
+        what: "Everything goes into a practice version of your store you can open whenever you like. You see it every week instead of waiting for one big reveal, and you approve each stage before we start the next.",
       },
       {
         week: "Week 5",
-        title: "Data, Redirects & QA",
-        what: "Products, customers, and order history move across. Every existing URL gets mapped to its replacement and tested before launch. We test across devices and browsers and against Core Web Vitals, because a fast store that loses rankings is still a failure.",
+        title: "We Move Your Data",
+        what: "Products, customers and past orders come across. Every old web address gets pointed at its new one and tested first, so the Google traffic you already earn does not vanish overnight. Then we test on phones, tablets and every browser people actually use.",
       },
       {
         week: "Week 6, then 60 days",
-        title: "Launch & Handover",
-        what: "Controlled go-live with a rollback plan ready. You get the code, the repository, and documentation for every custom component. Then 60 days of support included, with Search Console and checkout watched closely through the first month.",
+        title: "We Launch and Hand Over",
+        what: "We go live with a way to undo it if anything looks wrong. You get the code, the files and written notes on how it all works. Then 60 days of support, and we watch your search traffic and checkout closely for the first month.",
       },
     ],
   },
 
   // ── Block 6: What we don't do ─────────────────────────────────────────
   whatWeDontDo: [
-    "We do not sell apps. No affiliate deals with app vendors, so when we say you need one, that is the only reason.",
-    "We do not edit a live store directly. Every change goes through a staging copy with a rollback plan behind it, down to a one-line fix.",
-    "We do not take equity, revenue share, or performance deals. You pay a fixed fee and keep what the work produces.",
-    "We do not quote in a meeting. Every number goes in writing after we have been inside the store.",
+    "We do not make money on apps. Nobody pays us to recommend theirs, so if we tell you to install one, that is the only reason.",
+    "We do not make changes straight onto your live store. Everything gets tried on a copy first, even a one-line fix, so your shop never goes down while we work.",
+    "We do not take a share of your company or your sales. You pay us a fee and you keep everything the work earns.",
+    "We do not give you a price in a meeting. Every number comes in writing, after we have looked inside your store. That is the least you should expect from an ecommerce agency.",
   ],
 
-  proofHeading: "What Does an Ecommerce Agency Actually Deliver?",
+  proofHeading: "Work We Have Done",
   objectionsHeading: "What You Are Probably Thinking",
 
   // ── Block 7: Proof (build type, per Page Spec section 5) ──────────────
@@ -335,17 +295,17 @@ export const ECOMMERCE_AGENCY: HubPage = {
     {
       objection: "We paid an agency for a rebuild last year and conversion did not move.",
       answer:
-        "Then the rebuild answered the wrong question. Before we quote, we find where your funnel loses people: traffic, product page, cart, or checkout. If the loss is not in the build, we say so and you keep the money. Any digital commerce agency that quotes a rebuild without opening your analytics is selling a template.",
+        "Then the rebuild was fixing the wrong thing. Before we quote, we find where people actually drop out: the traffic you buy, the product page, the cart, or the checkout. If it is not the build, we say so and you keep your money. Any digital commerce agency that quotes a rebuild without opening your analytics is selling you a template.",
     },
     {
       objection: "How do I know the price will not move?",
       answer:
-        "We fix the number before development starts, and any scope change gets requoted before we build it. Overruns start when an ecommerce agency quotes a range against a vague brief. We write the scope in detail first, which is why a quote takes 48 hours instead of an afternoon.",
+        "Because we agree the number before we start, and if the job grows we requote before building, not after. Bills grow when an ecommerce agency quotes a rough range against a vague brief. We write down exactly what you get first, which is why our quote takes two days instead of an afternoon.",
     },
     {
       objection: "What happens if you disappear after launch?",
       answer:
-        "You own the code and documentation from the first commit, so leaving costs nothing. Every project carries 60 days of support after go-live. After that you can retain us, hire in-house, or hand the codebase to anyone else.",
+        "You own the code and the notes from day one, so walking away costs you nothing. Every project comes with 60 days of support after launch. After that you can keep us on, hire in-house, or hand it to another agency. Nothing we build locks you in.",
     },
   ],
 
@@ -394,7 +354,7 @@ export const ECOMMERCE_AGENCY: HubPage = {
       // unique: what an agency does that a freelancer cannot
       question: "How do you choose an ecommerce agency for brand growth?",
       answer:
-        "Compare agencies on outcomes, not output. Ask what happened to revenue after launch, not how many stores they shipped. A freelancer is the better hire for one well-defined task, like a theme tweak or a single integration. An agency earns the difference when design, development, data migration, and SEO move at once and somebody has to answer when one breaks another.",
+        "Compare them on results, not on how busy they look. Ask any ecommerce agency what happened to revenue after launch, not how many stores they shipped. A freelancer is the better hire for one well-defined task, like a theme tweak or a single integration. An agency earns the difference when design, development, data migration, and SEO move at once and somebody has to answer when one breaks another.",
       unique: true,
     },
     {
@@ -424,11 +384,11 @@ export const ECOMMERCE_AGENCY: HubPage = {
   // ── Block 10: Conversion ──────────────────────────────────────────────
   conversion: {
     whatYouGet:
-      "Send us the store URL. Before you pay anything you get a written read on where the funnel loses people, and whether an ecommerce agency is even the right spend.",
+      "Send us your store address. Before you pay anything, we will write back and tell you where you are losing sales, and whether hiring an ecommerce agency is even the right thing to spend on.",
     whatWeWillTellYouNotToDo:
-      "If your conversion problem is priced into the product rather than built into the store, we will tell you not to spend a dollar on a rebuild.",
+      "If the reason people are not buying is your pricing or your product, we will tell you, and we will tell you not to spend a penny on a rebuild.",
     responseExpectation:
-      "A senior developer replies within one business day. The scope and fixed price follow within 48 hours of the call.",
+      "A senior developer writes back within one working day. If we get on a call, your written price and date follow within two days of it.",
   },
 
   // ── Block 11: Sources ─────────────────────────────────────────────────

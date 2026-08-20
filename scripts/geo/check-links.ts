@@ -32,6 +32,15 @@ const KNOWN_SLUGS = new Set<string>([
   ...CREATIVE_CASE_STUDIES.map((s) => s.slug),
 ]);
 
+/** Studies that carry a real, signed-off client quote with a named person.
+ *  Only these can appear in the results slider, which has no layout for a
+ *  study without one and would drop it without saying so. */
+const QUOTED_SLUGS = new Set<string>(
+  [...CASE_STUDIES, ...APP_CASE_STUDIES, ...KLAVIYO_CASE_STUDIES, ...CREATIVE_CASE_STUDIES]
+    .filter((s) => s.quote && s.quotePerson)
+    .map((s) => s.slug),
+);
+
 const HUB_PATHS = new Set(GEO_PAGES.filter((p) => p.type === "hub").map((p) => p.path));
 
 function htmlPathFor(routePath: string): string {
@@ -55,9 +64,24 @@ function main(): number {
     const issues: string[] = [];
     const strings = allStrings(page);
 
-    // (a) proof slugs
+    // (a) proof slugs, and the results slider's slugs, which are a second set
+    // of case-study references and just as easy to typo. A slider slug must
+    // also carry a signed-off quote, because the slide has nowhere to put a
+    // study without one and would silently drop it.
     for (const p of page.proof) {
       if (!KNOWN_SLUGS.has(p.slug)) issues.push(`proof slug "${p.slug}" does not exist in any case-study array`);
+    }
+    for (const slug of page.results?.slugs ?? []) {
+      if (!KNOWN_SLUGS.has(slug)) {
+        issues.push(`results slug "${slug}" does not exist in any case-study array`);
+      } else if (!QUOTED_SLUGS.has(slug)) {
+        issues.push(`results slug "${slug}" has no quote + quotePerson, so the slider would drop it`);
+      }
+    }
+    for (const slug of Object.keys(page.results?.headlines ?? {})) {
+      if (!(page.results?.slugs ?? []).includes(slug)) {
+        issues.push(`results headline for "${slug}" does not match any slug in results.slugs`);
+      }
     }
 
     // (b) bare index links in content

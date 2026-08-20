@@ -127,7 +127,7 @@ export type OnlyHereAsset = z.infer<typeof OnlyHereAssetSchema>;
  *  coincidence. */
 /** Icon keys the SegmentsBlock knows how to draw. Adding a key here means
  *  adding the matching SVG in components/sections/geo/SegmentsBlock.tsx. */
-export const SEGMENT_ICONS = ["apparel", "beauty", "consumable", "jewelry", "outdoor", "wholesale", "cart", "box"] as const;
+export const SEGMENT_ICONS = ["apparel", "beauty", "consumable", "jewelry", "outdoor", "wholesale", "cart", "box", "platform", "search", "code", "chart"] as const;
 export type SegmentIcon = (typeof SEGMENT_ICONS)[number];
 
 export const SegmentSchema = z.object({
@@ -148,6 +148,23 @@ export const SegmentsSchema = z.object({
 });
 export type Segments = z.infer<typeof SegmentsSchema>;
 
+/** The full service list, rendered as the sticky-intro + accordion layout the
+ *  Shopify development landing page uses. One entry per service, in the order
+ *  a buyer would meet them, so the first item is open on load and reads as the
+ *  headline service. */
+export const ServicesListSchema = z.object({
+  /** Small uppercase label above the heading. */
+  label: z.string().min(1),
+  heading: z.string().min(1),
+  intro: z.string().min(1),
+  ctaLabel: z.string().min(1),
+  items: z
+    .array(z.object({ title: z.string().min(1), body: z.string().min(1) }))
+    .min(4)
+    .max(12),
+});
+export type ServicesList = z.infer<typeof ServicesListSchema>;
+
 /** Results and client voice. Only slugs: every quote, name, role, avatar and
  *  metric is read from lib/case-studies.ts at render time, so a testimonial can
  *  only appear if a real published case study carries it. Nothing is retyped
@@ -156,6 +173,12 @@ export const ResultsSchema = z.object({
   heading: z.string().min(1),
   intro: z.string().min(1),
   slugs: z.array(z.string().min(1)).min(1).max(4),
+  /** Optional per-slug headline, keyed by slug, so a page can lead each slide
+   *  on the metric that matters HERE rather than on the study's hero number.
+   *  Use the {brand} token where the brand name should appear in bold. Without
+   *  an entry the headline is built from the study's own hero metric. Claims
+   *  must still be supported by that study's stats. */
+  headlines: z.record(z.string(), z.string()).optional(),
 });
 export type Results = z.infer<typeof ResultsSchema>;
 
@@ -246,7 +269,16 @@ const BaseSchema = z.object({
   /** Optional hero image. Present: the hero splits into two columns. Absent:
    *  the copy runs full width. Alt text describes the image, and must never
    *  imply a location. */
-  heroImage: z.object({ src: z.string().startsWith("/"), alt: z.string().min(1) }).optional(),
+  heroImage: z
+    .object({
+      src: z.string().startsWith("/"),
+      alt: z.string().min(1),
+      /** Optional "W / H" crop, e.g. "5 / 4". Set it when the source file is
+       *  taller than the copy column needs; the image is cropped, not squashed.
+       *  Omit to render the file at its natural proportions. */
+      aspect: z.string().regex(/^\d+ \/ \d+$/).optional(),
+    })
+    .optional(),
   hook: z.string().min(1),
   /** 40-60 word answer-first block. Defines the entity the page is named after
    *  and states who it is for. This is the passage AI Overviews and LLM answers
@@ -256,9 +288,16 @@ const BaseSchema = z.object({
   trust: TrustSchema.optional(),
   /** Optional "who we work with" category block. */
   segments: SegmentsSchema.optional(),
-  /** Optional results + client-quote block. */
+  /** Optional full service list (sticky intro + accordion). */
+  servicesList: ServicesListSchema.optional(),
+  /** Optional results + client-quote block. When present it REPLACES the proof
+   *  card grid, so a page shows one case-study section rather than two. */
   results: ResultsSchema.optional(),
   asset: OnlyHereAssetSchema,
+  /** Label for the hero's secondary button, which jumps to the Only-Here Asset.
+   *  Defaults to the platform-cost wording, which is only right on a page whose
+   *  asset is a cost table. Set it to describe THIS page's asset. */
+  assetCtaLabel: z.string().min(1).optional(),
   /** One-line conversion prompt rendered directly under the Only-Here Asset,
    *  where reader intent peaks. Keep it a question or an offer, not a slogan. */
   midCta: z.object({ text: z.string().min(1), label: z.string().min(1) }).optional(),
@@ -342,6 +381,10 @@ export function proseStrings(page: GeoProgrammePage): string[] {
   if (page.segments) {
     out.push(page.segments.heading, page.segments.intro);
     for (const s of page.segments.items) out.push(s.name, s.what, s.breaks);
+  }
+  if (page.type === "hub" && page.servicesList) {
+    out.push(page.servicesList.label, page.servicesList.heading, page.servicesList.intro, page.servicesList.ctaLabel);
+    for (const s of page.servicesList.items) out.push(s.title, s.body);
   }
   if (page.type === "hub") {
     out.push(page.whatWeDo);
