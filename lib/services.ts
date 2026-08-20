@@ -28,6 +28,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       { name: "Landing Page Design", blurb: "High-converting campaign and product landing pages, built to ship fast.", href: "/services/shopify-landing-page-design" },
       { name: "New Store Development", blurb: "A complete custom Shopify store built around your brand and your customers.", href: "/services/shopify-store-development" },
       { name: "Custom Theme Development", blurb: "Bespoke Liquid themes coded for speed, conversion, and easy editing.", href: "/services/shopify-theme-development" },
+      { name: "Ecommerce Agency", blurb: "Builds, replatforms, and rescues for brands doing $1M to $50M a year.", href: "/services/ecommerce-agency" },
       { name: "Shopify Development Agency", blurb: "A full-stack dev team for custom builds, features, and Shopify Plus.", href: "/services/shopify-development-agency" },
       { name: "Shopify 2.0 Development", blurb: "Modern Online Store 2.0 architecture with flexible, editable sections.", href: "/services/shopify-2-0-development" },
       { name: "Shopify Plus Development", blurb: "Enterprise builds with checkout extensibility, B2B, and Shopify Functions.", href: "/services/shopify-plus-development" },
