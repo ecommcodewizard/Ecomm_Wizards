@@ -30,7 +30,7 @@ export const ECOMMERCE_SEO_AGENCY: HubPage = {
   type: "hub",
   slug: "ecommerce-seo-agency",
   path: "/services/ecommerce-seo-agency",
-  status: "draft",
+  status: "published",
 
   // ── SEO ────────────────────────────────────────────────────────────────
   targetKeyword: "ecommerce seo agency",
