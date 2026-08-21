@@ -28,6 +28,12 @@ type PillTone = "green" | "amber" | "blue" | "red";
 // match "no", and "re-authorization required" does not match anything else.
 const STATUS_PILLS: { key: string; tone: PillTone }[] = [
   { key: "re-authorization required", tone: "red" },
+  { key: "will not fix this", tone: "red" },
+  { key: "makes it worse", tone: "red" },
+  { key: "no effect", tone: "red" },
+  { key: "start here", tone: "green" },
+  { key: "helps a bit", tone: "amber" },
+  { key: "next", tone: "blue" },
   { key: "native fix", tone: "green" },
   { key: "app required", tone: "amber" },
   { key: "custom work", tone: "blue" },

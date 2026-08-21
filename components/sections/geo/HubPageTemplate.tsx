@@ -13,6 +13,7 @@ import QuickAnswer from "./QuickAnswer";
 import ServiceBlock from "./ServiceBlock";
 import SegmentsBlock from "./SegmentsBlock";
 import ServicesAccordion from "./ServicesAccordion";
+import IndustriesBlock from "./IndustriesBlock";
 import ResultsSlider from "./ResultsSlider";
 import OnlyHereAsset from "./OnlyHereAsset";
 import InlineCta from "./InlineCta";
@@ -60,6 +61,7 @@ export default function HubPageTemplate({ page }: { page: HubPage }) {
         h1={page.h1}
         qualifier={page.qualifier}
         image={page.heroImage}
+        stats={page.heroStats}
         secondaryCta={{ label: page.assetCtaLabel ?? "See what each platform costs", href: "#asset" }}
       />
 
@@ -77,6 +79,13 @@ export default function HubPageTemplate({ page }: { page: HubPage }) {
       />
 
       {page.servicesList && <ServicesAccordion data={page.servicesList} />}
+
+      {/* Industries follows the service list: the channels, then how they differ
+          by vertical. It is also the dark band that keeps the run from
+          "what we do" (white) to the results slider (white) from being two
+          white blocks in a row. A page carrying BOTH a servicesList and
+          industries would put two dark bands together; nothing does yet. */}
+      {page.industries && <IndustriesBlock industries={page.industries} />}
 
       {/* Client voice sits high, directly after the service list: it answers
           "can they actually do this" while the reader still has the list in

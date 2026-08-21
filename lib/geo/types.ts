@@ -165,6 +165,26 @@ export const ServicesListSchema = z.object({
 });
 export type ServicesList = z.infer<typeof ServicesListSchema>;
 
+/** Industries block. Deliberately NOT a grid of nouns: every agency has one of
+ *  those and it reads as padding. Each entry has to say what is actually
+ *  different about marketing that industry, which is the part a reader cannot
+ *  get from a list of category names. */
+export const IndustriesSchema = z.object({
+  heading: z.string().min(1),
+  intro: z.string().min(1),
+  items: z
+    .array(
+      z.object({
+        name: z.string().min(1),
+        /** The one thing that changes about marketing in this vertical. */
+        whatsDifferent: z.string().min(1),
+      }),
+    )
+    .min(4)
+    .max(8),
+});
+export type Industries = z.infer<typeof IndustriesSchema>;
+
 /** Results and client voice. Only slugs: every quote, name, role, avatar and
  *  metric is read from lib/case-studies.ts at render time, so a testimonial can
  *  only appear if a real published case study carries it. Nothing is retyped
@@ -277,7 +297,18 @@ const BaseSchema = z.object({
        *  taller than the copy column needs; the image is cropped, not squashed.
        *  Omit to render the file at its natural proportions. */
       aspect: z.string().regex(/^\d+ \/ \d+$/).optional(),
+      /** Optional autoplaying video. When set, `src` becomes the poster and the
+       *  still shown under prefers-reduced-motion, so the hero still satisfies
+       *  WCAG 2.2.2 for anything that moves on its own. */
+      video: z.string().startsWith("/").optional(),
     })
+    .optional(),
+  /** Optional hero stat strip. Values should come from lib/brand-stats.ts or be
+   *  otherwise verifiable; do not invent a figure to fill the fourth slot. */
+  heroStats: z
+    .array(z.object({ value: z.string().min(1), label: z.string().min(1) }))
+    .min(3)
+    .max(4)
     .optional(),
   hook: z.string().min(1),
   /** 40-60 word answer-first block. Defines the entity the page is named after
@@ -288,6 +319,9 @@ const BaseSchema = z.object({
   trust: TrustSchema.optional(),
   /** Optional "who we work with" category block. */
   segments: SegmentsSchema.optional(),
+  /** Optional industries block. Verifiable: every brand named must have a
+   *  published case study. */
+  industries: IndustriesSchema.optional(),
   /** Optional full service list (sticky intro + accordion). */
   servicesList: ServicesListSchema.optional(),
   /** Optional results + client-quote block. When present it REPLACES the proof
@@ -381,6 +415,10 @@ export function proseStrings(page: GeoProgrammePage): string[] {
   if (page.segments) {
     out.push(page.segments.heading, page.segments.intro);
     for (const s of page.segments.items) out.push(s.name, s.what, s.breaks);
+  }
+  if (page.type === "hub" && page.industries) {
+    out.push(page.industries.heading, page.industries.intro);
+    for (const i of page.industries.items) out.push(i.name, i.whatsDifferent);
   }
   if (page.type === "hub" && page.servicesList) {
     out.push(page.servicesList.label, page.servicesList.heading, page.servicesList.intro, page.servicesList.ctaLabel);

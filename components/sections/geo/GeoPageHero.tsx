@@ -19,7 +19,11 @@ type Props = {
   qualifier: string;
   primaryCta?: Cta;
   secondaryCta?: Cta;
-  image?: { src: string; alt: string; aspect?: string };
+  image?: { src: string; alt: string; aspect?: string; video?: string };
+  /** Optional stat strip under the qualifier, matching the Shopify development
+   *  landing page. Omitted by default: the page opens on the claim, not on
+   *  decoration, and a strip only earns its place when the numbers are real. */
+  stats?: { value: string; label: string }[];
 };
 
 const DEFAULT_PRIMARY: Cta = { label: "Get in touch", href: "#contact" };
@@ -32,7 +36,7 @@ function splitHeading(h1: string): { plain: string; accent: string } {
   return { plain: words.slice(0, -2).join(" "), accent: words.slice(-2).join(" ") };
 }
 
-export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAULT_PRIMARY, secondaryCta, image }: Props) {
+export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAULT_PRIMARY, secondaryCta, image, stats }: Props) {
   const { plain, accent } = splitHeading(h1);
 
   return (
@@ -47,6 +51,17 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
         <div className="gph-qualifier">
           <Prose text={qualifier} className="gp-lead" />
         </div>
+        {stats && stats.length > 0 ? (
+          <dl className="gph-stats">
+            {stats.map((s) => (
+              <div key={s.label} className="gph-stat">
+                <dd className="gph-stat-num">{s.value}</dd>
+                <dt className="gph-stat-label">{s.label}</dt>
+              </div>
+            ))}
+          </dl>
+        ) : null}
+
         <div className="gph-ctas">
           <span className="gph-ring">
             <Link href={primaryCta.href} className="gph-primary">
@@ -69,15 +84,44 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
 
         {image ? (
           <div className="gph-media">
-            <Image
-              src={image.src}
-              alt={image.alt}
-              width={640}
-              height={480}
-              priority
-              className="gph-img"
-              style={image.aspect ? { aspectRatio: image.aspect, objectFit: "cover" } : undefined}
-            />
+            {image.video ? (
+              <>
+                {/* Autoplaying decoration. `src` doubles as the poster and as
+                    the still shown under prefers-reduced-motion, which is what
+                    WCAG 2.2.2 requires of anything that moves on its own. */}
+                <video
+                  className="gph-img gph-video"
+                  src={image.video}
+                  poster={image.src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  aria-label={image.alt}
+                  style={image.aspect ? { aspectRatio: image.aspect, objectFit: "cover" } : undefined}
+                />
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={640}
+                  height={480}
+                  priority
+                  className="gph-img gph-still"
+                  style={image.aspect ? { aspectRatio: image.aspect, objectFit: "cover" } : undefined}
+                />
+              </>
+            ) : (
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={640}
+                height={480}
+                priority
+                className="gph-img"
+                style={image.aspect ? { aspectRatio: image.aspect, objectFit: "cover" } : undefined}
+              />
+            )}
           </div>
         ) : null}
       </div>
@@ -92,6 +136,26 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
              an inline aspect-ratio + object-fit: cover, so the image is
              cropped rather than squashed. */
           .gph-img { width: 100%; height: auto; object-position: center; border-radius: 16px; display: block; box-shadow: 0 24px 64px rgba(0,0,0,0.45); }
+          /* Video plays by default; the still is only for reduced motion. */
+          .gph-still { display: none; }
+          @media (prefers-reduced-motion: reduce) {
+            .gph-video { display: none; }
+            .gph-still { display: block; }
+          }
+
+          /* Hero stat strip, matching the Shopify development landing page. */
+          .gph-stats { display: flex; flex-wrap: wrap; gap: 0; margin: 32px 0 0; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 24px; }
+          .gph-stat { display: flex; flex-direction: column-reverse; gap: 4px; padding: 0 28px 0 0; margin-right: 28px; border-right: 1px solid rgba(255,255,255,0.12); }
+          .gph-stat:last-child { border-right: none; padding-right: 0; margin-right: 0; }
+          .gph-stat-num { margin: 0; font-size: 28px; font-weight: 800; line-height: 1; background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+          .gph-stat-label { font-size: 13px; font-weight: 500; color: #ffffff; letter-spacing: .02em; }
+          @media (max-width: 1023px) { .gph-stat { padding-right: 20px; margin-right: 20px; } .gph-stat-num { font-size: 24px; } }
+          @media (max-width: 640px) {
+            .gph-stats { margin-top: 20px; padding-top: 16px; gap: 14px 0; }
+            .gph-stat { padding-right: 14px; margin-right: 14px; }
+            .gph-stat-num { font-size: 20px; }
+            .gph-stat-label { font-size: 11.5px; }
+          }
           .gph-grid--split .gph-h1 { max-width: none; }
           .gph-grid--split .gph-qualifier { max-width: none; }
           @media (max-width: 1023px) { .gph-media { margin-top: 8px; } }
