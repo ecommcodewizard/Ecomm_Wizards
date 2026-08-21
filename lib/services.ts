@@ -48,6 +48,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       { name: "Speed Optimization", blurb: "Faster load times and better Core Web Vitals for rankings and conversion.", href: "/services/shopify-speed-optimization" },
       { name: "Shopify SEO", blurb: "Technical and content SEO that grows organic traffic and rankings.", href: "/services/shopify-seo-agency" },
       { name: "Ecommerce SEO Agency", blurb: "We find what is costing you rankings on any platform, then fix it on Shopify.", href: "/services/ecommerce-seo-agency" },
+      { name: "Ecommerce Marketing Agency", blurb: "One team across search, ads, email and CRO. We tell you which channel to fix first.", href: "/services/ecommerce-marketing-agency" },
       { name: "Agentic Commerce", blurb: "Get your products found and bought by AI assistants like ChatGPT and Gemini.", href: "/services/shopify-agentic-commerce" },
       { name: "Creative Strategy", blurb: "Performance ad creative for Meta and Google that lowers CPA and scales ROAS.", href: "/services/creative-strategy" },
       { name: "Cart Gamification", blurb: "Free-shipping bars, tiered rewards, and gift-with-purchase that lift average order value.", href: "/services/shopify-cart-gamification" },

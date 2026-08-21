@@ -56,13 +56,11 @@ export default function ServiceBlock({ heading, text, eyebrow, variant = "hub", 
             {map.map((item) => (
               <li key={item.href} className="gps-map-item">
                 <Link href={item.href} className="gp-card gps-map-card">
-                  <span className="gp-h3 gps-map-name">{inline(item.name)}</span>
+                  {/* A real h3, not a styled span. These nine names are what
+                      this page is about, and heading level is how both Google
+                      and AI answer engines chunk a page into passages. */}
+                  <h3 className="gp-h3 gps-map-name">{inline(item.name)}</h3>
                   <span className="gps-map-role">{inline(item.role)}</span>
-                  <span className="gps-map-arrow" aria-hidden="true">
-                    <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
-                      <path d="M0 5H14M14 5L9 0M14 5L9 10" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
                 </Link>
               </li>
             ))}
@@ -84,7 +82,6 @@ export default function ServiceBlock({ heading, text, eyebrow, variant = "hub", 
           .gps-map-name { margin: 0; color: #0f172a; font-size: 18px; }
           .gps-map-card:hover .gps-map-name { color: #2A9555; }
           .gps-map-role { font-size: 14px; line-height: 1.55; color: #64748b; flex-grow: 1; }
-          .gps-map-arrow { display: inline-flex; color: #2A9555; margin-top: 4px; }
           @media (min-width: 1024px) {
             .gps-grid { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 56px; align-items: start; }
             .gps-left { position: sticky; top: 120px; }

@@ -10,11 +10,12 @@ import { SERVICE_CATEGORIES } from "@/lib/services";
 import { GeoProgrammePageSchema, NEEDS_INPUT, hasNeedsInput, proseStrings, wordCount, type GeoPage, type GeoProgrammePage, type HubPage } from "./types";
 import { ECOMMERCE_AGENCY } from "./pages/ecommerce-agency";
 import { ECOMMERCE_SEO_AGENCY } from "./pages/ecommerce-seo-agency";
+import { ECOMMERCE_MARKETING_AGENCY } from "./pages/ecommerce-marketing-agency";
 
 export const SITE_URL = "https://ecommwizards.com";
 
 /** Add each new page here. Order is irrelevant; paths must be unique. */
-export const GEO_PAGES: GeoProgrammePage[] = [ECOMMERCE_AGENCY, ECOMMERCE_SEO_AGENCY];
+export const GEO_PAGES: GeoProgrammePage[] = [ECOMMERCE_AGENCY, ECOMMERCE_SEO_AGENCY, ECOMMERCE_MARKETING_AGENCY];
 
 // ---------------------------------------------------------------------------
 // Lookups

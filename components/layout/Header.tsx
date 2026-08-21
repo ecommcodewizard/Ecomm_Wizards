@@ -78,6 +78,7 @@ const NAV: NavItem[] = [
   {
     label: "Marketing",
     children: [
+      { label: "Ecommerce Marketing Agency", href: "/services/ecommerce-marketing-agency",       description: "Which channel to fix first, and which ones will not help" },
       { label: "Shopify SEO",          href: "/services/shopify-seo-agency",                     description: "Rank higher, earn more organic traffic" },
       { label: "Ecommerce SEO",        href: "/services/ecommerce-seo-agency",                   description: "Catalog SEO on Shopify, Magento, Woo, or BigCommerce" },
       { label: "CRO Agency",           href: "/services/shopify-cro-agency", description: "Systematic conversion improvements" },

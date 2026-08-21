@@ -48,6 +48,12 @@ export default function GeoStyles() {
         .gp-p a, .gp-lead a { color: ${GP.green}; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
         .gp-section--dark .gp-p a { color: ${GP.greenSoft}; }
         .gp-gradient { background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        /* Clipped-background text disappears in Windows high-contrast mode,
+           which would swallow the accented half of every heading using it.
+           Hand those users plain text instead. */
+        @media (forced-colors: active) {
+          .gp-gradient { background: none; -webkit-text-fill-color: currentColor; color: currentColor; }
+        }
 
         .gp-card { background: ${GP.white}; border: 1px solid ${GP.rule}; border-radius: 16px; padding: 24px; }
         .gp-section--white .gp-card { background: ${GP.cream}; }
