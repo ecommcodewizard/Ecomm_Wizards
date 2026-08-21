@@ -381,7 +381,7 @@ export const ECOMMERCE_MARKETING_AGENCY: HubPage = {
   ],
 
   results: {
-    heading: "We Fixed One Thing. Here Is What It Did.",
+    heading: "What Our Clients Say",
     intro:
       "Not forecasts. Three stores where the work is documented, the client says so in their own words, and every number opens into the case study it came from.",
     slugs: [
