@@ -61,7 +61,11 @@ export const ECOMMERCE_AGENCY: HubPage = {
 
   // Same hero image the Shopify development landing page uses.
   heroImage: {
-    src: "/images/Group_1000003974_d0eba414-7aec-4930-b534-a4dcc91d004e_1024x1024.png",
+    // WebP, not the 140 KB PNG. The Hostinger CDN caches /_next/image
+    // responses without Vary: Accept, so whichever format is requested first is
+    // served to everyone, and it had cached the PNG variant. A WebP source
+    // removes the dependency on runtime format negotiation entirely.
+    src: "/images/hero-ecommerce-agency.webp",
     alt: "Ecommerce agency team building a custom Shopify storefront",
   },
 
