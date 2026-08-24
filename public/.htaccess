@@ -1,0 +1,26 @@
+# Cache headers for static assets under /public.
+#
+# WHY THIS FILE EXISTS: the app runs under Passenger on cPanel, and Apache /
+# LiteSpeed serves any file that exists on disk under the document root without
+# ever handing the request to Node. So the `/images/:path*` rule in
+# next.config.ts never executes in production, and PageSpeed found every image
+# and video being served with no Cache-Control header at all: a repeat visitor
+# re-downloaded the lot. Verified 2026-08-24:
+#
+#   /_next/static/chunks/webpack-*.js  ->  max-age=31536000, immutable  (Node, works)
+#   /images/performance-1.webp         ->  no Cache-Control             (hcdn, bypassed)
+#
+# NOT `immutable`, and not a year. Files under /images are named by hand, not
+# content-hashed, so they DO get overwritten in place (three case-study videos
+# were re-encoded under their existing names on 2026-08-24). An immutable
+# year-long cache would strand those in browsers well beyond any CDN purge.
+# Thirty days kills the repeat-visit cost while keeping a bad asset recoverable.
+#
+# If you ever switch /images to content-hashed filenames, raise this to
+# 31536000 with immutable and delete this paragraph.
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(avif|webp|png|jpe?g|gif|svg|ico|mp4|webm|mov|woff2?|ttf|otf)$">
+    Header set Cache-Control "public, max-age=2592000, stale-while-revalidate=86400"
+  </FilesMatch>
+</IfModule>
