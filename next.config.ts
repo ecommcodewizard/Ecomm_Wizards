@@ -24,9 +24,14 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // /public/images assets change by filename, so cache them aggressively
-        // (PageSpeed flagged them as uncached). CDN purge on deploy covers any
-        // in-place overwrite.
+        // INERT IN PRODUCTION, kept for `next dev` and `next start`. Under
+        // Passenger on cPanel, Apache/LiteSpeed serves anything that exists on
+        // disk under the document root without handing the request to Node, so
+        // this rule never runs against the live site. Verified 2026-08-24: a
+        // hashed /_next/static asset comes back with the immutable header set
+        // below, while /images/performance-1.webp comes back from `Server:
+        // hcdn` with no Cache-Control at all. The header that actually applies
+        // to /images in production lives in public/.htaccess.
         source: "/images/:path*",
         headers: [
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },

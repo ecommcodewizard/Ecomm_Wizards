@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import SpeedVideo from "./SpeedVideo";
 import { CASE_STUDY_VIDEOS, SPEED_VIDEO_SLUGS, posterFor } from "@/lib/case-study-videos";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
 import type { CaseStudy } from "@/lib/case-studies";
 
 const INITIAL_COUNT = 6;
@@ -14,17 +15,20 @@ function CardMedia({ cs, index }: { cs: CaseStudy; index: number }) {
 
   const videoSrc = CASE_STUDY_VIDEOS[cs.slug];
   if (videoSrc) {
-    const videoProps = {
-      src: videoSrc,
-      poster: posterFor(videoSrc),
-      autoPlay: true,
-      loop: true,
-      muted: true,
-      playsInline: true,
-      preload: "none" as const,
-      style: videoStyle,
-    };
-    return SPEED_VIDEO_SLUGS.has(cs.slug) ? <SpeedVideo {...videoProps} /> : <video {...videoProps} />;
+    // Every card here used to be <video autoPlay preload="none">, which does
+    // not defer the download: autoplay needs the bytes, so preload="none" is
+    // ignored and all of them fetch on load. With 21 videos in this grid that
+    // was the single heaviest thing on the site. LazyAutoplayVideo withholds
+    // src until the card is near the viewport, and skips the fetch entirely
+    // for anyone who has asked for reduced motion.
+    return (
+      <LazyAutoplayVideo
+        src={videoSrc}
+        poster={posterFor(videoSrc)}
+        style={videoStyle}
+        rate={SPEED_VIDEO_SLUGS.has(cs.slug) ? 1.5 : undefined}
+      />
+    );
   }
 
   return (

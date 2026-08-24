@@ -6,6 +6,7 @@ import { APP_CASE_STUDIES } from "@/lib/shopify-app-studies";
 import { KLAVIYO_CASE_STUDIES } from "@/lib/klaviyo-studies";
 import { CREATIVE_CASE_STUDIES } from "@/lib/creative-studies";
 import { CASE_STUDY_VIDEOS, posterFor } from "@/lib/case-study-videos";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
 import { inline } from "./Prose";
 
 // A proof card for a geo programme page. Resolves the study by slug across the
@@ -40,27 +41,24 @@ export default function CaseStudyCard({ study }: { study: CaseStudyRef }) {
         <div className="gcs-media">
           {video ? (
             // Same treatment as the case-studies grid: muted, looping, inline,
-            // with preload="none" so three cards do not cost three video
-            // downloads before the reader scrolls to them. The poster carries
-            // the first frame until playback starts.
+            // and not fetched until the card is near the viewport. This used to
+            // be a plain <video autoPlay preload="none">, which does not defer
+            // anything: autoplay needs the bytes, so the browser fetches
+            // immediately and preload="none" is ignored. Three cards therefore
+            // cost three full downloads on load. LazyAutoplayVideo withholds
+            // src until an IntersectionObserver says it is worth having.
             <>
-              <video
+              <LazyAutoplayVideo
                 src={video}
                 poster={posterFor(video)}
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="none"
-                aria-label={`${data?.brandName ?? "Client"} store preview`}
                 className="gcs-video"
               />
               {/* A looping autoplay video has no pause control, which fails
                   WCAG 2.2.2 for anyone who has asked for reduced motion. CSS
                   cannot stop playback, so the still poster is rendered
-                  alongside and the two are swapped by media query. No client
-                  JS, and the video never even starts because preload is off
-                  and it is display:none. */}
+                  alongside and the two are swapped by media query. Under
+                  reduced motion LazyAutoplayVideo also never fetches the file
+                  at all, so it costs nothing beyond the hidden element. */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={posterFor(video)}
