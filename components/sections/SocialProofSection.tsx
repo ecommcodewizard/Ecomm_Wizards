@@ -110,6 +110,7 @@ function LogoCell({ logo, borderRight }: { logo: Logo; borderRight?: boolean }) 
     }}>
       <Image
         src={logo.src}
+        overrideSrc={logo.src}
         alt={logo.alt}
         width={191}
         height={79}
@@ -351,7 +352,7 @@ export default function SocialProofSection() {
                       boxShadow: `0 3px 10px ${GOLD}44`,
                     }}>
                       {t.avatar ? (
-                        <Image src={t.avatar} alt={t.name} width={42} height={42} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                        <Image src={t.avatar} overrideSrc={t.avatar} alt={t.name} width={42} height={42} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                       ) : (
                         <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "13px", color: "#fff" }}>{t.initials}</span>
                       )}

@@ -154,7 +154,7 @@ export default function ServicesHero() {
                   className="inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-semibold transition-all duration-300 group-hover:bg-white"
                 >
                   <span className="whitespace-nowrap text-white transition-colors duration-300 group-hover:text-black">Book a Call</span>
-                  <Image src="/images/arrow vector.png" alt="" width={16} height={16} className="transition-all duration-300 group-hover:brightness-0" />
+                  <Image src="/images/arrow vector.png" overrideSrc="/images/arrow vector.png" alt="" width={16} height={16} className="transition-all duration-300 group-hover:brightness-0" />
                 </Link>
               </span>
             </div>
@@ -179,6 +179,7 @@ export default function ServicesHero() {
               <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
                 <Image
                   src="/images/Case%20studies/Kim%20Crow.jpg"
+                  overrideSrc="/images/Case%20studies/Kim%20Crow.jpg"
                   alt="Kim Crow"
                   width={52}
                   height={52}

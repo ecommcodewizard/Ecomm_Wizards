@@ -272,6 +272,7 @@ export default function Header() {
           <Link href="/" className="shrink-0 flex items-center">
             <Image
               src="/images/ecomm-green.svg"
+              unoptimized
               alt="Ecomm Wizards"
               width={227}
               height={60}
@@ -375,6 +376,7 @@ export default function Header() {
         <div className="flex h-[100px] sm:h-[70px] md:h-[100px] items-center justify-between border-b border-white/10 px-4 sm:px-[20px]">
           <Image
             src="/images/ecomm-green.svg"
+            unoptimized
             alt="Ecomm Wizards"
             width={140}
             height={37}

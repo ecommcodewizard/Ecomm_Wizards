@@ -480,7 +480,7 @@ export default function Page() {
 
             {/* Partner badge */}
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginTop: "24px" }}>
-              <Image src="/images/shopify-icon.svg" alt="Shopify Plus Partner" width={22} height={22} style={{ opacity: 0.8 }} />
+              <Image src="/images/shopify-icon.svg" unoptimized alt="Shopify Plus Partner" width={22} height={22} style={{ opacity: 0.8 }} />
               <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 500 }}>Shopify Plus Partner. 150+ stores built exclusively on Shopify.</span>
             </div>
           </div>
@@ -488,6 +488,7 @@ export default function Page() {
           <div className="si-hero-img-wrap">
             <Image
               src="/images/Group_1000003974_d0eba414-7aec-4930-b534-a4dcc91d004e_1024x1024.png"
+              overrideSrc="/images/Group_1000003974_d0eba414-7aec-4930-b534-a4dcc91d004e_1024x1024.png"
               alt="Shopify development agency building a custom Shopify store"
               width={640}
               height={480}
@@ -606,7 +607,7 @@ export default function Page() {
                   {cs.video ? (
                     <video src={cs.video} autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
-                    <Image src={cs.image} alt={`${cs.brand} Shopify development case study`} fill className="sda-cs-card-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" priority={i === 0} />
+                    <Image src={cs.image} overrideSrc={cs.image} alt={`${cs.brand} Shopify development case study`} fill className="sda-cs-card-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" priority={i === 0} />
                   )}
                   <div style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.97)", borderRadius: "9999px", padding: "5px 14px", display: "flex", alignItems: "center", gap: "8px" }}>
                     <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#000", display: "inline-block", flexShrink: 0 }} />
@@ -812,7 +813,7 @@ export default function Page() {
             {/* Shopify — featured */}
             <div className="sda-plat-card sda-plat-card--featured">
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
-                <Image src="/images/shopify-icon.svg" alt="" width={24} height={24} aria-hidden />
+                <Image src="/images/shopify-icon.svg" unoptimized alt="" width={24} height={24} aria-hidden />
                 <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 20, fontWeight: 700, color: "#000", margin: 0 }}>Shopify</h3>
               </div>
               <span style={{ display: "inline-block", background: "rgba(61,199,122,0.15)", color: "#2A9555", fontFamily: "'Poppins', sans-serif", fontSize: 12, fontWeight: 600, borderRadius: "999px", padding: "3px 12px", marginBottom: "20px", border: "1px solid rgba(61,199,122,0.3)" }}>Our Platform</span>

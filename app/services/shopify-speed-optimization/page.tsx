@@ -348,6 +348,7 @@ function StatsImageTipsBlock({
     <div className="relative">
       <Image
         src="/images/speed-image4-scaled.webp"
+        overrideSrc="/images/speed-image4-scaled.webp"
         alt="Shopify speed optimization results: high desktop Core Web Vitals scores"
         width={1024}
         height={615}
@@ -381,6 +382,7 @@ function StatsImageTipsBlock({
       <div className="mt-6 flex items-center gap-3">
         <Image
           src={testimonialAvatar}
+          overrideSrc={testimonialAvatar}
           alt={testimonialName}
           width={48}
           height={48}
@@ -575,6 +577,7 @@ export default function Page() {
                     <Image
                       key={i}
                       src={src}
+                      overrideSrc={src}
                       alt={i < PHONE_IMAGES.length ? "Shopify store page optimized for fast mobile load times" : ""}
                       width={400}
                       height={520}
@@ -657,6 +660,7 @@ export default function Page() {
                       <div className="speed-flip-image">
                         <Image
                           src={s.image}
+                          overrideSrc={s.image}
                           alt={s.title}
                           width={300}
                           height={223}
@@ -916,6 +920,7 @@ export default function Page() {
                   <li key={`${logo.src}-${i}`} className="speed-brands-slide">
                     <Image
                       src={logo.src}
+                      overrideSrc={logo.src}
                       alt={logo.alt}
                       width={200}
                       height={90}

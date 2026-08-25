@@ -68,6 +68,7 @@ export default function AboutHero() {
 
             <Image
               src="/images/about_main_image_1024x1024.webp"
+              overrideSrc="/images/about_main_image_1024x1024.webp"
               alt="Ecomm Wizards, a leading Shopify Plus agency"
               width={451}
               height={576}

@@ -256,6 +256,7 @@ export default function Page() {
           <div className="uxui-hero-image relative">
             <Image
               src="/images/Group_1000003974_d0eba414-7aec-4930-b534-a4dcc91d004e_1024x1024.png"
+              overrideSrc="/images/Group_1000003974_d0eba414-7aec-4930-b534-a4dcc91d004e_1024x1024.png"
               alt="Shopify UX and UI design mockups for Olaplex, Buddy Scripts, and Everlast storefronts above a laptop"
               width={1024}
               height={648}
@@ -295,6 +296,7 @@ export default function Page() {
           <div className="uxui-wwd-image">
             <Image
               src="/images/uxui-what-we-do.webp"
+              overrideSrc="/images/uxui-what-we-do.webp"
               alt="Shopify store UX/UI design mockups for Jessakae with Arctic Grey Shopify Plus Experts five star review"
               width={1000}
               height={1041}
@@ -379,7 +381,7 @@ export default function Page() {
                         <div key={col} className="uxui-tab-mcol">
                           <div className="uxui-tab-mtrack" style={{ animationDuration: col === 0 ? "22s" : "28s" }}>
                             {[...FUNNEL_MOCKUPS, ...FUNNEL_MOCKUPS].map((src, i) => (
-                              <Image key={i} src={src} alt={i < FUNNEL_MOCKUPS.length ? "Shopify page UX and UI design mockup" : ""} width={500} height={420} className="block h-auto w-full rounded-md" />
+                              <Image key={i} src={src} overrideSrc={src} alt={i < FUNNEL_MOCKUPS.length ? "Shopify page UX and UI design mockup" : ""} width={500} height={420} className="block h-auto w-full rounded-md" />
                             ))}
                           </div>
                         </div>
@@ -402,7 +404,7 @@ export default function Page() {
           <div className="uxui-awards-row" style={{ marginTop: 48 }}>
             {AWARDS.map((a) => (
               <div key={a.src} className="uxui-award">
-                <Image src={a.src} alt={a.alt} width={150} height={150} className="block h-auto w-full" />
+                <Image src={a.src} overrideSrc={a.src} alt={a.alt} width={150} height={150} className="block h-auto w-full" />
               </div>
             ))}
           </div>
@@ -418,6 +420,7 @@ export default function Page() {
           <div className="uxui-emails-image">
             <Image
               src="/images/Group_1000003975_1024x1024.webp"
+              overrideSrc="/images/Group_1000003975_1024x1024.webp"
               alt="Hiya email design mockups showing newsletter and product email layouts"
               width={850}
               height={1024}
@@ -495,7 +498,7 @@ export default function Page() {
             <div className="uxui-h-track uxui-h-left">
               {[...APPS_ROW_A, ...APPS_ROW_A].map((src, i) => (
                 <div key={i} className="uxui-h-card">
-                  <Image src={src} alt="Custom Shopify app dashboard interface" width={620} height={440} className="block h-auto w-full" />
+                  <Image src={src} overrideSrc={src} alt="Custom Shopify app dashboard interface" width={620} height={440} className="block h-auto w-full" />
                 </div>
               ))}
             </div>
@@ -504,7 +507,7 @@ export default function Page() {
             <div className="uxui-h-track uxui-h-right">
               {[...APPS_ROW_B, ...APPS_ROW_B].map((src, i) => (
                 <div key={i} className="uxui-h-card">
-                  <Image src={src} alt="Custom Shopify app dashboard interface" width={620} height={440} className="block h-auto w-full" />
+                  <Image src={src} overrideSrc={src} alt="Custom Shopify app dashboard interface" width={620} height={440} className="block h-auto w-full" />
                 </div>
               ))}
             </div>
@@ -545,6 +548,7 @@ export default function Page() {
           <div className="uxui-proto-image">
             <Image
               src="/images/get_started.webp"
+              overrideSrc="/images/get_started.webp"
               alt="Designer reviewing clickable Figma prototype on a laptop with headphones"
               width={760}
               height={520}
@@ -608,7 +612,7 @@ export default function Page() {
             <div className="uxui-h-track uxui-h-left">
               {[...BRAND_ROW_A, ...BRAND_ROW_A].map((src, i) => (
                 <div key={i} className="uxui-h-card uxui-brand-card">
-                  <Image src={src} alt="Shopify brand identity sample: typography and logo system" width={460} height={340} className="block h-auto w-full" />
+                  <Image src={src} overrideSrc={src} alt="Shopify brand identity sample: typography and logo system" width={460} height={340} className="block h-auto w-full" />
                 </div>
               ))}
             </div>
@@ -617,7 +621,7 @@ export default function Page() {
             <div className="uxui-h-track uxui-h-right">
               {[...BRAND_ROW_B, ...BRAND_ROW_B].map((src, i) => (
                 <div key={i} className="uxui-h-card uxui-brand-card">
-                  <Image src={src} alt="Shopify brand identity sample: color palette and brand guidelines" width={460} height={340} className="block h-auto w-full" />
+                  <Image src={src} overrideSrc={src} alt="Shopify brand identity sample: color palette and brand guidelines" width={460} height={340} className="block h-auto w-full" />
                 </div>
               ))}
             </div>

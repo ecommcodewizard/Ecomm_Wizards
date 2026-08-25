@@ -82,6 +82,7 @@ function EcommLogo() {
     <div className="flex items-center gap-2">
       <Image
         src="/images/ecomm-green-logo-cropped.png"
+        overrideSrc="/images/ecomm-green-logo-cropped.png"
         alt="Ecomm Wizards"
         width={86}
         height={79}
@@ -208,6 +209,7 @@ function ScreenshotCard({ label, src, alt }: { label: string; src: string; alt: 
       <div className="relative mt-3 w-full flex-1 min-h-[420px] overflow-hidden rounded-[8px]">
         <Image
           src={src}
+          overrideSrc={src}
           alt={alt}
           fill
           sizes="(max-width: 768px) 90vw, (max-width: 1320px) 30vw, 400px"

@@ -30,6 +30,7 @@ export default function PartnerLogos({ heading = "We partner with the best Shopi
             <div key={p.alt} className="flex items-center justify-center">
               <Image
                 src={p.src}
+                overrideSrc={p.src}
                 alt={p.alt}
                 width={p.w * 2}
                 height={60}

@@ -376,6 +376,7 @@ export default function Page() {
           <div className="si-hero-img-wrap">
             <Image
               src="/images/erp-banner-image_1024x1024.webp"
+              overrideSrc="/images/erp-banner-image_1024x1024.webp"
               alt="Shopify integration services dashboard showing live ERP and CRM connections"
               width={640}
               height={480}
@@ -769,7 +770,7 @@ export default function Page() {
                   {cs.video ? (
                     <video src={cs.video} autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
-                    <Image src={cs.image} alt={`${cs.brand} Shopify integration case study`} fill className="si-cs-card-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" priority={i === 0} />
+                    <Image src={cs.image} overrideSrc={cs.image} alt={`${cs.brand} Shopify integration case study`} fill className="si-cs-card-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" priority={i === 0} />
                   )}
                   <div style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.97)", borderRadius: "9999px", padding: "5px 14px", display: "flex", alignItems: "center", gap: "8px" }}>
                     <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#000", display: "inline-block", flexShrink: 0 }} />

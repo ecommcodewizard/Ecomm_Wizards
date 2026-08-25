@@ -62,7 +62,7 @@ export default function ResultsBlock({ results }: { results: Results }) {
 
               <div className="gpr2-person">
                 {s.quoteAvatar && s.quotePerson ? (
-                  <Image src={s.quoteAvatar} alt={`${s.quotePerson}, ${s.brandName}`} width={44} height={44} className="gpr2-avatar" loading="lazy" />
+                  <Image src={s.quoteAvatar} overrideSrc={s.quoteAvatar} alt={`${s.quotePerson}, ${s.brandName}`} width={44} height={44} className="gpr2-avatar" loading="lazy" />
                 ) : null}
                 <span className="gpr2-person-text">
                   {s.quotePerson ? <span className="gpr2-name">{s.quotePerson}</span> : <span className="gpr2-name">{s.brandName}</span>}

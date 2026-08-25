@@ -198,6 +198,7 @@ export default function Page() {
             <div className="relative mx-auto w-full max-w-[640px] lg:max-w-none aspect-[1628/1508]">
               <Image
                 src="/images/Group-1000004281-green.png"
+                overrideSrc="/images/Group-1000004281-green.png"
                 alt="Shopify analytics dashboard preview"
                 fill
                 priority
@@ -404,6 +405,7 @@ export default function Page() {
           >
             <Image
               src="/images/Group_1000004345_1.webp"
+              overrideSrc="/images/Group_1000004345_1.webp"
               alt="Shopify audit revenue visualization"
               fill
               sizes="(max-width: 1024px) 100vw, 640px"
@@ -427,6 +429,7 @@ export default function Page() {
           <div className="relative w-full aspect-[800/752] mx-auto max-w-[640px] lg:max-w-none">
             <Image
               src="/images/shopify-audit-unlock.webp"
+              overrideSrc="/images/shopify-audit-unlock.webp"
               alt="What's included in the Shopify audit"
               fill
               sizes="(max-width: 1024px) 90vw, 640px"

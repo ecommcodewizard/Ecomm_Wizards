@@ -127,6 +127,7 @@ export default function StatsCard() {
             <Image
               key={i}
               src={logo.src}
+              overrideSrc={logo.src}
               alt={logo.alt}
               width={148}
               height={30}

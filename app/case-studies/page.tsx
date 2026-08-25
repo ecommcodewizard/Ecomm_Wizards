@@ -484,6 +484,7 @@ export default async function CaseStudiesPage({
                 <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
                   <Image
                     src="/images/Case%20studies/Kim%20Crow.jpg"
+                    overrideSrc="/images/Case%20studies/Kim%20Crow.jpg"
                     alt="Kim Crow"
                     width={52}
                     height={52}

@@ -498,7 +498,7 @@ export default function Page() {
             </div>
 
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginTop: "24px" }}>
-              <Image src="/images/shopify-icon.svg" alt="Shopify Partner" width={22} height={22} style={{ opacity: 0.8 }} />
+              <Image src="/images/shopify-icon.svg" unoptimized alt="Shopify Partner" width={22} height={22} style={{ opacity: 0.8 }} />
               <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 500 }}>Shopify Plus Partner. Headless builds on Hydrogen and Next.js.</span>
             </div>
           </div>
@@ -506,6 +506,7 @@ export default function Page() {
           <div className="shl-hero-img-wrap" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Image
               src="/images/seeamleass-right.webp"
+              overrideSrc="/images/seeamleass-right.webp"
               alt="Headless Shopify storefront built on Hydrogen and Next.js"
               width={640}
               height={520}
@@ -548,7 +549,7 @@ export default function Page() {
               &ldquo;We had pushed our theme as far as it could go. Ecomm Wizards rebuilt the storefront as a fully custom headless build, and the speed jump was instant. We finally have the design freedom we wanted, with none of the template limits we were fighting before.&rdquo;
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-              <Image src="/images/Case%20studies/Daniel%20Summerson.jpg" alt="Daniel Summerson" width={44} height={44} style={{ borderRadius: "50%", objectFit: "cover", objectPosition: "center 20%", flexShrink: 0, width: "44px", height: "44px" }} />
+              <Image src="/images/Case%20studies/Daniel%20Summerson.jpg" overrideSrc="/images/Case%20studies/Daniel%20Summerson.jpg" alt="Daniel Summerson" width={44} height={44} style={{ borderRadius: "50%", objectFit: "cover", objectPosition: "center 20%", flexShrink: 0, width: "44px", height: "44px" }} />
               <div>
                 <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 14, fontWeight: 700, color: C_DARK, margin: 0 }}>Daniel Summerson</p>
                 <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: C_TEXT, margin: 0 }}>Managing Director, Everlast Gyms. <strong style={{ color: "#2A9555" }}>+152% Conversion Rate</strong></p>
@@ -773,7 +774,7 @@ export default function Page() {
             <div className="shl-fw-card">
               <div className="shl-fw-head">
                 <span className="shl-fw-icon" aria-hidden="true">
-                  <Image src="/images/Hydrogen logo icon svg.webp" alt="Hydrogen" width={28} height={28} style={{ objectFit: "contain", width: "28px", height: "28px" }} />
+                  <Image src="/images/Hydrogen logo icon svg.webp" overrideSrc="/images/Hydrogen logo icon svg.webp" alt="Hydrogen" width={28} height={28} style={{ objectFit: "contain", width: "28px", height: "28px" }} />
                 </span>
                 <div>
                   <p className="shl-fw-name">Hydrogen + Oxygen</p>
@@ -788,7 +789,7 @@ export default function Page() {
             <div className="shl-fw-card">
               <div className="shl-fw-head">
                 <span className="shl-fw-icon" aria-hidden="true">
-                  <Image src="/images/next-js logo icon svg.svg" alt="Next.js" width={28} height={28} style={{ objectFit: "contain", width: "28px", height: "28px" }} />
+                  <Image src="/images/next-js logo icon svg.svg" unoptimized alt="Next.js" width={28} height={28} style={{ objectFit: "contain", width: "28px", height: "28px" }} />
                 </span>
                 <div>
                   <p className="shl-fw-name">Next.js + Vercel</p>
@@ -817,7 +818,7 @@ export default function Page() {
             ].map((tool) => (
               <div key={tool.name} className="shl-tool-card">
                 <div className="shl-tool-icon" aria-hidden="true">
-                  <Image src={tool.logo} alt={tool.name} width={26} height={26} style={{ objectFit: "contain", width: "26px", height: "26px" }} />
+                  <Image src={tool.logo} overrideSrc={tool.logo} alt={tool.name} width={26} height={26} style={{ objectFit: "contain", width: "26px", height: "26px" }} />
                 </div>
                 <div>
                   <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 15, fontWeight: 700, color: C_DARK, margin: "0 0 2px", lineHeight: 1.3 }}>{tool.name}</p>
@@ -906,7 +907,7 @@ export default function Page() {
                   {cs.video ? (
                     <video src={cs.video} autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
-                    <Image src={cs.image} alt={`${cs.brand} headless Shopify case study`} fill className="shl-cs-card-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" priority={i === 0} />
+                    <Image src={cs.image} overrideSrc={cs.image} alt={`${cs.brand} headless Shopify case study`} fill className="shl-cs-card-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" priority={i === 0} />
                   )}
                   <div style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.97)", borderRadius: "9999px", padding: "5px 14px", display: "flex", alignItems: "center", gap: "8px" }}>
                     <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#000", display: "inline-block", flexShrink: 0 }} />

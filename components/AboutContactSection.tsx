@@ -277,6 +277,7 @@ export default function AboutContactSection() {
           <div className="about-contact-right">
             <Image
               src={active.image.src}
+              overrideSrc={active.image.src}
               alt={active.image.alt}
               width={1260}
               height={840}

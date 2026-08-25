@@ -413,6 +413,7 @@ export default function ABTestingPage() {
           <div className="relative">
             <Image
               src="/images/ab-testing-hero.webp"
+              overrideSrc="/images/ab-testing-hero.webp"
               alt="Shopify A/B testing dashboard comparing variant performance with Shoplift"
               width={1400}
               height={1109}
@@ -430,6 +431,7 @@ export default function ABTestingPage() {
           <div>
             <Image
               src="/images/Group_1000004415.webp"
+              overrideSrc="/images/Group_1000004415.webp"
               alt="Shopify A/B testing theme editor"
               width={800}
               height={869}
@@ -481,7 +483,7 @@ export default function ABTestingPage() {
                 <h3 className="text-[19px] font-semibold leading-snug text-white sm:text-[20px]">{c.title}</h3>
                 <p className="mt-3 text-[13.5px] leading-[22px] text-white sm:mt-4">{c.desc}</p>
                 <div className="mt-5 sm:mt-6">
-                  <Image src={c.image} alt={`Shopify A/B testing with Shoplift: ${c.title.replace(/\.+$/, "")}`} width={460} height={320} className="h-auto w-full rounded-[10px]" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
+                  <Image src={c.image} overrideSrc={c.image} alt={`Shopify A/B testing with Shoplift: ${c.title.replace(/\.+$/, "")}`} width={460} height={320} className="h-auto w-full rounded-[10px]" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
                 </div>
               </div>
             ))}
@@ -547,6 +549,7 @@ export default function ABTestingPage() {
             <div>
               <Image
                 src="/images/ab-what-you-get.webp"
+                overrideSrc="/images/ab-what-you-get.webp"
                 alt="A/B test drive: Shoplift, Figma, and analytics workflow"
                 width={720}
                 height={620}
@@ -563,6 +566,7 @@ export default function ABTestingPage() {
           <div className="order-2 lg:order-1">
             <Image
               src="/images/ab-guarantee.webp"
+              overrideSrc="/images/ab-guarantee.webp"
               alt="A/B test insight dashboard"
               width={720}
               height={620}
@@ -631,6 +635,7 @@ export default function ABTestingPage() {
             <div className="mt-6 sm:mt-10">
               <Image
                 src="/images/Group_1000004421.webp"
+                overrideSrc="/images/Group_1000004421.webp"
                 alt="A/B testing in action across Shopify stores"
                 width={800}
                 height={694}

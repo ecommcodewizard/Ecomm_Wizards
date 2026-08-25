@@ -487,6 +487,7 @@ export default function ShopifyDesignSection({
                   {imageSrc ? (
                     <Image
                       src={imageSrc}
+                      overrideSrc={imageSrc}
                       alt={imageAlt}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"

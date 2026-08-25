@@ -410,7 +410,7 @@ function CaseStudyHero({ cs }: { cs: CaseStudy }) {
             {cs.slug === "vithit-shopify-plus-d2c" ? (
               <video src="/images/Case%20studies/VITHIT%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", position: "absolute", inset: 0 }} />
             ) : (
-              <Image src={cs.heroImage} alt={`${cs.brandName} Shopify store`} fill className="object-cover" priority sizes="(max-width: 1023px) 100vw, 50vw" />
+              <Image src={cs.heroImage} overrideSrc={cs.heroImage} alt={`${cs.brandName} Shopify store`} fill className="object-cover" priority sizes="(max-width: 1023px) 100vw, 50vw" />
             )}
           </div>
           {/* Site Metrics floating card — Cashmere banner style */}
@@ -755,6 +755,7 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
           ) : (
             <Image
               src={cs.challengeImage ?? cs.heroImage}
+              overrideSrc={cs.challengeImage ?? cs.heroImage}
               alt={`${cs.brandName} ${cs.studyKind ?? "Shopify"} case study`}
               fill
               className="object-cover"
@@ -891,7 +892,7 @@ function CaseStudyWork({ cs }: { cs: CaseStudy }) {
                     style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                   />
                 ) : (
-                  <Image src={img} alt={`${cs.brandName} ${cs.studyKind ?? "Shopify"} case study, image ${i + 1}`} fill className="object-cover" loading="lazy" sizes="(max-width: 767px) 100vw, 50vw" />
+                  <Image src={img} overrideSrc={img} alt={`${cs.brandName} ${cs.studyKind ?? "Shopify"} case study, image ${i + 1}`} fill className="object-cover" loading="lazy" sizes="(max-width: 767px) 100vw, 50vw" />
                 )}
               </div>
             </div>
@@ -1005,7 +1006,7 @@ function CaseStudyTechStack({ cs }: { cs: CaseStudy }) {
           {cs.techStack.map((tool) => (
             <div key={tool.name} className="cs-tech-card" style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 36px", background: "#FBF7ED", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "16px" }}>
               <div style={{ width: tool.name === "Etsy" ? "150px" : "110px", height: tool.name === "Etsy" ? "56px" : "44px", position: "relative", flexShrink: 0 }}>
-                <Image src={tool.logo} alt={tool.name} fill className="object-contain" style={tool.noFilter ? (tool.multiplyBlend ? { mixBlendMode: "multiply" } : undefined) : { filter: "brightness(0)" }} />
+                <Image src={tool.logo} overrideSrc={tool.logo} alt={tool.name} fill className="object-contain" style={tool.noFilter ? (tool.multiplyBlend ? { mixBlendMode: "multiply" } : undefined) : { filter: "brightness(0)" }} />
               </div>
             </div>
           ))}
@@ -1115,7 +1116,7 @@ function CaseStudyExploreMore({ current, mode }: { current: string; mode?: "app"
                   ) : mode === "klaviyo" && cs.slug === "cecraft-klaviyo-email" ? (
                     <SpeedVideo src="/images/Case%20studies/Cande%20Klaviyo%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (mode === "app" || mode === "klaviyo") ? (
-                    <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" sizes="356px" />
+                    <Image src={cs.heroImage} overrideSrc={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" sizes="356px" />
                   ) : cs.slug === "111skin-shopify-cro-redesign" ? (
                     <video src="/images/Case%20studies/111skin%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : cs.slug === "evie-lou-shopify-fashion-cro" ? (
@@ -1159,7 +1160,7 @@ function CaseStudyExploreMore({ current, mode }: { current: string; mode?: "app"
                   ) : cs.slug === "henchman-shopify-plus-b2b" ? (
                     <video src="/images/Case%20studies/Henchman%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
-                    <Image src={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" sizes="356px" />
+                    <Image src={cs.heroImage} overrideSrc={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" sizes="356px" />
                   )}
                   {/* Stat badge */}
                   <div style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.97)", borderRadius: "9999px", padding: "5px 14px", display: "flex", alignItems: "center", gap: "8px",  }}>

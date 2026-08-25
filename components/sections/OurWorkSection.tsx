@@ -38,7 +38,7 @@ export default function OurWorkSection({
                 {cs.video ? (
                   <video src={cs.video} autoPlay loop muted playsInline preload="none" poster={cs.image} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                 ) : (
-                  <Image src={cs.image} alt={`${cs.brand} Shopify case study`} fill className="ow-card-img" style={{ objectFit: "cover" }} sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw" />
+                  <Image src={cs.image} overrideSrc={cs.image} alt={`${cs.brand} Shopify case study`} fill className="ow-card-img" style={{ objectFit: "cover" }} sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw" />
                 )}
                 <div style={{ position: "absolute", top: 12, left: 12, background: "rgba(255,255,255,0.97)", borderRadius: 9999, padding: "5px 14px", display: "flex", alignItems: "center", gap: 8 }}>
                   <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#000", display: "inline-block", flexShrink: 0 }} />

@@ -296,6 +296,7 @@ export default function ShopifyStoreDevelopmentPage() {
                   </span>
                   <Image
                     src="/images/arrow vector.png"
+                    overrideSrc="/images/arrow vector.png"
                     alt=""
                     width={16}
                     height={16}
@@ -345,6 +346,7 @@ export default function ShopifyStoreDevelopmentPage() {
                       <div key={`${idx}-${i}`} className="ssd-hero-card">
                         <Image
                           src={src}
+                          overrideSrc={src}
                           alt=""
                           width={221}
                           height={179}
@@ -1235,6 +1237,7 @@ export default function ShopifyStoreDevelopmentPage() {
               <div className="ssd-process-image-wrap">
                 <Image
                   src="/images/olaplex-px-new-2.webp"
+                  overrideSrc="/images/olaplex-px-new-2.webp"
                   alt="Shopify store development workflow: design, build, and launch"
                   width={630}
                   height={678}
