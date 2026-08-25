@@ -119,8 +119,22 @@ export default function CaseStudySlider({ slides, intervalMs = 6000, showDots = 
               <div className="ssd-results-quote-card">
                 <p className="ssd-results-quote-text">{s.quote}</p>
                 <div className="ssd-results-quote-person">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={s.avatar} alt={s.name} className="ssd-results-quote-avatar" loading="lazy" decoding="async" />
+                  {/* 44x44 circle. As a bare <img> these shipped at source
+                      size: one headshot was 135 KB for a thumbnail, and a .jfif
+                      one came back as text/plain because the extension is not
+                      recognised. next/image resizes and re-encodes, which fixes
+                      both. */}
+                  <Image
+                    src={s.avatar}
+                    overrideSrc={s.avatar}
+                    alt={s.name}
+                    width={44}
+                    height={44}
+                    sizes="44px"
+                    className="ssd-results-quote-avatar"
+                    loading="lazy"
+                    decoding="async"
+                  />
                   <div>
                     <div className="ssd-results-quote-name">{s.name}</div>
                     <div className="ssd-results-quote-role">{s.role}</div>
