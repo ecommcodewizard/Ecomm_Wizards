@@ -222,6 +222,7 @@ export default function Footer() {
           <Link href="/">
             <Image
               src="/images/ecomm-green.svg"
+              unoptimized
               alt="Ecomm Wizards"
               width={218}
               height={57}
@@ -239,6 +240,7 @@ export default function Footer() {
           <Link href="/" className="hidden md:flex shrink-0 items-center">
             <Image
               src="/images/ecomm-green.svg"
+              unoptimized
               alt="Ecomm Wizards"
               width={218}
               height={57}

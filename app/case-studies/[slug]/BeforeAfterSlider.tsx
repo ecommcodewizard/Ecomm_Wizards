@@ -83,6 +83,7 @@ export default function BeforeAfterSlider({ beforeSrc, beforeAlt, afterSrc, afte
           {/* AFTER image — full width base layer */}
           <Image
             src={afterSrc}
+            overrideSrc={afterSrc}
             alt={afterAlt}
             fill
             className="object-cover object-top"
@@ -101,6 +102,7 @@ export default function BeforeAfterSlider({ beforeSrc, beforeAlt, afterSrc, afte
           >
             <Image
               src={beforeSrc}
+              overrideSrc={beforeSrc}
               alt={beforeAlt}
               fill
               className="object-cover object-top"

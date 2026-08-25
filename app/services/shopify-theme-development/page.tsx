@@ -432,6 +432,7 @@ export default function Page() {
           <div className="std-hero-img">
             <Image
               src="/images/build-hero-4-1.webp"
+              overrideSrc="/images/build-hero-4-1.webp"
               alt="Shopify theme development: clean, modern storefront built for performance"
               width={700}
               height={500}
@@ -948,7 +949,7 @@ export default function Page() {
                   {cs.video ? (
                     <video src={cs.video} autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
-                    <Image src={cs.image} alt={`${cs.brand} Shopify theme development case study`} fill className="ssd-cs-card-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" priority={i === 0} />
+                    <Image src={cs.image} overrideSrc={cs.image} alt={`${cs.brand} Shopify theme development case study`} fill className="ssd-cs-card-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" priority={i === 0} />
                   )}
                   {/* Stat badge */}
                   <div style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.97)", borderRadius: "9999px", padding: "5px 14px", display: "flex", alignItems: "center", gap: "8px" }}>

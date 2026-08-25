@@ -103,6 +103,7 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
                 />
                 <Image
                   src={image.src}
+                  overrideSrc={image.src}
                   alt={image.alt}
                   width={640}
                   height={480}
@@ -114,6 +115,7 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
             ) : (
               <Image
                 src={image.src}
+                overrideSrc={image.src}
                 alt={image.alt}
                 width={640}
                 height={480}

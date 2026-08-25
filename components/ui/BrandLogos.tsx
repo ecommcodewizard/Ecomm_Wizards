@@ -42,6 +42,7 @@ export default function BrandLogos({ heading = "Trusted by the World's Most Inno
             <div key={b.alt} className="flex items-center justify-center">
               <Image
                 src={b.src}
+                overrideSrc={b.src}
                 alt={b.alt}
                 width={b.w * 2}
                 height={60}

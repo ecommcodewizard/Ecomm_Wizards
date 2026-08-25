@@ -34,6 +34,7 @@ function CardMedia({ cs, index }: { cs: CaseStudy; index: number }) {
   return (
     <Image
       src={cs.heroImage}
+      overrideSrc={cs.heroImage}
       alt={cs.brandName}
       fill
       className="object-cover cs-landing-card-img"

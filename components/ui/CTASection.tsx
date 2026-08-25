@@ -68,7 +68,7 @@ export default function CTASection({
                 className="inline-flex items-center gap-2 rounded-full bg-black px-7 py-3 text-sm font-semibold transition-all duration-300 group-hover:bg-white"
               >
                 <span className="whitespace-nowrap text-white transition-colors duration-300 group-hover:text-black">{secondaryLabel}</span>
-                <Image src="/images/arrow vector.png" alt="" width={16} height={16} className="transition-all duration-300 group-hover:brightness-0" />
+                <Image src="/images/arrow vector.png" overrideSrc="/images/arrow vector.png" alt="" width={16} height={16} className="transition-all duration-300 group-hover:brightness-0" />
               </Link>
             </span>
           ) : (

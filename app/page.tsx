@@ -181,6 +181,7 @@ export default function HomePage() {
         {/* Background image */}
         <Image
           src="/images/main-hero-f-desktop.webp"
+          overrideSrc="/images/main-hero-f-desktop.webp"
           alt="Ecomm Wizards Shopify agency building high-converting Shopify stores"
           fill
           sizes="100vw"
@@ -218,7 +219,7 @@ export default function HomePage() {
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   <span className="text-white group-hover:text-black transition-colors duration-300 whitespace-nowrap">Book a Call</span>
-                  <Image src="/images/arrow vector.png" alt="" width={16} height={16} className="transition-all duration-300 group-hover:brightness-0" />
+                  <Image src="/images/arrow vector.png" overrideSrc="/images/arrow vector.png" alt="" width={16} height={16} className="transition-all duration-300 group-hover:brightness-0" />
                 </Link>
               </span>
             </div>
@@ -410,6 +411,7 @@ export default function HomePage() {
                   <div key={logo.alt} className="flex items-center justify-center shrink-0 w-[160px] sm:w-[260px]">
                     <Image
                       src={logo.src}
+                      overrideSrc={logo.src}
                       alt={logo.alt}
                       width={180}
                       height={62}
@@ -513,6 +515,7 @@ export default function HomePage() {
           <div className="w-full md:w-[calc(50%-10px)] min-[1440px]:w-[650px] h-[320px] sm:h-auto md:h-[780px] lg:h-[879px] min-[1440px]:h-[801px]" style={{ borderRadius: "20px", overflow: "hidden", position: "relative" }}>
             <Image
               src="/images/image-4.png"
+              overrideSrc="/images/image-4.png"
               alt="The Ecomm Wizards Shopify agency team at work in the office"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -646,6 +649,7 @@ export default function HomePage() {
             {/* Counter image */}
             <Image
               src="/images/ai-counter-image-1.webp"
+              overrideSrc="/images/ai-counter-image-1.webp"
               alt="Shopify CRO agency conversion results dashboard"
               width={640}
               height={360}

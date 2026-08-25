@@ -73,6 +73,7 @@ export default function CaseStudyCard({ study }: { study: CaseStudyRef }) {
                described rather than labelled. No location, ever. */
             <Image
               src={data.heroImage}
+              overrideSrc={data.heroImage}
               alt={`${data.brandName} ecommerce store, ${lowerFirst(study.whatWasBuilt)}`}
               fill
               className="gcs-img"

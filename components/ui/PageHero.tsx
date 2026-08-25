@@ -37,7 +37,7 @@ export default function PageHero({
     >
       {/* background photo */}
       {backgroundImage && (
-        <Image src={backgroundImage} alt="" fill className="object-cover opacity-20" priority quality={55} />
+        <Image src={backgroundImage} overrideSrc={backgroundImage} alt="" fill className="object-cover opacity-20" priority quality={55} />
       )}
       {/* dot-grid overlay */}
       <div
@@ -117,7 +117,7 @@ export default function PageHero({
                   className="inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-semibold transition-all duration-300 group-hover:bg-white"
                 >
                   <span className="whitespace-nowrap text-white transition-colors duration-300 group-hover:text-black">{secondaryCta.label}</span>
-                  <Image src="/images/arrow vector.png" alt="" width={16} height={16} className="transition-all duration-300 group-hover:brightness-0" />
+                  <Image src="/images/arrow vector.png" overrideSrc="/images/arrow vector.png" alt="" width={16} height={16} className="transition-all duration-300 group-hover:brightness-0" />
                 </Link>
               </span>
             ) : (

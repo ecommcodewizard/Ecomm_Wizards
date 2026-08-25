@@ -74,7 +74,7 @@ export default async function ProtectedAdminLayout({ children }: { children: Rea
       <aside className="ewa-sidebar">
         <div className="ewa-brand">
           <span className="ewa-brand-mark">
-            <Image src="/images/ecomm-green-logo-cropped.png" alt="" width={22} height={22} style={{ objectFit: "contain" }} />
+            <Image src="/images/ecomm-green-logo-cropped.png" overrideSrc="/images/ecomm-green-logo-cropped.png" alt="" width={22} height={22} style={{ objectFit: "contain" }} />
           </span>
           <span>
             <span className="ewa-brand-name" style={{ display: "block" }}>Ecomm Wizards</span>

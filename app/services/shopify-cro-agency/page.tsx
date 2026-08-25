@@ -511,7 +511,7 @@ export default function Page() {
             </div>
 
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginTop: "24px" }}>
-              <Image src="/images/shopify-icon.svg" alt="Shopify Partner" width={22} height={22} style={{ opacity: 0.8 }} />
+              <Image src="/images/shopify-icon.svg" unoptimized alt="Shopify Partner" width={22} height={22} style={{ opacity: 0.8 }} />
               <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 500 }}>Shopify Partner. 100+ stores optimized exclusively on Shopify.</span>
             </div>
           </div>
@@ -580,7 +580,7 @@ export default function Page() {
               &ldquo;We needed a store that could handle serious athletes, casual fitness buyers, and trade accounts in one place. Ecomm Wizards built exactly that. The conversion numbers and trade portal revenue both exceeded what we projected.&rdquo;
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-              <Image src="/images/Case%20studies/Daniel%20Summerson.jpg" alt="Daniel Summerson" width={44} height={44} style={{ borderRadius: "50%", objectFit: "cover", objectPosition: "center 20%", flexShrink: 0, width: "44px", height: "44px" }} />
+              <Image src="/images/Case%20studies/Daniel%20Summerson.jpg" overrideSrc="/images/Case%20studies/Daniel%20Summerson.jpg" alt="Daniel Summerson" width={44} height={44} style={{ borderRadius: "50%", objectFit: "cover", objectPosition: "center 20%", flexShrink: 0, width: "44px", height: "44px" }} />
               <div>
                 <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 14, fontWeight: 700, color: C_DARK, margin: 0 }}>Daniel Summerson</p>
                 <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: C_TEXT, margin: 0 }}>Managing Director, Everlast Gyms. <strong style={{ color: "#2A9555" }}>+152% Conversion Rate</strong></p>
@@ -737,7 +737,7 @@ export default function Page() {
                   {cs.video ? (
                     <video src={cs.video} autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
-                    <Image src={cs.image} alt={`${cs.brand} Shopify CRO case study`} fill className="scro-cs-card-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" priority={i === 0} />
+                    <Image src={cs.image} overrideSrc={cs.image} alt={`${cs.brand} Shopify CRO case study`} fill className="scro-cs-card-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" priority={i === 0} />
                   )}
                   <div style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.97)", borderRadius: "9999px", padding: "5px 14px", display: "flex", alignItems: "center", gap: "8px" }}>
                     <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#000", display: "inline-block", flexShrink: 0 }} />
@@ -910,49 +910,49 @@ export default function Page() {
                 name: "Google Analytics 4",
                 abbr: "GA4",
                 desc: "Funnel drop-off analysis, revenue per session, device and segment breakdowns.",
-                icon: (<Image src="/images/google_analytics_image_logo_icon.webp" alt="Google Analytics 4" width={28} height={28} style={{ objectFit: "contain" }} />),
+                icon: (<Image src="/images/google_analytics_image_logo_icon.webp" overrideSrc="/images/google_analytics_image_logo_icon.webp" alt="Google Analytics 4" width={28} height={28} style={{ objectFit: "contain" }} />),
               },
               {
                 name: "Hotjar",
                 abbr: "Heatmaps",
                 desc: "Heatmaps, scroll maps, and click maps on your highest-value conversion pages.",
-                icon: (<Image src="/images/hotjar logo icon svg.png" alt="Hotjar" width={28} height={28} style={{ objectFit: "contain" }} />),
+                icon: (<Image src="/images/hotjar logo icon svg.png" overrideSrc="/images/hotjar logo icon svg.png" alt="Hotjar" width={28} height={28} style={{ objectFit: "contain" }} />),
               },
               {
                 name: "Microsoft Clarity",
                 abbr: "Session Rec.",
                 desc: "Session recordings, rage clicks, and dead click detection across all pages.",
-                icon: (<Image src="/images/Microsoft clarity logo Icon svg.png" alt="Microsoft Clarity" width={28} height={28} style={{ objectFit: "contain" }} />),
+                icon: (<Image src="/images/Microsoft clarity logo Icon svg.png" overrideSrc="/images/Microsoft clarity logo Icon svg.png" alt="Microsoft Clarity" width={28} height={28} style={{ objectFit: "contain" }} />),
               },
               {
                 name: "Shoplift",
                 abbr: "A/B Testing",
                 desc: "Shopify-native A/B testing. No performance impact, no traffic sampling.",
-                icon: (<Image src="/images/Shoplift logo icon png.png" alt="Shoplift" width={28} height={28} style={{ objectFit: "contain" }} />),
+                icon: (<Image src="/images/Shoplift logo icon png.png" overrideSrc="/images/Shoplift logo icon png.png" alt="Shoplift" width={28} height={28} style={{ objectFit: "contain" }} />),
               },
               {
                 name: "Shopify Analytics",
                 abbr: "Native Data",
                 desc: "Native CVR benchmarks, checkout funnel, and product performance data.",
-                icon: (<Image src="/images/shopify-icon.svg" alt="Shopify Analytics" width={28} height={28} style={{ objectFit: "contain" }} />),
+                icon: (<Image src="/images/shopify-icon.svg" unoptimized alt="Shopify Analytics" width={28} height={28} style={{ objectFit: "contain" }} />),
               },
               {
                 name: "VWO",
                 abbr: "Multivariate",
                 desc: "Multivariate testing for higher-traffic stores needing more complex experiments.",
-                icon: (<Image src="/images/vwo logo icon svg.svg" alt="VWO" width={28} height={28} style={{ objectFit: "contain" }} />),
+                icon: (<Image src="/images/vwo logo icon svg.svg" unoptimized alt="VWO" width={28} height={28} style={{ objectFit: "contain" }} />),
               },
               {
                 name: "Triple Whale",
                 abbr: "Attribution",
                 desc: "Revenue attribution to identify which traffic actually converts, not just clicks.",
-                icon: (<Image src="/images/Triple whale logo icon svg.png" alt="Triple Whale" width={28} height={28} style={{ objectFit: "contain" }} />),
+                icon: (<Image src="/images/Triple whale logo icon svg.png" overrideSrc="/images/Triple whale logo icon svg.png" alt="Triple Whale" width={28} height={28} style={{ objectFit: "contain" }} />),
               },
               {
                 name: "Klaviyo",
                 abbr: "Email/SMS",
                 desc: "Email and SMS flow performance to identify post-click drop-off in owned channels.",
-                icon: (<Image src="/images/Klaviyo logo icon svg.webp" alt="Klaviyo" width={28} height={28} style={{ objectFit: "contain" }} />),
+                icon: (<Image src="/images/Klaviyo logo icon svg.webp" overrideSrc="/images/Klaviyo logo icon svg.webp" alt="Klaviyo" width={28} height={28} style={{ objectFit: "contain" }} />),
               },
             ].map((tool) => (
               <div key={tool.name} className="scro-tool-card">

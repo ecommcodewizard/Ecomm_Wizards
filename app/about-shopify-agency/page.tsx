@@ -132,6 +132,7 @@ export default function AboutPage() {
           >
             <Image
               src="/images/convertionrate-box.webp"
+              overrideSrc="/images/convertionrate-box.webp"
               alt="Shopify conversion rate optimization results"
               width={600}
               height={400}
@@ -152,6 +153,7 @@ export default function AboutPage() {
               >
                 <Image
                   src="/images/new-about-image_1_2048x2048-1.webp"
+                  overrideSrc="/images/new-about-image_1_2048x2048-1.webp"
                   alt="The Ecomm Wizards Shopify development agency reviewing a client store"
                   fill
                   className="object-cover"
@@ -222,6 +224,7 @@ export default function AboutPage() {
               >
                 <Image
                   src="/images/convertionrate-box.webp"
+                  overrideSrc="/images/convertionrate-box.webp"
                   alt="Shopify conversion rate optimization results"
                   width={600}
                   height={400}
@@ -268,6 +271,7 @@ export default function AboutPage() {
               >
                 <Image
                   src="/images/new-about-mobile-image_grande.webp"
+                  overrideSrc="/images/new-about-mobile-image_grande.webp"
                   alt="Mobile store view"
                   width={300}
                   height={520}
@@ -304,6 +308,7 @@ export default function AboutPage() {
                   >
                     <Image
                       src={logo.src}
+                      overrideSrc={logo.src}
                       alt={logo.alt}
                       width={220}
                       height={80}
@@ -775,6 +780,7 @@ export default function AboutPage() {
             <div className="culture-cell culture-cell--left">
               <Image
                 src="/images/culture_image_one_1024x1024.webp"
+                overrideSrc="/images/culture_image_one_1024x1024.webp"
                 alt="Ecomm Wizards Shopify Plus experts collaborating in the office"
                 width={1024}
                 height={1024}
@@ -784,6 +790,7 @@ export default function AboutPage() {
             <div className="culture-cell culture-cell--mid-top">
               <Image
                 src="/images/culture_image_two_1024x1024.webp"
+                overrideSrc="/images/culture_image_two_1024x1024.webp"
                 alt="A Shopify designer at the Ecomm Wizards Shopify design agency"
                 width={1024}
                 height={1024}
@@ -793,6 +800,7 @@ export default function AboutPage() {
             <div className="culture-cell culture-cell--mid-bottom">
               <Image
                 src="/images/culture_image_three_1024x1024.webp"
+                overrideSrc="/images/culture_image_three_1024x1024.webp"
                 alt="A Shopify developer on the Ecomm Wizards development team"
                 width={1024}
                 height={1024}
@@ -802,6 +810,7 @@ export default function AboutPage() {
             <div className="culture-cell culture-cell--right">
               <Image
                 src="/images/culture_image_four_1024x1024.webp"
+                overrideSrc="/images/culture_image_four_1024x1024.webp"
                 alt="The Ecomm Wizards ecommerce agency team at work"
                 width={1024}
                 height={1024}
@@ -1135,6 +1144,7 @@ export default function AboutPage() {
                     >
                       <Image
                         src={logo.src}
+                        overrideSrc={logo.src}
                         alt={logo.alt}
                         width={240}
                         height={115}
@@ -1335,6 +1345,7 @@ export default function AboutPage() {
                   >
                     <Image
                       src={badge.src}
+                      overrideSrc={badge.src}
                       alt={badge.label}
                       width={102}
                       height={102}
@@ -1374,6 +1385,7 @@ export default function AboutPage() {
           >
             <Image
               src="/images/new_image_grande.webp"
+              overrideSrc="/images/new_image_grande.webp"
               alt="Award winning team at Ecomm Wizards"
               width={1260}
               height={1233}
@@ -1550,6 +1562,7 @@ export default function AboutPage() {
               >
                 <Image
                   src={logo.src}
+                  overrideSrc={logo.src}
                   alt={logo.alt}
                   width={244}
                   height={76}
