@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 export type CaseStudySlide = {
@@ -66,10 +67,22 @@ export default function CaseStudySlider({ slides, intervalMs = 6000, showDots = 
       >
         {slides.map((s) => (
           <article key={s.key} className="ssd-results-slide" style={{ flex: `0 0 ${100 / total}%` }}>
-            {/* Left: image */}
+            {/* Left: image. next/image rather than a bare <img> because these
+                are full-size case-study hero photos rendering into a 600x423
+                slot: unoptimized, one of them was 244 KB for a slide nobody had
+                clicked to yet. overrideSrc keeps the clean, indexable path in
+                the src attribute while srcset carries the resized AVIF. */}
             <div className="ssd-results-slide-image">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={s.image} alt={s.alt ?? ""} loading="lazy" decoding="async" />
+              <Image
+                src={s.image}
+                overrideSrc={s.image}
+                alt={s.alt ?? ""}
+                width={600}
+                height={423}
+                sizes="(max-width: 1023px) 100vw, 600px"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
 
             {/* Right: content */}
