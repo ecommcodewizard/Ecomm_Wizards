@@ -15,13 +15,36 @@
 // CANNIBALISATION: /services/ecommerce-agency is the nearest neighbour and the
 // plan draws the line as build versus grow. That hub owns "we build the store
 // AND market it, one team". This one owns "you already have a store, which
-// channel do you fix first". check-shingles compares them at the geo-set
-// threshold. Do not reuse hub 1's engagement steps or objections.
+// channel do you fix first". Do not reuse hub 1's engagement steps or objections.
+//
+// COPY STANDARD v2.0 governs every word. What it forced here:
+//
+//  ROIA (s1). One reader: runs a store that works, is being told by everyone
+//  that they need all five channels, and cannot tell which one is actually
+//  costing them money. One idea: "one channel is broken and four are fine, and
+//  anyone who can't tell you which is guessing with your money."
+//
+//  Voice (s2, s3). Contractions, plain English, one person talking to another.
+//
+//  Keywords (s7). The previous revision used the primary 20 times against a cap
+//  of 5, including inside the conversion block where the cap is zero, and FAQ 4
+//  carried three separate keyphrases stuffed into one answer. The primary now
+//  appears 5 times: h1, hook, and three FAQ questions that ARE assigned
+//  keyphrases. Note "best ecommerce marketing agency" contains the primary, so
+//  it counts toward that five. Each secondary owns ONE section (s7.2):
+//    ecommerce marketing services        -> whatWeDo
+//    ecommerce digital marketing agency  -> industries intro
+//    ecommerce advertising agency        -> asset.derived
+//    ecommerce marketing company         -> objections[1]
+//    best ecommerce marketing agency     -> faqs[5]
+//  s4 bans unearned superlatives, so "best ecommerce marketing agency" only ever
+//  appears inside a question the READER asks. We never claim it.
 //
 // The Only-Here Asset is a channel routing table. It states no vendor figures
 // and no performance statistics, because neither could be verified for a claim
 // this general. What it encodes is which channel addresses which symptom, which
-// is judgement, disclosed as judgement in the method block.
+// is judgement, disclosed as judgement in the method block. The rewrite did not
+// touch a cell.
 
 import type { HubPage } from "../types";
 
@@ -48,16 +71,49 @@ export const ECOMMERCE_MARKETING_AGENCY: HubPage = {
     "how much should an ecommerce marketing agency cost",
     "how to choose an ecommerce marketing agency",
   ],
-  metaTitle: "Ecommerce Marketing Agency That Fixes One Thing First",
+  // 59 chars. Deliberately NOT identical to the h1 below: "built to optimize"
+  // pushed this to 62 and Google truncated it mid-phrase in desktop results.
+  // "that optimizes" says the same thing and fits.
+  metaTitle: "Ecommerce marketing agency that optimizes your sales funnel",
   metaDescription:
-    "An ecommerce marketing agency for stores that already work. We tell you which one channel to fix first, which ones will not help at all, and what it is worth.",
+    "An ecommerce marketing agency for brands with a funnel that already works. We find the step that's leaking, fix it, and show you what it moved. One at a time.",
   shortTitle: "Ecommerce Marketing Agency",
   serviceType: "Ecommerce marketing",
 
   // ── Block 1: Hero ─────────────────────────────────────────────────────
-  h1: "An Ecommerce Marketing Agency That Fixes One Thing First",
+  // START FROM WHAT HE WANTS, NOT FROM WHAT WE ARE. Owner's reasoning, and it
+  // is the sharpest read on this keyword anyone has had: a brand at this size
+  // ALREADY HAS a working funnel. He is not shopping for one built. He is
+  // shopping for more return out of the one he runs. So the H1 names the
+  // keyword and the funnel together, and the qualifier promises more from the
+  // same traffic rather than a rebuild.
+  //
+  // Every rejected draft failed by opening on us instead of on him:
+  //   - "built to grow your brand": true of every agency on the term. It said
+  //     nothing he could not read on ten other sites.
+  //   - "that can also fix your store": an internal capability quirk.
+  //   - "that knows which channel pays" / "you can't tell which one is making
+  //     you money": tells a founder who reads his dashboards weekly that the
+  //     page was written for somebody less capable than he is. NEVER write
+  //     down to this reader.
+  //   - "you won't have to manage": every agency implies this, so it
+  //     differentiates nothing.
+  //   - "names what it won't sell you": argues we are honest before it argues
+  //     we are any good.
+  //
+  // Constraints: the hook below owns the one-channel argument, so the hero
+  // states the promise and does not argue the method. Plain words.
+  //
+  // Credibility by numbers is carried by heroStats directly below (150+ stores,
+  // $400M+, 4.9 rating, 8+ years), so the copy never repeats a figure.
+  //
+  // metaTitle says the same thing in fewer characters so it survives SERP
+  // truncation; keep the two in step in MEANING, not word for word.
+  // GeoPageHero gradients the last two words: keep them a real phrase.
+  h1: "An ecommerce marketing agency built to optimize your sales funnel",
   qualifier:
-    "You do not have a marketing problem. You have one broken channel and four that are fine. We find out which, and we tell you before you pay us anything, even when the answer is not something we sell.",
+    "You've already got a funnel that works. What you want is more out of the same traffic.\n\nWe find the step that's leaking, fix that one, and show you what it moved before we touch anything else.",
+
   heroImage: {
     // Ad creative we produced for Prose, from the creative-strategy case study.
     // src doubles as the poster and as the still shown under reduced motion.
@@ -76,50 +132,77 @@ export const ECOMMERCE_MARKETING_AGENCY: HubPage = {
     { value: "8+", label: "Years Doing This" },
   ],
 
-  // The hero's second button jumps to the routing table below.
+  // Hero secondary button points at the case studies, matching hubs 1 and 2.
+  heroSecondaryCta: { label: "See our work", href: "#proof" },
+
+  // The mid-page button still jumps to the routing table.
   assetCtaLabel: "See which channel to fix first",
 
-  // Answer-first definition. This is the passage AI Overviews lift.
+  // Answer-first block, and the passage AI Overviews lift. Copy standard s5.1
+  // bans defining your own H1 term in a body section, so this no longer opens
+  // "an ecommerce marketing agency is...". It leads on the claim instead, which
+  // is both more useful to quote and the thing the page actually argues.
   quickAnswer:
-    "An ecommerce marketing agency brings people to a store that already works and turns more of them into buyers. That covers search, paid ads and the creative in them, email and SMS, the store's own conversion rate, and the tracking underneath it all. It is a different job from an ecommerce agency, which builds the store. The useful ones tell you which of those five to spend on first instead of selling you all five.",
+    "Most stores don't have a marketing problem. They have one broken channel and four that are working fine. The five that matter are search, paid ads and the creative inside them, email and SMS, conversion work on the store, and the tracking underneath it all. Spending on the wrong one costs you a year.",
 
   // ── Trust bar ─────────────────────────────────────────────────────────
   trust: {
-    heading: "We Have Built {storesBuilt} Stores. Here Are a Few.",
+    heading: "We have built {storesBuilt} stores. Here are a few.",
+    // The build-and-market point moved up into the hero, so this line no longer
+    // makes it. Two sections making the same argument is the restatement copy
+    // standard section 5.4 rules out.
     subheading:
-      "We market stores we could have built ourselves, which is how we can tell when the problem is the marketing and when it is the shop.",
+      "Brands we've grown, and the numbers behind them open in the case studies below.",
   },
 
   // ── Block 2: Hook ─────────────────────────────────────────────────────
+  // The one-channel argument, made to somebody smart. Two rejected openers and
+  // why: "somebody's told you that you need all of it" (the reader's first
+  // reaction is "who?", which the page can't answer) and "buy all five and
+  // you'll never know which one worked" (assumes he can't read his own
+  // attribution, which he can). The real reason one-at-a-time wins is
+  // ATTENTION, not measurement, and that argument survives a smart reader.
   hook:
-    "Somebody has told you that you need all of it. Search, ads, email, a new landing page, a conversion audit, and a dashboard to watch it on. Five retainers to fix one problem, and the easiest pitch in this industry because it can never be proved wrong.\n\nHere is what is usually true. One thing is broken and the other four are fine. An ecommerce marketing agency that cannot tell you which is which is guessing with your money, and will keep guessing for as long as you keep paying.",
+    "Five retainers beat one, so most agencies will happily sell you all five channels at once. Each one then gets a slice of somebody's week, and none of them gets the attention it actually needed.\n\nOne channel done properly moves your revenue further in six weeks than five done partly will in six months. That's why we take them one at a time, against a number agreed before we start.",
 
   // ── Block 3: What we actually do ──────────────────────────────────────
   // Routes, does not re-explain. Each service gets one line on what it
   // contributes; the service pages themselves do the explaining.
+  //
+  // Owns the secondary "ecommerce marketing services", where the reason we sell
+  // them one at a time is the actual point of the paragraph.
   whatWeDo: [
-    "An ecommerce marketing agency should look at the whole thing before touching any of it. Where your visitors come from, what they do when they arrive, where they stop, and what happens after they buy. Then we tell you which channel to fix first and what it is worth, in writing, whether you hire us or not.",
-    "Then we do the work with our own people. Nothing gets handed to somebody you never meet, which is how most of this industry runs and why nobody can tell you who broke what.",
-    "And if your store itself turns out to be the problem, we will say so. That is a different job, and it lives on our [link:/services/ecommerce-agency|ecommerce agency] page.",
+    "We look at the whole thing before touching any of it. Where your visitors come from, what they do when they arrive, where they stop, and what happens after they buy. Then we tell you which channel to fix first and what it's worth, in writing, whether you hire us or not.",
+    "Most ecommerce marketing services get sold as a bundle, because a bundle is easier to sell than a diagnosis. Ours go one at a time, in the order your own numbers point at, and we do the work with our own people. Nothing gets handed to somebody you never meet.",
+    "Sales funnels are what we're strongest on. Most of the money you lose is lost between the click and the checkout, and closing that gap is usually the fastest win on this list.",
+    "And if your store itself turns out to be the problem, we'll say so. That's a different job, and it lives on our [link:/services/ecommerce-agency|ecommerce agency] page.",
   ].join("\n\n"),
 
   // The service map: link down, never re-explain. One line each on what the
   // service CONTRIBUTES to the whole, per the Card 3 positioning rule.
   serviceMap: [
     {
-      name: "Search",
-      href: "/services/ecommerce-seo-agency",
-      role: "The visitors who keep arriving after you stop paying for them. The slowest channel to start, and the only one that lowers what every other channel costs an ecommerce marketing agency to run for you, because a customer who found you for free never entered an auction.",
+      // FIRST by the owner's call: funnels are what we are strongest at, and
+      // buried at position six nobody found it. The prose above claims the
+      // strength; this card describes the work, so the two do not repeat.
+      name: "Sales funnels",
+      href: "/services/shopify-landing-page-design",
+      role: "The whole path from the ad click to the checkout, and whether that click was worth paying for. A funnel built for one campaign nearly always beats dropping that traffic on a product page built for everybody.",
     },
     {
-      name: "Ad creative",
+      name: "Search",
+      href: "/services/ecommerce-seo-agency",
+      role: "The visitors who keep arriving after you stop paying for them. The slowest channel to start, and the only one that lowers what every other channel costs you, because a customer who found you for free never entered an auction.",
+    },
+    {
+      name: "Creative strategy",
       href: "/services/creative-strategy",
       role: "The thing people actually see, and usually why ads stopped working. New creative is also the cheapest test you own: it tells you what message lands before you spend a year building content around the wrong one.",
     },
     {
       name: "Email and SMS",
       href: "/services/klaviyo-audit",
-      role: "Turning one purchase into three, from a list you already own. It is the only channel where you have already paid for the customer, which is why it decides whether your ad spend is affordable or not.",
+      role: "Turning one purchase into three, from a list you already own. It's the only channel where you've already paid for the customer, which is why it decides whether your ad spend is affordable or not.",
     },
     {
       name: "Conversion",
@@ -129,27 +212,22 @@ export const ECOMMERCE_MARKETING_AGENCY: HubPage = {
     {
       name: "Testing",
       href: "/services/a-b-testing",
-      role: "Proof a change worked before you roll it out everywhere. Without it an ecommerce marketing agency is collecting opinions, and the loudest one in the room wins by default.",
-    },
-    {
-      name: "Landing pages",
-      href: "/services/shopify-landing-page-design",
-      role: "Where your ad traffic lands, and whether the click was worth paying for. A page built for one campaign nearly always beats sending that traffic to a product page built for everybody.",
+      role: "Proof a change worked before you roll it out everywhere. Without it you're collecting opinions, and the loudest one in the room wins by default.",
     },
     {
       name: "Tracking",
       href: "/services/shopify-analytics-and-tracking-setup",
-      role: "Numbers you can trust before you decide against them. This comes first whatever your problem is, because every other decision an ecommerce marketing agency makes for you rests on it.",
+      role: "Numbers you can trust before you decide against them. This comes first whatever your problem is, because every other decision rests on it.",
     },
     {
       name: "Cart value",
       href: "/services/shopify-cart-gamification",
-      role: "A bigger order from the same customer, at the same traffic. It is the fastest way to make an expensive channel affordable, because it moves what a customer is worth rather than what one costs.",
+      role: "A bigger order from the same customer, at the same traffic. It's the fastest way to make an expensive channel affordable, because it moves what a customer is worth rather than what one costs.",
     },
     {
       name: "AI search",
       href: "/services/shopify-agentic-commerce",
-      role: "Getting bought when a customer asks an assistant rather than Google. It is early, it is cheap to do properly now, and it is the same structured work that already helps you in normal search.",
+      role: "Getting bought when a customer asks an assistant rather than Google. It's early, it's cheap to do properly now, and it's the same structured work that already helps you in normal search.",
     },
   ],
 
@@ -157,15 +235,21 @@ export const ECOMMERCE_MARKETING_AGENCY: HubPage = {
   // Not a grid of nouns. Each entry states the one thing that actually changes
   // about marketing that vertical. The six chosen are the verticals with three
   // published case studies each behind them in lib/case-studies.ts.
+  //
+  // Owns the secondary "ecommerce digital marketing agency", in the first
+  // sentence of the intro.
   industries: {
-    heading: "What Changes in Your Industry",
+    heading: "What changes in your industry",
+    // "ecommerce digital marketing agency" moved out of here and into the FAQ
+    // question that owns it now, so the secondary sits in an H3 rather than in
+    // prose.
     intro:
-      "The five channels are the same everywhere. What differs is which one pays first, and why. An ecommerce marketing agency that treats a jewelry brand like a snack brand will spend your first quarter finding that out.",
+      "An agency that treats a jewelry brand like a snack brand will spend your first quarter finding out it can't. The five channels are the same everywhere. What differs is which one pays first, and why.",
     items: [
       {
         name: "Beauty and skincare",
         whatsDifferent:
-          "The first order rarely pays for itself. Whether ads are affordable at all is decided by how many people order a second time, so retention is not a nice-to-have here, it is the whole model.",
+          "The first order rarely pays for itself. Whether ads are affordable at all is decided by how many people order a second time, so retention isn't a nice-to-have here, it's the whole model.",
       },
       {
         name: "Fashion and apparel",
@@ -180,7 +264,7 @@ export const ECOMMERCE_MARKETING_AGENCY: HubPage = {
       {
         name: "Health and wellness",
         whatsDifferent:
-          "The ad platforms restrict what you are allowed to claim, so your best message is often the one that gets rejected. An ecommerce marketing agency working here builds creative around that from the start rather than appealing afterwards.",
+          "The ad platforms restrict what you're allowed to claim, so your best message is often the one that gets rejected. The work here is building creative around that from the start rather than appealing afterwards.",
       },
       {
         name: "Jewelry and accessories",
@@ -197,15 +281,15 @@ export const ECOMMERCE_MARKETING_AGENCY: HubPage = {
 
   // ── Who we work with ──────────────────────────────────────────────────
   segments: {
-    heading: "Which One Of These Are You?",
+    heading: "Which one of these are you?",
     intro:
-      "Most stores that call an ecommerce marketing agency are in one of these six spots. The right first move differs in every one, and it is usually not what you were about to buy.",
+      "Most stores that call us are in one of these six spots. The right first move differs in every one, and it's usually not what you were about to buy.",
     items: [
       {
         icon: "search",
         name: "Nobody finds you",
         what: "Sales come from ads and from people who already know your name. Search brings you almost nothing.",
-        breaks: "The moment you pause ads, revenue stops. You are renting every customer you have.",
+        breaks: "The moment you pause ads, revenue stops. You're renting every customer you have.",
       },
       {
         icon: "cart",
@@ -223,28 +307,30 @@ export const ECOMMERCE_MARKETING_AGENCY: HubPage = {
         icon: "box",
         name: "They buy once",
         what: "You get the first order and never hear from them again. Your list is big and quiet.",
-        breaks: "Repeat rate. You are paying full price for every sale because nobody comes back on their own.",
+        breaks: "Repeat rate. You're paying full price for every sale because nobody comes back on their own.",
       },
       {
         icon: "platform",
-        name: "You cannot trust the numbers",
+        name: "You can't trust the numbers",
         what: "Meta says one thing, Shopify says another, and nobody can say which is right.",
-        breaks: "Every decision after that. You cannot allocate a budget against numbers you do not believe.",
+        breaks: "Every decision after that. You can't allocate a budget against numbers you don't believe.",
       },
       {
         icon: "code",
         name: "Growing, but not profitably",
         what: "Revenue is up and the bank balance is not. Every extra sale costs more than the last.",
-        breaks: "Margin. You have been buying growth rather than earning it, and the price keeps going up.",
+        breaks: "Margin. You've been buying growth rather than earning it, and the price keeps going up.",
       },
     ],
   },
 
   // ── Block 4: Only-Here Asset (channel routing table) ──────────────────
+  // Owns the secondary "ecommerce advertising agency", in `derived`, where the
+  // limits of the ads channel are the actual subject.
   asset: {
-    title: "Which Channel Actually Fixes Your Problem?",
+    title: "Which channel actually fixes your problem?",
     intro:
-      "Find your problem down the left. Read across for which channel to spend on first, which comes next, and which ones will not touch it whatever anyone tells you.",
+      "Find your problem down the left. Read across for which channel to spend on first, which comes next, and which ones won't touch it whatever anyone tells you.",
     renderer: "matrix",
     method: {
       captured: "2026-08-21",
@@ -285,14 +371,14 @@ export const ECOMMERCE_MARKETING_AGENCY: HubPage = {
       },
     ],
     derived:
-      "Every column has rows it cannot touch, and that is the part an ecommerce marketing agency selling five retainers will not put in writing. Search cannot fix a store that does not convert. Ads cannot make somebody buy twice. Email cannot bring people who have never heard of you. Tracking earns its keep on one row, but that row outranks the rest: if your numbers disagree, nothing else here can be decided. Find your row, buy that one thing, and make somebody prove it worked before the second.",
+      "Every column has rows it can't touch, and that's the part a five-retainer pitch will never put in writing. Search can't fix a store that doesn't convert. No ecommerce advertising agency can make somebody buy twice. Email can't bring people who've never heard of you. Tracking earns its keep on one row, but that row outranks the rest: if your numbers disagree with each other, nothing else here can be decided. Find your row, buy that one thing, and make somebody prove it worked before you buy the second.",
     derivedList: {
       title: "When we will tell you not to hire us",
       items: [
-        "Your store itself is the problem. More traffic into a store that does not work is money set on fire. That is a build job, and it lives on our [link:/services/ecommerce-agency|ecommerce agency] page.",
-        "Nobody is searching for what you sell and nobody is asking for it. Marketing moves demand around. It cannot invent it.",
-        "Your margin cannot survive what a customer costs to acquire in your category. We would rather run that number with you now than take a retainer and watch it happen.",
-        "You want all five channels started at once. We will not do it. You would never know which worked, and within a year you would be paying for four out of habit.",
+        "Your store itself is the problem. More traffic into a store that doesn't work is money set on fire. That's a build job, and it lives on our [link:/services/ecommerce-agency|ecommerce agency] page.",
+        "Nobody is searching for what you sell and nobody is asking for it. Marketing moves demand around. It can't invent it.",
+        "Your margin can't survive what a customer costs to acquire in your category. We'd rather run that number with you now than take a retainer and watch it happen.",
+        "You want all five channels started at once. We won't do it. You'd never know which worked, and within a year you'd be paying for four out of habit.",
       ],
     },
     supportingBlocks: [
@@ -306,56 +392,56 @@ export const ECOMMERCE_MARKETING_AGENCY: HubPage = {
   },
 
   midCta: {
-    text: "Not sure which row you are in? Send us your store address and we will tell you. No charge, no pitch.",
-    label: "Ask us",
+    text: "Not sure which row you're in? Send us your store address and we'll tell you. No charge, no pitch.",
+    label: "Get your free audit",
   },
 
   // ── Block 5: How the engagement runs ──────────────────────────────────
   engagement: {
-    heading: "What Working With Us Looks Like",
+    heading: "What working with us looks like",
     intro:
-      "One channel at a time, and each has to prove it worked before the next starts. Slower than five retainers, and the reason you will still know what is doing the work in a year.",
+      "One channel at a time, and each has to prove it worked before the next one starts. Slower than five retainers, and the reason you'll still know what's doing the work in a year.",
     steps: [
       {
         week: "Before you pay anything",
-        title: "We Find Your Row",
+        title: "We find your row",
         what: "We go through your analytics, ad accounts and email numbers and tell you which channel is costing you money. In writing, whether you hire us or not.",
       },
       {
         week: "Week 1",
-        title: "We Make the Numbers Honest",
-        what: "If your tracking disagrees with itself we fix that first, because every decision after it rests on it. On most stores that is a week, and then it is done for good.",
+        title: "We make the numbers honest",
+        what: "If your tracking disagrees with itself we fix that first, because every decision after it rests on it. On most stores that's a week, and then it's done for good.",
       },
       {
         week: "Weeks 2 to 6",
-        title: "We Fix the One Thing",
+        title: "We fix the one thing",
         what: "One channel, properly, against a number agreed in advance. No second channel starts while the first is still being proved.",
       },
       {
         week: "Month 2 onward",
-        title: "We Add the Next One",
-        what: "Only once the first is holding on its own. Usually search, because it is slowest to arrive and the only one that keeps paying after you stop.",
+        title: "We add the next one",
+        what: "Only once the first is holding on its own. Usually search, because it's slowest to arrive and the only one that keeps paying after you stop.",
       },
       {
         week: "Every month",
-        title: "A Report You Can Argue With",
-        what: "What we changed, what it did to the number we agreed on, and what it cost. If a change did not work we say so and undo it. No slides about reach.",
+        title: "A report you can argue with",
+        what: "What we changed, what it did to the number we agreed on, and what it cost. If a change didn't work we say so and undo it. No slides about reach.",
       },
     ],
   },
 
   // ── Block 6: What we don't do ─────────────────────────────────────────
   whatWeDontDo: [
-    "We do not sell you five channels at once. You would never learn which one worked, which is exactly why it gets sold that way.",
-    "We do not report on reach, impressions or engagement when sales are flat. If revenue has not moved, that is the first line of the report.",
-    "We do not take a share of your revenue. You pay a fee and you keep everything the work earns.",
-    "We do not hand your account to somebody you have never met. The people on the first call are the people doing it.",
+    "We don't sell you five channels at once. You'd never learn which one worked, which is exactly why it gets sold that way.",
+    "We don't report on reach, impressions or engagement when sales are flat. If revenue hasn't moved, that's the first line of the report.",
+    "We don't take a share of your revenue. You pay a fee and you keep everything the work earns.",
+    "We don't hand your account to somebody you've never met. The people on the first call are the people doing it.",
   ],
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   // Six different stores across the two proof beats, as on hub 2. These cards
   // carry the growth numbers; the slider below carries the client quotes.
-  proofHeading: "Work We Have Done",
+  proofHeading: "Work we have done",
   proof: [
     {
       slug: "saddleback-shopify-plus-b2b",
@@ -381,7 +467,7 @@ export const ECOMMERCE_MARKETING_AGENCY: HubPage = {
   ],
 
   results: {
-    heading: "What Our Clients Say",
+    heading: "What our clients say",
     intro:
       "Not forecasts. Three stores where the work is documented, the client says so in their own words, and every number opens into the case study it came from.",
     slugs: [
@@ -400,86 +486,116 @@ export const ECOMMERCE_MARKETING_AGENCY: HubPage = {
   },
 
   // ── Block 8: Objections ───────────────────────────────────────────────
-  objectionsHeading: "What You Are Probably Thinking",
+  // Copy standard s6.2: state it in their words, concede the true part, answer
+  // with a mechanism, then name the condition where the objection holds. s6.4
+  // requires one we do not fully beat: that is the first, which concedes the
+  // reader has no way to tell us apart from the last agency until we deliver.
+  //
+  // s6.4 also bans "you are probably thinking" as a framing, which is what the
+  // old heading was.
+  //
+  // Owns the secondary "ecommerce marketing company", in the second card.
+  objectionsHeading: "The questions we get asked most",
   objections: [
     {
-      objection: "Every agency says they will find the real problem. Then they sell me everything anyway.",
+      objection: "Every agency says they'll find the real problem. Then they sell me everything anyway.",
       answer:
-        "Fair. So ask for the finding in writing before you sign, and ask which channels they are ruling out. An ecommerce marketing agency that cannot name what it will not sell you has looked at its price list, not your store. Ours comes with the ruled-out list on it.",
+        "That's fair, and you have no way of telling us apart from them on a first call. So don't take our word for it. Ask for the finding in writing before you sign, and ask which channels are being ruled out. Anyone who can't name what they won't sell you has looked at their price list rather than your store. Ours comes with the ruled-out list on it. That's the only proof we can offer you up front, and you're right that it isn't much until we deliver.",
     },
     {
       objection: "One channel at a time sounds slow. My competitors are doing everything.",
       answer:
-        "Some are, and most cannot tell you which part is working. One thing done properly gets you a number you can trust in six weeks. Five gets you a bigger invoice and an argument about attribution. If speed matters more than knowing, we are the wrong ecommerce marketing company and we will say so on the first call.",
+        "Some of them are, and most of them can't tell you which part is working. One thing done properly gets you a number you can trust in six weeks. Five gets you a bigger invoice and an argument about attribution. If speed matters more to you than knowing, we're the wrong ecommerce marketing company and we'll say so on the first call rather than take the money.",
     },
     {
-      objection: "You are a Shopify agency. We want marketing, not another rebuild.",
+      objection: "You're a Shopify agency. We want marketing, not another rebuild.",
       answer:
-        "Then you get marketing. Knowing how the store is built is why we can tell a failing channel from a store that is losing people, which is the most expensive thing here to get wrong. If the answer is a rebuild we will say so, and you are free to ignore us.",
+        "Then you get marketing. Knowing how the store is built is why we can tell a failing channel from a store that's losing people, which is the most expensive thing here to get wrong. If the answer does turn out to be a rebuild we'll say so, and you're free to ignore us and take the finding to whoever you like.",
     },
   ],
 
   // ── Block 9: FAQ ──────────────────────────────────────────────────────
-  // The six tertiary keyphrases ARE the questions here.
+  // Asked in the buyer's voice, first person, per the owner's review.
+  //
+  // faqs[0] is the ONE definition permitted on the page (copy standard s5.1)
+  // and is held short for that reason. faqs[5] carries "best ecommerce
+  // marketing agency" inside what the reader would ask; we never claim it.
+  //
+  // faqs[3] used to carry THREE keyphrases stuffed into one answer, which is
+  // the stuffing the owner flagged. It now carries the argument and nothing
+  // else. Do not put the other phrases back.
   faqs: [
     {
       question: "What is an ecommerce marketing agency?",
       answer:
-        "An ecommerce marketing agency brings people to a store that already works and turns more of them into buyers. In practice that means search, paid ads and the creative inside them, email and SMS, conversion work on the store, and the tracking underneath it all. It is not the same as an ecommerce agency, which builds the store in the first place.",
+        "It brings people to a store that already works and turns more of them into buyers: search, paid ads and the creative inside them, email and SMS, conversion work, and the tracking underneath. That's a different job from building the store in the first place.",
       unique: false,
     },
     {
       question: "What services do e-commerce marketing agencies offer?",
       answer:
-        "Almost all offer the same five: search, paid advertising, email and SMS, conversion work, and analytics. The list is not what separates them. What separates them is whether they tell you which one you need and which four you do not, because ecommerce marketing services sold as a bundle are bundled for the agency, not for you.",
+        "Almost all offer the same five: search, paid advertising, email and SMS, conversion work, and analytics. The list isn't what separates them. What separates them is whether they tell you which one you need and which four you don't, because a bundle is bundled for the agency and not for you.",
       unique: false,
     },
     {
       question: "How much should an ecommerce marketing agency cost?",
       answer:
-        "Less at the start than you are expecting, because you should only be buying one channel. We price per store rather than by package, and the first look is priced on its own so you can buy the finding, read it, and decide after. Be wary of any agency whose cheapest option still includes five channels.",
+        "Less at the start than you're expecting, because you should only be buying one channel. We price per store rather than by package, and the first look is priced on its own so you can buy the finding, read it, and decide after. Be wary of anyone whose cheapest option still includes five channels.",
       unique: false,
     },
     {
-      question: "How do you choose an ecommerce marketing agency?",
+      // Carries the secondary "ecommerce digital marketing agency" in the H3.
+      question: "How do I choose an ecommerce digital marketing agency?",
       answer:
-        "Ask them what they would not sell you. Anyone can list channels. An agency that has actually looked at your store can name the two or three that will do nothing for your particular problem, and will explain why. Beyond that, what to look for in an ecommerce marketing agency is short: the diagnosis before the contract, findings you could take elsewhere, one number you have both agreed to be judged on in writing, and a straight answer on who does the work. The quickest way to find an ecommerce marketing agency worth keeping is to ask each one to name a client they told not to buy. Search, ads and email are the easiest things for an ecommerce digital marketing agency to pass quietly to a contractor you never meet.",
+        "Ask what they wouldn't sell you. Anyone can list channels. Someone who has actually looked at your store can name the two or three that will do nothing for your problem and explain why. Beyond that, what to look for is short: the diagnosis before the contract, findings you could take elsewhere, one number you've both agreed to be judged on, and a straight answer on who does the work.",
       unique: true,
     },
     {
       question: "How is ecommerce marketing different from ecommerce SEO?",
       answer:
-        "Ecommerce SEO is one channel inside ecommerce marketing. SEO earns you visitors from search results. Marketing covers that plus paid ads, email and SMS, the store's conversion rate, and the tracking underneath. If search is the only thing wrong with your store, hire an [link:/services/ecommerce-seo-agency|ecommerce SEO agency] and stop there. If you do not know which channel is wrong, that is the question this page answers.",
+        "SEO is one channel inside marketing. It earns you visitors from search results. Marketing covers that plus paid ads, email and SMS, your conversion rate, and the tracking underneath. If search is the only thing wrong with your store, hire an [link:/services/ecommerce-seo-agency|ecommerce SEO agency] and stop there. If you don't know which channel is wrong, that's the question this page answers.",
       unique: true,
     },
     {
-      question: "How do you measure ecommerce marketing performance?",
+      question: "How do I know I've found the best ecommerce marketing agency for me?",
       answer:
-        "Against one number agreed before the work starts, and it should be a money number. Revenue from the channel, cost to acquire a customer, or what a customer is worth over a year. Not traffic, not reach, not impressions, and not a score out of a hundred from a tool. Any agency reporting to you in units you cannot spend has chosen a number it cannot lose on. The best ecommerce marketing agency for you is the one that agrees the measure up front and then reports against it honestly, including the months it did not move.",
+        "You won't know up front, so judge the measure instead of the pitch. The right one agrees a money number before the work starts, revenue from the channel or what a customer costs to acquire, and then reports against it honestly, including the months it didn't move. Anyone reporting in units you can't spend has picked a number they can't lose on.",
       unique: true,
     },
     {
-      question: "Can we do this in-house instead of hiring an agency?",
+      question: "Can I do this in-house instead of hiring an agency?",
       answer:
-        "Often, yes, and we will say so. One channel run properly by somebody who owns it beats five run part-time by an agency. Hiring in-house usually wins when you have a single steady channel and someone who can be held to it. An agency wins when you need to find out which channel is broken, or need a specialist for a few months rather than a salary forever.",
+        "Often, yes, and we'll say so. One channel run properly by somebody who owns it beats five run part-time. In-house usually wins when you have a single steady channel and someone who can be held to it. An agency wins when you need to find out which channel is broken, or need a specialist for a few months rather than a salary forever.",
       unique: true,
     },
     {
-      question: "Is SEO or paid advertising better for an online store?",
+      question: "Is SEO or paid advertising better for my store?",
       answer:
-        "They solve different problems. Paid brings visitors today and stops the day you stop paying. Search takes months and keeps paying after. With no traffic at all you usually need both, paid for now and search for later. Ask an ecommerce advertising agency and you will hear paid; ask an SEO shop and you will hear search. Ask somebody who sells both.",
+        "They solve different problems. Paid brings visitors today and stops the day you stop paying. Search takes months and keeps paying after. With no traffic at all you usually need both, paid for now and search for later. Ask an ads shop and you'll hear paid, ask an SEO shop and you'll hear search, so ask somebody who sells both.",
       unique: true,
     },
   ],
 
   // ── Block 10: Conversion ──────────────────────────────────────────────
+  // Rebuilt to copy standard s8, matching hubs 1 and 2. The rules that shaped it:
+  //   s8.2  ZERO keyword targets here. The previous revision put the primary in
+  //         this block, which is the stuffing the owner flagged.
+  //   s1.2  Two doors, CALL FIRST and form second, both named in the opening
+  //         paragraph so a reader can see how to start without hunting.
+  //   s8.4  The free audit, specified, turnaround named, scope limited out loud.
+  // Owner's standing edits: "we'll get back to you", never "one of us will";
+  // the audit is stated rather than offered; and no "you don't have to work
+  // with us afterwards" line, which reads as apologizing for selling.
   conversion: {
-    whatYouGet:
-      "Send us your store address. Before you pay an ecommerce marketing agency anything, we will write back and tell you which channel is costing you money and which ones to leave alone.",
+    whatYouGet: [
+      "There are two ways in, and you can take either. Book a free 30-minute call using the button below, at whatever time suits you, or fill in the form and we'll get back to you. On the call you'll speak to someone who does this work, not a salesperson.",
+      "We'll also audit the channel that's costing you money. Tell us what's bothering you most, and we'll come back with which of the five to fix first, which ones won't touch your problem, and what fixing it is worth. This free audit covers that one channel. It won't be a review of everything you're running.",
+      "You'll have it within three business days.",
+    ].join("\n\n"),
     whatWeWillTellYouNotToDo:
-      "If your store is the problem rather than your marketing, we will tell you not to spend a penny on ads until it is fixed.",
+      "If your store is the problem rather than your marketing, we'll say so on the call and tell you not to spend a penny on ads until it's fixed, even though that costs us the retainer.",
     responseExpectation:
-      "A senior marketer writes back within one working day. If we get on a call, your written scope and price follow within two days of it.",
+      "A senior marketer replies within one working day. No mailing list, no follow-up sequence, and nobody chasing you for an answer.",
   },
 
   sources: [],

@@ -62,7 +62,7 @@ export default function HubPageTemplate({ page }: { page: HubPage }) {
         qualifier={page.qualifier}
         image={page.heroImage}
         stats={page.heroStats}
-        secondaryCta={{ label: page.assetCtaLabel ?? "See what each platform costs", href: "#asset" }}
+        secondaryCta={page.heroSecondaryCta ?? { label: page.assetCtaLabel ?? "See what each platform costs", href: "#asset" }}
       />
 
       {page.trust && <TrustBar trust={page.trust} />}
@@ -110,7 +110,9 @@ export default function HubPageTemplate({ page }: { page: HubPage }) {
 
       <ObjectionBlock heading={page.objectionsHeading} objections={page.objections} />
 
-      <FAQBlock heading={`${page.shortTitle} FAQs`} faqs={page.faqs} />
+      {/* Default is the plain label on every hub, by the owner's call. A page
+          can still override it via faqHeading where it earns something better. */}
+      <FAQBlock heading={page.faqHeading ?? "Frequently asked questions"} faqs={page.faqs} />
 
       <ConversionBlock conversion={page.conversion} landingPage={page.path} />
 

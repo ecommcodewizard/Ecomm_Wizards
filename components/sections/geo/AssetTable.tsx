@@ -157,7 +157,12 @@ export default function AssetTable({ renderer, columns, rows, caption, id }: Ass
           .ga-wrap { font-family: 'Poppins', sans-serif; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; background: #ffffff; max-width: 100%; }
           .ga-wrap:focus-visible { outline: 3px solid #3DC77A; outline-offset: 2px; }
           .ga-table { width: 100%; border-collapse: collapse; font-size: 15px; color: #0f172a; }
-          .ga-caption { caption-side: top; text-align: left; font-size: 13px; font-weight: 600; color: #334155; padding: 12px 14px; background: #ffffff; border-bottom: 1px solid rgba(0,0,0,0.08); }
+          /* Screen-reader only. OnlyHereAsset passes asset.title as the caption,
+             so rendering it visibly printed the section's own H2 a second time
+             directly under itself, which is the restatement Copy Standard v2.0
+             section 5.4 rules out. The element stays in the DOM because it is
+             the table's accessible name; it is only hidden from sight. */
+          .ga-caption { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
           .ga-th { background: #0f172a; font-size: 13px; font-weight: 700; letter-spacing: .04em; color: #ffffff; text-align: left; padding: 16px 18px; border-bottom: none; white-space: nowrap; min-width: 150px; vertical-align: middle; }
           .ga-th--label { min-width: 180px; }
           .ga-rowlabel, .ga-td { padding: 16px 18px; border-bottom: 1px solid rgba(0,0,0,0.07); vertical-align: middle; text-align: left; line-height: 1.5; min-width: 150px; }
@@ -202,7 +207,7 @@ export default function AssetTable({ renderer, columns, rows, caption, id }: Ass
 
           @media (max-width: 640px) {
             .ga-table { font-size: 14px; }
-            .ga-caption, .ga-th, .ga-rowlabel, .ga-td { padding: 10px 12px; }
+            .ga-th, .ga-rowlabel, .ga-td { padding: 10px 12px; }
           }
         `,
         }}

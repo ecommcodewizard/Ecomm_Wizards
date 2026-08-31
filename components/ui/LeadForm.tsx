@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 
 // Embedded lead form for the geo programme conversion block. Posts to the shared
 // /api/lead pipeline as a "contact" lead with the landing page path attached
-// for attribution. Six fields per spec: name, work email, company, website URL
-// (the qualifying field), budget range, and an optional free-text line.
+// for attribution. Six fields: name, work email, company, website URL (the
+// qualifying field), budget range, and the bottleneck question (see below).
 //
 // Anti-spam: a hidden honeypot (_gotcha) plus a mount timestamp (ts). The API
 // drops submissions where ts is missing or under 3s old.
@@ -188,9 +188,17 @@ export default function LeadForm({ landingPage, budgetBands, idPrefix = "glf", s
         {errors.budget && <span id={id("budget-err")} className="glf-err">{errors.budget}</span>}
       </div>
 
+      {/* The bottleneck question (Copy Standard v2.0 section 8.4). It is the
+          highest-value field in the form: the answer names the service, the
+          urgency and usually the budget before the call starts, and it is what
+          the conversion copy promises to audit. Still OPTIONAL and still posting
+          to the existing project_details column, because making it required and
+          giving it its own column is a validation + schema change the owner
+          deferred. Wiring that up is the follow-up. */}
       <div className="glf-field">
-        <label htmlFor={id("details")} className="glf-label">Anything else</label>
-        <textarea id={id("details")} name="project_details" rows={4} value={values.details} onChange={set("details")} className="glf-input" />
+        <label htmlFor={id("details")} className="glf-label">What is the one thing hurting your store most?</label>
+        <textarea id={id("details")} name="project_details" rows={4} value={values.details} onChange={set("details")}
+          placeholder="e.g. our checkout converts at half what it should" className="glf-input" />
       </div>
 
       {/* honeypot */}

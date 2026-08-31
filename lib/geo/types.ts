@@ -332,6 +332,11 @@ const BaseSchema = z.object({
    *  Defaults to the platform-cost wording, which is only right on a page whose
    *  asset is a cost table. Set it to describe THIS page's asset. */
   assetCtaLabel: z.string().min(1).optional(),
+  /** Optional override for the hero's secondary button, when it should point
+   *  somewhere other than the Only-Here Asset (e.g. "#proof"). Takes precedence
+   *  over assetCtaLabel. Present so a page can send the secondary CTA at its
+   *  case studies without changing where the other hubs' heroes point. */
+  heroSecondaryCta: z.object({ label: z.string().min(1), href: z.string().min(1) }).optional(),
   /** One-line conversion prompt rendered directly under the Only-Here Asset,
    *  where reader intent peaks. Keep it a question or an offer, not a slogan. */
   midCta: z.object({ text: z.string().min(1), label: z.string().min(1) }).optional(),
@@ -340,6 +345,10 @@ const BaseSchema = z.object({
    *  reads as a placeholder. */
   proofHeading: z.string().min(1),
   objectionsHeading: z.string().min(1),
+  /** Optional FAQ section heading. Defaults to "<shortTitle> FAQs", which is
+   *  accurate and completely generic; set this where the page deserves a line
+   *  a human would actually say. */
+  faqHeading: z.string().min(1).optional(),
   /** 2-3 when published (validatePage enforces); may be empty while the client
    *  verification table is incomplete, since `verified: true` cannot be set
    *  honestly before then. */

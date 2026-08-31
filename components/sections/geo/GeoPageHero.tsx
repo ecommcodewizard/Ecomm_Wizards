@@ -26,7 +26,11 @@ type Props = {
   stats?: { value: string; label: string }[];
 };
 
-const DEFAULT_PRIMARY: Cta = { label: "Get in touch", href: "#contact" };
+// Copy Standard v2.0 section 1.4: one CTA label, used consistently, and it
+// names what the reader gets rather than what we want. This button does not
+// book anything itself; it carries the reader to the conversion block, which is
+// the only place the offer is asked for and where both doors live.
+const DEFAULT_PRIMARY: Cta = { label: "Talk to us", href: "#contact" };
 
 /** Split the H1 so the last two words can carry the gradient. Two words or
  *  fewer: the whole heading is the gradient span. */
