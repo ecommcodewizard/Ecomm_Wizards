@@ -7,6 +7,7 @@ import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/Case
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
+import { publishedGeoForHub } from "@/lib/geo/registry";
 import CalEmbed from "@/app/book-shopify-consultation/CalEmbed";
 
 const META_DESCRIPTION =
@@ -417,6 +418,8 @@ const WarnIcon = () => (
     <path d="M9 6v4M9 12v.5" stroke="#f59e0b" strokeWidth="1.8" strokeLinecap="round" />
   </svg>
 );
+
+const GEO_CHILDREN = publishedGeoForHub("/services/shopify-development-agency");
 
 export default function Page() {
   return (
@@ -1198,6 +1201,35 @@ export default function Page() {
           .std-hero-stat-label { font-size: 11px !important; }
         }
       `}} />
+
+      {/* Hub-down links to the geo pages under this hub. Reads the registry, so
+          a geo page appears here the moment it flips to published and never
+          before; nothing renders while the list is empty. Without this the geo
+          pages launch with no inbound internal link anywhere on the site. */}
+      {GEO_CHILDREN.length > 0 ? (
+        <section style={{ background: C_WHITE, padding: "0 20px 56px" }} aria-labelledby="sda-geo-heading">
+          <div style={{ maxWidth: 1320, margin: "0 auto", borderTop: "1px solid #e5e7eb", paddingTop: 28 }}>
+            <h2 id="sda-geo-heading" style={{ fontSize: 15, fontWeight: 700, color: "#0f172a", margin: "0 0 12px" }}>
+              Markets we write about
+            </h2>
+            <ul style={{ display: "flex", flexWrap: "wrap", gap: "10px 12px", listStyle: "none", margin: 0, padding: 0 }}>
+              {GEO_CHILDREN.map((g) => (
+                <li key={g.path}>
+                  <Link
+                    href={g.path}
+                    style={{
+                      display: "inline-block", fontSize: 14, color: "#0f172a", textDecoration: "none",
+                      border: "1px solid #e5e7eb", borderRadius: 9999, padding: "7px 15px",
+                    }}
+                  >
+                    {g.shortTitle}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
 
       <RelatedServices current="/services/shopify-development-agency" />
 
