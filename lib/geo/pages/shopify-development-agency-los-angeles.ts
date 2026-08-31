@@ -75,7 +75,7 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   slug: "los-angeles",
   path: "/services/shopify-development-agency/los-angeles",
   hub: "/services/shopify-development-agency",
-  status: "draft",
+  status: "published",
 
   geo: {
     name: "Los Angeles",
@@ -663,6 +663,16 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   //     no methodology, no date anywhere.
   //   "4,000+ businesses in the Fashion District" - aggregator sites only.
 
-  // Section 2.2: geo pages run 1,300-1,700 words.
-  wordCountTarget: [1300, 1700],
+  // Page Spec section 2.2 sets 1,300-1,700 for a geo page, and that number
+  // describes the bare eleven-block spine. This page is not that shape: it also
+  // carries a trust bar, a quick answer, a search-intent block, a ten-item
+  // service list, a quote slider, a how-we-work block and twelve FAQs instead of
+  // the spine's six to eight. The ceiling is raised on the owner's instruction
+  // (2026-09-01) so the target describes the page that actually exists rather
+  // than failing the publish gate on every addition they asked for.
+  //
+  // This is a per-page override, not a programme-wide change. Sibling geo pages
+  // keep [1300, 1700] unless they grow the same way, and if that becomes the
+  // norm the Page Spec is what should be revised, not each page's target.
+  wordCountTarget: [1300, 3700],
 };
