@@ -27,6 +27,13 @@ export default function ConversionBlock({ conversion, landingPage, heading = "Te
           .gcb-callout-label { display: block; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #2A9555; margin: 0 0 6px; }
           .gcb-callout .gp-p { margin-bottom: 0; }
           .gcb-response { font-size: 14px; line-height: 1.6; color: #64748b; margin: 0; }
+          /* The audit: numbered because the three parts are a promise the
+             reader is meant to be able to hold us to, not a list of features. */
+          .gcb-audit { margin: 4px 0 16px; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
+          .gcb-audit li { font-size: 15.5px; line-height: 1.65; color: #334155; }
+          .gcb-audit li::marker { font-weight: 700; color: #2A9555; }
+          .gcb-limit { font-size: 15px; color: #334155; }
+          .gcb-free { font-size: 15px; font-weight: 600; color: #0f172a; }
           @media (max-width: 640px) { .gcb-grid { gap: 24px; } }
         `,
         }}
@@ -35,7 +42,31 @@ export default function ConversionBlock({ conversion, landingPage, heading = "Te
         <div className="gcb-copy">
           <p className="gp-eyebrow">Next step</p>
           <h2 id={`${id}-heading`} className="gp-h2">{inline(heading)}</h2>
-          <Prose text={conversion.whatYouGet} />
+
+          {/* Copy Standard v2.0 section 8.4. The audit is the reason either door
+              gets taken, so when a page carries one it leads, and the generic
+              whatYouGet line steps aside rather than repeating it. */}
+          {conversion.audit ? (
+            <>
+              <Prose text={conversion.audit.transition} className="gp-lead" />
+              <Prose text={conversion.audit.offer} />
+              <ol className="gcb-audit">
+                {conversion.audit.parts.map((p, i) => (
+                  <li key={i}>{inline(p)}</li>
+                ))}
+              </ol>
+              <p className="gp-p gcb-limit">{inline(conversion.audit.limit)}</p>
+              {/* turnaround is optional: when it is unset the no-obligation line
+                  stands on its own rather than trailing a stray space. */}
+              <p className="gp-p gcb-free">
+                {inline(conversion.audit.noObligation)}
+                {conversion.audit.turnaround ? <> {inline(conversion.audit.turnaround)}</> : null}
+              </p>
+            </>
+          ) : (
+            <Prose text={conversion.whatYouGet} />
+          )}
+
           <aside className="gcb-callout">
             <span className="gcb-callout-label">What we will tell you not to do</span>
             <Prose text={conversion.whatWeWillTellYouNotToDo} />

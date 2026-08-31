@@ -14,9 +14,16 @@ type ServiceSchemaProps = {
   url: string;
   /** Optional country served, e.g. "United States" (omit for global) */
   areaServed?: string;
+  /** Schema.org type for areaServed. Defaults to Country, which is right for a
+   *  national page. Geo pages pass "AdministrativeArea" or "State", because
+   *  emitting {"@type":"Country","name":"Los Angeles"} is simply false.
+   *  areaServed describes where a service is OFFERED, so it carries no presence
+   *  claim; that is why it is permitted where LocalBusiness and PostalAddress
+   *  are not. */
+  areaServedType?: "Country" | "AdministrativeArea" | "State" | "Place";
 };
 
-export default function ServiceSchema({ name, serviceType, description, url, areaServed }: ServiceSchemaProps) {
+export default function ServiceSchema({ name, serviceType, description, url, areaServed, areaServedType = "Country" }: ServiceSchemaProps) {
   const json = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -24,7 +31,7 @@ export default function ServiceSchema({ name, serviceType, description, url, are
     name,
     serviceType,
     provider: { "@id": ORG_ID },
-    ...(areaServed ? { areaServed: { "@type": "Country", name: areaServed } } : {}),
+    ...(areaServed ? { areaServed: { "@type": areaServedType, name: areaServed } } : {}),
     url,
     description,
   };
