@@ -1,4 +1,5 @@
 import Image from "next/image";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
 import Link from "next/link";
 import Prose from "./Prose";
 
@@ -89,33 +90,24 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
         {image ? (
           <div className="gph-media">
             {image.video ? (
-              <>
-                {/* Autoplaying decoration. `src` doubles as the poster and as
-                    the still shown under prefers-reduced-motion, which is what
-                    WCAG 2.2.2 requires of anything that moves on its own. */}
-                <video
-                  className="gph-img gph-video"
-                  src={image.video}
-                  poster={image.src}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  aria-label={image.alt}
-                  style={image.aspect ? { aspectRatio: image.aspect, objectFit: "cover" } : undefined}
-                />
-                <Image
-                  src={image.src}
-                  overrideSrc={image.src}
-                  alt={image.alt}
-                  width={640}
-                  height={480}
-                  priority
-                  className="gph-img gph-still"
-                  style={image.aspect ? { aspectRatio: image.aspect, objectFit: "cover" } : undefined}
-                />
-              </>
+              /* Autoplaying decoration. `src` is the poster, which is also the
+                 entire experience under prefers-reduced-motion: LazyAutoplayVideo
+                 never fetches the file in that case and the poster simply stays,
+                 which is what WCAG 2.2.2 asks of anything that moves on its own.
+                 That is why there is no second hidden <Image> here any more. It
+                 was a duplicate of the poster carrying `priority`, so every
+                 visitor preloaded a still that only reduced-motion visitors were
+                 ever shown.
+
+                 deferUntilIdle because a hero is on screen at first paint: the
+                 poster has to win the race against the video, not tie with it. */
+              <LazyAutoplayVideo
+                src={image.video}
+                poster={image.src}
+                className="gph-img gph-video"
+                deferUntilIdle
+                style={image.aspect ? { aspectRatio: image.aspect, objectFit: "cover" } : undefined}
+              />
             ) : (
               <Image
                 src={image.src}
@@ -142,12 +134,12 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
              an inline aspect-ratio + object-fit: cover, so the image is
              cropped rather than squashed. */
           .gph-img { width: 100%; height: auto; object-position: center; border-radius: 16px; display: block; box-shadow: 0 24px 64px rgba(0,0,0,0.45); }
-          /* Video plays by default; the still is only for reduced motion. */
-          .gph-still { display: none; }
-          @media (prefers-reduced-motion: reduce) {
-            .gph-video { display: none; }
-            .gph-still { display: block; }
-          }
+          /* No reduced-motion display toggle here, deliberately. The poster is
+             an attribute OF the video element, so hiding the video under
+             prefers-reduced-motion would hide the still along with it and leave
+             an empty column. LazyAutoplayVideo handles the requirement properly
+             instead: it never assigns src in that case, so nothing ever moves
+             and the poster is what stays on screen. */
 
           /* Hero stat strip, matching the Shopify development landing page. */
           .gph-stats { display: flex; flex-wrap: wrap; gap: 0; margin: 32px 0 0; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 24px; }

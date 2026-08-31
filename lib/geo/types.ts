@@ -219,6 +219,35 @@ export const ConversionSchema = z.object({
   whatWeWillTellYouNotToDo: z.string().min(1),
   /** When they hear back, and from whom. */
   responseExpectation: z.string().min(1),
+  /** The free audit, per Copy Standard v2.0 section 8.4. Optional on the schema
+   *  so the three published hubs, which predate v2.0, still validate; REQUIRED
+   *  on every page written to v2.0. Carries the offer that makes either door
+   *  worth taking, so it gets the most words in the block.
+   *
+   *  Copy rules for this object: zero keyword targets anywhere inside it, under
+   *  180 words of prose above the form, Reading Ease 70+, second person in every
+   *  sentence. Never call it a consultation, discovery session or strategy
+   *  session. */
+  audit: z
+    .object({
+      /** One sentence tying back to THIS page's idea statement. Never generic. */
+      transition: z.string().min(1),
+      /** The ask: the reader names the one thing hurting the store most. */
+      offer: z.string().min(1),
+      /** Exactly three: what is happening, why, and how to fix it. */
+      parts: z.tuple([z.string().min(1), z.string().min(1), z.string().min(1)]),
+      /** One line on what the audit will NOT do, so the promise stays credible. */
+      limit: z.string().min(1),
+      /** Unambiguous. No follow-up sequence, no obligation. */
+      noObligation: z.string().min(1),
+      /** Business days from submission to delivery, and the format it arrives in.
+       *  Optional since 2026-08-31 on the owner's call. Copy Standard 8.4 asks
+       *  for both to be named, so leaving this unset is a deliberate exception
+       *  rather than an oversight: state a turnaround wherever one can be
+       *  committed to, and omit it rather than inventing one that cannot. */
+      turnaround: z.string().min(1).optional(),
+    })
+    .optional(),
 });
 export type Conversion = z.infer<typeof ConversionSchema>;
 
@@ -354,7 +383,11 @@ const BaseSchema = z.object({
    *  honestly before then. */
   proof: z.array(CaseStudyRefSchema).max(3),
   objections: z.array(ObjectionSchema).length(3),
-  faqs: z.array(FAQSchema).min(6).max(8),
+  // Raised from 8 on 2026-08-27. Geo pages append entity-shaped questions
+  // ("Do you provide Shopify development in Los Angeles?") beneath the
+  // service-specific ones; those are written for retrieval, not for humans,
+  // and 8 does not fit both sets.
+  faqs: z.array(FAQSchema).min(6).max(12),
   conversion: ConversionSchema,
   sources: z.array(SourceSchema),
   wordCountTarget: z.tuple([z.number().int().positive(), z.number().int().positive()]),
@@ -393,10 +426,38 @@ export const GeoPageSchema = BaseSchema.extend({
   archetype: z.array(z.string().regex(/^[A-G]$/)).min(1),
   /** Block 3: the reader's commercial world, refracted through the service. */
   placeLayer: z.string().min(1),
+  /** Optional H2 for blocks 3 and 4. Both render headless by default, because
+   *  in the original spine they read as narrative continuing from the hook.
+   *  That works on a short page and stops working on a long one: with the
+   *  optional blocks in place, a headless run of 800+ words leaves a reader no
+   *  anchor and leaves the page's two best passages with no heading above them,
+   *  which is a real cost for passage extraction.
+   *
+   *  Write a heading that frames the question the block answers. It must not
+   *  repeat a keyword that opens the block: Copy Standard 7.5 counts a keyword
+   *  in a heading and again in that heading's first sentence as stuffing. */
+  placeLayerHeading: z.string().min(1).optional(),
   /** Block 4: service x place. Minimum two sourced facts. */
   gradientLayer: z.string().min(1),
+  gradientLayerHeading: z.string().min(1).optional(),
   gradientFacts: z.array(SourceSchema),
-  /** Block 6: the service framed as the response, with price band + hub link. */
+  /** Optional block written FOR THE QUERY rather than for the reader: three or
+   *  four declarative sentences naming who the page serves and what it covers.
+   *  Deliberately plain, because the job is to be liftable whole by an AI
+   *  Overview. Must not define the H1 term (Copy Standard 5.1 bans definition
+   *  sections); it states scope, which is a different thing. */
+  searchIntent: z.string().min(1).optional(),
+  /** Optional honest-local block. Answers "can we actually work together" on a
+   *  page that makes no presence claim, by replacing proximity with a delivery
+   *  term: who is watching on release day, in what window, on which channel. */
+  howWeWork: z
+    .object({
+      heading: z.string().min(1),
+      intro: z.string().min(1),
+      items: z.array(z.object({ title: z.string().min(1), body: z.string().min(1) })).min(3).max(5),
+    })
+    .optional(),
+  /** Block 6: the response, in prose. */
   whatWeDoAboutIt: z.string().min(1),
 });
 export type GeoPage = z.infer<typeof GeoPageSchema>;
@@ -429,7 +490,7 @@ export function proseStrings(page: GeoProgrammePage): string[] {
     out.push(page.industries.heading, page.industries.intro);
     for (const i of page.industries.items) out.push(i.name, i.whatsDifferent);
   }
-  if (page.type === "hub" && page.servicesList) {
+  if (page.servicesList) {
     out.push(page.servicesList.label, page.servicesList.heading, page.servicesList.intro, page.servicesList.ctaLabel);
     for (const s of page.servicesList.items) out.push(s.title, s.body);
   }
@@ -441,6 +502,13 @@ export function proseStrings(page: GeoProgrammePage): string[] {
     out.push(...page.whatWeDontDo);
   } else {
     out.push(page.placeLayer, page.gradientLayer, page.whatWeDoAboutIt);
+    if (page.placeLayerHeading) out.push(page.placeLayerHeading);
+    if (page.gradientLayerHeading) out.push(page.gradientLayerHeading);
+    if (page.searchIntent) out.push(page.searchIntent);
+    if (page.howWeWork) {
+      out.push(page.howWeWork.heading, page.howWeWork.intro);
+      for (const i of page.howWeWork.items) out.push(i.title, i.body);
+    }
   }
   const a = page.asset;
   out.push(a.title);
@@ -459,6 +527,13 @@ export function proseStrings(page: GeoProgrammePage): string[] {
   for (const o of page.objections) out.push(o.objection, o.answer);
   for (const f of page.faqs) out.push(f.question, f.answer);
   out.push(page.conversion.whatYouGet, page.conversion.whatWeWillTellYouNotToDo, page.conversion.responseExpectation);
+  // The free audit is visible body copy, so it counts toward length and is
+  // scanned for banned words like everything else.
+  if (page.conversion.audit) {
+    const a = page.conversion.audit;
+    out.push(a.transition, a.offer, ...a.parts, a.limit, a.noObligation);
+    if (a.turnaround) out.push(a.turnaround);
+  }
   return out;
 }
 

@@ -11,11 +11,12 @@ import { GeoProgrammePageSchema, NEEDS_INPUT, hasNeedsInput, proseStrings, wordC
 import { ECOMMERCE_AGENCY } from "./pages/ecommerce-agency";
 import { ECOMMERCE_SEO_AGENCY } from "./pages/ecommerce-seo-agency";
 import { ECOMMERCE_MARKETING_AGENCY } from "./pages/ecommerce-marketing-agency";
+import { SHOPIFY_DEV_LOS_ANGELES } from "./pages/shopify-development-agency-los-angeles";
 
 export const SITE_URL = "https://ecommwizards.com";
 
 /** Add each new page here. Order is irrelevant; paths must be unique. */
-export const GEO_PAGES: GeoProgrammePage[] = [ECOMMERCE_AGENCY, ECOMMERCE_SEO_AGENCY, ECOMMERCE_MARKETING_AGENCY];
+export const GEO_PAGES: GeoProgrammePage[] = [ECOMMERCE_AGENCY, ECOMMERCE_SEO_AGENCY, ECOMMERCE_MARKETING_AGENCY, SHOPIFY_DEV_LOS_ANGELES];
 
 // ---------------------------------------------------------------------------
 // Lookups
@@ -38,6 +39,15 @@ export function getGeo(hubPath: string, slug: string): GeoPage | undefined {
 /** Geo children of a hub, published only (a hub never links to a 404). */
 export function publishedChildren(hub: HubPage): GeoPage[] {
   return GEO_PAGES.filter((p): p is GeoPage => p.type === "geo" && p.hub === hub.path && p.status === "published");
+}
+
+/** Published geo pages sitting under a hub, addressed by PATH rather than by a
+ *  HubPage object. publishedChildren above only works for hubs that are
+ *  themselves in the geo programme; several hubs are ordinary hand-built
+ *  service pages, and those still need to link down to their geo children or
+ *  the geo page launches with no inbound internal link at all. */
+export function publishedGeoForHub(hubPath: string): GeoPage[] {
+  return GEO_PAGES.filter((p): p is GeoPage => p.type === "geo" && p.hub === hubPath && p.status === "published");
 }
 
 export function canonicalUrl(page: GeoProgrammePage): string {
