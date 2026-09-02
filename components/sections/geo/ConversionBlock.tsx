@@ -26,7 +26,9 @@ export interface ConversionBlockProps {
   id?: string;
 }
 
-export default function ConversionBlock({ conversion, landingPage, heading = "Tell us about your store", id = "contact" }: ConversionBlockProps) {
+export default function ConversionBlock({ conversion, landingPage, heading, id = "contact" }: ConversionBlockProps) {
+  // Page-supplied heading wins, then the caller's prop, then the default.
+  const sectionHeading = conversion.heading ?? heading ?? "Tell us about your store";
   return (
     <section id={id} className="gp-section gp-section--cream gcb-section" aria-labelledby={`${id}-heading`}>
       <style
@@ -45,7 +47,12 @@ export default function ConversionBlock({ conversion, landingPage, heading = "Te
           .gcb-audit li { font-size: 15.5px; line-height: 1.65; color: #334155; }
           .gcb-audit li::marker { font-weight: 700; color: #2A9555; }
           .gcb-limit { font-size: 15px; color: #334155; }
+          /* The delivery promise. Sits directly above the button and is the
+             sentence that earns the click, so it reads a step heavier than the
+             body around it. */
+          .gcb-delivery { font-size: 16px; color: #0f172a; border-left: 3px solid #2A9555; padding-left: 14px; margin: 18px 0 0; }
           .gcb-free { font-size: 15px; font-weight: 600; color: #0f172a; }
+          .gcb-second { font-size: 14.5px; line-height: 1.55; color: #475569; margin: 14px 0 0; }
           /* The booking door. The form is the other one, in the column beside it. */
           .gcb-doors { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin: 22px 0 4px; }
           /* Two-layer background so the border can carry the brand gradient:
@@ -69,7 +76,7 @@ export default function ConversionBlock({ conversion, landingPage, heading = "Te
       <div className="gp-inner gcb-grid">
         <div className="gcb-copy">
           <p className="gp-eyebrow">Next step</p>
-          <h2 id={`${id}-heading`} className="gp-h2">{inline(heading)}</h2>
+          <h2 id={`${id}-heading`} className="gp-h2">{inline(sectionHeading)}</h2>
 
           {/* Copy Standard v2.0 section 8.4. The audit is the reason either door
               gets taken, so when a page carries one it leads, and the generic
@@ -87,16 +94,26 @@ export default function ConversionBlock({ conversion, landingPage, heading = "Te
                 ))}
               </ol>
               <p className="gp-p gcb-limit">{inline(conversion.audit.limit)}</p>
-              {/* turnaround is optional: when it is unset the no-obligation line
-                  stands on its own rather than trailing a stray space. */}
-              <p className="gp-p gcb-free">
-                {inline(conversion.audit.noObligation)}
-                {conversion.audit.turnaround ? <> {inline(conversion.audit.turnaround)}</> : null}
-              </p>
+              {/* Turnaround moved ABOVE the button on 2026-09-02. It carries the
+                  delivery promise and the one sentence arguing for the call, and
+                  while it sat in the small print below the button it was doing
+                  neither job. Optional, so pages without one skip it. */}
+              {conversion.audit.turnaround ? (
+                <p className="gp-p gcb-delivery">{inline(conversion.audit.turnaround)}</p>
+              ) : null}
             </>
           ) : (
             <Prose text={conversion.whatYouGet} />
           )}
+
+          {/* The second door sits ABOVE the button, on the owner's instruction
+              (2026-09-03). Below it, the last thing a reader saw before the CTA
+              was an alternative to taking it. Above it, the button is the final
+              word and the fallback is already dealt with. Quieter than the
+              button on purpose: it is an alternative, not a competing offer. */}
+          {conversion.audit?.secondDoor ? (
+            <p className="gp-p gcb-second">{inline(conversion.audit.secondDoor)}</p>
+          ) : null}
 
           <div className="gcb-doors">
             <Link href={BOOKING_PATH} className="gcb-book">
@@ -104,6 +121,10 @@ export default function ConversionBlock({ conversion, landingPage, heading = "Te
               <svg width="16" height="12" viewBox="0 0 18 14" fill="none" aria-hidden><path d="M1 7h15M10 1l6 6-6 6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </Link>
           </div>
+
+          {conversion.audit ? (
+            <p className="gp-p gcb-free">{inline(conversion.audit.noObligation)}</p>
+          ) : null}
 
           <aside className="gcb-callout">
             <span className="gcb-callout-label">What we will tell you not to do</span>

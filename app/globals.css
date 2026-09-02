@@ -773,8 +773,25 @@
 .ssd-results-card--audit .ssd-results-card-logo img { width: auto; max-width: 180px; height: 56px; }
 .ssd-results-slider { position: relative; background: #FFFFFF; border-radius: 18px; padding: 0; overflow: hidden; box-shadow: 0 2px 20px rgba(0,0,0,0.07); }
 .ssd-results-slider-track { display: flex; will-change: transform; }
-.ssd-results-slide { display: grid; grid-template-columns: 600px 1fr; gap: 30px; align-items: center; padding: 30px 20px; box-sizing: border-box; }
-.ssd-results-slide-image { width: 600px; height: 423.42px; border-radius: 12px; overflow: hidden; background: #f0f0f0; }
+/* min-width: 0 is load-bearing, not tidying. Each slide is a flex item with
+   `flex: 0 0 (100/total)%`, and the track advances by exactly that percentage.
+   A flex item's default `min-width: auto` lets it grow past its basis when its
+   content demands more room, and once one slide is wider than its share every
+   slide after it sits off by the difference: you land between two cards instead
+   of on one. That is what produced half of one case study beside half of the
+   next on tablets, where the 600px image column no longer fits. Pinning
+   min-width to 0 here, and on the grid children, makes the slide exactly its
+   basis at every width, so the transform always lands square.
+
+   The image column is minmax(0, 600px) rather than a hard 600px for the same
+   reason: between 1024px and about 1200px the old value could not fit beside
+   the text, so the grid overflowed its own slide. */
+.ssd-results-slide { display: grid; grid-template-columns: minmax(0, 600px) minmax(0, 1fr); gap: 30px; align-items: center; padding: 30px 20px; box-sizing: border-box; min-width: 0; }
+.ssd-results-slide > * { min-width: 0; }
+/* aspect-ratio rather than a fixed 423.42px height: now that the column can be
+   narrower than 600px, a fixed height would crop harder as the width shrinks.
+   Same ratio the <=1023px rule already used, so the shape never changes. */
+.ssd-results-slide-image { width: 100%; max-width: 600px; height: auto; aspect-ratio: 600 / 423.42; border-radius: 12px; overflow: hidden; background: #f0f0f0; }
 .ssd-results-slide-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .ssd-results-slide-text { padding: 10px; color: #334155; font-size: 16px; }
 .ssd-results-apps { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }

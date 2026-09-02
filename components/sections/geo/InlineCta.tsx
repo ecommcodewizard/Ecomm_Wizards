@@ -33,8 +33,19 @@ export default function InlineCta({ text, label, href = "#contact" }: { text: st
         .gpc { background: #FBF7ED; font-family: 'Poppins', sans-serif; padding: 20px 20px; }
         .gpc-inner { max-width: 1320px; margin: 0 auto; display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 24px; background: #ffffff; border: 1px solid rgba(0,0,0,0.07); border-radius: 16px; padding: 24px 28px; }
         .gpc-text { font-size: 18px; font-weight: 600; color: #000000; line-height: 1.5; margin: 0; flex: 1 1 auto; min-width: 0; }
-        .gpc-btn { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; background: #000000; color: #ffffff; border: 1px solid transparent; border-radius: 999px; padding: 14px 28px; font-size: 15px; font-weight: 600; line-height: 1; text-decoration: none; transition: background .3s ease, transform .25s ease; }
-        .gpc-btn:hover { background: linear-gradient(#000, #000) padding-box, var(--brand-gradient) border-box; transform: translateY(-1px); }
+        /* Brand CTA treatment, identical to .gcb-book in ConversionBlock and the
+           form's submit button, so every button on the page behaves the same.
+           Two-layer background: a flat black fill clipped to padding-box sits
+           over a border-box layer that swaps from black to the brand gradient
+           on hover. The base state MUST declare both layers - a plain
+           "background: #000" cannot animate to a gradient border, which is why
+           this button previously did nothing on hover. */
+        .gpc-btn { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; color: #ffffff; border: 1px solid transparent; background: linear-gradient(#000, #000) padding-box, #000 border-box; border-radius: 999px; padding: 14px 28px; font-size: 15px; font-weight: 600; line-height: 1; text-decoration: none; transition: background .3s ease, transform .25s ease, box-shadow .25s ease; }
+        .gpc-btn:hover { background: linear-gradient(#000, #000) padding-box, var(--brand-gradient) border-box; transform: translateY(-1px); box-shadow: 0 10px 28px -10px rgba(0,0,0,.45); }
+        /* Text stays white in every state. Without this the global link color
+           leaks through on visited and active, which is the one thing the
+           hover must never change. */
+        .gpc-btn:hover, .gpc-btn:focus, .gpc-btn:visited, .gpc-btn:active { color: #ffffff; }
         .gpc-btn:focus-visible { outline: 3px solid #3DC77A; outline-offset: 3px; }
         /* Tablet: drop a point of type rather than break the row, so the
            button keeps its place on the right. */

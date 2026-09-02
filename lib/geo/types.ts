@@ -98,6 +98,14 @@ export const OnlyHereAssetSchema = z.object({
   }),
   /** First column is the row label column; give it a header too. */
   columns: z.array(z.string().min(1)).min(2),
+  /** Hide the column headings visually. They stay in the DOM as real <th>
+   *  elements, so the table keeps its header semantics for a screen reader.
+   *
+   *  Set this when the headings are scaffolding rather than information: a
+   *  "figure / what it means" table explains itself from its rows, and a
+   *  header like "Across the ten" makes a reader stop and decode a label
+   *  instead of reading the number. */
+  hideColumnHeaders: z.boolean().optional(),
   rows: z
     .array(
       z.object({
@@ -213,7 +221,14 @@ export const TrustSchema = z.object({
 export type Trust = z.infer<typeof TrustSchema>;
 
 export const ConversionSchema = z.object({
-  /** One line restating what the reader gets from a call, specific to this page. */
+  /** Section heading. Optional: ConversionBlock falls back to its own default
+   *  when a page does not set one. Added 2026-09-02 because the default
+   *  ("Tell us about your store") asks the reader for a favour, and this block
+   *  is meant to be the page's strongest moment. */
+  heading: z.string().min(1).optional(),
+  /** One line restating what the reader gets from a call, specific to this page.
+   *  NOTE: rendered ONLY when `audit` is absent. When a page carries an audit,
+   *  the audit object replaces this line entirely (see ConversionBlock). */
   whatYouGet: z.string().min(1),
   /** One sentence naming something we would advise AGAINST spending on. */
   whatWeWillTellYouNotToDo: z.string().min(1),
@@ -244,8 +259,17 @@ export const ConversionSchema = z.object({
        *  Optional since 2026-08-31 on the owner's call. Copy Standard 8.4 asks
        *  for both to be named, so leaving this unset is a deliberate exception
        *  rather than an oversight: state a turnaround wherever one can be
-       *  committed to, and omit it rather than inventing one that cannot. */
+       *  committed to, and omit it rather than inventing one that cannot.
+       *
+       *  Rendered as its own paragraph ABOVE the booking button since
+       *  2026-09-02. It used to trail the no-obligation line in small print,
+       *  which buried the one sentence arguing for the call. */
       turnaround: z.string().min(1).optional(),
+      /** The second door, rendered beside the booking button. One short line
+       *  telling a reader who does not want a call what to do instead. The
+       *  button is the primary; this is deliberately quieter, and must never
+       *  read as pressure to take the call. */
+      secondDoor: z.string().min(1).optional(),
     })
     .optional(),
 });
@@ -368,7 +392,27 @@ const BaseSchema = z.object({
   heroSecondaryCta: z.object({ label: z.string().min(1), href: z.string().min(1) }).optional(),
   /** One-line conversion prompt rendered directly under the Only-Here Asset,
    *  where reader intent peaks. Keep it a question or an offer, not a slogan. */
+  /** Inline prompt rendered directly AFTER the Only-Here Asset. The reader has
+   *  just worked through original research and is at the highest intent the
+   *  page produces; without this the next chance to act is the form. */
   midCta: z.object({ text: z.string().min(1), label: z.string().min(1) }).optional(),
+  /** How we approach the work, as its own section between the place layer and
+   *  the proof block. Optional, but on any page where design is part of the
+   *  offer this is the block that separates us from a design studio, and it
+   *  needs a heading of its own to survive a skim. */
+  approach: z.object({ heading: z.string().min(1), body: z.string().min(1) }).optional(),
+  /** Inline prompt rendered directly after the proof block. Case studies are
+   *  the moment a reader believes we can do it; asking there costs them no
+   *  scrolling. Added 2026-09-03. */
+  proofCta: z.object({ text: z.string().min(1), label: z.string().min(1) }).optional(),
+  /** Third inline prompt, rendered after the "What we do about it" block.
+   *  Added 2026-09-03. That block ends on price, and the sections after it
+   *  (objections, FAQ) are where a reader resolves their last doubt, so the
+   *  stretch had no way to act across five sections.
+   *
+   *  Neither of these is a second OFFER, which Copy Standard 1.4 forbids. Both
+   *  are pointers to #contact, where the two doors still sit together. */
+  closingCta: z.object({ text: z.string().min(1), label: z.string().min(1) }).optional(),
   /** Section headings are copy, not layout, so they live here rather than being
    *  hardcoded in the template. Write a real headline: a bare noun like "Proof"
    *  reads as a placeholder. */
@@ -382,12 +426,23 @@ const BaseSchema = z.object({
    *  verification table is incomplete, since `verified: true` cannot be set
    *  honestly before then. */
   proof: z.array(CaseStudyRefSchema).max(3),
-  objections: z.array(ObjectionSchema).length(3),
+  // 3 or 4. Copy Standard v2.0 section 6.1 says to research 5-7 objections and
+  // "select the 3-4 that genuinely apply to this page's service and reader", so
+  // the previous hard .length(3) was stricter than the standard it enforces and
+  // blocked a legitimate fourth. Range widened 2026-09-02. The floor stays at 3:
+  // fewer than that is not an objection section, and section 6.4 still requires
+  // at least one of them to be conceded honestly.
+  objections: z.array(ObjectionSchema).min(3).max(4),
   // Raised from 8 on 2026-08-27. Geo pages append entity-shaped questions
   // ("Do you provide Shopify development in Los Angeles?") beneath the
   // service-specific ones; those are written for retrieval, not for humans,
   // and 8 does not fit both sets.
-  faqs: z.array(FAQSchema).min(6).max(12),
+  // Raised 12 -> 14 on 2026-09-03 to fit a scope-qualifier FAQ ("do you do ads
+  // and email too?") alongside the existing set. Master Strategy 5.5 asks for
+  // 6-8, and that number describes the human-facing questions; the entity-shaped
+  // ones written for retrieval sit on top of it. If this ceiling is reached
+  // again the answer is to CUT weak questions, not to raise it a third time.
+  faqs: z.array(FAQSchema).min(6).max(14),
   conversion: ConversionSchema,
   sources: z.array(SourceSchema),
   wordCountTarget: z.tuple([z.number().int().positive(), z.number().int().positive()]),
@@ -522,6 +577,9 @@ export function proseStrings(page: GeoProgrammePage): string[] {
   if (a.derivedList) out.push(a.derivedList.title, ...a.derivedList.items);
   for (const b of a.supportingBlocks ?? []) out.push(b.heading, b.body);
   if (page.midCta) out.push(page.midCta.text, page.midCta.label);
+  if (page.approach) out.push(page.approach.heading, page.approach.body);
+  if (page.proofCta) out.push(page.proofCta.text, page.proofCta.label);
+  if (page.closingCta) out.push(page.closingCta.text, page.closingCta.label);
   out.push(page.proofHeading, page.objectionsHeading);
   for (const p of page.proof) out.push(p.vertical, p.whatWasBuilt, p.outcome);
   for (const o of page.objections) out.push(o.objection, o.answer);

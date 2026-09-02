@@ -16,6 +16,8 @@ import ServicesAccordion from "./ServicesAccordion";
 import ResultsSlider from "./ResultsSlider";
 import HowWeWorkBlock from "./HowWeWorkBlock";
 import ServiceBlock from "./ServiceBlock";
+import ApproachBlock from "./ApproachBlock";
+import InlineCta from "./InlineCta";
 import OnlyHereAsset from "./OnlyHereAsset";
 import ProofBlock from "./ProofBlock";
 import ObjectionBlock from "./ObjectionBlock";
@@ -103,9 +105,38 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
 
       <PlaceLayer text={page.placeLayer} heading={page.placeLayerHeading} />
 
+      {/* Sits between the place layer and the proof, on the owner's
+          instruction (2026-09-03). The place layer ends on what the reader is
+          up against; this answers how we approach it, and the case studies
+          immediately after show it working. Previously a paragraph inside
+          "What we do about it", three quarters down the page. */}
+      {page.approach && <ApproachBlock text={page.approach.body} heading={page.approach.heading} />}
+
+      {/* Proof sits directly under the place layer on the owner's instruction
+          (2026-09-02). The place layer ends on what the reader is competing
+          against; the natural next question is "so who have you done this for",
+          and answering it there rather than 600 words later keeps the argument
+          moving. It used to sit below "What we do about it". */}
+      {page.proof.length > 0 ? (
+        <ProofBlock heading={page.proofHeading} proof={page.proof} />
+      ) : (
+        <DevSlotNote block="7 · Proof" note="proof[] is empty. 2-3 case studies matched to this market's dominant vertical, with verified: true, are required before publishing." />
+      )}
+
+      {/* Straight after the case studies: this is where a reader stops
+          wondering whether we can do it. */}
+      {page.proofCta && <InlineCta text={page.proofCta.text} label={page.proofCta.label} />}
+
       <GradientLayer text={page.gradientLayer} heading={page.gradientLayerHeading} />
 
       <OnlyHereAsset asset={page.asset} />
+
+      {/* Wired 2026-09-03. InlineCta already existed and was rendered by
+          HubPageTemplate, but the geo template never called it, so a geo page
+          had no way to act between the hero and the services block: seven
+          sections including proof and the asset. Both prompts point at
+          #contact rather than presenting a second offer. */}
+      {page.midCta && <InlineCta text={page.midCta.text} label={page.midCta.label} />}
 
       {/* Services list sits after the asset, not before it. The asset is what
           the page is here to give away; a service menu ahead of it reads as a
@@ -118,21 +149,18 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
 
       {page.howWeWork && <HowWeWorkBlock data={page.howWeWork} />}
 
-      {/* Block 6 links UP to the hub. The geo variant of ServiceBlock renders
-          that "Part of our ... service." line, which is the internal link the
-          hub-and-spoke structure depends on. */}
-      <ServiceBlock
-        heading="What we do about it"
-        text={page.whatWeDoAboutIt}
-        variant="geo"
-        hub={{ label: hubPathToLabel(page.hub), href: page.hub }}
-      />
+      {/* No `hub` prop, on the owner's instruction (2026-09-02): the appended
+          "Part of our ... service." line read as bolted on. The hub-and-spoke
+          uplink it provided has NOT been dropped - it moved into the first
+          services card, where it sits inside a real sentence. If a future geo
+          page removes that link from its copy, restore the prop here or the
+          page will have no path up to its hub. */}
+      <ServiceBlock heading="What we do about it" text={page.whatWeDoAboutIt} variant="geo" />
 
-      {page.proof.length > 0 ? (
-        <ProofBlock heading={page.proofHeading} proof={page.proof} />
-      ) : (
-        <DevSlotNote block="7 · Proof" note="proof[] is empty. 2-3 case studies matched to this market's dominant vertical, with verified: true, are required before publishing." />
-      )}
+      {/* Directly after the price. The objections and FAQ that follow are where
+          a reader settles their last doubt, and previously the nearest button
+          was five sections away at the form. */}
+      {page.closingCta && <InlineCta text={page.closingCta.text} label={page.closingCta.label} />}
 
       <ObjectionBlock heading={page.objectionsHeading} objections={page.objections} />
 
