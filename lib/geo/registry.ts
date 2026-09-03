@@ -138,8 +138,25 @@ export function validatePage(page: GeoProgrammePage, today: Date = new Date()): 
   // Geo-only
   if (page.type === "geo") {
     if (page.gradientFacts.length < 2) gate(`gradientFacts has ${page.gradientFacts.length}; minimum 2 sourced facts`);
+    // Downgraded from a gate to a warning on 2026-09-03, owner's decision.
+    //
+    // Page Spec section 6.4 required this FAQ as the page's presence
+    // disclaimer. The owner's position is now explicit and consistent: we make
+    // no claim to be in the city, so we should make no claim that we are not
+    // either. A buyer at this deal size cares about accountability, not an
+    // address, and volunteering "we have no office here" answers a doubt most
+    // readers never had.
+    //
+    // The actual compliance requirement is untouched. Master Strategy section 4
+    // forbids PRESENCE claims - "in [city]", "based in", "our [city] office",
+    // local schema - and check-forbidden still enforces every one of those.
+    // Nothing in the spec ever required a disclaimer of absence.
+    //
+    // Kept as a warning rather than deleted so the question stays visible to
+    // whoever writes the next geo page: it is often the right FAQ to include,
+    // just not a publishable-or-not one.
     if (!page.faqs.some((f) => /do you have an office/i.test(f.question))) {
-      gate("no 'Do you have an office in [city]?' FAQ (Page Spec section 6.4 requires it on every geo page)");
+      warn("no 'Do you have an office in [city]?' FAQ. Optional since 2026-09-03, but confirm nothing else on the page implies a local presence");
     }
   }
 

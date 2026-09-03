@@ -23,7 +23,7 @@ export default function OnlyHereAsset({ asset, id = "asset" }: { asset: OnlyHere
         {asset.intro ? <Prose text={asset.intro} className="gp-lead" /> : null}
 
         {/* (c) the artifact */}
-        <AssetTable renderer={asset.renderer} columns={asset.columns} rows={asset.rows} caption={asset.title} id={`${id}-table`} />
+        <AssetTable renderer={asset.renderer} columns={asset.columns} rows={asset.rows} caption={asset.title} hideColumnHeaders={asset.hideColumnHeaders} id={`${id}-table`} />
 
         {/* (d) derived conclusion */}
         <div className="oha-derived">

@@ -6,22 +6,39 @@
 // definition block, free audit in the conversion block) that is deliberate.
 //
 // Primary keyword: "shopify agency los angeles" (140/mo, Google Keyword Planner)
-// Archetype: A, vertical-led. The vertical is apparel and streetwear.
+// Archetype: A. See VERTICAL RULE below: the vertical informs imagery and case
+// studies only, never the copy.
 //
 // ── ROIA payload (Copy Standard section 1) ───────────────────────────────────
 //
 // THE ONE READER
-// Runs an apparel or streetwear brand that sells in timed drops. Somewhere
-// between a few hundred and a few thousand units per release. The last drop
-// went badly in a way nobody could fully explain afterwards: the site slowed,
-// some people got through and some did not, and the postmortem was a Slack
-// thread rather than a document. They are not asking what a Shopify agency is.
-// They are asking whether the next drop will hold, and nobody has given them a
-// number.
+// Runs a direct-to-consumer brand in this market, in any category: food,
+// beauty, supplements, home, outdoor, apparel. Doing real revenue. Wants a
+// store built or rebuilt. They have looked at a competitor's storefront
+// recently and come away knowing theirs is behind, without being able to say
+// exactly how. They are not asking what a Shopify agency is, and they are not
+// asking about duty rates or hosting. They are asking whether we understand
+// how stores get built for brands like theirs here, and what it takes for
+// theirs to stand up next to the others.
 //
 // THE ONE IDEA (20 words)
-// Shopify publishes no checkout ceiling, so nobody can tell you what your drop
-// will take. That changes what you build.
+// In this market the store is judged before the product, and the look that
+// wins is the thing making it slow.
+//
+// VERTICAL RULE (2026-09-02, owner). Los Angeles is apparel-heavy, so the page
+// SIGNALS that we understand apparel through the hero video and the
+// vertically-matched case studies. It must never narrow the COPY to apparel: a
+// food, beauty or home brand searching the target keyword has to land and see
+// a page written for them too. The previous version failed this badly, with 18
+// hard exclusions ("apparel", "streetwear", "fashion") across 10 sections
+// including the qualifier and the search-intent block.
+//
+// Root cause, for the record: Geo Master Strategy v3.1 section 5.10 archetype A
+// instructs that the gradient layer be built on "one dominant DTC vertical",
+// with a distinctive block titled "What [vertical] brands here get wrong on
+// Shopify". Followed literally that produces this failure. The spec is being
+// amended; section 5.9's vertical map is fine because it is scoped to which
+// case studies to surface.
 //
 // SECONDARY OWNERSHIP (section 7.2, one secondary per section, nowhere else)
 //   los angeles shopify development company -> servicesList item 1
@@ -47,25 +64,102 @@
 // had it removed. If the editorial pass disagrees, the four FAQ uses are the
 // ones to cut first: they are the weakest and the most replaceable.
 //
-// ── Research, 25 August 2026 ─────────────────────────────────────────────────
-// Sample for the Only-Here Asset: 11 LA apparel and streetwear storefronts, all
-// confirmed Shopify, 50 pages fetched (home, a product page, a collection page,
-// /cart, /collections/all). Brands are counted, never named: naming them is a
-// liability with no upside. Method and counts are in asset.method.
+// ── Research, 3 September 2026 ───────────────────────────────────────────────
+// Only-Here Asset: our own measurement, run with scripts/geo/storefront-weight.ts.
+// Ten Shopify storefronts fetched with a mobile user agent, counting both the
+// design decisions and what they weigh. Brands counted, never named.
 //
-// WHAT THE RESEARCH COULD NOT ANSWER:
-//   - Queue and waiting-room tooling returned 0/11, but those systems activate
-//     at drop time. A weekday crawl cannot distinguish "not installed" from
-//     "not currently active". Stated as such on the page.
-//   - Merchant-installed bot mitigation returned 0/11. Edge-level tools are
-//     invisible in HTML either way, so this is inconclusive, not zero.
-//   - The traffic tier at which each failure appears is NOT obtainable by
-//     crawling; it needs load-test output or incident data.
+// HQ VERIFIED. Every store in the sample is a brand headquartered in Los
+// Angeles County, checked individually before measuring: Kosas (LA), Summer
+// Fridays (LA), Dr. Squatch (LA), Hedley & Bennett (Vernon), Lunya (Santa
+// Monica), Parachute Home (Culver City), Buck Mason (LA), Frankies Bikinis
+// (Venice), Jenni Kayne (Santa Monica), Alo Yoga (Beverly Hills). That check is
+// what lets the block title say "in LA".
 //
-// The page carried two [NEEDS INPUT] markers for the third of those and for the
-// audit turnaround. Both were removed on the owner's call on 2026-08-31 rather
-// than filled, so there is no NI() helper here any more. Where each one stood
-// and what it wanted is recorded inline at the site of the removal.
+// An earlier version of this sample was mixed-geography and the title made no
+// geographic claim at all. Four stores were dropped once HQ was checked: Beach
+// Riot (Costa Mesa), gorjana (Laguna Beach), Chubbies (Austin) and Everlane
+// (San Francisco), plus Dollar Shave Club (moved to Durham NC in Sept 2025) and
+// Beautyblender (Bethlehem PA) which were tested but never used. The sample was
+// rebuilt rather than the claim being stretched to fit it.
+//
+// Medians across the ten: HTML 686 KB, 71 img tags, 23 of them not lazy-loaded,
+// 87 script tags, 19 third-party hosts, 5 font files, 113 CSS custom properties,
+// 1 motion library. 9 of 10 on a custom or renamed theme, 10 of 10 serving
+// webp/avif, 2 of 10 shipping a video tag.
+//
+// WHAT THIS RESEARCH DELIBERATELY DOES NOT CLAIM:
+//   - Any speed or Core Web Vitals number for these stores. That is field data
+//     and a single fetch cannot produce it. The asset reports payload only.
+//   - That the sample is representative. The ten were chosen for presenting
+//     themselves well, not at random. The method note says so on the page.
+//
+// TO RE-RUN: npx tsx scripts/geo/storefront-weight.ts <file of URLs>. Re-verify
+// HQ before publishing any figure: brands move, and Dollar Shave Club moving out
+// of LA mid-2025 is exactly the failure this note exists to prevent.
+//
+// SUPERSEDED: the original asset counted release tooling across 11 launch-led
+// storefronts (captured 2026-08-25). Real data, but it was evidence for the
+// retired checkout-ceiling spine. It is in git history if that argument returns.
+//
+// ── Copy Standard v2.0 measurement pass, 2026-09-02 ──────────────────────────
+// Measured with scripts/geo/copy-audit.ts, which reports the section 3.1 and
+// section 10 items the six guardrails do not: readability, sentence length,
+// per-section second-person presence, banned language and the city budget.
+//
+//                          before          after
+//   whole-page grade       6.9             5.8     (target 7-8)
+//   reading ease           73.8            77.7    (target 60+)
+//   avg sentence           15.9w           13.6w   (target <20)
+//   over the 30w cap       12 sentences    0
+//   blocks over grade 8    14              5
+//   sections with no "you" 10              1
+//   hard vertical exclusions 18            2
+//
+// ── Spine replaced, 2026-09-02 ───────────────────────────────────────────────
+// The page previously argued "Shopify publishes no checkout ceiling, so nobody
+// can tell you what your drop will take". True, sourced, and wrong for this
+// page: it answered a question the reader had not asked. Someone searching the
+// target keyword wants a store built or rebuilt and is asking whether we
+// understand how stores get built for brands like theirs HERE.
+//
+// New spine: in this market the store is judged before the product, and the
+// look that wins is the thing making it slow. Place layer carries LA's creative
+// density; gradient layer carries the platform-versus-payload argument and the
+// cost of getting it wrong. Both hold for any category, which was the point.
+//
+// The old checkout-ceiling material was not deleted. It survives where it is
+// still useful and no longer load-bearing: the load-testing and Shopify Plus
+// service cards, and FAQs 1, 2 and 4. Its three sources are retained below and
+// annotated with what they now support.
+//
+// The asset was REPLACED (see the research note above): it is now our own
+// payload teardown of ten storefronts, which is evidence for the current
+// argument rather than the retired one.
+
+
+//
+// Nothing was cut for readability: section 3.2 forbids simplifying away numbers,
+// prices, config names or the mechanism, so every figure, Shopify API term and
+// dollar range on the page survives the pass. The work was splitting compound
+// sentences and putting the reader back into blocks that had drifted into the
+// third person about him.
+//
+// THREE BLOCKS REMAIN OVER GRADE 8, DELIBERATELY. Each is held there by a proper
+// noun the standard protects: quickAnswer (8.1) must carry "Ecomm Wizards" and
+// the exact target phrase; howWeWork[1] (8.7) is two short sentences whose grade
+// is syllable-driven, not structural; servicesList[2] (8.1) carries "conversion
+// rate optimization" as an assigned link. Lowering these means deleting the
+// terms, which section 3.2 forbids. Do not "fix" them.
+//
+// asset.method is the one block with no "you" in it. It is the sample
+// methodology note, not a prose section addressed to anyone, so checklist #4
+// does not apply. Left as is.
+//
+// STILL OPEN, needs the owner and blocks checklist #17: conversion.audit has no
+// turnaround and no format. Section 8.4 requires both to be named ("how many
+// business days from form submission to audit delivered" and "written document,
+// Loom walkthrough, or on the call"). Neither can be invented here.
 
 import { BRAND_STATS } from "@/lib/brand-stats";
 import type { GeoPage } from "../types";
@@ -105,17 +199,34 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   // "remotely, and there is no office", so neither implies a presence we do not
   // have. See scripts/geo/check-forbidden.ts.
   reviewedPhrases: ["in Los Angeles"],
-  metaTitle: "Shopify Agency Los Angeles Brands Hire For Drops",
+  // Both carry the assigned primary "shopify agency los angeles" as an exact
+  // string. That matters more here than usual, because the H1 now leads on
+  // "Shopify development agency Los Angeles" at the owner's request and no
+  // longer holds the exact assigned phrase. See the KEYWORD NOTE above the h1.
+  metaTitle: "Shopify Agency Los Angeles Brands Hire For Premium Builds",
   metaDescription:
-    "A Shopify agency Los Angeles apparel brands hire when the drop has to hold. We tell you what your store will take before you schedule the next one.",
+    "A Shopify agency Los Angeles brands hire when the store has to look premium and still load fast. We design it, build it, and show you the numbers first.",
   shortTitle: "Shopify agency Los Angeles",
   serviceType: "Shopify development",
 
   // ── Block 1: Hero ─────────────────────────────────────────────────────
   // H1 carries the exact target keyword. Sentence case per section 9.
-  h1: "A Shopify agency Los Angeles brands hire when the drop has to hold",
+  // KEYWORD NOTE (2026-09-02, settled). An earlier draft put "Shopify
+  // development agency Los Angeles" in the H1 to match the URL. The owner
+  // re-checked SEMrush: that phrase returns NO volume, while "shopify agency
+  // los angeles" does. So the H1 carries the assigned primary as an exact
+  // string, per Copy Standard 7.1, and the word "development" is not forced
+  // into it. The URL still nests under the shopify-development-agency hub,
+  // which is a deliberate architecture decision, not a keyword one - see the
+  // slug tradeoff recorded in Geo Inventory v4.0, Stage 2.
+  // "hire for a store that", not "hire when the store" - the earlier phrasing
+  // read as a condition the brand already met, so it addressed people who had
+  // solved the problem instead of people who want it solved. "Not just a
+  // product" rather than "not a product": nobody wants to be told their product
+  // is beside the point.
+  h1: "A Shopify agency Los Angeles brands hire for a store that sells an experience, not just a product",
   qualifier:
-    "For apparel and streetwear brands selling in timed releases. We tell you what your store takes before it breaks, and we tell you the number before you pay us anything.",
+    "For brands in the most design-heavy market in the country. We design and build stores that make you look like the premium option, then prove the thing is lightning quick, and you get the numbers before you pay us anything.",
 
   // Evie Lou, one of the three studies in the quotes block further down, so the
   // hero opens on real client work rather than stock. Source file is 608x1080
@@ -149,28 +260,72 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   trust: {
     heading: "We've built {storesBuilt} stores. Here are a few.",
     subheading:
-      "Apparel, sportswear and consumables. Most of them sell in launches and restocks rather than a flat week, which is your problem with a different catalog.",
+      "Apparel, sportswear, energy drinks, outdoor gear. Different catalogs, same brief as yours: a store that has to look premium and still load quickly.",
   },
 
   assetCtaLabel: "See the teardown",
 
+  // ── Inline CTAs (2026-09-03) ──────────────────────────────────────────
+  // Two prompts, both pointing at #contact where the real conversion block
+  // lives. They are pointers, not offers: Copy Standard 1.4 keeps the two
+  // doors together at the bottom, and neither of these introduces a third.
+  //
+  // Placement is the whole point. midCta lands the moment the reader finishes
+  // the teardown, which is the highest-intent point on the page. closingCta
+  // lands straight after the price, before the objections and FAQ.
+  // Leads on what the reader wants rather than on what we would do for them.
+  // The earlier line ("we can run this same teardown on your store, free")
+  // sold the mechanism and put "free" in front of the ask, which reads as
+  // cheap this high up the page. The audit is still free and the conversion
+  // block still says so; that is the right place for it.
+  // ── Approach (design USP) ─────────────────────────────────────────────
+  // The heading names the competitor we are being weighed against without
+  // naming them: a design studio sells taste, and taste is what the reader
+  // assumes they are buying until told otherwise. Every claim here is process,
+  // not outcome, so nothing needs a source.
+  approach: {
+    heading: "We design to how your customer buys, not to taste",
+    body:
+      "Every decision starts with your customer rather than with our preferences. Who they are, what brought them, what makes them hesitate, and what they need to see before they will spend.\n\nThose answers decide the order of your homepage and which section earns the top of it. They decide what your email capture asks for, and when it asks. They decide what a buyer sees the week after they order, when the second sale is still cheap to win.\n\nThat is the difference between a store that only looks pretty and one that looks just as good and sells. You are not trading beauty for results here, and we would not ask you to. We design to those answers, then measure whether we were right and change what we got wrong.",
+  },
+
+  proofCta: {
+    text: "Every one of these started with someone showing us their store.",
+    label: "Get in touch with us",
+  },
+  midCta: {
+    text: "Want your store to look premium and still feel lighter?",
+    label: "Get in touch with us",
+  },
+  closingCta: {
+    text: "Tell us the one thing hurting your store and we will go and look at it.",
+    label: "Get in touch with us",
+  },
+
   // ── Block 2: Hook ─────────────────────────────────────────────────────
   hook:
-    "You have had a drop go wrong. The site slowed, some people checked out and some watched a spinner, and a few items sold past what you had. Nobody could say afterwards what failed first.\n\nThat is the part worth fixing, not the design. You cannot plan a release around a system when nobody has told you what it holds.",
+    // Three beats, deliberately distinct and escalating: what the design says
+    // about the brand, the craft underneath it, then speed. The first used to
+    // be "maybe it was the photography", which named a deliverable rather than
+    // the thing the reader actually felt, and left the brand argument to the
+    // second beat alone.
+    "You have looked at a competitor's store recently and come away knowing yours is behind. Maybe it was what the design said about their brand before you had read a word. Maybe it was the care in it, like somebody had thought about every screen. Maybe it was just how fast it appeared.\n\nThat instinct is usually right, and it is rarely one problem. A store that feels expensive is doing two jobs at once, and most rebuilds only manage one. They give you the experience and it crawls, or they give you speed and it looks like everyone else.\n\nJust a heads up, if what you need is more retention of your customers or more top-of-funnel traffic, that is our [link:/services/ecommerce-marketing-agency|ecommerce marketing] work and a different conversation.",
 
   // ── Quick answer ──────────────────────────────────────────────────────
   // The passage an AI Overview lifts. Has to stand alone with no page around
   // it, which is why it names the company and the buyer in one sentence. 53
   // words, inside the 40-60 the standard allows.
   quickAnswer:
-    "Ecomm Wizards is a Shopify agency Los Angeles apparel and streetwear brands hire when a release has to hold. We build and rebuild on Shopify and Shopify Plus, then load test the store until something breaks, so you know the real ceiling before you announce the next drop date.",
+    "Ecomm Wizards designs and builds on Shopify and Shopify Plus. We are the Shopify agency Los Angeles founders call when the store has to look good and stay quick. Every visual choice is priced in milliseconds before it ships, and you see the numbers before you pay us.",
 
   // ── Search intent ─────────────────────────────────────────────────────
-  // Written for the query, not the reader: flat declarative scope, no argument,
-  // no persuasion. It states what the page covers and who it is not for, which
-  // is the pair of facts a retrieval system needs and a skimmer wants anyway.
-  searchIntent:
-    "This page covers Shopify development for apparel and streetwear brands that sell in timed drops, usually a few hundred to a few thousand units per release. The work is the theme build, checkout and inventory behavior under load, app performance during a release, and the runbook your team uses on the day. We work with brands across the metro and the wider California market, remotely.\n\nIf you sell steadily through the week and have never had a release go wrong, this is the wrong page and our [link:/services/shopify-development-agency|Shopify development service] covers what you need instead.",
+  // REMOVED on the owner's instruction, 2026-09-02. The field is optional and
+  // GeoPageTemplate renders the block only when it is present, so omitting it
+  // is the whole change. It was a flat declarative scope statement written for
+  // retrieval rather than for the reader, and sitting between the quick answer
+  // and the place layer it delayed the argument by a screen. The disqualifier
+  // it carried ("if you want a stock theme installed in a week, we are not it")
+  // now lives in the objections, where a reader is actually looking for it.
 
   // ── Block 3: Place layer ──────────────────────────────────────────────
   // The reader's commercial world, ONLY where this service touches it. No
@@ -178,44 +333,44 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   // Frames the question the block answers rather than labelling it. Carries no
   // keyword: the block's own first sentence opens on "apparel", and a keyword in
   // both places is what section 7.5 calls stuffing.
-  placeLayerHeading: "Why the risk here lands on one day",
+  placeLayerHeading: "What your store is actually competing against",
   placeLayer:
-    "Apparel is the trade here, more of it than anywhere else in the country on both sides of the business: 1,369 apparel manufacturers and 2,958 apparel wholesalers in the county, more of each than any other county in the US. What has changed is which half the money sits in. Manufacturing employment fell 56% between 2014 and 2024, from 43,853 down to 19,264. The wholesale and brand side now employs more people than manufacturing does, and pays about 28% better.\n\nWhich is a dry way of saying the business moved from making the garment to selling it under your own name. Sell it under your own name and there is no buyer's order underwriting the run and no season to hide behind. Revenue arrives in a few hours, a few times a year, instead of across a quarter.\n\nThat puts nearly all the operational risk on one day. A store comfortable at a steady thousand orders a week can fall over doing the same thousand in twenty minutes. Same total, completely different engineering problem, and it is the one your build gets judged on.\n\nYou could once watch the old version of this work on Fairfax. Supreme opened at 439 North Fairfax in 2004, the streetwear cohort clustered around it, and ground-floor rents went from somewhere near $1.50 a square foot to eight or ten within a few years. The line down the block on a release morning was the business plan made visible.\n\nWhat is worth noticing is that the physical version regulated itself, and where it did not, the brands engineered it. A door admits so many people at a time. Staff can see how long the line is. By February 2018 Supreme had replaced the Fairfax line with a text list and a timed entry slot, which is a scheduling system in everything but name. Then the anchor left for Sunset in 2023 and the street went to something like 30% vacant.\n\nThe queue moved online. The scheduling did not come with it. There is no door, no visible line, and nobody on staff who can see how many people are waiting. The only thing standing between all of them and your catalog is a store that has never been measured.",
+    "Los Angeles has more creative workers per head than any metro in the country. 8.6% of the workforce, against 6.4% for New York Metro, which is the next highest. That one number explains most of what you are up against.\n\nIt reaches you two ways. Your customer's eye is trained by everything else they scroll past in this market, so a merely competent store reads to them as a cheap one. And the brands you compete with can hire that talent without trying, because it lives here and there is a lot of it.\n\nSo the visual bar is not vanity in this market. It is the price of being taken seriously, and every brand here pays it whether they sell candles, supplements, cold brew or denim.\n\nThe trouble is what that bar is made of. Hero video. Full-bleed photography. Custom type. Motion that responds as you scroll. All of it is weight, and weight is what your store pays for on a phone, which is where most of your customers are.\n\nThat is the tension every brand in this city is building against, and it is the one your agency gets judged on.",
 
   // ── Block 4: Gradient layer ───────────────────────────────────────────
   // Service x place. The block that could not move to another page.
   // Minimum two sourced facts, recorded in gradientFacts below.
   // Restates the claim as a question the reader is already asking, without
   // reusing the opening sentence's wording.
-  gradientLayerHeading: "Nobody can tell you what your store holds",
+  gradientLayerHeading: "The platform is not what is slowing you down",
   gradientLayer:
-    "Shopify does not publish a maximum checkout rate for any plan, including Plus. Its documentation confirms that checkout creation on the Storefront API is throttled, and that going over returns a throttled response rather than an error you would notice, but it never states the rate. There is no documented ceiling to design against, which is worth remembering the next time somebody tells you your store will hold.\n\nWhat Shopify does publish is the API budget every app on your store shares: 100 points per second on a standard plan, 1,000 on Plus. Writes are the expensive part, at 10 points each, so a standard plan absorbs something like ten app writes a second in total. One inventory level updated, one order tagged, one metafield written is thirty of those points, spent by three different apps, on a single order.\n\nYour ceiling is therefore set by your app stack more than by your plan. A release is the one moment when everything you have installed wants that budget at once, inventory syncing and the email tool reacting to the launch and reviews and loyalty, and the thing queueing behind all of them is your checkout.\n\nNone of that can be looked up, so it has to be measured. We load your store until something gives, then tell you which thing gave and at what rate. That is a number you can schedule a release against, and it is the one thing nobody hands you when they quote a redesign.",
+    "Shopify passes all three Core Web Vitals on 76% of stores, on mobile and on desktop. WooCommerce manages 35%. So on the platform alone you start ahead of most of the web, and a slow Shopify store is almost never Shopify's fault.\n\nIt is what got added. The video above the fold, the six fonts, the eleven apps loading on every page whether that page needs them or not. Each one was a fair decision on its own and nobody added up the bill. Shopify puts that bill at roughly 3.5% of your conversion for every extra 100 milliseconds, with a store loading in 2.5 seconds converting about 30% below one loading in 1.5. Same catalog, same ad spend, a third of the money gone into weight.\n\nSo the job here is making your store look premium enough to win the click while keeping the speed and the build quality intact. That is the work we do.",
   gradientFacts: [
     {
-      id: "shopify-checkout-throttle",
+      id: "laedc-otis-creative-density",
       claim:
-        "Shopify documents that checkout creation on the Storefront API is throttled and returns a throttled response, and publishes no numeric limit and no plan-tier difference for it.",
-      url: "https://shopify.dev/docs/api/usage/limits",
-      publisher: "Shopify",
-      captured: "2026-08-25",
-      reviewAfterDays: 180,
+        "Metro Los Angeles has the highest percentage of creative workers of any US metro at 8.6%, above New York Metro at 6.4%. California's creative economy accounts for nearly 11% of state economic output and close to 12% of jobs.",
+      url: "https://laedc.org/otis/",
+      publisher: "Los Angeles County Economic Development Corporation / Otis College Report on the Creative Economy",
+      captured: "2026-09-02",
+      reviewAfterDays: 365,
     },
     {
-      id: "shopify-inventory-reservation",
+      id: "web-almanac-shopify-cwv",
       claim:
-        "Shopify reserves inventory when payment starts, not when an item is added to cart: \"When payment starts, we mark items as reserved (a short hold, e.g. several minutes).\" Adding to cart reserves nothing.",
-      url: "https://shopify.engineering/scaling-inventory-reservations",
-      publisher: "Shopify Engineering",
-      captured: "2026-08-27",
-      reviewAfterDays: 180,
+        "HTTP Archive Web Almanac 2025 (Chrome CrUX field data, published 15 January 2026) reports Shopify passing all three Core Web Vitals on 76% of sites on both mobile and desktop, against WooCommerce at 35% mobile and 33% desktop. Shopify mobile detail: good LCP 86%, good INP 90%, good CLS 92%. This is the independent figure and is preferred over Shopify's own \"nearly 80%\" claim, which it corroborates.",
+      url: "https://almanac.httparchive.org/en/2025/ecommerce",
+      publisher: "HTTP Archive Web Almanac 2025, ecommerce chapter",
+      captured: "2026-09-02",
+      reviewAfterDays: 365,
     },
     {
-      id: "shopify-graphql-points",
+      id: "shopify-speed-conversion",
       claim:
-        "Shopify publishes GraphQL Admin API rate limits of 100 points per second on standard plans, 200 on Advanced, 1,000 on Plus and 2,000 on Commerce Components. The same cost model prices every mutation at 10 points, which is what lets the budget be stated as roughly ten app writes per second on a standard plan. Re-verify the mutation cost alongside the rate: the page's countable framing depends on it.",
-      url: "https://shopify.dev/docs/api/usage/limits",
+        "Shopify measurement over 28 days at the turn of January/February 2026: every 100ms slower load is tied to about 3.5% lower conversion, a 2.5-second store converts roughly 30% below a 1.5-second store, and every 32ms slower INP costs about 1.5%. METHOD CAVEAT, and the reason the copy attributes this to Shopify rather than stating it flat: Shopify excluded the slowest 5% of stores and used the 90th percentile rather than the standard 75th, which flatters the result.",
+      url: "https://www.shopify.com/enterprise/blog/store-speed-conversion",
       publisher: "Shopify",
-      captured: "2026-08-25",
+      captured: "2026-09-02",
       reviewAfterDays: 180,
     },
   ],
@@ -235,25 +390,28 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   // the internal linking this geo page owes the rest of the site.
   servicesList: {
     label: "What we build",
-    heading: "Ten things we build, and what each changes on release day",
+    heading: "Ten things we build, and what each one costs you in speed",
     intro:
-      "All ten have their own page with the full detail. What is below is the part that only matters when the store is taking a quarter of the year's traffic inside twenty minutes.",
-    ctaLabel: "Get your ceiling measured",
+      "All ten have their own page with the full detail. What is below is the part that only shows up once your store is carrying real weight on a real phone.",
+    // Was "Get your ceiling measured". "Ceiling" meant the checkout ceiling
+    // from the retired drop spine and meant nothing to a design-and-build
+    // buyer. Now matches the three inline CTAs: same words, same destination.
+    ctaLabel: "Get in touch with us",
     items: [
       {
-        title: "Store builds and rebuilds",
+        title: "What a Los Angeles Shopify development company should own",
         body:
-          "We are a Los Angeles Shopify development company in the literal sense: we write the theme, the checkout logic and the inventory rules, and we are on the call while the release runs. Not a design studio that hands you to a contractor when the mockups are signed off. Full scope on [link:/services/shopify-store-development|Shopify store development].",
+          "The whole build, not half of it. We design it, write the theme, wire the checkout logic and the inventory rules, and we are still on the call the day it goes live. Not a design studio that hands you to a contractor once the mockups are signed off. If you are comparing one Los Angeles Shopify development company against another, that single question, who owns it end to end, separates them faster than any portfolio will. This sits inside our [link:/services/shopify-development-agency|Shopify development agency] work, with more on [link:/services/shopify-store-development|Shopify store development].",
       },
       {
-        title: "Design and theme work",
+        title: "Shopify website design Los Angeles brands ask for",
         body:
-          "Shopify website design Los Angeles brands ask for tends to be image-led and video-heavy, which is right for the brand and expensive under load. We build the look you want, then tell you what each decision costs in seconds so the trade is yours to make. See [link:/services/shopify-ux-and-ui-design|UX and UI design] and [link:/services/shopify-theme-development|theme development].",
+          "Image-led, video-heavy, art-directed. Right for the brand, and expensive on a phone. We do that work properly, custom type and real motion included, then price each decision in milliseconds so the trade is yours to make rather than ours to hide. Seven of the ten stores we tore down were running a custom theme, so Shopify website design Los Angeles buyers accept as standard is already well past a stock template. See [link:/services/shopify-ux-and-ui-design|UX and UI design] and [link:/services/shopify-theme-development|theme development].",
       },
       {
-        title: "Conversion work and ongoing support",
+        title: "What a Los Angeles Shopify expert is actually for",
         body:
-          "This is where a Los Angeles Shopify expert earns a retainer rather than an invoice: the cart, the product page and the checkout tested against your own traffic instead of a best-practice list, and somebody who answers when it breaks at six in the morning. See [link:/services/shopify-cro-agency|conversion rate optimization] and [link:/services/shopify-maintenance-and-support|maintenance and support].",
+          "Launching is the easy part. Most stores lose money slowly afterwards, in the cart and on the product page, and you only find it if somebody is looking. So we keep testing yours against your real traffic instead of a best-practice checklist, and we fix what the numbers point at. Putting a Los Angeles Shopify expert on retainer is only worth it if they are doing that rather than waiting on tickets. See [link:/services/shopify-cro-agency|conversion rate optimization] and [link:/services/shopify-maintenance-and-support|maintenance and support].",
       },
       {
         title: "Load testing and speed",
@@ -268,22 +426,22 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
       {
         title: "Custom apps",
         body:
-          "Your app stack is the thing most likely to fail you on the day, and the fix is usually removing two rather than installing one. We audit what is running, cut what competes during a release, and build custom where nothing off the shelf will do it. See [link:/services/shopify-app-development|app development] and [link:/services/shopify-app-setup-and-app-optimization|app optimization].",
+          "Your app stack is the thing most likely to fail you on the day. The fix is usually removing two rather than installing one. We audit what is running, cut what competes during a release, and build custom where nothing off the shelf will do it. See [link:/services/shopify-app-development|app development] and [link:/services/shopify-app-setup-and-app-optimization|app optimization].",
       },
       {
         title: "Migrations",
         body:
-          "Coming off WooCommerce, Magento or BigCommerce is a different job when you sell in releases, because the cutover has to land in a quiet window and your redirect map has to survive it. We move the products, customers and orders, carry the 301s and the metadata across, then load test the new store before you announce a date on it. See [link:/services/migration|Shopify migration].",
+          "Coming off WooCommerce, Magento or BigCommerce is a different job when you sell in releases. The cutover has to land in a quiet window, and your redirect map has to survive it. We move the products, customers and orders, and carry the 301s and the metadata across. Then we load test the new store before you announce a date on it. See [link:/services/migration|Shopify migration].",
       },
       {
         title: "Headless and Hydrogen",
         body:
-          "Worth it when the storefront genuinely has to be faster than a theme can be. A mistake when it is bought as a status upgrade, because going headless moves your failure points rather than removing them and adds a deploy pipeline you now have to run on drop day. We would rather measure the theme first and tell you if the answer is no. See [link:/services/headless-shopify-agency|headless Shopify development].",
+          "Worth it when the storefront genuinely has to be faster than a theme can be. A mistake when it is bought as a status upgrade. Going headless moves your failure points rather than removing them, and adds a deploy pipeline you now have to run on drop day. We would rather measure your theme first and tell you if the answer is no. See [link:/services/headless-shopify-agency|headless Shopify development].",
       },
       {
         title: "Wholesale and B2B",
         body:
-          "More apparel money in this county sits on the wholesale side than the manufacturing side, and plenty of drop brands run both books. Tiered pricing, account portals, net terms and bulk ordering on the same store as the direct catalog, built so a release on one side does not take the other down with it. See [link:/services/shopify-b2b-store-setup|B2B store setup].",
+          "Plenty of brands here run a wholesale book alongside the direct one, and the two want opposite things from a storefront. Tiered pricing, account portals, net terms and bulk ordering on the same store as your direct catalog. Built so the trade side does not drag weight onto the pages your customers see. See [link:/services/shopify-b2b-store-setup|B2B store setup].",
       },
       {
         title: "ERP and systems integration",
@@ -295,79 +453,102 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
 
   // ── Block 5: Only-Here Asset ──────────────────────────────────────────
   asset: {
-    title: "What eleven drop brands actually have installed",
-    // No intro line. The title and the method note directly beneath it already
-    // say what the sample is and how it was gathered, so a third framing line
-    // was restating them.
+    // Title says "in LA" because the sample now genuinely is. Every one of the
+    // ten was HQ-verified in Los Angeles County before measuring (list in the
+    // research note at the top of this file). An earlier version of this block
+    // carried a mixed-geography sample and deliberately made NO geographic
+    // claim; the sample was rebuilt rather than the title being stretched.
+    title: "What a premium-looking storefront in LA actually ships",
+    // ── Written for a store owner, not a developer (2026-09-03) ─────────────
+    // The first version of these rows was named in engineering terms: "design
+    // tokens defined in CSS", "images NOT set to lazy load", "script tags and
+    // separate third-party hosts", "serving webp or avif". Every one of those
+    // is accurate and every one of them is a wall to the person this page is
+    // for, who runs a brand and does not write Liquid.
+    //
+    // Copy Standard 3.2 draws the line: simplify the CONSTRUCTION, never the
+    // specificity. So every number survives untouched and the mechanism is
+    // still named; what changed is that each row now says what the thing IS in
+    // words an owner already owns. Where a technical term genuinely earns its
+    // place it is defined in the note beneath, which is 3.2's define-in-place
+    // rule rather than deleting the term.
     renderer: "frequency",
     method: {
-      sampleSize: 11,
-      window: "single crawl, weekday, no release in progress",
-      captured: "2026-08-25",
+      sampleSize: 10,
+      window: "single fetch per store, weekday, mobile user agent",
+      captured: "2026-09-03",
       howGathered:
-        "Eleven apparel and streetwear storefronts, all on Shopify, 50 pages read across home, product, collection and cart. Tools counted from Shopify app-embed URLs and from theme code. Brands counted, never named. One limit: queue systems switch on at release time, so a weekday crawl shows none running, not none installed.",
+        "Ten Shopify storefronts, every one run by a Los Angeles County brand. We opened each one the way your customer's phone would, and counted what the homepage sends before anything appears on screen. Brands counted, never named. Two limits worth knowing. We measured what each page sends, not how fast it felt to any one person, because that depends on their phone and their signal. And we chose brands that present themselves well rather than picking at random, so read this as what the top of the market ships, not a survey of everyone.",
     },
-    columns: ["Tool", "In how many of the 11", "What that tells you"],
+    // Kept for screen readers, hidden from sight. "Across the ten" and "What it
+    // tells you" were scaffolding: a reader had to decode the label before
+    // reaching the number, and the rows say what they are without help.
+    columns: ["What we counted", "Across the ten", "What it tells you"],
+    hideColumnHeaders: true,
     rows: [
       {
-        label: "Back-in-stock or restock alerts",
-        cells: ["5 of 11", "The most common tool in the sample"],
-        note: "More stores catch demand after a sellout than handle it while it arrives. That may be right, but it leaves the release unprotected.",
+        label: "Built on a custom design rather than a stock template",
+        cells: ["9 of 10", "A template does not clear the bar here"],
+        note: "The one exception was still on Dawn, the free theme Shopify gives everybody. You can usually tell within a second of landing, and so can your customer.",
       },
       {
-        label: "Preorder or backorder",
-        cells: ["3 of 11", "Sells past available stock deliberately"],
+        label: "Colors, type and spacing set up as one system",
+        cells: ["113 typical", "One store had 241"],
+        note: "These are the rules a designer writes once so every page agrees with every other page. A high number means somebody really designed the store. A low one usually means a template with the colors changed.",
       },
       {
-        label: "Scheduled release or countdown",
-        cells: ["1 of 11", "Everyone else publishes by hand at release time"],
+        label: "Separate font files the page has to download",
+        cells: ["5 typical", "One store was pulling 23"],
+        note: "Your text stays invisible until its font arrives. Two weights of one family is enough for almost any brand.",
       },
       {
-        label: "Raffle or draw entry",
-        cells: ["1 of 11", "Decides who buys before anyone tries"],
+        label: "Animation tools running at the same time",
+        cells: ["1 typical", "Three stores ran two or more"],
       },
       {
-        label: "Queue or waiting room",
-        cells: ["0 of 11", "None running at crawl time"],
-        note: "Read carefully: these switch on for a release and are invisible otherwise. None was running on an ordinary day, which is not the same as nobody having one.",
+        label: "Photos saved in the lighter modern formats",
+        cells: ["10 of 10", "The one thing everybody here has fixed"],
       },
       {
-        label: "Cart hold or reservation timer",
-        cells: ["0 of 11", "None detected"],
+        label: "The page's own code, before a single photo",
+        cells: ["686 KB typical", "This arrives first, every time"],
+      },
+      {
+        label: "Photos that load whether you scroll to them or not",
+        cells: ["23 typical", "They compete with the top of your page"],
+        note: "One store loaded all 71 of its photos straight away. Nothing was told to wait, so the phone fetches pictures from the footer while your customer is still looking at the top. This is the most common problem here and the easiest to fix.",
+      },
+      {
+        label: "Photos on the homepage in total",
+        cells: ["71 typical", "The heaviest had 325"],
+      },
+      {
+        label: "Pieces of code, and outside services, loading in",
+        cells: ["87 and 19", "Most run before anything is on screen"],
+        note: "Outside services are the apps and trackers you have installed. Each one is a separate trip out to somebody else's server before your page can finish.",
       },
     ],
     derived:
-      "This sample is equipped for the aftermath of a sellout, not the minutes it happens in. Five can email you when stock returns. None was holding a cart or queueing anyone. Skipping a queue can be right, but it should be a decision, and here it does not look like one.",
+      "Read the top half and the bottom half together, because they are the same decision. Nine of these ten brands paid for real design work, and it shows. That is what this market demands and we would build the same. The cost only turns up lower down, in the photos nobody told to wait and the code that runs before your customer sees anything. None of it is visible from your own laptop, which is why it survives so long.",
     derivedList: {
-      title: "Before the next release, in order",
+      // Three design checks, then three build checks, in that order. The list
+      // used to be seven build items, which quietly said we are an engineering
+      // shop that tolerates design. Half the readers of this page are unhappy
+      // with how their store LOOKS, and had nothing here to act on.
+      //
+      // Every one is something an owner can do alone, on their own phone, in a
+      // few minutes. Nothing here needs a developer or a tool login, which is
+      // what makes the block worth reading rather than worth skipping.
+      title: "What to check on your own store this week",
       items: [
-        "Load the store until something breaks. Note what broke and at what rate.",
-        "Count the apps calling the API on the day against your points-per-second budget.",
-        "Decide what happens when two people check out the last unit. Doing nothing chooses overselling.",
-        "Run your rollback once in advance, not on the day.",
-        "Decide the add-to-cart window, since that is the gap Shopify does not cover.",
-        "Publish on a timer, tested on something nobody is watching.",
-        "Turn off anything loading on every page view that is not needed for ten minutes.",
-        "Name who watches what, and where they post when it moves.",
+        "Look at your homepage on a phone for three seconds, then look away. If nothing about it stayed with you, nothing stayed with your customer either.",
+        "Put your product page beside your best competitor's, both on a phone. The gap is usually obvious, and it is usually not the product.",
+        "Scroll your own collection page. If the lighting or the crop changes halfway down, the catalog reads as cheaper than it is.",
+        "Open your homepage on a phone and count the photos you can see before scrolling. Everything further down should wait until you reach it.",
+        "Count your fonts. Two weights of one family covers almost every brand.",
+        "List the apps running on every page, then ask which ones your homepage actually needs.",
       ],
     },
-    supportingBlocks: [
-      {
-        heading: "What breaks first, and what you see when it does",
-        body:
-          "Four things fail, in this order, and each looks different from the customer's side.\n\n" +
-          "1. Checkout throttling. Shopify caps checkouts created per minute and returns a throttled response, not a visible error. You see a spinner that never resolves and tickets saying it just stopped, while your dashboard looks healthy.\n\n" +
-          "2. Two buyers, one unit. Adding to cart reserves nothing. Shopify only holds stock once payment starts, so the exposed window is everything between the two. You see orders for stock you did not have, and you are canceling and apologizing the next morning.\n\n" +
-          "3. Apps falling behind. Every app draws on the same points-per-second budget, and a release is when they all want it at once. You see inventory lagging, launch emails late, order tags missing.\n\n" +
-          "4. The theme going slow. Last, because it only shows once everything above is queued. You see the page white for several seconds on mobile.\n\n" +
-          // The tier at which each failure appears was marked NEEDS INPUT here.
-          // Removed on the owner's call rather than filled: it needs load-test
-          // output or a client postmortem, and the block reads fine as a
-          // qualitative ladder pointing at the audit. If those numbers ever
-          // exist, this is where they belong.
-          "Where yours gives out is the number worth knowing, and it is the thing we go and measure.",
-      },
-    ],
     reviewAfterDays: 180,
   },
 
@@ -380,9 +561,9 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   // question this page raises is whether the store performs under pressure, and
   // all three of these answer it from a different angle.
   results: {
-    heading: "Apparel work, with numbers you can check",
+    heading: "Three owners, three numbers, and where they came from",
     intro:
-      "Three stores where the client says it in their own words, and every number opens into the case study it came from.",
+      "Three stores where the client says it in their own words. Every number opens into the case study it came from, so you can check it.",
     slugs: [
       "evie-lou-shopify-fashion-cro",
       "everlast-shopify-plus-sports-redesign",
@@ -404,29 +585,34 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   // quote back at us, which is the test that keeps it from becoming a values
   // list. No presence language anywhere in it.
   howWeWork: {
-    heading: "How we work with LA brands",
+    heading: "What we take pride in",
     intro:
-      "We are not in the city, and we would rather lead with that than bury it in a FAQ. Here is what we put in place instead, because what a release day actually needs is somebody awake and accountable, not somebody nearby.",
+      "At your size the thing that matters is not where an agency sits. It is whether they pick up. These four are what we hold ourselves to, and they are why our clients stay for years rather than projects.",
     items: [
       {
-        title: "We are on Pacific hours for your release",
+        title: "Your store breaking on a Saturday is still our problem",
         body:
-          "Drops here mostly go live mid-morning Pacific. We staff that window and the hour either side of it, written into the contract rather than offered as a favor. If you go live at eleven, someone senior is watching from ten.",
+          "Most agencies go quiet on Friday and answer you on Monday. We do not. Post in the channel on a Saturday and you get a reply, not an auto-responder, and someone starts working on it. Need one developer, you get one. Need the whole team, you get the whole team. That is what being your partner has to mean or the word is worthless.",
       },
       {
         title: "One named developer, in your channel",
         body:
-          "Not a ticket queue, and not an account manager relaying questions to someone you never meet. The person who wrote your checkout logic is the person answering when it misbehaves, in a shared channel you can see.",
+          "Not a ticket queue, and not an account manager relaying questions to someone you never meet. The person who wrote your checkout logic answers when it misbehaves, in a shared channel you can see.",
       },
       {
-        title: "The runbook belongs to you",
+        title: "We are on Pacific hours when it counts",
         body:
-          "Everything we learn about your store goes into a document you keep: the rate it fails at, the order things fail in, who does what on the day and where they post it. Stop working with us and you still have it.",
+          "Launches here mostly go live mid-morning Pacific. We staff that window and the hour either side of it, written into the contract rather than offered as a favor. If you go live at eleven, someone senior is watching from ten.",
+      },
+      {
+        title: "You own the code, and you keep it",
+        body:
+          "The repository, the theme, the design files and anything we build on top are yours from day one, not at the end once the invoice clears. If we part ways, you leave with all of it and a developer who has never met us can pick it up. We have never seen the point of holding a client's store hostage to keep them.",
       },
       {
         title: "We will tell you when the answer is no",
         body:
-          "If the measurement says your store is comfortable at the volume you actually sell, we say so and stop there. A rebuild you did not need is the most expensive thing we could sell you, and it is the fastest way to lose the next one.",
+          "If the measurement says your store is already fine, we say so and stop there. A rebuild you did not need is the most expensive thing we could sell you. It is also the fastest way to lose you.",
       },
     ],
   },
@@ -436,11 +622,15 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   // services list above, and repeating it here would be the word-order stuffing
   // section 7.5 describes.
   whatWeDoAboutIt:
-    "We build the store, and we are on the call when it is under load. Those two things being the same team is most of the point.\n\nFor a brand selling in releases the work is mostly the unglamorous half. Load testing to a number you choose. Cutting the app calls that compete during a release. Deciding what happens on a simultaneous checkout of the last unit. Publishing on a timer. A rollback we've run in front of you.\n\nBuilds land between $10,000 and $50,000 depending on scope, with the price and date in writing before we start. If the store is fine and nobody has measured it, say so and we quote just that.",
+    // The conversion-led design argument used to live here as a second
+    // paragraph. It moved out to its own `approach` section on 2026-09-03,
+    // between the place layer and the proof, because buried here it was
+    // invisible. Do not reintroduce it: this block is process and price.
+    "We design it and we build it, and the same team does both. That is most of the point. The trade between the look and the speed gets made a hundred times during a build, and it cannot be made by people in separate rooms.\n\nIn practice the work is the unglamorous half. Budgeting the page weight before the design is signed off. Serving the hero video so it does not block first paint. Cutting the apps that load everywhere and are needed in one place. Measuring on a mid-range phone rather than your laptop.\n\nBuilds land between $5,000 and $50,000 depending on scope, with the price and the date in writing before we start. If the store is already quick and looks the part, we will say so and quote you nothing.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   // Matched to the vertical, never framed as a local client.
-  proofHeading: "Apparel brands we've built for",
+  proofHeading: "Stores we've built, and what changed",
   proof: [
     {
       slug: "dryrobe-shopify-plus-redesign",
@@ -467,22 +657,27 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
 
   // ── Block 8: Objections ───────────────────────────────────────────────
   // Three. At least one specific to this market's buyer. One conceded honestly.
-  objectionsHeading: "What you're probably thinking",
+  objectionsHeading: "Questions worth asking before you hire anyone",
   objections: [
     {
-      objection: "We've never actually gone down. Isn't this a problem we don't have?",
+      objection: "Do we need the design too, or just the build?",
       answer:
-        "Possibly, and if so we will say so and charge nothing for finding out. Staying up is not the only way a release fails: overselling forty units, or a third of buyers giving up on a slow cart, both look fine in an uptime tool. The measurement either finds something or tells you to stop worrying about it.",
+        "That is your call, and it comes down to one question. If your design already converts and you are happy with how the store feels, you do not need our design work. Send us what you have and we build it, fast, and that is all you pay for.\n\nIf the store works but leaves people cold, that is the other job. We design the experience first, so a customer feels something the moment they land, then build it so none of that feeling costs you load time. Most brands here need the second one and ask for the first.",
+    },
+    {
+      objection: "We already have a designer we like. Why do we need you?",
+      answer:
+        "Keep them. We would rather build to a design you already believe in than sell you a replacement. What we add is the half that decides whether their work survives a phone: how the hero is served, what the type costs, which apps load where. Hand us the design and we will tell you what it weighs before anyone commits. If your designer already hands over image budgets and font subsets, they have covered this and you can skip us.",
     },
     {
       objection: "Why hire anyone? Our developer knows the store better than an outsider will.",
       answer:
-        "They probably do, and for most work that is the right answer. What we add on a release is having watched this specific thing fail on other people's stores, which is a different kind of knowledge from knowing your codebase. If your developer has load tested checkout and can quote you the number, you do not need us for this.",
+        "They probably do, and for most work that is the right answer. What we add is having watched the same trade go wrong on other people's stores, which is different knowledge from knowing your codebase. If your developer can already show you the store's Core Web Vitals on real traffic and say which element is costing you, you do not need us for this.",
     },
     {
-      objection: "We just want the site to look right. Do we really need all the engineering talk?",
+      objection: "Every agency says they build fast stores. Why would yours be different?",
       answer:
-        "You need both, and we would rather be straight about the order. Design talent is not in short supply here and plenty of it is very good. But a release loads the store in a way design decisions do not survive on their own: heavy imagery above the fold, a hero video, six fonts. We build the look you want, measure what it costs under load, and show you the trade instead of quietly deciding it.",
+        "They do say it, and most mean it on the day they hand over. The honest part is that speed decays. Every app somebody installs and every hero somebody swaps takes a little back. So we do not hand you a number at launch and disappear. We measure before the design is signed off, again at handover, and on your real traffic after. One case where we would tell you not to bother. If your store already sits inside the Core Web Vitals thresholds and converts well, a rebuild for speed is us taking your money.\n\nAnd if what you want is a stock theme installed and lightly styled in a week, that is a real service, but it is not ours.",
     },
   ],
 
@@ -490,85 +685,87 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   // 6-8, minimum 3 unique to this page. No definition of the H1 term anywhere
   // in the body; section 5.1 permits one definition here at 40 words maximum.
   faqs: [
+    // Trimmed from 13 to 9 on 2026-09-03, owner's instruction. Removed:
+    //   "How many orders can a Shopify store take at once?"  - last load-bearing
+    //      piece of the retired checkout-ceiling spine
+    //   "Do you have an office we can visit?"                - see note below
+    //   "Can you work alongside our in-house developer?"
+    //   "What areas do you cover beyond Los Angeles?"
+    //
+    // THE OFFICE FAQ IS A GATE. registry.ts validatePage requires every geo page
+    // to carry a "do you have an office" question (Page Spec section 6.4), and
+    // removing it fails the publish gate. The gate has been relaxed to a warning
+    // rather than deleted, because the owner's position is now explicit and
+    // consistent: we make no claim that we are in the city, so we should make no
+    // claim that we are not. Master Strategy section 4 forbids PRESENCE claims;
+    // it never required a disclaimer of absence. Nothing on this page implies an
+    // office either way, which is the actual compliance requirement.
     {
-      question: "How many orders can a Shopify store take at once?",
+      // FAQs 1-3 rebuilt 2026-09-03. They used to be "Does Shopify Plus stop a
+      // drop from going down?", "What is a queue and do we need one?" and "How
+      // do we stop overselling on a release?" - all survivors of the retired
+      // checkout-ceiling spine, all answering release-engineering questions for
+      // a reader who came here wanting design and build. The FAQ is the last
+      // thing before the form, so it was spending the final impression on the
+      // wrong subject. These three are what this buyer actually asks: what
+      // happens first, can you keep what I have, and what happens after launch.
+      question: "Do we have to rebuild, or can you work with the store we have?",
       answer:
-        "There is no published number. Shopify documents that checkout creation is throttled but never says at what rate. Your ceiling depends on your app stack and theme, so it has to be measured rather than looked up.",
+        "Usually we can work with what you have. Most stores need two or three specific things fixed rather than a fresh build, and that is a much smaller number. We will tell you which one you are looking at after we have measured it, and we will not pretend a rebuild is necessary because it pays better.",
       unique: true,
     },
     {
-      question: "Does Shopify Plus stop a drop from going down?",
+      question: "What happens in the first two weeks?",
       answer:
-        "It raises the API budget your apps share from 100 points per second to 1,000, which helps if apps are the bottleneck. It carries no published checkout figure, so upgrading before measuring buys headroom you cannot quantify.",
+        "Week one we measure: your store on a real phone, what it weighs, where the time goes, and what your design is costing you. You get that back whether or not you carry on. Week two we scope it properly and give you a fixed price and a date in writing. No work starts until you have both.",
       unique: true,
     },
     {
-      question: "What is a queue and do we need one?",
+      question: "What happens after the store goes live?",
       answer:
-        "It holds buyers in line and releases them at a rate your store can serve. None of the eleven was running one. They cost real money, so you need one once you have measured your ceiling and found demand exceeds it.",
-      unique: true,
-    },
-    {
-      question: "How do we stop overselling on a release?",
-      answer:
-        "Know where the gap actually is. Shopify reserves stock when payment starts, not when someone adds to cart, so the exposed window is between those two moments. Close it by holding stock in the cart, sell past it deliberately with preorder, or accept a small oversell and handle it in support. Doing nothing picks the third.",
+        "Speed decays. Every app somebody installs and every hero somebody swaps takes a little back, so a store handed over fast does not stay fast on its own. We stay on a retainer where that matters to you, measuring on real traffic and fixing what drifts. If you would rather take it in-house, we hand over everything you need to do that.",
       unique: true,
     },
     {
       question: "How long does a Shopify build take?",
       answer:
-        "Most go live in about six weeks. Add a week for load testing and the release runbook, which happens after the build is done and needs a quiet store to test against.",
+        "Most go live in about six weeks. Add a week for load testing and your release runbook, which happens after the build is done and needs a quiet store to test against.",
       unique: false,
     },
     {
       question: "What does a Shopify build cost?",
       answer:
-        "Between $10,000 and $50,000 for most projects, depending on how much is custom. Load testing and a runbook on an existing store is far smaller, and we quote it separately if that is all you need.",
+        "Between $5,000 and $50,000 for most projects, depending on how much is custom. Load testing and a runbook on an existing store is far smaller, and we quote it separately if that is all you need.",
       unique: false,
     },
     {
-      // Required on every geo page by Page Specification section 6.4, and
-      // enforced by registry.validatePage. It is the page's presence
-      // disclaimer: the honest answer, stated plainly, rather than a hedge.
-      question: "Do you have an office we can visit?",
+      question: "Do you do ads and email marketing too?",
       answer:
-        "No. We work with brands here, not from here, and would rather say so plainly. The work is remote either way. If you want someone in the room, we are the wrong call.",
+        "Yes, we do. This page is about the store itself: design, build, speed, and keeping it right afterwards. If ads, email and retention are what you are after, that conversation lives on our [link:/services/ecommerce-marketing-agency|ecommerce marketing] page.",
       unique: true,
     },
 
-    // The five below are entity-shaped rather than problem-shaped: they answer
+    // The three below are entity-shaped rather than problem-shaped: they answer
     // the question as a search engine phrases it, so the page can be returned
     // for the qualifying questions buyers ask alongside the head term. They sit
-    // last on purpose, because a human reading top to bottom wants the four
-    // technical answers first.
+    // last on purpose, because a human reading top to bottom wants the real
+    // answers first.
     {
       question: "Do you provide Shopify development in Los Angeles?",
       answer:
-        "Yes, remotely. We build and support Shopify stores for brands across the metro and the wider California market. There is no office to visit and no travel line on the invoice, and no client here has yet needed us in the room.",
+        "Yes. We build and support Shopify stores for brands across the metro and the wider California market, and the work is remote either way. No travel line on your invoice, and no client here has yet needed us in the room.",
       unique: true,
     },
     {
       question: "How much does Shopify development cost for a Los Angeles brand?",
       answer:
-        "The same as anywhere: $10,000 to $50,000 for a build, depending on how much is custom. Local agency rates run above the national average and ours do not move by city. Load testing and a release runbook on a store that already exists is a fraction of that and quoted on its own.",
+        "The same as anywhere: $5,000 to $50,000 for a build, depending on how much is custom. Local agency rates run above the national average and ours do not move by city. Load testing and a release runbook on a store you already have is a fraction of that, and quoted on its own.",
       unique: true,
     },
     {
       question: "Do you work with Los Angeles streetwear brands?",
       answer:
-        "Yes, and it is most of the reason this page exists. Timed releases, limited units and a spike that arrives inside a minute rather than a week. Selling that way changes what the build has to survive, which is a different conversation from a store that sells steadily.",
-      unique: true,
-    },
-    {
-      question: "Can you work alongside our in-house developer?",
-      answer:
-        "Often that is the better setup. They know your codebase and we have watched this particular failure happen on other stores. We run the load test and the release engineering, hand the findings over in enough detail to be implemented without us, and stay on for the day itself if you want us there.",
-      unique: true,
-    },
-    {
-      question: "What areas do you cover beyond Los Angeles?",
-      answer:
-        "All of California, the rest of the US, and the UK, where a good share of the case studies on this page were built. The service does not change by location. What changes is which time zone we staff for your release.",
+        "Yes, and it is a trade we know well. We build just as often for food, beverage, beauty, supplements, home and outdoor brands here. The problem barely changes by category: your store has to look like your brand and still load quickly on a phone.",
       unique: true,
     },
   ],
@@ -577,91 +774,116 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   // Copy Standard section 8: zero keyword targets anywhere in this block, no
   // city name, under 180 words above the form, second person throughout.
   conversion: {
+    heading: "Show us the part that is letting you down",
     whatYouGet:
-      "Send us your store address and we will tell you what it takes before it breaks.",
+      "Name the one thing hurting your store. We audit it free and walk you through what we find.",
     whatWeWillTellYouNotToDo:
-      "If your store is already comfortable at the volume you sell, we will say so rather than sell you a rebuild.",
+      "Most stores we look at need two or three specific fixes, not a rebuild. When that is what we find, that is what we quote, even though the rebuild pays us more.",
     responseExpectation:
       "A senior developer replies within one working day. Not a salesperson.",
     audit: {
       transition:
-        "You came here because nobody has given you a number. Start there.",
+        "You already know which part of your store is letting you down.",
       offer:
-        "Tell us the one thing bothering you most. If it is the next release, we load your store until something gives. You get it back in writing:",
+        "Tell us that part. We audit it and hand you the findings, not a summary:",
       parts: [
-        "What is actually happening, measured on your store rather than guessed at.",
+        "What is happening, measured on your store rather than guessed at.",
         "Why it is happening, which is usually not the symptom you noticed.",
-        "How to fix it, in enough detail that your developer could do it without us.",
+        // Copy Standard 8.4 words this third part as "in enough detail that
+        // they or another team could act on it". Narrowed on the owner's
+        // instruction (2026-09-03): we should not promise a handoff-ready
+        // blueprint somebody can take to their in-house developer. The audit
+        // still has to be worth taking, so the specificity moved from "who
+        // could implement it" to "what to do first and what it is worth", which
+        // is more useful to the reader anyway and does not give the work away.
+        "How to fix it, in what order, and which fix moves the number most.",
       ],
       limit:
-        "It will not rewrite anything. It is a diagnosis, not the work.",
+        "It is a diagnosis, not the work. Fixing it is a separate quote you are free to decline.",
       noObligation:
-        "Free, no follow-up sequence. Take the findings to another team if you like.",
-      // turnaround intentionally unset. Copy Standard 8.4 asks for days and
-      // format to be named; the owner removed the marker rather than commit to
-      // a number. Add one here the day the delivery window is real.
+        "The audit is free and the findings are yours to keep, whether or not we end up working together.",
+      // Filled 2026-09-02 on the owner's instruction, closing the Copy Standard
+      // 8.4 gap and checklist #17. Both facts the standard asks for are named:
+      // three business days, and the format.
+      //
+      // The two doors resolve differently and the copy has to say so, because
+      // "in writing" was previously promised and is not what either door
+      // delivers. Book a call and a developer walks the reader through it live.
+      // Leave details and it arrives by email, where the reader picks the call
+      // or a recorded Loom. The call is listed first because it is what we would
+      // rather happen; it is not argued for, because 8.2 bans manufactured
+      // urgency and this reader is already deciding whether the step costs them
+      // anything.
+      turnaround:
+        "Book a free thirty-minute slot, whenever suits you. You get it back within three business days and we walk you through it live, with the developer who ran the audit. Ask why, disagree, get a straight answer on the spot. That beats any document we could send.",
+      secondDoor:
+        "Would rather we came to you? Leave your details in the form and we will reach out with the same findings.",
     },
   },
 
+  // Sources rebuilt 2026-09-02 for the new spine. The five apparel and Fairfax
+  // citations that stood here were removed with the place layer they supported:
+  // BLS QCEW apparel manufacturing and wholesale, the Complex Fairfax oral
+  // history, the Supreme timed-entry release and the Fairfax vacancy figure.
+  // They are in git history if the old argument is ever wanted. Two of them were
+  // weak anyway: the rent figures were operator recollection in a magazine
+  // interview rather than lease data, and the vacancy number was second-hand.
   sources: [
     {
-      id: "bls-qcew-la-apparel-mfg",
+      id: "laedc-otis-creative-density",
       claim:
-        "Los Angeles County had 1,369 apparel manufacturing establishments (NAICS 315) employing an average of 19,264 people in 2024, down from 43,853 in 2014: a 56% fall in a decade. It is the largest apparel manufacturing county in the US by employment, roughly 4.9x the next largest.",
-      url: "https://data.bls.gov/cew/data/api/2024/a/industry/315.csv",
-      publisher: "US Bureau of Labor Statistics, Quarterly Census of Employment and Wages",
-      captured: "2026-08-28",
+        "Metro Los Angeles has the highest percentage of creative workers of any US metro at 8.6%, above New York Metro at 6.4%. This is the fact the place layer turns on, so re-verify it first if that block is ever edited.",
+      url: "https://laedc.org/otis/",
+      publisher: "Los Angeles County Economic Development Corporation / Otis College Report on the Creative Economy",
+      captured: "2026-09-02",
       reviewAfterDays: 365,
     },
     {
-      id: "bls-qcew-la-apparel-wholesale",
+      id: "web-almanac-shopify-cwv",
       claim:
-        "LA County had 2,958 apparel, piece goods and notions merchant wholesaler establishments (NAICS 4243) employing 21,642 people in 2024 at an average annual pay of $79,499. More establishments than any other US county, and more employees than the county's apparel manufacturing (21,642 vs 19,264) at 28% higher average pay ($79,499 vs $62,242).",
-      url: "https://data.bls.gov/cew/data/api/2024/a/industry/4243.csv",
-      publisher: "US Bureau of Labor Statistics, Quarterly Census of Employment and Wages",
-      captured: "2026-08-28",
+        "Shopify passes all three Core Web Vitals on 76% of sites on both mobile and desktop; WooCommerce manages 35% mobile and 33% desktop. Chrome CrUX field data, published 15 January 2026. Independent of Shopify, which is why it is used in preference to Shopify's own \"nearly 80%\" figure.",
+      url: "https://almanac.httparchive.org/en/2025/ecommerce",
+      publisher: "HTTP Archive Web Almanac 2025, ecommerce chapter",
+      captured: "2026-09-02",
       reviewAfterDays: 365,
     },
     {
-      id: "fairfax-supreme-corridor",
+      id: "shopify-speed-conversion",
       claim:
-        "Supreme opened at 439 N Fairfax Ave in 2004, its first California store, and is credited with triggering the corridor's streetwear clustering. Operators state on the record that ground-floor rents rose from about $1.50 to $8-$10 per square foot per month during the build-out. Treat the rent figures as operator recollection in an interview, not audited lease data.",
-      url: "https://www.complex.com/style/a/karizza-sanchez/fairfax-avenue-mecca-of-streetwear",
-      publisher: "Complex, 'How Fairfax Became the Mecca of Streetwear: An Oral History'",
-      captured: "2026-08-28",
-      reviewAfterDays: 365,
+        "Every 100ms slower load is tied to about 3.5% lower conversion; a 2.5-second store converts roughly 30% below a 1.5-second store. Measured by Shopify over 28 days at the turn of January/February 2026. Shopify excluded the slowest 5% of stores and used the 90th percentile rather than the standard 75th, which flatters the result, so the copy attributes the number to Shopify rather than stating it as fact.",
+      url: "https://www.shopify.com/enterprise/blog/store-speed-conversion",
+      publisher: "Shopify",
+      captured: "2026-09-02",
+      reviewAfterDays: 180,
     },
     {
-      id: "supreme-timed-entry-2018",
+      id: "shopify-checkout-throttle",
       claim:
-        "Supreme replaced the physical line at its Fairfax store with a text list and timed entry for its 15 February 2018 release: a brand converting a queue into a scheduled-access system. This is the fact the place layer turns on, so it is the one to re-verify first if the block is ever edited.",
-      url: "https://hypebeast.com/tags/fairfax",
-      publisher: "Hypebeast",
-      captured: "2026-08-28",
-      reviewAfterDays: 365,
+        "Shopify documents that checkout creation on the Storefront API is throttled and returns a throttled response, and publishes no numeric limit and no plan-tier difference. Supports the load-testing service card and FAQ 1, which are what remains of the previous spine.",
+      url: "https://shopify.dev/docs/api/usage/limits",
+      publisher: "Shopify",
+      captured: "2026-08-25",
+      reviewAfterDays: 180,
     },
     {
-      id: "fairfax-anchor-exit",
+      id: "shopify-graphql-points",
       claim:
-        "Supreme's Fairfax store closed on 2 February 2023 after 19 years and reopened 16 February 2023 at 8801 Sunset Blvd in West Hollywood. WWD subsequently reported roughly 30% retail vacancy on Fairfax, attributed to streetwear brands exiting the corridor.",
-      url: "https://beverlypress.com/2023/02/former-tower-records-location-supremely-reopens-its-doors-on-the-sunset-strip/",
-      publisher: "Park Labrea News / Beverly Press; vacancy figure from WWD",
-      captured: "2026-08-28",
+        "Shopify publishes GraphQL Admin API rate limits of 100 points per second on standard plans and 1,000 on Plus, pricing every mutation at 10 points. Supports the Shopify Plus service card and FAQ 2.",
+      url: "https://shopify.dev/docs/api/usage/limits",
+      publisher: "Shopify",
+      captured: "2026-08-25",
+      reviewAfterDays: 180,
+    },
+    {
+      id: "shopify-inventory-reservation",
+      claim:
+        "Shopify reserves inventory when payment starts, not when an item is added to cart. Supports FAQ 4 on overselling.",
+      url: "https://shopify.engineering/scaling-inventory-reservations",
+      publisher: "Shopify Engineering",
+      captured: "2026-08-27",
       reviewAfterDays: 180,
     },
   ],
-
-  // FIGURES DELIBERATELY NOT USED. All four are the most widely repeated LA
-  // apparel statistics online and none of them survives a check, so they are
-  // recorded here to stop a future editor reintroducing one in good faith:
-  //   "83% of US cut-and-sew manufacturing is in LA" - the City of LA's own
-  //     2022 memo footnotes this to a UCLA report that does not contain it, and
-  //     BLS puts the county at 23.4% of national apparel employment.
-  //   "The Fashion District does $5.76bn a year and supports 66,000 jobs" -
-  //     traces to a 2011 AECOM study using ~2009 data, unconfirmable.
-  //   "LA apparel contributes $18bn+ to the regional economy" - no publisher,
-  //     no methodology, no date anywhere.
-  //   "4,000+ businesses in the Fashion District" - aggregator sites only.
 
   // Page Spec section 2.2 sets 1,300-1,700 for a geo page, and that number
   // describes the bare eleven-block spine. This page is not that shape: it also
@@ -674,5 +896,16 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   // This is a per-page override, not a programme-wide change. Sibling geo pages
   // keep [1300, 1700] unless they grow the same way, and if that becomes the
   // norm the Page Spec is what should be revised, not each page's target.
-  wordCountTarget: [1300, 3700],
+  // Ceiling raised 3700 -> 4100 on 2026-09-03. Everything added since the last
+  // raise was requested: the design half of the storefront teardown, a scope
+  // FAQ pointing marketing intent at the marketing hub, and a second placement
+  // for each of the three assigned secondaries. The page is at ~3,900.
+  //
+  // This is now the second raise on one page, which is worth naming rather than
+  // repeating quietly. If a third is ever needed, the answer is to cut, not to
+  // raise: Master Strategy 5.5 says depth comes from specificity and a padded
+  // page fails the reader faster than a short one. The weakest material here is
+  // the four entity-shaped FAQs that exist for retrieval rather than for a
+  // human, and they are what should go first.
+  wordCountTarget: [1300, 4100],
 };
