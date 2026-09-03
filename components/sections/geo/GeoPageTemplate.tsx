@@ -13,6 +13,8 @@ import SearchIntentBlock from "./SearchIntentBlock";
 import PlaceLayer from "./PlaceLayer";
 import GradientLayer from "./GradientLayer";
 import ServicesAccordion from "./ServicesAccordion";
+import DisciplineBlocks from "./DisciplineBlocks";
+import EngagementBlock from "./EngagementBlock";
 import ResultsSlider from "./ResultsSlider";
 import HowWeWorkBlock from "./HowWeWorkBlock";
 import ServiceBlock from "./ServiceBlock";
@@ -141,7 +143,21 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
       {/* Services list sits after the asset, not before it. The asset is what
           the page is here to give away; a service menu ahead of it reads as a
           pitch interrupting the argument. */}
+      {/* Discipline deep-dives, for pages whose keyword is the broad agency
+          term rather than a named service. A page sets EITHER this or the
+          services accordion: they answer the same slot for two different
+          readers, and rendering both would sell the service list twice. */}
+      {page.disciplines && <DisciplineBlocks data={page.disciplines} />}
+
       {page.servicesList && <ServicesAccordion data={page.servicesList} />}
+
+      {/* Numbered process. Optional, and only right where the reader has
+          already chosen the service and wants the sequence: every page ranking
+          for the Shopify SEO term walks through a numbered method, because that
+          buyer has usually paid for SEO once already and wants to know what
+          they are actually getting this time. Sits after the service list so
+          the page says what the work is before it says how it runs. */}
+      {page.engagement && <EngagementBlock engagement={page.engagement} />}
 
       {/* Named client quotes. Uses different studies from the proof grid below,
           so the page shows six brands rather than the same three twice. */}
@@ -164,7 +180,12 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
 
       <ObjectionBlock heading={page.objectionsHeading} objections={page.objections} />
 
-      <FAQBlock heading={`${page.shortTitle} FAQs`} faqs={page.faqs} />
+      {/* types.ts documents faqHeading as an override for the generic default,
+          but the default was hardcoded here and the field was never read. The
+          fallback is unchanged, so pages that do not set it are unaffected.
+          Worth having: "<shortTitle> FAQs" repeats the page's target keyword in
+          an H2, which Copy Standard 7.5 counts toward the body cap. */}
+      <FAQBlock heading={page.faqHeading ?? `${page.shortTitle} FAQs`} faqs={page.faqs} />
 
       <ConversionBlock conversion={page.conversion} landingPage={page.path} />
 

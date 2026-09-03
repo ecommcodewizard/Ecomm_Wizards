@@ -193,6 +193,47 @@ export const IndustriesSchema = z.object({
 });
 export type Industries = z.infer<typeof IndustriesSchema>;
 
+/** One discipline deep-dive, rendered as an alternating image + text row.
+ *
+ *  Exists for pages whose target keyword is the BROAD agency term rather than a
+ *  named service. Someone searching "shopify agency <city>" may want design,
+ *  build, SEO, marketing or retention, and Positioning (Master Strategy 6) says
+ *  the keyword sets the page's angle without narrowing what it sells. A single
+ *  services accordion answers that reader with a task list; this block answers
+ *  with the disciplines themselves, each evidenced by a real case study.
+ *
+ *  Every discipline is anchored to a published study by slug. The brand name,
+ *  image and headline metric are read from lib/case-studies.ts at render time
+ *  and never retyped here, so a discipline cannot claim proof that does not
+ *  exist. */
+export const DisciplineSchema = z.object({
+  /** Small uppercase label above the heading, e.g. "Design and UX". */
+  label: z.string().min(1),
+  heading: z.string().min(1),
+  /** Paragraphs split on blank lines, same convention as the prose blocks. */
+  body: z.string().min(1),
+  /** Case study slug that evidences THIS discipline. A slug that resolves to no
+   *  published study renders the row without its proof panel rather than
+   *  inventing one. */
+  /** Optional sub-services this discipline covers, rendered as small chips.
+   *  Borrowed from dd.nyc, whose service cards each list four to six
+   *  sub-services: on a shortlist-stage page it lets a reader confirm their own
+   *  job is in scope without reading the paragraph. Keep every entry to
+   *  something we actually sell and have a page for. */
+  covers: z.array(z.string().min(1)).min(3).max(8).optional(),
+  caseSlug: z.string().min(1),
+  cta: z.object({ label: z.string().min(1), href: z.string().startsWith("/") }),
+});
+export type Discipline = z.infer<typeof DisciplineSchema>;
+
+export const DisciplinesSchema = z.object({
+  label: z.string().min(1),
+  heading: z.string().min(1),
+  intro: z.string().min(1),
+  items: z.array(DisciplineSchema).min(3).max(8),
+});
+export type Disciplines = z.infer<typeof DisciplinesSchema>;
+
 /** Results and client voice. Only slugs: every quote, name, role, avatar and
  *  metric is read from lib/case-studies.ts at render time, so a testimonial can
  *  only appear if a real published case study carries it. Nothing is retyped
@@ -375,6 +416,9 @@ const BaseSchema = z.object({
   /** Optional industries block. Verifiable: every brand named must have a
    *  published case study. */
   industries: IndustriesSchema.optional(),
+  /** Optional discipline deep-dives (alternating image + text). For broad-term
+   *  pages where the searcher may want any of several services. */
+  disciplines: DisciplinesSchema.optional(),
   /** Optional full service list (sticky intro + accordion). */
   servicesList: ServicesListSchema.optional(),
   /** Optional results + client-quote block. When present it REPLACES the proof
@@ -512,6 +556,13 @@ export const GeoPageSchema = BaseSchema.extend({
       items: z.array(z.object({ title: z.string().min(1), body: z.string().min(1) })).min(3).max(5),
     })
     .optional(),
+  /** Optional numbered process block, shared with the hub schema.
+   *  Added for pages whose keyword names a service the reader has already
+   *  chosen, where the real question is what actually happens and when. That is
+   *  the dominant pattern on the SEO SERP: every page ranking for
+   *  "shopify seo agency new york" walks through a numbered method, because the
+   *  buyer has usually been burned once and wants the sequence in advance. */
+  engagement: EngagementSchema.optional(),
   /** Block 6: the response, in prose. */
   whatWeDoAboutIt: z.string().min(1),
 });
@@ -545,6 +596,10 @@ export function proseStrings(page: GeoProgrammePage): string[] {
     out.push(page.industries.heading, page.industries.intro);
     for (const i of page.industries.items) out.push(i.name, i.whatsDifferent);
   }
+  if (page.disciplines) {
+    out.push(page.disciplines.label, page.disciplines.heading, page.disciplines.intro);
+    for (const d of page.disciplines.items) out.push(d.label, d.heading, d.body, d.cta.label, ...(d.covers ?? []));
+  }
   if (page.servicesList) {
     out.push(page.servicesList.label, page.servicesList.heading, page.servicesList.intro, page.servicesList.ctaLabel);
     for (const s of page.servicesList.items) out.push(s.title, s.body);
@@ -557,6 +612,10 @@ export function proseStrings(page: GeoProgrammePage): string[] {
     out.push(...page.whatWeDontDo);
   } else {
     out.push(page.placeLayer, page.gradientLayer, page.whatWeDoAboutIt);
+    if (page.engagement) {
+      out.push(page.engagement.heading, page.engagement.intro);
+      for (const st of page.engagement.steps) out.push(st.week, st.title, st.what);
+    }
     if (page.placeLayerHeading) out.push(page.placeLayerHeading);
     if (page.gradientLayerHeading) out.push(page.gradientLayerHeading);
     if (page.searchIntent) out.push(page.searchIntent);
