@@ -1,6 +1,5 @@
-import Link from "next/link";
 import type { Conversion } from "@/lib/geo/types";
-import LeadForm from "@/components/ui/LeadForm";
+import BookingSwitch from "./BookingSwitch";
 import Prose, { inline } from "./Prose";
 
 // Geo programme conversion block (spec section 7). Left column: what the reader
@@ -73,8 +72,19 @@ export default function ConversionBlock({ conversion, landingPage, heading, id =
         `,
         }}
       />
-      <div className="gp-inner gcb-grid">
-        <div className="gcb-copy">
+      {/* BookingSwitch owns the grid because the button and the panel it swaps
+          live in different columns and must share one piece of state. The prose
+          is passed in as slots: it is still rendered on the server, so none of
+          it reaches the client bundle. */}
+      <BookingSwitch
+        landingPage={landingPage}
+        bookingPath={BOOKING_PATH}
+        // Unique per page. The landing path is already unique and stable, so it
+        // is the natural key; cal.com only needs a string no other embed on the
+        // page uses.
+        calNamespace={`gcb${landingPage.replace(/[^a-z0-9]+/gi, "-")}`}
+        above={
+          <>
           <p className="gp-eyebrow">Next step</p>
           <h2 id={`${id}-heading`} className="gp-h2">{inline(sectionHeading)}</h2>
 
@@ -114,14 +124,10 @@ export default function ConversionBlock({ conversion, landingPage, heading, id =
           {conversion.audit?.secondDoor ? (
             <p className="gp-p gcb-second">{inline(conversion.audit.secondDoor)}</p>
           ) : null}
-
-          <div className="gcb-doors">
-            <Link href={BOOKING_PATH} className="gcb-book">
-              Book a 30-minute call
-              <svg width="16" height="12" viewBox="0 0 18 14" fill="none" aria-hidden><path d="M1 7h15M10 1l6 6-6 6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            </Link>
-          </div>
-
+          </>
+        }
+        below={
+          <>
           {conversion.audit ? (
             <p className="gp-p gcb-free">{inline(conversion.audit.noObligation)}</p>
           ) : null}
@@ -131,11 +137,9 @@ export default function ConversionBlock({ conversion, landingPage, heading, id =
             <Prose text={conversion.whatWeWillTellYouNotToDo} />
           </aside>
           <Prose text={conversion.responseExpectation} className="gp-p gcb-response" />
-        </div>
-        <div className="gcb-form">
-          <LeadForm landingPage={landingPage} submitLabel="Send my details" />
-        </div>
-      </div>
+          </>
+        }
+      />
     </section>
   );
 }
