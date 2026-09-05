@@ -105,6 +105,7 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
                 src={image.video}
                 poster={image.src}
                 className="gph-img gph-video"
+                label={image.alt}
                 deferUntilIdle
                 style={image.aspect ? { aspectRatio: image.aspect, objectFit: "cover" } : undefined}
               />
@@ -159,7 +160,7 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
           @media (max-width: 1023px) { .gph-media { margin-top: 8px; } }
           @media (max-width: 640px) { .gph-img { border-radius: 10px; } }
           .gph-badge { display: inline-block; padding: 6px 16px; background: rgba(97,206,112,0.12); border: 1px solid rgba(97,206,112,0.3); border-radius: 999px; color: #61ce70; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
-          .gph-h1 { color: #ffffff; font-size: 48px; font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; margin: 20px 0 0; max-width: 900px; text-wrap: balance; }
+          .gph-h1 { color: #ffffff; font-size: 48px; font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; margin: 20px 0 0; max-width: 900px; text-wrap: pretty; }
           .gph-qualifier { max-width: 640px; margin-top: 20px; }
           .gph-qualifier .gp-lead { margin-bottom: 12px; }
           .gph-qualifier .gp-lead:last-child { margin-bottom: 0; }

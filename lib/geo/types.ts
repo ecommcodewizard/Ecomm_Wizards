@@ -210,8 +210,17 @@ export const DisciplineSchema = z.object({
   /** Small uppercase label above the heading, e.g. "Design and UX". */
   label: z.string().min(1),
   heading: z.string().min(1),
-  /** Paragraphs split on blank lines, same convention as the prose blocks. */
-  body: z.string().min(1),
+  /** Optional single supporting line. Deliberately NOT a paragraph: the owner
+   *  ruled (2026-09-05) that by this point in the page the reader has done all
+   *  the reading they are going to do, so the heading carries the argument and
+   *  the video carries the proof. Present only where an assigned secondary
+   *  keyword has to live somewhere; omitted entirely otherwise. */
+  body: z.string().min(1).optional(),
+  /** Alt text for this row's image or video. Falls back to a generated
+   *  "<brand> storefront we built" when unset. Set it where the image can
+   *  honestly carry the discipline's own language: it is the one place a
+   *  keyword and a genuine description coincide. Never imply a location. */
+  imageAlt: z.string().min(1).optional(),
   /** Case study slug that evidences THIS discipline. A slug that resolves to no
    *  published study renders the row without its proof panel rather than
    *  inventing one. */
@@ -457,6 +466,18 @@ const BaseSchema = z.object({
    *  Neither of these is a second OFFER, which Copy Standard 1.4 forbids. Both
    *  are pointers to #contact, where the two doors still sit together. */
   closingCta: z.object({ text: z.string().min(1), label: z.string().min(1) }).optional(),
+  /** Fourth inline prompt, rendered directly after the services block, whether
+   *  that is the discipline rows, the accordion or the numbered process. Added
+   *  2026-09-05: the reader has just been shown everything we sell and is at
+   *  the point of working out which of it applies to them, and the next chance
+   *  to act was otherwise two sections away. Like the other three, this is a
+   *  pointer to #contact, not a second offer (Copy Standard 1.4). */
+  servicesCta: z.object({ text: z.string().min(1), label: z.string().min(1) }).optional(),
+  /** Optional heading for the "what we do about it" block. The template's
+   *  default is "What we do about it", which reads as a placeholder rather than
+   *  a heading: it names no subject and promises nothing. Set this per page.
+   *  Kept optional so published pages that never set it are untouched. */
+  whatWeDoAboutItHeading: z.string().min(1).optional(),
   /** Section headings are copy, not layout, so they live here rather than being
    *  hardcoded in the template. Write a real headline: a bare noun like "Proof"
    *  reads as a placeholder. */
@@ -598,7 +619,7 @@ export function proseStrings(page: GeoProgrammePage): string[] {
   }
   if (page.disciplines) {
     out.push(page.disciplines.label, page.disciplines.heading, page.disciplines.intro);
-    for (const d of page.disciplines.items) out.push(d.label, d.heading, d.body, d.cta.label, ...(d.covers ?? []));
+    for (const d of page.disciplines.items) out.push(d.label, d.heading, ...(d.body ? [d.body] : []), d.cta.label, ...(d.covers ?? []));
   }
   if (page.servicesList) {
     out.push(page.servicesList.label, page.servicesList.heading, page.servicesList.intro, page.servicesList.ctaLabel);
@@ -639,6 +660,8 @@ export function proseStrings(page: GeoProgrammePage): string[] {
   if (page.approach) out.push(page.approach.heading, page.approach.body);
   if (page.proofCta) out.push(page.proofCta.text, page.proofCta.label);
   if (page.closingCta) out.push(page.closingCta.text, page.closingCta.label);
+  if (page.servicesCta) out.push(page.servicesCta.text, page.servicesCta.label);
+  if (page.whatWeDoAboutItHeading) out.push(page.whatWeDoAboutItHeading);
   out.push(page.proofHeading, page.objectionsHeading);
   for (const p of page.proof) out.push(p.vertical, p.whatWasBuilt, p.outcome);
   for (const o of page.objections) out.push(o.objection, o.answer);
@@ -674,6 +697,7 @@ export function wordCount(strings: string[]): number {
     .replace(/\[NEEDS INPUT[^\]]*\]/g, " ")
     .replace(/\[src:[a-z0-9-]+\]/gi, " ")
     .replace(/\[link:[^\]|]+\|([^\]]+)\]/g, "$1")
+    .replace(/\*\*/g, "")
     .split(/\s+/)
     .filter(Boolean).length;
 }

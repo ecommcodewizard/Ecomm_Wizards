@@ -23,6 +23,12 @@ type Props = {
   poster: string;
   className?: string;
   style?: React.CSSProperties;
+  /** Describes the footage. A <video> element has no alt attribute, so this is
+   *  the only way to give one a text alternative: without it a hero video is
+   *  unlabelled to a screen reader and carries no description at all. Applied
+   *  as aria-label with role="img", because the element is decoration that
+   *  carries meaning rather than a control anyone can operate. */
+  label?: string;
   /** Playback rate once it starts. Some clips read better slightly sped up. */
   rate?: number;
   /** How far ahead of the viewport to start fetching. */
@@ -52,6 +58,7 @@ export default function LazyAutoplayVideo({
   poster,
   className,
   style,
+  label,
   rate,
   rootMargin = "400px",
   deferUntilIdle = false,
@@ -136,6 +143,7 @@ export default function LazyAutoplayVideo({
       preload="none"
       className={className}
       style={style}
+      {...(label ? { "aria-label": label, role: "img" } : {})}
     />
   );
 }
