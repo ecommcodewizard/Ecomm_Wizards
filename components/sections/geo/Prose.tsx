@@ -14,7 +14,7 @@ import { NEEDS_INPUT } from "@/lib/geo/types";
 // by the owner, and validate-content fails any content file that still contains
 // a [src:...] marker so it cannot creep back in.
 
-const MARKER_RE = /(\[NEEDS INPUT[^\]]*\]|\[link:[^\]|]+\|[^\]]+\])/gi;
+const MARKER_RE = /(\[NEEDS INPUT[^\]]*\]|\[link:[^\]|]+\|[^\]]+\]|\*\*[^*]+\*\*)/gi;
 
 // Brand-stat tokens. Writing {storesBuilt} instead of "150+" means a revised
 // figure is one edit in lib/brand-stats.ts rather than a hunt through copy,
@@ -43,6 +43,10 @@ export function inline(text: string): ReactNode[] {
           {link[2]}
         </Link>
       );
+    }
+    const bold = /^\*\*([^*]+)\*\*$/.exec(part);
+    if (bold) {
+      return <strong key={i}>{bold[1]}</strong>;
     }
     return part;
   });

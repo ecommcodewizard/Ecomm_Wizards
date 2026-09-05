@@ -71,7 +71,7 @@ export default function ServicesAccordion({ data }: { data: ServicesList }) {
         @media (min-width: 1024px) { .gpsa-grid { grid-template-columns: 1.2fr 1fr; align-items: start; } .gpsa-left { position: sticky; top: 120px; align-self: start; } }
 
         .gpsa-label { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #61ce70; }
-        .gpsa-h2 { color: #ffffff; font-size: 42px; font-weight: 700; line-height: 1.2; margin: 12px 0 0; text-wrap: balance; }
+        .gpsa-h2 { color: #ffffff; font-size: 42px; font-weight: 700; line-height: 1.2; margin: 12px 0 0; text-wrap: pretty; }
         .gpsa-intro { color: rgba(255,255,255,0.78); font-size: 16px; line-height: 28px; margin: 20px 0 0; max-width: 620px; }
         .gpsa-intro a { color: #61ce70; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
         .gpsa-cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 28px; padding: 14px 26px; border-radius: 9999px; background: #ffffff; color: #000000; font-size: 15px; font-weight: 600; text-decoration: none; transition: background .2s ease, color .2s ease, gap .2s ease; }

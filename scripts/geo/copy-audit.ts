@@ -11,6 +11,7 @@ const strip = (s: string) =>
     .replace(/\[NEEDS INPUT[^\]]*\]/g, " ")
     .replace(/\[src:[a-z0-9-]+\]/gi, " ")
     .replace(/\[link:[^\]|]+\|([^\]]+)\]/g, "$1")
+    .replace(/\*\*/g, "")
     .replace(/\{[a-zA-Z]+\}/g, "X");
 
 const BANNED = [

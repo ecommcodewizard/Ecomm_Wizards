@@ -13,6 +13,8 @@ import SearchIntentBlock from "./SearchIntentBlock";
 import PlaceLayer from "./PlaceLayer";
 import GradientLayer from "./GradientLayer";
 import ServicesAccordion from "./ServicesAccordion";
+import DisciplineBlocks from "./DisciplineBlocks";
+import EngagementBlock from "./EngagementBlock";
 import ResultsSlider from "./ResultsSlider";
 import HowWeWorkBlock from "./HowWeWorkBlock";
 import ServiceBlock from "./ServiceBlock";
@@ -127,44 +129,95 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
           wondering whether we can do it. */}
       {page.proofCta && <InlineCta text={page.proofCta.text} label={page.proofCta.label} />}
 
+      {/* Gradient sits here again as of 2026-09-05, which restores the original
+          ordering. It was briefly moved above the proof grid earlier the same
+          day, on the reading that both argument sections should precede the
+          evidence; the owner's call is that the case studies land better
+          straight after the place layer, and the gradient reads better as the
+          turn into the asset. Los Angeles, which is published, is back on the
+          order it shipped with. */}
       <GradientLayer text={page.gradientLayer} heading={page.gradientLayerHeading} />
-
-      <OnlyHereAsset asset={page.asset} />
-
-      {/* Wired 2026-09-03. InlineCta already existed and was rendered by
-          HubPageTemplate, but the geo template never called it, so a geo page
-          had no way to act between the hero and the services block: seven
-          sections including proof and the asset. Both prompts point at
-          #contact rather than presenting a second offer. */}
-      {page.midCta && <InlineCta text={page.midCta.text} label={page.midCta.label} />}
 
       {/* Services list sits after the asset, not before it. The asset is what
           the page is here to give away; a service menu ahead of it reads as a
           pitch interrupting the argument. */}
+      {/* Discipline deep-dives, for pages whose keyword is the broad agency
+          term rather than a named service. A page sets EITHER this or the
+          services accordion: they answer the same slot for two different
+          readers, and rendering both would sell the service list twice. */}
+      {page.disciplines && <DisciplineBlocks data={page.disciplines} />}
+
       {page.servicesList && <ServicesAccordion data={page.servicesList} />}
 
-      {/* Named client quotes. Uses different studies from the proof grid below,
-          so the page shows six brands rather than the same three twice. */}
-      {page.results && <ResultsSlider results={page.results} />}
+      {/* Numbered process. Optional, and only right where the reader has
+          already chosen the service and wants the sequence: every page ranking
+          for the Shopify SEO term walks through a numbered method, because that
+          buyer has usually paid for SEO once already and wants to know what
+          they are actually getting this time. Sits after the service list so
+          the page says what the work is before it says how it runs. */}
+      {page.engagement && <EngagementBlock engagement={page.engagement} />}
+
+      {/* Fourth inline prompt, added 2026-09-05. The reader has just been shown
+          everything we sell and is working out which of it applies to them,
+          which is the moment to offer to answer that for them. */}
+      {page.servicesCta && <InlineCta text={page.servicesCta.text} label={page.servicesCta.label} />}
+
+      {/* Only-Here Asset moved down here on the owner's instruction
+          (2026-09-05). It used to sit directly under the gradient. The page now
+          runs argument -> services -> client quotes -> what you are signing up
+          for, so the asset reads as the terms you get after the case has been
+          made, rather than as an artifact interrupting it. Its inline CTA
+          travels with it, because that prompt refers to the table.
+
+          NOTE: this reorders Los Angeles too, which is published, and every
+          other geo page. The hero's secondary button still resolves to #asset,
+          it just scrolls further now. */}
+      <OnlyHereAsset asset={page.asset} />
+
+      {page.midCta && <InlineCta text={page.midCta.text} label={page.midCta.label} />}
 
       {page.howWeWork && <HowWeWorkBlock data={page.howWeWork} />}
 
+      {/* Moved here 2026-09-05. It used to trail the price block near the FAQ.
+          It now lands straight after the two commitment sections, the terms
+          table and the four habits, which is where a reader has just been told
+          what working with us is like and has nothing left to do but ask. */}
+      {page.closingCta && <InlineCta text={page.closingCta.text} label={page.closingCta.label} />}
+
+      <ObjectionBlock heading={page.objectionsHeading} objections={page.objections} />
+
+      {/* Named client quotes, moved below the objections on the owner's
+          instruction (2026-09-05). A reader who has just had their doubts
+          answered is the right audience for three named clients saying it
+          worked; before, the quotes landed while the doubts were still open.
+          Studies here are disjoint from the proof grid higher up, so the page
+          shows six brands rather than the same three twice. */}
+      {page.results && <ResultsSlider results={page.results} />}
+
+      {/* Process and price moved here on the owner's instruction (2026-09-05):
+          below the client quotes, immediately above the FAQ. The reader has
+          seen the terms, the commitments and three brands vouching, so this is
+          where "how does it actually run and what does it cost" is the next
+          question rather than an interruption. */}
       {/* No `hub` prop, on the owner's instruction (2026-09-02): the appended
           "Part of our ... service." line read as bolted on. The hub-and-spoke
           uplink it provided has NOT been dropped - it moved into the first
           services card, where it sits inside a real sentence. If a future geo
           page removes that link from its copy, restore the prop here or the
           page will have no path up to its hub. */}
-      <ServiceBlock heading="What we do about it" text={page.whatWeDoAboutIt} variant="geo" />
+      <ServiceBlock
+        heading={page.whatWeDoAboutItHeading ?? "What we do about it"}
+        text={page.whatWeDoAboutIt}
+        variant="geo"
+      />
 
-      {/* Directly after the price. The objections and FAQ that follow are where
-          a reader settles their last doubt, and previously the nearest button
-          was five sections away at the form. */}
-      {page.closingCta && <InlineCta text={page.closingCta.text} label={page.closingCta.label} />}
 
-      <ObjectionBlock heading={page.objectionsHeading} objections={page.objections} />
-
-      <FAQBlock heading={`${page.shortTitle} FAQs`} faqs={page.faqs} />
+      {/* types.ts documents faqHeading as an override for the generic default,
+          but the default was hardcoded here and the field was never read. The
+          fallback is unchanged, so pages that do not set it are unaffected.
+          Worth having: "<shortTitle> FAQs" repeats the page's target keyword in
+          an H2, which Copy Standard 7.5 counts toward the body cap. */}
+      <FAQBlock heading={page.faqHeading ?? `${page.shortTitle} FAQs`} faqs={page.faqs} />
 
       <ConversionBlock conversion={page.conversion} landingPage={page.path} />
 

@@ -37,7 +37,7 @@ export default function GeoStyles() {
         /* Headings are true black on light grounds, matching the sections that
            carry their own styles (engagement, categories). Body copy keeps the
            softer ink, so the heading still leads. Dark bands invert. */
-        .gp-h2 { font-size: clamp(26px, 3.4vw, 40px); font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 16px; text-wrap: balance; color: ${GP.dark}; }
+        .gp-h2 { font-size: clamp(26px, 3.4vw, 40px); font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 16px; text-wrap: pretty; color: ${GP.dark}; }
         .gp-section--dark .gp-h2 { color: ${GP.white}; }
         .gp-h3 { font-size: 20px; font-weight: 700; line-height: 1.3; margin: 0 0 10px; }
         .gp-lead { font-size: 18px; line-height: 1.6; margin: 0 0 20px; color: ${GP.text}; }
@@ -72,7 +72,10 @@ export default function GeoStyles() {
         /* Unfilled content slot. Only visible in development / preview builds. */
         .gp-needs-input { background: #FEF3C7; color: #78350F; border: 1px dashed #F59E0B; border-radius: 6px; padding: 1px 6px; font-weight: 500; }
 
-        @media (max-width: 1024px) { .gp-grid-3 { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 1024px) {
+          .gp-grid-3 { grid-template-columns: repeat(2, 1fr); }
+          .gp-section { padding: 52px 20px; }
+        }
         @media (max-width: 640px) {
           .gp-section { padding: 40px 18px; }
           .gp-grid-3, .gp-grid-2 { grid-template-columns: 1fr; }

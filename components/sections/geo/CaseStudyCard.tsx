@@ -86,6 +86,29 @@ export default function CaseStudyCard({ study }: { study: CaseStudyRef }) {
       ) : null}
       <div className="gcs-body">
         {data ? <p className="gcs-brand">{data.brandName}</p> : null}
+        {/* Discipline tags, borrowed from how roswell.nyc tags every project
+            card with the services that went into it. On a page whose keyword is
+            the broad agency term, this is the cheapest possible proof of
+            breadth: a reader who came for design and a reader who came for a
+            migration both see their own job on real work, without another
+            section being added to the page.
+
+            Split from the study's own `serviceType` string, so these can only
+            ever say what the case study already claims. Nothing is authored
+            here and nothing can drift. */}
+        {data?.serviceType ? (
+          <ul className="gcs-tags">
+            {data.serviceType
+              .split("|")
+              .map((t) => t.trim())
+              .filter(Boolean)
+              .map((t) => (
+                <li key={t} className="gcs-tag">
+                  {t}
+                </li>
+              ))}
+          </ul>
+        ) : null}
         <dl className="gcs-rows">
           <div className="gcs-row">
             <dt>Vertical</dt>
@@ -114,6 +137,8 @@ export default function CaseStudyCard({ study }: { study: CaseStudyRef }) {
           .gcs-card:hover .gcs-img { transform: scale(1.03); }
           .gcs-body { padding: 20px 20px 22px; display: flex; flex-direction: column; gap: 14px; flex-grow: 1; }
           .gcs-brand { font-size: 22px; font-weight: 700; line-height: 1.2; margin: 0; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.08); }
+          .gcs-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; padding: 0; }
+          .gcs-tag { font-size: 11.5px; font-weight: 600; line-height: 1; letter-spacing: .01em; padding: 6px 10px; border-radius: 999px; background: rgba(42,149,85,0.08); color: #1f6b3e; border: 1px solid rgba(42,149,85,0.16); white-space: nowrap; }
           .gcs-rows { margin: 0 0 auto; display: flex; flex-direction: column; gap: 10px; }
           .gcs-row { display: flex; flex-direction: column; gap: 2px; }
           .gcs-row dt { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #000000; }
