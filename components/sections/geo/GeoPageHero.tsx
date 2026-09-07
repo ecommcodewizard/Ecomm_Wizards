@@ -148,6 +148,16 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
           .gph-stat:last-child { border-right: none; padding-right: 0; margin-right: 0; }
           .gph-stat-num { margin: 0; font-size: 28px; font-weight: 800; line-height: 1; background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
           .gph-stat-label { font-size: 13px; font-weight: 500; color: #ffffff; letter-spacing: .02em; }
+          /* One row from 1024px up. The bar sits in the hero's copy column,
+             which is the narrower half of the split grid, so four tiles wrap to
+             a second line at exactly the widths where the split kicks in.
+             flex: 1 1 0 gives every tile an equal share and min-width: 0 lets
+             it shrink under its content, so a long label wraps inside its own
+             tile instead of pushing the fourth tile onto a new row. */
+          @media (min-width: 1024px) {
+            .gph-stats { flex-wrap: nowrap; }
+            .gph-stat { flex: 1 1 0; min-width: 0; padding-right: 20px; margin-right: 20px; }
+          }
           @media (max-width: 1023px) { .gph-stat { padding-right: 20px; margin-right: 20px; } .gph-stat-num { font-size: 24px; } }
           @media (max-width: 640px) {
             .gph-stats { margin-top: 20px; padding-top: 16px; gap: 14px 0; }
