@@ -25,6 +25,18 @@ export const CASE_STUDY_VIDEOS: Record<string, string> = {
   "feetures-shopify-theme-development": "/images/Case%20studies/Feetures%20video.mp4",
   "chlobo-shopify-plus-migration": "/images/Case%20studies/ChloBo%20video.mp4",
   "henchman-shopify-plus-b2b": "/images/Case%20studies/Henchman%20video.mp4",
+  // The one creative-strategy study with a preview video, so it is the one
+  // entry living outside /images/Case studies/. posterFor still resolves it:
+  // the replace targets the LAST path segment before the filename, which is
+  // "/Case studies/" here too. Poster generated alongside it as the convention
+  // above requires. Same file the study's own Challenge section plays.
+  "prose-creative-strategy": "/images/Creative%20strategy%20services/Case%20studies/prose-cover.mp4",
+  // The first Klaviyo study to get a preview. Its video and poster had been
+  // sitting in /public unregistered, which is why the site-wide re-encode pass
+  // missed the file: at 8.9 MB and 53 seconds it was the heaviest video in the
+  // corpus against a 1.7 MB median. Re-encoded to a 26-second 960px loop with
+  // no audio track, 2.33 MB, before being registered here.
+  "living-in-sunshine-klaviyo-email": "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo%20video.mp4",
 };
 
 // Slugs whose preview uses the speed-adjusted player (faster playback loop).
