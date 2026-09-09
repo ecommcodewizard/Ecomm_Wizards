@@ -52,6 +52,11 @@ export default function CaseStudyCard({ study }: { study: CaseStudyRef }) {
                 src={video}
                 poster={posterFor(video)}
                 className="gcs-video"
+                /* The still below carries the same description, but it is
+                   display:none unless reduced motion is on, so its alt never
+                   reaches assistive tech. Without this the proof-grid videos
+                   had no text alternative at all. */
+                label={`${data?.brandName ?? "Client"} ecommerce store, ${lowerFirst(study.whatWasBuilt)}`}
               />
               {/* A looping autoplay video has no pause control, which fails
                   WCAG 2.2.2 for anyone who has asked for reduced motion. CSS

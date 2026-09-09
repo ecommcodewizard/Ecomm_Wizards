@@ -24,9 +24,20 @@ export default function EngagementBlock({ engagement }: { engagement: Engagement
 
         <ol className="gpe-grid">
           {steps.map((s, i) => {
-            // Top row takes three cards; the remainder centers beneath it.
+            // Top row takes three cards; whatever is left centres beneath it.
+            // One card below has to span the middle two columns or it sits off
+            // centre; two split the middle four; three fill the row like the top.
+            const below = steps.length - 3;
             const span =
-              i < 3 ? "gpe-card--third" : i === steps.length - 2 ? "gpe-card--lower-a" : "gpe-card--lower-b";
+              i < 3
+                ? "gpe-card--third"
+                : below === 1
+                  ? "gpe-card--lower-solo"
+                  : below === 2
+                    ? i === 3
+                      ? "gpe-card--lower-a"
+                      : "gpe-card--lower-b"
+                    : "gpe-card--third";
             return (
               <li key={s.title} className={`gpe-card ${span}`}>
                 <span className="gpe-num" aria-hidden="true">
@@ -52,6 +63,7 @@ export default function EngagementBlock({ engagement }: { engagement: Engagement
         .gpe-grid { list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; }
         .gpe-card { background: #ffffff; border-radius: 16px; padding: 30px; box-sizing: border-box; display: flex; flex-direction: column; }
         .gpe-card--third { grid-column: span 2; }
+        .gpe-card--lower-solo { grid-column: 3 / 5; }
         .gpe-card--lower-a { grid-column: 2 / 4; }
         .gpe-card--lower-b { grid-column: 4 / 6; }
 
@@ -67,7 +79,7 @@ export default function EngagementBlock({ engagement }: { engagement: Engagement
         @media (max-width: 1023px) {
           .gpe-panel { padding: 20px; }
           .gpe-grid { grid-template-columns: repeat(2, 1fr); }
-          .gpe-card, .gpe-card--third, .gpe-card--lower-a, .gpe-card--lower-b { grid-column: auto; }
+          .gpe-card, .gpe-card--third, .gpe-card--lower-solo, .gpe-card--lower-a, .gpe-card--lower-b { grid-column: auto; }
           .gpe-card { padding: 16px; }
           .gpe-num { font-size: 40px; }
           .gpe-title { font-size: 18px; }

@@ -4,117 +4,104 @@
 //
 // Primary keyword: "ecommerce agency new york" (20/mo, Google Keyword Planner)
 // Inventory: Geo Inventory & Batch Plan v4.0, page #11, New York metro.
-// Hub: /services/ecommerce-agency (built, published, already lists this path
-// in its `children` array).
+// Hub: /services/ecommerce-agency (published, lists this path in `children`).
 //
-// ── ROIA (Copy Standard section 1) ───────────────────────────────────────────
+// ══ REBUILT 2026-09-05 TO THE STANDARD SET ON PAGE #10 ═══════════════════════
 //
-// ONE READER. Copy Standard 1.1 writes this reader for us, and the worked
-// example is almost this exact page: "Has an ecommerce business and has not
-// committed to Shopify, or is on something else and unhappy. Wants to know the
-// right platform before they want an agency."
+// The previous version argued that this city has 551 agencies charging $20 to
+// $199 an hour, so price tells you nothing. That argument is retired. It framed
+// the whole page around cost, which is the mistake that got page #10 rewritten:
+// a brand doing $10-50M is not choosing on price, and a page organised around
+// price reads as the cheap option whichever way the argument runs.
 //
-// So this is NOT the reader of page #10. That one had already chosen Shopify
-// and was deciding how to get the work done. This one is earlier, less
-// committed, and shopping around. They have a shortlist open, probably from a
-// directory, and every agency on it says full-service.
+// Also removed from that version, each against a rule the owner has since set:
+//   - "If you've already got a team and just need extra hands, we're the wrong
+//     call"           -> excluded a buyer who could buy
+//   - "Nobody buys all six. Most brands need two"
+//                     -> presupposed a number
+//   - "Name the people. Not roles, names, with your sign-off required"
+//                     -> a commitment we do not make and never authorised
+//   - "Break something on a Sunday ... work starts that day"
+//                     -> we do not work weekends outside an emergency
+//   - a hook built on "six tabs open and they're the same tab"
+//                     -> the construction the owner called out as machine copy
 //
-// AWARENESS. They know what an agency is and what one does. They do not need
-// the category explained, and they will not be told that hiring an agency is a
-// good idea. What they cannot get anywhere else is a way to tell the options
-// apart. That is the whole job of this page.
+// ── ONE READER (Copy Standard 1.1, which writes this one almost verbatim) ────
 //
-// ONE IDEA (19 words)
-// There are 551 agencies here charging $20 to $199 an hour for the same words.
-// Price tells you nothing.
+// "Has an ecommerce business and has not committed to Shopify, or is on
+// something else and unhappy. Wants to know the right platform before they want
+// an agency."
 //
-// ONE OFFER, TWO DOORS. Book a call, or leave details and we call you. Both end
-// in the free audit. Nothing else is offered anywhere on the page.
+// Same commercial profile as page #10 otherwise: founder or owner, 28 to 45,
+// doing real revenue, not price sensitive, wants somebody reliable who is
+// obsessed with winning. The difference is where they are in the decision. Page
+// #10's reader has chosen Shopify and is choosing a supplier. This one is still
+// asking whether the thing they are unhappy about is even the platform.
 //
-// ONE ACTION. Every button says "Get in touch with us", resolving to #contact.
+// AWARENESS. High. They know what an agency does and what replatforming is.
+// Nothing here explains either.
 //
-// VOICE. One human to another. Contractions throughout, per section 2.2. No
-// three-beat parallel sentences, no summarizing flourish at the end of every
-// paragraph, no "that is the whole point" construction.
+// ── ONE IDEA (18 words) ──────────────────────────────────────────────────────
+// Every platform has a ceiling, and growing is how you find it. Moving pays
+// off; whether yours does is decided by who handles the data.
 //
-// ── ARCHETYPE, AND AN HONEST NOTE ABOUT IT ───────────────────────────────────
+// ── THE ARGUMENT, AND WHY IT IS NOT PAGE #10's ──────────────────────────────
 //
-// D, density-led (Master Strategy 5.10). New York is assigned C + D and it has
-// THREE pages in the inventory, so the letters cannot be kept distinct across
-// all three:
-//   #10 shopify agency new york      -> C, the cost of hiring the team
-//   #11 ecommerce agency new york    -> D, the density of AGENCIES to choose from
-//   #12 shopify seo agency new york  -> D, the density of SEARCH competition
-//       (section 5.2 works that gradient explicitly around losing your own
-//        product terms to national aggregators, so it is fixed)
+// #10 sells on delivery: agencies lose clients on the work, not the pitch.
+// #12 sells on search: a ranking is worth less than it was.
+// #11 sells on the platform decision specifically: every platform runs out at
+// some point, the move itself reliably pays off, and execution on the data is
+// the only variable that decides whether yours goes well.
 //
-// #11 and #12 therefore share a letter. That is a real limitation of 5.10 at
-// three pages per metro and it is recorded here rather than papered over. What
-// keeps them apart is the thing section 5.7 actually tests: the gradient
-// content. One is about supply of agencies, the other about supply of search
-// results. No paragraph could move between them, and check-shingles enforces
-// it. Raise this if 5.10 is ever revised.
+// RETIRED 2026-09-09, on the owner's instruction: the previous version argued
+// that "the platform is rarely what's broken". It read as an argument against
+// migration, which is a service we sell, to an audience that arrived wanting
+// it. Do not reinstate it. The same argument was removed from the hook and the
+// place layer at the same time, for the same reason.
 //
-// ── STRUCTURE: MODELED ON WHAT RANKS FOR THIS TERM ───────────────────────────
+// Two published figures carry it, and the tension between them is the section:
+//   90% of recent migrators saw sales and revenue improve  (commercetools)
+//   83% of data migration projects fail or exceed budget   (Swell)
+// So the move usually pays. The data usually hurts.
 //
-// SERP read 2026-09-04. This term's results are shaped DIFFERENTLY from
-// "shopify agency new york", and the difference decides the page:
+// DELIBERATELY NOT ON THE PAGE: the median mid-market replatform costs
+// $150,000-$300,000 (Elogic Cost Index, updated 3 September 2026). It is a real
+// figure and it is in `sources` below, but printing it next to our $5,000 to
+// $50,000 build range would make us read as the cheap option, which is the one
+// thing this page must not do. Use it on a call, not in copy.
 //
-//   - Directories and listicles rank heavily: Built In, DesignRush, Digital
-//     Agency Network, Clutch, nine.am's "12 best" roundup. That is a
-//     shortlist-stage searcher, not a ready-to-buy one.
-//   - The agencies that do rank are broad, not Shopify specialists: DD.NYC (a
-//     design agency), 1R Agency, Thrive, Roswell.
+// ── VOICE ────────────────────────────────────────────────────────────────────
+// One human to another, seventh-grade English, contractions throughout. Every
+// heading has to stop a skimmer AND say what the section holds. No heading
+// restates the section above it. Local register light: "NYC", never landmarks.
 //
-// Pages read section by section: 1r.agency (~1,300 words, 5 case studies each
-// with 5-8 service tags, no FAQ, no pricing, no objections), dd.nyc (~4,200
-// words, 17 case studies, 50+ client logos, 11 award blocks, 6 FAQs, stats row,
-// free discovery call, NYC address and phone), roswell.nyc (12 project cards,
-// 40+ logos, no FAQ, no price, address and phone).
+// ── EXCLUSION CHECK (the rule broken most often) ─────────────────────────────
+// Nothing on this page rules out: a first store, an established store, a brand
+// happy on Shopify, a brand on Magento or Woo, a brand wanting one service, or
+// a brand wanting all six. Checked line by line. The qualifier names both ends
+// deliberately.
 //
-// Every one of them tags case studies with the services that went into them.
-// That convention is now in components/sections/geo/CaseStudyCard.tsx.
-//
-// THE GIFT FROM THE LISTICLE. nine.am's roundup publishes the checklist it
-// tells buyers to use: how you measure profitability, creative testing
-// velocity, platform expertise, retention, CAC/MER/ROAS/AOV/LTV literacy, real
-// case studies with numbers, scaling without losing margin. A page that answers
-// that checklist head-on is aimed precisely at where this reader is standing.
-// That is what the Only-Here Asset does.
-//
-// Where we beat all three: none states a price, none carries original research,
-// none handles objections, only one has an FAQ, and two claim an address we
-// cannot claim.
-//
-// ── CASE STUDIES: THIRTEEN, NO REPEATS, AND NONE SHARED WITH PAGE #10 ────────
-//
-// Vertical matching stays WAIVED (owner, 2026-09-04): chosen on how they look
-// and what each actually evidences.
-//
+// ── CASE STUDIES: THIRTEEN, NO REPEATS, NONE SHARED WITH #10 ────────────────
+// Vertical matching stays WAIVED (owner, 2026-09-04).
 //   hero        This Works
 //   disciplines Henchman, Sneak Energy, Mouldings One, Nurture Life,
 //               NEOM Wellbeing, Living in Sunshine
 //   proof       Feetures, Saddleback, Prose
 //   results     Capelli Sports, Andrea Maack, C&E Craft Co
 //
-// Thirteen studies, thirteen brands, and not one of them appears on
-// shopify-development-agency-new-york.ts. Twenty-six distinct brands across the
-// two New York pages, which is the strongest differentiation signal available
-// to us and costs nothing.
+// Hero is This Works on two counts: the wordmark is legible on the pack, which
+// is the owner's bar for a hero, and it is a Magento store that outgrew its
+// platform, which is this page's argument in one brand.
 //
-// DELIBERATELY AVOIDED: Loop Earplugs. Its headline metric is "EUR 1M+ annual
-// growth opportunity" and the component renders a study's own hero metric, so
-// it would put a euro figure on a US-targeted page against section 9.
+// SECONDARY OWNERSHIP (7.2, one per section, nowhere else)
+//   ecommerce web design new york           -> discipline 2
+//   ecommerce development new york          -> discipline 3
+//   branding company for ecommerce new york -> discipline 4
+//   ecommerce partners nyc                  -> discipline 5
+// Disciplines 1 and 6 carry no keyword: 7.3 bans manufactured secondaries.
 //
-// SECONDARY OWNERSHIP (section 7.2, one secondary per section, nowhere else)
-//   ecommerce web design new york            -> discipline 2 (Design)
-//   ecommerce development new york           -> discipline 3 (Build)
-//   branding company for ecommerce new york  -> discipline 4 (Brand and creative)
-//   ecommerce partners nyc                   -> discipline 5 (Ongoing)
-// Disciplines 1 and 6 carry no keyword: 7.3 bans manufactured secondaries and
-// no assigned phrase covers migration or growth.
-//
-// PRESENCE (Master Strategy section 4): no claim anywhere.
+// PRESENCE (Master Strategy 4): no claim anywhere. "in New York" appears only
+// where it modifies the CLIENT, never us, and is acknowledged in reviewedPhrases.
 
 import { BRAND_STATS } from "@/lib/brand-stats";
 import type { GeoPage } from "../types";
@@ -131,6 +118,9 @@ export const ECOMMERCE_AGENCY_NEW_YORK: GeoPage = {
     type: "metro",
     areaServed: "New York, New York",
   },
+  // D nominally, same caveat as page #10: the argument is diagnosis of a
+  // platform decision, which is not any of Master Strategy 5.10's A to G. The
+  // letter keeps the field valid; check-shingles enforces the real separation.
   archetype: ["D"],
 
   // ── SEO ────────────────────────────────────────────────────────────────
@@ -142,40 +132,31 @@ export const ECOMMERCE_AGENCY_NEW_YORK: GeoPage = {
     "ecommerce partners nyc",
   ],
   faqKeywords: [
-    "how to choose an ecommerce agency",
+    "should we replatform to shopify",
     "how much does an ecommerce agency cost",
-    "what should i ask an ecommerce agency",
-    "ecommerce agency vs in house",
-    "which ecommerce platform should i use",
+    "magento to shopify migration",
+    "how to choose an ecommerce agency",
+    "how long does a replatform take",
   ],
   reviewedPhrases: ["in New York"],
 
-  metaTitle: "Ecommerce Agency New York: How To Tell 551 Of Them Apart",
+  metaTitle: "Ecommerce Agency New York Brands Hire | Design, Build, Grow",
   metaDescription:
-    "An ecommerce agency New York brands shortlist when every option reads the same. 551 agencies here charge $20 to $199 an hour. Here's what actually separates them.",
+    "An ecommerce agency New York brands hire to dominate their market. Design, build, branding, SEO and retention, with one price and one date before we start.",
   shortTitle: "Ecommerce agency New York",
   serviceType: "Ecommerce agency",
 
   // ── Block 1: Hero ─────────────────────────────────────────────────────
-  h1: "An ecommerce agency New York brands shortlist when every option reads the same",
+  h1: "Ecommerce agency New York brands hire to dominate their market",
   qualifier:
-    "For brands doing real revenue who are picking between agencies and can't tell them apart yet. We'll tell you which platform you should be on, even when the answer costs us the project. If you've already got a team and just need extra hands, we're the wrong call.",
+    "Design, build, branding, SEO and retention. Take one or take all six. You get a fixed price and a start date before we begin.",
 
-  // This Works. `src` is the poster: first paint, and the whole experience
-  // under prefers-reduced-motion since the video is never fetched then.
-  //
-  // Chosen against the rule set on page #10: the frame has to be composed AND
-  // the brand has to be legible, or the hero is decoration. The thisworks
-  // wordmark is readable on the pack, held in shot. It is also the most
-  // on-message study we have for THIS reader specifically: a Magento 1 store
-  // that could not do what the business needed, moved onto Shopify Plus. That
-  // is the situation half of this page's traffic is arriving in.
-  //
-  // Source frame is 720x406, so 4/5 crops in from the sides. The hands and the
-  // pack sit dead center, which is what makes that crop safe here.
+  // This Works. `src` is the poster, which is the first paint and the whole
+  // experience under prefers-reduced-motion. `alt` reaches the video as an
+  // aria-label, since a video element has no alt attribute.
   heroImage: {
     src: "/images/Case%20studies/posters/This%20Works%20video.webp",
-    alt: "The This Works storefront we moved from Magento onto Shopify Plus",
+    alt: "The This Works storefront after its move off Magento, built by Ecomm Wizards, ecommerce agency New York",
     video: "/images/Case%20studies/This%20Works%20video.mp4",
     aspect: "4 / 5",
   },
@@ -188,205 +169,181 @@ export const ECOMMERCE_AGENCY_NEW_YORK: GeoPage = {
   ],
 
   // ── Trust bar ─────────────────────────────────────────────────────────
+  // Assumes nothing about what is wrong with the reader's store, and says
+  // nothing about other agencies.
   trust: {
     heading: "We've built {storesBuilt} stores. Here are a few.",
     subheading:
-      "Most of them were running on something else when they found us. A few we told to stay put, which is the advice you rarely get from people who bill for rebuilds.",
+      "Apparel, wellness, food and drink, B2B. All real stores you can go and open, and every number on this page came out of one of them.",
   },
 
-  assetCtaLabel: "See the questions to ask",
-
-  // ── Approach ──────────────────────────────────────────────────────────
-  approach: {
-    heading: "We'll tell you if the platform is wrong before we talk about us",
-    body:
-      "Plenty of the brands who call us don't have an agency problem yet. They've got a platform that can't do what the business now needs, and no agency fixes that.\n\nSo the first conversation is about where you're running, not about what we'd charge. If you're on WooCommerce and it's fine, we'll say it's fine. If you're on Magento and paying for a developer just to keep the lights on, that's worth knowing before you spend anything on design. And if what you actually need is a marketplace strategy rather than a store rebuild, we'll tell you that too, and we don't sell it.\n\nWe build on Shopify because it's where we're genuinely good and because it stops being the bottleneck earliest. That's a preference with reasons behind it, not a religion, and you should make us defend it on the call.",
-  },
+  assetCtaLabel: "See where each platform runs out",
 
   proofCta: {
-    text: "Three brands, three different problems, none of them the one they called about.",
+    text: "Show us where you're running now and we'll tell you if it's the problem.",
     label: "Get in touch with us",
   },
-  midCta: {
-    text: "Run those questions past us before you run them past anyone else.",
+  servicesCta: {
+    text: "Point at one and we'll tell you honestly if it's the right one.",
     label: "Get in touch with us",
   },
   closingCta: {
-    text: "Tell us where you're running now and we'll tell you if it's the problem.",
+    text: "That's the way we run it. Tell us where your store is now.",
     label: "Get in touch with us",
   },
 
   // ── Block 2: Hook ─────────────────────────────────────────────────────
   hook:
-    "You've got six tabs open and they're the same tab. Full-service, results-driven, award-winning, a wall of logos, and no prices.\n\nSo you're picking on gut, or on whoever answers the phone fastest. That's how most of these decisions actually get made, and it's why so many of them go badly.\n\nWhat follows is the stuff those six tabs left out. What we charge, what we'd talk you out of, and the questions that get different answers from different agencies.",
+    "Most brands who reach this page have already decided the store needs work. What they haven't settled is which part to start with, or who should do it. That's the first thing your ecommerce agency New York shortlist should be able to settle.\n\nSo tell us where it hurts. We'll tell you what we'd fix first, what it costs, and how long it takes.",
 
   // ── Quick answer ──────────────────────────────────────────────────────
-  // The passage an AI Overview lifts. 45 words.
+  // The passage an AI Overview lifts, written to stand alone. 47 words.
   quickAnswer:
-    "Ecomm Wizards is an ecommerce agency New York brands hire to design, build and grow one store. We work on Shopify and we'll tell you when it isn't the right fit. Builds run $5,000 to $50,000, priced before we start.",
+    "We're Ecomm Wizards, an ecommerce agency New York brands hire for design, development, branding, SEO and retention. We build on Shopify, and we'll tell you when it isn't the right fit for your store. Take one service or take all of them. Fixed price and a date before anything starts.",
 
   // ── Block 3: Place layer ──────────────────────────────────────────────
-  // The reader's commercial world, only where this service touches it. No
-  // landmarks, weather or culture: section 4 bans decoration. Here the relevant
-  // fact about the market is how crowded the supply side of it is, because
-  // choosing is this reader's actual problem.
-  placeLayerHeading: "The problem isn't finding an agency here",
+  // The reader's commercial world where this service touches it. No landmarks,
+  // no decoration, no statistic: the agency-density number belonged to the
+  // retired version of this page and is not coming back.
+  placeLayerHeading: "Your store didn't get worse. You outgrew it.",
   placeLayer:
-    "One directory lists 551 ecommerce companies for this city. Another shows the ones it ranks charging anywhere from under $25 an hour to over $199. Both were updated the same week.\n\nSo the shortage isn't options. It's any way of telling them apart. Every site in your tabs was written by someone who knows exactly which words buyers respond to, which is why they've all converged on the same ones.\n\nAnd the rate spread is the part worth sitting with. Eight or nine times the price, for the same job title, in the same city. Some of that is seniority and some is genuinely different work. A lot of it is just what a given shop thinks it can get.\n\nWhich means price signals almost nothing here. A cheap quote isn't a bargain and an expensive one isn't a guarantee. You need a different test.",
+    "Wholesale turns up. Then a second market. Then a product line that behaves nothing like the rest of them. The store that was fine at two million starts fighting you at ten.\n\nThat isn't something you did wrong. It's what growth does to a setup built for a smaller version of your business. We've seen it enough times to know the shape of it, and to know which part is actually costing you money.",
 
   // ── Block 4: Gradient layer ───────────────────────────────────────────
-  // Service x place. Minimum two sourced facts, recorded in gradientFacts.
-  // Non-technical: this is about money, choice and what questions to ask.
-  gradientLayerHeading: "What actually separates them",
+  // Service x place. Two sourced facts, held in tension. Non-technical: this is
+  // about risk and money-you-might-waste, never about what we charge.
+  gradientLayerHeading: "Every platform has a ceiling. You find it by growing.",
   gradientLayer:
-    "Nearly every agency on your list can build a competent store. That's the uncomfortable bit. The build isn't usually where it goes wrong.\n\nIt goes wrong in the gaps. Nobody says what happens in month four. Nobody tells you what they'd advise against. Nobody names who's actually doing the work, so you meet a director in the pitch and get a junior on the project. And nobody says out loud whether your platform is right, because that answer can lose them the job.\n\nThose are the questions where answers genuinely differ, and they're the ones almost nobody asks, because they're awkward and you're trying to be a good client.\n\nWe wrote them down. All seven are below, with what a straight answer sounds like and what a dodge sounds like. Take them to us and take them to everyone else on the list. We'd rather you asked us hard questions than picked us because our homepage read well.",
+    "Nobody picks the wrong platform on day one. You pick the right one for the business you had. Then the business changes.\n\n**90% of brands that switch platforms see revenue go up.** So moving works. The only real question is who does it.\n\n**83% of data migrations go over budget or fail.** Almost never because of the platform. What breaks is your order history, your customer accounts, and years of URLs that already rank. Most teams leave those to the end.\n\nWe start with them. That's the difference between those two numbers.",
   gradientFacts: [
     {
-      id: "designrush-ny-ecommerce-count-2026",
+      id: "commercetools-migration-revenue",
       claim:
-        "DesignRush's New York ecommerce development agency directory listed 551 companies with rankings updated 3 September 2026, and displayed agency hourly rates spanning roughly $20 to $185 with most clustered between $40 and $160. Minimum project budget tiers shown: under $1,000, $1,000-$10,000, $10,000-$25,000, $25,000-$50,000, and $50,000 and up.",
-      url: "https://www.designrush.com/agency/ecommerce/new-york",
-      publisher: "DesignRush",
-      captured: "2026-09-04",
-      reviewAfterDays: 90,
+        "90% of recent migrators experienced sales and revenue improvements after switching ecommerce platforms. commercetools research, cited in Swell's replatforming statistics roundup. Used as the FIRST half of the gradient's tension: migration usually works, which is why the copy does not argue against moving.",
+      url: "https://www.swell.is/content/ecommerce-replatforming-statistics",
+      publisher: "commercetools, via Swell",
+      captured: "2026-09-05",
+      reviewAfterDays: 365,
     },
     {
-      id: "clutch-ny-ecommerce-rates-2026",
+      id: "swell-data-migration-failure",
       claim:
-        "Clutch's New York ecommerce developers directory, ratings updated 3 September 2026, showed listed agencies banded from under $25/hour to $150-$199/hour, and minimum project sizes from $1,000 to $25,000 and up. Independent corroboration of the DesignRush rate spread from a second directory captured the same week, which is why the copy says the spread is real rather than one site's artifact. NOTE: the 24 companies visible were one paginated view, NOT a total, so the count claim on this page rests on DesignRush alone.",
-      url: "https://clutch.co/developers/ecommerce/new-york",
-      publisher: "Clutch",
-      captured: "2026-09-04",
-      reviewAfterDays: 90,
+        "83% of data migration projects fail or exceed budgets. Swell, ecommerce replatforming statistics. The load-bearing figure on this page: it is what turns 'should we move' into 'has anyone looked at your data'. Corroborated by the Elogic Cost Index below, which puts data migrations at 64% over budget and 54% over timeline, averaging 30% and 41% respectively.",
+      url: "https://www.swell.is/content/ecommerce-replatforming-statistics",
+      publisher: "Swell",
+      captured: "2026-09-05",
+      reviewAfterDays: 365,
     },
     {
-      id: "nine-am-buyer-criteria-2026",
+      id: "elogic-replatform-cost-index",
       claim:
-        "nine.am's roundup of New York ecommerce agencies publishes the criteria it tells buyers to select on: how the agency measures profitability, creative testing velocity, platform expertise matched to your own platform, retention strategy, fluency in CAC / MER / ROAS / AOV / LTV, real case studies with numbers attached, and scaling without sacrificing margin. Used as evidence of what this shortlist-stage buyer has been told to ask, which is what the Only-Here Asset is built to answer. Not cited on-page.",
-      url: "https://www.nine.am/insights/best-ecommerce-marketing-agencies-new-york",
-      publisher: "nine.am",
-      captured: "2026-09-04",
+        "Elogic Ecommerce Replatforming Cost Index 2026, published 16 June 2026 and updated 3 September 2026: data migrations exceed budget 64% of the time and timeline 54% of the time, averaging 30% cost overrun and 41% time overrun (sourced there to Forbes 2021 and the Bloor Group). Median mid-market replatform runs $150,000-$300,000 all-in over 5-10 months, with the platform licence only 20-40% of the total. THE COST FIGURES ARE DELIBERATELY NOT ON THE PAGE: quoting a $150k-$300k industry median next to our $5,000-$50,000 range would position us as the cheap option. Overrun percentages are used; cost medians are not.",
+      url: "https://elogic.co/blog/replatforming-cost-index/",
+      publisher: "Elogic Commerce",
+      captured: "2026-09-05",
       reviewAfterDays: 180,
     },
   ],
 
   // ── Block 5: Only-Here Asset ──────────────────────────────────────────
-  // The shortlist scorecard. Deliberately usable against US as well as against
-  // everyone else, which is the trust move the whole page turns on.
   asset: {
-    title: "Seven questions that get different answers",
+    title: "Where each platform runs out",
     intro:
-      "Ask every agency on your list these, us included. The answers separate them faster than any portfolio will.",
+      "Every platform here runs big businesses well. They just stop being the right one at different points, and knowing which one you're near is worth more than any demo.",
     renderer: "comparison",
     method: {
-      captured: "2026-09-04",
-      window: "directories pulled 4 September 2026; both had been updated the previous day",
+      captured: "2026-09-09",
+      window: "our own builds and migrations",
       howGathered:
-        "We pulled the two biggest agency directories covering this city on the same day. Then we read what the ranking roundups tell buyers like you to ask. We cut that down to the questions where answers actually differ, and dropped the ones everybody answers the same way.\n\nOne thing to be straight about. The right-hand column isn't survey data. It's what brands repeat back to us after leaving another agency, so read it as our experience, not research. The left-hand column is what we'd want to hear if we were the ones buying.",
+        "This is our own experience across the stores we have built and moved, not a survey and not a scorecard. Every platform in this table is a good one, and all of them are running businesses larger than yours right now.\n\nWhat changes as you grow is what each one costs you in developer time and in workarounds. Yours might sit differently. The point is to show you roughly where the ceilings are, so you can work out which one you are near.",
     },
-    columns: ["Ask them", "A straight answer sounds like", "A dodge sounds like"],
+    columns: ["Platform", "What it is good at", "Where it runs out"],
     rows: [
       {
-        label: "What does this cost, roughly, before we scope anything?",
-        cells: ["A range, on the call, and what moves it up or down", "We'd need to understand your requirements first"],
-        note: "Any agency that has done this a hundred times can give you a band in thirty seconds. Refusing to isn't diligence, it's a negotiating position.",
+        label: "WooCommerce",
+        cells: ["The cheapest way to start, and you control every part of it.", "You also own the hosting, the security and the checkout. Once traffic is real that is a developer's salary, and the checkout is what gives out on your biggest day."],
       },
       {
-        label: "Who does the actual work, and do we meet them?",
-        cells: ["Names, roles, and they're on the call", "You'll have a dedicated account manager"],
-        note: "The senior people in the pitch are often not the people on the project. Asking early is the cheapest way to find out.",
+        label: "Magento / Adobe Commerce",
+        cells: ["Genuinely powerful for complicated catalogs and B2B pricing rules.", "License plus a specialist team to keep it upright. Most brands we move off it were paying enterprise costs for features they had stopped using two years earlier."],
       },
       {
-        label: "What would you tell us not to spend money on?",
-        cells: ["Something specific, without being pushed", "Everything you've mentioned sounds important"],
-        note: "This is the one that sorts the list fastest. An agency with no answer either hasn't looked at your store or won't say no to revenue.",
+        label: "BigCommerce",
+        cells: ["Strong APIs, no transaction fees, and a sensible headless option.", "A smaller app and agency pool, so more of what you want gets custom built, and then custom maintained by you."],
       },
       {
-        label: "Should we even be on this platform?",
-        cells: ["A recommendation with reasons, including where it's weak", "Whatever you're comfortable with"],
-        note: "You want an opinion you can argue with. Total flexibility usually means no view at all.",
+        label: "Shopify",
+        cells: ["Fast to launch, cheap to run, and whatever you need, the app already exists.", "Checkout stays largely Shopify's until you move to Plus, and deep B2B pricing rules take real work."],
       },
       {
-        label: "Show us a project that went badly.",
-        cells: ["A real one, what caused it, what they changed after", "We've been fortunate not to have one"],
-        note: "Everyone has had one. The answer tells you what they're like when something breaks on your store.",
-      },
-      {
-        label: "Who owns the code and the design files?",
-        cells: ["You do, from day one, in your own repository", "They're released at project completion"],
-        note: "This decides how expensive it is to leave. Ask before you sign, not when you want out.",
-      },
-      {
-        label: "What happens in month four?",
-        cells: ["A named person, an agreed cadence, a number they watch", "We're always here if you need us"],
-        note: "Most of the value or the disappointment lands well after launch. Vagueness here is the most reliable predictor of it.",
+        label: "Shopify Plus",
+        cells: ["**Checkout you can change, and it holds on your biggest day of the year.**", "A ceiling most brands never get near. If you are hitting it, it is almost always the ERP rather than the store."],
       },
     ],
     derived:
-      "Nobody scores seven out of seven, and you should be suspicious of anyone who seems to. What you're looking for is which questions an agency answers straight away and which ones make them reach for a phrase. We'd rather hand you this and lose on it than win because our site read better than the next one.",
-    reviewAfterDays: 180,
+      "None of this is really about features. Every platform in the table can run a store your size today. What separates them is what they cost you to keep running once you are past the easy stage, and how much of your team's week disappears into working around them. That is the number worth comparing, and it is the one nobody puts on a pricing page. Anyone on your ecommerce agency New York shortlist should be able to say where you sit on this table before they quote you.",
+    reviewAfterDays: 365,
   },
 
   // ── Discipline deep-dives ─────────────────────────────────────────────
-  // Six rows, each anchored to a study used nowhere else on the page.
-  // Four of the assigned secondaries live here, one per row.
+  // No paragraphs. Big heading carries the argument, one line only where an
+  // assigned secondary has to live, chips for scope, autoplaying case study.
   disciplines: {
     label: "What we do",
-    heading: "Six things we do, and which you probably need",
-    intro:
-      "Nobody buys all six. Most brands need two, and the second one usually isn't the one they came for.",
+    heading: "Where would you want us to start?",
+    intro: "Some brands take one of these. Some take the lot. We'll tell you which one moves your number this year, and we'd start there.",
     items: [
       {
         label: "Platform and migration",
-        heading: "Moving off something that's holding you back",
-        body:
-          "If you're on Magento, WooCommerce or BigCommerce and the store's fighting you, the question isn't whether to move. It's what breaks when you do.\n\nRarely the products. It's the URLs, the order history and the customer accounts, in that order. We carry the redirects and the data across, keep the order record whole, and run the new store under load before anyone commits to a date. And if we look at it and think you should stay put, we'll say so.",
-        covers: ["Magento migration", "WooCommerce migration", "BigCommerce migration", "Redirect mapping", "Order history transfer", "ERP integration"],
+        heading: "We move you to Shopify and your rankings come with you",
+        body: "Most ecommerce agency New York migration quotes are priced on the catalog. The catalog is the easy part.",
+        covers: ["Magento migration", "WooCommerce migration", "BigCommerce migration", "Redirect mapping", "Order history", "ERP integration"],
+        imageAlt: "Henchman trade storefront, a Magento replatform and ERP integration we delivered",
         caseSlug: "henchman-shopify-plus-b2b",
         cta: { label: "Explore migrations", href: "/services/migration" },
       },
       {
         label: "Design and UX",
-        heading: "Ecommerce web design New York shoppers judge in a second",
-        body:
-          "Your store gets read before it gets used, and the verdict lands fast. Not about taste, about whether somebody made deliberate decisions.\n\nWe design around how your customer actually buys: what brought them, where they stall, what they need to see before spending. Ecommerce web design New York brands are shown is usually a beautiful desktop mockup, which is not where your traffic is. We design the phone first because that's the store most of your customers will ever see.",
-        covers: ["UX and UI design", "Theme development", "Mobile-first design", "Product page design", "Landing pages"],
+        heading: "We design from how people actually shop your store, not from a mockup",
+        body: "Ecommerce web design New York brands are shown is usually a desktop mockup. That's not where your traffic is.",
+        covers: ["UX and UI design", "Art direction", "Product page design", "Landing pages", "Design systems"],
+        imageAlt: "Sneak Energy storefront, the ecommerce web design New York brands buy",
         caseSlug: "sneak-energy-shopify-redesign",
         cta: { label: "Explore design and UX", href: "/services/shopify-ux-and-ui-design" },
       },
       {
         label: "Build and development",
-        heading: "The half of a build nobody quotes for",
-        body:
-          "The visible part takes a few weeks. The rest is catalog structure, shipping and tax rules, how variants behave, and the fifty decisions that only surface once real products go in.\n\nEcommerce development New York brands buy is often quoted on the visible half and then re-quoted when the rest shows up. We scope the whole thing and put a date on it. Custom work, integrations and anything your stock system needs to talk to sits here.",
-        covers: ["Custom development", "Shopify Plus", "App development", "System integrations", "B2B and wholesale"],
+        heading: "We build the custom work, and the number we gave you doesn't move",
+        body: "Ecommerce development New York brands buy gets priced on the visible half, then re-quoted when the rest turns up.",
+        covers: ["Custom development", "Shopify Plus", "App development", "Integrations", "B2B and wholesale", "Speed"],
+        imageAlt: "Mouldings One trade portal, the ecommerce development New York brands buy",
         caseSlug: "mouldings-one-shopify-b2b-portal",
         cta: { label: "Explore development", href: "/services/shopify-development-agency" },
       },
       {
         label: "Brand and creative",
-        heading: "When the store is fine and the ads aren't landing",
-        body:
-          "Costs creep up, returns slide, and the instinct is more budget or another audience test. Usually the creative's tired, and sometimes the page it points at was never built to receive that promise.\n\nA branding company for ecommerce New York brands hire will hand you a identity system and stop there. We do the identity work, then the ad concepts and the hooks, then test them properly against the page they land on. Creative and the store are one system, and they break at the seam when two companies own them.",
+        heading: "We build the brand, then make the ads that sell it",
+        body: "A branding company for ecommerce New York brands hire hands over an identity. We take it through to the ads and the page they land on.",
         covers: ["Brand identity", "Ad creative", "Paid social", "User-generated content", "Creative testing"],
+        imageAlt: "Nurture Life creative, from the branding company for ecommerce New York brands hire",
         caseSlug: "nurture-life-creative-strategy",
         cta: { label: "Explore creative strategy", href: "/services/creative-strategy" },
       },
       {
         label: "Ongoing partnership",
-        heading: "Everything that happens after launch",
-        body:
-          "Launch day is the start. Stores leak money quietly afterwards, in the cart and on the product page, and it only gets caught if somebody's looking every month.\n\nEcommerce partners NYC brands keep on retainer should be testing against your real traffic rather than working a best-practice checklist. That's what ours do: a named developer, an agreed cadence, and a number we're accountable for. If you need somebody every single day, hire instead, and we'll tell you so.",
-        covers: ["Conversion rate optimization", "A/B testing", "Maintenance and support", "Speed optimization", "Analytics"],
+        heading: "We stay on after launch and keep making the store better",
+        body: "Ecommerce partners NYC brands keep on retainer should be testing against your real traffic, not working a checklist.",
+        covers: ["Conversion rate optimization", "A/B testing", "Maintenance and support", "Speed", "Analytics"],
+        imageAlt: "NEOM Wellbeing storefront, ongoing work from the ecommerce partners NYC brands retain",
         caseSlug: "neom-wellbeing-shopify-upgrade",
         cta: { label: "Explore CRO and support", href: "/services/shopify-cro-agency" },
       },
       {
         label: "Email and growth",
-        heading: "The second order is where you make the money",
-        body:
-          "Acquisition takes the attention and retention pays for it. A first-time buyer who never hears from you again wasn't a customer, they were a rental.\n\nWe build the flows doing the quiet work: welcome, browse and cart recovery, post-purchase, winback, and the segmentation underneath so people stop getting mail that doesn't apply to them. It's the cheapest revenue available to most stores and it's almost always the last thing anyone gets to.",
+        heading: "Your best customer already bought once",
+        body: "Your flows bring the steady revenue, your campaigns bring the spikes, and the segmentation underneath keeps both off the wrong inbox.",
         covers: ["Klaviyo email and SMS", "Flow strategy", "Segmentation", "Subscriptions", "Ecommerce SEO"],
+        imageAlt: "Living in Sunshine campaign work, the email flows and segmentation we built",
         caseSlug: "living-in-sunshine-klaviyo-email",
         cta: { label: "Explore marketing and retention", href: "/services/ecommerce-marketing-agency" },
       },
@@ -394,68 +351,56 @@ export const ECOMMERCE_AGENCY_NEW_YORK: GeoPage = {
   },
 
   // ── Client quotes ─────────────────────────────────────────────────────
-  // Must not overlap the proof grid or the disciplines. Each carries a
-  // quotePerson; ResultsSlider skips any study that does not.
+  // Disjoint from the proof grid and the disciplines.
   results: {
     heading: "Three owners, three numbers, and where they came from",
-    intro:
-      "Every number opens into the case study it came from, so you can check it.",
-    slugs: [
-      "capelli-sports-shopify-migration",
-      "andrea-maack-klaviyo-email",
-      "cecraft-klaviyo-email",
-    ],
+    intro: "Every number opens into the case study it came from, so you can check it.",
+    slugs: ["capelli-sports-shopify-migration", "andrea-maack-klaviyo-email", "cecraft-klaviyo-email"],
     headlines: {
-      "capelli-sports-shopify-migration":
-        "{brand} lifted conversion 24% after moving the whole catalog across",
-      "andrea-maack-klaviyo-email":
-        "{brand} grew flow revenue 144% without spending more on acquisition",
-      "cecraft-klaviyo-email":
-        "{brand} added 196% attributed revenue from email alone",
+      "capelli-sports-shopify-migration": "{brand} kept 95% of its search equity through a full replatform",
+      "andrea-maack-klaviyo-email": "{brand} grew flow revenue 144% without spending more on acquisition",
+      "cecraft-klaviyo-email": "{brand} added 196% attributed revenue from email alone",
     },
   },
 
   // ── How we work ───────────────────────────────────────────────────────
-  // The honest-local block: replaces proximity with a delivery term on a page
-  // that makes no presence claim. Four items, each a commitment a client could
-  // quote back at us.
+  // Four commitments, all things we actually do and all distinct from page
+  // #10's four. Nothing here is invented and nothing claims weekend working.
   howWeWork: {
-    heading: "What we hold ourselves to",
-    intro:
-      "At your size it doesn't matter where an agency sits. It matters whether they pick up.",
+    heading: "Four things we won't budge on",
+    intro: "Each one is here because the opposite is easy to get away with, and you wouldn't spot it for a quarter.",
     items: [
       {
-        title: "Nothing waits until Monday",
+        title: "First week, we look before we pitch",
         body:
-          "Break something on a Sunday and most shops find out when they open again. There's a shared channel, somebody reads it, and work starts that day. How many people pile on depends on what's actually on fire, and you decide that, not us.",
+          "We go through what you already have before we tell you what we'd do. You keep that write-up either way. If you walk, you've had a free second opinion out of it.",
       },
       {
-        title: "Whoever built it is who answers for it",
+        title: "If we say move, we'll also tell you why not to",
         body:
-          "No account manager sitting in the middle translating. You talk to the developer who wrote the thing, by name, in a channel you can scroll back through. Less polished than a status report and a great deal faster.",
+          "Every recommendation comes with the argument against it. Be suspicious of anyone who only hands you one side of it, us included.",
       },
       {
-        title: "Eastern hours are contractual, not a favor",
+        title: "One price and one date, before we start",
         body:
-          "Mornings are when you make decisions and when a bad release does the most damage. That window plus an hour either side is written into the agreement. If you go live at ten, somebody senior has been watching since nine.",
+          "Not a day rate and a guess that creeps. If you change what you want, we requote there and then, instead of quietly swallowing it and getting funny about it three months later.",
       },
       {
-        title: "You own it from the first commit",
+        title: "Everything's in your name from day one",
         body:
-          "Code, theme, design files, ad assets, email templates. Yours immediately, not on final payment. That's deliberate: it makes leaving us cheap, and a retainer you can walk out of is the only kind we think is honest.",
+          "The repo, the theme, the design files, the email templates, every account. If you ever leave, it costs you a bit of time and nothing else.",
       },
     ],
   },
 
   // ── Block 6: What we do about it ──────────────────────────────────────
-  // Carries no keyword. Process and price only.
+  whatWeDoAboutItHeading: "How we do it, and what an ecommerce agency New York quote should cover",
   whatWeDoAboutIt:
-    "Nothing gets quoted before it gets looked at. The first week is diagnosis: where you're running, what that's costing you, and whether the platform is the real problem or just where the symptom shows up. You keep the write-up regardless.\n\nAfter that you get one number and one date, in writing. Neither moves unless you change the brief, and if you do we requote in front of you rather than absorbing it quietly and resenting it later.\n\nA build is $5,000 to $50,000 depending on how much of it is custom. Retainers get sized to work that exists rather than to a tier chart. And if you don't need us this quarter, that's what the call will say.",
+    "Nothing gets quoted before it gets looked at. The first week is measurement: where you're running now, what it's costing you in developer time and workarounds, and which ceiling you're closest to.\n\nThen one number and one date, in writing. Builds run $5,000 to $50,000 depending on how much is custom, and a migration is scoped on your data and your integrations rather than on your product count. That is what an ecommerce agency New York quote should show you: one number, one date, and the scope behind both.\n\nOngoing work is a retainer sized to work that exists. We're rarely the cheapest ecommerce agency New York brands quote, and we don't try to be.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
-  // Three studies used nowhere else on this page, and on no other geo page.
-  // Heading is not "stores we've built" because one of the three is creative
-  // work rather than a build, and the heading has to be true of all three.
+  // Heading has to be true of all three, and one of them is creative work
+  // rather than a build.
   proofHeading: "Work we've done, and what it moved",
   proof: [
     {
@@ -470,7 +415,7 @@ export const ECOMMERCE_AGENCY_NEW_YORK: GeoPage = {
       slug: "saddleback-shopify-plus-b2b",
       vertical: "Wholesale and B2B",
       whatWasBuilt:
-        "A trade portal on Shopify Plus with net terms, price lists and bulk ordering, alongside the direct store",
+        "A trade portal with net terms, price lists and bulk ordering, running alongside the direct store",
       outcome: "+881% B2B sales in month one, 9.54% conversion rate",
       verified: true,
     },
@@ -485,160 +430,152 @@ export const ECOMMERCE_AGENCY_NEW_YORK: GeoPage = {
   ],
 
   // ── Block 8: Objections ───────────────────────────────────────────────
-  // Four. Section 6.4 wants at least one we don't fully beat: objection 3
-  // concedes the specialist argument, objection 4 concedes our own record.
-  objectionsHeading: "Questions worth asking before you sign anyone",
+  // Three. Section 6.4 wants one we don't fully beat: objection 3 concedes we
+  // can't prove it in advance.
+  objectionsHeading: "Questions worth asking any ecommerce agency New York brands hire",
   objections: [
     {
-      objection: "Everyone says they're full-service. Why would you be different?",
+      objection: "You build on Shopify. Of course you'll say we should move.",
       answer:
-        "We might not be, and you shouldn't take our word for it from a paragraph on our own site. That's why the seven questions above are written down instead of being kept as a sales script.\n\nThe one thing we'd point at: we've put our price on this page. Almost nobody you're comparing us against has. It isn't proof of quality, but it does tell you we're willing to be pinned to something before you're on a call.",
+        "Fair, and it's the right suspicion. Every ecommerce agency New York brands speak to has an interest in the answer, us included.\n\nSo here's the honest shape of it. Shopify fits most brands at your revenue and stops being the constraint earliest. It's a poor fit for heavily configured B2B pricing, deep ERP dependency, or a catalog that behaves more like a database than a shop. We've told brands to stay where they were and walked away from the work. Make us argue for it on the call.",
     },
     {
-      objection: "You only build on Shopify. Isn't that just what you'd say?",
+      objection: "We only want one of these things.",
       answer:
-        "Fair, and it's the right suspicion to have. We do have a commercial interest in the answer.\n\nSo here's the honest version. Shopify is where we're genuinely good, and for most brands doing your kind of revenue it stops being the constraint earliest. But it's a bad fit for some businesses: heavily configured B2B pricing, deep ERP dependency, catalogs that behave more like a database than a shop. We've told brands to stay on what they had and walked away from the work. Ask us on the call and make us argue for it.",
-    },
-    {
-      objection: "Wouldn't a specialist beat a generalist at each of these?",
-      answer:
-        "Often, yes. A dedicated email shop will out-email us on the email alone, and a pure design studio may out-design us on the design alone. We're not going to pretend otherwise.\n\nWhat you'd be trading is the seam. Three specialists means three contracts, three roadmaps and nobody accountable when the ad promises something the product page doesn't deliver. That gap is where most of the money goes, and it's invisible to everyone whose remit stops at their own piece. If you've got someone senior in-house who can own that seam, the specialists are a good answer. Most brands your size don't.",
+        "Then buy one. We quote them separately and plenty of clients only ever take a single one.\n\nAll we'd ask is to check the diagnosis first, because the most common thing we find is a brand about to spend on the wrong one. If you're right, you're right, and we'll scope exactly what you asked for.",
     },
     {
       objection: "We've been burned by an agency before.",
       answer:
-        "Probably one that scoped loosely, went quiet for two months, then came back with an invoice and something nobody had seen. We can't disprove that pattern in a paragraph and we won't try.\n\nWhat we can do is make finding out cheap. The audit costs nothing and leaves you with something you can hold. Scope and price are fixed in writing before work starts. Everything we make is yours from day one, so leaving costs you time and nothing else.\n\nAnd none of that's a guarantee. There are agencies with worse records than ours promising more. If you've been burned once, do a small piece of work first, with us or with whoever else is on the list.",
+        "Probably by one that scoped loosely, went quiet, then came back with an invoice and something nobody had seen. No ecommerce agency New York brands hire can disprove that pattern in a paragraph on its own website, us included.\n\nWhat we can do is make finding out cheap. The first look costs nothing and leaves you with something you can hold, everything we make is yours from day one, and there's no long notice period to escape. None of that is a guarantee. If you've been burned once, do a small piece of work first, with us or with whoever else is on your list.",
     },
   ],
 
   // ── Block 9: FAQ ──────────────────────────────────────────────────────
-  // Nine. No definition of the H1 term anywhere: this reader knows what an
-  // ecommerce agency is and section 5.1 never required one.
-  faqHeading: "What brands ask before they decide",
+  // No definition of the H1 term anywhere: this reader knows what an agency is.
+  faqHeading: "What NYC brands ask before they decide",
   faqs: [
     {
-      question: "How much does an ecommerce agency cost?",
+      question: "Should we replatform at all?",
       answer:
-        "Ours is $5,000 to $50,000 for a build, depending on how much you need custom. Ongoing work is a monthly retainer. Across the directories covering this city, listed rates run from under $25 an hour to over $199. So treat any quote you get as one point on a very wide range.",
+        "Often not, and an ecommerce agency New York brands hire should be willing to say so. If the store works and your costs are predictable, staying put is usually right. It's worth moving when you're paying a developer to keep it upright, or when a change that should take a day takes a fortnight. We'll tell you which one you're in before you spend anything.",
+      unique: true,
+    },
+    {
+      question: "What's the riskiest part of a migration?",
+      answer:
+        "Your data, not the build. Products move cleanly. It's your URLs, order history, customer accounts and integrations where the overruns come from, which is why 83% of data migration projects fail or run over budget.",
+      unique: true,
+    },
+    {
+      question: "How much does an ecommerce agency New York brands hire actually cost?",
+      answer:
+        "Ours is $5,000 to $50,000 for a build, depending on how much you need custom, with ongoing work as a monthly retainer. Migrations are scoped on data complexity rather than product count. We're rarely the cheapest quote and we don't try to be.",
+      unique: true,
+    },
+    {
+      question: "Will we lose our Google rankings if we move?",
+      answer:
+        "You can, and it almost always comes down to the redirect map. Every old URL needs a home, the metadata has to travel, and somebody has to watch the index daily for the first month. Done properly you keep most of it: Capelli Sports retained 95% through a full move.",
       unique: true,
     },
     {
       question: "How do we choose between agencies that all look the same?",
       answer:
-        "Ask all of them the seven questions above. The answers separate a shortlist faster than portfolios do, because portfolios are selected and answers are not. Pay most attention to what an agency says it would talk you out of.",
-      unique: true,
-    },
-    {
-      question: "Which platform should we be on?",
-      answer:
-        "Depends on what's actually constraining you, and it's the first thing we'd look at. We build on Shopify and think it fits most brands at your revenue, but heavily configured B2B pricing or deep ERP dependency can point elsewhere. We'll tell you if it does.",
-      unique: true,
-    },
-    {
-      question: "We're on WooCommerce or Magento. Is moving worth it?",
-      answer:
-        "Sometimes not. If the store works and your costs are predictable, staying is often right. It's worth moving when you're paying a developer just to keep it upright, or when a change that should take a day takes a fortnight. We'll tell you which one you're in.",
+        "Ask everyone on your ecommerce agency New York shortlist what they'd talk you out of. Ask who'll actually be on the work and how long they've been there. Then ask for both answers in writing. That separates a shortlist faster than any portfolio.",
       unique: true,
     },
     {
       question: "What happens in the first two weeks?",
       answer:
-        "Week one we measure: the store, the traffic, the numbers behind both, and where money's leaking. You keep that either way. Week two we scope it and give you a fixed price and a date in writing. Nothing starts until you've got both.",
+        "Week one is the look: your setup, your traffic, and where the money goes missing. That write-up is yours either way. Week two we scope it properly and hand you one price and one date. Nothing begins until both are agreed, and you should get that in writing from any ecommerce agency New York brands hire.",
       unique: false,
     },
     {
-      question: "How long does a build take?",
+      question: "How long does a replatform take?",
       answer:
-        "Six to twelve weeks for most stores, depending on how much is custom and how fast decisions come back from your side. Migrations with a big catalog run longer. You get the date before we start, and if it moves because of us we say so early.",
-      unique: false,
-    },
-    {
-      question: "Do we have to take all six services?",
-      answer:
-        "No, and most clients start with one or two. We quote them separately and we'll say plainly if something would do nothing for you this year. Bundling work a brand doesn't need is the fastest way to lose them.",
-      unique: false,
+        "Eight to twelve weeks for most stores. A big catalog with ERP integration runs longer, and anyone quoting you four weeks for that hasn't opened the integrations yet. You get the date before we start.",
+      unique: true,
     },
     {
       question: "Do you provide ecommerce development in New York?",
       answer:
-        "Yes, along with design, branding, creative and retention. We work with brands across the metro, and we work remotely, which is how the whole team works. There's no office to visit and we don't claim one. You get a named contact in a shared channel and cover through Eastern business hours.",
+        "Yes, along with design, branding, creative and retention. We work with brands across the metro and the whole team works remotely, so there's no office to visit and we don't claim one. You get a named contact in a shared channel and cover through Eastern business hours.",
       unique: false,
     },
     {
       question: "Do you work with brands outside New York?",
       answer:
-        "Yes, across the United States and further afield. Nothing about how we work depends on where you sit, and you won't pay a different rate by city. This page exists because choosing here is unusually hard, not because we charge more for it.",
+        "Yes, across the United States and further afield. Nothing about how we work depends on where you sit, and you won't pay a different rate by city.",
       unique: false,
     },
   ],
 
   // ── Block 10: Conversion ──────────────────────────────────────────────
   // Section 8.2: zero keyword targets. No primary, no secondary, no city name,
-  // no platform name. Under 180 words above the form. Second person throughout.
+  // no platform name. Under 180 words above the form.
   conversion: {
-    heading: "Put us at the top of the list or the bottom",
+    heading: "Point us at the part you'd fix first",
     whatYouGet:
       "Tell us the one thing bothering you most. We'll dig into it, free, and walk you through what turns up.",
     whatWeWillTellYouNotToDo:
-      "If your platform is fine and the problem is somewhere we don't work, we'll say so and quote you nothing. That happens more than you'd expect.",
+      "If the setup you've got is fine and the problem is somewhere we don't work, we'll say so and quote you nothing. That happens more than you'd expect.",
     responseExpectation:
       "Someone senior reads it and replies the same day or the next. It won't be a sales rep.",
     audit: {
-      transition:
-        "You're going to have this conversation with three or four of us. Start with the awkward questions.",
-      offer:
-        "Or just name the thing that's bothering you most. We'll go and look properly, and you get back what we found:",
+      transition: "You came here with one thing on your mind. Start there.",
+      offer: "Tell us what it is. We'll open the store up and come back with three things:",
       parts: [
-        "What's actually happening, measured on your store, not inferred from a benchmark.",
-        "Where it starts, which is usually a layer below the thing you spotted.",
-        "What we'd do about it, in order, and which single change earns the most.",
+        "What's really going on, measured on your own store rather than a benchmark.",
+        "Whether the setup you're on is causing it or just carrying the blame.",
+        "The order we'd fix it in, and the one change that earns the most.",
       ],
-      limit:
-        "You're getting the diagnosis. Doing the work is a separate number you're free to ignore.",
+      limit: "This is the diagnosis. The work itself is quoted separately and you can walk away from it.",
       noObligation:
-        "No charge, no sequence of follow-up emails, and the findings stay yours whichever way you go.",
+        "It's free, nobody chases you afterwards, and what we find is yours to take elsewhere.",
       turnaround:
-        "Book any thirty-minute slot. Three business days after that, the person who did the digging walks you through it live, so you can interrupt and argue with it. A document can't be argued with.",
-      secondDoor:
-        "Don't want the call? Leave your details and we'll send the same findings over.",
+        "Pick any thirty-minute slot. Three business days later the person who looked at your store talks you through it live, so you can push back while they're still on the call. You can't argue with a PDF.",
+      secondDoor: "Rather not book a call? Leave your details and the findings come to you.",
     },
   },
 
   // ── Sources ───────────────────────────────────────────────────────────
-  // On-page citation markers are retired, so nothing here renders. Provenance
-  // record for the editorial pass and the review windows.
-  //
-  // NOTE THE SHORT REVIEW WINDOWS. Both directory figures are 90 days, not the
-  // usual 180 or 365. Directory counts and rate bands move, and the place layer
-  // states them as current facts. If they go stale the two headline numbers on
-  // this page are the first things to re-pull.
   sources: [
     {
-      id: "designrush-ny-ecommerce-count-2026",
+      id: "commercetools-migration-revenue",
       claim:
-        "551 ecommerce companies listed for New York, rankings updated 3 September 2026, rates roughly $20-$185/hour. This is the source of the 551 figure in the place layer and the meta description. Single-sourced: no second directory publishes a comparable total.",
-      url: "https://www.designrush.com/agency/ecommerce/new-york",
-      publisher: "DesignRush",
-      captured: "2026-09-04",
-      reviewAfterDays: 90,
+        "90% of recent migrators saw sales and revenue improvements after replatforming. commercetools, via Swell's roundup. First half of the gradient's tension.",
+      url: "https://www.swell.is/content/ecommerce-replatforming-statistics",
+      publisher: "commercetools, via Swell",
+      captured: "2026-09-05",
+      reviewAfterDays: 365,
     },
     {
-      id: "clutch-ny-ecommerce-rates-2026",
+      id: "swell-data-migration-failure",
       claim:
-        "Listed New York ecommerce developers banded from under $25/hour to $150-$199/hour, minimum project sizes $1,000 to $25,000+, ratings updated 3 September 2026. Corroborates the rate spread from a second directory the same week.",
-      url: "https://clutch.co/developers/ecommerce/new-york",
-      publisher: "Clutch",
-      captured: "2026-09-04",
-      reviewAfterDays: 90,
+        "83% of data migration projects fail or exceed budgets. Swell. Quoted on the page twice, in the gradient and in FAQ 2, and it is the figure the whole argument turns on. Re-verify first.",
+      url: "https://www.swell.is/content/ecommerce-replatforming-statistics",
+      publisher: "Swell",
+      captured: "2026-09-05",
+      reviewAfterDays: 365,
     },
     {
-      id: "nine-am-buyer-criteria-2026",
+      id: "elogic-replatform-cost-index",
       claim:
-        "Published buyer selection criteria for New York ecommerce agencies. Shaped the seven questions in the Only-Here Asset; not quoted on-page.",
-      url: "https://www.nine.am/insights/best-ecommerce-marketing-agencies-new-york",
-      publisher: "nine.am",
-      captured: "2026-09-04",
+        "Data migrations exceed budget 64% of the time and timeline 54%, averaging 30% and 41% overrun (Forbes 2021 / Bloor Group). Median mid-market replatform $150,000-$300,000 over 5-10 months, licence only 20-40% of total. Corroborates the Swell figure. THE COST MEDIANS ARE DELIBERATELY UNUSED ON PAGE: see the note in the file header.",
+      url: "https://elogic.co/blog/replatforming-cost-index/",
+      publisher: "Elogic Commerce",
+      captured: "2026-09-05",
       reviewAfterDays: 180,
+    },
+    {
+      id: "capelli-seo-equity",
+      claim:
+        "Capelli Sports retained 95% of SEO equity through a full replatform. Read from that study's own results table in lib/case-studies.ts, so it cannot drift from the case study page. Cited in FAQ 4 and the results slider headline.",
+      url: "https://ecommwizards.com/case-studies/capelli-sports-shopify-migration",
+      publisher: "Ecomm Wizards case study",
+      captured: "2026-09-05",
+      reviewAfterDays: 365,
     },
   ],
 
@@ -647,11 +584,6 @@ export const ECOMMERCE_AGENCY_NEW_YORK: GeoPage = {
 
 // ── OPEN ITEMS BLOCKING PUBLISH (not blocking the build) ─────────────────────
 //
-// Same four as page #10, all site-level rather than page-level:
-//   1. Eight-city footer still rendering site-wide (Master Strategy 8, issue 3)
-//   2. Index remediation, last reading 1,818 against a ~200 gate
-//   3. Partner tier unconfirmed, so no Plus or Partner framing used here
-//   4. RelatedServices renders after the form, against Copy Standard 1.4
-//
-// Page-specific: the 551 figure and the rate bands carry 90-day review windows
-// and are the first thing to re-pull before this publishes.
+// Same four site-level items as pages #10 and #12: the eight-city footer, index
+// remediation against the ~200 gate, the unconfirmed partner tier, and
+// RelatedServices rendering after the form against Copy Standard 1.4.

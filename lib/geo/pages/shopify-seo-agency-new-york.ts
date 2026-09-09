@@ -147,16 +147,16 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
   ],
   reviewedPhrases: ["in New York"],
 
-  metaTitle: "Shopify SEO Agency New York Brands Hire After The Last One",
+  metaTitle: "Shopify SEO Agency New York Brands Hire To Rank And Grow",
   metaDescription:
-    "A Shopify SEO agency New York brands hire when the last one sent reports instead of orders. Organic click share fell to 40% this year. Rankings aren't the product.",
+    "A Shopify SEO agency New York brands hire to turn rankings into revenue. We build these stores as well as rank them, with one price and one date up front.",
   shortTitle: "Shopify SEO agency New York",
   serviceType: "Shopify SEO",
 
   // ── Block 1: Hero ─────────────────────────────────────────────────────
-  h1: "A Shopify SEO agency New York brands hire after the last one sent reports",
+  h1: "Shopify SEO agency New York brands hire to turn rankings into revenue",
   qualifier:
-    "For stores that rank for their own name and nothing else. We'll tell you what the traffic is actually worth before you commit to anything, and if organic isn't where your next dollar is, we'll say that too.",
+    "We build Shopify stores as well as rank them. Most of what holds a store back in search is how it was built, so we fix both. One price and one date before we start.",
 
   // Loop Earplugs. `src` is the poster: first paint, and the whole experience
   // under prefers-reduced-motion since the video is never fetched then.
@@ -187,24 +187,18 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
   trust: {
     heading: "We've built {storesBuilt} stores. Here are a few.",
     subheading:
-      "We build stores as well as rank them. That matters more than it sounds, because most of what holds your store back in search is how it was built.",
+      "We build these stores as well as rank them. Most of what holds a store back in search is how it was built.",
   },
 
   assetCtaLabel: "See what changed this year",
 
-  // ── Approach ──────────────────────────────────────────────────────────
-  approach: {
-    heading: "We report on orders, because that's what you're buying",
-    body:
-      "You've had the deck before. Twelve keywords in green, a domain authority score that went up two points, an average position chart with no money on it anywhere.\n\nNone of that is dishonest exactly. It's just measuring the wrong end. Position five to position three is only worth something if position three still gets clicked, and this year it gets clicked a lot less than it used to.\n\nSo we report on sessions from search, orders from those sessions, and revenue. Rankings show up as a diagnostic, not as the result. If organic sessions climb and orders don't, that's a conversion problem and we'll say so rather than showing you a nicer chart.",
-  },
 
   proofCta: {
-    text: "Three stores, three numbers, none of them a ranking.",
+    text: "Three stores, three numbers, and not a ranking among them.",
     label: "Get in touch with us",
   },
   midCta: {
-    text: "Want to know what your current rankings are actually earning?",
+    text: "Want to know what your rankings are actually earning you right now?",
     label: "Get in touch with us",
   },
   closingCta: {
@@ -214,7 +208,7 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
 
   // ── Block 2: Hook ─────────────────────────────────────────────────────
   hook:
-    "Search your best-selling product by name, without your brand attached. Count how many results load before you show up.\n\nThat's the whole problem, and you've probably paid somebody to fix it already. What came back was a monthly report, some green arrows, and roughly the same number of orders.\n\nSo the useful thing we can do here isn't to promise you rankings. It's to show you what a ranking is currently worth, because that number moved a lot this year and almost nobody selling you SEO has mentioned it.",
+    "You've decided the store should be earning more from search. What's left is knowing which fixes move orders and what they cost, which is what a Shopify SEO agency New York brands hire is for.\n\nThat's what the first two weeks answer, and you keep the answer either way.",
 
   // ── Quick answer ──────────────────────────────────────────────────────
   // The passage an AI Overview lifts. 45 words.
@@ -225,16 +219,16 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
   // The reader's commercial world, only where this service touches it. No
   // landmarks or decoration. The NY-specific point: your buyers are national,
   // so the SERP you compete in is the national one.
-  placeLayerHeading: "You're not competing locally, whatever the search looks like",
+  placeLayerHeading: "Your customers aren't only in New York",
   placeLayer:
-    "A restaurant here competes with the restaurants around it. Your store doesn't. Whoever buys from you could be anywhere, which means the search results you're fighting over aren't local ones.\n\nThat catches a lot of brands out. There's an instinct that being a New York brand should count for something in search, and for a plumber it does. For a store shipping nationwide it counts for almost nothing, because the query your customer types has no geography in it at all.\n\nOn those queries you're up against Amazon, a couple of department stores, and three affiliate roundups titled \"best of\". Increasingly there's an AI summary too, answering the question before any of you get a click.\n\nAnd the categories this market is thickest in, apparel and jewelry and beauty, are precisely the ones where those aggregators are strongest. Which is why so many stores here rank beautifully for their own brand name and nowhere at all for the thing they sell.",
+    "Whoever buys from you could be anywhere, so the results you compete in are national rather than local. None of the local tactics apply, which is why your terms are harder to win and worth more when you do. Any Shopify SEO agency New York brands hire should be clear about that on the first call.",
 
   // ── Block 4: Gradient layer ───────────────────────────────────────────
   // Service x place. Minimum two sourced facts, recorded in gradientFacts.
   // Non-technical by instruction: this is about clicks and money, not crawling.
-  gradientLayerHeading: "A ranking is worth less than it was in March",
+  gradientLayerHeading: "The clicks that still come through are worth more",
   gradientLayer:
-    "Here's the part that should change how you buy this. Across US search, the share of clicks going to organic results fell from 44.9% in March to 40% in June this year. Over the same stretch, the share of clicks Google kept inside its own properties went from 14.8% to 17.1%.\n\nWhen an AI summary appears on a search, 8% of those searches end in a click. Without one, it's 15%. Roughly half the traffic, gone, on a result you might still be ranking first for.\n\nSo two agencies can both move you from position five to position two, and one of them delivers orders while the other delivers a chart. The difference is whether they picked terms that still send people anywhere, and whether the page they land on was built to sell.\n\nThat's the work. Choosing the searches worth winning, then making sure the click turns into an order. Position is the input. Nobody spends it.",
+    "**Organic's share of US clicks fell from 44.9% in March to 40% in June.** When an AI summary shows, 8% of searches end in a click, against 15% without one.\n\nWhat went missing was the browsing. The clicks that still arrive are closer to a purchase, and they close harder than they used to.\n\nSo the terms worth winning have narrowed. Picking the right ones, then making the page sell, is what a Shopify SEO agency New York brands hire is actually for now.",
   gradientFacts: [
     {
       id: "emarketer-organic-click-share-2026",
@@ -272,7 +266,7 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
   asset: {
     title: "What changed in search this year, and what it costs you",
     intro:
-      "Five measured shifts from the last six months. If your SEO agency hasn't raised any of these with you, that's worth a conversation.",
+      "Five measured shifts from the last six months. Any Shopify SEO agency New York brands hire should have raised all five with you by now.",
     renderer: "model",
     method: {
       captured: "2026-09-04",
@@ -300,7 +294,7 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
       {
         label: "Click-through on top-ranking results with AI Overviews",
         cells: ["down to 58%", "Position one isn't what it was"],
-        note: "Ahrefs. Worth holding next to any proposal that promises you a number one spot as though the spot is the outcome.",
+        note: "Ahrefs. Worth holding next to any proposal that sells you a number one spot as though the spot were the outcome.",
       },
       {
         label: "Publisher referral traffic across 2025",
@@ -322,48 +316,86 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
   },
 
   // ── Services ──────────────────────────────────────────────────────────
-  // The accordion rather than the discipline rows, because this keyword names
-  // the service: the reader has chosen and wants scope. All three assigned
-  // secondaries live here, one per item. Platform-specific throughout, per the
+  // Discipline rows, matching pages 10 and 11: every section carries a case
+  // study video. Converted from the accordion 2026-09-09, when the three
+  // headings built around a secondary keyword were rewritten. All three
+  // assigned secondaries now live in the body line, one per item. Platform-specific throughout, per the
   // cannibalisation guardrail at the top of this file.
-  servicesList: {
+  disciplines: {
     label: "What the work is",
-    heading: "Six things we actually do, and what each one is for",
+    heading: "Seven things we do, and what each one is for",
     intro:
-      "You've probably been sold content before. Most of what caps a Shopify store is structural, and we'd rather fix that than write around it.",
-    ctaLabel: "Get in touch with us",
+      "You have probably been sold content before. Most of what caps a Shopify store is structural, and we would rather fix that than write around it.",
     items: [
       {
-        title: "What a Shopify SEO company NYC brands hire should look at first",
-        body:
-          "Your collections. On Shopify they've got the best chance of ranking for what people actually search. On most stores they're an afterthought. No copy, thin titles, and tag pages quietly generating dozens of near-identical URLs that compete with each other. A Shopify SEO company NYC founders keep should be showing you that map in week one, before anyone writes a blog post. See [link:/services/shopify-seo-agency|Shopify SEO].",
+        label: "Audit and strategy",
+        heading: "We start by working out what your traffic is actually worth",
+        body: "A Shopify SEO company NYC brands hire should put a number on the opportunity before it quotes you. That is week one, and you keep it either way.",
+        covers: ["Opportunity sizing", "Keyword mapping", "Competitor gaps", "Technical audit", "Baseline reporting"],
+        imageAlt: "111SKIN storefront, a Shopify SEO agency New York project covering collection structure and product pages",
+        caseSlug: "111skin-shopify-cro-redesign",
+        cta: { label: "Explore SEO strategy", href: "/services/ecommerce-seo-agency" },
       },
       {
-        title: "Shopify SEO NYC stores need on the product page",
-        body:
-          "Product pages are where the money is. They're also where the thinnest copy sits, because it came from the manufacturer and so did everyone else's. We rewrite for what buyers type, fix how your variants generate URLs, and get the structured data right so your listings show reviews and price. Shopify SEO NYC brands buy is too often blog-first. This is the part that pays.",
+        label: "Collections and product pages",
+        heading: "We rewrite the pages that sit one click from a sale",
+        body: "Collections are where Shopify SEO NYC stores have the best chance of ranking, and they are the pages most often left with no copy at all.",
+        covers: ["Collection copy", "Product page rewrites", "Variant URLs", "Internal linking", "Schema markup"],
+        imageAlt: "Loop Earplugs landing page, product and collection work from a Shopify SEO agency New York brands hire",
+        caseSlug: "loop-earplugs-shopify-landing-page-cro",
+        cta: { label: "Explore on-page SEO", href: "/services/shopify-seo-agency" },
       },
       {
-        title: "Where Shopify SEO experts NYC brands trust spend the technical time",
-        body:
-          "Speed, crawl waste and the app stack, in that order. Every app you install adds weight to pages nobody asked it to touch, and Shopify's theme system makes that easy to miss. Shopify SEO experts NYC stores rely on should be able to name the three apps costing you the most and show you the measurement. See [link:/services/shopify-speed-optimization|speed optimization].",
+        label: "Technical SEO",
+        heading: "We fix the technical faults that quietly cap your traffic",
+        body: "Speed, crawl waste and the app stack, in that order. Shopify SEO experts NYC stores rely on should be able to show you what each app costs you in page weight.",
+        covers: ["Core Web Vitals", "Crawl budget", "App audit", "Index bloat", "Structured data"],
+        imageAlt: "Everlast storefront rebuild, technical work by a Shopify SEO agency New York brands trust",
+        caseSlug: "everlast-shopify-plus-sports-redesign",
+        cta: { label: "Explore technical SEO", href: "/services/shopify-development-agency" },
       },
       {
-        title: "Content that's aimed at buyers, not at volume",
-        body:
-          "Less of it than you've been sold, and different. Comparison pages, buying guides for your own categories, and the questions people ask right before they order. We'd rather write six pages that catch somebody with their card out than sixty that catch somebody reading.",
+        label: "Content",
+        heading: "We write for people who are ready to buy",
+        body: "Less of it than you have been sold, and different. Comparison pages, category buying guides, and the questions people ask right before they order.",
+        covers: ["Comparison pages", "Buying guides", "Category content", "FAQ content", "Content refreshes"],
+        imageAlt: "Happy Mammoth subscription store, buyer-stage content built for a Shopify SEO agency New York program",
+        caseSlug: "happy-mammoth-shopify-subscriptions-cro",
+        cta: { label: "Explore content", href: "/services/ecommerce-marketing-agency" },
       },
       {
-        title: "Migrations without losing what you've built",
-        body:
-          "Replatforming is where hard-won rankings die. Usually it's a redirect map somebody rushed. We map every one of your URLs, carry the metadata across, and watch the index daily for the first month. Capelli Sports kept 95% of its SEO equity through a full move. See [link:/services/migration|Shopify migration].",
+        label: "Migrations",
+        heading: "We move you without losing the rankings you have paid for",
+        body: "Replatforming is where hard-won rankings die, and it is almost always a redirect map somebody rushed. Capelli Sports kept 95% of its organic traffic through the move.",
+        covers: ["Redirect mapping", "Metadata transfer", "Index monitoring", "Rollback plan", "Post-launch audit"],
+        imageAlt: "Capelli Sports storefront, a migration that kept its rankings, run by a Shopify SEO agency New York brands hire",
+        caseSlug: "capelli-sports-shopify-migration",
+        cta: { label: "Explore migrations", href: "/services/migration" },
       },
       {
-        title: "AI search, honestly",
-        body:
-          "Being cited in AI answers is real, and you'd want it. Nobody can reliably sell it as a deliverable yet. What helps is what always helped. Clear answers to specific questions, structured data, and being the source other people cite. Anyone quoting you a fixed price to rank in AI overviews is guessing. That includes us, if we ever do.",
+        label: "AEO",
+        heading: "We get your brand into the shortlist Google's AI answer writes",
+        body: "Someone asks Google for the best brands in your category and it answers with a list. Answer engine optimization is the work that puts you on it.",
+        covers: ["Answer-shaped content", "Structured data", "Comparison pages", "Entity coverage", "AI Overview tracking"],
+        imageAlt: "Wild storefront, answer engine optimization work across structured data and comparison content",
+        caseSlug: "wild-shopify-plus-subscriptions",
+        cta: { label: "Explore AEO", href: "/services/ecommerce-seo-agency" },
+      },
+      {
+        label: "GEO",
+        heading: "We get you named when someone asks ChatGPT who to buy from",
+        body: "Generative engine optimization is the same job pointed at ChatGPT and Claude. They recommend the brands their sources already talk about, so we go and earn those mentions.",
+        covers: ["Brand entity building", "Third-party citations", "Review presence", "Source coverage", "LLM visibility tracking"],
+        imageAlt: "Candy Kittens storefront, citation and brand work that gets a store named in AI recommendations",
+        caseSlug: "candy-kittens-shopify-food-beverage-cro",
+        cta: { label: "Explore GEO", href: "/services/ecommerce-seo-agency" },
       },
     ],
+  },
+
+  servicesCta: {
+    text: "Point at the one you think is costing you most and we will tell you honestly if you are right.",
+    label: "Get in touch with us",
   },
 
   // ── Numbered process ──────────────────────────────────────────────────
@@ -373,7 +405,7 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
   engagement: {
     heading: "What actually happens, month by month",
     intro:
-      "No twelve-month lock-in and no reporting until there's something to report. If month three looks wrong to you, leave.",
+      "No twelve-month lock-in, and no reporting until there's something worth reporting. If month three looks wrong to you, leave.",
     steps: [
       {
         week: "Weeks 1 to 2",
@@ -424,7 +456,7 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
   // could move between them.
   howWeWork: {
     heading: "What we hold ourselves to",
-    intro: "Where an agency sits matters less than whether you can get hold of them.",
+    intro: "Where a Shopify SEO agency New York brands hire actually sits matters less than whether you can get hold of them.",
     items: [
       {
         title: "No twelve-month lock-in",
@@ -442,7 +474,7 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
           "Not an account manager reading out someone else's findings. Whoever went through your collections explains what they found and can answer why, in a channel you can scroll back through.",
       },
       {
-        title: "We'll tell you when it isn't the answer",
+        title: "We'll tell you what to fix before we touch SEO",
         body:
           "If your store converts badly, more traffic makes the problem worse and more expensive. Plenty of the audits we run end with us recommending conversion work we'd charge less for, or nothing at all.",
       },
@@ -451,12 +483,12 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
 
   // ── Block 6: What we do about it ──────────────────────────────────────
   whatWeDoAboutIt:
-    "Pricing first, since nobody else on this search will tell you. Ongoing work is a monthly retainer sized to your store and your catalog, and a one-off technical fix is quoted on its own if that's genuinely all you need.\n\nThe first month is diagnosis and it's fixed and small. You get the map of what you rank for, what it earns, and what's structurally in the way, and you keep that document whichever way you go.\n\nAfter that, month to month. We'd rather earn the next month than hold you to a year. And if your money is better spent on conversion or on ads this quarter, we'll say so and quote you nothing.",
+    "Pricing first, since nobody else on this search will tell you. Ongoing work is a monthly retainer sized to your store and your catalog, and a one-off technical fix is quoted on its own if that's genuinely all you need.\n\nThe first month is diagnosis, fixed and small, and it's the month a Shopify SEO agency New York brands hire should be judged on. You get the map of what you rank for, what it earns, and what's structurally in the way, and you keep that document whichever way you go.\n\nAfter that, month to month. We'd rather earn the next month than hold you to a year. And if your money is better spent on conversion or on ads this quarter, we'll say so and quote you nothing.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   // Picked for SEO evidence specifically. No study here appears elsewhere on
   // this page.
-  proofHeading: "Stores we've worked on, and what moved",
+  proofHeading: "Stores we've worked on, and the numbers that moved",
   proof: [
     {
       slug: "evie-lou-shopify-fashion-cro",
@@ -487,7 +519,7 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
   // ── Block 8: Objections ───────────────────────────────────────────────
   // Four. Section 6.4 wants one we don't fully beat: objection 1 concedes that
   // SEO may be the wrong spend entirely, objection 4 concedes our own record.
-  objectionsHeading: "Questions worth asking before you sign anyone",
+  objectionsHeading: "Questions worth asking any Shopify SEO agency New York brands hire",
   objections: [
     {
       objection: "We tried SEO for a year and got nothing out of it.",
@@ -514,7 +546,7 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
   // ── Block 9: FAQ ──────────────────────────────────────────────────────
   // Nine, and no definition of the H1 term. Every page ranking for this keyword
   // opens by explaining what Shopify SEO is; this reader knows.
-  faqHeading: "What brands ask before they decide",
+  faqHeading: "What brands ask us before they start",
   faqs: [
     {
       question: "How long before we see anything?",
@@ -531,7 +563,7 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
     {
       question: "Why does our store only rank for our own brand name?",
       answer:
-        "It's almost always structure. Your collections have no copy on them. Your product pages carry the same description the maker handed everyone else. And your tag pages split authority across a dozen near-identical URLs. Your own name ranks because nobody else competes for it, so it's the one term your SEO never had to win.",
+        "It's almost always structure, and it is the first thing a Shopify SEO agency New York brands hire should check. Your collections have no copy on them. Your product pages carry the same description the maker handed everyone else. And your tag pages split authority across a dozen near-identical URLs. Your own name ranks because nobody else competes for it, so it's the one term your SEO never had to win.",
       unique: true,
     },
     {
@@ -547,7 +579,7 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
       unique: true,
     },
     {
-      question: "Can you do the SEO and the development?",
+      question: "Can a Shopify SEO agency New York brands hire do the development too?",
       answer:
         "Yes, and it's the arrangement we'd argue for. Most of what caps your search performance is how the store was built, so recommendations that need a developer sit in your queue. When the same team does both, the fix ships instead of being written up for you.",
       unique: false,
@@ -561,7 +593,7 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
     {
       question: "Do you provide Shopify SEO in New York?",
       answer:
-        "Yes, and we work remotely, which is how the whole team works. There's no office to visit and we don't claim one. You get a named person in a shared channel and cover through Eastern business hours.",
+        "Yes. We are a Shopify SEO agency New York brands hire and we work remotely, which is how the whole team works. There's no office to visit and we don't claim one. You get a named person in a shared channel and cover through Eastern business hours.",
       unique: false,
     },
     {

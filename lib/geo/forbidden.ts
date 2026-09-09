@@ -19,7 +19,14 @@ export const BANNED_PHRASES: { pattern: RegExp; label: string }[] = [
   { pattern: /\bseamless(?:ly)?\b/i, label: "seamless" },
   { pattern: /\bcutting[- ]edge\b/i, label: "cutting-edge" },
   { pattern: /\bworld[- ]class\b/i, label: "world-class" },
-  { pattern: /\bdominat(?:e|es|ed|ing)\b/i, label: "dominate" },
+  // "dominate" LIFTED 2026-09-05 on the owner's explicit instruction, so it can
+  // carry a hero headline as a positioning word. scripts/geo/README says never
+  // to widen this list without asking the owner; the owner asked, and it is
+  // recorded here rather than quietly deleted. Note that Copy Standard v2.0
+  // section 4 still lists it as marketing filler, so the document and this file
+  // now disagree on this one word. The owner's call is the newer of the two and
+  // wins until the standard is reissued. Every other ban in section 4 stands,
+  // and this is not precedent for widening the list again.
   { pattern: /\bleverag(?:e|es|ed|ing)\s+(?:the|your|our|its|their|a|an|this|these|those)\b/i, label: "leverage (verb)" },
   // Site-wide copy rules (owner's standing list), in addition to the manual's set.
   { pattern: /\brobust\b/i, label: "robust" },
