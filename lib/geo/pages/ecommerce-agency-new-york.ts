@@ -111,7 +111,7 @@ export const ECOMMERCE_AGENCY_NEW_YORK: GeoPage = {
   slug: "new-york",
   path: "/services/ecommerce-agency/new-york",
   hub: "/services/ecommerce-agency",
-  status: "draft",
+  status: "published",
 
   geo: {
     name: "New York",
