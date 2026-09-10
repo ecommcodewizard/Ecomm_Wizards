@@ -19,11 +19,12 @@ import { SHOPIFY_SEO_NEW_YORK } from "./pages/shopify-seo-agency-new-york";
 import { SHOPIFY_DEV_AUSTIN } from "./pages/shopify-development-agency-austin";
 import { ECOMMERCE_AGENCY_AUSTIN } from "./pages/ecommerce-agency-austin";
 import { ECOMMERCE_AGENCY_DALLAS } from "./pages/ecommerce-agency-dallas";
+import { ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES } from "./pages/ecommerce-marketing-agency-los-angeles";
 
 export const SITE_URL = "https://ecommwizards.com";
 
 /** Add each new page here. Order is irrelevant; paths must be unique. */
-export const GEO_PAGES: GeoProgrammePage[] = [ECOMMERCE_AGENCY, ECOMMERCE_SEO_AGENCY, ECOMMERCE_MARKETING_AGENCY, SHOPIFY_DEV_LOS_ANGELES, SHOPIFY_DEV_NEW_YORK, ECOMMERCE_AGENCY_NEW_YORK, SHOPIFY_SEO_NEW_YORK, ECOMMERCE_AGENCY_LOS_ANGELES, SHOPIFY_DEV_AUSTIN, ECOMMERCE_AGENCY_AUSTIN, ECOMMERCE_AGENCY_DALLAS];
+export const GEO_PAGES: GeoProgrammePage[] = [ECOMMERCE_AGENCY, ECOMMERCE_SEO_AGENCY, ECOMMERCE_MARKETING_AGENCY, SHOPIFY_DEV_LOS_ANGELES, SHOPIFY_DEV_NEW_YORK, ECOMMERCE_AGENCY_NEW_YORK, SHOPIFY_SEO_NEW_YORK, ECOMMERCE_AGENCY_LOS_ANGELES, ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES, SHOPIFY_DEV_AUSTIN, ECOMMERCE_AGENCY_AUSTIN, ECOMMERCE_AGENCY_DALLAS];
 
 // ---------------------------------------------------------------------------
 // Lookups

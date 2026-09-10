@@ -37,6 +37,19 @@ export const CASE_STUDY_VIDEOS: Record<string, string> = {
   // corpus against a 1.7 MB median. Re-encoded to a 26-second 960px loop with
   // no audio track, 2.33 MB, before being registered here.
   "living-in-sunshine-klaviyo-email": "/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo%20video.mp4",
+  // Both of these had a video AND a poster already sitting in /public,
+  // unregistered, so their rows would have rendered as stills beside
+  // neighbours that move. Chilly's points at the same file its own case study
+  // plays, and its poster was generated to the convention above. Both are
+  // inside the corpus size norm (1.0 MB and 1.7 MB against a ~1.7 MB median),
+  // so unlike Living in Sunshine neither needed re-encoding.
+  "cecraft-klaviyo-email": "/images/Case%20studies/Cande%20Klaviyo%20video.mp4",
+  "chillys-creative-strategy": "/images/Creative%20strategy%20services/Case%20studies/chillys-series.mp4",
+  // Registered for the Los Angeles marketing page, which leads its hero and its
+  // first discipline row on this study. The video and a matching poster were
+  // already sitting in /public unregistered, so the row would have rendered as
+  // a still beside neighbours that move. Same situation as the two above.
+  "andrea-maack-klaviyo-email": "/images/Case%20studies/Andrea%20Maack%20Klaviyo%20video.mp4",
 };
 
 // Slugs whose preview uses the speed-adjusted player (faster playback loop).
