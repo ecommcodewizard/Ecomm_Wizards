@@ -1,13 +1,25 @@
 // Guardrail 6: publish velocity.
 // Counts lines added under lib/geo/pages in the last 7 days that set
-// status: "published". More than 5 in a rolling week fails (the programme's
+// status: "published". More than the cap below in a rolling week fails (the
 // publish cadence cap). Not a git repo, or git missing: WARN and exit 0.
 //
 // Run: npx tsx scripts/geo/velocity.ts
 
 import { spawnSync } from "node:child_process";
 
-const MAX_PUBLISHES_PER_WEEK = 5;
+// CAP RAISED 5 -> 8 on 2026-09-10, by the owner, so the three Texas pages
+// (#13, #14, #15) could publish in the same week as the Los Angeles
+// ecommerce page. Recorded here rather than changed quietly, per
+// scripts/geo/README.md.
+//
+// WHY THE CAP EXISTS, so nobody raises it again without thinking: a burst of
+// structurally similar pages appearing at once is a pattern Google treats as
+// programmatic, and this corpus is still thin enough for that to matter. The
+// mitigation here is that all three Texas pages clear the shingle floor
+// comfortably (79.6 / 84.5 / 91.8% unique against a 60% minimum) and each
+// argues a different case. Watch Search Console coverage for the fortnight
+// after this ships. If impressions on the older geo pages dip, put it back.
+const MAX_PUBLISHES_PER_WEEK = 8;
 const ADDED_PUBLISHED_RE = /^\+\s*status:\s*["']published["']/;
 
 function main(): number {
