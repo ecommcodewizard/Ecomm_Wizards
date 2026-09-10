@@ -7,19 +7,21 @@
 
 import { spawnSync } from "node:child_process";
 
-// CAP RAISED 5 -> 8 on 2026-09-10, by the owner, so the three Texas pages
-// (#13, #14, #15) could publish in the same week as the Los Angeles
-// ecommerce page. Recorded here rather than changed quietly, per
-// scripts/geo/README.md.
+// CAP RAISED TO 30 on 2026-09-10, by the owner. It was 5, then briefly 8.
+// At 30 a week this check no longer constrains anything in practice: the
+// whole Group A geo programme is 39 pages. Treat it as effectively off.
 //
-// WHY THE CAP EXISTS, so nobody raises it again without thinking: a burst of
-// structurally similar pages appearing at once is a pattern Google treats as
-// programmatic, and this corpus is still thin enough for that to matter. The
-// mitigation here is that all three Texas pages clear the shingle floor
-// comfortably (79.6 / 84.5 / 91.8% unique against a 60% minimum) and each
-// argues a different case. Watch Search Console coverage for the fortnight
-// after this ships. If impressions on the older geo pages dip, put it back.
-const MAX_PUBLISHES_PER_WEEK = 8;
+// WHY IT EXISTED, kept here because turning a guardrail off is worth
+// remembering: a burst of structurally similar pages going live together is
+// a pattern Google reads as programmatic, and this corpus is still small.
+// The protection that remains is check-shingles, which enforces a 60%
+// uniqueness floor per page and is the stronger of the two checks anyway.
+//
+// WHAT TO WATCH NOW THAT PACING IS MANUAL: Search Console coverage and
+// impressions across the older geo pages after each batch. If impressions
+// on already-indexed pages fall while new ones go live, pacing is the first
+// thing to suspect and this number is the lever.
+const MAX_PUBLISHES_PER_WEEK = 30;
 const ADDED_PUBLISHED_RE = /^\+\s*status:\s*["']published["']/;
 
 function main(): number {
