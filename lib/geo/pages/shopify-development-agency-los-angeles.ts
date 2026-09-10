@@ -375,78 +375,104 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
     },
   ],
 
-  // ── Services ──────────────────────────────────────────────────────────
+  // ── Disciplines ───────────────────────────────────────────────────────
   // Sits AFTER the asset in the template, so the page gives before it sells.
   //
-  // Each of the three assigned secondaries owns exactly one card here and
-  // appears nowhere else on the page (section 7.2). The mapping is the owner's:
-  //   item 1 -> los angeles shopify development company
-  //   item 2 -> shopify website design los angeles
-  //   item 3 -> los angeles shopify expert
-  // Items 4-6 carry no keyword. That is correct: the standard bans manufactured
-  // secondaries, and there is no fourth phrase with volume worth having.
+  // Replaced a ten-item services accordion on 2026-09-07. GeoPageTemplate
+  // renders one or the other, never both. The accordion sliced development into
+  // ten tasks, which is the right shape for a reader who has already chosen the
+  // service; this page's keyword is the broad agency term, so the reader has
+  // not chosen and the honest question is which discipline they need.
   //
-  // Every card links out to the page that actually sells that service, which is
-  // the internal linking this geo page owes the rest of the site.
-  servicesList: {
-    label: "What we build",
-    heading: "Ten things we build, and what each one costs you in speed",
+  // Every panel is derived: give a caseSlug and the brand, video and headline
+  // metric are read from lib/case-studies.ts at render. None of these six slugs
+  // appears elsewhere on this page.
+  //
+  // COST OF THE SWAP, recorded so it is a decision rather than a regression:
+  // the accordion carried ten outbound links to service pages and this carries
+  // six. Speed optimization, Shopify Plus, migrations, headless, B2B, ERP,
+  // integrations, app development and theme development lost their contextual
+  // link from this block. RelatedServices at the foot of the page still links
+  // them, but from a generic slot rather than from copy that argues for them.
+  disciplines: {
+    label: "What we do",
+    heading: "So which of these do you need?",
     intro:
-      "All ten have their own page with the full detail. What is below is the part that only shows up once your store is carrying real weight on a real phone.",
-    // Was "Get your ceiling measured". "Ceiling" meant the checkout ceiling
-    // from the retired drop spine and meant nothing to a design-and-build
-    // buyer. Now matches the three inline CTAs: same words, same destination.
-    ctaLabel: "Get in touch with us",
+      "Might be one, might be three. We will tell you which before you spend anything.",
     items: [
       {
-        title: "What a Los Angeles Shopify development company should own",
+        label: "Design and UX",
+        heading: "Looking expensive and loading fast are the same design decision",
         body:
-          "The whole build, not half of it. We design it, write the theme, wire the checkout logic and the inventory rules, and we are still on the call the day it goes live. Not a design studio that hands you to a contractor once the mockups are signed off. If you are comparing one Los Angeles Shopify development company against another, that single question, who owns it end to end, separates them faster than any portfolio will. This sits inside our [link:/services/shopify-development-agency|Shopify development agency] work, with more on [link:/services/shopify-store-development|Shopify store development].",
+          "Every Shopify website design Los Angeles build gets a weight budget before the first mockup. Hero video, photography and custom type all have to fit inside it.",
+        covers: ["UX and UI design", "Art direction", "Product page design", "Landing pages", "Design systems"],
+        imageAlt: "A beauty storefront we designed and rebuilt for 111SKIN",
+        caseSlug: "111skin-shopify-cro-redesign",
+        cta: { label: "Explore design and UX", href: "/services/shopify-ux-and-ui-design" },
       },
       {
-        title: "Shopify website design Los Angeles brands ask for",
+        label: "Build and development",
+        heading: "The build is where the look stops costing you speed",
         body:
-          "Image-led, video-heavy, art-directed. Right for the brand, and expensive on a phone. We do that work properly, custom type and real motion included, then price each decision in milliseconds so the trade is yours to make rather than ours to hide. Seven of the ten stores we tore down were running a custom theme, so Shopify website design Los Angeles buyers accept as standard is already well past a stock template. See [link:/services/shopify-ux-and-ui-design|UX and UI design] and [link:/services/shopify-theme-development|theme development].",
+          "Those 23 photos loading before anyone scrolls were never a design decision. We are a Los Angeles Shopify development company, so we fix that in the theme before your store ships.",
+        covers: ["Theme development", "Shopify Plus", "Migrations", "App development", "Integrations", "Speed"],
+        imageAlt: "A jewelry storefront we replatformed onto Shopify Plus for John Hardy",
+        caseSlug: "john-hardy-shopify-plus-migration",
+        cta: { label: "Explore development", href: "/services/shopify-development-agency" },
       },
       {
-        title: "What a Los Angeles Shopify expert is actually for",
+        label: "Ecommerce SEO",
+        heading: "Your rankings are paying for the hero video too",
         body:
-          "Launching is the easy part. Most stores lose money slowly afterwards, in the cart and on the product page, and you only find it if somebody is looking. So we keep testing yours against your real traffic instead of a best-practice checklist, and we fix what the numbers point at. Putting a Los Angeles Shopify expert on retainer is only worth it if they are doing that rather than waiting on tickets. See [link:/services/shopify-cro-agency|conversion rate optimization] and [link:/services/shopify-maintenance-and-support|maintenance and support].",
+          "Google measures the same load your customer sits through, and it crawls a heavy store less often. We cut the script and image weight first, because nothing else in the plan works until the store loads.",
+        covers: ["Core Web Vitals", "Technical SEO", "Collection page SEO", "Product page SEO", "Schema markup", "AI search visibility"],
+        imageAlt: "A sportswear storefront we moved onto Shopify for Capelli Sports",
+        caseSlug: "capelli-sports-shopify-migration",
+        cta: { label: "Explore ecommerce SEO", href: "/services/ecommerce-seo-agency" },
       },
       {
-        title: "Load testing and speed",
+        label: "Creative strategy",
+        heading: "Your most expensive traffic hits your heaviest page",
         body:
-          "The part almost nobody sells you, and the only one that produces a number. We load the store until something gives, name the thing that gave, tell you the rate it gave at, and then go and fix it. See [link:/services/shopify-speed-optimization|speed optimization].",
+          "We make the video and the motion in house, and we size every file to what the landing page can carry. Your paid visitors are the last people who should be waiting on a hero video.",
+        covers: ["Ad creative", "Motion and video", "User-generated content", "Paid social", "Creative testing"],
+        imageAlt: "Creative work we produced for the haircare brand Prose",
+        caseSlug: "prose-creative-strategy",
+        cta: { label: "Explore creative strategy", href: "/services/creative-strategy" },
       },
       {
-        title: "Shopify Plus",
+        label: "Email and retention",
+        heading: "Every repeat order is one your homepage does not have to win",
         body:
-          "Worth the money when your apps are the bottleneck, because the shared API budget goes from 100 points per second to 1,000. Not worth it as insurance against a checkout limit nobody has published. We will tell you which of those you are buying. See [link:/services/shopify-plus-development|Shopify Plus development].",
+          "Your storefront has to load all that weight before it can sell. An email does not, which is why the fifth order costs a fraction of the first.",
+        covers: ["Klaviyo email and SMS", "Automated flows", "List segmentation", "Subscriptions", "Loyalty programs"],
+        // Was wild-shopify-plus-subscriptions, which did not evidence this row.
+        // Wild's serviceType is "Shopify Plus | Subscriptions | Integration
+        // Services" and its own challenge text says the work "was not CRO or a
+        // platform migration. It was building a subscription-first commerce
+        // infrastructure from the ground up." Klaviyo appears only in its tech
+        // stack. The panel would have shown "80K+ Monthly Subscribers", a build
+        // number standing in for an email claim, which is exactly the borrowed
+        // proof this block's derived panel exists to make impossible.
+        //
+        // Living in Sunshine is a real Klaviyo engagement: "Klaviyo Email |
+        // Flow Strategy | BFCM", headline +219.8% Flows Revenue Growth, which
+        // is the claim this row actually makes. It is also a Southern
+        // California category, so it signals the market without narrowing the
+        // copy, which the vertical rule at the top of this file requires.
+        imageAlt: "Email and retention work we ran for Living in Sunshine",
+        caseSlug: "living-in-sunshine-klaviyo-email",
+        cta: { label: "Explore marketing and retention", href: "/services/ecommerce-marketing-agency" },
       },
       {
-        title: "Custom apps",
+        label: "CRO and support",
+        heading: "Six months in, the look has grown and the store has slowed",
         body:
-          "Your app stack is the thing most likely to fail you on the day. The fix is usually removing two rather than installing one. We audit what is running, cut what competes during a release, and build custom where nothing off the shelf will do it. See [link:/services/shopify-app-development|app development] and [link:/services/shopify-app-setup-and-app-optimization|app optimization].",
-      },
-      {
-        title: "Migrations",
-        body:
-          "Coming off WooCommerce, Magento or BigCommerce is a different job when you sell in releases. The cutover has to land in a quiet window, and your redirect map has to survive it. We move the products, customers and orders, and carry the 301s and the metadata across. Then we load test the new store before you announce a date on it. See [link:/services/migration|Shopify migration].",
-      },
-      {
-        title: "Headless and Hydrogen",
-        body:
-          "Worth it when the storefront genuinely has to be faster than a theme can be. A mistake when it is bought as a status upgrade. Going headless moves your failure points rather than removing them, and adds a deploy pipeline you now have to run on drop day. We would rather measure your theme first and tell you if the answer is no. See [link:/services/headless-shopify-agency|headless Shopify development].",
-      },
-      {
-        title: "Wholesale and B2B",
-        body:
-          "Plenty of brands here run a wholesale book alongside the direct one, and the two want opposite things from a storefront. Tiered pricing, account portals, net terms and bulk ordering on the same store as your direct catalog. Built so the trade side does not drag weight onto the pages your customers see. See [link:/services/shopify-b2b-store-setup|B2B store setup].",
-      },
-      {
-        title: "ERP and systems integration",
-        body:
-          "If your stock really lives in NetSuite, Brightpearl, SAP or a 3PL rather than in Shopify, a release is the moment that gap shows. We build the sync and decide in advance what the store does when it lags, which matters more on drop day than on any other day of the year. See [link:/services/erp-connections-to-shopify|ERP connections] and [link:/services/shopify-integration-services|integrations].",
+          "It happens one hero video at a time, so nobody catches it in a design review. A Los Angeles Shopify expert tests on your real traffic and measures what each addition costs in orders before you ship it.",
+        covers: ["Conversion rate optimization", "A/B testing", "Speed monitoring", "Maintenance and support", "Analytics and reporting"],
+        imageAlt: "A confectionery storefront we rebuilt and tested for Candy Kittens",
+        caseSlug: "candy-kittens-shopify-food-beverage-cro",
+        cta: { label: "Explore CRO and support", href: "/services/shopify-cro-agency" },
       },
     ],
   },

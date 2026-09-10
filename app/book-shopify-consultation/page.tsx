@@ -242,6 +242,10 @@ export default function BookCallPage() {
         .bkc-cal-card { background:#fff; border-radius:20px; padding:14px; box-shadow:0 24px 70px rgba(0,0,0,.14); border:1px solid rgba(0,0,0,.06); }
         .bkc-cal-wrap { position:relative; min-height:600px; border-radius:12px; overflow:hidden; }
         .bkc-cal-loading { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#94a3b8; font-family:'Poppins',sans-serif; font-size:14px; }
+        /* Shown only when cal.com reports the embed failed to load. Positioned
+           the same way as the placeholder it replaces, so it sits in the space
+           the calendar would have filled rather than above an empty box. */
+        .bkc-cal-failed { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; padding:0 24px; margin:0; color:#334155; font-family:'Poppins',sans-serif; font-size:14px; line-height:1.6; }
         .bkc-cal-inline { position:relative; width:100%; min-height:600px; }
         .bkc-cal-inline iframe { width:100% !important; }
 
