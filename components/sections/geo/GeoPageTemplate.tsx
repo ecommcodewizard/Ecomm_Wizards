@@ -13,6 +13,7 @@ import SearchIntentBlock from "./SearchIntentBlock";
 import PlaceLayer from "./PlaceLayer";
 import GradientLayer from "./GradientLayer";
 import ServicesAccordion from "./ServicesAccordion";
+import SegmentsBlock from "./SegmentsBlock";
 import DisciplineBlocks from "./DisciplineBlocks";
 import EngagementBlock from "./EngagementBlock";
 import ResultsSlider from "./ResultsSlider";
@@ -148,6 +149,20 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
       {page.disciplines && <DisciplineBlocks data={page.disciplines} />}
 
       {page.servicesList && <ServicesAccordion data={page.servicesList} />}
+
+      {/* Categories we have shipped in. Optional, and added to the geo spine on
+          2026-09-10 after a scan of everything ranking for "shopify agency
+          austin": every serious competitor on that first page carries an
+          industries block, and we had one on the hubs only, so a geo page could
+          not answer "have you built for a brand like mine" without the reader
+          inferring it from the case studies. `segments` was already legal on the
+          base schema and simply had no renderer here.
+
+          It is NOT a grid of category nouns. SegmentsSchema forces each entry to
+          say what actually breaks in that category, which is the part a reader
+          cannot get from a list of names. Pages that would only be able to fill
+          it with nouns should leave it off. */}
+      {page.segments && <SegmentsBlock segments={page.segments} />}
 
       {/* Numbered process. Optional, and only right where the reader has
           already chosen the service and wants the sequence: every page ranking

@@ -1,13 +1,27 @@
 // Guardrail 6: publish velocity.
 // Counts lines added under lib/geo/pages in the last 7 days that set
-// status: "published". More than 5 in a rolling week fails (the programme's
+// status: "published". More than the cap below in a rolling week fails (the
 // publish cadence cap). Not a git repo, or git missing: WARN and exit 0.
 //
 // Run: npx tsx scripts/geo/velocity.ts
 
 import { spawnSync } from "node:child_process";
 
-const MAX_PUBLISHES_PER_WEEK = 5;
+// CAP RAISED TO 30 on 2026-09-10, by the owner. It was 5, then briefly 8.
+// At 30 a week this check no longer constrains anything in practice: the
+// whole Group A geo programme is 39 pages. Treat it as effectively off.
+//
+// WHY IT EXISTED, kept here because turning a guardrail off is worth
+// remembering: a burst of structurally similar pages going live together is
+// a pattern Google reads as programmatic, and this corpus is still small.
+// The protection that remains is check-shingles, which enforces a 60%
+// uniqueness floor per page and is the stronger of the two checks anyway.
+//
+// WHAT TO WATCH NOW THAT PACING IS MANUAL: Search Console coverage and
+// impressions across the older geo pages after each batch. If impressions
+// on already-indexed pages fall while new ones go live, pacing is the first
+// thing to suspect and this number is the lever.
+const MAX_PUBLISHES_PER_WEEK = 30;
 const ADDED_PUBLISHED_RE = /^\+\s*status:\s*["']published["']/;
 
 function main(): number {
