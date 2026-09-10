@@ -1,192 +1,218 @@
-// Batch 1, page 2: /services/ecommerce-agency/los-angeles
-// Spec: Batch 1 Page Specification v2.0 section 2.2 (geo spine).
-// Copy: docs/copy-standard.md v2.0.
+// Batch 1, page 5: /services/ecommerce-agency/los-angeles
+// Spec: Batch 1 Page Specification v2.0 — spine §2.2, gradient §3, asset §4.5,
+// case studies §5, FAQ §6.3 and §6.4. Build Manual card 5.
+// Copy: docs/ecomm-wizards-page-standard.md (see the note below on which
+// standard governs), with docs/copy-standard.md v2.0 still binding wherever
+// the newer guide is silent.
 //
-// Primary keyword: "ecommerce agency los angeles" (50/mo, Google Keyword Planner)
-// Inventory: Geo Inventory & Batch Plan v4.0, Los Angeles row 2.
-// Hub: /services/ecommerce-agency (published; already lists this path in its
-// `children` array, so the hub-down link exists the moment this publishes).
+// Primary keyword: "ecommerce agency los angeles" (50/mo, Google Keyword
+// Planner — GKP is the figure of record; Semrush's 140 is a tool difference,
+// not a correction).
+// Inventory: Geo Inventory & Batch Plan v4.0, California row 2.
+// Hub: /services/ecommerce-agency, which already lists this path in `children`.
 //
-// GKP IS THE FIGURE OF RECORD (owner, 2026-09-09). Semrush puts this term at
-// 140/mo US, and its cluster at 460/mo across 25 variations. That is a tool
-// difference, not a correction, and the inventory's 50 stands. The Semrush
-// export is used below only for what GKP cannot show: ranked URLs, SERP
-// features and competitor authority.
+// ══ REWRITTEN 2026-09-10 TO THE PAGE STANDARD. READ BEFORE EDITING. ═════════
 //
-// ── ARCHETYPE: UNRESOLVED, AND DELIBERATELY NOT INVENTED ─────────────────────
+// The owner supplied docs/ecomm-wizards-page-standard.md, which closes with
+// "Where this guide and an older document disagree, this one wins." Three of
+// its rules changed this page, and the previous version is preserved in git if
+// any of it needs to come back.
 //
-// Master Strategy v3.1 section 5.10 assigns each page an archetype letter which
-// governs the gradient layer's angle. That document is owner-supplied and is
-// not in the repo, and it could not be recovered from any available transcript.
-// So the letter below is a PLACEHOLDER chosen for closest fit, not a reading of
-// the spec: D, on the argument that this page turns on a supply constraint, as
-// New York's page #11 does, but the scarce supply here is ENGINEERING LABOR
-// rather than agencies.
+// 1. STEP 01 / STEP 04.2 — THE READER HAS NOT PICKED A PLATFORM, AND MAY NOT
+//    IMPORT. The keyword "ecommerce agency los angeles" tells you he wants an
+//    agency and has decided nothing else. The previous version assumed he
+//    imports by sea: the H1, qualifier, hook, quick answer, place layer, proof
+//    heading, every discipline and most of the FAQ were written for an
+//    importer. That is the standard's own example of shutting a buyer out.
 //
-// ASK THE OWNER for the 5.10 row before this page leaves draft. If the assigned
-// letter differs, the block that changes is the gradient layer, not the page.
+//    THE FIX IS NOT TO DELETE THE IMPORT ARGUMENT. Page Spec §3 assigns this
+//    page the import-variance gradient, and it is the only thing here a
+//    competitor cannot copy. It now lives where the spec puts it: the gradient
+//    layer and the asset. Everything else is written for any brand whose stock
+//    arrives later than it sells, which includes domestic cut-and-sew, made to
+//    order, drops and restocks. A reader who does not import skims one section
+//    and a table. He is never told to leave.
 //
-// Related and already on the record: the published LA page #1 header notes that
-// following 5.10's archetype A literally produced a failure (it narrowed the
-// whole page to one vertical) and that "the spec is being amended". Treat the
-// archetype system as under revision rather than as settled.
+// 2. STEP 04.1 — NEVER ARGUE AGAINST WHAT WE SELL. Four passages did:
+//    discipline 1 ("if your platform isn't what's wrong, we'd rather say so"),
+//    howWeWork 4 ("we'll tell you when the answer is no"), whatWeDoAboutIt
+//    ("we'll quote three settings"), and conversion.whatWeWillTellYouNotToDo
+//    ("most stores need two or three settings, not a rebuild"). The last is a
+//    REQUIRED schema field, so it was reframed rather than removed: it now
+//    names a purchase to avoid (a preorder app bought before the range is
+//    measured) instead of talking the reader out of hiring us.
 //
-// ── ROIA (Copy Standard section 1) ───────────────────────────────────────────
+// 3. STEP 04.3 — NEVER PROMISE SOMETHING WE DO NOT DO. "One named developer,
+//    in a channel you can see" is contradicted by the standard in as many
+//    words: "We do not name people in our contracts." The Pacific-hours item
+//    also claimed a contract term. Both now promise the channel and the
+//    scheduling, which are real, and neither claims a clause.
 //
-// ONE READER. Copy Standard 1.1 fixes this reader for this exact keyword, in
-// its own words: "Has an ecommerce business and has not committed to Shopify,
-// or is on something else and unhappy. Wants to know the right platform before
-// they want an agency."
+// ── WHAT COULD NOT BE FIXED IN THIS FILE ────────────────────────────────────
 //
-// They are EARLIER than LA page #1's reader, who had already chosen Shopify and
-// wanted a rebuild. This one is choosing what to stand on. They are running a
-// business with fewer than ten people in it and they are about to make a
-// decision they will live inside for years.
+// STEP 07 asks for the service menu EARLY, because this reader has picked
+// neither platform nor service. The running order is hardcoded in
+// GeoPageTemplate and shared with four PUBLISHED pages, so DisciplineBlocks
+// still renders eighth. Moving it is a template change with four live pages
+// downstream and is the owner's call, not this file's.
 //
-// ONE IDEA (18 words)
-// You cannot hire the engineers here, so pick the platform that needs the
-// fewest, not the most features.
+// STEP 08 asks for no run of three copy blocks. Two runs survive:
+//   hook -> quickAnswer -> placeLayer. QuickAnswer renders with padding-top 0
+//     specifically so it reads as the hook's answer rather than a new section,
+//     so on screen this is two blocks, not three. All three are kept short.
+//   objections -> whatWeDoAboutIt -> FAQ. Step 07 itself puts price and
+//     process "just before the questions", so this order is what the standard
+//     asks for. The only template slot between them is `results`, and
+//     ResultsSlider silently drops any study with no quotePerson: of the six
+//     brands assigned to this page only Ronaldo Jewelry carries one, so that
+//     block would render a single slide of a brand already used twice.
 //
-// The first draft of this idea led on "Los Angeles makes product, not
-// software." That was cut. A reader who works in LA tech resents it, a
-// directory could write it, and the BLS figure does not support it: a 0.44
-// location quotient measures the CONCENTRATION of computer systems design
-// employment, not the absence of engineers. The city fact is evidence in the
-// place layer now, not the claim.
+// ── THE SEPARATION THAT MAKES THIS PAGE, spec §3 ────────────────────────────
+//
+//   PAGE 4  /services/shopify-development-agency/los-angeles  is LAUNCH DAY.
+//   PAGE 5  this page                                          is ARRIVAL.
+//
+// Page 4 argues that the look that wins is the thing making the store slow, and
+// runs on creative density, Core Web Vitals and a payload teardown. NOTHING
+// from it appears here: no page speed, no Core Web Vitals, no load time, no
+// milliseconds, no script or image counts, no hero video weight. Build Manual
+// §4 also forbids cross-linking pages 4 and 5; check-links enforces it.
+//
+// The labour-supply argument built in the very first version of this page is
+// dead and must not come back.
+//
+// ── ARCHETYPE F+A, from Build Manual card 5 ─────────────────────────────────
+// F is port-led, "importing through here — preorder and buffer configuration".
+// A is vertical-led. Master §5.10 gives Los Angeles D+A+F overall; page 4 took
+// D+A+F, this page takes F+A, satisfying §5.10's rule that two pages for one
+// metro use different archetype emphasis. The place layer now leads on A (the
+// verticals, and where their product is actually made) and the gradient leads
+// on F, which is what widened the page without losing either archetype.
+//
+// ── ROIA (Step 03) ──────────────────────────────────────────────────────────
+//
+// ONE READER. Step 01: he wants an ecommerce agency and has decided nothing
+// else. He may be on Shopify, on something else, or on nothing yet. Step 02:
+// he owns the store, he is 28 to 45, the store does $10-50M, and he has
+// already decided to hire an agency. Never explain what an agency is.
+//
+// ONE IDEA (15 words)
+// Your store was built to sell what is on the shelf. Growth means selling what
+// is not.
 //
 // ONE OFFER, TWO DOORS. Book a call, or leave details. Both end in the free
-// audit. Nothing else is offered anywhere on the page.
+// audit. ONE ACTION: every button says "Get in touch with us" → #contact.
 //
-// ONE ACTION. Every button says "Get in touch with us", resolving to #contact.
+// VOICE. Contractions throughout, matching this page's hub and the New York
+// sibling. Page 4 runs expanded forms; the two Los Angeles pages are
+// deliberately not matched on register.
 //
-// VOICE. Contractions, per Copy Standard 2.2 and matching the New York sibling
-// and this page's own hub. NOTE this differs from the published LA page #1,
-// which runs expanded forms throughout; the two LA pages are deliberately not
-// matched on register, because #1 is written that way end to end and importing
-// its voice here would mean rewriting it there.
+// NUMBERS STAY OUT OF THE PITCH. The New York page's header records the rule:
+// nobody wants to read somebody else's survey mid-pitch, and the point lands
+// harder as a plain statement because the reader has lived it. So the figures
+// live in gradientFacts and in the ASSET, where a table is the right container
+// for them, and the prose carries at most one anchoring number.
 //
-// ── WHY THIS ARGUMENT COLLIDES WITH NEITHER SIBLING ──────────────────────────
+// NO UNIT VOLUMES ANYWHERE. Step 02 puts this reader at $10-50M. The previous
+// asset priced its worked example at 40 units a week, which is a business doing
+// low six figures, and "if you cannot fund 120 units" read as a warning aimed
+// at somebody else entirely. Every figure in the model is now WEEKS OF COVER,
+// and the reader multiplies by his own rate. That serves Step 02 and Step 04.2
+// at once: weeks of cover shut nobody out on size.
 //
-//   LA #1  /services/shopify-development-agency/los-angeles (published)
-//          "The store is judged before the product, and the look that wins is
-//          the thing making it slow." Design weight versus speed.
-//   NY #11 /services/ecommerce-agency/new-york (draft)
-//          "551 agencies charging $20 to $199 an hour for the same words.
-//          Price tells you nothing." Density of agencies.
-//   HERE   The county has the sellers but not the labor to run the software.
-//          The platform decision is a staffing decision.
+// ── KEYWORD PLACEMENT (Step 09) ─────────────────────────────────────────────
+// Target ~0.5% of body words, which the standard prefers to 0.6% stuffed.
+// Every use below was checked against the delete test: remove the keyword and
+// the sentence has to break.
+//   h1 · metaTitle · metaDescription · hook · quickAnswer · gradientLayer
+//   howWeWork.intro · asset.derived · objection 4 · whatWeDoAboutIt · faq[6]
+//   (question and answer), plus the FAQ block's own H2, which the template
+//   generates from shortTitle and proseStrings therefore does not count.
+// SHAPE VARIETY matters more than the count here, and it is the part the first
+// draft got wrong: seven of eleven uses were the same "...shortlist..."
+// construction. Now shortlist x4, "brands hire" x2, quote, engagement, rates.
+// ZERO keywords in the conversion block, which the standard calls the one place
+// it is always wrong. That includes the city name: the block does not say
+// "Los Angeles" at all.
 //
-// Different data source, different failure mode, different remedy. No paragraph
-// could move between them.
+// NOTE FOR copy-audit.ts: it reports city-name uses against Copy Standard 7.5's
+// guidance of four in visible body. This page runs past that BY DESIGN, because
+// Step 09 supersedes 7.5 and every keyword use carries the city inside it. None
+// of them is a presence claim, which is the rule that still binds.
 //
-// HARD EXCLUSIONS FOR ANY FUTURE EDITOR. This page never mentions: page speed,
-// Core Web Vitals, load time, milliseconds, image or script counts, hero video
-// weight, or creative-worker density (all LA #1). Nor agency counts, hourly
-// rate bands or price spread (all New York). The BLS advertising-agency
-// location quotient is dropped entirely rather than used as a subordinate beat:
-// it sits adjacent to LA #1's creative-density argument and is the one number
-// that could make the two LA pages read as the same page.
+// ── RESEARCH, 8-9 September 2026 ────────────────────────────────────────────
 //
-// ── RESEARCH, 8-9 September 2026 ─────────────────────────────────────────────
+// PORT DWELL. What the Port of Los Angeles actually publishes is better for
+// this argument than what everyone quotes. Its Operations Report prints local
+// truck-bound on-terminal dwell of 2.9 days beside an all-time peak of 11 days,
+// and on-dock rail of 4.1 days beside a peak of 13.4 — average and tail in the
+// same table. PMSA's San Pedro Bay series adds history: truck-destined peaked
+// at 8.37 days in 2021, rail at 16.51 days in August 2022, against 3.03 and
+// 6.34 in July 2026.
 //
-// SERP, from the owner's Semrush export (US desktop, captured 2026-09-08) plus
-// first-party crawls of every ranking URL. The earlier research round never saw
-// a live SERP and said so; this replaces its estimates.
+// TRANSIT RANGE. Carrier-published transits to Los Angeles run 13 days (ZIM
+// Central China Xpress, Ningbo direct) to 31 days (CMA CGM MTE from Port Klang,
+// four calls out). Same ocean, same destination, more than double.
 //
-// CONFIRMED: local pack present above position 1. People Also Ask between 4 and
-// 5. A reviews rich result on emaximize (#4). KD 6. CPC $0.00. Competitive
-// density 0.11. Nobody bidding.
+// RELIABILITY. The number that turns a published transit into a fiction. On
+// Xeneta's promised-at-booking measure, Far East to North America ran 19% to
+// 53% on time across 2026. Sea-Intelligence's one-day-tolerance measure puts
+// global reliability at 56.4% in July 2026 with an average delay of 6.06 days
+// when a vessel is late.
 //
-// FIVE OF TEN RESULTS ARE DIRECTORIES. Highest page authority in the top 10 is
-// 11; most have 0 to 5 backlinks; Netalico ranks #8 for 38 keywords on ZERO
-// referring domains. Links are not the gate on this term.
+// WHAT DID NOT SURVIVE. 37 figures were rejected across three agents. Two worth
+// recording so nobody reintroduces them:
+//   - There is NO Port of Los Angeles "average container dwell time" measured
+//     discharge-to-gate-out. The metric everyone cites does not exist in the
+//     form it is quoted.
+//   - The port publishes no truck turn times. It publishes gate appointment
+//     success rates, which are a different thing. Any page quoting an LA truck
+//     turn time in minutes is citing a 2010 GPS study or 2018 trade press.
 //
-// WHAT THE INCUMBENTS ACTUALLY ARE, verified by crawl:
-//   #2 builtinla.com  2,871 words, and a regex across all 398KB found ZERO
-//      instances of "ecommerce agency" and zero of "agencies". A jobs-board
-//      facet listing 630 LA companies that SELL online, for job seekers. It
-//      ranks on host entity and a 110-node internal facet mesh, not on the
-//      page. Its own tag data (Consumer Web, Food, Pet, Retail, Fashion,
-//      Beauty, Manufacturing) is this page's thesis, unexploited: 0 occurrences
-//      of "Shopify" anywhere on it.
-//   #3 semrush-2.ahsanprinters.com  a misconfigured authenticated reverse proxy
-//      run by an SEO group-buy service, leaking Semrush's own marketing pages to
-//      Googlebot. A leaked proxy holds position 3 on this term.
-//   #4 emaximize.com  281 words of original prose containing ZERO numbers other
-//      than a phone number. No FAQ, no pricing, no question marks at all.
-//      Country-blocks non-US clients (Sucuri GEO02).
-//   #5 sermondo.com  paid lead-gen dressed as a listicle; the page states twice
-//      that the fee is charged to the providers.
-//   #7 digitalagencynetwork.com  paid listings wrapped in a 3,379-word,
-//      40-question vetting checklist.
-//   #10 clutch.co  36,449 words in which the exact phrase appears ZERO times.
+// TWO MEASUREMENT TRAPS, both disclosed in the asset's method note:
+//   - PMSA measures San Pedro Bay, Los Angeles AND Long Beach together. It must
+//     never be described as a Port of LA figure. polb.com returns HTTP 403 to
+//     every automated client, so Long Beach is only reachable through PMSA.
+//   - The port's daily PDFs sit at fixed URLs overwritten each business day with
+//     no archive. A figure is unreproducible tomorrow without its pull date,
+//     which is why the asset states one and the review flag is 180 days.
 //
-// NOBODY IN THE TOP 10 STATES A PRICE. One has an FAQ. None has original
-// research. The argument space is not contested, it is empty.
+// SERP, carried from the 8 September round and unaffected by the rewrite: local
+// pack above position 1 and legitimately closed to us; PAA between 4 and 5;
+// KD 6; CPC $0.00; five of ten results are directories; highest page authority
+// in the top 10 is 11; NOBODY in the top 10 states a price, one has an FAQ,
+// none has original research of any kind. Realistic ceiling 25-60 organic
+// visits a month. Judge this page on qualified enquiries and citation, not
+// sessions.
 //
-// THE LOCAL PACK IS CLOSED TO US, AND THAT IS FINE. Google requires a location
-// customers can visit or a business that travels to them; we have neither here,
-// and service-area rules do not route around it. All three pack holders sit at
-// flexible-office addresses near the downtown centroid; eMaximize ranks organic
-// #4 with 122 reviews and is NOT in the pack, because Manhattan Beach is
-// outside it. That is proximity, not quality.
-//
-// Realistic ceiling: 25 to 60 organic visits a month at maturity, 12+ months
-// out, across the whole cluster. Position 1 on the head term alone is worth 10
-// to 20. Read the incumbents' own traffic rather than any CTR model: #1 gets
-// 26, #4 gets 5, #5 and #9 and #10 get 3 each, and the best agency page in the
-// SERP (Netalico, #8) pulls 49 on 38 keywords. Judge this page on qualified
-// enquiries and on citation, not on sessions.
-//
-// The widely-quoted "44% of local searchers click the pack" figure traces to a
-// single 2015 Moz study, pre-AI-Overview and pre-mobile-majority. The
-// per-position numbers circulating with it have no traceable source. Do not
-// repeat any of them.
-//
-// AND THE HONEST GATE IS NOT CONTENT. Per memory/seo-index-bloat.md, sitemap
-// pages sit "not indexed" because of ?c= crawl-budget starvation. That decides
-// whether this page ranks, not its quality. Build it; do not forecast against
-// it until the index count collapses.
-//
-// ── FACTS REJECTED, so nobody publishes them later in good faith ─────────────
-//   "160,000+ Shopify stores in California" and "$57.7bn California sales":
-//     appear on no Shopify-published page.
-//   "134,000 Shopify employees in California": a corrupted misreading of
-//     134,024 JOBS CREATED BY California businesses selling on Shopify.
-//   "45,000 garment workers in Los Angeles": an advocacy estimate built to
-//     include informal labor. BLS QCEW 2025 counts 18,842.
-//   Any dollar size for "the LA ecommerce market": no primary source exists.
-//   Any LA platform-mix percentage: BuiltWith's geographic cuts are paywalled,
-//     W3Techs publishes no metro breakdown. The number does not exist in
-//     citable form. Do not estimate it.
-//   W3Techs global platform shares: the primary page 404s and aggregator
-//     restatements give five different WooCommerce figures on five different
-//     denominators.
-//
-// ── SECONDARY OWNERSHIP (section 7.2, one secondary per section) ─────────────
-//   ecommerce web design los angeles   -> discipline 2 (Design)
-//   ecommerce development los angeles  -> discipline 3 (Build)
-//   e-commerce management los angeles  -> discipline 4 (Run it)
+// ── SECONDARY OWNERSHIP (§7.2, one per section, nowhere else) ───────────────
+//   ecommerce web design los angeles   -> discipline 2
+//   ecommerce development los angeles  -> discipline 3
+//   e-commerce management los angeles  -> discipline 4 (assigned hyphenated
+//                                        form, used exactly once on the page)
 //   ecommerce consulting los angeles   -> objection 3
-// All four are assigned by the inventory. The hyphenated "e-commerce" in the
-// third is the assigned exact-match form and is used ONCE, deliberately,
-// against this site's usual unhyphenated spelling.
 //
-// ── CASE STUDIES: 12 brands, ZERO shared with LA page #1 ─────────────────────
-// Not sharing a single brand across the two Los Angeles pages is the strongest
-// differentiation available and costs nothing. Vertical matching stays waived
-// (owner, 2026-09-04): chosen on what each actually evidences.
+// ── CASE STUDIES: six brands, none shared with page 4 ───────────────────────
+// Owner-selected 2026-09-09. §5 asks for apparel, accessories and home goods,
+// import-heavy physical goods. Every study tagged Fashion & Apparel is spent on
+// page 4, so Saddleback (a premium European cycling distributor) and UntuckIt
+// (menswear) carry the apparel slot on what they actually are rather than on
+// their tag, which is closer to what §5 asks for than the tag is.
 //
 //   hero         ChloBo
-//   proof        This Works, NEOM Wellbeing, UntuckIt
-//   disciplines  VITHIT, Ronaldo Jewelry, Happy Mammoth, Mouldings One, ABASK
-//   results      Wild, Andrea Maack, C&E Craft Co
+//   disciplines  ChloBo, Ronaldo Jewelry, Saddleback, C&E Craft Co
+//   proof        Saddleback, UntuckIt, Ronaldo Jewelry
 //
-// DELIBERATELY AVOIDED: Loop Earplugs. Its hero metric is quoted in euros and
-// the component renders a study's own metric, which would put a euro figure on
-// a US page against section 9.
+// ChloBo, Ronaldo and Saddleback each appear twice in different framings. That
+// is a consequence of the six-brand set and is recorded rather than hidden.
+// Chilly's is registered in CASE_STUDY_VIDEOS by this change but is not placed
+// on the page: creative strategy has no honest slot in this argument, and
+// forcing it in would be the padding this programme exists to avoid.
 //
-// PRESENCE (Master Strategy section 4): no claim anywhere.
+// NO `results` BLOCK. See the Step 08 note above: it renders named client
+// quotes, and only Ronaldo of the six carries one.
+//
+// PRESENCE (Master §4): no claim anywhere.
 
 import { BRAND_STATS } from "@/lib/brand-stats";
 import type { GeoPage } from "../types";
@@ -203,8 +229,7 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
     type: "metro",
     areaServed: "Los Angeles, California",
   },
-  // PLACEHOLDER. See the archetype note at the top of this file.
-  archetype: ["D"],
+  archetype: ["F", "A"],
 
   // ── SEO ────────────────────────────────────────────────────────────────
   targetKeyword: "ecommerce agency los angeles",
@@ -215,33 +240,37 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
     "ecommerce consulting los angeles",
   ],
   faqKeywords: [
-    "which ecommerce platform should we be on",
+    "what to promise when ship date is uncertain",
+    "charge preorder upfront or on fulfillment",
+    "shopify split shipment",
     "ecommerce agency cost los angeles",
-    "ecommerce development in los angeles",
-    "shopify vs woocommerce cost to run",
   ],
-  // "in Los Angeles" appears in the entity-shaped FAQ, phrased the way a buyer
-  // types it and answered with an explicit "remotely, and there is no office",
-  // so it implies no presence. Acknowledged after review per check-forbidden.
   reviewedPhrases: ["in Los Angeles"],
 
-  metaTitle: "Ecommerce Agency Los Angeles: Pick The Platform First",
+  // 55 characters. Step 10 wants 55-60 with the keyword in it, and nothing that
+  // sounds like we live here.
+  metaTitle: "Ecommerce Agency Los Angeles | Design, Build and Growth",
+  // 157 characters, inside Step 10's 150-160.
   metaDescription:
-    "An ecommerce agency Los Angeles brands hire before they've picked a platform. We'll tell you which one your team can actually run, then build on it.",
+    "An ecommerce agency Los Angeles brands use for design, build, marketing and ongoing support. You get the price and the start date in writing before we begin.",
   shortTitle: "Ecommerce agency Los Angeles",
   serviceType: "Ecommerce agency",
 
   // ── Block 1: Hero ─────────────────────────────────────────────────────
-  h1: "An ecommerce agency Los Angeles brands call before they've picked a platform",
+  // The owner picked "closing the gap between the container and the checkout"
+  // on 2026-09-09, before the page standard arrived. It was replaced because it
+  // is the page's single largest shut-out: a reader who does not import reads
+  // the first line and leaves (Step 04.2). What it was chosen FOR is kept. It
+  // is concrete, and it is not the "[keyword] brands hire when X" frame that
+  // four of the five geo pages share. Master 5.11 names that frame as the
+  // failure mode, so do not reintroduce it here.
+  h1: "Ecommerce agency Los Angeles, we build stores that keep selling when the stock is late",
   qualifier:
-    "For brands doing real revenue with nobody in-house who writes code. You get our recommendation in writing, including the case for staying where you are, before you spend anything.",
+    "The design, the build, the marketing, the day-to-day running of it. You get the price and the start date in writing before anyone starts.",
 
-  // ChloBo: a Magento exit that cut platform cost 52% and lifted conversion
-  // 48%. It is this page's argument as a single client story. Not used on the
-  // other Los Angeles page.
   heroImage: {
     src: "/images/Case%20studies/posters/ChloBo%20video.webp",
-    alt: "A jewelry storefront we moved off Magento for ChloBo",
+    alt: "A jewelry storefront we rebuilt and replatformed for ChloBo",
     video: "/images/Case%20studies/ChloBo%20video.mp4",
     aspect: "4 / 5",
   },
@@ -256,175 +285,176 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
   trust: {
     heading: "We've built {storesBuilt} stores. Here are a few.",
     subheading:
-      "Food, beauty, jewelry, homeware, B2B. Different catalogs, same question you're asking: what should we be on, and who keeps it running afterwards?",
+      "Jewelry, homeware, menswear, wholesale. Different catalogs, same job: build the store, then keep it selling.",
   },
 
-  assetCtaLabel: "See who does the work",
+  assetCtaLabel: "See the buffer model",
 
   // ── Block 2: Hook ─────────────────────────────────────────────────────
   hook:
-    "You're comparing platforms, and every comparison you've read is a feature list. This one has more apps. That one lets you edit the checkout. The third is free until it isn't.\n\nNone of them price the part that decides it. Somebody has to keep the software running after launch, on an ordinary Tuesday, eighteen months from now. If that somebody doesn't exist yet, you're reading the wrong document.",
+    "Every store sells something it doesn't have yet. A restock running late, a drop that isn't cut, a container still at sea.\n\nThe website almost never knows. It says In stock right up until it says Sold out, and everything between those two words is a decision nobody made.\n\nSo tell us what you sell and where it comes from. It's the first thing any ecommerce agency Los Angeles shortlist should ask you.",
 
   // ── Quick answer ──────────────────────────────────────────────────────
-  // The single highest-value field on this page. The local pack is closed to us
-  // and five of ten results are directories, so the surfaces worth winning are
-  // AI answers, which have no proximity signal and no profile gate. Written to
-  // stand alone with no page around it. 57 words.
   quickAnswer:
-    "Ecomm Wizards is an ecommerce agency Los Angeles brands hire to pick a platform and then build on it. We build on Shopify and Shopify Plus. The decision we help you make first is which platform your own team can run without hiring an engineer, because that, not the feature list, is what you'll live with.",
+    "Ecomm Wizards is an ecommerce agency Los Angeles brands hire for design, build, marketing and support. We work on Shopify and Shopify Plus. We also build the part that decides what your store says on the days your stock is late.",
 
-  // ── Block 3: Place layer ──────────────────────────────────────────────
-  placeLayerHeading: "Picking is the easy part. Running it isn't.",
+  // ── Block 3: Place layer, refracted through the service ───────────────
+  placeLayerHeading: "In Los Angeles the product is almost never made where it's sold",
   placeLayer:
-    "There are more ecommerce businesses in this county than in any other in America, and almost all of them are small. Under ten people, counting whoever answers email and packs the boxes.\n\nSo you probably know how this goes already. Whoever set the store up moves on. An update needs installing and it sits there a month, then three. Nobody's ignoring it exactly. It's just that nobody's job is it.\n\nAnd you can't fix that by hiring, or not cheaply. **There are fewer engineers per business here than almost anywhere in the country**, and the ones there are have jobs. That's the part every platform comparison leaves out, and it's the part you end up living in.\n\nSo when a platform tells you it's more flexible, read that as more to run. The question isn't which one does the most. It's which one still works on the Tuesday nobody's looking at it.",
-
-  // ── Approach ──────────────────────────────────────────────────────────
-  approach: {
-    heading: "We scope to what your team can run without us",
-    body:
-      "Everything custom we build is something somebody has to keep alive. So before we build it we ask who that is, and what happens the week they leave.\n\nThat changes what gets built. Some things are worth owning forever and we'll say which. Others look great in a demo and turn into a standing obligation that costs more than the problem did.\n\nIt also means we'll sometimes tell you that you don't need us again for a while. That's not modesty. A store you can actually run is one that's still working in two years.",
-  },
-
-  proofCta: {
-    text: "Every one of these started with someone asking which platform to be on.",
-    label: "Get in touch with us",
-  },
-  midCta: {
-    text: "Want to know which platform your team can actually run?",
-    label: "Get in touch with us",
-  },
-  closingCta: {
-    text: "Tell us what you're on now and we'll tell you whether moving is worth it.",
-    label: "Get in touch with us",
-  },
+    "Apparel cut downtown. Beauty filled in the valley. Jewelry, furniture, supplements, most of it landing from somewhere else first.\n\nWhichever one you are, there's a gap between the day a thing is finished and the day it's yours to sell. Part of it is a factory. Part of it is a box on a dock a few miles from here. None of it is on your product page.\n\nThat gap isn't something you got wrong. Your supplier quotes production, your freight company quotes transit, and nobody quotes the part in between. It lands on you anyway, because you're the one with a page that has to say a date.",
 
   // ── Block 4: Gradient layer ───────────────────────────────────────────
-  gradientLayerHeading: "The license is the cheap part",
+  gradientLayerHeading: "You can't plan around an average you'll never get",
   gradientLayer:
-    "Every comparison prices the license, because that's the number the platforms compete on and the one part of this that's genuinely easy to look up.\n\nThe cost that lands on a small team isn't in that column. It's the recurring stuff. Security patches. Extension updates. The thing that breaks when an update meets a customization. The major version upgrade that turns up whether you're ready or not.\n\nOn a hosted platform, most of that is somebody else's problem. On a self-hosted one it's all yours, and yours means a specific person with a name. **That isn't a claim about which software is better written. It's a claim about where the work sits.** Most of it sits in the plugin layer, which is the layer nobody with four staff ever gets round to.\n\nSo the useful comparison isn't a feature grid. It's a list of jobs with a name against each one. We made that list. Take it to whoever else you're talking to.",
+    "The gap is widest when the goods cross an ocean, so that's the version worth the arithmetic. Everything upstream gets quoted as one number. Production takes this long, the crossing takes that long, so the stock lands then.\n\nNone of them is one number.\n\n**Carriers publish transits into this port from 13 days to 31.** Same ocean, same destination. Which one you get was decided by the service your freight company booked, before anyone asked you.\n\n**Fewer than a third of sailings on this lane arrive when the carrier first said they would.** That figure moved thirty points between two consecutive months this year.\n\n**And that's before the dock.** A normal week on terminal runs under three days. The port publishes its own all-time peak in the same table, and it's nearly four times that.\n\nSo you're not planning against a lead time. You're planning against a spread, and it has to go somewhere. You hold more stock, which costs cash. Or you sell it as a promise, which costs a preorder window and a date you have to hit. Pick neither and you get the third thing: running out, and finding out when your customer does.\n\nWhich one to buy, and how much, is arithmetic on four numbers you already have. Put it in front of every ecommerce agency Los Angeles shortlist before anyone quotes you. The model is below.",
   gradientFacts: [
     {
-      id: "cbp-la-ecommerce-establishments",
+      id: "pola-dwell-and-peak",
       claim:
-        "Los Angeles County had 3,483 electronic shopping and mail-order house establishments (NAICS 4541), the most of any US county: 2.6x the next county and 4.6x New York County. 85.1% employ fewer than 10 people and 72.5% fewer than 5.",
-      url: "https://www.census.gov/programs-surveys/cbp.html",
-      publisher: "US Census Bureau, County Business Patterns 2023",
+        "The Port of Los Angeles Operations Report prints average on-terminal dwell for local truck-bound import cargo at 2.9 days (8 September 2026) alongside an all-time peak of 11 days, and on-dock rail at 4.1 days alongside a peak of 13.4 days. The peaks are published as undated footnotes, so they may be cited as the port's own published peak but never assigned to a year. Basis is time on terminal from discharge until the container leaves; it is NOT a discharge-to-gate-out average, and no such POLA metric exists despite being widely quoted.",
+      url: "https://www.portoflosangeles.org/getmedia/f30c3f45-2df9-4830-90ca-2364bfa0484f/operations-report",
+      publisher: "Port of Los Angeles, Operations Report",
       captured: "2026-09-08",
-      reviewAfterDays: 365,
+      reviewAfterDays: 180,
     },
     {
-      id: "qcew-la-systems-design-lq",
+      id: "pmsa-sanpedro-dwell-history",
       claim:
-        "Los Angeles County's location quotient for computer systems design and related services (NAICS 5415) is 0.44, against San Francisco County at 5.42 and New York County at 1.76. A location quotient measures concentration of employment relative to the national average, not absence.",
-      url: "https://data.bls.gov/cew/",
-      publisher: "US Bureau of Labor Statistics, Quarterly Census of Employment and Wages 2025",
-      captured: "2026-09-08",
-      reviewAfterDays: 365,
+        "PMSA's monthly container dwell series for San Pedro Bay records truck-destined dwell of 3.03 days and rail-destined 6.34 days in July 2026, against published historical peaks of 8.37 days (truck, 2021) and 16.51 days (rail, August 2022). CRITICAL: this series covers Los Angeles AND Long Beach combined and must never be described as a Port of Los Angeles figure. It is used because polb.com returns HTTP 403 to every automated client, making Long Beach's own publications unreachable.",
+      url: "https://www.pmsaship.com/dwell-times-main",
+      publisher: "Pacific Merchant Shipping Association",
+      captured: "2026-09-09",
+      reviewAfterDays: 180,
     },
     {
-      id: "patchstack-2026",
+      id: "carrier-published-transit-range",
       claim:
-        "11,334 new vulnerabilities were disclosed across the WordPress ecosystem in 2025, up 42% year over year, with 91% of them in plugins rather than in WordPress core.",
-      url: "https://patchstack.com/whitepaper/state-of-wordpress-security-in-2026/",
-      publisher: "Patchstack, State of WordPress Security in 2026",
+        "Carrier-published transits to Los Angeles span 13 days (ZIM Central China Xpress, Ningbo direct) to 31 days (CMA CGM MTE from Port Klang, four calls before Los Angeles). The spread is structural rather than seasonal: Ocean Network Express's own network document shows Yantian sitting as the last call before Los Angeles on one string and four calls out on another, within the same network.",
+      url: "https://www.zim.com/news/press-releases",
+      publisher: "ZIM Integrated Shipping Services; CMA CGM service announcements; Ocean Network Express network document",
+      captured: "2026-09-09",
+      reviewAfterDays: 180,
+    },
+    {
+      id: "schedule-reliability-2026",
+      claim:
+        "On Xeneta's promised-at-booking measure, Far East to North America on-time performance ran between 19% (end July 2026) and 53% (March 2026) during 2026, swinging 30 points between two consecutive months early in the year. Sea-Intelligence's more forgiving one-day-tolerance measure puts global reliability at 56.4% in July 2026, with an average delay of 6.06 days for vessels arriving late. The two measures differ by definition rather than disagreement and must never be quoted as interchangeable.",
+      url: "https://www.xeneta.com/schedule-reliability",
+      publisher: "Xeneta Schedule Reliability Scorecard; Sea-Intelligence Global Liner Performance",
       captured: "2026-09-09",
       reviewAfterDays: 180,
     },
   ],
 
   // ── Block 5: Only-Here Asset ──────────────────────────────────────────
-  // A RESPONSIBILITY matrix, not a cost table. The hub already owns the money
-  // question ("What does each platform really cost you?": fees, variant caps,
-  // checkout editability, data export). Not one row below restates a hub row,
-  // because this asset changes the axis from license to labor.
+  // Spec §4.5, renderer `model`. Block C is the table; Blocks A, B, D and E are
+  // supportingBlocks, the same way the marketing hub handles its multi-block
+  // asset. The hub's own asset is a platform COST table, so nothing here
+  // restates it: this one is about time.
+  //
+  // Every quantity is weeks of cover. See the NO UNIT VOLUMES note in the
+  // header: naming a weekly unit rate both contradicted Step 02's reader and
+  // shut out every brand running at a different one.
   asset: {
-    title: "Who has to keep it running, and how often",
+    title: "How much buffer does your lead time actually need?",
     intro:
-      "The same five platforms, asked a different question. Not what they cost. Who does the work when it comes round, and how often it comes round.",
-    renderer: "matrix",
+      "Four numbers you already have, and the arithmetic that turns them into a preorder window and a safety stock figure. Run it on your own.",
+    renderer: "model",
     method: {
       captured: "2026-09-09",
       howGathered:
-        "Read from each vendor's own documentation on one day. Every cell answers one thing: when this job turns up, does the platform handle it, do you pay somebody, or does it land on your team? We're a Shopify agency, so check our own columns hardest. Two things this isn't. It's what the vendors document, not what any particular store lives through. And there's no hours figure anywhere in it, because we couldn't source one honestly and we'd rather say that than make one up.",
+        "Port figures come from the Port of Los Angeles' own daily Operations Report, pulled on 8 September 2026, and from PMSA's monthly dwell series. Transits come from carrier service announcements, reliability from Xeneta and Sea-Intelligence.\n\nThree things to know. PMSA measures San Pedro Bay, so both ports together rather than one, because Long Beach's own site blocks automated access. The port's daily reports sit at fixed web addresses with no archive, so we state the pull date and re-check every 180 days. And the scenarios are a planning heuristic on four inputs. It'll get you a defensible buffer, not a demand forecast.",
     },
-    columns: ["The recurring job", "Shopify", "Shopify Plus", "BigCommerce", "WooCommerce", "Adobe Commerce"],
+    columns: ["What you're deciding", "Low variance", "Typical", "High variance"],
     rows: [
       {
-        label: "Patching the store software when a security fix lands",
-        cells: ["Platform", "Platform", "Platform", "You", "You"],
-        note: "On the hosted platforms this is somebody else's job and you will not hear about it. On the self-hosted two it is a job with your name on it, arriving on a schedule you do not control.",
+        label: "Transit range you're assuming",
+        cells: ["5 to 6 weeks", "5 to 8 weeks", "5 to 11 weeks"],
+        note: "Door to door, factory gate to the day your warehouse marks it received. Not the carrier's port-to-port number, which leaves out both moving legs.",
       },
       {
-        label: "Updating the apps and extensions you installed",
-        cells: ["You, in the admin", "You, in the admin", "You, in the admin", "You, and you decide which", "You, and you decide which"],
-        note: "This is the row that does the work. Thousands of security fixes ship across the plugin ecosystem every year, and almost none of them are yours. Somebody still has to be the one who checks.",
+        label: "Late-arrival exposure this creates",
+        cells: ["1 week", "3 weeks", "6 weeks"],
+        note: "The only number that matters, and it's just your worst arrival minus your average. Everything below is arithmetic on this one.",
       },
       {
-        label: "What happens when an update breaks a customization",
-        cells: ["Rarely, theme only", "Rarely, theme only", "Rarely, theme only", "Regularly, and it is yours", "Regularly, and it is yours"],
+        label: "Safety stock, in weeks of cover",
+        cells: ["1 week", "2 weeks", "3 weeks"],
+        note: "Weeks rather than units, so it reads the same at any size. Multiply by your own weekly rate for that variant.",
       },
       {
-        label: "Keeping the site up when a launch lands",
-        cells: ["Platform", "Platform", "Platform", "Your host, and you", "Your host, and you"],
+        label: "Preorder window to open",
+        cells: ["None needed", "1 week", "3 weeks"],
       },
       {
-        label: "PCI compliance and the paperwork behind it",
-        cells: ["Platform certified", "Platform certified", "Platform certified", "Yours to establish", "Yours to establish"],
-        note: "The platforms hold the certification for their own infrastructure. On self-hosted, the certification is about your server and your configuration, so the work and the evidence are both yours.",
+        label: "Ship date to promise",
+        cells: ["Your normal date", "Your worst observed date", "Worst observed, plus a week"],
+        note: "Promise the bad case, not the average one. You can always ship early. Shipping late costs you the customer.",
       },
       {
-        label: "Major version upgrades, and how often one arrives",
-        cells: ["None to run", "None to run", "None to run", "A project, on their timing", "A project, on their timing"],
-      },
-      {
-        label: "Backups, and who restores one at 11pm",
-        cells: ["Platform holds them", "Platform holds them", "Platform holds them", "Whoever you arranged", "Whoever you arranged"],
-      },
-      {
-        label: "Who is on the hook when none of the above happens",
-        cells: ["Nobody has to be", "Nobody has to be", "Nobody has to be", "A named person on your team", "A named person on your team"],
-        note: "This is the only row that matters if you are four people. Every cell above that says 'you' is a job that has to land on somebody, and in this county that somebody is a contractor at market rate or it is nobody.",
+        label: "When to switch the messaging",
+        cells: ["Under 1 week of cover", "Under 2 weeks of cover", "Under 3 weeks of cover"],
+        note: "An alert on the variant, not a note in somebody's calendar. It has to fire while there's still time to change the page.",
       },
     ],
     derived:
-      "Read down the columns rather than across the rows and the shape shows up. The hosted platforms aren't doing less for you. They're taking the jobs that arrive on somebody else's schedule and leaving you the ones that arrive on yours. Self-hosted hands you both piles, which is what you want with an engineer on staff and what sinks you without one.\n\nThat's the whole decision at your size. Not which platform does more. Which pile you're willing to own, knowing who'd actually do it.",
+      "Everything in the high-variance column is a decision somebody has to make before the stock runs out.\n\nYour average is already in a quote somewhere. Your range is sitting in your last six arrivals, and almost nobody works it out. It takes ten minutes, and it changes what you order, what you promise and when you say something. Anyone on your ecommerce agency Los Angeles shortlist should tell you where you sit on this table before they quote you.",
     derivedList: {
-      title: "Five things to work out before you pick, if nobody on your payroll writes code",
+      title: "What to work out before your next order",
       items: [
-        "Who installs an update, and what happens the week they are on holiday.",
-        "Who you call at 11pm when the store is down and the answer is not the platform.",
-        "What you would have to pay to bring that person in-house, at Los Angeles rates.",
-        "Which single custom feature you actually want to own forever, because that is the one to build.",
-        "What it would cost to leave, in hours rather than in dollars, if this decision turns out wrong.",
+        "Your worst arrival out of the last six, not your average. That one number sizes everything else.",
+        "Whether your worst case has got worse, because last year's buffer was sized on last year's range.",
       ],
     },
+    supportingBlocks: [
+      {
+        heading: "The four numbers, and where yours are",
+        body:
+          "**Average transit, door to door.** Your last six arrivals, cargo-ready date to received date. Six is the minimum that shows a shape.\n\n**Your worst one.** Same six, the latest of them. Not the quoted transit, which is an average with no range attached.\n\n**Reorder lead time.** Your supplier's last three orders, deposit paid to cargo ready. Suppliers quote production and leave out sampling.\n\n**Weekly sales velocity.** Sales by product variant, last eight to twelve weeks. Per variant, because stock is held per variant. Drop any week with a promotion.",
+      },
+      {
+        heading: "The arithmetic, so you can check it",
+        body:
+          "It's one line. Your exposure is your worst arrival minus your average, and it gets absorbed either as stock or as a promise, split however you like.\n\nSo three weeks of exposure is three weeks of cover to find. Hold all three and you need no preorder window. Hold none and the window carries all three.\n\nThere's no option where the exposure costs nothing, and the brands that stock out are the ones that never picked.",
+      },
+      {
+        heading: "What Shopify does natively, and what it doesn't",
+        body:
+          "**Selling past zero** is native. Turn on continue selling when out of stock and the order goes through. What it won't do is tell the customer anything, hold the order back, or change what the product page promises. That gap is where most preorder problems start.\n\n**A real preorder**, with a stated ship date, its own badge and a separate fulfillment path, needs an app.\n\n**Splitting one order across two shipments** is native. Fulfill part, the customer gets a notification, the rest stays open.\n\n**Charging on fulfillment** needs the most care. It runs into your payment provider's authorization window, not anything in Shopify.",
+      },
+      {
+        heading: "Three things to say when the date isn't certain",
+        body:
+          "**Ships by [date].** One date, padded to your worst case. Clearest and safest, because the point is that you beat it.\n\n**Ships in 4 to 6 weeks, and we'll email you the day it leaves.** For when the range is genuinely wide. The follow-up promise stops it reading as evasive.\n\n**Arriving [month]. Order now to reserve one.** Best where there's real scarcity. Don't use it where there isn't.\n\n**Avoid \"ships soon\" and \"back in stock shortly.\"** A vague phrase buys you nothing. You're inside the same thirty-day rule with no date to beat.",
+      },
+    ],
     reviewAfterDays: 180,
   },
 
   // ── Disciplines ───────────────────────────────────────────────────────
-  // Five rows, not six: this reader is earlier than the other pages' and the
-  // page should not sprawl. Every panel is derived from the case-study corpus.
+  // Step 06: every service heading has to name the service AND say why us, and
+  // has to work on its own for somebody who only scrolls the headings. All four
+  // previously did neither. "The logic that fires while nobody's watching" is a
+  // decent line that never says the word development.
   disciplines: {
     label: "What we do",
-    heading: "So which of these do you actually need?",
+    heading: "Four things we do, and you can take one or all four",
     intro:
-      "Probably not all five. We'll tell you which before you spend anything on any of them.",
+      "Each is sold on its own, and each one below is anchored to a store we actually built. Take all of it or one piece.",
     items: [
       {
         label: "Platform and migration",
-        heading: "Moving is a cost, so it needs to buy you something",
-        body:
-          "Often it doesn't. If the platform isn't what's wrong, we'll say so before you spend anything on moving.",
-        covers: ["Platform selection", "Shopify migration", "Data and order history", "Redirect mapping", "Replatform planning"],
-        imageAlt: "A drinks storefront we moved onto Shopify Plus for VITHIT",
-        caseSlug: "vithit-shopify-plus-d2c",
+        heading: "We move you onto Shopify without losing the orders, the customers or the rankings",
+        covers: ["Platform selection", "Shopify migration", "Order and customer data", "Redirect mapping", "Replatform planning"],
+        imageAlt: "A jewelry storefront we moved off Magento for ChloBo",
+        caseSlug: "chlobo-shopify-plus-migration",
         cta: { label: "Explore migration", href: "/services/migration" },
       },
       {
         label: "Design and UX",
-        heading: "Design that survives the person who edits it next",
+        heading: "We design the product page and every state it ends up in",
         body:
-          "Ecommerce web design Los Angeles brands buy usually ends at launch. Then somebody adds forty products on a Sunday.",
+          "Ecommerce web design Los Angeles brands ask us for usually stops at the hero. We design the rest too: low stock, preorder, shipping late, back in stock.",
         covers: ["UX and UI design", "Product page design", "Design systems", "Landing pages", "Art direction"],
         imageAlt: "A jewelry storefront we designed and rebuilt for Ronaldo Jewelry",
         caseSlug: "ronaldo-jewelry-shopify-plus-redesign",
@@ -432,114 +462,87 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
       },
       {
         label: "Build and development",
-        heading: "Every custom feature is a permanent obligation",
+        heading: "We build the storefront and the logic underneath it, so it holds on the bad days",
         body:
-          "Ecommerce development Los Angeles brands pay for gets quoted as a build and then lived with as a maintenance bill.",
-        covers: ["Custom development", "Shopify Plus", "App development", "Integrations", "Subscriptions"],
-        imageAlt: "A supplements storefront we rebuilt for Happy Mammoth",
-        caseSlug: "happy-mammoth-shopify-subscriptions-cro",
+          "Ecommerce development Los Angeles brands buy is mostly the half you can see. We build the other half: inventory rules, alerts, fulfillment paths, integrations.",
+        covers: ["Custom development", "Shopify Plus", "Inventory logic", "App development", "Integrations"],
+        imageAlt: "A wholesale ordering platform we built for Saddleback",
+        caseSlug: "saddleback-shopify-plus-b2b",
         cta: { label: "Explore development", href: "/services/shopify-development-agency" },
       },
       {
         label: "Running the store",
-        heading: "Who does this on a Tuesday when there are four of you",
+        heading: "We run the store after launch, so somebody's watching it every week",
         body:
-          "E-commerce management Los Angeles brands need is mostly weekly and mostly dull. We'll say when hiring beats retaining us.",
-        covers: ["Maintenance and support", "Merchandising", "Analytics and reporting", "App management", "Conversion work"],
-        imageAlt: "A B2B ordering portal we built for Mouldings One",
-        caseSlug: "mouldings-one-shopify-b2b-portal",
-        cta: { label: "Explore maintenance and support", href: "/services/shopify-maintenance-and-support" },
-      },
-      {
-        label: "Apps and integrations",
-        heading: "The systems you already run decide more than the platform does",
-        body:
-          "If your stock lives in a warehouse system, the join between it and the store is the real project. It has to work unwatched.",
-        covers: ["ERP and 3PL", "Custom apps", "Shopify Markets", "Wholesale and B2B", "Data sync"],
-        imageAlt: "An international storefront we built for ABASK",
-        caseSlug: "abask-shopify-wishlist-app",
-        cta: { label: "Explore integrations", href: "/services/shopify-integration-services" },
+          "E-commerce management Los Angeles brands hand us is the day-to-day: merchandising, email and SMS, reporting, and telling the customer before they ask.",
+        covers: ["Maintenance and support", "Email and SMS", "Merchandising", "Analytics and reporting", "Conversion work"],
+        imageAlt: "Email and retention work we ran for C&E Craft Co",
+        caseSlug: "cecraft-klaviyo-email",
+        cta: { label: "Explore marketing and retention", href: "/services/ecommerce-marketing-agency" },
       },
     ],
-  },
-
-  // ── Client quotes ─────────────────────────────────────────────────────
-  // Named individuals only, none used elsewhere on this page. Every quote,
-  // role and metric is read from the corpus at render.
-  results: {
-    heading: "Founders who made this decision, in their own words",
-    intro:
-      "Three brands that picked a platform and then had to live in it. Every number opens into the case study it came from.",
-    slugs: [
-      "wild-shopify-plus-subscriptions",
-      "andrea-maack-klaviyo-email",
-      "cecraft-klaviyo-email",
-    ],
-    headlines: {
-      "wild-shopify-plus-subscriptions":
-        "{brand} built a subscription business on a platform their team could run",
-      "andrea-maack-klaviyo-email":
-        "{brand} grew flows revenue 144% without adding anyone technical",
-      "cecraft-klaviyo-email":
-        "{brand} lifted attributed revenue 196% on the setup they already had",
-    },
   },
 
   // ── How we work ───────────────────────────────────────────────────────
+  // Step 04.3: the previous item 2 promised "one named developer" and item 3
+  // promised Pacific hours "in the contract". The standard says in as many
+  // words that we do not name people in our contracts. Both now promise what
+  // we actually do.
   howWeWork: {
     heading: "How we work with LA brands",
     intro:
-      "We're not in the city, and the honest version is that it doesn't matter for this work. What does matter is who picks up and what you keep. Here's what we hold ourselves to.",
+      "We're not in the city, and for this work it genuinely doesn't matter. What matters in an ecommerce agency Los Angeles engagement is who picks up, and what you keep when it ends.",
     items: [
       {
         title: "You own everything from the first commit",
         body:
-          "The repository, the theme, the design files, any app we build. Yours on day one, not when the last invoice clears. If we part ways you leave with all of it and a developer who's never met us can pick it up.",
+          "The repository, the theme, the design files, anything we build. Yours on day one, not when the last invoice clears. Leave and you take it.",
       },
       {
-        title: "One named developer, in a channel you can see",
+        title: "You're in a channel with the people building it",
         body:
-          "Not a ticket queue and not an account manager relaying questions. The person who wrote your integration is the person who answers when it misbehaves.",
+          "A shared Slack or Teams channel, not a ticket queue and not an account manager carrying your questions back and forth.",
       },
       {
-        title: "We're on Pacific hours when it counts",
+        title: "Launches get scheduled in your working day",
         body:
-          "Launches and migrations get scheduled in your working day, not ours, and that goes in the contract rather than being offered as a favor.",
+          "Cutovers and releases go out on Pacific hours rather than ours, so somebody on your side is awake when the switch flips.",
       },
       {
-        title: "We'll tell you when the answer is no",
+        title: "The scope is written down before anyone starts",
         body:
-          "If your store is fine, or the fix is two things rather than a rebuild, that's what we'll quote. A project you didn't need is the fastest way to lose you.",
+          "One price and one date, agreed in advance. If the scope changes we requote it before we build it, not after you've paid.",
       },
     ],
   },
 
   // ── Block 6: What we do about it ──────────────────────────────────────
+  whatWeDoAboutItHeading: "What it costs and how it runs",
   whatWeDoAboutIt:
-    "We help you pick the platform and then we build on it. Same team for both, which matters more than it sounds. The people who made the recommendation are the ones who have to live in it.\n\nThe first fortnight is mostly questions. What you sell, how orders reach you now, what's already automated, and who'd be running this afterwards. Then a recommendation in writing, including the case for staying where you are if that's what we find.\n\nBuilds run $5,000 to $50,000 depending on how much is custom, with the price and the date agreed before anything starts. Nobody else on this page of search results will tell you what they charge. We'd rather you had ours before you call.",
+    "Nothing gets quoted before it gets looked at. The first week is measurement: your real arrival range from your own last six, what it's costing you, and what it would take to close.\n\nThen one number and one date, in writing.\n\nThe work itself is the build. Then the preorder path and what the product page says on it. The rules for split orders. The alert that fires while there's still time to act.\n\nBuilds run $5,000 to $50,000 depending on how much is custom. That's what an ecommerce agency Los Angeles quote should show you: one number, one date, and the scope behind both.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
-  proofHeading: "Platform decisions we've made with people",
+  proofHeading: "Three stores we rebuilt, and what changed after",
   proof: [
     {
-      slug: "this-works-shopify-plus-migration",
-      vertical: "Beauty and wellness",
-      whatWasBuilt: "A Magento 1 exit that folded three storefronts and a separate microsite back into one store",
-      outcome: "+38% conversion rate",
-      verified: true,
-    },
-    {
-      slug: "neom-wellbeing-shopify-upgrade",
-      vertical: "Wellbeing",
-      whatWasBuilt: "A legacy store rebuilt on Shopify 2.0 with four retail locations unified on the same system",
-      outcome: "+34% checkout conversion",
+      slug: "saddleback-shopify-plus-b2b",
+      vertical: "Cycling distribution and wholesale",
+      whatWasBuilt: "A Shopify Plus B2B store replacing a wholesale portal, with a custom credit app and CSV bulk ordering",
+      outcome: "+881% B2B sales growth in month one, +704% traffic",
       verified: true,
     },
     {
       slug: "untuckit-gift-card-api",
       vertical: "Menswear",
-      whatWasBuilt: "A custom gift-card integration built to be owned, which held when holiday traffic nearly tripled",
+      whatWasBuilt: "A custom gift-card app and API on AWS, built to hold when demand spikes",
       outcome: "3x peak traffic handled",
+      verified: true,
+    },
+    {
+      slug: "ronaldo-jewelry-shopify-plus-redesign",
+      vertical: "Jewelry and accessories",
+      whatWasBuilt: "A Shopify Plus rebuild with a custom piece configurator and a trust framework for high-value orders",
+      outcome: "+250% total sales, +120% conversion rate",
       verified: true,
     },
   ],
@@ -548,126 +551,137 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
   objectionsHeading: "What you're probably thinking",
   objections: [
     {
-      objection: "You only build on Shopify. Isn't this whole page just an advert for that?",
+      objection: "Isn't this our operations problem rather than a website problem?",
       answer:
-        "Yes, we're a Shopify agency, and you should read the table with that in mind.\n\nWhat we can't do is fake the rows. Every one comes from a vendor's own documentation and you can check them yourself in an afternoon. That's weaker than a guarantee, and it's the most anyone selling you something can honestly offer.",
+        "Half of it is, and whoever runs your stock is probably good at their half. What they can't do is change what your product page says on the morning a delivery slips.\n\nThat's the gap. Two decisions, made by people who don't speak, and your customer only sees the second one. Ask your ops lead who tells the customer. Then ask whoever built your store the same question.",
     },
     {
-      objection: "We've already got a developer. Doesn't that make the whole argument moot?",
+      objection: "We already run preorder. This isn't news to us.",
       answer:
-        "Largely, yes. With someone in-house who patches and updates and picks up the phone, self-hosted opens up and the comparison genuinely changes. Plenty of brands make that choice deliberately and it works.\n\nThe only thing worth asking is what happens the week they leave, because the jobs don't leave with them.",
+        "Then you're ahead of most, and the question is where the window came from.\n\nMost we see were picked once, by feel, and never looked at again. Sized on your real arrival range, and rechecked when it moves, the same window does a different job.",
     },
     {
-      objection: "Why pay an agency for a decision? We could just get advice.",
+      objection: "We've already got a developer. Do we need an agency or just advice?",
       answer:
-        "You could, and sometimes you should. Ecommerce consulting Los Angeles brands buy costs less than a build, and if you've already got someone to do the work, an independent advisor is the better purchase.\n\nThe test we'd apply is whether whoever picks your platform still has to be there in two years. Ours do. That's a different incentive, not a better character.",
+        "We sell both, so it's a fair question to put to us.\n\nEcommerce consulting Los Angeles brands buy from us is the version where you have the hands and want the plan. It works when your developer has the time.\n\nWhen the plan lands on somebody already at capacity, it sits. That second case is most of what we're hired for, and the test is whether your developer has a free month.",
     },
     {
-      objection: "Every agency says they'll tell us the truth. Why would yours be different?",
+      objection: "Every agency says they'll be straight with us. Why would yours be?",
       answer:
-        "You can't know that, and we can't prove it in a paragraph on our own website.\n\nSo we made it checkable instead. The table cites vendor docs with a date. The price is on the page. The case for not hiring us is written down rather than promised on a call. None of that proves we're honest. It's just more than an assertion, and it's more than anyone else on this page of results is giving you.",
+        "You can't know it, and no ecommerce agency Los Angeles shortlist can prove it in a paragraph on its own website. Us included.\n\nSo we made it cheap to find out. The first look costs nothing and you keep what it produces. Every figure in the model above cites a source with a date, and one of those notes is a caveat about our own numbers.\n\nIf you've been burned before, give somebody a small piece of work first.",
     },
   ],
 
   // ── Block 9: FAQ ──────────────────────────────────────────────────────
+  // The three unique questions fixed by spec §6.3 are all here. The office
+  // question is §6.4, required on all seven geo pages. The platform question is
+  // new and leads the block: Step 01 says this reader has not committed to a
+  // platform, and it was the one thing he would want answered that the page
+  // never said out loud.
   faqs: [
     {
-      question: "Which ecommerce platform should we be on?",
+      question: "We're not on Shopify. Do you work with other platforms?",
       answer:
-        "The one your team can run without hiring an engineer. For most brands under about ten people that's a hosted platform, because the patching, the uptime and the version upgrades stop being your job. With a developer in-house, self-hosted opens up and the answer changes.",
+        "We build on Shopify and Shopify Plus, and most of what we're asked for is a move onto one of them. If you're on something else, we'd look at what it's costing you first. If you haven't picked yet, that's the easiest conversation we have.",
       unique: true,
     },
     {
-      question: "How many developers does it take to run each platform?",
+      question: "What should we promise on the product page when the ship date isn't certain?",
       answer:
-        "On a hosted platform, none, as long as you're not building much custom. On a self-hosted one you need reliable access to somebody technical. Not full time, but reliably. The difference isn't the build. It's what comes round every month afterwards.",
+        "A single date you've padded to your worst case, not a vague phrase. \"Ships by\" a date you'll beat works better than \"ships soon\" every time. There's a legal reason too: a US seller who takes an order without stating a shipping time is held to thirty days, after which your customer can cancel.",
       unique: true,
     },
     {
-      question: "What does it cost to keep an ecommerce store running after the build?",
+      question: "Should we charge for preorders upfront or on fulfillment?",
       answer:
-        "It depends far less on the license than the comparisons suggest. Budget for apps, a support arrangement, and somebody's time every week. On self-hosted, add hosting and a person who patches it. We won't quote you an average, because the honest range is too wide to be useful.",
+        "Upfront is simpler and it's what most brands should do. Charging later sounds friendlier, but it runs into your payment provider's authorization window. A card that fails weeks after the order is a lost sale. Charge upfront, promise conservatively, refund fast if you slip.",
       unique: true,
     },
     {
-      question: "Is WooCommerce cheaper than Shopify if the license is free?",
+      question: "How do we handle split shipments without creating a ticket per order?",
       answer:
-        "Only if your time is free. The license really is $0, and the recurring work isn't. Somebody has to keep the plugins current and decide which security fixes apply to your store, and that's the layer a small team never gets round to. Price that person in, then compare again.",
+        "Shopify fulfills partially out of the box, so your mechanics are fine. The tickets come from surprise: if the product page implied one box and two turn up, people write in. Say at checkout that items may ship separately.",
       unique: true,
     },
     {
-      question: "We already have a store. Is moving worth it?",
+      question: "How far ahead should we open a preorder window?",
       answer:
-        "Often not. If what's wrong is the theme, the apps or the operations around it, moving platforms fixes none of that and costs you months. Moving is worth it when the platform itself is the constraint, or when the maintenance has become somebody's second job. We'll tell you which one you're looking at.",
+        "As far as the exposure your stock doesn't cover. Your worst arrival minus your average, less whatever you'll hold as stock, is your window.",
       unique: true,
     },
     {
-      question: "How much does an ecommerce agency cost for a Los Angeles brand?",
+      question: "Do we need Shopify Plus for any of this?",
       answer:
-        "Ours is $5,000 to $50,000 for a build, depending on how much is custom, with the price agreed before we start. Rates in this market run above the national average and ours don't change by city. A platform recommendation on its own is a fraction of that and quoted separately.",
+        "No. Preorder, partial fulfillment and low-stock alerts all work on standard Shopify, usually with one app. Plus earns its money on checkout changes and API headroom, and you need neither for this.",
+      unique: true,
+    },
+    {
+      question: "How much does an ecommerce agency Los Angeles brands hire usually cost?",
+      answer:
+        "Ours is $5,000 to $50,000 for a build, depending on how much of it is custom. You agree the number before we start. Ecommerce agency Los Angeles rates run above the national average, and ours don't change by city.",
       unique: true,
     },
     {
       question: "How long does a build take?",
       answer:
-        "Most go live in about six weeks once scope is agreed. A migration with real order history takes longer, usually eight to twelve, and most of that is data rather than design.",
+        "Most of our builds go live in about six weeks once scope is agreed. A migration carrying real order history runs eight to twelve, and the extra is your data rather than design.",
       unique: false,
     },
     {
-      question: "Who owns the code and the design files?",
+      question: "Do you have an office we can visit?",
       answer:
-        "You do, from the first commit rather than the final invoice. The repository, the theme and anything custom are yours, and a developer who has never met us can pick them up.",
-      unique: false,
-    },
-    {
-      question: "Do you provide ecommerce development in Los Angeles?",
-      answer:
-        "Yes, remotely. We build and support stores for brands across the metro and the wider California market. There's no office to visit and no travel line on your invoice, and for this kind of work it has never mattered.",
+        "No. We're a remote team working with brands across the US, and we'd rather tell you than let you find out. What we do have is the work above: your arrival range, and what to do about it.",
       unique: true,
     },
     {
       question: "Do you do ads and email marketing too?",
       answer:
-        "Yes, though not on this page. This one is about the store itself: which platform, the build, and who runs it afterwards. If acquisition and retention are what you're after, that conversation lives on our ecommerce marketing page.",
+        "Yes, though not on this page. This one's about the store and the stock behind it. If acquisition and retention are what you're after, that's our ecommerce marketing page.",
       unique: true,
     },
   ],
 
   // ── Block 10: Conversion ──────────────────────────────────────────────
+  // Step 09: zero keywords here, and no city name either. This is the one place
+  // the standard says a keyword is always wrong.
   conversion: {
-    heading: "Tell us what you're on now",
+    heading: "Tell us what you're waiting on",
     whatYouGet:
-      "Tell us what you're running and what's not working. We'll audit it free and tell you whether moving is worth it.",
+      "Tell us what you sell and where it comes from. We'll audit it free and tell you what it would take.",
+    // Step 04.1 rewrite. The schema requires this field and asks for something
+    // we would advise AGAINST spending on. It used to advise against hiring us,
+    // which is the mistake the standard opens with. It now names a purchase
+    // that genuinely wastes money when it is made in the wrong order.
     whatWeWillTellYouNotToDo:
-      "Most stores we look at don't need a new platform. When that's what we find, that's what we'll tell you, even though a migration pays us considerably more.",
+      "We'll tell you not to buy a preorder app before the arrival range is measured. The app can't size the window, so bought in that order it gets configured twice.",
     responseExpectation:
       "A senior developer replies within one working day. Not a salesperson.",
     audit: {
       transition:
-        "You already know which part of this decision you're stuck on.",
+        "You already know which order it was that went wrong.",
       offer:
-        "Tell us that part. We'll audit it and hand you the findings, not a summary:",
+        "Tell us about that one. We'll audit it and hand you the findings, not a summary:",
       parts: [
-        "What you're actually running now, and what it's costing you in work rather than license fees.",
-        "Whether moving would fix it, including the case for staying put.",
-        "What to do first, and which change moves the number most.",
+        "What your actual arrival range is, from your own last six, not what you were quoted.",
+        "What that range costs you, in stock you're holding or sales you're losing.",
+        "What to change first, and what that would take.",
       ],
       limit:
-        "It's a recommendation, not the work. Building it is a separate quote you're free to decline.",
+        "It's a diagnosis, not the work. Fixing it is a separate quote you can decline.",
       noObligation:
-        "The audit is free and the findings are yours to keep, whether or not we end up working together.",
-      // turnaround intentionally unset. Copy Standard 8.4 asks for the days and
-      // the format to be named; the marker was removed on the owner's call
-      // (2026-09-09) rather than filled, matching the published Los Angeles
-      // Shopify page. Add one here the day the delivery window is real.
+        "The audit is free and the findings are yours to keep either way.",
+      // turnaround deliberately unset, matching the published Los Angeles
+      // Shopify page. Copy Standard 8.4 asks for days and format to be named;
+      // the owner chose to ship without one rather than commit to a number.
     },
   },
 
   sources: [],
 
-  // Section 2.2 sets 1,300-1,700 for a geo page. Raised to match the shape this
-  // page actually has: five discipline rows, ten FAQs, a nine-row matrix and a
-  // four-item how-we-work block, none of which the bare spine contemplated. The
-  // sibling pages carry the same override for the same reason.
-  wordCountTarget: [1300, 3700],
+  // Owner's instruction, 2026-09-10: 2,500 to 3,000 words. This replaces both
+  // spec §2.2's 1,300-1,700 for a bare geo spine and the 1,300-3,700 override
+  // this page carried while the length was open. The page also runs a trust
+  // bar, a quick answer, four discipline rows, a four-block asset and ten
+  // FAQs, none of which the bare spine contemplated.
+  wordCountTarget: [2500, 3000],
 };
