@@ -1,5 +1,6 @@
 import type { OnlyHereAsset as OnlyHereAssetT } from "@/lib/geo/types";
 import AssetTable from "./AssetTable";
+import Disclaimer from "./Disclaimer";
 import Prose, { inline } from "./Prose";
 
 // The signature comparison block: something the reader cannot get elsewhere.
@@ -24,6 +25,12 @@ export default function OnlyHereAsset({ asset, id = "asset" }: { asset: OnlyHere
 
         {/* (c) the artifact */}
         <AssetTable renderer={asset.renderer} columns={asset.columns} rows={asset.rows} caption={asset.title} hideColumnHeaders={asset.hideColumnHeaders} id={`${id}-table`} />
+
+        {/* Caveat attached to the artifact, not to the page. Only the San Diego
+            subscription checklist sets one so far; its Build Manual card
+            requires a not-legal-advice line, and a caveat about a table reads
+            as evasion if it sits anywhere except directly under that table. */}
+        {asset.disclaimer ? <Disclaimer text={asset.disclaimer} /> : null}
 
         {/* (d) derived conclusion */}
         <div className="oha-derived">
