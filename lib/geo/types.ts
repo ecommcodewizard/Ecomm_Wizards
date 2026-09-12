@@ -125,6 +125,17 @@ export const OnlyHereAssetSchema = z.object({
     })
     .optional(),
   supportingBlocks: z.array(z.object({ heading: z.string().min(1), body: z.string().min(1) })).optional(),
+  /** A caveat rendered directly under the artifact, in the Disclaimer component's
+   *  amber note. Added 2026-09-11 for the San Diego subscription-compliance
+   *  checklist, whose Build Manual card requires a not-legal-advice line and
+   *  requires the work to be framed as done alongside the reader's counsel
+   *  rather than instead of it.
+   *
+   *  Scoped to the asset rather than the page on purpose. The artifact is what
+   *  carries the legal content, so the caveat belongs attached to it, and
+   *  keeping it here means the shared geo template is untouched for the six
+   *  published pages that do not need one. */
+  disclaimer: z.string().min(1).optional(),
   reviewAfterDays: z.union([z.literal(90), z.literal(180), z.literal(365)]),
 });
 export type OnlyHereAsset = z.infer<typeof OnlyHereAssetSchema>;
@@ -653,6 +664,7 @@ export function proseStrings(page: GeoProgrammePage): string[] {
     out.push(r.label, ...r.cells);
     if (r.note) out.push(r.note);
   }
+  if (a.disclaimer) out.push(a.disclaimer);
   out.push(a.derived);
   if (a.derivedList) out.push(a.derivedList.title, ...a.derivedList.items);
   for (const b of a.supportingBlocks ?? []) out.push(b.heading, b.body);
