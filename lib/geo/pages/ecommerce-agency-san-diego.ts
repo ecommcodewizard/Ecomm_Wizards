@@ -227,7 +227,7 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
 
   // ── Block 2: Hook ─────────────────────────────────────────────────────
   hook:
-    "In July last year a federal court threw out the click-to-cancel rule, six days before it was due to bite. Plenty of people read the headline and stopped worrying.\n\nCalifornia's version had taken effect the week before. Nothing happened to it.\n\nSo if you sell on repeat here, the rule that binds you is the state one, and it asks for more than the federal one that died.",
+    "In July last year a federal court threw out the click-to-cancel rule, six days before it was due to bite. Plenty of people read the headline and stopped worrying.\n\nCalifornia's version had taken effect the week before. Nothing happened to it.\n\nSo through 2026, if you sell on repeat here, the rule binding you has been the state one. It asks for more than the federal one that died.",
 
   // ── Quick answer ──────────────────────────────────────────────────────
   quickAnswer:
@@ -241,7 +241,7 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
   // ── Block 4: Gradient layer ───────────────────────────────────────────
   gradientLayerHeading: "The rule that died and the rule that didn't",
   gradientLayer:
-    "**The FTC's click-to-cancel rule was vacated in full on 8 July 2025, six days before its compliance date.** The court never reached whether the rule was a good idea. It threw it out because the agency skipped a required cost analysis on the way to making it.\n\nSo the federal floor went back to what it was. ROSCA still covers every online seller running a renewal, still carries civil penalties, and the FTC has kept bringing cases.\n\n**California's Automatic Renewal Law took effect on 1 July 2025 and was untouched by any of that.** Eight days earlier, and it survived what killed the federal rule.\n\nIt's also stricter. Consent to renew has to be its own step, not part of your terms checkbox. Cancellation has to work in the medium they signed up in, so a web signup needs a web cancel. Free trials that roll into paid are covered. And you keep proof of consent for three years, or a year past cancellation, whichever is longer.\n\nWhich puts your retention team and your obligations on opposite sides of one screen. Every save step in a cancellation flow is a step between a Californian customer and a button they're entitled to reach. One of those has to give way, and it can't be the button.\n\nThat's a build problem before it's a legal one. The checklist below turns it into settings somebody can change.",
+    "**The FTC's click-to-cancel rule was vacated in full on 8 July 2025, six days before its compliance date.** The court never reached whether the rule was a good idea. It threw it out because the agency skipped a required cost analysis.\n\nSo the federal floor went back to what it was. As of September 2026 that means ROSCA, which covers every online seller running a renewal, carries civil penalties, and which the FTC keeps bringing cases under.\n\n**California's Automatic Renewal Law took effect on 1 July 2025 and was untouched by any of that.** Eight days earlier, and it survived what killed the federal rule.\n\nIt's also stricter, and today that means four things. Consent to renew has to be its own step, not part of your terms checkbox. Cancellation has to work in the medium they signed up in, so a web signup needs a web cancel. Free trials that roll into paid are covered. And you keep proof of consent three years, or a year past cancellation, whichever is longer.\n\nWhich puts your retention team and your obligations on opposite sides of one screen. Every save step in a cancellation flow sits between a Californian customer and a button they're entitled to reach. One of those has to give way, and it can't be the button.\n\nThat's a build problem before it's a legal one. The checklist below turns it into settings somebody can change.",
   gradientFacts: [
     {
       id: "ftc-negative-option-vacated-2025",
@@ -287,7 +287,7 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
       howGathered:
         "Federal status from the Eighth Circuit's disposition in Custom Communications v. FTC (8 July 2025), read alongside the FTC's own rule library. The two have to be read together: the FTC page still leads with the October 2024 final-rule announcement and reads as though the rule survived. California requirements from the text of AB 2863 at the state legislature site, Business and Professions Code §§17601 and 17602. Store configuration is our own, from builds we have shipped, not from either source.",
     },
-    columns: ["Requirement", "Federal floor now", "California ARL", "What to configure"],
+    columns: ["Requirement", "Federal floor, Sept 2026", "California ARL", "What to configure"],
     rows: [
       {
         label: "Cancellation mechanism parity",
@@ -314,7 +314,7 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
           "Its own separate step",
           "A dedicated unticked checkbox, not your terms box",
         ],
-        note: "Bundling renewal consent into your terms acceptance fails this. So does a pre-ticked box. It has to be a deliberate decision.",
+        note: "Bundling renewal consent into your terms acceptance fails this. So does a pre-ticked box. It has to be deliberate.",
       },
       {
         label: "Renewal reminder timing",
@@ -335,7 +335,7 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
     disclaimer:
       "This is a configuration checklist, not legal advice, and we aren't lawyers. It's written to give your counsel something concrete to review and your developer something specific to change. Take it to both.",
     derived:
-      "Read down the third column and almost none of this is a legal question by the time it reaches you. It's a checkbox that shouldn't be pre-ticked, a cancel link that should exist, and a record written when consent happens.\n\nThe last row catches people. Consent you can't produce is consent you didn't get, as far as anyone reviewing it goes. No subscription app we've seen stores it in a form you'd want to hand over. Anyone on your ecommerce agency San Diego shortlist should be able to tell you where that record lives.",
+      "Read down the third column and almost none of this is a legal question by the time it reaches you. It's a checkbox that shouldn't be pre-ticked, a cancel link that should exist, and a record written when consent happens.\n\nThe last row catches people. Consent you can't produce is consent you didn't get, as far as anyone reviewing it goes. No app we've seen stores it in a form you'd want to hand over. Anyone on your ecommerce agency San Diego shortlist should be able to tell you where that record lives.",
     derivedList: {
       title: "What to check on your own store this week",
       items: [
@@ -349,7 +349,7 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
       {
         heading: "What breaks this, usually by default",
         body:
-          "**Cancellation behind a support email.** Common on older builds. It reads as helpful and fails the medium test.\n\n**Consent bundled into the terms checkbox.** One box covering terms, privacy and the renewal. California asks for that last one on its own.\n\n**Renewal notices on a schedule nobody set.** The app sends something, never configured against a requirement, and the copy usually omits the way out.\n\n**Save offers that add a step.** An interstitial between the cancel button and the cancellation is the pattern regulators name most.",
+          "**Cancellation behind a support email.** Common on older builds, reads as helpful, fails the medium test.\n\n**Consent bundled into the terms checkbox.** One box covering terms, privacy and renewal. California asks for the last on its own.\n\n**Renewal notices on a schedule nobody set.** The app sends something, never configured against a requirement, and the copy omits the way out.\n\n**Save offers that add a step.** An interstitial between the button and the cancellation is the pattern regulators name most.",
       },
       {
         heading: "What Shopify does natively, and what it doesn't",
@@ -359,7 +359,7 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
       {
         heading: "Why this is a build job and not a memo",
         body:
-          "Every row above is a decision somebody already made, usually by accident, when the subscription app was installed and its defaults accepted.\n\nA legal review will tell you the defaults are wrong. It won't change them, and it won't tell your developer which of four places the cancel path is defined in.\n\nSo we work alongside your counsel. They say where the line is. We move the store to the right side of it and leave you the record showing when.",
+          "Every row above is a decision somebody already made, usually by accident, when the app was installed and its defaults accepted.\n\nA legal review will tell you the defaults are wrong. It won't change them, or tell your developer which of four places the cancel path is defined in.\n\nSo we work alongside your counsel. They say where the line is. We move the store to the right side of it and leave you the record showing when.",
       },
     ],
     reviewAfterDays: 90,
@@ -479,12 +479,12 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
     {
       objection: "Didn't the click-to-cancel rule get thrown out? Why does this matter?",
       answer:
-        "The federal one did, on 8 July 2025, and it isn't coming back in that form.\n\nTwo things survived. ROSCA still covers online renewals, still carries penalties, and the FTC has kept bringing cases. And California's own law took effect a week before the ruling, untouched.\n\nSo the headline was true and the conclusion most people drew wasn't.",
+        "The federal one did, on 8 July 2025. The FTC opened a replacement rulemaking in March 2026, so check the date on anything you read about this, this page included.\n\nTwo things survived the ruling. ROSCA, which covers online renewals and carries penalties, and California's own law, which took effect a week earlier and was untouched.\n\nSo the headline was true and the conclusion most people drew wasn't.",
     },
     {
       objection: "Our subscription app says it's compliant.",
       answer:
-        "Some are, for the rows they control. None controls all six.\n\nAn app gives a customer a cancel button. It can't stop your theme burying the account page. It can't separate your consent checkbox from your terms box. It can't keep a record you'd hand a regulator.\n\nAsk which of the six rows your vendor will put in writing.",
+        "Some are, for the rows they control. None controls all six.\n\nAn app gives a customer a cancel button. It can't stop your theme burying the account page, separate your consent checkbox from your terms box, or keep a record you'd hand a regulator.\n\nAsk which of the six rows your vendor will put in writing.",
     },
     {
       objection: "Won't a compliant cancellation flow just increase churn?",
