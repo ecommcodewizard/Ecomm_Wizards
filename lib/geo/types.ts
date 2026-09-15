@@ -689,6 +689,25 @@ export function proseStrings(page: GeoProgrammePage): string[] {
   return out;
 }
 
+/** Every human-authored string that SHIPS, for the banned-copy scan.
+ *
+ *  This is proseStrings plus the alt text, and the split matters. A word count
+ *  should measure what a sighted reader actually reads, so alt text stays out
+ *  of proseStrings; but a screen reader speaks alt text and Google reads it, so
+ *  it is copy and has to be scanned like copy.
+ *
+ *  Added 2026-09-16. Alt text was the one authored string no guardrail saw,
+ *  which is how "A subscription programme we built for Wild" reached a page
+ *  with check-forbidden passing. Putting it through proseStrings instead would
+ *  have worked for the scan and then pushed two PUBLISHED pages over their word
+ *  ceilings, which is how the two jobs turned out to be different jobs. */
+export function scannableStrings(page: GeoProgrammePage): string[] {
+  const out = proseStrings(page);
+  if (page.heroImage?.alt) out.push(page.heroImage.alt);
+  for (const d of page.disciplines?.items ?? []) if (d.imageAlt) out.push(d.imageAlt);
+  return out;
+}
+
 /** Every string on a page including structural ones (for schema-type and URL
  *  checks). */
 export function allStrings(value: unknown, acc: string[] = []): string[] {

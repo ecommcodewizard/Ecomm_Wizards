@@ -11,7 +11,7 @@
 // Run: npx tsx scripts/geo/check-forbidden.ts
 
 import { GEO_PAGES } from "@/lib/geo/registry";
-import { proseStrings } from "@/lib/geo/types";
+import { scannableStrings } from "@/lib/geo/types";
 import { BANNED_CHARACTERS, BANNED_PHRASES, PRESENCE_HARD, UK_SPELLINGS, presenceSoftPatterns } from "@/lib/geo/forbidden";
 
 const BATCH_CITIES = [
@@ -75,7 +75,7 @@ function main(): number {
 
   for (const page of GEO_PAGES) {
     const strings = [
-      ...proseStrings(page).map((s, i) => ({ where: `prose[${i}]`, text: s })),
+      ...scannableStrings(page).map((s, i) => ({ where: `prose[${i}]`, text: s })),
       { where: "metaTitle", text: page.metaTitle },
       { where: "metaDescription", text: page.metaDescription },
       { where: "shortTitle", text: page.shortTitle },
