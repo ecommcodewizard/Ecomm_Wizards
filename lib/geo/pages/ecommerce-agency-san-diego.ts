@@ -227,7 +227,7 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
 
   // ── Block 2: Hook ─────────────────────────────────────────────────────
   hook:
-    "In July last year a federal court threw out the click-to-cancel rule, six days before it was due to bite. Plenty of people read the headline and stopped worrying.\n\nCalifornia's version had taken effect the week before. Nothing happened to it.\n\nSo through 2026, if you sell on repeat here, the rule binding you has been the state one. It asks for more than the federal one that died.",
+    "In July last year a federal court threw out the click-to-cancel rule, six days before it was due to bite. Plenty read the headline and stopped worrying.\n\nCalifornia's version had taken effect the week before. Nothing happened to it.\n\nSo through 2026, if you sell on repeat here, the rule binding you is the state one, and it asks for more than the federal one that died.",
 
   // ── Quick answer ──────────────────────────────────────────────────────
   quickAnswer:
@@ -236,12 +236,12 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
   // ── Block 3: Place layer. Archetype A, the vertical ───────────────────
   placeLayerHeading: "This is a city that sells things people finish",
   placeLayer:
-    "Supplements, protein, pet food, skincare, coffee. The products this metro is built on get used up, which is why so many sell on subscription rather than a cart.\n\nThat model is a good one. It also changes what your store legally is. A one-off purchase is a sale. A recurring one is a contract that renews itself, and those have their own rules.\n\nMost of that lands on the checkout and the account page, which means it lands on whoever built them. Usually nobody told them.",
+    "Supplements, protein, pet food, skincare, coffee. The products this metro is built on get used up, which is why so many sell on subscription rather than a cart.\n\nThat model is a good one. It also changes what your store legally is. A one-off purchase is a sale. A recurring one is a contract that renews itself, with its own rules.\n\nMost of that lands on the checkout and the account page, which means it lands on whoever built them. Nobody told them.",
 
   // ── Block 4: Gradient layer ───────────────────────────────────────────
   gradientLayerHeading: "The rule that died and the rule that didn't",
   gradientLayer:
-    "**The FTC's click-to-cancel rule was vacated in full on 8 July 2025, six days before its compliance date.** The court never reached whether the rule was a good idea. It threw it out because the agency skipped a required cost analysis.\n\nSo the federal floor went back to what it was. As of September 2026 that means ROSCA, which covers every online seller running a renewal, carries civil penalties, and which the FTC keeps bringing cases under.\n\n**California's Automatic Renewal Law took effect on 1 July 2025 and was untouched by any of that.** Eight days earlier, and it survived what killed the federal rule.\n\nIt's also stricter, and today that means four things. Consent to renew has to be its own step, not part of your terms checkbox. Cancellation has to work in the medium they signed up in, so a web signup needs a web cancel. Free trials that roll into paid are covered. And you keep proof of consent three years, or a year past cancellation, whichever is longer.\n\nWhich puts your retention team and your obligations on opposite sides of one screen. Every save step in a cancellation flow sits between a Californian customer and a button they're entitled to reach. One of those has to give way, and it can't be the button.\n\nThat's a build problem before it's a legal one. The checklist below turns it into settings somebody can change.",
+    "**The FTC's click-to-cancel rule was vacated in full on 8 July 2025, six days before its compliance date.** The court never reached whether the rule was a good idea. It threw it out because the agency skipped a required cost analysis.\n\nSo the federal floor went back to what it was. As of September 2026 that means ROSCA: it covers every online seller running a renewal, carries civil penalties, and the FTC keeps bringing cases under it.\n\n**California's Automatic Renewal Law took effect on 1 July 2025 and was untouched by any of that.** Eight days earlier, and it survived what killed the federal rule.\n\nIt's stricter, and today that means four things. Consent to renew has to be its own step, not part of your terms checkbox. Cancellation has to work in the medium they signed up in, so a web signup needs a web cancel. Free trials rolling into paid are covered. And you keep proof of consent three years, or a year past cancellation, whichever is longer.\n\nWhich puts your retention team and your obligations on opposite sides of one screen. Every save step sits between a Californian customer and a button they're entitled to reach. One has to give way, and it can't be the button.\n\nThat's a build problem before it's a legal one. The checklist below turns it into settings somebody can change.",
   gradientFacts: [
     {
       id: "ftc-negative-option-vacated-2025",
@@ -305,7 +305,7 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
           "Before the consent step",
           "Terms rendered on the product page and in cart",
         ],
-        note: "Charge amount, frequency and how to get out, visible before they commit rather than after.",
+        note: "Charge amount, frequency and how to get out, visible before they commit, not after.",
       },
       {
         label: "Affirmative consent capture",
@@ -319,7 +319,7 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
       {
         label: "Renewal reminder timing",
         cells: ["Not mandated federally", "Annual reminder required", "Scheduled notification with the required fields"],
-        note: "Has to name the product, the amount, the frequency and how to cancel. Your app can send it, but almost none do by default.",
+        note: "Has to name the product, the amount, the frequency and how to cancel. Your app can send it; almost none do by default.",
       },
       {
         label: "Save-offer rules before cancellation",
@@ -335,13 +335,13 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
     disclaimer:
       "This is a configuration checklist, not legal advice, and we aren't lawyers. It's written to give your counsel something concrete to review and your developer something specific to change. Take it to both.",
     derived:
-      "Read down the third column and almost none of this is a legal question by the time it reaches you. It's a checkbox that shouldn't be pre-ticked, a cancel link that should exist, and a record written when consent happens.\n\nThe last row catches people. Consent you can't produce is consent you didn't get, as far as anyone reviewing it goes. No app we've seen stores it in a form you'd want to hand over. Anyone on your ecommerce agency San Diego shortlist should be able to tell you where that record lives.",
+      "Read down the third column and almost none of this is a legal question by the time it reaches you. It's a checkbox that shouldn't be pre-ticked, a cancel link that should exist, and a record written when consent happens. Every one is a default somebody accepted when the app went in. A legal review will tell you they're wrong. It won't tell your developer which of four places the cancel path is defined in.\n\nThe last row catches people. Consent you can't produce is consent you didn't get, as far as anyone reviewing it goes. No app we've seen stores it in a form you'd want to hand over. Anyone on your ecommerce agency San Diego shortlist should tell you where that record lives.",
     derivedList: {
       title: "What to check on your own store this week",
       items: [
         "Cancel a subscription yourself from a customer account, without emailing anyone. If you can't, that's row one.",
-        "Check your checkout for a renewal consent box that's separate from your terms box, and unticked.",
-        "Find the last renewal reminder you sent, and check it names the amount and the way out.",
+        "Check your checkout for a renewal consent box separate from your terms box, and unticked.",
+        "Find the last renewal reminder you sent. Check it names the amount and the way out.",
         "Ask where an eighteen-month-old consent event is stored, and for how long.",
       ],
     },
@@ -349,17 +349,12 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
       {
         heading: "What breaks this, usually by default",
         body:
-          "**Cancellation behind a support email.** Common on older builds, reads as helpful, fails the medium test.\n\n**Consent bundled into the terms checkbox.** One box covering terms, privacy and renewal. California asks for the last on its own.\n\n**Renewal notices on a schedule nobody set.** The app sends something, never configured against a requirement, and the copy omits the way out.\n\n**Save offers that add a step.** An interstitial between the button and the cancellation is the pattern regulators name most.",
+          "**Cancellation behind a support email.** Common on older builds, reads as helpful, fails the medium test.\n\n**Consent bundled into the terms checkbox.** One box covering terms, privacy and renewal. California asks for the last on its own.\n\n**Renewal notices on a schedule nobody set.** The app sends something nobody configured against a requirement, and the copy omits the way out.",
       },
       {
         heading: "What Shopify does natively, and what it doesn't",
         body:
-          "**Self-serve cancels** are native. Shopify Subscriptions lets a customer pause, skip, reschedule or cancel from their account. That covers the mechanism half of row one.\n\n**Renewal notices** are configurable with editable templates. What isn't native is any check that the wording carries the fields California asks for.\n\n**A separate consent step** is not native. It needs checkout customization on Plus, or an app that renders its own.\n\n**Durable consent records** are the real gap. Nothing stores the event as evidence you'd hand to counsel, which is why we build that record ourselves.",
-      },
-      {
-        heading: "Why this is a build job and not a memo",
-        body:
-          "Every row above is a decision somebody already made, usually by accident, when the app was installed and its defaults accepted.\n\nA legal review will tell you the defaults are wrong. It won't change them, or tell your developer which of four places the cancel path is defined in.\n\nSo we work alongside your counsel. They say where the line is. We move the store to the right side of it and leave you the record showing when.",
+          "**Self-serve cancels** are native. Shopify Subscriptions lets a customer pause, skip, reschedule or cancel from their account, covering the mechanism half of row one.\n\n**Renewal notices** are configurable with editable templates. What isn't native is any check that the wording carries the fields California asks for.\n\n**A separate consent step** is not native. It needs checkout customization on Plus, or an app rendering its own.\n\n**Durable consent records** are the real gap. Nothing stores the event as evidence you'd hand counsel, so we build that record ourselves.",
       },
     ],
     reviewAfterDays: 90,
@@ -372,13 +367,13 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
     label: "What we do",
     heading: "Four things we do, and you can take one or all four",
     intro:
-      "Each is sold separately, and each row is a store we shipped. That's what an ecommerce agency San Diego engagement should let you buy.",
+      "Each is sold separately and each row is a store we shipped. That's what an ecommerce agency San Diego engagement should let you buy.",
     items: [
       {
         label: "Subscriptions and recurring billing",
         heading: "We build the subscription, the cancel path and the consent record together",
         body:
-          "Most subscription work stops once billing works. The parts deciding whether it holds up all come after that.",
+          "Most subscription work stops once billing works. The parts that decide whether it holds up come after.",
         covers: ["Subscription setup", "Cancellation flows", "Consent capture", "Renewal notifications", "Churn reporting"],
         imageAlt: "A subscription experience we rebuilt for Happy Mammoth",
         caseSlug: "happy-mammoth-shopify-subscriptions-cro",
@@ -404,7 +399,7 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
         label: "Growth and lifecycle",
         heading: "We run the work after launch, so the second order gets the attention the first did",
         body:
-          "Ecommerce marketing San Diego brands buy from us is the lifecycle half: email, retention, and reporting that shows which of it paid.",
+          "The ecommerce marketing San Diego brands buy from us is the lifecycle half: email, retention, and reporting that shows which of it paid.",
         covers: ["Email and SMS", "Lifecycle flows", "Analytics", "Merchandising", "Ongoing support"],
         imageAlt: "Direct to consumer growth work we ran for VITHIT",
         caseSlug: "vithit-shopify-plus-d2c",
@@ -417,12 +412,12 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
   howWeWork: {
     heading: "What working with us looks like",
     intro:
-      "Nobody here is in the city, and for this work that changes nothing. What matters is who answers, and what you keep.",
+      "Nobody here is in the city, and for this work that changes nothing. What matters is who answers and what you keep.",
     items: [
       {
         title: "The consent log is yours, not ours",
         body:
-          "Same for the repository, the theme and the design files. All of it sits in your accounts from day one, so there is nothing to hand back.",
+          "Same for the repository, the theme and the design files. All of it sits in your accounts from day one, so there's nothing to hand back.",
       },
       {
         title: "We work next to your lawyer, not around them",
@@ -437,7 +432,7 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
       {
         title: "Nothing gets built that wasn't quoted",
         body:
-          "Scope, number and date up front. Change any of them and it goes back through a quote before it goes back through a developer.",
+          "Your scope, your number, your date, agreed up front. Change one and it goes back through a quote before a developer.",
       },
     ],
   },
@@ -445,7 +440,7 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
   // ── Block 6: What we do about it ──────────────────────────────────────
   whatWeDoAboutItHeading: "What it costs and how it runs",
   whatWeDoAboutIt:
-    "Week one is an audit against the six rows above, on your store rather than a questionnaire. You keep the findings.\n\nThen a number and a date, in writing.\n\nThe work is the cancellation path, the consent step, the renewal notification, the record proving all three, and whatever else the store needs while we're in it.\n\nBuilds run $5,000 to $50,000 depending on how much is custom, and a compliance-only pass costs a fraction of that. Any ecommerce agency San Diego quote should separate the two, because they're different jobs.",
+    "Week one is an audit against the six rows above, on your store, not a questionnaire. You keep the findings.\n\nThen a number and a date, in writing.\n\nThe work is the cancellation path, the consent step, the renewal notification, the record proving all three, and whatever else the store needs while we're in it.\n\nBuilds run $5,000 to $50,000 depending on how much is custom, and a compliance-only pass costs a fraction of that. Any ecommerce agency San Diego quote should separate the two, because they're different jobs.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   proofHeading: "Three brands that sell on repeat",
@@ -479,33 +474,29 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
     {
       objection: "Didn't the click-to-cancel rule get thrown out? Why does this matter?",
       answer:
-        "The federal one did, on 8 July 2025. The FTC opened a replacement rulemaking in March 2026, so check the date on anything you read about this, this page included.\n\nTwo things survived the ruling. ROSCA, which covers online renewals and carries penalties, and California's own law, which took effect a week earlier and was untouched.\n\nSo the headline was true and the conclusion most people drew wasn't.",
+        "The federal one did, on 8 July 2025. The FTC opened a replacement rulemaking in March 2026, so check the date on anything you read about this, this page included.\n\nTwo things survived. ROSCA, which covers online renewals and carries penalties, and California's own law, which took effect a week earlier, untouched.\n\nSo the headline was true and the conclusion most people drew wasn't.",
     },
     {
       objection: "Our subscription app says it's compliant.",
       answer:
-        "Some are, for the rows they control. None controls all six.\n\nAn app gives a customer a cancel button. It can't stop your theme burying the account page, separate your consent checkbox from your terms box, or keep a record you'd hand a regulator.\n\nAsk which of the six rows your vendor will put in writing.",
+        "Some are, for the rows they control. None controls all six.\n\nAn app gives a customer a cancel button. It can't stop your theme burying the account page, separate your consent checkbox from your terms box, or keep a record you'd hand a regulator.\n\nAsk which rows your vendor will put in writing.",
     },
     {
       objection: "Won't a compliant cancellation flow just increase churn?",
       answer:
-        "Some, and it's fair to weigh rather than dismiss.\n\nThe people a hard cancel path retains are mostly the ones who churn angry later, and a save offer beside the button still works. It just can't be a toll gate in front of it.\n\nThe law made that trade for you here. Your room is in what you offer, not in how hard you make leaving.",
-    },
-    {
-      objection: "Every agency says they'll be straight with us. Why would yours be?",
-      answer:
-        "You can't tell from a page we wrote about ourselves, and no ecommerce agency San Diego shortlist proves it in a paragraph. Us included.\n\nSo the first audit costs nothing and you keep it. Every legal claim here names its source, its section and its date, and one says the FTC's own page is currently misleading.\n\nIf you've been burned before, hand somebody a small piece first.",
+        "Some, and it's fair to weigh rather than dismiss, and no ecommerce agency San Diego brands hire should tell you otherwise.\n\nThe people a hard cancel path retains are mostly the ones who churn angry later, and a save offer beside the button still works. It just can't be a toll gate.\n\nThe law made that trade for you. Your room is in what you offer, not in how hard you make leaving.",
     },
   ],
 
   // ── Block 9: FAQ ──────────────────────────────────────────────────────
   // The first three unique questions are fixed by spec §6.3 for this page.
-  // The office question is §6.4, required on all seven geo pages.
+  // The office question is §6.4, required on all seven geo pages. Every one is
+  // unique:true after the 2026-09-16 trim took the timeline question out.
   faqs: [
     {
       question: "What is a cancellation flow actually required to permit?",
       answer:
-        "In California, canceling in the same medium they signed up in. Web signup means web cancellation, no phone call or email to support. You can ask why they're leaving and you can make an offer. Neither can be a condition of getting out.",
+        "In California, canceling in the same medium they signed up in. Web signup means web cancellation, no phone call or email to support. You can ask why they're leaving and make an offer. Neither can be a condition of getting out.",
       unique: true,
     },
     {
@@ -517,13 +508,13 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
     {
       question: "What consent records do we need to keep, and for how long?",
       answer:
-        "Proof they agreed to the renewal terms. Keep it three years, or one year past the end of the contract if that runs longer. In practice: store the consent event with a timestamp. A subscription record on its own doesn't show what they saw.",
+        "Proof they agreed to the renewal terms. Keep it three years, or one year past the end of the contract if that runs longer. In practice: store the consent event with a timestamp. A subscription record alone doesn't show what they saw.",
       unique: true,
     },
     {
       question: "Do we need Shopify Plus for any of this?",
       answer:
-        "For most of it, no. Self-serve cancels and renewal notices work on standard Shopify. The row that often needs Plus is the separate consent step, because that's a checkout change. The alternative is an app that renders its own.",
+        "For most of it, no. Self-serve cancels and renewal notices work on standard Shopify. The row that needs Plus is the separate consent step, because that's a checkout change. The alternative is an app rendering its own.",
       unique: true,
     },
     {
@@ -535,19 +526,13 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
     {
       question: "How much does an ecommerce agency San Diego brands hire usually charge?",
       answer:
-        "A build runs $5,000 to $50,000 with the number fixed before anyone starts, and where it lands depends on how much is custom. A compliance-only pass on a working store is priced separately and costs far less.",
+        "A build runs $5,000 to $50,000, fixed before anyone starts, and where it lands depends on how much is custom. A compliance-only pass on a working store is priced separately and costs far less.",
       unique: true,
-    },
-    {
-      question: "How long does a build take?",
-      answer:
-        "About six weeks once scope is agreed. Subscription work adds time at the end, because the cancel and consent paths get tested as a customer, not an admin.",
-      unique: false,
     },
     {
       question: "Do you have an office we can visit?",
       answer:
-        "No, and there isn't one to visit. We work remotely with brands across the country. The checklist above is the part of local that actually changes what your store does.",
+        "No, and there isn't one to visit. We work remotely with brands across the country. The checklist above is the part of local that changes what your store does.",
       unique: true,
     },
     {
@@ -565,7 +550,7 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
     whatYouGet:
       "Show us how someone cancels today. We'll tell you which of the six rows you fail.",
     whatWeWillTellYouNotToDo:
-      "We'll tell you not to buy a second subscription app for this. Four of the six rows sit in your theme and checkout, so a new app moves the problem rather than solving it.",
+      "We'll tell you not to buy a second subscription app for this. Four of the six rows sit in your theme and checkout, so a new app moves the problem rather than solves it.",
     responseExpectation:
       "The reply comes from whoever would do the work, inside a working day.",
     audit: {
@@ -581,15 +566,15 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
       limit:
         "It stops at the findings, and it's a configuration review, not a legal opinion. Take it to your counsel.",
       noObligation:
-        "No charge, and the write-up stays yours whatever you decide next.",
+        "No charge, and the write-up stays yours whatever you decide.",
     },
   },
 
   sources: [],
 
-  // Matching the band the owner set for page 6 on 2026-09-11. Card 7 says
-  // 1,300-1,700, which describes a bare spine without the trust bar, quick
-  // answer, four discipline rows, a six-row checklist with three supporting
-  // blocks and nine FAQs.
-  wordCountTarget: [2500, 2700],
+  // Owner's instruction, 2026-09-16: below 2,500 words, superseding the
+  // 2,500-2,700 this page inherited from page 6 and matching page 8. Card 7
+  // says 1,300-1,700, which describes a bare spine without the trust bar,
+  // quick answer, four discipline rows and a six-row annotated checklist.
+  wordCountTarget: [2200, 2500],
 };

@@ -183,7 +183,7 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
   // ── Block 1: Hero ─────────────────────────────────────────────────────
   h1: "Ecommerce marketing agency Los Angeles, we get more revenue out of fewer messages",
   qualifier:
-    "Email, SMS, paid, and the creative that feeds them. Take one channel or all four. Nothing starts without a scope, a number and a date you've agreed.",
+    "Email, SMS, paid, and the creative that feeds them. One channel or all four, with a scope, a number and a date agreed first.",
 
   heroImage: {
     src: "/images/Case%20studies/posters/Andrea%20Maack%20Klaviyo%20video.webp",
@@ -209,7 +209,7 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
 
   // ── Block 2: Hook ─────────────────────────────────────────────────────
   hook:
-    "Your customer will take about four marketing messages a month from you. After that, most of them go.\n\nThat's the budget. Not your send calendar, not your list size. And a text spends it the same way an email does, so if you run both you're through it in a fortnight.\n\nMost brands spend it on discounts, because a discount is the easiest thing to put in an email. Then the next one has to be deeper.\n\nSo ask every ecommerce marketing agency Los Angeles shortlist you build what they'd stop sending.",
+    "Your customer will take about four marketing messages a month from you. After that, most of them go.\n\nThat's the budget. Not your send calendar, not your list size. And a text spends it the same way an email does, so if you run both you're through it in a fortnight.\n\nMost spend it on discounts, because a discount is the easiest thing to put in an email. Then the next has to be deeper.\n\nSo ask every ecommerce marketing agency Los Angeles shortlist what they'd stop sending.",
 
   // ── Quick answer ──────────────────────────────────────────────────────
   quickAnswer:
@@ -218,12 +218,12 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
   // ── Block 3: Place layer. Archetype A, the verticals ──────────────────
   placeLayerHeading: "Your customer already gets this email from nine other brands",
   placeLayer:
-    "Beauty, skincare, apparel, streetwear, supplements. The categories this city is built on are the ones with the most brands chasing the same customer.\n\nSo the person on your list is on a lot of other lists, and they look like yours. Same category, same season, same reason to send. Run a promotion and you're rarely the only one that week.\n\nThat isn't a reason to send less of everything. It's a reason to know what the rest of the inbox looks like first.",
+    "Beauty, skincare, apparel, streetwear, supplements. The categories this city is built on have the most brands chasing one customer.\n\nSo the person on your list is on a lot of other lists that look like yours. Same category, same season, same reason to send. Run a promotion and you're rarely the only one that week.\n\nThat isn't a reason to send less of everything. It's a reason to know what the rest of the inbox looks like first.",
 
   // ── Block 4: Gradient layer. Archetype D, the density ─────────────────
   gradientLayerHeading: "The ceiling is four messages, and a text spends one",
   gradientLayer:
-    "There's a published number for how much a customer will take, and it's lower than most send calendars assume.\n\n**Over half of US consumers unsubscribe once a company sends four or more messages in thirty days.** The survey counts texts and emails together, which is the part that catches people out. Four is not four emails plus some texts. Four is everything you send.\n\nNow put that beside what brands here run. **Six of the eighteen Los Angeles beauty and streetwear storefronts we checked run a separate SMS vendor alongside their email platform.** Two ask for a phone number in the same box as the email. Those brands spend the budget twice as fast, and most have never counted it.\n\nThe second number is worse. **Eighty-three percent of people who unsubscribe over repeated offers say they do it because they know the same offer will turn up on another channel anyway.** So the discount you send twice isn't working twice. The second one is why they leave.\n\nWhich is why the answer isn't a better subject line. It's fewer sends, and a reason to open that isn't a number with a percent sign after it.",
+    "There's a published number for how much a customer will take, and it's lower than most send calendars assume.\n\n**Over half of US consumers unsubscribe once a company sends four or more messages in thirty days.** It counts texts and emails together, which is the part that catches people out. Four is not four emails plus some texts. Four is everything.\n\nNow put that beside what brands here run. **Six of the eighteen Los Angeles beauty and streetwear storefronts we checked run a separate SMS vendor alongside their email platform.** Two ask for a phone number in the same box. Those brands spend the budget twice as fast and have never counted it.\n\nThe second number is worse. **Eighty-three percent of people who unsubscribe over repeated offers say they do it because they know the same offer will turn up on another channel anyway.** So the discount you send twice isn't working twice. The second is why they leave.\n\nWhich is why the answer isn't a better subject line. It's fewer sends, and a reason to open that isn't a percentage.",
   gradientFacts: [
     {
       id: "getapp-four-message-ceiling",
@@ -261,7 +261,7 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
   asset: {
     title: "What eighteen LA beauty and streetwear brands run at the door",
     intro:
-      "On 11 September 2026 we opened eighteen Los Angeles beauty and streetwear storefronts in a browser, each in a clean session so the first-visit popup fired the way it would for a real customer. We recorded which marketing platforms each site loads and whether its signup form asks for a phone number. We did not record how often they send or how deep their discounts go: that needs a month on their lists. Brands counted, never named.",
+      "On 11 September 2026 we opened eighteen Los Angeles beauty and streetwear storefronts, each in a clean session so the first-visit popup fired the way it would for a real customer. We recorded which marketing platforms each site loads and whether its signup form asks for a phone number. Not how often they send or how deep the discounts go: that needs a month on their lists. Brands counted, never named.",
     renderer: "frequency",
     method: {
       sampleSize: 18,
@@ -275,17 +275,17 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
       {
         label: "Runs an email marketing platform",
         cells: ["8", "7", "15"],
-        note: "Every one of the fifteen runs the same platform. Not a majority, all of them. Whatever you send lands beside brands on identical tooling and its default templates.",
+        note: "Every one of the fifteen runs the same platform. Not a majority, all of them. Whatever you send lands beside brands on identical tooling.",
       },
       {
         label: "Runs a separate SMS vendor as well",
         cells: ["4", "2", "6"],
-        note: "One in three, spending the four-message budget from two directions at once. The two systems rarely know what the other sent.",
+        note: "One in three, spending the four-message budget from two directions. The two systems rarely know what the other sent.",
       },
       {
         label: "Asks for a phone number in the signup form",
         cells: ["2", "0", "2"],
-        note: "Both are beauty. Asking at the door doubles what you can send and halves how long you can send it. Nobody makes that trade on purpose.",
+        note: "Both are beauty. Asking at the door doubles what you can send and halves how long for. Nobody makes that trade on purpose.",
       },
       {
         label: "Category norm at the signup form",
@@ -294,30 +294,30 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
       },
     ],
     derived:
-      "The single-platform finding is worth sitting with. Fifteen brands, one platform, mostly the same flows in the same order, because that's what it suggests at setup. Your welcome email competes with fourteen built from the same template.\n\nSo the differentiator was never tooling, and it isn't cadence either. It's whether the thing you send is worth the message it costs. Anyone on your ecommerce marketing agency Los Angeles shortlist should tell you what your customer already gets before telling you what to send.",
+      "The single-platform finding is worth sitting with. Fifteen brands, one platform, mostly the same flows in the same order, because that's what it suggests at setup. Your welcome email competes with fourteen built from one template.\n\nSo the differentiator was never tooling, and it isn't cadence. It's whether the thing you send is worth the message it costs. Anyone on your ecommerce marketing agency Los Angeles shortlist should tell you what your customer already gets before telling you what to send.",
     derivedList: {
       title: "What to work out before your next campaign",
       items: [
-        "How many messages one subscriber got last month, counting texts. Most brands never add the two together.",
+        "How many messages one subscriber got last month, counting texts. Most brands never add the two.",
         "What your signup form promises, and whether the last four sends kept it.",
-        "Which of your sends would be missed if it stopped. If the answer is none, that's the cadence problem.",
+        "Which of your sends would be missed if it stopped. If none, that's the cadence problem.",
       ],
     },
     supportingBlocks: [
       {
         heading: "The arithmetic, so you can check it",
         body:
-          "**Four messages in thirty days** is the published ceiling before most people leave. Texts and emails count together.\n\n**Two campaign emails a week** is three times that on its own. Add an abandoned-cart flow and a back-in-stock alert and one subscriber clears it inside ten days.\n\n**So spend the budget on flows before campaigns.** A flow fires because the customer did something, so it arrives while they're already paying attention. A campaign fires because it's Thursday.\n\nThat's the trade. Not less for its own sake, but no ceiling spent on sends nobody asked for.",
+          "**Four messages in thirty days** is the published ceiling before most people leave. Texts and emails count together.\n\n**Two campaign emails a week** is three times that alone. Add an abandoned-cart flow and a back-in-stock alert and one subscriber clears it inside ten days.\n\n**So spend it on flows before campaigns.** A flow fires because the customer did something, so it lands while they're paying attention. A campaign fires because it's Thursday.\n\nThat's the trade. Not less for its own sake, but nothing spent on sends nobody asked for.",
       },
       {
         heading: "What the two categories do differently",
         body:
-          "**Beauty pays at the door.** Money off the first order, then a list that expects money off. The cost lands later, when full price reads as the exception.\n\n**Streetwear sells the queue.** Early access to a drop, no discount near the signup. That list opens because being late means missing the thing, and that reason survives repeating.\n\n**Neither transfers whole.** A skincare brand can't manufacture scarcity. But the streetwear question is the useful one for everybody: what do we have that gets worse if you hear about it late?",
+          "**Beauty pays at the door.** Money off the first order, then a list that expects money off. The cost lands later, when full price reads as the exception.\n\n**Streetwear sells the queue.** Early access to a drop, no discount near the signup. That list opens because being late means missing the thing, and that survives repeating.\n\n**Neither transfers whole.** But the streetwear question is the useful one: what do we have that gets worse if you hear about it late?",
       },
       {
         heading: "What we couldn't measure, and why it matters",
         body:
-          "**Send cadence.** Nobody publishes it and no archive we could reach exposes it. Getting it honestly means a month on the lists, and this is a snapshot.\n\n**Discount depth per send.** Same reason.\n\n**The offer wording.** We saw it, but the machine doing the looking sits outside the United States and several storefronts served an international version. So the offers are described as a direction, not counted.\n\nThe stack figures don't have that problem, which is why they're in the table. A site loads the same scripts wherever you open it from.",
+          "**Send cadence.** Nobody publishes it and no archive we could reach exposes it. Getting it honestly means a month on the lists, and this is a snapshot.\n\n**Discount depth per send.** Same reason.\n\n**The offer wording.** We saw it, but the machine doing the looking sits outside the United States and several storefronts served an international version. So the offers are a direction, not a count. The stack figures don't have that problem, which is why they're in the table.",
       },
     ],
     reviewAfterDays: 180,
@@ -328,13 +328,13 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
     label: "What we do",
     heading: "Four channels, and you can take one or all four",
     intro:
-      "Buy one channel or the set: an ecommerce marketing agency Los Angeles retainer should let you. Every row below is a brand we ran it for.",
+      "Buy one channel or the set: an ecommerce marketing agency Los Angeles retainer should let you. Every row is a brand we ran it for.",
     items: [
       {
         label: "Email and retention",
         heading: "We build the flows first, because they arrive when somebody's already paying attention",
         body:
-          "Ecommerce marketing Los Angeles brands ask us for usually starts at the campaign calendar. We start at the flows, which is where the revenue per send is.",
+          "The ecommerce marketing Los Angeles brands ask us for starts at the campaign calendar. We start at the flows, where the revenue per send is.",
         covers: ["Klaviyo build", "Welcome and browse flows", "Abandoned cart", "Win-back", "List segmentation"],
         imageAlt: "Lifecycle email we designed and built for the fragrance brand Andrea Maack",
         caseSlug: "andrea-maack-klaviyo-email",
@@ -352,7 +352,7 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
         label: "Subscriptions and LTV",
         heading: "We work on the second order, which is where the margin actually is",
         body:
-          "The ecommerce digital marketing agency Los Angeles brands usually hire is measured on the first sale. We'd rather be measured on whether the customer comes back.",
+          "The ecommerce digital marketing agency Los Angeles brands hire is measured on the first sale. We'd rather be measured on whether the customer returns.",
         covers: ["Subscription setup", "Churn reduction", "Replenishment flows", "LTV reporting", "Retention offers"],
         imageAlt: "Subscription and retention work we ran for Wild",
         caseSlug: "wild-shopify-plus-subscriptions",
@@ -373,27 +373,27 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
   howWeWork: {
     heading: "What you're actually signing up for",
     intro:
-      "Nobody here is down the road from you, and for channel work that changes nothing. It comes down to access and ownership, and both go into the engagement in writing.",
+      "Nobody here is down the road from you, and for channel work that changes nothing. It comes down to access and ownership, both written into the engagement.",
     items: [
       {
         title: "You own the account and everything in it",
         body:
-          "Your Klaviyo, your ad accounts, your creative files. We work inside your logins, so nothing has to be handed back.",
+          "Your Klaviyo, your ad accounts, your creative files. We work inside your logins, so nothing gets handed back.",
       },
       {
         title: "The strategist who plans your sends is the one you message",
         body:
-          "No ticket queue in front of them. If a campaign needs pulling an hour before it goes, you're talking to whoever can pull it.",
+          "No ticket queue in front of them. If a campaign needs pulling an hour before it goes, you're talking to whoever can.",
       },
       {
         title: "Sends get scheduled in your working day",
         body:
-          "Campaigns go out on Pacific hours rather than ours, so somebody your side is awake if a send needs pulling.",
+          "Campaigns go out on Pacific hours, not ours, so somebody your side is awake if a send needs pulling.",
       },
       {
         title: "Reporting is revenue per send, not opens",
         body:
-          "You get one number that says whether a send was worth making. Open rates go in the appendix, where they belong.",
+          "One number that says whether a send was worth making. Open rates go in the appendix, where they belong.",
       },
     ],
   },
@@ -401,7 +401,7 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
   // ── Block 6: What we do about it ──────────────────────────────────────
   whatWeDoAboutItHeading: "What it costs and how it runs",
   whatWeDoAboutIt:
-    "The first fortnight is counting rather than sending. What one subscriber got from you last month, across every channel. Which of those sends earned their place. What the rest of your category put in the same inbox.\n\nThe plan comes out of that count, priced and dated.\n\nThen it's the flows, whatever survives of the campaign calendar, the creative, and a weekly number for revenue per send.\n\nRetainers run $3,000 to $15,000 a month on channels and volume; a one-off flow build is priced on its own. Any ecommerce marketing agency Los Angeles quote should separate those two, because they buy different things.",
+    "The first fortnight is counting, not sending. What one subscriber got from you last month across every channel, which of those sends earned their place, and what the rest of your category put in the same inbox.\n\nThe plan comes out of that count, priced and dated. Then it's the flows, whatever survives of the campaign calendar, the creative, and a weekly number for revenue per send.\n\nRetainers run $3,000 to $15,000 a month on channels and volume; a one-off flow build is priced on its own. Any ecommerce marketing agency Los Angeles quote should separate those two, because they buy different things.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   // §5 row 6: retention and LTV outcomes only. No traffic number appears here.
@@ -436,7 +436,7 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
     {
       objection: "Our competitors send daily. Won't sending less just lose us the revenue?",
       answer:
-        "It moves it rather than loses it, and that's worth testing before you believe any ecommerce marketing agency Los Angeles pitch, ours included.\n\nRevenue per send is the number that tells you. If it's falling while your send count climbs, the extra sends borrow from next quarter's list. Cut the weakest for six weeks and watch total revenue. If it drops and stays down, we're wrong.",
+        "It moves it rather than loses it, and that's worth testing before you believe any ecommerce marketing agency Los Angeles pitch, ours included.\n\nRevenue per send tells you. If it's falling while your send count climbs, the extra sends borrow from next quarter's list. Cut the weakest for six weeks and watch total revenue. If it drops and stays down, we're wrong.",
     },
     {
       objection: "We're a Beverly Hills brand. Does a remote agency understand this market?",
@@ -448,16 +448,12 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
       answer:
         "Then the question is what they're short of, and it's usually hands or a plan.\n\nIf it's hands, we take the build and hand it back running. If it's the plan, that's smaller work and we'd scope it that way.\n\nWhat we wouldn't do is run a channel in parallel with your own person. Two people sending to one list is how the ceiling gets blown.",
     },
-    {
-      objection: "How do we know you won't just run the same playbook you run for everyone?",
-      answer:
-        "Because the first fortnight produces a count, and counts differ. Two skincare brands with the same list size get different answers if one is also texting.\n\nEvery number here names its source and date, including one saying what our own method couldn't see. Ask for that on the work itself and you'll know whether the plan was built or reheated.",
-    },
   ],
 
   // ── Block 9: FAQ ──────────────────────────────────────────────────────
   // The first three unique questions are fixed by spec §6.3 for this page.
-  // The office question is §6.4, required on all seven geo pages.
+  // The office question is §6.4, required on all seven geo pages. Every one is
+  // unique:true after the 2026-09-16 trim took the timeline question out.
   faqs: [
     {
       question: "How often should we send when every competitor sends daily?",
@@ -480,31 +476,25 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
     {
       question: "Do we need to be on Shopify for you to run this?",
       answer:
-        "No. The work sits in your email and ad platforms, not in your store, so it runs whatever you're on. Shopify makes reporting easier because the revenue data is cleaner. It isn't a condition.",
+        "No. The work sits in your email and ad platforms, not your store, so it runs whatever you're on. Shopify makes reporting easier because the revenue data is cleaner. It isn't a condition.",
       unique: true,
     },
     {
       question: "Do you run SMS as well, or just email?",
       answer:
-        "Both, though we'd rather plan them as one budget than two channels. That's what the table above is about. Six of the eighteen brands we checked run a separate SMS vendor beside their email, and the two rarely talk.",
+        "Both, though we'd rather plan them as one budget than two channels. Six of the eighteen brands we checked run a separate SMS vendor beside their email, and the two rarely talk.",
       unique: true,
     },
     {
       question: "What does an ecommerce marketing agency Los Angeles brands hire usually charge?",
       answer:
-        "Ours is $3,000 to $15,000 a month on channels and creative volume, agreed before we start. A one-off flow build with no retainer is priced on its own. Rates here run above the national average and ours don't change by city.",
+        "Ours is $3,000 to $15,000 a month on channels and creative volume, agreed before we start. A one-off flow build is priced on its own. Rates here run above the national average; ours don't change by city.",
       unique: true,
-    },
-    {
-      question: "How long before we see anything move?",
-      answer:
-        "Flows usually show inside a month, because they fire on traffic you already have. Campaign and creative changes take a quarter to read: you need enough sends to tell a real change from a good week.",
-      unique: false,
     },
     {
       question: "Do you have an office we can visit?",
       answer:
-        "No, we're remote, and we'd sooner say so now than have you find out in week three. The table above is the version of local that helps: what your category puts in the same inbox you're writing to.",
+        "No, we're remote, and we'd sooner say so now than have you find out in week three. The table above is the version of local that helps: what your category puts in the inbox you're writing to.",
       unique: true,
     },
     {
@@ -522,7 +512,7 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
     whatYouGet:
       "Send us a month of your campaigns and we'll tell you what your customer actually got, and which of it earned the send.",
     whatWeWillTellYouNotToDo:
-      "We'll tell you not to buy an SMS platform before the email budget is counted. Bought first, it doubles your send volume against a ceiling nobody has measured.",
+      "We'll tell you not to buy an SMS platform before the email budget is counted. Bought first, it doubles send volume against a ceiling nobody has measured.",
     responseExpectation:
       "Someone who runs these programs answers, inside one working day.",
     audit: {
@@ -532,11 +522,11 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
         "Show us that one and the month around it. We'll audit it and hand you the findings, not a summary:",
       parts: [
         "How many messages one subscriber got, counting every channel together.",
-        "Which sends earned their place on revenue per send, and which are borrowing from your list.",
+        "Which sends earned their place on revenue per send, and which borrow from your list.",
         "What to cut first, and what to put in the space it leaves.",
       ],
       limit:
-        "It stops at the read-out. Doing the work is priced on its own and you're under no pressure to take it.",
+        "It stops at the read-out. Doing the work is priced on its own, with no pressure to take it.",
       noObligation:
         "It costs nothing, and the count is yours whether we work together or not.",
     },
@@ -544,8 +534,9 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
 
   sources: [],
 
-  // Owner's instruction, 2026-09-11: 2,500 to 2,700 words. Replaces card 6's
-  // 1,300-1,700, which describes a bare spine without the trust bar, quick
-  // answer, four discipline rows, four-block asset and nine FAQs this page runs.
-  wordCountTarget: [2500, 2700],
+  // Owner's instruction, 2026-09-16: below 2,500 words, superseding the
+  // 2,500-2,700 set on 2026-09-11 and bringing this page into line with page 8.
+  // Still well above card 6's 1,300-1,700, which describes a bare spine without
+  // the trust bar, quick answer, four discipline rows and four-block asset.
+  wordCountTarget: [2200, 2500],
 };
