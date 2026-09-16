@@ -538,6 +538,10 @@ export const HubPageSchema = BaseSchema.extend({
   engagement: EngagementSchema,
   /** Block 6: explicit scope boundary, one item per line. */
   whatWeDontDo: z.array(z.string().min(1)).min(1),
+  /** H2 over the hub-down city links (HubCityLinks). Must say the brands are
+   *  in the markets, never that we are. Falls back to a shortTitle-based line.
+   *  Added 2026-09-17, replacing the hardcoded "By market". */
+  childrenHeading: z.string().min(1).optional(),
   /** Paths of geo pages beneath this hub (rendered only when those are published). */
   children: z.array(z.string().startsWith("/services/")),
 });

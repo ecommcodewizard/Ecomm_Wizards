@@ -539,6 +539,9 @@ export const ECOMMERCE_AGENCY: HubPage = {
   // which still states where the figures came from and when they were captured.
   sources: [],
 
+  // H2 over the city links, owner's wording 2026-09-17. Says the brands are in
+  // the markets, never that we are.
+  childrenHeading: "Ecommerce agency support for brands in the markets we know",
   children: [
     "/services/ecommerce-agency/los-angeles",
     "/services/ecommerce-agency/san-diego",

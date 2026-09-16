@@ -8,9 +8,9 @@ import { ALL_FAQS } from "@/lib/faqs";
 export const metadata: Metadata = {
   alternates: { canonical: "https://ecommwizards.com/faqs" },
   openGraph: og("/faqs", "Shopify Agency FAQs"),
-  title: { absolute: "Shopify Agency FAQs: Pricing, Migrations, SEO & Support | Ecomm Wizards" },
+  title: { absolute: "Shopify FAQs: Pricing, Migrations & Support | Ecomm Wizards" },
   description:
-    "Answers to common Shopify questions: how much a store costs, how long a build takes, migrations, Shopify Plus, SEO, B2B, and ongoing support from Ecomm Wizards.",
+    "Answers to common Shopify questions: how much a store costs, how long a build takes, migrations, Shopify Plus, SEO, B2B, and ongoing support from Ecomm Wizards.",
 };
 
 // FAQPage structured data, built from the same data the page renders, so the
@@ -42,8 +42,8 @@ export default function Page() {
 
       <PageHero
         badge="FAQs"
-        title="Frequently Asked"
-        titleHighlight="Questions"
+        title="Shopify Agency FAQs:"
+        titleHighlight="Pricing, Builds and Migrations"
         subtitle="Everything you want to know about working with Ecomm Wizards: pricing, timelines, migrations, SEO, and support. Jump to a topic below."
         primaryCta={{ label: "Get a Free Quote", href: "/contact-shopify-agency" }}
         secondaryCta={{ label: "Book a Call", href: "/book-shopify-consultation" }}

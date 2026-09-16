@@ -13,9 +13,9 @@ import { SERVICE_CATEGORIES, OUR_WORK } from "@/lib/services";
 export const metadata: Metadata = {
   alternates: { canonical: "https://ecommwizards.com/services" },
   openGraph: og("/services", "Shopify Services"),
-  title: { absolute: "Shopify Services: Development, Migration, CRO, SEO, Apps & B2B | Ecomm Wizards" },
+  title: { absolute: "Shopify Services: Dev, CRO, SEO & Migration | Ecomm Wizards" },
   description:
-    "Full-service Shopify agency: store builds, migrations, CRO, SEO, apps, B2B, and POS. One team behind 150+ stores and $400M+ in revenue. Get a free quote.",
+    "Full-service Shopify agency: store builds, migrations, CRO, SEO, apps, B2B, and POS. One team behind 150+ stores and $400M+ in revenue. Get a free quote.",
 };
 
 const SERVICE_FAQS = [

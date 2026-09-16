@@ -600,8 +600,10 @@ export const ECOMMERCE_MARKETING_AGENCY: HubPage = {
 
   sources: [],
 
-  // Geo children per Inventory v4.0: Los Angeles and Miami. None built yet, so
-  // this renders as nothing rather than as placeholders.
+  // Geo children per Inventory v4.0: Los Angeles and Miami. Only published ones
+  // render, so an unbuilt city never shows as a placeholder.
+  // H2 over the city links, owner's wording 2026-09-17.
+  childrenHeading: "Ecommerce marketing for brands in the markets we know",
   children: [
     "/services/ecommerce-marketing-agency/los-angeles",
     "/services/ecommerce-marketing-agency/miami",

@@ -199,10 +199,10 @@ export default function HomePage() {
           {/* â"€â"€ Left: text â"€â"€ */}
           <div className="w-full lg:w-[460px] min-[1440px]:w-[560px] lg:shrink-0" style={{ color: "#334155", fontFamily: "'Poppins', sans-serif", fontSize: "16px" }}>
             <h1 className="leading-tight text-white text-[32px] sm:text-[40px] lg:text-[44px] min-[1440px]:text-[52px]" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600 }}>
-              We are the Shopify<br />
-              Agency that{" "}
-              <span style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Design.<br />
-              Develop. Dominate.</span>
+              We Are the Shopify{" "}<br />
+              Agency That{" "}
+              <span style={{ background: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Designs, Develops{" "}<br />
+              and Grows Stores</span>
             </h1>
 
             <p className="mt-4 lg:mt-[20px] text-[15px] lg:text-[18px]" style={{ fontFamily: "'Nunito', sans-serif", color: "#FFFFFF" }}>
