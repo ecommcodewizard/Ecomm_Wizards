@@ -7,6 +7,10 @@ import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/Case
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
+import HubCityLinks from "@/components/sections/geo/HubCityLinks";
+import { publishedGeoForHub } from "@/lib/geo/registry";
+
+const GEO_CHILDREN = publishedGeoForHub("/services/shopify-seo-agency");
 
 const META_DESCRIPTION =
   "Shopify SEO agency for 150+ stores. We fix technical issues, map keywords to buyer intent, and grow organic revenue that compounds. 320% avg traffic lift.";
@@ -14,7 +18,7 @@ const CANONICAL_URL = "https://ecommwizards.com/services/shopify-seo-agency";
 
 export const metadata: Metadata = {
   title: { absolute: "Shopify SEO Agency | Organic Growth for Shopify Stores" },
-  description: META_DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
@@ -943,6 +947,12 @@ export default function Page() {
           .std-solutions h2 { font-size: 26px !important; line-height: 1.28 !important; }
         }
       `}} />
+
+      {/* Hub-down links to the geo pages under this hub (New York so far). Reads
+          the registry, so a geo page appears the moment it is published and
+          never before. Added 2026-09-17: this hub had a published geo child and
+          no link down to it. */}
+      <HubCityLinks heading="Shopify SEO for Brands in the Markets We Know" pages={GEO_CHILDREN} />
 
       <RelatedServices current="/services/shopify-seo-agency" />
     </>

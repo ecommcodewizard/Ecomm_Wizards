@@ -1,4 +1,4 @@
-import Link from "next/link";
+import HubCityLinks from "./HubCityLinks";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import RelatedServices from "@/components/sections/RelatedServices";
@@ -117,24 +117,9 @@ export default function HubPageTemplate({ page }: { page: HubPage }) {
       <ConversionBlock conversion={page.conversion} landingPage={page.path} />
 
       {/* Hub -> geo children. Rendered only for published children so a hub never
-          links to a 404. Contextual list, not a footer block. */}
-      {children.length > 0 && (
-        <section className="gp-section gp-section--white" aria-label="Regional pages">
-          <div className="gp-inner">
-            <h2 className="gp-h2" style={{ fontSize: 24 }}>By market</h2>
-            <ul className="gp-children">
-              {children.map((c) => (
-                <li key={c.path}>
-                  <Link href={c.path} className="gp-link">
-                    {c.geo.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <style dangerouslySetInnerHTML={{ __html: `.gp-children{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 22px}` }} />
-          </div>
-        </section>
-      )}
+          links to a 404. Contextual list, not a footer block. Shared with the
+          hand-built Shopify hubs via HubCityLinks. */}
+      <HubCityLinks heading={page.childrenHeading ?? `${page.shortTitle} for brands in the markets we know`} pages={children} />
 
       {/* Structured data: BreadcrumbList from the same trail as the visible crumbs. */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbListJsonLd(trail, page.path)) }} />

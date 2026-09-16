@@ -591,6 +591,8 @@ export const ECOMMERCE_SEO_AGENCY: HubPage = {
 
   // Geo children per Inventory v4.0: Miami, Florida, Chicago. None built yet,
   // so this renders as nothing rather than as placeholders.
+  // H2 over the city links once one publishes, owner's wording 2026-09-17.
+  childrenHeading: "Ecommerce SEO for brands in the markets we know",
   children: [
     "/services/ecommerce-seo-agency/miami",
     "/services/ecommerce-seo-agency/florida",
