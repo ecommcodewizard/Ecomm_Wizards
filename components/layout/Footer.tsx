@@ -7,11 +7,6 @@ import ScrollToTop from "./ScrollToTop";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-const CITIES = [
-  "Los Angeles", "New York", "Chicago", "Seattle",
-  "Toronto", "Boston", "London", "Washington DC",
-];
-
 const SERVICE_TAGS = [
   { label: "Build a New Shopify Store",        href: "/services/shopify-store-development" },
   { label: "Shopify Theme Customizations",     href: "/services/shopify-theme-development" },
@@ -234,7 +229,12 @@ export default function Footer() {
         <SocialIcons center />
       </div>
 
-      {/* ── Top strip: logo (lg+) · cities · social — hidden mobile ── */}
+      {/* ── Top strip: logo (md+) · social — hidden mobile ──
+          The eight-city line that sat between them was removed on 2026-09-17,
+          at the owner's request. A bare list of city names on every page reads
+          as a list of office locations, and the geo programme's Build Manual
+          flagged it as an implied presence claim that had to go before the
+          location pages published. */}
       <div className="hidden sm:block border-b border-white/10">
         <div className="mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 w-full max-w-[1320px] px-4 lg:px-6 py-5 lg:h-[97px] lg:py-0">
           <Link href="/" className="hidden md:flex shrink-0 items-center">
@@ -247,15 +247,7 @@ export default function Footer() {
               className="h-[65px] w-[248px] lg:h-[57px] lg:w-[217px] object-cover object-[0%_58%]"
             />
           </Link>
-          <p className="hidden lg:block flex-1 text-center text-[15px] text-white px-[10px]">
-            {CITIES.map((city, i) => (
-              <span key={city}>
-                {city}
-                {i < CITIES.length - 1 && <span className="mx-2 text-white/30">–</span>}
-              </span>
-            ))}
-          </p>
-          <div className="flex-1 lg:hidden" />
+          <div className="flex-1" />
           <div className="shrink-0">
             <SocialIcons />
           </div>
