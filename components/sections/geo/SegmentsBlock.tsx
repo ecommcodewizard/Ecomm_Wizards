@@ -92,11 +92,14 @@ const ICONS: Record<SegmentIcon, ReactNode> = {
   ),
 };
 
-export default function SegmentsBlock({ segments }: { segments: Segments }) {
+// `tone` flips the palette: white band with cream cards, for pages where the
+// block sits between two cream sections (California, 2026-09-19). Default is
+// the original cream band with white cards, so every other page is unchanged.
+export default function SegmentsBlock({ segments, tone = "cream" }: { segments: Segments; tone?: "cream" | "white" }) {
   const { heading, intro, items } = segments;
 
   return (
-    <section className="gpw" aria-label={heading}>
+    <section className={tone === "white" ? "gpw gpw--white" : "gpw"} aria-label={heading}>
       <div className="gpw-inner">
         <h2 className="gpw-h2">{inline(heading)}</h2>
         <p className="gpw-intro">{inline(intro)}</p>
@@ -133,6 +136,8 @@ export default function SegmentsBlock({ segments }: { segments: Segments }) {
 
         .gpw-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .gpw-card { background: #fff; border-radius: 16px; padding: 28px; border: 1px solid rgba(0,0,0,0.07); display: flex; flex-direction: column; gap: 12px; }
+        .gpw--white { background: #fff; }
+        .gpw--white .gpw-card { background: #FBF7ED; }
         .gpw-icon { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: rgba(61,199,122,0.1); border-radius: 12px; color: #2A9555; flex-shrink: 0; }
         .gpw-name { font-size: 18px; font-weight: 700; color: #000; margin: 0; line-height: 1.3; }
         .gpw-what { font-size: 14px; color: #334155; line-height: 1.7; margin: 0; flex-grow: 1; }

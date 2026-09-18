@@ -11,10 +11,14 @@ export default function RelatedServices({
   current,
   max = 6,
   heading,
+  tone = "cream",
 }: {
   current?: string;
   max?: number;
   heading?: string;
+  /** "white" flips the band to white with cream cards. Added 2026-09-19 for
+   *  the California geo page; the cream default leaves every other page as is. */
+  tone?: "cream" | "white";
 }) {
   const path = current ?? "";
   if (!path || path === "/services") return null;
@@ -56,7 +60,7 @@ export default function RelatedServices({
   if (items.length === 0) return null;
 
   return (
-    <section className="ew-related" aria-label="Related Shopify services">
+    <section className={tone === "white" ? "ew-related ew-related--white" : "ew-related"} aria-label="Related Shopify services">
       <div className="ew-related-inner">
         <h2 className="ew-related-title">{heading ?? "Explore more Shopify services"}</h2>
         <div className="ew-related-grid">
@@ -80,6 +84,8 @@ export default function RelatedServices({
         .ew-related-title { font-size: clamp(24px, 3vw, 34px); font-weight: 700; color: #0f172a; letter-spacing: -0.02em; margin: 0 0 28px; }
         .ew-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
         .ew-related-card { display: flex; flex-direction: column; gap: 10px; padding: 22px; background: #ffffff; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; text-decoration: none; transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
+        .ew-related--white { background: #ffffff; }
+        .ew-related--white .ew-related-card { background: #FBF7ED; }
         .ew-related-card:hover { border-color: #2A9555; box-shadow: 0 8px 28px rgba(0,0,0,0.07); transform: translateY(-3px); }
         .ew-related-name { font-size: 17px; font-weight: 600; color: #0f172a; line-height: 1.3; }
         .ew-related-card:hover .ew-related-name { color: #2A9555; }

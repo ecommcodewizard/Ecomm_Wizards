@@ -17,7 +17,9 @@ export default function OnlyHereAsset({ asset, id = "asset" }: { asset: OnlyHere
   const blocks = asset.supportingBlocks ?? [];
 
   return (
-    <section id={id} className="gp-section gp-section--white oha" style={{ scrollMarginTop: 90 }}>
+    // asset.tone defaults to white; California sets cream (2026-09-19) so the
+    // table doesn't sit white-on-white after the white services block.
+    <section id={id} className={`gp-section gp-section--${asset.tone ?? "white"} oha`} style={{ scrollMarginTop: 90 }}>
       <div className="gp-inner">
         {/* (a) title */}
         <h2 className="gp-h2">{inline(asset.title)}</h2>

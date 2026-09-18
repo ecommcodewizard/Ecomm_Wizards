@@ -38,6 +38,16 @@ export function inline(text: string): ReactNode[] {
     }
     const link = /^\[link:([^\]|]+)\|([^\]]+)\]$/.exec(part);
     if (link) {
+      // Source citations (added 2026-09-19, Page Standard Step 10: every
+      // number with a named source and a link) open in a new tab, so a
+      // reader checking a figure doesn't lose the page.
+      if (/^https?:\/\//.test(link[1])) {
+        return (
+          <a key={i} href={link[1]} target="_blank" rel="noopener noreferrer">
+            {link[2]}
+          </a>
+        );
+      }
       return (
         <Link key={i} href={link[1]}>
           {link[2]}

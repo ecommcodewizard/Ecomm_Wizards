@@ -27,7 +27,7 @@ function preview(p: GeoProgrammePage): void {
     console.log(render(p.whatWeDo));
   } else {
     console.log(rule("PLACE LAYER"));
-    console.log(render(p.placeLayer));
+    console.log(p.placeLayer ? render(p.placeLayer) : "(none: industries block renders here instead)");
     console.log(rule("GRADIENT LAYER"));
     console.log(render(p.gradientLayer));
   }

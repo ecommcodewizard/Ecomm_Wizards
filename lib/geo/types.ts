@@ -136,6 +136,9 @@ export const OnlyHereAssetSchema = z.object({
    *  keeping it here means the shared geo template is untouched for the six
    *  published pages that do not need one. */
   disclaimer: z.string().min(1).optional(),
+  /** Section background. Defaults to white; California sets cream
+   *  (2026-09-19, owner's call) so its sections keep alternating. */
+  tone: z.enum(["white", "cream"]).optional(),
   reviewAfterDays: z.union([z.literal(90), z.literal(180), z.literal(365)]),
 });
 export type OnlyHereAsset = z.infer<typeof OnlyHereAssetSchema>;
@@ -415,8 +418,15 @@ const BaseSchema = z.object({
        *  still shown under prefers-reduced-motion, so the hero still satisfies
        *  WCAG 2.2.2 for anything that moves on its own. */
       video: z.string().startsWith("/").optional(),
+      /** A transparent cut-out graphic rather than a photo: drops the hero's
+       *  drop shadow and rounded corners, which draw a box around it.
+       *  Added 2026-09-19 for California's composite. */
+      cutout: z.boolean().optional(),
     })
     .optional(),
+  /** Background of the "Explore more Shopify services" band. Defaults to
+   *  cream; California sets white (2026-09-19, owner's call). */
+  relatedTone: z.enum(["white", "cream"]).optional(),
   /** Optional hero stat strip. Values should come from lib/brand-stats.ts or be
    *  otherwise verifiable; do not invent a figure to fill the fourth slot. */
   heroStats: z
@@ -433,6 +443,24 @@ const BaseSchema = z.object({
   trust: TrustSchema.optional(),
   /** Optional "who we work with" category block. */
   segments: SegmentsSchema.optional(),
+  /** When true, `segments` renders in block 3's slot (straight after the
+   *  hook) INSTEAD of the place layer, and placeLayer may be omitted.
+   *  Added 2026-09-19 on the owner's instruction for California, a state page
+   *  where a place block could only name cities, which he ruled out. The
+   *  industries block answers "have you built a store like mine" at the top
+   *  of the page instead. validatePage fails a page that sets neither. */
+  segmentsReplacePlace: z.boolean().optional(),
+  /** Case-studies-style green glow and dot pattern behind the hero.
+   *  Added 2026-09-19 for California; off unless set. */
+  heroGlow: z.boolean().optional(),
+  /** Hero primary button label. Defaults to "Talk to us"; set it to match the
+   *  page's inline CTAs so the page has one action with one label (Page
+   *  Standard Step 03). Added 2026-09-19 for California. */
+  heroCtaLabel: z.string().min(1).optional(),
+  /** Render the services menu before the gradient layer instead of after it.
+   *  For keywords where the reader hasn't picked a service (Page Standard
+   *  Step 07: menu early). Added 2026-09-19 for California. */
+  servicesBeforeGradient: z.boolean().optional(),
   /** Optional industries block. Verifiable: every brand named must have a
    *  published case study. */
   industries: IndustriesSchema.optional(),
@@ -477,6 +505,13 @@ const BaseSchema = z.object({
    *  Neither of these is a second OFFER, which Copy Standard 1.4 forbids. Both
    *  are pointers to #contact, where the two doors still sit together. */
   closingCta: z.object({ text: z.string().min(1), label: z.string().min(1) }).optional(),
+  /** Inline prompt rendered directly after the "What we do about it" block
+   *  (shown as "How a project starts" on California), immediately above the
+   *  FAQ. Added 2026-09-19 on the owner's instruction after a CRO review: that
+   *  block ends on the first step of an engagement, which is the moment to
+   *  offer it, and closingCta renders earlier, above the objections. Optional
+   *  and inert on every page that doesn't set it. */
+  processCta: z.object({ text: z.string().min(1), label: z.string().min(1) }).optional(),
   /** Fourth inline prompt, rendered directly after the services block, whether
    *  that is the discipline rows, the accordion or the numbered process. Added
    *  2026-09-05: the reader has just been shown everything we sell and is at
@@ -560,7 +595,9 @@ export const GeoPageSchema = BaseSchema.extend({
   }),
   archetype: z.array(z.string().regex(/^[A-G]$/)).min(1),
   /** Block 3: the reader's commercial world, refracted through the service. */
-  placeLayer: z.string().min(1),
+  /** Optional only for pages that set segmentsReplacePlace; validatePage
+   *  fails any other geo page without it. */
+  placeLayer: z.string().min(1).optional(),
   /** Optional H2 for blocks 3 and 4. Both render headless by default, because
    *  in the original spine they read as narrative continuing from the hook.
    *  That works on a short page and stops working on a long one: with the
@@ -590,6 +627,9 @@ export const GeoPageSchema = BaseSchema.extend({
       heading: z.string().min(1),
       intro: z.string().min(1),
       items: z.array(z.object({ title: z.string().min(1), body: z.string().min(1) })).min(3).max(5),
+      /** Section background. Defaults to cream; California sets white
+       *  (2026-09-19, owner's call) because it follows the cream table. */
+      tone: z.enum(["white", "cream"]).optional(),
     })
     .optional(),
   /** Optional numbered process block, shared with the hub schema.
@@ -647,7 +687,8 @@ export function proseStrings(page: GeoProgrammePage): string[] {
     for (const s of page.engagement.steps) out.push(s.week, s.title, s.what);
     out.push(...page.whatWeDontDo);
   } else {
-    out.push(page.placeLayer, page.gradientLayer, page.whatWeDoAboutIt);
+    if (page.placeLayer) out.push(page.placeLayer);
+    out.push(page.gradientLayer, page.whatWeDoAboutIt);
     if (page.engagement) {
       out.push(page.engagement.heading, page.engagement.intro);
       for (const st of page.engagement.steps) out.push(st.week, st.title, st.what);
@@ -676,6 +717,7 @@ export function proseStrings(page: GeoProgrammePage): string[] {
   if (page.approach) out.push(page.approach.heading, page.approach.body);
   if (page.proofCta) out.push(page.proofCta.text, page.proofCta.label);
   if (page.closingCta) out.push(page.closingCta.text, page.closingCta.label);
+  if (page.processCta) out.push(page.processCta.text, page.processCta.label);
   if (page.servicesCta) out.push(page.servicesCta.text, page.servicesCta.label);
   if (page.whatWeDoAboutItHeading) out.push(page.whatWeDoAboutItHeading);
   out.push(page.proofHeading, page.objectionsHeading);

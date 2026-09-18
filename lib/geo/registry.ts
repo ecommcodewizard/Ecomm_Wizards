@@ -23,12 +23,13 @@ import { ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES } from "./pages/ecommerce-market
 import { ECOMMERCE_AGENCY_SAN_DIEGO } from "./pages/ecommerce-agency-san-diego";
 import { SHOPIFY_DEV_SAN_DIEGO } from "./pages/shopify-development-agency-san-diego";
 import { SHOPIFY_DEV_ORANGE_COUNTY } from "./pages/shopify-development-agency-orange-county";
+import { SHOPIFY_DEV_CALIFORNIA } from "./pages/shopify-development-agency-california";
 import { ECOMMERCE_AGENCY_SAN_FRANCISCO } from "./pages/ecommerce-agency-san-francisco";
 
 export const SITE_URL = "https://ecommwizards.com";
 
 /** Add each new page here. Order is irrelevant; paths must be unique. */
-export const GEO_PAGES: GeoProgrammePage[] = [ECOMMERCE_AGENCY, ECOMMERCE_SEO_AGENCY, ECOMMERCE_MARKETING_AGENCY, SHOPIFY_DEV_LOS_ANGELES, SHOPIFY_DEV_NEW_YORK, ECOMMERCE_AGENCY_NEW_YORK, SHOPIFY_SEO_NEW_YORK, ECOMMERCE_AGENCY_LOS_ANGELES, ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES, ECOMMERCE_AGENCY_SAN_DIEGO, SHOPIFY_DEV_SAN_DIEGO, SHOPIFY_DEV_ORANGE_COUNTY, ECOMMERCE_AGENCY_SAN_FRANCISCO, SHOPIFY_DEV_AUSTIN, ECOMMERCE_AGENCY_AUSTIN, ECOMMERCE_AGENCY_DALLAS];
+export const GEO_PAGES: GeoProgrammePage[] = [ECOMMERCE_AGENCY, ECOMMERCE_SEO_AGENCY, ECOMMERCE_MARKETING_AGENCY, SHOPIFY_DEV_LOS_ANGELES, SHOPIFY_DEV_NEW_YORK, ECOMMERCE_AGENCY_NEW_YORK, SHOPIFY_SEO_NEW_YORK, ECOMMERCE_AGENCY_LOS_ANGELES, ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES, ECOMMERCE_AGENCY_SAN_DIEGO, SHOPIFY_DEV_SAN_DIEGO, SHOPIFY_DEV_ORANGE_COUNTY, SHOPIFY_DEV_CALIFORNIA, ECOMMERCE_AGENCY_SAN_FRANCISCO, SHOPIFY_DEV_AUSTIN, ECOMMERCE_AGENCY_AUSTIN, ECOMMERCE_AGENCY_DALLAS];
 
 // ---------------------------------------------------------------------------
 // Lookups
@@ -150,6 +151,11 @@ export function validatePage(page: GeoProgrammePage, today: Date = new Date()): 
   // Geo-only
   if (page.type === "geo") {
     if (page.gradientFacts.length < 2) gate(`gradientFacts has ${page.gradientFacts.length}; minimum 2 sourced facts`);
+    // Block 3 must render something: the place layer, or the industries block
+    // standing in for it (segmentsReplacePlace, added 2026-09-19).
+    if (!page.placeLayer && !(page.segmentsReplacePlace && page.segments)) {
+      err("no placeLayer, and no segments set to replace it (segmentsReplacePlace)");
+    }
     // Downgraded from a gate to a warning on 2026-09-03, owner's decision.
     //
     // Page Spec section 6.4 required this FAQ as the page's presence

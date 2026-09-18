@@ -182,6 +182,12 @@ export default function AssetTable({ renderer, columns, rows, caption, hideColum
           .ga-th--label { min-width: 180px; }
           .ga-rowlabel, .ga-td { padding: 16px 18px; border-bottom: 1px solid rgba(0,0,0,0.07); vertical-align: middle; text-align: left; line-height: 1.5; min-width: 150px; }
           .ga-rowlabel { font-weight: 700; min-width: 190px; color: #000000; background: #FBF7ED; }
+          /* On a cream section (asset.tone "cream", California 2026-09-19) the
+             cream label column disappeared into the background. There it
+             takes a pale brand green, and the table gets a soft shadow so it
+             reads as a card sitting on the band. White sections unchanged. */
+          .gp-section--cream .ga-rowlabel { background: #EEF7F1; }
+          .gp-section--cream .ga-wrap { border-color: rgba(0,0,0,0.1); box-shadow: 0 10px 30px rgba(15,23,42,0.08); }
           .ga-rowlabel-main { display: inline-flex; align-items: flex-start; gap: 10px; }
           .ga-rownote { display: block; font-weight: 400; font-size: 13px; color: #64748b; margin-top: 4px; }
           .ga-row:last-child .ga-rowlabel, .ga-row:last-child .ga-td { border-bottom: none; }

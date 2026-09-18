@@ -93,6 +93,8 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
         qualifier={page.qualifier}
         image={page.heroImage}
         stats={page.heroStats}
+        glow={page.heroGlow}
+        primaryCta={page.heroCtaLabel ? { label: page.heroCtaLabel, href: "#contact" } : undefined}
         secondaryCta={{ label: page.assetCtaLabel ?? "See the teardown", href: "#asset" }}
       />
 
@@ -106,7 +108,16 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
 
       {page.searchIntent && <SearchIntentBlock text={page.searchIntent} />}
 
-      <PlaceLayer text={page.placeLayer} heading={page.placeLayerHeading} />
+      {/* Block 3. Pages that set segmentsReplacePlace show the industries
+          block here instead (added 2026-09-19 for California), and it is not
+          repeated in its usual slot below the services. */}
+      {page.segmentsReplacePlace && page.segments ? (
+        // White band here: it sits between the cream hook and the cream
+        // case studies, so the page keeps alternating.
+        <SegmentsBlock segments={page.segments} tone="white" />
+      ) : page.placeLayer ? (
+        <PlaceLayer text={page.placeLayer} heading={page.placeLayerHeading} />
+      ) : null}
 
       {/* Sits between the place layer and the proof, on the owner's
           instruction (2026-09-03). The place layer ends on what the reader is
@@ -137,7 +148,9 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
           straight after the place layer, and the gradient reads better as the
           turn into the asset. Los Angeles, which is published, is back on the
           order it shipped with. */}
-      <GradientLayer text={page.gradientLayer} heading={page.gradientLayerHeading} />
+      {!page.servicesBeforeGradient && (
+        <GradientLayer text={page.gradientLayer} heading={page.gradientLayerHeading} />
+      )}
 
       {/* Services list sits after the asset, not before it. The asset is what
           the page is here to give away; a service menu ahead of it reads as a
@@ -162,7 +175,7 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
           say what actually breaks in that category, which is the part a reader
           cannot get from a list of names. Pages that would only be able to fill
           it with nouns should leave it off. */}
-      {page.segments && <SegmentsBlock segments={page.segments} />}
+      {page.segments && !page.segmentsReplacePlace && <SegmentsBlock segments={page.segments} />}
 
       {/* Numbered process. Optional, and only right where the reader has
           already chosen the service and wants the sequence: every page ranking
@@ -176,6 +189,14 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
           everything we sell and is working out which of it applies to them,
           which is the moment to offer to answer that for them. */}
       {page.servicesCta && <InlineCta text={page.servicesCta.text} label={page.servicesCta.label} />}
+
+      {/* servicesBeforeGradient (added 2026-09-19 for California, Page
+          Standard Step 07): a reader who hasn't picked a service sees the
+          menu first, and the gradient lands straight before the asset that
+          proves it. Every other page keeps the order above. */}
+      {page.servicesBeforeGradient && (
+        <GradientLayer text={page.gradientLayer} heading={page.gradientLayerHeading} />
+      )}
 
       {/* Only-Here Asset moved down here on the owner's instruction
           (2026-09-05). It used to sit directly under the gradient. The page now
@@ -226,6 +247,11 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
         variant="geo"
       />
 
+      {/* Added 2026-09-19. The block above ends on the first step of working
+          with us, so the offer belongs straight after it rather than three
+          sections later at the form. Renders only where a page sets it. */}
+      {page.processCta && <InlineCta text={page.processCta.text} label={page.processCta.label} />}
+
 
       {/* types.ts documents faqHeading as an override for the generic default,
           but the default was hardcoded here and the field was never read. The
@@ -246,7 +272,7 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
         areaServedType={page.geo.type === "state" ? "State" : "AdministrativeArea"}
       />
 
-      <RelatedServices current={page.path} />
+      <RelatedServices current={page.path} tone={page.relatedTone} />
     </>
   );
 }
