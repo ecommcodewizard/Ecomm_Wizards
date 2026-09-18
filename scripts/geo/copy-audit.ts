@@ -86,8 +86,13 @@ function proseBlocks(p: GeoProgrammePage): [string, string][] {
   if (p.quickAnswer) out.push(["quickAnswer", p.quickAnswer]);
   if (p.trust) out.push(["trust.subheading", p.trust.subheading]);
   if (p.type !== "hub") {
+    if (p.placeLayer) out.push(["placeLayer", p.placeLayer]);
+    // Industries block, graded like any other prose (it had no coverage here).
+    if (p.segments) {
+      out.push(["segments.intro", p.segments.intro]);
+      for (const s of p.segments.items) out.push([`segment: ${s.name}`, `${s.what} ${s.breaks}`]);
+    }
     out.push(
-      ["placeLayer", p.placeLayer],
       ["gradientLayer", p.gradientLayer],
       ["whatWeDoAboutIt", p.whatWeDoAboutIt],
     );

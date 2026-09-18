@@ -20,11 +20,15 @@ type Props = {
   qualifier: string;
   primaryCta?: Cta;
   secondaryCta?: Cta;
-  image?: { src: string; alt: string; aspect?: string; video?: string };
+  image?: { src: string; alt: string; aspect?: string; video?: string; cutout?: boolean };
   /** Optional stat strip under the qualifier, matching the Shopify development
    *  landing page. Omitted by default: the page opens on the claim, not on
    *  decoration, and a strip only earns its place when the numbers are real. */
   stats?: { value: string; label: string }[];
+  /** Green glow and faint dot pattern across the whole hero, the treatment
+   *  the /case-studies hero uses, a little stronger. Added 2026-09-19 for
+   *  California; off by default, so every other hero is unchanged. */
+  glow?: boolean;
 };
 
 // Copy Standard v2.0 section 1.4: one CTA label, used consistently, and it
@@ -41,12 +45,44 @@ function splitHeading(h1: string): { plain: string; accent: string } {
   return { plain: words.slice(0, -2).join(" "), accent: words.slice(-2).join(" ") };
 }
 
-export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAULT_PRIMARY, secondaryCta, image, stats }: Props) {
+export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAULT_PRIMARY, secondaryCta, image, stats, glow }: Props) {
   const { plain, accent } = splitHeading(h1);
 
   return (
-    <section className="gp-section gp-section--dark gph" aria-labelledby="gph-h1">
-      <div className={`gp-inner gph-grid${image ? " gph-grid--split" : ""}`}>
+    <section
+      className="gp-section gp-section--dark gph"
+      aria-labelledby="gph-h1"
+      style={glow ? { position: "relative", overflow: "hidden" } : undefined}
+    >
+      {glow ? (
+        <>
+          <div
+            aria-hidden="true"
+            style={{
+              pointerEvents: "none",
+              position: "absolute",
+              inset: 0,
+              background:
+                "radial-gradient(ellipse 55% 60% at 72% 45%, rgba(61,199,122,0.5) 0%, rgba(61,199,122,0.22) 40%, rgba(61,199,122,0.07) 65%, transparent 82%)",
+            }}
+          />
+          <div
+            aria-hidden="true"
+            style={{
+              pointerEvents: "none",
+              position: "absolute",
+              inset: 0,
+              opacity: 0.05,
+              backgroundImage: "radial-gradient(circle, #61ce70 1px, transparent 1px)",
+              backgroundSize: "32px 32px",
+            }}
+          />
+        </>
+      ) : null}
+      <div
+        className={`gp-inner gph-grid${image ? " gph-grid--split" : ""}`}
+        style={glow ? { position: "relative", zIndex: 1 } : undefined}
+      >
         <div className="gph-copy">
         <span className="gph-badge">{eyebrow}</span>
         <h1 id="gph-h1" className="gph-h1">
@@ -117,7 +153,7 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
                 width={640}
                 height={480}
                 priority
-                className="gph-img"
+                className={image.cutout ? "gph-img gph-img--cutout" : "gph-img"}
                 style={image.aspect ? { aspectRatio: image.aspect, objectFit: "cover" } : undefined}
               />
             )}
@@ -135,6 +171,9 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
              an inline aspect-ratio + object-fit: cover, so the image is
              cropped rather than squashed. */
           .gph-img { width: 100%; height: auto; object-position: center; border-radius: 16px; display: block; box-shadow: 0 24px 64px rgba(0,0,0,0.45); }
+          /* Transparent composites carry their own shadows; the box shadow
+             would draw a rectangle around them. */
+          .gph-img--cutout { box-shadow: none; border-radius: 0; }
           /* No reduced-motion display toggle here, deliberately. The poster is
              an attribute OF the video element, so hiding the video under
              prefers-reduced-motion would hide the still along with it and leave

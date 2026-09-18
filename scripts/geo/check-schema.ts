@@ -13,7 +13,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { GEO_PAGES, SITE_URL, canonicalUrl } from "@/lib/geo/registry";
-import { breadcrumbListJsonLd, breadcrumbTrail, faqPageJsonLd } from "@/lib/geo/schema";
+import { breadcrumbListJsonLd, breadcrumbTrail, faqPageJsonLd, faqPlainText } from "@/lib/geo/schema";
 import { ALLOWED_SCHEMA_TYPES, FORBIDDEN_SCHEMA_PROPERTIES, FORBIDDEN_SCHEMA_TYPES } from "@/lib/geo/forbidden";
 import type { GeoProgrammePage } from "@/lib/geo/types";
 
@@ -94,9 +94,13 @@ function checkFaqPage(faqPage: Record<string, unknown>, page: GeoProgrammePage, 
   for (let i = 0; i < n; i++) {
     const q = main[i] as Record<string, unknown>;
     const faq = page.faqs[i];
-    if (q.name !== faq.question) issues.push(`${where}: FAQPage question ${i + 1} name does not match page.faqs[${i}].question`);
+    // Compared as visible text (owner-approved change, 2026-09-19): the
+    // JSON-LD now drops link/bold markers, as a reader sees the answer, so
+    // the check normalizes page.faqs through the same function.
+    if (q.name !== faqPlainText(faq.question)) issues.push(`${where}: FAQPage question ${i + 1} name does not match page.faqs[${i}].question`);
     const ans = q.acceptedAnswer as Record<string, unknown> | undefined;
-    if (!ans || ans.text !== faq.answer) issues.push(`${where}: FAQPage question ${i + 1} answer text does not match page.faqs[${i}].answer`);
+    if (!ans || ans.text !== faqPlainText(faq.answer)) issues.push(`${where}: FAQPage question ${i + 1} answer text does not match page.faqs[${i}].answer`);
+    if (typeof ans?.text === "string" && /\[link:|\*\*/.test(ans.text)) issues.push(`${where}: FAQPage question ${i + 1} answer still contains markup`);
   }
 }
 

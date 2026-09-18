@@ -22,7 +22,7 @@ import type { GeoPage } from "@/lib/geo/types";
 
 export default function HowWeWorkBlock({ data }: { data: NonNullable<GeoPage["howWeWork"]> }) {
   return (
-    <section className="gp-section gp-section--cream gphw" aria-labelledby="gphw-heading">
+    <section className={`gp-section gp-section--${data.tone ?? "cream"} gphw`} aria-labelledby="gphw-heading">
       <div className="gp-inner--prose">
         <h2 id="gphw-heading" className="gp-h2">
           {inline(data.heading)}

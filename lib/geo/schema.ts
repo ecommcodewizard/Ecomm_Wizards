@@ -40,6 +40,18 @@ export function breadcrumbListJsonLd(trail: Crumb[], currentPath: string) {
   };
 }
 
+/** The text a reader actually sees: link markers become their label, bold
+ *  markers drop. Fixed 2026-09-19 on the owner's instruction: FAQ answers were
+ *  emitted raw, so a [link:url|label] marker reached Google's structured data
+ *  verbatim (Los Angeles and the ecommerce marketing hub had one each).
+ *  check-schema compares against this same function, so the check still
+ *  proves the JSON-LD comes from the rendered FAQ array. */
+export function faqPlainText(s: string): string {
+  return s
+    .replace(/\[link:[^\]|]+\|([^\]]+)\]/g, "$1")
+    .replace(/\*\*([^*]+)\*\*/g, "$1");
+}
+
 /** FAQPage JSON-LD from the exact array the visible FAQ block renders. */
 export function faqPageJsonLd(faqs: FAQ[]) {
   return {
@@ -47,8 +59,8 @@ export function faqPageJsonLd(faqs: FAQ[]) {
     "@type": "FAQPage",
     mainEntity: faqs.map((f) => ({
       "@type": "Question",
-      name: f.question,
-      acceptedAnswer: { "@type": "Answer", text: f.answer },
+      name: faqPlainText(f.question),
+      acceptedAnswer: { "@type": "Answer", text: faqPlainText(f.answer) },
     })),
   };
 }

@@ -34,7 +34,7 @@ function blocksOf(p: GeoProgrammePage): [string, string][] {
     ]);
     out.push(["scopeBoundary", p.whatWeDontDo.join(" ")]);
   } else {
-    out.push(["placeLayer", p.placeLayer]);
+    if (p.placeLayer) out.push(["placeLayer", p.placeLayer]);
     out.push(["gradientLayer", p.gradientLayer]);
     out.push(["whatWeDoAboutIt", p.whatWeDoAboutIt]);
   }
