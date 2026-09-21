@@ -245,6 +245,7 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
         heading={page.whatWeDoAboutItHeading ?? "What we do about it"}
         text={page.whatWeDoAboutIt}
         variant="geo"
+        tone={page.whatWeDoAboutItTone}
       />
 
       {/* Added 2026-09-19. The block above ends on the first step of working
@@ -272,7 +273,12 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
         areaServedType={page.geo.type === "state" ? "State" : "AdministrativeArea"}
       />
 
-      <RelatedServices current={page.path} tone={page.relatedTone} />
+      {/* Seeded from the HUB, not this page's own path (fixed 2026-09-21).
+          A geo path isn't in the service catalog, so RelatedServices fell
+          through to its hash seed and offered unrelated services: the
+          California design page was suggesting Klaviyo audits and cart
+          gamification. With the hub, it lists that hub's catalog siblings. */}
+      <RelatedServices current={page.hub} tone={page.relatedTone} />
     </>
   );
 }

@@ -8,6 +8,13 @@ import ShopifyDesignSection from "@/components/sections/ShopifyDesignSection";
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
+import HubCityLinks from "@/components/sections/geo/HubCityLinks";
+import { publishedGeoForHub } from "@/lib/geo/registry";
+
+// Published geo children of this hub. Without this block the California page
+// under /services/shopify-theme-development would launch with no internal
+// link pointing at it (added 2026-09-22).
+const GEO_CHILDREN = publishedGeoForHub("/services/shopify-theme-development");
 
 const META_DESCRIPTION =
   "Shopify theme development agency building custom Liquid themes on Shopify 2.0. Fast, mobile-first, and built to convert. 100+ themes built.";
@@ -15,7 +22,7 @@ const CANONICAL_URL = "https://ecommwizards.com/services/shopify-theme-developme
 
 export const metadata: Metadata = {
   title: { absolute: "Shopify Theme Development Agency | Custom Liquid Themes" },
-  description: META_DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
@@ -1683,6 +1690,8 @@ export default function Page() {
           .std-final-cta h2   { font-size: 28px !important; line-height: 1.25 !important; }
         }
       `}} />
+
+      <HubCityLinks heading="Shopify Theme Development for Brands in the Markets We Know" pages={GEO_CHILDREN} />
 
       <RelatedServices current="/services/shopify-theme-development" />
     </>

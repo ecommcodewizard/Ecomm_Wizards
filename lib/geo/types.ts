@@ -427,6 +427,9 @@ const BaseSchema = z.object({
   /** Background of the "Explore more Shopify services" band. Defaults to
    *  cream; California sets white (2026-09-19, owner's call). */
   relatedTone: z.enum(["white", "cream"]).optional(),
+  /** Background of the "what we do about it" / process block. Defaults to
+   *  white; set "cream" where it would sit white-on-white (2026-09-22). */
+  whatWeDoAboutItTone: z.enum(["white", "cream"]).optional(),
   /** Optional hero stat strip. Values should come from lib/brand-stats.ts or be
    *  otherwise verifiable; do not invent a figure to fill the fourth slot. */
   heroStats: z
