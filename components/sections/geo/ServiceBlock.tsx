@@ -15,16 +15,19 @@ type Props = {
   text: string;
   eyebrow?: string;
   variant?: "hub" | "geo" | "map";
+  /** Section background. Defaults to white; a page sets "cream" where the
+   *  block would otherwise sit white-on-white (2026-09-22). */
+  tone?: "white" | "cream";
   hub?: { label: string; href: string };
   mapItems?: ServiceMapItem[];
 };
 
-export default function ServiceBlock({ heading, text, eyebrow, variant = "hub", hub, mapItems }: Props) {
+export default function ServiceBlock({ heading, text, eyebrow, variant = "hub", hub, mapItems, tone = "white" }: Props) {
   const uplink = variant === "geo" ? hub : undefined;
   const map = variant === "map" && mapItems && mapItems.length > 0 ? mapItems : undefined;
 
   return (
-    <section className="gp-section gp-section--white gps" aria-labelledby="gps-heading">
+    <section className={`gp-section gp-section--${tone} gps`} aria-labelledby="gps-heading">
       <div className="gp-inner">
         <div className="gps-grid">
           <div className="gps-left">

@@ -226,7 +226,7 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   // is beside the point.
   h1: "A Shopify agency Los Angeles brands hire for a store that sells an experience, not just a product",
   qualifier:
-    "For brands in the most design-heavy market in the country. We design and build stores that make you look like the premium option, then prove the thing is lightning quick, and you get the numbers before you pay us anything.",
+    "For brands in the most design-heavy market in the country. We design and build stores that look like the premium option, then prove they are quick. You get the numbers before you pay us.",
 
   // Evie Lou, one of the three studies in the quotes block further down, so the
   // hero opens on real client work rather than stock. Source file is 608x1080
@@ -286,7 +286,7 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   approach: {
     heading: "We design to how your customer buys, not to taste",
     body:
-      "Every decision starts with your customer rather than with our preferences. Who they are, what brought them, what makes them hesitate, and what they need to see before they will spend.\n\nThose answers decide the order of your homepage and which section earns the top of it. They decide what your email capture asks for, and when it asks. They decide what a buyer sees the week after they order, when the second sale is still cheap to win.\n\nThat is the difference between a store that only looks pretty and one that looks just as good and sells. You are not trading beauty for results here, and we would not ask you to. We design to those answers, then measure whether we were right and change what we got wrong.",
+      "Every decision starts with your customer. Who they are, what brought them, what makes them hesitate, and what they need to see before they spend.\n\nThose answers decide the order of your homepage and what a buyer sees the week after they order.\n\nThat is the difference between a store that only looks pretty and one that sells. Ask everyone on your Shopify agency Los Angeles shortlist how they decide those things.",
   },
 
   proofCta: {
@@ -309,14 +309,14 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
     // be "maybe it was the photography", which named a deliverable rather than
     // the thing the reader actually felt, and left the brand argument to the
     // second beat alone.
-    "You have looked at a competitor's store recently and come away knowing yours is behind. Maybe it was what the design said about their brand before you had read a word. Maybe it was the care in it, like somebody had thought about every screen. Maybe it was just how fast it appeared.\n\nThat instinct is usually right, and it is rarely one problem. A store that feels expensive is doing two jobs at once, and most rebuilds only manage one. They give you the experience and it crawls, or they give you speed and it looks like everyone else.\n\nJust a heads up, if what you need is more retention of your customers or more top-of-funnel traffic, that is our [link:/services/ecommerce-marketing-agency|ecommerce marketing] work and a different conversation.",
+    "You have looked at a competitor's store recently and come away knowing yours is behind. Maybe it was what their design said before you read a word. Maybe it was the care in it. Maybe it was the speed.\n\nThat instinct is usually right, and it is rarely one problem. A store that feels expensive does two jobs, and most rebuilds manage one. They give you the experience and it crawls, or they give you speed and it looks like everyone else.\n\nIf what you need is retention or traffic, that is our [link:/services/ecommerce-marketing-agency|ecommerce marketing] work and a different conversation.",
 
   // ── Quick answer ──────────────────────────────────────────────────────
   // The passage an AI Overview lifts. Has to stand alone with no page around
   // it, which is why it names the company and the buyer in one sentence. 53
   // words, inside the 40-60 the standard allows.
   quickAnswer:
-    "Ecomm Wizards designs and builds on Shopify and Shopify Plus. We are the Shopify agency Los Angeles founders call when the store has to look good and stay quick. Every visual choice is priced in milliseconds before it ships, and you see the numbers before you pay us.",
+    "Ecomm Wizards designs and builds on Shopify and Shopify Plus. We are the Shopify agency Los Angeles founders call when a store has to look good and stay quick. Every visual choice is priced in milliseconds. You see the numbers before you pay us.",
 
   // ── Search intent ─────────────────────────────────────────────────────
   // REMOVED on the owner's instruction, 2026-09-02. The field is optional and
@@ -335,7 +335,7 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   // both places is what section 7.5 calls stuffing.
   placeLayerHeading: "What your store is actually competing against",
   placeLayer:
-    "Los Angeles has more creative workers per head than any metro in the country. 8.6% of the workforce, against 6.4% for New York Metro, which is the next highest. That one number explains most of what you are up against.\n\nIt reaches you two ways. Your customer's eye is trained by everything else they scroll past in this market, so a merely competent store reads to them as a cheap one. And the brands you compete with can hire that talent without trying, because it lives here and there is a lot of it.\n\nSo the visual bar is not vanity in this market. It is the price of being taken seriously, and every brand here pays it whether they sell candles, supplements, cold brew or denim.\n\nThe trouble is what that bar is made of. Hero video. Full-bleed photography. Custom type. Motion that responds as you scroll. All of it is weight, and weight is what your store pays for on a phone, which is where most of your customers are.\n\nThat is the tension every brand in this city is building against, and it is the one your agency gets judged on.",
+    "Los Angeles has more creative workers per head than any metro in the country: 8.6% of the workforce, against 6.4% for New York Metro. That number explains most of what you are up against.\n\nYour customer's eye is trained by everything else they scroll past here, so a merely competent store reads as a cheap one. And your competitors can hire that talent without trying.\n\nSo the visual bar is the price of being taken seriously, whether you sell candles, supplements, cold brew or denim. The trouble is what it is made of: hero video, full-bleed photography, custom type, motion that answers your scroll. All of it is weight, and weight is what your store pays for on a phone.\n\nThat tension is what a Shopify agency Los Angeles brands trust gets judged on.",
 
   // ── Block 4: Gradient layer ───────────────────────────────────────────
   // Service x place. The block that could not move to another page.
@@ -344,7 +344,7 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   // reusing the opening sentence's wording.
   gradientLayerHeading: "The platform is not what is slowing you down",
   gradientLayer:
-    "Shopify passes all three Core Web Vitals on 76% of stores, on mobile and on desktop. WooCommerce manages 35%. So on the platform alone you start ahead of most of the web, and a slow Shopify store is almost never Shopify's fault.\n\nIt is what got added. The video above the fold, the six fonts, the eleven apps loading on every page whether that page needs them or not. Each one was a fair decision on its own and nobody added up the bill. Shopify puts that bill at roughly 3.5% of your conversion for every extra 100 milliseconds, with a store loading in 2.5 seconds converting about 30% below one loading in 1.5. Same catalog, same ad spend, a third of the money gone into weight.\n\nSo the job here is making your store look premium enough to win the click while keeping the speed and the build quality intact. That is the work we do.",
+    "Shopify passes all three Core Web Vitals on 76% of stores, mobile and desktop. WooCommerce manages 35%. So a slow Shopify store is almost never Shopify's fault.\n\nIt is what got added. The video above the fold, the six fonts, the eleven apps on every page. Each was a fair decision and nobody added up the bill.\n\nShopify puts that bill at roughly 3.5% of your conversion for every extra 100 milliseconds, with a 2.5-second store converting about 30% below a 1.5-second one. Same catalog, same ad spend.\n\nSo one question decides a Shopify agency Los Angeles proposal: what will this design weigh?",
   gradientFacts: [
     {
       id: "laedc-otis-creative-density",
@@ -398,14 +398,14 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
     label: "What we do",
     heading: "So which of these do you need?",
     intro:
-      "Might be one, might be three. We will tell you which before you spend anything.",
+      "Might be one, might be three. A Shopify agency Los Angeles quote should price each on its own, and we tell you which you need.",
     items: [
       {
         label: "Design and UX",
         heading: "Looking expensive and loading fast are the same design decision",
         body:
           "Every Shopify website design Los Angeles build gets a weight budget before the first mockup. Hero video, photography and custom type all have to fit inside it.",
-        covers: ["UX and UI design", "Art direction", "Product page design", "Landing pages", "Design systems"],
+        covers: ["UX and UI design", "Art direction", "Product page design", "Design systems"],
         imageAlt: "A beauty storefront we designed and rebuilt for 111SKIN",
         caseSlug: "111skin-shopify-cro-redesign",
         cta: { label: "Explore design and UX", href: "/services/shopify-ux-and-ui-design" },
@@ -415,7 +415,7 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
         heading: "The build is where the look stops costing you speed",
         body:
           "Those 23 photos loading before anyone scrolls were never a design decision. We are a Los Angeles Shopify development company, so we fix that in the theme before your store ships.",
-        covers: ["Theme development", "Shopify Plus", "Migrations", "App development", "Integrations", "Speed"],
+        covers: ["Theme development", "Shopify Plus", "Migrations", "Integrations", "Speed"],
         imageAlt: "A jewelry storefront we replatformed onto Shopify Plus for John Hardy",
         caseSlug: "john-hardy-shopify-plus-migration",
         cta: { label: "Explore development", href: "/services/shopify-development-agency" },
@@ -425,7 +425,7 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
         heading: "Your rankings are paying for the hero video too",
         body:
           "Google measures the same load your customer sits through, and it crawls a heavy store less often. We cut the script and image weight first, because nothing else in the plan works until the store loads.",
-        covers: ["Core Web Vitals", "Technical SEO", "Collection page SEO", "Product page SEO", "Schema markup", "AI search visibility"],
+        covers: ["Core Web Vitals", "Technical SEO", "Product page SEO", "Schema markup"],
         imageAlt: "A sportswear storefront we moved onto Shopify for Capelli Sports",
         caseSlug: "capelli-sports-shopify-migration",
         cta: { label: "Explore ecommerce SEO", href: "/services/ecommerce-seo-agency" },
@@ -435,7 +435,7 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
         heading: "Your most expensive traffic hits your heaviest page",
         body:
           "We make the video and the motion in house, and we size every file to what the landing page can carry. Your paid visitors are the last people who should be waiting on a hero video.",
-        covers: ["Ad creative", "Motion and video", "User-generated content", "Paid social", "Creative testing"],
+        covers: ["Ad creative", "Motion and video", "Paid social", "Creative testing"],
         imageAlt: "Creative work we produced for the haircare brand Prose",
         caseSlug: "prose-creative-strategy",
         cta: { label: "Explore creative strategy", href: "/services/creative-strategy" },
@@ -445,7 +445,7 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
         heading: "Every repeat order is one your homepage does not have to win",
         body:
           "Your storefront has to load all that weight before it can sell. An email does not, which is why the fifth order costs a fraction of the first.",
-        covers: ["Klaviyo email and SMS", "Automated flows", "List segmentation", "Subscriptions", "Loyalty programs"],
+        covers: ["Klaviyo email and SMS", "Automated flows", "Subscriptions", "Loyalty programs"],
         // Was wild-shopify-plus-subscriptions, which did not evidence this row.
         // Wild's serviceType is "Shopify Plus | Subscriptions | Integration
         // Services" and its own challenge text says the work "was not CRO or a
@@ -469,7 +469,7 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
         heading: "Six months in, the look has grown and the store has slowed",
         body:
           "It happens one hero video at a time, so nobody catches it in a design review. A Los Angeles Shopify expert tests on your real traffic and measures what each addition costs in orders before you ship it.",
-        covers: ["Conversion rate optimization", "A/B testing", "Speed monitoring", "Maintenance and support", "Analytics and reporting"],
+        covers: ["Conversion rate optimization", "A/B testing", "Maintenance and support", "Analytics"],
         imageAlt: "A confectionery storefront we rebuilt and tested for Candy Kittens",
         caseSlug: "candy-kittens-shopify-food-beverage-cro",
         cta: { label: "Explore CRO and support", href: "/services/shopify-cro-agency" },
@@ -504,7 +504,7 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
       window: "single fetch per store, weekday, mobile user agent",
       captured: "2026-09-03",
       howGathered:
-        "Ten Shopify storefronts, every one run by a Los Angeles County brand. We opened each one the way your customer's phone would, and counted what the homepage sends before anything appears on screen. Brands counted, never named. Two limits worth knowing. We measured what each page sends, not how fast it felt to any one person, because that depends on their phone and their signal. And we chose brands that present themselves well rather than picking at random, so read this as what the top of the market ships, not a survey of everyone.",
+        "Ten Shopify storefronts, every one a Los Angeles County brand. We opened each the way your customer's phone would, and counted what the homepage sends before anything appears. Brands counted, never named. Two limits: we measured what each page sends, not how fast it felt. And we chose brands that present themselves well, so read this as what the top of the market ships.",
     },
     // Kept for screen readers, hidden from sight. "Across the ten" and "What it
     // tells you" were scaffolding: a reader had to decode the label before
@@ -515,17 +515,17 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
       {
         label: "Built on a custom design rather than a stock template",
         cells: ["9 of 10", "A template does not clear the bar here"],
-        note: "The one exception was still on Dawn, the free theme Shopify gives everybody. You can usually tell within a second of landing, and so can your customer.",
+        note: "The exception was still on Dawn, the free theme Shopify gives everybody.",
       },
       {
         label: "Colors, type and spacing set up as one system",
         cells: ["113 typical", "One store had 241"],
-        note: "These are the rules a designer writes once so every page agrees with every other page. A high number means somebody really designed the store. A low one usually means a template with the colors changed.",
+        note: "The rules a designer writes once so every page agrees with the next. A high number means somebody really designed it.",
       },
       {
         label: "Separate font files the page has to download",
         cells: ["5 typical", "One store was pulling 23"],
-        note: "Your text stays invisible until its font arrives. Two weights of one family is enough for almost any brand.",
+        note: "Your text stays invisible until its font arrives. Two weights of one family is enough.",
       },
       {
         label: "Animation tools running at the same time",
@@ -542,7 +542,7 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
       {
         label: "Photos that load whether you scroll to them or not",
         cells: ["23 typical", "They compete with the top of your page"],
-        note: "One store loaded all 71 of its photos straight away. Nothing was told to wait, so the phone fetches pictures from the footer while your customer is still looking at the top. This is the most common problem here and the easiest to fix.",
+        note: "One store loaded all 71 straight away, so the phone fetches footer pictures while your customer is still at the top.",
       },
       {
         label: "Photos on the homepage in total",
@@ -551,11 +551,11 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
       {
         label: "Pieces of code, and outside services, loading in",
         cells: ["87 and 19", "Most run before anything is on screen"],
-        note: "Outside services are the apps and trackers you have installed. Each one is a separate trip out to somebody else's server before your page can finish.",
+        note: "Your apps and trackers. Each is a separate trip to somebody else's server before your page can finish.",
       },
     ],
     derived:
-      "Read the top half and the bottom half together, because they are the same decision. Nine of these ten brands paid for real design work, and it shows. That is what this market demands and we would build the same. The cost only turns up lower down, in the photos nobody told to wait and the code that runs before your customer sees anything. None of it is visible from your own laptop, which is why it survives so long.",
+      "Read the top half and the bottom half together, because they are the same decision. Nine of these ten paid for real design work, and it shows. The cost turns up lower down, in the photos nobody told to wait and the code that runs first. None of it shows on your own laptop, which is why it survives. Run these checks before any Shopify agency Los Angeles pitch.",
     derivedList: {
       // Three design checks, then three build checks, in that order. The list
       // used to be seven build items, which quietly said we are an engineering
@@ -565,14 +565,12 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
       // Every one is something an owner can do alone, on their own phone, in a
       // few minutes. Nothing here needs a developer or a tool login, which is
       // what makes the block worth reading rather than worth skipping.
-      title: "What to check on your own store this week",
+      title: "What to check before a Shopify agency Los Angeles quote",
       items: [
-        "Look at your homepage on a phone for three seconds, then look away. If nothing about it stayed with you, nothing stayed with your customer either.",
-        "Put your product page beside your best competitor's, both on a phone. The gap is usually obvious, and it is usually not the product.",
-        "Scroll your own collection page. If the lighting or the crop changes halfway down, the catalog reads as cheaper than it is.",
-        "Open your homepage on a phone and count the photos you can see before scrolling. Everything further down should wait until you reach it.",
-        "Count your fonts. Two weights of one family covers almost every brand.",
-        "List the apps running on every page, then ask which ones your homepage actually needs.",
+        "Look at your homepage on a phone for three seconds, then look away. If nothing stayed with you, nothing stayed with your customer.",
+        "Put your product page beside your best competitor's, both on a phone. The gap is usually obvious, and usually not the product.",
+        "Count the photos you can see before scrolling. Everything further down should wait until you reach it.",
+        "Count your fonts, then list the apps running on every page.",
       ],
     },
     reviewAfterDays: 180,
@@ -589,7 +587,7 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   results: {
     heading: "Three owners, three numbers, and where they came from",
     intro:
-      "Three stores where the client says it in their own words. Every number opens into the case study it came from, so you can check it.",
+      "Three stores, in the owners' own words. Every number opens into its case study, so you can check any Shopify agency Los Angeles claim the same way.",
     slugs: [
       "evie-lou-shopify-fashion-cro",
       "everlast-shopify-plus-sports-redesign",
@@ -613,32 +611,33 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
   howWeWork: {
     heading: "What we take pride in",
     intro:
-      "At your size the thing that matters is not where an agency sits. It is whether they pick up. These four are what we hold ourselves to, and they are why our clients stay for years rather than projects.",
+      // TRIMMED 22 September 2026, owner's instruction to cut this page to
+      // 2,500 words. The "Saturday" item went with it, which also removed a
+      // claim about other agencies going quiet on Fridays (Standard Step 04
+      // #5) and a weekend promise the Standard itself says we don't make.
+      // "Written into the contract" came out of the Pacific hours item for the
+      // same reason: it was never checked.
+      "At your size, what matters is not where an agency sits. It is whether they pick up. These are what a Shopify agency Los Angeles brands keep should hold to.",
     items: [
       {
-        title: "Your store breaking on a Saturday is still our problem",
+        title: "One developer you can name, in your channel",
         body:
-          "Most agencies go quiet on Friday and answer you on Monday. We do not. Post in the channel on a Saturday and you get a reply, not an auto-responder, and someone starts working on it. Need one developer, you get one. Need the whole team, you get the whole team. That is what being your partner has to mean or the word is worthless.",
-      },
-      {
-        title: "One named developer, in your channel",
-        body:
-          "Not a ticket queue, and not an account manager relaying questions to someone you never meet. The person who wrote your checkout logic answers when it misbehaves, in a shared channel you can see.",
+          "Not a ticket queue, and not an account manager relaying questions. The person who wrote your checkout logic answers in your channel.",
       },
       {
         title: "We are on Pacific hours when it counts",
         body:
-          "Launches here mostly go live mid-morning Pacific. We staff that window and the hour either side of it, written into the contract rather than offered as a favor. If you go live at eleven, someone senior is watching from ten.",
+          "Launches here mostly go live mid-morning Pacific, so we staff that window for your launch. Go live at eleven and someone senior is watching from ten.",
       },
       {
         title: "You own the code, and you keep it",
         body:
-          "The repository, the theme, the design files and anything we build on top are yours from day one, not at the end once the invoice clears. If we part ways, you leave with all of it and a developer who has never met us can pick it up. We have never seen the point of holding a client's store hostage to keep them.",
+          "The repository, the theme and the design files are yours from day one. If we part ways, a new developer can pick it up.",
       },
       {
         title: "We will tell you when the answer is no",
         body:
-          "If the measurement says your store is already fine, we say so and stop there. A rebuild you did not need is the most expensive thing we could sell you. It is also the fastest way to lose you.",
+          "If the measurement says your store is already fine, we say so and stop there. A rebuild you did not need is the most expensive thing we could sell you.",
       },
     ],
   },
@@ -652,7 +651,9 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
     // paragraph. It moved out to its own `approach` section on 2026-09-03,
     // between the place layer and the proof, because buried here it was
     // invisible. Do not reintroduce it: this block is process and price.
-    "We design it and we build it, and the same team does both. That is most of the point. The trade between the look and the speed gets made a hundred times during a build, and it cannot be made by people in separate rooms.\n\nIn practice the work is the unglamorous half. Budgeting the page weight before the design is signed off. Serving the hero video so it does not block first paint. Cutting the apps that load everywhere and are needed in one place. Measuring on a mid-range phone rather than your laptop.\n\nBuilds land between $5,000 and $50,000 depending on scope, with the price and the date in writing before we start. If the store is already quick and looks the part, we will say so and quote you nothing.",
+    // Price band removed 22 September 2026 under the owner's no-prices rule,
+    // the same rule applied to both California pages.
+    "We design it and we build it, and the same team does both. The trade between the look and the speed gets made a hundred times during a build, and it cannot be made by people in separate rooms.\n\nIn practice the work is the unglamorous half. Budgeting page weight before the design is signed off. Serving the hero so it does not block first paint. Cutting apps needed in one place that load everywhere.\n\nYou get the measurements first, then a scope and a date in writing. Ask for that order in any Shopify agency Los Angeles engagement. If your store is already quick, we will say so and quote you nothing.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   // Matched to the vertical, never framed as a local client.
@@ -661,7 +662,7 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
     {
       slug: "dryrobe-shopify-plus-redesign",
       vertical: "Apparel and outdoor",
-      whatWasBuilt: "Three fragmented stores consolidated into one Shopify Plus build, with a custom activity and size finder",
+      whatWasBuilt: "Three fragmented stores consolidated into one Shopify Plus build, with an activity and size finder",
       outcome: "+89% online revenue, +23% checkout completion, -31% return rate",
       verified: true,
     },
@@ -675,7 +676,7 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
     {
       slug: "feetures-shopify-theme-development",
       vertical: "Performance apparel",
-      whatWasBuilt: "A theme rebuilt from scratch with custom collection pages, variant-aware product pages and metafield automation",
+      whatWasBuilt: "A theme rebuilt from scratch, with variant-aware product pages and metafield automation",
       outcome: "+32% add-to-cart rate, +19% average order value",
       verified: true,
     },
@@ -688,22 +689,17 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
     {
       objection: "Do we need the design too, or just the build?",
       answer:
-        "That is your call, and it comes down to one question. If your design already converts and you are happy with how the store feels, you do not need our design work. Send us what you have and we build it, fast, and that is all you pay for.\n\nIf the store works but leaves people cold, that is the other job. We design the experience first, so a customer feels something the moment they land, then build it so none of that feeling costs you load time. Most brands here need the second one and ask for the first.",
+        "That is your call. If your design already converts, send us what you have and we build it.\n\nIf the store works but leaves people cold, that is the other job. We design the experience first, then build it so none of it costs you load time.\n\nAsk any Shopify agency Los Angeles brands recommend to price the two separately.",
     },
     {
       objection: "We already have a designer we like. Why do we need you?",
       answer:
-        "Keep them. We would rather build to a design you already believe in than sell you a replacement. What we add is the half that decides whether their work survives a phone: how the hero is served, what the type costs, which apps load where. Hand us the design and we will tell you what it weighs before anyone commits. If your designer already hands over image budgets and font subsets, they have covered this and you can skip us.",
-    },
-    {
-      objection: "Why hire anyone? Our developer knows the store better than an outsider will.",
-      answer:
-        "They probably do, and for most work that is the right answer. What we add is having watched the same trade go wrong on other people's stores, which is different knowledge from knowing your codebase. If your developer can already show you the store's Core Web Vitals on real traffic and say which element is costing you, you do not need us for this.",
+        "Keep them. We would rather build a design you believe in than sell you a replacement.\n\nWhat we add is the half that decides whether their work survives a phone: how the hero is served, what the type costs, which apps load where. Any Shopify agency Los Angeles shortlist should tell you what a design weighs before anyone commits.",
     },
     {
       objection: "Every agency says they build fast stores. Why would yours be different?",
       answer:
-        "They do say it, and most mean it on the day they hand over. The honest part is that speed decays. Every app somebody installs and every hero somebody swaps takes a little back. So we do not hand you a number at launch and disappear. We measure before the design is signed off, again at handover, and on your real traffic after. One case where we would tell you not to bother. If your store already sits inside the Core Web Vitals thresholds and converts well, a rebuild for speed is us taking your money.\n\nAnd if what you want is a stock theme installed and lightly styled in a week, that is a real service, but it is not ours.",
+        "The honest part is that speed decays. Every app installed and every hero swapped takes a little back, so a launch number means little.\n\nWe measure before the design is signed off, at handover, and on your traffic after. If your store already sits inside the Core Web Vitals thresholds, a rebuild for speed is us taking your money.",
     },
   ],
 
@@ -737,37 +733,36 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
       // happens first, can you keep what I have, and what happens after launch.
       question: "Do we have to rebuild, or can you work with the store we have?",
       answer:
-        "Usually we can work with what you have. Most stores need two or three specific things fixed rather than a fresh build, and that is a much smaller number. We will tell you which one you are looking at after we have measured it, and we will not pretend a rebuild is necessary because it pays better.",
+        "Usually. Most stores need two or three things fixed rather than a fresh build, and we will tell you which after we measure.",
       unique: true,
     },
     {
       question: "What happens in the first two weeks?",
       answer:
-        "Week one we measure: your store on a real phone, what it weighs, where the time goes, and what your design is costing you. You get that back whether or not you carry on. Week two we scope it properly and give you a fixed price and a date in writing. No work starts until you have both.",
+        "Week one we measure: your store on a real phone, what it weighs, where the time goes. You get that back either way. Week two we scope it and give you a date in writing.",
       unique: true,
     },
     {
       question: "What happens after the store goes live?",
       answer:
-        "Speed decays. Every app somebody installs and every hero somebody swaps takes a little back, so a store handed over fast does not stay fast on its own. We stay on a retainer where that matters to you, measuring on real traffic and fixing what drifts. If you would rather take it in-house, we hand over everything you need to do that.",
+        "Speed decays, so a store handed over fast does not stay fast. We stay on a retainer where that matters, measuring real traffic and fixing what drifts. Or we hand over everything you need.",
       unique: true,
     },
     {
       question: "How long does a Shopify build take?",
       answer:
-        "Most go live in about six weeks. Add a week for load testing and your release runbook, which happens after the build is done and needs a quiet store to test against.",
+        "Most go live in about six weeks, plus a week for load testing and your release runbook.",
       unique: false,
     },
     {
-      question: "What does a Shopify build cost?",
+      // The two cost FAQs (this one and "How much does Shopify development
+      // cost for a Los Angeles brand?") were merged here on 22 September 2026
+      // and the price band removed under the owner's no-prices rule. The
+      // merged answer also drops "local agency rates run above the national
+      // average", an unprovable claim about competitors (Step 04 #5).
+      question: "What should a Shopify agency Los Angeles proposal include?",
       answer:
-        "Between $5,000 and $50,000 for most projects, depending on how much is custom. Load testing and a runbook on an existing store is far smaller, and we quote it separately if that is all you need.",
-      unique: false,
-    },
-    {
-      question: "Do you do ads and email marketing too?",
-      answer:
-        "Yes, we do. This page is about the store itself: design, build, speed, and keeping it right afterwards. If ads, email and retention are what you are after, that conversation lives on our [link:/services/ecommerce-marketing-agency|ecommerce marketing] page.",
+        "The measurements first, then a scope and a date in writing, with design and build priced separately.",
       unique: true,
     },
 
@@ -779,19 +774,14 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
     {
       question: "Do you provide Shopify development in Los Angeles?",
       answer:
-        "Yes. We build and support Shopify stores for brands across the metro and the wider California market, and the work is remote either way. No travel line on your invoice, and no client here has yet needed us in the room.",
+        "Yes, and your project runs remotely. We are the Shopify agency Los Angeles brands work with across the metro and wider California.",
       unique: true,
     },
     {
-      question: "How much does Shopify development cost for a Los Angeles brand?",
-      answer:
-        "The same as anywhere: $5,000 to $50,000 for a build, depending on how much is custom. Local agency rates run above the national average and ours do not move by city. Load testing and a release runbook on a store you already have is a fraction of that, and quoted on its own.",
-      unique: true,
-    },
-    {
+      // The streetwear FAQ folded into this one, 22 September 2026.
       question: "Do you work with Los Angeles streetwear brands?",
       answer:
-        "Yes, and it is a trade we know well. We build just as often for food, beverage, beauty, supplements, home and outdoor brands here. The problem barely changes by category: your store has to look like your brand and still load quickly on a phone.",
+        "Yes, and it is a trade we know well. We build just as often for food, beverage, beauty and outdoor brands here. The problem barely changes by category: your store has to look like your brand and load fast.",
       unique: true,
     },
   ],
@@ -804,16 +794,16 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
     whatYouGet:
       "Name the one thing hurting your store. We audit it free and walk you through what we find.",
     whatWeWillTellYouNotToDo:
-      "Most stores we look at need two or three specific fixes, not a rebuild. When that is what we find, that is what we quote, even though the rebuild pays us more.",
+      "Most stores we look at need two or three fixes, not a rebuild. That is then what we quote.",
     responseExpectation:
-      "A senior developer replies within one working day. Not a salesperson.",
+      "A senior developer replies within one working day, not a salesperson.",
     audit: {
       transition:
-        "You already know which part of your store is letting you down.",
+        "You already know which part is letting you down.",
       offer:
-        "Tell us that part. We audit it and hand you the findings, not a summary:",
+        "Tell us that part. We audit it and hand you the findings:",
       parts: [
-        "What is happening, measured on your store rather than guessed at.",
+        "What is happening, measured rather than guessed at.",
         "Why it is happening, which is usually not the symptom you noticed.",
         // Copy Standard 8.4 words this third part as "in enough detail that
         // they or another team could act on it". Narrowed on the owner's
@@ -825,9 +815,9 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
         "How to fix it, in what order, and which fix moves the number most.",
       ],
       limit:
-        "It is a diagnosis, not the work. Fixing it is a separate quote you are free to decline.",
+        "It is a diagnosis, not the work. Fixing it is quoted separately and you are free to decline.",
       noObligation:
-        "The audit is free and the findings are yours to keep, whether or not we end up working together.",
+        "The audit is free and the findings are yours either way.",
       // Filled 2026-09-02 on the owner's instruction, closing the Copy Standard
       // 8.4 gap and checklist #17. Both facts the standard asks for are named:
       // three business days, and the format.
