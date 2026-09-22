@@ -292,7 +292,7 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
 
   // ── Block 2: Hook ─────────────────────────────────────────────────────
   hook:
-    "Every store sells something it doesn't have yet. A restock running late, a drop that isn't cut, a container still at sea.\n\nThe website almost never knows. It says In stock right up until it says Sold out, and everything between those two words is a decision nobody made.\n\nSo tell us what you sell and where it comes from. It's the first thing any ecommerce agency Los Angeles shortlist should ask you.",
+    "Every store sells something it doesn't have yet: a restock running late, a drop that isn't cut, a container still at sea.\n\nThe website almost never knows. It says In stock until it says Sold out, and everything between those two words is a decision nobody made.\n\nSo tell us what you sell and where it comes from. It's the first thing any ecommerce agency Los Angeles shortlist should ask.",
 
   // ── Quick answer ──────────────────────────────────────────────────────
   quickAnswer:
@@ -301,12 +301,12 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
   // ── Block 3: Place layer, refracted through the service ───────────────
   placeLayerHeading: "In Los Angeles the product is almost never made where it's sold",
   placeLayer:
-    "Apparel cut downtown. Beauty filled in the valley. Jewelry, furniture, supplements, most of it landing from somewhere else first.\n\nWhichever one you are, there's a gap between the day a thing is finished and the day it's yours to sell. Part of it is a factory. Part of it is a box on a dock a few miles from here. None of it is on your product page.\n\nThat gap isn't something you got wrong. Your supplier quotes production, your freight company quotes transit, and nobody quotes the part in between. It lands on you anyway, because you're the one with a page that has to say a date.",
+    "Apparel cut downtown. Beauty filled in the valley. Jewelry, furniture and supplements, most of it landing from somewhere else first.\n\nWhichever you are, there's a gap between the day a thing is finished and the day it's yours to sell. Part factory, part box on a dock. None of it is on your product page.\n\nThat gap isn't something you got wrong. Your supplier quotes production, your freight company quotes transit, and nobody quotes the part in between. It lands on you anyway, and on whichever ecommerce agency Los Angeles brands hire to build the page that has to say a date.",
 
   // ── Block 4: Gradient layer ───────────────────────────────────────────
   gradientLayerHeading: "You can't plan around an average you'll never get",
   gradientLayer:
-    "The gap is widest when the goods cross an ocean, so that's the version worth the arithmetic. Everything upstream gets quoted as one number. Production takes this long, the crossing takes that long, so the stock lands then.\n\nNone of them is one number.\n\n**Carriers publish transits into this port from 13 days to 31.** Same ocean, same destination. Which one you get was decided by the service your freight company booked, before anyone asked you.\n\n**Fewer than a third of sailings on this lane arrive when the carrier first said they would.** That figure moved thirty points between two consecutive months this year.\n\n**And that's before the dock.** A normal week on terminal runs under three days. The port publishes its own all-time peak in the same table, and it's nearly four times that.\n\nSo you're not planning against a lead time. You're planning against a spread, and it has to go somewhere. You hold more stock, which costs cash. Or you sell it as a promise, which costs a preorder window and a date you have to hit. Pick neither and you get the third thing: running out, and finding out when your customer does.\n\nWhich one to buy, and how much, is arithmetic on four numbers you already have. Put it in front of every ecommerce agency Los Angeles shortlist before anyone quotes you. The model is below.",
+    "The gap is widest when goods cross an ocean, so that's the version worth the arithmetic. Everything upstream gets quoted as one number: production takes this long, the crossing takes that long, so the stock lands then.\n\nNone of them is one number.\n\n**Carriers publish transits into this port from 13 days to 31.** Same ocean, same destination. Which one you get was decided by the service your freight company booked.\n\n**Fewer than a third of sailings on this lane arrive when the carrier first said they would.** That figure moved thirty points between two consecutive months this year.\n\n**And that's before the dock.** A normal week on terminal runs under three days. The port's own all-time peak is nearly four times that.\n\nSo you're not planning against a lead time but a spread, and it has to go somewhere. Hold more stock, which costs cash. Or sell it as a promise, which costs a preorder window and a date you have to hit. Pick neither and you run out, and find out when your customer does.\n\nWhich to buy is arithmetic on four numbers you already have. Put it in front of every ecommerce agency Los Angeles shortlist before anyone quotes you.",
   gradientFacts: [
     {
       id: "pola-dwell-and-peak",
@@ -358,29 +358,29 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
   asset: {
     title: "How much buffer does your lead time actually need?",
     intro:
-      "Four numbers you already have, and the arithmetic that turns them into a preorder window and a safety stock figure. Run it on your own.",
+      "Four numbers you already have, turned into a preorder window and a safety stock figure. Run it before any ecommerce agency Los Angeles pitch.",
     renderer: "model",
     method: {
       captured: "2026-09-09",
       howGathered:
-        "Port figures come from the Port of Los Angeles' own daily Operations Report, pulled on 8 September 2026, and from PMSA's monthly dwell series. Transits come from carrier service announcements, reliability from Xeneta and Sea-Intelligence.\n\nThree things to know. PMSA measures San Pedro Bay, so both ports together rather than one, because Long Beach's own site blocks automated access. The port's daily reports sit at fixed web addresses with no archive, so we state the pull date and re-check every 180 days. And the scenarios are a planning heuristic on four inputs. It'll get you a defensible buffer, not a demand forecast.",
+        "Port figures come from the Port of Los Angeles' daily Operations Report, pulled 8 September 2026, and PMSA's monthly dwell series. Transits come from carrier service announcements, reliability from Xeneta and Sea-Intelligence.\n\nThree things you should know. PMSA measures San Pedro Bay, both ports, because Long Beach blocks automated access. The port's daily reports have no archive, so we state the pull date and check again every 180 days. And the scenarios are a rule of thumb on four inputs. You get a buffer you can defend, not a forecast.",
     },
     columns: ["What you're deciding", "Low variance", "Typical", "High variance"],
     rows: [
       {
         label: "Transit range you're assuming",
         cells: ["5 to 6 weeks", "5 to 8 weeks", "5 to 11 weeks"],
-        note: "Door to door, factory gate to the day your warehouse marks it received. Not the carrier's port-to-port number, which leaves out both moving legs.",
+        note: "Door to door, factory gate to the day your warehouse marks it received, not port to port.",
       },
       {
         label: "Late-arrival exposure this creates",
         cells: ["1 week", "3 weeks", "6 weeks"],
-        note: "The only number that matters, and it's just your worst arrival minus your average. Everything below is arithmetic on this one.",
+        note: "The only number that matters: your worst arrival minus your average. Everything below is arithmetic on it.",
       },
       {
         label: "Safety stock, in weeks of cover",
         cells: ["1 week", "2 weeks", "3 weeks"],
-        note: "Weeks rather than units, so it reads the same at any size. Multiply by your own weekly rate for that variant.",
+        note: "Weeks rather than units, so it reads the same at any size.",
       },
       {
         label: "Preorder window to open",
@@ -389,20 +389,20 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
       {
         label: "Ship date to promise",
         cells: ["Your normal date", "Your worst observed date", "Worst observed, plus a week"],
-        note: "Promise the bad case, not the average one. You can always ship early. Shipping late costs you the customer.",
+        note: "Promise the bad case, not the average. You can always ship early; shipping late costs you the customer.",
       },
       {
         label: "When to switch the messaging",
         cells: ["Under 1 week of cover", "Under 2 weeks of cover", "Under 3 weeks of cover"],
-        note: "An alert on the variant, not a note in somebody's calendar. It has to fire while there's still time to change the page.",
+        note: "An alert on the variant, not a note in a calendar. It has to fire while there is time to change the page.",
       },
     ],
     derived:
-      "Everything in the high-variance column is a decision somebody has to make before the stock runs out.\n\nYour average is already in a quote somewhere. Your range is sitting in your last six arrivals, and almost nobody works it out. It takes ten minutes, and it changes what you order, what you promise and when you say something. Anyone on your ecommerce agency Los Angeles shortlist should tell you where you sit on this table before they quote you.",
+      "Everything in the high-variance column is decided before the stock runs out.\n\nYour average is in a quote somewhere. Your range is sitting in your last six arrivals, and almost nobody works it out. Ten minutes changes what you order and what you promise. Anyone on your ecommerce agency Los Angeles shortlist should tell you where you sit on this table before they quote you.",
     derivedList: {
       title: "What to work out before your next order",
       items: [
-        "Your worst arrival out of the last six, not your average. That one number sizes everything else.",
+        "Your worst arrival out of the last six, not your average. That number sizes everything else.",
         "Whether your worst case has got worse, because last year's buffer was sized on last year's range.",
       ],
     },
@@ -410,22 +410,22 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
       {
         heading: "The four numbers, and where yours are",
         body:
-          "**Average transit, door to door.** Your last six arrivals, cargo-ready date to received date. Six is the minimum that shows a shape.\n\n**Your worst one.** Same six, the latest of them. Not the quoted transit, which is an average with no range attached.\n\n**Reorder lead time.** Your supplier's last three orders, deposit paid to cargo ready. Suppliers quote production and leave out sampling.\n\n**Weekly sales velocity.** Sales by product variant, last eight to twelve weeks. Per variant, because stock is held per variant. Drop any week with a promotion.",
+          "**Average transit, door to door.** Your last six arrivals, cargo-ready to received. Six is the minimum that shows a shape.\n\n**Your worst one.** The latest of those six, not the quoted transit, which is an average with no range.\n\n**Reorder lead time.** Your supplier's last three orders, deposit paid to cargo ready. Suppliers quote production and skip sampling.\n\n**Weekly sales velocity.** Sales per variant over eight to twelve weeks, because stock is held per variant. Drop promotion weeks.",
       },
       {
         heading: "The arithmetic, so you can check it",
         body:
-          "It's one line. Your exposure is your worst arrival minus your average, and it gets absorbed either as stock or as a promise, split however you like.\n\nSo three weeks of exposure is three weeks of cover to find. Hold all three and you need no preorder window. Hold none and the window carries all three.\n\nThere's no option where the exposure costs nothing, and the brands that stock out are the ones that never picked.",
+          "One line: your exposure is your worst arrival minus your average, absorbed as stock or as a promise, split however you like.\n\nThree weeks of exposure is three weeks of cover to find. Hold all three and you need no window. Hold none and the window carries all three.\n\nNo option makes the exposure free, and the brands that stock out are the ones that never picked.",
       },
       {
         heading: "What Shopify does natively, and what it doesn't",
         body:
-          "**Selling past zero** is native. Turn on continue selling when out of stock and the order goes through. What it won't do is tell the customer anything, hold the order back, or change what the product page promises. That gap is where most preorder problems start.\n\n**A real preorder**, with a stated ship date, its own badge and a separate fulfillment path, needs an app.\n\n**Splitting one order across two shipments** is native. Fulfill part, the customer gets a notification, the rest stays open.\n\n**Charging on fulfillment** needs the most care. It runs into your payment provider's authorization window, not anything in Shopify.",
+          "**Selling past zero** is native. Turn on continue selling when out of stock and the order goes through. What it won't do is tell the customer, hold the order back, or change what the page promises. That gap is where most preorder problems start.\n\n**A real preorder**, with a stated ship date, its own badge and a separate fulfillment path, needs an app.\n\n**Splitting one order across two shipments** is native: fulfill part and the rest stays open.\n\n**Charging on fulfillment** needs the most care. It runs into your payment provider's authorization window, not anything in Shopify.",
       },
       {
         heading: "Three things to say when the date isn't certain",
         body:
-          "**Ships by [date].** One date, padded to your worst case. Clearest and safest, because the point is that you beat it.\n\n**Ships in 4 to 6 weeks, and we'll email you the day it leaves.** For when the range is genuinely wide. The follow-up promise stops it reading as evasive.\n\n**Arriving [month]. Order now to reserve one.** Best where there's real scarcity. Don't use it where there isn't.\n\n**Avoid \"ships soon\" and \"back in stock shortly.\"** A vague phrase buys you nothing. You're inside the same thirty-day rule with no date to beat.",
+          "**Ships by [date].** One date, padded to your worst case. Clearest and safest, because the point is that you beat it.\n\n**Ships in 4 to 6 weeks, and we'll email you the day it leaves.** For a genuinely wide range.\n\n**Arriving [month]. Order now to reserve one.** Best where scarcity is real. Don't use it where it isn't.\n\n**Avoid \"ships soon\" and \"back in stock shortly.\"** A vague phrase buys nothing, and you're inside the same thirty-day rule with no date to beat.",
       },
     ],
     reviewAfterDays: 180,
@@ -440,12 +440,12 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
     label: "What we do",
     heading: "Four things we do, and you can take one or all four",
     intro:
-      "Each is sold on its own, and each one below is anchored to a store we actually built. Take all of it or one piece.",
+      "Each is sold on its own, and each is anchored to a store we built. An ecommerce agency Los Angeles quote should price them separately.",
     items: [
       {
         label: "Platform and migration",
-        heading: "We move you onto Shopify without losing the orders, the customers or the rankings",
-        covers: ["Platform selection", "Shopify migration", "Order and customer data", "Redirect mapping", "Replatform planning"],
+        heading: "We move you onto Shopify without losing orders, customers or rankings",
+        covers: ["Platform selection", "Shopify migration", "Order and customer data", "Redirect mapping"],
         imageAlt: "A jewelry storefront we moved off Magento for ChloBo",
         caseSlug: "chlobo-shopify-plus-migration",
         cta: { label: "Explore migration", href: "/services/migration" },
@@ -455,27 +455,27 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
         heading: "We design the product page and every state it ends up in",
         body:
           "Ecommerce web design Los Angeles brands ask us for usually stops at the hero. We design the rest too: low stock, preorder, shipping late, back in stock.",
-        covers: ["UX and UI design", "Product page design", "Design systems", "Landing pages", "Art direction"],
+        covers: ["UX and UI design", "Product page design", "Design systems", "Landing pages"],
         imageAlt: "A jewelry storefront we designed and rebuilt for Ronaldo Jewelry",
         caseSlug: "ronaldo-jewelry-shopify-plus-redesign",
         cta: { label: "Explore design and UX", href: "/services/shopify-ux-and-ui-design" },
       },
       {
         label: "Build and development",
-        heading: "We build the storefront and the logic underneath it, so it holds on the bad days",
+        heading: "We build the storefront and the logic underneath, so it holds on the bad days",
         body:
           "Ecommerce development Los Angeles brands buy is mostly the half you can see. We build the other half: inventory rules, alerts, fulfillment paths, integrations.",
-        covers: ["Custom development", "Shopify Plus", "Inventory logic", "App development", "Integrations"],
+        covers: ["Custom development", "Shopify Plus", "Inventory logic", "Integrations"],
         imageAlt: "A wholesale ordering platform we built for Saddleback",
         caseSlug: "saddleback-shopify-plus-b2b",
         cta: { label: "Explore development", href: "/services/shopify-development-agency" },
       },
       {
         label: "Running the store",
-        heading: "We run the store after launch, so somebody's watching it every week",
+        heading: "We run the store after launch, so somebody watches it every week",
         body:
           "E-commerce management Los Angeles brands hand us is the day-to-day: merchandising, email and SMS, reporting, and telling the customer before they ask.",
-        covers: ["Maintenance and support", "Email and SMS", "Merchandising", "Analytics and reporting", "Conversion work"],
+        covers: ["Maintenance and support", "Email and SMS", "Merchandising", "Analytics"],
         imageAlt: "Email and retention work we ran for C&E Craft Co",
         caseSlug: "cecraft-klaviyo-email",
         cta: { label: "Explore marketing and retention", href: "/services/ecommerce-marketing-agency" },
@@ -491,43 +491,43 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
   howWeWork: {
     heading: "How we work with LA brands",
     intro:
-      "We're not in the city, and for this work it genuinely doesn't matter. What matters in an ecommerce agency Los Angeles engagement is who picks up, and what you keep when it ends.",
+      "We're not in the city, and for this work it doesn't matter. What matters in an ecommerce agency Los Angeles engagement is who picks up, and what you keep at the end.",
     items: [
       {
         title: "You own everything from the first commit",
         body:
-          "The repository, the theme, the design files, anything we build. Yours on day one, not when the last invoice clears. Leave and you take it.",
+          "The repository, the theme, the design files, anything we build. Yours on day one, not when the invoice clears.",
       },
       {
         title: "You're in a channel with the people building it",
         body:
-          "A shared Slack or Teams channel, not a ticket queue and not an account manager carrying your questions back and forth.",
+          "A shared Slack or Teams channel, not a ticket queue and not an account manager relaying questions.",
       },
       {
         title: "Launches get scheduled in your working day",
         body:
-          "Cutovers and releases go out on Pacific hours rather than ours, so somebody on your side is awake when the switch flips.",
+          "Cutovers go out on Pacific hours, so somebody on your side is awake when the switch flips.",
       },
       {
         title: "The scope is written down before anyone starts",
         body:
-          "One price and one date, agreed in advance. If the scope changes we requote it before we build it, not after you've paid.",
+          "One scope and one date, agreed in advance. If it changes we requote before building.",
       },
     ],
   },
 
   // ── Block 6: What we do about it ──────────────────────────────────────
-  whatWeDoAboutItHeading: "What it costs and how it runs",
+  whatWeDoAboutItHeading: "How a project runs",
   whatWeDoAboutIt:
-    "Nothing gets quoted before it gets looked at. The first week is measurement: your real arrival range from your own last six, what it's costing you, and what it would take to close.\n\nThen one number and one date, in writing.\n\nThe work itself is the build. Then the preorder path and what the product page says on it. The rules for split orders. The alert that fires while there's still time to act.\n\nBuilds run $5,000 to $50,000 depending on how much is custom. That's what an ecommerce agency Los Angeles quote should show you: one number, one date, and the scope behind both.",
+    "Nothing gets quoted before it gets looked at. The first week is measurement: your real arrival range from your last six, and what it's costing you.\n\nThen one number and one date, in writing.\n\nThe work itself is the build, plus the preorder path and what the page says. Then the rules for split orders, and the alert that fires while there's time to act.\n\nThat is what an ecommerce agency Los Angeles quote should show you: one number, one date, and the scope behind both.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
-  proofHeading: "Three stores we rebuilt, and what changed after",
+  proofHeading: "Three stores an ecommerce agency Los Angeles brand would know",
   proof: [
     {
       slug: "saddleback-shopify-plus-b2b",
       vertical: "Cycling distribution and wholesale",
-      whatWasBuilt: "A Shopify Plus B2B store replacing a wholesale portal, with a custom credit app and CSV bulk ordering",
+      whatWasBuilt: "A Shopify Plus B2B store replacing a wholesale portal, with a credit app and CSV bulk ordering",
       outcome: "+881% B2B sales growth in month one, +704% traffic",
       verified: true,
     },
@@ -541,7 +541,7 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
     {
       slug: "ronaldo-jewelry-shopify-plus-redesign",
       vertical: "Jewelry and accessories",
-      whatWasBuilt: "A Shopify Plus rebuild with a custom piece configurator and a trust framework for high-value orders",
+      whatWasBuilt: "A Shopify Plus rebuild with a piece configurator and a trust framework for high-value orders",
       outcome: "+250% total sales, +120% conversion rate",
       verified: true,
     },
@@ -553,22 +553,17 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
     {
       objection: "Isn't this our operations problem rather than a website problem?",
       answer:
-        "Half of it is, and whoever runs your stock is probably good at their half. What they can't do is change what your product page says on the morning a delivery slips.\n\nThat's the gap. Two decisions, made by people who don't speak, and your customer only sees the second one. Ask your ops lead who tells the customer. Then ask whoever built your store the same question.",
-    },
-    {
-      objection: "We already run preorder. This isn't news to us.",
-      answer:
-        "Then you're ahead of most, and the question is where the window came from.\n\nMost we see were picked once, by feel, and never looked at again. Sized on your real arrival range, and rechecked when it moves, the same window does a different job.",
+        "Half of it is, and whoever runs your stock is good at their half. What they can't do is change what your page says on the morning a delivery slips.\n\nThat's the gap: two decisions, made by people who don't speak, and your customer only sees the second. Ask your ops lead who tells the customer, then ask the ecommerce agency Los Angeles brands hire the same question.",
     },
     {
       objection: "We've already got a developer. Do we need an agency or just advice?",
       answer:
-        "We sell both, so it's a fair question to put to us.\n\nEcommerce consulting Los Angeles brands buy from us is the version where you have the hands and want the plan. It works when your developer has the time.\n\nWhen the plan lands on somebody already at capacity, it sits. That second case is most of what we're hired for, and the test is whether your developer has a free month.",
+        "We sell both, so it's a fair question.\n\nEcommerce consulting Los Angeles brands buy from us is the version where you have the hands and want the plan, and it works when your developer has time.\n\nWhen the plan lands on somebody at capacity, it sits. The test is whether your developer has a free month.",
     },
     {
       objection: "Every agency says they'll be straight with us. Why would yours be?",
       answer:
-        "You can't know it, and no ecommerce agency Los Angeles shortlist can prove it in a paragraph on its own website. Us included.\n\nSo we made it cheap to find out. The first look costs nothing and you keep what it produces. Every figure in the model above cites a source with a date, and one of those notes is a caveat about our own numbers.\n\nIf you've been burned before, give somebody a small piece of work first.",
+        "You can't know it, and no ecommerce agency Los Angeles shortlist can prove it on its own website. Us included.\n\nSo we made it cheap to find out. The first look costs nothing and you keep what it produces, and every figure in the model cites a source with a date.\n\nIf you've been burned before, give somebody a small job first.",
     },
   ],
 
@@ -582,61 +577,55 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
     {
       question: "We're not on Shopify. Do you work with other platforms?",
       answer:
-        "We build on Shopify and Shopify Plus, and most of what we're asked for is a move onto one of them. If you're on something else, we'd look at what it's costing you first. If you haven't picked yet, that's the easiest conversation we have.",
+        "We build on Shopify and Shopify Plus, and most of what we're asked for is a move onto one. If you're on something else, we'd look at what it costs you first.",
       unique: true,
     },
     {
       question: "What should we promise on the product page when the ship date isn't certain?",
       answer:
-        "A single date you've padded to your worst case, not a vague phrase. \"Ships by\" a date you'll beat works better than \"ships soon\" every time. There's a legal reason too: a US seller who takes an order without stating a shipping time is held to thirty days, after which your customer can cancel.",
+        "A single date padded to your worst case, not a vague phrase. There's a legal reason too. A US seller who takes an order without stating a shipping time is held to thirty days, and after that your customer can cancel.",
       unique: true,
     },
     {
       question: "Should we charge for preorders upfront or on fulfillment?",
       answer:
-        "Upfront is simpler and it's what most brands should do. Charging later sounds friendlier, but it runs into your payment provider's authorization window. A card that fails weeks after the order is a lost sale. Charge upfront, promise conservatively, refund fast if you slip.",
+        "Upfront is simpler and what most brands should do. Charging later runs into your payment provider's authorization window, and a card that fails later is a lost sale.",
       unique: true,
     },
     {
       question: "How do we handle split shipments without creating a ticket per order?",
       answer:
-        "Shopify fulfills partially out of the box, so your mechanics are fine. The tickets come from surprise: if the product page implied one box and two turn up, people write in. Say at checkout that items may ship separately.",
+        "Shopify fulfills partially out of the box, so your mechanics are fine. The tickets come from surprise: if the page implied one box and two turn up, people write in. Say so at checkout.",
       unique: true,
     },
     {
       question: "How far ahead should we open a preorder window?",
       answer:
-        "As far as the exposure your stock doesn't cover. Your worst arrival minus your average, less whatever you'll hold as stock, is your window.",
+        "As far as the exposure your stock doesn't cover: your worst arrival minus your average, less whatever you hold as stock.",
       unique: true,
     },
     {
       question: "Do we need Shopify Plus for any of this?",
       answer:
-        "No. Preorder, partial fulfillment and low-stock alerts all work on standard Shopify, usually with one app. Plus earns its money on checkout changes and API headroom, and you need neither for this.",
+        "No. Preorder, partial fulfillment and low-stock alerts work on standard Shopify, usually with one app. Plus earns its money on checkout changes and API headroom, neither of which you need here.",
       unique: true,
     },
     {
-      question: "How much does an ecommerce agency Los Angeles brands hire usually cost?",
+      question: "What should an ecommerce agency Los Angeles proposal include?",
       answer:
-        "Ours is $5,000 to $50,000 for a build, depending on how much of it is custom. You agree the number before we start. Ecommerce agency Los Angeles rates run above the national average, and ours don't change by city.",
+        "The measurement first, then one number and one date in writing, with the scope behind both. Ours shows your arrival range, so you see what the buffer is sized against.",
       unique: true,
     },
     {
-      question: "How long does a build take?",
+      question: "How long does an ecommerce agency Los Angeles build take?",
       answer:
-        "Most of our builds go live in about six weeks once scope is agreed. A migration carrying real order history runs eight to twelve, and the extra is your data rather than design.",
+        "Most builds go live in about six weeks once your scope is agreed. A migration carrying real order history runs eight to twelve, and the extra is data, not design.",
       unique: false,
     },
     {
       question: "Do you have an office we can visit?",
       answer:
-        "No. We're a remote team working with brands across the US, and we'd rather tell you than let you find out. What we do have is the work above: your arrival range, and what to do about it.",
-      unique: true,
-    },
-    {
-      question: "Do you do ads and email marketing too?",
-      answer:
-        "Yes, though not on this page. This one's about the store and the stock behind it. If acquisition and retention are what you're after, that's our ecommerce marketing page.",
+        "No. We're a remote team working with brands across the US, and we'd rather tell you than let you find out.",
       unique: true,
     },
   ],
@@ -653,23 +642,23 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
     // which is the mistake the standard opens with. It now names a purchase
     // that genuinely wastes money when it is made in the wrong order.
     whatWeWillTellYouNotToDo:
-      "We'll tell you not to buy a preorder app before the arrival range is measured. The app can't size the window, so bought in that order it gets configured twice.",
+      "Don't buy a preorder app before you've measured your arrival range. The app can't size the window, so it gets configured twice.",
     responseExpectation:
-      "A senior developer replies within one working day. Not a salesperson.",
+      "A senior developer replies within one working day, not a salesperson.",
     audit: {
       transition:
-        "You already know which order it was that went wrong.",
+        "You already know which order went wrong.",
       offer:
-        "Tell us about that one. We'll audit it and hand you the findings, not a summary:",
+        "Tell us about that one. We'll audit it and hand you the findings:",
       parts: [
-        "What your actual arrival range is, from your own last six, not what you were quoted.",
-        "What that range costs you, in stock you're holding or sales you're losing.",
-        "What to change first, and what that would take.",
+        "Your actual arrival range, from your last six, not what you were quoted.",
+        "What that range costs you, in stock held or sales lost.",
+        "What to change first, and what it would take.",
       ],
       limit:
-        "It's a diagnosis, not the work. Fixing it is a separate quote you can decline.",
+        "It's a diagnosis, not the work. Fixing it is quoted separately and you can decline.",
       noObligation:
-        "The audit is free and the findings are yours to keep either way.",
+        "The audit is free and the findings are yours either way.",
       // turnaround deliberately unset, matching the published Los Angeles
       // Shopify page. Copy Standard 8.4 asks for days and format to be named;
       // the owner chose to ship without one rather than commit to a number.
