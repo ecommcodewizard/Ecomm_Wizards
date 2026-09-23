@@ -17,7 +17,10 @@ export type CaseStudySlide = {
   metaLabel?: string;
   headline: ReactNode;
   quote: ReactNode;
-  avatar: string;
+  /** Optional: not every published study carries a headshot. When it is absent
+   *  the name and role render without the circle, rather than passing an empty
+   *  string to next/image (which asks the browser to refetch the whole page). */
+  avatar?: string;
   name: string;
   role: string;
   /** Case-study destination. Falls back to /case-studies when omitted. */
@@ -123,18 +126,25 @@ export default function CaseStudySlider({ slides, intervalMs = 6000, showDots = 
                       size: one headshot was 135 KB for a thumbnail, and a .jfif
                       one came back as text/plain because the extension is not
                       recognised. next/image resizes and re-encodes, which fixes
-                      both. */}
-                  <Image
-                    src={s.avatar}
-                    overrideSrc={s.avatar}
-                    alt={s.name}
-                    width={44}
-                    height={44}
-                    sizes="44px"
-                    className="ssd-results-quote-avatar"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                      both.
+
+                      Rendered only when there IS one. Some published studies
+                      carry a signed-off quote and a named person but no
+                      headshot (Mouldings One, for one), and passing that empty
+                      string to next/image made the browser refetch the page. */}
+                  {s.avatar ? (
+                    <Image
+                      src={s.avatar}
+                      overrideSrc={s.avatar}
+                      alt={s.name}
+                      width={44}
+                      height={44}
+                      sizes="44px"
+                      className="ssd-results-quote-avatar"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : null}
                   <div>
                     <div className="ssd-results-quote-name">{s.name}</div>
                     <div className="ssd-results-quote-role">{s.role}</div>
