@@ -84,7 +84,7 @@ export default function ResultsSlider({ results }: { results: Results }) {
     metaLabel: "What changed:",
     headline: headlineFor(s, results.headlines?.[s.slug]),
     quote: s.quote!,
-    avatar: s.quoteAvatar ?? "",
+    avatar: s.quoteAvatar,
     name: s.quotePerson!,
     role: s.quoteRole ?? s.brandName,
     href: `/case-studies/${s.slug}`,
