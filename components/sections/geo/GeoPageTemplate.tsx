@@ -152,9 +152,22 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
         <GradientLayer text={page.gradientLayer} heading={page.gradientLayerHeading} />
       )}
 
+      {/* assetBeforeServices (added 2026-09-24 for Boston #23): the asset and
+          its inline prompt run BEFORE the service menu, so a hook that promises
+          the research pays it off immediately instead of after a fifth of the
+          page. Opt-in; every other page keeps the 2026-09-05 order below. */}
+      {page.assetBeforeServices && (
+        <>
+          <OnlyHereAsset asset={page.asset} />
+          {page.midCta && <InlineCta text={page.midCta.text} label={page.midCta.label} />}
+        </>
+      )}
+
       {/* Services list sits after the asset, not before it. The asset is what
           the page is here to give away; a service menu ahead of it reads as a
-          pitch interrupting the argument. */}
+          pitch interrupting the argument. NOTE: this stopped being true on
+          2026-09-05, when the asset moved below the services; pages that want
+          the behaviour this comment describes set assetBeforeServices. */}
       {/* Discipline deep-dives, for pages whose keyword is the broad agency
           term rather than a named service. A page sets EITHER this or the
           services accordion: they answer the same slot for two different
@@ -208,9 +221,11 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
           NOTE: this reorders Los Angeles too, which is published, and every
           other geo page. The hero's secondary button still resolves to #asset,
           it just scrolls further now. */}
-      <OnlyHereAsset asset={page.asset} />
+      {!page.assetBeforeServices && <OnlyHereAsset asset={page.asset} />}
 
-      {page.midCta && <InlineCta text={page.midCta.text} label={page.midCta.label} />}
+      {!page.assetBeforeServices && page.midCta && (
+        <InlineCta text={page.midCta.text} label={page.midCta.label} />
+      )}
 
       {page.howWeWork && <HowWeWorkBlock data={page.howWeWork} />}
 

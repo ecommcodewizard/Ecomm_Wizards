@@ -218,8 +218,13 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
           .gph-primary { display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; background: #000000; color: #ffffff; padding: 14px 32px; font-size: 15px; font-weight: 600; line-height: 1.2; text-decoration: none; white-space: nowrap; transition: background .3s ease, color .3s ease; }
           .gph-ring:hover .gph-primary { background: #ffffff; color: #000000; }
           .gph-primary:focus-visible { outline: 3px solid #3DC77A; outline-offset: 3px; }
-          .gph-secondary { display: inline-flex; align-items: center; gap: 6px; padding: 14px 0; font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.7); text-decoration: none; transition: color .2s ease; }
-          .gph-secondary:hover { color: #ffffff; }
+          /* Lifted from 0.7 white to full white with a visible rule under it,
+             2026-09-24. At 0.7 on black, next to a bright bordered button, two
+             reviewers read it as disabled and nearly missed it. It is an
+             in-page anchor to the asset, so it costs no exits and it is the
+             highest-intent click above the fold. */
+          .gph-secondary { display: inline-flex; align-items: center; gap: 6px; padding: 14px 0; font-size: 15px; font-weight: 600; color: #ffffff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.45); transition: border-color .2s ease; }
+          .gph-secondary:hover { border-bottom-color: #ffffff; }
           .gph-secondary:focus-visible { outline: 3px solid #3DC77A; outline-offset: 3px; border-radius: 4px; }
           @media (max-width: 1024px) { .gph-h1 { font-size: 40px; } }
           @media (max-width: 640px) { .gph-h1 { font-size: 28px; line-height: 1.22; margin-top: 16px; } .gph-ctas { margin-top: 24px; } .gph-primary { padding: 13px 26px; } }

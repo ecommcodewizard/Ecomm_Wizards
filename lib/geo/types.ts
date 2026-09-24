@@ -464,6 +464,20 @@ const BaseSchema = z.object({
    *  For keywords where the reader hasn't picked a service (Page Standard
    *  Step 07: menu early). Added 2026-09-19 for California. */
   servicesBeforeGradient: z.boolean().optional(),
+  /** Render the Only-Here Asset (and its midCta) BEFORE the services menu
+   *  rather than after it.
+   *
+   *  Added 2026-09-24 for Boston #23 after two independent reviews hit the
+   *  same wall: the hook promises "everything we found is below", and the
+   *  reader then has to scroll the whole discipline menu before the research
+   *  pays that off. One reviewer measured the delay, the other simply stopped
+   *  reading there.
+   *
+   *  Opt-in, so the published pages keep the order they shipped with. Note the
+   *  comment above the services block in GeoPageTemplate still claims services
+   *  sit after the asset; that stopped being true on 2026-09-05 when the asset
+   *  was moved down, and this flag is how a page gets the older behaviour. */
+  assetBeforeServices: z.boolean().optional(),
   /** Optional industries block. Verifiable: every brand named must have a
    *  published case study. */
   industries: IndustriesSchema.optional(),
