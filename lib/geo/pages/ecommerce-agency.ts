@@ -549,6 +549,7 @@ export const ECOMMERCE_AGENCY: HubPage = {
     "/services/ecommerce-agency/new-york",
     "/services/ecommerce-agency/austin",
     "/services/ecommerce-agency/dallas",
+    "/services/ecommerce-agency/boston",
     "/services/ecommerce-agency/miami",
     "/services/ecommerce-agency/florida",
     "/services/ecommerce-agency/boston",

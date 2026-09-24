@@ -101,10 +101,30 @@ export function looksNumeric(cell: string): boolean {
 // Component
 // ---------------------------------------------------------------------------
 
+/* A tick, not an empty box.
+ *
+ * This used to draw an empty rounded square with a green border, which is
+ * pixel-for-pixel an unchecked checkbox. The asset's own intro tells the reader
+ * to go and run the checks, so the square read as something to tick, and
+ * nothing was behind it: no input, no state, aria-hidden. Two independent
+ * reviews landed on it on 2026-09-24 as a control that looks interactive and
+ * is not.
+ *
+ * A tick still says "checklist" without promising an interaction the page
+ * cannot honour. Making it genuinely tickable would mean converting this
+ * server component to a client one for every geo page, which is a bigger
+ * change than the problem deserves. */
 function CheckGlyph() {
   return (
     <svg className="ga-check" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" focusable="false">
-      <rect x="1.5" y="1.5" width="17" height="17" rx="4" fill="#ffffff" stroke="#2A9555" strokeWidth="1.6" />
+      <path
+        d="M3.5 10.5l4 4 9-9"
+        fill="none"
+        stroke="#2A9555"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
@@ -253,17 +273,24 @@ export default function AssetTable({ renderer, columns, rows, caption, hideColum
             .ga-row:last-child { margin-bottom: 0; }
             .ga-rowlabel { display: block; min-width: 0; width: auto; padding: 14px 16px; border-bottom: 1px solid rgba(0,0,0,0.08); font-size: 15.5px; }
             .ga-row:last-child .ga-rowlabel { border-bottom: 1px solid rgba(0,0,0,0.08); }
-            .ga-td { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; min-width: 0; width: auto; padding: 11px 16px; border-bottom: 1px solid rgba(0,0,0,0.05); text-align: left; }
+            /* Label ABOVE the value, both flush left. This was a flex row with
+               space-between, which pushed the finding hard right against a
+               column name that wrapped to three lines on a 390px screen, so
+               every value read ragged-left with a gap down the middle. Two
+               independent reviews flagged the same thing on 2026-09-24. */
+            .ga-td { display: block; min-width: 0; width: auto; padding: 11px 16px; border-bottom: 1px solid rgba(0,0,0,0.05); text-align: left; }
             .ga-row .ga-td:last-child { border-bottom: none; }
             /* The column name, printed per cell now that the header row is gone. */
-            .ga-td::before { content: attr(data-label); flex: 0 1 auto; font-size: 11.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #64748b; line-height: 1.5; }
+            .ga-td::before { content: attr(data-label); display: block; margin-bottom: 3px; font-size: 11.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #64748b; line-height: 1.4; }
             .ga-td[data-label=""]::before { display: none; }
             /* Same reasoning as the desktop rule: if the headings are hidden
                there, they must not reappear as per-cell labels on a phone. */
             .ga-wrap[data-noheader="true"] .ga-td::before { display: none; }
             .ga-wrap[data-noheader="true"] .ga-td { justify-content: flex-start; }
             .ga-wrap[data-noheader="true"] .ga-td .ga-cell { justify-content: flex-start; text-align: left; }
-            .ga-td .ga-cell { flex: 0 1 auto; justify-content: flex-end; text-align: right; }
+            /* Was flex-end/right, which belonged to the old side-by-side row.
+               With the label stacked above, the value reads left like the rest. */
+            .ga-td .ga-cell { flex: 0 1 auto; justify-content: flex-start; text-align: left; }
             .ga-td--num { text-align: left; white-space: normal; }
             .ga-td--num .ga-cell { width: auto; }
             /* The proportional bar is measured against the cell, which is now a

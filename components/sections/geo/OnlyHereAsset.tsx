@@ -73,6 +73,14 @@ export default function OnlyHereAsset({ asset, id = "asset" }: { asset: OnlyHere
            below and should read as attached to this table, not as a separate
            band. Specificity beats .gp-section at every breakpoint. */
         .gp-section.oha { padding-bottom: 20px; }
+          /* The three blocks under the table are the highest-intent reading on
+             a geo page, and they were running the full container width while
+             every other prose block is capped at 760px, so they set at roughly
+             160 characters a line. Capped 2026-09-24 after a CRO review. */
+          /* A single supporting block is prose and is capped with the rest; a
+             two-up grid keeps the full width, because each column is already
+             near the measure. */
+          .oha-derived, .oha-list, .oha-blocks:not(.gp-grid-2) { max-width: 760px; }
           .oha-derived { margin: 24px 0 0; padding: 4px 0 4px 20px; border-left: 4px solid #2A9555; }
           .oha-derived .gp-p { font-size: 17px; }
           .oha-list { margin: 28px 0 0; }
