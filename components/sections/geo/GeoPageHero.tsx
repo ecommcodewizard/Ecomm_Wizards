@@ -150,8 +150,14 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
                 src={image.src}
                 overrideSrc={image.src}
                 alt={image.alt}
-                width={640}
-                height={480}
+                /* 1280x960, not 640x480. These are intrinsic dimensions, so
+                   they pick the srcset candidates: at 640 the 1x candidate was
+                   a 640px-wide file for a media column that is ~610 CSS px,
+                   which crushed the detail out of the cutout composites. The
+                   4:3 ratio is unchanged, so no layout shift, and the video
+                   heroes never take this branch. */
+                width={1280}
+                height={960}
                 priority
                 className={image.cutout ? "gph-img gph-img--cutout" : "gph-img"}
                 style={image.aspect ? { aspectRatio: image.aspect, objectFit: "cover" } : undefined}

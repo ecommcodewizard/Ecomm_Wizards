@@ -629,6 +629,10 @@ export const GeoPageSchema = BaseSchema.extend({
   /** Block 4: service x place. Minimum two sourced facts. */
   gradientLayer: z.string().min(1),
   gradientLayerHeading: z.string().min(1).optional(),
+  /** Background of the gradient band. Defaults to cream; Raleigh sets white
+   *  (2026-09-29, owner's call) because assetBeforeServices plus a cream asset
+   *  put three cream bands in a row and the alternation was lost. */
+  gradientLayerTone: z.enum(["white", "cream"]).optional(),
   gradientFacts: z.array(SourceSchema),
   /** Optional block written FOR THE QUERY rather than for the reader: three or
    *  four declarative sentences naming who the page serves and what it covers.
