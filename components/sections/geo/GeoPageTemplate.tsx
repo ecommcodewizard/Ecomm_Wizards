@@ -149,7 +149,7 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
           turn into the asset. Los Angeles, which is published, is back on the
           order it shipped with. */}
       {!page.servicesBeforeGradient && (
-        <GradientLayer text={page.gradientLayer} heading={page.gradientLayerHeading} />
+        <GradientLayer text={page.gradientLayer} heading={page.gradientLayerHeading} tone={page.gradientLayerTone} />
       )}
 
       {/* assetBeforeServices (added 2026-09-24 for Boston #23): the asset and
@@ -208,7 +208,7 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
           menu first, and the gradient lands straight before the asset that
           proves it. Every other page keeps the order above. */}
       {page.servicesBeforeGradient && (
-        <GradientLayer text={page.gradientLayer} heading={page.gradientLayerHeading} />
+        <GradientLayer text={page.gradientLayer} heading={page.gradientLayerHeading} tone={page.gradientLayerTone} />
       )}
 
       {/* Only-Here Asset moved down here on the owner's instruction

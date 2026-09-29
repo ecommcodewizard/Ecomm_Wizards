@@ -15,15 +15,28 @@ import { inline } from "./Prose";
 //     certainly generic and the page has failed the uniqueness gate whatever
 //     check-shingles says.
 //
-// Cream band so it reads as the argument's centre of gravity, sitting between
-// the white place layer above and the white asset below.
+// Cream band by default, so it reads as the argument's centre of gravity
+// sitting between the white place layer above and the white asset below.
+//
+// `tone` overrides that, added 2026-09-29 for Raleigh #24 on the owner's call.
+// That page sets assetBeforeServices and a cream asset, which put three cream
+// bands in a row (proof, gradient, asset) and lost the alternation. Opt-in, so
+// the twenty pages that never set it keep the cream they shipped with.
 
 // `heading` is optional, and on a page of any length it should be supplied.
 // This block carries the page's load-bearing claim, so leaving it untitled
 // wastes the strongest passage on the page: an H2 immediately above a passage
 // is a primary signal for extraction. The heading must not restate the
 // keyword that opens the block, per Copy Standard 7.5.
-export default function GradientLayer({ text, heading }: { text: string; heading?: string }) {
+export default function GradientLayer({
+  text,
+  heading,
+  tone,
+}: {
+  text: string;
+  heading?: string;
+  tone?: "white" | "cream";
+}) {
   const paragraphs = text
     .split(/\n\s*\n/)
     .map((p) => p.trim())
@@ -32,7 +45,7 @@ export default function GradientLayer({ text, heading }: { text: string; heading
 
   return (
     <section
-      className="gp-section gp-section--cream gpgl"
+      className={`gp-section gp-section--${tone ?? "cream"} gpgl`}
       aria-labelledby={heading ? "gpgl-heading" : undefined}
       aria-label={heading ? undefined : "Why this market is different"}
     >
