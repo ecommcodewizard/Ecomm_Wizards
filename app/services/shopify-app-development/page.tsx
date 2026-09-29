@@ -2,7 +2,16 @@ import type { Metadata } from "next";
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
+import HubCityLinks from "@/components/sections/geo/HubCityLinks";
+import { publishedGeoForHub } from "@/lib/geo/registry";
 import Link from "next/link";
+
+// Published geo children of this hub. Without this block the Raleigh page under
+// /services/shopify-app-development would ship with no internal link pointing
+// at it, reachable only from the sitemap (added 2026-09-29). Same fix the theme
+// hub took on 2026-09-22. It renders nothing while there are no published
+// children, so it is safe ahead of the next city.
+const GEO_CHILDREN = publishedGeoForHub("/services/shopify-app-development");
 
 const META_DESCRIPTION =
   "Hire expert Shopify app developers to build custom private apps or launch on the Shopify App Store. Shopify Plus Preferred Partner. 150+ merchants.";
@@ -12,7 +21,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Shopify App Development Company | Private and Public Apps" },
-  description: META_DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
@@ -1891,6 +1900,8 @@ export default function ShopifyAppDevelopmentPage() {
           }
         ` }} />
       </section>
+
+      <HubCityLinks heading="Shopify App Development for Brands in the Markets We Know" pages={GEO_CHILDREN} />
 
       <RelatedServices current="/services/shopify-app-development" />
     </>
