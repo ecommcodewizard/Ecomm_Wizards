@@ -173,7 +173,7 @@ export const ECOMMERCE_AGENCY_MINNEAPOLIS: GeoPage = {
 
   trust: {
     heading: "{storesBuilt} stores built, and the product pages inside them.",
-    subheading: "Ten products or ten thousand, on the platform you are on now or the one you move to. That is the span an ecommerce agency Minneapolis brands keep has to cover.",
+    subheading: "Ten products or ten thousand, on the platform you are on now or the one you move to.",
   },
 
   assetCtaLabel: "See what 10,301 products showed",
@@ -244,12 +244,12 @@ export const ECOMMERCE_AGENCY_MINNEAPOLIS: GeoPage = {
       { label: "Stores whose bottom tenth gets two or fewer", cells: ["13 of 26"] },
     ],
     derived:
-      "The average is not the story. Five or six photographs is a perfectly reasonable product page, and if that were true across a catalog nobody would need to read this.\n\nThe gap is the story. The same store that gives its hero product 17 pictures gives the bottom of its catalog two, and the bottom of a catalog is most of a catalog. Nobody decided that. It is what happens when photography is commissioned campaign by campaign and the rest gets whatever the supplier sent.\n\nHalf the stores we read are in that position. Finding out whether you are is an afternoon, and it is a fair thing to ask any ecommerce agency Minneapolis brands shortlist to do before it proposes anything.",
+      "The average is not the story. Five or six photographs is a perfectly reasonable product page, and if that were true across a catalog nobody would need to read this.\n\nThe gap is the story. The same store that gives its hero product 17 pictures gives the bottom of its catalog two, and there is far more of that than there is hero product. Nobody decided that. It is what happens when photography is commissioned campaign by campaign and the rest gets whatever the supplier sent.\n\nHalf the stores we read are in that position. Finding out whether you are is an afternoon, and it is a fair thing to ask any ecommerce agency Minneapolis brands shortlist to do before it proposes anything.",
     derivedList: {
       title: "Three things to check on your own catalog",
       items: [
         "Sort your products by how recently they were added and open the oldest one. That is usually where the drop-off starts.",
-        "Count the pictures on something outside your top twenty sellers. The top twenty are always fine.",
+        "Count the pictures on something outside your top twenty sellers. Those are the ones that get looked after.",
         "Look at whether every color you sell has a photograph of that color. If not, somebody is buying blind.",
       ],
     },
@@ -390,9 +390,13 @@ export const ECOMMERCE_AGENCY_MINNEAPOLIS: GeoPage = {
         "That is fine, and it is not the first question we would ask. The count above runs the same way whatever a store is built on, because it reads your catalog rather than the platform.\n\nIf moving would help we will say so, and if it would not we will say that too.",
     },
     {
+      // Rewritten after the review passes. The page diagnosed a photography
+      // problem and never said who fixes it, which left a reader asking the
+      // obvious question: do you take the pictures? We do not, and saying so
+      // plainly is what makes the rest of the answer worth anything.
       objection: "Reshooting the whole catalog is not happening.",
       answer:
-        "Nor should it. Almost nobody needs that, and we would not propose it.\n\nThe useful version is a list, worst first, and a rule for what a new product needs before it can go live on your store. That stops the list growing back.",
+        "Nor should it, and we would not propose it. We do not take photographs.\n\nWhat an ecommerce agency Minneapolis brands hire builds is everything around them. The list of which products actually need a shoot. The rule that stops a new one going live without enough. And pages that use what you already have properly, which is usually where half the win turns out to be.",
     },
     {
       objection: "We would rather work with someone nearby.",
