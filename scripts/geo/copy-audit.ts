@@ -167,7 +167,7 @@ const r = readability(all);
 const line = (n = 72) => "-".repeat(n);
 
 console.log("=".repeat(72));
-console.log(page.path + "  (status: " + page.status + ")");
+console.log(page.path);
 console.log("=".repeat(72));
 
 if (r) {

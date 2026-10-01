@@ -209,7 +209,6 @@ export const SHOPIFY_DEV_ORANGE_COUNTY: GeoPage = {
   slug: "orange-county",
   path: "/services/shopify-development-agency/orange-county",
   hub: "/services/shopify-development-agency",
-  status: "published",
 
   geo: {
     name: "Orange County",

@@ -1,10 +1,13 @@
 // Registry of every geo programme page (hubs + geo pages). This list is the
-// single source of truth for: the routes that exist, what the sitemap emits, the
-// publish gate, and every guardrail script in scripts/geo/.
+// single source of truth for: the routes that exist, what the sitemap emits, and
+// every guardrail script in scripts/geo/.
 //
-// Publishing is a discrete commit that flips a page's `status` to "published".
-// scripts/geo/velocity.ts fails CI if more than 5 pages flip inside a rolling
-// 7 days.
+// There is no publish gate. Adding a page here and merging to main puts it live:
+// it renders, it enters the sitemap, and its hub links down to it.
+//
+// The guardrails in scripts/geo are the only gate, and nothing runs them for you:
+// this repo has no CI workflow. Run `npm run geo:check` before every merge. An
+// unfinished page also fails `next build`, which is the backstop.
 
 import { SERVICE_CATEGORIES } from "@/lib/services";
 import { GeoProgrammePageSchema, NEEDS_INPUT, hasNeedsInput, proseStrings, wordCount, type GeoPage, type GeoProgrammePage, type HubPage } from "./types";
@@ -56,18 +59,18 @@ export function getGeo(hubPath: string, slug: string): GeoPage | undefined {
   return p && p.type === "geo" ? p : undefined;
 }
 
-/** Geo children of a hub, published only (a hub never links to a 404). */
-export function publishedChildren(hub: HubPage): GeoPage[] {
-  return GEO_PAGES.filter((p): p is GeoPage => p.type === "geo" && p.hub === hub.path && p.status === "published");
+/** Geo children of a hub. Every registered page is live, so this is all of them. */
+export function hubChildren(hub: HubPage): GeoPage[] {
+  return GEO_PAGES.filter((p): p is GeoPage => p.type === "geo" && p.hub === hub.path);
 }
 
-/** Published geo pages sitting under a hub, addressed by PATH rather than by a
- *  HubPage object. publishedChildren above only works for hubs that are
- *  themselves in the geo programme; several hubs are ordinary hand-built
- *  service pages, and those still need to link down to their geo children or
- *  the geo page launches with no inbound internal link at all. */
-export function publishedGeoForHub(hubPath: string): GeoPage[] {
-  return GEO_PAGES.filter((p): p is GeoPage => p.type === "geo" && p.hub === hubPath && p.status === "published");
+/** Geo pages sitting under a hub, addressed by PATH rather than by a HubPage
+ *  object. hubChildren above only works for hubs that are themselves in the geo
+ *  programme; several hubs are ordinary hand-built service pages, and those
+ *  still need to link down to their geo children or the geo page launches with
+ *  no inbound internal link at all. */
+export function geoForHub(hubPath: string): GeoPage[] {
+  return GEO_PAGES.filter((p): p is GeoPage => p.type === "geo" && p.hub === hubPath);
 }
 
 export function canonicalUrl(page: GeoProgrammePage): string {
@@ -88,32 +91,12 @@ export function hubPathToLabel(hubPath: string): string {
 }
 
 // ---------------------------------------------------------------------------
-// Publish gate
+// Routes and validation
 // ---------------------------------------------------------------------------
 
-/** Paths that belong in the sitemap: published pages only. */
-export function publishedGeoRoutes(): string[] {
-  return GEO_PAGES.filter((p) => p.status === "published").map((p) => p.path);
-}
-
-/** Should this page render for a request?
- *
- *  Published pages always render. An unpublished page renders anywhere it can
- *  only be seen by the team, and 404s on the live site:
- *    - local `next dev`
- *    - Vercel PR preview deployments (VERCEL_ENV is "preview" there; the
- *      Hostinger production build never sets it, so live traffic still 404s)
- *    - any host where GEO_PREVIEW=1 is set deliberately
- *
- *  Note this is evaluated at build time for these statically prerendered
- *  routes, so the decision is baked into each deployment rather than read per
- *  request. Unpublished pages also carry robots noindex from the route's
- *  metadata, so a preview URL cannot be indexed even while it renders. */
-export function isRenderable(page: GeoProgrammePage): boolean {
-  if (page.status === "published") return true;
-  if (process.env.NODE_ENV !== "production") return true;
-  if (process.env.VERCEL_ENV === "preview") return true;
-  return process.env.GEO_PREVIEW === "1";
+/** Paths that belong in the sitemap: every registered page. */
+export function geoRoutes(): string[] {
+  return GEO_PAGES.map((p) => p.path);
 }
 
 export type ValidationIssue = { path: string; level: "error" | "warn"; message: string };
@@ -131,8 +114,9 @@ export function validatePage(page: GeoProgrammePage, today: Date = new Date()): 
     return issues; // shape errors make the rest meaningless
   }
 
-  const publishing = page.status === "published";
-  const gate = publishing ? err : warn;
+  // Every registered page is live, so a content fault is always an error. There
+  // is no draft state left to downgrade it to a warning.
+  const gate = err;
 
   // Unfilled slots
   const markers = proseStrings(page).filter(hasNeedsInput).length;
@@ -213,14 +197,13 @@ export function validatePage(page: GeoProgrammePage, today: Date = new Date()): 
   return issues;
 }
 
-/** Throws when a published page is not publishable. Called from the route at
- *  render time so `next build` itself fails on an unfinished published page. */
+/** Throws when a page is not fit to be live. Called from the route at render
+ *  time so `next build` itself fails on an unfinished page. */
 export function assertPublishable(page: GeoProgrammePage): void {
-  if (page.status !== "published") return;
   const errors = validatePage(page).filter((i) => i.level === "error");
   if (errors.length) {
     throw new Error(
-      `[geo] ${page.path} is marked published but is not publishable:\n` + errors.map((e) => `  - ${e.message}`).join("\n"),
+      `[geo] ${page.path} is not fit to be live:\n` + errors.map((e) => `  - ${e.message}`).join("\n"),
     );
   }
 }

@@ -7,7 +7,7 @@
 import { spawnSync } from "node:child_process";
 import path from "node:path";
 
-const SCRIPTS = ["validate-content", "check-forbidden", "check-schema", "check-links", "check-shingles", "velocity"] as const;
+const SCRIPTS = ["validate-content", "check-forbidden", "check-schema", "check-links", "check-shingles"] as const;
 
 type Result = { name: string; code: number; ms: number };
 
@@ -38,7 +38,7 @@ function main(): number {
   }
   const failed = results.filter((r) => r.code !== 0);
   console.log(`\n${results.length - failed.length}/${results.length} passed${failed.length ? `; failed: ${failed.map((f) => f.name).join(", ")}` : ""}`);
-  console.log("Publish checklist: flip status in lib/geo/pages/<slug>.ts, add the hub to SERVICE_CATEGORIES in lib/services.ts, purge the Hostinger CDN after deploy.");
+  console.log("Ship checklist: register the page in GEO_PAGES, add its hub to SERVICE_CATEGORIES in lib/services.ts if new, merge to main, purge the Hostinger CDN after deploy. Merging is publishing: there is no status to flip.");
   return failed.length ? 1 : 0;
 }
 

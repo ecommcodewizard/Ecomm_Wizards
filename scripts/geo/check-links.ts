@@ -125,7 +125,7 @@ function main(): number {
         }
       }
     } else {
-      console.log(`SKIP ${page.path}: no rendered HTML at ${path.relative(ROOT, file)} (status=${page.status})`);
+      console.log(`SKIP ${page.path}: no rendered HTML at ${path.relative(ROOT, file)}`);
     }
 
     for (const i of issues) console.log(`FAIL ${page.path}: ${i}`);

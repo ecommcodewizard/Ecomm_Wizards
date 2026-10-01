@@ -8,7 +8,7 @@
 // shopify agency cambridge / b2b shopify agency boston / shopify developers
 // new england.
 // Hub: /services/shopify-development-agency, which already renders
-// HubCityLinks from publishedGeoForHub, so no hub edit is needed.
+// HubCityLinks from geoForHub, so no hub edit is needed.
 //
 // NO PAGE SPEC ROW AND NO BUILD CARD. Boston is not among the ten pages in
 // Page Specification v2.0, so the gradient, the asset and the case studies had
@@ -150,7 +150,6 @@ export const SHOPIFY_DEV_BOSTON: GeoPage = {
   slug: "boston",
   path: "/services/shopify-development-agency/boston",
   hub: "/services/shopify-development-agency",
-  status: "published",
 
   geo: {
     name: "Boston",

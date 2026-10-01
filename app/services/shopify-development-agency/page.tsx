@@ -7,7 +7,7 @@ import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/Case
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
-import { publishedGeoForHub } from "@/lib/geo/registry";
+import { geoForHub } from "@/lib/geo/registry";
 import HubCityLinks from "@/components/sections/geo/HubCityLinks";
 import CalEmbed from "@/app/book-shopify-consultation/CalEmbed";
 
@@ -420,7 +420,7 @@ const WarnIcon = () => (
   </svg>
 );
 
-const GEO_CHILDREN = publishedGeoForHub("/services/shopify-development-agency");
+const GEO_CHILDREN = geoForHub("/services/shopify-development-agency");
 
 export default function Page() {
   return (

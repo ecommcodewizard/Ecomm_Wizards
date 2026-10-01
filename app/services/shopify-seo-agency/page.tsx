@@ -8,9 +8,9 @@ import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
 import HubCityLinks from "@/components/sections/geo/HubCityLinks";
-import { publishedGeoForHub } from "@/lib/geo/registry";
+import { geoForHub } from "@/lib/geo/registry";
 
-const GEO_CHILDREN = publishedGeoForHub("/services/shopify-seo-agency");
+const GEO_CHILDREN = geoForHub("/services/shopify-seo-agency");
 
 const META_DESCRIPTION =
   "Shopify SEO agency for 150+ stores. We fix technical issues, map keywords to buyer intent, and grow organic revenue that compounds. 320% avg traffic lift.";

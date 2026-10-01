@@ -172,7 +172,6 @@ export const SHOPIFY_DEV_SAN_DIEGO: GeoPage = {
   slug: "san-diego",
   path: "/services/shopify-development-agency/san-diego",
   hub: "/services/shopify-development-agency",
-  status: "published",
 
   geo: {
     name: "San Diego",

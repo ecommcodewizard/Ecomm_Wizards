@@ -9,12 +9,12 @@ import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
 import HubCityLinks from "@/components/sections/geo/HubCityLinks";
-import { publishedGeoForHub } from "@/lib/geo/registry";
+import { geoForHub } from "@/lib/geo/registry";
 
 // Published geo children of this hub. Without this block the California page
 // under /services/shopify-theme-development would launch with no internal
 // link pointing at it (added 2026-09-22).
-const GEO_CHILDREN = publishedGeoForHub("/services/shopify-theme-development");
+const GEO_CHILDREN = geoForHub("/services/shopify-theme-development");
 
 const META_DESCRIPTION =
   "Shopify theme development agency building custom Liquid themes on Shopify 2.0. Fast, mobile-first, and built to convert. 100+ themes built.";

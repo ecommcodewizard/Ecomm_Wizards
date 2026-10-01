@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import GeoPageTemplate from "@/components/sections/geo/GeoPageTemplate";
 import { SHOPIFY_DEV_CALIFORNIA as page } from "@/lib/geo/pages/shopify-development-agency-california";
-import { canonicalUrl, isRenderable } from "@/lib/geo/registry";
+import { canonicalUrl } from "@/lib/geo/registry";
 import { og } from "@/lib/og";
 
 // Geo programme California #8 (Batch 1b), a state page. Content lives in
@@ -27,10 +26,8 @@ export const metadata: Metadata = {
     description: page.metaDescription,
     images: og(page.path, page.shortTitle).images,
   },
-  ...(page.status !== "published" ? { robots: { index: false, follow: false } } : {}),
 };
 
 export default function Page() {
-  if (!isRenderable(page)) notFound();
   return <GeoPageTemplate page={page} />;
 }

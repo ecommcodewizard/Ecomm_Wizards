@@ -140,17 +140,11 @@ function pass2(): number {
   for (const page of GEO_PAGES) {
     const file = htmlPathFor(page.path);
     if (!fs.existsSync(file)) {
-      console.log(`SKIP ${page.path}: no rendered HTML at ${path.relative(ROOT, file)} (status=${page.status})`);
+      console.log(`SKIP ${page.path}: no rendered HTML at ${path.relative(ROOT, file)}`);
       continue;
     }
-    // An unpublished page renders as notFound() in a production build, so the
-    // emitted .html is the 404 shell and carries no page schema. Checking it
-    // would fail every draft. The route's own guard is what keeps it a 404;
-    // pass 1 already validated the schema this page WILL emit once published.
-    if (page.status !== "published") {
-      console.log(`SKIP ${page.path}: status=${page.status}, rendered HTML is the 404 shell (pass 1 covers its schema)`);
-      continue;
-    }
+    // Every registered page is live, so every rendered .html is the real page
+    // rather than a 404 shell. Pass 2 therefore covers the whole set.
     checked++;
     const html = fs.readFileSync(file, "utf8");
     const blocks = extractJsonLd(html);

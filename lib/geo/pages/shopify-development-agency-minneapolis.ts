@@ -117,7 +117,6 @@ export const SHOPIFY_DEV_MINNEAPOLIS: GeoPage = {
   slug: "minneapolis",
   path: "/services/shopify-development-agency/minneapolis",
   hub: "/services/shopify-development-agency",
-  status: "published",
 
   geo: {
     name: "Minneapolis",

@@ -21,8 +21,7 @@
     "geo:forbidden": "tsx scripts/geo/check-forbidden.ts",
     "geo:schema": "tsx scripts/geo/check-schema.ts",
     "geo:links": "tsx scripts/geo/check-links.ts",
-    "geo:shingles": "tsx scripts/geo/check-shingles.ts",
-    "geo:velocity": "tsx scripts/geo/velocity.ts"
+    "geo:shingles": "tsx scripts/geo/check-shingles.ts"
   },
   "dependencies": {
     "@fontsource/poppins": "^5.2.7",
