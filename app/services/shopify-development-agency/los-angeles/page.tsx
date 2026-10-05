@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import GeoPageTemplate from "@/components/sections/geo/GeoPageTemplate";
 import { SHOPIFY_DEV_LOS_ANGELES as page } from "@/lib/geo/pages/shopify-development-agency-los-angeles";
-import { canonicalUrl, isRenderable } from "@/lib/geo/registry";
+import { canonicalUrl } from "@/lib/geo/registry";
 import { og } from "@/lib/og";
 
 // Geo programme page 4 (Batch 1). Content lives in
@@ -26,11 +25,9 @@ export const metadata: Metadata = {
     title: page.metaTitle,
     description: page.metaDescription,
     images: og(page.path, page.shortTitle).images,
-  },
-  ...(page.status !== "published" ? { robots: { index: false, follow: false } } : {}),
+  },
 };
 
-export default function Page() {
-  if (!isRenderable(page)) notFound();
+export default function Page() {
   return <GeoPageTemplate page={page} />;
 }

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import HubPageTemplate from "@/components/sections/geo/HubPageTemplate";
 import { ECOMMERCE_SEO_AGENCY as page } from "@/lib/geo/pages/ecommerce-seo-agency";
-import { canonicalUrl, isRenderable } from "@/lib/geo/registry";
+import { canonicalUrl } from "@/lib/geo/registry";
 import { og } from "@/lib/og";
 
 // Geo programme hub H2 (Batch 1, page 2). Content lives in
@@ -25,11 +24,9 @@ export const metadata: Metadata = {
     title: page.metaTitle,
     description: page.metaDescription,
     images: og(page.path, page.shortTitle).images,
-  },
-  ...(page.status !== "published" ? { robots: { index: false, follow: false } } : {}),
+  },
 };
 
-export default function Page() {
-  if (!isRenderable(page)) notFound();
+export default function Page() {
   return <HubPageTemplate page={page} />;
 }

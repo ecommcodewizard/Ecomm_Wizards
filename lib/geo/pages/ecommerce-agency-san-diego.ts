@@ -150,7 +150,6 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
   slug: "san-diego",
   path: "/services/ecommerce-agency/san-diego",
   hub: "/services/ecommerce-agency",
-  status: "published",
 
   geo: {
     name: "San Diego",

@@ -126,7 +126,6 @@ export const ECOMMERCE_AGENCY_PHILADELPHIA: GeoPage = {
   slug: "philadelphia",
   path: "/services/ecommerce-agency/philadelphia",
   hub: "/services/ecommerce-agency",
-  status: "published",
 
   geo: {
     name: "Philadelphia",

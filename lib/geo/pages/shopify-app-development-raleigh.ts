@@ -158,7 +158,6 @@ export const SHOPIFY_APP_RALEIGH: GeoPage = {
   slug: "raleigh",
   path: "/services/shopify-app-development/raleigh",
   hub: "/services/shopify-app-development",
-  status: "published",
 
   geo: {
     name: "Raleigh",

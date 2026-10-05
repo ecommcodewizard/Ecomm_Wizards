@@ -57,7 +57,7 @@ function report(p: GeoProgrammePage): void {
   const primary = p.targetKeyword;
 
   console.log("=".repeat(72));
-  console.log(p.path + "  (status: " + p.status + ")");
+  console.log(p.path);
   console.log("=".repeat(72));
   console.log("Body word count: " + words + "  target " + p.wordCountTarget[0] + " to " + p.wordCountTarget[1]);
   console.log("");

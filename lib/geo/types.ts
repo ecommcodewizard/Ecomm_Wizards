@@ -3,7 +3,8 @@
 //
 // The build renders SHELL only: every prose slot below is filled by a human in
 // lib/geo/pages/<slug>.ts. Unfilled slots stay as "[NEEDS INPUT: ...]" markers.
-// A page with status "published" that still contains a marker FAILS the build
+// There is no draft or published status. A page listed in the registry is live
+// the moment it reaches main, so ANY page still holding a marker FAILS the build
 // (see lib/geo/registry.ts assertPublishable and scripts/geo/validate-content.ts).
 // That failure is deliberate: it is what stops an unfinished page reaching prod.
 //
@@ -21,9 +22,6 @@ import { z } from "zod";
 /** Marker a human replaces with sourced copy. Anything containing this fails
  *  validation for a published page. */
 export const NEEDS_INPUT = "[NEEDS INPUT";
-
-export const PAGE_STATUSES = ["draft", "review", "published"] as const;
-export type PageStatus = (typeof PAGE_STATUSES)[number];
 
 export const REVIEW_AFTER_DAYS = [90, 180, 365] as const;
 export type ReviewAfterDays = (typeof REVIEW_AFTER_DAYS)[number];
@@ -379,7 +377,6 @@ const BaseSchema = z.object({
   slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "kebab-case slug, no dots"),
   /** Site-relative path, e.g. "/services/ecommerce-agency". Self-canonical. */
   path: z.string().startsWith("/services/"),
-  status: z.enum(PAGE_STATUSES),
 
   // SEO
   targetKeyword: z.string().min(1),

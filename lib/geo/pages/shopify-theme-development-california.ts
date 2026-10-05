@@ -130,7 +130,6 @@ export const SHOPIFY_THEME_CALIFORNIA: GeoPage = {
   slug: "california",
   path: "/services/shopify-theme-development/california",
   hub: "/services/shopify-theme-development",
-  status: "published",
 
   geo: {
     name: "California",

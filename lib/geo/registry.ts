@@ -61,9 +61,10 @@ export function getGeo(hubPath: string, slug: string): GeoPage | undefined {
   return p && p.type === "geo" ? p : undefined;
 }
 
-/** Geo children of a hub, published only (a hub never links to a 404). */
+/** Geo children of a hub. Everything in the registry is live, so this is
+ *  simply every geo page sitting under it. */
 export function publishedChildren(hub: HubPage): GeoPage[] {
-  return GEO_PAGES.filter((p): p is GeoPage => p.type === "geo" && p.hub === hub.path && p.status === "published");
+  return GEO_PAGES.filter((p): p is GeoPage => p.type === "geo" && p.hub === hub.path);
 }
 
 /** Published geo pages sitting under a hub, addressed by PATH rather than by a
@@ -72,7 +73,7 @@ export function publishedChildren(hub: HubPage): GeoPage[] {
  *  service pages, and those still need to link down to their geo children or
  *  the geo page launches with no inbound internal link at all. */
 export function publishedGeoForHub(hubPath: string): GeoPage[] {
-  return GEO_PAGES.filter((p): p is GeoPage => p.type === "geo" && p.hub === hubPath && p.status === "published");
+  return GEO_PAGES.filter((p): p is GeoPage => p.type === "geo" && p.hub === hubPath);
 }
 
 export function canonicalUrl(page: GeoProgrammePage): string {
@@ -96,29 +97,10 @@ export function hubPathToLabel(hubPath: string): string {
 // Publish gate
 // ---------------------------------------------------------------------------
 
-/** Paths that belong in the sitemap: published pages only. */
+/** Paths that belong in the sitemap: everything in the registry, since a page
+ *  reaching main is a page that is live. */
 export function publishedGeoRoutes(): string[] {
-  return GEO_PAGES.filter((p) => p.status === "published").map((p) => p.path);
-}
-
-/** Should this page render for a request?
- *
- *  Published pages always render. An unpublished page renders anywhere it can
- *  only be seen by the team, and 404s on the live site:
- *    - local `next dev`
- *    - Vercel PR preview deployments (VERCEL_ENV is "preview" there; the
- *      Hostinger production build never sets it, so live traffic still 404s)
- *    - any host where GEO_PREVIEW=1 is set deliberately
- *
- *  Note this is evaluated at build time for these statically prerendered
- *  routes, so the decision is baked into each deployment rather than read per
- *  request. Unpublished pages also carry robots noindex from the route's
- *  metadata, so a preview URL cannot be indexed even while it renders. */
-export function isRenderable(page: GeoProgrammePage): boolean {
-  if (page.status === "published") return true;
-  if (process.env.NODE_ENV !== "production") return true;
-  if (process.env.VERCEL_ENV === "preview") return true;
-  return process.env.GEO_PREVIEW === "1";
+  return GEO_PAGES.map((p) => p.path);
 }
 
 export type ValidationIssue = { path: string; level: "error" | "warn"; message: string };
@@ -136,8 +118,9 @@ export function validatePage(page: GeoProgrammePage, today: Date = new Date()): 
     return issues; // shape errors make the rest meaningless
   }
 
-  const publishing = page.status === "published";
-  const gate = publishing ? err : warn;
+  // Every page in the registry is live, so every problem is an error rather
+  // than a warning. There is no longer an unpublished state to be lenient to.
+  const gate = err;
 
   // Unfilled slots
   const markers = proseStrings(page).filter(hasNeedsInput).length;
@@ -218,10 +201,10 @@ export function validatePage(page: GeoProgrammePage, today: Date = new Date()): 
   return issues;
 }
 
-/** Throws when a published page is not publishable. Called from the route at
- *  render time so `next build` itself fails on an unfinished published page. */
+/** Throws when a page is not publishable. Called from the route at render time
+ *  so `next build` itself fails on an unfinished page. Every page in the
+ *  registry is live, so this applies to all of them. */
 export function assertPublishable(page: GeoProgrammePage): void {
-  if (page.status !== "published") return;
   const errors = validatePage(page).filter((i) => i.level === "error");
   if (errors.length) {
     throw new Error(

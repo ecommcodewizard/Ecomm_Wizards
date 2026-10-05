@@ -222,7 +222,6 @@ export const ECOMMERCE_AGENCY_LOS_ANGELES: GeoPage = {
   slug: "los-angeles",
   path: "/services/ecommerce-agency/los-angeles",
   hub: "/services/ecommerce-agency",
-  status: "published",
 
   geo: {
     name: "Los Angeles",

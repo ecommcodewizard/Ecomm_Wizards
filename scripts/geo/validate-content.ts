@@ -38,7 +38,7 @@ function main(): number {
     const words = wordCount(prose);
     const markers = prose.filter(hasNeedsInput).length;
     const state = errors.length ? "ERROR" : warnings.length ? "WARN" : "OK";
-    console.log(`PAGE ${page.path} | status=${page.status} | ${state} | words=${words} | markers=${markers}`);
+    console.log(`PAGE ${page.path} | ${state} | words=${words} | markers=${markers}`);
   }
 
   console.log("");

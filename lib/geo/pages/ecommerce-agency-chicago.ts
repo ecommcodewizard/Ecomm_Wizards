@@ -129,7 +129,6 @@ export const ECOMMERCE_AGENCY_CHICAGO: GeoPage = {
   slug: "chicago",
   path: "/services/ecommerce-agency/chicago",
   hub: "/services/ecommerce-agency",
-  status: "published",
 
   geo: {
     name: "Chicago",
