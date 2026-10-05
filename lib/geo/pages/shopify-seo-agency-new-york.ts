@@ -126,7 +126,6 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
   slug: "new-york",
   path: "/services/shopify-seo-agency/new-york",
   hub: "/services/shopify-seo-agency",
-  status: "published",
 
   geo: {
     name: "New York",

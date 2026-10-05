@@ -138,7 +138,6 @@ export const SHOPIFY_DEV_AUSTIN: GeoPage = {
   slug: "austin",
   path: "/services/shopify-development-agency/austin",
   hub: "/services/shopify-development-agency",
-  status: "published",
 
   geo: {
     name: "Austin",

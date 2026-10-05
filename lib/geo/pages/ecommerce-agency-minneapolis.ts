@@ -110,7 +110,6 @@ export const ECOMMERCE_AGENCY_MINNEAPOLIS: GeoPage = {
   slug: "minneapolis",
   path: "/services/ecommerce-agency/minneapolis",
   hub: "/services/ecommerce-agency",
-  status: "published",
 
   geo: {
     name: "Minneapolis",
