@@ -367,22 +367,22 @@ export const ECOMMERCE_SEO_AGENCY_CHICAGO: GeoPage = {
         body: "We run the checks on your catalog and send what we find. If there is not enough there to be worth paying for, we say that.",
       },
       {
-        title: "We work on the store you have got",
-        body: "Everything is measured on what you run today. If replacing it is not the answer, we say so and name what is.",
+        title: "We start from the store you have",
+        body: "Everything is measured against what you run now. If replacing it is not the answer, we will say so and name what is.",
       },
       {
         title: "You see the number both ways",
-        body: "We measure what we are asked to fix before we touch it, and again afterwards. You get both figures, not a description of them.",
+        body: "We count before we touch anything, then count again when it is done. You get both numbers, not a summary of them.",
       },
       {
         title: "Nothing is tied to us",
-        body: "The code, the accounts and the data are in your name. If you leave, there is nothing to ask us for.",
+        body: "The code, the accounts and the search tools are yours throughout. If you leave, nothing of yours stays with us.",
       },
     ],
   },
 
   // ── Block 7: Where we would start ─────────────────────────────────────
-  whatWeDoAboutItHeading: "What we would do in the first two weeks",
+  whatWeDoAboutItHeading: "What the first two weeks look like",
   whatWeDoAboutIt:
     "We run the three checks on your catalog and put the result next to what those pages currently earn you. That tells you two things: how many pages have nothing of their own, and which of them already get seen.\n\nThe overlap is the work. A blank category page nobody visits can wait. A blank one that already ranks on page two is worth a morning.\n\nThen we write the first batch with you, not at you, because you know why someone buys the thing and we do not. Any ecommerce SEO agency Chicago brands trust will want that conversation first.",
 
@@ -489,9 +489,9 @@ export const ECOMMERCE_SEO_AGENCY_CHICAGO: GeoPage = {
       unique: true,
     },
     {
-      question: "Will you touch a WooCommerce or Magento store?",
+      question: "Does this work on WooCommerce or Magento?",
       answer:
-        "Yes. We work on whatever your store runs on now. The first job is finding out whether the platform is the problem or something sitting on top of it, and usually it is not the platform.",
+        "Yes. We work on whatever you are on now. The first job is working out whether the platform is the problem or something sitting on top of it, and it is usually the second.",
       unique: true,
     },
     {
@@ -507,7 +507,7 @@ export const ECOMMERCE_SEO_AGENCY_CHICAGO: GeoPage = {
       unique: true,
     },
     {
-      question: "Our developer is staying. Is that a problem?",
+      question: "We already have a developer. Does that matter?",
       answer:
         "Usually, and often it is the quickest route. We can hand them a specification and check the result, or take the parts nobody on your team has time for.",
       unique: true,

@@ -231,7 +231,7 @@ export const ECOMMERCE_AGENCY_CHICAGO: GeoPage = {
   // ── Block 4: Gradient layer ───────────────────────────────────────────
   gradientLayerHeading: "The cart is lost at the delivery line, not the price",
   gradientLayer:
-    "**People do not leave because the product costs too much.** In Baymard's research into why full carts get abandoned, the top reason is extra costs being too high: shipping, tax and fees together. It beats every other reason on the list.\n\n**Which means the delivery figure is doing a lot of work.** It is the last number a customer sees before deciding, and it arrives after they have already chosen what they want.\n\n**And a store can only charge what it can calculate.** Live carrier rates need a weight on every item. Without one the store falls back to a flat figure. A flat figure is wrong twice: too low on the heavy orders, which you pay for, and too high on the small ones, which you lose. Any ecommerce agency Chicago brands trust should be able to tell you which of those is happening to you.",
+    "**People do not leave because the product costs too much.** The research on abandoned carts puts one reason at the top: extra costs being too high, counting shipping, tax and fees. It beats every other reason on the list.\n\n**Which means the delivery figure is doing a lot of work.** It is the last number a customer sees before deciding, and it arrives after they have already chosen what they want.\n\n**And a store can only charge what it can calculate.** Live carrier rates need a weight on every item. Without one the store falls back to a flat figure. A flat figure is wrong twice: too low on the heavy orders, which you pay for, and too high on the small ones, which you lose. Any ecommerce agency Chicago brands trust should be able to tell you which of those is happening to you.",
   gradientFacts: [
     {
       id: "baymard-cart-abandonment-2026",
@@ -329,7 +329,7 @@ export const ECOMMERCE_AGENCY_CHICAGO: GeoPage = {
       },
       {
         label: "Ecommerce development",
-        heading: "We write the logic a theme has no opinion about",
+        heading: "We write the shipping logic a theme has no opinion about",
         body: "Shipping logic, product data and integrations are where ecommerce custom web development Chicago brands actually need help.",
         covers: ["Ecommerce development", "Shipping and tax logic", "Integrations", "Performance", "Support"],
         imageAlt: "A multi-region store we rebuilt for the wellbeing brand NEOM",
@@ -369,26 +369,26 @@ export const ECOMMERCE_AGENCY_CHICAGO: GeoPage = {
     intro: "These four do not change with the size of the job. Worth putting the same list to every ecommerce agency Chicago brands talk to before you choose one.",
     items: [
       {
-        title: "We work on the store you have got",
-        body: "Everything is measured on what you run today. If replacing it is not the answer, we say so and name what is.",
+        title: "We work on what you run today",
+        body: "Everything is measured against the store you have. If replacing it is not the answer, we say so and name what is.",
       },
       {
         title: "You see the number both ways",
-        body: "We measure what we are asked to fix before we touch it, and again afterwards. You get both figures, not a description of them.",
+        body: "We weigh the problem before we touch it, then weigh it again after. You get both numbers, not a write-up of them.",
       },
       {
         title: "Nothing is tied to us",
-        body: "The code, the accounts and the data are in your name. If you leave, there is nothing to ask us for.",
+        body: "The code, the accounts and the carrier logins stay in your name. Walk away and nothing of yours sits with us.",
       },
       {
         title: "Scope is signed before work begins",
-        body: "If it has to change, you see it and agree before anyone acts on it.",
+        body: "If the job has to change, you see the change and agree to it before anyone starts.",
       },
     ],
   },
 
   // ── Block 7: Where we would start ─────────────────────────────────────
-  whatWeDoAboutItHeading: "What we would do in the first two weeks",
+  whatWeDoAboutItHeading: "Where we would start on your catalog",
   whatWeDoAboutIt:
     "We run the same count on your catalog and put it next to a year of your orders. That shows two things: how many items have no weight, and what your flat rate has been costing you on the heavy ones.\n\nUsually the second number is the surprise. It is not a figure anyone reports, so it just sits there.\n\nThen you get the choice. Fill the gaps and switch to live rates, which is a few weeks of catalog work. Or leave them and set the flat rate against what your orders actually weigh, which is the honest answer at low volumes. Any ecommerce agency Chicago brands hire should be willing to recommend the second one when it is right.",
 
@@ -449,7 +449,7 @@ export const ECOMMERCE_AGENCY_CHICAGO: GeoPage = {
     {
       objection: "Our store is not on Shopify.",
       answer:
-        "That is fine, and not the first question we would ask. Every platform needs the same thing to quote a real rate, and every one falls back to a flat figure without it.\n\nIf moving would help we will say so, and if not we will say that too.",
+        "That is fine, and not the first question we would ask. Every platform needs the same thing to quote you a real rate, and every one falls back to a flat figure without it.\n\nIf moving would help we will say so, and if not we will say that too.",
     },
     {
       objection: "This sounds like a small problem.",
@@ -492,7 +492,7 @@ export const ECOMMERCE_AGENCY_CHICAGO: GeoPage = {
       unique: true,
     },
     {
-      question: "Will you touch a WooCommerce or Magento store?",
+      question: "What if we are on WooCommerce or Magento?",
       answer:
         "Yes. We work on whatever your store runs on now. The first job is finding out whether the platform is the problem or something sitting on top of it, and often it is not the platform.",
       unique: true,
@@ -506,13 +506,13 @@ export const ECOMMERCE_AGENCY_CHICAGO: GeoPage = {
     {
       question: "Are you an ecommerce agency Chicago brands can work with remotely?",
       answer:
-        "Yes, and remotely is how it runs. There is no office in the city to visit. Where you sit does not change how the work is scoped, built or handed over.",
+        "Yes, and that is how all of it runs. There is no office here for you to drop into. Where you sit changes nothing about how the work is scoped or handed over.",
       unique: true,
     },
     {
-      question: "Our developer is staying. Is that a problem?",
+      question: "Our developer is staying. Does that get in the way?",
       answer:
-        "Usually, and often it is the quickest route. We can scope and hand over, or take the parts nobody on your team has time for. We will not quietly replace somebody doing a decent job.",
+        "Usually not, and often it is the quickest route. We can write the spec and check the result, or take what nobody on your team has time for. We will not quietly replace somebody doing a decent job.",
       unique: true,
     },
     {

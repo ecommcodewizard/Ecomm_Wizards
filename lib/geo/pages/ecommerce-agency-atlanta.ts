@@ -207,7 +207,7 @@ export const ECOMMERCE_AGENCY_ATLANTA: GeoPage = {
   ],
 
   trust: {
-    heading: "{storesBuilt} stores built, and the catalogs behind them.",
+    heading: "{storesBuilt} stores built, and the product data under them.",
     subheading: "Beauty, apparel, home. Trade ranges with forty sizes of one thing. Whichever ecommerce agency Atlanta brands you pick, make sure it reads your product data first.",
   },
 
@@ -320,7 +320,7 @@ export const ECOMMERCE_AGENCY_ATLANTA: GeoPage = {
       },
       {
         label: "Ecommerce development",
-        heading: "We write the logic a theme has no opinion about",
+        heading: "We write what the theme was never going to do",
         body: "Catalog structure, integrations and the feeds that carry your products out to other channels.",
         covers: ["Ecommerce development", "Catalog structure", "Integrations", "Performance", "Support"],
         imageAlt: "A trade catalog and ordering portal built for Mouldings One",
@@ -337,7 +337,7 @@ export const ECOMMERCE_AGENCY_ATLANTA: GeoPage = {
       },
       {
         label: "Growth",
-        heading: "We find the leak, fix it, and show you both numbers",
+        heading: "We find what is losing orders and prove the fix",
         covers: ["A/B testing", "Product discovery", "Email and retention", "Paid landing pages"],
         imageAlt: "Conversion testing for the menswear brand Twillory",
         caseSlug: "twillory-shopify-cro",
@@ -362,21 +362,21 @@ export const ECOMMERCE_AGENCY_ATLANTA: GeoPage = {
       },
       {
         title: "You see the number both ways",
-        body: "We measure what we are asked to fix before we touch it, and again afterwards. You get both figures, not a description of them.",
+        body: "We take the reading before anyone touches the catalog, and again afterwards. You get both numbers, not an account of them.",
       },
       {
         title: "Nothing is tied to us",
-        body: "The code, the accounts and the data are in your name. If you leave, there is nothing to ask us for.",
+        body: "The code, the accounts and the product data are yours from day one. If you leave, nothing of yours stays behind.",
       },
       {
         title: "Scope is signed before work begins",
-        body: "If it has to change, you see it and agree before anyone acts on it.",
+        body: "Nothing starts until you have agreed what it is. If it has to change midway, you see that first.",
       },
     ],
   },
 
   // ── Block 7: Where we would start ─────────────────────────────────────
-  whatWeDoAboutItHeading: "What we would do in the first two weeks",
+  whatWeDoAboutItHeading: "What we would do before anything else",
   whatWeDoAboutIt:
     "We run the same count on your catalog and put it beside what your search box gets asked for. Those two lists settle the argument in an afternoon.\n\nIf people search for things you sell and get nothing back, the labels are the job and the design can wait. If they find everything and still leave, the design is the job and we will say so.\n\nEither way you get the answer before you commit, which is the part an ecommerce agency Atlanta brands keep tends to get right.",
 
@@ -480,15 +480,15 @@ export const ECOMMERCE_AGENCY_ATLANTA: GeoPage = {
       unique: true,
     },
     {
-      question: "Will you touch a WooCommerce or Magento store?",
+      question: "Will you work on a WooCommerce or Magento store?",
       answer:
-        "Yes. We work on whatever your store runs on now. The first job is finding out whether the platform is the problem or something sitting on top of it, and usually it is not the platform.",
+        "Yes. We work on whatever you are on now. Every platform builds its menus out of product data, so the first job is reading yours rather than reading the admin.",
       unique: true,
     },
     {
       question: "Are you an ecommerce agency Atlanta brands can work with remotely?",
       answer:
-        "Yes, and remotely is how it runs. There is no office in the city to visit. Where you sit does not change how the work is scoped, built or handed over.",
+        "Yes, and remote is how the whole thing runs. There is no office here for you to visit. None of the work changes because of where either of us sits.",
       unique: true,
     },
     {
@@ -498,7 +498,7 @@ export const ECOMMERCE_AGENCY_ATLANTA: GeoPage = {
       unique: true,
     },
     {
-      question: "Our developer is staying. Is that a problem?",
+      question: "Our developer is staying on. Is that awkward?",
       answer:
         "Usually, and often it is the quickest route. We can hand them a plan and check the result, or take the parts nobody on your team has time for.",
       unique: true,
