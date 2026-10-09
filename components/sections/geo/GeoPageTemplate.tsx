@@ -87,6 +87,9 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
       <GeoStyles />
       <Breadcrumbs items={trail} />
 
+      {/* hideHeroSecondaryCta (2026-10-10, Maryland #38) leaves the hero with a
+          single action. GeoPageHero already renders nothing when secondaryCta is
+          undefined, so no page that omits the flag changes. */}
       <GeoPageHero
         eyebrow={page.shortTitle}
         h1={page.h1}
@@ -95,7 +98,7 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
         stats={page.heroStats}
         glow={page.heroGlow}
         primaryCta={page.heroCtaLabel ? { label: page.heroCtaLabel, href: "#contact" } : undefined}
-        secondaryCta={{ label: page.assetCtaLabel ?? "See the teardown", href: "#asset" }}
+        secondaryCta={page.hideHeroSecondaryCta ? undefined : { label: page.assetCtaLabel ?? "See the teardown", href: "#asset" }}
       />
 
       {page.trust && <TrustBar trust={page.trust} />}

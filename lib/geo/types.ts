@@ -496,6 +496,12 @@ const BaseSchema = z.object({
    *  over assetCtaLabel. Present so a page can send the secondary CTA at its
    *  case studies without changing where the other hubs' heroes point. */
   heroSecondaryCta: z.object({ label: z.string().min(1), href: z.string().min(1) }).optional(),
+  /** Drops the hero's secondary button altogether, leaving one action in the
+   *  hero. Added 2026-10-10 for Maryland #38, whose asset is a table of a
+   *  federal rule: pointing a shopper's second click at that reads as homework
+   *  rather than as an invitation, so the page offers nothing but "get in
+   *  touch". Leave it unset and the secondary button behaves as before. */
+  hideHeroSecondaryCta: z.boolean().optional(),
   /** One-line conversion prompt rendered directly under the Only-Here Asset,
    *  where reader intent peaks. Keep it a question or an offer, not a slogan. */
   /** Inline prompt rendered directly AFTER the Only-Here Asset. The reader has
