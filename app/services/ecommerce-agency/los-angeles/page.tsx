@@ -6,8 +6,7 @@ import { og } from "@/lib/og";
 
 // Geo programme, Batch 1 page 2. Content lives in
 // lib/geo/pages/ecommerce-agency-los-angeles.ts; this route wires metadata and
-// the template only. Draft pages 404 in production and render on previews and
-// locally.
+// the template only. Every page in the registry is live.
 
 const CANONICAL_URL = canonicalUrl(page);
 

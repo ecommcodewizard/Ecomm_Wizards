@@ -7,8 +7,7 @@ import { og } from "@/lib/og";
 // Geo programme Raleigh #25 (Batch 1b), the second Raleigh page and a metro
 // page on the ecommerce-agency hub. Content lives in
 // lib/geo/pages/ecommerce-agency-raleigh.ts; this route wires metadata and the
-// template only. Draft pages 404 in production and render on previews and
-// locally.
+// template only. Every page in the registry is live.
 
 const CANONICAL_URL = canonicalUrl(page);
 
