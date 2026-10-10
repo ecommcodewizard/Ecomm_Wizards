@@ -6,8 +6,7 @@ import { og } from "@/lib/og";
 
 // Geo programme page 8 (Batch 1b, first of the Texas block). Content lives in
 // lib/geo/pages/shopify-development-agency-austin.ts; this route wires metadata
-// and the template only. Draft pages 404 in production and render on previews
-// and locally.
+// and the template only.
 
 const CANONICAL_URL = canonicalUrl(page);
 
@@ -25,9 +24,9 @@ export const metadata: Metadata = {
     title: page.metaTitle,
     description: page.metaDescription,
     images: og(page.path, page.shortTitle).images,
-  },
+  },
 };
 
-export default function Page() {
+export default function Page() {
   return <GeoPageTemplate page={page} />;
 }

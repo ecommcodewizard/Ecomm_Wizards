@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     title: page.metaTitle,
     description: page.metaDescription,
     images: og(page.path, page.shortTitle).images,
-  },
+  },
 };
 
-export default function Page() {
+export default function Page() {
   return <GeoPageTemplate page={page} />;
 }

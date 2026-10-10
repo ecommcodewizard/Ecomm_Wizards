@@ -143,6 +143,8 @@ function pass2(): number {
       console.log(`SKIP ${page.path}: no rendered HTML at ${path.relative(ROOT, file)}`);
       continue;
     }
+    // Every registered page is live, so every rendered .html is the real page
+    // rather than a 404 shell. Pass 2 therefore covers the whole set.
     checked++;
     const html = fs.readFileSync(file, "utf8");
     const blocks = extractJsonLd(html);

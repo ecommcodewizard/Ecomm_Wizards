@@ -6,8 +6,7 @@ import { og } from "@/lib/og";
 
 // Geo programme Raleigh #24 (Batch 1b), a metro page on the app-development
 // hub. Content lives in lib/geo/pages/shopify-app-development-raleigh.ts; this
-// route wires metadata and the template only. Draft pages 404 in production
-// and render on previews and locally.
+// route wires metadata and the template only.
 
 const CANONICAL_URL = canonicalUrl(page);
 

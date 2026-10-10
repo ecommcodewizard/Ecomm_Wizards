@@ -38,7 +38,7 @@ function main(): number {
   }
   const failed = results.filter((r) => r.code !== 0);
   console.log(`\n${results.length - failed.length}/${results.length} passed${failed.length ? `; failed: ${failed.map((f) => f.name).join(", ")}` : ""}`);
-  console.log("Publish checklist: add the page to GEO_PAGES in lib/geo/registry.ts, add the hub to SERVICE_CATEGORIES in lib/services.ts, purge the Hostinger CDN after deploy. A page in the registry is live the moment it reaches main; there is no status to flip.");
+  console.log("Ship checklist: register the page in GEO_PAGES, add its hub to SERVICE_CATEGORIES in lib/services.ts if new, merge to main, purge the Hostinger CDN after deploy. Merging is publishing: there is no status to flip.");
   return failed.length ? 1 : 0;
 }
 

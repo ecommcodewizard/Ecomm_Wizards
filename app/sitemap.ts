@@ -3,7 +3,7 @@ import { CASE_STUDIES } from "@/lib/case-studies";
 import { APP_CASE_STUDIES } from "@/lib/shopify-app-studies";
 import { KLAVIYO_CASE_STUDIES } from "@/lib/klaviyo-studies";
 import { CREATIVE_CASE_STUDIES } from "@/lib/creative-studies";
-import { publishedGeoRoutes } from "@/lib/geo/registry";
+import { geoRoutes } from "@/lib/geo/registry";
 
 const SITE_URL = "https://ecommwizards.com";
 
@@ -101,7 +101,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Geo programme hubs + geo pages (lib/geo/registry.ts). Derived from the same
   // registry that gates rendering, so only pages with status "published" are
   // listed; drafts never reach the sitemap.
-  const geoEntries: MetadataRoute.Sitemap = publishedGeoRoutes().map((path) => ({
+  const geoEntries: MetadataRoute.Sitemap = geoRoutes().map((path) => ({
     url: `${SITE_URL}${path}`,
   }));
 

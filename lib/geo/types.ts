@@ -3,9 +3,9 @@
 //
 // The build renders SHELL only: every prose slot below is filled by a human in
 // lib/geo/pages/<slug>.ts. Unfilled slots stay as "[NEEDS INPUT: ...]" markers.
-// There is no draft or published status. A page listed in the registry is live
-// the moment it reaches main, so ANY page still holding a marker FAILS the build
-// (see lib/geo/registry.ts assertPublishable and scripts/geo/validate-content.ts).
+// There is no draft/published status: a page listed in the registry is live the
+// moment it reaches main. Any marker left in a slot FAILS the build (see
+// lib/geo/registry.ts assertPublishable and scripts/geo/validate-content.ts).
 // That failure is deliberate: it is what stops an unfinished page reaching prod.
 //
 // Copy rules for everything typed into these slots: US spelling, no em dashes,
@@ -20,7 +20,7 @@ import { z } from "zod";
 // ---------------------------------------------------------------------------
 
 /** Marker a human replaces with sourced copy. Anything containing this fails
- *  validation for a published page. */
+ *  validation. */
 export const NEEDS_INPUT = "[NEEDS INPUT";
 
 export const REVIEW_AFTER_DAYS = [90, 180, 365] as const;

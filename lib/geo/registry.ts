@@ -1,10 +1,13 @@
 // Registry of every geo programme page (hubs + geo pages). This list is the
-// single source of truth for: the routes that exist, what the sitemap emits, the
-// publish gate, and every guardrail script in scripts/geo/.
+// single source of truth for: the routes that exist, what the sitemap emits, and
+// every guardrail script in scripts/geo/.
 //
-// Publishing is a discrete commit that flips a page's `status` to "published".
-// scripts/geo/velocity.ts fails CI if more than 5 pages flip inside a rolling
-// 7 days.
+// There is no publish gate. Adding a page here and merging to main puts it live:
+// it renders, it enters the sitemap, and its hub links down to it.
+//
+// The guardrails in scripts/geo are the only gate, and nothing runs them for you:
+// this repo has no CI workflow. Run `npm run geo:check` before every merge. An
+// unfinished page also fails `next build`, which is the backstop.
 
 import { SERVICE_CATEGORIES } from "@/lib/services";
 import { GeoProgrammePageSchema, NEEDS_INPUT, hasNeedsInput, proseStrings, wordCount, type GeoPage, type GeoProgrammePage, type HubPage } from "./types";
@@ -31,8 +34,9 @@ import { SHOPIFY_APP_RALEIGH } from "./pages/shopify-app-development-raleigh";
 import { ECOMMERCE_AGENCY_RALEIGH } from "./pages/ecommerce-agency-raleigh";
 import { SHOPIFY_DEV_MINNEAPOLIS } from "./pages/shopify-development-agency-minneapolis";
 import { ECOMMERCE_AGENCY_MINNEAPOLIS } from "./pages/ecommerce-agency-minneapolis";
-import { ECOMMERCE_AGENCY_CHICAGO } from "./pages/ecommerce-agency-chicago";
 import { ECOMMERCE_AGENCY_SAN_FRANCISCO } from "./pages/ecommerce-agency-san-francisco";
+import { ECOMMERCE_AGENCY_MIAMI } from "./pages/ecommerce-agency-miami";
+import { ECOMMERCE_AGENCY_CHICAGO } from "./pages/ecommerce-agency-chicago";
 import { ECOMMERCE_SEO_AGENCY_CHICAGO } from "./pages/ecommerce-seo-agency-chicago";
 import { ECOMMERCE_AGENCY_ATLANTA } from "./pages/ecommerce-agency-atlanta";
 import { ECOMMERCE_AGENCY_DENVER } from "./pages/ecommerce-agency-denver";
@@ -48,7 +52,7 @@ import { ECOMMERCE_AGENCY_NEW_JERSEY } from "./pages/ecommerce-agency-new-jersey
 export const SITE_URL = "https://ecommwizards.com";
 
 /** Add each new page here. Order is irrelevant; paths must be unique. */
-export const GEO_PAGES: GeoProgrammePage[] = [ECOMMERCE_AGENCY, ECOMMERCE_SEO_AGENCY, ECOMMERCE_MARKETING_AGENCY, SHOPIFY_DEV_LOS_ANGELES, SHOPIFY_DEV_NEW_YORK, ECOMMERCE_AGENCY_NEW_YORK, SHOPIFY_SEO_NEW_YORK, ECOMMERCE_AGENCY_LOS_ANGELES, ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES, ECOMMERCE_AGENCY_SAN_DIEGO, SHOPIFY_DEV_SAN_DIEGO, SHOPIFY_DEV_ORANGE_COUNTY, SHOPIFY_DEV_CALIFORNIA, SHOPIFY_THEME_CALIFORNIA, ECOMMERCE_AGENCY_SAN_FRANCISCO, SHOPIFY_DEV_AUSTIN, ECOMMERCE_AGENCY_AUSTIN, ECOMMERCE_AGENCY_DALLAS, SHOPIFY_DEV_BOSTON, ECOMMERCE_AGENCY_BOSTON, SHOPIFY_APP_RALEIGH, ECOMMERCE_AGENCY_RALEIGH, SHOPIFY_DEV_MINNEAPOLIS, ECOMMERCE_AGENCY_MINNEAPOLIS, ECOMMERCE_AGENCY_CHICAGO, ECOMMERCE_SEO_AGENCY_CHICAGO, ECOMMERCE_AGENCY_ATLANTA, ECOMMERCE_AGENCY_DENVER, ECOMMERCE_AGENCY_PHILADELPHIA, ECOMMERCE_AGENCY_MILWAUKEE, ECOMMERCE_AGENCY_WISCONSIN, SHOPIFY_DEV_MAINE, ECOMMERCE_AGENCY_MAINE, ECOMMERCE_AGENCY_ARIZONA, ECOMMERCE_AGENCY_MARYLAND, ECOMMERCE_AGENCY_NEW_JERSEY];
+export const GEO_PAGES: GeoProgrammePage[] = [ECOMMERCE_AGENCY, ECOMMERCE_SEO_AGENCY, ECOMMERCE_MARKETING_AGENCY, SHOPIFY_DEV_LOS_ANGELES, SHOPIFY_DEV_NEW_YORK, ECOMMERCE_AGENCY_NEW_YORK, SHOPIFY_SEO_NEW_YORK, ECOMMERCE_AGENCY_LOS_ANGELES, ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES, ECOMMERCE_AGENCY_SAN_DIEGO, SHOPIFY_DEV_SAN_DIEGO, SHOPIFY_DEV_ORANGE_COUNTY, SHOPIFY_DEV_CALIFORNIA, SHOPIFY_THEME_CALIFORNIA, ECOMMERCE_AGENCY_SAN_FRANCISCO, SHOPIFY_DEV_AUSTIN, ECOMMERCE_AGENCY_AUSTIN, ECOMMERCE_AGENCY_DALLAS, SHOPIFY_DEV_BOSTON, ECOMMERCE_AGENCY_BOSTON, SHOPIFY_APP_RALEIGH, ECOMMERCE_AGENCY_RALEIGH, SHOPIFY_DEV_MINNEAPOLIS, ECOMMERCE_AGENCY_MINNEAPOLIS, ECOMMERCE_AGENCY_MIAMI, ECOMMERCE_AGENCY_CHICAGO, ECOMMERCE_SEO_AGENCY_CHICAGO, ECOMMERCE_AGENCY_ATLANTA, ECOMMERCE_AGENCY_DENVER, ECOMMERCE_AGENCY_PHILADELPHIA, ECOMMERCE_AGENCY_MILWAUKEE, ECOMMERCE_AGENCY_WISCONSIN, SHOPIFY_DEV_MAINE, ECOMMERCE_AGENCY_MAINE, ECOMMERCE_AGENCY_ARIZONA, ECOMMERCE_AGENCY_MARYLAND, ECOMMERCE_AGENCY_NEW_JERSEY];
 
 // ---------------------------------------------------------------------------
 // Lookups
@@ -68,18 +72,17 @@ export function getGeo(hubPath: string, slug: string): GeoPage | undefined {
   return p && p.type === "geo" ? p : undefined;
 }
 
-/** Geo children of a hub. Everything in the registry is live, so this is
- *  simply every geo page sitting under it. */
-export function publishedChildren(hub: HubPage): GeoPage[] {
+/** Geo children of a hub. Every registered page is live, so this is all of them. */
+export function hubChildren(hub: HubPage): GeoPage[] {
   return GEO_PAGES.filter((p): p is GeoPage => p.type === "geo" && p.hub === hub.path);
 }
 
-/** Published geo pages sitting under a hub, addressed by PATH rather than by a
- *  HubPage object. publishedChildren above only works for hubs that are
- *  themselves in the geo programme; several hubs are ordinary hand-built
- *  service pages, and those still need to link down to their geo children or
- *  the geo page launches with no inbound internal link at all. */
-export function publishedGeoForHub(hubPath: string): GeoPage[] {
+/** Geo pages sitting under a hub, addressed by PATH rather than by a HubPage
+ *  object. hubChildren above only works for hubs that are themselves in the geo
+ *  programme; several hubs are ordinary hand-built service pages, and those
+ *  still need to link down to their geo children or the geo page launches with
+ *  no inbound internal link at all. */
+export function geoForHub(hubPath: string): GeoPage[] {
   return GEO_PAGES.filter((p): p is GeoPage => p.type === "geo" && p.hub === hubPath);
 }
 
@@ -101,12 +104,11 @@ export function hubPathToLabel(hubPath: string): string {
 }
 
 // ---------------------------------------------------------------------------
-// Publish gate
+// Routes and validation
 // ---------------------------------------------------------------------------
 
-/** Paths that belong in the sitemap: everything in the registry, since a page
- *  reaching main is a page that is live. */
-export function publishedGeoRoutes(): string[] {
+/** Paths that belong in the sitemap: every registered page. */
+export function geoRoutes(): string[] {
   return GEO_PAGES.map((p) => p.path);
 }
 
@@ -125,8 +127,8 @@ export function validatePage(page: GeoProgrammePage, today: Date = new Date()): 
     return issues; // shape errors make the rest meaningless
   }
 
-  // Every page in the registry is live, so every problem is an error rather
-  // than a warning. There is no longer an unpublished state to be lenient to.
+  // Every registered page is live, so a content fault is always an error. There
+  // is no draft state left to downgrade it to a warning.
   const gate = err;
 
   // Unfilled slots
@@ -208,14 +210,13 @@ export function validatePage(page: GeoProgrammePage, today: Date = new Date()): 
   return issues;
 }
 
-/** Throws when a page is not publishable. Called from the route at render time
- *  so `next build` itself fails on an unfinished page. Every page in the
- *  registry is live, so this applies to all of them. */
+/** Throws when a page is not fit to be live. Called from the route at render
+ *  time so `next build` itself fails on an unfinished page. */
 export function assertPublishable(page: GeoProgrammePage): void {
   const errors = validatePage(page).filter((i) => i.level === "error");
   if (errors.length) {
     throw new Error(
-      `[geo] ${page.path} is marked published but is not publishable:\n` + errors.map((e) => `  - ${e.message}`).join("\n"),
+      `[geo] ${page.path} is not fit to be live:\n` + errors.map((e) => `  - ${e.message}`).join("\n"),
     );
   }
 }

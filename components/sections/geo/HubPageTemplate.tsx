@@ -3,7 +3,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import RelatedServices from "@/components/sections/RelatedServices";
 import type { HubPage } from "@/lib/geo/types";
-import { assertPublishable, canonicalUrl, publishedChildren } from "@/lib/geo/registry";
+import { assertPublishable, canonicalUrl, hubChildren } from "@/lib/geo/registry";
 import { breadcrumbListJsonLd, breadcrumbTrail } from "@/lib/geo/schema";
 import GeoStyles from "./GeoStyles";
 import GeoPageHero from "./GeoPageHero";
@@ -48,7 +48,7 @@ export default function HubPageTemplate({ page }: { page: HubPage }) {
 
   const trail = breadcrumbTrail(page);
   const url = canonicalUrl(page);
-  const children = publishedChildren(page);
+  const children = hubChildren(page);
   const isMap = !!page.serviceMap?.length;
 
   return (

@@ -3,7 +3,7 @@ import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
 import HubCityLinks from "@/components/sections/geo/HubCityLinks";
-import { publishedGeoForHub } from "@/lib/geo/registry";
+import { geoForHub } from "@/lib/geo/registry";
 import Link from "next/link";
 
 // Published geo children of this hub. Without this block the Raleigh page under
@@ -11,7 +11,7 @@ import Link from "next/link";
 // at it, reachable only from the sitemap (added 2026-09-29). Same fix the theme
 // hub took on 2026-09-22. It renders nothing while there are no published
 // children, so it is safe ahead of the next city.
-const GEO_CHILDREN = publishedGeoForHub("/services/shopify-app-development");
+const GEO_CHILDREN = geoForHub("/services/shopify-app-development");
 
 const META_DESCRIPTION =
   "Hire expert Shopify app developers to build custom private apps or launch on the Shopify App Store. Shopify Plus Preferred Partner. 150+ merchants.";
