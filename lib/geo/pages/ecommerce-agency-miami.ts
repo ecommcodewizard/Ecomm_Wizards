@@ -132,7 +132,7 @@ export const ECOMMERCE_AGENCY_MIAMI: GeoPage = {
   // through the market, not through his store.
   h1: "Ecommerce agency Miami brands hire when the store has to earn its keep",
   qualifier:
-    "Design, development, migration to Shopify, CRO and email. Take one of those or take all of them. You get a fixed price and a start date in writing before we touch anything.",
+    "Design, development, migration to Shopify, ad creative, CRO and email. Take one of those or take all of them. You get a fixed price and a start date in writing before we touch anything.",
 
   heroImage: {
     src: "/images/Case%20studies/posters/John%20Hardy%20video.webp",
@@ -161,17 +161,17 @@ export const ECOMMERCE_AGENCY_MIAMI: GeoPage = {
 
   // ── Quick answer ──────────────────────────────────────────────────────
   quickAnswer:
-    "Ecomm Wizards is an ecommerce agency Miami brands hire for design, development, CRO and email. We build on Shopify. We also move stores onto it from WooCommerce, Magento and BigCommerce. You buy the work you need, at a price agreed before we start.",
+    "Ecomm Wizards is an ecommerce agency Miami brands hire for design, development, ad creative, CRO and email. We build on Shopify. We also move stores onto it from WooCommerce, Magento and BigCommerce. You buy the work you need, at a price agreed before we start.",
 
   // ── Block 3: Place layer ──────────────────────────────────────────────
   placeLayerHeading: "Three in four people in Miami speak a language other than English",
   placeLayer:
-    "Whether that matters to you depends on who's actually buying.\n\nSome stores here sell to the neighborhood. Some sell to the whole country out of a warehouse that happens to sit here. For the second kind, none of this is your problem.\n\nFor the first kind it might be a big one. CSA Research asked 8,709 shoppers across 29 countries, and 40% said they never buy from a site in a language that isn't theirs. Never, not less often. That survey ran in 2020 and nobody has run a bigger one since, so treat it as a direction rather than a decimal.\n\nYour own analytics settle it in about ten minutes. They already hold the language every browser asked for and the country it came from.\n\nSo we read that before we quote you anything, and anyone on your ecommerce agency Miami shortlist should do the same. If your buyers are national and reading in English, we'll say so, and we won't sell you a second storefront you don't need.",
+    "Whether that matters to you depends on who's buying. For a lot of stores, it doesn't matter at all.\n\nPlenty of the brands we work with sell across the country in English. They hire us to design the store, build it, move it to Shopify, make the ads or run the email. A second language never comes into it.\n\nFor a store selling to its own neighborhood, it can be a big deal. CSA Research asked 8,709 shoppers across 29 countries, and 40% said they never buy from a site in a language that isn't theirs. That survey ran in 2020 and nobody has run a bigger one since, so treat it as a direction rather than a decimal.\n\nSo it's one line on the list we check, next to speed, checkout and email. Your analytics answer it in about ten minutes. If your buyers read in English, we'll tell you, and get on with the work you came for.",
 
   // ── Block 4: Gradient layer ───────────────────────────────────────────
   gradientLayerHeading: "Most of what's costing you orders doesn't show up in a brief",
   gradientLayer:
-    "A brief says what you want built. It doesn't say what's losing you money now.\n\nThose are two different questions, and the second one usually changes the answer to the first.\n\nSo we read the store before we price anything. An ecommerce agency Miami quote that lands before that has guessed at it.\n\nHere's the list we work through, and what each line actually tells us.",
+    "A brief says what you want built. It doesn't say what's losing you money now.\n\nThose are two different questions, and the second one usually changes the answer to the first.\n\nSo we read the store before we price anything. A quote that shows up before that is a guess.\n\nHere's the list we work through. Ask any ecommerce agency Miami brands are weighing up to show you theirs.",
   gradientFacts: [
     {
       id: "acs-2024-miami-dade-language",
@@ -248,7 +248,7 @@ export const ECOMMERCE_AGENCY_MIAMI: GeoPage = {
       },
     ],
     derived:
-      "Four of those five usually come back as no. That's the point of doing them in this order: the cheap checks rule things out before anyone writes a proposal.\n\nWhat's left is a short list of work with a number against each line, and you can take one line or all of them.\n\nAnyone on your ecommerce agency Miami shortlist should be willing to show you this before they quote, not after.",
+      "Four of those five usually come back as no. That's the point of doing them in this order: the cheap checks rule things out before anyone writes a proposal.\n\nWhat's left is a short list of work with a number against each line, and you can take one line or all of them.\n\nWhoever you hire should be willing to show you this before they quote, not after.",
     derivedList: {
       title: "When we'd tell you not to hire us",
       items: [
@@ -262,7 +262,7 @@ export const ECOMMERCE_AGENCY_MIAMI: GeoPage = {
       {
         heading: "What it costs",
         body:
-          "**A build is $5,000 to $50,000**, quoted against a scope you approve first.\n\n**Ongoing work is $3,000 to $15,000 a month**, and it covers the running, not the build.\n\n**Those two are quoted apart.** Ecommerce agency Miami pricing that rolls them into one number hides which of them you're actually paying for.",
+          "**A build is $5,000 to $50,000**, quoted against a scope you approve first.\n\n**Ongoing work is $3,000 to $15,000 a month**, and it covers the running, not the build.\n\n**Those two are quoted apart.** A price that rolls them into one number hides which of them you're actually paying for.",
       },
     ],
     reviewAfterDays: 365,
@@ -271,9 +271,9 @@ export const ECOMMERCE_AGENCY_MIAMI: GeoPage = {
   // ── Disciplines. Design and development lead, per the secondaries ─────
   disciplines: {
     label: "What we do",
-    heading: "Six kinds of work, bought one at a time or together",
+    heading: "Seven kinds of work, bought one at a time or together",
     intro:
-      "Take one of these or take all of them. Most ecommerce agency Miami engagements start as one row and grow into two. Every store below was real, and most were already trading when we arrived.",
+      "Take one of these or take all of them. Most projects start as one row and grow into two. Every store below was real, and most were already trading when we arrived.",
     items: [
       {
         label: "Website design",
@@ -316,6 +316,14 @@ export const ECOMMERCE_AGENCY_MIAMI: GeoPage = {
         cta: { label: "Explore CRO", href: "/services/shopify-cro-agency" },
       },
       {
+        label: "Creative strategy",
+        heading: "We make the ads, test them, and keep the ones that actually sell",
+        covers: ["Ad creative", "Paid social", "User-generated content", "Creative testing"],
+        imageAlt: "Parent and kid UGC we produced and tested for Nurture Life",
+        caseSlug: "nurture-life-creative-strategy",
+        cta: { label: "Explore creative strategy", href: "/services/creative-strategy" },
+      },
+      {
         label: "Email and retention",
         heading: "We build the flows that sell to the customers you already paid for",
         covers: ["Klaviyo", "Welcome and cart flows", "Segmentation", "SMS", "Campaign calendar"],
@@ -329,7 +337,7 @@ export const ECOMMERCE_AGENCY_MIAMI: GeoPage = {
   // ── How we work ───────────────────────────────────────────────────────
   howWeWork: {
     heading: "How the work runs, and what you're buying",
-    intro: "Nobody from our team sits in your office, so here's what you get instead.",
+    intro: "We're an ecommerce agency Miami brands work with remotely. Nobody from our team sits in your office, so here's what you get instead.",
     items: [
       {
         title: "Everything we build lives in your accounts",
@@ -342,9 +350,9 @@ export const ECOMMERCE_AGENCY_MIAMI: GeoPage = {
           "You approve a scope with a number and a delivery date on it. If the scope changes, you see the new number before we do the work.",
       },
       {
-        title: "Four disciplines on one invoice",
+        title: "Every discipline on one invoice",
         body:
-          "Design, development, testing and retention, used as the work needs them. You aren't paying four suppliers to point at each other.",
+          "Design, development, creative, testing and retention, used as the work needs them. You aren't paying five suppliers to point at each other.",
       },
       {
         title: "You talk to the person doing the work",
@@ -356,7 +364,7 @@ export const ECOMMERCE_AGENCY_MIAMI: GeoPage = {
   // ── Block 6: What we do about it ──────────────────────────────────────
   whatWeDoAboutItHeading: "How it actually starts",
   whatWeDoAboutIt:
-    "You send the URL. We go through the five lines above and come back with what each one said about your store.\n\nThen you get a short list of work, with a number and a date against each line. Take one line, take all of them, or take none.\n\nThat's week one of an ecommerce agency Miami project, and it happens before anybody signs anything. Nothing begins until you've approved the scope and the price in writing.",
+    "You send the URL. We go through the five lines above and come back with what each one said about your store.\n\nThen you get a short list of work, with a number and a date against each line. Take one line, take all of them, or take none.\n\nThat's week one of hiring us as your ecommerce agency, Miami or anywhere else, and it happens before anybody signs anything. Nothing begins until you've approved the scope and the price in writing.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   proofHeading: "Three brands, and what the work actually moved",
@@ -400,7 +408,7 @@ export const ECOMMERCE_AGENCY_MIAMI: GeoPage = {
     {
       objection: "We only want a redesign. We're not interested in any of this.",
       answer:
-        "Then that's what you buy, and the rest of this page is just something to know.\n\nDesign, development, CRO and retention are sold separately here, and most brands we work with take one of them.\n\nYou're not going to get a second storefront quoted into a redesign you didn't ask for.",
+        "Then that's what you buy, and the rest of this page is just something to know.\n\nDesign, development, creative, CRO and retention are sold separately here, and most brands we work with take one of them.\n\nYou're not going to get a second storefront quoted into a redesign you didn't ask for.",
     },
   ],
 
@@ -413,9 +421,9 @@ export const ECOMMERCE_AGENCY_MIAMI: GeoPage = {
       unique: true,
     },
     {
-      question: "What does an ecommerce agency Miami build usually cost?",
+      question: "What does a Miami ecommerce agency charge for a build?",
       answer:
-        "Most ecommerce development Miami brands hire for runs $5,000 to $50,000 as a build. Ongoing work is $3,000 to $15,000 a month. You get a fixed number and a date before anything starts, and the two are quoted apart.",
+        "Our ecommerce development work usually runs $5,000 to $50,000 as a build. Ongoing work is $3,000 to $15,000 a month. You get a fixed number and a date before anything starts, and the two are quoted apart.",
       unique: true,
     },
     {
@@ -439,7 +447,7 @@ export const ECOMMERCE_AGENCY_MIAMI: GeoPage = {
     {
       question: "What does ecommerce website design include?",
       answer:
-        "Ecommerce website design Miami brands ask us for covers the design system, the templates, your product and collection pages, the navigation and every mobile layout. You see all of it and approve it before a line gets built. The build is quoted on its own.",
+        "It covers the design system, the templates, your product and collection pages, the navigation and every mobile layout. You see all of it and approve it before a line gets built. The build is quoted on its own.",
       unique: true,
     },
     {
