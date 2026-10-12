@@ -96,7 +96,7 @@ export const SHOPIFY_DEV_FLORIDA: GeoPage = {
 
   metaTitle: "Shopify Agency Florida | Built Right and Launched on Time",
   metaDescription:
-    "A Shopify agency Florida brands hire to design, build, migrate and grow. Launch dates in writing before any code, plus version control and testing on every build.",
+    "A Shopify agency Florida brands hire to design, build, migrate and grow. Launch dates in writing before any code, version control and testing on every build.",
   shortTitle: "Shopify agency Florida",
   serviceType: "Shopify agency",
 
@@ -136,7 +136,7 @@ export const SHOPIFY_DEV_FLORIDA: GeoPage = {
   // The page's one mention of hurricane season (owner's ruling). It shows we
   // know the market, then turns straight to the argument.
   hook:
-    "Running a brand from Florida means planning around a lot. Six months of hurricane season, for a start. Your store shouldn't be one more thing you have to watch.\n\nThat comes down to two things. How well the store was built, and whether it launched when you were told it would. Both are easy to promise and easy to check, so we'd rather show you.\n\nBelow are the stores we've built, the jobs we take on, and seven questions to ask any agency on your list, us included.",
+    "Running a brand from Florida means planning around a lot. Six months of hurricane season, for a start. Your store shouldn't be one more thing you have to watch.\n\nThat comes down to two things. How well the store was built, and whether it launched when you were told it would. Both are easy to promise and easy to check, so we'd rather show you.\n\nBelow are the stores we've built, the jobs we take on, and seven questions that show whether a build will hold up.",
 
   // ── GEO passage ───────────────────────────────────────────────────────
   // Written to be lifted whole by AI answers. Plain and declarative on purpose.
@@ -230,7 +230,7 @@ export const SHOPIFY_DEV_FLORIDA: GeoPage = {
     label: "What we do",
     heading: "Seven jobs we take on, all held to the same standard of build",
     intro:
-      "Each row opens the store the work was done for. Any Shopify agency Florida brands shortlist should let you start with one job and add the rest later.",
+      "Each row opens the store the work was done for. As a Shopify agency Florida brands hire for one job or all seven, we let you start with one and add the rest later.",
     items: [
       {
         label: "Design and build",
@@ -274,9 +274,9 @@ export const SHOPIFY_DEV_FLORIDA: GeoPage = {
       },
       {
         label: "SEO, AEO and GEO",
-        heading: "We get your products found on Google, in its AI answers and in ChatGPT",
+        heading: "We get your products found on Google, in its AI answers and in assistants like ChatGPT and Gemini",
         covers: ["Technical SEO", "Collection pages", "Product page SEO", "AI answers (AEO)", "AI search (GEO)"],
-        imageAlt: "Product and collection pages we optimized for search for the womenswear brand Evie Lou",
+        imageAlt: "Product and collection pages we rebuilt for the womenswear brand Evie Lou",
         caseSlug: "evie-lou-shopify-fashion-cro",
         cta: { label: "Explore Shopify SEO", href: "/services/shopify-seo-agency" },
       },
@@ -298,7 +298,7 @@ export const SHOPIFY_DEV_FLORIDA: GeoPage = {
   // ── Gradient: what a solid build is ───────────────────────────────────
   gradientLayerHeading: "A weak build and a solid one look the same on launch day. The difference shows up later.",
   gradientLayer:
-    "**It's in where things live.** Apps built as theme app extensions [link:https://shopify.dev/docs/apps/build/online-store/theme-app-extensions|don't edit theme code], per Shopify's own docs. Older apps, and a lot of custom work, write straight into your theme files. That code is part of your theme now, and it stays until somebody takes it out.\n\n**And in what it's built on.** Shopify [link:https://shopify.dev/docs/storefronts/themes/architecture/layouts/checkout-liquid|retired checkout.liquid] on the thank-you and order status pages on August 28, 2025. Script tags on those pages ended for non-Plus stores on August 26, 2026. Anything built the old way there stopped working.\n\n**So ask before you hire.** Any Shopify agency Florida brands trust with a build should tell you where each feature will live and what it's built on. If they can't, you'll find out when it breaks.",
+    "**It's in where things live.** Apps built as theme app extensions [link:https://shopify.dev/docs/apps/build/online-store/theme-app-extensions|don't edit theme code], per Shopify's own docs. Older apps, and a lot of custom work, write straight into your theme files. That code is part of your theme now, and it stays until somebody takes it out.\n\n**And in what it's built on.** Shopify [link:https://shopify.dev/docs/storefronts/themes/architecture/layouts/checkout-liquid|retired checkout.liquid] on the thank-you and order status pages on August 28, 2025. Script tags on those pages ended for non-Plus stores on August 26, 2026. Anything built the old way there stopped working.\n\n**So ask before you hire.** As a Shopify agency Florida brands trust with the build, we tell you where each feature will live and what it's built on before we start.",
   gradientFacts: [
     {
       id: "nhc-season-dates",
@@ -351,7 +351,7 @@ export const SHOPIFY_DEV_FLORIDA: GeoPage = {
   asset: {
     title: "Seven questions that tell you whether a Shopify build will hold up",
     intro:
-      "Ask these of any agency on your list, us included. The middle column is what a solid answer sounds like. Each one is an answer we'll put in writing.",
+      "These are the questions to ask before anyone touches your store. The middle column is what a solid answer sounds like. Each one is an answer we'll put in writing.",
     renderer: "checklist",
     tone: "white",
     method: {
@@ -359,7 +359,7 @@ export const SHOPIFY_DEV_FLORIDA: GeoPage = {
       howGathered:
         "We wrote these from Shopify's own help and developer pages, read on 12 October 2026, and from the promises already on our own site. Nothing here is a ranking of other agencies. It's a list of questions, and what a careful answer looks like, so you can judge the ones you get.",
     },
-    columns: ["Ask any agency", "A solid answer", "Why it matters"],
+    columns: ["The question", "A solid answer", "Why it matters"],
     rows: [
       {
         label: "When will it go live?",
@@ -391,7 +391,7 @@ export const SHOPIFY_DEV_FLORIDA: GeoPage = {
       },
     ],
     derived:
-      "Every answer in the middle column is one we'll give you in writing before a project starts.\n\nNone of them is hard to say. What matters is whether the agency means it, and the first two rows show that fastest. A Shopify agency Florida brands can rely on should be glad you asked.",
+      "Every answer in the middle column is one we'll give you in writing before a project starts.\n\nNone of them is hard to say. What matters is whether the agency means it, and the first two rows show that fastest. Ask us all seven before you sign, and we'll answer each one in writing.",
     reviewAfterDays: 180,
   },
   midCta: {
@@ -431,7 +431,7 @@ export const SHOPIFY_DEV_FLORIDA: GeoPage = {
     {
       objection: "Our last agency went quiet after launch.",
       answer:
-        "That's the risk with any agency, so we build for it. Your theme is in version control, the work is documented, and everything is in your name.\n\nKeep us on for support, or hand the store to someone else. Ask every Shopify agency Florida search turns up whether they'd say the same.",
+        "That's the risk with any agency, so we build for it. Your theme is in version control, the work is documented, and everything is in your name.\n\nKeep us on for support, or hand the store to someone else. That's standard on every job we take as a Shopify agency Florida brands hire.",
     },
     {
       objection: "Our last agency missed its launch date.",
@@ -462,7 +462,7 @@ export const SHOPIFY_DEV_FLORIDA: GeoPage = {
   // ── How a job starts ──────────────────────────────────────────────────
   whatWeDoAboutItHeading: "Every job starts the same way. We read your store, then give you a date.",
   whatWeDoAboutIt:
-    "We start with your store as it is. The theme, the apps, the checkout, and any code left behind by apps you've since removed.\n\nYou get that back as a list: what's solid, what's fragile, and the first change we'd make. If you hire us, the scope and timeline arrive in writing within 48 hours of the call, and the go-live date is set before any code is written.\n\nAsk every Shopify agency Florida brands shortlist for the same. It's the quickest way to see who's careful.",
+    "We start with your store as it is. The theme, the apps, the checkout, and any code left behind by apps you've since removed.\n\nYou get that back as a list: what's solid, what's fragile, and the first change we'd make. If you hire us, the scope and timeline arrive in writing within 48 hours of the call, and the go-live date is set before any code is written.\n\nThat's how every job starts for us as a Shopify agency Florida brands hire. You see the problem before you pay for the fix.",
   processCta: {
     text: "The read of your store is free, and you keep the list whether you hire us or not.",
     label: "Get in touch with us",
