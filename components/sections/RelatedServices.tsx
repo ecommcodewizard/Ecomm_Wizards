@@ -81,7 +81,7 @@ export default function RelatedServices({
       <style dangerouslySetInnerHTML={{ __html: `
         .ew-related { background: #FBF7ED; border-top: 1px solid rgba(0,0,0,0.06); font-family: 'Poppins', sans-serif; }
         .ew-related-inner { max-width: 1320px; margin: 0 auto; padding: 56px 20px; }
-        .ew-related-title { font-size: clamp(24px, 3vw, 34px); font-weight: 700; color: #0f172a; letter-spacing: -0.02em; margin: 0 0 28px; }
+        .ew-related-title { font-size: clamp(24px, 3vw, 34px); font-weight: 700; line-height: 1.25; color: #0f172a; letter-spacing: -0.02em; margin: 0 0 28px; }
         .ew-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
         .ew-related-card { display: flex; flex-direction: column; gap: 10px; padding: 22px; background: #ffffff; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; text-decoration: none; transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
         .ew-related--white { background: #ffffff; }

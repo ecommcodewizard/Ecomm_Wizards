@@ -203,10 +203,24 @@ export default function GeoPageHero({ eyebrow, h1, qualifier, primaryCta = DEFAU
             .gph-stats { flex-wrap: nowrap; }
             .gph-stat { flex: 1 1 0; min-width: 0; padding-right: 20px; margin-right: 20px; }
           }
-          @media (max-width: 1023px) { .gph-stat { padding-right: 20px; margin-right: 20px; } .gph-stat-num { font-size: 24px; } }
+          /* The copy column is at its narrowest here, and "$400M+" at 28px was
+             clipped inside its quarter-width tile. */
+          @media (min-width: 1024px) and (max-width: 1279px) {
+            .gph-stat { padding-right: 12px; margin-right: 12px; }
+            .gph-stat-num { font-size: 22px; }
+          }
+          /* Below 1024px a wrapping flex row broke unevenly and left a divider
+             dangling at the end of the first line, so the tiles sit on a grid:
+             four across on tablets, two by two on phones. */
+          @media (max-width: 1023px) {
+            .gph-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .gph-stat { padding-right: 16px; margin-right: 16px; }
+            .gph-stat-num { font-size: 24px; }
+          }
           @media (max-width: 640px) {
-            .gph-stats { margin-top: 20px; padding-top: 16px; gap: 14px 0; }
+            .gph-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 20px; padding-top: 16px; gap: 16px 0; }
             .gph-stat { padding-right: 14px; margin-right: 14px; }
+            .gph-stat:nth-child(2n) { border-right: none; padding-right: 0; margin-right: 0; }
             .gph-stat-num { font-size: 20px; }
             .gph-stat-label { font-size: 11.5px; }
           }

@@ -74,11 +74,15 @@ export default function GeoStyles() {
 
         @media (max-width: 1024px) {
           .gp-grid-3 { grid-template-columns: repeat(2, 1fr); }
+          /* Three cards on two columns left the third stranded on the left.
+             Centre it at the same width as the others. */
+          .gp-grid-3 > :last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 10px); }
           .gp-section { padding: 52px 20px; }
         }
         @media (max-width: 640px) {
           .gp-section { padding: 40px 18px; }
           .gp-grid-3, .gp-grid-2 { grid-template-columns: 1fr; }
+          .gp-grid-3 > :last-child:nth-child(odd) { width: auto; }
           .gp-h2 { font-size: 26px; }
           .gp-lead { font-size: 16px; }
           .gp-p { font-size: 15px; }
