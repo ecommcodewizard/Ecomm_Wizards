@@ -173,7 +173,7 @@ export const ECOMMERCE_AGENCY_FLORIDA: GeoPage = {
     label: "What we do",
     heading: "Seven jobs, and design and build never handed between teams",
     intro:
-      "Each row opens the store the work was done for. An ecommerce agency Florida brands hire should let you start with one job and add the rest when you're ready.",
+      "Each row opens the store the work was done for. As an ecommerce agency Florida brands hire for one job or all seven, we let you start with one and add the rest when you're ready.",
     items: [
       {
         label: "Website design",
@@ -210,9 +210,9 @@ export const ECOMMERCE_AGENCY_FLORIDA: GeoPage = {
       },
       {
         label: "SEO, AEO and GEO",
-        heading: "We get your products found on Google, in its AI answers and in ChatGPT",
+        heading: "We get your products found on Google, in its AI answers and in assistants like ChatGPT and Gemini",
         covers: ["Technical SEO", "Collection pages", "Product page SEO", "AI answers (AEO)", "AI search (GEO)"],
-        imageAlt: "Search work on product and collection pages for the womenswear brand Evie Lou",
+        imageAlt: "Product and collection pages we rebuilt for the womenswear brand Evie Lou",
         caseSlug: "evie-lou-shopify-fashion-cro",
         cta: { label: "Explore ecommerce SEO", href: "/services/ecommerce-seo-agency" },
       },
@@ -242,7 +242,7 @@ export const ECOMMERCE_AGENCY_FLORIDA: GeoPage = {
   // ── Gradient: what's decided in the design ────────────────────────────
   gradientLayerHeading: "Most of what a store can do is decided in the design file. The build can't fix what the design missed.",
   gradientLayer:
-    "**Google ranks the phone version.** Google's own docs say it uses the mobile version of a site for indexing and ranking. A design that only looks finished on a laptop isn't finished.\n\n**Contrast and labels are design choices too.** The accessibility standard asks for text with a contrast ratio of at least 4.5:1. Florida courts saw 950 website accessibility lawsuits in 2025, nearly a quarter of the US total, per EcomBack's annual report.\n\n**So design and build belong together.** When they're split, the developer finishes the design by guessing. Any ecommerce agency Florida brands hire should show you the full design before the build starts, so you can check it.",
+    "**Google ranks the phone version.** Google's own docs say it uses the mobile version of a site for indexing and ranking. A design that only looks finished on a laptop isn't finished.\n\n**Contrast and labels are design choices too.** The accessibility standard asks for text with a contrast ratio of at least 4.5:1. Florida courts saw 950 website accessibility lawsuits in 2025, nearly a quarter of the US total, per EcomBack's annual report.\n\n**So design and build belong together.** When they're split, the developer finishes the design by guessing. That's why we plan both together as an ecommerce agency Florida brands hire for design and build, and you see the full plan before work starts.",
   gradientFacts: [
     {
       id: "census-quickfacts-fl-us-2025",
@@ -305,7 +305,7 @@ export const ECOMMERCE_AGENCY_FLORIDA: GeoPage = {
       { label: "A redirect map, if you're changing platforms", cells: ["Every old URL needs a new home on launch day, or the rankings it earned are lost"] },
     ],
     derived:
-      "None of the eight is exotic. They get missed because the design and the build are handled by different people, and each assumes the other has it.\n\nAsk for all eight before the build starts. An ecommerce agency Florida brands can rely on will have them ready, or tell you when they will.",
+      "None of the eight is exotic. They get missed because the design and the build are handled by different people, and each assumes the other has it.\n\nAsk us for all eight before your build starts, and hold us to it.",
     reviewAfterDays: 180,
   },
   midCta: {
@@ -353,7 +353,7 @@ export const ECOMMERCE_AGENCY_FLORIDA: GeoPage = {
     {
       objection: "We only want it to look better. We don't need a rebuild.",
       answer:
-        "Then that's the job. On Shopify, a lot of a redesign can happen inside the store you have.\n\nWe'll tell you which parts need new design and which only need cleaning up. Ask any ecommerce agency Florida brands shortlist for the same split.",
+        "Then that's the job. On Shopify, a lot of a redesign can happen inside the store you have.\n\nWe'll tell you which parts need new design and which only need cleaning up. That split is the first thing you get from us as an ecommerce agency Florida brands hire for a redesign.",
     },
   ],
 
@@ -373,7 +373,7 @@ export const ECOMMERCE_AGENCY_FLORIDA: GeoPage = {
   // ── How a job starts ──────────────────────────────────────────────────
   whatWeDoAboutItHeading: "How it starts: we read your store before we design anything",
   whatWeDoAboutIt:
-    "Whatever platform you're on, we start with what's there. What's selling, what's slow, what's costing you, and what the move or redesign would touch.\n\nYou get that back as a short list, with the first change we'd make. If you go ahead, the scope and timeline arrive in writing within 48 hours of the call.\n\nAsk every ecommerce agency Florida brands talk to for the same read before they show you a design. It's the quickest way to see who looked.",
+    "Whatever platform you're on, we start with what's there. What's selling, what's slow, what's costing you, and what the move or redesign would touch.\n\nYou get that back as a short list, with the first change we'd make. If you go ahead, the scope and timeline arrive in writing within 48 hours of the call.\n\nThat read comes before any design from us as an ecommerce agency Florida brands hire. It shows you we looked.",
   processCta: {
     text: "The read is free, and the list is yours to keep either way.",
     label: "Get in touch with us",
