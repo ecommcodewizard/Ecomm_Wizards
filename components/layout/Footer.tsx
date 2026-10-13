@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import ScrollToTop from "./ScrollToTop";
+import type { LocalizedGroup } from "@/lib/geo/registry";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -88,12 +89,13 @@ const OTHERS = [
   { label: "Q4 Breakthrough Journey",    href: "/q4-breakthrough-journey" },
 ];
 
-const SOCIALS = [
-  { label: "Facebook",    href: "https://www.facebook.com/profile.php?id=61591725146049" },
-  { label: "X / Twitter", href: "https://x.com/theecommwizards" },
-  { label: "Instagram",   href: "https://www.instagram.com/theecommwizards/" },
-  { label: "LinkedIn",    href: "https://www.linkedin.com/company/ecomm-wizards" },
-];
+// The "Socials" text column was replaced by "Localized" on 2026-10-14, at the
+// owner's request, following the pattern on 100xelevate.com: a service name per
+// row, each opening to that service's locations.
+//
+// NOTHING IS LOST BY REMOVING IT. That column duplicated the four social icons
+// in the top strip, which stay exactly where they are, so the same four
+// destinations are still linked from every page.
 
 // ─── Social icons ─────────────────────────────────────────────────────────────
 
@@ -205,9 +207,114 @@ function FooterCol({ title, links, className = "" }: { title: string; links: { l
 }
 
 
+// ─── Localized column ─────────────────────────────────────────────────────────
+
+/** One row per hub, each opening to that hub's locations.
+ *
+ *  EVERY LOCATION LINK IS RENDERED INTO THE HTML WHETHER OR NOT THE ROW IS
+ *  OPEN, and collapsed rows are hidden with max-height, the same way FooterCol
+ *  above handles its mobile accordion. Mounting them on click instead would
+ *  keep them out of the server-rendered HTML, and since the reason for building
+ *  this column is to give 39 geo pages an internal link, links a crawler cannot
+ *  see would defeat the whole exercise.
+ *
+ *  THE HUB NAME IS NOT A LINK, on the owner's instruction of 14 October 2026.
+ *  The whole row is the toggle, so clicking the words opens the dropdown rather
+ *  than navigating away. No link is lost by this: the header already carries
+ *  every hub on every page. */
+function LocalizedCol({ groups, className = "" }: { groups: LocalizedGroup[]; className?: string }) {
+  const [open, setOpen] = useState<string | null>(null);
+  // Outer accordion, mobile only. Mirrors FooterCol exactly: collapsed under
+  // 640px with a +, and from sm upward always open with the header inert. That
+  // keeps this column behaving like every other one on a phone.
+  const [colOpen, setColOpen] = useState(false);
+
+  return (
+    <div className={`border-b border-white/10 sm:border-b-0 lg:border-l lg:border-white/10 lg:first:border-l-0 lg:p-[10px] lg:first:pl-0 lg:h-full ${className}`}>
+      <button
+        type="button"
+        onClick={() => setColOpen((o) => !o)}
+        aria-expanded={colOpen}
+        className="flex w-full items-center justify-between px-[25px] py-[20px] text-left sm:cursor-default sm:pointer-events-none sm:px-0 sm:pb-3 sm:pt-0"
+      >
+        <span className="text-[20px] font-semibold text-white sm:text-[19px]">Localized</span>
+        <span
+          className={`text-2xl font-extralight text-white/70 leading-none transition-transform duration-200 sm:hidden ${
+            colOpen ? "rotate-45" : ""
+          }`}
+        >
+          +
+        </span>
+      </button>
+
+      {/* max-h is generous because a hub can open 21 locations inside this
+          already-open column; the nested list would otherwise be clipped. */}
+      <ul
+        className={`overflow-hidden transition-all duration-300 sm:max-h-none sm:overflow-visible sm:pb-6 ${
+          colOpen ? "max-h-[2000px] pb-5" : "max-h-0"
+        }`}
+      >
+        {groups.map((g) => {
+          const isOpen = open === g.href;
+          return (
+            <li key={g.href} className="px-[25px] sm:px-0">
+              <button
+                type="button"
+                onClick={() => setOpen(isOpen ? null : g.href)}
+                aria-expanded={isOpen}
+                aria-label={`${isOpen ? "Hide" : "Show"} ${g.label} locations`}
+                className="group flex w-full items-center gap-2 pb-[12px] text-left sm:pb-[7.5px] sm:mt-[7.5px]"
+              >
+                <span
+                  className="text-[14px] text-white bg-clip-text transition-colors group-hover:text-transparent sm:text-[16px]"
+                  style={{ backgroundImage: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}
+                >
+                  {g.label}
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full border border-white/30 text-[13px] leading-none text-white/70 transition-all group-hover:border-white/60 group-hover:text-white"
+                >
+                  <span className={`transition-transform duration-200 ${isOpen ? "rotate-45" : ""}`}>+</span>
+                </span>
+              </button>
+
+              {/* Two columns on a phone, one from sm upward. 21 locations in a
+                  single mobile column ran to roughly 650px and buried the six
+                  services below it; paired up it is about half that. The footer
+                  column on desktop is far too narrow to split. */}
+              <ul
+                className={`grid grid-cols-2 gap-x-2 overflow-hidden transition-all duration-300 sm:block ${
+                  isOpen ? "max-h-[900px] pb-2" : "max-h-0"
+                }`}
+              >
+                {g.items.map((i) => (
+                  <li key={i.href}>
+                    <Link
+                      href={i.href}
+                      className="group block pb-[9px] pl-[10px] text-[13px] transition-colors sm:text-[14px]"
+                    >
+                      <span
+                        className="text-white bg-clip-text group-hover:text-transparent"
+                        style={{ backgroundImage: "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)" }}
+                      >
+                        {i.name}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
 // ─── Footer ───────────────────────────────────────────────────────────────────
 
-export default function Footer() {
+export default function Footer({ localized = [] }: { localized?: LocalizedGroup[] }) {
   return (
     <footer className="bg-black text-white/70">
 
@@ -289,7 +396,9 @@ export default function Footer() {
               <FooterCol title="Migrate to Shopify" links={MIGRATE}       className="md:pt-[10px]" />
               <FooterCol title="Get Started"        links={GET_STARTED}   className="md:pt-[10px]" />
               <FooterCol title="Others"             links={OTHERS}        className="hidden md:block" />
-              <FooterCol title="Socials"            links={SOCIALS}       className="hidden md:block" />
+              {/* Last in the DOM, so on a phone it lands under "Get Started"
+                  ("Others" is hidden there) and on desktop it closes the row. */}
+              {localized.length > 0 && <LocalizedCol groups={localized} className="md:pt-[10px]" />}
             </div>
 
 
