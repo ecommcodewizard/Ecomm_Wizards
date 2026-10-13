@@ -109,6 +109,57 @@ export function hubPathToLabel(hubPath: string): string {
 }
 
 // ---------------------------------------------------------------------------
+// Footer "Localized" column
+// ---------------------------------------------------------------------------
+
+/** Footer labels for each hub. Shorter than the registry's own shortTitle,
+ *  because the footer column is narrow and "Shopify Development Agency" wraps
+ *  onto three lines there. A hub with no entry here falls back to
+ *  hubPathToLabel. */
+const FOOTER_HUB_LABELS: Record<string, string> = {
+  "/services/ecommerce-agency": "Ecommerce Agency",
+  "/services/shopify-development-agency": "Shopify Development",
+  "/services/ecommerce-seo-agency": "Ecommerce SEO",
+  "/services/ecommerce-marketing-agency": "Ecommerce Marketing",
+  "/services/shopify-seo-agency": "Shopify SEO",
+  "/services/shopify-theme-development": "Theme Development",
+  "/services/shopify-app-development": "App Development",
+};
+
+export type LocalizedGroup = {
+  label: string;
+  href: string;
+  items: { name: string; href: string }[];
+};
+
+/** Every hub that has geo pages, with its locations, for the footer's
+ *  "Localized" column. Hubs are ordered by how many locations they carry, so
+ *  the biggest cluster leads; locations are alphabetical within a hub.
+ *
+ *  RETURNS NAMES AND PATHS ONLY, AND THAT IS THE POINT. components/layout/
+ *  Footer.tsx is a client component, so whatever this returns is serialized
+ *  into the page and shipped to every visitor. Handing it GeoPage objects
+ *  would put all 39 pages' full copy, sourced facts and asset tables into the
+ *  bundle of every page on the site. Keep this projection small. */
+export function localizedFooterGroups(): LocalizedGroup[] {
+  const byHub = new Map<string, { name: string; href: string }[]>();
+
+  for (const p of GEO_PAGES) {
+    if (p.type !== "geo") continue;
+    if (!byHub.has(p.hub)) byHub.set(p.hub, []);
+    byHub.get(p.hub)!.push({ name: p.geo.name, href: p.path });
+  }
+
+  return [...byHub.entries()]
+    .map(([hub, items]) => ({
+      label: FOOTER_HUB_LABELS[hub] ?? hubPathToLabel(hub),
+      href: hub,
+      items: items.sort((a, b) => a.name.localeCompare(b.name)),
+    }))
+    .sort((a, b) => b.items.length - a.items.length || a.label.localeCompare(b.label));
+}
+
+// ---------------------------------------------------------------------------
 // Routes and validation
 // ---------------------------------------------------------------------------
 

@@ -13,6 +13,10 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CTABar from "@/components/layout/CTABar";
 import PauseOffscreenAnimations from "@/components/PauseOffscreenAnimations";
+// Computed here, in a server component, and handed to the footer as a prop.
+// Footer is "use client", so importing the registry there would serialize all
+// 39 geo pages' full copy into the bundle of every page on the site.
+import { localizedFooterGroups } from "@/lib/geo/registry";
 
 const SITE_URL = "https://ecommwizards.com";
 const SITE_NAME = "Ecomm Wizards";
@@ -114,7 +118,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="flex-1 pt-[100px] sm:pt-[70px] md:pt-[100px] lg:pt-[86px] xl:pt-[96px]">{children}</main>
         <CTABar />
-        <Footer />
+        <Footer localized={localizedFooterGroups()} />
         <PauseOffscreenAnimations />
       </body>
     </html>
