@@ -58,6 +58,9 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // The blog launched at /blog and moved to /insights.
+      { source: "/blog", destination: "/insights", permanent: true },
+      { source: "/blog/:slug", destination: "/insights/:slug", permanent: true },
       {
         source: "/shopify-app-setup-and-app-optimization",
         destination: "/services/shopify-app-setup-and-app-optimization",
