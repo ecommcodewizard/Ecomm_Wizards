@@ -7,15 +7,16 @@ import Editorial from "./Editorial";
 const PAGE_TITLE = "Shopify Insights: Design, SEO, Email & AI Commerce | Ecomm Wizards";
 const PAGE_DESCRIPTION =
   "Practical guides on Shopify design, development, SEO, AEO and GEO, email and agentic commerce, written by the team building and growing Shopify stores.";
-const PAGE_URL = "https://ecommwizards.com/blog";
+const PAGE_URL = "https://ecommwizards.com/insights";
 const OG_IMAGE = "/images/main-hero-f-desktop.webp";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },
   description: PAGE_DESCRIPTION,
   alternates: { canonical: PAGE_URL },
-  // Sample posts only. Remove this line when real articles replace them.
-  robots: { index: false, follow: true },
+  // Sample posts whose article pages don't exist yet: keep Google off this page
+  // and its links. Remove this line when real articles replace them.
+  robots: { index: false, follow: false },
   openGraph: {
     type: "website",
     url: PAGE_URL,

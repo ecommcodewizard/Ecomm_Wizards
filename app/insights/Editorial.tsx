@@ -40,7 +40,7 @@ export default function Editorial({ posts, quotes }: { posts: Post[]; quotes: Qu
           const q = quotes[qi];
           return (
             <Fragment key={p.slug}>
-              <Link href={`/blog/${p.slug}`} className="ed-card">
+              <Link href={`/insights/${p.slug}`} className="ed-card">
                 <span className="ed-img">
                   {p.image && (
                     <Image src={p.image} alt="" fill sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" priority={i < 4} />
