@@ -1,17 +1,19 @@
 // Blog topics map 1:1 to the services we sell, so every post points a reader
 // at something they can buy.
 export const TOPICS = [
-  { slug: "development", label: "Shopify Development" },
-  { slug: "design", label: "Design & UX" },
-  { slug: "seo", label: "SEO" },
-  { slug: "aeo-geo", label: "AEO & GEO" },
-  { slug: "email", label: "Email & SMS" },
-  { slug: "agentic-commerce", label: "Agentic Commerce" },
-  { slug: "cro", label: "CRO" },
-  { slug: "migration", label: "Migration" },
+  { slug: "development", label: "Shopify Development", specialist: "Shopify Development Specialist", service: { label: "Shopify Development", href: "/services/shopify-development-agency" } },
+  { slug: "design", label: "Design & UX", specialist: "Design & UX Specialist", service: { label: "Shopify UX & UI Design", href: "/services/shopify-ux-and-ui-design" } },
+  { slug: "seo", label: "SEO", specialist: "SEO Specialist", service: { label: "Shopify SEO", href: "/services/shopify-seo-agency" } },
+  { slug: "aeo-geo", label: "AEO & GEO", specialist: "AEO & GEO Specialist", service: { label: "Ecommerce SEO, AEO & GEO", href: "/services/ecommerce-seo-agency" } },
+  { slug: "email", label: "Email & SMS", specialist: "Email Marketing Specialist", service: { label: "Klaviyo Audit", href: "/services/klaviyo-audit" } },
+  { slug: "agentic-commerce", label: "Agentic Commerce", specialist: "Agentic Commerce Specialist", service: { label: "Agentic Commerce", href: "/services/shopify-agentic-commerce" } },
+  { slug: "cro", label: "CRO", specialist: "CRO Specialist", service: { label: "Shopify CRO", href: "/services/shopify-cro-agency" } },
+  { slug: "migration", label: "Migration", specialist: "Migration Specialist", service: { label: "Shopify Migration", href: "/services/migration" } },
 ] as const;
 
 export type TopicSlug = (typeof TOPICS)[number]["slug"];
+
+export const topicOf = (slug: TopicSlug) => TOPICS.find((t) => t.slug === slug)!;
 
 export type Post = {
   slug: string;
