@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CTASection from "@/components/ui/CTASection";
 import { POSTS } from "@/lib/blog/posts";
+import { ARTICLES, readMinutes } from "@/lib/blog/articles";
 import { CASE_STUDIES } from "@/lib/case-studies";
 import Editorial from "./Editorial";
 
@@ -29,6 +30,9 @@ export const metadata: Metadata = {
 };
 
 // Real, signed-off client quotes. The two shortest read best as cards.
+// Written articles report their real read time.
+const LISTED = POSTS.map((p) => (ARTICLES[p.slug] ? { ...p, readMins: readMinutes(ARTICLES[p.slug]) } : p));
+
 const QUOTES = CASE_STUDIES.filter((c) => c.quote && c.quotePerson)
   .map((c) => ({ text: c.quote!, person: c.quotePerson!, role: c.quoteRole ?? c.brandName }))
   .sort((a, b) => a.text.length - b.text.length)
@@ -43,7 +47,7 @@ export default function BlogPage() {
           <h1 className="ed-h1">
             What&apos;s working in commerce, <em>right now.</em>
           </h1>
-          <Editorial posts={POSTS} quotes={QUOTES} />
+          <Editorial posts={LISTED} quotes={QUOTES} />
         </div>
       </section>
       <CTASection

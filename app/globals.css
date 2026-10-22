@@ -369,6 +369,7 @@
     scroll-behavior: smooth;
     font-size: var(--font-size-base);
     overflow-x: hidden;
+    overflow-x: clip; /* clip, not hidden, so position:sticky still works; hidden stays as the Safari 15 fallback */
   }
 
   body {
@@ -379,6 +380,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    overflow-x: clip;
   }
 
   /* Headings */
