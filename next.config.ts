@@ -1,8 +1,35 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // BUILD PARALLELISM IS CAPPED ON PURPOSE. The first two Next 16 deploys to
+  // Hostinger died during "Collecting page data" with "OS can't spawn worker
+  // thread: Resource temporarily unavailable (os error 11)", then SIGABRT.
+  // The container allows 120 processes/threads; the build wanted far more.
+  //
+  // This is HALF the fix. `cpus` caps how many page-data WORKER PROCESSES Next
+  // forks (build/index.js:379 returns this value verbatim once it differs from
+  // the default, which also bypasses Next's usual minimum of 4). It does NOT
+  // reach inside those workers: the error string itself lives in the @next/swc
+  // NATIVE binary next to "RAYON_NUM_THREADS" and "available_parallelism", so
+  // the threads that actually failed to spawn are a Rust (rayon) pool sized
+  // from the HOST's core count, which a shared container over-reports. That
+  // pool is capped by RAYON_NUM_THREADS in scripts/build.mjs, which has to be
+  // set before Node loads Next at all — hence a wrapper rather than this file.
+  //
+  // Note `workerThreads` is deliberately NOT set: false is already the Next 16
+  // default (config-shared.js:228), so setting it would be a no-op that reads
+  // like a fix.
+  experimental: {
+    cpus: 2,
+  },
   images: {
     formats: ["image/avif", "image/webp"],
+    // Next 16 changed the `qualities` default from "any value allowed" to
+    // exactly [75], and SILENTLY COERCES anything else to the nearest allowed
+    // value. PageHero passes quality={55} for its full-bleed background, which
+    // would have become 75 without this line — heavier hero images on every
+    // page that uses PageHero, with no error to notice it by.
+    qualities: [55, 75],
     // Cap generated widths at 2048. The site has no 4K-critical imagery, so the
     // default 3840 candidate only wasted bandwidth on full-bleed hero images.
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
