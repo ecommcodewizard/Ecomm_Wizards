@@ -28,6 +28,31 @@ export const Users: CollectionConfig = {
       return { id: { equals: user.id } };
     },
   },
+  hooks: {
+    beforeChange: [
+      async ({ operation, data, req }) => {
+        // THE FIRST ACCOUNT EVER CREATED IS ALWAYS AN ADMIN.
+        //
+        // Without this, setting up the CMS leaves you locked out of it. `role`
+        // defaults to "writer", and the field is admin-only to edit, so
+        // Payload's create-first-user screen cannot set it. The result would be
+        // a lone writer account that can neither publish nor create the admin
+        // account needed to fix it.
+        //
+        // This applies ONLY when the users table is empty, so the second and
+        // later accounts still default to writer and must be promoted by an
+        // admin on purpose.
+        if (operation === "create") {
+          const { totalDocs } = await req.payload.count({
+            collection: "users",
+            overrideAccess: true,
+          });
+          if (totalDocs === 0) data.role = "admin";
+        }
+        return data;
+      },
+    ],
+  },
   fields: [
     {
       name: "name",
