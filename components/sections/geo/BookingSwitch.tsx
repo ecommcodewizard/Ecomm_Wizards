@@ -28,7 +28,7 @@ import LeadForm from "@/components/ui/LeadForm";
 // and open-in-new-tab behave, and with JS unavailable the click just navigates
 // to a page that does the same job. The in-place swap is an enhancement on top
 // of something that already worked, never a replacement for it.
-const CalEmbed = dynamic(() => import("@/app/book-shopify-consultation/CalEmbed"), {
+const CalEmbed = dynamic(() => import("@/app/(frontend)/book-shopify-consultation/CalEmbed"), {
   ssr: false,
   loading: () => (
     <p className="bks-loading" role="status">
