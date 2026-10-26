@@ -97,8 +97,14 @@ const ORG_SCHEMA = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // data-scroll-behavior keeps Next 15's navigation behaviour. globals.css sets
+  // `scroll-behavior: smooth` on <html>; Next used to force it to `auto`
+  // mid-navigation so route changes jumped to the top instantly, but Next 16 no
+  // longer does that unless this attribute is present. Without it every route
+  // change animates a long smooth scroll instead — very visible on the geo
+  // pages, which run past 2,700 words.
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <head />
       <body className="flex min-h-screen flex-col" style={{ backgroundColor: "var(--color-white)", color: "var(--color-dark)" }} suppressHydrationWarning>
         {/* Google Tag Manager — loads after the page is interactive so it never blocks rendering */}
