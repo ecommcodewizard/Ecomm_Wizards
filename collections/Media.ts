@@ -9,8 +9,10 @@ import type { CollectionConfig } from "payload";
 // this, and swapping it in is a plugin change, not a re-upload.
 export const Media: CollectionConfig = {
   slug: "media",
+  labels: { singular: "Image", plural: "Images" },
   admin: {
-    group: "Content",
+    group: "Media",
+    useAsTitle: "alt",
     description: "Images for posts. Every image needs alt text.",
   },
   access: {

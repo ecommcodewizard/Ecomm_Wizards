@@ -27,6 +27,7 @@
     "@fontsource/poppins": "^5.2.7",
     "@payloadcms/db-postgres": "^3.92.0",
     "@payloadcms/next": "^3.92.0",
+    "@payloadcms/plugin-redirects": "^3.92.0",
     "@payloadcms/plugin-seo": "^3.92.0",
     "@payloadcms/richtext-lexical": "^3.92.0",
     "framer-motion": "^12.38.0",

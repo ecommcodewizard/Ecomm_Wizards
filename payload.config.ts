@@ -2,14 +2,19 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 import { postgresAdapter } from "@payloadcms/db-postgres";
+import { redirectsPlugin } from "@payloadcms/plugin-redirects";
 import { seoPlugin } from "@payloadcms/plugin-seo";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 
+import { Authors } from "./collections/Authors";
+import { Categories } from "./collections/Categories";
 import { Media } from "./collections/Media";
 import { Posts } from "./collections/Posts";
+import { Tags } from "./collections/Tags";
 import { Users } from "./collections/Users";
+import { BlogSettings } from "./globals/BlogSettings";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -39,11 +44,19 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
     meta: {
+      title: "Dashboard",
       titleSuffix: " — Ecomm Wizards CMS",
+      description: "Write, edit and publish articles for the Ecomm Wizards blog.",
+      // The CMS must never be indexed. It is reachable on the public domain,
+      // so this is the instruction that keeps /cms out of search results.
+      robots: "noindex, nofollow",
     },
   },
 
-  collections: [Posts, Media, Users],
+  // Order here is the order of the nav: Blog, then Media, then Settings.
+  collections: [Posts, Categories, Tags, Authors, Media, Users],
+
+  globals: [BlogSettings],
 
   editor: lexicalEditor(),
 
@@ -83,6 +96,30 @@ export default buildConfig({
       // Groups the SEO fields into their own tab rather than appending them to
       // the bottom of a long edit form.
       tabbedUI: true,
+    }),
+
+    redirectsPlugin({
+      collections: ["posts", "categories"],
+      redirectTypes: ["301", "302"],
+      overrides: {
+        admin: {
+          group: "Settings",
+          description:
+            "Old web addresses that forward to a new one. Changing a published article's slug breaks its existing links, so add a redirect when you do.",
+          // Writers cannot manage redirects, so they do not see them.
+          hidden: ({ user }) =>
+            (user as { role?: string } | null)?.role !== "admin",
+        },
+        access: {
+          read: () => true,
+          create: ({ req: { user } }) =>
+            (user as { role?: string } | null)?.role === "admin",
+          update: ({ req: { user } }) =>
+            (user as { role?: string } | null)?.role === "admin",
+          delete: ({ req: { user } }) =>
+            (user as { role?: string } | null)?.role === "admin",
+        },
+      },
     }),
   ],
 });
