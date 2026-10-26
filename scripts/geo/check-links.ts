@@ -47,10 +47,23 @@ function htmlPathFor(routePath: string): string {
   return path.join(APP_DIR, ...routePath.split("/").filter(Boolean)) + ".html";
 }
 
+// Route groups are parenthesised directories that do NOT appear in the URL, so
+// a route's path on disk and its path on the web stopped matching when the site
+// moved into app/(frontend) to make room for the CMS at app/(payload). This
+// check looked only at app/<parts> and so reported 13 live hub pages as
+// missing. Each candidate root is tried in turn; add one here if another group
+// is ever introduced.
+const APP_ROOTS = [
+  path.join(ROOT, "app"),
+  path.join(ROOT, "app", "(frontend)"),
+];
+
 function staticServiceRouteExists(hubPath: string): boolean {
   const parts = hubPath.split("/").filter(Boolean); // ["services", "<slug>", ...]
   if (parts[0] !== "services" || parts.length < 2) return false;
-  return fs.existsSync(path.join(ROOT, "app", ...parts, "page.tsx"));
+  return APP_ROOTS.some((root) =>
+    fs.existsSync(path.join(root, ...parts, "page.tsx")),
+  );
 }
 
 function main(): number {

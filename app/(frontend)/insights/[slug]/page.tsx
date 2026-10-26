@@ -4,25 +4,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CTASection from "@/components/ui/CTASection";
-import { POSTS, topicOf } from "@/lib/blog/posts";
-import { ARTICLES, readMinutes, type Block } from "@/lib/blog/articles";
+import { topicOf } from "@/lib/blog/posts";
+import { readMinutes, type Block } from "@/lib/blog/articles";
+import { getPost, listPosts } from "@/lib/blog/cms";
 import ArticleNav from "./ArticleNav";
 import ShareLinks from "./ShareLinks";
 
 const SITE = "https://ecommwizards.com";
 
-// Only slugs with a written article get a page; the rest 404.
-export const dynamicParams = false;
-export const generateStaticParams = () => Object.keys(ARTICLES).map((slug) => ({ slug }));
-
-const load = (slug: string) => {
-  const post = POSTS.find((p) => p.slug === slug);
-  const article = ARTICLES[slug];
-  return post && article ? { post, article } : null;
-};
+// Rendered on demand, then cached. Previously every article was baked into the
+// build from a fixed list, which cannot work once articles live in a database:
+// a deploy would need database access, and a newly published article would not
+// appear until the next deploy. getPost returns null for anything unpublished
+// or non-existent, so unknown slugs still 404 exactly as before.
+export const revalidate = 300;
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const found = load((await params).slug);
+  const found = await getPost((await params).slug);
   if (!found) return {};
   const { post, article } = found;
   const url = `${SITE}/insights/${post.slug}`;
@@ -30,8 +28,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: { absolute: `${post.title} | Ecomm Wizards` },
     description: article.summary,
     alternates: { canonical: url },
-    // Sample article. Remove this line when real articles replace the samples.
-    robots: { index: false, follow: false },
+    // The noindex that used to sit here was for the placeholder articles, which
+    // are gone. Anything reaching this point is a real, published article, and
+    // an unpublished one never renders at all — getPost filters on status.
     openGraph: {
       type: "article",
       url,
@@ -100,7 +99,7 @@ function BlockView({ b }: { b: Block }) {
 }
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
-  const found = load((await params).slug);
+  const found = await getPost((await params).slug);
   if (!found) notFound();
   const { post, article } = found;
   const topic = topicOf(post.topic);
@@ -109,8 +108,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const toc = [...article.sections.map(({ id, title }) => ({ id, title })), ...(article.faqs.length ? [{ id: "faqs", title: "FAQs" }] : [])];
   const updated = article.updated ?? post.date;
 
-  // Same topic first, then the newest of the rest.
-  const related = [...POSTS.filter((p) => p.topic === post.topic), ...POSTS.filter((p) => p.topic !== post.topic)]
+  // Same topic first, then the newest of the rest. listPosts already returns
+  // published posts newest-first, so this only needs to reorder by topic.
+  const all = await listPosts();
+  const related = [...all.filter((p) => p.topic === post.topic), ...all.filter((p) => p.topic !== post.topic)]
     .filter((p) => p.slug !== post.slug)
     .slice(0, 3);
 

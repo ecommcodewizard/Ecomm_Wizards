@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { withPayload } from "@payloadcms/next/withPayload";
 
 const nextConfig: NextConfig = {
   // BUILD PARALLELISM IS CAPPED ON PURPOSE. The first two Next 16 deploys to
@@ -201,4 +202,7 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// withPayload teaches the bundler about Payload's server-only packages and its
+// admin bundle. The site's own config above is untouched by it — redirects,
+// headers, image settings and the build worker caps all still apply.
+export default withPayload(nextConfig, { devBundleServerPackages: false });

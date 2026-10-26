@@ -9,7 +9,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
 import { geoForHub } from "@/lib/geo/registry";
 import HubCityLinks from "@/components/sections/geo/HubCityLinks";
-import CalEmbed from "@/app/book-shopify-consultation/CalEmbed";
+import CalEmbed from "@/app/(frontend)/book-shopify-consultation/CalEmbed";
 
 const META_DESCRIPTION =
   "Shopify development agency specializing in custom builds, theme development, Shopify Plus, and migrations. 150+ stores built. Fixed price. Most projects live in 6 weeks.";
