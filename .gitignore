@@ -36,3 +36,7 @@ wordpress-export.xml.xml
 # Nested repos
 claude-seo/
 node_modules
+
+# Payload uploads land here on disk. They are content, not source, and this
+# directory does not survive a Hostinger redeploy anyway - see collections/Media.ts.
+/public/cms-media
