@@ -1,5 +1,7 @@
 import type { CollectionConfig } from "payload";
 
+import { revalidatePost, revalidatePostAfterDelete } from "../hooks/revalidate";
+
 // Blog articles, served at /insights/<slug>.
 //
 // THE FIELD LIST MIRRORS lib/blog/articles.ts ON PURPOSE. That shape — a short
@@ -79,6 +81,10 @@ export const Posts: CollectionConfig = {
         return data;
       },
     ],
+    // Publishing should show up on the site immediately rather than whenever
+    // the page's own cache window happens to expire.
+    afterChange: [revalidatePost],
+    afterDelete: [revalidatePostAfterDelete],
   },
 
   fields: [

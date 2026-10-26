@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import CTASection from "@/components/ui/CTASection";
-import { POSTS } from "@/lib/blog/posts";
-import { ARTICLES, readMinutes } from "@/lib/blog/articles";
+import { listPosts } from "@/lib/blog/cms";
 import { CASE_STUDIES } from "@/lib/case-studies";
 import Editorial from "./Editorial";
+
+// Rendered on demand and then cached for five minutes, rather than built into
+// the site at deploy time. Two reasons: a deploy would otherwise need database
+// access (CI does not have it), and an article published in the CMS should
+// appear without waiting for a rebuild. Publishing also revalidates this path
+// directly, so the five minutes is only a backstop.
+export const revalidate = 300;
 
 const PAGE_TITLE = "Shopify Insights: Design, SEO, Email & AI Commerce | Ecomm Wizards";
 const PAGE_DESCRIPTION =
@@ -11,13 +17,24 @@ const PAGE_DESCRIPTION =
 const PAGE_URL = "https://ecommwizards.com/insights";
 const OG_IMAGE = "/images/main-hero-f-desktop.webp";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  // The old hard-coded noindex existed because the page listed sample posts
+  // whose articles did not exist, so every card was a dead link. Those are
+  // gone, but an EMPTY listing is just as bad a thing to offer Google — so the
+  // rule now follows reality: index it once there is something on it.
+  const posts = await listPosts();
+  return {
+    ...metadataBase,
+    robots: posts.length
+      ? { index: true, follow: true }
+      : { index: false, follow: false },
+  };
+}
+
+const metadataBase: Metadata = {
   title: { absolute: PAGE_TITLE },
   description: PAGE_DESCRIPTION,
   alternates: { canonical: PAGE_URL },
-  // Sample posts whose article pages don't exist yet: keep Google off this page
-  // and its links. Remove this line when real articles replace them.
-  robots: { index: false, follow: false },
   openGraph: {
     type: "website",
     url: PAGE_URL,
@@ -30,15 +47,16 @@ export const metadata: Metadata = {
 };
 
 // Real, signed-off client quotes. The two shortest read best as cards.
-// Written articles report their real read time.
-const LISTED = POSTS.map((p) => (ARTICLES[p.slug] ? { ...p, readMins: readMinutes(ARTICLES[p.slug]) } : p));
-
 const QUOTES = CASE_STUDIES.filter((c) => c.quote && c.quotePerson)
   .map((c) => ({ text: c.quote!, person: c.quotePerson!, role: c.quoteRole ?? c.brandName }))
   .sort((a, b) => a.text.length - b.text.length)
   .slice(0, 2);
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  // Read times are computed from the article body in lib/blog/cms.ts, so a
+  // card always reports the real length rather than a guess.
+  const posts = await listPosts();
+
   return (
     <>
       <section className="ed">
@@ -47,7 +65,7 @@ export default function BlogPage() {
           <h1 className="ed-h1">
             What&apos;s working in commerce, <em>right now.</em>
           </h1>
-          <Editorial posts={LISTED} quotes={QUOTES} />
+          <Editorial posts={posts} quotes={QUOTES} />
         </div>
       </section>
       <CTASection
