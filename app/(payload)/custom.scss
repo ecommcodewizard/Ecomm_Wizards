@@ -1,2 +1,92 @@
 // Custom styles for the Payload admin interface at /cms.
-// Intentionally empty — Payload's own stylesheet is loaded by the layout.
+// Payload's own stylesheet is loaded by the layout; this only adds what the
+// import screen needs, using Payload's theme variables so it follows the
+// light/dark setting rather than fighting it.
+
+.cms-import {
+  max-width: 44rem;
+  padding-block: 1.5rem 4rem;
+
+  h1 {
+    margin-bottom: 0.75rem;
+  }
+
+  &__lede {
+    margin-bottom: 1rem;
+    color: var(--theme-elevation-700);
+    line-height: 1.6;
+  }
+
+  &__form {
+    display: grid;
+    gap: 1.75rem;
+    margin-top: 2rem;
+  }
+
+  &__choice {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--theme-elevation-150);
+    border-radius: 4px;
+
+    legend {
+      padding-inline: 0.5rem;
+      color: var(--theme-elevation-700);
+      font-size: 0.85rem;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      cursor: pointer;
+    }
+  }
+
+  &__field {
+    display: grid;
+    gap: 0.5rem;
+
+    label {
+      font-weight: 600;
+    }
+
+    input[type="url"] {
+      padding: 0.65rem 0.75rem;
+      border: 1px solid var(--theme-elevation-150);
+      border-radius: 4px;
+      background: var(--theme-input-bg);
+      color: var(--theme-elevation-800);
+      font: inherit;
+    }
+
+    input[type="file"] {
+      padding: 0.5rem 0;
+    }
+  }
+
+  &__hint {
+    margin: 0;
+    color: var(--theme-elevation-600);
+    font-size: 0.85rem;
+    line-height: 1.55;
+  }
+
+  // Not colour alone: the word "problem" is carried by the text itself, which
+  // matters for anyone who cannot distinguish the red.
+  &__error {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    border-left: 3px solid var(--theme-error-500);
+    background: var(--theme-error-50);
+    color: var(--theme-error-600);
+    line-height: 1.55;
+  }
+}
+
+.cms-import-navlink {
+  display: block;
+}

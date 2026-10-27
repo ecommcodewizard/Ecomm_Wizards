@@ -1,6 +1,7 @@
 import type { CollectionConfig } from "payload";
 
 import { postContentEditor, simpleEditor } from "../lib/cms/editor";
+import { importPostEndpoint } from "../lib/import/importPost";
 import { revalidatePost, revalidatePostAfterDelete } from "../hooks/revalidate";
 
 // Blog articles, served at /insights/<slug>.
@@ -44,6 +45,9 @@ export const Posts: CollectionConfig = {
     preview: (doc) =>
       doc?.slug ? `https://ecommwizards.com/insights/${doc.slug}` : null,
   },
+
+  // Serves POST /cms-api/posts/import, behind the "Import a doc" screen.
+  endpoints: [importPostEndpoint],
 
   access: {
     read: ({ req: { user } }) => {

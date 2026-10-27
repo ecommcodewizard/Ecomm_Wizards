@@ -52,6 +52,16 @@ export default buildConfig({
       // so this is the instruction that keeps /cms out of search results.
       robots: "noindex, nofollow",
     },
+    components: {
+      // "Import a doc" in the sidebar, below the collections.
+      afterNavLinks: ["/components/cms/ImportButton#ImportNavLink"],
+      views: {
+        importPost: {
+          Component: "/components/cms/ImportView#ImportView",
+          path: "/import",
+        },
+      },
+    },
   },
 
   // Order here is the order of the nav: Blog, then Media, then Settings.
