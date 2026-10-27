@@ -140,45 +140,30 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <h1 className="ar-h1">{post.title}</h1>
           <p className="ar-summary">{article.summary}</p>
           <div className="ar-meta">
-            {/* The real byline from the CMS. This used to render
-                "EW {topic.specialist}" — a persona invented from the category,
-                shown regardless of who actually wrote the piece and even when
-                no author was set at all. With no author chosen it falls back
-                to the company logo and name, which is at least true. */}
-            <span className="ar-author">
-              <span className="ar-avatar" aria-hidden="true">
-                {article.author?.avatarUrl ? (
-                  <Image src={article.author.avatarUrl} alt="" width={86} height={86} />
-                ) : (
-                  <Image src="/images/ecomm-green-logo-cropped.png" alt="" width={86} height={79} />
-                )}
-              </span>
-              <span>
-                <small>Published by</small>
-                <b>{post.author}</b>
-                {article.author?.role && <em className="ar-author-role">{article.author.role}</em>}
-              </span>
+            {/* ONE PLAIN LINE: name, dates, read time — the shape the
+                reference blog uses. It replaced a boxed card with a logo
+                circle and stacked label/value pairs, which gave the byline
+                more visual weight than the standfirst above it. A byline is
+                reference information, not a feature of the page.
+
+                The name itself used to be "EW {topic.specialist}", a persona
+                invented from the category and shown regardless of who wrote
+                the piece. It now comes from the CMS, falling back to the
+                company, which is at least true. */}
+            <span className="ar-byline-name">{post.author}</span>
+            <span>
+              Published <time dateTime={post.date}>{date(post.date)}</time>
             </span>
-            <span className="ar-facts">
+            {/* Only when the article has genuinely been revised since
+                publication. A publish date set by hand can sit after the last
+                edit, which made the page claim it was "last updated" before it
+                existed. */}
+            {showUpdated && (
               <span>
-                <small>Published</small>
-                <time dateTime={post.date}>{date(post.date)}</time>
+                Last updated <time dateTime={updated}>{date(updated)}</time>
               </span>
-              {/* Only when the article has genuinely been revised since
-                  publication. A publish date set by hand can sit after the last
-                  edit, which made the page claim it was "last updated" before
-                  it existed. */}
-              {showUpdated && (
-                <span>
-                  <small>Last updated</small>
-                  <time dateTime={updated}>{date(updated)}</time>
-                </span>
-              )}
-              <span>
-                <small>Read time</small>
-                {mins} min
-              </span>
-            </span>
+            )}
+            <span>{mins} min read</span>
           </div>
         </div>
       </header>
@@ -336,13 +321,10 @@ const CSS = `
 .ar-crumbs span:last-child{color:#fff}
 .ar-h1{margin:0 auto 24px;max-width:900px;color:#fff;font-weight:400;font-size:clamp(36px,5.4vw,72px);line-height:1.05;letter-spacing:-.035em;text-wrap:balance}
 .ar-summary{max-width:680px;margin:0 auto 40px;color:rgba(255,255,255,.7);font-size:clamp(17px,1.4vw,20px);line-height:1.6}
-.ar-meta{display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px 40px;padding:18px 28px;border:1px solid rgba(255,255,255,.12);border-radius:20px;background:rgba(255,255,255,.03);text-align:left}
-.ar-author{display:flex;align-items:center;gap:12px}
-.ar-author b{display:block;margin-top:2px;font-size:15px;font-weight:600}
-.ar-author small,.ar-facts small{display:block;font-size:12px;color:rgba(255,255,255,.5)}
-.ar-avatar{display:grid;place-items:center;flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:#000;border:1px solid rgba(255,255,255,.16)}
-.ar-avatar img{width:24px;height:auto}
-.ar-facts{display:flex;flex-wrap:wrap;gap:12px 32px;font-size:14px}
+/* A single quiet line of reference information, not a card. */
+.ar-meta{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:6px 26px;font-size:14px;color:rgba(255,255,255,.6)}
+.ar-byline-name{color:#fff;font-weight:600}
+.ar-meta time{color:inherit}
 
 /* Cover image overlaps the hero */
 .ar-cover{position:relative;max-width:1280px;width:calc(100% - 40px);aspect-ratio:16/7;margin:-176px auto 0;border-radius:24px;overflow:hidden;background:#1a1b1a;box-shadow:0 40px 80px -40px rgba(0,0,0,.5)}
@@ -380,8 +362,9 @@ const CSS = `
 .ar-main a[target="_blank"]:hover,.ar-main a[target="_blank"]:focus-visible{text-decoration:underline;text-decoration-color:currentColor;text-decoration-thickness:1px}
 .ar-main strong{color:#000;font-weight:600}
 
-/* Author role beside the name in the header byline. */
-.ar-author-role{display:block;margin-top:2px;font-style:normal;font-size:12px;color:rgba(255,255,255,.55)}
+/* The author's role is shown in the "Written by" block at the end of the
+   article, not in the header byline — the reference blog keeps the top line to
+   name and dates, and so does this. */
 
 /* "Written by" at the end of the article. */
 .ar-byline{display:flex;gap:20px;align-items:flex-start;margin-top:56px;padding:28px;border:1px solid #e3e7e4;border-radius:18px;background:#f6f8f7}
@@ -539,7 +522,6 @@ const CSS = `
 @media (max-width:639px){
   .ar-hero{padding:44px 16px 120px}
   .ar-meta{display:grid;gap:16px;padding:16px 18px;width:100%}
-  .ar-facts{gap:20px}
   .ar-cover{width:calc(100% - 32px);margin-top:-88px;border-radius:14px}
   .ar-body{padding:0 16px 48px}
   .ar-rail-in{grid-template-columns:1fr}
