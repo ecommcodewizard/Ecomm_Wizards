@@ -228,8 +228,13 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               whether the advice is worth taking. Shown only when there is a
               real author with something to say, rather than padding the page
               with the company name twice. */}
-          {article.author?.bio && (
+          {article.author && (
             <aside className="ar-byline" aria-labelledby="written-by">
+              {/* Photo and bio are both optional. The reference blog credits
+                  its company name and a role and shows neither, so gating the
+                  whole block on a bio — as this did — meant it never appeared
+                  at all. Name and role are enough to say who stands behind the
+                  advice. */}
               {article.author.avatarUrl && (
                 <span className="ar-byline-img">
                   <Image src={article.author.avatarUrl} alt="" width={128} height={128} />
@@ -239,7 +244,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 <small id="written-by">Written by</small>
                 <b>{article.author.name}</b>
                 {article.author.role && <em>{article.author.role}</em>}
-                <p>{article.author.bio}</p>
+                {article.author.bio && <p>{article.author.bio}</p>}
               </span>
             </aside>
           )}
