@@ -87,7 +87,18 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       image: post.image ? `${SITE}${post.image}` : undefined,
       datePublished: post.date,
       dateModified: article.updated ?? post.date,
-      author: { "@id": `${SITE}/#organization` },
+      // A named Person when the article has a real author, so the piece is
+      // attributed to someone rather than to a company. Falls back to the
+      // organization, which is what it genuinely is when nobody is credited.
+      author: article.author
+        ? {
+            "@type": "Person",
+            name: article.author.name,
+            ...(article.author.role ? { jobTitle: article.author.role } : {}),
+            ...(article.author.bio ? { description: article.author.bio } : {}),
+            worksFor: { "@id": `${SITE}/#organization` },
+          }
+        : { "@id": `${SITE}/#organization` },
       publisher: {
         "@type": "Organization",
         "@id": `${SITE}/#organization`,
@@ -129,19 +140,23 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <h1 className="ar-h1">{post.title}</h1>
           <p className="ar-summary">{article.summary}</p>
           <div className="ar-meta">
+            {/* The real byline from the CMS. This used to render
+                "EW {topic.specialist}" — a persona invented from the category,
+                shown regardless of who actually wrote the piece and even when
+                no author was set at all. With no author chosen it falls back
+                to the company logo and name, which is at least true. */}
             <span className="ar-author">
               <span className="ar-avatar" aria-hidden="true">
-                <Image src="/images/ecomm-green-logo-cropped.png" alt="" width={86} height={79} />
+                {article.author?.avatarUrl ? (
+                  <Image src={article.author.avatarUrl} alt="" width={86} height={86} />
+                ) : (
+                  <Image src="/images/ecomm-green-logo-cropped.png" alt="" width={86} height={79} />
+                )}
               </span>
               <span>
                 <small>Published by</small>
-                {/* The real byline from the CMS. This used to render
-                    "EW {topic.specialist}" — a persona invented from the
-                    category, shown regardless of who actually wrote the piece
-                    and even when no author was set at all. post.author falls
-                    back to "Ecomm Wizards", which is true, rather than to a
-                    job title nobody holds. */}
                 <b>{post.author}</b>
+                {article.author?.role && <em className="ar-author-role">{article.author.role}</em>}
               </span>
             </span>
             <span className="ar-facts">
@@ -206,6 +221,28 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <p className="ar-updated">
             Last updated <time dateTime={updated}>{date(updated)}</time>
           </p>
+
+          {/* WHO WROTE THIS, at the end where a reader arrives having just
+              taken the advice. A named person with a stated role and real
+              experience is what a reader — and a search engine — uses to judge
+              whether the advice is worth taking. Shown only when there is a
+              real author with something to say, rather than padding the page
+              with the company name twice. */}
+          {article.author?.bio && (
+            <aside className="ar-byline" aria-labelledby="written-by">
+              {article.author.avatarUrl && (
+                <span className="ar-byline-img">
+                  <Image src={article.author.avatarUrl} alt="" width={128} height={128} />
+                </span>
+              )}
+              <span className="ar-byline-text">
+                <small id="written-by">Written by</small>
+                <b>{article.author.name}</b>
+                {article.author.role && <em>{article.author.role}</em>}
+                <p>{article.author.bio}</p>
+              </span>
+            </aside>
+          )}
         </article>
 
         <aside className="ar-rail">
@@ -337,6 +374,22 @@ const CSS = `
 .ar-main a[target="_blank"],.ar-main a[target="_blank"]:visited{color:inherit;text-decoration:none}
 .ar-main a[target="_blank"]:hover,.ar-main a[target="_blank"]:focus-visible{text-decoration:underline;text-decoration-color:currentColor;text-decoration-thickness:1px}
 .ar-main strong{color:#000;font-weight:600}
+
+/* Author role beside the name in the header byline. */
+.ar-author-role{display:block;margin-top:2px;font-style:normal;font-size:12px;color:rgba(255,255,255,.55)}
+
+/* "Written by" at the end of the article. */
+.ar-byline{display:flex;gap:20px;align-items:flex-start;margin-top:56px;padding:28px;border:1px solid #e3e7e4;border-radius:18px;background:#f6f8f7}
+.ar-byline-img{flex:0 0 64px}
+.ar-byline-img img{width:64px;height:64px;border-radius:9999px;object-fit:cover}
+.ar-byline-text{display:block;min-width:0}
+.ar-byline-text small{display:block;color:#5d6b61;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.ar-byline-text b{display:block;margin-top:4px;color:#000;font-size:19px;font-weight:600;letter-spacing:-.01em}
+.ar-byline-text em{display:block;margin-top:2px;color:#5d6b61;font-style:normal;font-size:14px}
+.ar-byline-text p{margin:12px 0 0;font-size:15px;line-height:1.6;color:#2b302c}
+@media (max-width:639px){
+  .ar-byline{flex-direction:column;gap:14px;padding:22px}
+}
 
 /* Tables. Comparison tables are a staple of these articles, and the body had
    no styling for them at all, so one would have rendered as unstyled rows.

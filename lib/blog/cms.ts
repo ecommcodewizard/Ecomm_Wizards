@@ -19,6 +19,21 @@ const WORDS_PER_MINUTE = 230;
 
 export type TocEntry = { id: string; title: string };
 
+/**
+ * The byline, as the CMS holds it.
+ *
+ * A real named person with a stated role and relevant experience is worth more
+ * than a company name here: it is how a reader, and a search engine, judge who
+ * is behind the advice. Null when no author has been chosen, in which case the
+ * page falls back to the company.
+ */
+export type AuthorInfo = {
+  name: string;
+  role?: string;
+  bio?: string;
+  avatarUrl?: string;
+};
+
 export type Faq = {
   question: string;
   /** For display. */
@@ -42,6 +57,8 @@ export type Article = {
   faqs: Faq[];
   toc: TocEntry[];
   showTableOfContents: boolean;
+  /** Null when no author has been chosen on the post. */
+  author: AuthorInfo | null;
   /** ISO date, when edited after publishing. */
   updated?: string;
 };
@@ -157,17 +174,34 @@ function toArticle(doc: PostDoc): Article {
       : [],
     toc: tableOfContents(content),
     showTableOfContents: doc.showTableOfContents !== false,
+    author: toAuthor(doc.author as Rel<AuthorDoc>),
     ...(doc.contentUpdatedAt
       ? { updated: String(doc.contentUpdatedAt).slice(0, 10) }
       : {}),
   };
 }
 
-type AuthorDoc = { name?: string | null };
+type AuthorDoc = {
+  name?: string | null;
+  role?: string | null;
+  bio?: string | null;
+  avatar?: Rel<MediaDoc>;
+};
+
+function toAuthor(value: Rel<AuthorDoc>): AuthorInfo | null {
+  const doc = rel<AuthorDoc>(value);
+  if (!doc?.name) return null;
+  const avatarUrl = rel<MediaDoc>(doc.avatar)?.url ?? undefined;
+  return {
+    name: doc.name,
+    ...(doc.role ? { role: doc.role } : {}),
+    ...(doc.bio ? { bio: doc.bio } : {}),
+    ...(avatarUrl ? { avatarUrl } : {}),
+  };
+}
 
 function toPost(doc: PostDoc, article: Article): Post {
   const category = rel<{ slug?: string }>(doc.category as Rel<{ slug?: string }>);
-  const author = rel<AuthorDoc>(doc.author as Rel<AuthorDoc>);
   const hero = rel<MediaDoc>(doc.heroImage as Rel<MediaDoc>);
   const published = doc.publishedAt ? String(doc.publishedAt) : "";
 
@@ -178,7 +212,8 @@ function toPost(doc: PostDoc, article: Article): Post {
     topic: asTopic(category?.slug),
     date: published.slice(0, 10),
     readMins: readMinutes(article),
-    author: author?.name ?? "Ecomm Wizards",
+    // Listing cards only need a name; the full byline lives on the article.
+    author: article.author?.name ?? "Ecomm Wizards",
     ...(hero?.url ? { image: hero.url } : {}),
   };
 }
