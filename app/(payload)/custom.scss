@@ -90,3 +90,22 @@
 .cms-import-navlink {
   display: block;
 }
+
+// The wordmark on the login screen. The source file is a 636x457 box, so it is
+// constrained by width and left to keep its own proportions rather than being
+// stretched to whatever the login card expects.
+.cms-logo {
+  width: auto;
+  max-width: 220px;
+  height: auto;
+}
+
+// The import shortcut above the Posts list.
+.cms-import-button {
+  margin-bottom: 1rem;
+
+  a {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+}

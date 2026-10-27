@@ -39,9 +39,26 @@ export const Posts: CollectionConfig = {
   slug: "posts",
   admin: {
     useAsTitle: "title",
-    defaultColumns: ["title", "_status", "category", "publishedAt"],
+    // The columns worth scanning at a glance: who wrote it, what it is about,
+    // when it went out and when it last changed.
+    defaultColumns: [
+      "title",
+      "_status",
+      "author",
+      "category",
+      "publishedAt",
+      "contentUpdatedAt",
+    ],
+    // Searching by slug matters once there are articles with similar titles,
+    // since the slug is the thing that appears in a URL someone is holding.
+    listSearchableFields: ["title", "slug"],
     group: "Blog",
     description: "Articles published at /insights.",
+    components: {
+      // The same shortcut as the sidebar link, where someone looking at the
+      // list of articles will actually look for it.
+      beforeListTable: ["/components/cms/ImportButton#ImportButton"],
+    },
     preview: (doc) =>
       doc?.slug ? `https://ecommwizards.com/insights/${doc.slug}` : null,
   },

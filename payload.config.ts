@@ -53,6 +53,12 @@ export default buildConfig({
       robots: "noindex, nofollow",
     },
     components: {
+      // Replaces Payload's default mark with the Ecomm Wizards logo: the
+      // wordmark on the login screen, the badge in the nav.
+      graphics: {
+        Logo: "/components/cms/Logo#Logo",
+        Icon: "/components/cms/Icon#Icon",
+      },
       // "Import a doc" in the sidebar, below the collections.
       afterNavLinks: ["/components/cms/ImportButton#ImportNavLink"],
       views: {
