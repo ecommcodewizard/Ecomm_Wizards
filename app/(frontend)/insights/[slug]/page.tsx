@@ -346,6 +346,11 @@ const CSS = `
 .ar-main table{width:100%;margin:0 0 26px;border-collapse:collapse;font-size:16px;line-height:1.5}
 .ar-main table th,.ar-main table td{padding:12px 14px;border:1px solid #e3e7e4;text-align:left;vertical-align:top}
 .ar-main table th{background:#0c0d0c;color:#fff;font-weight:600;font-size:15px;letter-spacing:-.01em}
+/* Header labels pasted from a document arrive bold, so they are wrapped in
+   <strong> — and ".ar-main strong{color:#000}" above is more specific than the
+   white set on the cell, which rendered black text on the black header. Let
+   anything inside a header cell take the cell's own colour. */
+.ar-main table th strong,.ar-main table th b,.ar-main table th em,.ar-main table th a{color:inherit}
 .ar-main table tr:nth-child(even) td{background:#f6f8f7}
 .ar-main table p{margin:0}
 /* Lexical wraps tables in a scroll container; style it whatever it is called. */
