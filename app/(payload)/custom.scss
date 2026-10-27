@@ -100,6 +100,35 @@
   height: auto;
 }
 
+// The Excerpt hint, character count and Auto-generate button.
+.cms-excerpt {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
+  margin-top: 0.4rem;
+
+  &__hint {
+    margin: 0;
+    color: var(--theme-elevation-600);
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  // Shown next to the hint so the writer can see where they are without
+  // counting, which is the whole reason a range is stated at all.
+  &__count {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    color: var(--theme-elevation-500);
+  }
+
+  &__note {
+    margin: 0;
+    color: var(--theme-elevation-600);
+    font-size: 0.8rem;
+  }
+}
+
 // The import shortcut above the Posts list.
 .cms-import-button {
   margin-bottom: 1rem;

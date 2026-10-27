@@ -19,8 +19,11 @@ import { revalidatePost, revalidatePostAfterDelete } from "../hooks/revalidate";
 //   1. Only an admin can publish.
 //   2. Nothing unpublished is visible to the public.
 
-const EXCERPT_MIN = 80;
-const EXCERPT_MAX = 300;
+// Matches the reference implementation. The ceiling matters more than it
+// looks: the excerpt is also the fallback meta description, and Google stops
+// showing one at roughly 160 characters.
+const EXCERPT_MIN = 120;
+const EXCERPT_MAX = 200;
 const ANSWER_MAX = 600;
 
 const RESERVED_SLUGS = new Set(["", "new", "edit", "draft", "preview", "api", "feed", "rss"]);
@@ -128,7 +131,12 @@ export const Posts: CollectionConfig = {
               minLength: EXCERPT_MIN,
               maxLength: EXCERPT_MAX,
               admin: {
-                description: `One or two sentences on what the reader will learn (${EXCERPT_MIN}–${EXCERPT_MAX} characters). Shown on article cards and used as the search description if the SEO tab is left empty.`,
+                placeholder: "One or two sentences on what the reader will learn.",
+                components: {
+                  // Renders the hint, a live character count, and an
+                  // Auto-generate button that drafts the summary from the body.
+                  Description: "/components/cms/ExcerptDescription#ExcerptDescription",
+                },
               },
             },
             {
@@ -212,32 +220,6 @@ export const Posts: CollectionConfig = {
           label: "Settings",
           fields: [
             {
-              name: "category",
-              type: "relationship",
-              relationTo: "categories",
-              required: true,
-              admin: {
-                description:
-                  "The topic. Each one points at a service, which is how an article leads somewhere.",
-              },
-            },
-            {
-              name: "tags",
-              type: "relationship",
-              relationTo: "tags",
-              hasMany: true,
-              admin: { description: "Optional. Smaller topics this article touches on." },
-            },
-            {
-              name: "author",
-              type: "relationship",
-              relationTo: "authors",
-              admin: {
-                description:
-                  "The byline. Falls back to the default author in Blog settings if left empty.",
-              },
-            },
-            {
               name: "showTableOfContents",
               type: "checkbox",
               defaultValue: true,
@@ -299,8 +281,41 @@ export const Posts: CollectionConfig = {
       type: "date",
       admin: {
         position: "sidebar",
+        description: "Filled in automatically the first time the article is published.",
+      },
+    },
+    // AUTHOR, CATEGORY AND TAGS LIVE IN THE SIDEBAR, not in a tab. They are
+    // decisions you make while writing — who it is by, what it is about — so
+    // they belong beside the editor rather than behind a tab you have to
+    // remember to open. The Settings tab keeps the things you set rarely.
+    {
+      name: "author",
+      type: "relationship",
+      relationTo: "authors",
+      admin: {
+        position: "sidebar",
+        description: "Who wrote this article.",
+      },
+    },
+    {
+      name: "category",
+      type: "relationship",
+      relationTo: "categories",
+      required: true,
+      admin: {
+        position: "sidebar",
         description:
-          "Filled in automatically the first time the article is published. Edit it only to correct the record.",
+          "The topic. Each one points at a service, which is how an article leads somewhere.",
+      },
+    },
+    {
+      name: "tags",
+      type: "relationship",
+      relationTo: "tags",
+      hasMany: true,
+      admin: {
+        position: "sidebar",
+        description: "Optional. Smaller topics this article touches on.",
       },
     },
     {
