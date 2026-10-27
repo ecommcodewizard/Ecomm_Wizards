@@ -1,25 +1,25 @@
 import type { CollectionConfig } from "payload";
 
+import { postContentEditor, simpleEditor } from "../lib/cms/editor";
 import { revalidatePost, revalidatePostAfterDelete } from "../hooks/revalidate";
 
 // Blog articles, served at /insights/<slug>.
 //
-// THE FIELD LIST MIRRORS lib/blog/articles.ts ON PURPOSE. That shape — a short
-// direct `answer`, `takeaways`, typed section blocks, `faqs` and `sources` — is
-// deliberate work to make articles quotable by AI search, not decoration. A
-// single rich-text box would have been quicker to build and would have thrown
-// that away, so the structure is reproduced here field for field.
+// THE BODY IS ONE RICH-TEXT FIELD, NOT A STRUCTURE OF BLOCKS. An earlier
+// version modelled the article as Sections, each holding typed Blocks, which
+// mirrored the data shape the site renders. It was correct and unusable:
+// writing a 2,000-word article meant clicking "Add Section", then "Add Block",
+// then choosing "Paragraph", for every paragraph. The writer's experience
+// decides whether a CMS gets used at all, so the body is now an ordinary
+// editor. Headings in it still build the article's contents list.
 //
-// Two rules are enforced server-side, in hooks rather than in the interface,
-// because hiding a control is not access control:
+// Two rules are enforced in hooks rather than in the interface, because hiding
+// a control is not access control:
 //   1. Only an admin can publish.
 //   2. Nothing unpublished is visible to the public.
 
 const EXCERPT_MIN = 80;
 const EXCERPT_MAX = 300;
-// The answer block exists to be lifted verbatim by an AI search result, which
-// is why it is capped rather than open-ended.
-const ANSWER_MIN = 150;
 const ANSWER_MAX = 600;
 
 const RESERVED_SLUGS = new Set(["", "new", "edit", "draft", "preview", "api", "feed", "rss"]);
@@ -46,8 +46,6 @@ export const Posts: CollectionConfig = {
   },
 
   access: {
-    // Signed-in users see drafts; the public sees published posts only. This
-    // single rule is what keeps unfinished writing off the live site.
     read: ({ req: { user } }) => {
       if (user) return true;
       return { _status: { equals: "published" } };
@@ -81,13 +79,21 @@ export const Posts: CollectionConfig = {
         return data;
       },
     ],
-    // Publishing should show up on the site immediately rather than whenever
-    // the page's own cache window happens to expire.
     afterChange: [revalidatePost],
     afterDelete: [revalidatePostAfterDelete],
   },
 
   fields: [
+    {
+      name: "title",
+      type: "text",
+      required: true,
+      maxLength: 120,
+      admin: {
+        description:
+          "The headline a reader sees. Under 65 characters keeps it from being cut off in Google.",
+      },
+    },
     {
       type: "tabs",
       tabs: [
@@ -95,198 +101,88 @@ export const Posts: CollectionConfig = {
           label: "Content",
           fields: [
             {
-              name: "title",
-              type: "text",
-              required: true,
-              maxLength: 120,
-              admin: {
-                description:
-                  "The headline a reader sees. The SEO tab can differ if you want a different title in Google.",
-              },
-            },
-            {
               name: "excerpt",
               type: "textarea",
               required: true,
               minLength: EXCERPT_MIN,
               maxLength: EXCERPT_MAX,
               admin: {
-                description: `The standfirst under the title, and the text on listing cards (${EXCERPT_MIN}–${EXCERPT_MAX} characters).`,
+                description: `One or two sentences on what the reader will learn (${EXCERPT_MIN}–${EXCERPT_MAX} characters). Shown on article cards and used as the search description if the SEO tab is left empty.`,
               },
-            },
-            {
-              name: "answer",
-              type: "textarea",
-              minLength: ANSWER_MIN,
-              maxLength: ANSWER_MAX,
-              admin: {
-                description:
-                  "A direct answer to the article's core question, roughly 40–60 words. Written to be quoted verbatim by AI search, so answer the question outright — no preamble, no 'it depends'.",
-              },
-            },
-            {
-              name: "takeaways",
-              type: "array",
-              labels: { singular: "Takeaway", plural: "Takeaways" },
-              admin: {
-                description:
-                  "The points someone should leave with. One sentence each.",
-              },
-              fields: [{ name: "text", type: "text", required: true }],
             },
             {
               name: "heroImage",
+              label: "Featured Image",
               type: "upload",
               relationTo: "media",
               admin: {
                 description:
-                  "The image at the top of the article, also used when the link is shared.",
+                  "Shown at the top of the article, on article cards, and when the link is shared. At least 1200 pixels wide.",
               },
             },
             {
-              name: "sections",
-              type: "array",
-              labels: { singular: "Section", plural: "Sections" },
+              name: "content",
+              type: "richText",
+              editor: postContentEditor,
+              required: true,
               admin: {
                 description:
-                  "The article body. Each section becomes a heading plus its content, and feeds the on-page contents list.",
+                  "The article. Use Heading 2 for each main section and Heading 3 beneath it — the contents list is built from the Heading 2s.",
               },
-              fields: [
-                {
-                  name: "title",
-                  type: "text",
-                  required: true,
-                },
-                {
-                  name: "anchor",
-                  type: "text",
-                  admin: {
-                    description:
-                      "The link target for the contents list. Filled in from the title if left blank.",
-                  },
-                  hooks: {
-                    beforeValidate: [
-                      ({ value, siblingData }) =>
-                        slugify(
-                          (value as string) ||
-                            ((siblingData as { title?: string })?.title ?? ""),
-                        ),
-                    ],
-                  },
-                },
-                {
-                  name: "blocks",
-                  type: "blocks",
-                  required: true,
-                  blocks: [
-                    {
-                      slug: "paragraph",
-                      labels: { singular: "Paragraph", plural: "Paragraphs" },
-                      fields: [
-                        {
-                          name: "text",
-                          type: "textarea",
-                          required: true,
-                          admin: {
-                            description:
-                              "Supports **bold** and [label](/link).",
-                          },
-                        },
-                      ],
-                    },
-                    {
-                      slug: "heading",
-                      labels: { singular: "Sub-heading", plural: "Sub-headings" },
-                      fields: [{ name: "text", type: "text", required: true }],
-                    },
-                    {
-                      slug: "list",
-                      labels: { singular: "List", plural: "Lists" },
-                      fields: [
-                        {
-                          name: "style",
-                          type: "select",
-                          required: true,
-                          defaultValue: "ul",
-                          options: [
-                            { label: "Bulleted", value: "ul" },
-                            { label: "Numbered", value: "ol" },
-                          ],
-                        },
-                        {
-                          name: "items",
-                          type: "array",
-                          required: true,
-                          fields: [
-                            { name: "text", type: "text", required: true },
-                          ],
-                        },
-                      ],
-                    },
-                    {
-                      slug: "tip",
-                      labels: { singular: "Tip", plural: "Tips" },
-                      fields: [
-                        { name: "text", type: "textarea", required: true },
-                      ],
-                    },
-                    {
-                      slug: "quote",
-                      labels: { singular: "Quote", plural: "Quotes" },
-                      fields: [
-                        { name: "text", type: "textarea", required: true },
-                        {
-                          name: "cite",
-                          type: "text",
-                          admin: {
-                            description:
-                              "Who said it. Never attribute a quote to a named person who did not say it.",
-                          },
-                        },
-                      ],
-                    },
-                    {
-                      slug: "image",
-                      labels: { singular: "Image", plural: "Images" },
-                      fields: [
-                        {
-                          name: "image",
-                          type: "upload",
-                          relationTo: "media",
-                          required: true,
-                        },
-                        { name: "caption", type: "text" },
-                      ],
-                    },
-                  ],
-                },
-              ],
             },
             {
               name: "faqs",
+              label: "FAQ",
               type: "array",
               labels: { singular: "Question", plural: "Questions" },
               admin: {
                 description:
-                  "Questions a reader would still have. These become FAQ structured data, so answer them properly rather than teasing the service.",
+                  "Optional. Questions a reader would still have. These are published as FAQ structured data and can appear directly in Google, so answer them properly rather than teasing the service.",
               },
               fields: [
-                { name: "question", type: "text", required: true },
-                { name: "answer", type: "textarea", required: true },
+                {
+                  name: "question",
+                  type: "text",
+                  required: true,
+                  admin: { description: "Written the way a reader would ask it." },
+                },
+                {
+                  name: "answer",
+                  type: "richText",
+                  editor: simpleEditor,
+                  required: true,
+                  admin: { description: "A direct answer in two to four sentences." },
+                },
               ],
             },
             {
-              name: "sources",
-              type: "array",
-              labels: { singular: "Source", plural: "Sources" },
+              type: "collapsible",
+              label: "AI search extras (optional)",
               admin: {
+                initCollapsed: true,
                 description:
-                  "Outside sources the article relies on. Citing real ones is part of why AI search trusts a page.",
+                  "Both optional. They render as their own blocks on the article and exist to make the page easy for AI search to quote.",
               },
               fields: [
-                { name: "title", type: "text", required: true },
-                { name: "publisher", type: "text", required: true },
-                { name: "url", type: "text", required: true },
+                {
+                  name: "answer",
+                  label: "Direct answer",
+                  type: "textarea",
+                  maxLength: ANSWER_MAX,
+                  admin: {
+                    description:
+                      "40–60 words answering the article's core question outright, no preamble. Written to be lifted verbatim by an AI result.",
+                  },
+                },
+                {
+                  name: "takeaways",
+                  type: "array",
+                  labels: { singular: "Takeaway", plural: "Takeaways" },
+                  admin: {
+                    description: "The points a reader should leave with. One sentence each.",
+                  },
+                  fields: [{ name: "text", type: "text", required: true }],
+                },
               ],
             },
           ],
@@ -309,6 +205,7 @@ export const Posts: CollectionConfig = {
               type: "relationship",
               relationTo: "tags",
               hasMany: true,
+              admin: { description: "Optional. Smaller topics this article touches on." },
             },
             {
               name: "author",
@@ -317,6 +214,15 @@ export const Posts: CollectionConfig = {
               admin: {
                 description:
                   "The byline. Falls back to the default author in Blog settings if left empty.",
+              },
+            },
+            {
+              name: "showTableOfContents",
+              type: "checkbox",
+              defaultValue: true,
+              admin: {
+                description:
+                  "Builds a contents list from the Heading 2s. Worth turning off for a short article, where it is longer than the piece.",
               },
             },
           ],
@@ -332,16 +238,35 @@ export const Posts: CollectionConfig = {
       admin: {
         position: "sidebar",
         description:
-          "The web address: /insights/your-slug. Changing it after publishing breaks existing links.",
+          "The end of the web address: /insights/your-slug. Filled in from the title if left empty. Changing it after publishing breaks existing links.",
       },
       hooks: {
         beforeValidate: [
-          ({ value, data }) =>
-            slugify((value as string) || (data?.title as string) || ""),
+          ({ value, data }) => {
+            const derived = slugify(
+              (value as string) || (data?.title as string) || "",
+            );
+            // RETURNING undefined RATHER THAN "" IS THE WHOLE POINT HERE.
+            // Autosave creates a draft the moment "Create New" is clicked,
+            // before any title exists, so the slug derives to empty. Postgres
+            // permits many NULLs under a unique index but only one "", so the
+            // second untitled draft collided and the create screen failed to
+            // render at all — a blank page with error:valueMustBeUnique in the
+            // log.
+            return derived || undefined;
+          },
         ],
       },
-      validate: (value: unknown) => {
+      validate: (value: unknown, options: unknown) => {
         const v = String(value ?? "");
+        const status = (options as { data?: { _status?: string } })?.data?._status;
+        if (!v) {
+          // An untitled draft is a normal state; an untitled PUBLISHED post is
+          // not, since the slug is its address.
+          return status === "published"
+            ? "A web address is required before publishing."
+            : true;
+        }
         if (RESERVED_SLUGS.has(v)) return `"${v}" is reserved — choose another.`;
         if (!/^[a-z0-9-]+$/.test(v))
           return "Use lowercase letters, numbers and hyphens only.";
@@ -354,16 +279,17 @@ export const Posts: CollectionConfig = {
       admin: {
         position: "sidebar",
         description:
-          "Set automatically when first published. Edit only to correct the record.",
+          "Filled in automatically the first time the article is published. Edit it only to correct the record.",
       },
     },
     {
       name: "contentUpdatedAt",
+      label: "Last updated",
       type: "date",
       admin: {
         position: "sidebar",
         readOnly: true,
-        description: "Last updated. Maintained automatically.",
+        description: "Maintained automatically on every save.",
       },
     },
   ],

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CTASection from "@/components/ui/CTASection";
 import { topicOf } from "@/lib/blog/posts";
-import { readMinutes, type Block } from "@/lib/blog/articles";
 import { getPost, listPosts } from "@/lib/blog/cms";
+import ArticleContent from "@/components/blog/ArticleContent";
+import { RichText } from "@payloadcms/richtext-lexical/react";
 import ArticleNav from "./ArticleNav";
 import ShareLinks from "./ShareLinks";
 
@@ -48,64 +48,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 const fmt = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 const date = (iso: string) => fmt.format(new Date(iso));
 
-// **bold** and [label](/href) inside article text.
-function rich(text: string): ReactNode[] {
-  return text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g).map((part, i) => {
-    const bold = part.match(/^\*\*(.+)\*\*$/);
-    if (bold) return <strong key={i}>{bold[1]}</strong>;
-    const link = part.match(/^\[(.+)\]\((.+)\)$/);
-    if (link)
-      return link[2].startsWith("/") ? (
-        <Link key={i} href={link[2]}>{link[1]}</Link>
-      ) : (
-        <a key={i} href={link[2]} target="_blank" rel="noopener noreferrer">{link[1]}</a>
-      );
-    return part;
-  });
-}
-
-function BlockView({ b }: { b: Block }) {
-  switch (b.type) {
-    case "p":
-      return <p>{rich(b.text)}</p>;
-    case "h3":
-      return <h3>{b.text}</h3>;
-    case "ul":
-      return <ul>{b.items.map((t, i) => <li key={i}>{rich(t)}</li>)}</ul>;
-    case "ol":
-      return <ol>{b.items.map((t, i) => <li key={i}>{rich(t)}</li>)}</ol>;
-    case "tip":
-      return (
-        <aside className="ar-tip">
-          <span className="ar-tip-label">Quick tip</span>
-          <p>{rich(b.text)}</p>
-        </aside>
-      );
-    case "quote":
-      return (
-        <blockquote className="ar-quote">
-          <p>{b.text}</p>
-          {b.cite && <cite>{b.cite}</cite>}
-        </blockquote>
-      );
-    case "image":
-      return (
-        <figure className="ar-fig">
-          <Image src={b.src} alt={b.alt} width={b.width} height={b.height} sizes="(min-width: 1024px) 720px, 100vw" />
-          {b.caption && <figcaption>{rich(b.caption)}</figcaption>}
-        </figure>
-      );
-  }
-}
+// The **bold** / [label](/href) helper that used to live here is gone: inline
+// formatting and links are now the editor's job, and it stored them properly
+// rather than as markdown inside a text field.
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const found = await getPost((await params).slug);
   if (!found) notFound();
   const { post, article } = found;
   const topic = topicOf(post.topic);
-  const mins = readMinutes(article);
+  const mins = post.readMins;
   const url = `${SITE}/insights/${post.slug}`;
-  const toc = [...article.sections.map(({ id, title }) => ({ id, title })), ...(article.faqs.length ? [{ id: "faqs", title: "FAQs" }] : [])];
+  // Built from the body's H2s in lib/blog/cms.ts, and suppressible per article
+  // for short pieces where a contents list is longer than the piece itself.
+  const toc = [
+    ...(article.showTableOfContents ? article.toc : []),
+    ...(article.faqs.length ? [{ id: "faqs", title: "FAQs" }] : []),
+  ];
   const updated = article.updated ?? post.date;
 
   // Same topic first, then the newest of the rest. listPosts already returns
@@ -132,7 +91,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         url: SITE,
         logo: { "@type": "ImageObject", url: `${SITE}/images/ecomm-green.png`, width: 636, height: 457 },
       },
-      citation: article.sources.map((c) => ({ "@type": "CreativeWork", name: c.title, url: c.url, publisher: { "@type": "Organization", name: c.publisher } })),
       mainEntityOfPage: url,
     },
     {
@@ -147,7 +105,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     article.faqs.length && {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      mainEntity: article.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+      // answerText is the plain-text form of the same answer the page shows.
+      // Google wants text here, not markup.
+      mainEntity: article.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answerText } })),
     },
   ].filter(Boolean);
 
@@ -204,27 +164,28 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         </aside>
 
         <article className="ar-main" id="article-body">
-          <section className="ar-answer" aria-labelledby="short-answer">
-            <h2 id="short-answer">The short answer</h2>
-            <p>{article.answer}</p>
-          </section>
-
-          <section className="ar-take" aria-labelledby="takeaways">
-            <h2 id="takeaways">Key takeaways</h2>
-            <ul>
-              {article.takeaways.map((t, i) => <li key={i}>{t}</li>)}
-            </ul>
-          </section>
-
-          {article.sections.map((s) => (
-            <section key={s.id} className="ar-sec">
-              <h2 id={s.id}>
-                <a href={`#${s.id}`} className="ar-anchor" aria-label={`Link to ${s.title}`}>#</a>
-                {s.title}
-              </h2>
-              {s.blocks.map((b, i) => <BlockView key={i} b={b} />)}
+          {/* Both optional now, so each is hidden rather than rendered empty. */}
+          {article.answer && (
+            <section className="ar-answer" aria-labelledby="short-answer">
+              <h2 id="short-answer">The short answer</h2>
+              <p>{article.answer}</p>
             </section>
-          ))}
+          )}
+
+          {article.takeaways.length > 0 && (
+            <section className="ar-take" aria-labelledby="takeaways">
+              <h2 id="takeaways">Key takeaways</h2>
+              <ul>
+                {article.takeaways.map((t, i) => <li key={i}>{t}</li>)}
+              </ul>
+            </section>
+          )}
+
+          {/* The body as written in the CMS editor. Its H2s carry the ids the
+              contents list links to. */}
+          <div className="ar-sec">
+            <ArticleContent content={article.content} />
+          </div>
 
           <p className="ar-updated">
             Last updated <time dateTime={updated}>{date(updated)}</time>
@@ -256,8 +217,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <div className="ar-faq-list">
               {article.faqs.map((f, i) => (
                 <details key={i} name="faq">
-                  <summary>{f.q}</summary>
-                  <p>{f.a}</p>
+                  <summary>{f.question}</summary>
+                  <RichText data={f.answer} />
                 </details>
               ))}
             </div>
