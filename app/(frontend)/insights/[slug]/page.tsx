@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CTASection from "@/components/ui/CTASection";
 import { topicOf } from "@/lib/blog/posts";
-import { readMinutes, type Block } from "@/lib/blog/articles";
 import { getPost, listPosts } from "@/lib/blog/cms";
+import ArticleContent from "@/components/blog/ArticleContent";
+import { RichText } from "@payloadcms/richtext-lexical/react";
 import ArticleNav from "./ArticleNav";
 import ShareLinks from "./ShareLinks";
 
@@ -48,65 +48,28 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 const fmt = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 const date = (iso: string) => fmt.format(new Date(iso));
 
-// **bold** and [label](/href) inside article text.
-function rich(text: string): ReactNode[] {
-  return text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g).map((part, i) => {
-    const bold = part.match(/^\*\*(.+)\*\*$/);
-    if (bold) return <strong key={i}>{bold[1]}</strong>;
-    const link = part.match(/^\[(.+)\]\((.+)\)$/);
-    if (link)
-      return link[2].startsWith("/") ? (
-        <Link key={i} href={link[2]}>{link[1]}</Link>
-      ) : (
-        <a key={i} href={link[2]} target="_blank" rel="noopener noreferrer">{link[1]}</a>
-      );
-    return part;
-  });
-}
-
-function BlockView({ b }: { b: Block }) {
-  switch (b.type) {
-    case "p":
-      return <p>{rich(b.text)}</p>;
-    case "h3":
-      return <h3>{b.text}</h3>;
-    case "ul":
-      return <ul>{b.items.map((t, i) => <li key={i}>{rich(t)}</li>)}</ul>;
-    case "ol":
-      return <ol>{b.items.map((t, i) => <li key={i}>{rich(t)}</li>)}</ol>;
-    case "tip":
-      return (
-        <aside className="ar-tip">
-          <span className="ar-tip-label">Quick tip</span>
-          <p>{rich(b.text)}</p>
-        </aside>
-      );
-    case "quote":
-      return (
-        <blockquote className="ar-quote">
-          <p>{b.text}</p>
-          {b.cite && <cite>{b.cite}</cite>}
-        </blockquote>
-      );
-    case "image":
-      return (
-        <figure className="ar-fig">
-          <Image src={b.src} alt={b.alt} width={b.width} height={b.height} sizes="(min-width: 1024px) 720px, 100vw" />
-          {b.caption && <figcaption>{rich(b.caption)}</figcaption>}
-        </figure>
-      );
-  }
-}
+// The **bold** / [label](/href) helper that used to live here is gone: inline
+// formatting and links are now the editor's job, and it stored them properly
+// rather than as markdown inside a text field.
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const found = await getPost((await params).slug);
   if (!found) notFound();
   const { post, article } = found;
   const topic = topicOf(post.topic);
-  const mins = readMinutes(article);
+  const mins = post.readMins;
   const url = `${SITE}/insights/${post.slug}`;
-  const toc = [...article.sections.map(({ id, title }) => ({ id, title })), ...(article.faqs.length ? [{ id: "faqs", title: "FAQs" }] : [])];
+  // Built from the body's H2s in lib/blog/cms.ts, and suppressible per article
+  // for short pieces where a contents list is longer than the piece itself.
+  const toc = [
+    ...(article.showTableOfContents ? article.toc : []),
+    ...(article.faqs.length ? [{ id: "faqs", title: "FAQs" }] : []),
+  ];
   const updated = article.updated ?? post.date;
+  // An edit only counts as an update if it happened after the article went
+  // live. Publish dates can be set by hand, so "updated" is not automatically
+  // the later of the two.
+  const showUpdated = Boolean(article.updated) && updated > post.date;
 
   // Same topic first, then the newest of the rest. listPosts already returns
   // published posts newest-first, so this only needs to reorder by topic.
@@ -124,7 +87,18 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       image: post.image ? `${SITE}${post.image}` : undefined,
       datePublished: post.date,
       dateModified: article.updated ?? post.date,
-      author: { "@id": `${SITE}/#organization` },
+      // A named Person when the article has a real author, so the piece is
+      // attributed to someone rather than to a company. Falls back to the
+      // organization, which is what it genuinely is when nobody is credited.
+      author: article.author
+        ? {
+            "@type": "Person",
+            name: article.author.name,
+            ...(article.author.role ? { jobTitle: article.author.role } : {}),
+            ...(article.author.bio ? { description: article.author.bio } : {}),
+            worksFor: { "@id": `${SITE}/#organization` },
+          }
+        : { "@id": `${SITE}/#organization` },
       publisher: {
         "@type": "Organization",
         "@id": `${SITE}/#organization`,
@@ -132,7 +106,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         url: SITE,
         logo: { "@type": "ImageObject", url: `${SITE}/images/ecomm-green.png`, width: 636, height: 457 },
       },
-      citation: article.sources.map((c) => ({ "@type": "CreativeWork", name: c.title, url: c.url, publisher: { "@type": "Organization", name: c.publisher } })),
       mainEntityOfPage: url,
     },
     {
@@ -147,7 +120,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     article.faqs.length && {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      mainEntity: article.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+      // answerText is the plain-text form of the same answer the page shows.
+      // Google wants text here, not markup.
+      mainEntity: article.faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answerText } })),
     },
   ].filter(Boolean);
 
@@ -165,29 +140,30 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <h1 className="ar-h1">{post.title}</h1>
           <p className="ar-summary">{article.summary}</p>
           <div className="ar-meta">
-            <span className="ar-author">
-              <span className="ar-avatar" aria-hidden="true">
-                <Image src="/images/ecomm-green-logo-cropped.png" alt="" width={86} height={79} />
-              </span>
-              <span>
-                <small>Published by</small>
-                <b>EW {topic.specialist}</b>
-              </span>
+            {/* ONE PLAIN LINE: name, dates, read time — the shape the
+                reference blog uses. It replaced a boxed card with a logo
+                circle and stacked label/value pairs, which gave the byline
+                more visual weight than the standfirst above it. A byline is
+                reference information, not a feature of the page.
+
+                The name itself used to be "EW {topic.specialist}", a persona
+                invented from the category and shown regardless of who wrote
+                the piece. It now comes from the CMS, falling back to the
+                company, which is at least true. */}
+            <span className="ar-byline-name">{post.author}</span>
+            <span>
+              Published <time dateTime={post.date}>{date(post.date)}</time>
             </span>
-            <span className="ar-facts">
+            {/* Only when the article has genuinely been revised since
+                publication. A publish date set by hand can sit after the last
+                edit, which made the page claim it was "last updated" before it
+                existed. */}
+            {showUpdated && (
               <span>
-                <small>Published</small>
-                <time dateTime={post.date}>{date(post.date)}</time>
+                Last updated <time dateTime={updated}>{date(updated)}</time>
               </span>
-              <span>
-                <small>Last updated</small>
-                <time dateTime={updated}>{date(updated)}</time>
-              </span>
-              <span>
-                <small>Read time</small>
-                {mins} min
-              </span>
-            </span>
+            )}
+            <span>{mins} min read</span>
           </div>
         </div>
       </header>
@@ -204,31 +180,59 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         </aside>
 
         <article className="ar-main" id="article-body">
-          <section className="ar-answer" aria-labelledby="short-answer">
-            <h2 id="short-answer">The short answer</h2>
-            <p>{article.answer}</p>
-          </section>
-
-          <section className="ar-take" aria-labelledby="takeaways">
-            <h2 id="takeaways">Key takeaways</h2>
-            <ul>
-              {article.takeaways.map((t, i) => <li key={i}>{t}</li>)}
-            </ul>
-          </section>
-
-          {article.sections.map((s) => (
-            <section key={s.id} className="ar-sec">
-              <h2 id={s.id}>
-                <a href={`#${s.id}`} className="ar-anchor" aria-label={`Link to ${s.title}`}>#</a>
-                {s.title}
-              </h2>
-              {s.blocks.map((b, i) => <BlockView key={i} b={b} />)}
+          {/* Both optional now, so each is hidden rather than rendered empty. */}
+          {article.answer && (
+            <section className="ar-answer" aria-labelledby="short-answer">
+              <h2 id="short-answer">The short answer</h2>
+              <p>{article.answer}</p>
             </section>
-          ))}
+          )}
+
+          {article.takeaways.length > 0 && (
+            <section className="ar-take" aria-labelledby="takeaways">
+              <h2 id="takeaways">Key takeaways</h2>
+              <ul>
+                {article.takeaways.map((t, i) => <li key={i}>{t}</li>)}
+              </ul>
+            </section>
+          )}
+
+          {/* The body as written in the CMS editor. Its H2s carry the ids the
+              contents list links to. */}
+          <div className="ar-sec">
+            <ArticleContent content={article.content} />
+          </div>
 
           <p className="ar-updated">
             Last updated <time dateTime={updated}>{date(updated)}</time>
           </p>
+
+          {/* WHO WROTE THIS, at the end where a reader arrives having just
+              taken the advice. A named person with a stated role and real
+              experience is what a reader — and a search engine — uses to judge
+              whether the advice is worth taking. Shown only when there is a
+              real author with something to say, rather than padding the page
+              with the company name twice. */}
+          {article.author && (
+            <aside className="ar-byline" aria-labelledby="written-by">
+              {/* Photo and bio are both optional. The reference blog credits
+                  its company name and a role and shows neither, so gating the
+                  whole block on a bio — as this did — meant it never appeared
+                  at all. Name and role are enough to say who stands behind the
+                  advice. */}
+              {article.author.avatarUrl && (
+                <span className="ar-byline-img">
+                  <Image src={article.author.avatarUrl} alt="" width={128} height={128} />
+                </span>
+              )}
+              <span className="ar-byline-text">
+                <small id="written-by">Written by</small>
+                <b>{article.author.name}</b>
+                {article.author.role && <em>{article.author.role}</em>}
+                {article.author.bio && <p>{article.author.bio}</p>}
+              </span>
+            </aside>
+          )}
         </article>
 
         <aside className="ar-rail">
@@ -256,8 +260,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <div className="ar-faq-list">
               {article.faqs.map((f, i) => (
                 <details key={i} name="faq">
-                  <summary>{f.q}</summary>
-                  <p>{f.a}</p>
+                  <summary>{f.question}</summary>
+                  <RichText data={f.answer} />
                 </details>
               ))}
             </div>
@@ -317,13 +321,10 @@ const CSS = `
 .ar-crumbs span:last-child{color:#fff}
 .ar-h1{margin:0 auto 24px;max-width:900px;color:#fff;font-weight:400;font-size:clamp(36px,5.4vw,72px);line-height:1.05;letter-spacing:-.035em;text-wrap:balance}
 .ar-summary{max-width:680px;margin:0 auto 40px;color:rgba(255,255,255,.7);font-size:clamp(17px,1.4vw,20px);line-height:1.6}
-.ar-meta{display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px 40px;padding:18px 28px;border:1px solid rgba(255,255,255,.12);border-radius:20px;background:rgba(255,255,255,.03);text-align:left}
-.ar-author{display:flex;align-items:center;gap:12px}
-.ar-author b{display:block;margin-top:2px;font-size:15px;font-weight:600}
-.ar-author small,.ar-facts small{display:block;font-size:12px;color:rgba(255,255,255,.5)}
-.ar-avatar{display:grid;place-items:center;flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:#000;border:1px solid rgba(255,255,255,.16)}
-.ar-avatar img{width:24px;height:auto}
-.ar-facts{display:flex;flex-wrap:wrap;gap:12px 32px;font-size:14px}
+/* A single quiet line of reference information, not a card. */
+.ar-meta{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:6px 26px;font-size:14px;color:rgba(255,255,255,.6)}
+.ar-byline-name{color:#fff;font-weight:600}
+.ar-meta time{color:inherit}
 
 /* Cover image overlaps the hero */
 .ar-cover{position:relative;max-width:1280px;width:calc(100% - 40px);aspect-ratio:16/7;margin:-176px auto 0;border-radius:24px;overflow:hidden;background:#1a1b1a;box-shadow:0 40px 80px -40px rgba(0,0,0,.5)}
@@ -360,6 +361,45 @@ const CSS = `
 .ar-main a[target="_blank"],.ar-main a[target="_blank"]:visited{color:inherit;text-decoration:none}
 .ar-main a[target="_blank"]:hover,.ar-main a[target="_blank"]:focus-visible{text-decoration:underline;text-decoration-color:currentColor;text-decoration-thickness:1px}
 .ar-main strong{color:#000;font-weight:600}
+
+/* The author's role is shown in the "Written by" block at the end of the
+   article, not in the header byline — the reference blog keeps the top line to
+   name and dates, and so does this. */
+
+/* "Written by" at the end of the article. */
+.ar-byline{display:flex;gap:20px;align-items:flex-start;margin-top:56px;padding:28px;border:1px solid #e3e7e4;border-radius:18px;background:#f6f8f7}
+.ar-byline-img{flex:0 0 64px}
+.ar-byline-img img{width:64px;height:64px;border-radius:9999px;object-fit:cover}
+.ar-byline-text{display:block;min-width:0}
+.ar-byline-text small{display:block;color:#5d6b61;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.ar-byline-text b{display:block;margin-top:4px;color:#000;font-size:19px;font-weight:600;letter-spacing:-.01em}
+.ar-byline-text em{display:block;margin-top:2px;color:#5d6b61;font-style:normal;font-size:14px}
+.ar-byline-text p{margin:12px 0 0;font-size:15px;line-height:1.6;color:#2b302c}
+@media (max-width:639px){
+  .ar-byline{flex-direction:column;gap:14px;padding:22px}
+}
+
+/* Tables. Comparison tables are a staple of these articles, and the body had
+   no styling for them at all, so one would have rendered as unstyled rows.
+   The wrapper scrolls horizontally rather than letting a wide table either
+   overflow the page or squeeze its columns into unreadable slivers on a
+   phone. */
+.ar-main table{width:100%;margin:0 0 26px;border-collapse:collapse;font-size:16px;line-height:1.5}
+.ar-main table th,.ar-main table td{padding:12px 14px;border:1px solid #e3e7e4;text-align:left;vertical-align:top}
+.ar-main table th{background:#0c0d0c;color:#fff;font-weight:600;font-size:15px;letter-spacing:-.01em}
+/* Header labels pasted from a document arrive bold, so they are wrapped in
+   <strong> — and ".ar-main strong{color:#000}" above is more specific than the
+   white set on the cell, which rendered black text on the black header. Let
+   anything inside a header cell take the cell's own colour. */
+.ar-main table th strong,.ar-main table th b,.ar-main table th em,.ar-main table th a{color:inherit}
+.ar-main table tr:nth-child(even) td{background:#f6f8f7}
+.ar-main table p{margin:0}
+/* Lexical wraps tables in a scroll container; style it whatever it is called. */
+.ar-main .lexical-table-container,.ar-main .payload-richtext table{max-width:100%;overflow-x:auto}
+@media (max-width:639px){
+  .ar-main table{font-size:15px;display:block;overflow-x:auto;white-space:nowrap}
+  .ar-main table th,.ar-main table td{padding:10px 12px}
+}
 .ar-sec{margin-top:64px}
 .ar-sec h2{position:relative;margin:0 0 24px;color:#000;font-weight:500;font-size:clamp(28px,2.6vw,40px);line-height:1.15;letter-spacing:-.03em;text-wrap:balance;scroll-margin-top:calc(var(--hdr) + 32px)}
 .ar-anchor,.ar-anchor:visited{position:absolute;left:-1em;width:1em;color:#3DC77A;text-decoration:none;opacity:0;transition:opacity .15s ease}
@@ -482,7 +522,6 @@ const CSS = `
 @media (max-width:639px){
   .ar-hero{padding:44px 16px 120px}
   .ar-meta{display:grid;gap:16px;padding:16px 18px;width:100%}
-  .ar-facts{gap:20px}
   .ar-cover{width:calc(100% - 32px);margin-top:-88px;border-radius:14px}
   .ar-body{padding:0 16px 48px}
   .ar-rail-in{grid-template-columns:1fr}

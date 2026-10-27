@@ -31,6 +31,30 @@ const nextConfig: NextConfig = {
     // would have become 75 without this line — heavier hero images on every
     // page that uses PageHero, with no error to notice it by.
     qualities: [55, 75],
+    // CMS images live in Neon object storage, which is a different host from
+    // the site, and next/image refuses any remote host not listed here. Without
+    // this, every featured image and every image inside an article fails the
+    // moment one is set.
+    //
+    // Two entries on purpose. The first is the exact bucket host for this
+    // environment, derived from the same variable the uploader uses, so it is
+    // always right and never drifts. The second is a narrow fallback covering
+    // Neon storage hosts generally, so a missing variable degrades to "images
+    // still load" rather than "every image 400s". Each Neon branch has its own
+    // hostname, which is why the fallback matters.
+    remotePatterns: [
+      ...(process.env.AWS_ENDPOINT_URL_S3
+        ? [
+            {
+              protocol: "https" as const,
+              hostname: new URL(process.env.AWS_ENDPOINT_URL_S3).hostname,
+              pathname: "/**",
+            },
+          ]
+        : []),
+      { protocol: "https" as const, hostname: "**.storage.aws.neon.tech", pathname: "/**" },
+      { protocol: "https" as const, hostname: "**.aws.neon.tech", pathname: "/**" },
+    ],
     // Cap generated widths at 2048. The site has no 4K-critical imagery, so the
     // default 3840 candidate only wasted bandwidth on full-bleed hero images.
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],

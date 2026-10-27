@@ -1,27 +1,67 @@
-// Reads blog content out of Payload and hands it back in the shapes the
-// existing /insights pages already render.
+// Reads blog content out of Payload for the /insights pages.
 //
-// WHY A TRANSLATION LAYER INSTEAD OF REWRITING THE PAGES. The article template
-// is ~500 lines of careful markup — table of contents, structured data, share
-// links, related posts. Rewriting it against Payload's own record shape would
-// have risked all of that to no benefit. Mapping Payload's records into the
-// existing `Post` and `Article` types instead means the renderer is untouched
-// and keeps working exactly as it did.
-//
-// Everything here runs on the server only. It talks to Payload in-process
+// Everything here runs on the server only, and talks to Payload in-process
 // rather than over HTTP, so there is no round trip and no API route to secure.
 
-import { getPayload } from "payload";
+import { convertLexicalToPlaintext } from "@payloadcms/richtext-lexical/plaintext";
+import type { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import config from "@payload-config";
+import { getPayload } from "payload";
 
-import type { Article, Block, Section } from "./articles";
-import { readMinutes } from "./articles";
 import { TOPICS, type Post, type TopicSlug } from "./posts";
 
 const KNOWN_TOPICS = new Set<string>(TOPICS.map((t) => t.slug));
 // Used when a category exists in the CMS that is not one of the fixed topics.
 // Falling back beats throwing: a mislabelled article should still render.
 const FALLBACK_TOPIC: TopicSlug = "development";
+
+const WORDS_PER_MINUTE = 230;
+
+export type TocEntry = { id: string; title: string };
+
+/**
+ * The byline, as the CMS holds it.
+ *
+ * A real named person with a stated role and relevant experience is worth more
+ * than a company name here: it is how a reader, and a search engine, judge who
+ * is behind the advice. Null when no author has been chosen, in which case the
+ * page falls back to the company.
+ */
+export type AuthorInfo = {
+  name: string;
+  role?: string;
+  bio?: string;
+  avatarUrl?: string;
+};
+
+export type Faq = {
+  question: string;
+  /** For display. */
+  answer: SerializedEditorState;
+  /**
+   * The same answer as plain text, for FAQPage structured data. Google wants
+   * text there, not markup, and computing it once here keeps the rendered
+   * answer and the one Google reads from drifting apart.
+   */
+  answerText: string;
+};
+
+export type Article = {
+  /** The standfirst under the title. */
+  summary: string;
+  /** Optional 40-60 word direct answer, written to be quoted by AI search. */
+  answer: string;
+  takeaways: string[];
+  /** The article body, as the editor stored it. */
+  content: SerializedEditorState | null;
+  faqs: Faq[];
+  toc: TocEntry[];
+  showTableOfContents: boolean;
+  /** Null when no author has been chosen on the post. */
+  author: AuthorInfo | null;
+  /** ISO date, when edited after publishing. */
+  updated?: string;
+};
 
 const asTopic = (slug: unknown): TopicSlug =>
   typeof slug === "string" && KNOWN_TOPICS.has(slug)
@@ -33,96 +73,136 @@ type Rel<T> = T | number | null | undefined;
 const rel = <T,>(value: Rel<T>): T | null =>
   value && typeof value === "object" ? (value as T) : null;
 
-type MediaDoc = { url?: string | null; alt?: string | null; width?: number | null; height?: number | null };
+type MediaDoc = { url?: string | null; alt?: string | null };
 
-const mediaUrl = (value: Rel<MediaDoc>): string | undefined =>
-  rel<MediaDoc>(value)?.url ?? undefined;
+// Headings are given ids so the contents list can link to them. The same rule
+// runs here and in the renderer, so the link and its target always agree —
+// deriving them separately is how anchors quietly stop working.
+export const headingId = (text: string): string =>
+  text
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 80) || "section";
 
-// Payload stores each block type in its own shape; the renderer expects the
-// flat Block union from articles.ts. The block slugs here must stay in step
-// with collections/Posts.ts.
-function toBlock(raw: Record<string, unknown>): Block | null {
-  switch (raw.blockType) {
-    case "paragraph":
-      return { type: "p", text: String(raw.text ?? "") };
-    case "heading":
-      return { type: "h3", text: String(raw.text ?? "") };
-    case "list": {
-      const items = Array.isArray(raw.items)
-        ? (raw.items as { text?: string }[]).map((i) => String(i?.text ?? "")).filter(Boolean)
-        : [];
-      if (!items.length) return null;
-      return { type: raw.style === "ol" ? "ol" : "ul", items };
-    }
-    case "tip":
-      return { type: "tip", text: String(raw.text ?? "") };
-    case "quote":
-      return {
-        type: "quote",
-        text: String(raw.text ?? ""),
-        ...(raw.cite ? { cite: String(raw.cite) } : {}),
-      };
-    case "image": {
-      const image = rel<MediaDoc>(raw.image as Rel<MediaDoc>);
-      if (!image?.url) return null;
-      return {
-        type: "image",
-        src: image.url,
-        alt: image.alt ?? "",
-        ...(raw.caption ? { caption: String(raw.caption) } : {}),
-        // The renderer needs intrinsic dimensions to avoid layout shift.
-        // Payload records them on upload; these are a last resort.
-        width: image.width ?? 1600,
-        height: image.height ?? 900,
-      };
-    }
-    default:
-      return null;
+type LexicalNode = {
+  type?: string;
+  tag?: string;
+  text?: string;
+  children?: LexicalNode[];
+};
+
+/** The plain text of a node and everything inside it. */
+const nodeText = (node: LexicalNode): string => {
+  if (typeof node.text === "string") return node.text;
+  return (node.children ?? []).map(nodeText).join("");
+};
+
+/**
+ * The contents list, built from the body's H2s.
+ *
+ * Only H2s: an article's sections are its H2s, and including H3s produces a
+ * contents list that is longer than some of the sections it points at.
+ */
+export function tableOfContents(
+  content: SerializedEditorState | null,
+): TocEntry[] {
+  if (!content) return [];
+  const root = (content as unknown as { root?: LexicalNode }).root;
+  const out: TocEntry[] = [];
+  const seen = new Set<string>();
+
+  for (const node of root?.children ?? []) {
+    if (node.type !== "heading" || node.tag !== "h2") continue;
+    const title = nodeText(node).trim();
+    if (!title) continue;
+    // Two sections can legitimately share a heading; their anchors cannot.
+    let id = headingId(title);
+    let n = 2;
+    while (seen.has(id)) id = `${headingId(title)}-${n++}`;
+    seen.add(id);
+    out.push({ id, title });
   }
+  return out;
+}
+
+const toPlainText = (data: SerializedEditorState): string => {
+  try {
+    return convertLexicalToPlaintext({ data }).replace(/\s+/g, " ").trim();
+  } catch {
+    return "";
+  }
+};
+
+function readMinutes(article: Article): number {
+  const parts = [article.summary, article.answer, ...article.takeaways];
+  if (article.content) {
+    try {
+      parts.push(convertLexicalToPlaintext({ data: article.content }));
+    } catch {
+      // A body that cannot be flattened should not stop the page rendering;
+      // the read time is simply based on what is left.
+    }
+  }
+  for (const f of article.faqs) parts.push(f.question);
+  const words = parts.join(" ").trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
 }
 
 type PostDoc = Record<string, unknown>;
 
 function toArticle(doc: PostDoc): Article {
-  const sections: Section[] = Array.isArray(doc.sections)
-    ? (doc.sections as Record<string, unknown>[]).map((s, i) => ({
-        id: String(s.anchor || `section-${i + 1}`),
-        title: String(s.title ?? ""),
-        blocks: Array.isArray(s.blocks)
-          ? (s.blocks as Record<string, unknown>[]).map(toBlock).filter((b): b is Block => b !== null)
-          : [],
-      }))
-    : [];
-
+  const content = (doc.content as SerializedEditorState | null) ?? null;
   return {
     summary: String(doc.excerpt ?? ""),
     answer: String(doc.answer ?? ""),
     takeaways: Array.isArray(doc.takeaways)
-      ? (doc.takeaways as { text?: string }[]).map((t) => String(t?.text ?? "")).filter(Boolean)
+      ? (doc.takeaways as { text?: string }[])
+          .map((t) => String(t?.text ?? ""))
+          .filter(Boolean)
       : [],
-    sections,
+    content,
     faqs: Array.isArray(doc.faqs)
-      ? (doc.faqs as { question?: string; answer?: string }[]).map((f) => ({
-          q: String(f?.question ?? ""),
-          a: String(f?.answer ?? ""),
-        }))
+      ? (doc.faqs as { question?: string; answer?: SerializedEditorState }[])
+          .filter((f) => f?.question && f?.answer)
+          .map((f) => ({
+            question: String(f.question),
+            answer: f.answer!,
+            answerText: toPlainText(f.answer!),
+          }))
       : [],
-    sources: Array.isArray(doc.sources)
-      ? (doc.sources as { title?: string; publisher?: string; url?: string }[]).map((s) => ({
-          title: String(s?.title ?? ""),
-          publisher: String(s?.publisher ?? ""),
-          url: String(s?.url ?? ""),
-        }))
-      : [],
-    ...(doc.contentUpdatedAt ? { updated: String(doc.contentUpdatedAt).slice(0, 10) } : {}),
+    toc: tableOfContents(content),
+    showTableOfContents: doc.showTableOfContents !== false,
+    author: toAuthor(doc.author as Rel<AuthorDoc>),
+    ...(doc.contentUpdatedAt
+      ? { updated: String(doc.contentUpdatedAt).slice(0, 10) }
+      : {}),
   };
 }
 
-type AuthorDoc = { name?: string | null };
+type AuthorDoc = {
+  name?: string | null;
+  role?: string | null;
+  bio?: string | null;
+  avatar?: Rel<MediaDoc>;
+};
+
+function toAuthor(value: Rel<AuthorDoc>): AuthorInfo | null {
+  const doc = rel<AuthorDoc>(value);
+  if (!doc?.name) return null;
+  const avatarUrl = rel<MediaDoc>(doc.avatar)?.url ?? undefined;
+  return {
+    name: doc.name,
+    ...(doc.role ? { role: doc.role } : {}),
+    ...(doc.bio ? { bio: doc.bio } : {}),
+    ...(avatarUrl ? { avatarUrl } : {}),
+  };
+}
 
 function toPost(doc: PostDoc, article: Article): Post {
   const category = rel<{ slug?: string }>(doc.category as Rel<{ slug?: string }>);
-  const author = rel<AuthorDoc>(doc.author as Rel<AuthorDoc>);
+  const hero = rel<MediaDoc>(doc.heroImage as Rel<MediaDoc>);
   const published = doc.publishedAt ? String(doc.publishedAt) : "";
 
   return {
@@ -132,13 +212,14 @@ function toPost(doc: PostDoc, article: Article): Post {
     topic: asTopic(category?.slug),
     date: published.slice(0, 10),
     readMins: readMinutes(article),
-    author: author?.name ?? "Ecomm Wizards",
-    ...(mediaUrl(doc.heroImage as Rel<MediaDoc>) ? { image: mediaUrl(doc.heroImage as Rel<MediaDoc>) } : {}),
+    // Listing cards only need a name; the full byline lives on the article.
+    author: article.author?.name ?? "Ecomm Wizards",
+    ...(hero?.url ? { image: hero.url } : {}),
   };
 }
 
 // `depth: 2` resolves relationships (category, author, hero image) and the
-// images nested inside section blocks, which are one level deeper.
+// images referenced from inside the body, which are one level deeper.
 const DEPTH = 2;
 
 // A BLOG THAT CANNOT REACH ITS DATABASE MUST NOT TAKE THE SITE DOWN.
@@ -162,7 +243,7 @@ async function withFallback<T>(label: string, fn: () => Promise<T>, fallback: T)
 
 /** Published posts, newest first, for the /insights listing. */
 export async function listPosts(): Promise<Post[]> {
-  return withFallback("listPosts", () => listPostsUncached(), []);
+  return withFallback("listPosts", listPostsUncached, []);
 }
 
 async function listPostsUncached(): Promise<Post[]> {
@@ -195,7 +276,9 @@ async function getPostUncached(
   const payload = await getPayload({ config });
   const { docs } = await payload.find({
     collection: "posts",
-    where: { and: [{ slug: { equals: slug } }, { _status: { equals: "published" } }] },
+    where: {
+      and: [{ slug: { equals: slug } }, { _status: { equals: "published" } }],
+    },
     depth: DEPTH,
     limit: 1,
     overrideAccess: false,
