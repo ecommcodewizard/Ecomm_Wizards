@@ -66,6 +66,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     ...(article.faqs.length ? [{ id: "faqs", title: "FAQs" }] : []),
   ];
   const updated = article.updated ?? post.date;
+  // An edit only counts as an update if it happened after the article went
+  // live. Publish dates can be set by hand, so "updated" is not automatically
+  // the later of the two.
+  const showUpdated = Boolean(article.updated) && updated > post.date;
 
   // Same topic first, then the newest of the rest. listPosts already returns
   // published posts newest-first, so this only needs to reorder by topic.
@@ -131,7 +135,13 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               </span>
               <span>
                 <small>Published by</small>
-                <b>EW {topic.specialist}</b>
+                {/* The real byline from the CMS. This used to render
+                    "EW {topic.specialist}" — a persona invented from the
+                    category, shown regardless of who actually wrote the piece
+                    and even when no author was set at all. post.author falls
+                    back to "Ecomm Wizards", which is true, rather than to a
+                    job title nobody holds. */}
+                <b>{post.author}</b>
               </span>
             </span>
             <span className="ar-facts">
@@ -139,10 +149,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 <small>Published</small>
                 <time dateTime={post.date}>{date(post.date)}</time>
               </span>
-              <span>
-                <small>Last updated</small>
-                <time dateTime={updated}>{date(updated)}</time>
-              </span>
+              {/* Only when the article has genuinely been revised since
+                  publication. A publish date set by hand can sit after the last
+                  edit, which made the page claim it was "last updated" before
+                  it existed. */}
+              {showUpdated && (
+                <span>
+                  <small>Last updated</small>
+                  <time dateTime={updated}>{date(updated)}</time>
+                </span>
+              )}
               <span>
                 <small>Read time</small>
                 {mins} min
@@ -321,6 +337,23 @@ const CSS = `
 .ar-main a[target="_blank"],.ar-main a[target="_blank"]:visited{color:inherit;text-decoration:none}
 .ar-main a[target="_blank"]:hover,.ar-main a[target="_blank"]:focus-visible{text-decoration:underline;text-decoration-color:currentColor;text-decoration-thickness:1px}
 .ar-main strong{color:#000;font-weight:600}
+
+/* Tables. Comparison tables are a staple of these articles, and the body had
+   no styling for them at all, so one would have rendered as unstyled rows.
+   The wrapper scrolls horizontally rather than letting a wide table either
+   overflow the page or squeeze its columns into unreadable slivers on a
+   phone. */
+.ar-main table{width:100%;margin:0 0 26px;border-collapse:collapse;font-size:16px;line-height:1.5}
+.ar-main table th,.ar-main table td{padding:12px 14px;border:1px solid #e3e7e4;text-align:left;vertical-align:top}
+.ar-main table th{background:#0c0d0c;color:#fff;font-weight:600;font-size:15px;letter-spacing:-.01em}
+.ar-main table tr:nth-child(even) td{background:#f6f8f7}
+.ar-main table p{margin:0}
+/* Lexical wraps tables in a scroll container; style it whatever it is called. */
+.ar-main .lexical-table-container,.ar-main .payload-richtext table{max-width:100%;overflow-x:auto}
+@media (max-width:639px){
+  .ar-main table{font-size:15px;display:block;overflow-x:auto;white-space:nowrap}
+  .ar-main table th,.ar-main table td{padding:10px 12px}
+}
 .ar-sec{margin-top:64px}
 .ar-sec h2{position:relative;margin:0 0 24px;color:#000;font-weight:500;font-size:clamp(28px,2.6vw,40px);line-height:1.15;letter-spacing:-.03em;text-wrap:balance;scroll-margin-top:calc(var(--hdr) + 32px)}
 .ar-anchor,.ar-anchor:visited{position:absolute;left:-1em;width:1em;color:#3DC77A;text-decoration:none;opacity:0;transition:opacity .15s ease}

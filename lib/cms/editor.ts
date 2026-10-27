@@ -1,6 +1,7 @@
 import {
   BlockquoteFeature,
   BoldFeature,
+  EXPERIMENTAL_TableFeature,
   FixedToolbarFeature,
   HeadingFeature,
   HorizontalRuleFeature,
@@ -37,6 +38,14 @@ export const postContentEditor = lexicalEditor({
     OrderedListFeature(),
     BlockquoteFeature(),
     HorizontalRuleFeature(),
+    // WITHOUT THIS, A PASTED TABLE SILENTLY FALLS APART. The editor can only
+    // keep what it has a node for, so a table copied from Word or Google Docs
+    // was flattened into one paragraph per cell — a comparison table arriving
+    // as a column of stray words. Comparison tables are a staple of the
+    // articles this blog is for, so the feature is not optional.
+    // Still prefixed EXPERIMENTAL_ upstream; that is Payload's naming, not a
+    // judgement about whether it works.
+    EXPERIMENTAL_TableFeature(),
     // Lets an image be dropped into the middle of an article. It uploads to the
     // same Media collection, so it lands in object storage like any other.
     UploadFeature({
