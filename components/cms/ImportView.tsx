@@ -8,7 +8,8 @@ import { ImportForm } from "./ImportForm";
 /** Admin screen at /cms/import: turn a Google Doc or Word file into a new draft post. */
 export function ImportView({ initPageResult, params, searchParams }: AdminViewServerProps) {
   const { req, locale, permissions, visibleEntities } = initPageResult;
-  if (!req.user) redirect("/cms/login/?redirect=%2Fcms%2Fimport");
+  // Slashless for the same reason as the fetch in ImportForm.
+  if (!req.user) redirect("/cms/login?redirect=%2Fcms%2Fimport");
   return (
     <DefaultTemplate
       i18n={req.i18n}

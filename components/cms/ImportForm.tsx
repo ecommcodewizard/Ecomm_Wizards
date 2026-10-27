@@ -28,7 +28,13 @@ export function ImportForm() {
     }
     setBusy(true);
     try {
-      const response = await fetch("/cms-api/posts/import/", {
+      // NO TRAILING SLASH. This project does not set trailingSlash, so
+      // "/cms-api/posts/import/" answers 308 to the slashless URL — and a
+      // browser will not resend a multipart upload through a redirect, so the
+      // request failed before reaching the server and looked like a connection
+      // problem. The reference implementation uses a trailing slash because
+      // its own Next config sets trailingSlash: true.
+      const response = await fetch("/cms-api/posts/import", {
         method: "POST",
         body,
         credentials: "include",
