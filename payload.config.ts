@@ -5,6 +5,7 @@ import { postgresAdapter } from "@payloadcms/db-postgres";
 import { redirectsPlugin } from "@payloadcms/plugin-redirects";
 import { seoPlugin } from "@payloadcms/plugin-seo";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { s3Storage } from "@payloadcms/storage-s3";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 
@@ -81,6 +82,47 @@ export default buildConfig({
   sharp,
 
   plugins: [
+    // UPLOADS GO TO NEON OBJECT STORAGE, NOT THE SERVER'S DISK.
+    //
+    // Hostinger clones the repository fresh on each deploy, so anything written
+    // into the application directory is not guaranteed to survive one. Images
+    // uploaded through the CMS would quietly disappear while the articles went
+    // on pointing at them — the kind of breakage nobody notices until a reader
+    // does. Object storage lives outside the application entirely.
+    //
+    // Neon's S3 support is path-style only and rejects the newer checksum
+    // headers the AWS SDK sends by default, hence forcePathStyle and
+    // requestChecksumCalculation below. Without them, uploads fail.
+    //
+    // DISABLED UNTIL THE CREDENTIALS EXIST, so a machine without them still
+    // runs and simply writes to Media's staticDir as before. That keeps local
+    // work and CI builds unaffected by a missing bucket.
+    s3Storage({
+      enabled: Boolean(
+        process.env.AWS_ENDPOINT_URL_S3 && process.env.S3_BUCKET,
+      ),
+      collections: {
+        media: {
+          prefix: "blog",
+          // Files are served straight from the bucket rather than proxied
+          // through the app, so reading an image never wakes the database.
+          disablePayloadAccessControl: true,
+        },
+      },
+      bucket: process.env.S3_BUCKET || "",
+      acl: "public-read",
+      config: {
+        region: process.env.AWS_REGION || "us-east-1",
+        endpoint: process.env.AWS_ENDPOINT_URL_S3,
+        credentials: {
+          accessKeyId: process.env.AWS_ACCESS_KEY_ID || "",
+          secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || "",
+        },
+        forcePathStyle: true,
+        requestChecksumCalculation: "WHEN_REQUIRED",
+      },
+    }),
+
     seoPlugin({
       collections: ["posts"],
       uploadsCollection: "media",
