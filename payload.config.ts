@@ -110,7 +110,12 @@ export default buildConfig({
         },
       },
       bucket: process.env.S3_BUCKET || "",
-      acl: "public-read",
+      // NO `acl` HERE, DELIBERATELY. Setting acl: "public-read" made every
+      // upload fail with "A header or operation you provided implies
+      // functionality that is not implemented": Neon controls bucket access
+      // through its own console, not through S3 ACLs or bucket policies, so it
+      // rejects the x-amz-acl header outright. The bucket is already set to
+      // public read in Neon, which is what makes the images readable.
       config: {
         region: process.env.AWS_REGION || "us-east-1",
         endpoint: process.env.AWS_ENDPOINT_URL_S3,
