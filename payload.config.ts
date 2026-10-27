@@ -20,6 +20,11 @@ import { BlogSettings } from "./globals/BlogSettings";
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
+// What Google actually shows before truncating. The SEO plugin grades against
+// 50-60 and 100-150; these ceilings keep a generated value inside that.
+const SEO_TITLE_MAX = 60;
+const SEO_DESC_MAX = 150;
+
 export default buildConfig({
   // PAYLOAD LIVES ENTIRELY UNDER /cms*, OFF BOTH PAYLOAD DEFAULTS.
   //
@@ -51,6 +56,9 @@ export default buildConfig({
       // The CMS must never be indexed. It is reachable on the public domain,
       // so this is the instruction that keeps /cms out of search results.
       robots: "noindex, nofollow",
+      // The browser-tab icon. Without this the CMS shows Payload's own mark,
+      // which is confusing once several tabs are open.
+      icons: [{ rel: "icon", type: "image/png", url: "/images/ecomm-favicon.png" }],
     },
     components: {
       // Replaces Payload's default mark with the Ecomm Wizards logo: the
@@ -147,13 +155,30 @@ export default buildConfig({
     seoPlugin({
       collections: ["posts"],
       uploadsCollection: "media",
-      // Falls back to the post's own title and excerpt so a post is never
-      // published with an empty meta title or description. Both remain
-      // editable: these are only the starting values.
-      generateTitle: ({ doc }) =>
-        `${(doc as { title?: string })?.title ?? ""} | Ecomm Wizards`,
-      generateDescription: ({ doc }) =>
-        (doc as { excerpt?: string })?.excerpt ?? "",
+      // AUTO-GENERATE AIMS AT THE LENGTHS THE PLUGIN THEN GRADES YOU ON.
+      // It used to append " | Ecomm Wizards" unconditionally and copy the
+      // excerpt verbatim, which routinely produced a title over 60 characters
+      // and a description over 150 — so pressing Auto-generate gave you a
+      // value the checks below immediately marked as too long.
+      //
+      // Google truncates a title around 60 characters and a description around
+      // 155, so these are not arbitrary targets: past them, the extra words are
+      // written for nobody.
+      generateTitle: ({ doc }) => {
+        const title = ((doc as { title?: string })?.title ?? "").trim();
+        if (!title) return "";
+        const suffixed = `${title} | Ecomm Wizards`;
+        // Keep the brand only when it fits; the headline matters more.
+        if (suffixed.length <= SEO_TITLE_MAX) return suffixed;
+        if (title.length <= SEO_TITLE_MAX) return title;
+        return `${title.slice(0, SEO_TITLE_MAX - 1).replace(/\s+\S*$/, "")}…`;
+      },
+      generateDescription: ({ doc }) => {
+        const excerpt = ((doc as { excerpt?: string })?.excerpt ?? "").trim();
+        if (excerpt.length <= SEO_DESC_MAX) return excerpt;
+        // Cut at a word boundary rather than mid-word.
+        return `${excerpt.slice(0, SEO_DESC_MAX - 1).replace(/\s+\S*$/, "")}…`;
+      },
       generateURL: ({ doc }) =>
         `https://ecommwizards.com/insights/${(doc as { slug?: string })?.slug ?? ""}`,
       // Groups the SEO fields into their own tab rather than appending them to
