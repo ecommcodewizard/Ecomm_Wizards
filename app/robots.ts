@@ -19,13 +19,26 @@ const AI_CRAWLERS = [
   "cohere-ai", "MistralAI-User",                      // Cohere, Mistral
 ];
 
+// The two private areas, blocked for every crawler.
+//
+//   /admin    the lead dashboard and its login
+//   /cms      the Payload CMS and its login
+//
+// robots.txt matching is a PREFIX match, so "/cms" also covers "/cms-api",
+// Payload's REST and GraphQL endpoints. Both are listed anyway, because a rule
+// that depends on a reader knowing that is a rule someone deletes later.
+//
+// Each page also sends noindex,nofollow (Payload's admin.meta.robots), which is
+// the layer that actually removes a page if one is ever indexed: a URL blocked
+// in robots.txt cannot be crawled, so Google never reads the noindex on it.
+// Disallow keeps crawlers away; noindex is what gets a page dropped.
+const PRIVATE_PATHS = ["/admin", "/cms", "/cms-api"];
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      // /admin is the private lead dashboard + login — block all crawlers from it
-      // (the pages also carry a noindex,nofollow meta tag as a second layer).
-      { userAgent: AI_CRAWLERS, allow: "/", disallow: "/admin" },
-      { userAgent: "*", allow: "/", disallow: "/admin" },
+      { userAgent: AI_CRAWLERS, allow: "/", disallow: PRIVATE_PATHS },
+      { userAgent: "*", allow: "/", disallow: PRIVATE_PATHS },
     ],
     sitemap: [`${SITE_URL}/sitemap.xml`, `${SITE_URL}/video-sitemap.xml`],
     host: SITE_URL,
