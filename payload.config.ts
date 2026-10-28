@@ -16,14 +16,10 @@ import { Posts } from "./collections/Posts";
 import { Tags } from "./collections/Tags";
 import { Users } from "./collections/Users";
 import { BlogSettings } from "./globals/BlogSettings";
+import { metaDescription, metaTitle } from "./lib/cms/seo";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
-
-// What Google actually shows before truncating. The SEO plugin grades against
-// 50-60 and 100-150; these ceilings keep a generated value inside that.
-const SEO_TITLE_MAX = 60;
-const SEO_DESC_MAX = 150;
 
 export default buildConfig({
   // PAYLOAD LIVES ENTIRELY UNDER /cms*, OFF BOTH PAYLOAD DEFAULTS.
@@ -155,29 +151,13 @@ export default buildConfig({
     seoPlugin({
       collections: ["posts"],
       uploadsCollection: "media",
-      // AUTO-GENERATE AIMS AT THE LENGTHS THE PLUGIN THEN GRADES YOU ON.
-      // It used to append " | Ecomm Wizards" unconditionally and copy the
-      // excerpt verbatim, which routinely produced a title over 60 characters
-      // and a description over 150 — so pressing Auto-generate gave you a
-      // value the checks below immediately marked as too long.
-      //
-      // Google truncates a title around 60 characters and a description around
-      // 155, so these are not arbitrary targets: past them, the extra words are
-      // written for nobody.
-      generateTitle: ({ doc }) => {
-        const title = ((doc as { title?: string })?.title ?? "").trim();
-        if (!title) return "";
-        const suffixed = `${title} | Ecomm Wizards`;
-        // Keep the brand only when it fits; the headline matters more.
-        if (suffixed.length <= SEO_TITLE_MAX) return suffixed;
-        if (title.length <= SEO_TITLE_MAX) return title;
-        return `${title.slice(0, SEO_TITLE_MAX - 1).replace(/\s+\S*$/, "")}…`;
-      },
+      // Both live in lib/cms/seo.ts, which the Excerpt button also uses, so a
+      // change to the rules applies everywhere rather than in one of three
+      // places. See that file for why each rule is what it is.
+      generateTitle: ({ doc }) => metaTitle((doc as { title?: string })?.title ?? ""),
       generateDescription: ({ doc }) => {
-        const excerpt = ((doc as { excerpt?: string })?.excerpt ?? "").trim();
-        if (excerpt.length <= SEO_DESC_MAX) return excerpt;
-        // Cut at a word boundary rather than mid-word.
-        return `${excerpt.slice(0, SEO_DESC_MAX - 1).replace(/\s+\S*$/, "")}…`;
+        const d = doc as { excerpt?: string; content?: unknown };
+        return metaDescription(d?.excerpt ?? "", d?.content);
       },
       generateURL: ({ doc }) =>
         `https://ecommwizards.com/insights/${(doc as { slug?: string })?.slug ?? ""}`,
