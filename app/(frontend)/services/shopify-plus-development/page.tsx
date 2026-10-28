@@ -15,7 +15,7 @@ const CANONICAL_URL = "https://ecommwizards.com/services/shopify-plus-developmen
 
 export const metadata: Metadata = {
   title: { absolute: "Shopify Plus Development Agency | Enterprise Builds" },
-  description: META_DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
@@ -104,8 +104,8 @@ const PLUS_FEATURES = [
     ),
   },
   {
-    name: "Native B2B Commerce",
-    desc: "Company profiles, segment-specific pricing, net payment terms, and self-service wholesale portals built into the platform. B2B and DTC run from one admin with no separate tools needed.",
+    name: "B2B Without The Catalog Cap",
+    desc: "Unlimited B2B catalogs, assigned directly to individual companies and locations, plus deposits and partial payments. Standard Shopify stops at three catalogs. B2B and DTC still run from one admin with no separate tools needed.",
     roi: "Henchman's self-serve B2B portal cut their sales team's manual order workload by 40%.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
@@ -242,7 +242,7 @@ const FAQS = [
   },
   {
     q: "Do you need Shopify Plus to run B2B commerce?",
-    a: "Shopify Plus includes native B2B features that standard Shopify does not have: company profiles, customer-specific pricing by segment, net payment terms, draft orders, and self-service wholesale portals. You manage B2B and DTC from one admin without separate platforms or apps filling gaps. If your brand has trade buyers, wholesale accounts, or volume pricing requirements, Plus is the right platform.",
+    a: "No. Company profiles, company locations, buyer permissions, and net payment terms are available on Basic, Grow, and Advanced as well as Plus, so a brand can run wholesale alongside DTC without upgrading. What Plus adds is scale: Basic, Grow, and Advanced cap you at three active B2B catalogs, while Plus removes that cap and lets you assign a catalog directly to a specific company or location. Plus also adds deposits and partial payments. If you price differently for more than a handful of accounts, that cap is usually what decides it.",
   },
   {
     q: "How do you protect SEO during a Shopify Plus migration?",
@@ -250,11 +250,11 @@ const FAQS = [
   },
   {
     q: "What does Shopify Plus cost per month?",
-    a: "Shopify Plus costs $2,500 per month, or 0.25% of monthly revenue, whichever is higher, up to $20,000 per month on the variable-fee tier. This is the Shopify platform fee, separate from any development work. For most brands generating over $2M annually, Plus pays for itself through checkout conversion improvements, automation efficiency savings, and reduced third-party app costs.",
+    a: "Shopify Plus starts at $2,300 per month on a three-year term, or $2,500 per month on a one-year term. Higher-volume brands are quoted a variable platform fee instead, which Shopify sets per account rather than publishing. The plan covers your main store plus nine expansion stores. This is the Shopify platform fee and is separate from any development work. For most brands generating over $2M annually, Plus pays for itself through checkout conversion improvements, automation efficiency savings, and reduced third-party app costs.",
   },
   {
     q: "What is the difference between Shopify and Shopify Plus?",
-    a: "Shopify Plus is the enterprise tier. It gives you full checkout customization through Checkout Extensions, Shopify Flow for complex automation, native B2B tools including company profiles and segment pricing, higher API rate limits, and access to Shopify Launchpad. Standard Shopify locks the checkout and limits automation. Plus removes those limits for brands that have outgrown the standard platform.",
+    a: "Shopify Plus is the enterprise tier. It gives you full checkout customization through Checkout Extensions, Shopify Flow for complex automation, unlimited B2B catalogs with direct assignment to individual companies, higher API rate limits, and access to Shopify Launchpad. Standard Shopify locks the checkout, limits automation, and caps you at three B2B catalogs. Plus removes those limits for brands that have outgrown the standard platform.",
   },
 ];
 
