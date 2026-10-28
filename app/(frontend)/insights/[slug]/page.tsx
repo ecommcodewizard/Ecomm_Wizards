@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import CTASection from "@/components/ui/CTASection";
 import { topicOf } from "@/lib/blog/posts";
 import { getPost, listPosts } from "@/lib/blog/cms";
+import { metaTitle } from "@/lib/cms/seo";
 import ArticleContent from "@/components/blog/ArticleContent";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import ArticleNav from "./ArticleNav";
@@ -24,9 +25,26 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!found) return {};
   const { post, article } = found;
   const url = `${SITE}/insights/${post.slug}`;
+
+  // THE SEO TAB WINS, which it previously did not. This built
+  // `${post.title} | Ecomm Wizards` and used the excerpt, ignoring the meta
+  // title and description entirely — so a deliberate 55-character meta title
+  // was replaced on the live page by an 87-character one nobody chose, and the
+  // SEO tab was writing to a field nothing read.
+  //
+  // The fallbacks are what the writer would otherwise have to type by hand:
+  // metaTitle() adds the brand only when it fits inside 60 characters, where
+  // the old template appended it unconditionally.
+  const title = article.seo.title || metaTitle(post.title);
+  const description = article.seo.description || article.summary;
+  // Social cards name the site separately, so the brand suffix is not repeated
+  // here; a meta image set on the SEO tab beats the article's own hero.
+  const socialTitle = article.seo.title || post.title;
+  const image = article.seo.imageUrl ?? post.image;
+
   return {
-    title: { absolute: `${post.title} | Ecomm Wizards` },
-    description: article.summary,
+    title: { absolute: title },
+    description,
     alternates: { canonical: url },
     // The noindex that used to sit here was for the placeholder articles, which
     // are gone. Anything reaching this point is a real, published article, and
@@ -35,13 +53,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: "article",
       url,
       siteName: "Ecomm Wizards",
-      title: post.title,
-      description: article.summary,
+      title: socialTitle,
+      description,
       publishedTime: post.date,
       modifiedTime: article.updated ?? post.date,
-      images: post.image ? [{ url: post.image, alt: post.title }] : undefined,
+      images: image ? [{ url: image, alt: post.title }] : undefined,
     },
-    twitter: { card: "summary_large_image", title: post.title, description: article.summary, images: post.image ? [post.image] : undefined },
+    twitter: { card: "summary_large_image", title: socialTitle, description, images: image ? [image] : undefined },
   };
 }
 
