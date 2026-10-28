@@ -34,6 +34,21 @@ export type AuthorInfo = {
   avatarUrl?: string;
 };
 
+/**
+ * What the writer typed on the SEO tab.
+ *
+ * Empty fields are omitted so the page can fall back to the headline and
+ * excerpt. These were being written to the database and read by nothing: the
+ * article page built its own title and description and ignored the tab
+ * entirely, so a carefully written 55-character meta title was replaced on the
+ * live page by an 87-character one nobody chose.
+ */
+export type Seo = {
+  title?: string;
+  description?: string;
+  imageUrl?: string;
+};
+
 export type Faq = {
   question: string;
   /** For display. */
@@ -59,6 +74,8 @@ export type Article = {
   showTableOfContents: boolean;
   /** Null when no author has been chosen on the post. */
   author: AuthorInfo | null;
+  /** The SEO tab's values, each present only when filled in. */
+  seo: Seo;
   /** ISO date, when edited after publishing. */
   updated?: string;
 };
@@ -175,11 +192,35 @@ function toArticle(doc: PostDoc): Article {
     toc: tableOfContents(content),
     showTableOfContents: doc.showTableOfContents !== false,
     author: toAuthor(doc.author as Rel<AuthorDoc>),
+    seo: toSeo(doc.meta),
     ...(doc.contentUpdatedAt
       ? { updated: String(doc.contentUpdatedAt).slice(0, 10) }
       : {}),
   };
 }
+
+type MetaDoc = {
+  title?: string | null;
+  description?: string | null;
+  image?: Rel<MediaDoc>;
+};
+
+function toSeo(value: unknown): Seo {
+  const meta = (value ?? {}) as MetaDoc;
+  const title = tidyish(meta.title);
+  const description = tidyish(meta.description);
+  const imageUrl = rel<MediaDoc>(meta.image)?.url ?? undefined;
+  return {
+    ...(title ? { title } : {}),
+    ...(description ? { description } : {}),
+    ...(imageUrl ? { imageUrl } : {}),
+  };
+}
+
+const tidyish = (v: unknown): string | undefined => {
+  const s = typeof v === "string" ? v.replace(/\s+/g, " ").trim() : "";
+  return s || undefined;
+};
 
 type AuthorDoc = {
   name?: string | null;
