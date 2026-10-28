@@ -85,6 +85,11 @@ const GET_STARTED = [
 
 // Desktop + tablet-only columns (hidden on mobile, where the service columns take over)
 const OTHERS = [
+  // Insights leads: it is the section that keeps growing, and a link from every
+  // page is how a new article gets found — by a reader and by a crawler. The
+  // listing is noindex while empty, so this link costs nothing until it earns
+  // its place.
+  { label: "Insights",                   href: "/insights" },
   { label: "On Demand Dev (Bulk Hours)", href: "/bulk-hours" },
   { label: "Q4 Breakthrough Journey",    href: "/q4-breakthrough-journey" },
 ];
