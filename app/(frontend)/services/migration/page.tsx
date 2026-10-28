@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Shopify Migration Agency | Migrate to Shopify, Zero Downtime" },
-  description: META_DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
@@ -187,7 +187,11 @@ const FAQS = [
   },
   {
     q: "How long does a Shopify migration take?",
-    a: "Most migrations run two to six weeks depending on catalog size, custom features, and integrations. We scope the exact timeline on your discovery call and give you a clear plan before any work begins.",
+    // The range depends on what is being moved, and saying so avoids
+    // contradicting the Shopify Plus page, which quotes eight to fourteen weeks
+    // for an enterprise replatform. Both were true of different projects and
+    // read as a contradiction when each page stated only its own number.
+    a: "Most migrations run two to six weeks depending on catalog size, custom features, and integrations. A full replatform from Magento, WooCommerce, or BigCommerce onto Shopify Plus runs longer, typically eight to fourteen weeks, because of the integration and B2B work involved. We scope the exact timeline on your discovery call and give you a clear plan before any work begins.",
   },
   {
     q: "Will my store go down during the migration?",
