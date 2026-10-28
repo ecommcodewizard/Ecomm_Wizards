@@ -7,6 +7,7 @@ import { topicOf } from "@/lib/blog/posts";
 import { getPost, listPosts } from "@/lib/blog/cms";
 import { metaTitle } from "@/lib/cms/seo";
 import ArticleContent from "@/components/blog/ArticleContent";
+import ArticleFaq from "@/components/blog/ArticleFaq";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import ArticleNav from "./ArticleNav";
 import ShareLinks from "./ShareLinks";
@@ -275,14 +276,15 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <h2 id="faqs" className="ar-faq-h">
               Questions, <em>answered.</em>
             </h2>
-            <div className="ar-faq-list">
-              {article.faqs.map((f, i) => (
-                <details key={i} name="faq">
-                  <summary>{f.question}</summary>
-                  <RichText data={f.answer} />
-                </details>
-              ))}
-            </div>
+            {/* Answers are rendered here, on the server, and handed to the
+                client component as elements — so the rich-text converter never
+                ships to the browser and only the open/closed state does. */}
+            <ArticleFaq
+              items={article.faqs.map((f) => ({
+                question: f.question,
+                answer: <RichText data={f.answer} />,
+              }))}
+            />
           </div>
         </section>
       )}
@@ -477,14 +479,21 @@ const CSS = `
 .ar-faq-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:64px;max-width:1280px;margin:0 auto}
 .ar-faq-h{margin:0;color:#000;font-weight:400;font-size:clamp(36px,4vw,60px);line-height:1.02;letter-spacing:-.04em;scroll-margin-top:calc(var(--hdr) + 32px)}
 .ar-faq-h em{font-family:${SERIF};background:var(--brand-gradient);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
-.ar-faq-list details{border-bottom:1px solid #e6e9e6}
-.ar-faq-list details:first-child{border-top:1px solid #e6e9e6}
-.ar-faq-list summary{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 0;color:#000;font-size:clamp(18px,1.6vw,22px);font-weight:500;letter-spacing:-.015em;cursor:pointer;list-style:none}
-.ar-faq-list summary::-webkit-details-marker{display:none}
-.ar-faq-list summary::after{content:"";flex:0 0 14px;height:14px;background:linear-gradient(#000,#000) center/14px 1.5px no-repeat,linear-gradient(#000,#000) center/1.5px 14px no-repeat;transition:transform .25s ease}
-.ar-faq-list details[open] summary::after{transform:rotate(45deg)}
-.ar-faq-list summary:hover{color:#2A9555}
-.ar-faq-list details p{margin:0 0 24px;max-width:680px;color:#4a514c;font-size:17px;line-height:1.7}
+.ar-faq-item{border-bottom:1px solid #e6e9e6}
+.ar-faq-item:first-child{border-top:1px solid #e6e9e6}
+.ar-faq-q{display:flex;width:100%;justify-content:space-between;align-items:center;gap:24px;padding:24px 0;border:0;background:none;color:#000;font:inherit;font-size:clamp(18px,1.6vw,22px);font-weight:500;letter-spacing:-.015em;text-align:left;cursor:pointer}
+.ar-faq-q:hover{color:#2A9555}
+.ar-faq-icon{flex:0 0 14px;height:14px;background:linear-gradient(#000,#000) center/14px 1.5px no-repeat,linear-gradient(#000,#000) center/1.5px 14px no-repeat;transition:transform .25s ease}
+.ar-faq-icon[data-open="true"]{transform:rotate(45deg)}
+/* THE ANIMATION. A grid row track of 0fr animates to 1fr; height:auto does
+   not, which is why the old <details> element snapped open instead of easing.
+   The inner element clips the overflow while the track grows. */
+.ar-faq-panel{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .28s ease,opacity .22s ease}
+.ar-faq-panel[data-open="true"]{grid-template-rows:1fr;opacity:1}
+.ar-faq-panel-in{overflow:hidden}
+.ar-faq-panel p{margin:0 0 24px;max-width:680px;color:#4a514c;font-size:17px;line-height:1.7}
+/* Honour a reader who has asked the system for less motion. */
+@media (prefers-reduced-motion:reduce){.ar-faq-panel,.ar-faq-icon{transition:none}}
 
 /* Keep reading */
 .ar-more{background:#0c0d0c;color:#fff;padding:96px 40px 112px}
