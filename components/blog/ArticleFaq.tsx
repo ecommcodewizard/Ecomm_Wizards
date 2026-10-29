@@ -54,7 +54,13 @@ export default function ArticleFaq({ items }: { items: ArticleFaqItem[] }) {
               // Keeps a closed answer out of the tab order and away from
               // screen readers and in-page search, which a 0fr track alone
               // would not do.
-              {...(isOpen ? {} : { inert: "" as unknown as boolean })}
+              //
+              // React 19 knows inert is a boolean attribute and writes it out
+              // only when true. Spreading an empty string in, the way this had
+              // to be done before, now logs a console error on every closed
+              // answer and is read as FALSE — so the old workaround had quietly
+              // stopped doing the one thing it was there for.
+              inert={!isOpen}
             >
               <div className="ar-faq-panel-in">{item.answer}</div>
             </div>
