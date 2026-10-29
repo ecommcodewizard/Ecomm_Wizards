@@ -3,7 +3,7 @@
 import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { topicLabel, type Post } from "@/lib/blog/posts";
+import { focalStyle, topicLabel, type Post } from "@/lib/blog/posts";
 import { useBlogFilter } from "./useBlogFilter";
 
 type Quote = { text: string; person: string; role: string };
@@ -43,7 +43,7 @@ export default function Editorial({ posts, quotes }: { posts: Post[]; quotes: Qu
               <Link href={`/insights/${p.slug}`} className="ed-card">
                 <span className="ed-img">
                   {p.image && (
-                    <Image src={p.image} alt="" fill sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" priority={i < 4} />
+                    <Image src={p.image} alt="" fill sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" priority={i < 4} style={focalStyle(p)} />
                   )}
                   <span className="ed-tag">{topicLabel(p.topic)}</span>
                 </span>

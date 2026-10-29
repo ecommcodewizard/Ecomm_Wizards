@@ -24,7 +24,28 @@ export type Post = {
   readMins: number;
   author: string;
   image?: string; // cover photo; the card shows a plain dark panel without one
+  /**
+   * Where the subject of the cover photo sits, as percentages, taken from the
+   * focal point set in the CMS. Undefined means dead centre.
+   */
+  focal?: { x: number; y: number };
 };
+
+/**
+ * Keeps the subject in frame when a cover photo is cropped.
+ *
+ * ONE PHOTO HAS TO FILL THREE DIFFERENT SHAPES: a 3:2 listing card, a 16:7
+ * band at the top of an article, and a 16:11 card under it. Every one of them
+ * uses object-fit: cover, which fills the box and discards the overhang, so
+ * something is always being thrown away. Without this the browser keeps the
+ * middle, which is how a subject standing off to one side gets cut in half.
+ *
+ * Returns undefined for a centred focal point so the attribute is left off
+ * entirely — 50% 50% is the browser's own default, so writing it would be
+ * noise in the markup.
+ */
+export const focalStyle = (post: Post): { objectPosition: string } | undefined =>
+  post.focal ? { objectPosition: `${post.focal.x}% ${post.focal.y}%` } : undefined;
 
 export const topicLabel = (slug: TopicSlug) =>
   TOPICS.find((t) => t.slug === slug)!.label;

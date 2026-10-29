@@ -146,7 +146,7 @@ export const Posts: CollectionConfig = {
               relationTo: "media",
               admin: {
                 description:
-                  "Shown at the top of the article, on article cards, and when the link is shared. At least 1200 pixels wide.",
+                  "Shown at the top of the article, on the /insights cards, and when the link is shared. Upload it wide and landscape — 1600 × 900 is ideal, and under 1200 wide will look soft on the article. Each of those three places crops it to a slightly different shape, so if the subject sits off to one side, open the image and drag its focal point onto the subject to keep it in frame.",
               },
             },
             {

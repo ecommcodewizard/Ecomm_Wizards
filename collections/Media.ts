@@ -13,7 +13,8 @@ export const Media: CollectionConfig = {
   admin: {
     group: "Media",
     useAsTitle: "alt",
-    description: "Images for posts. Every image needs alt text.",
+    description:
+      "Images for posts. Every image needs alt text. A cover photo should be wide and landscape, 1600 × 900 for preference — it is cropped to three different shapes around the site, and the focal point in the image editor decides which part survives.",
   },
   access: {
     // Public: the site has to be able to display these to visitors.

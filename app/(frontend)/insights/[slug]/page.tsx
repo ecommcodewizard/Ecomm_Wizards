@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CTASection from "@/components/ui/CTASection";
-import { topicOf } from "@/lib/blog/posts";
+import { focalStyle, topicOf } from "@/lib/blog/posts";
 import { getPost, listPosts } from "@/lib/blog/cms";
 import { faqSubject, metaTitle } from "@/lib/cms/seo";
 import ArticleContent from "@/components/blog/ArticleContent";
@@ -229,7 +229,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
       {post.image && (
         <div className="ar-cover">
-          <Image src={post.image} alt="" fill priority sizes="(min-width: 1360px) 1280px, 94vw" />
+          <Image src={post.image} alt="" fill priority sizes="(min-width: 1360px) 1280px, 94vw" style={focalStyle(post)} />
         </div>
       )}
 
@@ -346,7 +346,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             {related.map((p) => (
               <Link key={p.slug} href={`/insights/${p.slug}`} className="ar-card">
                 <span className="ar-card-img">
-                  {p.image && <Image src={p.image} alt="" fill sizes="(min-width: 1024px) 400px, 100vw" />}
+                  {p.image && <Image src={p.image} alt="" fill sizes="(min-width: 1024px) 400px, 100vw" style={focalStyle(p)} />}
                   <span className="ar-card-tag">{topicOf(p.topic).label}</span>
                 </span>
                 <span className="ar-card-title">{p.title}</span>

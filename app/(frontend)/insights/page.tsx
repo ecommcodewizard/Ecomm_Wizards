@@ -101,7 +101,13 @@ const CSS = `
 .ed-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-flow:dense;gap:44px 20px}
 .ed-card,.ed-card:hover,.ed-card:visited,.ed-card:focus,.ed-card:active{display:flex;flex-direction:column;overflow:hidden;border-radius:20px;background:#191a19;border:1px solid rgba(255,255,255,.06);color:#fff;text-decoration:none;transition:transform .45s cubic-bezier(.2,.7,.2,1),border-color .3s ease}
 .ed-card:hover,.ed-card:focus-visible{transform:translateY(-4px);border-color:rgba(61,199,122,.45)}
-.ed-img{position:relative;display:block;aspect-ratio:1/1.1;overflow:hidden;background:#222}
+/* LANDSCAPE, BECAUSE THE PHOTOS ARE LANDSCAPE. This box used to be 1/1.1 —
+   taller than wide — while the article it links to shows the same photo in a
+   16/7 band. Nothing can fill both, so cover-fit silently cut the difference:
+   a 1589x640 banner showed 37% of its width here, a 4:3 photo 68%. At 3/2 a
+   normal wide photo arrives nearly whole, and the card stops being 400px of
+   cropped image on a phone. */
+.ed-img{position:relative;display:block;aspect-ratio:3/2;overflow:hidden;background:#222}
 .ed-img img{object-fit:cover;filter:grayscale(1) contrast(1.05);transition:filter .5s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 .ed-card:hover .ed-img img{filter:none;transform:scale(1.04)}
 @media (hover:none){.ed-img img{filter:none}}

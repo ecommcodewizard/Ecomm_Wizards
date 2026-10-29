@@ -3,6 +3,7 @@
 // Everything here runs on the server only, and talks to Payload in-process
 // rather than over HTTP, so there is no round trip and no API route to secure.
 
+import { cache } from "react";
 import { convertLexicalToPlaintext } from "@payloadcms/richtext-lexical/plaintext";
 import type { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import config from "@payload-config";
@@ -95,7 +96,29 @@ type Rel<T> = T | number | null | undefined;
 const rel = <T,>(value: Rel<T>): T | null =>
   value && typeof value === "object" ? (value as T) : null;
 
-type MediaDoc = { url?: string | null; alt?: string | null };
+type MediaDoc = {
+  url?: string | null;
+  alt?: string | null;
+  // Payload adds these to every upload collection that has imageSizes, and
+  // defaults both to 50. The admin's image editor is where they get moved.
+  focalX?: number | null;
+  focalY?: number | null;
+};
+
+/**
+ * The focal point as object-position percentages, or undefined when it has
+ * never been moved off centre.
+ *
+ * Postgres hands a `numeric` column back as a string, so these are coerced
+ * rather than trusted.
+ */
+function focalOf(doc: MediaDoc | null): { x: number; y: number } | undefined {
+  if (!doc) return undefined;
+  const x = Number(doc.focalX ?? 50);
+  const y = Number(doc.focalY ?? 50);
+  if (!Number.isFinite(x) || !Number.isFinite(y)) return undefined;
+  return x === 50 && y === 50 ? undefined : { x, y };
+}
 
 // Headings are given ids so the contents list can link to them. The same rule
 // runs here and in the renderer, so the link and its target always agree —
@@ -250,6 +273,7 @@ function toAuthor(value: Rel<AuthorDoc>): AuthorInfo | null {
 function toPost(doc: PostDoc, article: Article): Post {
   const category = rel<{ slug?: string }>(doc.category as Rel<{ slug?: string }>);
   const hero = rel<MediaDoc>(doc.heroImage as Rel<MediaDoc>);
+  const focal = focalOf(hero);
   const published = doc.publishedAt ? String(doc.publishedAt) : "";
 
   return {
@@ -262,6 +286,7 @@ function toPost(doc: PostDoc, article: Article): Post {
     // Listing cards only need a name; the full byline lives on the article.
     author: article.author?.name ?? "Ecomm Wizards",
     ...(hero?.url ? { image: hero.url } : {}),
+    ...(focal ? { focal } : {}),
   };
 }
 
@@ -288,10 +313,24 @@ async function withFallback<T>(label: string, fn: () => Promise<T>, fallback: T)
   }
 }
 
-/** Published posts, newest first, for the /insights listing. */
-export async function listPosts(): Promise<Post[]> {
-  return withFallback("listPosts", listPostsUncached, []);
-}
+// ASKED FOR TWICE, FETCHED ONCE.
+//
+// generateMetadata and the page body are separate functions that each need the
+// same records, so both call these. Without cache() that is two full trips to
+// Postgres per page view — and Payload at depth 2 is not one query but dozens,
+// one per relationship and array table. Measured from a machine far from the
+// database, a round trip is about 230ms, which turned /insights into eight to
+// thirty seconds of waiting with nothing wrong.
+//
+// cache() is per-request, not a store: two calls while rendering one page share
+// one result, and the next request fetches again. So a published article still
+// appears immediately, and no reader is served another reader's data.
+export const listPosts = cache(
+  /** Published posts, newest first, for the /insights listing. */
+  async function listPosts(): Promise<Post[]> {
+    return withFallback("listPosts", listPostsUncached, []);
+  },
+);
 
 async function listPostsUncached(): Promise<Post[]> {
   const payload = await getPayload({ config });
@@ -310,12 +349,14 @@ async function listPostsUncached(): Promise<Post[]> {
   return (docs as PostDoc[]).map((doc) => toPost(doc, toArticle(doc)));
 }
 
-/** One published post plus its body, or null if there is no such post. */
-export async function getPost(
-  slug: string,
-): Promise<{ post: Post; article: Article } | null> {
-  return withFallback(`getPost(${slug})`, () => getPostUncached(slug), null);
-}
+export const getPost = cache(
+  /** One published post plus its body, or null if there is no such post. */
+  async function getPost(
+    slug: string,
+  ): Promise<{ post: Post; article: Article } | null> {
+    return withFallback(`getPost(${slug})`, () => getPostUncached(slug), null);
+  },
+);
 
 async function getPostUncached(
   slug: string,
