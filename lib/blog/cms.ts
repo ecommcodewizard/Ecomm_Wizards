@@ -70,6 +70,11 @@ export type Article = {
   /** The article body, as the editor stored it. */
   content: SerializedEditorState | null;
   faqs: Faq[];
+  /**
+   * The writer's own FAQ heading. When set it replaces the one derived from
+   * the title entirely; empty means fall back to the derived heading.
+   */
+  faqHeading?: string;
   toc: TocEntry[];
   showTableOfContents: boolean;
   /** Null when no author has been chosen on the post. */
@@ -189,6 +194,7 @@ function toArticle(doc: PostDoc): Article {
             answerText: toPlainText(f.answer!),
           }))
       : [],
+    ...(tidyish(doc.faqHeading) ? { faqHeading: tidyish(doc.faqHeading) } : {}),
     toc: tableOfContents(content),
     showTableOfContents: doc.showTableOfContents !== false,
     author: toAuthor(doc.author as Rel<AuthorDoc>),

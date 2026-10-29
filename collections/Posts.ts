@@ -160,6 +160,18 @@ export const Posts: CollectionConfig = {
               },
             },
             {
+              name: "faqHeading",
+              label: "FAQ heading",
+              type: "text",
+              maxLength: 90,
+              admin: {
+                placeholder: "Frequently Asked Questions About ...",
+                description:
+                  "Optional. Leave empty and the heading is written from the article title — \"Frequently Asked Questions About Shopify Speed Optimization\". Fill it in and yours is used instead. Worth setting when the title is a question or a how-to, because the automatic heading falls back to a plain \"Frequently Asked Questions\" for those.",
+                condition: (data) => Boolean(data?.faqs?.length),
+              },
+            },
+            {
               name: "faqs",
               label: "FAQ",
               type: "array",

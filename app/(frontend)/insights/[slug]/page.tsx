@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import CTASection from "@/components/ui/CTASection";
 import { topicOf } from "@/lib/blog/posts";
 import { getPost, listPosts } from "@/lib/blog/cms";
-import { metaTitle } from "@/lib/cms/seo";
+import { faqSubject, metaTitle } from "@/lib/cms/seo";
 import ArticleContent from "@/components/blog/ArticleContent";
 import ArticleFaq from "@/components/blog/ArticleFaq";
 import { RichText } from "@payloadcms/richtext-lexical/react";
@@ -70,6 +70,46 @@ const date = (iso: string) => fmt.format(new Date(iso));
 // The **bold** / [label](/href) helper that used to live here is gone: inline
 // formatting and links are now the editor's job, and it stored them properly
 // rather than as markdown inside a text field.
+
+/**
+ * The FAQ heading.
+ *
+ * A heading typed in the CMS replaces the derived one outright — the automatic
+ * version is a default, never something layered on top of the writer's words.
+ *
+ * The brand gradient sits on whatever follows "About", so a custom heading
+ * keeps the same look as the derived one without the writer having to think
+ * about it. A heading with no "About" renders plain rather than having the
+ * gradient guessed onto an arbitrary word.
+ */
+function FaqHeading({ custom, subject }: { custom?: string; subject: string }) {
+  if (custom) {
+    const [lead, ...rest] = custom.split(/\s+About\s+/);
+    if (rest.length) {
+      return (
+        <>
+          {lead} About <em>{rest.join(" About ")}</em>
+        </>
+      );
+    }
+    return <>{custom}</>;
+  }
+  if (subject) {
+    return (
+      <>
+        Frequently Asked Questions About <em>{subject}</em>
+      </>
+    );
+  }
+  // No clean noun phrase in the headline — usually because the headline is
+  // itself a question. Forcing one produced "About How to Migrate From Magento
+  // to Shopify Without Losing Your".
+  return (
+    <>
+      Frequently Asked <em>Questions</em>
+    </>
+  );
+}
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const found = await getPost((await params).slug);
@@ -273,8 +313,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       {article.faqs.length > 0 && (
         <section className="ar-faq" aria-labelledby="faqs">
           <div className="ar-faq-in">
+            {/* "Questions, answered." said nothing about the article and
+                matched no search anybody performs. Naming the subject makes
+                the heading describe its own section, which is what a heading
+                is for — and it matches how people phrase the search. */}
             <h2 id="faqs" className="ar-faq-h">
-              Questions, <em>answered.</em>
+              <FaqHeading custom={article.faqHeading} subject={faqSubject(post.title)} />
             </h2>
             {/* Answers are rendered here, on the server, and handed to the
                 client component as elements — so the rich-text converter never
@@ -292,7 +336,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <section className="ar-more" aria-labelledby="more">
         <div className="ar-more-in">
           <div className="ar-more-head">
-            <h2 id="more">Keep reading</h2>
+            {/* Not a heading: related links are navigation, not a section of
+                this article. The id stays so the section's aria-labelledby
+                still resolves. */}
+            <p id="more">Keep reading</p>
             <Link href="/insights">All insights <span aria-hidden="true">→</span></Link>
           </div>
           <div className="ar-more-grid">
@@ -477,7 +524,9 @@ const CSS = `
 /* FAQ */
 .ar-faq{border-top:1px solid #e6e9e6;padding:72px 40px 88px}
 .ar-faq-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:64px;max-width:1280px;margin:0 auto}
-.ar-faq-h{margin:0;color:#000;font-weight:400;font-size:clamp(36px,4vw,60px);line-height:1.02;letter-spacing:-.04em;scroll-margin-top:calc(var(--hdr) + 32px)}
+/* Smaller than the old "Questions, answered." because this heading now names
+   the subject and is several words longer. */
+.ar-faq-h{margin:0;color:#000;font-weight:400;font-size:clamp(28px,3vw,44px);line-height:1.08;letter-spacing:-.03em;text-wrap:balance;scroll-margin-top:calc(var(--hdr) + 32px)}
 .ar-faq-h em{font-family:${SERIF};background:var(--brand-gradient);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
 .ar-faq-item{border-bottom:1px solid #e6e9e6}
 .ar-faq-item:first-child{border-top:1px solid #e6e9e6}
