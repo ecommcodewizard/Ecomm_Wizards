@@ -370,9 +370,13 @@ export default function Footer({ localized = [] }: { localized?: LocalizedGroup[
       <div className="hidden md:block relative overflow-hidden bg-black xl:h-[351px] xl:flex xl:flex-col xl:justify-start">
         <div className="absolute inset-0" style={{background: "radial-gradient(ellipse 55% 45% at 50% 40%, rgba(61,199,122,0.35) 0%, rgba(61,199,122,0.15) 40%, rgba(61,199,122,0.05) 65%, transparent 80%)"}} />
         <div className="relative z-10 mx-auto w-full max-w-[1320px] p-[24px]">
-          <h3 className="mb-6 text-center text-[20px] leading-[30px] font-semibold text-white">
+          {/* NOT A HEADING. The footer renders on every page, so this <h3>
+              added "Select a Service" to the heading outline of all of them —
+              a site-wide label competing with each page's own structure.
+              Styling is unchanged; only the element is. */}
+          <p className="mb-6 text-center text-[20px] leading-[30px] font-semibold text-white">
             <Link href="/services" className="text-white transition-opacity hover:opacity-80">Select a Service</Link>
-          </h3>
+          </p>
           <div className="flex flex-wrap justify-center text-[16px]">
             {SERVICE_TAGS.map((tag) => (
               <Link

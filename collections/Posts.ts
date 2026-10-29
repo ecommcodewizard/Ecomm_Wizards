@@ -146,7 +146,7 @@ export const Posts: CollectionConfig = {
               relationTo: "media",
               admin: {
                 description:
-                  "Shown at the top of the article, on article cards, and when the link is shared. At least 1200 pixels wide.",
+                  "Shown at the top of the article, on the /insights cards, and when the link is shared. Upload it wide and landscape — 1600 × 900 is ideal, and under 1200 wide will look soft on the article. Each of those three places crops it to a slightly different shape, so if the subject sits off to one side, open the image and drag its focal point onto the subject to keep it in frame.",
               },
             },
             {
@@ -157,6 +157,18 @@ export const Posts: CollectionConfig = {
               admin: {
                 description:
                   "The article. Use Heading 2 for each main section and Heading 3 beneath it — the contents list is built from the Heading 2s.",
+              },
+            },
+            {
+              name: "faqHeading",
+              label: "FAQ heading",
+              type: "text",
+              maxLength: 90,
+              admin: {
+                placeholder: "Frequently Asked Questions About ...",
+                description:
+                  "Optional. Leave empty and the heading is written from the article title — \"Frequently Asked Questions About Shopify Speed Optimization\". Fill it in and yours is used instead. Worth setting when the title is a question or a how-to, because the automatic heading falls back to a plain \"Frequently Asked Questions\" for those.",
+                condition: (data) => Boolean(data?.faqs?.length),
               },
             },
             {

@@ -165,6 +165,38 @@ export function metaDescription(excerpt: string, content: unknown): string {
   return build([tidy(excerpt), ...paragraphs(content)], DESC_MIN, DESC_MAX);
 }
 
+/**
+ * A short subject for the FAQ heading, taken from the headline.
+ *
+ * Headlines usually carry the subject before a colon or dash, so
+ * "Shopify vs WooCommerce: Which Platform Is Better for Your Online Store?"
+ * yields "Shopify vs WooCommerce" — which is what the questions are actually
+ * about, and what someone would search for. The trailing question mark goes:
+ * "Frequently Asked Questions About Which Platform Is Better?" reads as a
+ * mistake.
+ *
+ * Falls back to the headline, trimmed, when there is no natural break.
+ */
+export function faqSubject(title: string): string {
+  const clean = tidy(title).replace(/[?!.]+$/, "");
+  const head = clean.split(/\s*[:–—]\s*/)[0].trim();
+
+  for (const candidate of [head, clean]) {
+    // "About How to Migrate From Magento..." does not read as English, so a
+    // headline phrased as a question or an instruction yields no subject.
+    if (OPENS_A_QUESTION.test(candidate)) continue;
+    // Never truncate: a cut subject is worse than none. A headline with no
+    // short form returns "" and the heading simply drops the "About" clause.
+    if (candidate.length >= 6 && candidate.length <= 55) return candidate;
+  }
+  return "";
+}
+
+// Leading words that make a headline a question or an instruction rather than
+// a noun phrase.
+const OPENS_A_QUESTION =
+  /^(how|why|what|when|where|which|who|should|can|could|do|does|did|is|are|was|will|would|the best way)\b/i;
+
 /** The article card summary, built from the opening of the article. */
 export function excerptFrom(content: unknown): string {
   return build(paragraphs(content), EXCERPT_MIN, EXCERPT_MAX);

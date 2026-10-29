@@ -28,14 +28,22 @@ export default function CTASection({
   secondaryGradient,
 }: CTASectionProps) {
   return (
-    <section className="py-20" style={{ background }}>
+    // NOT A HEADING. This block repeats on every page it appears on, so as an
+    // <h2> it injected a line into each page's heading outline that had
+    // nothing to do with that page's subject — "Want this done on your store?"
+    // ranked alongside the real sections of an article. Headings describe the
+    // page's content; this is a call to action.
+    //
+    // aria-label keeps the section announced as a landmark, which is what the
+    // heading was doing for screen readers. Styling is unchanged.
+    <section className="py-20" style={{ background }} aria-label={heading}>
       <div className="mx-auto px-5 text-center" style={{ maxWidth: "768px" }}>
-        <h2
+        <p
           className="font-bold text-white"
-          style={{ fontSize: "42px", fontWeight: 600, lineHeight: "52px" }}
+          style={{ fontSize: "42px", fontWeight: 600, lineHeight: "52px", margin: 0 }}
         >
           {heading}
-        </h2>
+        </p>
         <p className="mt-4 text-white/80" style={{ fontSize: "16px", lineHeight: "1.75" }}>
           {subheading}
         </p>
