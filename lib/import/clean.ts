@@ -112,6 +112,19 @@ export function cleanImportedHtml(source: string): CleanedDoc {
   // Unwrap spans and divs (they carry nothing once styles are gone).
   body.querySelectorAll("span, div, font").forEach((el) => el.replaceWith(...Array.from(el.childNodes)));
 
+  // Google Docs never exports a header row, and Word only does when "repeat as
+  // header row" is ticked, so tables arrive as all <td>. Promote the first row
+  // to <th> so Lexical marks it as a header and the blog styles it as one.
+  body.querySelectorAll("table").forEach((table) => {
+    if (table.querySelector("th")) return;
+    table.querySelector("tr")?.querySelectorAll(":scope > td").forEach((td) => {
+      const th = doc.createElement("th");
+      for (const attr of Array.from(td.attributes)) th.setAttribute(attr.name, attr.value);
+      while (td.firstChild) th.appendChild(td.firstChild);
+      td.replaceWith(th);
+    });
+  });
+
   // Each image becomes a top-level block right after the block it sat in.
   const images: CleanedDoc["images"] = [];
   body.querySelectorAll("img").forEach((img, i) => {
