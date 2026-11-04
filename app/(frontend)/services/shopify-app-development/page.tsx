@@ -129,8 +129,8 @@ export default function ShopifyAppDevelopmentPage() {
           {/* Left: text */}
           <div className="text-center lg:text-left">
             <h1 className="font-semibold leading-[1.1] tracking-tight text-white text-[34px] sm:text-[44px] lg:text-[48px]">
-              <span style={GRADIENT_TEXT}>Hire a Shopify App Developer</span>{" "}
-              Who Builds Apps That Actually Grow Your Store.
+              <span style={GRADIENT_TEXT}>Shopify App Development Services</span>{" "}
+              That Do What Off-the-Shelf Apps Can&apos;t.
             </h1>
 
             <p className="mt-6 text-white text-[15px] sm:text-base lg:text-[16px] leading-[1.7]">
