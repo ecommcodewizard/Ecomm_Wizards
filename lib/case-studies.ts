@@ -46,6 +46,17 @@ export interface CaseStudy {
   /** Written ~150-char SEO meta description. Falls back to a truncated
    *  heroDescription when absent (see app/case-studies/[slug]/page.tsx). */
   metaDescription?: string;
+  /** Full <title>. Falls back to "{brandName} {studyKind} Case Study | {heroMetric}",
+   *  which reads badly when heroMetric is a word rather than a number. */
+  metaTitle?: string;
+  /** Alt text for the hero image (also the OG image alt). Falls back to a
+   *  generic "{brandName} {studyKind} case study". */
+  heroImageAlt?: string;
+  /** Alt text per workImages entry, same order. Missing entries fall back to
+   *  a generic numbered alt. */
+  workImageAlts?: string[];
+  /** Text alternative for the Challenge-section video. */
+  videoAlt?: string;
   stats: CaseStudyStat[];
   challengeTitle: string;
   challengeBody: string;
@@ -1850,6 +1861,105 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     prevSlug: "chlobo-shopify-plus-migration",
     prevBrand: "ChloBo",
+  },
+
+  // ─── 22. CHILLY'S — Headless (Commerce Layer) ───
+  // Separate from the paid social study (chillys-creative-strategy in
+  // lib/creative-studies.ts), which stays as it is. Figures supplied by the
+  // owner on 2026-11-04. techStack is empty until a Commerce Layer logo is
+  // added; the section hides while empty.
+  {
+    slug: "chillys-headless-commerce-layer",
+    studyKind: "Headless Commerce",
+    brandName: "Chilly's",
+    industry: "Drinkware & Lifestyle",
+    serviceType: "Headless Development | Commerce Layer | Custom Frontend",
+    heroMetric: "42%",
+    heroSubMetric: "Faster Load Time",
+    heroImage: "/images/Case%20studies/Chillys%20Headless%20hero.webp",
+    heroDescription:
+      "How Chilly's, the British reusable bottle brand, moved off a theme and rebuilt its store headless on Commerce Layer in 10 weeks. A custom frontend gave the brand personalised pages no theme could offer, loaded 42% faster, lifted conversion rate 28%, and cut running costs by 31%.",
+    metaDescription: "Chilly's rebuilt its store headless on Commerce Layer: 42% faster load times, 28% higher conversion rate, 31% lower running costs, and 8 apps removed.",
+    metaTitle: "Chilly's Headless Commerce Case Study | 42% Faster Store",
+    heroImageAlt: "Three Chilly's reusable bottles in orange, navy and yellow retro prints beside the Chilly's logo",
+    videoAlt: "Chilly's Series 2 Flip bottle film: a swimmer drinks from a mint bottle at the poolside",
+    workImageAlts: [
+      "Hand holding a dark green Chilly's bottle over open water from a boat",
+      "Lilac Chilly's bottle with a flip-top lid carried on a city street",
+      "Woman holding a mint Chilly's Series 2 bottle in a black puffer jacket",
+      "Pink Chilly's bottle clipped to a bag strap",
+    ],
+    stats: [
+      { label: "Faster Load Time", value: "42%", shortLabel: "Load Time" },
+      { label: "Lower Running Costs", value: "-31%", shortLabel: "Running Costs" },
+      { label: "Higher Conversion Rate", value: "+28%", shortLabel: "Conversion" },
+      { label: "Higher AOV", value: "+19%", shortLabel: "AOV" },
+    ],
+    challengeTitle: "A Design-Led Brand Boxed In by a Theme",
+    challengeBody:
+      "Chilly's is a British brand built on design. Its reusable bottles, cups, and food pots come in a constantly changing range of colours, prints, and limited editions, and the brand experience matters as much as the product.\n\nThe store couldn't keep up. A theme decides what a page is allowed to look like, so every new idea ran into the same walls: layouts that couldn't be changed, personalised pages that couldn't be built, and workarounds that added cost every time the team pushed past what the template allowed. Chilly's needed a store shaped around the brand, not a brand squeezed into a store.",
+    approachTitle: "Headless, Built Around the Brand.",
+    approachItems: [
+      {
+        step: 1,
+        title: "Headless Architecture on Commerce Layer",
+        desc: "We separated the commerce engine from the storefront. Commerce Layer runs products, pricing, carts, and checkout through its API, so the front end is free to look and behave however the brand needs, without a theme deciding what is possible. Six third-party integrations were connected to the new stack.",
+      },
+      {
+        step: 2,
+        title: "Custom Frontend Built for Speed",
+        desc: "Every page was designed and built from scratch around Chilly's design language, with performance built in from the start. Pages now load in 1.8 seconds, the storefront scores 96/100 on Lighthouse and 94/100 on mobile, and LCP improved by 38%.",
+      },
+      {
+        step: 3,
+        title: "12 Custom and Personalised Page Templates",
+        desc: "With the storefront under full control, we built 12 custom page templates that a theme simply cannot produce, and optimised more than 45 product pages. Collections, campaigns, and product stories each get a page made for them, not a reskinned template.",
+      },
+      {
+        step: 4,
+        title: "A Leaner, Cheaper Stack",
+        desc: "Going headless removed the workarounds the old setup depended on. We removed 8 apps that were doing jobs the platform should do, and running costs came down 31%, all delivered in a 10-week build.",
+      },
+    ],
+    workTitle: "Inside the Chilly's Build",
+    workSubtitle: "A headless storefront on Commerce Layer, built from scratch.",
+    workImages: [
+      "/images/Case%20studies/Chillys%20Headless%201.jpg",
+      "/images/Case%20studies/Chillys%20Headless%202.webp",
+      "/images/Case%20studies/Chillys%20Headless%203.webp",
+      "/images/Case%20studies/Chillys%20Headless%204.jpg",
+    ],
+    results: [
+      { label: "Faster Storefront Loading", improvement: "42%" },
+      { label: "Higher Conversion Rate", improvement: "28%" },
+      { label: "Unnecessary Apps Removed", improvement: "8" },
+      { label: "Lower Running Costs", improvement: "31%" },
+    ],
+    resultsDescription:
+      "Chilly's now runs on a headless stack with Commerce Layer handling the commerce and a custom frontend handling everything the customer sees. The storefront loads 42% faster, conversion rate is up 28%, and average order value is up 19%. With 8 unnecessary apps removed, running costs are down 31%.",
+    techStack: [],
+    sliderStats: [
+      "Lighthouse performance score 96/100",
+      "Mobile performance score 94/100",
+      "LCP improved by 38%",
+      "CLS of 0.03",
+      "Page load time 1.8 seconds",
+      "8 apps removed",
+      "12 custom page templates",
+      "6 third-party integrations",
+      "45+ product pages optimised",
+      "Built in 10 weeks",
+    ],
+    // Approved by James. "headless Shopify setup" in his first draft was
+    // changed to "headless setup on Commerce Layer"; he confirmed the new
+    // wording on 2026-11-04.
+    quote:
+      "The team at Ecomm Wizards understood what we wanted to achieve with Chilly's and translated that into a storefront that feels much closer to our brand. Moving to a headless setup on Commerce Layer gave us greater flexibility over the design, customer experience, and how we manage the store. The process was well handled, and we're pleased with the result.",
+    quotePerson: "James Butterfield",
+    quoteRole: "Founder, Chilly's Bottles",
+    quoteAvatar: "/images/Case%20studies/James%20Butterfield%20Chillys.jpg",
+    prevSlug: "henchman-shopify-plus-b2b",
+    prevBrand: "Henchman",
   },
 ];
 

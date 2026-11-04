@@ -9,7 +9,26 @@ import { getCreativeCaseStudyBySlug, CREATIVE_CASE_STUDIES } from "@/lib/creativ
 import CTASection from "@/components/ui/CTASection";
 import RelatedServices from "@/components/sections/RelatedServices";
 import BeforeAfterSlider from "./BeforeAfterSlider";
-import SpeedVideo from "../SpeedVideo";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
+import { CASE_STUDY_VIDEOS, SPEED_VIDEO_SLUGS, posterFor } from "@/lib/case-study-videos";
+
+// Challenge-section video per study. The grid previews (CASE_STUDY_VIDEOS)
+// cover most; these two play only here. All go through LazyAutoplayVideo:
+// <video autoPlay preload="none"> still downloads on load, because autoplay
+// overrides preload.
+const CHALLENGE_VIDEOS: Record<string, string> = {
+  ...CASE_STUDY_VIDEOS,
+  "abask-shopify-wishlist-app": "/images/Case%20studies/ABASK%20video.mp4",
+  "nurture-life-creative-strategy": "/images/Creative%20strategy%20services/Case%20studies/nurture-cover.mp4",
+};
+const CHALLENGE_SPEED_SLUGS = new Set<string>([
+  ...SPEED_VIDEO_SLUGS,
+  "cecraft-klaviyo-email",
+  "living-in-sunshine-klaviyo-email",
+  "chillys-creative-strategy",
+  "prose-creative-strategy",
+  "nurture-life-creative-strategy",
+]);
 
 function caseStudyJsonLd(study: { slug: string; brandName: string; heroDescription: string; heroImage: string; studyKind?: string }) {
   return [
@@ -81,10 +100,10 @@ export async function generateMetadata({
       ? study.heroDescription.slice(0, 157).replace(/\s+\S*$/, "") + "…"
       : study.heroDescription);
   return {
-    title: { absolute: `${study.brandName} ${study.studyKind ?? "Shopify"} Case Study | ${study.heroMetric}` },
+    title: { absolute: study.metaTitle ?? `${study.brandName} ${study.studyKind ?? "Shopify"} Case Study | ${study.heroMetric}` },
     description: metaDesc,
     alternates: { canonical: CANONICAL },
-    openGraph: { type: "article", url: CANONICAL, siteName: "Ecomm Wizards", title: `${study.brandName} ${study.studyKind ?? "Shopify"} Case Study`, description: metaDesc, images: [{ url: study.heroImage, alt: `${study.brandName} ${study.studyKind ?? "Shopify"} case study` }] },
+    openGraph: { type: "article", url: CANONICAL, siteName: "Ecomm Wizards", title: `${study.brandName} ${study.studyKind ?? "Shopify"} Case Study`, description: metaDesc, images: [{ url: study.heroImage, alt: study.heroImageAlt ?? `${study.brandName} ${study.studyKind ?? "Shopify"} case study` }] },
     twitter: { card: "summary_large_image", title: `${study.brandName} ${study.studyKind ?? "Shopify"} Case Study`, description: metaDesc, images: [study.heroImage] },
   };
 }
@@ -408,9 +427,9 @@ function CaseStudyHero({ cs }: { cs: CaseStudy }) {
         <div className="cs-hero-img-wrap" style={{ position: "relative" }}>
           <div className="cs-hero-img-box" style={{ borderRadius: "16px", overflow: "hidden", boxShadow: "0 32px 80px rgba(0,0,0,0.6)", background: "#1a1a1a", position: "relative" }}>
             {cs.slug === "vithit-shopify-plus-d2c" ? (
-              <video src="/images/Case%20studies/VITHIT%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", position: "absolute", inset: 0 }} />
+              <LazyAutoplayVideo src="/images/Case%20studies/VITHIT%20video.mp4" poster={posterFor("/images/Case%20studies/VITHIT%20video.mp4")} label={cs.videoAlt ?? `${cs.brandName} store walkthrough`} deferUntilIdle style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", position: "absolute", inset: 0 }} />
             ) : (
-              <Image src={cs.heroImage} overrideSrc={cs.heroImage} alt={`${cs.brandName} Shopify store`} fill className="object-cover" priority sizes="(max-width: 1023px) 100vw, 50vw" />
+              <Image src={cs.heroImage} overrideSrc={cs.heroImage} alt={cs.heroImageAlt ?? `${cs.brandName} ${cs.studyKind ?? "Shopify"} case study`} fill className="object-cover" priority sizes="(max-width: 1023px) 100vw, 50vw" />
             )}
           </div>
           {/* Site Metrics floating card — Cashmere banner style */}
@@ -584,172 +603,12 @@ function CaseStudyChallenge({ cs }: { cs: CaseStudy }) {
           ))}
         </div>
         <div className="cs-challenge-media" style={{ borderRadius: "16px", overflow: "hidden", background: "#000", position: "relative" }}>
-          {cs.slug === "111skin-shopify-cro-redesign" ? (
-            <video
-              src="/images/Case%20studies/111skin%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "evie-lou-shopify-fashion-cro" ? (
-            <video
-              src="/images/Case%20studies/evie-lou%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "happy-mammoth-shopify-subscriptions-cro" ? (
-            <video
-              src="/images/Case%20studies/happy-mammoth-video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "candy-kittens-shopify-food-beverage-cro" ? (
-            <video
-              src="/images/Case%20studies/Candy%20Kittens%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "everlast-shopify-plus-sports-redesign" ? (
-            <video
-              src="/images/Case%20studies/Everlast%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "ronaldo-jewelry-shopify-plus-redesign" ? (
-            <SpeedVideo
-              src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "mouldings-one-shopify-b2b-portal" ? (
-            <SpeedVideo
-              src="/images/Case%20studies/Mouldings%20One%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "wild-shopify-plus-subscriptions" ? (
-            <video
-              src="/images/Case%20studies/WeareWild%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "dryrobe-shopify-plus-redesign" ? (
-            <video
-              src="/images/Case%20studies/dryrobe%20video%20test.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "loop-earplugs-shopify-landing-page-cro" ? (
-            <video
-              src="/images/Case%20studies/Loop%20Earplugs%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "sneak-energy-shopify-redesign" ? (
-            <video
-              src="/images/Case%20studies/Sneak%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "capelli-sports-shopify-migration" ? (
-            <video
-              src="/images/Case%20studies/Capelli%20Sports%20test%20video-2.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "john-hardy-shopify-plus-migration" ? (
-            <video
-              src="/images/Case%20studies/John%20Hardy%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "saddleback-shopify-plus-b2b" ? (
-            <video
-              src="/images/Case%20studies/Saddleback%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "this-works-shopify-plus-migration" ? (
-            <video
-              src="/images/Case%20studies/This%20Works%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "twillory-shopify-cro" ? (
-            <video
-              src="/images/Case%20studies/Twillory%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "neom-wellbeing-shopify-upgrade" ? (
-            <video
-              src="/images/Case%20studies/NEOM%20Wellbeing%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "vithit-shopify-plus-d2c" ? (
-            <video
-              src="/images/Case%20studies/VITHIT%20video%202.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "feetures-shopify-theme-development" ? (
-            <video
-              src="/images/Case%20studies/Feetures%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "chlobo-shopify-plus-migration" ? (
-            <video
-              src="/images/Case%20studies/ChloBo%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "henchman-shopify-plus-b2b" ? (
-            <video
-              src="/images/Case%20studies/Henchman%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "abask-shopify-wishlist-app" ? (
-            <video
-              src="/images/Case%20studies/ABASK%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "cecraft-klaviyo-email" ? (
-            <SpeedVideo
-              src="/images/Case%20studies/Cande%20Klaviyo%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "andrea-maack-klaviyo-email" ? (
-            <video
-              src="/images/Case%20studies/Andrea%20Maack%20Klaviyo%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "living-in-sunshine-klaviyo-email" ? (
-            <SpeedVideo
-              src="/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo%20video.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "chillys-creative-strategy" ? (
-            <SpeedVideo
-              src="/images/Creative%20strategy%20services/Case%20studies/chillys-series.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "prose-creative-strategy" ? (
-            <SpeedVideo
-              src="/images/Creative%20strategy%20services/Case%20studies/prose-cover.mp4"
-              autoPlay loop muted playsInline preload="none"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
-            />
-          ) : cs.slug === "nurture-life-creative-strategy" ? (
-            <SpeedVideo
-              src="/images/Creative%20strategy%20services/Case%20studies/nurture-cover.mp4"
-              autoPlay loop muted playsInline preload="none"
+          {CHALLENGE_VIDEOS[cs.slug] ? (
+            <LazyAutoplayVideo
+              src={CHALLENGE_VIDEOS[cs.slug]}
+              poster={posterFor(CHALLENGE_VIDEOS[cs.slug])}
+              label={cs.videoAlt ?? `${cs.brandName} ${cs.studyKind ?? "Shopify"} case study video`}
+              rate={CHALLENGE_SPEED_SLUGS.has(cs.slug) ? 1.5 : undefined}
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", willChange: "transform" }}
             />
           ) : (
@@ -892,7 +751,7 @@ function CaseStudyWork({ cs }: { cs: CaseStudy }) {
                     style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                   />
                 ) : (
-                  <Image src={img} overrideSrc={img} alt={`${cs.brandName} ${cs.studyKind ?? "Shopify"} case study, image ${i + 1}`} fill className="object-cover" loading="lazy" sizes="(max-width: 767px) 100vw, 50vw" />
+                  <Image src={img} overrideSrc={img} alt={cs.workImageAlts?.[i] ?? `${cs.brandName} ${cs.studyKind ?? "Shopify"} case study, image ${i + 1}`} fill className="object-cover" loading="lazy" sizes="(max-width: 767px) 100vw, 50vw" />
                 )}
               </div>
             </div>
@@ -1071,10 +930,6 @@ function CaseStudyExploreMore({ current, mode }: { current: string; mode?: "app"
   // every study earns an inbound link from every sibling page.
   const startInBase = currentIdx < 0 ? 0 : currentIdx % base.length;
   const all = base.map((_, i) => base[(startInBase + i) % base.length]);
-  // Sequential prev/next over the full source (wrapping) — always present regardless
-  // of the sparse prevSlug/nextSlug data fields, so no detail page is a dead end.
-  const prev = currentIdx < 0 ? null : source[(currentIdx - 1 + source.length) % source.length];
-  const next = currentIdx < 0 ? null : source[(currentIdx + 1) % source.length];
   return (
     <section style={{ background: "#ffffff", padding: "40px 0 40px" }}>
       {/* Header row */}
@@ -1105,60 +960,13 @@ function CaseStudyExploreMore({ current, mode }: { current: string; mode?: "app"
           {all.map((cs) => {
             const tags = cs.serviceType.split("|").map((t) => t.trim());
             const stat = cs.stats[0];
+            const railVideo = mode === "app" ? undefined : CASE_STUDY_VIDEOS[cs.slug];
             return (
               <Link key={cs.slug} href={`/case-studies/${cs.slug}`} className="cs-explore-card" draggable={false} style={{ display: "block", width: "356px", height: "494px", flexShrink: 0, background: "#FBF7ED", borderRadius: "20px", overflow: "hidden", textDecoration: "none" }}>
                 {/* Image */}
                 <div className="cs-explore-card-img" style={{ position: "relative", width: "340px", height: "372px", background: "#e8e8e8", margin: "8px", borderRadius: "14px", overflow: "hidden", flexShrink: 0 }}>
-                  {mode === "klaviyo" && cs.slug === "andrea-maack-klaviyo-email" ? (
-                    <SpeedVideo src="/images/Case%20studies/Andrea%20Maack%20Klaviyo%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : mode === "klaviyo" && cs.slug === "living-in-sunshine-klaviyo-email" ? (
-                    <SpeedVideo src="/images/Case%20studies/Living%20in%20Sunshine%20Klaviyo%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : mode === "klaviyo" && cs.slug === "cecraft-klaviyo-email" ? (
-                    <SpeedVideo src="/images/Case%20studies/Cande%20Klaviyo%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : (mode === "app" || mode === "klaviyo") ? (
-                    <Image src={cs.heroImage} overrideSrc={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" sizes="356px" />
-                  ) : cs.slug === "111skin-shopify-cro-redesign" ? (
-                    <video src="/images/Case%20studies/111skin%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "evie-lou-shopify-fashion-cro" ? (
-                    <video src="/images/Case%20studies/evie-lou%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "happy-mammoth-shopify-subscriptions-cro" ? (
-                    <video src="/images/Case%20studies/happy-mammoth-video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "candy-kittens-shopify-food-beverage-cro" ? (
-                    <video src="/images/Case%20studies/Candy%20Kittens%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "everlast-shopify-plus-sports-redesign" ? (
-                    <video src="/images/Case%20studies/Everlast%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "ronaldo-jewelry-shopify-plus-redesign" ? (
-                    <SpeedVideo src="/images/Case%20studies/Ronaldo%20Jewelry-video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "mouldings-one-shopify-b2b-portal" ? (
-                    <SpeedVideo src="/images/Case%20studies/Mouldings%20One%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "wild-shopify-plus-subscriptions" ? (
-                    <video src="/images/Case%20studies/WeareWild%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "dryrobe-shopify-plus-redesign" ? (
-                    <video src="/images/Case%20studies/dryrobe%20video%20test.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "loop-earplugs-shopify-landing-page-cro" ? (
-                    <video src="/images/Case%20studies/Loop%20Earplugs%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "sneak-energy-shopify-redesign" ? (
-                    <video src="/images/Case%20studies/Sneak%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "capelli-sports-shopify-migration" ? (
-                    <video src="/images/Case%20studies/Capelli%20Sports%20test%20video-2.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "john-hardy-shopify-plus-migration" ? (
-                    <video src="/images/Case%20studies/John%20Hardy%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "saddleback-shopify-plus-b2b" ? (
-                    <video src="/images/Case%20studies/Saddleback%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "this-works-shopify-plus-migration" ? (
-                    <video src="/images/Case%20studies/This%20Works%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "twillory-shopify-cro" ? (
-                    <video src="/images/Case%20studies/Twillory%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "neom-wellbeing-shopify-upgrade" ? (
-                    <video src="/images/Case%20studies/NEOM%20Wellbeing%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "vithit-shopify-plus-d2c" ? (
-                    <video src="/images/Case%20studies/VITHIT%20video%202.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "feetures-shopify-theme-development" ? (
-                    <video src="/images/Case%20studies/Feetures%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "chlobo-shopify-plus-migration" ? (
-                    <video src="/images/Case%20studies/ChloBo%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  ) : cs.slug === "henchman-shopify-plus-b2b" ? (
-                    <video src="/images/Case%20studies/Henchman%20video.mp4" autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  {railVideo ? (
+                    <LazyAutoplayVideo src={railVideo} poster={posterFor(railVideo)} rate={mode === "klaviyo" || SPEED_VIDEO_SLUGS.has(cs.slug) ? 1.5 : undefined} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
                     <Image src={cs.heroImage} overrideSrc={cs.heroImage} alt={cs.brandName} fill className="object-cover" loading="lazy" sizes="356px" />
                   )}
@@ -1207,25 +1015,6 @@ function CaseStudyExploreMore({ current, mode }: { current: string; mode?: "app"
           View All Work
         </Link>
       </div>
-
-      {/* Sequential prev / next — crawlable links that chain every detail page into
-          one path (wrapping over the full set), so no case study is a dead end. */}
-      {(prev || next) && (
-        <nav aria-label="Case study navigation" className="cs-explore-prevnext" style={{ maxWidth: "1320px", margin: "48px auto 0", padding: "0 24px", display: "flex", justifyContent: "space-between", gap: "16px", borderTop: "1px solid rgba(0,0,0,0.08)", paddingTop: "28px" }}>
-          {prev ? (
-            <Link href={`/case-studies/${prev.slug}`} className="cs-prevnext-link" style={{ display: "flex", flexDirection: "column", gap: "4px", textDecoration: "none", maxWidth: "48%" }}>
-              <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#4a7c59", letterSpacing: "0.06em", textTransform: "uppercase" }}>← Previous case study</span>
-              <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "18px", fontWeight: 700, color: "#000000", lineHeight: 1.3 }}>{prev.brandName}</span>
-            </Link>
-          ) : <span />}
-          {next ? (
-            <Link href={`/case-studies/${next.slug}`} className="cs-prevnext-link" style={{ display: "flex", flexDirection: "column", gap: "4px", textDecoration: "none", maxWidth: "48%", textAlign: "right", alignItems: "flex-end" }}>
-              <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "12px", fontWeight: 600, color: "#4a7c59", letterSpacing: "0.06em", textTransform: "uppercase" }}>Next case study →</span>
-              <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "18px", fontWeight: 700, color: "#000000", lineHeight: 1.3 }}>{next.brandName}</span>
-            </Link>
-          ) : <span />}
-        </nav>
-      )}
 
       <style dangerouslySetInnerHTML={{ __html: `
         .cs-explore-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
