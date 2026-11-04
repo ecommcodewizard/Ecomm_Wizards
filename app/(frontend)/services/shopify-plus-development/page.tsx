@@ -10,7 +10,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
-  "Shopify Plus development agency with 150+ enterprise stores built. Custom checkout extensions, B2B portals, ERP integrations, zero-downtime migrations.";
+  "Shopify Plus development agency with 75+ enterprise stores built. Custom checkout extensions, B2B portals, ERP integrations, zero-downtime migrations.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-plus-development";
 
 export const metadata: Metadata = {
@@ -226,7 +226,7 @@ const FAQS = [
   },
   {
     q: "Why hire a Shopify Plus development agency instead of a freelancer?",
-    a: "A Shopify Plus project covers frontend development, React-based checkout extensions, API integrations, Shopify Flow automation, B2B configuration, and load testing. A freelancer typically covers one or two of those areas. When you hire a Shopify Plus development agency, you get all of them under one brief, one timeline, and one point of accountability. Our Shopify Plus developers have completed 150+ Plus projects. You are not our first.",
+    a: "A Shopify Plus project covers frontend development, React-based checkout extensions, API integrations, Shopify Flow automation, B2B configuration, and load testing. A freelancer typically covers one or two of those areas. When you hire a Shopify Plus development agency, you get all of them under one brief, one timeline, and one point of accountability. Our Shopify Plus developers have completed 75+ Plus projects. You are not our first.",
   },
   {
     q: "What should you look for when comparing Shopify Plus agencies?",
@@ -299,7 +299,7 @@ export default function Page() {
             </p>
             <div className="std-hero-stats">
               {[
-                { number: "150+",   label: "Plus Stores Built" },
+                { number: "75+",    label: "Plus Stores Built" },
                 { number: "$400M+", label: "Revenue Generated" },
                 { number: "28.5%",  label: "Avg Conversion Lift" },
                 { number: "4.9★",   label: "Client Rating" },
@@ -344,7 +344,7 @@ export default function Page() {
             The World&apos;s Fastest-Growing Brands Trust Ecomm Wizards
           </h2>
           <p className="text-center" style={{ color: C_TEXT, fontSize: 16, lineHeight: "26px", margin: "10px 0 0", textAlign: "center" }}>
-            150+ Shopify Plus store development projects completed. $400M+ in client revenue generated. From DTC challengers to global enterprise brands.
+            75+ Shopify Plus store development projects completed. $400M+ in client revenue generated. From DTC challengers to global enterprise brands.
           </p>
 
           <div className="std-trust-carousel" style={{ marginTop: 20, width: "100%", overflow: "hidden" }}>
@@ -470,7 +470,7 @@ export default function Page() {
           </h2>
 
           <p className="spd-why-desc">
-            We have built 150+ Shopify Plus stores and helped clients generate over $400M in revenue. Here is what makes us<br className="std-why-desc-br" /> the right Plus development agency for brands that cannot afford to get this wrong:
+            We have built 75+ Shopify Plus stores and helped clients generate over $400M in revenue. Here is what makes us<br className="std-why-desc-br" /> the right Plus development agency for brands that cannot afford to get this wrong:
           </p>
 
           <div className="spd-why-grid">
