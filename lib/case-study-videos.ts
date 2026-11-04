@@ -25,6 +25,8 @@ export const CASE_STUDY_VIDEOS: Record<string, string> = {
   "feetures-shopify-theme-development": "/images/Case%20studies/Feetures%20video.mp4",
   "chlobo-shopify-plus-migration": "/images/Case%20studies/ChloBo%20video.mp4",
   "henchman-shopify-plus-b2b": "/images/Case%20studies/Henchman%20video.mp4",
+  // The Series 2 Flip film, re-encoded to a 960px loop with no audio track.
+  "chillys-headless-commerce-layer": "/images/Case%20studies/Chillys%20Headless%20video.mp4",
   // The one creative-strategy study with a preview video, so it is the one
   // entry living outside /images/Case studies/. posterFor still resolves it:
   // the replace targets the LAST path segment before the filename, which is
