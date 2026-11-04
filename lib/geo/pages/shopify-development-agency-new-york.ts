@@ -156,6 +156,10 @@ export const SHOPIFY_DEV_NEW_YORK: GeoPage = {
     "shopify experts new york",
     "ongoing shopify maintenance new york",
     "shopify agency vs freelancer new york",
+    // v5 §3.4 (Ahrefs 30/mo), in the development FAQ answer. v5's other term,
+    // "shopify developer new york" (80/mo), has no home that does not read as
+    // a keyword; "shopify website developers new york" already serves it.
+    "shopify development agency new york",
   ],
   faqKeywords: [
     "how to choose a shopify agency",
@@ -571,7 +575,7 @@ export const SHOPIFY_DEV_NEW_YORK: GeoPage = {
     {
       question: "Do you provide Shopify development in New York?",
       answer:
-        "Yes. We're a Shopify agency New York brands hire for development, design, SEO, creative and retention. The whole team works remotely, so there's no office to visit and we don't claim one. You get a named contact in a shared channel, and cover through Eastern business hours.",
+        "Yes. We're the Shopify development agency New York brands hire for builds, design, SEO, creative and retention. The whole team works remotely. There's no office to visit, and we don't claim one. You get a named contact in a shared channel, and cover through Eastern business hours.",
       unique: false,
     },
     {

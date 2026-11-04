@@ -220,7 +220,10 @@ export const SHOPIFY_DEV_ORANGE_COUNTY: GeoPage = {
   // ── SEO ────────────────────────────────────────────────────────────────
   targetKeyword: "shopify agency orange county",
   // Primary-only. Inventory v4.0, California #6: "No usable secondary exists."
-  secondaryKeywords: [],
+  // v5 §3.4 (Ahrefs 90/mo). Asked as a question and answered honestly: no.
+  // "shopify website developer orange county" (50/mo) has no natural home and
+  // Google reads it as the same search; skipped rather than forced.
+  secondaryKeywords: ["orange county shopify developer"],
   faqKeywords: [
     "hide dealer pricing from search engines shopify",
     "does wholesale need a separate shopify store",
@@ -638,9 +641,9 @@ export const SHOPIFY_DEV_ORANGE_COUNTY: GeoPage = {
     // qualifying question buyers ask beside the head term. Last on purpose,
     // because a human reading top to bottom wants the real answers first.
     {
-      question: "Do you provide Shopify development in Orange County?",
+      question: "Are you an Orange County Shopify developer?",
       answer:
-        "Yes, though nobody here is local. The work is remote anyway: your dealer side gets built and tested, not talked through in a room. We do it for brands across the state.",
+        "Not a local one: nobody here is in the county. The work is remote anyway: your dealer side gets built and tested, not talked through in a room. We do it for brands across the state.",
       unique: true,
     },
   ],

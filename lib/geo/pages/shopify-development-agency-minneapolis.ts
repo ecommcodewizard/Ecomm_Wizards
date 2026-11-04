@@ -127,7 +127,9 @@ export const SHOPIFY_DEV_MINNEAPOLIS: GeoPage = {
 
   // ── SEO ────────────────────────────────────────────────────────────────
   targetKeyword: "shopify agency minneapolis",
-  secondaryKeywords: [],
+  // v5 §3.4 (Ahrefs 60/mo). Placed in the existing-developer FAQ, where it
+  // describes the reader's own developer, so it carries no presence claim.
+  secondaryKeywords: ["minneapolis shopify developer"],
   faqKeywords: [
     "is clothing taxable in minnesota",
     "how do i set up sales tax on shopify",
@@ -465,7 +467,7 @@ export const SHOPIFY_DEV_MINNEAPOLIS: GeoPage = {
       unique: true,
     },
     {
-      question: "Can you work with our existing developer?",
+      question: "Can you work with our existing Minneapolis Shopify developer?",
       answer:
         "Usually, and often it is the quickest route. We can scope and hand over, or take the parts nobody on your team has time for. We will not quietly replace somebody doing a decent job.",
       unique: true,

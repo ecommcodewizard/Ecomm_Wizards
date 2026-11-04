@@ -185,6 +185,9 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
     "los angeles shopify development company",
     "los angeles shopify expert",
     "shopify website design los angeles",
+    // v5 §3.4 (Ahrefs 150/mo). Written as the reader's search, answered with
+    // what they actually get: a named remote developer, not a local office.
+    "los angeles shopify developer",
   ],
   faqKeywords: [
     "shopify development in los angeles",
@@ -773,7 +776,7 @@ export const SHOPIFY_DEV_LOS_ANGELES: GeoPage = {
     {
       question: "Do you provide Shopify development in Los Angeles?",
       answer:
-        "Yes, and your project runs remotely. We are the Shopify agency Los Angeles brands work with across the metro and wider California.",
+        "Yes, and your project runs remotely. We are the Shopify agency Los Angeles brands work with across the metro and wider California. Want a Los Angeles Shopify developer you can reach fast? Nobody sits down the road. You get one named developer in your channel. They reply within a working day.",
       unique: true,
     },
     {
