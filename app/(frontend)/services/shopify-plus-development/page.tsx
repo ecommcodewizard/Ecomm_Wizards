@@ -218,7 +218,7 @@ const BREADCRUMB_SCHEMA = {
 const FAQS = [
   {
     q: "How much does Shopify Plus development cost?",
-    a: "Cost depends on scope: what you need built, how many integrations are involved, and whether it is a full store build or targeted enhancements. A custom checkout extension or Flow automation build starts from £3,000. A full Shopify Plus store build or migration from Magento or WooCommerce starts from £15,000. We work on fixed-price quotes, not hourly rates. Send us your requirements and we will return a detailed estimate within 24 hours.",
+    a: "Cost depends on scope: what you need built, how many integrations are involved, and whether it is a full store build or targeted enhancements such as a checkout extension or a Flow automation. Every project is quoted to its scope. We work on fixed-price quotes, not hourly rates. Send us your requirements and we will return a detailed estimate within 24 hours.",
   },
   {
     q: "How long does a Shopify Plus development project take?",
@@ -227,6 +227,10 @@ const FAQS = [
   {
     q: "Why hire a Shopify Plus development agency instead of a freelancer?",
     a: "A Shopify Plus project covers frontend development, React-based checkout extensions, API integrations, Shopify Flow automation, B2B configuration, and load testing. A freelancer typically covers one or two of those areas. When you hire a Shopify Plus development agency, you get all of them under one brief, one timeline, and one point of accountability. Our Shopify Plus developers have completed 150+ Plus projects. You are not our first.",
+  },
+  {
+    q: "What should you look for when comparing Shopify Plus agencies?",
+    a: "Ask each agency to show you Plus stores they built and what changed after launch, not just a wall of logos. Check that they build checkout extensions and Shopify Functions themselves instead of reselling apps, and that they can handle your integrations: ERP, 3PL, and B2B. Get the scope and timeline in writing before you sign. Then ask who owns the code when the project ends. The answer should be you.",
   },
   {
     q: "When should I upgrade to Shopify Plus?",
