@@ -27,6 +27,10 @@ export const CASE_STUDY_VIDEOS: Record<string, string> = {
   "henchman-shopify-plus-b2b": "/images/Case%20studies/Henchman%20video.mp4",
   // The Series 2 Flip film, re-encoded to a 960px loop with no audio track.
   "chillys-headless-commerce-layer": "/images/Case%20studies/Chillys%20Headless%20video.mp4",
+  // Supplied at 3.7 MB with audio; re-encoded to a 960px loop, no audio, 1.6 MB.
+  "daring-headless-shopify-hydrogen": "/images/Case%20studies/Daring%20video.mp4",
+  // Portrait (540x960), cropped by the landscape slots. Re-encoded, no audio.
+  "denim-tears-headless-shopify-hydrogen": "/images/Case%20studies/Denim%20Tears%20video.mp4",
   // The one creative-strategy study with a preview video, so it is the one
   // entry living outside /images/Case studies/. posterFor still resolves it:
   // the replace targets the LAST path segment before the filename, which is

@@ -1961,6 +1961,197 @@ export const CASE_STUDIES: CaseStudy[] = [
     prevSlug: "henchman-shopify-plus-b2b",
     prevBrand: "Henchman",
   },
+
+  // ─── 23. DARING — Headless Shopify (Hydrogen) ───
+  // Figures and brief supplied by the owner on 2026-11-04. The ~12-week
+  // duration was given as a planning estimate, so it is not stated as fact.
+  // Testimonial supplied by the owner on 2026-11-05.
+  {
+    slug: "daring-headless-shopify-hydrogen",
+    studyKind: "Headless Shopify",
+    brandName: "Daring",
+    industry: "Food & Beverages",
+    serviceType: "Headless Shopify | Shopify Plus | Mobile-First UX",
+    heroMetric: "+38%",
+    heroSubMetric: "Conversion Rate",
+    heroImage: "/images/Case%20studies/Daring%20hero.webp",
+    heroDescription:
+      "How Daring, the plant-based chicken brand, moved to a headless Shopify Plus storefront built on Hydrogen. Product discovery, recipes, brand storytelling, and checkout now live in one fast, mobile-first experience, with conversion rate up 38% and pages loading 42% faster.",
+    metaDescription: "Daring moved to a headless Shopify Plus storefront on Hydrogen: 38% higher conversion rate, 42% faster page loads, and 27% higher average order value.",
+    metaTitle: "Daring Headless Shopify Case Study | +38% Conversion Rate",
+    heroImageAlt: "Daring plant chicken packs in breaded, Cajun, original and lemon herb flavours beside plated dishes",
+    videoAlt: "Daring brand film: plant chicken cooked on a grill and served in tacos and salads",
+    workImageAlts: [
+      "Daring Breaded Plant Chicken Pieces pack on a blue background",
+      "Daring range of plant chicken packs, including teriyaki, buffalo and Cajun",
+      "Breaded Daring plant chicken lifted from an air fryer beside the pack",
+      "Daring plant chicken bowls in spicy fajita, teriyaki and harvest flavours",
+    ],
+    stats: [
+      { label: "Higher Conversion Rate", value: "+38%", shortLabel: "Conversion" },
+      { label: "Faster Page Load Time", value: "-42%", shortLabel: "Load Time" },
+      { label: "Higher Average Order Value", value: "+27%", shortLabel: "AOV" },
+      { label: "More Mobile Conversions", value: "+31%", shortLabel: "Mobile" },
+    ],
+    challengeTitle: "A Growing Food Brand That Needed More Than a Store",
+    challengeBody:
+      "Daring makes plant-based chicken that cooks and tastes like the real thing. As the brand grew, its online presence had to do more than list products: it had to tell the plant-based story, teach people how to cook with it, and inspire them with recipes, all while making it easy to buy.\n\nThat called for a flexible ecommerce experience. Daring wanted a modern, content-rich storefront with faster navigation, better product discovery, and a smoother shopping journey on every device, without the brand story and the shop feeling like two separate websites.",
+    approachTitle: "One Headless Storefront for Story and Sale.",
+    approachItems: [
+      {
+        step: 1,
+        title: "Headless Shopify Architecture",
+        desc: "We kept Shopify Plus as the commerce engine and built the storefront headless with Hydrogen and React. Products, carts, and checkout run through Shopify, while the custom frontend is free to present the brand exactly as Daring wants, with custom integrations connecting the rest of the stack.",
+      },
+      {
+        step: 2,
+        title: "Custom Storefront for Product Discovery",
+        desc: "Product discovery, brand storytelling, and recipes were brought into one cohesive experience, so a customer reading a recipe is one step from the products in it. Engagement with product discovery rose 34% and bounce rate fell 26%.",
+      },
+      {
+        step: 3,
+        title: "Mobile-First UX",
+        desc: "Every page was designed for the phone first. Browsing, choosing products, and checking out are easier on small screens, the storefront scores 92/100 for mobile performance, and mobile conversions rose 31%.",
+      },
+      {
+        step: 4,
+        title: "Performance and a Conversion-Focused Journey",
+        desc: "The optimised frontend loads the homepage in 1.8 seconds, 42% faster than before. A streamlined path from browsing to checkout lifted checkout completion by 19%, and better product presentation and cross-selling raised average order value 27%.",
+      },
+    ],
+    workTitle: "Inside the Daring Build",
+    workSubtitle: "A headless Shopify Plus storefront on Hydrogen, built mobile-first.",
+    workImages: [
+      "/images/Case%20studies/Daring%201.webp",
+      "/images/Case%20studies/Daring%202.webp",
+      "/images/Case%20studies/Daring%203.webp",
+      "/images/Case%20studies/Daring%204.webp",
+    ],
+    results: [
+      { label: "Higher Conversion Rate", improvement: "38%" },
+      { label: "Faster Page Loads", improvement: "42%" },
+      { label: "Increase in AOV", improvement: "27%" },
+      { label: "More Mobile Conversions", improvement: "31%" },
+    ],
+    resultsDescription:
+      "A streamlined shopping journey and better product discovery cut the friction between browsing and checkout, lifting conversion rate 38%. The headless architecture and optimised frontend made pages load 42% faster. Better product presentation and cross-selling raised average order value 27%, and the mobile-first experience delivered 31% more mobile conversions.",
+    techStack: [
+      { name: "Shopify Plus", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
+      { name: "Hydrogen", logo: "/images/Hydrogen%20logo%20icon%20svg.webp" },
+    ],
+    sliderStats: [
+      "Homepage load time 1.8 seconds",
+      "Mobile performance score 92/100",
+      "Product discovery engagement up 34%",
+      "Bounce rate down 26%",
+      "Checkout completion up 19%",
+      "Returning customer rate up 22%",
+    ],
+    quote:
+      "We wanted an e-commerce experience that reflected the quality of our brand while making it easier for customers to discover our products and shop. The Ecomm Wizards team understood our vision and delivered a headless Shopify experience that gave us greater flexibility, improved performance, and a smoother customer journey. Their attention to detail and understanding of e-commerce made the entire process straightforward.",
+    quotePerson: "Ross Mackay",
+    quoteRole: "Co-Founder, Daring",
+    quoteAvatar: "/images/Case%20studies/Ross%20Mackay%20Daring.jpg",
+    prevSlug: "chillys-headless-commerce-layer",
+    prevBrand: "Chilly's",
+  },
+
+  // ─── 24. DENIM TEARS — Headless Shopify (Hydrogen + Sanity) ───
+  // Brief and figures supplied by the owner on 2026-11-05. The owner confirmed
+  // the build was ours, delivered in an earlier phase: the live site now runs a
+  // Liquid theme, so the copy is written in the past tense and never describes
+  // the current site. Global-E is left out of the claims because the brief
+  // marked its integration ownership as unverified.
+  {
+    slug: "denim-tears-headless-shopify-hydrogen",
+    studyKind: "Headless Shopify",
+    brandName: "Denim Tears",
+    industry: "Fashion & Apparel",
+    serviceType: "Headless Shopify | Hydrogen | Sanity CMS",
+    heroMetric: "+38%",
+    heroSubMetric: "Conversion Rate",
+    heroImage: "/images/Case%20studies/Denim%20Tears%20hero.webp",
+    heroDescription:
+      "During an earlier phase of the brand's growth, we built Denim Tears a headless Shopify storefront on Hydrogen and Oxygen, with a custom React frontend and Sanity CMS. Editorial content, product discovery, and commerce worked as one, with conversion rate up 38% and pages loading 45% faster.",
+    metaDescription: "We built Denim Tears a headless Shopify storefront on Hydrogen with Sanity CMS: 38% higher conversion rate, 45% faster page loads, and 24% higher AOV.",
+    metaTitle: "Denim Tears Headless Shopify Case Study | +38% Conversion Rate",
+    heroImageAlt: "Denim Tears storefront homepage with the brand name over a lakeside photo of a figure in an orange cotton wreath suit",
+    videoAlt: "adidas and Denim Tears campaign film showing a woven installation on a New York street",
+    workImageAlts: [
+      "Denim Tears denim collection page with cotton wreath jeans, shorts and jackets",
+      "Models in Denim Tears cotton wreath knitwear and denim on a runway",
+      "Denim Tears retail space with red striped walls and cotton wreath murals",
+      "Denim Tears retail display of cotton wreath denim on brick shelving",
+    ],
+    stats: [
+      { label: "Higher Conversion Rate", value: "+38%", shortLabel: "Conversion" },
+      { label: "Faster Page Load Time", value: "-45%", shortLabel: "Load Time" },
+      { label: "More Mobile Conversions", value: "+29%", shortLabel: "Mobile" },
+      { label: "Higher Average Order Value", value: "+24%", shortLabel: "AOV" },
+    ],
+    challengeTitle: "A Storefront That Had to Carry a Story",
+    challengeBody:
+      "Denim Tears is a fashion label built on storytelling. Its collections carry cultural history, and the context behind each piece matters as much as the piece itself.\n\nThe brand needed an online experience that reflected that identity. The goal was an immersive storefront where editorial content, product discovery, and commerce worked together, without the storytelling slowing the store down or the shopping getting in the way of the story.",
+    approachTitle: "Editorial and Commerce, Built as One.",
+    approachItems: [
+      {
+        step: 1,
+        title: "Headless Shopify on Hydrogen and Oxygen",
+        desc: "We built the storefront headless, with Shopify handling products, carts, and checkout, and Hydrogen and Oxygen powering a custom frontend. That separation gave the brand full creative control over every page without giving up Shopify's commerce engine.",
+      },
+      {
+        step: 2,
+        title: "Custom React Storefront and Editorial Product Pages",
+        desc: "Product pages were designed as editorial pages, with interactive visual elements that let each collection tell its story. Collection archives kept past releases browsable, and product discovery engagement rose 32%.",
+      },
+      {
+        step: 3,
+        title: "Sanity CMS Integration",
+        desc: "Sanity gave the Denim Tears team a flexible way to manage content and experiment with different storefront experiences without a developer for every change. Editorial and commerce content lived in one workflow.",
+      },
+      {
+        step: 4,
+        title: "Mobile-First Performance",
+        desc: "The storefront was optimised for speed on every device. The homepage loaded in 1.7 seconds and scored 94/100 for mobile performance, add-to-cart rate rose 21%, and checkout completion improved 18%.",
+      },
+    ],
+    workTitle: "Inside the Denim Tears Build",
+    workSubtitle: "A headless Shopify storefront on Hydrogen with Sanity CMS.",
+    workImages: [
+      "/images/Case%20studies/Denim%20Tears%20work%201.webp",
+      "/images/Case%20studies/Denim%20Tears%20work%202.webp",
+      "/images/Case%20studies/Denim%20Tears%20work%203.webp",
+      "/images/Case%20studies/Denim%20Tears%20work%204.webp",
+    ],
+    results: [
+      { label: "Increase in Conversion Rate", improvement: "38%" },
+      { label: "Faster Page Loads", improvement: "45%" },
+      { label: "More Mobile Conversions", improvement: "29%" },
+      { label: "Increase in AOV", improvement: "24%" },
+    ],
+    resultsDescription:
+      "A more intuitive shopping experience made it easier to explore collections, discover products, and complete a purchase, lifting conversion rate 38%. Frontend optimisation and a streamlined architecture made key pages load 45% faster. The mobile-first experience delivered 29% more mobile conversions, and better collection presentation raised average order value 24%.",
+    techStack: [
+      { name: "Shopify", logo: "/images/Shopify_864c7bb4-97c4-4c50-9f89-9e84042003b9-2.svg" },
+      { name: "Hydrogen", logo: "/images/Hydrogen%20logo%20icon%20svg.webp" },
+    ],
+    sliderStats: [
+      "Mobile performance score 94/100",
+      "Homepage load time 1.7 seconds",
+      "Product discovery engagement up 32%",
+      "Add-to-cart rate up 21%",
+      "Checkout completion up 18%",
+      "Returning customer rate up 16%",
+    ],
+    // Owner confirmed Tremaine Emory approved this quote on 2026-11-05.
+    quote:
+      "We wanted an online experience that felt true to Denim Tears and gave our customers a better way to engage with the brand. Ecomm Wizards understood the importance of our creative vision and brought it into the shopping experience. The team was thoughtful in their approach, attentive to detail, and focused on making the experience work just as well for our customers as it did for the brand.",
+    quotePerson: "Tremaine Emory",
+    quoteRole: "Founder, Denim Tears",
+    quoteAvatar: "/images/Case%20studies/Tremaine%20Emory%20Denim%20Tears.jpg",
+    prevSlug: "daring-headless-shopify-hydrogen",
+    prevBrand: "Daring",
+  },
 ];
 
 export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {

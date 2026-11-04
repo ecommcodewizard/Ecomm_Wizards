@@ -45,12 +45,33 @@ function CardMedia({ cs, index }: { cs: CaseStudy; index: number }) {
   );
 }
 
-export default function CaseStudiesGrid({ studies }: { studies: CaseStudy[] }) {
+// Fisher-Yates; returns a new array.
+function shuffle<T>(items: T[]): T[] {
+  const a = [...items];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+export default function CaseStudiesGrid({ studies: source }: { studies: CaseStudy[] }) {
   const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
+  // Random order per visit. Shuffled after mount, not on the server: the CDN
+  // caches this page's HTML, so a server shuffle would freeze one order for
+  // everyone, and a render-time shuffle would mismatch hydration.
+  const [studies, setStudies] = useState(source);
+  const sourceKey = source.map((s) => s.slug).join(",");
 
   useEffect(() => {
-    setVisibleCount(INITIAL_COUNT);
-  }, [studies.length]);
+    const id = requestAnimationFrame(() => {
+      setStudies(shuffle(source));
+      setVisibleCount(INITIAL_COUNT);
+    });
+    return () => cancelAnimationFrame(id);
+    // sourceKey stands in for `source`, whose identity can change without its contents changing.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sourceKey]);
 
   const hasMore = visibleCount < studies.length;
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { CASE_STUDIES } from "@/lib/case-studies";
+import { CASE_STUDIES, type CaseStudy } from "@/lib/case-studies";
 import { APP_CASE_STUDIES } from "@/lib/shopify-app-studies";
 import { KLAVIYO_CASE_STUDIES } from "@/lib/klaviyo-studies";
 import CaseStudiesGrid from "./CaseStudiesGrid";
@@ -68,8 +68,11 @@ const HERO_LOGOS = [
   "/images/Case%20studies/logos/Everlast.png",
 ];
 
+// "headless" is a build-type filter rather than an industry; it matches on
+// serviceType/studyKind (see filteredStudies below).
 const INDUSTRY_FILTERS = [
   { label: "All", value: "all" },
+  { label: "Headless", value: "headless" },
   { label: "Fashion", value: "Fashion & Apparel" },
   { label: "Beauty", value: "Cosmetics & Beauty" },
   { label: "Health & Wellness", value: "Health, Wellness & Fitness" },
@@ -77,7 +80,10 @@ const INDUSTRY_FILTERS = [
   { label: "Sports", value: "Sports & Fitness" },
   { label: "Jewellery", value: "Jewelry & Accessories" },
   { label: "B2B", value: "B2B & Wholesale" },
+  { label: "Lifestyle", value: "Drinkware & Lifestyle" },
 ];
+
+const isHeadless = (cs: CaseStudy) => /headless/i.test(`${cs.serviceType} ${cs.studyKind ?? ""}`);
 
 const SHOPIFY_APP_CARDS = [
   {
@@ -286,10 +292,13 @@ export default async function CaseStudiesPage({
   searchParams: Promise<{ industry?: string }>;
 }) {
   const { industry: activeIndustry = "all" } = await searchParams;
+  // Display order is shuffled per visit in CaseStudiesGrid.
   const filteredStudies =
     activeIndustry === "all"
       ? CASE_STUDIES
-      : CASE_STUDIES.filter((cs) => cs.industry === activeIndustry);
+      : activeIndustry === "headless"
+        ? CASE_STUDIES.filter(isHeadless)
+        : CASE_STUDIES.filter((cs) => cs.industry === activeIndustry);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
