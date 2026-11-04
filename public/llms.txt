@@ -24,6 +24,9 @@ Key facts:
 - [POS Setup](https://ecommwizards.com/services/shopify-pos-setup): Shopify POS configuration to unify in-store and online retail.
 
 ## Case Studies
+- [Daring — Headless Shopify](https://ecommwizards.com/case-studies/daring-headless-shopify-hydrogen): A headless Shopify Plus storefront on Hydrogen lifted conversion rate 38%, cut page load time 42%, and raised average order value 27%.
+- [Denim Tears — Headless Shopify](https://ecommwizards.com/case-studies/denim-tears-headless-shopify-hydrogen): An editorial headless storefront on Hydrogen and Sanity CMS lifted conversion rate 38% and made pages load 45% faster.
+- [Chilly's — Headless Commerce](https://ecommwizards.com/case-studies/chillys-headless-commerce-layer): A headless rebuild on Commerce Layer made the store 42% faster, lifted conversion rate 28%, and cut running costs 31%.
 - [Saddleback — Shopify Plus B2B](https://ecommwizards.com/case-studies/saddleback-shopify-plus-b2b): +881% B2B sales growth and +704% traffic after a Shopify Plus B2B rebuild.
 - [Candy Kittens — Food & Beverage CRO](https://ecommwizards.com/case-studies/candy-kittens-shopify-food-beverage-cro): +182% conversion rate and +$8.1M new annual revenue.
 - [Ronaldo Jewelry — Shopify Plus Redesign](https://ecommwizards.com/case-studies/ronaldo-jewelry-shopify-plus-redesign): +250% total sales and +120% conversion rate.

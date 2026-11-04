@@ -7,6 +7,8 @@ import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/Case
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
+import { posterFor } from "@/lib/case-study-videos";
 
 const META_DESCRIPTION =
   "Headless Shopify agency for Hydrogen and Next.js. Commerce storefronts with sub-second load times and total design freedom. Book a free architecture call.";
@@ -14,7 +16,7 @@ const CANONICAL_URL = "https://ecommwizards.com/services/headless-shopify-agency
 
 export const metadata: Metadata = {
   title: { absolute: "Headless Shopify Agency | Hydrogen and Custom Storefronts" },
-  description: META_DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
@@ -59,10 +61,82 @@ const SHL_SLIDES: CaseStudySlide[] = [
     name: "Daniel Summerson",
     role: "Managing Director, Everlast Gyms",
   },
+  {
+    key: "daring",
+    image: "/images/Case%20studies/Daring%20hero.webp",
+    alt: "Daring plant chicken packs beside plated dishes",
+    metrics: ["+38% conversion rate", "42% faster pages", "+27% AOV"],
+    metaLabel: "Results:",
+    headline: (<>A headless <strong>Shopify Plus</strong> storefront on <strong>Hydrogen</strong> that lifted conversion rate <strong>38%</strong> for <strong>Daring</strong></>),
+    quote: (<>&ldquo;The Ecomm Wizards team understood our vision and delivered a headless Shopify experience that gave us <strong>greater flexibility, improved performance, and a smoother customer journey</strong>.&rdquo;</>),
+    avatar: "/images/Case%20studies/Ross%20Mackay%20Daring.jpg",
+    name: "Ross Mackay",
+    role: "Co-Founder, Daring",
+    href: "/case-studies/daring-headless-shopify-hydrogen",
+  },
+  {
+    key: "denim-tears",
+    image: "/images/Case%20studies/Denim%20Tears%20hero.webp",
+    alt: "Denim Tears storefront homepage",
+    metrics: ["+38% conversion rate", "45% faster pages", "+24% AOV"],
+    metaLabel: "Results:",
+    headline: (<>An editorial headless storefront on <strong>Hydrogen</strong> and <strong>Sanity</strong> that lifted conversion rate <strong>38%</strong> for <strong>Denim Tears</strong></>),
+    quote: (<>&ldquo;Ecomm Wizards understood the importance of our creative vision and brought it into the shopping experience. The team was <strong>thoughtful in their approach, attentive to detail</strong>, and focused on making the experience work just as well for our customers as it did for the brand.&rdquo;</>),
+    avatar: "/images/Case%20studies/Tremaine%20Emory%20Denim%20Tears.jpg",
+    name: "Tremaine Emory",
+    role: "Founder, Denim Tears",
+    href: "/case-studies/denim-tears-headless-shopify-hydrogen",
+  },
+  {
+    key: "chillys",
+    image: "/images/Case%20studies/Chillys%20Headless%20hero.webp",
+    alt: "Three Chilly's reusable bottles beside the Chilly's logo",
+    metrics: ["42% faster", "+28% conversion rate", "-31% running costs"],
+    metaLabel: "Results:",
+    headline: (<>A headless rebuild on <strong>Commerce Layer</strong> that made <strong>Chilly&apos;s</strong> store <strong>42% faster</strong> and 31% cheaper to run</>),
+    quote: (<>&ldquo;Moving to a headless setup on Commerce Layer gave us <strong>greater flexibility over the design, customer experience, and how we manage the store</strong>.&rdquo;</>),
+    avatar: "/images/Case%20studies/James%20Butterfield%20Chillys.jpg",
+    name: "James Butterfield",
+    role: "Founder, Chilly's Bottles",
+    href: "/case-studies/chillys-headless-commerce-layer",
+  },
 ];
 
 /* ── Case study cards ── */
 const SHL_CASE_STUDIES = [
+  {
+    brand: "Daring",
+    metric: "+38%",
+    metricLabel: "Conversion Rate",
+    tags: ["Headless Shopify", "Hydrogen", "Mobile-First"],
+    industry: "Food & Beverage",
+    image: "/images/Case%20studies/Daring%20hero.webp",
+    video: "/images/Case%20studies/Daring%20video.mp4",
+    href: "/case-studies/daring-headless-shopify-hydrogen",
+    description: "A headless Shopify Plus storefront on Hydrogen that brought recipes, brand storytelling, and product discovery into one experience. Conversion rate grew 38%, pages load 42% faster, and AOV rose 27%.",
+  },
+  {
+    brand: "Denim Tears",
+    metric: "+38%",
+    metricLabel: "Conversion Rate",
+    tags: ["Headless Shopify", "Hydrogen", "Sanity CMS"],
+    industry: "Fashion & Apparel",
+    image: "/images/Case%20studies/Denim%20Tears%20hero.webp",
+    video: "/images/Case%20studies/Denim%20Tears%20video.mp4",
+    href: "/case-studies/denim-tears-headless-shopify-hydrogen",
+    description: "An editorial headless storefront on Hydrogen and Sanity, built in an earlier phase, where storytelling and commerce worked as one. Conversion rate grew 38% and pages loaded 45% faster.",
+  },
+  {
+    brand: "Chilly's",
+    metric: "42%",
+    metricLabel: "Faster Load Time",
+    tags: ["Headless", "Commerce Layer", "Custom Frontend"],
+    industry: "Drinkware & Lifestyle",
+    image: "/images/Case%20studies/Chillys%20Headless%20hero.webp",
+    video: "/images/Case%20studies/Chillys%20Headless%20video.mp4",
+    href: "/case-studies/chillys-headless-commerce-layer",
+    description: "A headless rebuild on Commerce Layer with 12 custom page templates no theme could produce. The store loads 42% faster, converts 28% better, and costs 31% less to run.",
+  },
   {
     brand: "Everlast",
     metric: "+152%",
@@ -73,39 +147,6 @@ const SHL_CASE_STUDIES = [
     video: "/images/Case%20studies/Everlast%20video.mp4",
     href: "/case-studies/everlast-shopify-plus-sports-redesign",
     description: "A performance-first Shopify Plus rebuild for one of the world's most recognized sportswear brands. Custom PLPs, a trade portal, and sub-2s load times. Conversion rate grew 152% and trade portal revenue beat projections by 40%.",
-  },
-  {
-    brand: "Dryrobe",
-    metric: "+89%",
-    metricLabel: "Online Revenue",
-    tags: ["Custom Storefront", "Internationalization", "Shopify Plus"],
-    industry: "Fashion & Apparel",
-    image: "/images/Case%20studies/Dryrobe%20hero%20section.webp",
-    video: "/images/Case%20studies/dryrobe%20video.mp4",
-    href: "/case-studies/dryrobe-shopify-plus-redesign",
-    description: "We consolidated three separate stores into one international Shopify Plus build with a custom product finder and brand storytelling woven into the architecture. Online revenue grew 89% in the first year.",
-  },
-  {
-    brand: "Sneak Energy",
-    metric: "+68%",
-    metricLabel: "Mobile Conversion",
-    tags: ["Performance", "Mobile-First", "Custom Build"],
-    industry: "Food & Beverage",
-    image: "/images/Case%20studies/sneak-header-final.jpg",
-    video: "/images/Case%20studies/Sneak%20video.mp4",
-    href: "/case-studies/sneak-energy-shopify-redesign",
-    description: "A mobile-first rebuild for a high-growth energy drink brand, engineered for sub-3s load times on mobile. Mobile conversion rate grew 68% and the store now handles spiky launch-day traffic without slowing down.",
-  },
-  {
-    brand: "Capelli Sports",
-    metric: "+38%",
-    metricLabel: "Site Speed",
-    tags: ["Migration", "Performance", "Custom Theme"],
-    industry: "Sports & Fitness",
-    image: "/images/Case%20studies/Capelli%20Sports%20hero%20image.webp",
-    video: "/images/Case%20studies/Capelli%20Sports%20video.mp4",
-    href: "/case-studies/capelli-sports-shopify-migration",
-    description: "A global sportswear brand migrated from WordPress to Shopify with zero downtime and a performance-first frontend. Site speed improved 38%, conversion rate grew 24%, and 95% of SEO equity was preserved.",
   },
 ];
 
@@ -499,7 +540,7 @@ export default function Page() {
 
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginTop: "24px" }}>
               <Image src="/images/shopify-icon.svg" unoptimized alt="Shopify Partner" width={22} height={22} style={{ opacity: 0.8 }} />
-              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 500 }}>Shopify Plus Partner. Headless builds on Hydrogen and Next.js.</span>
+              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 500 }}>Headless builds on Hydrogen and Next.js.</span>
             </div>
           </div>
 
@@ -905,9 +946,9 @@ export default function Page() {
               <Link key={cs.brand} href={cs.href} className={`shl-cs-card${i === 3 ? " shl-cs-card-4th" : ""}`} style={{ display: "flex", flexDirection: "column", background: C_WHITE, borderRadius: "20px", overflow: "hidden", textDecoration: "none", border: "1px solid rgba(0,0,0,0.06)" }}>
                 <div style={{ position: "relative", width: "calc(100% - 16px)", margin: "8px 8px 0", borderRadius: "14px", overflow: "hidden", flexShrink: 0, aspectRatio: "16/10", background: "#e0ddd5" }}>
                   {cs.video ? (
-                    <video src={cs.video} autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    <LazyAutoplayVideo src={cs.video} poster={posterFor(cs.video)} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
-                    <Image src={cs.image} overrideSrc={cs.image} alt={`${cs.brand} headless Shopify case study`} fill className="shl-cs-card-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" priority={i === 0} />
+                    <Image src={cs.image} overrideSrc={cs.image} alt={`${cs.brand} headless case study`} fill className="shl-cs-card-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" priority={i === 0} />
                   )}
                   <div style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.97)", borderRadius: "9999px", padding: "5px 14px", display: "flex", alignItems: "center", gap: "8px" }}>
                     <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#000", display: "inline-block", flexShrink: 0 }} />
