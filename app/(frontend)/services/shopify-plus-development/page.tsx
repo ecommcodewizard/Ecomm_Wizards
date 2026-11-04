@@ -287,7 +287,7 @@ export default function Page() {
           style={{ maxWidth: "1320px", padding: "60px 20px" }}
         >
           <div>
-            <span className="std-badge">Certified Shopify Plus Partner Agency</span>
+            <span className="std-badge">Shopify Plus Partner Agency</span>
             <h1 className="std-hero-h1 font-bold mt-5" style={{ color: C_WHITE, fontSize: "48px", lineHeight: 1.15, margin: "20px 0 0" }}>
               <span style={{ background: "var(--brand-gradient)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                 Shopify Plus Development

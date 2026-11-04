@@ -304,7 +304,7 @@ export default function ShopifyAppDevelopmentPage() {
               </h2>
 
               <p className="sad-about-p">
-                Ecomm Wizards Apps is not a side project. It is a dedicated <b>Shopify app development company</b> built from within the Ecomm Wizards family, a Shopify Plus Preferred Partner with nearly a decade of ecommerce experience behind it.
+                Ecomm Wizards Apps is not a side project. It is a dedicated <b>Shopify app development company</b> built from within the Ecomm Wizards family, a Shopify Plus Partner Agency with nearly a decade of ecommerce experience behind it.
               </p>
 
               <p className="sad-about-p">
@@ -1378,14 +1378,14 @@ export default function ShopifyAppDevelopmentPage() {
                 <div className="sad-why-list">
                   <div className="sad-why-item" data-why="sad-why-1">
                     <label htmlFor="sad-why-1" className="sad-why-head">
-                      <span className="sad-why-title">Shopify Plus Preferred Partner</span>
+                      <span className="sad-why-title">Shopify Plus Partner Agency</span>
                       <span className="sad-why-ico" aria-hidden>
                         <svg className="sad-why-down" viewBox="0 0 32 32" width="18" height="18" fill="currentColor"><path d="M31.582 8.495c-0.578-0.613-1.544-0.635-2.153-0.059l-13.43 12.723-13.428-12.723c-0.61-0.578-1.574-0.553-2.153 0.059-0.579 0.611-0.553 1.576 0.058 2.155l14.477 13.715c0.293 0.277 0.67 0.418 1.047 0.418s0.756-0.14 1.048-0.418l14.477-13.715c0.611-0.579 0.637-1.544 0.058-2.155z" /></svg>
                         <svg className="sad-why-up"   viewBox="0 0 32 32" width="18" height="18" fill="currentColor"><path d="M26.915 10.844c0.451 0.451 0.451 1.162 0 1.613-0.436 0.436-1.162 0.436-1.597 0l-8.18-8.18v26.995c0 0.629-0.5 1.129-1.129 1.129s-1.146-0.5-1.146-1.129v-26.996l-8.164 8.18c-0.451 0.436-1.178 0.436-1.613 0-0.451-0.451-0.451-1.162 0-1.613l10.117-10.117c0.436-0.436 1.162-0.436 1.597 0l10.116 10.118z" /></svg>
                       </span>
                     </label>
                     <div className="sad-why-bodyc">
-                      <p>We do not just claim expertise. As a Shopify Plus Preferred Partner, we have been vetted by Shopify itself and trusted by some of the most demanding merchants on the platform.</p>
+                      <p>We do not just claim expertise. As a Shopify Plus Partner Agency, we have been vetted by Shopify itself and trusted by some of the most demanding merchants on the platform.</p>
                     </div>
                   </div>
 
