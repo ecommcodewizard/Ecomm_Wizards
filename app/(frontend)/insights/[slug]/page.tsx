@@ -459,6 +459,11 @@ const CSS = `
    white set on the cell, which rendered black text on the black header. Let
    anything inside a header cell take the cell's own colour. */
 .ar-main table th strong,.ar-main table th b,.ar-main table th em,.ar-main table th a{color:inherit}
+/* A table with no <th> (imported before the importer promoted header rows, or
+   built in the editor without toggling the header row) still gets its first
+   row styled as the header. */
+.ar-main table:not(:has(th)) tr:first-child>td{background:#0c0d0c;color:#fff;font-weight:600;font-size:15px;letter-spacing:-.01em}
+.ar-main table:not(:has(th)) tr:first-child>td :is(strong,b,em,a){color:inherit}
 .ar-main table tr:nth-child(even) td{background:#f6f8f7}
 .ar-main table p{margin:0}
 /* Lexical wraps tables in a scroll container; style it whatever it is called. */
