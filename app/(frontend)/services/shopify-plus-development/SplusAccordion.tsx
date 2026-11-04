@@ -15,7 +15,7 @@ const SOLUTIONS = [
     body: "We build native Checkout Extensions: upsells, gift messages, loyalty redemption, and branded UI inside the Shopify Plus checkout. No redirects, no third-party replacements. Higher AOV without added friction.",
   },
   {
-    title: "Headless and Composable Commerce",
+    title: "Shopify Plus Headless Commerce",
     body: "We build headless Shopify Plus stores via the Storefront API when performance or brand requirements go beyond standard themes. Shopify handles commerce; your front end is built exactly to spec.",
   },
   {
@@ -23,8 +23,8 @@ const SOLUTIONS = [
     body: "We configure Shopify Plus B2B: company profiles, segment pricing, net terms, and self-service wholesale portals. Trade buyers order without calling your team. B2B and DTC run from one admin.",
   },
   {
-    title: "Custom App and API Development",
-    body: "We build private Shopify apps, admin extensions, and API-driven features when the app store falls short. Custom pricing logic, operational workflows, and buyer experiences built directly into the platform.",
+    title: "Shopify Plus App Development and APIs",
+    body: "We build custom Shopify apps, admin extensions, and API-driven features when the app store falls short. Custom pricing logic, operational workflows, and buyer experiences built directly into the platform.",
   },
   {
     title: "ERP, CRM, and 3PL Integration",

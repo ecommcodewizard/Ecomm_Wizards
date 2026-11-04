@@ -156,6 +156,10 @@ export const SHOPIFY_DEV_NEW_YORK: GeoPage = {
     "shopify experts new york",
     "ongoing shopify maintenance new york",
     "shopify agency vs freelancer new york",
+    // v5 §3.4 (Ahrefs 30/mo), in the development FAQ answer. v5's other term,
+    // "shopify developer new york" (80/mo), has no home that does not read as
+    // a keyword; "shopify website developers new york" already serves it.
+    "shopify development agency new york",
   ],
   faqKeywords: [
     "how to choose a shopify agency",
@@ -468,7 +472,7 @@ export const SHOPIFY_DEV_NEW_YORK: GeoPage = {
   // apology: it is a fact the reader needs, not an argument for hiring us.
   whatWeDoAboutItHeading: "How we do it, and what it costs",
   whatWeDoAboutIt:
-    "Nothing gets quoted before it gets looked at. Week one is measurement: what you've got, what's costing you orders, and which of the six would move your number most. You keep that write-up either way.\n\nThen one number and one date, in writing, before anything starts. If you change the brief we requote in front of you rather than absorbing it and resenting it later.\n\nBuilds run $5,000 to $50,000 depending on how much is custom, and ongoing work is a retainer sized to real work rather than to a tier chart. We're not the cheapest quote you'll get. We'd rather be the one you don't have to manage.",
+    "Nothing gets quoted before it gets looked at. Week one is measurement: what you've got, what's costing you orders, and which of the six would move your number most. You keep that write-up either way.\n\nThen one number and one date, in writing, before anything starts. If you change the brief we requote in front of you rather than absorbing it and resenting it later.\n\nA build is priced on how much is custom, and ongoing work is a retainer sized to real work rather than to a tier chart. We're not the cheapest quote you'll get. We'd rather be the one you don't have to manage.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   proofHeading: "Stores we've built, and what changed",
@@ -535,7 +539,7 @@ export const SHOPIFY_DEV_NEW_YORK: GeoPage = {
     {
       question: "How much does a Shopify agency cost?",
       answer:
-        "Ours run $5,000 to $50,000 for a build, depending on how much you need custom, with ongoing work as a monthly retainer. We're rarely the cheapest Shopify agency New York brands quote, and we don't try to be.",
+        "It depends on how much you need custom: each build gets one fixed quote, with ongoing work as a monthly retainer. We're rarely the cheapest Shopify agency New York brands quote, and we don't try to be.",
       unique: true,
     },
     {
@@ -571,7 +575,7 @@ export const SHOPIFY_DEV_NEW_YORK: GeoPage = {
     {
       question: "Do you provide Shopify development in New York?",
       answer:
-        "Yes. We're a Shopify agency New York brands hire for development, design, SEO, creative and retention. The whole team works remotely, so there's no office to visit and we don't claim one. You get a named contact in a shared channel, and cover through Eastern business hours.",
+        "Yes. We're the Shopify development agency New York brands hire for builds, design, SEO, creative and retention. The whole team works remotely. There's no office to visit, and we don't claim one. You get a named contact in a shared channel, and cover through Eastern business hours.",
       unique: false,
     },
     {

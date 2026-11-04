@@ -262,7 +262,7 @@ export const ECOMMERCE_AGENCY_MIAMI: GeoPage = {
       {
         heading: "What it costs",
         body:
-          "**A build is $5,000 to $50,000**, quoted against a scope you approve first.\n\n**Ongoing work is $3,000 to $15,000 a month**, and it covers the running, not the build.\n\n**Those two are quoted apart.** A price that rolls them into one number hides which of them you're actually paying for.",
+          "**A build is quoted against a scope you approve first.**\n\n**Ongoing work is a monthly retainer**, and it covers the running, not the build.\n\n**Those two are quoted apart.** A price that rolls them into one number hides which of them you're actually paying for.",
       },
     ],
     reviewAfterDays: 365,
@@ -423,7 +423,7 @@ export const ECOMMERCE_AGENCY_MIAMI: GeoPage = {
     {
       question: "What does a Miami ecommerce agency charge for a build?",
       answer:
-        "Our ecommerce development work usually runs $5,000 to $50,000 as a build. Ongoing work is $3,000 to $15,000 a month. You get a fixed number and a date before anything starts, and the two are quoted apart.",
+        "It depends on the scope you approve: a build gets one fixed quote, and ongoing work is a monthly retainer. You get a fixed number and a date before anything starts, and the two are quoted apart.",
       unique: true,
     },
     {

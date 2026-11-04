@@ -395,7 +395,7 @@ export const ECOMMERCE_AGENCY_NEW_YORK: GeoPage = {
   // ── Block 6: What we do about it ──────────────────────────────────────
   whatWeDoAboutItHeading: "How we do it, and what an ecommerce agency New York quote should cover",
   whatWeDoAboutIt:
-    "Nothing gets quoted before it gets looked at. The first week is measurement: where you're running now, what it's costing you in developer time and workarounds, and which ceiling you're closest to.\n\nThen one number and one date, in writing. Builds run $5,000 to $50,000 depending on how much is custom, and a migration is scoped on your data and your integrations rather than on your product count. That is what an ecommerce agency New York quote should show you: one number, one date, and the scope behind both.\n\nOngoing work is a retainer sized to work that exists. We're rarely the cheapest ecommerce agency New York brands quote, and we don't try to be.",
+    "Nothing gets quoted before it gets looked at. The first week is measurement: where you're running now, what it's costing you in developer time and workarounds, and which ceiling you're closest to.\n\nThen one number and one date, in writing. A build is priced on how much of it is custom, and a migration is scoped on your data and your integrations rather than on your product count. That is what an ecommerce agency New York quote should show you: one number, one date, and the scope behind both.\n\nOngoing work is a retainer sized to work that exists. We're rarely the cheapest ecommerce agency New York brands quote, and we don't try to be.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   // Heading has to be true of all three, and one of them is creative work
@@ -469,7 +469,7 @@ export const ECOMMERCE_AGENCY_NEW_YORK: GeoPage = {
     {
       question: "How much does an ecommerce agency New York brands hire actually cost?",
       answer:
-        "Ours is $5,000 to $50,000 for a build, depending on how much you need custom, with ongoing work as a monthly retainer. Migrations are scoped on data complexity rather than product count. We're rarely the cheapest quote and we don't try to be.",
+        "One fixed quote per build, set by how much you need custom, with ongoing work as a monthly retainer. Migrations are scoped on data complexity rather than product count. We're rarely the cheapest quote and we don't try to be.",
       unique: true,
     },
     {

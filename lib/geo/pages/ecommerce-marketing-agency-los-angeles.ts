@@ -400,7 +400,7 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
   // ── Block 6: What we do about it ──────────────────────────────────────
   whatWeDoAboutItHeading: "What it costs and how it runs",
   whatWeDoAboutIt:
-    "The first fortnight is counting, not sending. What one subscriber got from you last month across every channel, which of those sends earned their place, and what the rest of your category put in the same inbox.\n\nThe plan comes out of that count, priced and dated. Then it's the flows, whatever survives of the campaign calendar, the creative, and a weekly number for revenue per send.\n\nRetainers run $3,000 to $15,000 a month on channels and volume; a one-off flow build is priced on its own. Any ecommerce marketing agency Los Angeles quote should separate those two, because they buy different things.",
+    "The first fortnight is counting, not sending. What one subscriber got from you last month across every channel, which of those sends earned their place, and what the rest of your category put in the same inbox.\n\nThe plan comes out of that count, priced and dated. Then it's the flows, whatever survives of the campaign calendar, the creative, and a weekly number for revenue per send.\n\nRetainers are sized to your channels and volume; a one-off flow build is priced on its own. Any ecommerce marketing agency Los Angeles quote should separate those two, because they buy different things.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   // §5 row 6: retention and LTV outcomes only. No traffic number appears here.
@@ -487,7 +487,7 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
     {
       question: "What does an ecommerce marketing agency Los Angeles brands hire usually charge?",
       answer:
-        "Ours is $3,000 to $15,000 a month on channels and creative volume, agreed before we start. A one-off flow build is priced on its own. Rates here run above the national average; ours don't change by city.",
+        "Ours is a monthly retainer set by your channels and creative volume, agreed before we start. A one-off flow build is priced on its own. Rates here run above the national average; ours don't change by city.",
       unique: true,
     },
     {

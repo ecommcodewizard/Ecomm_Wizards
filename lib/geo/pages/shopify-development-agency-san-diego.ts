@@ -373,7 +373,7 @@ export const SHOPIFY_DEV_SAN_DIEGO: GeoPage = {
       {
         heading: "The switching cost nobody quotes",
         body:
-          "The quote covers the build. It does not cover the subscribers you lose while moving, and that is usually the larger number.\n\n**The arithmetic is one line.** Subscribers affected, times the share you expect to lose, times what a subscriber is worth.\n\n**Worked at an assumed 5% loss**, our planning figure rather than a measured one, so substitute your own: 10,000 subscribers at $180 lifetime value, losing 5%, is $90,000. Against a $40,000 build quote the migration is the larger half.\n\n**Then re-run it on the wallet share.** Say 20% pays by Apple Pay. Those re-authorize, so the exposure sits on 2,000 people rather than the whole base, and sequencing is what moves it.",
+          "The quote covers the build. It does not cover the subscribers you lose while moving, and that is usually the larger number.\n\n**The arithmetic is one line.** Subscribers affected, times the share you expect to lose, times what a subscriber is worth.\n\n**Worked at an assumed 5% loss**, our planning figure rather than a measured one, so substitute your own: 10,000 subscribers at $180 lifetime value, losing 5%, is $90,000. That can be more than the build itself costs.\n\n**Then re-run it on the wallet share.** Say 20% pays by Apple Pay. Those re-authorize, so the exposure sits on 2,000 people rather than the whole base, and sequencing is what moves it.",
       },
      {
         heading: "When we say don't move",
@@ -499,7 +499,7 @@ export const SHOPIFY_DEV_SAN_DIEGO: GeoPage = {
   // ── Block 6: What we do about it ──────────────────────────────────────
   whatWeDoAboutItHeading: "What it costs and how it runs",
   whatWeDoAboutIt:
-    "The first week is measurement, not design. Your wallet share, your processor, your plan tier, and what a subscriber is worth. That gives you the exposure number before anything is committed.\n\nThen a scope, a number and a date, in writing. After that the order is data, then parallel billing, then the theme.\n\nBuilds run $5,000 to $50,000 depending on how much is custom, and a migration assessment costs a fraction of that. Any Shopify agency San Diego quote should price them separately.",
+    "The first week is measurement, not design. Your wallet share, your processor, your plan tier, and what a subscriber is worth. That gives you the exposure number before anything is committed.\n\nThen a scope, a number and a date, in writing. After that the order is data, then parallel billing, then the theme.\n\nBuilds are priced on how much is custom, and a migration assessment costs a fraction of one. Any Shopify agency San Diego quote should price them separately.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   proofHeading: "Three stores that were already trading",
@@ -578,7 +578,7 @@ export const SHOPIFY_DEV_SAN_DIEGO: GeoPage = {
     {
       question: "How much does a Shopify agency San Diego brands hire usually charge?",
       answer:
-        "Ours is $5,000 to $50,000 for a build, fixed before we start. A migration assessment on its own costs a fraction of that, and it's the thing worth buying first, because it tells you whether the build is worth buying.",
+        "Each build is quoted to its scope and fixed before we start. A migration assessment on its own costs a fraction of that, and it's the thing worth buying first, because it tells you whether the build is worth buying.",
       unique: true,
     },
     {

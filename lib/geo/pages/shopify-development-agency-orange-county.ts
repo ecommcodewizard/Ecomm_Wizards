@@ -220,7 +220,10 @@ export const SHOPIFY_DEV_ORANGE_COUNTY: GeoPage = {
   // ── SEO ────────────────────────────────────────────────────────────────
   targetKeyword: "shopify agency orange county",
   // Primary-only. Inventory v4.0, California #6: "No usable secondary exists."
-  secondaryKeywords: [],
+  // v5 §3.4 (Ahrefs 90/mo). Asked as a question and answered honestly: no.
+  // "shopify website developer orange county" (50/mo) has no natural home and
+  // Google reads it as the same search; skipped rather than forced.
+  secondaryKeywords: ["orange county shopify developer"],
   faqKeywords: [
     "hide dealer pricing from search engines shopify",
     "does wholesale need a separate shopify store",
@@ -543,7 +546,7 @@ export const SHOPIFY_DEV_ORANGE_COUNTY: GeoPage = {
   // ── Block 6: What we do about it ──────────────────────────────────────
   whatWeDoAboutItHeading: "What it costs and how it runs",
   whatWeDoAboutIt:
-    "Week one is the eight rows above, run against your store, not a questionnaire. Price lists counted, the gate tested logged out, your biggest order measured in line items.\n\nThat produces a recommendation with a plan tier attached, and you keep it either way. Then a scope, a number and a date. The build order is price lists, then accounts and terms, then the storefront.\n\nBuilds run $5,000 to $50,000 depending on how much is custom, and the assessment alone costs a fraction. Any Shopify agency Orange County quote should price the two apart.",
+    "Week one is the eight rows above, run against your store, not a questionnaire. Price lists counted, the gate tested logged out, your biggest order measured in line items.\n\nThat produces a recommendation with a plan tier attached, and you keep it either way. Then a scope, a number and a date. The build order is price lists, then accounts and terms, then the storefront.\n\nA build is priced on how much is custom, and the assessment alone costs a fraction of one. Any Shopify agency Orange County quote should price the two apart.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   // §5 row 9, prioritising the B2B component.
@@ -617,7 +620,7 @@ export const SHOPIFY_DEV_ORANGE_COUNTY: GeoPage = {
     {
       question: "How much does a Shopify agency Orange County brands hire usually charge?",
       answer:
-        "Ours is $5,000 to $50,000 for a build, fixed before anyone starts. The wholesale assessment alone costs a fraction, and it's the thing to buy first: it tells you whether the build is worth buying.",
+        "Ours is quoted to your scope and fixed before anyone starts. The wholesale assessment alone costs a fraction, and it's the thing to buy first: it tells you whether the build is worth buying.",
       unique: true,
     },
     {
@@ -638,9 +641,9 @@ export const SHOPIFY_DEV_ORANGE_COUNTY: GeoPage = {
     // qualifying question buyers ask beside the head term. Last on purpose,
     // because a human reading top to bottom wants the real answers first.
     {
-      question: "Do you provide Shopify development in Orange County?",
+      question: "Are you an Orange County Shopify developer?",
       answer:
-        "Yes, though nobody here is local. The work is remote anyway: your dealer side gets built and tested, not talked through in a room. We do it for brands across the state.",
+        "Not a local one: nobody here is in the county. The work is remote anyway: your dealer side gets built and tested, not talked through in a room. We do it for brands across the state.",
       unique: true,
     },
   ],

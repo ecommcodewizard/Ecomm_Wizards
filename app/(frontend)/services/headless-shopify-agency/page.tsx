@@ -42,26 +42,6 @@ const C_CREAM = "#FBF7ED";
 /* ── Case study slider slides ── */
 const SHL_SLIDES: CaseStudySlide[] = [
   {
-    key: "bark",
-    image: "/images/ai-bark-casestudy.webp",
-    apps: ["/images/shopify-icon.svg", "/images/recharge.svg", "/images/Subtract.svg", "/images/64f098c0e38dec3a384cb182_rebuy.svg"],
-    headline: (<>A high-performance <strong>Shopify Plus</strong> storefront engineered and scaled for <strong>BARK</strong></>),
-    quote: (<>&ldquo;Their immense knowledge of Shopify Plus and exceptional communication skills, accompanied by a <strong>can-do attitude</strong>, made Ecomm Wizards a fantastic partner.&rdquo;</>),
-    avatar: "/images/nari_medium_215a6a4f-f640-4b4f-98aa-28f001df20dd_medium.webp",
-    name: "Nari Sitaraman",
-    role: "Chief Technology Officer",
-  },
-  {
-    key: "everlast",
-    image: "/images/Case%20studies/Everlast-banner.webp",
-    apps: ["/images/shopify-icon.svg", "/images/klaviyo.svg", "/images/yotpo.svg", "/images/64f098c0e38dec3a384cb182_rebuy.svg"],
-    headline: (<>A performance-first <strong>Shopify Plus</strong> rebuild that delivered <strong>+152% conversion rate</strong> for <strong>Everlast</strong></>),
-    quote: (<>&ldquo;We needed a store that could handle serious athletes, casual fitness buyers, and trade accounts in one place. Ecomm Wizards built exactly that. The <strong>conversion numbers and trade portal revenue</strong> both exceeded what we projected.&rdquo;</>),
-    avatar: "/images/Case%20studies/Daniel%20Summerson.jpg",
-    name: "Daniel Summerson",
-    role: "Managing Director, Everlast Gyms",
-  },
-  {
     key: "daring",
     image: "/images/Case%20studies/Daring%20hero.webp",
     alt: "Daring plant chicken packs beside plated dishes",
@@ -252,11 +232,11 @@ const SHL_ITEMS = [
     body: "Next.js gives you a mature ecosystem, a large developer talent pool, and the flexibility content-heavy or multi-market builds need. We build headless Shopify storefronts on Next.js and host them on Vercel when your store needs more than a pure-commerce frontend can offer. Server-side rendering keeps it fast and SEO-friendly.",
   },
   {
-    title: "Headless CMS Integration (Sanity, Contentful)",
+    title: "Shopify Headless CMS Integration (Sanity, Contentful)",
     body: "We connect a dedicated headless CMS so your marketing team ships editorial, landing pages, and campaigns without a developer. Sanity and Contentful are our usual choices. Your content and your commerce live in the tools each does best, joined in one fast storefront.",
   },
   {
-    title: "Theme-to-Headless Migration",
+    title: "Headless Migration From Your Shopify Theme",
     body: "Moving an existing Shopify store to a headless Shopify store without losing rankings or revenue takes a plan. We map every URL, preserve your SEO, rebuild storefront app functionality as headless-native code, and cut over with zero downtime. Your backend keeps running on Shopify the whole time.",
   },
   {
@@ -396,8 +376,12 @@ const SHL_FAQS = [
     a: "Not strictly. You can use the Storefront API to build a headless Shopify store on any Shopify plan. Shopify Plus headless builds add Checkout UI Extensions, Shopify Functions, and B2B features that headless commerce frequently uses, and Oxygen hosting for Hydrogen is included with Plus. Most brands seriously considering headless are on or moving to Plus anyway, but we will tell you whether your build actually needs it.",
   },
   {
+    q: "What happens to checkout on a headless Shopify store?",
+    a: "Checkout stays on Shopify. Your custom storefront handles browsing and the cart, then hands the shopper to Shopify's own checkout, so payments, taxes, fraud checks, and order processing keep running on Shopify. Your payment setup does not change. On Shopify Plus, we can brand and extend the checkout with Checkout UI Extensions and Shopify Functions, for custom fields, upsells, and discount rules, and we style it to match your storefront so the handover feels like one store.",
+  },
+  {
     q: "How much does a headless Shopify build cost?",
-    a: "It depends entirely on scope: how many pages go headless, your catalog complexity, which systems you integrate, whether you need design from scratch, and your CMS choice. Headless Shopify development is a larger investment than a theme build, which is exactly why we start with an architecture call to scope it properly. We give you a fixed price in writing before any work begins, so you never see a surprise invoice.",
+    a: "It depends entirely on scope: how many pages go headless, your catalog complexity, which systems you integrate, whether you need design from scratch, and your CMS choice. Headless Shopify development is a larger investment than a theme build, which is exactly why we start with an architecture call to scope it properly. We give you a fixed price in writing before any work begins, so you never see a surprise invoice. Your Shopify plan is billed by Shopify separately, so our quote covers the build itself.",
   },
   {
     q: "How long does a headless build take?",
@@ -587,13 +571,13 @@ export default function Page() {
 
           <div style={{ maxWidth: "780px", margin: "36px auto 0", padding: "28px 32px", borderLeft: "4px solid #3DC77A", background: "rgba(61,199,122,0.05)", borderRadius: "0 12px 12px 0" }}>
             <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 18, fontWeight: 500, color: C_DARK, lineHeight: 1.6, margin: "0 0 16px", fontStyle: "italic" }}>
-              &ldquo;We had pushed our theme as far as it could go. Ecomm Wizards rebuilt the storefront as a fully custom headless build, and the speed jump was instant. We finally have the design freedom we wanted, with none of the template limits we were fighting before.&rdquo;
+              &ldquo;We wanted an e-commerce experience that reflected the quality of our brand while making it easier for customers to discover our products and shop. The Ecomm Wizards team understood our vision and delivered a headless Shopify experience that gave us greater flexibility, improved performance, and a smoother customer journey. Their attention to detail and understanding of e-commerce made the entire process straightforward.&rdquo;
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-              <Image src="/images/Case%20studies/Daniel%20Summerson.jpg" overrideSrc="/images/Case%20studies/Daniel%20Summerson.jpg" alt="Daniel Summerson" width={44} height={44} style={{ borderRadius: "50%", objectFit: "cover", objectPosition: "center 20%", flexShrink: 0, width: "44px", height: "44px" }} />
+              <Image src="/images/Case%20studies/Ross%20Mackay%20Daring.jpg" overrideSrc="/images/Case%20studies/Ross%20Mackay%20Daring.jpg" alt="Ross Mackay" width={44} height={44} style={{ borderRadius: "50%", objectFit: "cover", objectPosition: "center 20%", flexShrink: 0, width: "44px", height: "44px" }} />
               <div>
-                <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 14, fontWeight: 700, color: C_DARK, margin: 0 }}>Daniel Summerson</p>
-                <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: C_TEXT, margin: 0 }}>Managing Director, Everlast Gyms. <strong style={{ color: "#2A9555" }}>+152% Conversion Rate</strong></p>
+                <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 14, fontWeight: 700, color: C_DARK, margin: 0 }}>Ross Mackay</p>
+                <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: 13, color: C_TEXT, margin: 0 }}>Co-Founder, Daring. <strong style={{ color: "#2A9555" }}>+38% Conversion Rate</strong></p>
               </div>
             </div>
           </div>
@@ -784,7 +768,7 @@ export default function Page() {
           <div className="std-solutions-left" style={{ position: "sticky", top: "120px", alignSelf: "start" }}>
             <span className="std-label" style={{ color: C_TEXT }}>Headless Services</span>
             <h2 style={{ color: C_DARK, fontSize: 42, fontWeight: 700, lineHeight: 1.2, margin: "12px 0 0" }}>
-              Every Headless Shopify Service Your Build Needs
+              Headless Shopify Development Services, Start to Finish
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
               Our headless Shopify development services cover the full headless commerce build: architecture, Hydrogen or Next.js development, CMS integration, migration, and <Link href="/services/shopify-maintenance-and-support" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>ongoing support</Link>. Every service your build needs, in-house and fixed price.

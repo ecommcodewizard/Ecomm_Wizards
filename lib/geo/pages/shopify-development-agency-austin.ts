@@ -507,7 +507,7 @@ export const SHOPIFY_DEV_AUSTIN: GeoPage = {
   // already approved and live on page #10. Nothing new is promised here.
   whatWeDoAboutItHeading: "What a Shopify agency Austin brands hire costs, and how we run it",
   whatWeDoAboutIt:
-    "Nothing gets quoted before it gets looked at. Week one we measure the store and tell you which of the six would move your number most. That write-up is yours either way.\n\nThen one price and one date, in writing, before any work starts. Change the brief later and we requote it in front of you.\n\nBuilds run $5,000 to $50,000 depending on how much is custom, and most take six to twelve weeks. Ongoing work is a monthly retainer.\n\nWhat comes with that number is ownership. We treat your store like we have money riding on it. If it goes down on a Saturday, someone is on it that day.",
+    "Nothing gets quoted before it gets looked at. Week one we measure the store and tell you which of the six would move your number most. That write-up is yours either way.\n\nThen one price and one date, in writing, before any work starts. Change the brief later and we requote it in front of you.\n\nWhat a build costs depends on how much is custom, and most take six to twelve weeks. Ongoing work is a monthly retainer.\n\nWhat comes with that number is ownership. We treat your store like we have money riding on it. If it goes down on a Saturday, someone is on it that day.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   proofHeading: "Stores we built, and what moved",
@@ -582,7 +582,7 @@ export const SHOPIFY_DEV_AUSTIN: GeoPage = {
     {
       question: "How much does a Shopify agency Austin brands hire usually cost?",
       answer:
-        "Ours run $5,000 to $50,000 for a build, depending on how much of it is custom, with ongoing work as a monthly retainer.\n\nQuotes across a Shopify agency Austin shortlist can differ by ten times for what sounds like the same job. That's usually because it isn't the same job. Ask each one what's in and what's out before you compare the numbers.",
+        "It's quoted to your scope, depending on how much of it is custom, with ongoing work as a monthly retainer.\n\nQuotes across a Shopify agency Austin shortlist can differ by ten times for what sounds like the same job. That's usually because it isn't the same job. Ask each one what's in and what's out before you compare the numbers.",
       unique: true,
     },
     {
