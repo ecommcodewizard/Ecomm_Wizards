@@ -506,7 +506,7 @@ export const ECOMMERCE_AGENCY_AUSTIN: GeoPage = {
   // pages #10 and #13. No new commercial commitment is invented here.
   whatWeDoAboutItHeading: "What an ecommerce agency Austin brands hire costs, and how we run it",
   whatWeDoAboutIt:
-    "Nothing gets quoted before it gets looked at. Week one we measure, and tell you which piece of work would move your number most. That write-up is yours either way.\n\nThen one price and one date, in writing, before any work starts. Change the brief later and we requote it in front of you.\n\nBuilds run $5,000 to $50,000 depending on how much is custom, and most take six to twelve weeks. Ongoing work is a monthly retainer.\n\nWhat comes with that price is ownership. We treat your store like we have money riding on it.",
+    "Nothing gets quoted before it gets looked at. Week one we measure, and tell you which piece of work would move your number most. That write-up is yours either way.\n\nThen one price and one date, in writing, before any work starts. Change the brief later and we requote it in front of you.\n\nEach build is priced on how much of it is custom, and most take six to twelve weeks. Ongoing work is a monthly retainer.\n\nWhat comes with that price is ownership. We treat your store like we have money riding on it.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   proofHeading: "Stores we've built, and what changed",
@@ -573,7 +573,7 @@ export const ECOMMERCE_AGENCY_AUSTIN: GeoPage = {
     {
       question: "How much does an ecommerce agency Austin brands hire usually cost?",
       answer:
-        "Ours run $5,000 to $50,000 for a build, depending on how much is custom, with ongoing work as a monthly retainer.\n\nQuotes for what sounds like the same job can differ by ten times. That's normally because it isn't the same job, so ask what's in and what's out before you compare numbers.",
+        "We quote each build against its brief, so the price follows how much is custom. Ongoing work is a monthly retainer.\n\nQuotes for what sounds like the same job can differ by ten times. That's normally because it isn't the same job, so ask what's in and what's out before you compare numbers.",
       unique: true,
     },
     {

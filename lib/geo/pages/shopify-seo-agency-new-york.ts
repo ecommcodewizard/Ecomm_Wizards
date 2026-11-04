@@ -556,7 +556,7 @@ export const SHOPIFY_SEO_NEW_YORK: GeoPage = {
     {
       question: "How much does Shopify SEO cost?",
       answer:
-        "A monthly retainer, sized to your store and your catalog. The first month is diagnosis, priced on its own and kept small. Across the directories covering this city, listed projects start anywhere from $1,000 to $5,000. So ask what's actually included before you compare two numbers.",
+        "A monthly retainer, sized to your store and your catalog. The first month is diagnosis, priced on its own and kept small. Ask what's actually included before you compare two numbers.",
       unique: true,
     },
     {

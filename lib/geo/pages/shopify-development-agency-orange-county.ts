@@ -546,7 +546,7 @@ export const SHOPIFY_DEV_ORANGE_COUNTY: GeoPage = {
   // ── Block 6: What we do about it ──────────────────────────────────────
   whatWeDoAboutItHeading: "What it costs and how it runs",
   whatWeDoAboutIt:
-    "Week one is the eight rows above, run against your store, not a questionnaire. Price lists counted, the gate tested logged out, your biggest order measured in line items.\n\nThat produces a recommendation with a plan tier attached, and you keep it either way. Then a scope, a number and a date. The build order is price lists, then accounts and terms, then the storefront.\n\nBuilds run $5,000 to $50,000 depending on how much is custom, and the assessment alone costs a fraction. Any Shopify agency Orange County quote should price the two apart.",
+    "Week one is the eight rows above, run against your store, not a questionnaire. Price lists counted, the gate tested logged out, your biggest order measured in line items.\n\nThat produces a recommendation with a plan tier attached, and you keep it either way. Then a scope, a number and a date. The build order is price lists, then accounts and terms, then the storefront.\n\nA build is priced on how much is custom, and the assessment alone costs a fraction of one. Any Shopify agency Orange County quote should price the two apart.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   // §5 row 9, prioritising the B2B component.
@@ -620,7 +620,7 @@ export const SHOPIFY_DEV_ORANGE_COUNTY: GeoPage = {
     {
       question: "How much does a Shopify agency Orange County brands hire usually charge?",
       answer:
-        "Ours is $5,000 to $50,000 for a build, fixed before anyone starts. The wholesale assessment alone costs a fraction, and it's the thing to buy first: it tells you whether the build is worth buying.",
+        "Ours is quoted to your scope and fixed before anyone starts. The wholesale assessment alone costs a fraction, and it's the thing to buy first: it tells you whether the build is worth buying.",
       unique: true,
     },
     {

@@ -479,7 +479,7 @@ export const ECOMMERCE_MARKETING_AGENCY_MIAMI: GeoPage = {
   // ── Block 6: Price and the first month ────────────────────────────────
   whatWeDoAboutItHeading: "What it costs, and what happens first",
   whatWeDoAboutIt:
-    "We start by reading, not sending. We tie your recent orders back to the channels that brought them in, then look at your forms, flows and ads.\n\nThen you get a plan with a price and a date on each line. Take one line, or all of them.\n\nRetainers run $3,000 to $15,000 a month, depending on how many channels we run and how much creative you need. A one-off build, like a set of flows or a landing page, is priced on its own. Any Miami ecommerce marketing company you talk to should quote those two apart.",
+    "We start by reading, not sending. We tie your recent orders back to the channels that brought them in, then look at your forms, flows and ads.\n\nThen you get a plan with a price and a date on each line. Take one line, or all of them.\n\nRetainers are monthly, and they follow how many channels we run and how much creative you need. A one-off build, like a set of flows or a landing page, is priced on its own. Any Miami ecommerce marketing company you talk to should quote those two apart.",
 
   processCta: {
     text: "The first call is about your store and what each channel sells now. It's free, and it can end with us saying you don't need us yet.",
@@ -516,7 +516,7 @@ export const ECOMMERCE_MARKETING_AGENCY_MIAMI: GeoPage = {
     {
       question: "How much does an ecommerce marketing agency Miami brands use cost per month?",
       answer:
-        "Ours runs $3,000 to $15,000 a month, set by how many channels we run and how much creative you need. One-off builds are priced separately. You get the number in writing before anything starts.",
+        "It's a monthly retainer, sized by how many channels we run and how much creative you need. One-off builds are priced separately. You get the number in writing before anything starts.",
       unique: true,
     },
     {

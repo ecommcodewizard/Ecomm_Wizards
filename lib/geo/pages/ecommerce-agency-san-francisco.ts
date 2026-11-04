@@ -340,11 +340,11 @@ export const ECOMMERCE_AGENCY_SAN_FRANCISCO: GeoPage = {
       {
         label: "The three seats together",
         cells: ["$536,740 at the medians", "$535,550 at the medians", "$732,800 a year"],
-        note: "Loaded on the lower median for each role, before a recruiter's fee or the wait. A retainer for the same work runs $36,000 to $180,000 a year.",
+        note: "Loaded on the lower median for each role, before a recruiter's fee or the wait.",
       },
     ],
     derived:
-      "Set the bottom row against a retainer. Three salaried seats cost about $732,800 a year before anyone is recruited, and a retainer across the same work runs $36,000 to $180,000.\n\nThat isn't a like-for-like fight, and it isn't meant to be. A salary buys every week, while a retainer buys the weeks you use. So what decides it is how many weeks each seat would really be busy.\n\nAnyone on your ecommerce agency San Francisco shortlist should run this against your own roadmap before they quote.",
+      "Set the bottom row against a retainer. Three salaried seats cost about $732,800 a year before anyone is recruited, and a retainer across the same work costs a fraction of that.\n\nThat isn't a like-for-like fight, and it isn't meant to be. A salary buys every week, while a retainer buys the weeks you use. So what decides it is how many weeks each seat would really be busy.\n\nAnyone on your ecommerce agency San Francisco shortlist should run this against your own roadmap before they quote.",
     derivedList: {
       title: "Hire in-house when these are true",
       items: [
@@ -442,7 +442,7 @@ export const ECOMMERCE_AGENCY_SAN_FRANCISCO: GeoPage = {
   // ── Block 6: What we do about it ──────────────────────────────────────
   whatWeDoAboutItHeading: "What a retainer costs, and where it starts",
   whatWeDoAboutIt:
-    "It starts with a plan, not a retainer. We go through your roadmap and sort it into work that needs someone every week and work that comes in bursts.\n\nThe weekly work is your case for a hire, and we'll say so, while the bursts become a scope with a number and a date.\n\nA retainer is $3,000 to $15,000 a month, and builds are quoted separately at $5,000 to $50,000. Any ecommerce agency San Francisco quote should keep those two apart.",
+    "It starts with a plan, not a retainer. We go through your roadmap and sort it into work that needs someone every week and work that comes in bursts.\n\nThe weekly work is your case for a hire, and we'll say so, while the bursts become a scope with a number and a date.\n\nA retainer and a build are quoted separately. Any ecommerce agency San Francisco quote should keep those two apart.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   proofHeading: "Three brands from the categories that sell here",
@@ -515,7 +515,7 @@ export const ECOMMERCE_AGENCY_SAN_FRANCISCO: GeoPage = {
     {
       question: "How much does an ecommerce agency San Francisco brands hire usually charge?",
       answer:
-        "Ongoing work is $3,000 to $15,000 a month, and a build is $5,000 to $50,000, with the number agreed before anything starts. Set that against $732,800 a year for three loaded salaries, and ask how much of the work you'd really use.",
+        "Ongoing work is a monthly retainer and a build is quoted to its scope, with the number agreed before anything starts. Set that against $732,800 a year for three loaded salaries, and ask how much of the work you'd really use.",
       unique: true,
     },
     {

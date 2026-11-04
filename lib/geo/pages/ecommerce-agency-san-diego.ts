@@ -439,7 +439,7 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
   // ── Block 6: What we do about it ──────────────────────────────────────
   whatWeDoAboutItHeading: "What it costs and how it runs",
   whatWeDoAboutIt:
-    "Week one is an audit against the six rows above, on your store, not a questionnaire. You keep the findings.\n\nThen a number and a date, in writing.\n\nThe work is the cancellation path, the consent step, the renewal notification, the record proving all three, and whatever else the store needs while we're in it.\n\nBuilds run $5,000 to $50,000 depending on how much is custom, and a compliance-only pass costs a fraction of that. Any ecommerce agency San Diego quote should separate the two, because they're different jobs.",
+    "Week one is an audit against the six rows above, on your store, not a questionnaire. You keep the findings.\n\nThen a number and a date, in writing.\n\nThe work is the cancellation path, the consent step, the renewal notification, the record proving all three, and whatever else the store needs while we're in it.\n\nA build is priced on how much is custom, and a compliance-only pass costs a fraction of one. Any ecommerce agency San Diego quote should separate the two, because they're different jobs.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   proofHeading: "Three brands that sell on repeat",
@@ -525,7 +525,7 @@ export const ECOMMERCE_AGENCY_SAN_DIEGO: GeoPage = {
     {
       question: "How much does an ecommerce agency San Diego brands hire usually charge?",
       answer:
-        "A build runs $5,000 to $50,000, fixed before anyone starts, and where it lands depends on how much is custom. A compliance-only pass on a working store is priced separately and costs far less.",
+        "A build gets one quote, fixed before anyone starts, and where it lands depends on how much is custom. A compliance-only pass on a working store is priced separately and costs far less.",
       unique: true,
     },
     {

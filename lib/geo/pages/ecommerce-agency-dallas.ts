@@ -471,7 +471,7 @@ export const ECOMMERCE_AGENCY_DALLAS: GeoPage = {
   // New York and Austin pages. No new commercial commitment invented here.
   whatWeDoAboutItHeading: "What it costs, and how we run a build",
   whatWeDoAboutIt:
-    "Nothing gets quoted before it gets scoped. We go through the requirement, the systems it touches and the build-versus-buy calls above, and you keep that write-up either way.\n\nThen one price and one date, in writing, before any work starts. Change the brief later and we requote it in front of you.\n\nBuilds run $5,000 to $50,000 depending on how much is custom, and most take six to twelve weeks. Anything with a heavy ERP or a large catalog runs longer, and we'll say so before you sign, not once we're in it.\n\nOngoing work is a monthly retainer. What comes with it is ownership: we treat your store like we have money riding on it.",
+    "Nothing gets quoted before it gets scoped. We go through the requirement, the systems it touches and the build-versus-buy calls above, and you keep that write-up either way.\n\nThen one price and one date, in writing, before any work starts. Change the brief later and we requote it in front of you.\n\nThe price follows how much of the build is custom, and most take six to twelve weeks. Anything with a heavy ERP or a large catalog runs longer, and we'll say so before you sign, not once we're in it.\n\nOngoing work is a monthly retainer. What comes with it is ownership: we treat your store like we have money riding on it.",
 
   // ── Block 7: Proof ────────────────────────────────────────────────────
   proofHeading: "Builds we've shipped, and what changed",
@@ -530,7 +530,7 @@ export const ECOMMERCE_AGENCY_DALLAS: GeoPage = {
     {
       question: "How much does an ecommerce development agency Dallas brands hire cost?",
       answer:
-        "Ours runs $5,000 to $50,000 for a build, depending on how much is genuinely custom, with ongoing work as a monthly retainer.\n\nThe spread is wide because the brief usually is. A storefront on a well-understood platform and a two-way ERP integration are the same sentence in an email and a very different number.",
+        "There's no list price. Each build is quoted on how much is genuinely custom, with ongoing work as a monthly retainer.\n\nQuotes vary because briefs do. A storefront on a well-understood platform and a two-way ERP integration are the same sentence in an email and a very different number.",
       unique: true,
     },
     {
