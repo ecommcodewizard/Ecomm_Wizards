@@ -14,20 +14,20 @@ const META_DESCRIPTION =
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-cro-agency";
 
 export const metadata: Metadata = {
-  title: { absolute: "Best Shopify CRO Agency | Conversion Rate Optimization" },
-  description: META_DESCRIPTION,
+  title: { absolute: "Shopify CRO Agency | Conversion Rate Optimization Services" },
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
     url: CANONICAL_URL,
     siteName: "Ecomm Wizards",
-    title: "Best Shopify CRO Agency | Conversion Rate Optimization",
+    title: "Shopify CRO Agency | Conversion Rate Optimization Services",
     description: META_DESCRIPTION,
     images: [{ url: ogImage("Shopify CRO Agency"), width: 1200, height: 630, alt: "Shopify CRO Agency — Ecomm Wizards" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Shopify CRO Agency | Conversion Rate Optimization",
+    title: "Shopify CRO Agency | Conversion Rate Optimization Services",
     description: META_DESCRIPTION,
     images: [ogImage("Shopify CRO Agency")],
   },
@@ -708,7 +708,7 @@ export default function Page() {
           <div className="std-solutions-left" style={{ position: "sticky", top: "120px", alignSelf: "start" }}>
             <span className="std-label" style={{ color: C_TEXT }}>CRO Services</span>
             <h2 style={{ color: C_DARK, fontSize: 42, fontWeight: 700, lineHeight: 1.2, margin: "12px 0 0" }}>
-              Every Shopify CRO Service Your Store Needs
+              Shopify Conversion Rate Optimization Services for Your Whole Store
             </h2>
             <p className="mt-5" style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px" }}>
               Our Shopify CRO services cover everything from CRO audits and A/B testing to checkout optimization and <Link href="/services/shopify-ux-and-ui-design" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>mobile UX</Link>. We also lift average order value with <Link href="/services/shopify-cart-gamification" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>cart gamification</Link>: free shipping bars, tiered rewards, and gift with purchase built into your cart. Every conversion rate optimization service your store needs, for Shopify and Shopify Plus, in-house and fixed price.
