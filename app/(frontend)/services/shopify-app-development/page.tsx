@@ -14,20 +14,20 @@ import Link from "next/link";
 const GEO_CHILDREN = geoForHub("/services/shopify-app-development");
 
 const META_DESCRIPTION =
-  "Hire expert Shopify app developers to build custom private apps or launch on the Shopify App Store. Shopify Plus Preferred Partner. 150+ merchants.";
+  "Shopify app development services: custom apps built for your store alone, or public apps launched on the Shopify App Store. Fixed-price quotes, code you own.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-app-development";
 
 export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
-  title: { absolute: "Shopify App Development Company | Private and Public Apps" },
+  title: { absolute: "Shopify App Development Services | Custom and Public Apps" },
   description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
     url: CANONICAL_URL,
     siteName: "Ecomm Wizards",
-    title: "Shopify App Development Company | Private and Public Apps",
+    title: "Shopify App Development Services | Custom and Public Apps",
     description: META_DESCRIPTION,
     images: [
       {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shopify App Development Company | Private and Public Apps",
+    title: "Shopify App Development Services | Custom and Public Apps",
     description: META_DESCRIPTION,
     images: ["/images/results.webp"],
   },
@@ -51,11 +51,11 @@ const FAQS = [
   },
   {
     q: "How much does Shopify app development cost?",
-    a: "Shopify app development cost depends on the number of features, integrations, and whether you are building a private app or a public app for the Shopify App Store. Simple private apps can start from a few thousand dollars. Fully featured public apps with design, development, and App Store submission management will range higher. Every quote we send is fixed-price with no hourly billing surprises.",
+    a: "There is no price list, because every app is quoted to its scope. Three things drive Shopify app development pricing: the features your app needs, the systems it connects to (ERP, CRM, 3PL, payments), and whether it is a custom app for your store or a public app that has to pass Shopify App Store review. Public apps usually take more work, because they need multi-store support, billing, and the review process. Every quote is fixed-price and in writing before work starts, with no hourly billing surprises.",
   },
   {
-    q: "What is the difference between a private Shopify app and a public Shopify app?",
-    a: "A private Shopify app is built exclusively for one store. It is not listed on the Shopify App Store and is designed for custom integrations or proprietary functionality specific to your business. A public app is available to all merchants through the Shopify App Store and can generate recurring subscription revenue from thousands of merchants worldwide.",
+    q: "What is the difference between a custom (private) Shopify app and a public Shopify app?",
+    a: "A custom app, which Shopify used to call a private app, is built exclusively for one store. Shopify replaced private apps with custom apps in 2022, so you may see both names for the same thing. It is not listed on the Shopify App Store and is designed for custom integrations or proprietary functionality specific to your business. A public app is available to all merchants through the Shopify App Store and can generate recurring subscription revenue from thousands of merchants worldwide.",
   },
   {
     q: "Do I own the app source code once it's complete?",
@@ -477,9 +477,9 @@ export default function ShopifyAppDevelopmentPage() {
           <div className="sad-panel">
             <div className="sad-panel-grid">
               <div className="sad-panel-content">
-                <h3 className="sad-panel-h">Private Shopify App Development for Your Store</h3>
+                <h3 className="sad-panel-h">Shopify Custom App Development for Your Store</h3>
                 <p className="sad-panel-p">
-                  Your store has needs that off-the-shelf apps cannot meet. We build <b>private Shopify apps</b> exclusively for your business, whether that is a <Link href="/services/erp-connections-to-shopify" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>deep ERP integration</Link>, a custom workflow, or proprietary functionality your competitors simply do not have.
+                  Your store has needs that off-the-shelf apps cannot meet. We build <b>custom Shopify apps</b> (once called private apps) exclusively for your business, whether that is a <Link href="/services/erp-connections-to-shopify" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>deep ERP integration</Link>, a custom workflow, or proprietary functionality your competitors simply do not have.
                 </p>
 
                 <div className="sad-cards">
@@ -549,7 +549,7 @@ export default function ShopifyAppDevelopmentPage() {
               </div>
 
               <div className="sad-panel-content">
-                <h3 className="sad-panel-h">Public App Development for the Shopify App Store</h3>
+                <h3 className="sad-panel-h">Shopify Public App Development for the App Store</h3>
                 <p className="sad-panel-p">
                   Got an idea that could serve thousands of Shopify merchants? We handle the full lifecycle, from concept to Shopify App Store listing, optimized for downloads and <b>built to generate recurring revenue</b>. We do not just build the app. We help you monetize it.
                 </p>
