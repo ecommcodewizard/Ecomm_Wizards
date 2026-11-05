@@ -69,6 +69,16 @@ export async function GET(request: Request) {
         </div>
       </div>
     ),
-    { width: 1200, height: 630 }
+    {
+      width: 1200,
+      height: 630,
+      // Every page's og:image points here, so Googlebot crawls these and files
+      // them as "Crawled - currently not indexed". noindex states the intent
+      // (not a page, keep out of image search). Unfurlers (Slack, LinkedIn, X,
+      // Facebook) ignore X-Robots-Tag, so link previews are unaffected. Do NOT
+      // block /og in robots.txt instead: X honours robots.txt and would lose
+      // the preview image.
+      headers: { "X-Robots-Tag": "noindex" },
+    }
   );
 }
