@@ -200,7 +200,7 @@ export const ECOMMERCE_MARKETING_AGENCY: HubPage = {
     },
     {
       name: "Email and SMS",
-      href: "/services/klaviyo-audit",
+      href: "/services/klaviyo-agency",
       role: "Turning one purchase into three, from a list you already own. It's the only channel where you've already paid for the customer, which is why it decides whether your ad spend is affordable or not.",
     },
     {

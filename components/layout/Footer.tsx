@@ -28,6 +28,7 @@ const SERVICE_TAGS = [
   { label: "Shopify Plus Development",         href: "/services/shopify-plus-development" },
   { label: "Headless Shopify Agency",          href: "/services/headless-shopify-agency" },
   { label: "Creative Strategy",                href: "/services/creative-strategy" },
+  { label: "Klaviyo Agency",                   href: "/services/klaviyo-agency" },
   { label: "Klaviyo Email Audit",              href: "/services/klaviyo-audit" },
 ];
 

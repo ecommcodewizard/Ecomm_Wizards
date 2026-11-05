@@ -64,7 +64,7 @@ const SERVICE_LINK_MAP: { test: RegExp; href: string }[] = [
   { test: /landing/i, href: "/services/shopify-landing-page-design" },
   { test: /speed|performance/i, href: "/services/shopify-speed-optimization" },
   { test: /\bseo\b/i, href: "/services/shopify-seo-agency" },
-  { test: /klaviyo|email|sms/i, href: "/services/klaviyo-audit" },
+  { test: /klaviyo|email|sms/i, href: "/services/klaviyo-agency" },
   { test: /integration|erp/i, href: "/services/shopify-integration-services" },
   { test: /app[\s-]*(setup|optim)/i, href: "/services/shopify-app-setup-and-app-optimization" },
   { test: /app/i, href: "/services/shopify-app-development" },
