@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Klaviyo Audit for Shopify Brands | Free Email Revenue Review" },
-  description: META_DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
@@ -264,7 +264,7 @@ const CHAT_BULLETS = [
 
 const FAQS = [
   { q: "What is a Klaviyo audit?", a: <>A <span style={GRADIENT_TEXT}>Klaviyo audit</span> is a structured review of your email and SMS setup that identifies revenue gaps, underperforming flows, deliverability issues, and missed automation opportunities affecting ecommerce growth.</> },
-  { q: "Is a Klaviyo audit really free?", a: <>Yes. Our Klaviyo audit is completely free with no contracts or credit card required. You receive actionable insights and a clear roadmap without any obligation to continue working with us.</> },
+  { q: "Is a Klaviyo audit really free?", a: <>Yes. Our Klaviyo audit is completely free with no contracts or credit card required. You receive actionable insights and a clear roadmap without any obligation to continue working with us. If you want us to run the fixes for you, that is our <Link href="/services/klaviyo-agency" style={{ color: "#2A9555", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Klaviyo agency</Link> service.</> },
   { q: "Who should get a Klaviyo audit?", a: <>A Klaviyo audit is best for Shopify brands generating $50,000 or more per month that want to improve email revenue, automation performance, and customer retention without increasing ad spend.</> },
   { q: "What does a Klaviyo audit include?", a: <>The audit covers flows, campaigns, segmentation, deliverability, list health, design, and automation gaps. You also receive a prioritized action plan ranked by impact and implementation effort.</> },
   { q: "How long does a Klaviyo audit take?", a: <>The audit review call takes about 30 minutes. Preparation happens in advance, so the call focuses on findings, missed revenue opportunities, and clear next steps you can implement immediately.</> },
