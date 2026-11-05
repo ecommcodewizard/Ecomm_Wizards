@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Image from "next/image";
 import Link from "next/link";
 import SiAccordion from "./SiAccordion";
@@ -23,13 +24,13 @@ export const metadata: Metadata = {
     siteName: "Ecomm Wizards",
     title: "Shopify Integration Services | ERP, CRM, 3PL and More",
     description: META_DESCRIPTION,
-    images: [{ url: "/images/erp-banner-image_1024x1024.webp", alt: "shopify integration services by Ecomm Wizards" }],
+    images: [{ url: ogImage("Shopify Integration Services"), alt: "shopify integration services by Ecomm Wizards" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Shopify Integration Services | ERP, CRM, 3PL and More",
     description: META_DESCRIPTION,
-    images: ["/images/erp-banner-image_1024x1024.webp"],
+    images: [ogImage("Shopify Integration Services")],
   },
 };
 

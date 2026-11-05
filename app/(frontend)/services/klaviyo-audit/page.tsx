@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import CalEmbed from "./CalEmbed";
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     description: META_DESCRIPTION,
     images: [
       {
-        url: "/images/368b34d129434b1e37c56b68c6b45d6d-1-1024x486.webp",
+        url: ogImage("Klaviyo Audit for Shopify Brands"),
         alt: "Klaviyo audit revenue results dashboard for a Shopify brand",
       },
     ],
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Klaviyo Audit for Shopify Brands | Free Email Revenue Review",
     description: META_DESCRIPTION,
-    images: ["/images/368b34d129434b1e37c56b68c6b45d6d-1-1024x486.webp"],
+    images: [ogImage("Klaviyo Audit for Shopify Brands")],
   },
 };
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { ogImage } from "@/lib/og";
 import "./globals.css";
 // Self-hosted Poppins (replaces the render-blocking Google Fonts link). Keeps the
 // family name "Poppins", so every existing font-family reference resolves unchanged.
@@ -23,7 +24,8 @@ const SITE_NAME = "Ecomm Wizards";
 const ROOT_TITLE = "Ecomm Wizards: Shopify Integration & Automation Experts";
 const ROOT_DESCRIPTION =
   "Shopify experts specializing in store builds, migrations, optimization, custom apps, B2B, POS, and marketing. Let's grow your ecommerce together.";
-const OG_IMAGE = "/images/main-hero-f-desktop.webp";
+// Generated PNG card. Slack and other unfurlers cannot render WebP.
+const OG_IMAGE = ogImage("Shopify Integration & Automation Experts");
 
 // Google Tag Manager container (holds Google Ads + GA4 conversion tags).
 const GTM_ID = "GTM-PZV8S2C2";
@@ -48,9 +50,10 @@ export const metadata: Metadata = {
   // No title/description here on purpose: every page auto-derives its own
   // twitter:title/description from its resolved title/description. Pages that
   // set neither fall back to the root title/description above.
+  // No twitter:image here: unfurlers fall back to og:image, so each page's
+  // own card is used. Forcing one image here overrode every page's card.
   twitter: {
     card: "summary_large_image",
-    images: [OG_IMAGE],
   },
 };
 

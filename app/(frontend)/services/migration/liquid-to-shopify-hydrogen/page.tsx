@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import RodeoCarousel, { type RodeoSlide } from "@/components/sections/RodeoCarousel";
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     description: META_DESCRIPTION,
     images: [
       {
-        url: "/images/hydrogen-hero.webp",
+        url: ogImage("Shopify Hydrogen Migration Agency"),
         alt: "Shopify Hydrogen migration by Ecomm Wizards",
       },
     ],
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shopify Hydrogen Migration Agency | Headless Storefronts",
     description: META_DESCRIPTION,
-    images: ["/images/hydrogen-hero.webp"],
+    images: [ogImage("Shopify Hydrogen Migration Agency")],
   },
 };
 

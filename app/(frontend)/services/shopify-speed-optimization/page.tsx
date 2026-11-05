@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Image from "next/image";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     description: META_DESCRIPTION,
     images: [
       {
-        url: "/images/speed-image4-scaled.webp",
+        url: ogImage("Shopify Speed Optimization"),
         alt: "Shopify speed optimization results showing high Core Web Vitals scores",
       },
     ],
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shopify Speed Optimization Services | Core Web Vitals Experts",
     description: META_DESCRIPTION,
-    images: ["/images/speed-image4-scaled.webp"],
+    images: [ogImage("Shopify Speed Optimization")],
   },
 };
 

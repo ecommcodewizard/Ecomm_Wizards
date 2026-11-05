@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Link from "next/link";
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
 
 const META_DESCRIPTION =
-  "Build a unified Shopify B2B store with custom pricing, net payment terms, wholesale portals, and ERP integration. Shopify Plus Preferred Partner.";
+  "Build a unified Shopify B2B store with custom pricing, net payment terms, wholesale portals, and ERP integration. Shopify Plus Partner Agency.";
 const CANONICAL_URL = "https://ecommwizards.com/services/shopify-b2b-store-setup";
 
 export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Shopify B2B Agency | Wholesale and D2C on Shopify Plus" },
-  description: META_DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     description: META_DESCRIPTION,
     images: [
       {
-        url: "/images/B2B-hero-image.webp",
+        url: ogImage("Shopify B2B Agency"),
         alt: "Shopify Plus B2B store running wholesale and D2C from one platform",
       },
     ],
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shopify B2B Agency | Wholesale and D2C on Shopify Plus",
     description: META_DESCRIPTION,
-    images: ["/images/B2B-hero-image.webp"],
+    images: [ogImage("Shopify B2B Agency")],
   },
 };
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Image from "next/image";
 import Link from "next/link";
 import HlAccordion from "./HlAccordion";
@@ -24,13 +25,13 @@ export const metadata: Metadata = {
     siteName: "Ecomm Wizards",
     title: "Headless Shopify Agency | Hydrogen and Custom Storefronts",
     description: META_DESCRIPTION,
-    images: [{ url: "/images/seeamleass-right.webp", alt: "headless shopify agency by Ecomm Wizards" }],
+    images: [{ url: ogImage("Headless Shopify Agency"), alt: "headless shopify agency by Ecomm Wizards" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Headless Shopify Agency | Hydrogen and Custom Storefronts",
     description: META_DESCRIPTION,
-    images: ["/images/seeamleass-right.webp"],
+    images: [ogImage("Headless Shopify Agency")],
   },
 };
 

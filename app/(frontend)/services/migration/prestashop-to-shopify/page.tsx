@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import RodeoCarousel, { type RodeoSlide } from "@/components/sections/RodeoCarousel";
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     description: META_DESCRIPTION,
     images: [
       {
-        url: "/images/prestashop-hero.webp",
+        url: ogImage("PrestaShop to Shopify Migration Agency"),
         alt: "PrestaShop to Shopify migration by Ecomm Wizards",
       },
     ],
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "PrestaShop to Shopify Migration Agency | Zero Downtime",
     description: META_DESCRIPTION,
-    images: ["/images/prestashop-hero.webp"],
+    images: [ogImage("PrestaShop to Shopify Migration Agency")],
   },
 };
 
@@ -983,7 +984,7 @@ export default function Page() {
                 <li>
                   <h5 className="w2s-compare-feat-title">One-click installs</h5>
                   <p className="w2s-compare-feat-body">
-                    <Link href="/services/klaviyo-audit" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Hook up Klaviyo</Link>, Recharge, Gorgias, Yotpo, you name it. No FTP, no SQL,
+                    <Link href="/services/klaviyo-agency" style={{ color: "#1F7A45", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Hook up Klaviyo</Link>, Recharge, Gorgias, Yotpo, you name it. No FTP, no SQL,
                     no debugging someone else&rsquo;s code.
                   </p>
                 </li>

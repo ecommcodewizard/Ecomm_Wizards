@@ -230,7 +230,7 @@ export const ECOMMERCE_AGENCY_FLORIDA: GeoPage = {
         covers: ["Klaviyo", "Welcome and cart flows", "Segmentation", "Campaigns"],
         imageAlt: "The Klaviyo email program we built for the surf and outdoor brand Living in Sunshine",
         caseSlug: "living-in-sunshine-klaviyo-email",
-        cta: { label: "Explore email marketing", href: "/services/klaviyo-audit" },
+        cta: { label: "Explore email marketing", href: "/services/klaviyo-agency" },
       },
     ],
   },

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { ogImage } from "@/lib/og";
 import { getCaseStudyBySlug, CASE_STUDIES, type CaseStudy } from "@/lib/case-studies";
 import { getAppCaseStudyBySlug, APP_CASE_STUDIES, type AppCaseStudy } from "@/lib/shopify-app-studies";
 import { getKlaviyoCaseStudyBySlug, KLAVIYO_CASE_STUDIES, type KlaviyoCaseStudy } from "@/lib/klaviyo-studies";
@@ -103,8 +104,9 @@ export async function generateMetadata({
     title: { absolute: study.metaTitle ?? `${study.brandName} ${study.studyKind ?? "Shopify"} Case Study | ${study.heroMetric}` },
     description: metaDesc,
     alternates: { canonical: CANONICAL },
-    openGraph: { type: "article", url: CANONICAL, siteName: "Ecomm Wizards", title: `${study.brandName} ${study.studyKind ?? "Shopify"} Case Study`, description: metaDesc, images: [{ url: study.heroImage, alt: study.heroImageAlt ?? `${study.brandName} ${study.studyKind ?? "Shopify"} case study` }] },
-    twitter: { card: "summary_large_image", title: `${study.brandName} ${study.studyKind ?? "Shopify"} Case Study`, description: metaDesc, images: [study.heroImage] },
+    openGraph: { type: "article", url: CANONICAL, siteName: "Ecomm Wizards", title: `${study.brandName} ${study.studyKind ?? "Shopify"} Case Study`, description: metaDesc, images: [{ url: ogImage(`${study.brandName} ${study.studyKind ?? "Shopify"} Case Study`), width: 1200, height: 630, alt: study.heroImageAlt ?? `${study.brandName} ${study.studyKind ?? "Shopify"} case study` }] },
+    // Generated PNG card, not the WebP hero: Slack and other unfurlers cannot render WebP.
+    twitter: { card: "summary_large_image", title: `${study.brandName} ${study.studyKind ?? "Shopify"} Case Study`, description: metaDesc, images: [ogImage(`${study.brandName} ${study.studyKind ?? "Shopify"} Case Study`)] },
   };
 }
 
