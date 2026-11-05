@@ -162,6 +162,7 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
     "ecommerce marketing los angeles",
     "ecommerce digital marketing agency los angeles",
     "ecommerce marketing beverly hills",
+    "email marketing agency los angeles",
   ],
   faqKeywords: [
     "how often to send marketing emails ecommerce",
@@ -267,7 +268,9 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
       window: "single rendered visit per storefront, clean browser context, 10 seconds on page",
       captured: "2026-09-11",
       howGathered:
-        "Eighteen Los Angeles beauty and streetwear storefronts, rendered in Chromium with a fresh context per brand so no stored cookie suppressed a first-visit popup. Platform detection is by network request, which is identical from any location. Capture-form detection reads the DOM for a phone input beside the email input. Two limits. Send cadence and per-send discount depth are absent, because both need list subscription over time. That is what the specification's 30-day window was for. And the collecting machine geolocates outside the United States, so any offer TEXT seen may be an international variant. That is why offer wording is not in the table.",
+        // Trimmed 5 Nov 2026 to make room for the email H2 (v5 §6c). This
+        // field never renders; the full method is in the header comment.
+        "Eighteen Los Angeles beauty and streetwear storefronts, rendered in Chromium with a fresh context per brand. Platforms detected by network request, capture forms by a phone input beside the email input. Send cadence and discount depth need a month on the lists, so they are absent.",
     },
     columns: ["What we counted", "Beauty (9)", "Streetwear (9)", "All 18"],
     rows: [
@@ -322,6 +325,15 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
     reviewAfterDays: 180,
   },
 
+  // ── Email H2 (v5 §6c) ─────────────────────────────────────────────────
+  // Owner decision 5 Nov 2026: "email marketing agency los angeles" (390/mo,
+  // KD 4) goes in as an H2 section; the page's primary stays unchanged.
+  approach: {
+    heading: "The Email Marketing Agency Los Angeles Brands Hand Their List To",
+    body:
+      "Your list is the one channel you've already paid for, so it should earn on every send. We run it in Klaviyo: the flows first, then a campaign calendar built around your launches, with deliverability checked every week. Want email on its own? That's our [link:/services/klaviyo-agency|Klaviyo agency] service. Add the other channels whenever you're ready.",
+  },
+
   // ── Disciplines ───────────────────────────────────────────────────────
   disciplines: {
     label: "What we do",
@@ -337,7 +349,7 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
         covers: ["Klaviyo build", "Welcome and browse flows", "Abandoned cart", "Win-back", "List segmentation"],
         imageAlt: "Lifecycle email we designed and built for the fragrance brand Andrea Maack",
         caseSlug: "andrea-maack-klaviyo-email",
-        cta: { label: "Explore email and retention", href: "/services/klaviyo-audit" },
+        cta: { label: "Explore email and retention", href: "/services/klaviyo-agency" },
       },
       {
         label: "Campaigns and peak season",
@@ -345,7 +357,7 @@ export const ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES: GeoPage = {
         covers: ["Campaign calendar", "BFCM planning", "Segmentation", "A/B testing", "Reporting"],
         imageAlt: "Peak season email campaigns we ran for Living in Sunshine",
         caseSlug: "living-in-sunshine-klaviyo-email",
-        cta: { label: "Explore campaign work", href: "/services/klaviyo-audit" },
+        cta: { label: "Explore campaign work", href: "/services/klaviyo-agency" },
       },
       {
         label: "Subscriptions and LTV",

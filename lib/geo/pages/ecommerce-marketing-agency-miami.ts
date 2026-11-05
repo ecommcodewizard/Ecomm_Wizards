@@ -92,7 +92,7 @@ export const ECOMMERCE_MARKETING_AGENCY_MIAMI: GeoPage = {
 
   // ── SEO ────────────────────────────────────────────────────────────────
   targetKeyword: "ecommerce marketing agency miami",
-  secondaryKeywords: ["ecommerce marketing miami", "miami ecommerce marketing company"],
+  secondaryKeywords: ["ecommerce marketing miami", "miami ecommerce marketing company", "email marketing agency miami"],
   faqKeywords: [
     "do i need consent to send marketing texts",
     "what happens when a customer replies stop",
@@ -224,6 +224,15 @@ export const ECOMMERCE_MARKETING_AGENCY_MIAMI: GeoPage = {
     },
   ],
 
+  // ── Email H2 (v5 §6c) ─────────────────────────────────────────────────
+  // Owner decision 5 Nov 2026: "email marketing agency miami" (100/mo, KD 0)
+  // goes in as an H2 section; the page's primary stays unchanged.
+  approach: {
+    heading: "The Email Marketing Agency Miami Brands Trust With Their Flows",
+    body:
+      "Your customers bought once. Email is how they buy again, and you've already paid to reach them. We build your flows in Klaviyo first, then plan campaigns around your launches and the season, and watch deliverability every week. Need email on its own? Our [link:/services/klaviyo-agency|Klaviyo agency] service runs just that.",
+  },
+
   // ── Channel menu ──────────────────────────────────────────────────────
   // Early, because the reader has not picked a channel (Step 07).
   disciplines: {
@@ -238,7 +247,7 @@ export const ECOMMERCE_MARKETING_AGENCY_MIAMI: GeoPage = {
         covers: ["Klaviyo setup", "Welcome and cart flows", "Win-back", "Segmentation", "Campaign calendar"],
         imageAlt: "Email flows and seasonal campaigns we built for the candle brand C&E Craft Co",
         caseSlug: "cecraft-klaviyo-email",
-        cta: { label: "Explore email marketing", href: "/services/klaviyo-audit" },
+        cta: { label: "Explore email marketing", href: "/services/klaviyo-agency" },
       },
       {
         label: "SMS",
@@ -246,7 +255,7 @@ export const ECOMMERCE_MARKETING_AGENCY_MIAMI: GeoPage = {
         covers: ["Consent capture", "Signup forms", "Text flows", "Opt-out handling", "One email and SMS calendar"],
         imageAlt: "Email and SMS we built from scratch for the fragrance brand Andrea Maack",
         caseSlug: "andrea-maack-klaviyo-email",
-        cta: { label: "Explore SMS work", href: "/services/klaviyo-audit" },
+        cta: { label: "Explore SMS work", href: "/services/klaviyo-agency" },
       },
       {
         label: "Paid social and creative",
