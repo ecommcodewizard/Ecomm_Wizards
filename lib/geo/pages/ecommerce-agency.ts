@@ -166,7 +166,7 @@ export const ECOMMERCE_AGENCY: HubPage = {
     "A full service ecommerce agency should do both halves of the job: build the store, and bring people to it. We do both. Most agencies pick one and hand you to somebody else for the other, which is how you end up with two suppliers blaming each other.",
     "On the building side: a new store, a [link:/services/migration|move off a platform] that stopped working, or a rescue when the last team left you something broken. Anything no app can do, we write ourselves as [link:/services/shopify-development-agency|custom development].",
     "On the selling side: [link:/services/shopify-seo-agency|search], [link:/services/shopify-cro-agency|turning visitors into buyers], email and SMS, and [link:/services/creative-strategy|the ads themselves]. Same team. If your traffic climbs and your sales do not, nobody gets to point across the room.",
-    "Builds land between $10,000 and $50,000. Growth work is monthly. Either way the number and the date come in writing first.",
+    "Each build is quoted to its scope. Growth work is monthly. Either way the number and the date come in writing first.",
   ].join("\n\n"),
 
   // ── Who we work with ──────────────────────────────────────────────────
@@ -441,7 +441,7 @@ export const ECOMMERCE_AGENCY: HubPage = {
       // shared set: cost, and what happens if it goes wrong
       question: "How do I value an ecommerce platform design and development agency?",
       answer:
-        "Weigh the fixed number against the written scope, never the day rate. Custom theme builds run $10,000 to $20,000. Shopify Plus builds with B2B or complex integrations run $20,000 to $50,000. Migrations start at $15,000. Ours is fixed before development starts, so if we underestimate, that cost is ours. If you are handed a range, ask what closes the gap.",
+        "Weigh the fixed number against the written scope, never the day rate. A custom theme, a Shopify Plus build with B2B or complex integrations, and a migration each cost more as the scope grows, so compare quotes against the same written scope. Ours is fixed before development starts, so if we underestimate, that cost is ours. If you are handed a range, ask what closes the gap.",
       unique: false,
     },
     {

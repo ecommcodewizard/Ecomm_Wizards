@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
@@ -47,14 +48,14 @@ const CASE_STUDY_SLIDES: CaseStudySlide[] = [
 ];
 
 const META_DESCRIPTION =
-  "Connect your ERP to Shopify with real-time two-way sync. NetSuite, SAP, Dynamics 365, Acumatica and more. Shopify Plus Preferred Partner. Free quote.";
+  "Connect your ERP to Shopify with real-time two-way sync. NetSuite, SAP, Dynamics 365, Acumatica and more. Shopify Plus Partner Agency. Free quote.";
 const CANONICAL_URL = "https://ecommwizards.com/services/erp-connections-to-shopify";
 
 export const metadata: Metadata = {
   // `absolute` renders the title exactly; the root layout's "%s | Ecomm Wizards"
   // template would otherwise append the brand to this custom title.
   title: { absolute: "Shopify ERP Integration Service | NetSuite, SAP and More" },
-  description: META_DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     type: "website",
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
     description: META_DESCRIPTION,
     images: [
       {
-        url: "/images/erp-banner-image_1024x1024.webp",
+        url: ogImage("Shopify ERP Integration Service"),
         alt: "Shopify ERP integration by Ecomm Wizards",
       },
     ],
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shopify ERP Integration Service | NetSuite, SAP and More",
     description: META_DESCRIPTION,
-    images: ["/images/erp-banner-image_1024x1024.webp"],
+    images: [ogImage("Shopify ERP Integration Service")],
   },
 };
 
@@ -381,7 +382,7 @@ export default function ERPPage() {
         >
           <div className="text-center lg:text-left">
             <p className="text-white text-[14px] sm:text-[15px] font-semibold tracking-wide">
-              Shopify Plus Preferred Partner
+              Shopify Plus Partner Agency
             </p>
             <h1 className="mt-4 font-semibold leading-[1.15] tracking-tight text-white text-[34px] sm:text-[44px] lg:text-[50px] xl:text-[54px]">
               <span style={GRADIENT_TEXT}>Shopify ERP Integration</span> That Eliminates the Manual Work Holding Your

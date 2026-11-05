@@ -155,7 +155,6 @@ export const SHOPIFY_DEV_NEW_YORK: GeoPage = {
     "shopify website developers new york",
     "shopify experts new york",
     "ongoing shopify maintenance new york",
-    "shopify agency vs freelancer new york",
     // v5 §3.4 (Ahrefs 30/mo), in the development FAQ answer. v5's other term,
     // "shopify developer new york" (80/mo), has no home that does not read as
     // a keyword; "shopify website developers new york" already serves it.
@@ -167,6 +166,9 @@ export const SHOPIFY_DEV_NEW_YORK: GeoPage = {
     "how much does a shopify agency cost",
     "shopify development in new york",
     "how long does a shopify build take",
+    // Was a secondary that never appeared: the phrase cannot be written as
+    // English. Moved here and answered by the agency-or-freelancer FAQ.
+    "shopify agency vs freelancer new york",
   ],
   reviewedPhrases: ["in New York"],
 
@@ -589,6 +591,12 @@ export const SHOPIFY_DEV_NEW_YORK: GeoPage = {
       answer:
         "Yes, across the United States and further afield. Nothing about how we work depends on where you sit, and you won't pay a different rate by city.",
       unique: false,
+    },
+    {
+      question: "Should we hire a Shopify agency or a freelancer?",
+      answer:
+        "It depends on the job. A freelancer suits one clear task you can manage yourself, like a theme fix or a single integration. An agency suits work that spans design, build and marketing, or a store that can't stop when one person is away. If you need both, use both. Ask each one who covers your store when they're off, whether they're in New York or not.",
+      unique: true,
     },
   ],
 
