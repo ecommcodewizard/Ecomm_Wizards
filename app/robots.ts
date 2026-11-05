@@ -34,11 +34,23 @@ const AI_CRAWLERS = [
 // Disallow keeps crawlers away; noindex is what gets a page dropped.
 const PRIVATE_PATHS = ["/admin", "/cms", "/cms-api"];
 
+// The ?c= ghost URLs (spam-linked, ~409k known to Google). middleware.ts
+// already answers every one with 410 Gone, but Google still spends a visit to
+// learn that: crawl stats for Aug-Nov 2026 showed 57% of all Googlebot requests
+// ending in 404/410 on ?c= URLs, while 21 location pages sat "Discovered, never
+// crawled". Blocking them returns that crawl to real pages. No real URL on the
+// site uses a "c" parameter. Added 2026-11-06.
+//
+// Watch Page indexing for "Indexed, though blocked by robots.txt": if ?c= URLs
+// appear there, remove these two lines and fall back to 410 + the GSC removal
+// (prefix https://ecommwizards.com/?c=, expires ~9 Feb 2027).
+const JUNK_PATHS = ["/*?c=", "/*&c="];
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: AI_CRAWLERS, allow: "/", disallow: PRIVATE_PATHS },
-      { userAgent: "*", allow: "/", disallow: PRIVATE_PATHS },
+      { userAgent: AI_CRAWLERS, allow: "/", disallow: [...PRIVATE_PATHS, ...JUNK_PATHS] },
+      { userAgent: "*", allow: "/", disallow: [...PRIVATE_PATHS, ...JUNK_PATHS] },
     ],
     sitemap: [`${SITE_URL}/sitemap.xml`, `${SITE_URL}/video-sitemap.xml`],
     host: SITE_URL,
