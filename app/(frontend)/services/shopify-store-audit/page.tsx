@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Link from "next/link";
 import Image from "next/image";
 import AuditRebuildSection from "@/components/sections/AuditRebuildSection";
@@ -70,7 +71,7 @@ export const metadata: Metadata = {
     description: META_DESCRIPTION,
     images: [
       {
-        url: "/images/shopify-audit-unlock.webp",
+        url: ogImage("Shopify Store Audit"),
         alt: "Free Shopify store audit by Ecomm Wizards conversion experts",
       },
     ],
@@ -79,7 +80,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shopify Store Audit | CRO, SEO & UX Audit Service",
     description: META_DESCRIPTION,
-    images: ["/images/shopify-audit-unlock.webp"],
+    images: [ogImage("Shopify Store Audit")],
   },
 };
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     description: META_DESCRIPTION,
     images: [
       {
-        url: "/images/results.webp",
+        url: ogImage("Shopify App Development Services"),
         alt: "Shopify app development results by Ecomm Wizards",
       },
     ],
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shopify App Development Services | Custom and Public Apps",
     description: META_DESCRIPTION,
-    images: ["/images/results.webp"],
+    images: [ogImage("Shopify App Development Services")],
   },
 };
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     description: META_DESCRIPTION,
     images: [
       {
-        url: "/images/pos-hero.webp",
+        url: ogImage("Shopify POS Setup"),
         alt: "Shopify POS setup by Ecomm Wizards: terminal, tablet, and hardware",
       },
     ],
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shopify POS Setup Service | Remote Configuration and Migration",
     description: META_DESCRIPTION,
-    images: ["/images/pos-hero.webp"],
+    images: [ogImage("Shopify POS Setup")],
   },
 };
 

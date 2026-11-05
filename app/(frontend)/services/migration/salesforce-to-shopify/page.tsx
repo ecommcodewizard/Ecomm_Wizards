@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import RodeoCarousel, { type RodeoSlide } from "@/components/sections/RodeoCarousel";
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     description: META_DESCRIPTION,
     images: [
       {
-        url: "/images/salesforce-hero.webp",
+        url: ogImage("Salesforce to Shopify Migration Agency"),
         alt: "Salesforce to Shopify migration by Ecomm Wizards",
       },
     ],
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Salesforce to Shopify Migration Agency | Lower Your TCO",
     description: META_DESCRIPTION,
-    images: ["/images/salesforce-hero.webp"],
+    images: [ogImage("Salesforce to Shopify Migration Agency")],
   },
 };
 

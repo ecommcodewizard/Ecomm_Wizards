@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import RodeoCarousel, { type RodeoSlide } from "@/components/sections/RodeoCarousel";
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     description: META_DESCRIPTION,
     images: [
       {
-        url: "/images/woocommerce-hero-scaled.webp",
+        url: ogImage("WooCommerce to Shopify Migration Agency"),
         alt: "WooCommerce to Shopify migration by Ecomm Wizards",
       },
     ],
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "WooCommerce to Shopify Migration Agency | Zero Downtime",
     description: META_DESCRIPTION,
-    images: ["/images/woocommerce-hero-scaled.webp"],
+    images: [ogImage("WooCommerce to Shopify Migration Agency")],
   },
 };
 

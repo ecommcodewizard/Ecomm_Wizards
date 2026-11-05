@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Image from "next/image";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
@@ -68,7 +69,7 @@ export const metadata: Metadata = {
     description: META_DESCRIPTION,
     images: [
       {
-        url: "/images/Frame_1000004320.webp",
+        url: ogImage("Custom Shopify Store Development"),
         alt: "Custom Shopify store built by the Ecomm Wizards Shopify store development team",
       },
     ],
@@ -77,7 +78,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Custom Shopify Store Development | Ecomm Wizards",
     description: META_DESCRIPTION,
-    images: ["/images/Frame_1000004320.webp"],
+    images: [ogImage("Custom Shopify Store Development")],
   },
 };
 
@@ -1553,7 +1554,7 @@ export default function ShopifyStoreDevelopmentPage() {
                 desc: (
                   <>
                     Connect your ERP, warehouse management, POS, and tools like{" "}
-                    <Link href="/services/klaviyo-audit" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Klaviyo</Link> or Rebuy without the headaches. Our Shopify developer
+                    <Link href="/services/klaviyo-agency" style={{ color: "#61ce70", textDecoration: "underline", textUnderlineOffset: "2px", fontWeight: 600 }}>Klaviyo</Link> or Rebuy without the headaches. Our Shopify developer
                     agency engineers integrations that eliminate manual data entry
                     and keep operations running smoothly.
                   </>

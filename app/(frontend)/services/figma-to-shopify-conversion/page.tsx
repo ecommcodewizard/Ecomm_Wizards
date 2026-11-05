@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import KnifeAccordion from "@/components/sections/KnifeAccordion";
 import ServiceSchema from "@/components/seo/ServiceSchema";
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     description: META_DESCRIPTION,
     images: [
       {
-        url: "/images/Group_1000004395.webp",
+        url: ogImage("Figma to Shopify Conversion"),
         alt: "Figma design converted into a pixel-perfect custom Shopify store by Ecomm Wizards",
       },
     ],
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Figma to Shopify Conversion | Pixel-Perfect Builds",
     description: META_DESCRIPTION,
-    images: ["/images/Group_1000004395.webp"],
+    images: [ogImage("Figma to Shopify Conversion")],
   },
 };
 

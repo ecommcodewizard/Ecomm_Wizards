@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Image from "next/image";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     description: META_DESCRIPTION,
     images: [
       {
-        url: "/images/ab-testing-hero.webp",
+        url: ogImage("Shopify A/B Testing Agency"),
         alt: "Shopify A/B testing dashboard comparing variant performance with Shoplift",
       },
     ],
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shopify A/B Testing Agency | Shoplift Certified Experts",
     description: META_DESCRIPTION,
-    images: ["/images/ab-testing-hero.webp"],
+    images: [ogImage("Shopify A/B Testing Agency")],
   },
 };
 

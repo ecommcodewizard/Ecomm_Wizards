@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Link from "next/link";
 import Image from "next/image";
 import KnifeAccordion from "@/components/sections/KnifeAccordion";
@@ -27,13 +28,13 @@ export const metadata: Metadata = {
     url: "https://ecommwizards.com",
     title: HOME_TITLE,
     description: HOME_DESCRIPTION,
-    images: [{ url: "/images/main-hero-f-desktop.webp", alt: "Shopify agency building high-converting Shopify stores" }],
+    images: [{ url: ogImage("Shopify Integration & Automation Experts"), alt: "Shopify agency building high-converting Shopify stores" }],
   },
   twitter: {
     card: "summary_large_image",
     title: HOME_TITLE,
     description: HOME_DESCRIPTION,
-    images: ["/images/main-hero-f-desktop.webp"],
+    images: [ogImage("Shopify Integration & Automation Experts")],
   },
 };
 
@@ -729,7 +730,7 @@ export default function HomePage() {
         description="Acquiring customers is expensive. Keeping them is profitable. We build email flows, loyalty loops, and lead systems that turn one-time buyers into repeat customers."
         services={RETENTION_SERVICES}
         buttonText="Boost Your Retention"
-        buttonHref="/services/klaviyo-audit"
+        buttonHref="/services/klaviyo-agency"
         imageSrc="/images/pexels-kindelmedia-7688116.jpg"
         imageAlt="Shopify retention marketing with email and loyalty flows"
         paddingTop="5px"

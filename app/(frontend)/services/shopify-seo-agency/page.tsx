@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Image from "next/image";
 import Link from "next/link";
 import SseAccordion from "./SseAccordion";
@@ -26,13 +27,13 @@ export const metadata: Metadata = {
     siteName: "Ecomm Wizards",
     title: "Shopify SEO Agency | Organic Growth for Shopify Stores",
     description: META_DESCRIPTION,
-    images: [{ url: "/images/performance-1.webp", alt: "shopify seo agency by Ecomm Wizards" }],
+    images: [{ url: ogImage("Shopify SEO Agency"), alt: "shopify seo agency by Ecomm Wizards" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Shopify SEO Agency | Organic Growth for Shopify Stores",
     description: META_DESCRIPTION,
-    images: ["/images/performance-1.webp"],
+    images: [ogImage("Shopify SEO Agency")],
   },
 };
 

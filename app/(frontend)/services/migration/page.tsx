@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/lib/og";
 import Link from "next/link";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import ServiceSchema from "@/components/seo/ServiceSchema";
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description: META_DESCRIPTION,
     images: [
       {
-        url: "/images/migration-shopify-right-image.webp",
+        url: ogImage("Shopify Migration Agency"),
         alt: "Shopify migration: store and admin moved to Shopify by Ecomm Wizards",
       },
     ],
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shopify Migration Agency | Migrate to Shopify, Zero Downtime",
     description: META_DESCRIPTION,
-    images: ["/images/migration-shopify-right-image.webp"],
+    images: [ogImage("Shopify Migration Agency")],
   },
 };
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import AboutHero from "@/components/ui/AboutHero";
+import { ogImage } from "@/lib/og";
 import CTASection from "@/components/ui/CTASection";
 import SectionHeader from "@/components/ui/SectionHeader";
 import JourneyTimeline from "@/components/JourneyTimeline";
@@ -13,7 +14,8 @@ const ABOUT_TITLE = "About Ecomm Wizards | Leading Shopify Plus Agency";
 const ABOUT_DESCRIPTION =
   "Ecomm Wizards is a leading Shopify Plus agency with 8+ years of experience and $400M+ in client revenue. Meet the team behind 150+ successful Shopify stores.";
 const ABOUT_URL = "https://ecommwizards.com/about-shopify-agency";
-const ABOUT_OG_IMAGE = "/images/new_image_grande.webp";
+// Generated PNG card: Slack and other unfurlers cannot render WebP.
+const ABOUT_OG_IMAGE = ogImage("About Ecomm Wizards");
 
 export const metadata: Metadata = {
   title: { absolute: ABOUT_TITLE },
