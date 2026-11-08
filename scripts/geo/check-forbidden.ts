@@ -10,8 +10,8 @@
 //
 // Run: npx tsx scripts/geo/check-forbidden.ts
 
-import { GEO_PAGES } from "@/lib/geo/registry";
-import { scannableStrings } from "@/lib/geo/types";
+import { GEO_PAGES, SERVICE_GEO_PAGES } from "@/lib/geo/registry";
+import { scannableStrings, serviceScannableStrings } from "@/lib/geo/types";
 import { BANNED_CHARACTERS, BANNED_PHRASES, PRESENCE_HARD, UK_SPELLINGS, presenceSoftPatterns } from "@/lib/geo/forbidden";
 
 const BATCH_CITIES = [
@@ -38,6 +38,16 @@ const BATCH_CITIES = [
   "Arizona",
   "Maryland",
   "New Jersey",
+  // Geo v5 S2 (service-format pages)
+  "Charlotte",
+  "Columbus",
+  "Houston",
+  "Colorado",
+  "North Carolina",
+  "Vermont",
+  "Portland",
+  "Seattle",
+  "Alabama",
 ];
 
 const MARKER_RE = /\[NEEDS INPUT[^\]]*\]/g;
@@ -70,17 +80,23 @@ function main(): number {
   let reviewed = 0;
   let scanned = 0;
 
-  console.log(`check-forbidden: ${GEO_PAGES.length} page(s)`);
+  const total = GEO_PAGES.length + SERVICE_GEO_PAGES.length;
+  console.log(`check-forbidden: ${total} page(s)`);
   console.log("");
 
-  for (const page of GEO_PAGES) {
+  const targets = [
+    ...GEO_PAGES.map((p) => ({ page: p, prose: scannableStrings(p), city: p.type === "geo" ? p.geo.name : undefined })),
+    ...SERVICE_GEO_PAGES.map((p) => ({ page: p, prose: serviceScannableStrings(p), city: p.geo.name })),
+  ];
+
+  for (const { page, prose, city } of targets) {
     const strings = [
-      ...scannableStrings(page).map((s, i) => ({ where: `prose[${i}]`, text: s })),
+      ...prose.map((s, i) => ({ where: `prose[${i}]`, text: s })),
       { where: "metaTitle", text: page.metaTitle },
       { where: "metaDescription", text: page.metaDescription },
       { where: "shortTitle", text: page.shortTitle },
     ];
-    const cityNames = page.type === "geo" ? [page.geo.name, ...BATCH_CITIES] : [...BATCH_CITIES];
+    const cityNames = city ? [city, ...BATCH_CITIES] : [...BATCH_CITIES];
     const soft = presenceSoftPatterns(cityNames);
     const reviewedSet = new Set((page.reviewedPhrases ?? []).map((p) => p.toLowerCase().trim()));
 
@@ -128,7 +144,7 @@ function main(): number {
   }
 
   console.log("");
-  console.log(`Summary: ${scanned} string(s) scanned across ${GEO_PAGES.length} page(s), ${fails} FAIL, ${reviewed} REVIEWED`);
+  console.log(`Summary: ${scanned} string(s) scanned across ${total} page(s), ${fails} FAIL, ${reviewed} REVIEWED`);
   return fails > 0 ? 1 : 0;
 }
 

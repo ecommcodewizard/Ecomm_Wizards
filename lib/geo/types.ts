@@ -672,6 +672,190 @@ export const GeoProgrammePageSchema = z.discriminatedUnion("type", [HubPageSchem
 export type GeoProgrammePage = z.infer<typeof GeoProgrammePageSchema>;
 
 // ---------------------------------------------------------------------------
+// Service-format location pages (geo v5, from 2026-11-08)
+// ---------------------------------------------------------------------------
+//
+// The owner's approved format for the v5 S2 pages: a normal service page
+// written for one location, mirroring the hub it sits under (hero, trust bar,
+// pain points, services, location blocks, case studies, process, compare,
+// industries, why us, FAQ, book a call). No gradient layer and no Only-Here
+// research asset, which is why this is a separate schema rather than a third
+// branch of GeoProgrammePageSchema: every consumer of that union assumes an
+// asset, objections and a conversion block, and the 42 published pages keep
+// rendering exactly as before.
+//
+// The same hard rules apply: no presence claims, nothing invented, no prices,
+// case studies read from lib/case-studies.ts by slug, and the 60% shingle
+// gate across the whole set (check-shingles compares these pages against the
+// old-format pages too).
+
+/** Icons the ServicePageTemplate knows how to draw. */
+export const SERVICE_ICONS = [
+  "clock", "grid", "star", "alert", "layers", "user", "box", "truck", "calendar", "receipt",
+  "shirt", "home", "food", "flag", "paw", "cart", "code", "chart", "search", "store",
+] as const;
+export type ServiceIcon = (typeof SERVICE_ICONS)[number];
+
+const iconCard = z.object({ icon: z.enum(SERVICE_ICONS), name: z.string().min(1), desc: z.string().min(1) });
+
+export const ServiceGeoPageSchema = z.object({
+  type: z.literal("service"),
+  slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "kebab-case slug, no dots"),
+  path: z.string().startsWith("/services/"),
+  /** Path of the owning hub, e.g. "/services/shopify-development-agency". */
+  hub: z.string().startsWith("/services/"),
+  geo: z.object({
+    name: z.string().min(1),
+    type: z.enum(["metro", "state"]),
+    areaServed: z.string().min(1),
+  }),
+
+  // SEO
+  targetKeyword: z.string().min(1),
+  secondaryKeywords: z.array(z.string()),
+  faqKeywords: z.array(z.string()).default([]),
+  metaTitle: z.string().min(1).max(70),
+  metaDescription: z.string().min(1).max(170),
+  /** Hub-down link label and OG card title. */
+  shortTitle: z.string().min(1).max(60),
+  serviceType: z.string().min(1),
+
+  // 1. Hero
+  hero: z.object({
+    badge: z.string().min(1),
+    /** H1 = h1Lead + gradient span + h1Tail. */
+    h1Lead: z.string(),
+    h1Gradient: z.string().min(1),
+    h1Tail: z.string(),
+    intro: z.string().min(1),
+    stats: z.array(z.object({ value: z.string().min(1), label: z.string().min(1) })).min(3).max(4),
+    image: z.object({ src: z.string().startsWith("/"), alt: z.string().min(1) }),
+    /** Small line under the CTAs. */
+    footnote: z.string().min(1).optional(),
+  }),
+  // 2. Trust bar (logos are shared, copy is not)
+  trust: z.object({ heading: z.string().min(1), subheading: z.string().min(1) }),
+  // 3. Pain points
+  pains: z.object({
+    heading: z.string().min(1),
+    intro: z.string().min(1),
+    items: z.array(iconCard.extend({ cost: z.string().min(1) })).min(3).max(6),
+  }),
+  // 4. Services
+  services: z.object({
+    label: z.string().min(1),
+    heading: z.string().min(1),
+    intro: z.string().min(1),
+    items: z.array(z.object({ title: z.string().min(1), body: z.string().min(1) })).min(4).max(10),
+  }),
+  // 5. Location section: what this place means for the store
+  local: z.object({
+    label: z.string().min(1),
+    heading: z.string().min(1),
+    intro: z.string().min(1),
+    items: z.array(iconCard).min(2).max(4),
+  }),
+  // 6. Case studies, by vertical. Brand, image and metric come from
+  //    lib/case-studies.ts; only the framing line and tags live here.
+  caseStudies: z.object({
+    heading: z.string().min(1),
+    intro: z.string().min(1),
+    items: z
+      .array(
+        z.object({
+          slug: z.string().min(1),
+          tags: z.array(z.string().min(1)).min(2).max(4),
+          description: z.string().min(1),
+          video: z.string().startsWith("/").optional(),
+        }),
+      )
+      .min(3)
+      .max(4),
+  }),
+  // 7. Process: shared structure, copy per location
+  process: z.object({
+    heading: z.string().min(1),
+    intro: z.string().min(1),
+    steps: z.array(z.object({ title: z.string().min(1), desc: z.string().min(1) })).length(5),
+  }),
+  // 8. Compare: the kinds of agency a buyer here gets offered. Categories,
+  //    never named firms.
+  compare: z.object({
+    heading: z.string().min(1),
+    intro: z.string().min(1),
+    options: z
+      .array(z.object({ name: z.string().min(1), goodFor: z.string().min(1), watchFor: z.string().min(1) }))
+      .min(2)
+      .max(3),
+    us: z.object({ name: z.string().min(1), points: z.array(z.string().min(1)).min(3).max(6) }),
+  }),
+  // 9. Industries
+  industries: z.object({
+    heading: z.string().min(1),
+    intro: z.string().min(1),
+    items: z.array(iconCard).min(4).max(8),
+    footnote: z.string().min(1).optional(),
+  }),
+  // 10. Why us is shared (template constant).
+  // 11. FAQ
+  faqHeading: z.string().min(1),
+  faqs: z.array(FAQSchema).min(6).max(10),
+  // 12. Book a call (calendar is shared)
+  book: z.object({
+    heading: z.string().min(1),
+    sub: z.string().min(1),
+    bullets: z.array(z.string().min(1)).min(3).max(5),
+  }),
+
+  sources: z.array(SourceSchema),
+  wordCountTarget: z.tuple([z.number().int().positive(), z.number().int().positive()]),
+  reviewedPhrases: z.array(z.string()).optional(),
+});
+export type ServiceGeoPage = z.infer<typeof ServiceGeoPageSchema>;
+
+/** The visible H1 of a service-format page, as one string. */
+export function serviceH1(page: ServiceGeoPage): string {
+  return [page.hero.h1Lead, page.hero.h1Gradient, page.hero.h1Tail].map((s) => s.trim()).filter(Boolean).join(" ");
+}
+
+/** Every page-specific prose string on a service-format page, in reading
+ *  order. Shared template copy (why us, the booking chips) is excluded: it is
+ *  identical on every page by design and would only add noise to the
+ *  uniqueness check. */
+export function serviceProseStrings(page: ServiceGeoPage): string[] {
+  const h = page.hero;
+  const out: string[] = [h.badge, serviceH1(page), h.intro];
+  for (const s of h.stats) out.push(s.value, s.label);
+  if (h.footnote) out.push(h.footnote);
+  out.push(page.trust.heading, page.trust.subheading);
+  out.push(page.pains.heading, page.pains.intro);
+  for (const p of page.pains.items) out.push(p.name, p.desc, p.cost);
+  out.push(page.services.label, page.services.heading, page.services.intro);
+  for (const s of page.services.items) out.push(s.title, s.body);
+  out.push(page.local.label, page.local.heading, page.local.intro);
+  for (const l of page.local.items) out.push(l.name, l.desc);
+  out.push(page.caseStudies.heading, page.caseStudies.intro);
+  for (const c of page.caseStudies.items) out.push(...c.tags, c.description);
+  out.push(page.process.heading, page.process.intro);
+  for (const s of page.process.steps) out.push(s.title, s.desc);
+  out.push(page.compare.heading, page.compare.intro);
+  for (const o of page.compare.options) out.push(o.name, o.goodFor, o.watchFor);
+  out.push(page.compare.us.name, ...page.compare.us.points);
+  out.push(page.industries.heading, page.industries.intro);
+  for (const i of page.industries.items) out.push(i.name, i.desc);
+  if (page.industries.footnote) out.push(page.industries.footnote);
+  out.push(page.faqHeading);
+  for (const f of page.faqs) out.push(f.question, f.answer);
+  out.push(page.book.heading, page.book.sub, ...page.book.bullets);
+  return out;
+}
+
+/** serviceProseStrings plus alt text, for the banned-copy scan. */
+export function serviceScannableStrings(page: ServiceGeoPage): string[] {
+  return [...serviceProseStrings(page), page.hero.image.alt];
+}
+
+// ---------------------------------------------------------------------------
 // Helpers shared by components and scripts
 // ---------------------------------------------------------------------------
 

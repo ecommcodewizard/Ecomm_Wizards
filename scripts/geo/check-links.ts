@@ -10,7 +10,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { GEO_PAGES } from "@/lib/geo/registry";
+import { GEO_PAGES, SERVICE_GEO_PAGES } from "@/lib/geo/registry";
 import { allStrings } from "@/lib/geo/types";
 import { CASE_STUDIES } from "@/lib/case-studies";
 import { APP_CASE_STUDIES } from "@/lib/shopify-app-studies";
@@ -146,8 +146,38 @@ function main(): number {
     console.log(`PAGE ${page.path} | ${issues.length ? "FAIL" : "OK"} | proof=${page.proof.length}`);
   }
 
+  // Service-format pages: case-study slugs, the hub, every [link:] target, and
+  // the same rendered-HTML checks.
+  for (const page of SERVICE_GEO_PAGES) {
+    const issues: string[] = [];
+    const strings = allStrings(page);
+    for (const c of page.caseStudies.items) {
+      if (!KNOWN_SLUGS.has(c.slug)) issues.push(`case study slug "${c.slug}" does not exist in any case-study array`);
+    }
+    if (!(HUB_PATHS.has(page.hub) || staticServiceRouteExists(page.hub))) issues.push(`hub "${page.hub}" is neither a registry hub nor an existing app/services route`);
+    for (const s of strings) {
+      for (const m of s.matchAll(/\[link:([^\]|]+)\|/g)) {
+        const href = m[1];
+        if (href === "/case-studies" || href === "/case-studies/") issues.push(`bare index link marker in content`);
+        else if (href.startsWith("/services/") && !staticServiceRouteExists(href) && !HUB_PATHS.has(href)) issues.push(`link target "${href}" has no route`);
+      }
+    }
+    const file = htmlPathFor(page.path);
+    if (fs.existsSync(file)) {
+      htmlChecked++;
+      const html = fs.readFileSync(file, "utf8");
+      if (!html.includes(`href="${page.hub}"`)) issues.push(`rendered HTML has no link to hub href="${page.hub}"`);
+      if (/href="[^"]*\?c=/.test(html)) issues.push(`rendered HTML: an href contains ?c=`);
+    } else {
+      console.log(`SKIP ${page.path}: no rendered HTML at ${path.relative(ROOT, file)}`);
+    }
+    for (const i of issues) console.log(`FAIL ${page.path}: ${i}`);
+    fails += issues.length;
+    console.log(`PAGE ${page.path} | ${issues.length ? "FAIL" : "OK"} | case studies=${page.caseStudies.items.length}`);
+  }
+
   console.log("");
-  console.log(`Summary: ${GEO_PAGES.length} page(s), ${htmlChecked} rendered HTML file(s) checked, ${fails} FAIL`);
+  console.log(`Summary: ${GEO_PAGES.length + SERVICE_GEO_PAGES.length} page(s), ${htmlChecked} rendered HTML file(s) checked, ${fails} FAIL`);
   return fails > 0 ? 1 : 0;
 }
 

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import type { GeoPage } from "@/lib/geo/types";
 
 // Hub-down links to a hub's published geo pages. One component for every hub:
 // the three geo-programme hubs and the hand-built Shopify development and
@@ -21,7 +20,7 @@ import type { GeoPage } from "@/lib/geo/types";
 // Renders nothing until the hub has a published geo page, so a hub never links
 // to a draft, which would 404.
 
-export default function HubCityLinks({ heading, pages }: { heading: string; pages: GeoPage[] }) {
+export default function HubCityLinks({ heading, pages }: { heading: string; pages: { path: string; shortTitle: string }[] }) {
   if (pages.length === 0) return null;
 
   return (

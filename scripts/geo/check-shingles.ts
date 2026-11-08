@@ -9,8 +9,8 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { GEO_PAGES } from "@/lib/geo/registry";
-import { proseStrings } from "@/lib/geo/types";
+import { GEO_PAGES, SERVICE_GEO_PAGES } from "@/lib/geo/registry";
+import { proseStrings, serviceProseStrings } from "@/lib/geo/types";
 
 const ROOT = process.cwd();
 const APP_DIR = path.join(ROOT, ".next", "server", "app");
@@ -18,7 +18,12 @@ const SHINGLE = 8;
 const MIN_UNIQUE_PCT = 60;
 
 /** [registry page path, existing route path, minimum unique %] */
-const COMPARE: [string, string, number][] = [["/services/ecommerce-seo-agency", "/services/shopify-seo-agency", 75]];
+const COMPARE: [string, string, number][] = [
+  ["/services/ecommerce-seo-agency", "/services/shopify-seo-agency", 75],
+  // Service-format pages borrow the hub's layout, so their own copy must not
+  // borrow its words.
+  ["/services/shopify-development-agency/charlotte", "/services/shopify-development-agency", 60],
+];
 
 const MARKER_RE = /\[NEEDS INPUT[^\]]*\]/g;
 
@@ -64,10 +69,15 @@ function uniquePct(mine: Set<string>, others: Set<string>[]): { pct: number; uni
 
 function main(): number {
   let fails = 0;
-  console.log(`check-shingles: ${GEO_PAGES.length} page(s), ${SHINGLE}-word shingles, minimum ${MIN_UNIQUE_PCT}% unique across the set`);
+  console.log(`check-shingles: ${GEO_PAGES.length + SERVICE_GEO_PAGES.length} page(s), ${SHINGLE}-word shingles, minimum ${MIN_UNIQUE_PCT}% unique across the set`);
   console.log("");
 
-  const sets = GEO_PAGES.map((p) => ({ page: p, set: shingles(proseStrings(p).join(" ")) }));
+  // Both page formats sit in one comparison set: a service-format page must be
+  // unique against the old-format pages as well as against its own kind.
+  const sets: { page: { path: string }; set: Set<string> }[] = [
+    ...GEO_PAGES.map((p) => ({ page: p, set: shingles(proseStrings(p).join(" ")) })),
+    ...SERVICE_GEO_PAGES.map((p) => ({ page: p, set: shingles(serviceProseStrings(p).join(" ")) })),
+  ];
 
   if (sets.length < 2) {
     console.log("NOTE only one page in the registry: the cross-set check passes trivially (nothing to compare against).");

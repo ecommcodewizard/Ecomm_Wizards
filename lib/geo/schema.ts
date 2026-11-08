@@ -7,17 +7,17 @@
 // enforced by scripts/geo/check-schema.ts).
 
 import type { Crumb } from "@/components/ui/Breadcrumbs";
-import type { FAQ, GeoProgrammePage } from "./types";
+import type { FAQ, GeoProgrammePage, ServiceGeoPage } from "./types";
 import { SITE_URL, hubPathToLabel } from "./registry";
 
 /** Visible breadcrumb trail for a page. Geo pages name the HUB as position 3,
  *  never a redirecting path. The last crumb has no href (current page). */
-export function breadcrumbTrail(page: GeoProgrammePage): Crumb[] {
+export function breadcrumbTrail(page: GeoProgrammePage | ServiceGeoPage): Crumb[] {
   const trail: Crumb[] = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
   ];
-  if (page.type === "geo") {
+  if (page.type === "geo" || page.type === "service") {
     trail.push({ name: hubPathToLabel(page.hub), href: page.hub });
     trail.push({ name: page.geo.name });
   } else {
