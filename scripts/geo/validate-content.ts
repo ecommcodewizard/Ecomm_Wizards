@@ -4,8 +4,8 @@
 //
 // Run: npx tsx scripts/geo/validate-content.ts
 
-import { GEO_PAGES, validatePage } from "@/lib/geo/registry";
-import { hasNeedsInput, proseStrings, wordCount } from "@/lib/geo/types";
+import { GEO_PAGES, SERVICE_GEO_PAGES, validatePage, validateServicePage } from "@/lib/geo/registry";
+import { hasNeedsInput, proseStrings, serviceProseStrings, wordCount } from "@/lib/geo/types";
 
 function main(): number {
   const today = new Date();
@@ -17,7 +17,7 @@ function main(): number {
 
   // Duplicate paths
   const seen = new Map<string, number>();
-  for (const p of GEO_PAGES) seen.set(p.path, (seen.get(p.path) ?? 0) + 1);
+  for (const p of [...GEO_PAGES, ...SERVICE_GEO_PAGES]) seen.set(p.path, (seen.get(p.path) ?? 0) + 1);
   for (const [path, n] of seen) {
     if (n > 1) {
       console.log(`FAIL ${path}: path appears ${n} times in GEO_PAGES`);
@@ -41,8 +41,21 @@ function main(): number {
     console.log(`PAGE ${page.path} | ${state} | words=${words} | markers=${markers}`);
   }
 
+  for (const page of SERVICE_GEO_PAGES) {
+    const issues = validateServicePage(page, today);
+    const errors = issues.filter((i) => i.level === "error");
+    const warnings = issues.filter((i) => i.level === "warn");
+    for (const e of errors) console.log(`FAIL ${page.path}: ${e.message}`);
+    for (const w of warnings) console.log(`WARN ${page.path}: ${w.message}`);
+    fails += errors.length;
+    warns += warnings.length;
+    const prose = serviceProseStrings(page);
+    const state = errors.length ? "ERROR" : warnings.length ? "WARN" : "OK";
+    console.log(`PAGE ${page.path} | ${state} | service format | words=${wordCount(prose)} | markers=${prose.filter(hasNeedsInput).length}`);
+  }
+
   console.log("");
-  console.log(`Summary: ${GEO_PAGES.length} page(s), ${fails} FAIL, ${warns} WARN`);
+  console.log(`Summary: ${GEO_PAGES.length + SERVICE_GEO_PAGES.length} page(s), ${fails} FAIL, ${warns} WARN`);
   return fails > 0 ? 1 : 0;
 }
 

@@ -12,10 +12,14 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { GEO_PAGES, SITE_URL, canonicalUrl } from "@/lib/geo/registry";
+import { GEO_PAGES, SERVICE_GEO_PAGES, SITE_URL, canonicalUrl } from "@/lib/geo/registry";
 import { breadcrumbListJsonLd, breadcrumbTrail, faqPageJsonLd, faqPlainText } from "@/lib/geo/schema";
 import { ALLOWED_SCHEMA_TYPES, FORBIDDEN_SCHEMA_PROPERTIES, FORBIDDEN_SCHEMA_TYPES } from "@/lib/geo/forbidden";
-import type { GeoProgrammePage } from "@/lib/geo/types";
+import type { GeoProgrammePage as OldPage, ServiceGeoPage } from "@/lib/geo/types";
+
+// Both page formats go through every check.
+type GeoProgrammePage = OldPage | ServiceGeoPage;
+const ALL_PAGES: GeoProgrammePage[] = [...GEO_PAGES, ...SERVICE_GEO_PAGES];
 
 const ROOT = process.cwd();
 const APP_DIR = path.join(ROOT, ".next", "server", "app");
@@ -39,7 +43,8 @@ function serviceJsonLd(page: GeoProgrammePage) {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${url}#service`,
-    name: page.h1,
+    name: page.type === "service" ? page.shortTitle : page.h1,
+    ...(page.type === "service" ? { areaServed: { "@type": page.geo.type === "state" ? "State" : "AdministrativeArea", name: page.geo.areaServed } } : {}),
     serviceType: page.serviceType,
     provider: { "@id": ORG_ID },
     ...(areaServed ? { areaServed: { "@type": "Country", name: areaServed } } : {}),
@@ -111,7 +116,7 @@ function checkGraph(graph: unknown, page: GeoProgrammePage, where: string, issue
 
 function pass1(): number {
   let fails = 0;
-  for (const page of GEO_PAGES) {
+  for (const page of ALL_PAGES) {
     const issues: Issue[] = [];
     const graph = [breadcrumbListJsonLd(breadcrumbTrail(page), page.path), faqPageJsonLd(page.faqs), serviceJsonLd(page)];
     checkGraph(graph, page, "jsonld", issues);
@@ -137,7 +142,7 @@ function htmlPathFor(routePath: string): string {
 function pass2(): number {
   let fails = 0;
   let checked = 0;
-  for (const page of GEO_PAGES) {
+  for (const page of ALL_PAGES) {
     const file = htmlPathFor(page.path);
     if (!fs.existsSync(file)) {
       console.log(`SKIP ${page.path}: no rendered HTML at ${path.relative(ROOT, file)}`);
@@ -163,7 +168,7 @@ function pass2(): number {
     checkGraph(parsed, page, "html", issues, LAYOUT_TYPES);
 
     // Geo pages: BreadcrumbList must contain the hub path.
-    if (page.type === "geo") {
+    if (page.type === "geo" || page.type === "service") {
       const lists = collectByType(parsed, "BreadcrumbList");
       const hubUrl = `${SITE_URL}${page.hub}`;
       const hasHub = lists.some((l) => JSON.stringify(l).includes(hubUrl));
@@ -186,7 +191,7 @@ function pass2(): number {
 }
 
 function main(): number {
-  console.log(`check-schema: ${GEO_PAGES.length} page(s)`);
+  console.log(`check-schema: ${ALL_PAGES.length} page(s)`);
   console.log("");
   console.log("Pass 1: JSON-LD rebuilt from content objects");
   let fails = pass1();

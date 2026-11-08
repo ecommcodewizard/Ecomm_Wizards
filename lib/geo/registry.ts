@@ -10,7 +10,9 @@
 // unfinished page also fails `next build`, which is the backstop.
 
 import { SERVICE_CATEGORIES } from "@/lib/services";
-import { GeoProgrammePageSchema, NEEDS_INPUT, hasNeedsInput, proseStrings, wordCount, type GeoPage, type GeoProgrammePage, type HubPage } from "./types";
+import { GeoProgrammePageSchema, NEEDS_INPUT, ServiceGeoPageSchema, hasNeedsInput, proseStrings, serviceProseStrings, wordCount, type GeoPage, type GeoProgrammePage, type HubPage, type ServiceGeoPage } from "./types";
+import { CASE_STUDIES } from "@/lib/case-studies";
+import { SHOPIFY_DEV_CHARLOTTE } from "./pages/shopify-development-agency-charlotte";
 import { ECOMMERCE_AGENCY } from "./pages/ecommerce-agency";
 import { ECOMMERCE_SEO_AGENCY } from "./pages/ecommerce-seo-agency";
 import { ECOMMERCE_MARKETING_AGENCY } from "./pages/ecommerce-marketing-agency";
@@ -59,6 +61,14 @@ export const SITE_URL = "https://ecommwizards.com";
 /** Add each new page here. Order is irrelevant; paths must be unique. */
 export const GEO_PAGES: GeoProgrammePage[] = [ECOMMERCE_AGENCY, ECOMMERCE_SEO_AGENCY, ECOMMERCE_MARKETING_AGENCY, SHOPIFY_DEV_LOS_ANGELES, SHOPIFY_DEV_NEW_YORK, ECOMMERCE_AGENCY_NEW_YORK, SHOPIFY_SEO_NEW_YORK, ECOMMERCE_AGENCY_LOS_ANGELES, ECOMMERCE_MARKETING_AGENCY_LOS_ANGELES, ECOMMERCE_AGENCY_SAN_DIEGO, SHOPIFY_DEV_SAN_DIEGO, SHOPIFY_DEV_ORANGE_COUNTY, SHOPIFY_DEV_CALIFORNIA, SHOPIFY_THEME_CALIFORNIA, ECOMMERCE_AGENCY_SAN_FRANCISCO, SHOPIFY_DEV_AUSTIN, ECOMMERCE_AGENCY_AUSTIN, ECOMMERCE_AGENCY_DALLAS, SHOPIFY_DEV_BOSTON, ECOMMERCE_AGENCY_BOSTON, SHOPIFY_APP_RALEIGH, ECOMMERCE_AGENCY_RALEIGH, SHOPIFY_DEV_MINNEAPOLIS, ECOMMERCE_AGENCY_MINNEAPOLIS, ECOMMERCE_AGENCY_MIAMI, ECOMMERCE_AGENCY_CHICAGO, ECOMMERCE_SEO_AGENCY_CHICAGO, ECOMMERCE_AGENCY_ATLANTA, ECOMMERCE_AGENCY_DENVER, ECOMMERCE_AGENCY_PHILADELPHIA, ECOMMERCE_AGENCY_MILWAUKEE, ECOMMERCE_AGENCY_WISCONSIN, SHOPIFY_DEV_MAINE, ECOMMERCE_AGENCY_MAINE, ECOMMERCE_AGENCY_ARIZONA, ECOMMERCE_AGENCY_MARYLAND, ECOMMERCE_AGENCY_NEW_JERSEY, ECOMMERCE_MARKETING_AGENCY_MIAMI, ECOMMERCE_SEO_AGENCY_MIAMI, SHOPIFY_DEV_FLORIDA, ECOMMERCE_AGENCY_FLORIDA, ECOMMERCE_SEO_AGENCY_FLORIDA];
 
+/** Service-format location pages (geo v5, owner-approved 2026-11-08). Live
+ *  the moment they reach main, exactly like GEO_PAGES. Kept in their own list
+ *  because they have their own schema; every guardrail reads both lists. */
+export const SERVICE_GEO_PAGES: ServiceGeoPage[] = [SHOPIFY_DEV_CHARLOTTE];
+
+/** Anything a hub links down to or the footer lists. */
+export type LocationPage = GeoPage | ServiceGeoPage;
+
 // ---------------------------------------------------------------------------
 // Lookups
 // ---------------------------------------------------------------------------
@@ -87,11 +97,13 @@ export function hubChildren(hub: HubPage): GeoPage[] {
  *  programme; several hubs are ordinary hand-built service pages, and those
  *  still need to link down to their geo children or the geo page launches with
  *  no inbound internal link at all. */
-export function geoForHub(hubPath: string): GeoPage[] {
-  return GEO_PAGES.filter((p): p is GeoPage => p.type === "geo" && p.hub === hubPath);
+export function geoForHub(hubPath: string): LocationPage[] {
+  const old = GEO_PAGES.filter((p): p is GeoPage => p.type === "geo" && p.hub === hubPath);
+  const svc = SERVICE_GEO_PAGES.filter((p) => p.hub === hubPath);
+  return [...old, ...svc];
 }
 
-export function canonicalUrl(page: GeoProgrammePage): string {
+export function canonicalUrl(page: { path: string }): string {
   return `${SITE_URL}${page.path}`;
 }
 
@@ -144,8 +156,8 @@ export type LocalizedGroup = {
 export function localizedFooterGroups(): LocalizedGroup[] {
   const byHub = new Map<string, { name: string; href: string }[]>();
 
-  for (const p of GEO_PAGES) {
-    if (p.type !== "geo") continue;
+  const located: LocationPage[] = [...GEO_PAGES.filter((p): p is GeoPage => p.type === "geo"), ...SERVICE_GEO_PAGES];
+  for (const p of located) {
     if (!byHub.has(p.hub)) byHub.set(p.hub, []);
     byHub.get(p.hub)!.push({ name: p.geo.name, href: p.path });
   }
@@ -165,7 +177,7 @@ export function localizedFooterGroups(): LocalizedGroup[] {
 
 /** Paths that belong in the sitemap: every registered page. */
 export function geoRoutes(): string[] {
-  return GEO_PAGES.map((p) => p.path);
+  return [...GEO_PAGES.map((p) => p.path), ...SERVICE_GEO_PAGES.map((p) => p.path)];
 }
 
 export type ValidationIssue = { path: string; level: "error" | "warn"; message: string };
@@ -264,6 +276,69 @@ export function validatePage(page: GeoProgrammePage, today: Date = new Date()): 
   }
 
   return issues;
+}
+
+/** Content validation for a service-format location page. */
+export function validateServicePage(page: ServiceGeoPage, today: Date = new Date()): ValidationIssue[] {
+  const issues: ValidationIssue[] = [];
+  const err = (message: string) => issues.push({ path: page.path, level: "error", message });
+  const warn = (message: string) => issues.push({ path: page.path, level: "warn", message });
+
+  const parsed = ServiceGeoPageSchema.safeParse(page);
+  if (!parsed.success) {
+    for (const i of parsed.error.issues) err(`shape: ${i.path.join(".")}: ${i.message}`);
+    return issues;
+  }
+
+  const prose = serviceProseStrings(page);
+  const markers = prose.filter(hasNeedsInput).length;
+  if (markers > 0) err(`${markers} slot(s) still contain ${NEEDS_INPUT} markers`);
+  if ([page.metaTitle, page.metaDescription, page.shortTitle].some(hasNeedsInput)) err(`SEO fields still contain ${NEEDS_INPUT} markers`);
+  for (const s of page.sources) {
+    if (hasNeedsInput(s.url) || hasNeedsInput(s.claim) || hasNeedsInput(s.publisher) || hasNeedsInput(s.captured)) err(`source "${s.id}" incomplete`);
+  }
+
+  // Case studies must resolve to a published study.
+  const known = new Set(CASE_STUDIES.map((c) => c.slug));
+  for (const c of page.caseStudies.items) if (!known.has(c.slug)) err(`case study "${c.slug}" is not in lib/case-studies.ts`);
+
+  const unique = page.faqs.filter((f) => f.unique).length;
+  if (unique < 3) err(`only ${unique} FAQ(s) marked unique; minimum 3`);
+
+  // No prices in copy (owner rule): any sentence carrying a dollar figure next
+  // to price language fails. Dollar figures that are results or thresholds
+  // (brand stats, case-study revenue, a tax threshold) pass.
+  const PRICE_WORDS = /\b(cost|costs|price|priced|pricing|budget|fee|fees|retainer|starts? at|starting at|per (?:month|hour)|hourly rate|packages? from)\b/i;
+  for (const s of prose) {
+    for (const sentence of s.split(/(?<=[.!?])\s+/)) {
+      if (/\$\s?\d/.test(sentence) && PRICE_WORDS.test(sentence)) err(`possible price in copy: "${sentence.slice(0, 100)}"`);
+    }
+  }
+
+  // The accordions and the FAQ render plain text, so a link or bold marker
+  // there would show as literal brackets.
+  for (const s of [...page.services.items.map((i) => i.body), ...page.faqs.flatMap((f) => [f.question, f.answer])]) {
+    if (/\[link:|\*\*/.test(s)) err(`marker in a plain-text slot (services accordion or FAQ): "${s.slice(0, 80)}"`);
+  }
+
+  const words = wordCount(prose);
+  const [lo, hi] = page.wordCountTarget;
+  if (words < lo || words > hi) err(`word count ${words} outside target ${lo}-${hi}`);
+
+  for (const s of page.sources) {
+    const d = new Date(s.captured);
+    if (!Number.isNaN(d.getTime()) && d.getTime() + s.reviewAfterDays * 86400000 < today.getTime()) {
+      warn(`source "${s.id}" captured ${s.captured} is past its ${s.reviewAfterDays}-day review window`);
+    }
+  }
+  return issues;
+}
+
+export function assertServicePublishable(page: ServiceGeoPage): void {
+  const errors = validateServicePage(page).filter((i) => i.level === "error");
+  if (errors.length) {
+    throw new Error(`[geo] ${page.path} is not fit to be live:\n` + errors.map((e) => `  - ${e.message}`).join("\n"));
+  }
 }
 
 /** Throws when a page is not fit to be live. Called from the route at render
