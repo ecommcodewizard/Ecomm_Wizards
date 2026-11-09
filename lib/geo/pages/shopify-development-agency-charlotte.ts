@@ -43,8 +43,9 @@ export const SHOPIFY_DEV_CHARLOTTE: ServiceGeoPage = {
       { value: "60 Days", label: "Support Included" },
     ],
     image: {
-      src: "/images/Group_1000003974_d0eba414-7aec-4930-b534-a4dcc91d004e_1024x1024.png",
-      alt: "Custom Shopify store design and development by Ecomm Wizards",
+      src: "/images/shopify-development-agency-charlotte-hero-v1.webp",
+      alt: "Shopify stores we built for Mouldings One, Candy Kittens and Twillory, with B2B revenue up 50% and conversion up 182%",
+      cutout: true,
     },
     footnote: "Shopify Plus Partner. 150+ stores built exclusively on Shopify.",
   },

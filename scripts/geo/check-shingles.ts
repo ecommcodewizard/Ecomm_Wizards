@@ -24,7 +24,8 @@ const COMPARE: [string, string, number][] = [
   // borrow its words.
   ["/services/shopify-development-agency/charlotte", "/services/shopify-development-agency", 60],
   ["/services/shopify-development-agency/chicago", "/services/shopify-development-agency", 60],
-  ["/services/shopify-development-agency/dallas", "/services/shopify-development-agency", 60],];
+  ["/services/shopify-development-agency/dallas", "/services/shopify-development-agency", 60],
+  ["/services/shopify-development-agency/columbus", "/services/shopify-development-agency", 60],];
 
 const MARKER_RE = /\[NEEDS INPUT[^\]]*\]/g;
 

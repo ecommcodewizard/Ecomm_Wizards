@@ -15,6 +15,7 @@ import { CASE_STUDIES } from "@/lib/case-studies";
 import { SHOPIFY_DEV_CHARLOTTE } from "./pages/shopify-development-agency-charlotte";
 import { SHOPIFY_DEV_CHICAGO } from "./pages/shopify-development-agency-chicago";
 import { SHOPIFY_DEV_DALLAS } from "./pages/shopify-development-agency-dallas";
+import { SHOPIFY_DEV_COLUMBUS } from "./pages/shopify-development-agency-columbus";
 import { ECOMMERCE_AGENCY } from "./pages/ecommerce-agency";
 import { ECOMMERCE_SEO_AGENCY } from "./pages/ecommerce-seo-agency";
 import { ECOMMERCE_MARKETING_AGENCY } from "./pages/ecommerce-marketing-agency";
@@ -66,7 +67,7 @@ export const GEO_PAGES: GeoProgrammePage[] = [ECOMMERCE_AGENCY, ECOMMERCE_SEO_AG
 /** Service-format location pages (geo v5, owner-approved 2026-11-08). Live
  *  the moment they reach main, exactly like GEO_PAGES. Kept in their own list
  *  because they have their own schema; every guardrail reads both lists. */
-export const SERVICE_GEO_PAGES: ServiceGeoPage[] = [SHOPIFY_DEV_CHARLOTTE, SHOPIFY_DEV_CHICAGO, SHOPIFY_DEV_DALLAS];
+export const SERVICE_GEO_PAGES: ServiceGeoPage[] = [SHOPIFY_DEV_CHARLOTTE, SHOPIFY_DEV_CHICAGO, SHOPIFY_DEV_DALLAS, SHOPIFY_DEV_COLUMBUS];
 
 /** Anything a hub links down to or the footer lists. */
 export type LocationPage = GeoPage | ServiceGeoPage;
@@ -384,7 +385,12 @@ function keywordIssues(page: ServiceGeoPage, prose: string[], words: number): { 
   if (uses < min) out.push({ level: "error", message: `primary "${kw}" used ${uses}x (${pct}%); needs at least ${min} (0.4% of ${words} words)` });
   else if (uses > Math.ceil(words * 0.008)) out.push({ level: "warn", message: `primary "${kw}" used ${uses}x (${pct}%), above 0.8%: check none read as stuffed` });
 
-  const place = new Set([page.geo.name.toLowerCase(), "nc", "il", "tx", "in"]);
+  // Place words dropped from a secondary before matching: the city's own
+  // words, every US state abbreviation, and "in".
+  const place = new Set([
+    ...page.geo.name.toLowerCase().split(/\s+/), "in",
+    ..."al ak az ar ca co ct de fl ga hi id il ia ks ky la me md ma mi mn ms mo mt ne nv nh nj nm ny nc nd oh ok or pa ri sc sd tn tx ut vt va wa wv wi wy dc".split(" "),
+  ]);
   const leads = [
     ...headings,
     ...[page.pains.intro, page.services.intro, page.local.intro, page.caseStudies.intro, page.process.intro, page.compare.intro, page.industries.intro,
