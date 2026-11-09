@@ -25,7 +25,7 @@ export const SHOPIFY_DEV_CHARLOTTE: ServiceGeoPage = {
   faqKeywords: ["shopify developers charlotte", "charlotte shopify design agency", "shopify design charlotte nc", "shopify developer charlotte nc"],
   metaTitle: "Shopify Development Charlotte NC | Custom Design and Builds",
   metaDescription:
-    "Shopify development and design for Charlotte brands: custom themes, Shopify Plus, B2B and WooCommerce migrations. 150+ stores built, fixed price, live in about 6 weeks.",
+    "Shopify development Charlotte brands hire for custom themes, Shopify Plus, B2B and WooCommerce moves. 150+ stores built, fixed price, most live in about 6 weeks.",
   shortTitle: "Shopify Development Charlotte",
   serviceType: "Shopify development",
 
@@ -35,7 +35,7 @@ export const SHOPIFY_DEV_CHARLOTTE: ServiceGeoPage = {
     h1Gradient: "Shopify Development",
     h1Tail: "Charlotte Brands Hire to Sell More, Not Just Look Better",
     intro:
-      "Your store has to carry the whole business: a big catalog, trade accounts, local pickup and the weekends when everyone shows up at once. We build it for that. [link:/services/shopify-theme-development|Custom theme development], Shopify Plus, [link:/services/migration/woocommerce-to-shopify|moves off WooCommerce] and the speed work that turns visits into orders, all at a fixed price with your launch date agreed before we write any code.",
+      "Your store has to carry the whole business: a big catalog, trade accounts, local pickup and the weekends when everyone shows up at once. That's the brief behind the Shopify development Charlotte brands hire us for: [link:/services/shopify-theme-development|custom theme development], Shopify Plus, [link:/services/migration/woocommerce-to-shopify|moves off WooCommerce] and the speed work that turns visits into orders, all at a fixed price with your launch date agreed before we write any code.",
     stats: [
       { value: "150+", label: "Stores Built" },
       { value: "$400M+", label: "Client Revenue" },
@@ -49,15 +49,18 @@ export const SHOPIFY_DEV_CHARLOTTE: ServiceGeoPage = {
     footnote: "Shopify Plus Partner. 150+ stores built exclusively on Shopify.",
   },
 
+  summary:
+    "Ecomm Wizards is a Shopify-only agency offering Shopify development Charlotte brands can trust with custom themes, Shopify Plus and B2B wholesale builds, and WooCommerce migrations. We have built 150+ stores, agree a fixed price and launch date in writing before work starts, and most stores go live in about six weeks.",
+
   trust: {
     heading: "150+ Shopify Stores Built. These Brands Trust Us.",
-    subheading: "Every one was scoped, built and launched in-house by developers who work only on Shopify.",
+    subheading: "Every one was scoped, built and launched in-house by Shopify developers who work on nothing else.",
   },
 
   pains: {
     heading: "Where Your Store Is Losing Sales Before Checkout",
     intro:
-      "If you sell retail and trade, ship nationwide and offer pickup, or run one-day drops next to your steady sellers, a stock theme starts to fight you. These are the four problems we fix most often.",
+      "If you sell retail and trade, ship nationwide and offer pickup, or run one-day drops next to your steady sellers, a stock theme starts to fight you. These are the four problems we fix most often, and the ones any Shopify development Charlotte brands hire should catch first.",
     items: [
       {
         icon: "layers",
@@ -94,7 +97,7 @@ export const SHOPIFY_DEV_CHARLOTTE: ServiceGeoPage = {
     items: [
       {
         title: "Custom Shopify Design",
-        body: "Your store designed from scratch around your brand and your products, not a theme with your logo dropped in. Every page is designed in Figma for desktop and mobile, and you approve it before any build starts. Charlotte brands that hire us for Shopify design get a storefront no other store is running.",
+        body: "Your store designed from scratch around your brand and your products, not a theme with your logo dropped in. Every page is designed in Figma for desktop and mobile, and you approve it before any build starts. Charlotte brands that hire us as their Shopify design agency get a storefront no other store is running.",
       },
       {
         title: "Custom Shopify Theme Development",
@@ -131,7 +134,7 @@ export const SHOPIFY_DEV_CHARLOTTE: ServiceGeoPage = {
     label: "Selling from Charlotte",
     heading: "What Selling from Charlotte Means for Your Store",
     intro:
-      "Where you sell from changes how your store should be built: when traffic spikes, how fast orders reach customers, and which tax rules apply at checkout. These are the three we plan around for Charlotte brands.",
+      "Where you sell from changes how your store should be built: when traffic spikes, how fast orders reach customers, and which tax rules apply at checkout. These are the three things Shopify development Charlotte brands rely on should plan around.",
     items: [
       {
         icon: "flag",
@@ -178,7 +181,7 @@ export const SHOPIFY_DEV_CHARLOTTE: ServiceGeoPage = {
 
   process: {
     heading: "From First Call to a Live Store in About Six Weeks",
-    intro: "Five steps, one written scope, and a launch date you can plan a race week or a holiday push around.",
+    intro: "Five steps, one written scope, and a launch date you can plan a race week or a holiday push around: the way Shopify development Charlotte brands should expect a build to run.",
     steps: [
       { title: "Scope and Fixed Price", desc: "We look at your store, your catalog and how you sell: retail, trade or both. You get a written scope and a fixed price before any work starts." },
       { title: "Design You Approve", desc: "Every page designed in Figma for desktop and mobile, built around your products and your brand. Nothing goes into development until you sign it off." },
@@ -189,7 +192,7 @@ export const SHOPIFY_DEV_CHARLOTTE: ServiceGeoPage = {
   },
 
   compare: {
-    heading: "Choosing a Shopify Developer for Your Charlotte Brand",
+    heading: "Building Your Shopify Development Charlotte Shortlist",
     intro: "You will probably talk to three kinds of agency. Each can be the right fit for someone. Here is how to tell which one your store needs.",
     options: [
       {
@@ -222,7 +225,7 @@ export const SHOPIFY_DEV_CHARLOTTE: ServiceGeoPage = {
 
   industries: {
     heading: "Industries We Build Shopify Stores For",
-    intro: "The Charlotte region has deep roots in textiles, furniture and motorsports, and food and beverage is one of its growing sectors. Here is what changes in the build for each.",
+    intro: "The Charlotte region has deep roots in textiles, furniture and motorsports, and food and beverage is one of its growing sectors. Here is what changes in the build for each, and what Shopify development Charlotte brands in these categories should ask for.",
     items: [
       { icon: "flag", name: "Motorsports and Fan Merch", desc: "Drop calendars that follow the race schedule, team and driver collections, and stock limits that hold when a whole fan base shows up at once." },
       { icon: "home", name: "Home and Furniture", desc: "Large catalogs with fabric, finish and size options, swatch ordering, freight shipping rules, and trade accounts for designers." },
@@ -237,7 +240,7 @@ export const SHOPIFY_DEV_CHARLOTTE: ServiceGeoPage = {
   faqHeading: "Shopify Development FAQs for Charlotte Brands",
   faqs: [
     {
-      question: "Do I need a local Shopify developer for my Charlotte brand?",
+      question: "Do I need local Shopify developers for my Charlotte brand?",
       answer:
         "No. What matters is that your developer knows Shopify deeply and is easy to reach. We work with brands across the US through online calls, a staging copy of your store and written weekly updates, and you get the same scope, fixed price and launch date in writing wherever you are.",
       unique: true,
@@ -263,7 +266,7 @@ export const SHOPIFY_DEV_CHARLOTTE: ServiceGeoPage = {
     {
       question: "What does Shopify development cost for a Charlotte brand?",
       answer:
-        "It depends on what you need built, so we don't publish a price list. After a short online call we send a written scope with one fixed price and a launch date, usually within 48 hours. The price you sign is the price you pay, with no hourly billing.",
+        "It depends on what you need built, so we don't publish a price list. A fair Shopify development Charlotte quote is one fixed price in writing: after a short online call we send yours, with a launch date, usually within 48 hours. The price you sign is the price you pay, with no hourly billing.",
       unique: false,
     },
     {

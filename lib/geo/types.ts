@@ -733,6 +733,11 @@ export const ServiceGeoPageSchema = z.object({
     /** Small line under the CTAs. */
     footnote: z.string().min(1).optional(),
   }),
+  /** Scope summary rendered directly under the hero: 35 to 70 words, plain,
+   *  third person, standing alone. Written to be lifted whole by AI Overviews
+   *  and answer engines (who we are, what we build, for whom, on what terms).
+   *  States scope; never defines the H1 term (Copy Standard 5.1). */
+  summary: z.string().min(1),
   // 2. Trust bar (logos are shared, copy is not)
   trust: z.object({ heading: z.string().min(1), subheading: z.string().min(1) }),
   // 3. Pain points
@@ -827,6 +832,7 @@ export function serviceProseStrings(page: ServiceGeoPage): string[] {
   const out: string[] = [h.badge, serviceH1(page), h.intro];
   for (const s of h.stats) out.push(s.value, s.label);
   if (h.footnote) out.push(h.footnote);
+  out.push(page.summary);
   out.push(page.trust.heading, page.trust.subheading);
   out.push(page.pains.heading, page.pains.intro);
   for (const p of page.pains.items) out.push(p.name, p.desc, p.cost);

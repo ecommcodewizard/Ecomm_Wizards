@@ -20,7 +20,8 @@ import SdaAccordion from "@/app/(frontend)/services/shopify-development-agency/S
 import SdaFaqAccordion from "@/app/(frontend)/services/shopify-development-agency/SdaFaqAccordion";
 import CalEmbed from "@/app/(frontend)/book-shopify-consultation/CalEmbed";
 import { CASE_STUDIES } from "@/lib/case-studies";
-import { assertServicePublishable, canonicalUrl } from "@/lib/geo/registry";
+import { assertServicePublishable, canonicalUrl, geoForHub, hubPathToLabel } from "@/lib/geo/registry";
+import HubCityLinks from "@/components/sections/geo/HubCityLinks";
 import { breadcrumbListJsonLd, breadcrumbTrail, faqPageJsonLd, faqPlainText } from "@/lib/geo/schema";
 import type { ServiceGeoPage, ServiceIcon } from "@/lib/geo/types";
 
@@ -135,6 +136,8 @@ export default function ServicePageTemplate({ page }: { page: ServiceGeoPage }) 
     .filter((x): x is { item: (typeof page.caseStudies.items)[number]; cs: (typeof CASE_STUDIES)[number] } => Boolean(x.cs));
   const faqs = page.faqs.map((f) => ({ q: faqPlainText(f.question), a: faqPlainText(f.answer) }));
   const h = page.hero;
+  // Every other location page under the same hub, old format and new.
+  const siblings = geoForHub(page.hub).filter((p) => p.path !== page.path);
 
   return (
     <>
@@ -178,6 +181,16 @@ export default function ServicePageTemplate({ page }: { page: ServiceGeoPage }) 
           <div className="si-hero-img-wrap">
             <Image src={h.image.src} overrideSrc={h.image.src} alt={h.image.alt} width={640} height={480} priority className="si-hero-img" style={{ width: "100%", height: "auto", borderRadius: "16px", display: "block" }} />
           </div>
+        </div>
+      </section>
+
+      {/* Scope summary: one quotable passage for AI Overviews and answer
+          engines. Sits straight under the hero so it is read before anything
+          else on the page. */}
+      <section className="svc-summary" aria-label="Summary">
+        <div className="svc-summary-card mx-auto">
+          <p className="svc-summary-label">In short</p>
+          <p className="svc-summary-text">{rich(page.summary)}</p>
         </div>
       </section>
 
@@ -418,6 +431,8 @@ export default function ServicePageTemplate({ page }: { page: ServiceGeoPage }) 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbListJsonLd(trail, page.path)) }} />
       <ServiceSchema url={url} name={page.shortTitle} serviceType={page.serviceType} description={page.metaDescription} areaServed={page.geo.areaServed} areaServedType={page.geo.type === "state" ? "State" : "AdministrativeArea"} />
 
+      <HubCityLinks heading={`${hubPathToLabel(page.hub)} for Brands in Other Markets`} pages={siblings} />
+
       <RelatedServices current={page.hub} />
 
       <a href="#book-a-call" className="sda-spin-cta" aria-label="Book a free discovery call">
@@ -469,6 +484,12 @@ const CSS = `
 .si-feat-desc-text { font-family:'Poppins',sans-serif; font-size:14px; color:#334155; line-height:1.7; margin:0; flex-grow:1; }
 .si-feat-roi { font-family:'Poppins',sans-serif; font-size:13px; color:#2A9555; line-height:1.5; background:rgba(61,199,122,0.08); border-radius:8px; padding:10px 14px; border-left:3px solid #3DC77A; margin-top:auto; }
 .si-feat-roi-label { font-weight:700; }
+
+.svc-summary { background:${C_CREAM}; padding:40px 20px; }
+.svc-summary-card { max-width:1040px; background:#fff; border:1px solid rgba(0,0,0,0.07); border-left:4px solid #3DC77A; border-radius:16px; padding:26px 32px; box-shadow:0 8px 30px rgba(0,0,0,0.05); }
+.svc-summary-label { font-family:'Poppins',sans-serif; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#2A9555; margin:0 0 8px; }
+.svc-summary-text { font-family:'Poppins',sans-serif; font-size:17px; line-height:29px; color:#1f2937; margin:0; }
+@media (max-width:640px){ .svc-summary { padding:28px 16px; } .svc-summary-card { padding:20px 20px; } .svc-summary-text { font-size:15.5px; line-height:26px; } }
 
 .svc-local-label { font-family:'Poppins',sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#61ce70; text-align:center; margin:0 0 12px; }
 .svc-local-h2 { font-family:'Poppins',sans-serif; font-size:42px; font-weight:700; line-height:1.2; color:#fff; text-align:center; margin:0 auto 16px; max-width:1000px; }
