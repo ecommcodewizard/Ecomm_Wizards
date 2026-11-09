@@ -2,7 +2,8 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import RelatedServices from "@/components/sections/RelatedServices";
 import type { GeoPage } from "@/lib/geo/types";
-import { assertPublishable, canonicalUrl, hubPathToLabel } from "@/lib/geo/registry";
+import { assertPublishable, canonicalUrl, geoForHub, hubPathToLabel } from "@/lib/geo/registry";
+import HubCityLinks from "./HubCityLinks";
 import { breadcrumbListJsonLd, breadcrumbTrail } from "@/lib/geo/schema";
 import GeoStyles from "./GeoStyles";
 import GeoPageHero from "./GeoPageHero";
@@ -296,6 +297,14 @@ export default function GeoPageTemplate({ page }: { page: GeoPage }) {
           through to its hash seed and offered unrelated services: the
           California design page was suggesting Klaviyo audits and cart
           gamification. With the hub, it lists that hub's catalog siblings. */}
+      {/* Links across to every other location page under the same hub
+          (added 2026-11-10), so no location page depends on the hub alone
+          for an inbound link. */}
+      <HubCityLinks
+        heading={`${hubPathToLabel(page.hub)} for Brands in Other Markets`}
+        pages={geoForHub(page.hub).filter((p) => p.path !== page.path)}
+      />
+
       <RelatedServices current={page.hub} tone={page.relatedTone} />
     </>
   );

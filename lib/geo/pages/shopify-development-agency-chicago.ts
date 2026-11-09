@@ -27,7 +27,7 @@ export const SHOPIFY_DEV_CHICAGO: ServiceGeoPage = {
   faqKeywords: ["shopify design company chicago", "shopify website company chicago", "shopify expert chicago"],
   metaTitle: "Shopify Website Design Company Chicago | Design and Development",
   metaDescription:
-    "Shopify website design for Chicago brands: custom design, theme builds, Shopify Plus and migrations by Shopify experts. Fixed price, most stores live in about 6 weeks.",
+    "The Shopify website design company Chicago brands hire for custom design, theme builds, Shopify Plus and migrations. Shopify experts, fixed price, live in ~6 weeks.",
   shortTitle: "Shopify Website Design Company Chicago",
   serviceType: "Shopify website design",
 
@@ -37,7 +37,7 @@ export const SHOPIFY_DEV_CHICAGO: ServiceGeoPage = {
     h1Gradient: "Shopify Website Design Company",
     h1Tail: "Chicago Brands Hire to Design, Build and Grow the Store",
     intro:
-      "A good-looking store that doesn't sell is an expensive brochure. We design your Shopify store around how your customers actually buy, then build it, launch it and keep improving it, with [link:/services/shopify-theme-development|custom theme development], [link:/services/shopify-plus-development|Shopify Plus] and [link:/services/migration|platform migrations] covered. You get a fixed price and a launch date in writing before design starts.",
+      "A good-looking store that doesn't sell is an expensive brochure. As the Shopify website design company Chicago brands hire to fix that, we design your store around how your customers actually buy, then build it, launch it and keep improving it, with [link:/services/shopify-theme-development|custom theme development], [link:/services/shopify-plus-development|Shopify Plus] and [link:/services/migration|platform migrations] covered. You get a fixed price and a launch date in writing before design starts.",
     stats: [
       { value: "150+", label: "Stores Built" },
       { value: "$400M+", label: "Client Revenue" },
@@ -51,6 +51,9 @@ export const SHOPIFY_DEV_CHICAGO: ServiceGeoPage = {
     footnote: "Shopify Plus Partner. 150+ stores designed and built on Shopify only.",
   },
 
+  summary:
+    "Ecomm Wizards is a Shopify website design company Chicago brands hire for custom store design, theme development, Shopify Plus and platform migrations. Design and development come from one in-house team that works only on Shopify, with a fixed price and launch date in writing before design starts. Most stores go live in about six weeks.",
+
   trust: {
     heading: "Stores We Designed and Built for Brands Like These",
     subheading: "Each one was designed, built and launched by our own team, from the first wireframe to go-live.",
@@ -59,7 +62,7 @@ export const SHOPIFY_DEV_CHICAGO: ServiceGeoPage = {
   pains: {
     heading: "Is Your Store Design Costing You Orders?",
     intro:
-      "If any of these sound like your store, a fresh coat of paint won't fix it. The fix starts with how the store is laid out, before anyone opens Figma.",
+      "If any of these sound like your store, a fresh coat of paint won't fix it, and no Shopify website design company Chicago brands hire should sell you one. The fix starts with how the store is laid out, before anyone opens Figma.",
     items: [
       {
         icon: "grid",
@@ -92,7 +95,7 @@ export const SHOPIFY_DEV_CHICAGO: ServiceGeoPage = {
     label: "Design and Development",
     heading: "Shopify Website Design and Development, Under One Roof",
     intro:
-      "Design and code come from the same in-house team, so nothing gets lost between the mockup and the live store. When you're ready for more traffic, we also handle [link:/services/shopify-seo-agency|Shopify SEO] and [link:/services/shopify-cro-agency|conversion rate optimization].",
+      "Chicago brands get design and code from one in-house team of Shopify designers and Shopify web developers, so nothing gets lost between the mockup and the live store. When you're ready for more traffic, we also handle [link:/services/shopify-seo-agency|Shopify SEO] and [link:/services/shopify-cro-agency|conversion rate optimization].",
     items: [
       {
         title: "Custom Shopify Website Design",
@@ -133,7 +136,7 @@ export const SHOPIFY_DEV_CHICAGO: ServiceGeoPage = {
     label: "Selling from Chicago",
     heading: "What Selling from Chicago Means for Your Store",
     intro:
-      "Three things about Chicago change how we design and set up your store: how fast you can ship, which sales tax applies, and who your buyers are.",
+      "Three things should shape the work of any Shopify website design company Chicago brands choose: how fast you can ship, which sales tax applies, and who your buyers are.",
     items: [
       {
         icon: "truck",
@@ -180,7 +183,7 @@ export const SHOPIFY_DEV_CHICAGO: ServiceGeoPage = {
 
   process: {
     heading: "Design First, Then Build: How Your Project Runs",
-    intro: "Five stages, each signed off by you before the next one starts. Most stores are live about six weeks after kickoff.",
+    intro: "Five stages, each signed off by you before the next one starts: the order any Shopify website design company Chicago brands trust should work in. Most stores are live about six weeks after kickoff.",
     steps: [
       { title: "Discovery and Fixed Quote", desc: "We study your store, your analytics and your best customers, then agree the scope, a fixed price and a launch date in writing." },
       { title: "Structure and Wireframes", desc: "Navigation, page layouts and the path to checkout, laid out in plain wireframes first, so we agree how the store works before deciding how it looks." },
@@ -191,7 +194,7 @@ export const SHOPIFY_DEV_CHICAGO: ServiceGeoPage = {
   },
 
   compare: {
-    heading: "How to Choose Who Designs Your Shopify Store",
+    heading: "Building Your Shopify Website Design Company Chicago Shortlist",
     intro: "You will usually weigh three options against a Shopify specialist. Each one suits a different kind of store.",
     options: [
       {
@@ -225,7 +228,7 @@ export const SHOPIFY_DEV_CHICAGO: ServiceGeoPage = {
   industries: {
     heading: "Industries We Design Shopify Stores For",
     intro:
-      "The Chicago region has the largest food and beverage manufacturing sector in the US and the largest wholesale design center in the world. Here is what changes in the design for each kind of store.",
+      "The Chicago region has the largest food and beverage manufacturing sector in the US and the largest wholesale design center in the world. Here is what a Shopify website design company Chicago brands hire should change in the design for each kind of store.",
     items: [
       { icon: "food", name: "Food and Beverage", desc: "Subscriptions, bundles and gift sets, ingredient and allergen details shoppers can find fast, and shipping rules for perishables." },
       { icon: "home", name: "Home and Furniture", desc: "Swatches and finishes shown properly, room-scene photography, freight delivery options, and trade accounts for designers." },
@@ -242,13 +245,13 @@ export const SHOPIFY_DEV_CHICAGO: ServiceGeoPage = {
     {
       question: "How much does a Shopify website designer cost?",
       answer:
-        "It depends on how many pages need custom design, how big your catalog is and what has to be built, so we don't publish a price list. After a short online call we send a written scope with one fixed price and a launch date, usually within 48 hours. That number doesn't change unless you add to the scope.",
+        "It depends on how many pages need custom design, how big your catalog is and what has to be built, so we don't publish a price list. That's why a Shopify website design company Chicago quote should be one fixed price in writing, not an hourly estimate. Ours arrives within 48 hours of a short online call and doesn't change unless you add to the scope.",
       unique: false,
     },
     {
       question: "Can I pay someone to build my Shopify website?",
       answer:
-        "Yes. You can hire a freelancer, a general web agency or a Shopify specialist like us. We design and build the whole store, connect your apps, move your data and launch it, so your job is to approve the work rather than do it.",
+        "Yes. You can hire a freelancer, a general web agency or a Shopify design company like us. We design and build the whole store, connect your apps, move your data and launch it, so your job is to approve the work rather than do it.",
       unique: true,
     },
     {
@@ -264,9 +267,9 @@ export const SHOPIFY_DEV_CHICAGO: ServiceGeoPage = {
       unique: true,
     },
     {
-      question: "Are you Shopify experts or general web designers?",
+      question: "Are you Shopify experts for Chicago brands, or general web designers?",
       answer:
-        "Shopify experts. We work only on Shopify and Shopify Plus and have designed and built 150+ stores on it. That focus lets us tell you what Shopify does out of the box and what needs custom work before you pay for any of it.",
+        "Shopify experts. Every Shopify expert on your project works only on Shopify and Shopify Plus, and together we have designed and built 150+ stores on it. That focus lets us tell you what Shopify does out of the box and what needs custom work before you pay for any of it.",
       unique: true,
     },
     {

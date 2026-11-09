@@ -10,10 +10,11 @@
 // unfinished page also fails `next build`, which is the backstop.
 
 import { SERVICE_CATEGORIES } from "@/lib/services";
-import { GeoProgrammePageSchema, NEEDS_INPUT, ServiceGeoPageSchema, hasNeedsInput, proseStrings, serviceProseStrings, wordCount, type GeoPage, type GeoProgrammePage, type HubPage, type ServiceGeoPage } from "./types";
+import { GeoProgrammePageSchema, NEEDS_INPUT, ServiceGeoPageSchema, hasNeedsInput, proseStrings, serviceH1, serviceProseStrings, wordCount, type GeoPage, type GeoProgrammePage, type HubPage, type ServiceGeoPage } from "./types";
 import { CASE_STUDIES } from "@/lib/case-studies";
 import { SHOPIFY_DEV_CHARLOTTE } from "./pages/shopify-development-agency-charlotte";
 import { SHOPIFY_DEV_CHICAGO } from "./pages/shopify-development-agency-chicago";
+import { SHOPIFY_DEV_DALLAS } from "./pages/shopify-development-agency-dallas";
 import { ECOMMERCE_AGENCY } from "./pages/ecommerce-agency";
 import { ECOMMERCE_SEO_AGENCY } from "./pages/ecommerce-seo-agency";
 import { ECOMMERCE_MARKETING_AGENCY } from "./pages/ecommerce-marketing-agency";
@@ -65,7 +66,7 @@ export const GEO_PAGES: GeoProgrammePage[] = [ECOMMERCE_AGENCY, ECOMMERCE_SEO_AG
 /** Service-format location pages (geo v5, owner-approved 2026-11-08). Live
  *  the moment they reach main, exactly like GEO_PAGES. Kept in their own list
  *  because they have their own schema; every guardrail reads both lists. */
-export const SERVICE_GEO_PAGES: ServiceGeoPage[] = [SHOPIFY_DEV_CHARLOTTE, SHOPIFY_DEV_CHICAGO];
+export const SERVICE_GEO_PAGES: ServiceGeoPage[] = [SHOPIFY_DEV_CHARLOTTE, SHOPIFY_DEV_CHICAGO, SHOPIFY_DEV_DALLAS];
 
 /** Anything a hub links down to or the footer lists. */
 export type LocationPage = GeoPage | ServiceGeoPage;
@@ -326,6 +327,12 @@ export function validateServicePage(page: ServiceGeoPage, today: Date = new Date
   const [lo, hi] = page.wordCountTarget;
   if (words < lo || words > hi) err(`word count ${words} outside target ${lo}-${hi}`);
 
+  // Scope summary: short enough to be quoted whole.
+  const summaryWords = wordCount([page.summary]);
+  if (summaryWords < 35 || summaryWords > 70) err(`summary is ${summaryWords} words; keep it 35-70 so it can be quoted whole`);
+
+  for (const i of keywordIssues(page, prose, words)) (i.level === "error" ? err : warn)(i.message);
+
   for (const s of page.sources) {
     const d = new Date(s.captured);
     if (!Number.isNaN(d.getTime()) && d.getTime() + s.reviewAfterDays * 86400000 < today.getTime()) {
@@ -333,6 +340,64 @@ export function validateServicePage(page: ServiceGeoPage, today: Date = new Date
     }
   }
   return issues;
+}
+
+/** Keyword placement, per the Page Standard (Step 09) for the primary and
+ *  Copy Standard 7.2 for secondaries. Matching ignores case and punctuation,
+ *  so "Shopify Agency Dallas | ..." counts as the phrase.
+ *
+ *  Primary: exact phrase in the title, meta description, H1, first 100 words
+ *  of the hero copy and at least one heading; at least 0.4% of visible words
+ *  (the standard aims for ~0.6% and says 0.4% clean beats 0.6% stuffed);
+ *  never in the booking section. Above ~0.8% is a warning: that is where a
+ *  reader starts to notice.
+ *
+ *  Secondary: its phrase without the place name must lead a section, in a
+ *  heading or the first sentence of a section or item. More than three uses
+ *  on the page is a warning (each secondary owns one section). */
+function keywordIssues(page: ServiceGeoPage, prose: string[], words: number): { level: "error" | "warn"; message: string }[] {
+  const out: { level: "error" | "warn"; message: string }[] = [];
+  const norm = (s: string) => " " + s.toLowerCase().replace(/\[link:[^\]|]+\|([^\]]+)\]/g, "$1").replace(/[^a-z0-9]+/g, " ").trim() + " ";
+  const count = (s: string, phrase: string) => norm(s).split(norm(phrase)).length - 1;
+  const has = (s: string, phrase: string) => count(s, phrase) > 0;
+
+  const kw = page.targetKeyword;
+  const headings = [
+    page.trust.heading, page.pains.heading, page.services.heading, page.local.heading, page.caseStudies.heading,
+    page.process.heading, page.compare.heading, page.industries.heading, page.faqHeading,
+    ...page.pains.items.map((i) => i.name), ...page.services.items.map((i) => i.title),
+    ...page.local.items.map((i) => i.name), ...page.process.steps.map((s) => s.title), ...page.faqs.map((f) => f.question),
+  ];
+  const first100 = page.hero.intro.replace(/\[link:[^\]|]+\|([^\]]+)\]/g, "$1").split(/\s+/).slice(0, 100).join(" ");
+  const book = [page.book.heading, page.book.sub, ...page.book.bullets].join(" ");
+
+  if (!has(page.metaTitle, kw)) out.push({ level: "error", message: `primary "${kw}" missing from the title` });
+  if (!has(page.metaDescription, kw)) out.push({ level: "error", message: `primary "${kw}" missing from the meta description` });
+  if (!has(serviceH1(page), kw)) out.push({ level: "error", message: `primary "${kw}" missing from the H1` });
+  if (!has(first100, kw)) out.push({ level: "error", message: `primary "${kw}" missing from the first 100 words of the hero copy` });
+  if (!headings.some((h) => has(h, kw))) out.push({ level: "error", message: `primary "${kw}" is in no section heading` });
+  if (has(book, kw)) out.push({ level: "error", message: `primary "${kw}" appears in the booking section (must be 0)` });
+
+  const uses = prose.reduce((a, s) => a + count(s, kw), 0);
+  const min = Math.floor(words * 0.004);
+  const pct = ((uses / words) * 100).toFixed(2);
+  if (uses < min) out.push({ level: "error", message: `primary "${kw}" used ${uses}x (${pct}%); needs at least ${min} (0.4% of ${words} words)` });
+  else if (uses > Math.ceil(words * 0.008)) out.push({ level: "warn", message: `primary "${kw}" used ${uses}x (${pct}%), above 0.8%: check none read as stuffed` });
+
+  const place = new Set([page.geo.name.toLowerCase(), "nc", "il", "tx", "in"]);
+  const leads = [
+    ...headings,
+    ...[page.pains.intro, page.services.intro, page.local.intro, page.caseStudies.intro, page.process.intro, page.compare.intro, page.industries.intro,
+      ...page.services.items.map((i) => i.body), ...page.pains.items.map((i) => i.desc), ...page.local.items.map((i) => i.desc),
+      ...page.faqs.map((f) => f.answer)].map((s) => s.split(/(?<=[.!?])\s+/)[0]),
+  ];
+  for (const sec of page.secondaryKeywords) {
+    const core = sec.toLowerCase().split(/\s+/).filter((w) => !place.has(w)).join(" ");
+    if (!leads.some((s) => has(s, core))) out.push({ level: "error", message: `secondary "${sec}": "${core}" does not lead any section (heading or first sentence)` });
+    const n = prose.reduce((a, s) => a + count(s, core), 0);
+    if (n > 3) out.push({ level: "warn", message: `secondary "${sec}": "${core}" used ${n}x; each secondary should own one section` });
+  }
+  return out;
 }
 
 export function assertServicePublishable(page: ServiceGeoPage): void {
