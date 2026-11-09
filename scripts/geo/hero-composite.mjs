@@ -59,6 +59,15 @@ const PAGES = {
       { n: "+89%", l: "online revenue", b: "Dryrobe" },
     ],
   },
+  houston: {
+    main: "Henchman-3.webp",
+    top: "Mouldings One PDP.webp",
+    bottom: "Saddleback-pdp.webp",
+    badges: [
+      { n: "-74%", l: "order processing time", b: "Mouldings One" },
+      { n: "+881%", l: "B2B sales", b: "Saddleback" },
+    ],
+  },
   dallas: {
     main: "Everlast-all products.webp",
     top: "John Hardy-pdp.webp",
