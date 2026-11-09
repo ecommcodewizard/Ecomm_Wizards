@@ -68,6 +68,15 @@ const PAGES = {
       { n: "+881%", l: "B2B sales", b: "Saddleback" },
     ],
   },
+  atlanta: {
+    main: "NEOM Wellbeing collection page.png",
+    top: "happy-mammoth-subscription.webp",
+    bottom: "WeareWild-1.png",
+    badges: [
+      { n: "+218%", l: "subscription revenue", b: "Wild" },
+      { n: "+61%", l: "conversion rate", b: "Happy Mammoth" },
+    ],
+  },
   dallas: {
     main: "Everlast-all products.webp",
     top: "John Hardy-pdp.webp",
