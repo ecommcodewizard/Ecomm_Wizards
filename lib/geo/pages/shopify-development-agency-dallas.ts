@@ -43,8 +43,9 @@ export const SHOPIFY_DEV_DALLAS: ServiceGeoPage = {
       { value: "60 Days", label: "Support Included" },
     ],
     image: {
-      src: "/images/Group_1000003974_d0eba414-7aec-4930-b534-a4dcc91d004e_1024x1024.png",
-      alt: "Shopify store designs for retail and wholesale built by Ecomm Wizards",
+      src: "/images/shopify-development-agency-dallas-hero-v1.webp",
+      alt: "Retail and trade Shopify stores for Everlast, Saddleback and John Hardy, with B2B sales up 881% and conversion up 152%",
+      cutout: true,
     },
     footnote: "Shopify Plus Partner. 150+ stores built on Shopify only.",
   },

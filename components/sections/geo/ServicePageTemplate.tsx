@@ -178,8 +178,17 @@ export default function ServicePageTemplate({ page }: { page: ServiceGeoPage }) 
               </div>
             )}
           </div>
-          <div className="si-hero-img-wrap">
-            <Image src={h.image.src} overrideSrc={h.image.src} alt={h.image.alt} width={640} height={480} priority className="si-hero-img" style={{ width: "100%", height: "auto", borderRadius: "16px", display: "block" }} />
+          <div className={h.image.cutout ? "si-hero-img-wrap si-hero-img-wrap--glow" : "si-hero-img-wrap"}>
+            <Image
+              src={h.image.src}
+              overrideSrc={h.image.src}
+              alt={h.image.alt}
+              width={640}
+              height={480}
+              priority
+              className={h.image.cutout ? "si-hero-img si-hero-img--cutout" : "si-hero-img"}
+              style={{ width: "100%", height: "auto", borderRadius: h.image.cutout ? 0 : "16px", display: "block" }}
+            />
           </div>
         </div>
       </section>
@@ -453,6 +462,14 @@ export default function ServicePageTemplate({ page }: { page: ServiceGeoPage }) 
 const CSS = `
 .si-hero-img-wrap { display:flex; align-items:center; justify-content:center; }
 .si-hero-img { width:100%; height:auto; border-radius:16px; display:block; box-shadow:0 24px 64px rgba(0,0,0,0.45); }
+.si-hero-img--cutout { box-shadow:none; border-radius:0; position:relative; z-index:1; }
+/* Brand-green glow behind transparent hero composites: a wide green field
+   under the laptop plus a lime highlight toward the top-right badge. */
+.si-hero-img-wrap--glow { position:relative; isolation:isolate; }
+.si-hero-img-wrap--glow::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background: radial-gradient(ellipse 52% 48% at 56% 56%, rgba(61,199,122,1) 0%, rgba(61,199,122,.55) 45%, rgba(42,149,85,.18) 75%, transparent 100%);
+  filter:blur(38px); }
+@media (max-width:640px){ .si-hero-img-wrap--glow::before { filter:blur(28px); } }
 @media (max-width:1023px){ .si-hero-img-wrap { margin-top:8px; } }
 .sda-hero-secondary-cta:hover { color:#fff !important; }
 .sda-trust-track { display:flex; align-items:center; gap:40px; width:max-content; animation:sdaTrustScroll 32s linear infinite; }
@@ -607,8 +624,9 @@ const CSS = `
   .std-solutions h2 { font-size:26px !important; }
   .std-hero-h1 { font-size:28px !important; line-height:1.22 !important; }
   .std-hero-p { font-size:14px !important; line-height:24px !important; }
-  .std-hero-stat-num { font-size:20px !important; }
+  .std-hero-stat-num { font-size:18px !important; white-space:nowrap; }
   .std-hero-stat-label { font-size:11px !important; }
+  .std-hero-stat-item { padding-right:10px !important; margin-right:10px !important; }
   .sda-cs-heading { font-size:26px !important; }
   .sda-compare-h2 { font-size:26px !important; line-height:1.25 !important; }
   .sda-compare > div { padding:46px 0 !important; }

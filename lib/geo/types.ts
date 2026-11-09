@@ -729,7 +729,10 @@ export const ServiceGeoPageSchema = z.object({
     h1Tail: z.string(),
     intro: z.string().min(1),
     stats: z.array(z.object({ value: z.string().min(1), label: z.string().min(1) })).min(3).max(4),
-    image: z.object({ src: z.string().startsWith("/"), alt: z.string().min(1) }),
+    /** Hero composite (case-study screenshots + result badges, transparent
+     *  background). `cutout` drops the frame's rounded corners and shadow,
+     *  which would draw a box around a transparent image. */
+    image: z.object({ src: z.string().startsWith("/"), alt: z.string().min(1), cutout: z.boolean().optional() }),
     /** Small line under the CTAs. */
     footnote: z.string().min(1).optional(),
   }),

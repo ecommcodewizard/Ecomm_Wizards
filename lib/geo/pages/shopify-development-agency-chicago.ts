@@ -45,8 +45,9 @@ export const SHOPIFY_DEV_CHICAGO: ServiceGeoPage = {
       { value: "60 Days", label: "Support Included" },
     ],
     image: {
-      src: "/images/Group_1000003974_d0eba414-7aec-4930-b534-a4dcc91d004e_1024x1024.png",
-      alt: "Shopify website design mockups on desktop and mobile by Ecomm Wizards",
+      src: "/images/shopify-development-agency-chicago-hero-v1.webp",
+      alt: "Shopify store designs for Sneak Energy, Evie Lou and Henchman, with mobile conversion up 68% and online revenue up 58%",
+      cutout: true,
     },
     footnote: "Shopify Plus Partner. 150+ stores designed and built on Shopify only.",
   },
