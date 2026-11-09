@@ -16,6 +16,7 @@ import { SHOPIFY_DEV_CHARLOTTE } from "./pages/shopify-development-agency-charlo
 import { SHOPIFY_DEV_CHICAGO } from "./pages/shopify-development-agency-chicago";
 import { SHOPIFY_DEV_DALLAS } from "./pages/shopify-development-agency-dallas";
 import { SHOPIFY_DEV_COLUMBUS } from "./pages/shopify-development-agency-columbus";
+import { SHOPIFY_DEV_MIAMI } from "./pages/shopify-development-agency-miami";
 import { ECOMMERCE_AGENCY } from "./pages/ecommerce-agency";
 import { ECOMMERCE_SEO_AGENCY } from "./pages/ecommerce-seo-agency";
 import { ECOMMERCE_MARKETING_AGENCY } from "./pages/ecommerce-marketing-agency";
@@ -67,7 +68,7 @@ export const GEO_PAGES: GeoProgrammePage[] = [ECOMMERCE_AGENCY, ECOMMERCE_SEO_AG
 /** Service-format location pages (geo v5, owner-approved 2026-11-08). Live
  *  the moment they reach main, exactly like GEO_PAGES. Kept in their own list
  *  because they have their own schema; every guardrail reads both lists. */
-export const SERVICE_GEO_PAGES: ServiceGeoPage[] = [SHOPIFY_DEV_CHARLOTTE, SHOPIFY_DEV_CHICAGO, SHOPIFY_DEV_DALLAS, SHOPIFY_DEV_COLUMBUS];
+export const SERVICE_GEO_PAGES: ServiceGeoPage[] = [SHOPIFY_DEV_CHARLOTTE, SHOPIFY_DEV_CHICAGO, SHOPIFY_DEV_DALLAS, SHOPIFY_DEV_COLUMBUS, SHOPIFY_DEV_MIAMI];
 
 /** Anything a hub links down to or the footer lists. */
 export type LocationPage = GeoPage | ServiceGeoPage;

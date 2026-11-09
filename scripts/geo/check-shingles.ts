@@ -21,11 +21,9 @@ const MIN_UNIQUE_PCT = 60;
 const COMPARE: [string, string, number][] = [
   ["/services/ecommerce-seo-agency", "/services/shopify-seo-agency", 75],
   // Service-format pages borrow the hub's layout, so their own copy must not
-  // borrow its words.
-  ["/services/shopify-development-agency/charlotte", "/services/shopify-development-agency", 60],
-  ["/services/shopify-development-agency/chicago", "/services/shopify-development-agency", 60],
-  ["/services/shopify-development-agency/dallas", "/services/shopify-development-agency", 60],
-  ["/services/shopify-development-agency/columbus", "/services/shopify-development-agency", 60],];
+  // borrow its words. One row per registered service page, generated.
+  ...SERVICE_GEO_PAGES.map((p): [string, string, number] => [p.path, p.hub, 60]),
+];
 
 const MARKER_RE = /\[NEEDS INPUT[^\]]*\]/g;
 

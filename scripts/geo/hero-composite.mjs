@@ -50,6 +50,15 @@ const PAGES = {
       { n: "+58%", l: "online revenue", b: "Henchman" },
     ],
   },
+  miami: {
+    main: "Dryrobe-best sellers.webp",
+    top: "This Works-hero section.png",
+    bottom: "Ronaldo Jewelry PDP.webp",
+    badges: [
+      { n: "+250%", l: "total sales", b: "Ronaldo Jewelry" },
+      { n: "+89%", l: "online revenue", b: "Dryrobe" },
+    ],
+  },
   dallas: {
     main: "Everlast-all products.webp",
     top: "John Hardy-pdp.webp",
