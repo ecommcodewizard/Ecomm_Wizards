@@ -86,6 +86,15 @@ const PAGES = {
       { n: "+32%", l: "add-to-cart rate", b: "Feetures" },
     ],
   },
+  colorado: {
+    main: "Dryrobe-menu navigation.webp",
+    top: "Chillys Headless hero.webp",
+    bottom: "Daring hero.webp",
+    badges: [
+      { n: "+89%", l: "online revenue", b: "Dryrobe" },
+      { n: "+38%", l: "conversion rate", b: "Daring" },
+    ],
+  },
   dallas: {
     main: "Everlast-all products.webp",
     top: "John Hardy-pdp.webp",
