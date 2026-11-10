@@ -77,6 +77,15 @@ const PAGES = {
       { n: "+61%", l: "conversion rate", b: "Happy Mammoth" },
     ],
   },
+  milwaukee: {
+    main: "Feetures collection page.png",
+    top: "Capelli Sports website hero.png",
+    bottom: "Everlast-all products.webp",
+    badges: [
+      { n: "+152%", l: "conversion rate", b: "Everlast" },
+      { n: "+32%", l: "add-to-cart rate", b: "Feetures" },
+    ],
+  },
   dallas: {
     main: "Everlast-all products.webp",
     top: "John Hardy-pdp.webp",
