@@ -26,6 +26,8 @@ import { SHOPIFY_DEV_RALEIGH } from "./pages/shopify-development-agency-raleigh"
 import { SHOPIFY_DEV_VERMONT } from "./pages/shopify-development-agency-vermont";
 import { SHOPIFY_DEV_PORTLAND } from "./pages/shopify-development-agency-portland";
 import { SHOPIFY_DEV_SEATTLE } from "./pages/shopify-development-agency-seattle";
+import { SHOPIFY_DEV_DENVER } from "./pages/shopify-development-agency-denver";
+import { SHOPIFY_DEV_ALABAMA } from "./pages/shopify-development-agency-alabama";
 import { ECOMMERCE_AGENCY } from "./pages/ecommerce-agency";
 import { ECOMMERCE_SEO_AGENCY } from "./pages/ecommerce-seo-agency";
 import { ECOMMERCE_MARKETING_AGENCY } from "./pages/ecommerce-marketing-agency";
@@ -77,7 +79,7 @@ export const GEO_PAGES: GeoProgrammePage[] = [ECOMMERCE_AGENCY, ECOMMERCE_SEO_AG
 /** Service-format location pages (geo v5, owner-approved 2026-11-08). Live
  *  the moment they reach main, exactly like GEO_PAGES. Kept in their own list
  *  because they have their own schema; every guardrail reads both lists. */
-export const SERVICE_GEO_PAGES: ServiceGeoPage[] = [SHOPIFY_DEV_CHARLOTTE, SHOPIFY_DEV_CHICAGO, SHOPIFY_DEV_DALLAS, SHOPIFY_DEV_COLUMBUS, SHOPIFY_DEV_MIAMI, SHOPIFY_DEV_HOUSTON, SHOPIFY_DEV_ATLANTA, SHOPIFY_DEV_MILWAUKEE, SHOPIFY_DEV_COLORADO, SHOPIFY_DEV_NORTH_CAROLINA, SHOPIFY_DEV_RALEIGH, SHOPIFY_DEV_VERMONT, SHOPIFY_DEV_PORTLAND, SHOPIFY_DEV_SEATTLE];
+export const SERVICE_GEO_PAGES: ServiceGeoPage[] = [SHOPIFY_DEV_CHARLOTTE, SHOPIFY_DEV_CHICAGO, SHOPIFY_DEV_DALLAS, SHOPIFY_DEV_COLUMBUS, SHOPIFY_DEV_MIAMI, SHOPIFY_DEV_HOUSTON, SHOPIFY_DEV_ATLANTA, SHOPIFY_DEV_MILWAUKEE, SHOPIFY_DEV_COLORADO, SHOPIFY_DEV_NORTH_CAROLINA, SHOPIFY_DEV_RALEIGH, SHOPIFY_DEV_VERMONT, SHOPIFY_DEV_PORTLAND, SHOPIFY_DEV_SEATTLE, SHOPIFY_DEV_DENVER, SHOPIFY_DEV_ALABAMA];
 
 /** Anything a hub links down to or the footer lists. */
 export type LocationPage = GeoPage | ServiceGeoPage;
