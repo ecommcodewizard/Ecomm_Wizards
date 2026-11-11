@@ -104,6 +104,24 @@ const PAGES = {
       { n: "+82%", l: "conversion rate", b: "Evie Lou" },
     ],
   },
+  raleigh: {
+    main: "Loop Earplugs quiz.png",
+    top: "111skin-hero section.png",
+    bottom: "This Works-hero section.png",
+    badges: [
+      { n: "+46%", l: "conversion rate", b: "111SKIN" },
+      { n: "+38%", l: "conversion rate", b: "This Works" },
+    ],
+  },
+  vermont: {
+    main: "Candy Kittens hero section.webp",
+    top: "Ronaldo Jewelry PDP.webp",
+    bottom: "WeareWild-1.png",
+    badges: [
+      { n: "+250%", l: "total sales", b: "Ronaldo Jewelry" },
+      { n: "+182%", l: "conversion rate", b: "Candy Kittens" },
+    ],
+  },
   dallas: {
     main: "Everlast-all products.webp",
     top: "John Hardy-pdp.webp",
