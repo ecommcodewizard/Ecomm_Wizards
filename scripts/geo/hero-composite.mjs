@@ -140,6 +140,24 @@ const PAGES = {
       { n: "+881%", l: "B2B sales", b: "Saddleback" },
     ],
   },
+  denver: {
+    main: "Henchman-3.webp",
+    top: "Everlast-range.webp",
+    bottom: "Sneak-bundle.png",
+    badges: [
+      { n: "+152%", l: "conversion rate", b: "Everlast" },
+      { n: "+58%", l: "online revenue", b: "Henchman" },
+    ],
+  },
+  alabama: {
+    main: "Ronaldo Jewelry PDP.webp",
+    top: "Twillory product page.png",
+    bottom: "Mouldings One PDP.webp",
+    badges: [
+      { n: "+250%", l: "total sales", b: "Ronaldo Jewelry" },
+      { n: "+50%", l: "B2B revenue", b: "Mouldings One" },
+    ],
+  },
   dallas: {
     main: "Everlast-all products.webp",
     top: "John Hardy-pdp.webp",
