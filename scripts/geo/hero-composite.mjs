@@ -122,6 +122,24 @@ const PAGES = {
       { n: "+182%", l: "conversion rate", b: "Candy Kittens" },
     ],
   },
+  portland: {
+    main: "Capelli Sports pdp.png",
+    top: "Feetures PDP.png",
+    bottom: "Dryrobe-best sellers.webp",
+    badges: [
+      { n: "+89%", l: "online revenue", b: "Dryrobe" },
+      { n: "+32%", l: "add-to-cart rate", b: "Feetures" },
+    ],
+  },
+  seattle: {
+    main: "happy-mammoth-subscription.webp",
+    top: "Chillys Headless hero.webp",
+    bottom: "Saddleback-pdp.webp",
+    badges: [
+      { n: "+61%", l: "conversion rate", b: "Happy Mammoth" },
+      { n: "+881%", l: "B2B sales", b: "Saddleback" },
+    ],
+  },
   dallas: {
     main: "Everlast-all products.webp",
     top: "John Hardy-pdp.webp",
