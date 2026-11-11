@@ -95,6 +95,15 @@ const PAGES = {
       { n: "+38%", l: "conversion rate", b: "Daring" },
     ],
   },
+  "north-carolina": {
+    main: "Mouldings One PDP.webp",
+    top: "sneak-pdp.jpg",
+    bottom: "evie-lou-1.webp",
+    badges: [
+      { n: "+50%", l: "B2B revenue", b: "Mouldings One" },
+      { n: "+82%", l: "conversion rate", b: "Evie Lou" },
+    ],
+  },
   dallas: {
     main: "Everlast-all products.webp",
     top: "John Hardy-pdp.webp",
