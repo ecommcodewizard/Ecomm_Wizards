@@ -8,6 +8,8 @@ import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
 import AgenticAccordion from "./AgenticAccordion";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
+import { videoPosterFor } from "@/lib/case-study-videos";
 
 const META_DESCRIPTION =
   "Shopify agentic commerce agency. We make your store agent-ready so AI assistants like ChatGPT and Gemini buy your products. GEO done right. Get a free audit.";
@@ -210,19 +212,7 @@ export default function Page() {
           </div>
 
           <div className="sat-hero-img-wrap">
-            <video
-              src="/images/Shopify%20Agentic%20Commerce.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              width={346}
-              height={720}
-              aria-label="Shopify products surfacing inside AI assistants like ChatGPT and Gemini"
-              className="sat-hero-img"
-              style={{ width: "auto", height: "auto", maxHeight: "480px", maxWidth: "100%", borderRadius: "16px", display: "block", margin: "0 auto" }}
-            />
+            <LazyAutoplayVideo src={"/images/Shopify%20Agentic%20Commerce.mp4"} poster={videoPosterFor("/images/Shopify%20Agentic%20Commerce.mp4")} width={346} height={720} label="Shopify products surfacing inside AI assistants like ChatGPT and Gemini" className="sat-hero-img" style={{ width: "auto", height: "auto", maxHeight: "480px", maxWidth: "100%", borderRadius: "16px", display: "block", margin: "0 auto" }} deferUntilIdle />
             {/* Floating Shopify badge - identical dark-tile container to the AI badge */}
             <span
               aria-hidden

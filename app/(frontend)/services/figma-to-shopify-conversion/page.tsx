@@ -6,6 +6,8 @@ import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
 import Link from "next/link";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
+import { videoPosterFor } from "@/lib/case-study-videos";
 
 const META_DESCRIPTION =
   "Convert your Figma files into a pixel-perfect custom Shopify store. Expert Shopify developers, Shopify 2.0 builds, free blueprint & quote. 150+ brands launched.";
@@ -489,15 +491,7 @@ export default function FigmaToShopifyConversionPage() {
                 loading="lazy"
                 decoding="async"
               />
-              <video
-                className="f2s-why__mediaVideo"
-                src="/images/5a8e17ef773c4b6a9675ecd2347ac9de.HD-1080p-7.2Mbps-58742493-1.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="none"
-              />
+              <LazyAutoplayVideo src={"/images/5a8e17ef773c4b6a9675ecd2347ac9de.HD-1080p-7.2Mbps-58742493-1.mp4"} poster={videoPosterFor("/images/5a8e17ef773c4b6a9675ecd2347ac9de.HD-1080p-7.2Mbps-58742493-1.mp4")} className="f2s-why__mediaVideo" />
             </div>
           </div>
         </div>
@@ -718,14 +712,7 @@ export default function FigmaToShopifyConversionPage() {
               </a>
             </div>
             <div className="f2s-pair__media">
-              <video
-                src="/images/d7f14fb290a1484cbb32e6037b39d7f1.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="none"
-              />
+              <LazyAutoplayVideo src={"/images/d7f14fb290a1484cbb32e6037b39d7f1.mp4"} poster={videoPosterFor("/images/d7f14fb290a1484cbb32e6037b39d7f1.mp4")} />
             </div>
           </div>
 

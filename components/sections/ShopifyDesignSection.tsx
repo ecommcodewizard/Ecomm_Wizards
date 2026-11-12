@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import type { ReactNode } from "react";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
+import { videoPosterFor } from "@/lib/case-study-videos";
 
 const GRADIENT_BORDER = "linear-gradient(110deg, #A8F0B4 0%, #C8F57A 16.83%, #3DC77A 29.33%, #5FDB7E 41.83%, #A8F0B4 52.4%, #2A9555 66.83%, #4FB872 83.41%, #4EB771 100%)";
 
@@ -494,17 +496,7 @@ export default function ShopifyDesignSection({
                       style={{ objectFit: imageFit }}
                     />
                   ) : (
-                    <video
-                      src={videoSrc}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="none"
-                      poster={videoPoster}
-                      aria-label={imageAlt || undefined}
-                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                    />
+                    <LazyAutoplayVideo src={videoSrc} poster={videoPoster ?? videoPosterFor(videoSrc)} label={imageAlt || undefined} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   )}
                 </div>
               )}

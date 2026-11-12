@@ -78,3 +78,18 @@ export function posterFor(videoSrc: string): string {
 export function cardVideoFor(videoSrc: string): string {
   return videoSrc.replace("/Case%20studies/", "/Case%20studies/cards/");
 }
+
+/** Poster for any site video. Case-study videos use their posters/ folder;
+ *  everything else has a "<name>-poster.webp" beside it (first frames
+ *  generated 2026-11-12 for the migration, Figma and agentic videos). */
+export function videoPosterFor(videoSrc: string): string {
+  if (videoSrc.includes("/Case%20studies/")) return posterFor(videoSrc);
+  return videoSrc.replace(/\.mp4$/, "-poster.webp");
+}
+
+/** The lightest file to autoplay in a small card: the 14-second card encode
+ *  for a case-study video (every one referenced on the site has one), the
+ *  original for anything else. */
+export function lightVideoFor(videoSrc: string): string {
+  return videoSrc.startsWith("/images/Case%20studies/") ? cardVideoFor(videoSrc) : videoSrc;
+}

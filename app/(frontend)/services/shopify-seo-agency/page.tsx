@@ -10,6 +10,8 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
 import HubCityLinks from "@/components/sections/geo/HubCityLinks";
 import { geoForHub } from "@/lib/geo/registry";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
+import { lightVideoFor, videoPosterFor } from "@/lib/case-study-videos";
 
 const GEO_CHILDREN = geoForHub("/services/shopify-seo-agency");
 
@@ -772,7 +774,7 @@ export default function Page() {
               <Link key={cs.brand} href={cs.href} className={`sse-cs-card${i === 3 ? " sse-cs-card-4th" : ""}`} style={{ display: "flex", flexDirection: "column", background: C_WHITE, borderRadius: "20px", overflow: "hidden", textDecoration: "none", border: "1px solid rgba(0,0,0,0.06)" }}>
                 <div style={{ position: "relative", width: "calc(100% - 16px)", margin: "8px 8px 0", borderRadius: "14px", overflow: "hidden", flexShrink: 0, aspectRatio: "16/10", background: "#e0ddd5" }}>
                   {cs.video ? (
-                    <video src={cs.video} autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    <LazyAutoplayVideo src={lightVideoFor(cs.video)} poster={videoPosterFor(cs.video)} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
                     <Image src={cs.image} overrideSrc={cs.image} alt={`${cs.brand} Shopify SEO case study`} fill className="sse-cs-card-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" priority={i === 0} />
                   )}

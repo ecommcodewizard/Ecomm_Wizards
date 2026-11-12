@@ -11,7 +11,7 @@ import CTASection from "@/components/ui/CTASection";
 import RelatedServices from "@/components/sections/RelatedServices";
 import BeforeAfterSlider from "./BeforeAfterSlider";
 import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
-import { CASE_STUDY_VIDEOS, SPEED_VIDEO_SLUGS, posterFor } from "@/lib/case-study-videos";
+import { CASE_STUDY_VIDEOS, SPEED_VIDEO_SLUGS, posterFor, videoPosterFor } from "@/lib/case-study-videos";
 
 // Challenge-section video per study. The grid previews (CASE_STUDY_VIDEOS)
 // cover most; these two play only here. All go through LazyAutoplayVideo:
@@ -747,11 +747,7 @@ function CaseStudyWork({ cs }: { cs: CaseStudy }) {
               <div className="cs-work-img-box" style={{ position: "relative", aspectRatio: "16/10" }}>
                 {/* Gallery entries may be video (creative studies show ad cuts here). */}
                 {/\.(mp4|webm)$/i.test(img) ? (
-                  <video
-                    src={img}
-                    autoPlay loop muted playsInline preload="none"
-                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                  />
+                  <LazyAutoplayVideo src={img} poster={videoPosterFor(img)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                 ) : (
                   <Image src={img} overrideSrc={img} alt={cs.workImageAlts?.[i] ?? `${cs.brandName} ${cs.studyKind ?? "Shopify"} case study, image ${i + 1}`} fill className="object-cover" loading="lazy" sizes="(max-width: 767px) 100vw, 50vw" />
                 )}

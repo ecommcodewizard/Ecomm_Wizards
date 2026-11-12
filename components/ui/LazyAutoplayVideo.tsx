@@ -18,7 +18,11 @@ import { useEffect, useRef, useState } from "react";
 // poster is the entire experience for those visitors, so downloading a video
 // they will never be shown is pure waste on top of being the wrong behaviour.
 
-type Props = {
+/** Other <video> attributes (controls, controlsList, width, height, ...) pass
+ *  straight through. The ones this component owns are excluded. */
+type PassThrough = Omit<React.VideoHTMLAttributes<HTMLVideoElement>, "src" | "poster" | "autoPlay" | "loop" | "muted" | "playsInline" | "preload" | "className" | "style">;
+
+type Props = PassThrough & {
   src: string;
   poster: string;
   className?: string;
@@ -62,6 +66,7 @@ export default function LazyAutoplayVideo({
   rate,
   rootMargin = "400px",
   deferUntilIdle = false,
+  ...rest
 }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
@@ -133,6 +138,7 @@ export default function LazyAutoplayVideo({
 
   return (
     <video
+      {...rest}
       ref={ref}
       src={shouldLoad ? src : undefined}
       poster={poster}

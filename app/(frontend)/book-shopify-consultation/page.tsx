@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import CalEmbed from "./CalEmbed";
 import BookFaqAccordion from "./BookFaqAccordion";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
+import { lightVideoFor, videoPosterFor } from "@/lib/case-study-videos";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://ecommwizards.com/book-shopify-consultation" },
@@ -162,7 +164,7 @@ export default function BookCallPage() {
               <Link key={cs.brand} href={cs.href} className={`bkc-cs-card${i === 3 ? " bkc-cs-card-4th" : ""}`} style={{ display: "flex", flexDirection: "column", background: C_CREAM, borderRadius: "20px", overflow: "hidden", textDecoration: "none", border: "1px solid rgba(0,0,0,0.06)" }}>
                 <div style={{ position: "relative", width: "calc(100% - 16px)", margin: "8px 8px 0", borderRadius: "14px", overflow: "hidden", flexShrink: 0, aspectRatio: "16/10", background: "#e0ddd5" }}>
                   {cs.video ? (
-                    <video src={cs.video} autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    <LazyAutoplayVideo src={lightVideoFor(cs.video)} poster={videoPosterFor(cs.video)} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
                     <Image src={cs.image} overrideSrc={cs.image} alt={`${cs.brand} Shopify case study`} fill className="bkc-cs-card-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" priority={i === 0} />
                   )}
