@@ -7,6 +7,8 @@ import { KLAVIYO_CASE_STUDIES } from "@/lib/klaviyo-studies";
 import CaseStudiesGrid from "./CaseStudiesGrid";
 import { ogImage } from "@/lib/og";
 import ShopifyAppsSection from "./ShopifyAppsSection";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
+import { lightVideoFor, videoPosterFor } from "@/lib/case-study-videos";
 
 const PAGE_TITLE = "Case Studies | Real Results for Real Brands | Ecomm Wizards";
 const PAGE_DESCRIPTION =
@@ -588,15 +590,7 @@ export default async function CaseStudiesPage({
                 }}
               >
                 {/* Video */}
-                <video
-                  src={item.video}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                />
+                <LazyAutoplayVideo src={lightVideoFor(item.video)} poster={videoPosterFor(item.video)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
 
                 {/* Gradient overlay */}
                 <div

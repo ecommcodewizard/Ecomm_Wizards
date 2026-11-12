@@ -7,6 +7,8 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
 import CreativeAuditForm from "./CreativeAuditForm";
 import CreativeBoard from "@/components/sections/CreativeBoard";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
+import { lightVideoFor, videoPosterFor } from "@/lib/case-study-videos";
 
 const META_DESCRIPTION =
   "Performance creative and creative strategy agency for Shopify brands. Static, video, and UGC ads that cut CPA and scale ROAS. Get your free creative audit.";
@@ -232,7 +234,7 @@ export default function Page() {
           </div>
 
           <div className="sat-hero-img-wrap">
-            <CreativeBoard />
+            <CreativeBoard aboveFold />
           </div>
         </div>
       </section>
@@ -318,7 +320,7 @@ export default function Page() {
             {GALLERY.map((g) => (
               <div key={g.label} className="cs-gallery-tile">
                 {g.video ? (
-                  <video className="cs-gallery-media" src={g.src} poster={g.poster} autoPlay muted loop playsInline preload="metadata" aria-label={`${g.label} creative example for ecommerce ads`} />
+                  <LazyAutoplayVideo src={g.src} poster={g.poster ?? videoPosterFor(g.src)} className="cs-gallery-media" label={`${g.label} creative example for ecommerce ads`} />
                 ) : (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img className="cs-gallery-media" src={g.src} alt={`${g.label} creative example for ecommerce ads`} loading="lazy" decoding="async" />
@@ -357,7 +359,7 @@ export default function Page() {
               <div className="csp-phone">
                 <div className="csp-head"><span className="csp-av" /><span className="csp-head-bars"><i /><i /></span><span className="csp-menu">&middot;&middot;&middot;</span></div>
                 <div className="csp-creative csp-creative--after">
-                  <video src="/images/chillys-after.mp4" poster="/images/chillys-after-poster.webp" autoPlay muted loop playsInline preload="metadata" aria-label="Chilly's Series 2 Flip performance creative" />
+                  <LazyAutoplayVideo src={"/images/chillys-after.mp4"} poster={"/images/chillys-after-poster.webp"} label="Chilly's Series 2 Flip performance creative" />
                 </div>
                 <div className="csp-foot"><span className="csp-fbar w1" /><span className="csp-eng"><i /><i /><i /></span><span className="csp-fbar w2" /></div>
               </div>
@@ -464,7 +466,7 @@ export default function Page() {
             {CREATIVE_WORK.map((cs) => (
               <Link key={cs.brand} href={cs.href} className="cw-card" style={{ display: "flex", flexDirection: "column", background: "#FFFFFF", borderRadius: "20px", overflow: "hidden", textDecoration: "none", border: "1px solid rgba(0,0,0,0.06)" }}>
                 <div style={{ position: "relative", width: "calc(100% - 16px)", margin: "8px 8px 0", borderRadius: "14px", overflow: "hidden", flexShrink: 0, aspectRatio: "16/10", background: "#e0ddd5" }}>
-                  <video src={cs.video} autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  <LazyAutoplayVideo src={lightVideoFor(cs.video)} poster={videoPosterFor(cs.video)} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   <div style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.97)", borderRadius: "9999px", padding: "5px 14px", display: "flex", alignItems: "center", gap: "8px" }}>
                     <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#000", display: "inline-block", flexShrink: 0 }} />
                     <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", fontWeight: 400, color: "#000", whiteSpace: "nowrap" }}>{cs.metricLabel}</span>

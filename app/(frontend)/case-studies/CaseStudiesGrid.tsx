@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import SpeedVideo from "./SpeedVideo";
-import { CASE_STUDY_VIDEOS, SPEED_VIDEO_SLUGS, posterFor } from "@/lib/case-study-videos";
+import { CASE_STUDY_VIDEOS, SPEED_VIDEO_SLUGS, lightVideoFor, posterFor } from "@/lib/case-study-videos";
 import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
 import type { CaseStudy } from "@/lib/case-studies";
 
@@ -23,7 +23,7 @@ function CardMedia({ cs, index }: { cs: CaseStudy; index: number }) {
     // for anyone who has asked for reduced motion.
     return (
       <LazyAutoplayVideo
-        src={videoSrc}
+        src={lightVideoFor(videoSrc)}
         poster={posterFor(videoSrc)}
         style={videoStyle}
         rate={SPEED_VIDEO_SLUGS.has(cs.slug) ? 1.5 : undefined}

@@ -8,6 +8,8 @@ import HydrogenWhyAccordion, { type HydrogenWhyItem } from "@/components/section
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
+import { videoPosterFor } from "@/lib/case-study-videos";
 
 const META_DESCRIPTION =
   "Shopify Hydrogen migration without downtime. We move your Liquid theme to a headless Hydrogen storefront, keeping SEO and checkout intact. Free test build.";
@@ -740,15 +742,7 @@ export default function Page() {
 
           <div className="w2s-transition-video">
             {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-            <video
-              src="/images/5a8e17ef773c4b6a9675ecd2347ac9de.HD-1080p-7.2Mbps-58742493-1.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              controls
-              preload="metadata"
-            />
+            <LazyAutoplayVideo src={"/images/5a8e17ef773c4b6a9675ecd2347ac9de.HD-1080p-7.2Mbps-58742493-1.mp4"} poster={videoPosterFor("/images/5a8e17ef773c4b6a9675ecd2347ac9de.HD-1080p-7.2Mbps-58742493-1.mp4")} controls />
           </div>
         </div>
       </section>
@@ -795,15 +789,7 @@ export default function Page() {
         <div className="w2s-checkout-inner">
           <div className="w2s-checkout-visual">
             {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-            <video
-              src="/images/9fe8312bdc644954b6e3f17792ae21de.HD-1080p-2.5Mbps-20028686.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              controlsList="nodownload"
-            />
+            <LazyAutoplayVideo src={"/images/9fe8312bdc644954b6e3f17792ae21de.HD-1080p-2.5Mbps-20028686.mp4"} poster={videoPosterFor("/images/9fe8312bdc644954b6e3f17792ae21de.HD-1080p-2.5Mbps-20028686.mp4")} controlsList="nodownload" />
           </div>
           <div className="w2s-checkout-copy">
             <h2 className="w2s-checkout-h2">

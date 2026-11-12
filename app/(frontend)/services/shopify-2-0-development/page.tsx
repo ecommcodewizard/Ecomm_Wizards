@@ -8,6 +8,8 @@ import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/Case
 import ServiceSchema from "@/components/seo/ServiceSchema";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RelatedServices from "@/components/sections/RelatedServices";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
+import { lightVideoFor, videoPosterFor } from "@/lib/case-study-videos";
 
 const META_DESCRIPTION =
   "Shopify 2.0 development agency with 150+ Online Store 2.0 builds. Custom themes, 1.0 to 2.0 migrations, and native App Block integrations.";
@@ -689,7 +691,7 @@ export default function Page() {
               <Link key={cs.brand} href={cs.href} className={`s20-cs-card${i === 3 ? " s20-cs-card-4th" : ""}`} style={{ display: "flex", flexDirection: "column", background: C_WHITE, borderRadius: "20px", overflow: "hidden", textDecoration: "none", border: "1px solid rgba(0,0,0,0.06)" }}>
                 <div style={{ position: "relative", width: "calc(100% - 16px)", margin: "8px 8px 0", borderRadius: "14px", overflow: "hidden", flexShrink: 0, aspectRatio: "16/10", background: "#e0ddd5" }}>
                   {cs.video ? (
-                    <video src={cs.video} autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    <LazyAutoplayVideo src={lightVideoFor(cs.video)} poster={videoPosterFor(cs.video)} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
                     <Image src={cs.image} overrideSrc={cs.image} alt={`${cs.brand} Shopify 2.0 development case study`} fill className="s20-cs-card-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" priority={i === 0} />
                   )}

@@ -13,6 +13,8 @@ import AiAppsSlider from "@/components/sections/AiAppsSlider";
 import MobileAppSection from "@/components/sections/MobileAppSection";
 import CaseStudySlider, { type CaseStudySlide } from "@/components/sections/CaseStudySlider";
 import WhyPartnerSection from "@/components/sections/WhyPartnerSection";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
+import { videoPosterFor } from "@/lib/case-study-videos";
 
 const HOME_TITLE = "Shopify Agency | Design, CRO, Development & Growth Experts";
 const HOME_DESCRIPTION =
@@ -550,15 +552,7 @@ export default function HomePage() {
         wrapHeading
         mobileYPadding="max-sm:!pt-[40px] max-sm:!pb-[10px]"
         imagePanel={
-          <video
-            src="/images/Shopify%20Agentic%20Commerce.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            aria-label="Shopify products surfacing inside AI assistants like ChatGPT and Gemini"
-            style={{ width: "auto", height: "auto", maxHeight: "460px", maxWidth: "100%", borderRadius: "16px", display: "block", margin: "0 auto" }}
-          />
+          <LazyAutoplayVideo src={"/images/Shopify%20Agentic%20Commerce.mp4"} poster={videoPosterFor("/images/Shopify%20Agentic%20Commerce.mp4")} label="Shopify products surfacing inside AI assistants like ChatGPT and Gemini" style={{ width: "auto", height: "auto", maxHeight: "460px", maxWidth: "100%", borderRadius: "16px", display: "block", margin: "0 auto" }} />
         }
       />
 

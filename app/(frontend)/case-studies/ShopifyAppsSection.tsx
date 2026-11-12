@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
+import { lightVideoFor, videoPosterFor } from "@/lib/case-study-videos";
 
 type AppCard = {
   slug: string;
@@ -136,11 +138,7 @@ export default function ShopifyAppsSection({ cards, badge = "Shopify Apps", head
                   }}
                 >
                   {app.video ? (
-                    <video
-                      src={app.video}
-                      autoPlay loop muted playsInline preload="metadata"
-                      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
-                    />
+                    <LazyAutoplayVideo src={lightVideoFor(app.video)} poster={videoPosterFor(app.video)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
                   ) : app.image ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img

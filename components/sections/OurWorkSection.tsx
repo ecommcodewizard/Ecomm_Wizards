@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CaseStudyCard } from "@/lib/services";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
+import { lightVideoFor } from "@/lib/case-study-videos";
 
 // "Our Work" proof grid: case-study cards with an auto-play muted video (image
 // fallback) + a result metric. Extracted from the inline service-page pattern so
@@ -36,7 +38,7 @@ export default function OurWorkSection({
             <Link key={cs.brand} href={cs.href} className="ow-card" style={{ display: "flex", flexDirection: "column", background: "#fff", borderRadius: 20, overflow: "hidden", textDecoration: "none", border: "1px solid rgba(0,0,0,0.06)" }}>
               <div style={{ position: "relative", width: "calc(100% - 16px)", margin: "8px 8px 0", borderRadius: 14, overflow: "hidden", flexShrink: 0, aspectRatio: "16/10", background: "#e0ddd5" }}>
                 {cs.video ? (
-                  <video src={cs.video} autoPlay loop muted playsInline preload="none" poster={cs.image} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  <LazyAutoplayVideo src={lightVideoFor(cs.video)} poster={cs.image} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                 ) : (
                   <Image src={cs.image} overrideSrc={cs.image} alt={`${cs.brand} Shopify case study`} fill className="ow-card-img" style={{ objectFit: "cover" }} sizes="(max-width:560px) 100vw, (max-width:900px) 50vw, 33vw" />
                 )}
