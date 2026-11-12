@@ -60,13 +60,25 @@ export default function Breadcrumbs({ current, items }: { current?: string; item
       </ol>
       <style dangerouslySetInnerHTML={{ __html: `
         .ew-breadcrumb { background: #ffffff; border-bottom: 1px solid rgba(0,0,0,0.06); }
-        .ew-breadcrumb-list { max-width: 1320px; margin: 0 auto; padding: 14px 20px; list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-family: 'Poppins', sans-serif; font-size: 13px; }
+        .ew-breadcrumb-list { max-width: 1320px; margin: 0 auto; padding: 14px 20px; list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-family: var(--font-sans, 'Poppins', 'Poppins Fallback', sans-serif); font-size: 13px; }
         .ew-breadcrumb-item { display: inline-flex; align-items: center; gap: 8px; }
         .ew-breadcrumb-link { color: rgba(0,0,0,0.55); text-decoration: none; transition: color 0.18s ease; }
         .ew-breadcrumb-link:hover { color: #2A9555; }
         .ew-breadcrumb-current { color: rgba(0,0,0,0.9); font-weight: 600; }
         .ew-breadcrumb-sep { color: rgba(0,0,0,0.3); }
         @media (max-width: 640px) { .ew-breadcrumb-list { padding: 12px 18px; font-size: 12px; } }
+        /* Phones: one line, always. The trail used to wrap to a second line
+           when Poppins replaced the fallback font, pushing the whole hero down
+           27px (CLS 0.30 on every service page, measured 2026-11-12). The
+           middle crumbs give way first (ellipsis); Home and the current page
+           keep their width, the current page capped so it can't push the rest out. */
+        @media (max-width: 640px) {
+          .ew-breadcrumb-list { flex-wrap: nowrap; white-space: nowrap; overflow: hidden; }
+          .ew-breadcrumb-item { flex-shrink: 1; min-width: 0; }
+          .ew-breadcrumb-item:first-child { flex-shrink: 0; }
+          .ew-breadcrumb-item:last-child { flex-shrink: 0; max-width: 62%; }
+          .ew-breadcrumb-link, .ew-breadcrumb-current { display: block; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+        }
       ` }} />
     </nav>
   );

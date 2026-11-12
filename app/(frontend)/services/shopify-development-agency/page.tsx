@@ -10,6 +10,8 @@ import RelatedServices from "@/components/sections/RelatedServices";
 import { geoForHub } from "@/lib/geo/registry";
 import HubCityLinks from "@/components/sections/geo/HubCityLinks";
 import CalEmbed from "@/app/(frontend)/book-shopify-consultation/CalEmbed";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
+import { cardVideoFor, posterFor } from "@/lib/case-study-videos";
 
 const META_DESCRIPTION =
   "Shopify development agency specializing in custom builds, theme development, Shopify Plus, and migrations. 150+ stores built. Fixed price. Most projects live in 6 weeks.";
@@ -609,7 +611,8 @@ export default function Page() {
               <Link key={cs.brand} href={cs.href} className={`sda-cs-card${i === 3 ? " sda-cs-card-4th" : ""}`} style={{ display: "flex", flexDirection: "column", background: C_WHITE, borderRadius: "20px", overflow: "hidden", textDecoration: "none", border: "1px solid rgba(0,0,0,0.06)" }}>
                 <div style={{ position: "relative", width: "calc(100% - 16px)", margin: "8px 8px 0", borderRadius: "14px", overflow: "hidden", flexShrink: 0, aspectRatio: "16/10", background: "#e0ddd5" }}>
                   {cs.video ? (
-                    <video src={cs.video} autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    // Lazy + short card encode: autoplay ignores preload="none", so the plain tag downloaded every file on page open (2026-11-12).
+                    <LazyAutoplayVideo src={cardVideoFor(cs.video)} poster={posterFor(cs.video)} label={`${cs.brand} Shopify development case study`} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
                     <Image src={cs.image} overrideSrc={cs.image} alt={`${cs.brand} Shopify development case study`} fill className="sda-cs-card-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" priority={i === 0} />
                   )}
