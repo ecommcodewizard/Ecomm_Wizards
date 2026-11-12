@@ -24,7 +24,7 @@ export default function GeoStyles() {
     <style
       dangerouslySetInnerHTML={{
         __html: `
-        .gp-section { font-family: 'Poppins', sans-serif; padding: 60px 20px; }
+        .gp-section { font-family: var(--font-sans, 'Poppins', 'Poppins Fallback', sans-serif); padding: 60px 20px; }
         .gp-section--dark { background: ${GP.dark}; color: ${GP.white}; }
         .gp-section--white { background: ${GP.white}; color: ${GP.ink}; }
         .gp-section--cream { background: ${GP.cream}; color: ${GP.ink}; }
