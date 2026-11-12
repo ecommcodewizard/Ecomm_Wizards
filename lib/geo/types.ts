@@ -243,9 +243,30 @@ export const DisciplineSchema = z.object({
    *  something we actually sell and have a page for. */
   covers: z.array(z.string().min(1)).min(3).max(8).optional(),
   caseSlug: z.string().min(1),
-  cta: z.object({ label: z.string().min(1), href: z.string().startsWith("/") }),
+  cta: z.object({ label: z.string().min(1), href: z.string().startsWith("/") }).optional(),
 });
-export type Discipline = z.infer<typeof DisciplineSchema>;
+export type Discipline =z.infer<typeof DisciplineSchema>;
+
+/** One service on a service-format page. With only title + body it renders
+ *  as an accordion row. With heading, covers and caseSlug it renders as a
+ *  visual row (DisciplineBlocks): service name as the eyebrow, its own H3,
+ *  chips, and the case-study video read from lib/case-studies.ts by slug.
+ *  The owner set the visual layout for the 16 Shopify development pages on
+ *  2026-11-12: 6 rows, every heading, chip and line unique per page, each row
+ *  a different case study from the page's own case-studies section. */
+export const ServiceRowSchema = z.object({
+  /** Service name. Rendered as the eyebrow; counts as a heading for keywords. */
+  title: z.string().min(1),
+  /** The row's H3 in the visual layout. */
+  heading: z.string().min(1).optional(),
+  body: z.string().min(1),
+  covers: z.array(z.string().min(1)).min(3).max(6).optional(),
+  caseSlug: z.string().min(1).optional(),
+  imageAlt: z.string().min(1).optional(),
+  /** Omitted where no matching service page exists: no invented links. */
+  cta: z.object({ label: z.string().min(1), href: z.string().startsWith("/") }).optional(),
+});
+export type ServiceRow = z.infer<typeof ServiceRowSchema>;
 
 export const DisciplinesSchema = z.object({
   label: z.string().min(1),
@@ -754,7 +775,7 @@ export const ServiceGeoPageSchema = z.object({
     label: z.string().min(1),
     heading: z.string().min(1),
     intro: z.string().min(1),
-    items: z.array(z.object({ title: z.string().min(1), body: z.string().min(1) })).min(4).max(10),
+    items: z.array(ServiceRowSchema).min(4).max(10),
   }),
   // 5. Location section: what this place means for the store
   local: z.object({
@@ -840,7 +861,10 @@ export function serviceProseStrings(page: ServiceGeoPage): string[] {
   out.push(page.pains.heading, page.pains.intro);
   for (const p of page.pains.items) out.push(p.name, p.desc, p.cost);
   out.push(page.services.label, page.services.heading, page.services.intro);
-  for (const s of page.services.items) out.push(s.title, s.body);
+  for (const s of page.services.items) {
+    out.push(s.title, ...(s.heading ? [s.heading] : []), s.body, ...(s.covers ?? []));
+    if (s.cta) out.push(s.cta.label);
+  }
   out.push(page.local.label, page.local.heading, page.local.intro);
   for (const l of page.local.items) out.push(l.name, l.desc);
   out.push(page.caseStudies.heading, page.caseStudies.intro);
@@ -891,7 +915,7 @@ export function proseStrings(page: GeoProgrammePage): string[] {
   }
   if (page.disciplines) {
     out.push(page.disciplines.label, page.disciplines.heading, page.disciplines.intro);
-    for (const d of page.disciplines.items) out.push(d.label, d.heading, ...(d.body ? [d.body] : []), d.cta.label, ...(d.covers ?? []));
+    for (const d of page.disciplines.items) out.push(d.label, d.heading, ...(d.body ? [d.body] : []), ...(d.cta ? [d.cta.label] : []), ...(d.covers ?? []));
   }
   if (page.servicesList) {
     out.push(page.servicesList.label, page.servicesList.heading, page.servicesList.intro, page.servicesList.ctaLabel);

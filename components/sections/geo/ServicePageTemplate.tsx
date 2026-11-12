@@ -22,6 +22,10 @@ import CalEmbed from "@/app/(frontend)/book-shopify-consultation/CalEmbed";
 import { CASE_STUDIES } from "@/lib/case-studies";
 import { assertServicePublishable, canonicalUrl, geoForHub, hubPathToLabel } from "@/lib/geo/registry";
 import HubCityLinks from "@/components/sections/geo/HubCityLinks";
+import DisciplineBlocks from "@/components/sections/geo/DisciplineBlocks";
+import GeoStyles from "@/components/sections/geo/GeoStyles";
+import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
+import { cardVideoFor, posterFor } from "@/lib/case-study-videos";
 import { breadcrumbListJsonLd, breadcrumbTrail, faqPageJsonLd, faqPlainText } from "@/lib/geo/schema";
 import type { ServiceGeoPage, ServiceIcon } from "@/lib/geo/types";
 
@@ -239,8 +243,37 @@ export default function ServicePageTemplate({ page }: { page: ServiceGeoPage }) 
         </div>
       </section>
 
-      {/* 4. Services (WHITE) */}
-      <section className="std-solutions" style={{ background: C_WHITE }} aria-label={page.services.heading}>
+      {/* 4. Services (WHITE). Visual rows when every service carries a
+          heading and a case study (owner, 2026-11-12); accordion otherwise. */}
+      {page.services.items.every((s) => s.heading && s.caseSlug) ? (
+        <section id="services" className="svc-rows" style={{ background: C_WHITE, padding: "60px 20px", scrollMarginTop: "90px" }} aria-label={page.services.heading}>
+          <GeoStyles />
+          <div style={{ maxWidth: "1320px", margin: "0 auto", fontFamily: "'Poppins', sans-serif" }}>
+            <span className="std-label">{page.services.label}</span>
+            <h2 className="svc-rows-h2" style={{ color: C_DARK, fontSize: "clamp(28px, 3.4vw, 42px)", fontWeight: 700, lineHeight: 1.2, margin: "12px 0 0", maxWidth: "30ch" }}>{page.services.heading}</h2>
+            <p style={{ color: C_TEXT, fontSize: 16, lineHeight: "28px", margin: "16px 0 46px", maxWidth: "68ch" }}>{rich(page.services.intro)}</p>
+            <DisciplineBlocks
+              rowsOnly
+              cardVideos
+              data={{
+                label: page.services.label,
+                heading: page.services.heading,
+                intro: page.services.intro,
+                items: page.services.items.map((s) => ({
+                  label: s.title,
+                  heading: s.heading!,
+                  body: s.body,
+                  covers: s.covers,
+                  caseSlug: s.caseSlug!,
+                  imageAlt: s.imageAlt,
+                  cta: s.cta,
+                })),
+              }}
+            />
+          </div>
+        </section>
+      ) : (
+      <section className="std-solutions"style={{ background: C_WHITE }} aria-label={page.services.heading}>
         <div className="std-solutions-grid mx-auto grid gap-14 lg:grid-cols-[1.2fr_1fr] lg:items-start" style={{ maxWidth: "1320px", padding: "60px 20px" }}>
           <div className="std-solutions-left" style={{ position: "sticky", top: "120px", alignSelf: "start" }}>
             <span className="std-label">{page.services.label}</span>
@@ -254,6 +287,7 @@ export default function ServicePageTemplate({ page }: { page: ServiceGeoPage }) 
           <SdaAccordion items={page.services.items} />
         </div>
       </section>
+      )}
 
       {/* 5. Location section (DARK) */}
       <section className="svc-local" style={{ background: C_DARK, padding: "60px 20px" }} aria-label={page.local.heading}>
@@ -284,7 +318,8 @@ export default function ServicePageTemplate({ page }: { page: ServiceGeoPage }) 
               <Link key={cs.slug} href={`/case-studies/${cs.slug}`} data-proof-card className={`sda-cs-card${i === 3 ? " sda-cs-card-4th" : ""}`} style={{ display: "flex", flexDirection: "column", background: C_WHITE, borderRadius: "20px", overflow: "hidden", textDecoration: "none", border: "1px solid rgba(0,0,0,0.06)" }}>
                 <div style={{ position: "relative", width: "calc(100% - 16px)", margin: "8px 8px 0", borderRadius: "14px", overflow: "hidden", flexShrink: 0, aspectRatio: "16/10", background: "#e0ddd5" }}>
                   {item.video ? (
-                    <video src={item.video} poster={cs.heroImage} autoPlay loop muted playsInline preload="none" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    // Lazy: autoplay ignores preload="none" and fetched all three files on page open (2026-11-12 measurement).
+                    <LazyAutoplayVideo src={cardVideoFor(item.video)} poster={posterFor(item.video)} label={`${cs.brandName} Shopify case study`} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                   ) : (
                     <Image src={cs.heroImage} overrideSrc={cs.heroImage} alt={`${cs.brandName} Shopify case study`} fill className="sda-cs-card-img" style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, 33vw" />
                   )}
