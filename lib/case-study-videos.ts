@@ -68,3 +68,13 @@ export const SPEED_VIDEO_SLUGS = new Set<string>([
 export function posterFor(videoSrc: string): string {
   return videoSrc.replace("/Case%20studies/", "/Case%20studies/posters/").replace(/\.mp4$/, ".webp");
 }
+
+/** Short card version of a case-study video: the first 14 seconds, at most
+ *  960px, silent, about 0.3 to 1.4 MB (public/images/Case studies/cards/,
+ *  encoded 2026-11-12 with ffmpeg: -t 14 -an, libx264 crf 30, faststart).
+ *  Used by the service-format location pages, where a video is a small looping
+ *  card; the full files stay on the case-study pages. Every video those pages
+ *  use has a card version; add one before pointing a page at a new video. */
+export function cardVideoFor(videoSrc: string): string {
+  return videoSrc.replace("/Case%20studies/", "/Case%20studies/cards/");
+}

@@ -6,7 +6,7 @@ import { CASE_STUDIES, type CaseStudy } from "@/lib/case-studies";
 import { APP_CASE_STUDIES } from "@/lib/shopify-app-studies";
 import { KLAVIYO_CASE_STUDIES } from "@/lib/klaviyo-studies";
 import { CREATIVE_CASE_STUDIES } from "@/lib/creative-studies";
-import { CASE_STUDY_VIDEOS, posterFor } from "@/lib/case-study-videos";
+import { CASE_STUDY_VIDEOS, cardVideoFor, posterFor } from "@/lib/case-study-videos";
 import LazyAutoplayVideo from "@/components/ui/LazyAutoplayVideo";
 
 // Discipline deep-dives: alternating image + text rows, one per service the
@@ -35,13 +35,21 @@ function findStudy(slug: string): CaseStudy | undefined {
   return undefined;
 }
 
-export default function DisciplineBlocks({ data }: { data: Disciplines }) {
+// `rowsOnly`: the service-format template draws its own section header and
+// background and needs only the rows (ServicePageTemplate, 2026-11-12).
+// `cardVideos`: play the short card encodes instead of the full files.
+export default function DisciplineBlocks({ data, rowsOnly = false, cardVideos = false }: { data: Disciplines; rowsOnly?: boolean; cardVideos?: boolean }) {
+  const Wrap = rowsOnly ? "div" : "section";
   return (
-    <section id="disciplines" className="gp-section gpd" style={{ scrollMarginTop: 90 }}>
-      <div className="gp-inner">
-        <p className="gpd-label">{data.label}</p>
-        <h2 className="gp-h2 gpd-heading">{inline(data.heading)}</h2>
-        <div className="gpd-intro"><Prose text={data.intro} /></div>
+    <Wrap id={rowsOnly ? undefined : "disciplines"} className={rowsOnly ? "gpd" : "gp-section gpd"} style={rowsOnly ? undefined : { scrollMarginTop: 90 }}>
+      <div className={rowsOnly ? undefined : "gp-inner"}>
+        {rowsOnly ? null : (
+          <>
+            <p className="gpd-label">{data.label}</p>
+            <h2 className="gp-h2 gpd-heading">{inline(data.heading)}</h2>
+            <div className="gpd-intro"><Prose text={data.intro} /></div>
+          </>
+        )}
 
         <div className="gpd-rows">
           {data.items.map((item, i) => {
@@ -64,12 +72,14 @@ export default function DisciplineBlocks({ data }: { data: Disciplines }) {
                       ))}
                     </ul>
                   ) : null}
-                  <Link href={item.cta.href} className="gp-btn gp-btn--dark gpd-cta">
-                    <span>{item.cta.label}</span>
-                    <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
-                      <path d="M0 5H14M14 5L9 0M14 5L9 10" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </Link>
+                  {item.cta ? (
+                    <Link href={item.cta.href} className="gp-btn gp-btn--dark gpd-cta">
+                      <span>{item.cta.label}</span>
+                      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                        <path d="M0 5H14M14 5L9 0M14 5L9 10" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </Link>
+                  ) : null}
                 </div>
 
                 {study ? (
@@ -83,7 +93,7 @@ export default function DisciplineBlocks({ data }: { data: Disciplines }) {
                         // so six of these cost nothing above the fold.
                         <>
                           <LazyAutoplayVideo
-                            src={CASE_STUDY_VIDEOS[study.slug]}
+                            src={cardVideos ? cardVideoFor(CASE_STUDY_VIDEOS[study.slug]) : CASE_STUDY_VIDEOS[study.slug]}
                             poster={posterFor(CASE_STUDY_VIDEOS[study.slug])}
                             className="gpd-video"
                             label={item.imageAlt ?? `${study.brandName} storefront we built`}
@@ -210,6 +220,6 @@ export default function DisciplineBlocks({ data }: { data: Disciplines }) {
         `,
         }}
       />
-    </section>
+    </Wrap>
   );
 }

@@ -378,7 +378,7 @@ function keywordIssues(page: ServiceGeoPage, prose: string[], words: number): { 
   const headings = [
     page.trust.heading, page.pains.heading, page.services.heading, page.local.heading, page.caseStudies.heading,
     page.process.heading, page.compare.heading, page.industries.heading, page.faqHeading,
-    ...page.pains.items.map((i) => i.name), ...page.services.items.map((i) => i.title),
+    ...page.pains.items.map((i) => i.name), ...page.services.items.flatMap((i) => (i.heading ? [i.title, i.heading] : [i.title])),
     ...page.local.items.map((i) => i.name), ...page.process.steps.map((s) => s.title), ...page.faqs.map((f) => f.question),
   ];
   const first100 = page.hero.intro.replace(/\[link:[^\]|]+\|([^\]]+)\]/g, "$1").split(/\s+/).slice(0, 100).join(" ");
