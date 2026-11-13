@@ -167,6 +167,15 @@ const PAGES = {
       { n: "+152%", l: "conversion rate", b: "Everlast" },
     ],
   },
+  "app-charlotte": {
+    main: "Vytronix-pdp.png",
+    top: "untuckit-1.webp",
+    bottom: "emma-noah.webp",
+    badges: [
+      { n: "+61%", l: "average order value", b: "emma&noah" },
+      { n: "3x", l: "peak traffic handled", b: "UntuckIt" },
+    ],
+  },
 };
 
 const html = (p) => `<!doctype html><html><head><meta charset="utf-8">

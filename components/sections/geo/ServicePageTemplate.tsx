@@ -20,6 +20,7 @@ import SdaAccordion from "@/app/(frontend)/services/shopify-development-agency/S
 import SdaFaqAccordion from "@/app/(frontend)/services/shopify-development-agency/SdaFaqAccordion";
 import CalEmbed from "@/app/(frontend)/book-shopify-consultation/CalEmbed";
 import { CASE_STUDIES } from "@/lib/case-studies";
+import { APP_CASE_STUDIES } from "@/lib/shopify-app-studies";
 import { assertServicePublishable, canonicalUrl, geoForHub, hubPathToLabel } from "@/lib/geo/registry";
 import HubCityLinks from "@/components/sections/geo/HubCityLinks";
 import DisciplineBlocks from "@/components/sections/geo/DisciplineBlocks";
@@ -66,6 +67,23 @@ const WHY_US: Record<string, { heading: [string, string]; desc: string; cards: W
       { title: "Shopify Plus Partners Since 2021", desc: <>We are Shopify Plus Partners (since 2021) with hands-on experience across Shopify Functions, Shopify Flow, and the full enterprise feature set. Every Shopify platform update that could affect your store, we test it and document it before your next project goes live. Your store is never caught off guard.</>, icon: svg(<><path d="M16 4 l3 2.4 l3.7 -0.6 l1.6 3.4 l3.4 1.6 l-0.6 3.7 l2.4 3 l-2.4 3 l0.6 3.7 l-3.4 1.6 l-1.6 3.4 l-3.7 -0.6 l-3 2.4 l-3 -2.4 l-3.7 0.6 l-1.6 -3.4 l-3.4 -1.6 l0.6 -3.7 l-2.4 -3 l2.4 -3 l-0.6 -3.7 l3.4 -1.6 l1.6 -3.4 l3.7 0.6 z" /><polyline points="11,16.5 14.5,20 21,12.5" /></>) },
     ],
     closing: "Every store we build is documented, tested, and handed over completely. A Shopify development company that knows the platform deeply catches edge cases before go-live, not after.",
+  },
+  // App development hub (2026-11-13). Themes follow the hub's own "Why Choose"
+  // accordion; figures are the canonical brand stats only (lib/brand-stats.ts).
+  // Two hub claims are deliberately NOT repeated here: "550+ five-star
+  // reviews" and "200+ stores through our sister company" (not canonical).
+  "/services/shopify-app-development": {
+    heading: ["Why Brands Choose Ecomm Wizards as Their", "Shopify App Development Company"],
+    desc: "Custom apps touch your checkout, your data and your operations, so the team that builds them matters. Here is what you get when we build yours:",
+    cards: [
+      { title: "Shopify Plus Partner Agency", desc: <>We are a Shopify Plus Partner, vetted by Shopify and trusted by merchants at volume. Our developers work on Shopify full-time: the Admin and Storefront APIs, Shopify Functions, checkout extensions, webhooks and app embeds.</>, icon: svg(<><path d="M16 4 l3 2.4 l3.7 -0.6 l1.6 3.4 l3.4 1.6 l-0.6 3.7 l2.4 3 l-2.4 3 l0.6 3.7 l-3.4 1.6 l-1.6 3.4 l-3.7 -0.6 l-3 2.4 l-3 -2.4 l-3.7 0.6 l-1.6 -3.4 l-3.4 -1.6 l0.6 -3.7 l-2.4 -3 l2.4 -3 l-0.6 -3.7 l3.4 -1.6 l1.6 -3.4 l3.7 0.6 z" /><polyline points="11,16.5 14.5,20 21,12.5" /></>) },
+      { title: "Award-Winning Team", desc: <>9+ industry awards and a 4.9-star average rating across 8+ years of Shopify work. When you hire Shopify app developers from Ecomm Wizards, you hire a team that has shipped apps merchants rely on every day.</>, icon: svg(<><circle cx="16" cy="12" r="7" /><path d="M11 18l-3 10 8-4 8 4-3-10" /></>) },
+      { title: "Fixed Price and Clear Milestones", desc: <>Every engagement starts with a written scope, defined milestones and one price agreed before development begins. <span className="sda-why-hl">No hourly billing and no surprise invoices.</span></>, icon: svg(<><rect x="4" y="5" width="24" height="24" rx="3" /><path d="M22 3v4M10 3v4M4 13h24" /><path d="M10 19l3 3 6-6" /></>) },
+      { title: "You Own the App and the Code", desc: <>Source code, repositories and app listings live in your accounts from day one, with documentation at handover. No license fees, and nothing breaks if you stop working with us.</>, icon: svg(<><path d="M6 10l-4 6 4 6" /><path d="M26 10l4 6-4 6" /><path d="M19 6l-6 20" /></>) },
+      { title: "Dedicated Support After Launch", desc: <>Issues go to the developers who built your app, not a ticket queue. Shopify releases a new API version every quarter, and we keep your app current so a platform update never takes it offline.</>, icon: svg(<><path d="M16 3L5 8v9c0 6.1 4.7 11.8 11 13 6.3-1.2 11-6.9 11-13V8L16 3z" /><path d="M11 16l3 3 7-7" /></>) },
+      { title: "Scalable Collaboration", desc: <>Plug us into your existing team, or let us be your entire app development department. We scope the work around how your business runs, not the other way round.</>, icon: svg(<><circle cx="10" cy="11" r="4" /><circle cx="22" cy="11" r="4" /><path d="M3 26c0-4.4 3.1-7 7-7s7 2.6 7 7M15 26c0-4.4 3.1-7 7-7s7 2.6 7 7" /></>) },
+    ],
+    closing: "Every app we build is documented, tested against Shopify's current API version and handed over completely, so it keeps working long after launch.",
   },
 };
 
@@ -136,7 +154,7 @@ export default function ServicePageTemplate({ page }: { page: ServiceGeoPage }) 
   const trail = breadcrumbTrail(page);
   const why = WHY_US[page.hub] ?? WHY_US["/services/shopify-development-agency"];
   const studies = page.caseStudies.items
-    .map((item) => ({ item, cs: CASE_STUDIES.find((c) => c.slug === item.slug) }))
+    .map((item) => ({ item, cs: [...CASE_STUDIES, ...APP_CASE_STUDIES].find((c) => c.slug === item.slug) }))
     .filter((x): x is { item: (typeof page.caseStudies.items)[number]; cs: (typeof CASE_STUDIES)[number] } => Boolean(x.cs));
   const faqs = page.faqs.map((f) => ({ q: faqPlainText(f.question), a: faqPlainText(f.answer) }));
   const h = page.hero;
