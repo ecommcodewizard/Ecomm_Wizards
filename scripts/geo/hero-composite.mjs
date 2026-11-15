@@ -176,6 +176,15 @@ const PAGES = {
       { n: "3x", l: "peak traffic handled", b: "UntuckIt" },
     ],
   },
+  "app-vermont": {
+    main: "teelaunch-shopify-app-1.webp",
+    top: "what3words-2.webp",
+    bottom: "ABASK-1.jpg",
+    badges: [
+      { n: "50k+", l: "merchants onboarded", b: "teelaunch" },
+      { n: "165", l: "territories from day one", b: "ABASK" },
+    ],
+  },
 };
 
 const html = (p) => `<!doctype html><html><head><meta charset="utf-8">
