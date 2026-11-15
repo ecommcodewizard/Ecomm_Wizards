@@ -98,14 +98,16 @@ export const SHOPIFY_APP_VERMONT: ServiceGeoPage = {
       "Every app below is scoped, built and supported by our own developers, who work on nothing but Shopify. Sometimes the right answer is an app you already have, configured properly: we'll tell you if so, and [link:/services/shopify-app-setup-and-app-optimization|app setup] costs far less than a build.",
     // Visual rows. Case studies avoid the page's own three (teelaunch,
     // what3words, ABASK) and differ in order and framing from Charlotte.
+    // emma&noah was dropped from row 1 (owner, 2026-11-16): no video and a
+    // blurry image; Sneak Energy's bundle builder replaces it.
     items: [
       {
         title: "Bundle and Build-a-Box Apps",
         heading: "Let shoppers fill their own box, with a discount that grows as they add",
-        body: "A builder that sits on your product or collection page: shoppers pick the items, see the box fill and watch the saving step up. Your team gets one clean order with every item listed. For emma&noah, the mix-and-match app we built lifted average order value 61%.",
+        body: "A builder that sits on your product or collection page: shoppers pick the items, see the box fill and watch the saving step up. Your team gets one clean order with every item listed. For Sneak Energy we built a mix-and-match builder for tubs, sachets and cans, part of a rebuild that lifted add-to-cart rate 52%.",
         covers: ["Bundle builder", "Tiered discounts", "Theme app block", "Stock-aware picks", "Admin settings"],
-        caseSlug: "emma-noah-bundle-app",
-        imageAlt: "emma&noah bundle builder on a Shopify product page",
+        caseSlug: "sneak-energy-shopify-redesign",
+        imageAlt: "Sneak Energy store with a mix-and-match bundle builder",
         cta: { label: "Explore app development", href: "/services/shopify-app-development" },
       },
       {
