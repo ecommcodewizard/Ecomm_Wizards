@@ -6,6 +6,7 @@ import RelatedServices from "@/components/sections/RelatedServices";
 import HubCityLinks from "@/components/sections/geo/HubCityLinks";
 import { geoForHub } from "@/lib/geo/registry";
 import Link from "next/link";
+import { BRAND_STATS } from "@/lib/brand-stats";
 
 // Published geo children of this hub. Without this block the Raleigh page under
 // /services/shopify-app-development would ship with no internal link pointing
@@ -305,7 +306,7 @@ export default function ShopifyAppDevelopmentPage() {
               </h2>
 
               <p className="sad-about-p">
-                Ecomm Wizards Apps is not a side project. It is a dedicated <b>Shopify app development company</b> built from within the Ecomm Wizards family, a Shopify Plus Partner Agency with nearly a decade of ecommerce experience behind it.
+                Ecomm Wizards Apps is not a side project. It is a dedicated <b>Shopify app development company</b> built from within the Ecomm Wizards family, a Shopify Plus Partner Agency with {BRAND_STATS.years} years of ecommerce experience behind it.
               </p>
 
               <p className="sad-about-p">
@@ -335,7 +336,7 @@ export default function ShopifyAppDevelopmentPage() {
                     </svg>
                   </span>
                   <span className="sad-about-text">
-                    <b>Over 200 Shopify stores served</b> through our sister company.
+                    <b>{BRAND_STATS.storesBuilt} Shopify stores built</b> across every kind of brand.
                   </span>
                 </li>
 
@@ -350,7 +351,7 @@ export default function ShopifyAppDevelopmentPage() {
                     </svg>
                   </span>
                   <span className="sad-about-text">
-                    <b>$600M+ revenue generated</b> collectively for our clients.
+                    <b>{BRAND_STATS.revenue} revenue generated</b> collectively for our clients.
                   </span>
                 </li>
 
@@ -363,7 +364,7 @@ export default function ShopifyAppDevelopmentPage() {
                     </svg>
                   </span>
                   <span className="sad-about-text">
-                    <b>9+ industry awards</b> and more than <b>550 five star reviews.</b>
+                    <b>{BRAND_STATS.awards} industry awards</b> and a <b>{BRAND_STATS.rating} client rating.</b>
                   </span>
                 </li>
 
@@ -1399,7 +1400,7 @@ export default function ShopifyAppDevelopmentPage() {
                       </span>
                     </label>
                     <div className="sad-why-bodyc">
-                      <p>9+ industry awards. 550+ five-star reviews. When you hire Shopify app developers from Ecomm Wizards, you are hiring a team the industry keeps recognizing for results.</p>
+                      <p>{BRAND_STATS.awards} industry awards and a {BRAND_STATS.rating} client rating. When you hire Shopify app developers from Ecomm Wizards, you are hiring a team the industry keeps recognizing for results.</p>
                     </div>
                   </div>
 
@@ -1719,7 +1720,7 @@ export default function ShopifyAppDevelopmentPage() {
             Our Valued <b>Partners</b>
           </h2>
           <p className="sad-partners-p">
-            The best <b>Shopify app development agency</b> doesn&rsquo;t work in isolation. It works within the ecosystem. Over nearly a decade, Ecomm Wizards has built deep, working relationships with the platforms and tools that power the world&rsquo;s top Shopify stores. These aren&rsquo;t logo badges we collected. They&rsquo;re active partnerships that make our solutions faster, smarter, and better integrated for every merchant we serve.
+            The best <b>Shopify app development agency</b> doesn&rsquo;t work in isolation. It works within the ecosystem. Over {BRAND_STATS.years} years, Ecomm Wizards has built deep, working relationships with the platforms and tools that power the world&rsquo;s top Shopify stores. These aren&rsquo;t logo badges we collected. They&rsquo;re active partnerships that make our solutions faster, smarter, and better integrated for every merchant we serve.
           </p>
 
           <div className="sad-partners-grid">
@@ -1817,7 +1818,7 @@ export default function ShopifyAppDevelopmentPage() {
               {/* duplicated set for seamless infinite scroll */}
               {[1, 2].map((dup) => (
                 <div key={dup} className="sad-marq-group" aria-hidden={dup === 2}>
-                  <span className="sad-marq-item">100% Client Satisfaction</span>
+                  <span className="sad-marq-item">Fixed-Price Quotes</span>
                   <span className="sad-marq-dot" aria-hidden />
                   <span className="sad-marq-item">Unsurpassed Quality</span>
                   <span className="sad-marq-dot" aria-hidden />
