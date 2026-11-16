@@ -8,6 +8,7 @@ This repo **is the live site** (https://ecommwizards.com, Next.js + Payload, hos
 - Ask before commits, pushes, merges, deleting pages, or anything outward-facing.
 
 ## SEO / GEO work
+- **Start here:** [seo/STATUS.md](seo/STATUS.md) has the current state, pending owner inputs, next steps and new-machine setup. Update its sections 1, 3, 4 and 7 at the end of every session.
 - The rulebook is [seo/MASTER-SEO-GEO-PLAN.md](seo/MASTER-SEO-GEO-PLAN.md). The site plan is [seo/ECOMM-WIZARDS-SEO-PLAN.md](seo/ECOMM-WIZARDS-SEO-PLAN.md). Follow the site plan's priorities and rhythm; cite Master Plan § numbers.
 - **North star: qualified calls held per week.** Pick the task closest to a booked call.
 - Progress and logs live in [seo/SEO-GEO-Site-Tracker.xlsx](seo/SEO-GEO-Site-Tracker.xlsx) (Checklist, Routine, Approvals, Keywords, Content, Links, AI Prompts, KPIs, Weekly Bookings, Change Log). Log every ranking/conversion-affecting change in the Change Log.
