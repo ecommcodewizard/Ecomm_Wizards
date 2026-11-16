@@ -14,5 +14,5 @@ This repo **is the live site** (https://ecommwizards.com, Next.js + Payload, hos
 - **Permission Gate (Master Plan §2):** any ⚠️ tactic (R1–R12, D1) needs the owner's written approval on the Approvals tab first. Never do the ⛔ list (fake reviews/stats/quotes, cloaking, link schemes, copying content).
 - Keep the geo guardrails in `lib/geo/forbidden.ts` (no LocalBusiness/Review/AggregateRating schema or invented addresses on city pages). No new city pages without approval (R8).
 - Run `/seo drift compare` before merging changes to page templates; `/seo audit` quarterly.
-- Ahrefs is the Lite plan (no API): research uses CSV exports saved under `seo/research/` per [seo/research/README.md](seo/research/README.md).
+- Ahrefs is the Lite plan, but the Ahrefs connector works with 200,000 API units/month (resets on the 10th): check units before large pulls; CSV exports per [seo/research/README.md](seo/research/README.md) are the fallback.
 - Never invent numbers, clients, reviews or credentials; case-study numbers only when verified.

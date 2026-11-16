@@ -64,7 +64,15 @@
 3. Only `components/ui/LeadForm.tsx` pushes `lead_submit`; `AuditForm`, `ContactForm`, `CreativeAuditForm` push nothing.
 4. No CTA click tracking anywhere.
 5. `CAL_LINK = "ecomm-wizards/30min"` still marked `TODO` in 3 files.
-6. Placeholder phone `+1 555 123 4567` in `free-shopify-store-audit/AuditForm.tsx:141`; no phone, email or WhatsApp link anywhere on the site.
+6. No phone, email or WhatsApp link anywhere on the site. (`+1 555 123 4567` in `AuditForm.tsx:141` is only an input placeholder, but the phone field is required — friction.)
+
+**Found by the 16 Nov audit ([report](reports/ecommwizards.com-audit/FULL-AUDIT-REPORT.md)) — fix first:**
+- 6a. **Testimonials credited to "Ben Francis, Founder, Gymshark"** + "thousands of migrations / 100% client satisfaction / 90% less downtime" on 6 migration pages (`app/(frontend)/services/migration/*`). ⛔ Master Plan §2.
+- 6b. **Fake scarcity countdown** on `/services/shopify-store-audit`.
+- 6c. **Inconsistent partner-tier claims** (Certified / Partner / platinum) — the site's own article says the Plus Partner badge was retired in 2024.
+- 6d. **Spam backlink surge**: ~39 → 888 referring domains since May 2026 ([Ahrefs baseline](baseline/ahrefs-2026-11-16.md)).
+- 6e. Blog-post schema: broken image URL (double origin, exposes storage host), dateModified < datePublished, author "Ecomm Wizards".
+- 6f. Booking calendar ~80% down service/city pages on mobile; migration CTAs open the CRO audit form.
 
 **Trust**
 7. No custom 404 page (`app/(frontend)/not-found.tsx` missing).
@@ -76,10 +84,10 @@
 
 **SEO / technical**
 13. `app/sitemap.ts` doesn't include `/insights` or any blog post; no `lastmod`.
-14. Static service pages have no Service schema (the component exists: `components/seo/ServiceSchema.tsx`).
+14. ~~Static service pages have no Service schema~~ — corrected by the audit: they do output Service (with provider → `/#organization`).
 15. Organization schema has only 4 `sameAs` profiles, no `contactPoint`, logo as a plain string.
 16. Service and city pages show no "updated" date and have no `dateModified`.
-17. ~125 `<img>` tags may be missing `alt` (mostly migration pages).
+17. Images: the audit found 0/397 images missing the alt attribute on live templates; the real issue is **empty `alt=""` on client/partner logos** (102 on the home page) and heavy PNG originals.
 18. `robots.ts` is missing current bots from Master Plan §5.2 (Claude-SearchBot, Claude-User, Applebot, DuckAssistBot, meta-webindexer, meta-externalfetcher, Amzn-SearchBot, Amzn-User, MistralAI-Index/Training) and still lists retired names (`Claude-Web`, `anthropic-ai`).
 19. No IndexNow.
 20. No UK / Canada / Australia content at all, although these are target markets.
@@ -249,7 +257,7 @@ Sections F, G, H, run on the rhythm in section J.
 
 ## F. RESEARCH SYSTEM WITH AHREFS LITE (§6, §21)
 
-Ahrefs Lite/Standard has no API, so **the owner exports CSVs and Claude analyses them**. The full export checklist is in [research/README.md](research/README.md).
+**Update 16 Nov:** the Ahrefs connector works on our Lite plan (200,000 API units/month, reset on the 10th). **Claude pulls Ahrefs data directly**, checking remaining units before large pulls; CSV exports by the owner are the fallback when units run low. The export checklist in [research/README.md](research/README.md) still defines *what* to pull.
 
 ### F.1 Competitors (intake)
 Per market (US, UK, CA, AU): 5–10 direct competitors (Shopify / Shopify Plus / migration / Klaviyo agencies) **+ 5 low-DR, high-traffic sites** ranking for our services. Claude can propose them from the SERPs; the owner confirms.
@@ -421,3 +429,4 @@ BFCM note: the site is not an e-commerce store, so no freeze applies to us, but 
 | Date | Change | By |
 |---|---|---|
 | 2026-11-16 | v1.0 created from MASTER-SEO-GEO-PLAN v1.0 + code review of the repo | Claude, approved by owner |
+| 2026-11-16 | v1.1: added audit findings 6a–6f, corrected items 6, 14, 17; Ahrefs via connector (Lite API units) | Claude |

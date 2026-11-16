@@ -1,5 +1,5 @@
-# Ahrefs research — export checklist (Ahrefs Lite / Standard)
-*Our Ahrefs plan has no API, so the owner exports CSVs and Claude analyses them. Save every export in `seo/research/YYYY-MM-DD/` with the file names below. Master Plan §6, §21.*
+# Ahrefs research — what to pull (Ahrefs Lite)
+*Update 16 Nov 2026: the Ahrefs connector works on our Lite plan (200,000 API units/month, resets on the 10th), so **Claude pulls these reports directly** and saves results in `seo/research/YYYY-MM-DD/`. Check units first (`subscription-info-limits-and-usage`); if they run low, the owner exports the same reports as CSVs using the file names below. Master Plan §6, §21.*
 
 ## 0. First: check what the plan includes (one time)
 Open each and note Yes/No in `seo/research/plan-features.md`:
