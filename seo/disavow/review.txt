@@ -1,0 +1,22 @@
+# Not auto-disavowed: check these by hand (domain, traffic, first seen)
+agmermer.pro	0	2025-01-02
+bannercho.com	0	2016-03-23
+biglistofwebsites.com	0	2020-08-28
+curl.wiki	0	2018-11-30
+cutiesbyzootys.com.au	2	2022-01-18
+fldh.info	0	2024-10-09
+grimneko.de	0	2022-02-14
+jacobverghese.info	0	2025-01-25
+kompromat100.info	0	2025-01-07
+mmwatches.co.uk	0	2025-05-06
+mundotecnologia.info	0	2025-03-25
+qa-animals.info	0	2025-01-14
+qbool.fr	0	2022-02-13
+sergechel.info	0	2025-05-30
+sjmfoundation.com	0	2025-04-26
+skrep.in	0	2022-02-15
+sovereignmedia.co.za	0	2025-04-25
+thecloudherald.com	0	2025-04-20
+tinkershell.eu	0	2022-02-12
+urls-shortener.eu	0	2024-08-11
+usbannerads.com	0	2016-03-22

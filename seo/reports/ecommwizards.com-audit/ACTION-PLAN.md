@@ -1,6 +1,12 @@
 # Action plan — ecommwizards.com audit (16 Nov 2026)
 *Ordered by impact on booked calls, then by the plan's audit order (§14.2: baseline → technical P1 → cannibalisation → quick wins). Each item notes its site-plan priority (P0–P3), effort (S < 2 h · M < 1 day · L multi-day) and whether the owner must decide or supply something. Every shipped item gets a row in the tracker's Change Log.*
 
+## Owner decisions (16 Nov 2026)
+- **C1 Gymshark testimonials:** Gymshark is a real client → testimonials stay. Still recommended: link them to a Gymshark case study, and align "thousands of migrations / 100% satisfaction / 90% less downtime" with the site-wide "150+ stores" figure.
+- **C2 countdown:** owner keeps the urgency block. Note: a fixed "only 2 spots" shown to every visitor can be judged misleading under FTC/CMA rules; rotating or real availability is safer.
+- **C3 partner badge:** owner confirms the Shopify Plus partner badge is valid to 2030 → make the wording identical everywhere and correct the `/insights/shopify-plus-development-agency` article (Payload CMS content) that says it was retired.
+- **C4 spam:** remove the spam from Search Console where possible → disavow file prepared from Ahrefs (see `seo/disavow/`); the 409k `?c=` URLs: see the indexing note in the PR.
+
 ## Critical — this week (trust & legal; these also hold back bookings)
 | # | Fix | Where | Effort | Owner input |
 |---|---|---|---|---|
