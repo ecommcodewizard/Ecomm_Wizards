@@ -13,6 +13,21 @@ import ArticleNav from "./ArticleNav";
 import ShareLinks from "./ShareLinks";
 
 const SITE = "https://ecommwizards.com";
+const ORG_NAME = "Ecomm Wizards";
+
+// Media served from object storage already arrives as an absolute URL; only
+// site-relative paths get the origin. Prefixing unconditionally produced
+// "https://ecommwizards.comhttps://…" in the structured data.
+const absolute = (src: string) => (/^https?:\/\//i.test(src) ? src : `${SITE}${src.startsWith("/") ? "" : "/"}${src}`);
+
+// "Modified" can never be earlier than "published". Publish dates are set by
+// hand, so an edit made before the chosen publish date would otherwise give
+// Google a dateModified that precedes datePublished.
+const modifiedDate = (published: string, updated?: string) => (updated && updated > published ? updated : published);
+
+// An author record that is really the company (named "Ecomm Wizards") is
+// credited to the Organization, not marked up as a Person called a company.
+const isCompanyAuthor = (name?: string) => !name || name.trim().toLowerCase() === ORG_NAME.toLowerCase();
 
 // Rendered on demand, then cached. Previously every article was baked into the
 // build from a fixed list, which cannot work once articles live in a database:
@@ -57,7 +72,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: socialTitle,
       description,
       publishedTime: post.date,
-      modifiedTime: article.updated ?? post.date,
+      modifiedTime: modifiedDate(post.date, article.updated),
       images: image ? [{ url: image, alt: post.title }] : undefined,
     },
     twitter: { card: "summary_large_image", title: socialTitle, description, images: image ? [image] : undefined },
@@ -143,28 +158,27 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       "@type": "BlogPosting",
       headline: post.title,
       description: article.summary,
-      image: post.image ? `${SITE}${post.image}` : undefined,
+      image: (article.seo.imageUrl ?? post.image) ? absolute((article.seo.imageUrl ?? post.image)!) : undefined,
       datePublished: post.date,
-      dateModified: article.updated ?? post.date,
+      dateModified: modifiedDate(post.date, article.updated),
       // A named Person when the article has a real author, so the piece is
       // attributed to someone rather than to a company. Falls back to the
       // organization, which is what it genuinely is when nobody is credited.
-      author: article.author
-        ? {
-            "@type": "Person",
-            name: article.author.name,
-            ...(article.author.role ? { jobTitle: article.author.role } : {}),
-            ...(article.author.bio ? { description: article.author.bio } : {}),
-            worksFor: { "@id": `${SITE}/#organization` },
-          }
-        : { "@id": `${SITE}/#organization` },
-      publisher: {
-        "@type": "Organization",
-        "@id": `${SITE}/#organization`,
-        name: "Ecomm Wizards",
-        url: SITE,
-        logo: { "@type": "ImageObject", url: `${SITE}/images/ecomm-green.png`, width: 636, height: 457 },
-      },
+      author:
+        article.author && !isCompanyAuthor(article.author.name)
+          ? {
+              "@type": "Person",
+              name: article.author.name,
+              ...(article.author.role ? { jobTitle: article.author.role } : {}),
+              ...(article.author.bio ? { description: article.author.bio } : {}),
+              ...(article.author.avatarUrl ? { image: absolute(article.author.avatarUrl) } : {}),
+              worksFor: { "@id": `${SITE}/#organization` },
+            }
+          : { "@id": `${SITE}/#organization` },
+      // A reference to the one Organization node the layout already publishes.
+      // Redefining it here with a different shape gave Google two conflicting
+      // descriptions of the same @id.
+      publisher: { "@id": `${SITE}/#organization` },
       mainEntityOfPage: url,
     },
     {

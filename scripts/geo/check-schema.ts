@@ -31,7 +31,9 @@ const forbiddenProps = new Set<string>(FORBIDDEN_SCHEMA_PROPERTIES);
 /** Types emitted site-wide by app/layout.tsx (Organization + WebSite graph).
  *  They appear in every rendered page, so pass 2 tolerates them; forbidden
  *  types and properties are still checked inside them. */
-const LAYOUT_TYPES = new Set<string>(["Organization", "WebSite"]);
+// ImageObject: the Organization's logo node (layout.tsx), given real dimensions
+// so article pages can reference the Organization as publisher by @id.
+const LAYOUT_TYPES = new Set<string>(["Organization", "WebSite", "ImageObject"]);
 
 type Issue = string;
 

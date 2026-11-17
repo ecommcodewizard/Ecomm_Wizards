@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getAttribution, track } from "@/lib/tracking";
 
 // Controlled port of the contact form. Keeps the exact classNames the page's
 // <style> block targets (.contact-form-fields grid, .elementor-field-group*),
@@ -89,10 +90,14 @@ export default function ContactForm() {
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ type: "contact", ...v }),
+        // Attribution goes in its own object, not `landing_page`: the API treats
+        // a landing_page without a mount timestamp as a bot and drops the lead.
+        body: JSON.stringify({ type: "contact", ...v, attribution: getAttribution() }),
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("success");
+      // GTM conversion: this form previously reported nothing.
+      track("lead_submit", { form_type: "contact", form_id: "contact-page" });
     } catch {
       setErr("Something went wrong. Please try again, or email us directly.");
       setStatus("error");

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getAttribution, track } from "@/lib/tracking";
 
 /**
  * Where audit form submissions are sent.
@@ -80,13 +81,15 @@ export default function AuditForm({ formId = "audit" }: { formId?: string }) {
         const res = await fetch(FORM_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({ type: "audit", ...values }),
+          body: JSON.stringify({ type: "audit", ...values, attribution: getAttribution() }),
         });
         if (!res.ok) throw new Error("Request failed");
       } else {
         await new Promise((r) => setTimeout(r, 900)); // UI-ready mode
       }
       setStatus("success");
+      // GTM conversion: this form previously reported nothing.
+      track("lead_submit", { form_type: "audit", form_id: formId });
     } catch {
       setStatus("error");
     }

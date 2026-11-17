@@ -282,6 +282,7 @@ function toPost(doc: PostDoc, article: Article): Post {
     excerpt: String(doc.excerpt ?? ""),
     topic: asTopic(category?.slug),
     date: published.slice(0, 10),
+    ...(article.updated && article.updated > published.slice(0, 10) ? { updated: article.updated } : {}),
     readMins: readMinutes(article),
     // Listing cards only need a name; the full byline lives on the article.
     author: article.author?.name ?? "Ecomm Wizards",

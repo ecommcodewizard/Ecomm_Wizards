@@ -14,6 +14,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CTABar from "@/components/layout/CTABar";
 import PauseOffscreenAnimations from "@/components/PauseOffscreenAnimations";
+import TrackingBootstrap from "@/components/tracking/TrackingBootstrap";
 // Computed here, in a server component, and handed to the footer as a prop.
 // Footer is "use client", so importing the registry there would serialize all
 // 39 geo pages' full copy into the bundle of every page on the site.
@@ -68,7 +69,16 @@ const ORG_SCHEMA = {
       "@id": `${SITE_URL}/#organization`,
       name: SITE_NAME,
       url: SITE_URL,
-      logo: `${SITE_URL}/images/ecomm-green.png`,
+      // An ImageObject with real dimensions (the file is 636x457). Article pages
+      // reference this node by @id as their publisher, so its logo has to be
+      // complete here rather than redefined per page.
+      logo: {
+        "@type": "ImageObject",
+        "@id": `${SITE_URL}/#logo`,
+        url: `${SITE_URL}/images/ecomm-green.png`,
+        width: 636,
+        height: 457,
+      },
       description: ROOT_DESCRIPTION,
       knowsAbout: [
         "Shopify development agency",
@@ -129,6 +139,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CTABar />
         <Footer localized={localizedFooterGroups()} />
         <PauseOffscreenAnimations />
+        <TrackingBootstrap />
       </body>
     </html>
   );
