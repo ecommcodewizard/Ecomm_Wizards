@@ -16,7 +16,7 @@
 | Ahrefs baseline | Done: DR 15, 888 ref. domains (~850 spam since May 2026), 0 organic keywords est. → [baseline/ahrefs-2026-11-16.md](baseline/ahrefs-2026-11-16.md) |
 | GSC snapshot (owner screenshot) | 120 pages indexed · 409k not indexed (spam `?c=` URLs) · last update 09/11/2026 |
 | Disavow | First file: 272 domains → [disavow/](disavow/) — waiting for full Ahrefs export |
-| PR #227 (first code PR) | **Open** — branch `seo/sitemap-schema-tracking`: booking/lead source tracking (all 3 calendars, all forms, cta_click/contact_click, admin "Source" column), sitemap adds blog posts + lastmod, blog schema fixes, Organization logo ImageObject. Build/typecheck/geo:check pass. **Merging changes the live site.** |
+| PR #227 (first code PR) | **Merged 17 Nov 13:28 UTC** (deploy + CDN purge pending) — branch `seo/sitemap-schema-tracking`: booking/lead source tracking (all 3 calendars, all forms, cta_click/contact_click, admin "Source" column), sitemap adds blog posts + lastmod, blog schema fixes, Organization logo ImageObject. Build/typecheck/geo:check pass. **Merging changes the live site.** |
 | Cal.com plan | Free (no webhooks) — bookings are captured from the browser event |
 
 ## 2. Owner decisions so far
@@ -32,14 +32,14 @@
 2. ★ Search Console → Pages → filter "Sitemap: sitemap.xml" → export the **not-indexed** list (why only 120 pages are indexed).
 3. ★ Real **Cal.com** booking link (one place now: `CAL_LINK` in `lib/cal.ts`).
 3b. ★ Exact **Shopify partner tier** name (site currently mixes "Plus Partner", "Plus Certified", "Platinum Partner") — needed before making the wording consistent.
-3c. Review + merge **PR #227**; after merge: purge Hostinger CDN, add GTM tags for the new events, one test booking, resubmit sitemap in GSC (steps in the PR).
+3c. PR #227 merged — after deploy: purge Hostinger CDN, add GTM tags for the new events, one test booking, resubmit sitemap in GSC (steps in the PR).
 4. ★ Real **phone + email** for the site (WhatsApp optional).
 5. ★ Google Business Profile office: real & staffed? Address (Toronto?).
 6. Access: GSC, GA4, GTM, Bing WMT (or exports). CMS admin for the article fix.
 7. Team bios, founder name, review profile links (Clutch, Google, Trustpilot), competitors per market (or "you propose").
 
 ## 4. Next steps for Claude (in order)
-1. ~~Code PR 1~~ → done as **PR #227** (waiting for owner review). Partner wording postponed until the tier is confirmed.
+1. ~~Code PR 1~~ → **PR #227 merged** 17 Nov. Verify live: sitemap has /insights, home schema logo is ImageObject, test booking shows a Source. Partner wording postponed until the tier is confirmed.
 1b. Next code PR (after #227): booking-path UX from the audit — calendar higher on mobile, migration CTAs to a migration booking, real `/reviews` content, contact details (needs owner inputs), custom 404, Organization contactPoint + fuller sameAs.
 2. When item 3.1 arrives: `python -I seo/disavow/build_disavow.py seo/disavow/refdomains-export.csv` → owner uploads the file in GSC.
 3. When item 3.2 arrives: diagnose the not-indexed real pages.
