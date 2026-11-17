@@ -1,6 +1,6 @@
 # SEO + GEO work — current status & how to resume
 *Read this first in any new session or on any machine. Update it at the end of every working session.*
-**Last updated:** 16 Nov 2026 · **Owner:** Mateen (GitHub `ecommcodewizard`) · **Operator:** Claude Code
+**Last updated:** 17 Nov 2026 · **Owner:** Mateen (GitHub `ecommcodewizard`) · **Operator:** Claude Code
 
 ---
 
@@ -16,7 +16,8 @@
 | Ahrefs baseline | Done: DR 15, 888 ref. domains (~850 spam since May 2026), 0 organic keywords est. → [baseline/ahrefs-2026-11-16.md](baseline/ahrefs-2026-11-16.md) |
 | GSC snapshot (owner screenshot) | 120 pages indexed · 409k not indexed (spam `?c=` URLs) · last update 09/11/2026 |
 | Disavow | First file: 272 domains → [disavow/](disavow/) — waiting for full Ahrefs export |
-| Code changes to the site | **None yet** |
+| PR #227 (first code PR) | **Open** — branch `seo/sitemap-schema-tracking`: booking/lead source tracking (all 3 calendars, all forms, cta_click/contact_click, admin "Source" column), sitemap adds blog posts + lastmod, blog schema fixes, Organization logo ImageObject. Build/typecheck/geo:check pass. **Merging changes the live site.** |
+| Cal.com plan | Free (no webhooks) — bookings are captured from the browser event |
 
 ## 2. Owner decisions so far
 - Gymshark ("Ben Francis, Founder, Gymshark") **is a real client** → testimonials stay.
@@ -29,14 +30,17 @@
 ## 3. Waiting on the owner
 1. ★ Ahrefs → Site Explorer → ecommwizards.com → Referring domains → **Export all rows** → save as `seo/disavow/refdomains-export.csv`.
 2. ★ Search Console → Pages → filter "Sitemap: sitemap.xml" → export the **not-indexed** list (why only 120 pages are indexed).
-3. ★ Real **Cal.com** booking link + Cal plan (webhooks?).
+3. ★ Real **Cal.com** booking link (one place now: `CAL_LINK` in `lib/cal.ts`).
+3b. ★ Exact **Shopify partner tier** name (site currently mixes "Plus Partner", "Plus Certified", "Platinum Partner") — needed before making the wording consistent.
+3c. Review + merge **PR #227**; after merge: purge Hostinger CDN, add GTM tags for the new events, one test booking, resubmit sitemap in GSC (steps in the PR).
 4. ★ Real **phone + email** for the site (WhatsApp optional).
 5. ★ Google Business Profile office: real & staffed? Address (Toronto?).
 6. Access: GSC, GA4, GTM, Bing WMT (or exports). CMS admin for the article fix.
 7. Team bios, founder name, review profile links (Clutch, Google, Trustpilot), competitors per market (or "you propose").
 
 ## 4. Next steps for Claude (in order)
-1. **Code PR 1** (new branch from `main`): sitemap adds `/insights` posts + `lastmod`; blog-post schema fixes (image URL double origin, dateModified < datePublished, real author); consistent partner-badge wording; first booking-tracking pieces (Klaviyo pages reuse the main `CalEmbed`, `lead_submit` from every form, `cta_click` / `cal_open`, booking source saved). Build + lint + typecheck + `geo:check`, then PR for owner review.
+1. ~~Code PR 1~~ → done as **PR #227** (waiting for owner review). Partner wording postponed until the tier is confirmed.
+1b. Next code PR (after #227): booking-path UX from the audit — calendar higher on mobile, migration CTAs to a migration booking, real `/reviews` content, contact details (needs owner inputs), custom 404, Organization contactPoint + fuller sameAs.
 2. When item 3.1 arrives: `python -I seo/disavow/build_disavow.py seo/disavow/refdomains-export.csv` → owner uploads the file in GSC.
 3. When item 3.2 arrives: diagnose the not-indexed real pages.
 4. Then follow the site plan roadmap (section K) and the audit [ACTION-PLAN.md](reports/ecommwizards.com-audit/ACTION-PLAN.md); weekly rhythm in plan section J.
@@ -61,3 +65,4 @@
 | Date | What happened |
 |---|---|
 | 2026-11-16 | Plan + tracker created (PR #224 merged). claude-seo installed. Day-0 audit + Ahrefs baseline + disavow tooling (PR #225 open). Owner answered audit questions. |
+| 2026-11-17 | PR #227 opened: booking/lead attribution + tracking, sitemap blog + lastmod, blog schema fixes. Tested: typecheck, build, geo:check 5/5, local smoke test, headless-browser check of first touch + cta_click. `npm ci` run locally (node_modules now installed). |
