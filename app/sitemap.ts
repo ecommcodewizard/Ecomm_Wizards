@@ -4,8 +4,13 @@ import { APP_CASE_STUDIES } from "@/lib/shopify-app-studies";
 import { KLAVIYO_CASE_STUDIES } from "@/lib/klaviyo-studies";
 import { CREATIVE_CASE_STUDIES } from "@/lib/creative-studies";
 import { geoRoutes } from "@/lib/geo/registry";
+import { listPosts } from "@/lib/blog/cms";
 
 const SITE_URL = "https://ecommwizards.com";
+
+// Regenerated hourly so a newly published /insights article reaches the sitemap
+// without a redeploy (posts live in Payload, not in the build).
+export const revalidate = 3600;
 
 // URL-only sitemap. lastmod/priority/changefreq are intentionally omitted:
 // Google ignores priority and changefreq, and an accurate lastmod can't be
@@ -83,7 +88,7 @@ const ROUTES: string[] = [
   "/bulk-hours",
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticEntries: MetadataRoute.Sitemap = ROUTES.map((path) => ({
     url: `${SITE_URL}${path}`,
   }));
@@ -106,5 +111,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}${path}`,
   }));
 
-  return [...staticEntries, ...caseStudyEntries, ...geoEntries];
+  // Blog (/insights): published Payload posts only. Unlike the static routes,
+  // these carry a real lastmod: the CMS records when each article was published
+  // and last edited. listPosts() returns [] if the database is unreachable, and
+  // /insights itself is noindex when empty, so it is listed only with posts.
+  const posts = await listPosts();
+  const blogEntries: MetadataRoute.Sitemap = posts.length
+    ? [
+        { url: `${SITE_URL}/insights`, lastModified: posts.map((p) => p.updated ?? p.date).sort().at(-1) },
+        ...posts.map((p) => ({
+          url: `${SITE_URL}/insights/${p.slug}`,
+          lastModified: p.updated ?? p.date,
+        })),
+      ]
+    : [];
+
+  return [...staticEntries, ...caseStudyEntries, ...geoEntries, ...blogEntries];
 }

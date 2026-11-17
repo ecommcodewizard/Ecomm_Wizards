@@ -1,16 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { attachCalTracking, CAL_BRAND, CAL_LINK } from "@/lib/cal";
 
 /**
  * cal.com inline embed.
  *
- * To go live, set CAL_LINK to your real cal.com event link (the part after
- * cal.com/), e.g. "ecomm-wizards/discovery-call". That is the only change
- * needed.
- *
- * If you instead paste cal.com's own embed snippet, drop the calLink and
- * namespace out of it into the constants below and keep the rest of this file.
+ * The event link and brand colour live in lib/cal.ts, shared with every other
+ * calendar on the site, as does the booking capture and conversion tracking.
  *
  * Every prop is optional and defaults to exactly what /book-shopify-consultation
  * used before the props existed, so that page is unchanged by them. They exist
@@ -23,9 +20,6 @@ import { useEffect, useRef, useState } from "react";
  * calendar. Rendering it eagerly on a page that merely offers booking makes
  * every visitor pay for a widget almost none of them will open.
  */
-const CAL_LINK = "ecomm-wizards/30min"; // TODO: replace with your real cal.com link
-const CAL_BRAND = "#2A9555";
-
 declare global {
   interface Window {
     Cal?: CalApi;
@@ -123,37 +117,11 @@ export default function CalEmbed({
     Cal.ns![namespace]("on", { action: "linkReady", callback: () => setState("ready") });
     Cal.ns![namespace]("on", { action: "linkFailed", callback: () => setState("failed") });
 
-    // Capture successful bookings into our own DB. The free Cal.com plan has no
-    // server API/webhooks, so we read the booking from the browser event and
-    // fire-and-forget it to /api/bookings, which stores it for the admin
-    // Call Bookings page.
-    Cal.ns![namespace]("on", {
-      action: "bookingSuccessfulV2",
-      callback: (e: unknown) => {
-        try {
-          const data = (e as { detail?: { data?: unknown } })?.detail?.data ?? {};
-          fetch("/api/bookings", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data),
-            keepalive: true,
-          }).catch(() => {});
-        } catch {
-          // never let capture break the booking experience
-        }
-      },
-    });
-
-    // Bridge the booking out of cal.com's iframe: when a booking succeeds, push a
-    // dataLayer event so GTM can fire the Google Ads "Book a Call" conversion.
-    // (A standard form-submit trigger can't see inside the cross-origin iframe.)
-    Cal.ns![namespace]("on", {
-      action: "bookingSuccessful",
-      callback: () => {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: "cal_booking_success" });
-      },
-    });
+    // Booking capture (/api/bookings, with where the visitor came from) and the
+    // GTM conversion events (cal_view, cal_booking_success). The free cal.com
+    // plan has no webhooks, so the browser event is the only signal; a standard
+    // GTM form trigger cannot see inside the cross-origin iframe either.
+    attachCalTracking(Cal.ns![namespace], namespace);
   }, [namespace, elementId, calLink]);
 
   return (

@@ -1,17 +1,16 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { attachCalTracking, CAL_BRAND, CAL_LINK } from "@/lib/cal";
 
 /**
  * cal.com inline embed for the Klaviyo agency booking section.
  *
- * To go live, set CAL_LINK to your real cal.com event link (the part after
- * cal.com/), e.g. "ecomm-wizards/discovery-call". That is the only change
- * needed. CAL_NAMESPACE just has to be unique on the page; leave it as-is.
+ * The event link, brand colour and booking tracking are shared with every other
+ * calendar on the site (lib/cal.ts). CAL_NAMESPACE just has to be unique on the
+ * page; leave it as-is.
  */
-const CAL_LINK = "ecomm-wizards/30min"; // TODO: replace with your real cal.com link
 const CAL_NAMESPACE = "klaviyo-agency";
-const CAL_BRAND = "#2A9555";
 
 declare global {
   interface Window {
@@ -82,6 +81,10 @@ export default function KvCalEmbed() {
       layout: "month_view",
       cssVarsPerTheme: { light: { "cal-brand": CAL_BRAND } },
     });
+
+    // Same booking capture and conversion events as every other calendar. This
+    // embed previously recorded neither, so Klaviyo bookings were invisible.
+    attachCalTracking(Cal.ns![CAL_NAMESPACE], CAL_NAMESPACE);
   }, []);
 
   return (

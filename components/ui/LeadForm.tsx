@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { getAttribution, track } from "@/lib/tracking";
 
 // Embedded lead form for the geo programme conversion block. Posts to the shared
 // /api/lead pipeline as a "contact" lead with the landing page path attached
@@ -77,12 +78,15 @@ export default function LeadForm({ landingPage, budgetBands, idPrefix = "glf", s
           project_details: values.details,
           landing_page: landingPage,
           ts: ts ?? Date.now(),
+          attribution: getAttribution(),
           _gotcha: values._gotcha,
         }),
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("success");
-      (window as unknown as { dataLayer?: unknown[] }).dataLayer?.push({ event: "lead_submit", landing_page: landingPage });
+      // Same event shape as every other form; landing_page kept for the GTM tags
+      // that already read it.
+      track("lead_submit", { form_type: "contact", form_id: "geo-lead-form", landing_page: landingPage });
     } catch {
       setStatus("error");
     }

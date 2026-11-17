@@ -21,6 +21,8 @@ export type Post = {
   excerpt: string;
   topic: TopicSlug;
   date: string; // ISO yyyy-mm-dd
+  /** ISO yyyy-mm-dd of the last content edit, when later than `date`. Used for sitemap lastmod. */
+  updated?: string;
   readMins: number;
   author: string;
   image?: string; // cover photo; the card shows a plain dark panel without one

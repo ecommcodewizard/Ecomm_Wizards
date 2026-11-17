@@ -14,6 +14,52 @@ function fmtWhen(v: string | null): string {
     : t.toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" });
 }
 
+type Attr = { page?: string; landing_page?: string; referrer?: string; utm_source?: string; utm_medium?: string; gclid?: string };
+
+// Where the booker came from, as captured by lib/cal.ts into the booking's raw
+// JSON (bookings made before that existed have none). mysql2 may hand the JSON
+// column back as an object or a string, so both are handled.
+function attributionOf(raw: unknown): Attr | null {
+  let r: unknown = raw;
+  if (typeof r === "string") {
+    try {
+      r = JSON.parse(r);
+    } catch {
+      return null;
+    }
+  }
+  const a = r && typeof r === "object" ? (r as Record<string, unknown>)._attribution : null;
+  return a && typeof a === "object" ? (a as Attr) : null;
+}
+
+function channelOf(a: Attr): string {
+  if (a.gclid) return "Google Ads";
+  if (a.utm_source) return a.utm_medium ? `${a.utm_source} / ${a.utm_medium}` : a.utm_source;
+  if (a.referrer) {
+    try {
+      const host = new URL(a.referrer).hostname.replace(/^www\./, "");
+      if (/chatgpt|openai|perplexity|gemini|copilot|claude/.test(host)) return `AI: ${host}`;
+      if (/google|bing|duckduckgo|yahoo|ecosia/.test(host)) return `Search: ${host}`;
+      return host;
+    } catch {
+      return "Referral";
+    }
+  }
+  return "Direct";
+}
+
+function SourceCell({ raw }: { raw: unknown }) {
+  const a = attributionOf(raw);
+  if (!a) return <span className="ewa-muted">—</span>;
+  return (
+    <div style={{ fontSize: 12, lineHeight: 1.45 }}>
+      <div style={{ fontWeight: 600, color: "#0f172a" }}>{channelOf(a)}</div>
+      {a.landing_page ? <div className="ewa-muted">Landed: {a.landing_page}</div> : null}
+      {a.page && a.page !== a.landing_page ? <div className="ewa-muted">Booked on: {a.page}</div> : null}
+    </div>
+  );
+}
+
 function StatCard({ label, value, sub }: { label: string; value: number; sub: string }) {
   return (
     <div className="ewa-card">
@@ -104,6 +150,7 @@ export default async function BookingsDashboard() {
                       <th>When</th>
                       <th>Name</th>
                       <th>Status</th>
+                      <th>Source</th>
                       <th>Join</th>
                       <th aria-label="Row actions"></th>
                     </tr>
@@ -132,6 +179,7 @@ export default async function BookingsDashboard() {
                             {b.name || <span className="ewa-muted">{b.title || "—"}</span>}
                           </td>
                           <td><StatusBadge status={b.status} /></td>
+                          <td><SourceCell raw={b.raw} /></td>
                           <td>
                             {b.video_call_url ? (
                               <a className="ewa-link" href={b.video_call_url} target="_blank" rel="noopener noreferrer">Join</a>

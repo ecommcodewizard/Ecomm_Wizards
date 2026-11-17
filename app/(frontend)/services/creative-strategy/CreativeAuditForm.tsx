@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getAttribution, track } from "@/lib/tracking";
 
 // Free creative audit form for the Creative Strategy lander. Posts to the shared
 // /api/lead pipeline as a "creative-audit" lead (mapped onto existing columns).
@@ -61,11 +62,14 @@ export default function CreativeAuditForm() {
           services: values.services,
           situation: values.situation ? [values.situation] : [],
           source: "Creative Strategy Lander",
+          attribution: getAttribution(),
           _gotcha: values._gotcha,
         }),
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("success");
+      // GTM conversion: this form previously reported nothing.
+      track("lead_submit", { form_type: "creative-audit", form_id: "creative-strategy" });
     } catch {
       setStatus("error");
     }
