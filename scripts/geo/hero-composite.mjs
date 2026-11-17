@@ -142,7 +142,7 @@ const PAGES = {
   },
   denver: {
     main: "Henchman-3.webp",
-    top: "Everlast-range.webp",
+    top: "Everlast-banner.webp",
     bottom: "Sneak-bundle.png",
     badges: [
       { n: "+152%", l: "conversion rate", b: "Everlast" },
@@ -219,6 +219,15 @@ const PAGES = {
     badges: [
       { n: "+50%", l: "B2B revenue", b: "Mouldings One" },
       { n: "+134%", l: "subscription revenue", b: "Happy Mammoth" },
+    ],
+  },
+  maryland: {
+    main: "Saddleback-pdp.webp",
+    top: "Everlast-banner.webp",
+    bottom: "Henchman-1.webp",
+    badges: [
+      { n: "+881%", l: "B2B sales in month one", b: "Saddleback" },
+      { n: "+152%", l: "conversion rate", b: "Everlast" },
     ],
   },
 };
