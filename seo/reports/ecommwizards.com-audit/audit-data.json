@@ -1,0 +1,289 @@
+{
+  "summary": {
+    "health_score": 66,
+    "business_type": "Shopify / Shopify Plus agency (lead generation, booked calls)",
+    "top_findings": [
+      "Gymshark-attributed testimonials and unsupported claims on 6 migration pages",
+      "Fake scarcity countdown on /services/shopify-store-audit",
+      "Inconsistent/unsourced trust claims (4.9 rating, partner tier, $400M+); badges unlinked",
+      "Spam backlink surge: ~39 to 888 referring domains since May 2026",
+      "Booking tracking gaps: Klaviyo bookings untracked, forms send no conversion, bookings store no source"
+    ],
+    "quick_wins": [
+      "Remove fake testimonials/claims and countdown",
+      "Add /insights posts + lastmod to sitemap",
+      "Real reviews and linked profiles on /reviews",
+      "Fix blog-post schema (image URL, dates, author)",
+      "Migration CTAs to migration booking; calendar higher on mobile"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 78,
+      "what_works": [
+        "Self-referencing canonicals",
+        "Clean 200s",
+        "?c= spam returns 410",
+        "Server-side rendering",
+        "HSTS"
+      ],
+      "findings": [
+        {
+          "title": "Blog missing from sitemap",
+          "severity": "High",
+          "description": "11 /insights posts not in sitemap.xml; no lastmod",
+          "recommendation": "Add posts and lastmod in app/sitemap.ts"
+        },
+        {
+          "title": "Heavy HTML",
+          "severity": "High",
+          "description": "Home 584 KB raw, service ~440 KB",
+          "recommendation": "Trim RSC payload and duplicate logo sliders"
+        },
+        {
+          "title": "HTML not edge-cached",
+          "severity": "Medium",
+          "description": "max-age=0, DYNAMIC; TTFB 0.63-0.90 s",
+          "recommendation": "Cache prerendered HTML at CDN"
+        },
+        {
+          "title": "CDN blocks GPTBot",
+          "severity": "Medium",
+          "description": "429 for GPTBot, meta-externalagent despite robots allow",
+          "recommendation": "Align hPanel bot policy with robots.txt"
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 55,
+      "what_works": [
+        "Unique city pages",
+        "Answer-first insights articles",
+        "Named client quotes in case studies"
+      ],
+      "findings": [
+        {
+          "title": "Gymshark testimonials and unsupported claims",
+          "severity": "Critical",
+          "description": "6 migration pages",
+          "recommendation": "Remove; use verified client quotes and numbers"
+        },
+        {
+          "title": "Fake scarcity countdown",
+          "severity": "Critical",
+          "description": "/services/shopify-store-audit",
+          "recommendation": "Remove"
+        },
+        {
+          "title": "Empty reviews page and unsourced 4.9 rating",
+          "severity": "High",
+          "description": "/reviews 49 words",
+          "recommendation": "Show real reviews and link profiles"
+        },
+        {
+          "title": "No named people or contact details",
+          "severity": "High",
+          "description": "No bios, author 'Ecomm Wizards', no phone/email",
+          "recommendation": "Add team, author pages, contact details"
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 70,
+      "what_works": [
+        "Unique titles/descriptions on all 144 URLs",
+        "One H1 per page"
+      ],
+      "findings": [
+        {
+          "title": "Cannibalisation",
+          "severity": "High",
+          "description": "insights vs services for CRO and Plus; dev pages overlap; two audit pages",
+          "recommendation": "Decide merge/301/re-angle (owner approval)"
+        },
+        {
+          "title": "Footer links all 57 city pages",
+          "severity": "Medium",
+          "description": "172-227 internal links per page",
+          "recommendation": "Link via hubs"
+        },
+        {
+          "title": "CTA sprawl",
+          "severity": "Medium",
+          "description": "9 labels, 7 offers; city CTAs go to #contact",
+          "recommendation": "One booking CTA family"
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 68,
+      "what_works": [
+        "Valid JSON-LD everywhere",
+        "Service on service and city pages",
+        "Guardrails respected"
+      ],
+      "findings": [
+        {
+          "title": "Blog post image URL broken",
+          "severity": "High",
+          "description": "Double origin + exposed storage host",
+          "recommendation": "Fix URL builder"
+        },
+        {
+          "title": "Post dates inverted",
+          "severity": "High",
+          "description": "dateModified < datePublished",
+          "recommendation": "Fix date fields"
+        },
+        {
+          "title": "Thin/conflicting Organization",
+          "severity": "Medium",
+          "description": "String logo, 4 sameAs, duplicate nodes",
+          "recommendation": "One enriched Organization node"
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 62,
+      "what_works": [
+        "Lazy videos",
+        "next/image heroes",
+        "CLS ~0 in visual check"
+      ],
+      "findings": [
+        {
+          "title": "No field data",
+          "severity": "Medium",
+          "description": "PSI quota hit, no API key",
+          "recommendation": "Add PSI key / GSC access"
+        },
+        {
+          "title": "JS weight",
+          "severity": "Medium",
+          "description": "~620-800 KB JS, 110 KB polyfills",
+          "recommendation": "Modern browserslist"
+        },
+        {
+          "title": "Preloads and fonts",
+          "severity": "Low",
+          "description": "5 image preloads, 7 font faces, missing Nunito",
+          "recommendation": "One LCP preload, next/font"
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 59,
+      "what_works": [
+        "All AI search bots reach the site",
+        "llms.txt valid",
+        "Server-rendered text"
+      ],
+      "findings": [
+        {
+          "title": "Inconsistent facts",
+          "severity": "High",
+          "description": "Partner tier, HQ, focus differ across pages/llms.txt",
+          "recommendation": "Single fact sheet used everywhere"
+        },
+        {
+          "title": "Weak off-site proof",
+          "severity": "High",
+          "description": "Badges unlinked, 4 sameAs, no founder",
+          "recommendation": "Link profiles, name founder, extend sameAs"
+        },
+        {
+          "title": "No entity statement on home",
+          "severity": "Medium",
+          "description": "No 'Ecomm Wizards is a...' block",
+          "recommendation": "Add 40-60 word block + FAQ"
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 66,
+      "what_works": [
+        "0/397 images missing alt attribute on sampled templates",
+        "~93% lazy-loaded"
+      ],
+      "findings": [
+        {
+          "title": "Empty alt on logos",
+          "severity": "High",
+          "description": "102 alt='' on home",
+          "recommendation": "Real alt on first copy of each logo"
+        },
+        {
+          "title": "Heavy originals",
+          "severity": "Medium",
+          "description": "Migration originals ~4.4 MB, PNG up to 581 KB",
+          "recommendation": "WebP/AVIF; width/height"
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "Remove fake testimonials/claims and countdown",
+          "Consistent, sourced credentials and linked badges",
+          "GSC manual-action check; disavow decision",
+          "Booking measurement (P0)"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Sitemap + lastmod",
+          "Blog schema fixes",
+          "Contact details",
+          "Real reviews page",
+          "Named people",
+          "Migration CTAs and page type",
+          "Mobile booking path",
+          "Cannibalisation decisions",
+          "Edge caching + CDN bot policy",
+          "Logo alt text"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "Home entity block + FAQ",
+          "Question headings on money pages",
+          "City-page cleanup",
+          "Pricing page",
+          "Case-study proof",
+          "Schema enrichment",
+          "Performance work",
+          "Directory and listicle outreach"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "Weekly bookings scorecard",
+          "Monthly AI prompt set",
+          "Spam-link monitoring",
+          "Quarterly re-audit"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}
