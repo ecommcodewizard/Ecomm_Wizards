@@ -98,7 +98,7 @@ const PAGES = {
   "north-carolina": {
     main: "Mouldings One PDP.webp",
     top: "sneak-pdp.jpg",
-    bottom: "evie-lou-1.webp",
+    bottom: "evie-lou.webp",
     badges: [
       { n: "+50%", l: "B2B revenue", b: "Mouldings One" },
       { n: "+82%", l: "conversion rate", b: "Evie Lou" },
@@ -183,6 +183,42 @@ const PAGES = {
     badges: [
       { n: "50k+", l: "merchants onboarded", b: "teelaunch" },
       { n: "165", l: "territories from day one", b: "ABASK" },
+    ],
+  },
+  texas: {
+    main: "VITHIT PDP.png",
+    top: "ChloBo-pdp.webp",
+    bottom: "evie-lou.webp",
+    badges: [
+      { n: "+115%", l: "revenue year on year", b: "VITHIT" },
+      { n: "+82%", l: "conversion rate", b: "Evie Lou" },
+    ],
+  },
+  "san-antonio": {
+    main: "WeareWild-1.png",
+    top: "Ronaldo Jewelry Gift guide.webp",
+    bottom: "Candy Kittens hero section.webp",
+    badges: [
+      { n: "80K+", l: "monthly subscribers", b: "Wild" },
+      { n: "+$8.1M", l: "new annual revenue", b: "Candy Kittens" },
+    ],
+  },
+  sacramento: {
+    main: "Capelli Sports pdp.png",
+    top: "Daring hero.webp",
+    bottom: "sneak-1.webp",
+    badges: [
+      { n: "95%", l: "search traffic kept", b: "Capelli Sports" },
+      { n: "+68%", l: "mobile conversion rate", b: "Sneak Energy" },
+    ],
+  },
+  kansas: {
+    main: "Mouldings One PDP.webp",
+    top: "Feetures PDP.png",
+    bottom: "happy-mammoth-subscription.webp",
+    badges: [
+      { n: "+50%", l: "B2B revenue", b: "Mouldings One" },
+      { n: "+134%", l: "subscription revenue", b: "Happy Mammoth" },
     ],
   },
 };
