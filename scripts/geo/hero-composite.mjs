@@ -230,6 +230,15 @@ const PAGES = {
       { n: "+152%", l: "conversion rate", b: "Everlast" },
     ],
   },
+  arkansas: {
+    main: "Dryrobe-PDP.png",
+    top: "NEOM Wellbeing pdp.png",
+    bottom: "Mouldings One hero.webp",
+    badges: [
+      { n: "+89%", l: "online revenue", b: "Dryrobe" },
+      { n: "+50%", l: "B2B revenue", b: "Mouldings One" },
+    ],
+  },
 };
 
 const html = (p) => `<!doctype html><html><head><meta charset="utf-8">
