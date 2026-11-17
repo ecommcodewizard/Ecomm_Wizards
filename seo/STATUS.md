@@ -11,7 +11,7 @@
 | Site plan | [ECOMM-WIZARDS-SEO-PLAN.md](ECOMM-WIZARDS-SEO-PLAN.md) v1.1 — **north star: qualified calls held per week** |
 | Tracker | [SEO-GEO-Site-Tracker.xlsx](SEO-GEO-Site-Tracker.xlsx) — intake filled, Weekly Bookings tab, Nov KPIs, Change Log |
 | PR #224 (plan + tracker) | **Merged** to `main` |
-| PR #225 (day-0 audit, Ahrefs baseline, disavow tooling) | **Open** — branch `seo/day0-baseline` — docs only, safe to merge |
+| PR #225 (day-0 audit, Ahrefs baseline, disavow tooling, this file) | **Open — owner to merge** (docs only, safe). Until merged, run `git checkout seo/day0-baseline` after cloning to see these files |
 | Day-0 audit | Done: health **66/100** → [reports/ecommwizards.com-audit/](reports/ecommwizards.com-audit/) (FULL-AUDIT-REPORT, ACTION-PLAN, findings, screenshots, HTML report) |
 | Ahrefs baseline | Done: DR 15, 888 ref. domains (~850 spam since May 2026), 0 organic keywords est. → [baseline/ahrefs-2026-11-16.md](baseline/ahrefs-2026-11-16.md) |
 | GSC snapshot (owner screenshot) | 120 pages indexed · 409k not indexed (spam `?c=` URLs) · last update 09/11/2026 |
@@ -49,7 +49,7 @@
 
 ## 5. Resume on a new machine (one-time setup)
 1. **Clone:** `git clone https://github.com/ecommcodewizard/Ecomm_Wizards.git` (sign in as **ecommcodewizard**; another saved login `fivefoldgrowth-source` gets 403 on this repo — if pushes fail, run `git config --local credential.https://github.com.username ecommcodewizard`).
-2. **Node deps:** `npm install` (copy `.env` values from Hostinger/owner; see `.env.example`).
+2. **Node deps:** `npm ci` (uses the lockfile; Node 24.22+ recommended for Payload). Copy `.env` values from Hostinger/owner (see `.env.example`) only if you need the CMS/database locally; `npm run build` works without them.
 3. **Claude Code:** VS Code extension or CLI. Open the repo folder; `CLAUDE.md` loads automatically and points here.
 4. **GitHub CLI:** `winget install GitHub.cli` → `gh auth login --hostname github.com --git-protocol https --web` → choose ecommcodewizard.
 5. **claude-seo skills** (the `/seo …` commands): install Python 3.11–3.14 (tick "Add to PATH"), then
