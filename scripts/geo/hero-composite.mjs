@@ -24,7 +24,7 @@ const img = (f) => pathToFileURL(CS + f).href;
 
 const PAGES = {
   columbus: {
-    main: "Twillory product page.png",
+    main: "Twillory bundles.png",
     top: "VITHIT PDP.png",
     bottom: "111skin-hero section.png",
     badges: [
@@ -106,7 +106,7 @@ const PAGES = {
   },
   raleigh: {
     main: "Loop Earplugs quiz.png",
-    top: "111skin-hero section.png",
+    top: "111skin-quiz.jpg",
     bottom: "This Works-hero section.png",
     badges: [
       { n: "+46%", l: "conversion rate", b: "111SKIN" },
@@ -237,6 +237,51 @@ const PAGES = {
     badges: [
       { n: "+89%", l: "online revenue", b: "Dryrobe" },
       { n: "+50%", l: "B2B revenue", b: "Mouldings One" },
+    ],
+  },
+  boise: {
+    main: "John Hardy-pdp.webp",
+    top: "111skin-quiz.jpg",
+    bottom: "Denim Tears hero.webp",
+    badges: [
+      { n: "+71%", l: "conversion rate", b: "John Hardy" },
+      { n: "-45%", l: "page load time", b: "Denim Tears" },
+    ],
+  },
+  oklahoma: {
+    main: "Twillory bundles.png",
+    top: "This Works-1.webp",
+    bottom: "Ronaldo Jewelry PDP.webp",
+    badges: [
+      { n: "$5.4M", l: "new annual revenue", b: "Twillory" },
+      { n: "+38%", l: "conversion rate", b: "This Works" },
+    ],
+  },
+  orlando: {
+    main: "Candy Kittens hero section.webp",
+    top: "WeareWild-1.png",
+    bottom: "Dryrobe-PDP.png",
+    badges: [
+      { n: "+$8.1M", l: "new annual revenue", b: "Candy Kittens" },
+      { n: "+23%", l: "checkout completion", b: "Dryrobe" },
+    ],
+  },
+  tulsa: {
+    main: "Feetures PDP.png",
+    top: "VITHIT PDP.png",
+    bottom: "Capelli Sports-1.webp",
+    badges: [
+      { n: "+115%", l: "revenue year on year", b: "VITHIT" },
+      { n: "+32%", l: "add-to-cart rate", b: "Feetures" },
+    ],
+  },
+  utah: {
+    main: "happy-mammoth-subscription.webp",
+    top: "Daring hero.webp",
+    bottom: "Everlast-checkout.webp",
+    badges: [
+      { n: "+134%", l: "subscription revenue", b: "Happy Mammoth" },
+      { n: "+152%", l: "conversion rate", b: "Everlast" },
     ],
   },
 };

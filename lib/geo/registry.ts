@@ -37,6 +37,11 @@ import { SHOPIFY_DEV_SACRAMENTO } from "./pages/shopify-development-agency-sacra
 import { SHOPIFY_DEV_KANSAS } from "./pages/shopify-development-agency-kansas";
 import { SHOPIFY_DEV_MARYLAND } from "./pages/shopify-development-agency-maryland";
 import { SHOPIFY_DEV_ARKANSAS } from "./pages/shopify-development-agency-arkansas";
+import { SHOPIFY_DEV_BOISE } from "./pages/shopify-development-agency-boise";
+import { SHOPIFY_DEV_OKLAHOMA } from "./pages/shopify-development-agency-oklahoma";
+import { SHOPIFY_DEV_ORLANDO } from "./pages/shopify-development-agency-orlando";
+import { SHOPIFY_DEV_TULSA } from "./pages/shopify-development-agency-tulsa";
+import { SHOPIFY_DEV_UTAH } from "./pages/shopify-development-agency-utah";
 import { ECOMMERCE_AGENCY } from "./pages/ecommerce-agency";
 import { ECOMMERCE_SEO_AGENCY } from "./pages/ecommerce-seo-agency";
 import { ECOMMERCE_MARKETING_AGENCY } from "./pages/ecommerce-marketing-agency";
@@ -88,7 +93,7 @@ export const GEO_PAGES: GeoProgrammePage[] = [ECOMMERCE_AGENCY, ECOMMERCE_SEO_AG
 /** Service-format location pages (geo v5, owner-approved 2026-11-08). Live
  *  the moment they reach main, exactly like GEO_PAGES. Kept in their own list
  *  because they have their own schema; every guardrail reads both lists. */
-export const SERVICE_GEO_PAGES: ServiceGeoPage[] = [SHOPIFY_DEV_CHARLOTTE, SHOPIFY_DEV_CHICAGO, SHOPIFY_DEV_DALLAS, SHOPIFY_DEV_COLUMBUS, SHOPIFY_DEV_MIAMI, SHOPIFY_DEV_HOUSTON, SHOPIFY_DEV_ATLANTA, SHOPIFY_DEV_MILWAUKEE, SHOPIFY_DEV_COLORADO, SHOPIFY_DEV_NORTH_CAROLINA, SHOPIFY_DEV_RALEIGH, SHOPIFY_DEV_VERMONT, SHOPIFY_DEV_PORTLAND, SHOPIFY_DEV_SEATTLE, SHOPIFY_DEV_DENVER, SHOPIFY_DEV_ALABAMA, SHOPIFY_APP_CHARLOTTE, SHOPIFY_APP_VERMONT, SHOPIFY_DEV_TEXAS, SHOPIFY_DEV_SAN_ANTONIO, SHOPIFY_DEV_SACRAMENTO, SHOPIFY_DEV_KANSAS, SHOPIFY_DEV_MARYLAND, SHOPIFY_DEV_ARKANSAS];
+export const SERVICE_GEO_PAGES: ServiceGeoPage[] = [SHOPIFY_DEV_CHARLOTTE, SHOPIFY_DEV_CHICAGO, SHOPIFY_DEV_DALLAS, SHOPIFY_DEV_COLUMBUS, SHOPIFY_DEV_MIAMI, SHOPIFY_DEV_HOUSTON, SHOPIFY_DEV_ATLANTA, SHOPIFY_DEV_MILWAUKEE, SHOPIFY_DEV_COLORADO, SHOPIFY_DEV_NORTH_CAROLINA, SHOPIFY_DEV_RALEIGH, SHOPIFY_DEV_VERMONT, SHOPIFY_DEV_PORTLAND, SHOPIFY_DEV_SEATTLE, SHOPIFY_DEV_DENVER, SHOPIFY_DEV_ALABAMA, SHOPIFY_APP_CHARLOTTE, SHOPIFY_APP_VERMONT, SHOPIFY_DEV_TEXAS, SHOPIFY_DEV_SAN_ANTONIO, SHOPIFY_DEV_SACRAMENTO, SHOPIFY_DEV_KANSAS, SHOPIFY_DEV_MARYLAND, SHOPIFY_DEV_ARKANSAS, SHOPIFY_DEV_BOISE, SHOPIFY_DEV_OKLAHOMA, SHOPIFY_DEV_ORLANDO, SHOPIFY_DEV_TULSA, SHOPIFY_DEV_UTAH];
 
 /** Anything a hub links down to or the footer lists. */
 export type LocationPage = GeoPage | ServiceGeoPage;
