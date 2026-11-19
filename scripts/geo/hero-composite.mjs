@@ -284,6 +284,42 @@ const PAGES = {
       { n: "+152%", l: "conversion rate", b: "Everlast" },
     ],
   },
+  ohio: {
+    main: "Saddleback-product page.png",
+    top: "evie-lou.webp",
+    bottom: "Henchman-3.webp",
+    badges: [
+      { n: "+881%", l: "B2B sales in month one", b: "Saddleback" },
+      { n: "+82%", l: "conversion rate", b: "Evie Lou" },
+    ],
+  },
+  "kansas-city": {
+    main: "Ronaldo Jewelry PDP.webp",
+    top: "ChloBo-pdp.webp",
+    bottom: "sneak-1.webp",
+    badges: [
+      { n: "+250%", l: "total sales", b: "Ronaldo Jewelry" },
+      { n: "+68%", l: "mobile conversion rate", b: "Sneak Energy" },
+    ],
+  },
+  cleveland: {
+    main: "Twillory bundles.png",
+    top: "Daring 1.webp",
+    bottom: "Saddleback-hero section.webp",
+    badges: [
+      { n: "$5.4M", l: "new annual revenue", b: "Twillory" },
+      { n: "+881%", l: "B2B sales in month one", b: "Saddleback" },
+    ],
+  },
+  omaha: {
+    main: "Dryrobe-best sellers.webp",
+    top: "ChloBo-pdp.webp",
+    bottom: "Loop Earplugs pdp.png",
+    badges: [
+      { n: "+89%", l: "online revenue", b: "Dryrobe" },
+      { n: "+48%", l: "conversion rate", b: "ChloBo" },
+    ],
+  },
 };
 
 const html = (p) => `<!doctype html><html><head><meta charset="utf-8">
